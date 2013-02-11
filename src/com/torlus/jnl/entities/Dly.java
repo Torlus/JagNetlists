@@ -23,4 +23,11 @@ public class Dly extends Entity {
 		return vhdlMap(inst, vhdl);
 	}
 
+	@Override
+	public String verilogInstance(Instance inst) {
+		String vlog = "$z$ <= $a$;\n";
+		return verilogMap(inst, vlog);
+	}
+
+	
 }

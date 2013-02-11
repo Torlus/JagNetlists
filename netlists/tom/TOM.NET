@@ -99,7 +99,8 @@ bus ownership. This is when bg is active *)
 	xwel[0..7],	(* memory write strobes wel0 writes d0-d7, etc *)
 	xrasl[0..1],	(* ras for each bank of DRAM *)
 	xdtackl,	(* data transfer acknowledge *)
-	xintl:IO);	(* active low interrupt output *)
+	xintl, (* active low interrupt output *)
+	cfgen:IO); (* GE *)	
 
 	INT8/xd0_7,xd8_15,xd16_23,xd24_31,xd32_39,xd40_47,xd48_55,xd56_63,
 	INT24/xa:IO;

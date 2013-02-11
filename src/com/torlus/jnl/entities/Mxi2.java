@@ -7,7 +7,7 @@ import com.torlus.jnl.SignalType;
 public class Mxi2 extends Entity {
 	@Override
 	public String getBaseName() {
-		return null;
+		return "mxi2";
 	}
 
 	public Mxi2() {

@@ -20,4 +20,11 @@ public class Iv extends Entity {
 		return vhdlMap(inst, vhdl);
 	}
 
+	@Override
+	public String verilogInstance(Instance inst) {
+		String vlog = "assign $z$ = ~$a$;\n";
+		return verilogMap(inst, vlog);
+	}
+
+	
 }

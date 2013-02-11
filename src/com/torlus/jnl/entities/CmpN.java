@@ -42,5 +42,25 @@ public class CmpN extends Entity {
 		return vhdl;
 	}
 
+	@Override
+	public String verilogInstance(Instance inst) {
+		String vlog = "";
+		vlog += "assign " + inst.wires.get(0).verilogWireName() + " = ";		
+		vlog += "(";
+		vlog += inst.wires.get(1).verilogWireName();
+		vlog += " == ";
+		vlog += inst.wires.get(2).verilogWireName();
+		vlog += ")";
+		
+		for(int i = 2; i < size + 1; i++) {
+			vlog += " && (";
+			vlog += inst.wires.get(2 * i - 1).verilogWireName();
+			vlog += " == ";
+			vlog += inst.wires.get(2 * i).verilogWireName();
+			vlog += ")";	
+		}
+		vlog += ";\n";
+		return vlog;
+	}
 
 }

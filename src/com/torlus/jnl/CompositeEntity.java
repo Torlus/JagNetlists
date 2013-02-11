@@ -2,39 +2,35 @@ package com.torlus.jnl;
 
 import java.util.TreeMap;
 import java.util.Vector;
-import java.util.TreeSet;
 
 public class CompositeEntity extends Entity {
 
 	public Vector<Signal> locals = new Vector<Signal>();
 	public Vector<Instance> instances = new Vector<Instance>();
-	
+
 	@Override
 	public void findDeps(TreeMap<String, Entity> map) {
-		for(int i = 0; i < instances.size(); i++) {
+		for (int i = 0; i < instances.size(); i++) {
 			instances.get(i).entity.findDeps(map);
 		}
 		map.put(getBaseName(), this);
 	}
 
-	
 	public Signal findSignal(String name, int bit, int index) {
 		Signal res = null;
-		int maxIndex = 0; 
+		int maxIndex = 0;
 		int maxBit = 0;
-		
+
 		Vector<Signal> candidates = new Vector<Signal>();
 		candidates.addAll(ios);
 		candidates.addAll(locals);
-		
-		for(int i = 0; i < candidates.size(); i++) {
+
+		for (int i = 0; i < candidates.size(); i++) {
 			Signal s = candidates.get(i);
 			if (name.equals(s.name)) {
-				if ( (index != Signal.NONE && s.index >= 0) 
-						|| (index == Signal.NONE && s.index == Signal.NONE) ) {
-					if ( (bit != Signal.NONE && s.bit >= 0) 
-							|| (bit == Signal.NONE && s.bit == Signal.NONE) ) {
-						
+				if ((index != Signal.NONE && s.index >= 0) || (index == Signal.NONE && s.index == Signal.NONE)) {
+					if ((bit != Signal.NONE && s.bit >= 0) || (bit == Signal.NONE && s.bit == Signal.NONE)) {
+
 						if (index != Signal.MAX && bit != Signal.MAX) {
 							if (index == s.index && bit == s.bit)
 								return s;
@@ -59,13 +55,13 @@ public class CompositeEntity extends Entity {
 				}
 			}
 		}
-		
+
 		return res;
 	}
 
 	public String vhdlLocalDecl() {
 		String vhdl = "";
-		for(int n = 0; n < locals.size(); n++) {
+		for (int n = 0; n < locals.size(); n++) {
 			Signal io = locals.get(n);
 			if (io.bit == Signal.NONE) {
 				// std_logic
@@ -76,7 +72,7 @@ public class CompositeEntity extends Entity {
 				int current = start;
 				String name = io.vhdlName();
 				n++;
-				while(n < locals.size()) {
+				while (n < locals.size()) {
 					io = locals.get(n);
 					if (name.equals(io.vhdlName())) {
 						if (io.bit != current + 1)
@@ -98,18 +94,45 @@ public class CompositeEntity extends Entity {
 		}
 		return vhdl;
 	}
-	
-	
+
 	public String veriloglLocalDecl() {
 		String vlog = "";
+		for (int n = 0; n < locals.size(); n++) {
+			Signal io = locals.get(n);
+			if (io.bit == Signal.NONE) {
+				vlog += "wire " + io.verilogName() + ";\n";
+			} else {
+				int start = io.bit;
+				int current = start;
+				String name = io.verilogName();
+				n++;
+				while (n < locals.size()) {
+					io = locals.get(n);
+					if (name.equals(io.verilogName())) {
+						if (io.bit != current + 1)
+							throw new RuntimeException("Unsupported");
+						current++;
+					} else
+						break;
+					n++;
+				}
+				if (name.equals(io.verilogName())) {
+					// last declaration
+				} else {
+					// different signal, rewind
+					n--;
+					io = locals.get(n);
+				}
+				vlog += "wire [" + start + ":" + current + "] " + io.verilogName() + ";\n";
+			}
+		}
+
 		return vlog;
 	}
-	
-	
-	
+
 	public String vhdlBufferDecl() {
 		String vhdl = "";
-		for(int n = 0; n < ios.size(); n++) {
+		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
 			if (io.type.equals(SignalType.IO)) {
 				if (io.bit != Signal.NONE) {
@@ -125,9 +148,27 @@ public class CompositeEntity extends Entity {
 		return vhdl;
 	}
 
+	public String verilogBufferDecl() {
+		String vlog = "";
+		for (int n = 0; n < ios.size(); n++) {
+			Signal io = ios.get(n);
+			if (io.type.equals(SignalType.IO)) {
+				if (io.bit != Signal.NONE) {
+					vlog += "wire " + io.verilogName() + "_b" + io.bit + "_obuf;\n";
+				} else {
+					vlog += "wire " + io.verilogName() + "_obuf;\n";
+				}
+			}
+		}
+		if (vlog.length() > 0) {
+			vlog = "\n// Output buffers\n" + vlog + "\n";
+		}
+		return vlog;
+	}
+
 	public String vhdlBufferWires() {
 		String vhdl = "";
-		for(int n = 0; n < ios.size(); n++) {
+		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
 			if (io.type.equals(SignalType.IO)) {
 				if (io.bit != Signal.NONE) {
@@ -143,17 +184,37 @@ public class CompositeEntity extends Entity {
 		return vhdl;
 	}
 
+	public String verilogBufferWires() {
+		String vlog = "";
+		for (int n = 0; n < ios.size(); n++) {
+			Signal io = ios.get(n);
+			if (io.type.equals(SignalType.IO)) {
+				if (io.bit != Signal.NONE) {
+					vlog += "assign " + io.verilogName() + "[" + io.bit + "] = " + io.verilogName() + "_b" + io.bit + "_obuf;\n";
+				} else {
+					vlog += "assign " + io.verilogName() + " = " + io.verilogName() + "_obuf;\n";
+				}
+			}
+		}
+		if (vlog.length() > 0) {
+			vlog = "\n// Output buffers\n" + vlog + "\n";
+		}
+		return vlog;
+	}
+
 	private String baseName = null;
+
 	public void setBaseName(String name) {
 		baseName = name;
 	}
+
 	public String getBaseName() {
 		if (baseName == null) {
-			throw new RuntimeException("baseName undefined for " + this.getClass().getName() );
+			throw new RuntimeException("baseName undefined for " + this.getClass().getName());
 		}
 		return baseName;
 	}
-	
+
 	public CompositeEntity(String name) {
 		setBaseName(name);
 	}

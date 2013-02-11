@@ -47,5 +47,17 @@ public class Join extends Entity {
 		return vhdl;
 	}
 
+	@Override
+	public String verilogInstance(Instance inst) {
+		String vlog = "";
+		for(int i = 0; i <= max; i++) {
+			vlog += "assign " + inst.wires.get(i).verilogWireName();
+			vlog += " = ";
+			vlog += inst.wires.get(i + max + 1).verilogWireName();
+			vlog += ";\n";
+		}
+		return vlog;
+	}
+
 	
 }

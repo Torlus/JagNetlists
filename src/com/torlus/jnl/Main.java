@@ -1,5 +1,6 @@
 package com.torlus.jnl;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.TreeMap;
@@ -8,8 +9,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		String inputDir = "netlists\\tom\\";
-		String outputDir = "vhdl\\tom\\";
+		String inputDir = "netlists" + File.separator + "tom" + File.separator;
+		String outputDirVhdl = "vhdl" + File.separator + "tom" + File.separator;
+		String outputDirVerilog = "verilog" + File.separator + "tom" + File.separator;
 		
 		String files[] = {
 				//
@@ -180,23 +182,18 @@ public class Main {
 			if (!ok)
 				return;
 		}
-
-		// System.exit(0);
 		
-		// Run pass #3 - Translate to VHDL/Verilog
-		//VhdlTranslator vt = new VhdlTranslator(ws, outputDir);
-		//VerilogTranslator vt = new VerilogTranslator(ws, outputDir);
-		// vt.generate();
-		
+		// Run pass #3 - Translate to VHDL/Verilog		
 		TreeMap<String, Entity> deps = new TreeMap<String, Entity>();
 		// ws.find("daddamux").findDeps(deps);
-		ws.find("tom").findDeps(deps);
+		Entity root = ws.find("tom");
+		root.findDeps(deps);
 		System.out.println(Arrays.toString(deps.keySet().toArray()));
 		
-		VhdlTranslator vt = new VhdlTranslator(ws, outputDir);
-		// VerilogTranslator vt = new VerilogTranslator(ws, outputDir);
+		// VhdlTranslator vt = new VhdlTranslator(ws, outputDirVhdl);
+		VerilogTranslator vt = new VerilogTranslator(ws, outputDirVerilog);
 		vt.generate(deps.values());		
-		
+				
 		System.out.println("*** Done.");
 
 	}

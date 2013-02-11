@@ -6,28 +6,28 @@ public class Signal implements Comparable<Signal> {
 
 	public static int MAX = -2;
 	public static int NONE = -1;
-	
+
 	public SignalType type = SignalType.LOCAL;
 	public String name = null;
 	// 2 dimensions should be enough
 	public int bit = NONE;
 	public int index = NONE;
+
+	public boolean group = false;
 	
 	public Signal() {
-		
+
 	}
+
 	public Signal(String name, SignalType type) {
 		this.name = name;
 		this.type = type;
 	}
-	
+
 	public boolean equals(Signal s) {
-		return (type == s.type
-				&& name.equals(s.name)
-				&& bit == s.bit
-				&& index == s.index);
+		return (type == s.type && name.equals(s.name) && bit == s.bit && index == s.index);
 	}
-	
+
 	public String toString() {
 		String res = type + " " + name;
 		if (bit >= 0) {
@@ -38,7 +38,7 @@ public class Signal implements Comparable<Signal> {
 		}
 		return res;
 	}
-		
+
 	public static Vector<Signal> createSignals(String name, SignalType type, int width, int min, int max) {
 		Vector<Signal> sigs = new Vector<Signal>();
 		if (width < 0) {
@@ -50,7 +50,7 @@ public class Signal implements Comparable<Signal> {
 				sigs.add(s);
 			} else {
 				// Array of single signals
-				while(min <= max) {
+				while (min <= max) {
 					Signal s = new Signal();
 					s.name = name;
 					s.type = type;
@@ -62,23 +62,23 @@ public class Signal implements Comparable<Signal> {
 		} else {
 			if (min < 0) {
 				// Sized single signal => bit vector
-				for(int w = 0; w < width; w++) {
+				for (int w = 0; w < width; w++) {
 					Signal s = new Signal();
 					s.name = name;
 					s.type = type;
 					s.bit = w;
-					sigs.add(s);								
+					sigs.add(s);
 				}
 			} else {
 				// Sized signals array
-				while(min <= max) {
-					for(int w = 0; w < width; w++) {
+				while (min <= max) {
+					for (int w = 0; w < width; w++) {
 						Signal s = new Signal();
 						s.name = name;
 						s.type = type;
 						s.bit = w;
 						s.index = min;
-						sigs.add(s);							
+						sigs.add(s);
 					}
 					min++;
 				}
@@ -168,19 +168,7 @@ public class Signal implements Comparable<Signal> {
 		
 		return n;
 	}*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public String vhdlName() {
 		String res = name;
 		res = res.replaceAll("\\\\", "_n");
@@ -189,7 +177,7 @@ public class Signal implements Comparable<Signal> {
 		}
 		return res;
 	}
-	
+
 	public String verilogName() {
 		String res = name;
 		res = res.replaceAll("\\\\", "_n");
@@ -198,8 +186,7 @@ public class Signal implements Comparable<Signal> {
 		}
 		return res;
 	}
-	
-	
+
 	public String vhdlWireName() {
 		String res = vhdlName();
 		if (type == SignalType.IO) {
@@ -216,6 +203,22 @@ public class Signal implements Comparable<Signal> {
 		return res;
 	}
 
+	public String verilogWireName() {
+		String res = verilogName();
+		if (type == SignalType.IO) {
+			// Use output buffer
+			if (bit != Signal.NONE) {
+				res += "_b" + bit;
+			}
+			res += "_obuf";
+		} else {
+			if (bit != Signal.NONE) {
+				res += "[" + bit + "]";
+			}
+		}
+		return res;
+	}
+
 	@Override
 	public int compareTo(Signal other) {
 		int res = name.compareTo(other.name);
@@ -227,5 +230,5 @@ public class Signal implements Comparable<Signal> {
 			return index - other.index;
 		return 0;
 	}
-	
+
 }

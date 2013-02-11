@@ -25,28 +25,6 @@ public class LG extends Entity {
 		}
 	}
 
-	/*@Override
-	public boolean resize(int max) {
-		this.max = max;
-		if (max != 0) {
-			ios.clear();
-			for(int b = 0; b <= max; b++) {
-				Signal s = new Signal("z", SignalType.OUT);
-				s.bit = b;
-				ios.add(s);
-			}			
-			for(int i = 0; i < size; i++) {
-				for(int b = 0; b <= max; b++) {
-					Signal s = new Signal("a" + i, SignalType.IN);
-					// s.index = i;
-					s.bit = b;
-					ios.add(s);
-				}
-			}
-		}
-		return true;
-	}*/
-
 	@Override
 	public String vhdlInstance(Instance inst) {
 		String vhdl = "";
@@ -72,4 +50,32 @@ public class LG extends Entity {
 		vhdl += ";\n";
 		return vhdl;
 	}
+
+	@Override
+	public String verilogInstance(Instance inst) {
+		String vlog = "";
+		vlog += "assign " + inst.wires.get(0).verilogWireName();
+		vlog += " = ";
+		if (invertOutput)
+			vlog += "~(";
+		vlog += inst.wires.get(1).verilogWireName();
+		for(int i = 2; i < size + 1; i++) {
+			switch(operation) {
+			case AND:
+				vlog += " & "; break;
+			case OR:
+				vlog += " | "; break;
+			case XOR:
+				vlog += " ^ "; break;
+			}
+			vlog += inst.wires.get(i).verilogWireName();
+		}
+		if (invertOutput) {
+			vlog += ")";
+		}
+		vlog += ";\n";
+		return vlog;
+	}
+
+
 }

@@ -1,6 +1,7 @@
 package com.torlus.jnl.entities;
 
 import com.torlus.jnl.Entity;
+import com.torlus.jnl.Instance;
 import com.torlus.jnl.Signal;
 import com.torlus.jnl.SignalType;
 
@@ -30,4 +31,28 @@ public class Join_bus extends Entity {
 		return true;
 	}
 
+	@Override
+	public String vhdlInstance(Instance inst) {
+		String vhdl = "";
+		for(int i = 0; i <= max; i++) {
+			vhdl += inst.wires.get(i).vhdlWireName();
+			vhdl += " <= ";
+			vhdl += inst.wires.get(i + max + 1).vhdlWireName();
+			vhdl += ";\n";
+		}
+		return vhdl;
+	}
+
+	@Override
+	public String verilogInstance(Instance inst) {
+		String vlog = "";
+		for(int i = 0; i <= max; i++) {
+			vlog += "assign " + inst.wires.get(i).verilogWireName();
+			vlog += " = ";
+			vlog += inst.wires.get(i + max + 1).verilogWireName();
+			vlog += ";\n";
+		}
+		return vlog;
+	}
+	
 }

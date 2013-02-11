@@ -30,4 +30,9 @@ public class Dummy extends Entity {
 		return "";
 	}
 
+	@Override
+	public String verilogInstance(Instance inst) {
+		return "";
+	}
+
 }

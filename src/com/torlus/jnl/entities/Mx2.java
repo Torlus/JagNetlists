@@ -7,7 +7,7 @@ import com.torlus.jnl.SignalType;
 public class Mx2 extends Entity {
 	@Override
 	public String getBaseName() {
-		return null;
+		return "mx2";
 	}
 
 	public Mx2() {
@@ -17,4 +17,5 @@ public class Mx2 extends Entity {
 		ios.add(new Signal("a1", SignalType.IN));
 		ios.add(new Signal("s", SignalType.IN));
 	}
+
 }
