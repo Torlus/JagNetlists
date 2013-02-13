@@ -383,22 +383,22 @@ assign dstdsel_0 = dstrwen;
 assign dstdsel_1 = swtodr;
 
 // REGIS-WA.NET (86) - stba : dly8
-stba <= clk;
+assign stba = clk;
 
 // REGIS-WA.NET (87) - stbb : dly8
-stbb <= stba;
+assign stbb = stba;
 
 // REGIS-WA.NET (88) - stbc : dly8
-stbc <= stbb;
+assign stbc = stbb;
 
 // REGIS-WA.NET (89) - stbd : dly8
-stbd <= stbc;
+assign stbd = stbc;
 
 // REGIS-WA.NET (90) - stbe : dly8
-stbe <= stbd;
+assign stbe = stbd;
 
 // REGIS-WA.NET (91) - stb : dly8
-stb <= stbe;
+assign stb = stbe;
 
 // REGIS-WA.NET (93) - reg_ram : rd64x32
 rd64x32 reg_ram_inst

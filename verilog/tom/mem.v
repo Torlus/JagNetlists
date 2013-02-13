@@ -339,7 +339,7 @@ wire wco_2;
 wire wd_2;
 wire wq_3;
 wire wco_3;
-wire wait;
+wire _wait;
 wire waitdonei;
 wire dspdl_0;
 wire dspdl_1;
@@ -1402,10 +1402,10 @@ assign wcen = wq_0 | wq_1 | wq_2 | wq_3;
 assign wld = wait1 | wait2 | wait3 | wait5 | wait7 | wait15;
 
 // MEM.NET (503) - wait : iv
-assign wait = ~waitl;
+assign _wait = ~waitl;
 
 // MEM.NET (504) - waitdonei : nr6
-assign waitdonei = ~(wq_0 | wq_1 | wq_2 | wq_3 | wait | gnd);
+assign waitdonei = ~(wq_0 | wq_1 | wq_2 | wq_3 | _wait | gnd);
 
 // MEM.NET (505) - notwaitdone : iv
 assign notwaitdone = ~waitdonei;

@@ -387,7 +387,7 @@ wire oblatch_1;
 wire skip_0;
 wire skip_1;
 wire skip_2;
-wire release;
+wire _release;
 wire oblatch_2;
 wire rem_5;
 wire rem_6;
@@ -1441,7 +1441,7 @@ slatch transen_inst
 // OB.NET (85) - release : slatch
 slatch release_inst
 (
-	.q(release), // IO
+	.q(_release), // IO
 	.d(d_48), // IN
 	.clk(clk), // IN
 	.en(oblatch_1)  // IN
@@ -3284,7 +3284,7 @@ assign notobfw = ~obfw;
 assign notobdone = ~obdone;
 
 // OB.NET (655) - hold : iv
-assign hold = ~release;
+assign hold = ~_release;
 
 // OB.NET (659) - unused : nd6
 assign unused = ~(unused & gnd & olpco_21 & wco_9 & dco_20 & gnd);

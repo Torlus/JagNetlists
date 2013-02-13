@@ -25,7 +25,7 @@ public class Dly extends Entity {
 
 	@Override
 	public String verilogInstance(Instance inst) {
-		String vlog = "$z$ <= $a$;\n";
+		String vlog = "assign $z$ = $a$;\n";
 		return verilogMap(inst, vlog);
 	}
 

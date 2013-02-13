@@ -591,26 +591,26 @@ twoniv lbbd_inst
 assign lbb = lbbd;
 
 // LBUF.NET (64) - lbwad[0-8] : hdly1b
-lbwad_0 <= lbwa_0;
-lbwad_1 <= lbwa_1;
-lbwad_2 <= lbwa_2;
-lbwad_3 <= lbwa_3;
-lbwad_4 <= lbwa_4;
-lbwad_5 <= lbwa_5;
-lbwad_6 <= lbwa_6;
-lbwad_7 <= lbwa_7;
-lbwad_8 <= lbwa_8;
+assign lbwad_0 = lbwa_0;
+assign lbwad_1 = lbwa_1;
+assign lbwad_2 = lbwa_2;
+assign lbwad_3 = lbwa_3;
+assign lbwad_4 = lbwa_4;
+assign lbwad_5 = lbwa_5;
+assign lbwad_6 = lbwa_6;
+assign lbwad_7 = lbwa_7;
+assign lbwad_8 = lbwa_8;
 
 // LBUF.NET (65) - lbrad[0-8] : hdly1b
-lbrad_0 <= lbra_0;
-lbrad_1 <= lbra_1;
-lbrad_2 <= lbra_2;
-lbrad_3 <= lbra_3;
-lbrad_4 <= lbra_4;
-lbrad_5 <= lbra_5;
-lbrad_6 <= lbra_6;
-lbrad_7 <= lbra_7;
-lbrad_8 <= lbra_8;
+assign lbrad_0 = lbra_0;
+assign lbrad_1 = lbra_1;
+assign lbrad_2 = lbra_2;
+assign lbrad_3 = lbra_3;
+assign lbrad_4 = lbra_4;
+assign lbrad_5 = lbra_5;
+assign lbrad_6 = lbra_6;
+assign lbrad_7 = lbra_7;
+assign lbrad_8 = lbra_8;
 
 // LBUF.NET (66) - lbaadi[0-8] : mx2p
 mx2 lbaadi_from_0_to_8_inst_0

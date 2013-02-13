@@ -184,6 +184,11 @@ public class Signal implements Comparable<Signal> {
 		if (index != Signal.NONE) {
 			res = res + "_" + index;
 		}
+		// Keywords
+		if (res.equals("wait"))
+			return "_wait";
+		if (res.equals("release"))
+			return "_release";		
 		return res;
 	}
 

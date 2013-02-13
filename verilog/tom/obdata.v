@@ -2847,24 +2847,24 @@ fd1q prbl_from_0_to_7_inst_7
 );
 
 // OBDATA.NET (174) - paa[0-7] : hdly2b
-paa_0 <= paaq_0;
-paa_1 <= paaq_1;
-paa_2 <= paaq_2;
-paa_3 <= paaq_3;
-paa_4 <= paaq_4;
-paa_5 <= paaq_5;
-paa_6 <= paaq_6;
-paa_7 <= paaq_7;
+assign paa_0 = paaq_0;
+assign paa_1 = paaq_1;
+assign paa_2 = paaq_2;
+assign paa_3 = paaq_3;
+assign paa_4 = paaq_4;
+assign paa_5 = paaq_5;
+assign paa_6 = paaq_6;
+assign paa_7 = paaq_7;
 
 // OBDATA.NET (175) - pab[0-7] : hdly2b
-pab_0 <= pabq_0;
-pab_1 <= pabq_1;
-pab_2 <= pabq_2;
-pab_3 <= pabq_3;
-pab_4 <= pabq_4;
-pab_5 <= pabq_5;
-pab_6 <= pabq_6;
-pab_7 <= pabq_7;
+assign pab_0 = pabq_0;
+assign pab_1 = pabq_1;
+assign pab_2 = pabq_2;
+assign pab_3 = pabq_3;
+assign pab_4 = pabq_4;
+assign pab_5 = pabq_5;
+assign pab_6 = pabq_6;
+assign pab_7 = pabq_7;
 
 // OBDATA.NET (177) - aa : join
 assign aa[0] = paa_0;

@@ -11,7 +11,7 @@ public class Fd2e extends Entity {
 	}
 
 	public Fd2e() {
-		// 260c_pri_e.pdf - CFD2EAXL
+		// 260c_pri_e.pdf - CFD2EXL
 		ios.add(new Signal("q", SignalType.OUT));
 		ios.add(new Signal("qn", SignalType.OUT));
 		ios.add(new Signal("d", SignalType.IN));
