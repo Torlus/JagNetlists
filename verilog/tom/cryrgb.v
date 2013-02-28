@@ -150,7 +150,7 @@ assign b_6 = b_6_obuf;
 assign b_7 = b_7_obuf;
 
 
-// PIX.NET (177) - i : join
+// PIX.NET (184) - i : join
 assign i[0] = cry_0;
 assign i[1] = cry_1;
 assign i[2] = cry_2;
@@ -160,7 +160,7 @@ assign i[5] = cry_5;
 assign i[6] = cry_6;
 assign i[7] = cry_7;
 
-// PIX.NET (178) - c : join
+// PIX.NET (185) - c : join
 assign c[0] = cry_8;
 assign c[1] = cry_9;
 assign c[2] = cry_10;
@@ -170,58 +170,37 @@ assign c[5] = cry_13;
 assign c[6] = cry_14;
 assign c[7] = cry_15;
 
-// PIX.NET (194) - red : ra8008a
+// PIX.NET (201) - red : ra8008a
 ra8008a red_inst
 (
-	.z({r1[0],r1[1],r1[2],r1[3],r1[4],r1[5],r1[6],r1[7]}), // BUS
+	.z({r1[0],r1[1],r1[2],r1[3],r1[4],r1[5],r1[6],r1[7]}), // OUT
 	.clk(vclk), // IN
-	.a0(c[0]), // IN
-	.a1(c[1]), // IN
-	.a2(c[2]), // IN
-	.a3(c[3]), // IN
-	.a4(c[4]), // IN
-	.a5(c[5]), // IN
-	.a6(c[6]), // IN
-	.a7(c[7])  // IN
+	.a({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})  // IN
 );
 
-// PIX.NET (195) - green : ra8008b
+// PIX.NET (202) - green : ra8008b
 ra8008b green_inst
 (
-	.z({g1[0],g1[1],g1[2],g1[3],g1[4],g1[5],g1[6],g1[7]}), // BUS
+	.z({g1[0],g1[1],g1[2],g1[3],g1[4],g1[5],g1[6],g1[7]}), // OUT
 	.clk(vclk), // IN
-	.a0(c[0]), // IN
-	.a1(c[1]), // IN
-	.a2(c[2]), // IN
-	.a3(c[3]), // IN
-	.a4(c[4]), // IN
-	.a5(c[5]), // IN
-	.a6(c[6]), // IN
-	.a7(c[7])  // IN
+	.a({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})  // IN
 );
 
-// PIX.NET (196) - blue : ra8008c
+// PIX.NET (203) - blue : ra8008c
 ra8008c blue_inst
 (
-	.z({b1[0],b1[1],b1[2],b1[3],b1[4],b1[5],b1[6],b1[7]}), // BUS
+	.z({b1[0],b1[1],b1[2],b1[3],b1[4],b1[5],b1[6],b1[7]}), // OUT
 	.clk(vclk), // IN
-	.a0(c[0]), // IN
-	.a1(c[1]), // IN
-	.a2(c[2]), // IN
-	.a3(c[3]), // IN
-	.a4(c[4]), // IN
-	.a5(c[5]), // IN
-	.a6(c[6]), // IN
-	.a7(c[7])  // IN
+	.a({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})  // IN
 );
 
-// PIX.NET (201) - rgbtsti : or2
+// PIX.NET (208) - rgbtsti : or2
 assign rgbtsti = rgb | mptest;
 
-// PIX.NET (202) - rgbtst : nivh
+// PIX.NET (209) - rgbtst : nivh
 assign rgbtst = rgbtsti;
 
-// PIX.NET (203) - rt : mx2
+// PIX.NET (210) - rt : mx2
 mx2 rt_inst_0
 (
 	.z(rt[0]), // OUT
@@ -279,7 +258,7 @@ mx2 rt_inst_7
 	.s(rgbtst)  // IN
 );
 
-// PIX.NET (204) - gt : mx2
+// PIX.NET (211) - gt : mx2
 mx2 gt_inst_0
 (
 	.z(gt[0]), // OUT
@@ -337,7 +316,7 @@ mx2 gt_inst_7
 	.s(rgbtst)  // IN
 );
 
-// PIX.NET (205) - bt : mx2
+// PIX.NET (212) - bt : mx2
 mx2 bt_inst_0
 (
 	.z(bt[0]), // OUT
@@ -395,7 +374,7 @@ mx2 bt_inst_7
 	.s(rgbtst)  // IN
 );
 
-// PIX.NET (209) - r2 : fd1q
+// PIX.NET (216) - r2 : fd1q
 fd1q r2_inst_0
 (
 	.q(r2[0]), // OUT
@@ -445,7 +424,7 @@ fd1q r2_inst_7
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (210) - g2 : fd1q
+// PIX.NET (217) - g2 : fd1q
 fd1q g2_inst_0
 (
 	.q(g2[0]), // OUT
@@ -495,7 +474,7 @@ fd1q g2_inst_7
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (211) - b2 : fd1q
+// PIX.NET (218) - b2 : fd1q
 fd1q b2_inst_0
 (
 	.q(b2[0]), // OUT
@@ -545,7 +524,7 @@ fd1q b2_inst_7
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (212) - i2 : fd1q
+// PIX.NET (219) - i2 : fd1q
 fd1q i2_inst_0
 (
 	.q(i2[0]), // OUT
@@ -595,7 +574,7 @@ fd1q i2_inst_7
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (214) - rgbdi : fd1q
+// PIX.NET (221) - rgbdi : fd1q
 fd1q rgbdi_inst
 (
 	.q(rgbdi), // OUT
@@ -603,13 +582,13 @@ fd1q rgbdi_inst
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (215) - rgbd : nivh
+// PIX.NET (222) - rgbd : nivh
 assign rgbd = rgbdi;
 
-// PIX.NET (220) - gnd : tie0
+// PIX.NET (227) - gnd : tie0
 assign gnd = 1'b0;
 
-// PIX.NET (221) - r2a : join
+// PIX.NET (228) - r2a : join
 assign r2a[0] = r2[0];
 assign r2a[1] = r2[1];
 assign r2a[2] = r2[2];
@@ -621,7 +600,7 @@ assign r2a[7] = r2[7];
 assign r2a[8] = gnd;
 assign r2a[9] = gnd;
 
-// PIX.NET (222) - g2a : join
+// PIX.NET (229) - g2a : join
 assign g2a[0] = g2[0];
 assign g2a[1] = g2[1];
 assign g2a[2] = g2[2];
@@ -633,7 +612,7 @@ assign g2a[7] = g2[7];
 assign g2a[8] = gnd;
 assign g2a[9] = gnd;
 
-// PIX.NET (223) - b2a : join
+// PIX.NET (230) - b2a : join
 assign b2a[0] = b2[0];
 assign b2a[1] = b2[1];
 assign b2a[2] = b2[2];
@@ -645,7 +624,7 @@ assign b2a[7] = b2[7];
 assign b2a[8] = gnd;
 assign b2a[9] = gnd;
 
-// PIX.NET (224) - i2a : join
+// PIX.NET (231) - i2a : join
 assign i2a[0] = i2[0];
 assign i2a[1] = i2[1];
 assign i2a[2] = i2[2];
@@ -657,85 +636,31 @@ assign i2a[7] = i2[7];
 assign i2a[8] = gnd;
 assign i2a[9] = gnd;
 
-// PIX.NET (242) - r3 : mp1010a
+// PIX.NET (249) - r3 : mp1010a
 mp1010a r3_inst
 (
 	.q({r3[0],r3[1],r3[2],r3[3],r3[4],r3[5],r3[6],r3[7],r3[8],r3[9],r3[10],r3[11],r3[12],r3[13],r3[14],r3[15],r3[16],r3[17],r3[18],r3[19]}), // OUT
-	.a0(r2a[0]), // IN
-	.a1(r2a[1]), // IN
-	.a2(r2a[2]), // IN
-	.a3(r2a[3]), // IN
-	.a4(r2a[4]), // IN
-	.a5(r2a[5]), // IN
-	.a6(r2a[6]), // IN
-	.a7(r2a[7]), // IN
-	.a8(r2a[8]), // IN
-	.a9(r2a[9]), // IN
-	.b0(i2a[0]), // IN
-	.b1(i2a[1]), // IN
-	.b2(i2a[2]), // IN
-	.b3(i2a[3]), // IN
-	.b4(i2a[4]), // IN
-	.b5(i2a[5]), // IN
-	.b6(i2a[6]), // IN
-	.b7(i2a[7]), // IN
-	.b8(i2a[8]), // IN
-	.b9(i2a[9])  // IN
+	.a({r2a[0],r2a[1],r2a[2],r2a[3],r2a[4],r2a[5],r2a[6],r2a[7],r2a[8],r2a[9]}), // IN
+	.b({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})  // IN
 );
 
-// PIX.NET (243) - g3 : mp1010a
+// PIX.NET (250) - g3 : mp1010a
 mp1010a g3_inst
 (
 	.q({g3[0],g3[1],g3[2],g3[3],g3[4],g3[5],g3[6],g3[7],g3[8],g3[9],g3[10],g3[11],g3[12],g3[13],g3[14],g3[15],g3[16],g3[17],g3[18],g3[19]}), // OUT
-	.a0(g2a[0]), // IN
-	.a1(g2a[1]), // IN
-	.a2(g2a[2]), // IN
-	.a3(g2a[3]), // IN
-	.a4(g2a[4]), // IN
-	.a5(g2a[5]), // IN
-	.a6(g2a[6]), // IN
-	.a7(g2a[7]), // IN
-	.a8(g2a[8]), // IN
-	.a9(g2a[9]), // IN
-	.b0(i2a[0]), // IN
-	.b1(i2a[1]), // IN
-	.b2(i2a[2]), // IN
-	.b3(i2a[3]), // IN
-	.b4(i2a[4]), // IN
-	.b5(i2a[5]), // IN
-	.b6(i2a[6]), // IN
-	.b7(i2a[7]), // IN
-	.b8(i2a[8]), // IN
-	.b9(i2a[9])  // IN
+	.a({g2a[0],g2a[1],g2a[2],g2a[3],g2a[4],g2a[5],g2a[6],g2a[7],g2a[8],g2a[9]}), // IN
+	.b({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})  // IN
 );
 
-// PIX.NET (244) - b3 : mp1010a
+// PIX.NET (251) - b3 : mp1010a
 mp1010a b3_inst
 (
 	.q({b3[0],b3[1],b3[2],b3[3],b3[4],b3[5],b3[6],b3[7],b3[8],b3[9],b3[10],b3[11],b3[12],b3[13],b3[14],b3[15],b3[16],b3[17],b3[18],b3[19]}), // OUT
-	.a0(b2a[0]), // IN
-	.a1(b2a[1]), // IN
-	.a2(b2a[2]), // IN
-	.a3(b2a[3]), // IN
-	.a4(b2a[4]), // IN
-	.a5(b2a[5]), // IN
-	.a6(b2a[6]), // IN
-	.a7(b2a[7]), // IN
-	.a8(b2a[8]), // IN
-	.a9(b2a[9]), // IN
-	.b0(i2a[0]), // IN
-	.b1(i2a[1]), // IN
-	.b2(i2a[2]), // IN
-	.b3(i2a[3]), // IN
-	.b4(i2a[4]), // IN
-	.b5(i2a[5]), // IN
-	.b6(i2a[6]), // IN
-	.b7(i2a[7]), // IN
-	.b8(i2a[8]), // IN
-	.b9(i2a[9])  // IN
+	.a({b2a[0],b2a[1],b2a[2],b2a[3],b2a[4],b2a[5],b2a[6],b2a[7],b2a[8],b2a[9]}), // IN
+	.b({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})  // IN
 );
 
-// PIX.NET (249) - r3b[0-2] : mx2
+// PIX.NET (256) - r3b[0-2] : mx2
 mx2 r3b_from_0_to_2_inst_0
 (
 	.z(r3b_0), // OUT
@@ -758,7 +683,7 @@ mx2 r3b_from_0_to_2_inst_2
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (250) - r3b[3-7] : mx2
+// PIX.NET (257) - r3b[3-7] : mx2
 mx2 r3b_from_3_to_7_inst_0
 (
 	.z(r3b_3), // OUT
@@ -795,7 +720,7 @@ mx2 r3b_from_3_to_7_inst_4
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (252) - b3b[0-2] : mx2
+// PIX.NET (259) - b3b[0-2] : mx2
 mx2 b3b_from_0_to_2_inst_0
 (
 	.z(b3b_0), // OUT
@@ -818,7 +743,7 @@ mx2 b3b_from_0_to_2_inst_2
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (253) - b3b[3-4] : mx2
+// PIX.NET (260) - b3b[3-4] : mx2
 mx2 b3b_from_3_to_4_inst_0
 (
 	.z(b3b_3), // OUT
@@ -834,7 +759,7 @@ mx2 b3b_from_3_to_4_inst_1
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (254) - b3b[5-7] : mx2
+// PIX.NET (261) - b3b[5-7] : mx2
 mx2 b3b_from_5_to_7_inst_0
 (
 	.z(b3b_5), // OUT
@@ -857,7 +782,7 @@ mx2 b3b_from_5_to_7_inst_2
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (256) - g3b[0-1] : mx2
+// PIX.NET (263) - g3b[0-1] : mx2
 mx2 g3b_from_0_to_1_inst_0
 (
 	.z(g3b_0), // OUT
@@ -873,7 +798,7 @@ mx2 g3b_from_0_to_1_inst_1
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (257) - g3b[2-7] : mx2
+// PIX.NET (264) - g3b[2-7] : mx2
 mx2 g3b_from_2_to_7_inst_0
 (
 	.z(g3b_2), // OUT
@@ -917,7 +842,7 @@ mx2 g3b_from_2_to_7_inst_5
 	.s(rgbd)  // IN
 );
 
-// PIX.NET (261) - r[0-7] : slatch
+// PIX.NET (268) - r[0-7] : slatch
 slatch r_from_0_to_7_inst_0
 (
 	.q(r_0_obuf), // IO
@@ -975,7 +900,7 @@ slatch r_from_0_to_7_inst_7
 	.en(ppd)  // IN
 );
 
-// PIX.NET (262) - g[0-7] : slatch
+// PIX.NET (269) - g[0-7] : slatch
 slatch g_from_0_to_7_inst_0
 (
 	.q(g_0_obuf), // IO
@@ -1033,7 +958,7 @@ slatch g_from_0_to_7_inst_7
 	.en(ppd)  // IN
 );
 
-// PIX.NET (263) - b[0-7] : slatch
+// PIX.NET (270) - b[0-7] : slatch
 slatch b_from_0_to_7_inst_0
 (
 	.q(b_0_obuf), // IO

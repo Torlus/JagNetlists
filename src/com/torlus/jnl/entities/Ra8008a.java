@@ -12,13 +12,18 @@ public class Ra8008a extends Entity {
 
 	public Ra8008a() {
 		for (int i = 0; i < 8; i++) {
-			Signal s = new Signal("z", SignalType.BUS);
+			// Signal s = new Signal("z", SignalType.BUS);
+			Signal s = new Signal("z", SignalType.OUT);
 			s.bit = i;
 			ios.add(s);
 		}
 		ios.add(new Signal("clk", SignalType.IN));
 		for (int i = 0; i < 8; i++) {
-			ios.add(new Signal("a" + i, SignalType.IN));
+			// ios.add(new Signal("a" + i, SignalType.IN));
+			Signal s = new Signal("a", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
+			
 		}
 	}
 }

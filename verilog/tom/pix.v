@@ -121,6 +121,8 @@ wire [0:7] red;
 wire [0:7] green;
 wire [0:7] blue;
 wire [0:8] lbra;
+wire [0:31] pd1_d;
+wire [0:31] lbrd_d;
 wire ddl;
 wire lbres;
 wire co_0;
@@ -787,10 +789,82 @@ slatch pd1_from_0_to_31_inst_31
 	.en(nextpixb)  // IN
 );
 
-// PIX.NET (54) - word2b : nivu2
+// PIX.NET (53) - ge1 : join
+assign pd1_d[0] = pd1_0;
+assign pd1_d[1] = pd1_1;
+assign pd1_d[2] = pd1_2;
+assign pd1_d[3] = pd1_3;
+assign pd1_d[4] = pd1_4;
+assign pd1_d[5] = pd1_5;
+assign pd1_d[6] = pd1_6;
+assign pd1_d[7] = pd1_7;
+assign pd1_d[8] = pd1_8;
+assign pd1_d[9] = pd1_9;
+assign pd1_d[10] = pd1_10;
+assign pd1_d[11] = pd1_11;
+assign pd1_d[12] = pd1_12;
+assign pd1_d[13] = pd1_13;
+assign pd1_d[14] = pd1_14;
+assign pd1_d[15] = pd1_15;
+assign pd1_d[16] = pd1_16;
+assign pd1_d[17] = pd1_17;
+assign pd1_d[18] = pd1_18;
+assign pd1_d[19] = pd1_19;
+assign pd1_d[20] = pd1_20;
+assign pd1_d[21] = pd1_21;
+assign pd1_d[22] = pd1_22;
+assign pd1_d[23] = pd1_23;
+assign pd1_d[24] = pd1_24;
+assign pd1_d[25] = pd1_25;
+assign pd1_d[26] = pd1_26;
+assign pd1_d[27] = pd1_27;
+assign pd1_d[28] = pd1_28;
+assign pd1_d[29] = pd1_29;
+assign pd1_d[30] = pd1_30;
+assign pd1_d[31] = pd1_31;
+
+// PIX.NET (54) - ge2 : dummy
+
+// PIX.NET (55) - ge3 : join
+assign lbrd_d[0] = lbrd_0;
+assign lbrd_d[1] = lbrd_1;
+assign lbrd_d[2] = lbrd_2;
+assign lbrd_d[3] = lbrd_3;
+assign lbrd_d[4] = lbrd_4;
+assign lbrd_d[5] = lbrd_5;
+assign lbrd_d[6] = lbrd_6;
+assign lbrd_d[7] = lbrd_7;
+assign lbrd_d[8] = lbrd_8;
+assign lbrd_d[9] = lbrd_9;
+assign lbrd_d[10] = lbrd_10;
+assign lbrd_d[11] = lbrd_11;
+assign lbrd_d[12] = lbrd_12;
+assign lbrd_d[13] = lbrd_13;
+assign lbrd_d[14] = lbrd_14;
+assign lbrd_d[15] = lbrd_15;
+assign lbrd_d[16] = lbrd_16;
+assign lbrd_d[17] = lbrd_17;
+assign lbrd_d[18] = lbrd_18;
+assign lbrd_d[19] = lbrd_19;
+assign lbrd_d[20] = lbrd_20;
+assign lbrd_d[21] = lbrd_21;
+assign lbrd_d[22] = lbrd_22;
+assign lbrd_d[23] = lbrd_23;
+assign lbrd_d[24] = lbrd_24;
+assign lbrd_d[25] = lbrd_25;
+assign lbrd_d[26] = lbrd_26;
+assign lbrd_d[27] = lbrd_27;
+assign lbrd_d[28] = lbrd_28;
+assign lbrd_d[29] = lbrd_29;
+assign lbrd_d[30] = lbrd_30;
+assign lbrd_d[31] = lbrd_31;
+
+// PIX.NET (56) - ge4 : dummy
+
+// PIX.NET (61) - word2b : nivu2
 assign word2b = word2;
 
-// PIX.NET (55) - pd2[0-15] : mx2m
+// PIX.NET (62) - pd2[0-15] : mx2m
 mx2 pd2_from_0_to_15_inst_0
 (
 	.z(pd2_0), // OUT
@@ -904,16 +978,16 @@ mx2 pd2_from_0_to_15_inst_15
 	.s(word2b)  // IN
 );
 
-// PIX.NET (63) - rgb0 : iv
+// PIX.NET (70) - rgb0 : iv
 assign rgb0 = ~rgb16;
 
-// PIX.NET (64) - rgb1 : nd2
+// PIX.NET (71) - rgb1 : nd2
 assign rgb1 = ~(varmod & pd2_0);
 
-// PIX.NET (65) - rgb : nd2
+// PIX.NET (72) - rgb : nd2
 assign rgb = ~(rgb0 & rgb1);
 
-// PIX.NET (72) - ppdi : fd1q
+// PIX.NET (79) - ppdi : fd1q
 fd1q ppdi_inst
 (
 	.q(ppdi), // OUT
@@ -921,10 +995,10 @@ fd1q ppdi_inst
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (73) - ppd : nivu
+// PIX.NET (80) - ppd : nivu
 assign ppd = ppdi;
 
-// PIX.NET (75) - pd3 : cryrgb
+// PIX.NET (82) - pd3 : cryrgb
 cryrgb pd3_inst
 (
 	.r_0(pd3_0), // IO
@@ -973,10 +1047,10 @@ cryrgb pd3_inst
 	.ppd(ppd)  // IN
 );
 
-// PIX.NET (80) - lpb : nivh
+// PIX.NET (87) - lpb : nivh
 assign lpb = lp;
 
-// PIX.NET (81) - pd4[0-15] : mx2
+// PIX.NET (88) - pd4[0-15] : mx2
 mx2 pd4_from_0_to_15_inst_0
 (
 	.z(pd4_0), // OUT
@@ -1090,7 +1164,7 @@ mx2 pd4_from_0_to_15_inst_15
 	.s(lpb)  // IN
 );
 
-// PIX.NET (85) - bc[0-15] : ldp1q
+// PIX.NET (92) - bc[0-15] : ldp1q
 ldp1q bc_from_0_to_15_inst_0
 (
 	.q(bc_0), // OUT
@@ -1188,7 +1262,7 @@ ldp1q bc_from_0_to_15_inst_15
 	.g(bcrgwr)  // IN
 );
 
-// PIX.NET (86) - bc[16-23] : ldp1q
+// PIX.NET (93) - bc[16-23] : ldp1q
 ldp1q bc_from_16_to_23_inst_0
 (
 	.q(bc_16), // OUT
@@ -1238,13 +1312,13 @@ ldp1q bc_from_16_to_23_inst_7
 	.g(bcbwr)  // IN
 );
 
-// PIX.NET (94) - sxp : or2
+// PIX.NET (101) - sxp : or2
 assign sxp = cry16 | rgb16;
 
-// PIX.NET (95) - vactivel : iv
+// PIX.NET (102) - vactivel : iv
 assign notvactive = ~vactive;
 
-// PIX.NET (96) - bord1 : fd1q
+// PIX.NET (103) - bord1 : fd1q
 fd1q bord1_inst
 (
 	.q(bord1), // OUT
@@ -1252,7 +1326,7 @@ fd1q bord1_inst
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (97) - bord2 : fd1q
+// PIX.NET (104) - bord2 : fd1q
 fd1q bord2_inst
 (
 	.q(bord2), // OUT
@@ -1260,7 +1334,7 @@ fd1q bord2_inst
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (98) - bord3 : slatch
+// PIX.NET (105) - bord3 : slatch
 slatch bord3_inst
 (
 	.q(bord3), // IO
@@ -1269,7 +1343,7 @@ slatch bord3_inst
 	.en(ppd)  // IN
 );
 
-// PIX.NET (99) - border : mx2
+// PIX.NET (106) - border : mx2
 mx2 border_inst
 (
 	.z(border), // OUT
@@ -1278,28 +1352,28 @@ mx2 border_inst
 	.s(sxp)  // IN
 );
 
-// PIX.NET (120) - blankl : iv
+// PIX.NET (127) - blankl : iv
 assign blankl = ~blank;
 
-// PIX.NET (121) - borderl : iv
+// PIX.NET (128) - borderl : iv
 assign borderl = ~border;
 
-// PIX.NET (123) - s1i : nd2
+// PIX.NET (130) - s1i : nd2
 assign s1i = ~(blankl & borderl);
 
-// PIX.NET (124) - s1 : nivu
+// PIX.NET (131) - s1 : nivu
 assign s1 = s1i;
 
-// PIX.NET (125) - s01 : nd3
+// PIX.NET (132) - s01 : nd3
 assign s01 = ~(blankl & borderl & rgb24);
 
-// PIX.NET (126) - s0i : nd2
+// PIX.NET (133) - s0i : nd2
 assign s0i = ~(s01 & blankl);
 
-// PIX.NET (127) - s0 : nivu
+// PIX.NET (134) - s0 : nivu
 assign s0 = s0i;
 
-// PIX.NET (129) - pd5[0-23] : mx4
+// PIX.NET (136) - pd5[0-23] : mx4
 mx4 pd5_from_0_to_23_inst_0
 (
 	.z(pd5_0), // OUT
@@ -1541,7 +1615,7 @@ mx4 pd5_from_0_to_23_inst_23
 	.s1(s1)  // IN
 );
 
-// PIX.NET (133) - pd6[0-23] : fd1q
+// PIX.NET (140) - pd6[0-23] : fd1q
 fd1q pd6_from_0_to_23_inst_0
 (
 	.q(pd6_0), // OUT
@@ -1687,7 +1761,7 @@ fd1q pd6_from_0_to_23_inst_23
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (138) - r[0-7] : mx2
+// PIX.NET (145) - r[0-7] : mx2
 mx2 r_from_0_to_7_inst_0
 (
 	.z(r_0_obuf), // OUT
@@ -1745,7 +1819,7 @@ mx2 r_from_0_to_7_inst_7
 	.s(rg16)  // IN
 );
 
-// PIX.NET (139) - g[0-7] : mx2
+// PIX.NET (146) - g[0-7] : mx2
 mx2 g_from_0_to_7_inst_0
 (
 	.z(g_0_obuf), // OUT
@@ -1803,7 +1877,7 @@ mx2 g_from_0_to_7_inst_7
 	.s(rg16)  // IN
 );
 
-// PIX.NET (140) - b[0] : mx2
+// PIX.NET (147) - b[0] : mx2
 mx2 b_index_0_inst
 (
 	.z(b_0_obuf), // OUT
@@ -1812,7 +1886,7 @@ mx2 b_index_0_inst
 	.s(rg16)  // IN
 );
 
-// PIX.NET (141) - b[1] : mx2
+// PIX.NET (148) - b[1] : mx2
 mx2 b_index_1_inst
 (
 	.z(b_1_obuf), // OUT
@@ -1821,7 +1895,7 @@ mx2 b_index_1_inst
 	.s(rg16)  // IN
 );
 
-// PIX.NET (142) - b[2-7] : mx2
+// PIX.NET (149) - b[2-7] : mx2
 mx2 b_from_2_to_7_inst_0
 (
 	.z(b_2_obuf), // OUT
@@ -1865,7 +1939,7 @@ mx2 b_from_2_to_7_inst_5
 	.s(rg16)  // IN
 );
 
-// PIX.NET (150) - inc1 : fd1q
+// PIX.NET (157) - inc1 : fd1q
 fd1q inc1_inst
 (
 	.q(inc1), // OUT
@@ -1873,7 +1947,7 @@ fd1q inc1_inst
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (151) - inc2 : slatch
+// PIX.NET (158) - inc2 : slatch
 slatch inc2_inst
 (
 	.q(inc2), // IO
@@ -1882,7 +1956,7 @@ slatch inc2_inst
 	.en(ppd)  // IN
 );
 
-// PIX.NET (152) - inc3 : mx2
+// PIX.NET (159) - inc3 : mx2
 mx2 inc3_inst
 (
 	.z(inc3), // OUT
@@ -1891,7 +1965,7 @@ mx2 inc3_inst
 	.s(rgb24)  // IN
 );
 
-// PIX.NET (153) - inc4 : mx2
+// PIX.NET (160) - inc4 : mx2
 mx2 inc4_inst
 (
 	.z(inc4), // OUT
@@ -1900,7 +1974,7 @@ mx2 inc4_inst
 	.s(border)  // IN
 );
 
-// PIX.NET (154) - inc5 : fd1q
+// PIX.NET (161) - inc5 : fd1q
 fd1q inc5_inst
 (
 	.q(inc5), // OUT
@@ -1908,15 +1982,15 @@ fd1q inc5_inst
 	.cp(vclk)  // IN
 );
 
-// PIX.NET (155) - inc : or2
+// PIX.NET (162) - inc : or2
 assign inc_obuf = inc5 | notincen;
 
-// PIX.NET (159) - pd20 : an3
+// PIX.NET (166) - pd20 : an3
 assign pd20 = pd2_0 & notincen & notvarmod;
 
-// PIX.NET (161) - notincen : iv
+// PIX.NET (168) - notincen : iv
 assign notincen = ~incen;
 
-// PIX.NET (162) - notvarmod : iv
+// PIX.NET (169) - notvarmod : iv
 assign notvarmod = ~varmod;
 endmodule

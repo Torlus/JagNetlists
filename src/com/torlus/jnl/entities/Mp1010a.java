@@ -15,10 +15,14 @@ public class Mp1010a extends Entity {
 			ios.add(s);
 		}
 		for(int i = 0; i < 10; i++) {
-			ios.add(new Signal("a" + i, SignalType.IN));
+			Signal s = new Signal("a", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 		for(int i = 0; i < 10; i++) {
-			ios.add(new Signal("b" + i, SignalType.IN));
+			Signal s = new Signal("b", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}		
 	}
 }

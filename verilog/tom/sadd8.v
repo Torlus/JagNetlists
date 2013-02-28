@@ -64,10 +64,10 @@ assign z_6 = z_6_obuf;
 assign z_7 = z_7_obuf;
 
 
-// LBUF.NET (269) - gnd : tie0
+// LBUF.NET (274) - gnd : tie0
 assign gnd = 1'b0;
 
-// LBUF.NET (270) - s0 : add4
+// LBUF.NET (275) - s0 : add4
 add4 s0_inst
 (
 	.q_0(s_0), // OUT
@@ -86,7 +86,7 @@ add4 s0_inst
 	.ci(gnd)  // IN
 );
 
-// LBUF.NET (271) - s1 : add4
+// LBUF.NET (276) - s1 : add4
 add4 s1_inst
 (
 	.q_0(s_4), // OUT
@@ -105,16 +105,16 @@ add4 s1_inst
 	.ci(co_3)  // IN
 );
 
-// LBUF.NET (272) - overflowi : en
+// LBUF.NET (277) - overflowi : en
 assign overflowi = ~(co_7 ^ b_7);
 
-// LBUF.NET (273) - overflow : ivm
+// LBUF.NET (278) - overflow : ivm
 assign overflow = ~overflowi;
 
-// LBUF.NET (274) - cob[7] : nivm
+// LBUF.NET (279) - cob[7] : nivm
 assign cob_7 = co_7;
 
-// LBUF.NET (275) - z[0-7] : mx2
+// LBUF.NET (280) - z[0-7] : mx2
 mx2 z_from_0_to_7_inst_0
 (
 	.z(z_0_obuf), // OUT

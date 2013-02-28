@@ -16,11 +16,13 @@ public class Ab8616a extends Entity {
 			s.bit = i;
 			ios.add(s);
 		}
-		ios.add(new Signal("cs", SignalType.IN));
-		ios.add(new Signal("we", SignalType.IN));
+		ios.add(new Signal("cen", SignalType.IN));
+		ios.add(new Signal("rw", SignalType.IN));
 		// ios.add(new Signal("clk", SignalType.IN));
 		for (int i = 0; i < 9; i++) {
-			ios.add(new Signal("a" + i, SignalType.IN));
+			Signal s = new Signal("a", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 	}
 }

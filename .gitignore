@@ -1,2 +1,10 @@
 classes
 verilog/work
+*.exe
+*.o
+.settings
+.classpath
+.project
+*.bin
+*.lst
+*.wlf

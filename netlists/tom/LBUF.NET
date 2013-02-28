@@ -10,8 +10,8 @@ IMPORT 	tosh,		(* Toshiba gate & pad definitions *)
 	lego,
 	duplo;
 
-/* GE replaced aout[1] and aout[15] by aout1 and aout15 */
-DEF LBUF	(aout1,aout15,dout[0..31],siz[2],
+
+DEF LBUF	(aout[1],aout[15],dout[0..31],siz[2],
 		lbwa[0..8],lbra[0..8],lbwe[0..1],
 		lbwd[0..31],lbufa,lbufb,lbaw,lbbw,rmw,
 		reads,vclk,clk[0],lben,bgw,bgwr
@@ -22,6 +22,8 @@ DEF LBUF	(aout1,aout15,dout[0..31],siz[2],
 		dr[0..15]:BI);
 (* GE 24/06/2012 - Added missing declarations *)
 INT9/	lbai, lbbi
+(* GE *)
+INT32/ lbrd_d
 	INT16/wdil, wdih, lbadl, lbadh, lbbdl, lbbdh, bgc :IO;
 
 
@@ -31,11 +33,11 @@ lbufa	is asserted when line buffer A is being read
 
 cst	is a chip select for processor access to internal synchronous RAM
 
-	    ____________               ______
+      	    ____________               ______
 [v]clk	___/            \_____________/
-	            ___________________
+	              ___________________
 cst	___________/                   \_____
-	            _____________
+	              _____________
 wet	___________/             \___________
 
 
@@ -52,7 +54,7 @@ the next 2k, and the current write buffer occupies the next 2k
 
 BEGIN
 
-Nota[1] :=	IV (nota[1],aout1);
+Nota[1] :=	IV (nota[1],aout[1]);
 
 Lbad :=		TWONIV (lbad,lbaw);
 Lba :=		NIVU (lba,lbad);
@@ -74,14 +76,17 @@ Lbbad[0-8] :=	NIV (lbbad[0-8],lbbadi[0-8]);
 Dw[0-15] :=	MX2 (dw[0-15],dout[0-15],dout[16-31],down);
 Dw[16-31] :=	MX2 (dw[16-31],dout[0-15],dout[16-31],up);
 Littlend :=	IV (littlend,bigend);
-Down :=		AN2H (down,aout15,bigend);
-Up :=		AN2H (up,aout15,littlend);
+Down :=		AN2H (down,aout[15],bigend);
+Up :=		AN2H (up,aout[15],littlend);
 
 (* Multiplex the read data *)
 
 Lbrd[0-15] :=	MX2 (lbrd[0-15],lbbdl{0-15},lbadl{0-15},lbufa);
 Lbrd[16-31] :=	MX2 (lbrd[16-31],lbbdh{0-15},lbadh{0-15},lbufa);
 
+(* GE *)
+GE1 := JOIN(lbrd_d, lbrd[0..31]);
+GE2 := DUMMY(lbrd_d);
 
 (* Select the opposite data for read/modify/write cycles *)
 
@@ -130,7 +135,7 @@ Lbr[0-1] :=	IV (lbr[0-1],lbwe[0-1]);
 Wra0 :=		ND2 (wra0,lba,reads);
 Wra1l :=	ND3 (wra1l,lbufb,lben,lbr[0]);
 Wra1h :=	ND3 (wra1h,lbufb,lben,lbr[1]);
-Wra2l :=	ND3 (wra2l,lba,writes,aout1);
+Wra2l :=	ND3 (wra2l,lba,writes,aout[1]);
 Wra2h :=	ND4 (wra2h,lba,writes,notsiz[2],nota[1]);
 Wrali :=	AN4 (wrali,wra0,wra1l,wra2l,notaactive);
 Wrahi :=	AN4 (wrahi,wra0,wra1h,wra2h,notaactive);
@@ -140,7 +145,7 @@ Wrah :=		NIVU (wrah,wrahi);
 Wrb0 :=		ND2 (wrb0,lbb,reads);
 Wrb1l :=	ND3 (wrb1l,lbufa,lben,lbr[0]);
 Wrb1h :=	ND3 (wrb1h,lbufa,lben,lbr[1]);
-Wrb2l :=	ND3 (wrb2l,lbb,writes,aout1);
+Wrb2l :=	ND3 (wrb2l,lbb,writes,aout[1]);
 Wrb2h :=	ND4 (wrb2h,lbb,writes,notsiz[2],nota[1]);
 Wrbli :=	AN4 (wrbli,wrb0,wrb1l,wrb2l,notbactive);
 Wrbhi :=	AN4 (wrbhi,wrb0,wrb1h,wrb2h,notbactive);
@@ -182,8 +187,8 @@ Wea02 :=	ND2 (wea02,lbufa,bgw);
 Wead[0] :=	AN3 (wead[0],wea00,wea01,wea02);
 
 Wea10 :=	ND2 (wea10,lbwe[1],lbufb);
-Wea11 :=	ND3 (wea11,aout1,lba,writes);
-Wea12 :=	ND6 (wea12,aout15,nota[1],siz[2],lba,writes,vcc);
+Wea11 :=	ND3 (wea11,aout[1],lba,writes);
+Wea12 :=	ND6 (wea12,aout[15],nota[1],siz[2],lba,writes,vcc);
 Wead[1] :=	AN4 (wead[1],wea10,wea11,wea12,wea02);
 
 Web00 :=	ND2 (web00,lbwe[0],lbufa);
@@ -192,8 +197,8 @@ Web02 :=	ND2 (web02,lbufb,bgw);
 Webd[0] :=	AN3 (webd[0],web00,web01,web02);
 
 Web10 :=	ND2 (web10,lbwe[1],lbufa);
-Web11 :=	ND3 (web11,aout1,lbb,writes);
-Web12 :=	ND6 (web12,aout15,nota[1],siz[2],lbb,writes,vcc);
+Web11 :=	ND3 (web11,aout[1],lbb,writes);
+Web12 :=	ND6 (web12,aout[15],nota[1],siz[2],lbb,writes,vcc);
 Webd[1] :=	AN4 (webd[1],web10,web11,web12,web02);
 
 Wea[0-1] :=	TWONIV (wea[0-1],wead[0-1]);
@@ -210,7 +215,7 @@ Notsiz[2] :=	IV (notsiz[2],siz[2]);
 (* Select the read data *)
 
 Lbdi[0-15] := MX4 (lbdi[0-15],lbadl{0-15},lbadh{0-15},lbbdl{0-15},lbbdh{0-15},
-			aout1,lbb);
+			aout[1],lbb);
 
 (* latch the read data *)
 

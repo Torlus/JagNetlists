@@ -2,8 +2,8 @@
 
 module lbuf
 (
-	input aout1,
-	input aout15,
+	input aout_1,
+	input aout_15,
 	input dout_0,
 	input dout_1,
 	input dout_2,
@@ -155,6 +155,7 @@ module lbuf
 );
 wire [0:8] lbai;
 wire [0:8] lbbi;
+wire [0:31] lbrd_d;
 wire [0:15] wdil;
 wire [0:15] wdih;
 wire [0:15] lbadl;
@@ -567,30 +568,30 @@ assign lbrd_30 = lbrd_30_obuf;
 assign lbrd_31 = lbrd_31_obuf;
 
 
-// LBUF.NET (55) - nota[1] : iv
-assign nota_1 = ~aout1;
+// LBUF.NET (57) - nota[1] : iv
+assign nota_1 = ~aout_1;
 
-// LBUF.NET (57) - lbad : twoniv
+// LBUF.NET (59) - lbad : twoniv
 twoniv lbad_inst
 (
 	.z(lbad), // IO
 	.a(lbaw)  // IN
 );
 
-// LBUF.NET (58) - lba : nivu
+// LBUF.NET (60) - lba : nivu
 assign lba = lbad;
 
-// LBUF.NET (59) - lbbd : twoniv
+// LBUF.NET (61) - lbbd : twoniv
 twoniv lbbd_inst
 (
 	.z(lbbd), // IO
 	.a(lbbw)  // IN
 );
 
-// LBUF.NET (60) - lbb : nivu
+// LBUF.NET (62) - lbb : nivu
 assign lbb = lbbd;
 
-// LBUF.NET (64) - lbwad[0-8] : hdly1b
+// LBUF.NET (66) - lbwad[0-8] : hdly1b
 assign lbwad_0 = lbwa_0;
 assign lbwad_1 = lbwa_1;
 assign lbwad_2 = lbwa_2;
@@ -601,7 +602,7 @@ assign lbwad_6 = lbwa_6;
 assign lbwad_7 = lbwa_7;
 assign lbwad_8 = lbwa_8;
 
-// LBUF.NET (65) - lbrad[0-8] : hdly1b
+// LBUF.NET (67) - lbrad[0-8] : hdly1b
 assign lbrad_0 = lbra_0;
 assign lbrad_1 = lbra_1;
 assign lbrad_2 = lbra_2;
@@ -612,7 +613,7 @@ assign lbrad_6 = lbra_6;
 assign lbrad_7 = lbra_7;
 assign lbrad_8 = lbra_8;
 
-// LBUF.NET (66) - lbaadi[0-8] : mx2p
+// LBUF.NET (68) - lbaadi[0-8] : mx2p
 mx2 lbaadi_from_0_to_8_inst_0
 (
 	.z(lbaadi_0), // OUT
@@ -677,7 +678,7 @@ mx2 lbaadi_from_0_to_8_inst_8
 	.s(lbaactive)  // IN
 );
 
-// LBUF.NET (67) - lbbadi[0-8] : mx2p
+// LBUF.NET (69) - lbbadi[0-8] : mx2p
 mx2 lbbadi_from_0_to_8_inst_0
 (
 	.z(lbbadi_0), // OUT
@@ -742,7 +743,7 @@ mx2 lbbadi_from_0_to_8_inst_8
 	.s(lbbactive)  // IN
 );
 
-// LBUF.NET (68) - lbaad[0-8] : niv
+// LBUF.NET (70) - lbaad[0-8] : niv
 assign lbaad_0 = lbaadi_0;
 assign lbaad_1 = lbaadi_1;
 assign lbaad_2 = lbaadi_2;
@@ -753,7 +754,7 @@ assign lbaad_6 = lbaadi_6;
 assign lbaad_7 = lbaadi_7;
 assign lbaad_8 = lbaadi_8;
 
-// LBUF.NET (69) - lbbad[0-8] : niv
+// LBUF.NET (71) - lbbad[0-8] : niv
 assign lbbad_0 = lbbadi_0;
 assign lbbad_1 = lbbadi_1;
 assign lbbad_2 = lbbadi_2;
@@ -764,7 +765,7 @@ assign lbbad_6 = lbbadi_6;
 assign lbbad_7 = lbbadi_7;
 assign lbbad_8 = lbbadi_8;
 
-// LBUF.NET (74) - dw[0-15] : mx2
+// LBUF.NET (76) - dw[0-15] : mx2
 mx2 dw_from_0_to_15_inst_0
 (
 	.z(dw_0), // OUT
@@ -878,7 +879,7 @@ mx2 dw_from_0_to_15_inst_15
 	.s(down)  // IN
 );
 
-// LBUF.NET (75) - dw[16-31] : mx2
+// LBUF.NET (77) - dw[16-31] : mx2
 mx2 dw_from_16_to_31_inst_0
 (
 	.z(dw_16), // OUT
@@ -992,16 +993,16 @@ mx2 dw_from_16_to_31_inst_15
 	.s(up)  // IN
 );
 
-// LBUF.NET (76) - littlend : iv
+// LBUF.NET (78) - littlend : iv
 assign littlend = ~bigend;
 
-// LBUF.NET (77) - down : an2h
-assign down = aout15 & bigend;
+// LBUF.NET (79) - down : an2h
+assign down = aout_15 & bigend;
 
-// LBUF.NET (78) - up : an2h
-assign up = aout15 & littlend;
+// LBUF.NET (80) - up : an2h
+assign up = aout_15 & littlend;
 
-// LBUF.NET (82) - lbrd[0-15] : mx2
+// LBUF.NET (84) - lbrd[0-15] : mx2
 mx2 lbrd_from_0_to_15_inst_0
 (
 	.z(lbrd_0_obuf), // OUT
@@ -1115,7 +1116,7 @@ mx2 lbrd_from_0_to_15_inst_15
 	.s(lbufa)  // IN
 );
 
-// LBUF.NET (83) - lbrd[16-31] : mx2
+// LBUF.NET (85) - lbrd[16-31] : mx2
 mx2 lbrd_from_16_to_31_inst_0
 (
 	.z(lbrd_16_obuf), // OUT
@@ -1229,7 +1230,43 @@ mx2 lbrd_from_16_to_31_inst_15
 	.s(lbufa)  // IN
 );
 
-// LBUF.NET (88) - rmwd[0-15] : mx2
+// LBUF.NET (88) - ge1 : join
+assign lbrd_d[0] = lbrd_0_obuf;
+assign lbrd_d[1] = lbrd_1_obuf;
+assign lbrd_d[2] = lbrd_2_obuf;
+assign lbrd_d[3] = lbrd_3_obuf;
+assign lbrd_d[4] = lbrd_4_obuf;
+assign lbrd_d[5] = lbrd_5_obuf;
+assign lbrd_d[6] = lbrd_6_obuf;
+assign lbrd_d[7] = lbrd_7_obuf;
+assign lbrd_d[8] = lbrd_8_obuf;
+assign lbrd_d[9] = lbrd_9_obuf;
+assign lbrd_d[10] = lbrd_10_obuf;
+assign lbrd_d[11] = lbrd_11_obuf;
+assign lbrd_d[12] = lbrd_12_obuf;
+assign lbrd_d[13] = lbrd_13_obuf;
+assign lbrd_d[14] = lbrd_14_obuf;
+assign lbrd_d[15] = lbrd_15_obuf;
+assign lbrd_d[16] = lbrd_16_obuf;
+assign lbrd_d[17] = lbrd_17_obuf;
+assign lbrd_d[18] = lbrd_18_obuf;
+assign lbrd_d[19] = lbrd_19_obuf;
+assign lbrd_d[20] = lbrd_20_obuf;
+assign lbrd_d[21] = lbrd_21_obuf;
+assign lbrd_d[22] = lbrd_22_obuf;
+assign lbrd_d[23] = lbrd_23_obuf;
+assign lbrd_d[24] = lbrd_24_obuf;
+assign lbrd_d[25] = lbrd_25_obuf;
+assign lbrd_d[26] = lbrd_26_obuf;
+assign lbrd_d[27] = lbrd_27_obuf;
+assign lbrd_d[28] = lbrd_28_obuf;
+assign lbrd_d[29] = lbrd_29_obuf;
+assign lbrd_d[30] = lbrd_30_obuf;
+assign lbrd_d[31] = lbrd_31_obuf;
+
+// LBUF.NET (89) - ge2 : dummy
+
+// LBUF.NET (93) - rmwd[0-15] : mx2
 mx2 rmwd_from_0_to_15_inst_0
 (
 	.z(rmwd_0), // OUT
@@ -1343,7 +1380,7 @@ mx2 rmwd_from_0_to_15_inst_15
 	.s(lbufb)  // IN
 );
 
-// LBUF.NET (89) - rmwd[16-31] : mx2
+// LBUF.NET (94) - rmwd[16-31] : mx2
 mx2 rmwd_from_16_to_31_inst_0
 (
 	.z(rmwd_16), // OUT
@@ -1457,7 +1494,7 @@ mx2 rmwd_from_16_to_31_inst_15
 	.s(lbufb)  // IN
 );
 
-// LBUF.NET (93) - rmwd1[0-31] : fd1q
+// LBUF.NET (98) - rmwd1[0-31] : fd1q
 fd1q rmwd1_from_0_to_31_inst_0
 (
 	.q(rmwd1_0), // OUT
@@ -1651,7 +1688,7 @@ fd1q rmwd1_from_0_to_31_inst_31
 	.cp(clk_0)  // IN
 );
 
-// LBUF.NET (100) - rmwd2[0] : sadd8
+// LBUF.NET (105) - rmwd2[0] : sadd8
 sadd8 rmwd2_index_0_inst
 (
 	.z_0(rmwd2_0), // IO
@@ -1680,7 +1717,7 @@ sadd8 rmwd2_index_0_inst
 	.b_7(lbwd_7)  // IN
 );
 
-// LBUF.NET (101) - rmwd2[8] : sadd4
+// LBUF.NET (106) - rmwd2[8] : sadd4
 sadd4 rmwd2_index_8_inst
 (
 	.z_0(rmwd2_8), // IO
@@ -1697,7 +1734,7 @@ sadd4 rmwd2_index_8_inst
 	.b_3(lbwd_11)  // IN
 );
 
-// LBUF.NET (102) - rmwd2[12] : sadd4
+// LBUF.NET (107) - rmwd2[12] : sadd4
 sadd4 rmwd2_index_12_inst
 (
 	.z_0(rmwd2_12), // IO
@@ -1714,7 +1751,7 @@ sadd4 rmwd2_index_12_inst
 	.b_3(lbwd_15)  // IN
 );
 
-// LBUF.NET (103) - rmwd2[16] : sadd8
+// LBUF.NET (108) - rmwd2[16] : sadd8
 sadd8 rmwd2_index_16_inst
 (
 	.z_0(rmwd2_16), // IO
@@ -1743,7 +1780,7 @@ sadd8 rmwd2_index_16_inst
 	.b_7(lbwd_23)  // IN
 );
 
-// LBUF.NET (104) - rmwd2[24] : sadd4
+// LBUF.NET (109) - rmwd2[24] : sadd4
 sadd4 rmwd2_index_24_inst
 (
 	.z_0(rmwd2_24), // IO
@@ -1760,7 +1797,7 @@ sadd4 rmwd2_index_24_inst
 	.b_3(lbwd_27)  // IN
 );
 
-// LBUF.NET (105) - rmwd2[28] : sadd4
+// LBUF.NET (110) - rmwd2[28] : sadd4
 sadd4 rmwd2_index_28_inst
 (
 	.z_0(rmwd2_28), // IO
@@ -1777,7 +1814,7 @@ sadd4 rmwd2_index_28_inst
 	.b_3(lbwd_31)  // IN
 );
 
-// LBUF.NET (114) - wd[0-31] : mx4p
+// LBUF.NET (119) - wd[0-31] : mx4p
 mx4 wd_from_0_to_31_inst_0
 (
 	.z(wd_0), // OUT
@@ -2099,10 +2136,10 @@ mx4 wd_from_0_to_31_inst_31
 	.s1(extadd)  // IN
 );
 
-// LBUF.NET (117) - extadd : ivu
+// LBUF.NET (122) - extadd : ivu
 assign extadd = ~lben;
 
-// LBUF.NET (118) - wdil : join
+// LBUF.NET (123) - wdil : join
 assign wdil[0] = wd_0;
 assign wdil[1] = wd_1;
 assign wdil[2] = wd_2;
@@ -2120,7 +2157,7 @@ assign wdil[13] = wd_13;
 assign wdil[14] = wd_14;
 assign wdil[15] = wd_15;
 
-// LBUF.NET (119) - wdih : join
+// LBUF.NET (124) - wdih : join
 assign wdih[0] = wd_16;
 assign wdih[1] = wd_17;
 assign wdih[2] = wd_18;
@@ -2138,68 +2175,68 @@ assign wdih[13] = wd_29;
 assign wdih[14] = wd_30;
 assign wdih[15] = wd_31;
 
-// LBUF.NET (127) - writes : ivm
+// LBUF.NET (132) - writes : ivm
 assign writes = ~reads;
 
-// LBUF.NET (128) - lbr[0-1] : iv
+// LBUF.NET (133) - lbr[0-1] : iv
 assign lbr_0 = ~lbwe_0;
 assign lbr_1 = ~lbwe_1;
 
-// LBUF.NET (130) - wra0 : nd2
+// LBUF.NET (135) - wra0 : nd2
 assign wra0 = ~(lba & reads);
 
-// LBUF.NET (131) - wra1l : nd3
+// LBUF.NET (136) - wra1l : nd3
 assign wra1l = ~(lbufb & lben & lbr_0);
 
-// LBUF.NET (132) - wra1h : nd3
+// LBUF.NET (137) - wra1h : nd3
 assign wra1h = ~(lbufb & lben & lbr_1);
 
-// LBUF.NET (133) - wra2l : nd3
-assign wra2l = ~(lba & writes & aout1);
+// LBUF.NET (138) - wra2l : nd3
+assign wra2l = ~(lba & writes & aout_1);
 
-// LBUF.NET (134) - wra2h : nd4
+// LBUF.NET (139) - wra2h : nd4
 assign wra2h = ~(lba & writes & notsiz_2 & nota_1);
 
-// LBUF.NET (135) - wrali : an4
+// LBUF.NET (140) - wrali : an4
 assign wrali = wra0 & wra1l & wra2l & notaactive;
 
-// LBUF.NET (136) - wrahi : an4
+// LBUF.NET (141) - wrahi : an4
 assign wrahi = wra0 & wra1h & wra2h & notaactive;
 
-// LBUF.NET (137) - wral : nivu
+// LBUF.NET (142) - wral : nivu
 assign wral = wrali;
 
-// LBUF.NET (138) - wrah : nivu
+// LBUF.NET (143) - wrah : nivu
 assign wrah = wrahi;
 
-// LBUF.NET (140) - wrb0 : nd2
+// LBUF.NET (145) - wrb0 : nd2
 assign wrb0 = ~(lbb & reads);
 
-// LBUF.NET (141) - wrb1l : nd3
+// LBUF.NET (146) - wrb1l : nd3
 assign wrb1l = ~(lbufa & lben & lbr_0);
 
-// LBUF.NET (142) - wrb1h : nd3
+// LBUF.NET (147) - wrb1h : nd3
 assign wrb1h = ~(lbufa & lben & lbr_1);
 
-// LBUF.NET (143) - wrb2l : nd3
-assign wrb2l = ~(lbb & writes & aout1);
+// LBUF.NET (148) - wrb2l : nd3
+assign wrb2l = ~(lbb & writes & aout_1);
 
-// LBUF.NET (144) - wrb2h : nd4
+// LBUF.NET (149) - wrb2h : nd4
 assign wrb2h = ~(lbb & writes & notsiz_2 & nota_1);
 
-// LBUF.NET (145) - wrbli : an4
+// LBUF.NET (150) - wrbli : an4
 assign wrbli = wrb0 & wrb1l & wrb2l & notbactive;
 
-// LBUF.NET (146) - wrbhi : an4
+// LBUF.NET (151) - wrbhi : an4
 assign wrbhi = wrb0 & wrb1h & wrb2h & notbactive;
 
-// LBUF.NET (147) - wrbl : nivu
+// LBUF.NET (152) - wrbl : nivu
 assign wrbl = wrbli;
 
-// LBUF.NET (148) - wrbh : nivu
+// LBUF.NET (153) - wrbh : nivu
 assign wrbh = wrbhi;
 
-// LBUF.NET (150) - lbadl : ts
+// LBUF.NET (155) - lbadl : ts
 assign lbadl[0] = (wral) ? wdil[0] : 1'bz;
 assign lbadl[1] = (wral) ? wdil[1] : 1'bz;
 assign lbadl[2] = (wral) ? wdil[2] : 1'bz;
@@ -2217,7 +2254,7 @@ assign lbadl[13] = (wral) ? wdil[13] : 1'bz;
 assign lbadl[14] = (wral) ? wdil[14] : 1'bz;
 assign lbadl[15] = (wral) ? wdil[15] : 1'bz;
 
-// LBUF.NET (151) - lbadh : ts
+// LBUF.NET (156) - lbadh : ts
 assign lbadh[0] = (wrah) ? wdih[0] : 1'bz;
 assign lbadh[1] = (wrah) ? wdih[1] : 1'bz;
 assign lbadh[2] = (wrah) ? wdih[2] : 1'bz;
@@ -2235,7 +2272,7 @@ assign lbadh[13] = (wrah) ? wdih[13] : 1'bz;
 assign lbadh[14] = (wrah) ? wdih[14] : 1'bz;
 assign lbadh[15] = (wrah) ? wdih[15] : 1'bz;
 
-// LBUF.NET (152) - lbbdl : ts
+// LBUF.NET (157) - lbbdl : ts
 assign lbbdl[0] = (wrbl) ? wdil[0] : 1'bz;
 assign lbbdl[1] = (wrbl) ? wdil[1] : 1'bz;
 assign lbbdl[2] = (wrbl) ? wdil[2] : 1'bz;
@@ -2253,7 +2290,7 @@ assign lbbdl[13] = (wrbl) ? wdil[13] : 1'bz;
 assign lbbdl[14] = (wrbl) ? wdil[14] : 1'bz;
 assign lbbdl[15] = (wrbl) ? wdil[15] : 1'bz;
 
-// LBUF.NET (153) - lbbdh : ts
+// LBUF.NET (158) - lbbdh : ts
 assign lbbdh[0] = (wrbh) ? wdih[0] : 1'bz;
 assign lbbdh[1] = (wrbh) ? wdih[1] : 1'bz;
 assign lbbdh[2] = (wrbh) ? wdih[2] : 1'bz;
@@ -2271,7 +2308,7 @@ assign lbbdh[13] = (wrbh) ? wdih[13] : 1'bz;
 assign lbbdh[14] = (wrbh) ? wdih[14] : 1'bz;
 assign lbbdh[15] = (wrbh) ? wdih[15] : 1'bz;
 
-// LBUF.NET (157) - lbai : join
+// LBUF.NET (162) - lbai : join
 assign lbai[0] = lbaad_0;
 assign lbai[1] = lbaad_1;
 assign lbai[2] = lbaad_2;
@@ -2282,7 +2319,7 @@ assign lbai[6] = lbaad_6;
 assign lbai[7] = lbaad_7;
 assign lbai[8] = lbaad_8;
 
-// LBUF.NET (158) - lbbi : join
+// LBUF.NET (163) - lbbi : join
 assign lbbi[0] = lbbad_0;
 assign lbbi[1] = lbbad_1;
 assign lbbi[2] = lbbad_2;
@@ -2293,155 +2330,123 @@ assign lbbi[6] = lbbad_6;
 assign lbbi[7] = lbbad_7;
 assign lbbi[8] = lbbad_8;
 
-// LBUF.NET (161) - lbufal : ab8616a
+// LBUF.NET (166) - lbufal : ab8616a
 ab8616a lbufal_inst
 (
 	.z({lbadl[0],lbadl[1],lbadl[2],lbadl[3],lbadl[4],lbadl[5],lbadl[6],lbadl[7],lbadl[8],lbadl[9],lbadl[10],lbadl[11],lbadl[12],lbadl[13],lbadl[14],lbadl[15]}), // BUS
-	.cs(cea_0), // IN
-	.we(wea_0), // IN
-	.a0(lbai[0]), // IN
-	.a1(lbai[1]), // IN
-	.a2(lbai[2]), // IN
-	.a3(lbai[3]), // IN
-	.a4(lbai[4]), // IN
-	.a5(lbai[5]), // IN
-	.a6(lbai[6]), // IN
-	.a7(lbai[7]), // IN
-	.a8(lbai[8])  // IN
+	.cen(cea_0), // IN
+	.rw(wea_0), // IN
+	.a({lbai[0],lbai[1],lbai[2],lbai[3],lbai[4],lbai[5],lbai[6],lbai[7],lbai[8]})  // IN
 );
 
-// LBUF.NET (162) - lbufah : ab8616a
+// LBUF.NET (167) - lbufah : ab8616a
 ab8616a lbufah_inst
 (
 	.z({lbadh[0],lbadh[1],lbadh[2],lbadh[3],lbadh[4],lbadh[5],lbadh[6],lbadh[7],lbadh[8],lbadh[9],lbadh[10],lbadh[11],lbadh[12],lbadh[13],lbadh[14],lbadh[15]}), // BUS
-	.cs(cea_1), // IN
-	.we(wea_1), // IN
-	.a0(lbai[0]), // IN
-	.a1(lbai[1]), // IN
-	.a2(lbai[2]), // IN
-	.a3(lbai[3]), // IN
-	.a4(lbai[4]), // IN
-	.a5(lbai[5]), // IN
-	.a6(lbai[6]), // IN
-	.a7(lbai[7]), // IN
-	.a8(lbai[8])  // IN
+	.cen(cea_1), // IN
+	.rw(wea_1), // IN
+	.a({lbai[0],lbai[1],lbai[2],lbai[3],lbai[4],lbai[5],lbai[6],lbai[7],lbai[8]})  // IN
 );
 
-// LBUF.NET (163) - lbufbl : ab8616a
+// LBUF.NET (168) - lbufbl : ab8616a
 ab8616a lbufbl_inst
 (
 	.z({lbbdl[0],lbbdl[1],lbbdl[2],lbbdl[3],lbbdl[4],lbbdl[5],lbbdl[6],lbbdl[7],lbbdl[8],lbbdl[9],lbbdl[10],lbbdl[11],lbbdl[12],lbbdl[13],lbbdl[14],lbbdl[15]}), // BUS
-	.cs(ceb_0), // IN
-	.we(web_0), // IN
-	.a0(lbbi[0]), // IN
-	.a1(lbbi[1]), // IN
-	.a2(lbbi[2]), // IN
-	.a3(lbbi[3]), // IN
-	.a4(lbbi[4]), // IN
-	.a5(lbbi[5]), // IN
-	.a6(lbbi[6]), // IN
-	.a7(lbbi[7]), // IN
-	.a8(lbbi[8])  // IN
+	.cen(ceb_0), // IN
+	.rw(web_0), // IN
+	.a({lbbi[0],lbbi[1],lbbi[2],lbbi[3],lbbi[4],lbbi[5],lbbi[6],lbbi[7],lbbi[8]})  // IN
 );
 
-// LBUF.NET (164) - lbufbh : ab8616a
+// LBUF.NET (169) - lbufbh : ab8616a
 ab8616a lbufbh_inst
 (
 	.z({lbbdh[0],lbbdh[1],lbbdh[2],lbbdh[3],lbbdh[4],lbbdh[5],lbbdh[6],lbbdh[7],lbbdh[8],lbbdh[9],lbbdh[10],lbbdh[11],lbbdh[12],lbbdh[13],lbbdh[14],lbbdh[15]}), // BUS
-	.cs(ceb_1), // IN
-	.we(web_1), // IN
-	.a0(lbbi[0]), // IN
-	.a1(lbbi[1]), // IN
-	.a2(lbbi[2]), // IN
-	.a3(lbbi[3]), // IN
-	.a4(lbbi[4]), // IN
-	.a5(lbbi[5]), // IN
-	.a6(lbbi[6]), // IN
-	.a7(lbbi[7]), // IN
-	.a8(lbbi[8])  // IN
+	.cen(ceb_1), // IN
+	.rw(web_1), // IN
+	.a({lbbi[0],lbbi[1],lbbi[2],lbbi[3],lbbi[4],lbbi[5],lbbi[6],lbbi[7],lbbi[8]})  // IN
 );
 
-// LBUF.NET (166) - ncst : ivh
+// LBUF.NET (171) - ncst : ivh
 assign ncst = ~clk_0;
 
-// LBUF.NET (167) - nvcst : ivh
+// LBUF.NET (172) - nvcst : ivh
 assign nvcst = ~vclk;
 
-// LBUF.NET (169) - cea0 : nd2
+// LBUF.NET (174) - cea0 : nd2
 assign cea0 = ~(lbufb & lben);
 
-// LBUF.NET (170) - cea1 : iv
+// LBUF.NET (175) - cea1 : iv
 assign cea1 = ~lba;
 
-// LBUF.NET (171) - cea2 : nd2
+// LBUF.NET (176) - cea2 : nd2
 assign cea2 = ~(cea0 & cea1);
 
-// LBUF.NET (172) - cea[0-1] : anr23
+// LBUF.NET (177) - cea[0-1] : anr23
 assign cea_0 = ~( (cea2 & ncst) | (aactive & nvcst) );
 assign cea_1 = ~( (cea2 & ncst) | (aactive & nvcst) );
 
-// LBUF.NET (174) - ceb0 : nd2
+// LBUF.NET (179) - ceb0 : nd2
 assign ceb0 = ~(lbufa & lben);
 
-// LBUF.NET (175) - ceb1 : iv
+// LBUF.NET (180) - ceb1 : iv
 assign ceb1 = ~lbb;
 
-// LBUF.NET (176) - ceb2 : nd2
+// LBUF.NET (181) - ceb2 : nd2
 assign ceb2 = ~(ceb0 & ceb1);
 
-// LBUF.NET (177) - ceb[0-1] : anr23
+// LBUF.NET (182) - ceb[0-1] : anr23
 assign ceb_0 = ~( (ceb2 & ncst) | (bactive & nvcst) );
 assign ceb_1 = ~( (ceb2 & ncst) | (bactive & nvcst) );
 
-// LBUF.NET (179) - wea00 : nd2
+// LBUF.NET (184) - wea00 : nd2
 assign wea00 = ~(lbwe_0 & lbufb);
 
-// LBUF.NET (180) - wea01 : nd3
+// LBUF.NET (185) - wea01 : nd3
 assign wea01 = ~(nota_1 & lba & writes);
 
-// LBUF.NET (181) - wea02 : nd2
+// LBUF.NET (186) - wea02 : nd2
 assign wea02 = ~(lbufa & bgw);
 
-// LBUF.NET (182) - wead[0] : an3
+// LBUF.NET (187) - wead[0] : an3
 assign wead_0 = wea00 & wea01 & wea02;
 
-// LBUF.NET (184) - wea10 : nd2
+// LBUF.NET (189) - wea10 : nd2
 assign wea10 = ~(lbwe_1 & lbufb);
 
-// LBUF.NET (185) - wea11 : nd3
-assign wea11 = ~(aout1 & lba & writes);
+// LBUF.NET (190) - wea11 : nd3
+assign wea11 = ~(aout_1 & lba & writes);
 
-// LBUF.NET (186) - wea12 : nd6
-assign wea12 = ~(aout15 & nota_1 & siz_2 & lba & writes & vcc);
+// LBUF.NET (191) - wea12 : nd6
+assign wea12 = ~(aout_15 & nota_1 & siz_2 & lba & writes & vcc);
 
-// LBUF.NET (187) - wead[1] : an4
+// LBUF.NET (192) - wead[1] : an4
 assign wead_1 = wea10 & wea11 & wea12 & wea02;
 
-// LBUF.NET (189) - web00 : nd2
+// LBUF.NET (194) - web00 : nd2
 assign web00 = ~(lbwe_0 & lbufa);
 
-// LBUF.NET (190) - web01 : nd3
+// LBUF.NET (195) - web01 : nd3
 assign web01 = ~(nota_1 & lbb & writes);
 
-// LBUF.NET (191) - web02 : nd2
+// LBUF.NET (196) - web02 : nd2
 assign web02 = ~(lbufb & bgw);
 
-// LBUF.NET (192) - webd[0] : an3
+// LBUF.NET (197) - webd[0] : an3
 assign webd_0 = web00 & web01 & web02;
 
-// LBUF.NET (194) - web10 : nd2
+// LBUF.NET (199) - web10 : nd2
 assign web10 = ~(lbwe_1 & lbufa);
 
-// LBUF.NET (195) - web11 : nd3
-assign web11 = ~(aout1 & lbb & writes);
+// LBUF.NET (200) - web11 : nd3
+assign web11 = ~(aout_1 & lbb & writes);
 
-// LBUF.NET (196) - web12 : nd6
-assign web12 = ~(aout15 & nota_1 & siz_2 & lbb & writes & vcc);
+// LBUF.NET (201) - web12 : nd6
+assign web12 = ~(aout_15 & nota_1 & siz_2 & lbb & writes & vcc);
 
-// LBUF.NET (197) - webd[1] : an4
+// LBUF.NET (202) - webd[1] : an4
 assign webd_1 = web10 & web11 & web12 & web02;
 
-// LBUF.NET (199) - wea[0-1] : twoniv
+// LBUF.NET (204) - wea[0-1] : twoniv
 twoniv wea_from_0_to_1_inst_0
 (
 	.z(wea_0), // IO
@@ -2453,7 +2458,7 @@ twoniv wea_from_0_to_1_inst_1
 	.a(wead_1)  // IN
 );
 
-// LBUF.NET (200) - web[0-1] : twoniv
+// LBUF.NET (205) - web[0-1] : twoniv
 twoniv web_from_0_to_1_inst_0
 (
 	.z(web_0), // IO
@@ -2465,25 +2470,25 @@ twoniv web_from_0_to_1_inst_1
 	.a(webd_1)  // IN
 );
 
-// LBUF.NET (202) - notaactive : nd2
+// LBUF.NET (207) - notaactive : nd2
 assign notaactive = ~(lbufa & vactive);
 
-// LBUF.NET (203) - notbactive : nd2
+// LBUF.NET (208) - notbactive : nd2
 assign notbactive = ~(lbufb & vactive);
 
-// LBUF.NET (204) - aactive : iv
+// LBUF.NET (209) - aactive : iv
 assign aactive = ~notaactive;
 
-// LBUF.NET (205) - bactive : iv
+// LBUF.NET (210) - bactive : iv
 assign bactive = ~notbactive;
 
-// LBUF.NET (207) - vcc : tie1
+// LBUF.NET (212) - vcc : tie1
 assign vcc = 1'b1;
 
-// LBUF.NET (208) - notsiz[2] : iv
+// LBUF.NET (213) - notsiz[2] : iv
 assign notsiz_2 = ~siz_2;
 
-// LBUF.NET (212) - lbdi[0-15] : mx4
+// LBUF.NET (217) - lbdi[0-15] : mx4
 mx4 lbdi_from_0_to_15_inst_0
 (
 	.z(lbdi_0), // OUT
@@ -2491,7 +2496,7 @@ mx4 lbdi_from_0_to_15_inst_0
 	.a1(lbadh[0]), // IN
 	.a2(lbbdl[0]), // IN
 	.a3(lbbdh[0]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_1
@@ -2501,7 +2506,7 @@ mx4 lbdi_from_0_to_15_inst_1
 	.a1(lbadh[1]), // IN
 	.a2(lbbdl[1]), // IN
 	.a3(lbbdh[1]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_2
@@ -2511,7 +2516,7 @@ mx4 lbdi_from_0_to_15_inst_2
 	.a1(lbadh[2]), // IN
 	.a2(lbbdl[2]), // IN
 	.a3(lbbdh[2]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_3
@@ -2521,7 +2526,7 @@ mx4 lbdi_from_0_to_15_inst_3
 	.a1(lbadh[3]), // IN
 	.a2(lbbdl[3]), // IN
 	.a3(lbbdh[3]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_4
@@ -2531,7 +2536,7 @@ mx4 lbdi_from_0_to_15_inst_4
 	.a1(lbadh[4]), // IN
 	.a2(lbbdl[4]), // IN
 	.a3(lbbdh[4]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_5
@@ -2541,7 +2546,7 @@ mx4 lbdi_from_0_to_15_inst_5
 	.a1(lbadh[5]), // IN
 	.a2(lbbdl[5]), // IN
 	.a3(lbbdh[5]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_6
@@ -2551,7 +2556,7 @@ mx4 lbdi_from_0_to_15_inst_6
 	.a1(lbadh[6]), // IN
 	.a2(lbbdl[6]), // IN
 	.a3(lbbdh[6]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_7
@@ -2561,7 +2566,7 @@ mx4 lbdi_from_0_to_15_inst_7
 	.a1(lbadh[7]), // IN
 	.a2(lbbdl[7]), // IN
 	.a3(lbbdh[7]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_8
@@ -2571,7 +2576,7 @@ mx4 lbdi_from_0_to_15_inst_8
 	.a1(lbadh[8]), // IN
 	.a2(lbbdl[8]), // IN
 	.a3(lbbdh[8]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_9
@@ -2581,7 +2586,7 @@ mx4 lbdi_from_0_to_15_inst_9
 	.a1(lbadh[9]), // IN
 	.a2(lbbdl[9]), // IN
 	.a3(lbbdh[9]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_10
@@ -2591,7 +2596,7 @@ mx4 lbdi_from_0_to_15_inst_10
 	.a1(lbadh[10]), // IN
 	.a2(lbbdl[10]), // IN
 	.a3(lbbdh[10]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_11
@@ -2601,7 +2606,7 @@ mx4 lbdi_from_0_to_15_inst_11
 	.a1(lbadh[11]), // IN
 	.a2(lbbdl[11]), // IN
 	.a3(lbbdh[11]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_12
@@ -2611,7 +2616,7 @@ mx4 lbdi_from_0_to_15_inst_12
 	.a1(lbadh[12]), // IN
 	.a2(lbbdl[12]), // IN
 	.a3(lbbdh[12]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_13
@@ -2621,7 +2626,7 @@ mx4 lbdi_from_0_to_15_inst_13
 	.a1(lbadh[13]), // IN
 	.a2(lbbdl[13]), // IN
 	.a3(lbbdh[13]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_14
@@ -2631,7 +2636,7 @@ mx4 lbdi_from_0_to_15_inst_14
 	.a1(lbadh[14]), // IN
 	.a2(lbbdl[14]), // IN
 	.a3(lbbdh[14]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 mx4 lbdi_from_0_to_15_inst_15
@@ -2641,11 +2646,11 @@ mx4 lbdi_from_0_to_15_inst_15
 	.a1(lbadh[15]), // IN
 	.a2(lbbdl[15]), // IN
 	.a3(lbbdh[15]), // IN
-	.s0(aout1), // IN
+	.s0(aout_1), // IN
 	.s1(lbb)  // IN
 );
 
-// LBUF.NET (217) - lbd[0-15] : fd1q
+// LBUF.NET (222) - lbd[0-15] : fd1q
 fd1q lbd_from_0_to_15_inst_0
 (
 	.q(lbd_0), // OUT
@@ -2743,13 +2748,13 @@ fd1q lbd_from_0_to_15_inst_15
 	.cp(clk_0)  // IN
 );
 
-// LBUF.NET (219) - lbdeni : nd2
+// LBUF.NET (224) - lbdeni : nd2
 assign lbdeni = ~(wra0 & wrb0);
 
-// LBUF.NET (220) - lbden : nivh
+// LBUF.NET (225) - lbden : nivh
 assign lbden = lbdeni;
 
-// LBUF.NET (221) - dr[0-15] : ts
+// LBUF.NET (226) - dr[0-15] : ts
 assign dr_0 = (lbden) ? lbd_0 : 1'bz;
 assign dr_1 = (lbden) ? lbd_1 : 1'bz;
 assign dr_2 = (lbden) ? lbd_2 : 1'bz;
@@ -2767,7 +2772,7 @@ assign dr_13 = (lbden) ? lbd_13 : 1'bz;
 assign dr_14 = (lbden) ? lbd_14 : 1'bz;
 assign dr_15 = (lbden) ? lbd_15 : 1'bz;
 
-// LBUF.NET (225) - bgc[0-15] : ldp1q
+// LBUF.NET (230) - bgc[0-15] : ldp1q
 ldp1q bgc_from_0_to_15_inst_0
 (
 	.q(bgc_0), // OUT
@@ -2865,7 +2870,7 @@ ldp1q bgc_from_0_to_15_inst_15
 	.g(bgwr)  // IN
 );
 
-// LBUF.NET (226) - bgc : join
+// LBUF.NET (231) - bgc : join
 assign bgc[0] = bgc_0;
 assign bgc[1] = bgc_1;
 assign bgc[2] = bgc_2;
@@ -2883,7 +2888,7 @@ assign bgc[13] = bgc_13;
 assign bgc[14] = bgc_14;
 assign bgc[15] = bgc_15;
 
-// LBUF.NET (230) - bwadl : ts
+// LBUF.NET (235) - bwadl : ts
 assign lbadl[0] = (bgwa) ? bgc[0] : 1'bz;
 assign lbadl[1] = (bgwa) ? bgc[1] : 1'bz;
 assign lbadl[2] = (bgwa) ? bgc[2] : 1'bz;
@@ -2901,7 +2906,7 @@ assign lbadl[13] = (bgwa) ? bgc[13] : 1'bz;
 assign lbadl[14] = (bgwa) ? bgc[14] : 1'bz;
 assign lbadl[15] = (bgwa) ? bgc[15] : 1'bz;
 
-// LBUF.NET (231) - bwadh : ts
+// LBUF.NET (236) - bwadh : ts
 assign lbadh[0] = (bgwa) ? bgc[0] : 1'bz;
 assign lbadh[1] = (bgwa) ? bgc[1] : 1'bz;
 assign lbadh[2] = (bgwa) ? bgc[2] : 1'bz;
@@ -2919,7 +2924,7 @@ assign lbadh[13] = (bgwa) ? bgc[13] : 1'bz;
 assign lbadh[14] = (bgwa) ? bgc[14] : 1'bz;
 assign lbadh[15] = (bgwa) ? bgc[15] : 1'bz;
 
-// LBUF.NET (232) - bwbdl : ts
+// LBUF.NET (237) - bwbdl : ts
 assign lbbdl[0] = (bgwb) ? bgc[0] : 1'bz;
 assign lbbdl[1] = (bgwb) ? bgc[1] : 1'bz;
 assign lbbdl[2] = (bgwb) ? bgc[2] : 1'bz;
@@ -2937,7 +2942,7 @@ assign lbbdl[13] = (bgwb) ? bgc[13] : 1'bz;
 assign lbbdl[14] = (bgwb) ? bgc[14] : 1'bz;
 assign lbbdl[15] = (bgwb) ? bgc[15] : 1'bz;
 
-// LBUF.NET (233) - bwbdh : ts
+// LBUF.NET (238) - bwbdh : ts
 assign lbbdh[0] = (bgwb) ? bgc[0] : 1'bz;
 assign lbbdh[1] = (bgwb) ? bgc[1] : 1'bz;
 assign lbbdh[2] = (bgwb) ? bgc[2] : 1'bz;
@@ -2955,9 +2960,9 @@ assign lbbdh[13] = (bgwb) ? bgc[13] : 1'bz;
 assign lbbdh[14] = (bgwb) ? bgc[14] : 1'bz;
 assign lbbdh[15] = (bgwb) ? bgc[15] : 1'bz;
 
-// LBUF.NET (235) - bgwa : an2u
+// LBUF.NET (240) - bgwa : an2u
 assign bgwa = bgw & aactive;
 
-// LBUF.NET (236) - bgwb : an2u
+// LBUF.NET (241) - bgwb : an2u
 assign bgwb = bgw & bactive;
 endmodule

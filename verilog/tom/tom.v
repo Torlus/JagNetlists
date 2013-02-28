@@ -172,7 +172,10 @@ module tom
 	output xrasl_1,
 	output xdtackl,
 	output xintl,
-	output cfgen
+	output cfgen,
+	output brlout,
+	output ba,
+	output aen
 );
 wire [0:7] xd0_7;
 wire [0:7] xd8_15;
@@ -384,7 +387,6 @@ wire dout_63;
 wire ain_0;
 wire nt_23;
 wire maska_0;
-wire aen;
 wire nt_22;
 wire ain_1;
 wire nt_24;
@@ -586,12 +588,10 @@ wire fc_2;
 wire m68k;
 wire brlin;
 wire nt_13;
-wire brlout;
 wire testen;
 wire bglin;
 wire nt_14;
 wire bgain;
-wire ba;
 wire test;
 wire nottest;
 wire dout_0;
@@ -1212,6 +1212,9 @@ wire xrasl_1_obuf;
 wire xdtackl_obuf;
 wire xintl_obuf;
 wire cfgen_obuf;
+wire brlout_obuf;
+wire ba_obuf;
+wire aen_obuf;
 
 
 // Output buffers
@@ -1266,6 +1269,9 @@ assign xrasl_1 = xrasl_1_obuf;
 assign xdtackl = xdtackl_obuf;
 assign xintl = xintl_obuf;
 assign cfgen = cfgen_obuf;
+assign brlout = brlout_obuf;
+assign ba = ba_obuf;
+assign aen = aen_obuf;
 
 
 // TOM.NET (112) - d0 : join_bus
@@ -2168,7 +2174,7 @@ bd apad_index_0_inst
 	.po(nt_23), // OUT
 	.a(maska_0), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_22)  // IN
 );
 
@@ -2180,7 +2186,7 @@ bd apad_index_1_inst
 	.po(nt_24), // OUT
 	.a(maska_1), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_23)  // IN
 );
 
@@ -2192,7 +2198,7 @@ bd apad_index_2_inst
 	.po(nt_25), // OUT
 	.a(maska_2), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_24)  // IN
 );
 
@@ -2204,7 +2210,7 @@ bd apad_from_3_to_23_inst_0
 	.po(nt_26), // OUT
 	.a(aout_3), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_25)  // IN
 );
 bd apad_from_3_to_23_inst_1
@@ -2214,7 +2220,7 @@ bd apad_from_3_to_23_inst_1
 	.po(nt_27), // OUT
 	.a(aout_4), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_26)  // IN
 );
 bd apad_from_3_to_23_inst_2
@@ -2224,7 +2230,7 @@ bd apad_from_3_to_23_inst_2
 	.po(nt_28), // OUT
 	.a(aout_5), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_27)  // IN
 );
 bd apad_from_3_to_23_inst_3
@@ -2234,7 +2240,7 @@ bd apad_from_3_to_23_inst_3
 	.po(nt_29), // OUT
 	.a(aout_6), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_28)  // IN
 );
 bd apad_from_3_to_23_inst_4
@@ -2244,7 +2250,7 @@ bd apad_from_3_to_23_inst_4
 	.po(nt_30), // OUT
 	.a(aout_7), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_29)  // IN
 );
 bd apad_from_3_to_23_inst_5
@@ -2254,7 +2260,7 @@ bd apad_from_3_to_23_inst_5
 	.po(nt_31), // OUT
 	.a(aout_8), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_30)  // IN
 );
 bd apad_from_3_to_23_inst_6
@@ -2264,7 +2270,7 @@ bd apad_from_3_to_23_inst_6
 	.po(nt_32), // OUT
 	.a(aout_9), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_31)  // IN
 );
 bd apad_from_3_to_23_inst_7
@@ -2274,7 +2280,7 @@ bd apad_from_3_to_23_inst_7
 	.po(nt_33), // OUT
 	.a(aout_10), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_32)  // IN
 );
 bd apad_from_3_to_23_inst_8
@@ -2284,7 +2290,7 @@ bd apad_from_3_to_23_inst_8
 	.po(nt_34), // OUT
 	.a(aout_11), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_33)  // IN
 );
 bd apad_from_3_to_23_inst_9
@@ -2294,7 +2300,7 @@ bd apad_from_3_to_23_inst_9
 	.po(nt_35), // OUT
 	.a(aout_12), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_34)  // IN
 );
 bd apad_from_3_to_23_inst_10
@@ -2304,7 +2310,7 @@ bd apad_from_3_to_23_inst_10
 	.po(nt_36), // OUT
 	.a(aout_13), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_35)  // IN
 );
 bd apad_from_3_to_23_inst_11
@@ -2314,7 +2320,7 @@ bd apad_from_3_to_23_inst_11
 	.po(nt_37), // OUT
 	.a(aout_14), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_36)  // IN
 );
 bd apad_from_3_to_23_inst_12
@@ -2324,7 +2330,7 @@ bd apad_from_3_to_23_inst_12
 	.po(nt_38), // OUT
 	.a(aout_15), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_37)  // IN
 );
 bd apad_from_3_to_23_inst_13
@@ -2334,7 +2340,7 @@ bd apad_from_3_to_23_inst_13
 	.po(nt_39), // OUT
 	.a(aout_16), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_38)  // IN
 );
 bd apad_from_3_to_23_inst_14
@@ -2344,7 +2350,7 @@ bd apad_from_3_to_23_inst_14
 	.po(nt_40), // OUT
 	.a(aout_17), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_39)  // IN
 );
 bd apad_from_3_to_23_inst_15
@@ -2354,7 +2360,7 @@ bd apad_from_3_to_23_inst_15
 	.po(nt_41), // OUT
 	.a(aout_18), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_40)  // IN
 );
 bd apad_from_3_to_23_inst_16
@@ -2364,7 +2370,7 @@ bd apad_from_3_to_23_inst_16
 	.po(nt_42), // OUT
 	.a(aout_19), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_41)  // IN
 );
 bd apad_from_3_to_23_inst_17
@@ -2374,7 +2380,7 @@ bd apad_from_3_to_23_inst_17
 	.po(nt_43), // OUT
 	.a(aout_20), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_42)  // IN
 );
 bd apad_from_3_to_23_inst_18
@@ -2384,7 +2390,7 @@ bd apad_from_3_to_23_inst_18
 	.po(nt_44), // OUT
 	.a(aout_21), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_43)  // IN
 );
 bd apad_from_3_to_23_inst_19
@@ -2394,7 +2400,7 @@ bd apad_from_3_to_23_inst_19
 	.po(nt_45), // OUT
 	.a(aout_22), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_44)  // IN
 );
 bd apad_from_3_to_23_inst_20
@@ -2404,7 +2410,7 @@ bd apad_from_3_to_23_inst_20
 	.po(nt_46), // OUT
 	.a(aout_23), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_45)  // IN
 );
 
@@ -2610,7 +2616,7 @@ bd dreq_inst
 	.po(nt_7), // OUT
 	.a(dreqlout), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_6)  // IN
 );
 
@@ -2625,7 +2631,7 @@ bd rw_inst
 	.po(nt_9), // OUT
 	.a(reads), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_7)  // IN
 );
 
@@ -2637,7 +2643,7 @@ bd siz_index_0_inst
 	.po(nt_10), // OUT
 	.a(sizout_0), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_9)  // IN
 );
 
@@ -2649,7 +2655,7 @@ bd siz_index_1_inst
 	.po(nt_11), // OUT
 	.a(sizout_1), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_10)  // IN
 );
 
@@ -2773,7 +2779,7 @@ bd fc_index_1_inst
 	.po(nt_5), // OUT
 	.a(gnd), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_4)  // IN
 );
 
@@ -2785,12 +2791,12 @@ bd fc_index_2_inst
 	.po(nt_6), // OUT
 	.a(vcc), // IN
 	.en(gnd), // IN
-	.tn(aen), // IN
+	.tn(aen_obuf), // IN
 	.pi(nt_5)  // IN
 );
 
 // TOM.NET (286) - fcen : an2
-assign fcen = aen & m68k;
+assign fcen = aen_obuf & m68k;
 
 // TOM.NET (288) - brl : bd2t
 bd brl_inst
@@ -2799,7 +2805,7 @@ bd brl_inst
 	.zi(brlin), // OUT
 	.po(nt_13), // OUT
 	.a(gnd), // IN
-	.en(brlout), // IN
+	.en(brlout_obuf), // IN
 	.tn(testen), // IN
 	.pi(nt_12)  // IN
 );
@@ -2816,7 +2822,7 @@ bd ba_inst
 	.po(nt_15), // OUT
 	.a(gnd), // IN
 	.en(gnd), // IN
-	.tn(ba), // IN
+	.tn(ba_obuf), // IN
 	.pi(nt_14)  // IN
 );
 
@@ -3775,7 +3781,7 @@ abus abus_inst
 	.cfgen(cfgen_obuf), // IN
 	.ack(ack), // IN
 	.clk(clk_2), // IN
-	.ba(ba), // IN
+	.ba(ba_obuf), // IN
 	.fc_0(fc_0), // IN
 	.fc_1(fc_1), // IN
 	.fc_2(fc_2), // IN
@@ -3989,9 +3995,9 @@ mem mem_inst
 	.den_0(den_0), // IO
 	.den_1(den_1), // IO
 	.den_2(den_2), // IO
-	.aen(aen), // IO
+	.aen(aen_obuf), // IO
 	.dtackl(dtackl), // IO
-	.brlout(brlout), // IO
+	.brlout(brlout_obuf), // IO
 	.dbgl(dbgl), // IO
 	.dreqlout(dreqlout), // IO
 	.d7a(d7a), // IO
@@ -4026,7 +4032,7 @@ mem mem_inst
 	.reads(reads), // IO
 	.wet(wet), // IO
 	.oet(oet), // IO
-	.ba(ba), // IO
+	.ba(ba_obuf), // IO
 	.intswe(intswe), // IO
 	.intwe(intwe), // IO
 	.dspcsl(dspcsl), // IO
@@ -4665,8 +4671,8 @@ obdata obd_inst
 // TOM.NET (438) - lbuf : lbuf
 lbuf lbuf_inst
 (
-	.aout1(maska_1), // IN
-	.aout15(aout_15), // IN
+	.aout_1(maska_1), // IN
+	.aout_15(aout_15), // IN
 	.dout_0(dout_0), // IN
 	.dout_1(dout_1), // IN
 	.dout_2(dout_2), // IN

@@ -38,10 +38,10 @@ assign z_2 = z_2_obuf;
 assign z_3 = z_3_obuf;
 
 
-// LBUF.NET (252) - gnd : tie0
+// LBUF.NET (257) - gnd : tie0
 assign gnd = 1'b0;
 
-// LBUF.NET (253) - s0 : add4
+// LBUF.NET (258) - s0 : add4
 add4 s0_inst
 (
 	.q_0(s_0), // OUT
@@ -60,13 +60,13 @@ add4 s0_inst
 	.ci(gnd)  // IN
 );
 
-// LBUF.NET (254) - overflowi : en
+// LBUF.NET (259) - overflowi : en
 assign overflowi = ~(co_3 ^ b_3);
 
-// LBUF.NET (255) - overflow : ivm
+// LBUF.NET (260) - overflow : ivm
 assign overflow = ~overflowi;
 
-// LBUF.NET (256) - z[0-3] : mx2
+// LBUF.NET (261) - z[0-3] : mx2
 mx2 z_from_0_to_3_inst_0
 (
 	.z(z_0_obuf), // OUT

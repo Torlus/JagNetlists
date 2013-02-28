@@ -2910,32 +2910,18 @@ assign csl = ~(ncst & cs);
 ab8016a clut1_inst
 (
 	.z({pda[0],pda[1],pda[2],pda[3],pda[4],pda[5],pda[6],pda[7],pda[8],pda[9],pda[10],pda[11],pda[12],pda[13],pda[14],pda[15]}), // BUS
-	.cs(csl), // IN
-	.we(prw), // IN
-	.a0(aa[0]), // IN
-	.a1(aa[1]), // IN
-	.a2(aa[2]), // IN
-	.a3(aa[3]), // IN
-	.a4(aa[4]), // IN
-	.a5(aa[5]), // IN
-	.a6(aa[6]), // IN
-	.a7(aa[7])  // IN
+	.cen(csl), // IN
+	.rw(prw), // IN
+	.a({aa[0],aa[1],aa[2],aa[3],aa[4],aa[5],aa[6],aa[7]})  // IN
 );
 
 // OBDATA.NET (189) - clut2 : ab8016a
 ab8016a clut2_inst
 (
 	.z({pdb[0],pdb[1],pdb[2],pdb[3],pdb[4],pdb[5],pdb[6],pdb[7],pdb[8],pdb[9],pdb[10],pdb[11],pdb[12],pdb[13],pdb[14],pdb[15]}), // BUS
-	.cs(csl), // IN
-	.we(prw), // IN
-	.a0(ab[0]), // IN
-	.a1(ab[1]), // IN
-	.a2(ab[2]), // IN
-	.a3(ab[3]), // IN
-	.a4(ab[4]), // IN
-	.a5(ab[5]), // IN
-	.a6(ab[6]), // IN
-	.a7(ab[7])  // IN
+	.cen(csl), // IN
+	.rw(prw), // IN
+	.a({ab[0],ab[1],ab[2],ab[3],ab[4],ab[5],ab[6],ab[7]})  // IN
 );
 
 // OBDATA.NET (193) - pdi[0-15] : mx2

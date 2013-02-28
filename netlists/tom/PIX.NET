@@ -22,7 +22,7 @@ DEF 	PIX	(din[0..15],dd,vactive,blank,
 		dr[0..8]:TRI);
 
 	INT8/red,green,blue,INT9/lbra:IO;
-
+(* GE *) INT32/pd1_d,lbrd_d:IO;
 BEGIN
 
 Red :=		JOIN (red,r[0..7]);
@@ -48,6 +48,13 @@ Lbrad[0-8] :=	TS (dr[0-8],lbra[0-8],lbrar);
 
 Nextpixb :=	NIVU2 (nextpixb,nextpixd);
 Pd1[0-31] :=	SLATCH (pd1[0-31],lbrd[0-31],vclk,nextpixb);
+
+(* GE *)
+GE1 := JOIN(pd1_d, pd1[0..31]);
+GE2 := DUMMY(pd1_d);
+GE3 := JOIN(lbrd_d, lbrd[0..31]);
+GE4 := DUMMY(lbrd_d);
+
 
 (* multiplex into two CRY pixels *)
 

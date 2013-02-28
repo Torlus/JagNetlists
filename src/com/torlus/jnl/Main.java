@@ -183,6 +183,10 @@ public class Main {
 				return;
 		}
 		
+		
+		
+		// System.exit(0);
+		
 		// Run pass #3 - Translate to VHDL/Verilog		
 		TreeMap<String, Entity> deps = new TreeMap<String, Entity>();
 		// ws.find("daddamux").findDeps(deps);
