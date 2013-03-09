@@ -27,7 +27,7 @@ module dcontrol
 	input dwrite,
 	input dzwrite,
 	input dzwrite1,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input srcdreadd,
 	input srcshade
 );
@@ -80,55 +80,55 @@ assign srcz2add = srcz2add_obuf;
 // DCONTROL.NET (40) - gourd : fdsyncm
 fdsyncm gourd_inst
 (
-	.q(gourd_obuf), // IO
-	.d(gpu_din[12]), // IN
-	.ld(cmdld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (gourd_obuf),
+	.d /* IN */ (gpu_din[12]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (41) - gourz : fdsyncm
 fdsyncm gourz_inst
 (
-	.q(gourz_obuf), // IO
-	.d(gpu_din[13]), // IN
-	.ld(cmdld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (gourz_obuf),
+	.d /* IN */ (gpu_din[13]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (42) - topben : fdsync
 fdsync topben_inst
 (
-	.q(topben), // IO
-	.d(gpu_din[14]), // IN
-	.ld(cmdld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (topben),
+	.d /* IN */ (gpu_din[14]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (43) - topnen : fdsync
 fdsync topnen_inst
 (
-	.q(topnen), // IO
-	.d(gpu_din[15]), // IN
-	.ld(cmdld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (topnen),
+	.d /* IN */ (gpu_din[15]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (44) - patdsel : fdsync
 fdsync patdsel_inst
 (
-	.q(patdsel), // IO
-	.d(gpu_din[16]), // IN
-	.ld(cmdld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (patdsel),
+	.d /* IN */ (gpu_din[16]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (45) - adddsel : fdsync
 fdsync adddsel_inst
 (
-	.q(adddsel), // IO
-	.d(gpu_din[17]), // IN
-	.ld(cmdld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (adddsel),
+	.d /* IN */ (gpu_din[17]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (47) - gourd\ : iv
@@ -236,20 +236,20 @@ assign srcshadd = srcdreadd & srcshade;
 // DCONTROL.NET (165) - daddq_sel : or5
 or5 daddq_sel_inst
 (
-	.z(daddq_sel), // IO
-	.a(patfadd_obuf), // IN
-	.b(patdadd_obuf), // IN
-	.c(srcz1add_obuf), // IN
-	.d(srcz2add_obuf), // IN
-	.e(srcshadd)  // IN
+	.z /* OUT */ (daddq_sel),
+	.a /* IN */ (patfadd_obuf),
+	.b /* IN */ (patdadd_obuf),
+	.c /* IN */ (srcz1add_obuf),
+	.d /* IN */ (srcz2add_obuf),
+	.e /* IN */ (srcshadd)
 );
 
 // DCONTROL.NET (185) - dzwrite1d : fd1q
 fd1q dzwrite1d_inst
 (
-	.q(dzwrite1d), // OUT
-	.d(dzwrite1), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (dzwrite1d),
+	.d /* IN */ (dzwrite1),
+	.cp /* IN */ (clk_0)
 );
 
 // DCONTROL.NET (187) - dsel0t : nr2

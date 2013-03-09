@@ -2,12 +2,12 @@
 
 module zedshift
 (
-	output[0:31] srczlo;
-	output[0:31] srczhi;
-	input[0:31] srcz1lo;
-	input[0:31] srcz1hi;
-	input[0:31] srcz2lo;
-	input[0:31] srcz2hi;
+	output [0:31] srczlo;
+	output [0:31] srczhi;
+	input [0:31] srcz1lo;
+	input [0:31] srcz1hi;
+	input [0:31] srcz2lo;
+	input [0:31] srcz2hi;
 	input srcshift_4,
 	input srcshift_5
 );
@@ -164,649 +164,649 @@ assign srcshift5b_1 = srcshift_5;
 // DATACOMP.NET (94) - srcz[0] : mx4
 mx4 srcz_index_0_inst_0
 (
-	.z(srcz_0[0]), // OUT
-	.a0(srczw_0[0]), // IN
-	.a1(srczw_1[0]), // IN
-	.a2(srczw_2[0]), // IN
-	.a3(srczw_3[0]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[0]),
+	.a0 /* IN */ (srczw_0[0]),
+	.a1 /* IN */ (srczw_1[0]),
+	.a2 /* IN */ (srczw_2[0]),
+	.a3 /* IN */ (srczw_3[0]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_1
 (
-	.z(srcz_0[1]), // OUT
-	.a0(srczw_0[1]), // IN
-	.a1(srczw_1[1]), // IN
-	.a2(srczw_2[1]), // IN
-	.a3(srczw_3[1]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[1]),
+	.a0 /* IN */ (srczw_0[1]),
+	.a1 /* IN */ (srczw_1[1]),
+	.a2 /* IN */ (srczw_2[1]),
+	.a3 /* IN */ (srczw_3[1]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_2
 (
-	.z(srcz_0[2]), // OUT
-	.a0(srczw_0[2]), // IN
-	.a1(srczw_1[2]), // IN
-	.a2(srczw_2[2]), // IN
-	.a3(srczw_3[2]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[2]),
+	.a0 /* IN */ (srczw_0[2]),
+	.a1 /* IN */ (srczw_1[2]),
+	.a2 /* IN */ (srczw_2[2]),
+	.a3 /* IN */ (srczw_3[2]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_3
 (
-	.z(srcz_0[3]), // OUT
-	.a0(srczw_0[3]), // IN
-	.a1(srczw_1[3]), // IN
-	.a2(srczw_2[3]), // IN
-	.a3(srczw_3[3]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[3]),
+	.a0 /* IN */ (srczw_0[3]),
+	.a1 /* IN */ (srczw_1[3]),
+	.a2 /* IN */ (srczw_2[3]),
+	.a3 /* IN */ (srczw_3[3]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_4
 (
-	.z(srcz_0[4]), // OUT
-	.a0(srczw_0[4]), // IN
-	.a1(srczw_1[4]), // IN
-	.a2(srczw_2[4]), // IN
-	.a3(srczw_3[4]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[4]),
+	.a0 /* IN */ (srczw_0[4]),
+	.a1 /* IN */ (srczw_1[4]),
+	.a2 /* IN */ (srczw_2[4]),
+	.a3 /* IN */ (srczw_3[4]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_5
 (
-	.z(srcz_0[5]), // OUT
-	.a0(srczw_0[5]), // IN
-	.a1(srczw_1[5]), // IN
-	.a2(srczw_2[5]), // IN
-	.a3(srczw_3[5]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[5]),
+	.a0 /* IN */ (srczw_0[5]),
+	.a1 /* IN */ (srczw_1[5]),
+	.a2 /* IN */ (srczw_2[5]),
+	.a3 /* IN */ (srczw_3[5]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_6
 (
-	.z(srcz_0[6]), // OUT
-	.a0(srczw_0[6]), // IN
-	.a1(srczw_1[6]), // IN
-	.a2(srczw_2[6]), // IN
-	.a3(srczw_3[6]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[6]),
+	.a0 /* IN */ (srczw_0[6]),
+	.a1 /* IN */ (srczw_1[6]),
+	.a2 /* IN */ (srczw_2[6]),
+	.a3 /* IN */ (srczw_3[6]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_7
 (
-	.z(srcz_0[7]), // OUT
-	.a0(srczw_0[7]), // IN
-	.a1(srczw_1[7]), // IN
-	.a2(srczw_2[7]), // IN
-	.a3(srczw_3[7]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[7]),
+	.a0 /* IN */ (srczw_0[7]),
+	.a1 /* IN */ (srczw_1[7]),
+	.a2 /* IN */ (srczw_2[7]),
+	.a3 /* IN */ (srczw_3[7]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_8
 (
-	.z(srcz_0[8]), // OUT
-	.a0(srczw_0[8]), // IN
-	.a1(srczw_1[8]), // IN
-	.a2(srczw_2[8]), // IN
-	.a3(srczw_3[8]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[8]),
+	.a0 /* IN */ (srczw_0[8]),
+	.a1 /* IN */ (srczw_1[8]),
+	.a2 /* IN */ (srczw_2[8]),
+	.a3 /* IN */ (srczw_3[8]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_9
 (
-	.z(srcz_0[9]), // OUT
-	.a0(srczw_0[9]), // IN
-	.a1(srczw_1[9]), // IN
-	.a2(srczw_2[9]), // IN
-	.a3(srczw_3[9]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[9]),
+	.a0 /* IN */ (srczw_0[9]),
+	.a1 /* IN */ (srczw_1[9]),
+	.a2 /* IN */ (srczw_2[9]),
+	.a3 /* IN */ (srczw_3[9]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_10
 (
-	.z(srcz_0[10]), // OUT
-	.a0(srczw_0[10]), // IN
-	.a1(srczw_1[10]), // IN
-	.a2(srczw_2[10]), // IN
-	.a3(srczw_3[10]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[10]),
+	.a0 /* IN */ (srczw_0[10]),
+	.a1 /* IN */ (srczw_1[10]),
+	.a2 /* IN */ (srczw_2[10]),
+	.a3 /* IN */ (srczw_3[10]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_11
 (
-	.z(srcz_0[11]), // OUT
-	.a0(srczw_0[11]), // IN
-	.a1(srczw_1[11]), // IN
-	.a2(srczw_2[11]), // IN
-	.a3(srczw_3[11]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[11]),
+	.a0 /* IN */ (srczw_0[11]),
+	.a1 /* IN */ (srczw_1[11]),
+	.a2 /* IN */ (srczw_2[11]),
+	.a3 /* IN */ (srczw_3[11]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_12
 (
-	.z(srcz_0[12]), // OUT
-	.a0(srczw_0[12]), // IN
-	.a1(srczw_1[12]), // IN
-	.a2(srczw_2[12]), // IN
-	.a3(srczw_3[12]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[12]),
+	.a0 /* IN */ (srczw_0[12]),
+	.a1 /* IN */ (srczw_1[12]),
+	.a2 /* IN */ (srczw_2[12]),
+	.a3 /* IN */ (srczw_3[12]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_13
 (
-	.z(srcz_0[13]), // OUT
-	.a0(srczw_0[13]), // IN
-	.a1(srczw_1[13]), // IN
-	.a2(srczw_2[13]), // IN
-	.a3(srczw_3[13]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[13]),
+	.a0 /* IN */ (srczw_0[13]),
+	.a1 /* IN */ (srczw_1[13]),
+	.a2 /* IN */ (srczw_2[13]),
+	.a3 /* IN */ (srczw_3[13]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_14
 (
-	.z(srcz_0[14]), // OUT
-	.a0(srczw_0[14]), // IN
-	.a1(srczw_1[14]), // IN
-	.a2(srczw_2[14]), // IN
-	.a3(srczw_3[14]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[14]),
+	.a0 /* IN */ (srczw_0[14]),
+	.a1 /* IN */ (srczw_1[14]),
+	.a2 /* IN */ (srczw_2[14]),
+	.a3 /* IN */ (srczw_3[14]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_0_inst_15
 (
-	.z(srcz_0[15]), // OUT
-	.a0(srczw_0[15]), // IN
-	.a1(srczw_1[15]), // IN
-	.a2(srczw_2[15]), // IN
-	.a3(srczw_3[15]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_0[15]),
+	.a0 /* IN */ (srczw_0[15]),
+	.a1 /* IN */ (srczw_1[15]),
+	.a2 /* IN */ (srczw_2[15]),
+	.a3 /* IN */ (srczw_3[15]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 
 // DATACOMP.NET (96) - srcz[1] : mx4
 mx4 srcz_index_1_inst_0
 (
-	.z(srcz_1[0]), // OUT
-	.a0(srczw_1[0]), // IN
-	.a1(srczw_2[0]), // IN
-	.a2(srczw_3[0]), // IN
-	.a3(srczw_4[0]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[0]),
+	.a0 /* IN */ (srczw_1[0]),
+	.a1 /* IN */ (srczw_2[0]),
+	.a2 /* IN */ (srczw_3[0]),
+	.a3 /* IN */ (srczw_4[0]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_1
 (
-	.z(srcz_1[1]), // OUT
-	.a0(srczw_1[1]), // IN
-	.a1(srczw_2[1]), // IN
-	.a2(srczw_3[1]), // IN
-	.a3(srczw_4[1]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[1]),
+	.a0 /* IN */ (srczw_1[1]),
+	.a1 /* IN */ (srczw_2[1]),
+	.a2 /* IN */ (srczw_3[1]),
+	.a3 /* IN */ (srczw_4[1]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_2
 (
-	.z(srcz_1[2]), // OUT
-	.a0(srczw_1[2]), // IN
-	.a1(srczw_2[2]), // IN
-	.a2(srczw_3[2]), // IN
-	.a3(srczw_4[2]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[2]),
+	.a0 /* IN */ (srczw_1[2]),
+	.a1 /* IN */ (srczw_2[2]),
+	.a2 /* IN */ (srczw_3[2]),
+	.a3 /* IN */ (srczw_4[2]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_3
 (
-	.z(srcz_1[3]), // OUT
-	.a0(srczw_1[3]), // IN
-	.a1(srczw_2[3]), // IN
-	.a2(srczw_3[3]), // IN
-	.a3(srczw_4[3]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[3]),
+	.a0 /* IN */ (srczw_1[3]),
+	.a1 /* IN */ (srczw_2[3]),
+	.a2 /* IN */ (srczw_3[3]),
+	.a3 /* IN */ (srczw_4[3]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_4
 (
-	.z(srcz_1[4]), // OUT
-	.a0(srczw_1[4]), // IN
-	.a1(srczw_2[4]), // IN
-	.a2(srczw_3[4]), // IN
-	.a3(srczw_4[4]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[4]),
+	.a0 /* IN */ (srczw_1[4]),
+	.a1 /* IN */ (srczw_2[4]),
+	.a2 /* IN */ (srczw_3[4]),
+	.a3 /* IN */ (srczw_4[4]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_5
 (
-	.z(srcz_1[5]), // OUT
-	.a0(srczw_1[5]), // IN
-	.a1(srczw_2[5]), // IN
-	.a2(srczw_3[5]), // IN
-	.a3(srczw_4[5]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[5]),
+	.a0 /* IN */ (srczw_1[5]),
+	.a1 /* IN */ (srczw_2[5]),
+	.a2 /* IN */ (srczw_3[5]),
+	.a3 /* IN */ (srczw_4[5]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_6
 (
-	.z(srcz_1[6]), // OUT
-	.a0(srczw_1[6]), // IN
-	.a1(srczw_2[6]), // IN
-	.a2(srczw_3[6]), // IN
-	.a3(srczw_4[6]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[6]),
+	.a0 /* IN */ (srczw_1[6]),
+	.a1 /* IN */ (srczw_2[6]),
+	.a2 /* IN */ (srczw_3[6]),
+	.a3 /* IN */ (srczw_4[6]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_7
 (
-	.z(srcz_1[7]), // OUT
-	.a0(srczw_1[7]), // IN
-	.a1(srczw_2[7]), // IN
-	.a2(srczw_3[7]), // IN
-	.a3(srczw_4[7]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[7]),
+	.a0 /* IN */ (srczw_1[7]),
+	.a1 /* IN */ (srczw_2[7]),
+	.a2 /* IN */ (srczw_3[7]),
+	.a3 /* IN */ (srczw_4[7]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_8
 (
-	.z(srcz_1[8]), // OUT
-	.a0(srczw_1[8]), // IN
-	.a1(srczw_2[8]), // IN
-	.a2(srczw_3[8]), // IN
-	.a3(srczw_4[8]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[8]),
+	.a0 /* IN */ (srczw_1[8]),
+	.a1 /* IN */ (srczw_2[8]),
+	.a2 /* IN */ (srczw_3[8]),
+	.a3 /* IN */ (srczw_4[8]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_9
 (
-	.z(srcz_1[9]), // OUT
-	.a0(srczw_1[9]), // IN
-	.a1(srczw_2[9]), // IN
-	.a2(srczw_3[9]), // IN
-	.a3(srczw_4[9]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[9]),
+	.a0 /* IN */ (srczw_1[9]),
+	.a1 /* IN */ (srczw_2[9]),
+	.a2 /* IN */ (srczw_3[9]),
+	.a3 /* IN */ (srczw_4[9]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_10
 (
-	.z(srcz_1[10]), // OUT
-	.a0(srczw_1[10]), // IN
-	.a1(srczw_2[10]), // IN
-	.a2(srczw_3[10]), // IN
-	.a3(srczw_4[10]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[10]),
+	.a0 /* IN */ (srczw_1[10]),
+	.a1 /* IN */ (srczw_2[10]),
+	.a2 /* IN */ (srczw_3[10]),
+	.a3 /* IN */ (srczw_4[10]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_11
 (
-	.z(srcz_1[11]), // OUT
-	.a0(srczw_1[11]), // IN
-	.a1(srczw_2[11]), // IN
-	.a2(srczw_3[11]), // IN
-	.a3(srczw_4[11]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[11]),
+	.a0 /* IN */ (srczw_1[11]),
+	.a1 /* IN */ (srczw_2[11]),
+	.a2 /* IN */ (srczw_3[11]),
+	.a3 /* IN */ (srczw_4[11]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_12
 (
-	.z(srcz_1[12]), // OUT
-	.a0(srczw_1[12]), // IN
-	.a1(srczw_2[12]), // IN
-	.a2(srczw_3[12]), // IN
-	.a3(srczw_4[12]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[12]),
+	.a0 /* IN */ (srczw_1[12]),
+	.a1 /* IN */ (srczw_2[12]),
+	.a2 /* IN */ (srczw_3[12]),
+	.a3 /* IN */ (srczw_4[12]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_13
 (
-	.z(srcz_1[13]), // OUT
-	.a0(srczw_1[13]), // IN
-	.a1(srczw_2[13]), // IN
-	.a2(srczw_3[13]), // IN
-	.a3(srczw_4[13]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[13]),
+	.a0 /* IN */ (srczw_1[13]),
+	.a1 /* IN */ (srczw_2[13]),
+	.a2 /* IN */ (srczw_3[13]),
+	.a3 /* IN */ (srczw_4[13]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_14
 (
-	.z(srcz_1[14]), // OUT
-	.a0(srczw_1[14]), // IN
-	.a1(srczw_2[14]), // IN
-	.a2(srczw_3[14]), // IN
-	.a3(srczw_4[14]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[14]),
+	.a0 /* IN */ (srczw_1[14]),
+	.a1 /* IN */ (srczw_2[14]),
+	.a2 /* IN */ (srczw_3[14]),
+	.a3 /* IN */ (srczw_4[14]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 mx4 srcz_index_1_inst_15
 (
-	.z(srcz_1[15]), // OUT
-	.a0(srczw_1[15]), // IN
-	.a1(srczw_2[15]), // IN
-	.a2(srczw_3[15]), // IN
-	.a3(srczw_4[15]), // IN
-	.s0(srcshift4b_0), // IN
-	.s1(srcshift5b_0)  // IN
+	.z /* OUT */ (srcz_1[15]),
+	.a0 /* IN */ (srczw_1[15]),
+	.a1 /* IN */ (srczw_2[15]),
+	.a2 /* IN */ (srczw_3[15]),
+	.a3 /* IN */ (srczw_4[15]),
+	.s0 /* IN */ (srcshift4b_0),
+	.s1 /* IN */ (srcshift5b_0)
 );
 
 // DATACOMP.NET (98) - srcz[2] : mx4
 mx4 srcz_index_2_inst_0
 (
-	.z(srcz_2[0]), // OUT
-	.a0(srczw_2[0]), // IN
-	.a1(srczw_3[0]), // IN
-	.a2(srczw_4[0]), // IN
-	.a3(srczw_5[0]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[0]),
+	.a0 /* IN */ (srczw_2[0]),
+	.a1 /* IN */ (srczw_3[0]),
+	.a2 /* IN */ (srczw_4[0]),
+	.a3 /* IN */ (srczw_5[0]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_1
 (
-	.z(srcz_2[1]), // OUT
-	.a0(srczw_2[1]), // IN
-	.a1(srczw_3[1]), // IN
-	.a2(srczw_4[1]), // IN
-	.a3(srczw_5[1]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[1]),
+	.a0 /* IN */ (srczw_2[1]),
+	.a1 /* IN */ (srczw_3[1]),
+	.a2 /* IN */ (srczw_4[1]),
+	.a3 /* IN */ (srczw_5[1]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_2
 (
-	.z(srcz_2[2]), // OUT
-	.a0(srczw_2[2]), // IN
-	.a1(srczw_3[2]), // IN
-	.a2(srczw_4[2]), // IN
-	.a3(srczw_5[2]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[2]),
+	.a0 /* IN */ (srczw_2[2]),
+	.a1 /* IN */ (srczw_3[2]),
+	.a2 /* IN */ (srczw_4[2]),
+	.a3 /* IN */ (srczw_5[2]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_3
 (
-	.z(srcz_2[3]), // OUT
-	.a0(srczw_2[3]), // IN
-	.a1(srczw_3[3]), // IN
-	.a2(srczw_4[3]), // IN
-	.a3(srczw_5[3]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[3]),
+	.a0 /* IN */ (srczw_2[3]),
+	.a1 /* IN */ (srczw_3[3]),
+	.a2 /* IN */ (srczw_4[3]),
+	.a3 /* IN */ (srczw_5[3]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_4
 (
-	.z(srcz_2[4]), // OUT
-	.a0(srczw_2[4]), // IN
-	.a1(srczw_3[4]), // IN
-	.a2(srczw_4[4]), // IN
-	.a3(srczw_5[4]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[4]),
+	.a0 /* IN */ (srczw_2[4]),
+	.a1 /* IN */ (srczw_3[4]),
+	.a2 /* IN */ (srczw_4[4]),
+	.a3 /* IN */ (srczw_5[4]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_5
 (
-	.z(srcz_2[5]), // OUT
-	.a0(srczw_2[5]), // IN
-	.a1(srczw_3[5]), // IN
-	.a2(srczw_4[5]), // IN
-	.a3(srczw_5[5]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[5]),
+	.a0 /* IN */ (srczw_2[5]),
+	.a1 /* IN */ (srczw_3[5]),
+	.a2 /* IN */ (srczw_4[5]),
+	.a3 /* IN */ (srczw_5[5]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_6
 (
-	.z(srcz_2[6]), // OUT
-	.a0(srczw_2[6]), // IN
-	.a1(srczw_3[6]), // IN
-	.a2(srczw_4[6]), // IN
-	.a3(srczw_5[6]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[6]),
+	.a0 /* IN */ (srczw_2[6]),
+	.a1 /* IN */ (srczw_3[6]),
+	.a2 /* IN */ (srczw_4[6]),
+	.a3 /* IN */ (srczw_5[6]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_7
 (
-	.z(srcz_2[7]), // OUT
-	.a0(srczw_2[7]), // IN
-	.a1(srczw_3[7]), // IN
-	.a2(srczw_4[7]), // IN
-	.a3(srczw_5[7]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[7]),
+	.a0 /* IN */ (srczw_2[7]),
+	.a1 /* IN */ (srczw_3[7]),
+	.a2 /* IN */ (srczw_4[7]),
+	.a3 /* IN */ (srczw_5[7]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_8
 (
-	.z(srcz_2[8]), // OUT
-	.a0(srczw_2[8]), // IN
-	.a1(srczw_3[8]), // IN
-	.a2(srczw_4[8]), // IN
-	.a3(srczw_5[8]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[8]),
+	.a0 /* IN */ (srczw_2[8]),
+	.a1 /* IN */ (srczw_3[8]),
+	.a2 /* IN */ (srczw_4[8]),
+	.a3 /* IN */ (srczw_5[8]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_9
 (
-	.z(srcz_2[9]), // OUT
-	.a0(srczw_2[9]), // IN
-	.a1(srczw_3[9]), // IN
-	.a2(srczw_4[9]), // IN
-	.a3(srczw_5[9]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[9]),
+	.a0 /* IN */ (srczw_2[9]),
+	.a1 /* IN */ (srczw_3[9]),
+	.a2 /* IN */ (srczw_4[9]),
+	.a3 /* IN */ (srczw_5[9]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_10
 (
-	.z(srcz_2[10]), // OUT
-	.a0(srczw_2[10]), // IN
-	.a1(srczw_3[10]), // IN
-	.a2(srczw_4[10]), // IN
-	.a3(srczw_5[10]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[10]),
+	.a0 /* IN */ (srczw_2[10]),
+	.a1 /* IN */ (srczw_3[10]),
+	.a2 /* IN */ (srczw_4[10]),
+	.a3 /* IN */ (srczw_5[10]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_11
 (
-	.z(srcz_2[11]), // OUT
-	.a0(srczw_2[11]), // IN
-	.a1(srczw_3[11]), // IN
-	.a2(srczw_4[11]), // IN
-	.a3(srczw_5[11]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[11]),
+	.a0 /* IN */ (srczw_2[11]),
+	.a1 /* IN */ (srczw_3[11]),
+	.a2 /* IN */ (srczw_4[11]),
+	.a3 /* IN */ (srczw_5[11]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_12
 (
-	.z(srcz_2[12]), // OUT
-	.a0(srczw_2[12]), // IN
-	.a1(srczw_3[12]), // IN
-	.a2(srczw_4[12]), // IN
-	.a3(srczw_5[12]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[12]),
+	.a0 /* IN */ (srczw_2[12]),
+	.a1 /* IN */ (srczw_3[12]),
+	.a2 /* IN */ (srczw_4[12]),
+	.a3 /* IN */ (srczw_5[12]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_13
 (
-	.z(srcz_2[13]), // OUT
-	.a0(srczw_2[13]), // IN
-	.a1(srczw_3[13]), // IN
-	.a2(srczw_4[13]), // IN
-	.a3(srczw_5[13]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[13]),
+	.a0 /* IN */ (srczw_2[13]),
+	.a1 /* IN */ (srczw_3[13]),
+	.a2 /* IN */ (srczw_4[13]),
+	.a3 /* IN */ (srczw_5[13]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_14
 (
-	.z(srcz_2[14]), // OUT
-	.a0(srczw_2[14]), // IN
-	.a1(srczw_3[14]), // IN
-	.a2(srczw_4[14]), // IN
-	.a3(srczw_5[14]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[14]),
+	.a0 /* IN */ (srczw_2[14]),
+	.a1 /* IN */ (srczw_3[14]),
+	.a2 /* IN */ (srczw_4[14]),
+	.a3 /* IN */ (srczw_5[14]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_2_inst_15
 (
-	.z(srcz_2[15]), // OUT
-	.a0(srczw_2[15]), // IN
-	.a1(srczw_3[15]), // IN
-	.a2(srczw_4[15]), // IN
-	.a3(srczw_5[15]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_2[15]),
+	.a0 /* IN */ (srczw_2[15]),
+	.a1 /* IN */ (srczw_3[15]),
+	.a2 /* IN */ (srczw_4[15]),
+	.a3 /* IN */ (srczw_5[15]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 
 // DATACOMP.NET (100) - srcz[3] : mx4
 mx4 srcz_index_3_inst_0
 (
-	.z(srcz_3[0]), // OUT
-	.a0(srczw_3[0]), // IN
-	.a1(srczw_4[0]), // IN
-	.a2(srczw_5[0]), // IN
-	.a3(srczw_6[0]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[0]),
+	.a0 /* IN */ (srczw_3[0]),
+	.a1 /* IN */ (srczw_4[0]),
+	.a2 /* IN */ (srczw_5[0]),
+	.a3 /* IN */ (srczw_6[0]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_1
 (
-	.z(srcz_3[1]), // OUT
-	.a0(srczw_3[1]), // IN
-	.a1(srczw_4[1]), // IN
-	.a2(srczw_5[1]), // IN
-	.a3(srczw_6[1]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[1]),
+	.a0 /* IN */ (srczw_3[1]),
+	.a1 /* IN */ (srczw_4[1]),
+	.a2 /* IN */ (srczw_5[1]),
+	.a3 /* IN */ (srczw_6[1]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_2
 (
-	.z(srcz_3[2]), // OUT
-	.a0(srczw_3[2]), // IN
-	.a1(srczw_4[2]), // IN
-	.a2(srczw_5[2]), // IN
-	.a3(srczw_6[2]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[2]),
+	.a0 /* IN */ (srczw_3[2]),
+	.a1 /* IN */ (srczw_4[2]),
+	.a2 /* IN */ (srczw_5[2]),
+	.a3 /* IN */ (srczw_6[2]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_3
 (
-	.z(srcz_3[3]), // OUT
-	.a0(srczw_3[3]), // IN
-	.a1(srczw_4[3]), // IN
-	.a2(srczw_5[3]), // IN
-	.a3(srczw_6[3]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[3]),
+	.a0 /* IN */ (srczw_3[3]),
+	.a1 /* IN */ (srczw_4[3]),
+	.a2 /* IN */ (srczw_5[3]),
+	.a3 /* IN */ (srczw_6[3]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_4
 (
-	.z(srcz_3[4]), // OUT
-	.a0(srczw_3[4]), // IN
-	.a1(srczw_4[4]), // IN
-	.a2(srczw_5[4]), // IN
-	.a3(srczw_6[4]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[4]),
+	.a0 /* IN */ (srczw_3[4]),
+	.a1 /* IN */ (srczw_4[4]),
+	.a2 /* IN */ (srczw_5[4]),
+	.a3 /* IN */ (srczw_6[4]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_5
 (
-	.z(srcz_3[5]), // OUT
-	.a0(srczw_3[5]), // IN
-	.a1(srczw_4[5]), // IN
-	.a2(srczw_5[5]), // IN
-	.a3(srczw_6[5]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[5]),
+	.a0 /* IN */ (srczw_3[5]),
+	.a1 /* IN */ (srczw_4[5]),
+	.a2 /* IN */ (srczw_5[5]),
+	.a3 /* IN */ (srczw_6[5]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_6
 (
-	.z(srcz_3[6]), // OUT
-	.a0(srczw_3[6]), // IN
-	.a1(srczw_4[6]), // IN
-	.a2(srczw_5[6]), // IN
-	.a3(srczw_6[6]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[6]),
+	.a0 /* IN */ (srczw_3[6]),
+	.a1 /* IN */ (srczw_4[6]),
+	.a2 /* IN */ (srczw_5[6]),
+	.a3 /* IN */ (srczw_6[6]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_7
 (
-	.z(srcz_3[7]), // OUT
-	.a0(srczw_3[7]), // IN
-	.a1(srczw_4[7]), // IN
-	.a2(srczw_5[7]), // IN
-	.a3(srczw_6[7]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[7]),
+	.a0 /* IN */ (srczw_3[7]),
+	.a1 /* IN */ (srczw_4[7]),
+	.a2 /* IN */ (srczw_5[7]),
+	.a3 /* IN */ (srczw_6[7]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_8
 (
-	.z(srcz_3[8]), // OUT
-	.a0(srczw_3[8]), // IN
-	.a1(srczw_4[8]), // IN
-	.a2(srczw_5[8]), // IN
-	.a3(srczw_6[8]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[8]),
+	.a0 /* IN */ (srczw_3[8]),
+	.a1 /* IN */ (srczw_4[8]),
+	.a2 /* IN */ (srczw_5[8]),
+	.a3 /* IN */ (srczw_6[8]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_9
 (
-	.z(srcz_3[9]), // OUT
-	.a0(srczw_3[9]), // IN
-	.a1(srczw_4[9]), // IN
-	.a2(srczw_5[9]), // IN
-	.a3(srczw_6[9]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[9]),
+	.a0 /* IN */ (srczw_3[9]),
+	.a1 /* IN */ (srczw_4[9]),
+	.a2 /* IN */ (srczw_5[9]),
+	.a3 /* IN */ (srczw_6[9]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_10
 (
-	.z(srcz_3[10]), // OUT
-	.a0(srczw_3[10]), // IN
-	.a1(srczw_4[10]), // IN
-	.a2(srczw_5[10]), // IN
-	.a3(srczw_6[10]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[10]),
+	.a0 /* IN */ (srczw_3[10]),
+	.a1 /* IN */ (srczw_4[10]),
+	.a2 /* IN */ (srczw_5[10]),
+	.a3 /* IN */ (srczw_6[10]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_11
 (
-	.z(srcz_3[11]), // OUT
-	.a0(srczw_3[11]), // IN
-	.a1(srczw_4[11]), // IN
-	.a2(srczw_5[11]), // IN
-	.a3(srczw_6[11]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[11]),
+	.a0 /* IN */ (srczw_3[11]),
+	.a1 /* IN */ (srczw_4[11]),
+	.a2 /* IN */ (srczw_5[11]),
+	.a3 /* IN */ (srczw_6[11]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_12
 (
-	.z(srcz_3[12]), // OUT
-	.a0(srczw_3[12]), // IN
-	.a1(srczw_4[12]), // IN
-	.a2(srczw_5[12]), // IN
-	.a3(srczw_6[12]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[12]),
+	.a0 /* IN */ (srczw_3[12]),
+	.a1 /* IN */ (srczw_4[12]),
+	.a2 /* IN */ (srczw_5[12]),
+	.a3 /* IN */ (srczw_6[12]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_13
 (
-	.z(srcz_3[13]), // OUT
-	.a0(srczw_3[13]), // IN
-	.a1(srczw_4[13]), // IN
-	.a2(srczw_5[13]), // IN
-	.a3(srczw_6[13]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[13]),
+	.a0 /* IN */ (srczw_3[13]),
+	.a1 /* IN */ (srczw_4[13]),
+	.a2 /* IN */ (srczw_5[13]),
+	.a3 /* IN */ (srczw_6[13]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_14
 (
-	.z(srcz_3[14]), // OUT
-	.a0(srczw_3[14]), // IN
-	.a1(srczw_4[14]), // IN
-	.a2(srczw_5[14]), // IN
-	.a3(srczw_6[14]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[14]),
+	.a0 /* IN */ (srczw_3[14]),
+	.a1 /* IN */ (srczw_4[14]),
+	.a2 /* IN */ (srczw_5[14]),
+	.a3 /* IN */ (srczw_6[14]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 mx4 srcz_index_3_inst_15
 (
-	.z(srcz_3[15]), // OUT
-	.a0(srczw_3[15]), // IN
-	.a1(srczw_4[15]), // IN
-	.a2(srczw_5[15]), // IN
-	.a3(srczw_6[15]), // IN
-	.s0(srcshift4b_1), // IN
-	.s1(srcshift5b_1)  // IN
+	.z /* OUT */ (srcz_3[15]),
+	.a0 /* IN */ (srczw_3[15]),
+	.a1 /* IN */ (srczw_4[15]),
+	.a2 /* IN */ (srczw_5[15]),
+	.a3 /* IN */ (srczw_6[15]),
+	.s0 /* IN */ (srcshift4b_1),
+	.s1 /* IN */ (srcshift5b_1)
 );
 
 // DATACOMP.NET (103) - srczlo : join

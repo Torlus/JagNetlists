@@ -10,6 +10,11 @@ public class Ab8616a extends Entity {
 		return "ab8616a";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Ab8616a() {
 		for (int i = 0; i < 16; i++) {
 			Signal s = new Signal("z", SignalType.BUS);

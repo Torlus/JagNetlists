@@ -2,30 +2,62 @@
 
 module inner_cnt
 (
-	inout gpu_dout_16,
-	inout gpu_dout_17,
-	inout gpu_dout_18,
-	inout gpu_dout_19,
-	inout gpu_dout_20,
-	inout gpu_dout_21,
-	inout gpu_dout_22,
-	inout gpu_dout_23,
-	inout gpu_dout_24,
-	inout gpu_dout_25,
-	inout gpu_dout_26,
-	inout gpu_dout_27,
-	inout gpu_dout_28,
-	inout gpu_dout_29,
-	inout gpu_dout_30,
-	inout gpu_dout_31,
+	output gpu_dout_16_out,
+	output gpu_dout_16_oe,
+	input gpu_dout_16_in,
+	output gpu_dout_17_out,
+	output gpu_dout_17_oe,
+	input gpu_dout_17_in,
+	output gpu_dout_18_out,
+	output gpu_dout_18_oe,
+	input gpu_dout_18_in,
+	output gpu_dout_19_out,
+	output gpu_dout_19_oe,
+	input gpu_dout_19_in,
+	output gpu_dout_20_out,
+	output gpu_dout_20_oe,
+	input gpu_dout_20_in,
+	output gpu_dout_21_out,
+	output gpu_dout_21_oe,
+	input gpu_dout_21_in,
+	output gpu_dout_22_out,
+	output gpu_dout_22_oe,
+	input gpu_dout_22_in,
+	output gpu_dout_23_out,
+	output gpu_dout_23_oe,
+	input gpu_dout_23_in,
+	output gpu_dout_24_out,
+	output gpu_dout_24_oe,
+	input gpu_dout_24_in,
+	output gpu_dout_25_out,
+	output gpu_dout_25_oe,
+	input gpu_dout_25_in,
+	output gpu_dout_26_out,
+	output gpu_dout_26_oe,
+	input gpu_dout_26_in,
+	output gpu_dout_27_out,
+	output gpu_dout_27_oe,
+	input gpu_dout_27_in,
+	output gpu_dout_28_out,
+	output gpu_dout_28_oe,
+	input gpu_dout_28_in,
+	output gpu_dout_29_out,
+	output gpu_dout_29_oe,
+	input gpu_dout_29_in,
+	output gpu_dout_30_out,
+	output gpu_dout_30_oe,
+	input gpu_dout_30_in,
+	output gpu_dout_31_out,
+	output gpu_dout_31_oe,
+	input gpu_dout_31_in,
 	output icount_0,
 	output icount_1,
 	output icount_2,
 	output inner0,
 	input clk,
 	input countld,
-	input[0:15] dstxp;
-	input[0:31] gpu_din;
+	input [0:15] dstxp;
+	input [0:31] gpu_din;
 	input icntena,
 	input ireload,
 	input phrase_mode,
@@ -218,213 +250,213 @@ assign countldb = countld;
 // INNER.NET (587) - cntval : mx2
 mx2 cntval_inst_0
 (
-	.z(cntval[0]), // OUT
-	.a0(cntvall[0]), // IN
-	.a1(gpu_d_lo16[0]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[0]),
+	.a0 /* IN */ (cntvall[0]),
+	.a1 /* IN */ (gpu_d_lo16[0]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_1
 (
-	.z(cntval[1]), // OUT
-	.a0(cntvall[1]), // IN
-	.a1(gpu_d_lo16[1]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[1]),
+	.a0 /* IN */ (cntvall[1]),
+	.a1 /* IN */ (gpu_d_lo16[1]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_2
 (
-	.z(cntval[2]), // OUT
-	.a0(cntvall[2]), // IN
-	.a1(gpu_d_lo16[2]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[2]),
+	.a0 /* IN */ (cntvall[2]),
+	.a1 /* IN */ (gpu_d_lo16[2]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_3
 (
-	.z(cntval[3]), // OUT
-	.a0(cntvall[3]), // IN
-	.a1(gpu_d_lo16[3]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[3]),
+	.a0 /* IN */ (cntvall[3]),
+	.a1 /* IN */ (gpu_d_lo16[3]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_4
 (
-	.z(cntval[4]), // OUT
-	.a0(cntvall[4]), // IN
-	.a1(gpu_d_lo16[4]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[4]),
+	.a0 /* IN */ (cntvall[4]),
+	.a1 /* IN */ (gpu_d_lo16[4]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_5
 (
-	.z(cntval[5]), // OUT
-	.a0(cntvall[5]), // IN
-	.a1(gpu_d_lo16[5]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[5]),
+	.a0 /* IN */ (cntvall[5]),
+	.a1 /* IN */ (gpu_d_lo16[5]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_6
 (
-	.z(cntval[6]), // OUT
-	.a0(cntvall[6]), // IN
-	.a1(gpu_d_lo16[6]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[6]),
+	.a0 /* IN */ (cntvall[6]),
+	.a1 /* IN */ (gpu_d_lo16[6]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_7
 (
-	.z(cntval[7]), // OUT
-	.a0(cntvall[7]), // IN
-	.a1(gpu_d_lo16[7]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[7]),
+	.a0 /* IN */ (cntvall[7]),
+	.a1 /* IN */ (gpu_d_lo16[7]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_8
 (
-	.z(cntval[8]), // OUT
-	.a0(cntvall[8]), // IN
-	.a1(gpu_d_lo16[8]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[8]),
+	.a0 /* IN */ (cntvall[8]),
+	.a1 /* IN */ (gpu_d_lo16[8]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_9
 (
-	.z(cntval[9]), // OUT
-	.a0(cntvall[9]), // IN
-	.a1(gpu_d_lo16[9]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[9]),
+	.a0 /* IN */ (cntvall[9]),
+	.a1 /* IN */ (gpu_d_lo16[9]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_10
 (
-	.z(cntval[10]), // OUT
-	.a0(cntvall[10]), // IN
-	.a1(gpu_d_lo16[10]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[10]),
+	.a0 /* IN */ (cntvall[10]),
+	.a1 /* IN */ (gpu_d_lo16[10]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_11
 (
-	.z(cntval[11]), // OUT
-	.a0(cntvall[11]), // IN
-	.a1(gpu_d_lo16[11]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[11]),
+	.a0 /* IN */ (cntvall[11]),
+	.a1 /* IN */ (gpu_d_lo16[11]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_12
 (
-	.z(cntval[12]), // OUT
-	.a0(cntvall[12]), // IN
-	.a1(gpu_d_lo16[12]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[12]),
+	.a0 /* IN */ (cntvall[12]),
+	.a1 /* IN */ (gpu_d_lo16[12]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_13
 (
-	.z(cntval[13]), // OUT
-	.a0(cntvall[13]), // IN
-	.a1(gpu_d_lo16[13]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[13]),
+	.a0 /* IN */ (cntvall[13]),
+	.a1 /* IN */ (gpu_d_lo16[13]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_14
 (
-	.z(cntval[14]), // OUT
-	.a0(cntvall[14]), // IN
-	.a1(gpu_d_lo16[14]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[14]),
+	.a0 /* IN */ (cntvall[14]),
+	.a1 /* IN */ (gpu_d_lo16[14]),
+	.s /* IN */ (countldb)
 );
 mx2 cntval_inst_15
 (
-	.z(cntval[15]), // OUT
-	.a0(cntvall[15]), // IN
-	.a1(gpu_d_lo16[15]), // IN
-	.s(countldb)  // IN
+	.z /* OUT */ (cntval[15]),
+	.a0 /* IN */ (cntvall[15]),
+	.a1 /* IN */ (gpu_d_lo16[15]),
+	.s /* IN */ (countldb)
 );
 
 // INNER.NET (588) - cntvall : fd1q
 fd1q cntvall_inst_0
 (
-	.q(cntvall[0]), // OUT
-	.d(cntval[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[0]),
+	.d /* IN */ (cntval[0]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_1
 (
-	.q(cntvall[1]), // OUT
-	.d(cntval[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[1]),
+	.d /* IN */ (cntval[1]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_2
 (
-	.q(cntvall[2]), // OUT
-	.d(cntval[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[2]),
+	.d /* IN */ (cntval[2]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_3
 (
-	.q(cntvall[3]), // OUT
-	.d(cntval[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[3]),
+	.d /* IN */ (cntval[3]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_4
 (
-	.q(cntvall[4]), // OUT
-	.d(cntval[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[4]),
+	.d /* IN */ (cntval[4]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_5
 (
-	.q(cntvall[5]), // OUT
-	.d(cntval[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[5]),
+	.d /* IN */ (cntval[5]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_6
 (
-	.q(cntvall[6]), // OUT
-	.d(cntval[6]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[6]),
+	.d /* IN */ (cntval[6]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_7
 (
-	.q(cntvall[7]), // OUT
-	.d(cntval[7]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[7]),
+	.d /* IN */ (cntval[7]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_8
 (
-	.q(cntvall[8]), // OUT
-	.d(cntval[8]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[8]),
+	.d /* IN */ (cntval[8]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_9
 (
-	.q(cntvall[9]), // OUT
-	.d(cntval[9]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[9]),
+	.d /* IN */ (cntval[9]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_10
 (
-	.q(cntvall[10]), // OUT
-	.d(cntval[10]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[10]),
+	.d /* IN */ (cntval[10]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_11
 (
-	.q(cntvall[11]), // OUT
-	.d(cntval[11]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[11]),
+	.d /* IN */ (cntval[11]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_12
 (
-	.q(cntvall[12]), // OUT
-	.d(cntval[12]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[12]),
+	.d /* IN */ (cntval[12]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_13
 (
-	.q(cntvall[13]), // OUT
-	.d(cntval[13]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[13]),
+	.d /* IN */ (cntval[13]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_14
 (
-	.q(cntvall[14]), // OUT
-	.d(cntval[14]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[14]),
+	.d /* IN */ (cntval[14]),
+	.cp /* IN */ (clk)
 );
 fd1q cntvall_inst_15
 (
-	.q(cntvall[15]), // OUT
-	.d(cntval[15]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntvall[15]),
+	.d /* IN */ (cntval[15]),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (601) - dstxp\[0-2] : iv
@@ -438,10 +470,10 @@ assign inct_0 = ~dstxp_n_0;
 // INNER.NET (603) - inct1 : ha1
 ha1 inct1_inst
 (
-	.s(inct_1), // OUT
-	.co(incc_1), // OUT
-	.a(dstxp_n_1), // IN
-	.b(dstxp_n_0)  // IN
+	.s /* OUT */ (inct_1),
+	.co /* OUT */ (incc_1),
+	.a /* IN */ (dstxp_n_1),
+	.b /* IN */ (dstxp_n_0)
 );
 
 // INNER.NET (604) - inct2 : eo
@@ -488,75 +520,75 @@ assign inc_n_2 = ~(phrase_mode & inc2t_2);
 // INNER.NET (631) - inc\[3] : nd5
 nd5 inc_n_index_3_inst
 (
-	.q(inc_n_3), // OUT
-	.a_0(phrase_mode), // IN
-	.a_1(pixel8), // IN
-	.a_2(inct_n_0), // IN
-	.a_3(inct_n_1), // IN
-	.a_4(inct_n_2)  // IN
+	.q /* OUT */ (inc_n_3),
+	.a_0 /* IN */ (phrase_mode),
+	.a_1 /* IN */ (pixel8),
+	.a_2 /* IN */ (inct_n_0),
+	.a_3 /* IN */ (inct_n_1),
+	.a_4 /* IN */ (inct_n_2)
 );
 
 // INNER.NET (633) - count0t4 : add4
 add4 count0t4_inst
 (
-	.q_0(count_0), // OUT
-	.q_1(count_1), // OUT
-	.q_2(count_2), // OUT
-	.q_3(count_3), // OUT
-	.co(carry_3), // OUT
-	.a_0(inc_n_0), // IN
-	.a_1(inc_n_1), // IN
-	.a_2(inc_n_2), // IN
-	.a_3(inc_n_3), // IN
-	.b_0(icount_0_obuf), // IN
-	.b_1(icount_1_obuf), // IN
-	.b_2(icount_2_obuf), // IN
-	.b_3(icount_3), // IN
-	.ci(one)  // IN
+	.q_0 /* OUT */ (count_0),
+	.q_1 /* OUT */ (count_1),
+	.q_2 /* OUT */ (count_2),
+	.q_3 /* OUT */ (count_3),
+	.co /* OUT */ (carry_3),
+	.a_0 /* IN */ (inc_n_0),
+	.a_1 /* IN */ (inc_n_1),
+	.a_2 /* IN */ (inc_n_2),
+	.a_3 /* IN */ (inc_n_3),
+	.b_0 /* IN */ (icount_0_obuf),
+	.b_1 /* IN */ (icount_1_obuf),
+	.b_2 /* IN */ (icount_2_obuf),
+	.b_3 /* IN */ (icount_3),
+	.ci /* IN */ (one)
 );
 
 // INNER.NET (635) - count[4-9] : hs1
 hs1 count_from_4_to_9_inst_0
 (
-	.q(count_4), // OUT
-	.co(carry_4), // OUT
-	.a(carry_3), // IN
-	.ci(icount_4)  // IN
+	.q /* OUT */ (count_4),
+	.co /* OUT */ (carry_4),
+	.a /* IN */ (carry_3),
+	.ci /* IN */ (icount_4)
 );
 hs1 count_from_4_to_9_inst_1
 (
-	.q(count_5), // OUT
-	.co(carry_5), // OUT
-	.a(carry_4), // IN
-	.ci(icount_5)  // IN
+	.q /* OUT */ (count_5),
+	.co /* OUT */ (carry_5),
+	.a /* IN */ (carry_4),
+	.ci /* IN */ (icount_5)
 );
 hs1 count_from_4_to_9_inst_2
 (
-	.q(count_6), // OUT
-	.co(carry_6), // OUT
-	.a(carry_5), // IN
-	.ci(icount_6)  // IN
+	.q /* OUT */ (count_6),
+	.co /* OUT */ (carry_6),
+	.a /* IN */ (carry_5),
+	.ci /* IN */ (icount_6)
 );
 hs1 count_from_4_to_9_inst_3
 (
-	.q(count_7), // OUT
-	.co(carry_7), // OUT
-	.a(carry_6), // IN
-	.ci(icount_7)  // IN
+	.q /* OUT */ (count_7),
+	.co /* OUT */ (carry_7),
+	.a /* IN */ (carry_6),
+	.ci /* IN */ (icount_7)
 );
 hs1 count_from_4_to_9_inst_4
 (
-	.q(count_8), // OUT
-	.co(carry_8), // OUT
-	.a(carry_7), // IN
-	.ci(icount_8)  // IN
+	.q /* OUT */ (count_8),
+	.co /* OUT */ (carry_8),
+	.a /* IN */ (carry_7),
+	.ci /* IN */ (icount_8)
 );
 hs1 count_from_4_to_9_inst_5
 (
-	.q(count_9), // OUT
-	.co(carry_9), // OUT
-	.a(carry_8), // IN
-	.ci(icount_9)  // IN
+	.q /* OUT */ (count_9),
+	.co /* OUT */ (carry_9),
+	.a /* IN */ (carry_8),
+	.ci /* IN */ (icount_9)
 );
 
 // INNER.NET (637) - count[10] : en
@@ -568,33 +600,33 @@ assign cla10 = carry_3 | icount_4 | icount_5 | icount_6 | icount_7 | icount_8 | 
 // INNER.NET (639) - count[11] : hs1
 hs1 count_index_11_inst
 (
-	.q(count_11), // OUT
-	.co(carry_11), // OUT
-	.a(cla10), // IN
-	.ci(icount_11)  // IN
+	.q /* OUT */ (count_11),
+	.co /* OUT */ (carry_11),
+	.a /* IN */ (cla10),
+	.ci /* IN */ (icount_11)
 );
 
 // INNER.NET (640) - count[12-14] : hs1
 hs1 count_from_12_to_14_inst_0
 (
-	.q(count_12), // OUT
-	.co(carry_12), // OUT
-	.a(carry_11), // IN
-	.ci(icount_12)  // IN
+	.q /* OUT */ (count_12),
+	.co /* OUT */ (carry_12),
+	.a /* IN */ (carry_11),
+	.ci /* IN */ (icount_12)
 );
 hs1 count_from_12_to_14_inst_1
 (
-	.q(count_13), // OUT
-	.co(carry_13), // OUT
-	.a(carry_12), // IN
-	.ci(icount_13)  // IN
+	.q /* OUT */ (count_13),
+	.co /* OUT */ (carry_13),
+	.a /* IN */ (carry_12),
+	.ci /* IN */ (icount_13)
 );
 hs1 count_from_12_to_14_inst_2
 (
-	.q(count_14), // OUT
-	.co(carry_14), // OUT
-	.a(carry_13), // IN
-	.ci(icount_14)  // IN
+	.q /* OUT */ (count_14),
+	.co /* OUT */ (carry_14),
+	.a /* IN */ (carry_13),
+	.ci /* IN */ (icount_14)
 );
 
 // INNER.NET (642) - count[15] : en
@@ -603,9 +635,9 @@ assign count_15 = ~(carry_14 ^ icount_15);
 // INNER.NET (647) - cntlden : fd1q
 fd1q cntlden_inst
 (
-	.q(cntlden), // OUT
-	.d(countld), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (cntlden),
+	.d /* IN */ (countld),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (648) - cntisel[1] : or2u
@@ -614,171 +646,171 @@ assign cntisel_1 = ireload | cntlden;
 // INNER.NET (649) - cnti[0-15] : mx4
 mx4 cnti_from_0_to_15_inst_0
 (
-	.z(cnti_0), // OUT
-	.a0(icount_0_obuf), // IN
-	.a1(count_0), // IN
-	.a2(cntval[0]), // IN
-	.a3(cntval[0]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_0),
+	.a0 /* IN */ (icount_0_obuf),
+	.a1 /* IN */ (count_0),
+	.a2 /* IN */ (cntval[0]),
+	.a3 /* IN */ (cntval[0]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_1
 (
-	.z(cnti_1), // OUT
-	.a0(icount_1_obuf), // IN
-	.a1(count_1), // IN
-	.a2(cntval[1]), // IN
-	.a3(cntval[1]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_1),
+	.a0 /* IN */ (icount_1_obuf),
+	.a1 /* IN */ (count_1),
+	.a2 /* IN */ (cntval[1]),
+	.a3 /* IN */ (cntval[1]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_2
 (
-	.z(cnti_2), // OUT
-	.a0(icount_2_obuf), // IN
-	.a1(count_2), // IN
-	.a2(cntval[2]), // IN
-	.a3(cntval[2]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_2),
+	.a0 /* IN */ (icount_2_obuf),
+	.a1 /* IN */ (count_2),
+	.a2 /* IN */ (cntval[2]),
+	.a3 /* IN */ (cntval[2]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_3
 (
-	.z(cnti_3), // OUT
-	.a0(icount_3), // IN
-	.a1(count_3), // IN
-	.a2(cntval[3]), // IN
-	.a3(cntval[3]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_3),
+	.a0 /* IN */ (icount_3),
+	.a1 /* IN */ (count_3),
+	.a2 /* IN */ (cntval[3]),
+	.a3 /* IN */ (cntval[3]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_4
 (
-	.z(cnti_4), // OUT
-	.a0(icount_4), // IN
-	.a1(count_4), // IN
-	.a2(cntval[4]), // IN
-	.a3(cntval[4]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_4),
+	.a0 /* IN */ (icount_4),
+	.a1 /* IN */ (count_4),
+	.a2 /* IN */ (cntval[4]),
+	.a3 /* IN */ (cntval[4]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_5
 (
-	.z(cnti_5), // OUT
-	.a0(icount_5), // IN
-	.a1(count_5), // IN
-	.a2(cntval[5]), // IN
-	.a3(cntval[5]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_5),
+	.a0 /* IN */ (icount_5),
+	.a1 /* IN */ (count_5),
+	.a2 /* IN */ (cntval[5]),
+	.a3 /* IN */ (cntval[5]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_6
 (
-	.z(cnti_6), // OUT
-	.a0(icount_6), // IN
-	.a1(count_6), // IN
-	.a2(cntval[6]), // IN
-	.a3(cntval[6]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_6),
+	.a0 /* IN */ (icount_6),
+	.a1 /* IN */ (count_6),
+	.a2 /* IN */ (cntval[6]),
+	.a3 /* IN */ (cntval[6]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_7
 (
-	.z(cnti_7), // OUT
-	.a0(icount_7), // IN
-	.a1(count_7), // IN
-	.a2(cntval[7]), // IN
-	.a3(cntval[7]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_7),
+	.a0 /* IN */ (icount_7),
+	.a1 /* IN */ (count_7),
+	.a2 /* IN */ (cntval[7]),
+	.a3 /* IN */ (cntval[7]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_8
 (
-	.z(cnti_8), // OUT
-	.a0(icount_8), // IN
-	.a1(count_8), // IN
-	.a2(cntval[8]), // IN
-	.a3(cntval[8]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_8),
+	.a0 /* IN */ (icount_8),
+	.a1 /* IN */ (count_8),
+	.a2 /* IN */ (cntval[8]),
+	.a3 /* IN */ (cntval[8]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_9
 (
-	.z(cnti_9), // OUT
-	.a0(icount_9), // IN
-	.a1(count_9), // IN
-	.a2(cntval[9]), // IN
-	.a3(cntval[9]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_9),
+	.a0 /* IN */ (icount_9),
+	.a1 /* IN */ (count_9),
+	.a2 /* IN */ (cntval[9]),
+	.a3 /* IN */ (cntval[9]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_10
 (
-	.z(cnti_10), // OUT
-	.a0(icount_10), // IN
-	.a1(count_10), // IN
-	.a2(cntval[10]), // IN
-	.a3(cntval[10]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_10),
+	.a0 /* IN */ (icount_10),
+	.a1 /* IN */ (count_10),
+	.a2 /* IN */ (cntval[10]),
+	.a3 /* IN */ (cntval[10]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_11
 (
-	.z(cnti_11), // OUT
-	.a0(icount_11), // IN
-	.a1(count_11), // IN
-	.a2(cntval[11]), // IN
-	.a3(cntval[11]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_11),
+	.a0 /* IN */ (icount_11),
+	.a1 /* IN */ (count_11),
+	.a2 /* IN */ (cntval[11]),
+	.a3 /* IN */ (cntval[11]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_12
 (
-	.z(cnti_12), // OUT
-	.a0(icount_12), // IN
-	.a1(count_12), // IN
-	.a2(cntval[12]), // IN
-	.a3(cntval[12]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_12),
+	.a0 /* IN */ (icount_12),
+	.a1 /* IN */ (count_12),
+	.a2 /* IN */ (cntval[12]),
+	.a3 /* IN */ (cntval[12]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_13
 (
-	.z(cnti_13), // OUT
-	.a0(icount_13), // IN
-	.a1(count_13), // IN
-	.a2(cntval[13]), // IN
-	.a3(cntval[13]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_13),
+	.a0 /* IN */ (icount_13),
+	.a1 /* IN */ (count_13),
+	.a2 /* IN */ (cntval[13]),
+	.a3 /* IN */ (cntval[13]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_14
 (
-	.z(cnti_14), // OUT
-	.a0(icount_14), // IN
-	.a1(count_14), // IN
-	.a2(cntval[14]), // IN
-	.a3(cntval[14]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_14),
+	.a0 /* IN */ (icount_14),
+	.a1 /* IN */ (count_14),
+	.a2 /* IN */ (cntval[14]),
+	.a3 /* IN */ (cntval[14]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 mx4 cnti_from_0_to_15_inst_15
 (
-	.z(cnti_15), // OUT
-	.a0(icount_15), // IN
-	.a1(count_15), // IN
-	.a2(cntval[15]), // IN
-	.a3(cntval[15]), // IN
-	.s0(icntena), // IN
-	.s1(cntisel_1)  // IN
+	.z /* OUT */ (cnti_15),
+	.a0 /* IN */ (icount_15),
+	.a1 /* IN */ (count_15),
+	.a2 /* IN */ (cntval[15]),
+	.a3 /* IN */ (cntval[15]),
+	.s0 /* IN */ (icntena),
+	.s1 /* IN */ (cntisel_1)
 );
 
 // INNER.NET (653) - icountt[0] : fd1q
 fd1q icountt_index_0_inst
 (
-	.q(icountt_0), // OUT
-	.d(cnti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icountt_0),
+	.d /* IN */ (cnti_0),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (654) - icount[0] : nivm
@@ -787,93 +819,93 @@ assign icount_0_obuf = icountt_0;
 // INNER.NET (655) - icount[1-15] : fd1qp
 fd1q icount_from_1_to_15_inst_0
 (
-	.q(icount_1_obuf), // OUT
-	.d(cnti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_1_obuf),
+	.d /* IN */ (cnti_1),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_1
 (
-	.q(icount_2_obuf), // OUT
-	.d(cnti_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_2_obuf),
+	.d /* IN */ (cnti_2),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_2
 (
-	.q(icount_3), // OUT
-	.d(cnti_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_3),
+	.d /* IN */ (cnti_3),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_3
 (
-	.q(icount_4), // OUT
-	.d(cnti_4), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_4),
+	.d /* IN */ (cnti_4),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_4
 (
-	.q(icount_5), // OUT
-	.d(cnti_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_5),
+	.d /* IN */ (cnti_5),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_5
 (
-	.q(icount_6), // OUT
-	.d(cnti_6), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_6),
+	.d /* IN */ (cnti_6),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_6
 (
-	.q(icount_7), // OUT
-	.d(cnti_7), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_7),
+	.d /* IN */ (cnti_7),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_7
 (
-	.q(icount_8), // OUT
-	.d(cnti_8), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_8),
+	.d /* IN */ (cnti_8),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_8
 (
-	.q(icount_9), // OUT
-	.d(cnti_9), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_9),
+	.d /* IN */ (cnti_9),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_9
 (
-	.q(icount_10), // OUT
-	.d(cnti_10), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_10),
+	.d /* IN */ (cnti_10),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_10
 (
-	.q(icount_11), // OUT
-	.d(cnti_11), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_11),
+	.d /* IN */ (cnti_11),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_11
 (
-	.q(icount_12), // OUT
-	.d(cnti_12), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_12),
+	.d /* IN */ (cnti_12),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_12
 (
-	.q(icount_13), // OUT
-	.d(cnti_13), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_13),
+	.d /* IN */ (cnti_13),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_13
 (
-	.q(icount_14), // OUT
-	.d(cnti_14), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_14),
+	.d /* IN */ (cnti_14),
+	.cp /* IN */ (clk)
 );
 fd1q icount_from_1_to_15_inst_14
 (
-	.q(icount_15), // OUT
-	.d(cnti_15), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (icount_15),
+	.d /* IN */ (cnti_15),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (664) - icount\[15] : iv
@@ -885,52 +917,68 @@ assign uflowt = count_15 & icount_n_15;
 // INNER.NET (666) - uflow : fdsync
 fdsync uflow_inst
 (
-	.q(underflow), // IO
-	.d(uflowt), // IN
-	.ld(icntena), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (underflow),
+	.d /* IN */ (uflowt),
+	.ld /* IN */ (icntena),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (668) - inner0t : nr16
 nr16 inner0t_inst
 (
-	.z(inner0t), // IO
-	.a_0(icount_0_obuf), // IN
-	.a_1(icount_1_obuf), // IN
-	.a_2(icount_2_obuf), // IN
-	.a_3(icount_3), // IN
-	.a_4(icount_4), // IN
-	.a_5(icount_5), // IN
-	.a_6(icount_6), // IN
-	.a_7(icount_7), // IN
-	.a_8(icount_8), // IN
-	.a_9(icount_9), // IN
-	.a_10(icount_10), // IN
-	.a_11(icount_11), // IN
-	.a_12(icount_12), // IN
-	.a_13(icount_13), // IN
-	.a_14(icount_14), // IN
-	.a_15(icount_15)  // IN
+	.z /* OUT */ (inner0t),
+	.a_0 /* IN */ (icount_0_obuf),
+	.a_1 /* IN */ (icount_1_obuf),
+	.a_2 /* IN */ (icount_2_obuf),
+	.a_3 /* IN */ (icount_3),
+	.a_4 /* IN */ (icount_4),
+	.a_5 /* IN */ (icount_5),
+	.a_6 /* IN */ (icount_6),
+	.a_7 /* IN */ (icount_7),
+	.a_8 /* IN */ (icount_8),
+	.a_9 /* IN */ (icount_9),
+	.a_10 /* IN */ (icount_10),
+	.a_11 /* IN */ (icount_11),
+	.a_12 /* IN */ (icount_12),
+	.a_13 /* IN */ (icount_13),
+	.a_14 /* IN */ (icount_14),
+	.a_15 /* IN */ (icount_15)
 );
 
 // INNER.NET (669) - inner0 : or2p
 assign inner0 = inner0t | underflow;
 
 // INNER.NET (673) - stat[16-31] : ts
-assign gpu_dout_16 = (statrd) ? icount_0_obuf : 1'bz;
-assign gpu_dout_17 = (statrd) ? icount_1_obuf : 1'bz;
-assign gpu_dout_18 = (statrd) ? icount_2_obuf : 1'bz;
-assign gpu_dout_19 = (statrd) ? icount_3 : 1'bz;
-assign gpu_dout_20 = (statrd) ? icount_4 : 1'bz;
-assign gpu_dout_21 = (statrd) ? icount_5 : 1'bz;
-assign gpu_dout_22 = (statrd) ? icount_6 : 1'bz;
-assign gpu_dout_23 = (statrd) ? icount_7 : 1'bz;
-assign gpu_dout_24 = (statrd) ? icount_8 : 1'bz;
-assign gpu_dout_25 = (statrd) ? icount_9 : 1'bz;
-assign gpu_dout_26 = (statrd) ? icount_10 : 1'bz;
-assign gpu_dout_27 = (statrd) ? icount_11 : 1'bz;
-assign gpu_dout_28 = (statrd) ? icount_12 : 1'bz;
-assign gpu_dout_29 = (statrd) ? icount_13 : 1'bz;
-assign gpu_dout_30 = (statrd) ? icount_14 : 1'bz;
-assign gpu_dout_31 = (statrd) ? icount_15 : 1'bz;
+assign gpu_dout_16_out = icount_0_obuf;
+assign gpu_dout_16_oe = statrd;
+assign gpu_dout_17_out = icount_1_obuf;
+assign gpu_dout_17_oe = statrd;
+assign gpu_dout_18_out = icount_2_obuf;
+assign gpu_dout_18_oe = statrd;
+assign gpu_dout_19_out = icount_3;
+assign gpu_dout_19_oe = statrd;
+assign gpu_dout_20_out = icount_4;
+assign gpu_dout_20_oe = statrd;
+assign gpu_dout_21_out = icount_5;
+assign gpu_dout_21_oe = statrd;
+assign gpu_dout_22_out = icount_6;
+assign gpu_dout_22_oe = statrd;
+assign gpu_dout_23_out = icount_7;
+assign gpu_dout_23_oe = statrd;
+assign gpu_dout_24_out = icount_8;
+assign gpu_dout_24_oe = statrd;
+assign gpu_dout_25_out = icount_9;
+assign gpu_dout_25_oe = statrd;
+assign gpu_dout_26_out = icount_10;
+assign gpu_dout_26_oe = statrd;
+assign gpu_dout_27_out = icount_11;
+assign gpu_dout_27_oe = statrd;
+assign gpu_dout_28_out = icount_12;
+assign gpu_dout_28_oe = statrd;
+assign gpu_dout_29_out = icount_13;
+assign gpu_dout_29_oe = statrd;
+assign gpu_dout_30_out = icount_14;
+assign gpu_dout_30_oe = statrd;
+assign gpu_dout_31_out = icount_15;
+assign gpu_dout_31_oe = statrd;
 endmodule

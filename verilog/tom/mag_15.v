@@ -61,77 +61,77 @@ assign one = 1'b1;
 // DUPLO.NET (403) - mag0 : mag_4
 mag_4 mag0_inst
 (
-	.gto(gt_0), // OUT
-	.eqo(eq_0), // OUT
-	.lto(lt_0), // OUT
-	.gti(zeroa), // IN
-	.eqi(one), // IN
-	.lti(zerob), // IN
-	.a_0(a_0), // IN
-	.a_1(a_1), // IN
-	.a_2(a_2), // IN
-	.a_3(a_3), // IN
-	.b_0(b_0), // IN
-	.b_1(b_1), // IN
-	.b_2(b_2), // IN
-	.b_3(b_3)  // IN
+	.gto /* OUT */ (gt_0),
+	.eqo /* OUT */ (eq_0),
+	.lto /* OUT */ (lt_0),
+	.gti /* IN */ (zeroa),
+	.eqi /* IN */ (one),
+	.lti /* IN */ (zerob),
+	.a_0 /* IN */ (a_0),
+	.a_1 /* IN */ (a_1),
+	.a_2 /* IN */ (a_2),
+	.a_3 /* IN */ (a_3),
+	.b_0 /* IN */ (b_0),
+	.b_1 /* IN */ (b_1),
+	.b_2 /* IN */ (b_2),
+	.b_3 /* IN */ (b_3)
 );
 
 // DUPLO.NET (405) - mag1 : mag_4
 mag_4 mag1_inst
 (
-	.gto(gt_1), // OUT
-	.eqo(eq_1), // OUT
-	.lto(lt_1), // OUT
-	.gti(a_4), // IN
-	.eqi(zerob), // IN
-	.lti(b_4), // IN
-	.a_0(a_5), // IN
-	.a_1(a_6), // IN
-	.a_2(a_7), // IN
-	.a_3(a_8), // IN
-	.b_0(b_5), // IN
-	.b_1(b_6), // IN
-	.b_2(b_7), // IN
-	.b_3(b_8)  // IN
+	.gto /* OUT */ (gt_1),
+	.eqo /* OUT */ (eq_1),
+	.lto /* OUT */ (lt_1),
+	.gti /* IN */ (a_4),
+	.eqi /* IN */ (zerob),
+	.lti /* IN */ (b_4),
+	.a_0 /* IN */ (a_5),
+	.a_1 /* IN */ (a_6),
+	.a_2 /* IN */ (a_7),
+	.a_3 /* IN */ (a_8),
+	.b_0 /* IN */ (b_5),
+	.b_1 /* IN */ (b_6),
+	.b_2 /* IN */ (b_7),
+	.b_3 /* IN */ (b_8)
 );
 
 // DUPLO.NET (407) - mag2 : mag_4
 mag_4 mag2_inst
 (
-	.gto(gt_2), // OUT
-	.eqo(eq_2), // OUT
-	.lto(lt_2), // OUT
-	.gti(a_9), // IN
-	.eqi(zerob), // IN
-	.lti(b_9), // IN
-	.a_0(a_10), // IN
-	.a_1(a_11), // IN
-	.a_2(a_12), // IN
-	.a_3(a_13), // IN
-	.b_0(b_10), // IN
-	.b_1(b_11), // IN
-	.b_2(b_12), // IN
-	.b_3(b_13)  // IN
+	.gto /* OUT */ (gt_2),
+	.eqo /* OUT */ (eq_2),
+	.lto /* OUT */ (lt_2),
+	.gti /* IN */ (a_9),
+	.eqi /* IN */ (zerob),
+	.lti /* IN */ (b_9),
+	.a_0 /* IN */ (a_10),
+	.a_1 /* IN */ (a_11),
+	.a_2 /* IN */ (a_12),
+	.a_3 /* IN */ (a_13),
+	.b_0 /* IN */ (b_10),
+	.b_1 /* IN */ (b_11),
+	.b_2 /* IN */ (b_12),
+	.b_3 /* IN */ (b_13)
 );
 
 // DUPLO.NET (409) - mag3 : mag_4
 mag_4 mag3_inst
 (
-	.gto(gt), // OUT
-	.eqo(eq), // OUT
-	.lto(lt), // OUT
-	.gti(gt_0), // IN
-	.eqi(eq_0), // IN
-	.lti(lt_0), // IN
-	.a_0(gt_1), // IN
-	.a_1(gt_2), // IN
-	.a_2(a_14), // IN
-	.a_3(zerob), // IN
-	.b_0(lt_1), // IN
-	.b_1(lt_2), // IN
-	.b_2(b_14), // IN
-	.b_3(zerob)  // IN
+	.gto /* OUT */ (gt),
+	.eqo /* OUT */ (eq),
+	.lto /* OUT */ (lt),
+	.gti /* IN */ (gt_0),
+	.eqi /* IN */ (eq_0),
+	.lti /* IN */ (lt_0),
+	.a_0 /* IN */ (gt_1),
+	.a_1 /* IN */ (gt_2),
+	.a_2 /* IN */ (a_14),
+	.a_3 /* IN */ (zerob),
+	.b_0 /* IN */ (lt_1),
+	.b_1 /* IN */ (lt_2),
+	.b_2 /* IN */ (b_14),
+	.b_3 /* IN */ (zerob)
 );
 
 // DUPLO.NET (412) - dummy[1-2] : dummy

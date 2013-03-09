@@ -2,14 +2,14 @@
 
 module daddbmux
 (
-	output[0:15] addb_0;
-	output[0:15] addb_1;
-	output[0:15] addb_2;
-	output[0:15] addb_3;
-	input[0:31] srcdlo;
-	input[0:31] srcdhi;
-	input[0:31] iinc;
-	input[0:31] zinc;
+	output [0:15] addb_0;
+	output [0:15] addb_1;
+	output [0:15] addb_2;
+	output [0:15] addb_3;
+	input [0:31] srcdlo;
+	input [0:31] srcdhi;
+	input [0:31] iinc;
+	input [0:31] zinc;
 	input daddbsel_0,
 	input daddbsel_1,
 	input daddbsel_2
@@ -109,163 +109,163 @@ assign dsel1b = daddbsel_1;
 // DATAMUX.NET (85) - word : mx4p
 mx4 word_inst_0
 (
-	.z(word[0]), // OUT
-	.a0(iinclo[0]), // IN
-	.a1(iinchi[0]), // IN
-	.a2(zinclo[0]), // IN
-	.a3(zinchi[0]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[0]),
+	.a0 /* IN */ (iinclo[0]),
+	.a1 /* IN */ (iinchi[0]),
+	.a2 /* IN */ (zinclo[0]),
+	.a3 /* IN */ (zinchi[0]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_1
 (
-	.z(word[1]), // OUT
-	.a0(iinclo[1]), // IN
-	.a1(iinchi[1]), // IN
-	.a2(zinclo[1]), // IN
-	.a3(zinchi[1]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[1]),
+	.a0 /* IN */ (iinclo[1]),
+	.a1 /* IN */ (iinchi[1]),
+	.a2 /* IN */ (zinclo[1]),
+	.a3 /* IN */ (zinchi[1]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_2
 (
-	.z(word[2]), // OUT
-	.a0(iinclo[2]), // IN
-	.a1(iinchi[2]), // IN
-	.a2(zinclo[2]), // IN
-	.a3(zinchi[2]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[2]),
+	.a0 /* IN */ (iinclo[2]),
+	.a1 /* IN */ (iinchi[2]),
+	.a2 /* IN */ (zinclo[2]),
+	.a3 /* IN */ (zinchi[2]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_3
 (
-	.z(word[3]), // OUT
-	.a0(iinclo[3]), // IN
-	.a1(iinchi[3]), // IN
-	.a2(zinclo[3]), // IN
-	.a3(zinchi[3]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[3]),
+	.a0 /* IN */ (iinclo[3]),
+	.a1 /* IN */ (iinchi[3]),
+	.a2 /* IN */ (zinclo[3]),
+	.a3 /* IN */ (zinchi[3]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_4
 (
-	.z(word[4]), // OUT
-	.a0(iinclo[4]), // IN
-	.a1(iinchi[4]), // IN
-	.a2(zinclo[4]), // IN
-	.a3(zinchi[4]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[4]),
+	.a0 /* IN */ (iinclo[4]),
+	.a1 /* IN */ (iinchi[4]),
+	.a2 /* IN */ (zinclo[4]),
+	.a3 /* IN */ (zinchi[4]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_5
 (
-	.z(word[5]), // OUT
-	.a0(iinclo[5]), // IN
-	.a1(iinchi[5]), // IN
-	.a2(zinclo[5]), // IN
-	.a3(zinchi[5]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[5]),
+	.a0 /* IN */ (iinclo[5]),
+	.a1 /* IN */ (iinchi[5]),
+	.a2 /* IN */ (zinclo[5]),
+	.a3 /* IN */ (zinchi[5]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_6
 (
-	.z(word[6]), // OUT
-	.a0(iinclo[6]), // IN
-	.a1(iinchi[6]), // IN
-	.a2(zinclo[6]), // IN
-	.a3(zinchi[6]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[6]),
+	.a0 /* IN */ (iinclo[6]),
+	.a1 /* IN */ (iinchi[6]),
+	.a2 /* IN */ (zinclo[6]),
+	.a3 /* IN */ (zinchi[6]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_7
 (
-	.z(word[7]), // OUT
-	.a0(iinclo[7]), // IN
-	.a1(iinchi[7]), // IN
-	.a2(zinclo[7]), // IN
-	.a3(zinchi[7]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[7]),
+	.a0 /* IN */ (iinclo[7]),
+	.a1 /* IN */ (iinchi[7]),
+	.a2 /* IN */ (zinclo[7]),
+	.a3 /* IN */ (zinchi[7]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_8
 (
-	.z(word[8]), // OUT
-	.a0(iinclo[8]), // IN
-	.a1(iinchi[8]), // IN
-	.a2(zinclo[8]), // IN
-	.a3(zinchi[8]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[8]),
+	.a0 /* IN */ (iinclo[8]),
+	.a1 /* IN */ (iinchi[8]),
+	.a2 /* IN */ (zinclo[8]),
+	.a3 /* IN */ (zinchi[8]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_9
 (
-	.z(word[9]), // OUT
-	.a0(iinclo[9]), // IN
-	.a1(iinchi[9]), // IN
-	.a2(zinclo[9]), // IN
-	.a3(zinchi[9]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[9]),
+	.a0 /* IN */ (iinclo[9]),
+	.a1 /* IN */ (iinchi[9]),
+	.a2 /* IN */ (zinclo[9]),
+	.a3 /* IN */ (zinchi[9]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_10
 (
-	.z(word[10]), // OUT
-	.a0(iinclo[10]), // IN
-	.a1(iinchi[10]), // IN
-	.a2(zinclo[10]), // IN
-	.a3(zinchi[10]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[10]),
+	.a0 /* IN */ (iinclo[10]),
+	.a1 /* IN */ (iinchi[10]),
+	.a2 /* IN */ (zinclo[10]),
+	.a3 /* IN */ (zinchi[10]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_11
 (
-	.z(word[11]), // OUT
-	.a0(iinclo[11]), // IN
-	.a1(iinchi[11]), // IN
-	.a2(zinclo[11]), // IN
-	.a3(zinchi[11]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[11]),
+	.a0 /* IN */ (iinclo[11]),
+	.a1 /* IN */ (iinchi[11]),
+	.a2 /* IN */ (zinclo[11]),
+	.a3 /* IN */ (zinchi[11]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_12
 (
-	.z(word[12]), // OUT
-	.a0(iinclo[12]), // IN
-	.a1(iinchi[12]), // IN
-	.a2(zinclo[12]), // IN
-	.a3(zinchi[12]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[12]),
+	.a0 /* IN */ (iinclo[12]),
+	.a1 /* IN */ (iinchi[12]),
+	.a2 /* IN */ (zinclo[12]),
+	.a3 /* IN */ (zinchi[12]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_13
 (
-	.z(word[13]), // OUT
-	.a0(iinclo[13]), // IN
-	.a1(iinchi[13]), // IN
-	.a2(zinclo[13]), // IN
-	.a3(zinchi[13]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[13]),
+	.a0 /* IN */ (iinclo[13]),
+	.a1 /* IN */ (iinchi[13]),
+	.a2 /* IN */ (zinclo[13]),
+	.a3 /* IN */ (zinchi[13]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_14
 (
-	.z(word[14]), // OUT
-	.a0(iinclo[14]), // IN
-	.a1(iinchi[14]), // IN
-	.a2(zinclo[14]), // IN
-	.a3(zinchi[14]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[14]),
+	.a0 /* IN */ (iinclo[14]),
+	.a1 /* IN */ (iinchi[14]),
+	.a2 /* IN */ (zinclo[14]),
+	.a3 /* IN */ (zinchi[14]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 mx4 word_inst_15
 (
-	.z(word[15]), // OUT
-	.a0(iinclo[15]), // IN
-	.a1(iinchi[15]), // IN
-	.a2(zinclo[15]), // IN
-	.a3(zinchi[15]), // IN
-	.s0(dsel0b), // IN
-	.s1(dsel1b)  // IN
+	.z /* OUT */ (word[15]),
+	.a0 /* IN */ (iinclo[15]),
+	.a1 /* IN */ (iinchi[15]),
+	.a2 /* IN */ (zinclo[15]),
+	.a3 /* IN */ (zinchi[15]),
+	.s0 /* IN */ (dsel0b),
+	.s1 /* IN */ (dsel1b)
 );
 
 // DATAMUX.NET (88) - srcdw0 : join
@@ -347,456 +347,456 @@ assign dsel2b_1 = daddbsel_2;
 // DATAMUX.NET (95) - addb[0] : mx2p
 mx2 addb_index_0_inst_0
 (
-	.z(addb_0[0]), // OUT
-	.a0(srcdw_0[0]), // IN
-	.a1(word[0]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[0]),
+	.a0 /* IN */ (srcdw_0[0]),
+	.a1 /* IN */ (word[0]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_1
 (
-	.z(addb_0[1]), // OUT
-	.a0(srcdw_0[1]), // IN
-	.a1(word[1]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[1]),
+	.a0 /* IN */ (srcdw_0[1]),
+	.a1 /* IN */ (word[1]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_2
 (
-	.z(addb_0[2]), // OUT
-	.a0(srcdw_0[2]), // IN
-	.a1(word[2]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[2]),
+	.a0 /* IN */ (srcdw_0[2]),
+	.a1 /* IN */ (word[2]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_3
 (
-	.z(addb_0[3]), // OUT
-	.a0(srcdw_0[3]), // IN
-	.a1(word[3]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[3]),
+	.a0 /* IN */ (srcdw_0[3]),
+	.a1 /* IN */ (word[3]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_4
 (
-	.z(addb_0[4]), // OUT
-	.a0(srcdw_0[4]), // IN
-	.a1(word[4]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[4]),
+	.a0 /* IN */ (srcdw_0[4]),
+	.a1 /* IN */ (word[4]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_5
 (
-	.z(addb_0[5]), // OUT
-	.a0(srcdw_0[5]), // IN
-	.a1(word[5]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[5]),
+	.a0 /* IN */ (srcdw_0[5]),
+	.a1 /* IN */ (word[5]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_6
 (
-	.z(addb_0[6]), // OUT
-	.a0(srcdw_0[6]), // IN
-	.a1(word[6]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[6]),
+	.a0 /* IN */ (srcdw_0[6]),
+	.a1 /* IN */ (word[6]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_7
 (
-	.z(addb_0[7]), // OUT
-	.a0(srcdw_0[7]), // IN
-	.a1(word[7]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[7]),
+	.a0 /* IN */ (srcdw_0[7]),
+	.a1 /* IN */ (word[7]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_8
 (
-	.z(addb_0[8]), // OUT
-	.a0(srcdw_0[8]), // IN
-	.a1(word[8]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[8]),
+	.a0 /* IN */ (srcdw_0[8]),
+	.a1 /* IN */ (word[8]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_9
 (
-	.z(addb_0[9]), // OUT
-	.a0(srcdw_0[9]), // IN
-	.a1(word[9]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[9]),
+	.a0 /* IN */ (srcdw_0[9]),
+	.a1 /* IN */ (word[9]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_10
 (
-	.z(addb_0[10]), // OUT
-	.a0(srcdw_0[10]), // IN
-	.a1(word[10]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[10]),
+	.a0 /* IN */ (srcdw_0[10]),
+	.a1 /* IN */ (word[10]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_11
 (
-	.z(addb_0[11]), // OUT
-	.a0(srcdw_0[11]), // IN
-	.a1(word[11]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[11]),
+	.a0 /* IN */ (srcdw_0[11]),
+	.a1 /* IN */ (word[11]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_12
 (
-	.z(addb_0[12]), // OUT
-	.a0(srcdw_0[12]), // IN
-	.a1(word[12]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[12]),
+	.a0 /* IN */ (srcdw_0[12]),
+	.a1 /* IN */ (word[12]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_13
 (
-	.z(addb_0[13]), // OUT
-	.a0(srcdw_0[13]), // IN
-	.a1(word[13]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[13]),
+	.a0 /* IN */ (srcdw_0[13]),
+	.a1 /* IN */ (word[13]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_14
 (
-	.z(addb_0[14]), // OUT
-	.a0(srcdw_0[14]), // IN
-	.a1(word[14]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[14]),
+	.a0 /* IN */ (srcdw_0[14]),
+	.a1 /* IN */ (word[14]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_0_inst_15
 (
-	.z(addb_0[15]), // OUT
-	.a0(srcdw_0[15]), // IN
-	.a1(word[15]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_0[15]),
+	.a0 /* IN */ (srcdw_0[15]),
+	.a1 /* IN */ (word[15]),
+	.s /* IN */ (dsel2b_0)
 );
 
 // DATAMUX.NET (96) - addb[1] : mx2p
 mx2 addb_index_1_inst_0
 (
-	.z(addb_1[0]), // OUT
-	.a0(srcdw_1[0]), // IN
-	.a1(word[0]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[0]),
+	.a0 /* IN */ (srcdw_1[0]),
+	.a1 /* IN */ (word[0]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_1
 (
-	.z(addb_1[1]), // OUT
-	.a0(srcdw_1[1]), // IN
-	.a1(word[1]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[1]),
+	.a0 /* IN */ (srcdw_1[1]),
+	.a1 /* IN */ (word[1]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_2
 (
-	.z(addb_1[2]), // OUT
-	.a0(srcdw_1[2]), // IN
-	.a1(word[2]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[2]),
+	.a0 /* IN */ (srcdw_1[2]),
+	.a1 /* IN */ (word[2]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_3
 (
-	.z(addb_1[3]), // OUT
-	.a0(srcdw_1[3]), // IN
-	.a1(word[3]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[3]),
+	.a0 /* IN */ (srcdw_1[3]),
+	.a1 /* IN */ (word[3]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_4
 (
-	.z(addb_1[4]), // OUT
-	.a0(srcdw_1[4]), // IN
-	.a1(word[4]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[4]),
+	.a0 /* IN */ (srcdw_1[4]),
+	.a1 /* IN */ (word[4]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_5
 (
-	.z(addb_1[5]), // OUT
-	.a0(srcdw_1[5]), // IN
-	.a1(word[5]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[5]),
+	.a0 /* IN */ (srcdw_1[5]),
+	.a1 /* IN */ (word[5]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_6
 (
-	.z(addb_1[6]), // OUT
-	.a0(srcdw_1[6]), // IN
-	.a1(word[6]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[6]),
+	.a0 /* IN */ (srcdw_1[6]),
+	.a1 /* IN */ (word[6]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_7
 (
-	.z(addb_1[7]), // OUT
-	.a0(srcdw_1[7]), // IN
-	.a1(word[7]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[7]),
+	.a0 /* IN */ (srcdw_1[7]),
+	.a1 /* IN */ (word[7]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_8
 (
-	.z(addb_1[8]), // OUT
-	.a0(srcdw_1[8]), // IN
-	.a1(word[8]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[8]),
+	.a0 /* IN */ (srcdw_1[8]),
+	.a1 /* IN */ (word[8]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_9
 (
-	.z(addb_1[9]), // OUT
-	.a0(srcdw_1[9]), // IN
-	.a1(word[9]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[9]),
+	.a0 /* IN */ (srcdw_1[9]),
+	.a1 /* IN */ (word[9]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_10
 (
-	.z(addb_1[10]), // OUT
-	.a0(srcdw_1[10]), // IN
-	.a1(word[10]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[10]),
+	.a0 /* IN */ (srcdw_1[10]),
+	.a1 /* IN */ (word[10]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_11
 (
-	.z(addb_1[11]), // OUT
-	.a0(srcdw_1[11]), // IN
-	.a1(word[11]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[11]),
+	.a0 /* IN */ (srcdw_1[11]),
+	.a1 /* IN */ (word[11]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_12
 (
-	.z(addb_1[12]), // OUT
-	.a0(srcdw_1[12]), // IN
-	.a1(word[12]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[12]),
+	.a0 /* IN */ (srcdw_1[12]),
+	.a1 /* IN */ (word[12]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_13
 (
-	.z(addb_1[13]), // OUT
-	.a0(srcdw_1[13]), // IN
-	.a1(word[13]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[13]),
+	.a0 /* IN */ (srcdw_1[13]),
+	.a1 /* IN */ (word[13]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_14
 (
-	.z(addb_1[14]), // OUT
-	.a0(srcdw_1[14]), // IN
-	.a1(word[14]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[14]),
+	.a0 /* IN */ (srcdw_1[14]),
+	.a1 /* IN */ (word[14]),
+	.s /* IN */ (dsel2b_0)
 );
 mx2 addb_index_1_inst_15
 (
-	.z(addb_1[15]), // OUT
-	.a0(srcdw_1[15]), // IN
-	.a1(word[15]), // IN
-	.s(dsel2b_0)  // IN
+	.z /* OUT */ (addb_1[15]),
+	.a0 /* IN */ (srcdw_1[15]),
+	.a1 /* IN */ (word[15]),
+	.s /* IN */ (dsel2b_0)
 );
 
 // DATAMUX.NET (97) - addb[2] : mx2p
 mx2 addb_index_2_inst_0
 (
-	.z(addb_2[0]), // OUT
-	.a0(srcdw_2[0]), // IN
-	.a1(word[0]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[0]),
+	.a0 /* IN */ (srcdw_2[0]),
+	.a1 /* IN */ (word[0]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_1
 (
-	.z(addb_2[1]), // OUT
-	.a0(srcdw_2[1]), // IN
-	.a1(word[1]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[1]),
+	.a0 /* IN */ (srcdw_2[1]),
+	.a1 /* IN */ (word[1]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_2
 (
-	.z(addb_2[2]), // OUT
-	.a0(srcdw_2[2]), // IN
-	.a1(word[2]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[2]),
+	.a0 /* IN */ (srcdw_2[2]),
+	.a1 /* IN */ (word[2]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_3
 (
-	.z(addb_2[3]), // OUT
-	.a0(srcdw_2[3]), // IN
-	.a1(word[3]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[3]),
+	.a0 /* IN */ (srcdw_2[3]),
+	.a1 /* IN */ (word[3]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_4
 (
-	.z(addb_2[4]), // OUT
-	.a0(srcdw_2[4]), // IN
-	.a1(word[4]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[4]),
+	.a0 /* IN */ (srcdw_2[4]),
+	.a1 /* IN */ (word[4]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_5
 (
-	.z(addb_2[5]), // OUT
-	.a0(srcdw_2[5]), // IN
-	.a1(word[5]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[5]),
+	.a0 /* IN */ (srcdw_2[5]),
+	.a1 /* IN */ (word[5]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_6
 (
-	.z(addb_2[6]), // OUT
-	.a0(srcdw_2[6]), // IN
-	.a1(word[6]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[6]),
+	.a0 /* IN */ (srcdw_2[6]),
+	.a1 /* IN */ (word[6]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_7
 (
-	.z(addb_2[7]), // OUT
-	.a0(srcdw_2[7]), // IN
-	.a1(word[7]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[7]),
+	.a0 /* IN */ (srcdw_2[7]),
+	.a1 /* IN */ (word[7]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_8
 (
-	.z(addb_2[8]), // OUT
-	.a0(srcdw_2[8]), // IN
-	.a1(word[8]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[8]),
+	.a0 /* IN */ (srcdw_2[8]),
+	.a1 /* IN */ (word[8]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_9
 (
-	.z(addb_2[9]), // OUT
-	.a0(srcdw_2[9]), // IN
-	.a1(word[9]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[9]),
+	.a0 /* IN */ (srcdw_2[9]),
+	.a1 /* IN */ (word[9]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_10
 (
-	.z(addb_2[10]), // OUT
-	.a0(srcdw_2[10]), // IN
-	.a1(word[10]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[10]),
+	.a0 /* IN */ (srcdw_2[10]),
+	.a1 /* IN */ (word[10]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_11
 (
-	.z(addb_2[11]), // OUT
-	.a0(srcdw_2[11]), // IN
-	.a1(word[11]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[11]),
+	.a0 /* IN */ (srcdw_2[11]),
+	.a1 /* IN */ (word[11]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_12
 (
-	.z(addb_2[12]), // OUT
-	.a0(srcdw_2[12]), // IN
-	.a1(word[12]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[12]),
+	.a0 /* IN */ (srcdw_2[12]),
+	.a1 /* IN */ (word[12]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_13
 (
-	.z(addb_2[13]), // OUT
-	.a0(srcdw_2[13]), // IN
-	.a1(word[13]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[13]),
+	.a0 /* IN */ (srcdw_2[13]),
+	.a1 /* IN */ (word[13]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_14
 (
-	.z(addb_2[14]), // OUT
-	.a0(srcdw_2[14]), // IN
-	.a1(word[14]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[14]),
+	.a0 /* IN */ (srcdw_2[14]),
+	.a1 /* IN */ (word[14]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_2_inst_15
 (
-	.z(addb_2[15]), // OUT
-	.a0(srcdw_2[15]), // IN
-	.a1(word[15]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_2[15]),
+	.a0 /* IN */ (srcdw_2[15]),
+	.a1 /* IN */ (word[15]),
+	.s /* IN */ (dsel2b_1)
 );
 
 // DATAMUX.NET (98) - addb[3] : mx2p
 mx2 addb_index_3_inst_0
 (
-	.z(addb_3[0]), // OUT
-	.a0(srcdw_3[0]), // IN
-	.a1(word[0]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[0]),
+	.a0 /* IN */ (srcdw_3[0]),
+	.a1 /* IN */ (word[0]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_1
 (
-	.z(addb_3[1]), // OUT
-	.a0(srcdw_3[1]), // IN
-	.a1(word[1]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[1]),
+	.a0 /* IN */ (srcdw_3[1]),
+	.a1 /* IN */ (word[1]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_2
 (
-	.z(addb_3[2]), // OUT
-	.a0(srcdw_3[2]), // IN
-	.a1(word[2]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[2]),
+	.a0 /* IN */ (srcdw_3[2]),
+	.a1 /* IN */ (word[2]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_3
 (
-	.z(addb_3[3]), // OUT
-	.a0(srcdw_3[3]), // IN
-	.a1(word[3]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[3]),
+	.a0 /* IN */ (srcdw_3[3]),
+	.a1 /* IN */ (word[3]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_4
 (
-	.z(addb_3[4]), // OUT
-	.a0(srcdw_3[4]), // IN
-	.a1(word[4]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[4]),
+	.a0 /* IN */ (srcdw_3[4]),
+	.a1 /* IN */ (word[4]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_5
 (
-	.z(addb_3[5]), // OUT
-	.a0(srcdw_3[5]), // IN
-	.a1(word[5]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[5]),
+	.a0 /* IN */ (srcdw_3[5]),
+	.a1 /* IN */ (word[5]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_6
 (
-	.z(addb_3[6]), // OUT
-	.a0(srcdw_3[6]), // IN
-	.a1(word[6]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[6]),
+	.a0 /* IN */ (srcdw_3[6]),
+	.a1 /* IN */ (word[6]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_7
 (
-	.z(addb_3[7]), // OUT
-	.a0(srcdw_3[7]), // IN
-	.a1(word[7]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[7]),
+	.a0 /* IN */ (srcdw_3[7]),
+	.a1 /* IN */ (word[7]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_8
 (
-	.z(addb_3[8]), // OUT
-	.a0(srcdw_3[8]), // IN
-	.a1(word[8]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[8]),
+	.a0 /* IN */ (srcdw_3[8]),
+	.a1 /* IN */ (word[8]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_9
 (
-	.z(addb_3[9]), // OUT
-	.a0(srcdw_3[9]), // IN
-	.a1(word[9]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[9]),
+	.a0 /* IN */ (srcdw_3[9]),
+	.a1 /* IN */ (word[9]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_10
 (
-	.z(addb_3[10]), // OUT
-	.a0(srcdw_3[10]), // IN
-	.a1(word[10]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[10]),
+	.a0 /* IN */ (srcdw_3[10]),
+	.a1 /* IN */ (word[10]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_11
 (
-	.z(addb_3[11]), // OUT
-	.a0(srcdw_3[11]), // IN
-	.a1(word[11]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[11]),
+	.a0 /* IN */ (srcdw_3[11]),
+	.a1 /* IN */ (word[11]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_12
 (
-	.z(addb_3[12]), // OUT
-	.a0(srcdw_3[12]), // IN
-	.a1(word[12]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[12]),
+	.a0 /* IN */ (srcdw_3[12]),
+	.a1 /* IN */ (word[12]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_13
 (
-	.z(addb_3[13]), // OUT
-	.a0(srcdw_3[13]), // IN
-	.a1(word[13]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[13]),
+	.a0 /* IN */ (srcdw_3[13]),
+	.a1 /* IN */ (word[13]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_14
 (
-	.z(addb_3[14]), // OUT
-	.a0(srcdw_3[14]), // IN
-	.a1(word[14]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[14]),
+	.a0 /* IN */ (srcdw_3[14]),
+	.a1 /* IN */ (word[14]),
+	.s /* IN */ (dsel2b_1)
 );
 mx2 addb_index_3_inst_15
 (
-	.z(addb_3[15]), // OUT
-	.a0(srcdw_3[15]), // IN
-	.a1(word[15]), // IN
-	.s(dsel2b_1)  // IN
+	.z /* OUT */ (addb_3[15]),
+	.a0 /* IN */ (srcdw_3[15]),
+	.a1 /* IN */ (word[15]),
+	.s /* IN */ (dsel2b_1)
 );
 endmodule

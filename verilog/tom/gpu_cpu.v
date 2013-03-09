@@ -2,9 +2,11 @@
 
 module gpu_cpu
 (
-	inout[0:15] dread;
-	output[0:12] cpuaddr;
-	output[0:31] cpudata;
+	output [0:15] dread_out;
+	output [0:15] dread_oe;
+	input [0:15] dread_in;
+	output [0:12] cpuaddr;
+	output [0:31] cpudata;
 	output ioreq,
 	input at_1,
 	input a_15,
@@ -44,10 +46,10 @@ module gpu_cpu
 	input dwrite_29,
 	input dwrite_30,
 	input dwrite_31,
-	input[0:15] io_addr;
+	input [0:15] io_addr;
 	input iord,
 	input iowr,
-	input[0:31] mem_data;
+	input [0:31] mem_data;
 	input reset_n
 );
 wire [0:15] cpudlo;
@@ -171,18 +173,18 @@ assign at_n_1 = ~at_1;
 // GPU_CPU.NET (60) - at[15] : mx2
 mx2 at_index_15_inst
 (
-	.z(at_15), // OUT
-	.a0(atl_15), // IN
-	.a1(a_15), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_15),
+	.a0 /* IN */ (atl_15),
+	.a1 /* IN */ (a_15),
+	.s /* IN */ (ack)
 );
 
 // GPU_CPU.NET (61) - atl[15] : fd1q
 fd1q atl_index_15_inst
 (
-	.q(atl_15), // OUT
-	.d(at_15), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (atl_15),
+	.d /* IN */ (at_15),
+	.cp /* IN */ (clk_0)
 );
 
 // GPU_CPU.NET (67) - iorqt0 : nd2
@@ -200,27 +202,27 @@ assign ioreq = ~(iorqt_0 & iorqt_1);
 // GPU_CPU.NET (74) - rden : fd2q
 fd2q rden_inst
 (
-	.q(rden), // OUT
-	.d(iord), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (rden),
+	.d /* IN */ (iord),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_CPU.NET (75) - rdenp : fd2q
 fd2q rdenp_inst
 (
-	.q(rdenp), // OUT
-	.d(rden), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (rdenp),
+	.d /* IN */ (rden),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_CPU.NET (76) - iowrite : fd1q
 fd1q iowrite_inst
 (
-	.q(iowrite), // OUT
-	.d(iowr), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (iowrite),
+	.d /* IN */ (iowr),
+	.cp /* IN */ (clk_0)
 );
 
 // GPU_CPU.NET (86) - lodld : an3h
@@ -229,99 +231,99 @@ assign lodld = iowrite & clk_2 & io_addr_n_1;
 // GPU_CPU.NET (87) - lodata : ldp1q
 ldp1q lodata_inst_0
 (
-	.q(lodata[0]), // OUT
-	.d(dwritelo[0]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[0]),
+	.d /* IN */ (dwritelo[0]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_1
 (
-	.q(lodata[1]), // OUT
-	.d(dwritelo[1]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[1]),
+	.d /* IN */ (dwritelo[1]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_2
 (
-	.q(lodata[2]), // OUT
-	.d(dwritelo[2]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[2]),
+	.d /* IN */ (dwritelo[2]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_3
 (
-	.q(lodata[3]), // OUT
-	.d(dwritelo[3]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[3]),
+	.d /* IN */ (dwritelo[3]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_4
 (
-	.q(lodata[4]), // OUT
-	.d(dwritelo[4]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[4]),
+	.d /* IN */ (dwritelo[4]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_5
 (
-	.q(lodata[5]), // OUT
-	.d(dwritelo[5]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[5]),
+	.d /* IN */ (dwritelo[5]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_6
 (
-	.q(lodata[6]), // OUT
-	.d(dwritelo[6]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[6]),
+	.d /* IN */ (dwritelo[6]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_7
 (
-	.q(lodata[7]), // OUT
-	.d(dwritelo[7]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[7]),
+	.d /* IN */ (dwritelo[7]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_8
 (
-	.q(lodata[8]), // OUT
-	.d(dwritelo[8]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[8]),
+	.d /* IN */ (dwritelo[8]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_9
 (
-	.q(lodata[9]), // OUT
-	.d(dwritelo[9]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[9]),
+	.d /* IN */ (dwritelo[9]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_10
 (
-	.q(lodata[10]), // OUT
-	.d(dwritelo[10]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[10]),
+	.d /* IN */ (dwritelo[10]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_11
 (
-	.q(lodata[11]), // OUT
-	.d(dwritelo[11]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[11]),
+	.d /* IN */ (dwritelo[11]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_12
 (
-	.q(lodata[12]), // OUT
-	.d(dwritelo[12]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[12]),
+	.d /* IN */ (dwritelo[12]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_13
 (
-	.q(lodata[13]), // OUT
-	.d(dwritelo[13]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[13]),
+	.d /* IN */ (dwritelo[13]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_14
 (
-	.q(lodata[14]), // OUT
-	.d(dwritelo[14]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[14]),
+	.d /* IN */ (dwritelo[14]),
+	.g /* IN */ (lodld)
 );
 ldp1q lodata_inst_15
 (
-	.q(lodata[15]), // OUT
-	.d(dwritelo[15]), // IN
-	.g(lodld)  // IN
+	.q /* OUT */ (lodata[15]),
+	.d /* IN */ (dwritelo[15]),
+	.g /* IN */ (lodld)
 );
 
 // GPU_CPU.NET (89) - lodsel : or2_h
@@ -330,343 +332,343 @@ assign lodsel = big_io | io_addr[15];
 // GPU_CPU.NET (90) - cpudlo : mx2
 mx2 cpudlo_inst_0
 (
-	.z(cpudlo[0]), // OUT
-	.a0(lodata[0]), // IN
-	.a1(dwritelo[0]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[0]),
+	.a0 /* IN */ (lodata[0]),
+	.a1 /* IN */ (dwritelo[0]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_1
 (
-	.z(cpudlo[1]), // OUT
-	.a0(lodata[1]), // IN
-	.a1(dwritelo[1]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[1]),
+	.a0 /* IN */ (lodata[1]),
+	.a1 /* IN */ (dwritelo[1]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_2
 (
-	.z(cpudlo[2]), // OUT
-	.a0(lodata[2]), // IN
-	.a1(dwritelo[2]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[2]),
+	.a0 /* IN */ (lodata[2]),
+	.a1 /* IN */ (dwritelo[2]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_3
 (
-	.z(cpudlo[3]), // OUT
-	.a0(lodata[3]), // IN
-	.a1(dwritelo[3]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[3]),
+	.a0 /* IN */ (lodata[3]),
+	.a1 /* IN */ (dwritelo[3]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_4
 (
-	.z(cpudlo[4]), // OUT
-	.a0(lodata[4]), // IN
-	.a1(dwritelo[4]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[4]),
+	.a0 /* IN */ (lodata[4]),
+	.a1 /* IN */ (dwritelo[4]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_5
 (
-	.z(cpudlo[5]), // OUT
-	.a0(lodata[5]), // IN
-	.a1(dwritelo[5]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[5]),
+	.a0 /* IN */ (lodata[5]),
+	.a1 /* IN */ (dwritelo[5]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_6
 (
-	.z(cpudlo[6]), // OUT
-	.a0(lodata[6]), // IN
-	.a1(dwritelo[6]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[6]),
+	.a0 /* IN */ (lodata[6]),
+	.a1 /* IN */ (dwritelo[6]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_7
 (
-	.z(cpudlo[7]), // OUT
-	.a0(lodata[7]), // IN
-	.a1(dwritelo[7]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[7]),
+	.a0 /* IN */ (lodata[7]),
+	.a1 /* IN */ (dwritelo[7]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_8
 (
-	.z(cpudlo[8]), // OUT
-	.a0(lodata[8]), // IN
-	.a1(dwritelo[8]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[8]),
+	.a0 /* IN */ (lodata[8]),
+	.a1 /* IN */ (dwritelo[8]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_9
 (
-	.z(cpudlo[9]), // OUT
-	.a0(lodata[9]), // IN
-	.a1(dwritelo[9]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[9]),
+	.a0 /* IN */ (lodata[9]),
+	.a1 /* IN */ (dwritelo[9]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_10
 (
-	.z(cpudlo[10]), // OUT
-	.a0(lodata[10]), // IN
-	.a1(dwritelo[10]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[10]),
+	.a0 /* IN */ (lodata[10]),
+	.a1 /* IN */ (dwritelo[10]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_11
 (
-	.z(cpudlo[11]), // OUT
-	.a0(lodata[11]), // IN
-	.a1(dwritelo[11]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[11]),
+	.a0 /* IN */ (lodata[11]),
+	.a1 /* IN */ (dwritelo[11]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_12
 (
-	.z(cpudlo[12]), // OUT
-	.a0(lodata[12]), // IN
-	.a1(dwritelo[12]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[12]),
+	.a0 /* IN */ (lodata[12]),
+	.a1 /* IN */ (dwritelo[12]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_13
 (
-	.z(cpudlo[13]), // OUT
-	.a0(lodata[13]), // IN
-	.a1(dwritelo[13]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[13]),
+	.a0 /* IN */ (lodata[13]),
+	.a1 /* IN */ (dwritelo[13]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_14
 (
-	.z(cpudlo[14]), // OUT
-	.a0(lodata[14]), // IN
-	.a1(dwritelo[14]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[14]),
+	.a0 /* IN */ (lodata[14]),
+	.a1 /* IN */ (dwritelo[14]),
+	.s /* IN */ (lodsel)
 );
 mx2 cpudlo_inst_15
 (
-	.z(cpudlo[15]), // OUT
-	.a0(lodata[15]), // IN
-	.a1(dwritelo[15]), // IN
-	.s(lodsel)  // IN
+	.z /* OUT */ (cpudlo[15]),
+	.a0 /* IN */ (lodata[15]),
+	.a1 /* IN */ (dwritelo[15]),
+	.s /* IN */ (lodsel)
 );
 
 // GPU_CPU.NET (91) - cpudhit : mx2
 mx2 cpudhit_inst_0
 (
-	.z(cpudhit[0]), // OUT
-	.a0(dwritelo[0]), // IN
-	.a1(lodata[0]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[0]),
+	.a0 /* IN */ (dwritelo[0]),
+	.a1 /* IN */ (lodata[0]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_1
 (
-	.z(cpudhit[1]), // OUT
-	.a0(dwritelo[1]), // IN
-	.a1(lodata[1]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[1]),
+	.a0 /* IN */ (dwritelo[1]),
+	.a1 /* IN */ (lodata[1]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_2
 (
-	.z(cpudhit[2]), // OUT
-	.a0(dwritelo[2]), // IN
-	.a1(lodata[2]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[2]),
+	.a0 /* IN */ (dwritelo[2]),
+	.a1 /* IN */ (lodata[2]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_3
 (
-	.z(cpudhit[3]), // OUT
-	.a0(dwritelo[3]), // IN
-	.a1(lodata[3]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[3]),
+	.a0 /* IN */ (dwritelo[3]),
+	.a1 /* IN */ (lodata[3]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_4
 (
-	.z(cpudhit[4]), // OUT
-	.a0(dwritelo[4]), // IN
-	.a1(lodata[4]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[4]),
+	.a0 /* IN */ (dwritelo[4]),
+	.a1 /* IN */ (lodata[4]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_5
 (
-	.z(cpudhit[5]), // OUT
-	.a0(dwritelo[5]), // IN
-	.a1(lodata[5]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[5]),
+	.a0 /* IN */ (dwritelo[5]),
+	.a1 /* IN */ (lodata[5]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_6
 (
-	.z(cpudhit[6]), // OUT
-	.a0(dwritelo[6]), // IN
-	.a1(lodata[6]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[6]),
+	.a0 /* IN */ (dwritelo[6]),
+	.a1 /* IN */ (lodata[6]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_7
 (
-	.z(cpudhit[7]), // OUT
-	.a0(dwritelo[7]), // IN
-	.a1(lodata[7]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[7]),
+	.a0 /* IN */ (dwritelo[7]),
+	.a1 /* IN */ (lodata[7]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_8
 (
-	.z(cpudhit[8]), // OUT
-	.a0(dwritelo[8]), // IN
-	.a1(lodata[8]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[8]),
+	.a0 /* IN */ (dwritelo[8]),
+	.a1 /* IN */ (lodata[8]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_9
 (
-	.z(cpudhit[9]), // OUT
-	.a0(dwritelo[9]), // IN
-	.a1(lodata[9]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[9]),
+	.a0 /* IN */ (dwritelo[9]),
+	.a1 /* IN */ (lodata[9]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_10
 (
-	.z(cpudhit[10]), // OUT
-	.a0(dwritelo[10]), // IN
-	.a1(lodata[10]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[10]),
+	.a0 /* IN */ (dwritelo[10]),
+	.a1 /* IN */ (lodata[10]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_11
 (
-	.z(cpudhit[11]), // OUT
-	.a0(dwritelo[11]), // IN
-	.a1(lodata[11]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[11]),
+	.a0 /* IN */ (dwritelo[11]),
+	.a1 /* IN */ (lodata[11]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_12
 (
-	.z(cpudhit[12]), // OUT
-	.a0(dwritelo[12]), // IN
-	.a1(lodata[12]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[12]),
+	.a0 /* IN */ (dwritelo[12]),
+	.a1 /* IN */ (lodata[12]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_13
 (
-	.z(cpudhit[13]), // OUT
-	.a0(dwritelo[13]), // IN
-	.a1(lodata[13]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[13]),
+	.a0 /* IN */ (dwritelo[13]),
+	.a1 /* IN */ (lodata[13]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_14
 (
-	.z(cpudhit[14]), // OUT
-	.a0(dwritelo[14]), // IN
-	.a1(lodata[14]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[14]),
+	.a0 /* IN */ (dwritelo[14]),
+	.a1 /* IN */ (lodata[14]),
+	.s /* IN */ (big_io)
 );
 mx2 cpudhit_inst_15
 (
-	.z(cpudhit[15]), // OUT
-	.a0(dwritelo[15]), // IN
-	.a1(lodata[15]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (cpudhit[15]),
+	.a0 /* IN */ (dwritelo[15]),
+	.a1 /* IN */ (lodata[15]),
+	.s /* IN */ (big_io)
 );
 
 // GPU_CPU.NET (92) - cpudhi : mx2
 mx2 cpudhi_inst_0
 (
-	.z(cpudhi[0]), // OUT
-	.a0(cpudhit[0]), // IN
-	.a1(dwritehi[0]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[0]),
+	.a0 /* IN */ (cpudhit[0]),
+	.a1 /* IN */ (dwritehi[0]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_1
 (
-	.z(cpudhi[1]), // OUT
-	.a0(cpudhit[1]), // IN
-	.a1(dwritehi[1]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[1]),
+	.a0 /* IN */ (cpudhit[1]),
+	.a1 /* IN */ (dwritehi[1]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_2
 (
-	.z(cpudhi[2]), // OUT
-	.a0(cpudhit[2]), // IN
-	.a1(dwritehi[2]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[2]),
+	.a0 /* IN */ (cpudhit[2]),
+	.a1 /* IN */ (dwritehi[2]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_3
 (
-	.z(cpudhi[3]), // OUT
-	.a0(cpudhit[3]), // IN
-	.a1(dwritehi[3]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[3]),
+	.a0 /* IN */ (cpudhit[3]),
+	.a1 /* IN */ (dwritehi[3]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_4
 (
-	.z(cpudhi[4]), // OUT
-	.a0(cpudhit[4]), // IN
-	.a1(dwritehi[4]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[4]),
+	.a0 /* IN */ (cpudhit[4]),
+	.a1 /* IN */ (dwritehi[4]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_5
 (
-	.z(cpudhi[5]), // OUT
-	.a0(cpudhit[5]), // IN
-	.a1(dwritehi[5]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[5]),
+	.a0 /* IN */ (cpudhit[5]),
+	.a1 /* IN */ (dwritehi[5]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_6
 (
-	.z(cpudhi[6]), // OUT
-	.a0(cpudhit[6]), // IN
-	.a1(dwritehi[6]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[6]),
+	.a0 /* IN */ (cpudhit[6]),
+	.a1 /* IN */ (dwritehi[6]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_7
 (
-	.z(cpudhi[7]), // OUT
-	.a0(cpudhit[7]), // IN
-	.a1(dwritehi[7]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[7]),
+	.a0 /* IN */ (cpudhit[7]),
+	.a1 /* IN */ (dwritehi[7]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_8
 (
-	.z(cpudhi[8]), // OUT
-	.a0(cpudhit[8]), // IN
-	.a1(dwritehi[8]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[8]),
+	.a0 /* IN */ (cpudhit[8]),
+	.a1 /* IN */ (dwritehi[8]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_9
 (
-	.z(cpudhi[9]), // OUT
-	.a0(cpudhit[9]), // IN
-	.a1(dwritehi[9]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[9]),
+	.a0 /* IN */ (cpudhit[9]),
+	.a1 /* IN */ (dwritehi[9]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_10
 (
-	.z(cpudhi[10]), // OUT
-	.a0(cpudhit[10]), // IN
-	.a1(dwritehi[10]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[10]),
+	.a0 /* IN */ (cpudhit[10]),
+	.a1 /* IN */ (dwritehi[10]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_11
 (
-	.z(cpudhi[11]), // OUT
-	.a0(cpudhit[11]), // IN
-	.a1(dwritehi[11]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[11]),
+	.a0 /* IN */ (cpudhit[11]),
+	.a1 /* IN */ (dwritehi[11]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_12
 (
-	.z(cpudhi[12]), // OUT
-	.a0(cpudhit[12]), // IN
-	.a1(dwritehi[12]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[12]),
+	.a0 /* IN */ (cpudhit[12]),
+	.a1 /* IN */ (dwritehi[12]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_13
 (
-	.z(cpudhi[13]), // OUT
-	.a0(cpudhit[13]), // IN
-	.a1(dwritehi[13]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[13]),
+	.a0 /* IN */ (cpudhit[13]),
+	.a1 /* IN */ (dwritehi[13]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_14
 (
-	.z(cpudhi[14]), // OUT
-	.a0(cpudhit[14]), // IN
-	.a1(dwritehi[14]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[14]),
+	.a0 /* IN */ (cpudhit[14]),
+	.a1 /* IN */ (dwritehi[14]),
+	.s /* IN */ (io_addr[15])
 );
 mx2 cpudhi_inst_15
 (
-	.z(cpudhi[15]), // OUT
-	.a0(cpudhit[15]), // IN
-	.a1(dwritehi[15]), // IN
-	.s(io_addr[15])  // IN
+	.z /* OUT */ (cpudhi[15]),
+	.a0 /* IN */ (cpudhit[15]),
+	.a1 /* IN */ (dwritehi[15]),
+	.s /* IN */ (io_addr[15])
 );
 
 // GPU_CPU.NET (93) - cpudata : join
@@ -739,461 +741,477 @@ assign hidld = rdenp & clk_2 & io_addr_n_1;
 // GPU_CPU.NET (104) - latrdatai : mx2
 mx2 latrdatai_inst_0
 (
-	.z(latrdatai[0]), // OUT
-	.a0(gpudhi[0]), // IN
-	.a1(gpudlo[0]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[0]),
+	.a0 /* IN */ (gpudhi[0]),
+	.a1 /* IN */ (gpudlo[0]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_1
 (
-	.z(latrdatai[1]), // OUT
-	.a0(gpudhi[1]), // IN
-	.a1(gpudlo[1]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[1]),
+	.a0 /* IN */ (gpudhi[1]),
+	.a1 /* IN */ (gpudlo[1]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_2
 (
-	.z(latrdatai[2]), // OUT
-	.a0(gpudhi[2]), // IN
-	.a1(gpudlo[2]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[2]),
+	.a0 /* IN */ (gpudhi[2]),
+	.a1 /* IN */ (gpudlo[2]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_3
 (
-	.z(latrdatai[3]), // OUT
-	.a0(gpudhi[3]), // IN
-	.a1(gpudlo[3]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[3]),
+	.a0 /* IN */ (gpudhi[3]),
+	.a1 /* IN */ (gpudlo[3]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_4
 (
-	.z(latrdatai[4]), // OUT
-	.a0(gpudhi[4]), // IN
-	.a1(gpudlo[4]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[4]),
+	.a0 /* IN */ (gpudhi[4]),
+	.a1 /* IN */ (gpudlo[4]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_5
 (
-	.z(latrdatai[5]), // OUT
-	.a0(gpudhi[5]), // IN
-	.a1(gpudlo[5]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[5]),
+	.a0 /* IN */ (gpudhi[5]),
+	.a1 /* IN */ (gpudlo[5]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_6
 (
-	.z(latrdatai[6]), // OUT
-	.a0(gpudhi[6]), // IN
-	.a1(gpudlo[6]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[6]),
+	.a0 /* IN */ (gpudhi[6]),
+	.a1 /* IN */ (gpudlo[6]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_7
 (
-	.z(latrdatai[7]), // OUT
-	.a0(gpudhi[7]), // IN
-	.a1(gpudlo[7]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[7]),
+	.a0 /* IN */ (gpudhi[7]),
+	.a1 /* IN */ (gpudlo[7]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_8
 (
-	.z(latrdatai[8]), // OUT
-	.a0(gpudhi[8]), // IN
-	.a1(gpudlo[8]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[8]),
+	.a0 /* IN */ (gpudhi[8]),
+	.a1 /* IN */ (gpudlo[8]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_9
 (
-	.z(latrdatai[9]), // OUT
-	.a0(gpudhi[9]), // IN
-	.a1(gpudlo[9]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[9]),
+	.a0 /* IN */ (gpudhi[9]),
+	.a1 /* IN */ (gpudlo[9]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_10
 (
-	.z(latrdatai[10]), // OUT
-	.a0(gpudhi[10]), // IN
-	.a1(gpudlo[10]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[10]),
+	.a0 /* IN */ (gpudhi[10]),
+	.a1 /* IN */ (gpudlo[10]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_11
 (
-	.z(latrdatai[11]), // OUT
-	.a0(gpudhi[11]), // IN
-	.a1(gpudlo[11]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[11]),
+	.a0 /* IN */ (gpudhi[11]),
+	.a1 /* IN */ (gpudlo[11]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_12
 (
-	.z(latrdatai[12]), // OUT
-	.a0(gpudhi[12]), // IN
-	.a1(gpudlo[12]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[12]),
+	.a0 /* IN */ (gpudhi[12]),
+	.a1 /* IN */ (gpudlo[12]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_13
 (
-	.z(latrdatai[13]), // OUT
-	.a0(gpudhi[13]), // IN
-	.a1(gpudlo[13]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[13]),
+	.a0 /* IN */ (gpudhi[13]),
+	.a1 /* IN */ (gpudlo[13]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_14
 (
-	.z(latrdatai[14]), // OUT
-	.a0(gpudhi[14]), // IN
-	.a1(gpudlo[14]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[14]),
+	.a0 /* IN */ (gpudhi[14]),
+	.a1 /* IN */ (gpudlo[14]),
+	.s /* IN */ (big_io)
 );
 mx2 latrdatai_inst_15
 (
-	.z(latrdatai[15]), // OUT
-	.a0(gpudhi[15]), // IN
-	.a1(gpudlo[15]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (latrdatai[15]),
+	.a0 /* IN */ (gpudhi[15]),
+	.a1 /* IN */ (gpudlo[15]),
+	.s /* IN */ (big_io)
 );
 
 // GPU_CPU.NET (105) - latrdata : ldp1q
 ldp1q latrdata_inst_0
 (
-	.q(latrdata[0]), // OUT
-	.d(latrdatai[0]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[0]),
+	.d /* IN */ (latrdatai[0]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_1
 (
-	.q(latrdata[1]), // OUT
-	.d(latrdatai[1]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[1]),
+	.d /* IN */ (latrdatai[1]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_2
 (
-	.q(latrdata[2]), // OUT
-	.d(latrdatai[2]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[2]),
+	.d /* IN */ (latrdatai[2]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_3
 (
-	.q(latrdata[3]), // OUT
-	.d(latrdatai[3]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[3]),
+	.d /* IN */ (latrdatai[3]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_4
 (
-	.q(latrdata[4]), // OUT
-	.d(latrdatai[4]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[4]),
+	.d /* IN */ (latrdatai[4]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_5
 (
-	.q(latrdata[5]), // OUT
-	.d(latrdatai[5]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[5]),
+	.d /* IN */ (latrdatai[5]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_6
 (
-	.q(latrdata[6]), // OUT
-	.d(latrdatai[6]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[6]),
+	.d /* IN */ (latrdatai[6]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_7
 (
-	.q(latrdata[7]), // OUT
-	.d(latrdatai[7]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[7]),
+	.d /* IN */ (latrdatai[7]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_8
 (
-	.q(latrdata[8]), // OUT
-	.d(latrdatai[8]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[8]),
+	.d /* IN */ (latrdatai[8]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_9
 (
-	.q(latrdata[9]), // OUT
-	.d(latrdatai[9]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[9]),
+	.d /* IN */ (latrdatai[9]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_10
 (
-	.q(latrdata[10]), // OUT
-	.d(latrdatai[10]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[10]),
+	.d /* IN */ (latrdatai[10]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_11
 (
-	.q(latrdata[11]), // OUT
-	.d(latrdatai[11]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[11]),
+	.d /* IN */ (latrdatai[11]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_12
 (
-	.q(latrdata[12]), // OUT
-	.d(latrdatai[12]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[12]),
+	.d /* IN */ (latrdatai[12]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_13
 (
-	.q(latrdata[13]), // OUT
-	.d(latrdatai[13]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[13]),
+	.d /* IN */ (latrdatai[13]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_14
 (
-	.q(latrdata[14]), // OUT
-	.d(latrdatai[14]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[14]),
+	.d /* IN */ (latrdatai[14]),
+	.g /* IN */ (hidld)
 );
 ldp1q latrdata_inst_15
 (
-	.q(latrdata[15]), // OUT
-	.d(latrdatai[15]), // IN
-	.g(hidld)  // IN
+	.q /* OUT */ (latrdata[15]),
+	.d /* IN */ (latrdatai[15]),
+	.g /* IN */ (hidld)
 );
 
 // GPU_CPU.NET (108) - immrdatai : mx2
 mx2 immrdatai_inst_0
 (
-	.z(immrdata[0]), // OUT
-	.a0(gpudlo[0]), // IN
-	.a1(gpudhi[0]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[0]),
+	.a0 /* IN */ (gpudlo[0]),
+	.a1 /* IN */ (gpudhi[0]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_1
 (
-	.z(immrdata[1]), // OUT
-	.a0(gpudlo[1]), // IN
-	.a1(gpudhi[1]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[1]),
+	.a0 /* IN */ (gpudlo[1]),
+	.a1 /* IN */ (gpudhi[1]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_2
 (
-	.z(immrdata[2]), // OUT
-	.a0(gpudlo[2]), // IN
-	.a1(gpudhi[2]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[2]),
+	.a0 /* IN */ (gpudlo[2]),
+	.a1 /* IN */ (gpudhi[2]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_3
 (
-	.z(immrdata[3]), // OUT
-	.a0(gpudlo[3]), // IN
-	.a1(gpudhi[3]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[3]),
+	.a0 /* IN */ (gpudlo[3]),
+	.a1 /* IN */ (gpudhi[3]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_4
 (
-	.z(immrdata[4]), // OUT
-	.a0(gpudlo[4]), // IN
-	.a1(gpudhi[4]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[4]),
+	.a0 /* IN */ (gpudlo[4]),
+	.a1 /* IN */ (gpudhi[4]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_5
 (
-	.z(immrdata[5]), // OUT
-	.a0(gpudlo[5]), // IN
-	.a1(gpudhi[5]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[5]),
+	.a0 /* IN */ (gpudlo[5]),
+	.a1 /* IN */ (gpudhi[5]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_6
 (
-	.z(immrdata[6]), // OUT
-	.a0(gpudlo[6]), // IN
-	.a1(gpudhi[6]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[6]),
+	.a0 /* IN */ (gpudlo[6]),
+	.a1 /* IN */ (gpudhi[6]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_7
 (
-	.z(immrdata[7]), // OUT
-	.a0(gpudlo[7]), // IN
-	.a1(gpudhi[7]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[7]),
+	.a0 /* IN */ (gpudlo[7]),
+	.a1 /* IN */ (gpudhi[7]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_8
 (
-	.z(immrdata[8]), // OUT
-	.a0(gpudlo[8]), // IN
-	.a1(gpudhi[8]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[8]),
+	.a0 /* IN */ (gpudlo[8]),
+	.a1 /* IN */ (gpudhi[8]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_9
 (
-	.z(immrdata[9]), // OUT
-	.a0(gpudlo[9]), // IN
-	.a1(gpudhi[9]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[9]),
+	.a0 /* IN */ (gpudlo[9]),
+	.a1 /* IN */ (gpudhi[9]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_10
 (
-	.z(immrdata[10]), // OUT
-	.a0(gpudlo[10]), // IN
-	.a1(gpudhi[10]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[10]),
+	.a0 /* IN */ (gpudlo[10]),
+	.a1 /* IN */ (gpudhi[10]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_11
 (
-	.z(immrdata[11]), // OUT
-	.a0(gpudlo[11]), // IN
-	.a1(gpudhi[11]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[11]),
+	.a0 /* IN */ (gpudlo[11]),
+	.a1 /* IN */ (gpudhi[11]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_12
 (
-	.z(immrdata[12]), // OUT
-	.a0(gpudlo[12]), // IN
-	.a1(gpudhi[12]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[12]),
+	.a0 /* IN */ (gpudlo[12]),
+	.a1 /* IN */ (gpudhi[12]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_13
 (
-	.z(immrdata[13]), // OUT
-	.a0(gpudlo[13]), // IN
-	.a1(gpudhi[13]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[13]),
+	.a0 /* IN */ (gpudlo[13]),
+	.a1 /* IN */ (gpudhi[13]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_14
 (
-	.z(immrdata[14]), // OUT
-	.a0(gpudlo[14]), // IN
-	.a1(gpudhi[14]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[14]),
+	.a0 /* IN */ (gpudlo[14]),
+	.a1 /* IN */ (gpudhi[14]),
+	.s /* IN */ (big_io)
 );
 mx2 immrdatai_inst_15
 (
-	.z(immrdata[15]), // OUT
-	.a0(gpudlo[15]), // IN
-	.a1(gpudhi[15]), // IN
-	.s(big_io)  // IN
+	.z /* OUT */ (immrdata[15]),
+	.a0 /* IN */ (gpudlo[15]),
+	.a1 /* IN */ (gpudhi[15]),
+	.s /* IN */ (big_io)
 );
 
 // GPU_CPU.NET (110) - dreadt : mx2
 mx2 dreadt_inst_0
 (
-	.z(dreadt[0]), // OUT
-	.a0(immrdata[0]), // IN
-	.a1(latrdata[0]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[0]),
+	.a0 /* IN */ (immrdata[0]),
+	.a1 /* IN */ (latrdata[0]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_1
 (
-	.z(dreadt[1]), // OUT
-	.a0(immrdata[1]), // IN
-	.a1(latrdata[1]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[1]),
+	.a0 /* IN */ (immrdata[1]),
+	.a1 /* IN */ (latrdata[1]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_2
 (
-	.z(dreadt[2]), // OUT
-	.a0(immrdata[2]), // IN
-	.a1(latrdata[2]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[2]),
+	.a0 /* IN */ (immrdata[2]),
+	.a1 /* IN */ (latrdata[2]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_3
 (
-	.z(dreadt[3]), // OUT
-	.a0(immrdata[3]), // IN
-	.a1(latrdata[3]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[3]),
+	.a0 /* IN */ (immrdata[3]),
+	.a1 /* IN */ (latrdata[3]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_4
 (
-	.z(dreadt[4]), // OUT
-	.a0(immrdata[4]), // IN
-	.a1(latrdata[4]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[4]),
+	.a0 /* IN */ (immrdata[4]),
+	.a1 /* IN */ (latrdata[4]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_5
 (
-	.z(dreadt[5]), // OUT
-	.a0(immrdata[5]), // IN
-	.a1(latrdata[5]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[5]),
+	.a0 /* IN */ (immrdata[5]),
+	.a1 /* IN */ (latrdata[5]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_6
 (
-	.z(dreadt[6]), // OUT
-	.a0(immrdata[6]), // IN
-	.a1(latrdata[6]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[6]),
+	.a0 /* IN */ (immrdata[6]),
+	.a1 /* IN */ (latrdata[6]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_7
 (
-	.z(dreadt[7]), // OUT
-	.a0(immrdata[7]), // IN
-	.a1(latrdata[7]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[7]),
+	.a0 /* IN */ (immrdata[7]),
+	.a1 /* IN */ (latrdata[7]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_8
 (
-	.z(dreadt[8]), // OUT
-	.a0(immrdata[8]), // IN
-	.a1(latrdata[8]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[8]),
+	.a0 /* IN */ (immrdata[8]),
+	.a1 /* IN */ (latrdata[8]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_9
 (
-	.z(dreadt[9]), // OUT
-	.a0(immrdata[9]), // IN
-	.a1(latrdata[9]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[9]),
+	.a0 /* IN */ (immrdata[9]),
+	.a1 /* IN */ (latrdata[9]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_10
 (
-	.z(dreadt[10]), // OUT
-	.a0(immrdata[10]), // IN
-	.a1(latrdata[10]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[10]),
+	.a0 /* IN */ (immrdata[10]),
+	.a1 /* IN */ (latrdata[10]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_11
 (
-	.z(dreadt[11]), // OUT
-	.a0(immrdata[11]), // IN
-	.a1(latrdata[11]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[11]),
+	.a0 /* IN */ (immrdata[11]),
+	.a1 /* IN */ (latrdata[11]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_12
 (
-	.z(dreadt[12]), // OUT
-	.a0(immrdata[12]), // IN
-	.a1(latrdata[12]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[12]),
+	.a0 /* IN */ (immrdata[12]),
+	.a1 /* IN */ (latrdata[12]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_13
 (
-	.z(dreadt[13]), // OUT
-	.a0(immrdata[13]), // IN
-	.a1(latrdata[13]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[13]),
+	.a0 /* IN */ (immrdata[13]),
+	.a1 /* IN */ (latrdata[13]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_14
 (
-	.z(dreadt[14]), // OUT
-	.a0(immrdata[14]), // IN
-	.a1(latrdata[14]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[14]),
+	.a0 /* IN */ (immrdata[14]),
+	.a1 /* IN */ (latrdata[14]),
+	.s /* IN */ (io_addr[1])
 );
 mx2 dreadt_inst_15
 (
-	.z(dreadt[15]), // OUT
-	.a0(immrdata[15]), // IN
-	.a1(latrdata[15]), // IN
-	.s(io_addr[1])  // IN
+	.z /* OUT */ (dreadt[15]),
+	.a0 /* IN */ (immrdata[15]),
+	.a1 /* IN */ (latrdata[15]),
+	.s /* IN */ (io_addr[1])
 );
 
 // GPU_CPU.NET (111) - dreaden : or2_h
 assign dreaden = rden | rdenp;
 
 // GPU_CPU.NET (112) - dread : tsm
-assign dread[0] = (dreaden) ? dreadt[0] : 1'bz;
-assign dread[1] = (dreaden) ? dreadt[1] : 1'bz;
-assign dread[2] = (dreaden) ? dreadt[2] : 1'bz;
-assign dread[3] = (dreaden) ? dreadt[3] : 1'bz;
-assign dread[4] = (dreaden) ? dreadt[4] : 1'bz;
-assign dread[5] = (dreaden) ? dreadt[5] : 1'bz;
-assign dread[6] = (dreaden) ? dreadt[6] : 1'bz;
-assign dread[7] = (dreaden) ? dreadt[7] : 1'bz;
-assign dread[8] = (dreaden) ? dreadt[8] : 1'bz;
-assign dread[9] = (dreaden) ? dreadt[9] : 1'bz;
-assign dread[10] = (dreaden) ? dreadt[10] : 1'bz;
-assign dread[11] = (dreaden) ? dreadt[11] : 1'bz;
-assign dread[12] = (dreaden) ? dreadt[12] : 1'bz;
-assign dread[13] = (dreaden) ? dreadt[13] : 1'bz;
-assign dread[14] = (dreaden) ? dreadt[14] : 1'bz;
-assign dread[15] = (dreaden) ? dreadt[15] : 1'bz;
+assign dread_out[0] = dreadt[0];
+assign dread_oe[0] = dreaden;
+assign dread_out[1] = dreadt[1];
+assign dread_oe[1] = dreaden;
+assign dread_out[2] = dreadt[2];
+assign dread_oe[2] = dreaden;
+assign dread_out[3] = dreadt[3];
+assign dread_oe[3] = dreaden;
+assign dread_out[4] = dreadt[4];
+assign dread_oe[4] = dreaden;
+assign dread_out[5] = dreadt[5];
+assign dread_oe[5] = dreaden;
+assign dread_out[6] = dreadt[6];
+assign dread_oe[6] = dreaden;
+assign dread_out[7] = dreadt[7];
+assign dread_oe[7] = dreaden;
+assign dread_out[8] = dreadt[8];
+assign dread_oe[8] = dreaden;
+assign dread_out[9] = dreadt[9];
+assign dread_oe[9] = dreaden;
+assign dread_out[10] = dreadt[10];
+assign dread_oe[10] = dreaden;
+assign dread_out[11] = dreadt[11];
+assign dread_oe[11] = dreaden;
+assign dread_out[12] = dreadt[12];
+assign dread_oe[12] = dreaden;
+assign dread_out[13] = dreadt[13];
+assign dread_oe[13] = dreaden;
+assign dread_out[14] = dreadt[14];
+assign dread_oe[14] = dreaden;
+assign dread_out[15] = dreadt[15];
+assign dread_oe[15] = dreaden;
 endmodule

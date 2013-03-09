@@ -21,14 +21,6 @@ module nr14
 wire zero;
 wire y;
 
-// Output buffers
-wire z_obuf;
-
-
-// Output buffers
-assign z = z_obuf;
-
-
 // DUPLO.NET (695) - zero : tie0
 assign zero = 1'b0;
 
@@ -36,5 +28,5 @@ assign zero = 1'b0;
 assign y = a_0 | a_1 | a_2 | a_3 | a_4 | a_5 | a_6 | a_7;
 
 // DUPLO.NET (697) - gate2 : nr8
-assign z_obuf = ~(y | a_8 | a_9 | a_10 | a_11 | a_12 | a_13 | zero);
+assign z = ~(y | a_8 | a_9 | a_10 | a_11 | a_12 | a_13 | zero);
 endmodule

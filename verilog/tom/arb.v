@@ -126,58 +126,42 @@ wire dbg;
 wire dbgd;
 
 // Output buffers
-wire bback_obuf;
-wire gback_obuf;
-wire obback_obuf;
 wire brlout_obuf;
-wire dbgl_obuf;
-wire refack_obuf;
-wire ba_obuf;
 wire intbm_obuf;
-wire cpubm_obuf;
 wire intbms_obuf;
-wire intbmw_obuf;
 
 
 // Output buffers
-assign bback = bback_obuf;
-assign gback = gback_obuf;
-assign obback = obback_obuf;
 assign brlout = brlout_obuf;
-assign dbgl = dbgl_obuf;
-assign refack = refack_obuf;
-assign ba = ba_obuf;
 assign intbm = intbm_obuf;
-assign cpubm = cpubm_obuf;
 assign intbms = intbms_obuf;
-assign intbmw = intbmw_obuf;
 
 
 // ARB.NET (48) - q0 : fd4q
 fd4q q0_inst
 (
-	.q(q0), // OUT
-	.d(d0), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (q0),
+	.d /* IN */ (d0),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // ARB.NET (49) - q1 : fd2q
 fd2q q1_inst
 (
-	.q(q1), // OUT
-	.d(d1), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1),
+	.d /* IN */ (d1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ARB.NET (50) - q2i : fd2q
 fd2q q2i_inst
 (
-	.q(q2i), // OUT
-	.d(d2), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q2i),
+	.d /* IN */ (d2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ARB.NET (51) - q2 : nivm
@@ -238,7 +222,7 @@ assign bgin = ~bglin;
 assign ackl = ~ack;
 
 // ARB.NET (74) - ba : nivh
-assign ba_obuf = q2;
+assign ba = q2;
 
 // ARB.NET (75) - bgack : iv
 assign bgack = ~bgain;
@@ -258,10 +242,10 @@ assign brd = ~(brin & brlout_obuf);
 // ARB.NET (83) - brs : fd1
 fd1 brs_inst
 (
-	.q(brsl), // OUT
-	.qn(brs), // OUT
-	.d(brd), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (brsl),
+	.qn /* OUT */ (brs),
+	.d /* IN */ (brd),
+	.cp /* IN */ (clk)
 );
 
 // ARB.NET (85) - req[10] : an2
@@ -337,85 +321,85 @@ assign pr_9 = req_9 & dl_10;
 // ARB.NET (109) - ack[1-9] : slatchc
 slatchc ack_from_1_to_9_inst_0
 (
-	.q(ack_1), // IO
-	.d(pr_1), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_1),
+	.d /* IN */ (pr_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_1
 (
-	.q(ack_2), // IO
-	.d(pr_2), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_2),
+	.d /* IN */ (pr_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_2
 (
-	.q(ack_3), // IO
-	.d(pr_3), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_3),
+	.d /* IN */ (pr_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_3
 (
-	.q(ack_4), // IO
-	.d(pr_4), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_4),
+	.d /* IN */ (pr_4),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_4
 (
-	.q(ack_5), // IO
-	.d(pr_5), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_5),
+	.d /* IN */ (pr_5),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_5
 (
-	.q(ack_6), // IO
-	.d(pr_6), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_6),
+	.d /* IN */ (pr_6),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_6
 (
-	.q(ack_7), // IO
-	.d(pr_7), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_7),
+	.d /* IN */ (pr_7),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_7
 (
-	.q(ack_8), // IO
-	.d(pr_8), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_8),
+	.d /* IN */ (pr_8),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 slatchc ack_from_1_to_9_inst_8
 (
-	.q(ack_9), // IO
-	.d(pr_9), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (ack_9),
+	.d /* IN */ (pr_9),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.resl /* IN */ (resetl)
 );
 
 // ARB.NET (110) - ack[0] : slatchp
 slatchp ack_index_0_inst
 (
-	.q(ack_0), // IO
-	.d(pr_0), // IN
-	.clk(clk), // IN
-	.en(arben), // IN
-	.setl(resetl)  // IN
+	.q /* OUT */ (ack_0),
+	.d /* IN */ (pr_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (arben),
+	.setl /* IN */ (resetl)
 );
 
 // ARB.NET (114) - lbrl : nr8
@@ -437,19 +421,19 @@ assign arben = q2 & ack;
 assign cpub1 = q0 & brsl;
 
 // ARB.NET (134) - cpuback : or4
-assign cpubm_obuf = ack_0 | ack_3 | q1 | cpub1;
+assign cpubm = ack_0 | ack_3 | q1 | cpub1;
 
 // ARB.NET (135) - bback : or2
-assign bback_obuf = ack_1 | ack_6;
+assign bback = ack_1 | ack_6;
 
 // ARB.NET (136) - gback : or2
-assign gback_obuf = ack_2 | ack_7;
+assign gback = ack_2 | ack_7;
 
 // ARB.NET (137) - obback : nivh
-assign obback_obuf = ack_5;
+assign obback = ack_5;
 
 // ARB.NET (138) - refack : niv
-assign refack_obuf = ack_9;
+assign refack = ack_9;
 
 // ARB.NET (143) - intbm : or6
 assign intbm_obuf = ack_1 | ack_2 | ack_5 | ack_6 | ack_7 | ack_9;
@@ -457,19 +441,19 @@ assign intbm_obuf = ack_1 | ack_2 | ack_5 | ack_6 | ack_7 | ack_9;
 // ARB.NET (144) - intbmt : mx2
 mx2 intbmt_inst
 (
-	.z(intbmt), // OUT
-	.a0(intbms_obuf), // IN
-	.a1(intbm_obuf), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (intbmt),
+	.a0 /* IN */ (intbms_obuf),
+	.a1 /* IN */ (intbm_obuf),
+	.s /* IN */ (ack)
 );
 
 // ARB.NET (145) - intbms : fd2q
 fd2q intbms_inst
 (
-	.q(intbms_obuf), // OUT
-	.d(intbmt), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (intbms_obuf),
+	.d /* IN */ (intbmt),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ARB.NET (147) - intbmwd : nd2
@@ -478,9 +462,9 @@ assign intbmwd = ~(notreadt & intbmt);
 // ARB.NET (148) - intbmw : fd1q
 fd1q intbmw_inst
 (
-	.q(intbmw_obuf), // OUT
-	.d(intbmwd), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (intbmw),
+	.d /* IN */ (intbmwd),
+	.cp /* IN */ (clk)
 );
 
 // ARB.NET (152) - ack48 : or2
@@ -501,12 +485,12 @@ assign dbgd = ~(dbg0 & dbg1);
 // ARB.NET (159) - dbg : fd2q
 fd2q dbg_inst
 (
-	.q(dbg), // OUT
-	.d(dbgd), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (dbg),
+	.d /* IN */ (dbgd),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ARB.NET (160) - dbgl : iv
-assign dbgl_obuf = ~dbg;
+assign dbgl = ~dbg;
 endmodule

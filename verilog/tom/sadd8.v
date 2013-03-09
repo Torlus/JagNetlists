@@ -42,133 +42,111 @@ wire overflowi;
 wire overflow;
 wire cob_7;
 
-// Output buffers
-wire z_0_obuf;
-wire z_1_obuf;
-wire z_2_obuf;
-wire z_3_obuf;
-wire z_4_obuf;
-wire z_5_obuf;
-wire z_6_obuf;
-wire z_7_obuf;
-
-
-// Output buffers
-assign z_0 = z_0_obuf;
-assign z_1 = z_1_obuf;
-assign z_2 = z_2_obuf;
-assign z_3 = z_3_obuf;
-assign z_4 = z_4_obuf;
-assign z_5 = z_5_obuf;
-assign z_6 = z_6_obuf;
-assign z_7 = z_7_obuf;
-
-
-// LBUF.NET (274) - gnd : tie0
+// LBUF.NET (275) - gnd : tie0
 assign gnd = 1'b0;
 
-// LBUF.NET (275) - s0 : add4
+// LBUF.NET (276) - s0 : add4
 add4 s0_inst
 (
-	.q_0(s_0), // OUT
-	.q_1(s_1), // OUT
-	.q_2(s_2), // OUT
-	.q_3(s_3), // OUT
-	.co(co_3), // OUT
-	.a_0(a_0), // IN
-	.a_1(a_1), // IN
-	.a_2(a_2), // IN
-	.a_3(a_3), // IN
-	.b_0(b_0), // IN
-	.b_1(b_1), // IN
-	.b_2(b_2), // IN
-	.b_3(b_3), // IN
-	.ci(gnd)  // IN
+	.q_0 /* OUT */ (s_0),
+	.q_1 /* OUT */ (s_1),
+	.q_2 /* OUT */ (s_2),
+	.q_3 /* OUT */ (s_3),
+	.co /* OUT */ (co_3),
+	.a_0 /* IN */ (a_0),
+	.a_1 /* IN */ (a_1),
+	.a_2 /* IN */ (a_2),
+	.a_3 /* IN */ (a_3),
+	.b_0 /* IN */ (b_0),
+	.b_1 /* IN */ (b_1),
+	.b_2 /* IN */ (b_2),
+	.b_3 /* IN */ (b_3),
+	.ci /* IN */ (gnd)
 );
 
-// LBUF.NET (276) - s1 : add4
+// LBUF.NET (277) - s1 : add4
 add4 s1_inst
 (
-	.q_0(s_4), // OUT
-	.q_1(s_5), // OUT
-	.q_2(s_6), // OUT
-	.q_3(s_7), // OUT
-	.co(co_7), // OUT
-	.a_0(a_4), // IN
-	.a_1(a_5), // IN
-	.a_2(a_6), // IN
-	.a_3(a_7), // IN
-	.b_0(b_4), // IN
-	.b_1(b_5), // IN
-	.b_2(b_6), // IN
-	.b_3(b_7), // IN
-	.ci(co_3)  // IN
+	.q_0 /* OUT */ (s_4),
+	.q_1 /* OUT */ (s_5),
+	.q_2 /* OUT */ (s_6),
+	.q_3 /* OUT */ (s_7),
+	.co /* OUT */ (co_7),
+	.a_0 /* IN */ (a_4),
+	.a_1 /* IN */ (a_5),
+	.a_2 /* IN */ (a_6),
+	.a_3 /* IN */ (a_7),
+	.b_0 /* IN */ (b_4),
+	.b_1 /* IN */ (b_5),
+	.b_2 /* IN */ (b_6),
+	.b_3 /* IN */ (b_7),
+	.ci /* IN */ (co_3)
 );
 
-// LBUF.NET (277) - overflowi : en
+// LBUF.NET (278) - overflowi : en
 assign overflowi = ~(co_7 ^ b_7);
 
-// LBUF.NET (278) - overflow : ivm
+// LBUF.NET (279) - overflow : ivm
 assign overflow = ~overflowi;
 
-// LBUF.NET (279) - cob[7] : nivm
+// LBUF.NET (280) - cob[7] : nivm
 assign cob_7 = co_7;
 
-// LBUF.NET (280) - z[0-7] : mx2
+// LBUF.NET (281) - z[0-7] : mx2
 mx2 z_from_0_to_7_inst_0
 (
-	.z(z_0_obuf), // OUT
-	.a0(s_0), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_0),
+	.a0 /* IN */ (s_0),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_1
 (
-	.z(z_1_obuf), // OUT
-	.a0(s_1), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_1),
+	.a0 /* IN */ (s_1),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_2
 (
-	.z(z_2_obuf), // OUT
-	.a0(s_2), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_2),
+	.a0 /* IN */ (s_2),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_3
 (
-	.z(z_3_obuf), // OUT
-	.a0(s_3), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_3),
+	.a0 /* IN */ (s_3),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_4
 (
-	.z(z_4_obuf), // OUT
-	.a0(s_4), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_4),
+	.a0 /* IN */ (s_4),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_5
 (
-	.z(z_5_obuf), // OUT
-	.a0(s_5), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_5),
+	.a0 /* IN */ (s_5),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_6
 (
-	.z(z_6_obuf), // OUT
-	.a0(s_6), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_6),
+	.a0 /* IN */ (s_6),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 mx2 z_from_0_to_7_inst_7
 (
-	.z(z_7_obuf), // OUT
-	.a0(s_7), // IN
-	.a1(cob_7), // IN
-	.s(overflow)  // IN
+	.z /* OUT */ (z_7),
+	.a0 /* IN */ (s_7),
+	.a1 /* IN */ (cob_7),
+	.s /* IN */ (overflow)
 );
 endmodule

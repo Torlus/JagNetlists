@@ -2,79 +2,207 @@
 
 module data_mux
 (
-	inout wdata_0,
-	inout wdata_1,
-	inout wdata_2,
-	inout wdata_3,
-	inout wdata_4,
-	inout wdata_5,
-	inout wdata_6,
-	inout wdata_7,
-	inout wdata_8,
-	inout wdata_9,
-	inout wdata_10,
-	inout wdata_11,
-	inout wdata_12,
-	inout wdata_13,
-	inout wdata_14,
-	inout wdata_15,
-	inout wdata_16,
-	inout wdata_17,
-	inout wdata_18,
-	inout wdata_19,
-	inout wdata_20,
-	inout wdata_21,
-	inout wdata_22,
-	inout wdata_23,
-	inout wdata_24,
-	inout wdata_25,
-	inout wdata_26,
-	inout wdata_27,
-	inout wdata_28,
-	inout wdata_29,
-	inout wdata_30,
-	inout wdata_31,
-	inout wdata_32,
-	inout wdata_33,
-	inout wdata_34,
-	inout wdata_35,
-	inout wdata_36,
-	inout wdata_37,
-	inout wdata_38,
-	inout wdata_39,
-	inout wdata_40,
-	inout wdata_41,
-	inout wdata_42,
-	inout wdata_43,
-	inout wdata_44,
-	inout wdata_45,
-	inout wdata_46,
-	inout wdata_47,
-	inout wdata_48,
-	inout wdata_49,
-	inout wdata_50,
-	inout wdata_51,
-	inout wdata_52,
-	inout wdata_53,
-	inout wdata_54,
-	inout wdata_55,
-	inout wdata_56,
-	inout wdata_57,
-	inout wdata_58,
-	inout wdata_59,
-	inout wdata_60,
-	inout wdata_61,
-	inout wdata_62,
-	inout wdata_63,
-	input[0:15] addq_0;
-	input[0:15] addq_1;
-	input[0:15] addq_2;
-	input[0:15] addq_3;
+	output wdata_0_out,
+	output wdata_0_oe,
+	input wdata_0_in,
+	output wdata_1_out,
+	output wdata_1_oe,
+	input wdata_1_in,
+	output wdata_2_out,
+	output wdata_2_oe,
+	input wdata_2_in,
+	output wdata_3_out,
+	output wdata_3_oe,
+	input wdata_3_in,
+	output wdata_4_out,
+	output wdata_4_oe,
+	input wdata_4_in,
+	output wdata_5_out,
+	output wdata_5_oe,
+	input wdata_5_in,
+	output wdata_6_out,
+	output wdata_6_oe,
+	input wdata_6_in,
+	output wdata_7_out,
+	output wdata_7_oe,
+	input wdata_7_in,
+	output wdata_8_out,
+	output wdata_8_oe,
+	input wdata_8_in,
+	output wdata_9_out,
+	output wdata_9_oe,
+	input wdata_9_in,
+	output wdata_10_out,
+	output wdata_10_oe,
+	input wdata_10_in,
+	output wdata_11_out,
+	output wdata_11_oe,
+	input wdata_11_in,
+	output wdata_12_out,
+	output wdata_12_oe,
+	input wdata_12_in,
+	output wdata_13_out,
+	output wdata_13_oe,
+	input wdata_13_in,
+	output wdata_14_out,
+	output wdata_14_oe,
+	input wdata_14_in,
+	output wdata_15_out,
+	output wdata_15_oe,
+	input wdata_15_in,
+	output wdata_16_out,
+	output wdata_16_oe,
+	input wdata_16_in,
+	output wdata_17_out,
+	output wdata_17_oe,
+	input wdata_17_in,
+	output wdata_18_out,
+	output wdata_18_oe,
+	input wdata_18_in,
+	output wdata_19_out,
+	output wdata_19_oe,
+	input wdata_19_in,
+	output wdata_20_out,
+	output wdata_20_oe,
+	input wdata_20_in,
+	output wdata_21_out,
+	output wdata_21_oe,
+	input wdata_21_in,
+	output wdata_22_out,
+	output wdata_22_oe,
+	input wdata_22_in,
+	output wdata_23_out,
+	output wdata_23_oe,
+	input wdata_23_in,
+	output wdata_24_out,
+	output wdata_24_oe,
+	input wdata_24_in,
+	output wdata_25_out,
+	output wdata_25_oe,
+	input wdata_25_in,
+	output wdata_26_out,
+	output wdata_26_oe,
+	input wdata_26_in,
+	output wdata_27_out,
+	output wdata_27_oe,
+	input wdata_27_in,
+	output wdata_28_out,
+	output wdata_28_oe,
+	input wdata_28_in,
+	output wdata_29_out,
+	output wdata_29_oe,
+	input wdata_29_in,
+	output wdata_30_out,
+	output wdata_30_oe,
+	input wdata_30_in,
+	output wdata_31_out,
+	output wdata_31_oe,
+	input wdata_31_in,
+	output wdata_32_out,
+	output wdata_32_oe,
+	input wdata_32_in,
+	output wdata_33_out,
+	output wdata_33_oe,
+	input wdata_33_in,
+	output wdata_34_out,
+	output wdata_34_oe,
+	input wdata_34_in,
+	output wdata_35_out,
+	output wdata_35_oe,
+	input wdata_35_in,
+	output wdata_36_out,
+	output wdata_36_oe,
+	input wdata_36_in,
+	output wdata_37_out,
+	output wdata_37_oe,
+	input wdata_37_in,
+	output wdata_38_out,
+	output wdata_38_oe,
+	input wdata_38_in,
+	output wdata_39_out,
+	output wdata_39_oe,
+	input wdata_39_in,
+	output wdata_40_out,
+	output wdata_40_oe,
+	input wdata_40_in,
+	output wdata_41_out,
+	output wdata_41_oe,
+	input wdata_41_in,
+	output wdata_42_out,
+	output wdata_42_oe,
+	input wdata_42_in,
+	output wdata_43_out,
+	output wdata_43_oe,
+	input wdata_43_in,
+	output wdata_44_out,
+	output wdata_44_oe,
+	input wdata_44_in,
+	output wdata_45_out,
+	output wdata_45_oe,
+	input wdata_45_in,
+	output wdata_46_out,
+	output wdata_46_oe,
+	input wdata_46_in,
+	output wdata_47_out,
+	output wdata_47_oe,
+	input wdata_47_in,
+	output wdata_48_out,
+	output wdata_48_oe,
+	input wdata_48_in,
+	output wdata_49_out,
+	output wdata_49_oe,
+	input wdata_49_in,
+	output wdata_50_out,
+	output wdata_50_oe,
+	input wdata_50_in,
+	output wdata_51_out,
+	output wdata_51_oe,
+	input wdata_51_in,
+	output wdata_52_out,
+	output wdata_52_oe,
+	input wdata_52_in,
+	output wdata_53_out,
+	output wdata_53_oe,
+	input wdata_53_in,
+	output wdata_54_out,
+	output wdata_54_oe,
+	input wdata_54_in,
+	output wdata_55_out,
+	output wdata_55_oe,
+	input wdata_55_in,
+	output wdata_56_out,
+	output wdata_56_oe,
+	input wdata_56_in,
+	output wdata_57_out,
+	output wdata_57_oe,
+	input wdata_57_in,
+	output wdata_58_out,
+	output wdata_58_oe,
+	input wdata_58_in,
+	output wdata_59_out,
+	output wdata_59_oe,
+	input wdata_59_in,
+	output wdata_60_out,
+	output wdata_60_oe,
+	input wdata_60_in,
+	output wdata_61_out,
+	output wdata_61_oe,
+	input wdata_61_in,
+	output wdata_62_out,
+	output wdata_62_oe,
+	input wdata_62_in,
+	output wdata_63_out,
+	output wdata_63_oe,
+	input wdata_63_in,
+	input [0:15] addq_0;
+	input [0:15] addq_1;
+	input [0:15] addq_2;
+	input [0:15] addq_3;
 	input big_pix,
-	input[0:31] dstdlo;
-	input[0:31] dstdhi;
-	input[0:31] dstzlo;
-	input[0:31] dstzhi;
+	input [0:31] dstdlo;
+	input [0:31] dstdhi;
+	input [0:31] dstzlo;
+	input [0:31] dstzhi;
 	input data_sel_0,
 	input data_sel_1,
 	input data_ena,
@@ -98,13 +226,13 @@ module data_mux
 	input dbinh_n_5,
 	input dbinh_n_6,
 	input dbinh_n_7,
-	input[0:31] lfu_0;
-	input[0:31] lfu_1;
-	input[0:31] patd_0;
-	input[0:31] patd_1;
+	input [0:31] lfu_0;
+	input [0:31] lfu_1;
+	input [0:31] patd_0;
+	input [0:31] patd_1;
 	input phrase_mode,
-	input[0:31] srczlo;
-	input[0:31] srczhi
+	input [0:31] srczlo;
+	input [0:31] srczhi
 );
 wire [0:31] addql_0;
 wire [0:31] addql_1;
@@ -317,18 +445,18 @@ assign edis_n = dend_0 | dend_1 | dend_2 | dend_3 | dend_4 | dend_5;
 // DATAMUX.NET (203) - ecoarse : decl38e
 decl38e ecoarse_inst
 (
-	.q_0(e_coarse_n_0), // OUT
-	.q_1(e_coarse_n_1), // OUT
-	.q_2(e_coarse_n_2), // OUT
-	.q_3(e_coarse_n_3), // OUT
-	.q_4(e_coarse_n_4), // OUT
-	.q_5(e_coarse_n_5), // OUT
-	.q_6(e_coarse_n_6), // OUT
-	.q_7(e_coarse_n_7), // OUT
-	.a(dend_3), // IN
-	.b(dend_4), // IN
-	.c(dend_5), // IN
-	.en(edis_n)  // IN
+	.q_0 /* OUT */ (e_coarse_n_0),
+	.q_1 /* OUT */ (e_coarse_n_1),
+	.q_2 /* OUT */ (e_coarse_n_2),
+	.q_3 /* OUT */ (e_coarse_n_3),
+	.q_4 /* OUT */ (e_coarse_n_4),
+	.q_5 /* OUT */ (e_coarse_n_5),
+	.q_6 /* OUT */ (e_coarse_n_6),
+	.q_7 /* OUT */ (e_coarse_n_7),
+	.a /* IN */ (dend_3),
+	.b /* IN */ (dend_4),
+	.c /* IN */ (dend_5),
+	.en /* IN */ (edis_n)
 );
 
 // DATAMUX.NET (204) - e_coarse[0] : iv
@@ -337,34 +465,34 @@ assign e_coarse_0 = ~e_coarse_n_0;
 // DATAMUX.NET (205) - efine : decl38e
 decl38e efine_inst
 (
-	.q_0(unused_0), // OUT
-	.q_1(e_fine_n_1), // OUT
-	.q_2(e_fine_n_2), // OUT
-	.q_3(e_fine_n_3), // OUT
-	.q_4(e_fine_n_4), // OUT
-	.q_5(e_fine_n_5), // OUT
-	.q_6(e_fine_n_6), // OUT
-	.q_7(e_fine_n_7), // OUT
-	.a(dend_0), // IN
-	.b(dend_1), // IN
-	.c(dend_2), // IN
-	.en(e_coarse_0)  // IN
+	.q_0 /* OUT */ (unused_0),
+	.q_1 /* OUT */ (e_fine_n_1),
+	.q_2 /* OUT */ (e_fine_n_2),
+	.q_3 /* OUT */ (e_fine_n_3),
+	.q_4 /* OUT */ (e_fine_n_4),
+	.q_5 /* OUT */ (e_fine_n_5),
+	.q_6 /* OUT */ (e_fine_n_6),
+	.q_7 /* OUT */ (e_fine_n_7),
+	.a /* IN */ (dend_0),
+	.b /* IN */ (dend_1),
+	.c /* IN */ (dend_2),
+	.en /* IN */ (e_coarse_0)
 );
 
 // DATAMUX.NET (208) - scoarse : dech38
 dech38 scoarse_inst
 (
-	.q_0(s_coarse_0), // OUT
-	.q_1(s_coarse_1), // OUT
-	.q_2(s_coarse_2), // OUT
-	.q_3(s_coarse_3), // OUT
-	.q_4(s_coarse_4), // OUT
-	.q_5(s_coarse_5), // OUT
-	.q_6(s_coarse_6), // OUT
-	.q_7(s_coarse_7), // OUT
-	.a(dstart_3), // IN
-	.b(dstart_4), // IN
-	.c(dstart_5)  // IN
+	.q_0 /* OUT */ (s_coarse_0),
+	.q_1 /* OUT */ (s_coarse_1),
+	.q_2 /* OUT */ (s_coarse_2),
+	.q_3 /* OUT */ (s_coarse_3),
+	.q_4 /* OUT */ (s_coarse_4),
+	.q_5 /* OUT */ (s_coarse_5),
+	.q_6 /* OUT */ (s_coarse_6),
+	.q_7 /* OUT */ (s_coarse_7),
+	.a /* IN */ (dstart_3),
+	.b /* IN */ (dstart_4),
+	.c /* IN */ (dstart_5)
 );
 
 // DATAMUX.NET (209) - sfen\ : iv
@@ -373,18 +501,18 @@ assign sfen_n = ~s_coarse_0;
 // DATAMUX.NET (210) - sfine : dech38el
 dech38el sfine_inst
 (
-	.q_0(s_fine_0), // OUT
-	.q_1(s_fine_1), // OUT
-	.q_2(s_fine_2), // OUT
-	.q_3(s_fine_3), // OUT
-	.q_4(s_fine_4), // OUT
-	.q_5(s_fine_5), // OUT
-	.q_6(s_fine_6), // OUT
-	.q_7(s_fine_7), // OUT
-	.a(dstart_0), // IN
-	.b(dstart_1), // IN
-	.c(dstart_2), // IN
-	.en(sfen_n)  // IN
+	.q_0 /* OUT */ (s_fine_0),
+	.q_1 /* OUT */ (s_fine_1),
+	.q_2 /* OUT */ (s_fine_2),
+	.q_3 /* OUT */ (s_fine_3),
+	.q_4 /* OUT */ (s_fine_4),
+	.q_5 /* OUT */ (s_fine_5),
+	.q_6 /* OUT */ (s_fine_6),
+	.q_7 /* OUT */ (s_fine_7),
+	.a /* IN */ (dstart_0),
+	.b /* IN */ (dstart_1),
+	.c /* IN */ (dstart_2),
+	.en /* IN */ (sfen_n)
 );
 
 // DATAMUX.NET (212) - maskt[0] : niv
@@ -425,160 +553,160 @@ assign masktb_14 = maskt_14;
 // DATAMUX.NET (232) - masku[0] : mx4
 mx4 masku_index_0_inst
 (
-	.z(masku_0), // OUT
-	.a0(maskt_0), // IN
-	.a1(maskt_7), // IN
-	.a2(maskt_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_0),
+	.a0 /* IN */ (maskt_0),
+	.a1 /* IN */ (maskt_7),
+	.a2 /* IN */ (maskt_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (234) - masku[1] : mx4
 mx4 masku_index_1_inst
 (
-	.z(masku_1), // OUT
-	.a0(maskt_1), // IN
-	.a1(maskt_6), // IN
-	.a2(maskt_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_1),
+	.a0 /* IN */ (maskt_1),
+	.a1 /* IN */ (maskt_6),
+	.a2 /* IN */ (maskt_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (236) - masku[2] : mx4
 mx4 masku_index_2_inst
 (
-	.z(masku_2), // OUT
-	.a0(maskt_2), // IN
-	.a1(maskt_5), // IN
-	.a2(maskt_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_2),
+	.a0 /* IN */ (maskt_2),
+	.a1 /* IN */ (maskt_5),
+	.a2 /* IN */ (maskt_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (238) - masku[3] : mx4
 mx4 masku_index_3_inst
 (
-	.z(masku_3), // OUT
-	.a0(maskt_3), // IN
-	.a1(maskt_4), // IN
-	.a2(masktb_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_3),
+	.a0 /* IN */ (maskt_3),
+	.a1 /* IN */ (maskt_4),
+	.a2 /* IN */ (masktb_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (240) - masku[4] : mx4
 mx4 masku_index_4_inst
 (
-	.z(masku_4), // OUT
-	.a0(maskt_4), // IN
-	.a1(maskt_3), // IN
-	.a2(masktb_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_4),
+	.a0 /* IN */ (maskt_4),
+	.a1 /* IN */ (maskt_3),
+	.a2 /* IN */ (masktb_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (242) - masku[5] : mx4
 mx4 masku_index_5_inst
 (
-	.z(masku_5), // OUT
-	.a0(maskt_5), // IN
-	.a1(maskt_2), // IN
-	.a2(masktb_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_5),
+	.a0 /* IN */ (maskt_5),
+	.a1 /* IN */ (maskt_2),
+	.a2 /* IN */ (masktb_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (244) - masku[6] : mx4
 mx4 masku_index_6_inst
 (
-	.z(masku_6), // OUT
-	.a0(maskt_6), // IN
-	.a1(maskt_1), // IN
-	.a2(masktb_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_6),
+	.a0 /* IN */ (maskt_6),
+	.a1 /* IN */ (maskt_1),
+	.a2 /* IN */ (masktb_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (246) - masku[7] : mx4
 mx4 masku_index_7_inst
 (
-	.z(masku_7), // OUT
-	.a0(maskt_7), // IN
-	.a1(maskt_0), // IN
-	.a2(masktb_14), // IN
-	.a3(zero), // IN
-	.s0(mir_bit), // IN
-	.s1(mir_byte)  // IN
+	.z /* OUT */ (masku_7),
+	.a0 /* IN */ (maskt_7),
+	.a1 /* IN */ (maskt_0),
+	.a2 /* IN */ (masktb_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (mir_bit),
+	.s1 /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (248) - masku[8] : mx2
 mx2 masku_index_8_inst
 (
-	.z(masku_8), // OUT
-	.a0(maskt_8), // IN
-	.a1(maskt_13), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_8),
+	.a0 /* IN */ (maskt_8),
+	.a1 /* IN */ (maskt_13),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (249) - masku[9] : mx2
 mx2 masku_index_9_inst
 (
-	.z(masku_9), // OUT
-	.a0(maskt_9), // IN
-	.a1(maskt_12), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_9),
+	.a0 /* IN */ (maskt_9),
+	.a1 /* IN */ (maskt_12),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (250) - masku[10] : mx2
 mx2 masku_index_10_inst
 (
-	.z(masku_10), // OUT
-	.a0(maskt_10), // IN
-	.a1(maskt_11), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_10),
+	.a0 /* IN */ (maskt_10),
+	.a1 /* IN */ (maskt_11),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (251) - masku[11] : mx2
 mx2 masku_index_11_inst
 (
-	.z(masku_11), // OUT
-	.a0(maskt_11), // IN
-	.a1(maskt_10), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_11),
+	.a0 /* IN */ (maskt_11),
+	.a1 /* IN */ (maskt_10),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (252) - masku[12] : mx2
 mx2 masku_index_12_inst
 (
-	.z(masku_12), // OUT
-	.a0(maskt_12), // IN
-	.a1(maskt_9), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_12),
+	.a0 /* IN */ (maskt_12),
+	.a1 /* IN */ (maskt_9),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (253) - masku[13] : mx2
 mx2 masku_index_13_inst
 (
-	.z(masku_13), // OUT
-	.a0(maskt_13), // IN
-	.a1(maskt_8), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_13),
+	.a0 /* IN */ (maskt_13),
+	.a1 /* IN */ (maskt_8),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (254) - masku[14] : mx2
 mx2 masku_index_14_inst
 (
-	.z(masku_14), // OUT
-	.a0(maskt_14), // IN
-	.a1(maskt_0), // IN
-	.s(mir_byte)  // IN
+	.z /* OUT */ (masku_14),
+	.a0 /* IN */ (maskt_14),
+	.a1 /* IN */ (maskt_0),
+	.s /* IN */ (mir_byte)
 );
 
 // DATAMUX.NET (259) - mask[0-7] : an2
@@ -679,645 +807,645 @@ assign dsel1b_1 = data_sel_1;
 // DATAMUX.NET (267) - ddatlo : mx4
 mx4 ddatlo_inst_0
 (
-	.z(ddatlo[0]), // OUT
-	.a0(patd_0[0]), // IN
-	.a1(lfu_0[0]), // IN
-	.a2(addql_0[0]), // IN
-	.a3(zero32[0]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[0]),
+	.a0 /* IN */ (patd_0[0]),
+	.a1 /* IN */ (lfu_0[0]),
+	.a2 /* IN */ (addql_0[0]),
+	.a3 /* IN */ (zero32[0]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_1
 (
-	.z(ddatlo[1]), // OUT
-	.a0(patd_0[1]), // IN
-	.a1(lfu_0[1]), // IN
-	.a2(addql_0[1]), // IN
-	.a3(zero32[1]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[1]),
+	.a0 /* IN */ (patd_0[1]),
+	.a1 /* IN */ (lfu_0[1]),
+	.a2 /* IN */ (addql_0[1]),
+	.a3 /* IN */ (zero32[1]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_2
 (
-	.z(ddatlo[2]), // OUT
-	.a0(patd_0[2]), // IN
-	.a1(lfu_0[2]), // IN
-	.a2(addql_0[2]), // IN
-	.a3(zero32[2]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[2]),
+	.a0 /* IN */ (patd_0[2]),
+	.a1 /* IN */ (lfu_0[2]),
+	.a2 /* IN */ (addql_0[2]),
+	.a3 /* IN */ (zero32[2]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_3
 (
-	.z(ddatlo[3]), // OUT
-	.a0(patd_0[3]), // IN
-	.a1(lfu_0[3]), // IN
-	.a2(addql_0[3]), // IN
-	.a3(zero32[3]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[3]),
+	.a0 /* IN */ (patd_0[3]),
+	.a1 /* IN */ (lfu_0[3]),
+	.a2 /* IN */ (addql_0[3]),
+	.a3 /* IN */ (zero32[3]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_4
 (
-	.z(ddatlo[4]), // OUT
-	.a0(patd_0[4]), // IN
-	.a1(lfu_0[4]), // IN
-	.a2(addql_0[4]), // IN
-	.a3(zero32[4]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[4]),
+	.a0 /* IN */ (patd_0[4]),
+	.a1 /* IN */ (lfu_0[4]),
+	.a2 /* IN */ (addql_0[4]),
+	.a3 /* IN */ (zero32[4]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_5
 (
-	.z(ddatlo[5]), // OUT
-	.a0(patd_0[5]), // IN
-	.a1(lfu_0[5]), // IN
-	.a2(addql_0[5]), // IN
-	.a3(zero32[5]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[5]),
+	.a0 /* IN */ (patd_0[5]),
+	.a1 /* IN */ (lfu_0[5]),
+	.a2 /* IN */ (addql_0[5]),
+	.a3 /* IN */ (zero32[5]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_6
 (
-	.z(ddatlo[6]), // OUT
-	.a0(patd_0[6]), // IN
-	.a1(lfu_0[6]), // IN
-	.a2(addql_0[6]), // IN
-	.a3(zero32[6]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[6]),
+	.a0 /* IN */ (patd_0[6]),
+	.a1 /* IN */ (lfu_0[6]),
+	.a2 /* IN */ (addql_0[6]),
+	.a3 /* IN */ (zero32[6]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_7
 (
-	.z(ddatlo[7]), // OUT
-	.a0(patd_0[7]), // IN
-	.a1(lfu_0[7]), // IN
-	.a2(addql_0[7]), // IN
-	.a3(zero32[7]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[7]),
+	.a0 /* IN */ (patd_0[7]),
+	.a1 /* IN */ (lfu_0[7]),
+	.a2 /* IN */ (addql_0[7]),
+	.a3 /* IN */ (zero32[7]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_8
 (
-	.z(ddatlo[8]), // OUT
-	.a0(patd_0[8]), // IN
-	.a1(lfu_0[8]), // IN
-	.a2(addql_0[8]), // IN
-	.a3(zero32[8]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[8]),
+	.a0 /* IN */ (patd_0[8]),
+	.a1 /* IN */ (lfu_0[8]),
+	.a2 /* IN */ (addql_0[8]),
+	.a3 /* IN */ (zero32[8]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_9
 (
-	.z(ddatlo[9]), // OUT
-	.a0(patd_0[9]), // IN
-	.a1(lfu_0[9]), // IN
-	.a2(addql_0[9]), // IN
-	.a3(zero32[9]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[9]),
+	.a0 /* IN */ (patd_0[9]),
+	.a1 /* IN */ (lfu_0[9]),
+	.a2 /* IN */ (addql_0[9]),
+	.a3 /* IN */ (zero32[9]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_10
 (
-	.z(ddatlo[10]), // OUT
-	.a0(patd_0[10]), // IN
-	.a1(lfu_0[10]), // IN
-	.a2(addql_0[10]), // IN
-	.a3(zero32[10]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[10]),
+	.a0 /* IN */ (patd_0[10]),
+	.a1 /* IN */ (lfu_0[10]),
+	.a2 /* IN */ (addql_0[10]),
+	.a3 /* IN */ (zero32[10]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_11
 (
-	.z(ddatlo[11]), // OUT
-	.a0(patd_0[11]), // IN
-	.a1(lfu_0[11]), // IN
-	.a2(addql_0[11]), // IN
-	.a3(zero32[11]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[11]),
+	.a0 /* IN */ (patd_0[11]),
+	.a1 /* IN */ (lfu_0[11]),
+	.a2 /* IN */ (addql_0[11]),
+	.a3 /* IN */ (zero32[11]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_12
 (
-	.z(ddatlo[12]), // OUT
-	.a0(patd_0[12]), // IN
-	.a1(lfu_0[12]), // IN
-	.a2(addql_0[12]), // IN
-	.a3(zero32[12]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[12]),
+	.a0 /* IN */ (patd_0[12]),
+	.a1 /* IN */ (lfu_0[12]),
+	.a2 /* IN */ (addql_0[12]),
+	.a3 /* IN */ (zero32[12]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_13
 (
-	.z(ddatlo[13]), // OUT
-	.a0(patd_0[13]), // IN
-	.a1(lfu_0[13]), // IN
-	.a2(addql_0[13]), // IN
-	.a3(zero32[13]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[13]),
+	.a0 /* IN */ (patd_0[13]),
+	.a1 /* IN */ (lfu_0[13]),
+	.a2 /* IN */ (addql_0[13]),
+	.a3 /* IN */ (zero32[13]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_14
 (
-	.z(ddatlo[14]), // OUT
-	.a0(patd_0[14]), // IN
-	.a1(lfu_0[14]), // IN
-	.a2(addql_0[14]), // IN
-	.a3(zero32[14]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[14]),
+	.a0 /* IN */ (patd_0[14]),
+	.a1 /* IN */ (lfu_0[14]),
+	.a2 /* IN */ (addql_0[14]),
+	.a3 /* IN */ (zero32[14]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_15
 (
-	.z(ddatlo[15]), // OUT
-	.a0(patd_0[15]), // IN
-	.a1(lfu_0[15]), // IN
-	.a2(addql_0[15]), // IN
-	.a3(zero32[15]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[15]),
+	.a0 /* IN */ (patd_0[15]),
+	.a1 /* IN */ (lfu_0[15]),
+	.a2 /* IN */ (addql_0[15]),
+	.a3 /* IN */ (zero32[15]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_16
 (
-	.z(ddatlo[16]), // OUT
-	.a0(patd_0[16]), // IN
-	.a1(lfu_0[16]), // IN
-	.a2(addql_0[16]), // IN
-	.a3(zero32[16]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[16]),
+	.a0 /* IN */ (patd_0[16]),
+	.a1 /* IN */ (lfu_0[16]),
+	.a2 /* IN */ (addql_0[16]),
+	.a3 /* IN */ (zero32[16]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_17
 (
-	.z(ddatlo[17]), // OUT
-	.a0(patd_0[17]), // IN
-	.a1(lfu_0[17]), // IN
-	.a2(addql_0[17]), // IN
-	.a3(zero32[17]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[17]),
+	.a0 /* IN */ (patd_0[17]),
+	.a1 /* IN */ (lfu_0[17]),
+	.a2 /* IN */ (addql_0[17]),
+	.a3 /* IN */ (zero32[17]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_18
 (
-	.z(ddatlo[18]), // OUT
-	.a0(patd_0[18]), // IN
-	.a1(lfu_0[18]), // IN
-	.a2(addql_0[18]), // IN
-	.a3(zero32[18]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[18]),
+	.a0 /* IN */ (patd_0[18]),
+	.a1 /* IN */ (lfu_0[18]),
+	.a2 /* IN */ (addql_0[18]),
+	.a3 /* IN */ (zero32[18]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_19
 (
-	.z(ddatlo[19]), // OUT
-	.a0(patd_0[19]), // IN
-	.a1(lfu_0[19]), // IN
-	.a2(addql_0[19]), // IN
-	.a3(zero32[19]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[19]),
+	.a0 /* IN */ (patd_0[19]),
+	.a1 /* IN */ (lfu_0[19]),
+	.a2 /* IN */ (addql_0[19]),
+	.a3 /* IN */ (zero32[19]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_20
 (
-	.z(ddatlo[20]), // OUT
-	.a0(patd_0[20]), // IN
-	.a1(lfu_0[20]), // IN
-	.a2(addql_0[20]), // IN
-	.a3(zero32[20]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[20]),
+	.a0 /* IN */ (patd_0[20]),
+	.a1 /* IN */ (lfu_0[20]),
+	.a2 /* IN */ (addql_0[20]),
+	.a3 /* IN */ (zero32[20]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_21
 (
-	.z(ddatlo[21]), // OUT
-	.a0(patd_0[21]), // IN
-	.a1(lfu_0[21]), // IN
-	.a2(addql_0[21]), // IN
-	.a3(zero32[21]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[21]),
+	.a0 /* IN */ (patd_0[21]),
+	.a1 /* IN */ (lfu_0[21]),
+	.a2 /* IN */ (addql_0[21]),
+	.a3 /* IN */ (zero32[21]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_22
 (
-	.z(ddatlo[22]), // OUT
-	.a0(patd_0[22]), // IN
-	.a1(lfu_0[22]), // IN
-	.a2(addql_0[22]), // IN
-	.a3(zero32[22]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[22]),
+	.a0 /* IN */ (patd_0[22]),
+	.a1 /* IN */ (lfu_0[22]),
+	.a2 /* IN */ (addql_0[22]),
+	.a3 /* IN */ (zero32[22]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_23
 (
-	.z(ddatlo[23]), // OUT
-	.a0(patd_0[23]), // IN
-	.a1(lfu_0[23]), // IN
-	.a2(addql_0[23]), // IN
-	.a3(zero32[23]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[23]),
+	.a0 /* IN */ (patd_0[23]),
+	.a1 /* IN */ (lfu_0[23]),
+	.a2 /* IN */ (addql_0[23]),
+	.a3 /* IN */ (zero32[23]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_24
 (
-	.z(ddatlo[24]), // OUT
-	.a0(patd_0[24]), // IN
-	.a1(lfu_0[24]), // IN
-	.a2(addql_0[24]), // IN
-	.a3(zero32[24]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[24]),
+	.a0 /* IN */ (patd_0[24]),
+	.a1 /* IN */ (lfu_0[24]),
+	.a2 /* IN */ (addql_0[24]),
+	.a3 /* IN */ (zero32[24]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_25
 (
-	.z(ddatlo[25]), // OUT
-	.a0(patd_0[25]), // IN
-	.a1(lfu_0[25]), // IN
-	.a2(addql_0[25]), // IN
-	.a3(zero32[25]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[25]),
+	.a0 /* IN */ (patd_0[25]),
+	.a1 /* IN */ (lfu_0[25]),
+	.a2 /* IN */ (addql_0[25]),
+	.a3 /* IN */ (zero32[25]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_26
 (
-	.z(ddatlo[26]), // OUT
-	.a0(patd_0[26]), // IN
-	.a1(lfu_0[26]), // IN
-	.a2(addql_0[26]), // IN
-	.a3(zero32[26]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[26]),
+	.a0 /* IN */ (patd_0[26]),
+	.a1 /* IN */ (lfu_0[26]),
+	.a2 /* IN */ (addql_0[26]),
+	.a3 /* IN */ (zero32[26]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_27
 (
-	.z(ddatlo[27]), // OUT
-	.a0(patd_0[27]), // IN
-	.a1(lfu_0[27]), // IN
-	.a2(addql_0[27]), // IN
-	.a3(zero32[27]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[27]),
+	.a0 /* IN */ (patd_0[27]),
+	.a1 /* IN */ (lfu_0[27]),
+	.a2 /* IN */ (addql_0[27]),
+	.a3 /* IN */ (zero32[27]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_28
 (
-	.z(ddatlo[28]), // OUT
-	.a0(patd_0[28]), // IN
-	.a1(lfu_0[28]), // IN
-	.a2(addql_0[28]), // IN
-	.a3(zero32[28]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[28]),
+	.a0 /* IN */ (patd_0[28]),
+	.a1 /* IN */ (lfu_0[28]),
+	.a2 /* IN */ (addql_0[28]),
+	.a3 /* IN */ (zero32[28]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_29
 (
-	.z(ddatlo[29]), // OUT
-	.a0(patd_0[29]), // IN
-	.a1(lfu_0[29]), // IN
-	.a2(addql_0[29]), // IN
-	.a3(zero32[29]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[29]),
+	.a0 /* IN */ (patd_0[29]),
+	.a1 /* IN */ (lfu_0[29]),
+	.a2 /* IN */ (addql_0[29]),
+	.a3 /* IN */ (zero32[29]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_30
 (
-	.z(ddatlo[30]), // OUT
-	.a0(patd_0[30]), // IN
-	.a1(lfu_0[30]), // IN
-	.a2(addql_0[30]), // IN
-	.a3(zero32[30]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[30]),
+	.a0 /* IN */ (patd_0[30]),
+	.a1 /* IN */ (lfu_0[30]),
+	.a2 /* IN */ (addql_0[30]),
+	.a3 /* IN */ (zero32[30]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 mx4 ddatlo_inst_31
 (
-	.z(ddatlo[31]), // OUT
-	.a0(patd_0[31]), // IN
-	.a1(lfu_0[31]), // IN
-	.a2(addql_0[31]), // IN
-	.a3(zero32[31]), // IN
-	.s0(dsel0b_0), // IN
-	.s1(dsel1b_0)  // IN
+	.z /* OUT */ (ddatlo[31]),
+	.a0 /* IN */ (patd_0[31]),
+	.a1 /* IN */ (lfu_0[31]),
+	.a2 /* IN */ (addql_0[31]),
+	.a3 /* IN */ (zero32[31]),
+	.s0 /* IN */ (dsel0b_0),
+	.s1 /* IN */ (dsel1b_0)
 );
 
 // DATAMUX.NET (269) - ddathi : mx4
 mx4 ddathi_inst_0
 (
-	.z(ddathi[0]), // OUT
-	.a0(patd_1[0]), // IN
-	.a1(lfu_1[0]), // IN
-	.a2(addql_1[0]), // IN
-	.a3(zero32[0]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[0]),
+	.a0 /* IN */ (patd_1[0]),
+	.a1 /* IN */ (lfu_1[0]),
+	.a2 /* IN */ (addql_1[0]),
+	.a3 /* IN */ (zero32[0]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_1
 (
-	.z(ddathi[1]), // OUT
-	.a0(patd_1[1]), // IN
-	.a1(lfu_1[1]), // IN
-	.a2(addql_1[1]), // IN
-	.a3(zero32[1]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[1]),
+	.a0 /* IN */ (patd_1[1]),
+	.a1 /* IN */ (lfu_1[1]),
+	.a2 /* IN */ (addql_1[1]),
+	.a3 /* IN */ (zero32[1]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_2
 (
-	.z(ddathi[2]), // OUT
-	.a0(patd_1[2]), // IN
-	.a1(lfu_1[2]), // IN
-	.a2(addql_1[2]), // IN
-	.a3(zero32[2]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[2]),
+	.a0 /* IN */ (patd_1[2]),
+	.a1 /* IN */ (lfu_1[2]),
+	.a2 /* IN */ (addql_1[2]),
+	.a3 /* IN */ (zero32[2]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_3
 (
-	.z(ddathi[3]), // OUT
-	.a0(patd_1[3]), // IN
-	.a1(lfu_1[3]), // IN
-	.a2(addql_1[3]), // IN
-	.a3(zero32[3]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[3]),
+	.a0 /* IN */ (patd_1[3]),
+	.a1 /* IN */ (lfu_1[3]),
+	.a2 /* IN */ (addql_1[3]),
+	.a3 /* IN */ (zero32[3]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_4
 (
-	.z(ddathi[4]), // OUT
-	.a0(patd_1[4]), // IN
-	.a1(lfu_1[4]), // IN
-	.a2(addql_1[4]), // IN
-	.a3(zero32[4]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[4]),
+	.a0 /* IN */ (patd_1[4]),
+	.a1 /* IN */ (lfu_1[4]),
+	.a2 /* IN */ (addql_1[4]),
+	.a3 /* IN */ (zero32[4]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_5
 (
-	.z(ddathi[5]), // OUT
-	.a0(patd_1[5]), // IN
-	.a1(lfu_1[5]), // IN
-	.a2(addql_1[5]), // IN
-	.a3(zero32[5]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[5]),
+	.a0 /* IN */ (patd_1[5]),
+	.a1 /* IN */ (lfu_1[5]),
+	.a2 /* IN */ (addql_1[5]),
+	.a3 /* IN */ (zero32[5]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_6
 (
-	.z(ddathi[6]), // OUT
-	.a0(patd_1[6]), // IN
-	.a1(lfu_1[6]), // IN
-	.a2(addql_1[6]), // IN
-	.a3(zero32[6]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[6]),
+	.a0 /* IN */ (patd_1[6]),
+	.a1 /* IN */ (lfu_1[6]),
+	.a2 /* IN */ (addql_1[6]),
+	.a3 /* IN */ (zero32[6]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_7
 (
-	.z(ddathi[7]), // OUT
-	.a0(patd_1[7]), // IN
-	.a1(lfu_1[7]), // IN
-	.a2(addql_1[7]), // IN
-	.a3(zero32[7]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[7]),
+	.a0 /* IN */ (patd_1[7]),
+	.a1 /* IN */ (lfu_1[7]),
+	.a2 /* IN */ (addql_1[7]),
+	.a3 /* IN */ (zero32[7]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_8
 (
-	.z(ddathi[8]), // OUT
-	.a0(patd_1[8]), // IN
-	.a1(lfu_1[8]), // IN
-	.a2(addql_1[8]), // IN
-	.a3(zero32[8]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[8]),
+	.a0 /* IN */ (patd_1[8]),
+	.a1 /* IN */ (lfu_1[8]),
+	.a2 /* IN */ (addql_1[8]),
+	.a3 /* IN */ (zero32[8]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_9
 (
-	.z(ddathi[9]), // OUT
-	.a0(patd_1[9]), // IN
-	.a1(lfu_1[9]), // IN
-	.a2(addql_1[9]), // IN
-	.a3(zero32[9]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[9]),
+	.a0 /* IN */ (patd_1[9]),
+	.a1 /* IN */ (lfu_1[9]),
+	.a2 /* IN */ (addql_1[9]),
+	.a3 /* IN */ (zero32[9]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_10
 (
-	.z(ddathi[10]), // OUT
-	.a0(patd_1[10]), // IN
-	.a1(lfu_1[10]), // IN
-	.a2(addql_1[10]), // IN
-	.a3(zero32[10]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[10]),
+	.a0 /* IN */ (patd_1[10]),
+	.a1 /* IN */ (lfu_1[10]),
+	.a2 /* IN */ (addql_1[10]),
+	.a3 /* IN */ (zero32[10]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_11
 (
-	.z(ddathi[11]), // OUT
-	.a0(patd_1[11]), // IN
-	.a1(lfu_1[11]), // IN
-	.a2(addql_1[11]), // IN
-	.a3(zero32[11]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[11]),
+	.a0 /* IN */ (patd_1[11]),
+	.a1 /* IN */ (lfu_1[11]),
+	.a2 /* IN */ (addql_1[11]),
+	.a3 /* IN */ (zero32[11]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_12
 (
-	.z(ddathi[12]), // OUT
-	.a0(patd_1[12]), // IN
-	.a1(lfu_1[12]), // IN
-	.a2(addql_1[12]), // IN
-	.a3(zero32[12]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[12]),
+	.a0 /* IN */ (patd_1[12]),
+	.a1 /* IN */ (lfu_1[12]),
+	.a2 /* IN */ (addql_1[12]),
+	.a3 /* IN */ (zero32[12]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_13
 (
-	.z(ddathi[13]), // OUT
-	.a0(patd_1[13]), // IN
-	.a1(lfu_1[13]), // IN
-	.a2(addql_1[13]), // IN
-	.a3(zero32[13]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[13]),
+	.a0 /* IN */ (patd_1[13]),
+	.a1 /* IN */ (lfu_1[13]),
+	.a2 /* IN */ (addql_1[13]),
+	.a3 /* IN */ (zero32[13]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_14
 (
-	.z(ddathi[14]), // OUT
-	.a0(patd_1[14]), // IN
-	.a1(lfu_1[14]), // IN
-	.a2(addql_1[14]), // IN
-	.a3(zero32[14]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[14]),
+	.a0 /* IN */ (patd_1[14]),
+	.a1 /* IN */ (lfu_1[14]),
+	.a2 /* IN */ (addql_1[14]),
+	.a3 /* IN */ (zero32[14]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_15
 (
-	.z(ddathi[15]), // OUT
-	.a0(patd_1[15]), // IN
-	.a1(lfu_1[15]), // IN
-	.a2(addql_1[15]), // IN
-	.a3(zero32[15]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[15]),
+	.a0 /* IN */ (patd_1[15]),
+	.a1 /* IN */ (lfu_1[15]),
+	.a2 /* IN */ (addql_1[15]),
+	.a3 /* IN */ (zero32[15]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_16
 (
-	.z(ddathi[16]), // OUT
-	.a0(patd_1[16]), // IN
-	.a1(lfu_1[16]), // IN
-	.a2(addql_1[16]), // IN
-	.a3(zero32[16]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[16]),
+	.a0 /* IN */ (patd_1[16]),
+	.a1 /* IN */ (lfu_1[16]),
+	.a2 /* IN */ (addql_1[16]),
+	.a3 /* IN */ (zero32[16]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_17
 (
-	.z(ddathi[17]), // OUT
-	.a0(patd_1[17]), // IN
-	.a1(lfu_1[17]), // IN
-	.a2(addql_1[17]), // IN
-	.a3(zero32[17]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[17]),
+	.a0 /* IN */ (patd_1[17]),
+	.a1 /* IN */ (lfu_1[17]),
+	.a2 /* IN */ (addql_1[17]),
+	.a3 /* IN */ (zero32[17]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_18
 (
-	.z(ddathi[18]), // OUT
-	.a0(patd_1[18]), // IN
-	.a1(lfu_1[18]), // IN
-	.a2(addql_1[18]), // IN
-	.a3(zero32[18]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[18]),
+	.a0 /* IN */ (patd_1[18]),
+	.a1 /* IN */ (lfu_1[18]),
+	.a2 /* IN */ (addql_1[18]),
+	.a3 /* IN */ (zero32[18]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_19
 (
-	.z(ddathi[19]), // OUT
-	.a0(patd_1[19]), // IN
-	.a1(lfu_1[19]), // IN
-	.a2(addql_1[19]), // IN
-	.a3(zero32[19]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[19]),
+	.a0 /* IN */ (patd_1[19]),
+	.a1 /* IN */ (lfu_1[19]),
+	.a2 /* IN */ (addql_1[19]),
+	.a3 /* IN */ (zero32[19]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_20
 (
-	.z(ddathi[20]), // OUT
-	.a0(patd_1[20]), // IN
-	.a1(lfu_1[20]), // IN
-	.a2(addql_1[20]), // IN
-	.a3(zero32[20]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[20]),
+	.a0 /* IN */ (patd_1[20]),
+	.a1 /* IN */ (lfu_1[20]),
+	.a2 /* IN */ (addql_1[20]),
+	.a3 /* IN */ (zero32[20]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_21
 (
-	.z(ddathi[21]), // OUT
-	.a0(patd_1[21]), // IN
-	.a1(lfu_1[21]), // IN
-	.a2(addql_1[21]), // IN
-	.a3(zero32[21]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[21]),
+	.a0 /* IN */ (patd_1[21]),
+	.a1 /* IN */ (lfu_1[21]),
+	.a2 /* IN */ (addql_1[21]),
+	.a3 /* IN */ (zero32[21]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_22
 (
-	.z(ddathi[22]), // OUT
-	.a0(patd_1[22]), // IN
-	.a1(lfu_1[22]), // IN
-	.a2(addql_1[22]), // IN
-	.a3(zero32[22]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[22]),
+	.a0 /* IN */ (patd_1[22]),
+	.a1 /* IN */ (lfu_1[22]),
+	.a2 /* IN */ (addql_1[22]),
+	.a3 /* IN */ (zero32[22]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_23
 (
-	.z(ddathi[23]), // OUT
-	.a0(patd_1[23]), // IN
-	.a1(lfu_1[23]), // IN
-	.a2(addql_1[23]), // IN
-	.a3(zero32[23]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[23]),
+	.a0 /* IN */ (patd_1[23]),
+	.a1 /* IN */ (lfu_1[23]),
+	.a2 /* IN */ (addql_1[23]),
+	.a3 /* IN */ (zero32[23]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_24
 (
-	.z(ddathi[24]), // OUT
-	.a0(patd_1[24]), // IN
-	.a1(lfu_1[24]), // IN
-	.a2(addql_1[24]), // IN
-	.a3(zero32[24]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[24]),
+	.a0 /* IN */ (patd_1[24]),
+	.a1 /* IN */ (lfu_1[24]),
+	.a2 /* IN */ (addql_1[24]),
+	.a3 /* IN */ (zero32[24]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_25
 (
-	.z(ddathi[25]), // OUT
-	.a0(patd_1[25]), // IN
-	.a1(lfu_1[25]), // IN
-	.a2(addql_1[25]), // IN
-	.a3(zero32[25]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[25]),
+	.a0 /* IN */ (patd_1[25]),
+	.a1 /* IN */ (lfu_1[25]),
+	.a2 /* IN */ (addql_1[25]),
+	.a3 /* IN */ (zero32[25]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_26
 (
-	.z(ddathi[26]), // OUT
-	.a0(patd_1[26]), // IN
-	.a1(lfu_1[26]), // IN
-	.a2(addql_1[26]), // IN
-	.a3(zero32[26]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[26]),
+	.a0 /* IN */ (patd_1[26]),
+	.a1 /* IN */ (lfu_1[26]),
+	.a2 /* IN */ (addql_1[26]),
+	.a3 /* IN */ (zero32[26]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_27
 (
-	.z(ddathi[27]), // OUT
-	.a0(patd_1[27]), // IN
-	.a1(lfu_1[27]), // IN
-	.a2(addql_1[27]), // IN
-	.a3(zero32[27]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[27]),
+	.a0 /* IN */ (patd_1[27]),
+	.a1 /* IN */ (lfu_1[27]),
+	.a2 /* IN */ (addql_1[27]),
+	.a3 /* IN */ (zero32[27]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_28
 (
-	.z(ddathi[28]), // OUT
-	.a0(patd_1[28]), // IN
-	.a1(lfu_1[28]), // IN
-	.a2(addql_1[28]), // IN
-	.a3(zero32[28]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[28]),
+	.a0 /* IN */ (patd_1[28]),
+	.a1 /* IN */ (lfu_1[28]),
+	.a2 /* IN */ (addql_1[28]),
+	.a3 /* IN */ (zero32[28]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_29
 (
-	.z(ddathi[29]), // OUT
-	.a0(patd_1[29]), // IN
-	.a1(lfu_1[29]), // IN
-	.a2(addql_1[29]), // IN
-	.a3(zero32[29]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[29]),
+	.a0 /* IN */ (patd_1[29]),
+	.a1 /* IN */ (lfu_1[29]),
+	.a2 /* IN */ (addql_1[29]),
+	.a3 /* IN */ (zero32[29]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_30
 (
-	.z(ddathi[30]), // OUT
-	.a0(patd_1[30]), // IN
-	.a1(lfu_1[30]), // IN
-	.a2(addql_1[30]), // IN
-	.a3(zero32[30]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[30]),
+	.a0 /* IN */ (patd_1[30]),
+	.a1 /* IN */ (lfu_1[30]),
+	.a2 /* IN */ (addql_1[30]),
+	.a3 /* IN */ (zero32[30]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 mx4 ddathi_inst_31
 (
-	.z(ddathi[31]), // OUT
-	.a0(patd_1[31]), // IN
-	.a1(lfu_1[31]), // IN
-	.a2(addql_1[31]), // IN
-	.a3(zero32[31]), // IN
-	.s0(dsel0b_1), // IN
-	.s1(dsel1b_1)  // IN
+	.z /* OUT */ (ddathi[31]),
+	.a0 /* IN */ (patd_1[31]),
+	.a1 /* IN */ (lfu_1[31]),
+	.a2 /* IN */ (addql_1[31]),
+	.a3 /* IN */ (zero32[31]),
+	.s0 /* IN */ (dsel0b_1),
+	.s1 /* IN */ (dsel1b_1)
 );
 
 // DATAMUX.NET (272) - zed_sel : an2
@@ -1330,657 +1458,657 @@ assign zed_selb_1 = zed_sel;
 // DATAMUX.NET (275) - dat[0-7] : mx4
 mx4 dat_from_0_to_7_inst_0
 (
-	.z(dat_0), // OUT
-	.a0(dstdlo[0]), // IN
-	.a1(ddatlo[0]), // IN
-	.a2(dstzlo[0]), // IN
-	.a3(srczlo[0]), // IN
-	.s0(mask_0), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_0),
+	.a0 /* IN */ (dstdlo[0]),
+	.a1 /* IN */ (ddatlo[0]),
+	.a2 /* IN */ (dstzlo[0]),
+	.a3 /* IN */ (srczlo[0]),
+	.s0 /* IN */ (mask_0),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_1
 (
-	.z(dat_1), // OUT
-	.a0(dstdlo[1]), // IN
-	.a1(ddatlo[1]), // IN
-	.a2(dstzlo[1]), // IN
-	.a3(srczlo[1]), // IN
-	.s0(mask_1), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_1),
+	.a0 /* IN */ (dstdlo[1]),
+	.a1 /* IN */ (ddatlo[1]),
+	.a2 /* IN */ (dstzlo[1]),
+	.a3 /* IN */ (srczlo[1]),
+	.s0 /* IN */ (mask_1),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_2
 (
-	.z(dat_2), // OUT
-	.a0(dstdlo[2]), // IN
-	.a1(ddatlo[2]), // IN
-	.a2(dstzlo[2]), // IN
-	.a3(srczlo[2]), // IN
-	.s0(mask_2), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_2),
+	.a0 /* IN */ (dstdlo[2]),
+	.a1 /* IN */ (ddatlo[2]),
+	.a2 /* IN */ (dstzlo[2]),
+	.a3 /* IN */ (srczlo[2]),
+	.s0 /* IN */ (mask_2),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_3
 (
-	.z(dat_3), // OUT
-	.a0(dstdlo[3]), // IN
-	.a1(ddatlo[3]), // IN
-	.a2(dstzlo[3]), // IN
-	.a3(srczlo[3]), // IN
-	.s0(mask_3), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_3),
+	.a0 /* IN */ (dstdlo[3]),
+	.a1 /* IN */ (ddatlo[3]),
+	.a2 /* IN */ (dstzlo[3]),
+	.a3 /* IN */ (srczlo[3]),
+	.s0 /* IN */ (mask_3),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_4
 (
-	.z(dat_4), // OUT
-	.a0(dstdlo[4]), // IN
-	.a1(ddatlo[4]), // IN
-	.a2(dstzlo[4]), // IN
-	.a3(srczlo[4]), // IN
-	.s0(mask_4), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_4),
+	.a0 /* IN */ (dstdlo[4]),
+	.a1 /* IN */ (ddatlo[4]),
+	.a2 /* IN */ (dstzlo[4]),
+	.a3 /* IN */ (srczlo[4]),
+	.s0 /* IN */ (mask_4),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_5
 (
-	.z(dat_5), // OUT
-	.a0(dstdlo[5]), // IN
-	.a1(ddatlo[5]), // IN
-	.a2(dstzlo[5]), // IN
-	.a3(srczlo[5]), // IN
-	.s0(mask_5), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_5),
+	.a0 /* IN */ (dstdlo[5]),
+	.a1 /* IN */ (ddatlo[5]),
+	.a2 /* IN */ (dstzlo[5]),
+	.a3 /* IN */ (srczlo[5]),
+	.s0 /* IN */ (mask_5),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_6
 (
-	.z(dat_6), // OUT
-	.a0(dstdlo[6]), // IN
-	.a1(ddatlo[6]), // IN
-	.a2(dstzlo[6]), // IN
-	.a3(srczlo[6]), // IN
-	.s0(mask_6), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_6),
+	.a0 /* IN */ (dstdlo[6]),
+	.a1 /* IN */ (ddatlo[6]),
+	.a2 /* IN */ (dstzlo[6]),
+	.a3 /* IN */ (srczlo[6]),
+	.s0 /* IN */ (mask_6),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_0_to_7_inst_7
 (
-	.z(dat_7), // OUT
-	.a0(dstdlo[7]), // IN
-	.a1(ddatlo[7]), // IN
-	.a2(dstzlo[7]), // IN
-	.a3(srczlo[7]), // IN
-	.s0(mask_7), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_7),
+	.a0 /* IN */ (dstdlo[7]),
+	.a1 /* IN */ (ddatlo[7]),
+	.a2 /* IN */ (dstzlo[7]),
+	.a3 /* IN */ (srczlo[7]),
+	.s0 /* IN */ (mask_7),
+	.s1 /* IN */ (zed_selb_0)
 );
 
 // DATAMUX.NET (278) - dat[8-15] : mx4
 mx4 dat_from_8_to_15_inst_0
 (
-	.z(dat_8), // OUT
-	.a0(dstdlo[8]), // IN
-	.a1(ddatlo[8]), // IN
-	.a2(dstzlo[8]), // IN
-	.a3(srczlo[8]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_8),
+	.a0 /* IN */ (dstdlo[8]),
+	.a1 /* IN */ (ddatlo[8]),
+	.a2 /* IN */ (dstzlo[8]),
+	.a3 /* IN */ (srczlo[8]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_1
 (
-	.z(dat_9), // OUT
-	.a0(dstdlo[9]), // IN
-	.a1(ddatlo[9]), // IN
-	.a2(dstzlo[9]), // IN
-	.a3(srczlo[9]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_9),
+	.a0 /* IN */ (dstdlo[9]),
+	.a1 /* IN */ (ddatlo[9]),
+	.a2 /* IN */ (dstzlo[9]),
+	.a3 /* IN */ (srczlo[9]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_2
 (
-	.z(dat_10), // OUT
-	.a0(dstdlo[10]), // IN
-	.a1(ddatlo[10]), // IN
-	.a2(dstzlo[10]), // IN
-	.a3(srczlo[10]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_10),
+	.a0 /* IN */ (dstdlo[10]),
+	.a1 /* IN */ (ddatlo[10]),
+	.a2 /* IN */ (dstzlo[10]),
+	.a3 /* IN */ (srczlo[10]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_3
 (
-	.z(dat_11), // OUT
-	.a0(dstdlo[11]), // IN
-	.a1(ddatlo[11]), // IN
-	.a2(dstzlo[11]), // IN
-	.a3(srczlo[11]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_11),
+	.a0 /* IN */ (dstdlo[11]),
+	.a1 /* IN */ (ddatlo[11]),
+	.a2 /* IN */ (dstzlo[11]),
+	.a3 /* IN */ (srczlo[11]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_4
 (
-	.z(dat_12), // OUT
-	.a0(dstdlo[12]), // IN
-	.a1(ddatlo[12]), // IN
-	.a2(dstzlo[12]), // IN
-	.a3(srczlo[12]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_12),
+	.a0 /* IN */ (dstdlo[12]),
+	.a1 /* IN */ (ddatlo[12]),
+	.a2 /* IN */ (dstzlo[12]),
+	.a3 /* IN */ (srczlo[12]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_5
 (
-	.z(dat_13), // OUT
-	.a0(dstdlo[13]), // IN
-	.a1(ddatlo[13]), // IN
-	.a2(dstzlo[13]), // IN
-	.a3(srczlo[13]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_13),
+	.a0 /* IN */ (dstdlo[13]),
+	.a1 /* IN */ (ddatlo[13]),
+	.a2 /* IN */ (dstzlo[13]),
+	.a3 /* IN */ (srczlo[13]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_6
 (
-	.z(dat_14), // OUT
-	.a0(dstdlo[14]), // IN
-	.a1(ddatlo[14]), // IN
-	.a2(dstzlo[14]), // IN
-	.a3(srczlo[14]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_14),
+	.a0 /* IN */ (dstdlo[14]),
+	.a1 /* IN */ (ddatlo[14]),
+	.a2 /* IN */ (dstzlo[14]),
+	.a3 /* IN */ (srczlo[14]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_8_to_15_inst_7
 (
-	.z(dat_15), // OUT
-	.a0(dstdlo[15]), // IN
-	.a1(ddatlo[15]), // IN
-	.a2(dstzlo[15]), // IN
-	.a3(srczlo[15]), // IN
-	.s0(mask_8), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_15),
+	.a0 /* IN */ (dstdlo[15]),
+	.a1 /* IN */ (ddatlo[15]),
+	.a2 /* IN */ (dstzlo[15]),
+	.a3 /* IN */ (srczlo[15]),
+	.s0 /* IN */ (mask_8),
+	.s1 /* IN */ (zed_selb_0)
 );
 
 // DATAMUX.NET (281) - dat[16-23] : mx4
 mx4 dat_from_16_to_23_inst_0
 (
-	.z(dat_16), // OUT
-	.a0(dstdlo[16]), // IN
-	.a1(ddatlo[16]), // IN
-	.a2(dstzlo[16]), // IN
-	.a3(srczlo[16]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_16),
+	.a0 /* IN */ (dstdlo[16]),
+	.a1 /* IN */ (ddatlo[16]),
+	.a2 /* IN */ (dstzlo[16]),
+	.a3 /* IN */ (srczlo[16]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_1
 (
-	.z(dat_17), // OUT
-	.a0(dstdlo[17]), // IN
-	.a1(ddatlo[17]), // IN
-	.a2(dstzlo[17]), // IN
-	.a3(srczlo[17]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_17),
+	.a0 /* IN */ (dstdlo[17]),
+	.a1 /* IN */ (ddatlo[17]),
+	.a2 /* IN */ (dstzlo[17]),
+	.a3 /* IN */ (srczlo[17]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_2
 (
-	.z(dat_18), // OUT
-	.a0(dstdlo[18]), // IN
-	.a1(ddatlo[18]), // IN
-	.a2(dstzlo[18]), // IN
-	.a3(srczlo[18]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_18),
+	.a0 /* IN */ (dstdlo[18]),
+	.a1 /* IN */ (ddatlo[18]),
+	.a2 /* IN */ (dstzlo[18]),
+	.a3 /* IN */ (srczlo[18]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_3
 (
-	.z(dat_19), // OUT
-	.a0(dstdlo[19]), // IN
-	.a1(ddatlo[19]), // IN
-	.a2(dstzlo[19]), // IN
-	.a3(srczlo[19]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_19),
+	.a0 /* IN */ (dstdlo[19]),
+	.a1 /* IN */ (ddatlo[19]),
+	.a2 /* IN */ (dstzlo[19]),
+	.a3 /* IN */ (srczlo[19]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_4
 (
-	.z(dat_20), // OUT
-	.a0(dstdlo[20]), // IN
-	.a1(ddatlo[20]), // IN
-	.a2(dstzlo[20]), // IN
-	.a3(srczlo[20]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_20),
+	.a0 /* IN */ (dstdlo[20]),
+	.a1 /* IN */ (ddatlo[20]),
+	.a2 /* IN */ (dstzlo[20]),
+	.a3 /* IN */ (srczlo[20]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_5
 (
-	.z(dat_21), // OUT
-	.a0(dstdlo[21]), // IN
-	.a1(ddatlo[21]), // IN
-	.a2(dstzlo[21]), // IN
-	.a3(srczlo[21]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_21),
+	.a0 /* IN */ (dstdlo[21]),
+	.a1 /* IN */ (ddatlo[21]),
+	.a2 /* IN */ (dstzlo[21]),
+	.a3 /* IN */ (srczlo[21]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_6
 (
-	.z(dat_22), // OUT
-	.a0(dstdlo[22]), // IN
-	.a1(ddatlo[22]), // IN
-	.a2(dstzlo[22]), // IN
-	.a3(srczlo[22]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_22),
+	.a0 /* IN */ (dstdlo[22]),
+	.a1 /* IN */ (ddatlo[22]),
+	.a2 /* IN */ (dstzlo[22]),
+	.a3 /* IN */ (srczlo[22]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_16_to_23_inst_7
 (
-	.z(dat_23), // OUT
-	.a0(dstdlo[23]), // IN
-	.a1(ddatlo[23]), // IN
-	.a2(dstzlo[23]), // IN
-	.a3(srczlo[23]), // IN
-	.s0(mask_9), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_23),
+	.a0 /* IN */ (dstdlo[23]),
+	.a1 /* IN */ (ddatlo[23]),
+	.a2 /* IN */ (dstzlo[23]),
+	.a3 /* IN */ (srczlo[23]),
+	.s0 /* IN */ (mask_9),
+	.s1 /* IN */ (zed_selb_0)
 );
 
 // DATAMUX.NET (284) - dat[24-31] : mx4
 mx4 dat_from_24_to_31_inst_0
 (
-	.z(dat_24), // OUT
-	.a0(dstdlo[24]), // IN
-	.a1(ddatlo[24]), // IN
-	.a2(dstzlo[24]), // IN
-	.a3(srczlo[24]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_24),
+	.a0 /* IN */ (dstdlo[24]),
+	.a1 /* IN */ (ddatlo[24]),
+	.a2 /* IN */ (dstzlo[24]),
+	.a3 /* IN */ (srczlo[24]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_1
 (
-	.z(dat_25), // OUT
-	.a0(dstdlo[25]), // IN
-	.a1(ddatlo[25]), // IN
-	.a2(dstzlo[25]), // IN
-	.a3(srczlo[25]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_25),
+	.a0 /* IN */ (dstdlo[25]),
+	.a1 /* IN */ (ddatlo[25]),
+	.a2 /* IN */ (dstzlo[25]),
+	.a3 /* IN */ (srczlo[25]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_2
 (
-	.z(dat_26), // OUT
-	.a0(dstdlo[26]), // IN
-	.a1(ddatlo[26]), // IN
-	.a2(dstzlo[26]), // IN
-	.a3(srczlo[26]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_26),
+	.a0 /* IN */ (dstdlo[26]),
+	.a1 /* IN */ (ddatlo[26]),
+	.a2 /* IN */ (dstzlo[26]),
+	.a3 /* IN */ (srczlo[26]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_3
 (
-	.z(dat_27), // OUT
-	.a0(dstdlo[27]), // IN
-	.a1(ddatlo[27]), // IN
-	.a2(dstzlo[27]), // IN
-	.a3(srczlo[27]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_27),
+	.a0 /* IN */ (dstdlo[27]),
+	.a1 /* IN */ (ddatlo[27]),
+	.a2 /* IN */ (dstzlo[27]),
+	.a3 /* IN */ (srczlo[27]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_4
 (
-	.z(dat_28), // OUT
-	.a0(dstdlo[28]), // IN
-	.a1(ddatlo[28]), // IN
-	.a2(dstzlo[28]), // IN
-	.a3(srczlo[28]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_28),
+	.a0 /* IN */ (dstdlo[28]),
+	.a1 /* IN */ (ddatlo[28]),
+	.a2 /* IN */ (dstzlo[28]),
+	.a3 /* IN */ (srczlo[28]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_5
 (
-	.z(dat_29), // OUT
-	.a0(dstdlo[29]), // IN
-	.a1(ddatlo[29]), // IN
-	.a2(dstzlo[29]), // IN
-	.a3(srczlo[29]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_29),
+	.a0 /* IN */ (dstdlo[29]),
+	.a1 /* IN */ (ddatlo[29]),
+	.a2 /* IN */ (dstzlo[29]),
+	.a3 /* IN */ (srczlo[29]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_6
 (
-	.z(dat_30), // OUT
-	.a0(dstdlo[30]), // IN
-	.a1(ddatlo[30]), // IN
-	.a2(dstzlo[30]), // IN
-	.a3(srczlo[30]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_30),
+	.a0 /* IN */ (dstdlo[30]),
+	.a1 /* IN */ (ddatlo[30]),
+	.a2 /* IN */ (dstzlo[30]),
+	.a3 /* IN */ (srczlo[30]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 mx4 dat_from_24_to_31_inst_7
 (
-	.z(dat_31), // OUT
-	.a0(dstdlo[31]), // IN
-	.a1(ddatlo[31]), // IN
-	.a2(dstzlo[31]), // IN
-	.a3(srczlo[31]), // IN
-	.s0(mask_10), // IN
-	.s1(zed_selb_0)  // IN
+	.z /* OUT */ (dat_31),
+	.a0 /* IN */ (dstdlo[31]),
+	.a1 /* IN */ (ddatlo[31]),
+	.a2 /* IN */ (dstzlo[31]),
+	.a3 /* IN */ (srczlo[31]),
+	.s0 /* IN */ (mask_10),
+	.s1 /* IN */ (zed_selb_0)
 );
 
 // DATAMUX.NET (287) - dat[32-39] : mx4
 mx4 dat_from_32_to_39_inst_0
 (
-	.z(dat_32), // OUT
-	.a0(dstdhi[0]), // IN
-	.a1(ddathi[0]), // IN
-	.a2(dstzhi[0]), // IN
-	.a3(srczhi[0]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_32),
+	.a0 /* IN */ (dstdhi[0]),
+	.a1 /* IN */ (ddathi[0]),
+	.a2 /* IN */ (dstzhi[0]),
+	.a3 /* IN */ (srczhi[0]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_1
 (
-	.z(dat_33), // OUT
-	.a0(dstdhi[1]), // IN
-	.a1(ddathi[1]), // IN
-	.a2(dstzhi[1]), // IN
-	.a3(srczhi[1]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_33),
+	.a0 /* IN */ (dstdhi[1]),
+	.a1 /* IN */ (ddathi[1]),
+	.a2 /* IN */ (dstzhi[1]),
+	.a3 /* IN */ (srczhi[1]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_2
 (
-	.z(dat_34), // OUT
-	.a0(dstdhi[2]), // IN
-	.a1(ddathi[2]), // IN
-	.a2(dstzhi[2]), // IN
-	.a3(srczhi[2]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_34),
+	.a0 /* IN */ (dstdhi[2]),
+	.a1 /* IN */ (ddathi[2]),
+	.a2 /* IN */ (dstzhi[2]),
+	.a3 /* IN */ (srczhi[2]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_3
 (
-	.z(dat_35), // OUT
-	.a0(dstdhi[3]), // IN
-	.a1(ddathi[3]), // IN
-	.a2(dstzhi[3]), // IN
-	.a3(srczhi[3]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_35),
+	.a0 /* IN */ (dstdhi[3]),
+	.a1 /* IN */ (ddathi[3]),
+	.a2 /* IN */ (dstzhi[3]),
+	.a3 /* IN */ (srczhi[3]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_4
 (
-	.z(dat_36), // OUT
-	.a0(dstdhi[4]), // IN
-	.a1(ddathi[4]), // IN
-	.a2(dstzhi[4]), // IN
-	.a3(srczhi[4]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_36),
+	.a0 /* IN */ (dstdhi[4]),
+	.a1 /* IN */ (ddathi[4]),
+	.a2 /* IN */ (dstzhi[4]),
+	.a3 /* IN */ (srczhi[4]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_5
 (
-	.z(dat_37), // OUT
-	.a0(dstdhi[5]), // IN
-	.a1(ddathi[5]), // IN
-	.a2(dstzhi[5]), // IN
-	.a3(srczhi[5]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_37),
+	.a0 /* IN */ (dstdhi[5]),
+	.a1 /* IN */ (ddathi[5]),
+	.a2 /* IN */ (dstzhi[5]),
+	.a3 /* IN */ (srczhi[5]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_6
 (
-	.z(dat_38), // OUT
-	.a0(dstdhi[6]), // IN
-	.a1(ddathi[6]), // IN
-	.a2(dstzhi[6]), // IN
-	.a3(srczhi[6]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_38),
+	.a0 /* IN */ (dstdhi[6]),
+	.a1 /* IN */ (ddathi[6]),
+	.a2 /* IN */ (dstzhi[6]),
+	.a3 /* IN */ (srczhi[6]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_32_to_39_inst_7
 (
-	.z(dat_39), // OUT
-	.a0(dstdhi[7]), // IN
-	.a1(ddathi[7]), // IN
-	.a2(dstzhi[7]), // IN
-	.a3(srczhi[7]), // IN
-	.s0(mask_11), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_39),
+	.a0 /* IN */ (dstdhi[7]),
+	.a1 /* IN */ (ddathi[7]),
+	.a2 /* IN */ (dstzhi[7]),
+	.a3 /* IN */ (srczhi[7]),
+	.s0 /* IN */ (mask_11),
+	.s1 /* IN */ (zed_selb_1)
 );
 
 // DATAMUX.NET (290) - dat[40-47] : mx4
 mx4 dat_from_40_to_47_inst_0
 (
-	.z(dat_40), // OUT
-	.a0(dstdhi[8]), // IN
-	.a1(ddathi[8]), // IN
-	.a2(dstzhi[8]), // IN
-	.a3(srczhi[8]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_40),
+	.a0 /* IN */ (dstdhi[8]),
+	.a1 /* IN */ (ddathi[8]),
+	.a2 /* IN */ (dstzhi[8]),
+	.a3 /* IN */ (srczhi[8]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_1
 (
-	.z(dat_41), // OUT
-	.a0(dstdhi[9]), // IN
-	.a1(ddathi[9]), // IN
-	.a2(dstzhi[9]), // IN
-	.a3(srczhi[9]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_41),
+	.a0 /* IN */ (dstdhi[9]),
+	.a1 /* IN */ (ddathi[9]),
+	.a2 /* IN */ (dstzhi[9]),
+	.a3 /* IN */ (srczhi[9]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_2
 (
-	.z(dat_42), // OUT
-	.a0(dstdhi[10]), // IN
-	.a1(ddathi[10]), // IN
-	.a2(dstzhi[10]), // IN
-	.a3(srczhi[10]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_42),
+	.a0 /* IN */ (dstdhi[10]),
+	.a1 /* IN */ (ddathi[10]),
+	.a2 /* IN */ (dstzhi[10]),
+	.a3 /* IN */ (srczhi[10]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_3
 (
-	.z(dat_43), // OUT
-	.a0(dstdhi[11]), // IN
-	.a1(ddathi[11]), // IN
-	.a2(dstzhi[11]), // IN
-	.a3(srczhi[11]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_43),
+	.a0 /* IN */ (dstdhi[11]),
+	.a1 /* IN */ (ddathi[11]),
+	.a2 /* IN */ (dstzhi[11]),
+	.a3 /* IN */ (srczhi[11]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_4
 (
-	.z(dat_44), // OUT
-	.a0(dstdhi[12]), // IN
-	.a1(ddathi[12]), // IN
-	.a2(dstzhi[12]), // IN
-	.a3(srczhi[12]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_44),
+	.a0 /* IN */ (dstdhi[12]),
+	.a1 /* IN */ (ddathi[12]),
+	.a2 /* IN */ (dstzhi[12]),
+	.a3 /* IN */ (srczhi[12]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_5
 (
-	.z(dat_45), // OUT
-	.a0(dstdhi[13]), // IN
-	.a1(ddathi[13]), // IN
-	.a2(dstzhi[13]), // IN
-	.a3(srczhi[13]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_45),
+	.a0 /* IN */ (dstdhi[13]),
+	.a1 /* IN */ (ddathi[13]),
+	.a2 /* IN */ (dstzhi[13]),
+	.a3 /* IN */ (srczhi[13]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_6
 (
-	.z(dat_46), // OUT
-	.a0(dstdhi[14]), // IN
-	.a1(ddathi[14]), // IN
-	.a2(dstzhi[14]), // IN
-	.a3(srczhi[14]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_46),
+	.a0 /* IN */ (dstdhi[14]),
+	.a1 /* IN */ (ddathi[14]),
+	.a2 /* IN */ (dstzhi[14]),
+	.a3 /* IN */ (srczhi[14]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_40_to_47_inst_7
 (
-	.z(dat_47), // OUT
-	.a0(dstdhi[15]), // IN
-	.a1(ddathi[15]), // IN
-	.a2(dstzhi[15]), // IN
-	.a3(srczhi[15]), // IN
-	.s0(mask_12), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_47),
+	.a0 /* IN */ (dstdhi[15]),
+	.a1 /* IN */ (ddathi[15]),
+	.a2 /* IN */ (dstzhi[15]),
+	.a3 /* IN */ (srczhi[15]),
+	.s0 /* IN */ (mask_12),
+	.s1 /* IN */ (zed_selb_1)
 );
 
 // DATAMUX.NET (293) - dat[48-55] : mx4
 mx4 dat_from_48_to_55_inst_0
 (
-	.z(dat_48), // OUT
-	.a0(dstdhi[16]), // IN
-	.a1(ddathi[16]), // IN
-	.a2(dstzhi[16]), // IN
-	.a3(srczhi[16]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_48),
+	.a0 /* IN */ (dstdhi[16]),
+	.a1 /* IN */ (ddathi[16]),
+	.a2 /* IN */ (dstzhi[16]),
+	.a3 /* IN */ (srczhi[16]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_1
 (
-	.z(dat_49), // OUT
-	.a0(dstdhi[17]), // IN
-	.a1(ddathi[17]), // IN
-	.a2(dstzhi[17]), // IN
-	.a3(srczhi[17]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_49),
+	.a0 /* IN */ (dstdhi[17]),
+	.a1 /* IN */ (ddathi[17]),
+	.a2 /* IN */ (dstzhi[17]),
+	.a3 /* IN */ (srczhi[17]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_2
 (
-	.z(dat_50), // OUT
-	.a0(dstdhi[18]), // IN
-	.a1(ddathi[18]), // IN
-	.a2(dstzhi[18]), // IN
-	.a3(srczhi[18]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_50),
+	.a0 /* IN */ (dstdhi[18]),
+	.a1 /* IN */ (ddathi[18]),
+	.a2 /* IN */ (dstzhi[18]),
+	.a3 /* IN */ (srczhi[18]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_3
 (
-	.z(dat_51), // OUT
-	.a0(dstdhi[19]), // IN
-	.a1(ddathi[19]), // IN
-	.a2(dstzhi[19]), // IN
-	.a3(srczhi[19]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_51),
+	.a0 /* IN */ (dstdhi[19]),
+	.a1 /* IN */ (ddathi[19]),
+	.a2 /* IN */ (dstzhi[19]),
+	.a3 /* IN */ (srczhi[19]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_4
 (
-	.z(dat_52), // OUT
-	.a0(dstdhi[20]), // IN
-	.a1(ddathi[20]), // IN
-	.a2(dstzhi[20]), // IN
-	.a3(srczhi[20]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_52),
+	.a0 /* IN */ (dstdhi[20]),
+	.a1 /* IN */ (ddathi[20]),
+	.a2 /* IN */ (dstzhi[20]),
+	.a3 /* IN */ (srczhi[20]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_5
 (
-	.z(dat_53), // OUT
-	.a0(dstdhi[21]), // IN
-	.a1(ddathi[21]), // IN
-	.a2(dstzhi[21]), // IN
-	.a3(srczhi[21]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_53),
+	.a0 /* IN */ (dstdhi[21]),
+	.a1 /* IN */ (ddathi[21]),
+	.a2 /* IN */ (dstzhi[21]),
+	.a3 /* IN */ (srczhi[21]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_6
 (
-	.z(dat_54), // OUT
-	.a0(dstdhi[22]), // IN
-	.a1(ddathi[22]), // IN
-	.a2(dstzhi[22]), // IN
-	.a3(srczhi[22]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_54),
+	.a0 /* IN */ (dstdhi[22]),
+	.a1 /* IN */ (ddathi[22]),
+	.a2 /* IN */ (dstzhi[22]),
+	.a3 /* IN */ (srczhi[22]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_48_to_55_inst_7
 (
-	.z(dat_55), // OUT
-	.a0(dstdhi[23]), // IN
-	.a1(ddathi[23]), // IN
-	.a2(dstzhi[23]), // IN
-	.a3(srczhi[23]), // IN
-	.s0(mask_13), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_55),
+	.a0 /* IN */ (dstdhi[23]),
+	.a1 /* IN */ (ddathi[23]),
+	.a2 /* IN */ (dstzhi[23]),
+	.a3 /* IN */ (srczhi[23]),
+	.s0 /* IN */ (mask_13),
+	.s1 /* IN */ (zed_selb_1)
 );
 
 // DATAMUX.NET (296) - dat[56-63] : mx4
 mx4 dat_from_56_to_63_inst_0
 (
-	.z(dat_56), // OUT
-	.a0(dstdhi[24]), // IN
-	.a1(ddathi[24]), // IN
-	.a2(dstzhi[24]), // IN
-	.a3(srczhi[24]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_56),
+	.a0 /* IN */ (dstdhi[24]),
+	.a1 /* IN */ (ddathi[24]),
+	.a2 /* IN */ (dstzhi[24]),
+	.a3 /* IN */ (srczhi[24]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_1
 (
-	.z(dat_57), // OUT
-	.a0(dstdhi[25]), // IN
-	.a1(ddathi[25]), // IN
-	.a2(dstzhi[25]), // IN
-	.a3(srczhi[25]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_57),
+	.a0 /* IN */ (dstdhi[25]),
+	.a1 /* IN */ (ddathi[25]),
+	.a2 /* IN */ (dstzhi[25]),
+	.a3 /* IN */ (srczhi[25]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_2
 (
-	.z(dat_58), // OUT
-	.a0(dstdhi[26]), // IN
-	.a1(ddathi[26]), // IN
-	.a2(dstzhi[26]), // IN
-	.a3(srczhi[26]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_58),
+	.a0 /* IN */ (dstdhi[26]),
+	.a1 /* IN */ (ddathi[26]),
+	.a2 /* IN */ (dstzhi[26]),
+	.a3 /* IN */ (srczhi[26]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_3
 (
-	.z(dat_59), // OUT
-	.a0(dstdhi[27]), // IN
-	.a1(ddathi[27]), // IN
-	.a2(dstzhi[27]), // IN
-	.a3(srczhi[27]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_59),
+	.a0 /* IN */ (dstdhi[27]),
+	.a1 /* IN */ (ddathi[27]),
+	.a2 /* IN */ (dstzhi[27]),
+	.a3 /* IN */ (srczhi[27]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_4
 (
-	.z(dat_60), // OUT
-	.a0(dstdhi[28]), // IN
-	.a1(ddathi[28]), // IN
-	.a2(dstzhi[28]), // IN
-	.a3(srczhi[28]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_60),
+	.a0 /* IN */ (dstdhi[28]),
+	.a1 /* IN */ (ddathi[28]),
+	.a2 /* IN */ (dstzhi[28]),
+	.a3 /* IN */ (srczhi[28]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_5
 (
-	.z(dat_61), // OUT
-	.a0(dstdhi[29]), // IN
-	.a1(ddathi[29]), // IN
-	.a2(dstzhi[29]), // IN
-	.a3(srczhi[29]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_61),
+	.a0 /* IN */ (dstdhi[29]),
+	.a1 /* IN */ (ddathi[29]),
+	.a2 /* IN */ (dstzhi[29]),
+	.a3 /* IN */ (srczhi[29]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_6
 (
-	.z(dat_62), // OUT
-	.a0(dstdhi[30]), // IN
-	.a1(ddathi[30]), // IN
-	.a2(dstzhi[30]), // IN
-	.a3(srczhi[30]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_62),
+	.a0 /* IN */ (dstdhi[30]),
+	.a1 /* IN */ (ddathi[30]),
+	.a2 /* IN */ (dstzhi[30]),
+	.a3 /* IN */ (srczhi[30]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 mx4 dat_from_56_to_63_inst_7
 (
-	.z(dat_63), // OUT
-	.a0(dstdhi[31]), // IN
-	.a1(ddathi[31]), // IN
-	.a2(dstzhi[31]), // IN
-	.a3(srczhi[31]), // IN
-	.s0(mask_14), // IN
-	.s1(zed_selb_1)  // IN
+	.z /* OUT */ (dat_63),
+	.a0 /* IN */ (dstdhi[31]),
+	.a1 /* IN */ (ddathi[31]),
+	.a2 /* IN */ (dstzhi[31]),
+	.a3 /* IN */ (srczhi[31]),
+	.s0 /* IN */ (mask_14),
+	.s1 /* IN */ (zed_selb_1)
 );
 
 // DATAMUX.NET (300) - data_enab[0-1] : nivu
@@ -1988,72 +2116,136 @@ assign data_enab_0 = data_ena;
 assign data_enab_1 = data_ena;
 
 // DATAMUX.NET (301) - datadrv[0-31] : ts
-assign wdata_0 = (data_enab_0) ? dat_0 : 1'bz;
-assign wdata_1 = (data_enab_0) ? dat_1 : 1'bz;
-assign wdata_2 = (data_enab_0) ? dat_2 : 1'bz;
-assign wdata_3 = (data_enab_0) ? dat_3 : 1'bz;
-assign wdata_4 = (data_enab_0) ? dat_4 : 1'bz;
-assign wdata_5 = (data_enab_0) ? dat_5 : 1'bz;
-assign wdata_6 = (data_enab_0) ? dat_6 : 1'bz;
-assign wdata_7 = (data_enab_0) ? dat_7 : 1'bz;
-assign wdata_8 = (data_enab_0) ? dat_8 : 1'bz;
-assign wdata_9 = (data_enab_0) ? dat_9 : 1'bz;
-assign wdata_10 = (data_enab_0) ? dat_10 : 1'bz;
-assign wdata_11 = (data_enab_0) ? dat_11 : 1'bz;
-assign wdata_12 = (data_enab_0) ? dat_12 : 1'bz;
-assign wdata_13 = (data_enab_0) ? dat_13 : 1'bz;
-assign wdata_14 = (data_enab_0) ? dat_14 : 1'bz;
-assign wdata_15 = (data_enab_0) ? dat_15 : 1'bz;
-assign wdata_16 = (data_enab_0) ? dat_16 : 1'bz;
-assign wdata_17 = (data_enab_0) ? dat_17 : 1'bz;
-assign wdata_18 = (data_enab_0) ? dat_18 : 1'bz;
-assign wdata_19 = (data_enab_0) ? dat_19 : 1'bz;
-assign wdata_20 = (data_enab_0) ? dat_20 : 1'bz;
-assign wdata_21 = (data_enab_0) ? dat_21 : 1'bz;
-assign wdata_22 = (data_enab_0) ? dat_22 : 1'bz;
-assign wdata_23 = (data_enab_0) ? dat_23 : 1'bz;
-assign wdata_24 = (data_enab_0) ? dat_24 : 1'bz;
-assign wdata_25 = (data_enab_0) ? dat_25 : 1'bz;
-assign wdata_26 = (data_enab_0) ? dat_26 : 1'bz;
-assign wdata_27 = (data_enab_0) ? dat_27 : 1'bz;
-assign wdata_28 = (data_enab_0) ? dat_28 : 1'bz;
-assign wdata_29 = (data_enab_0) ? dat_29 : 1'bz;
-assign wdata_30 = (data_enab_0) ? dat_30 : 1'bz;
-assign wdata_31 = (data_enab_0) ? dat_31 : 1'bz;
+assign wdata_0_out = dat_0;
+assign wdata_0_oe = data_enab_0;
+assign wdata_1_out = dat_1;
+assign wdata_1_oe = data_enab_0;
+assign wdata_2_out = dat_2;
+assign wdata_2_oe = data_enab_0;
+assign wdata_3_out = dat_3;
+assign wdata_3_oe = data_enab_0;
+assign wdata_4_out = dat_4;
+assign wdata_4_oe = data_enab_0;
+assign wdata_5_out = dat_5;
+assign wdata_5_oe = data_enab_0;
+assign wdata_6_out = dat_6;
+assign wdata_6_oe = data_enab_0;
+assign wdata_7_out = dat_7;
+assign wdata_7_oe = data_enab_0;
+assign wdata_8_out = dat_8;
+assign wdata_8_oe = data_enab_0;
+assign wdata_9_out = dat_9;
+assign wdata_9_oe = data_enab_0;
+assign wdata_10_out = dat_10;
+assign wdata_10_oe = data_enab_0;
+assign wdata_11_out = dat_11;
+assign wdata_11_oe = data_enab_0;
+assign wdata_12_out = dat_12;
+assign wdata_12_oe = data_enab_0;
+assign wdata_13_out = dat_13;
+assign wdata_13_oe = data_enab_0;
+assign wdata_14_out = dat_14;
+assign wdata_14_oe = data_enab_0;
+assign wdata_15_out = dat_15;
+assign wdata_15_oe = data_enab_0;
+assign wdata_16_out = dat_16;
+assign wdata_16_oe = data_enab_0;
+assign wdata_17_out = dat_17;
+assign wdata_17_oe = data_enab_0;
+assign wdata_18_out = dat_18;
+assign wdata_18_oe = data_enab_0;
+assign wdata_19_out = dat_19;
+assign wdata_19_oe = data_enab_0;
+assign wdata_20_out = dat_20;
+assign wdata_20_oe = data_enab_0;
+assign wdata_21_out = dat_21;
+assign wdata_21_oe = data_enab_0;
+assign wdata_22_out = dat_22;
+assign wdata_22_oe = data_enab_0;
+assign wdata_23_out = dat_23;
+assign wdata_23_oe = data_enab_0;
+assign wdata_24_out = dat_24;
+assign wdata_24_oe = data_enab_0;
+assign wdata_25_out = dat_25;
+assign wdata_25_oe = data_enab_0;
+assign wdata_26_out = dat_26;
+assign wdata_26_oe = data_enab_0;
+assign wdata_27_out = dat_27;
+assign wdata_27_oe = data_enab_0;
+assign wdata_28_out = dat_28;
+assign wdata_28_oe = data_enab_0;
+assign wdata_29_out = dat_29;
+assign wdata_29_oe = data_enab_0;
+assign wdata_30_out = dat_30;
+assign wdata_30_oe = data_enab_0;
+assign wdata_31_out = dat_31;
+assign wdata_31_oe = data_enab_0;
 
 // DATAMUX.NET (302) - datadrv[32-63] : ts
-assign wdata_32 = (data_enab_1) ? dat_32 : 1'bz;
-assign wdata_33 = (data_enab_1) ? dat_33 : 1'bz;
-assign wdata_34 = (data_enab_1) ? dat_34 : 1'bz;
-assign wdata_35 = (data_enab_1) ? dat_35 : 1'bz;
-assign wdata_36 = (data_enab_1) ? dat_36 : 1'bz;
-assign wdata_37 = (data_enab_1) ? dat_37 : 1'bz;
-assign wdata_38 = (data_enab_1) ? dat_38 : 1'bz;
-assign wdata_39 = (data_enab_1) ? dat_39 : 1'bz;
-assign wdata_40 = (data_enab_1) ? dat_40 : 1'bz;
-assign wdata_41 = (data_enab_1) ? dat_41 : 1'bz;
-assign wdata_42 = (data_enab_1) ? dat_42 : 1'bz;
-assign wdata_43 = (data_enab_1) ? dat_43 : 1'bz;
-assign wdata_44 = (data_enab_1) ? dat_44 : 1'bz;
-assign wdata_45 = (data_enab_1) ? dat_45 : 1'bz;
-assign wdata_46 = (data_enab_1) ? dat_46 : 1'bz;
-assign wdata_47 = (data_enab_1) ? dat_47 : 1'bz;
-assign wdata_48 = (data_enab_1) ? dat_48 : 1'bz;
-assign wdata_49 = (data_enab_1) ? dat_49 : 1'bz;
-assign wdata_50 = (data_enab_1) ? dat_50 : 1'bz;
-assign wdata_51 = (data_enab_1) ? dat_51 : 1'bz;
-assign wdata_52 = (data_enab_1) ? dat_52 : 1'bz;
-assign wdata_53 = (data_enab_1) ? dat_53 : 1'bz;
-assign wdata_54 = (data_enab_1) ? dat_54 : 1'bz;
-assign wdata_55 = (data_enab_1) ? dat_55 : 1'bz;
-assign wdata_56 = (data_enab_1) ? dat_56 : 1'bz;
-assign wdata_57 = (data_enab_1) ? dat_57 : 1'bz;
-assign wdata_58 = (data_enab_1) ? dat_58 : 1'bz;
-assign wdata_59 = (data_enab_1) ? dat_59 : 1'bz;
-assign wdata_60 = (data_enab_1) ? dat_60 : 1'bz;
-assign wdata_61 = (data_enab_1) ? dat_61 : 1'bz;
-assign wdata_62 = (data_enab_1) ? dat_62 : 1'bz;
-assign wdata_63 = (data_enab_1) ? dat_63 : 1'bz;
+assign wdata_32_out = dat_32;
+assign wdata_32_oe = data_enab_1;
+assign wdata_33_out = dat_33;
+assign wdata_33_oe = data_enab_1;
+assign wdata_34_out = dat_34;
+assign wdata_34_oe = data_enab_1;
+assign wdata_35_out = dat_35;
+assign wdata_35_oe = data_enab_1;
+assign wdata_36_out = dat_36;
+assign wdata_36_oe = data_enab_1;
+assign wdata_37_out = dat_37;
+assign wdata_37_oe = data_enab_1;
+assign wdata_38_out = dat_38;
+assign wdata_38_oe = data_enab_1;
+assign wdata_39_out = dat_39;
+assign wdata_39_oe = data_enab_1;
+assign wdata_40_out = dat_40;
+assign wdata_40_oe = data_enab_1;
+assign wdata_41_out = dat_41;
+assign wdata_41_oe = data_enab_1;
+assign wdata_42_out = dat_42;
+assign wdata_42_oe = data_enab_1;
+assign wdata_43_out = dat_43;
+assign wdata_43_oe = data_enab_1;
+assign wdata_44_out = dat_44;
+assign wdata_44_oe = data_enab_1;
+assign wdata_45_out = dat_45;
+assign wdata_45_oe = data_enab_1;
+assign wdata_46_out = dat_46;
+assign wdata_46_oe = data_enab_1;
+assign wdata_47_out = dat_47;
+assign wdata_47_oe = data_enab_1;
+assign wdata_48_out = dat_48;
+assign wdata_48_oe = data_enab_1;
+assign wdata_49_out = dat_49;
+assign wdata_49_oe = data_enab_1;
+assign wdata_50_out = dat_50;
+assign wdata_50_oe = data_enab_1;
+assign wdata_51_out = dat_51;
+assign wdata_51_oe = data_enab_1;
+assign wdata_52_out = dat_52;
+assign wdata_52_oe = data_enab_1;
+assign wdata_53_out = dat_53;
+assign wdata_53_oe = data_enab_1;
+assign wdata_54_out = dat_54;
+assign wdata_54_oe = data_enab_1;
+assign wdata_55_out = dat_55;
+assign wdata_55_oe = data_enab_1;
+assign wdata_56_out = dat_56;
+assign wdata_56_oe = data_enab_1;
+assign wdata_57_out = dat_57;
+assign wdata_57_oe = data_enab_1;
+assign wdata_58_out = dat_58;
+assign wdata_58_oe = data_enab_1;
+assign wdata_59_out = dat_59;
+assign wdata_59_oe = data_enab_1;
+assign wdata_60_out = dat_60;
+assign wdata_60_oe = data_enab_1;
+assign wdata_61_out = dat_61;
+assign wdata_61_oe = data_enab_1;
+assign wdata_62_out = dat_62;
+assign wdata_62_oe = data_enab_1;
+assign wdata_63_out = dat_63;
+assign wdata_63_oe = data_enab_1;
 
 // DATAMUX.NET (304) - unused[0] : dummy
 endmodule

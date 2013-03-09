@@ -143,7 +143,6 @@ wire dspcs;
 wire exiol;
 
 // Output buffers
-wire memc1r_obuf;
 wire memc2r_obuf;
 wire hcr_obuf;
 wire vcr_obuf;
@@ -159,46 +158,9 @@ wire test3r_obuf;
 wire intr_obuf;
 wire pit0r_obuf;
 wire pit1r_obuf;
-wire memc1w_obuf;
-wire memc2w_obuf;
-wire olp1w_obuf;
-wire olp2w_obuf;
-wire obfw_obuf;
-wire vmodew_obuf;
-wire bord1w_obuf;
-wire bord2w_obuf;
-wire hcw_obuf;
-wire hpw_obuf;
-wire hbbw_obuf;
-wire hbew_obuf;
-wire hsw_obuf;
-wire hvsw_obuf;
-wire hdb1w_obuf;
-wire hdb2w_obuf;
-wire hdew_obuf;
-wire vcw_obuf;
-wire vpw_obuf;
-wire vbbw_obuf;
-wire vbew_obuf;
-wire vsw_obuf;
-wire vdbw_obuf;
-wire vdew_obuf;
-wire vebw_obuf;
-wire veew_obuf;
-wire viw_obuf;
-wire pit0w_obuf;
-wire pit1w_obuf;
-wire heqw_obuf;
-wire test1w_obuf;
-wire lbraw_obuf;
-wire int1w_obuf;
-wire int2w_obuf;
-wire bgwr_obuf;
-wire expl_obuf;
 
 
 // Output buffers
-assign memc1r = memc1r_obuf;
 assign memc2r = memc2r_obuf;
 assign hcr = hcr_obuf;
 assign vcr = vcr_obuf;
@@ -214,42 +176,6 @@ assign test3r = test3r_obuf;
 assign intr = intr_obuf;
 assign pit0r = pit0r_obuf;
 assign pit1r = pit1r_obuf;
-assign memc1w = memc1w_obuf;
-assign memc2w = memc2w_obuf;
-assign olp1w = olp1w_obuf;
-assign olp2w = olp2w_obuf;
-assign obfw = obfw_obuf;
-assign vmodew = vmodew_obuf;
-assign bord1w = bord1w_obuf;
-assign bord2w = bord2w_obuf;
-assign hcw = hcw_obuf;
-assign hpw = hpw_obuf;
-assign hbbw = hbbw_obuf;
-assign hbew = hbew_obuf;
-assign hsw = hsw_obuf;
-assign hvsw = hvsw_obuf;
-assign hdb1w = hdb1w_obuf;
-assign hdb2w = hdb2w_obuf;
-assign hdew = hdew_obuf;
-assign vcw = vcw_obuf;
-assign vpw = vpw_obuf;
-assign vbbw = vbbw_obuf;
-assign vbew = vbew_obuf;
-assign vsw = vsw_obuf;
-assign vdbw = vdbw_obuf;
-assign vdew = vdew_obuf;
-assign vebw = vebw_obuf;
-assign veew = veew_obuf;
-assign viw = viw_obuf;
-assign pit0w = pit0w_obuf;
-assign pit1w = pit1w_obuf;
-assign heqw = heqw_obuf;
-assign test1w = test1w_obuf;
-assign lbraw = lbraw_obuf;
-assign int1w = int1w_obuf;
-assign int2w = int2w_obuf;
-assign bgwr = bgwr_obuf;
-assign expl = expl_obuf;
 
 
 // IODEC.NET (42) - addr : join
@@ -434,112 +360,112 @@ assign floaten = ~(oet & intdev);
 assign float5 = ~(float4 & floaten);
 
 // IODEC.NET (109) - memc1r : nd2x3
-assign memc1r_obuf = ~(notmemc1 & float5);
+assign memc1r = ~(notmemc1 & float5);
 
 // IODEC.NET (113) - memc1w_ : an4h
-assign memc1w_obuf = i00xx & axx0x & axxx0 & wet;
+assign memc1w = i00xx & axx0x & axxx0 & wet;
 
 // IODEC.NET (114) - memc2w_ : an4h
-assign memc2w_obuf = i00xx & axx0x & axxx2 & intswe;
+assign memc2w = i00xx & axx0x & axxx2 & intswe;
 
 // IODEC.NET (115) - hcw_ : an4h
-assign hcw_obuf = i00xx & axx0x & axxx4 & writes;
+assign hcw = i00xx & axx0x & axxx4 & writes;
 
 // IODEC.NET (116) - vcw_ : an4h
-assign vcw_obuf = i00xx & axx0x & axxx6 & writes;
+assign vcw = i00xx & axx0x & axxx6 & writes;
 
 // IODEC.NET (117) - olp1w_ : an4h
-assign olp1w_obuf = i00xx & axx2x & axxx0 & wet;
+assign olp1w = i00xx & axx2x & axxx0 & wet;
 
 // IODEC.NET (118) - olp2w_ : an4h
-assign olp2w_obuf = i00xx & axx2x & axxx2 & wet;
+assign olp2w = i00xx & axx2x & axxx2 & wet;
 
 // IODEC.NET (119) - obfw_ : an4
-assign obfw_obuf = i00xx & axx2x & axxx6 & writes;
+assign obfw = i00xx & axx2x & axxx6 & writes;
 
 // IODEC.NET (120) - vmodew_ : an4h
-assign vmodew_obuf = i00xx & axx2x & axxx8 & intwe;
+assign vmodew = i00xx & axx2x & axxx8 & intwe;
 
 // IODEC.NET (121) - bord1w_ : an4h
-assign bord1w_obuf = i00xx & axx2x & axxxa & wet;
+assign bord1w = i00xx & axx2x & axxxa & wet;
 
 // IODEC.NET (122) - bord2w_ : an4h
-assign bord2w_obuf = i00xx & axx2x & axxxc & wet;
+assign bord2w = i00xx & axx2x & axxxc & wet;
 
 // IODEC.NET (123) - hpw_ : an4h
-assign hpw_obuf = i00xx & axx2x & axxxe & wet;
+assign hpw = i00xx & axx2x & axxxe & wet;
 
 // IODEC.NET (124) - hbbw_ : an4h
-assign hbbw_obuf = i00xx & axx3x & axxx0 & wet;
+assign hbbw = i00xx & axx3x & axxx0 & wet;
 
 // IODEC.NET (125) - hbew_ : an4h
-assign hbew_obuf = i00xx & axx3x & axxx2 & wet;
+assign hbew = i00xx & axx3x & axxx2 & wet;
 
 // IODEC.NET (126) - hsw_ : an4h
-assign hsw_obuf = i00xx & axx3x & axxx4 & wet;
+assign hsw = i00xx & axx3x & axxx4 & wet;
 
 // IODEC.NET (127) - hvsw_ : an4h
-assign hvsw_obuf = i00xx & axx3x & axxx6 & wet;
+assign hvsw = i00xx & axx3x & axxx6 & wet;
 
 // IODEC.NET (128) - hdb1w_ : an4h
-assign hdb1w_obuf = i00xx & axx3x & axxx8 & wet;
+assign hdb1w = i00xx & axx3x & axxx8 & wet;
 
 // IODEC.NET (129) - hdb2w_ : an4h
-assign hdb2w_obuf = i00xx & axx3x & axxxa & wet;
+assign hdb2w = i00xx & axx3x & axxxa & wet;
 
 // IODEC.NET (130) - hdew_ : an4h
-assign hdew_obuf = i00xx & axx3x & axxxc & wet;
+assign hdew = i00xx & axx3x & axxxc & wet;
 
 // IODEC.NET (131) - vpw_ : an4h
-assign vpw_obuf = i00xx & axx3x & axxxe & wet;
+assign vpw = i00xx & axx3x & axxxe & wet;
 
 // IODEC.NET (132) - vbbw_ : an4h
-assign vbbw_obuf = i00xx & axx4x & axxx0 & wet;
+assign vbbw = i00xx & axx4x & axxx0 & wet;
 
 // IODEC.NET (133) - vbew_ : an4h
-assign vbew_obuf = i00xx & axx4x & axxx2 & wet;
+assign vbew = i00xx & axx4x & axxx2 & wet;
 
 // IODEC.NET (134) - vsw_ : an4h
-assign vsw_obuf = i00xx & axx4x & axxx4 & wet;
+assign vsw = i00xx & axx4x & axxx4 & wet;
 
 // IODEC.NET (135) - vdbw_ : an4h
-assign vdbw_obuf = i00xx & axx4x & axxx6 & wet;
+assign vdbw = i00xx & axx4x & axxx6 & wet;
 
 // IODEC.NET (136) - vdew_ : an4h
-assign vdew_obuf = i00xx & axx4x & axxx8 & wet;
+assign vdew = i00xx & axx4x & axxx8 & wet;
 
 // IODEC.NET (137) - vebw_ : an4h
-assign vebw_obuf = i00xx & axx4x & axxxa & wet;
+assign vebw = i00xx & axx4x & axxxa & wet;
 
 // IODEC.NET (138) - veew_ : an4h
-assign veew_obuf = i00xx & axx4x & axxxc & wet;
+assign veew = i00xx & axx4x & axxxc & wet;
 
 // IODEC.NET (139) - viw_ : an4h
-assign viw_obuf = i00xx & axx4x & axxxe & wet;
+assign viw = i00xx & axx4x & axxxe & wet;
 
 // IODEC.NET (140) - pit0w_ : an4
-assign pit0w_obuf = i00xx & axx5x & axxx0 & intswe;
+assign pit0w = i00xx & axx5x & axxx0 & intswe;
 
 // IODEC.NET (141) - pit1w_ : an4
-assign pit1w_obuf = i00xx & axx5x & axxx2 & intswe;
+assign pit1w = i00xx & axx5x & axxx2 & intswe;
 
 // IODEC.NET (142) - heqw_ : an4h
-assign heqw_obuf = i00xx & axx5x & axxx4 & wet;
+assign heqw = i00xx & axx5x & axxx4 & wet;
 
 // IODEC.NET (143) - test1w_ : an6
-assign test1w_obuf = a00xx & axx5x & axxx6 & writes & intdev & vcc;
+assign test1w = a00xx & axx5x & axxx6 & writes & intdev & vcc;
 
 // IODEC.NET (144) - bgw_ : an4h
-assign bgwr_obuf = i00xx & axx5x & axxx8 & wet;
+assign bgwr = i00xx & axx5x & axxx8 & wet;
 
 // IODEC.NET (146) - intw : an4
-assign int1w_obuf = i00xx & axxex & axxx0 & writes;
+assign int1w = i00xx & axxex & axxx0 & writes;
 
 // IODEC.NET (147) - int2w : an4
-assign int2w_obuf = i00xx & axxex & axxx2 & writes;
+assign int2w = i00xx & axxex & axxx2 & writes;
 
 // IODEC.NET (149) - lbraw : an4h
-assign lbraw_obuf = i02xx & axx0x & axxx0 & writes;
+assign lbraw = i02xx & axx0x & axxx0 & writes;
 
 // IODEC.NET (153) - lbar : an2
 assign lbar = lba & reads;
@@ -566,5 +492,5 @@ assign dspcs = ~dspcsl;
 assign exiol = ~(dspcs & a_14 & al_15);
 
 // IODEC.NET (165) - expl : an3
-assign expl_obuf = exiol & romcsl_0 & romcsl_1;
+assign expl = exiol & romcsl_0 & romcsl_1;
 endmodule

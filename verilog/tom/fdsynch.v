@@ -21,12 +21,12 @@ assign q = q_obuf;
 // DUPLO.NET (293) - qt : fd1e
 fd1e qt_inst
 (
-	.q(qt), // OUT
-	.qn(qb), // OUT
-	.d(q_obuf), // IN
-	.cp(clk), // IN
-	.ti(d), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (qt),
+	.qn /* OUT */ (qb),
+	.d /* IN */ (q_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d),
+	.te /* IN */ (ld)
 );
 
 // DUPLO.NET (294) - dummy : dummy

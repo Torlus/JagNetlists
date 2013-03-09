@@ -48,11 +48,11 @@ DEF GRAPHICS (
 	:BUS);
 
 INT4/	width
-INT16/	dread,io_addr
+INT16/	io_addr
 INT32/	gpu_din
 (* GE 18/06/2012 Added missing declarations *)
-INT24/	address, dataddr, gpu_addr
-INT32/	gpu_data, immdata, locsrc
+INT24/	dataddr, gpu_addr
+INT32/	immdata, locsrc
 INT32/	result, srcd, srcdp, srcdpa, dstwd, srcwd, load_data, mem_data, quotient, dstdp, dstd
 INT32/	cpudata
 INT3/	alufunc
@@ -61,6 +61,10 @@ INT6/	dsta, srca
 INT22/	progaddr
 INT13/	cpuaddr
 :LOCAL;
+INT16/  dread:BUS; (* GE - declared as BUS *)
+INT24/	address:BUS;
+INT32/	gpu_data:BUS;
+gpu_dout[0..31]:BUS;
 BEGIN
 
 Io_addr :=      JOIN (io_addr,ima[0..15]);

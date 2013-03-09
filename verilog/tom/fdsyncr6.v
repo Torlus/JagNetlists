@@ -2,8 +2,8 @@
 
 module fdsyncr6
 (
-	output[0:5] q;
-	input[0:5] d;
+	output [0:5] q;
+	input [0:5] d;
 	input ld,
 	input clk,
 	input rst_n
@@ -31,63 +31,63 @@ assign q[5] = q_b5_obuf;
 // DUPLO.NET (315) - q : fd2e
 fd2e q_inst_0
 (
-	.q(q_b0_obuf), // OUT
-	.qn(qb[0]), // OUT
-	.d(q_b0_obuf), // IN
-	.cp(clk), // IN
-	.cd(rst_n), // IN
-	.ti(d[0]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b0_obuf),
+	.qn /* OUT */ (qb[0]),
+	.d /* IN */ (q_b0_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (rst_n),
+	.ti /* IN */ (d[0]),
+	.te /* IN */ (ld)
 );
 fd2e q_inst_1
 (
-	.q(q_b1_obuf), // OUT
-	.qn(qb[1]), // OUT
-	.d(q_b1_obuf), // IN
-	.cp(clk), // IN
-	.cd(rst_n), // IN
-	.ti(d[1]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b1_obuf),
+	.qn /* OUT */ (qb[1]),
+	.d /* IN */ (q_b1_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (rst_n),
+	.ti /* IN */ (d[1]),
+	.te /* IN */ (ld)
 );
 fd2e q_inst_2
 (
-	.q(q_b2_obuf), // OUT
-	.qn(qb[2]), // OUT
-	.d(q_b2_obuf), // IN
-	.cp(clk), // IN
-	.cd(rst_n), // IN
-	.ti(d[2]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b2_obuf),
+	.qn /* OUT */ (qb[2]),
+	.d /* IN */ (q_b2_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (rst_n),
+	.ti /* IN */ (d[2]),
+	.te /* IN */ (ld)
 );
 fd2e q_inst_3
 (
-	.q(q_b3_obuf), // OUT
-	.qn(qb[3]), // OUT
-	.d(q_b3_obuf), // IN
-	.cp(clk), // IN
-	.cd(rst_n), // IN
-	.ti(d[3]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b3_obuf),
+	.qn /* OUT */ (qb[3]),
+	.d /* IN */ (q_b3_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (rst_n),
+	.ti /* IN */ (d[3]),
+	.te /* IN */ (ld)
 );
 fd2e q_inst_4
 (
-	.q(q_b4_obuf), // OUT
-	.qn(qb[4]), // OUT
-	.d(q_b4_obuf), // IN
-	.cp(clk), // IN
-	.cd(rst_n), // IN
-	.ti(d[4]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b4_obuf),
+	.qn /* OUT */ (qb[4]),
+	.d /* IN */ (q_b4_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (rst_n),
+	.ti /* IN */ (d[4]),
+	.te /* IN */ (ld)
 );
 fd2e q_inst_5
 (
-	.q(q_b5_obuf), // OUT
-	.qn(qb[5]), // OUT
-	.d(q_b5_obuf), // IN
-	.cp(clk), // IN
-	.cd(rst_n), // IN
-	.ti(d[5]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b5_obuf),
+	.qn /* OUT */ (qb[5]),
+	.d /* IN */ (q_b5_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (rst_n),
+	.ti /* IN */ (d[5]),
+	.te /* IN */ (ld)
 );
 
 // DUPLO.NET (316) - dummy : dummy

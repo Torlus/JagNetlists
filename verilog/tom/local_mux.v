@@ -2,15 +2,15 @@
 
 module local_mux
 (
-	output[0:31] local_data_0;
-	output[0:31] local_data_1;
-	output[0:31] load_data_0;
-	output[0:31] load_data_1;
-	input[0:15] addq_0;
-	input[0:15] addq_1;
-	input[0:15] addq_2;
-	input[0:15] addq_3;
-	input[0:31] gpu_din;
+	output [0:31] local_data_0;
+	output [0:31] local_data_1;
+	output [0:31] load_data_0;
+	output [0:31] load_data_1;
+	input [0:15] addq_0;
+	input [0:15] addq_1;
+	input [0:15] addq_2;
+	input [0:15] addq_3;
+	input [0:31] gpu_din;
 	input data_0,
 	input data_1,
 	input data_2,
@@ -368,453 +368,453 @@ assign addqhi32[31] = addq_3[15];
 // DATAMUX.NET (132) - load_data[0] : mx2
 mx2 load_data_index_0_inst_0
 (
-	.z(load_data_0_b0_obuf), // OUT
-	.a0(gpu_din[0]), // IN
-	.a1(r_data_0[0]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b0_obuf),
+	.a0 /* IN */ (gpu_din[0]),
+	.a1 /* IN */ (r_data_0[0]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_1
 (
-	.z(load_data_0_b1_obuf), // OUT
-	.a0(gpu_din[1]), // IN
-	.a1(r_data_0[1]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b1_obuf),
+	.a0 /* IN */ (gpu_din[1]),
+	.a1 /* IN */ (r_data_0[1]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_2
 (
-	.z(load_data_0_b2_obuf), // OUT
-	.a0(gpu_din[2]), // IN
-	.a1(r_data_0[2]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b2_obuf),
+	.a0 /* IN */ (gpu_din[2]),
+	.a1 /* IN */ (r_data_0[2]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_3
 (
-	.z(load_data_0_b3_obuf), // OUT
-	.a0(gpu_din[3]), // IN
-	.a1(r_data_0[3]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b3_obuf),
+	.a0 /* IN */ (gpu_din[3]),
+	.a1 /* IN */ (r_data_0[3]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_4
 (
-	.z(load_data_0_b4_obuf), // OUT
-	.a0(gpu_din[4]), // IN
-	.a1(r_data_0[4]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b4_obuf),
+	.a0 /* IN */ (gpu_din[4]),
+	.a1 /* IN */ (r_data_0[4]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_5
 (
-	.z(load_data_0_b5_obuf), // OUT
-	.a0(gpu_din[5]), // IN
-	.a1(r_data_0[5]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b5_obuf),
+	.a0 /* IN */ (gpu_din[5]),
+	.a1 /* IN */ (r_data_0[5]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_6
 (
-	.z(load_data_0_b6_obuf), // OUT
-	.a0(gpu_din[6]), // IN
-	.a1(r_data_0[6]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b6_obuf),
+	.a0 /* IN */ (gpu_din[6]),
+	.a1 /* IN */ (r_data_0[6]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_7
 (
-	.z(load_data_0_b7_obuf), // OUT
-	.a0(gpu_din[7]), // IN
-	.a1(r_data_0[7]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b7_obuf),
+	.a0 /* IN */ (gpu_din[7]),
+	.a1 /* IN */ (r_data_0[7]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_8
 (
-	.z(load_data_0_b8_obuf), // OUT
-	.a0(gpu_din[8]), // IN
-	.a1(r_data_0[8]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b8_obuf),
+	.a0 /* IN */ (gpu_din[8]),
+	.a1 /* IN */ (r_data_0[8]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_9
 (
-	.z(load_data_0_b9_obuf), // OUT
-	.a0(gpu_din[9]), // IN
-	.a1(r_data_0[9]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b9_obuf),
+	.a0 /* IN */ (gpu_din[9]),
+	.a1 /* IN */ (r_data_0[9]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_10
 (
-	.z(load_data_0_b10_obuf), // OUT
-	.a0(gpu_din[10]), // IN
-	.a1(r_data_0[10]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b10_obuf),
+	.a0 /* IN */ (gpu_din[10]),
+	.a1 /* IN */ (r_data_0[10]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_11
 (
-	.z(load_data_0_b11_obuf), // OUT
-	.a0(gpu_din[11]), // IN
-	.a1(r_data_0[11]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b11_obuf),
+	.a0 /* IN */ (gpu_din[11]),
+	.a1 /* IN */ (r_data_0[11]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_12
 (
-	.z(load_data_0_b12_obuf), // OUT
-	.a0(gpu_din[12]), // IN
-	.a1(r_data_0[12]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b12_obuf),
+	.a0 /* IN */ (gpu_din[12]),
+	.a1 /* IN */ (r_data_0[12]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_13
 (
-	.z(load_data_0_b13_obuf), // OUT
-	.a0(gpu_din[13]), // IN
-	.a1(r_data_0[13]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b13_obuf),
+	.a0 /* IN */ (gpu_din[13]),
+	.a1 /* IN */ (r_data_0[13]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_14
 (
-	.z(load_data_0_b14_obuf), // OUT
-	.a0(gpu_din[14]), // IN
-	.a1(r_data_0[14]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b14_obuf),
+	.a0 /* IN */ (gpu_din[14]),
+	.a1 /* IN */ (r_data_0[14]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_15
 (
-	.z(load_data_0_b15_obuf), // OUT
-	.a0(gpu_din[15]), // IN
-	.a1(r_data_0[15]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b15_obuf),
+	.a0 /* IN */ (gpu_din[15]),
+	.a1 /* IN */ (r_data_0[15]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_16
 (
-	.z(load_data_0_b16_obuf), // OUT
-	.a0(gpu_din[16]), // IN
-	.a1(r_data_0[16]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b16_obuf),
+	.a0 /* IN */ (gpu_din[16]),
+	.a1 /* IN */ (r_data_0[16]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_17
 (
-	.z(load_data_0_b17_obuf), // OUT
-	.a0(gpu_din[17]), // IN
-	.a1(r_data_0[17]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b17_obuf),
+	.a0 /* IN */ (gpu_din[17]),
+	.a1 /* IN */ (r_data_0[17]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_18
 (
-	.z(load_data_0_b18_obuf), // OUT
-	.a0(gpu_din[18]), // IN
-	.a1(r_data_0[18]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b18_obuf),
+	.a0 /* IN */ (gpu_din[18]),
+	.a1 /* IN */ (r_data_0[18]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_19
 (
-	.z(load_data_0_b19_obuf), // OUT
-	.a0(gpu_din[19]), // IN
-	.a1(r_data_0[19]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b19_obuf),
+	.a0 /* IN */ (gpu_din[19]),
+	.a1 /* IN */ (r_data_0[19]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_20
 (
-	.z(load_data_0_b20_obuf), // OUT
-	.a0(gpu_din[20]), // IN
-	.a1(r_data_0[20]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b20_obuf),
+	.a0 /* IN */ (gpu_din[20]),
+	.a1 /* IN */ (r_data_0[20]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_21
 (
-	.z(load_data_0_b21_obuf), // OUT
-	.a0(gpu_din[21]), // IN
-	.a1(r_data_0[21]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b21_obuf),
+	.a0 /* IN */ (gpu_din[21]),
+	.a1 /* IN */ (r_data_0[21]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_22
 (
-	.z(load_data_0_b22_obuf), // OUT
-	.a0(gpu_din[22]), // IN
-	.a1(r_data_0[22]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b22_obuf),
+	.a0 /* IN */ (gpu_din[22]),
+	.a1 /* IN */ (r_data_0[22]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_23
 (
-	.z(load_data_0_b23_obuf), // OUT
-	.a0(gpu_din[23]), // IN
-	.a1(r_data_0[23]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b23_obuf),
+	.a0 /* IN */ (gpu_din[23]),
+	.a1 /* IN */ (r_data_0[23]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_24
 (
-	.z(load_data_0_b24_obuf), // OUT
-	.a0(gpu_din[24]), // IN
-	.a1(r_data_0[24]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b24_obuf),
+	.a0 /* IN */ (gpu_din[24]),
+	.a1 /* IN */ (r_data_0[24]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_25
 (
-	.z(load_data_0_b25_obuf), // OUT
-	.a0(gpu_din[25]), // IN
-	.a1(r_data_0[25]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b25_obuf),
+	.a0 /* IN */ (gpu_din[25]),
+	.a1 /* IN */ (r_data_0[25]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_26
 (
-	.z(load_data_0_b26_obuf), // OUT
-	.a0(gpu_din[26]), // IN
-	.a1(r_data_0[26]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b26_obuf),
+	.a0 /* IN */ (gpu_din[26]),
+	.a1 /* IN */ (r_data_0[26]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_27
 (
-	.z(load_data_0_b27_obuf), // OUT
-	.a0(gpu_din[27]), // IN
-	.a1(r_data_0[27]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b27_obuf),
+	.a0 /* IN */ (gpu_din[27]),
+	.a1 /* IN */ (r_data_0[27]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_28
 (
-	.z(load_data_0_b28_obuf), // OUT
-	.a0(gpu_din[28]), // IN
-	.a1(r_data_0[28]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b28_obuf),
+	.a0 /* IN */ (gpu_din[28]),
+	.a1 /* IN */ (r_data_0[28]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_29
 (
-	.z(load_data_0_b29_obuf), // OUT
-	.a0(gpu_din[29]), // IN
-	.a1(r_data_0[29]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b29_obuf),
+	.a0 /* IN */ (gpu_din[29]),
+	.a1 /* IN */ (r_data_0[29]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_30
 (
-	.z(load_data_0_b30_obuf), // OUT
-	.a0(gpu_din[30]), // IN
-	.a1(r_data_0[30]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b30_obuf),
+	.a0 /* IN */ (gpu_din[30]),
+	.a1 /* IN */ (r_data_0[30]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_0_inst_31
 (
-	.z(load_data_0_b31_obuf), // OUT
-	.a0(gpu_din[31]), // IN
-	.a1(r_data_0[31]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_0_b31_obuf),
+	.a0 /* IN */ (gpu_din[31]),
+	.a1 /* IN */ (r_data_0[31]),
+	.s /* IN */ (blit_backb)
 );
 
 // DATAMUX.NET (134) - load_data[1] : mx2
 mx2 load_data_index_1_inst_0
 (
-	.z(load_data_1_b0_obuf), // OUT
-	.a0(gpu_din[0]), // IN
-	.a1(r_data_1[0]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b0_obuf),
+	.a0 /* IN */ (gpu_din[0]),
+	.a1 /* IN */ (r_data_1[0]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_1
 (
-	.z(load_data_1_b1_obuf), // OUT
-	.a0(gpu_din[1]), // IN
-	.a1(r_data_1[1]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b1_obuf),
+	.a0 /* IN */ (gpu_din[1]),
+	.a1 /* IN */ (r_data_1[1]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_2
 (
-	.z(load_data_1_b2_obuf), // OUT
-	.a0(gpu_din[2]), // IN
-	.a1(r_data_1[2]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b2_obuf),
+	.a0 /* IN */ (gpu_din[2]),
+	.a1 /* IN */ (r_data_1[2]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_3
 (
-	.z(load_data_1_b3_obuf), // OUT
-	.a0(gpu_din[3]), // IN
-	.a1(r_data_1[3]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b3_obuf),
+	.a0 /* IN */ (gpu_din[3]),
+	.a1 /* IN */ (r_data_1[3]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_4
 (
-	.z(load_data_1_b4_obuf), // OUT
-	.a0(gpu_din[4]), // IN
-	.a1(r_data_1[4]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b4_obuf),
+	.a0 /* IN */ (gpu_din[4]),
+	.a1 /* IN */ (r_data_1[4]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_5
 (
-	.z(load_data_1_b5_obuf), // OUT
-	.a0(gpu_din[5]), // IN
-	.a1(r_data_1[5]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b5_obuf),
+	.a0 /* IN */ (gpu_din[5]),
+	.a1 /* IN */ (r_data_1[5]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_6
 (
-	.z(load_data_1_b6_obuf), // OUT
-	.a0(gpu_din[6]), // IN
-	.a1(r_data_1[6]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b6_obuf),
+	.a0 /* IN */ (gpu_din[6]),
+	.a1 /* IN */ (r_data_1[6]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_7
 (
-	.z(load_data_1_b7_obuf), // OUT
-	.a0(gpu_din[7]), // IN
-	.a1(r_data_1[7]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b7_obuf),
+	.a0 /* IN */ (gpu_din[7]),
+	.a1 /* IN */ (r_data_1[7]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_8
 (
-	.z(load_data_1_b8_obuf), // OUT
-	.a0(gpu_din[8]), // IN
-	.a1(r_data_1[8]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b8_obuf),
+	.a0 /* IN */ (gpu_din[8]),
+	.a1 /* IN */ (r_data_1[8]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_9
 (
-	.z(load_data_1_b9_obuf), // OUT
-	.a0(gpu_din[9]), // IN
-	.a1(r_data_1[9]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b9_obuf),
+	.a0 /* IN */ (gpu_din[9]),
+	.a1 /* IN */ (r_data_1[9]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_10
 (
-	.z(load_data_1_b10_obuf), // OUT
-	.a0(gpu_din[10]), // IN
-	.a1(r_data_1[10]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b10_obuf),
+	.a0 /* IN */ (gpu_din[10]),
+	.a1 /* IN */ (r_data_1[10]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_11
 (
-	.z(load_data_1_b11_obuf), // OUT
-	.a0(gpu_din[11]), // IN
-	.a1(r_data_1[11]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b11_obuf),
+	.a0 /* IN */ (gpu_din[11]),
+	.a1 /* IN */ (r_data_1[11]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_12
 (
-	.z(load_data_1_b12_obuf), // OUT
-	.a0(gpu_din[12]), // IN
-	.a1(r_data_1[12]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b12_obuf),
+	.a0 /* IN */ (gpu_din[12]),
+	.a1 /* IN */ (r_data_1[12]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_13
 (
-	.z(load_data_1_b13_obuf), // OUT
-	.a0(gpu_din[13]), // IN
-	.a1(r_data_1[13]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b13_obuf),
+	.a0 /* IN */ (gpu_din[13]),
+	.a1 /* IN */ (r_data_1[13]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_14
 (
-	.z(load_data_1_b14_obuf), // OUT
-	.a0(gpu_din[14]), // IN
-	.a1(r_data_1[14]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b14_obuf),
+	.a0 /* IN */ (gpu_din[14]),
+	.a1 /* IN */ (r_data_1[14]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_15
 (
-	.z(load_data_1_b15_obuf), // OUT
-	.a0(gpu_din[15]), // IN
-	.a1(r_data_1[15]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b15_obuf),
+	.a0 /* IN */ (gpu_din[15]),
+	.a1 /* IN */ (r_data_1[15]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_16
 (
-	.z(load_data_1_b16_obuf), // OUT
-	.a0(gpu_din[16]), // IN
-	.a1(r_data_1[16]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b16_obuf),
+	.a0 /* IN */ (gpu_din[16]),
+	.a1 /* IN */ (r_data_1[16]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_17
 (
-	.z(load_data_1_b17_obuf), // OUT
-	.a0(gpu_din[17]), // IN
-	.a1(r_data_1[17]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b17_obuf),
+	.a0 /* IN */ (gpu_din[17]),
+	.a1 /* IN */ (r_data_1[17]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_18
 (
-	.z(load_data_1_b18_obuf), // OUT
-	.a0(gpu_din[18]), // IN
-	.a1(r_data_1[18]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b18_obuf),
+	.a0 /* IN */ (gpu_din[18]),
+	.a1 /* IN */ (r_data_1[18]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_19
 (
-	.z(load_data_1_b19_obuf), // OUT
-	.a0(gpu_din[19]), // IN
-	.a1(r_data_1[19]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b19_obuf),
+	.a0 /* IN */ (gpu_din[19]),
+	.a1 /* IN */ (r_data_1[19]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_20
 (
-	.z(load_data_1_b20_obuf), // OUT
-	.a0(gpu_din[20]), // IN
-	.a1(r_data_1[20]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b20_obuf),
+	.a0 /* IN */ (gpu_din[20]),
+	.a1 /* IN */ (r_data_1[20]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_21
 (
-	.z(load_data_1_b21_obuf), // OUT
-	.a0(gpu_din[21]), // IN
-	.a1(r_data_1[21]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b21_obuf),
+	.a0 /* IN */ (gpu_din[21]),
+	.a1 /* IN */ (r_data_1[21]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_22
 (
-	.z(load_data_1_b22_obuf), // OUT
-	.a0(gpu_din[22]), // IN
-	.a1(r_data_1[22]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b22_obuf),
+	.a0 /* IN */ (gpu_din[22]),
+	.a1 /* IN */ (r_data_1[22]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_23
 (
-	.z(load_data_1_b23_obuf), // OUT
-	.a0(gpu_din[23]), // IN
-	.a1(r_data_1[23]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b23_obuf),
+	.a0 /* IN */ (gpu_din[23]),
+	.a1 /* IN */ (r_data_1[23]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_24
 (
-	.z(load_data_1_b24_obuf), // OUT
-	.a0(gpu_din[24]), // IN
-	.a1(r_data_1[24]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b24_obuf),
+	.a0 /* IN */ (gpu_din[24]),
+	.a1 /* IN */ (r_data_1[24]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_25
 (
-	.z(load_data_1_b25_obuf), // OUT
-	.a0(gpu_din[25]), // IN
-	.a1(r_data_1[25]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b25_obuf),
+	.a0 /* IN */ (gpu_din[25]),
+	.a1 /* IN */ (r_data_1[25]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_26
 (
-	.z(load_data_1_b26_obuf), // OUT
-	.a0(gpu_din[26]), // IN
-	.a1(r_data_1[26]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b26_obuf),
+	.a0 /* IN */ (gpu_din[26]),
+	.a1 /* IN */ (r_data_1[26]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_27
 (
-	.z(load_data_1_b27_obuf), // OUT
-	.a0(gpu_din[27]), // IN
-	.a1(r_data_1[27]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b27_obuf),
+	.a0 /* IN */ (gpu_din[27]),
+	.a1 /* IN */ (r_data_1[27]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_28
 (
-	.z(load_data_1_b28_obuf), // OUT
-	.a0(gpu_din[28]), // IN
-	.a1(r_data_1[28]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b28_obuf),
+	.a0 /* IN */ (gpu_din[28]),
+	.a1 /* IN */ (r_data_1[28]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_29
 (
-	.z(load_data_1_b29_obuf), // OUT
-	.a0(gpu_din[29]), // IN
-	.a1(r_data_1[29]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b29_obuf),
+	.a0 /* IN */ (gpu_din[29]),
+	.a1 /* IN */ (r_data_1[29]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_30
 (
-	.z(load_data_1_b30_obuf), // OUT
-	.a0(gpu_din[30]), // IN
-	.a1(r_data_1[30]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b30_obuf),
+	.a0 /* IN */ (gpu_din[30]),
+	.a1 /* IN */ (r_data_1[30]),
+	.s /* IN */ (blit_backb)
 );
 mx2 load_data_index_1_inst_31
 (
-	.z(load_data_1_b31_obuf), // OUT
-	.a0(gpu_din[31]), // IN
-	.a1(r_data_1[31]), // IN
-	.s(blit_backb)  // IN
+	.z /* OUT */ (load_data_1_b31_obuf),
+	.a0 /* IN */ (gpu_din[31]),
+	.a1 /* IN */ (r_data_1[31]),
+	.s /* IN */ (blit_backb)
 );
 
 // DATAMUX.NET (136) - daddq_selb[0-1] : nivu
@@ -824,452 +824,452 @@ assign daddq_selb_1 = daddq_sel;
 // DATAMUX.NET (137) - local_data[0] : mx2p
 mx2 local_data_index_0_inst_0
 (
-	.z(local_data_0[0]), // OUT
-	.a0(load_data_0_b0_obuf), // IN
-	.a1(addqlo32[0]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[0]),
+	.a0 /* IN */ (load_data_0_b0_obuf),
+	.a1 /* IN */ (addqlo32[0]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_1
 (
-	.z(local_data_0[1]), // OUT
-	.a0(load_data_0_b1_obuf), // IN
-	.a1(addqlo32[1]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[1]),
+	.a0 /* IN */ (load_data_0_b1_obuf),
+	.a1 /* IN */ (addqlo32[1]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_2
 (
-	.z(local_data_0[2]), // OUT
-	.a0(load_data_0_b2_obuf), // IN
-	.a1(addqlo32[2]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[2]),
+	.a0 /* IN */ (load_data_0_b2_obuf),
+	.a1 /* IN */ (addqlo32[2]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_3
 (
-	.z(local_data_0[3]), // OUT
-	.a0(load_data_0_b3_obuf), // IN
-	.a1(addqlo32[3]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[3]),
+	.a0 /* IN */ (load_data_0_b3_obuf),
+	.a1 /* IN */ (addqlo32[3]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_4
 (
-	.z(local_data_0[4]), // OUT
-	.a0(load_data_0_b4_obuf), // IN
-	.a1(addqlo32[4]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[4]),
+	.a0 /* IN */ (load_data_0_b4_obuf),
+	.a1 /* IN */ (addqlo32[4]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_5
 (
-	.z(local_data_0[5]), // OUT
-	.a0(load_data_0_b5_obuf), // IN
-	.a1(addqlo32[5]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[5]),
+	.a0 /* IN */ (load_data_0_b5_obuf),
+	.a1 /* IN */ (addqlo32[5]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_6
 (
-	.z(local_data_0[6]), // OUT
-	.a0(load_data_0_b6_obuf), // IN
-	.a1(addqlo32[6]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[6]),
+	.a0 /* IN */ (load_data_0_b6_obuf),
+	.a1 /* IN */ (addqlo32[6]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_7
 (
-	.z(local_data_0[7]), // OUT
-	.a0(load_data_0_b7_obuf), // IN
-	.a1(addqlo32[7]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[7]),
+	.a0 /* IN */ (load_data_0_b7_obuf),
+	.a1 /* IN */ (addqlo32[7]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_8
 (
-	.z(local_data_0[8]), // OUT
-	.a0(load_data_0_b8_obuf), // IN
-	.a1(addqlo32[8]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[8]),
+	.a0 /* IN */ (load_data_0_b8_obuf),
+	.a1 /* IN */ (addqlo32[8]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_9
 (
-	.z(local_data_0[9]), // OUT
-	.a0(load_data_0_b9_obuf), // IN
-	.a1(addqlo32[9]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[9]),
+	.a0 /* IN */ (load_data_0_b9_obuf),
+	.a1 /* IN */ (addqlo32[9]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_10
 (
-	.z(local_data_0[10]), // OUT
-	.a0(load_data_0_b10_obuf), // IN
-	.a1(addqlo32[10]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[10]),
+	.a0 /* IN */ (load_data_0_b10_obuf),
+	.a1 /* IN */ (addqlo32[10]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_11
 (
-	.z(local_data_0[11]), // OUT
-	.a0(load_data_0_b11_obuf), // IN
-	.a1(addqlo32[11]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[11]),
+	.a0 /* IN */ (load_data_0_b11_obuf),
+	.a1 /* IN */ (addqlo32[11]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_12
 (
-	.z(local_data_0[12]), // OUT
-	.a0(load_data_0_b12_obuf), // IN
-	.a1(addqlo32[12]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[12]),
+	.a0 /* IN */ (load_data_0_b12_obuf),
+	.a1 /* IN */ (addqlo32[12]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_13
 (
-	.z(local_data_0[13]), // OUT
-	.a0(load_data_0_b13_obuf), // IN
-	.a1(addqlo32[13]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[13]),
+	.a0 /* IN */ (load_data_0_b13_obuf),
+	.a1 /* IN */ (addqlo32[13]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_14
 (
-	.z(local_data_0[14]), // OUT
-	.a0(load_data_0_b14_obuf), // IN
-	.a1(addqlo32[14]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[14]),
+	.a0 /* IN */ (load_data_0_b14_obuf),
+	.a1 /* IN */ (addqlo32[14]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_15
 (
-	.z(local_data_0[15]), // OUT
-	.a0(load_data_0_b15_obuf), // IN
-	.a1(addqlo32[15]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[15]),
+	.a0 /* IN */ (load_data_0_b15_obuf),
+	.a1 /* IN */ (addqlo32[15]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_16
 (
-	.z(local_data_0[16]), // OUT
-	.a0(load_data_0_b16_obuf), // IN
-	.a1(addqlo32[16]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[16]),
+	.a0 /* IN */ (load_data_0_b16_obuf),
+	.a1 /* IN */ (addqlo32[16]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_17
 (
-	.z(local_data_0[17]), // OUT
-	.a0(load_data_0_b17_obuf), // IN
-	.a1(addqlo32[17]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[17]),
+	.a0 /* IN */ (load_data_0_b17_obuf),
+	.a1 /* IN */ (addqlo32[17]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_18
 (
-	.z(local_data_0[18]), // OUT
-	.a0(load_data_0_b18_obuf), // IN
-	.a1(addqlo32[18]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[18]),
+	.a0 /* IN */ (load_data_0_b18_obuf),
+	.a1 /* IN */ (addqlo32[18]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_19
 (
-	.z(local_data_0[19]), // OUT
-	.a0(load_data_0_b19_obuf), // IN
-	.a1(addqlo32[19]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[19]),
+	.a0 /* IN */ (load_data_0_b19_obuf),
+	.a1 /* IN */ (addqlo32[19]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_20
 (
-	.z(local_data_0[20]), // OUT
-	.a0(load_data_0_b20_obuf), // IN
-	.a1(addqlo32[20]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[20]),
+	.a0 /* IN */ (load_data_0_b20_obuf),
+	.a1 /* IN */ (addqlo32[20]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_21
 (
-	.z(local_data_0[21]), // OUT
-	.a0(load_data_0_b21_obuf), // IN
-	.a1(addqlo32[21]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[21]),
+	.a0 /* IN */ (load_data_0_b21_obuf),
+	.a1 /* IN */ (addqlo32[21]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_22
 (
-	.z(local_data_0[22]), // OUT
-	.a0(load_data_0_b22_obuf), // IN
-	.a1(addqlo32[22]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[22]),
+	.a0 /* IN */ (load_data_0_b22_obuf),
+	.a1 /* IN */ (addqlo32[22]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_23
 (
-	.z(local_data_0[23]), // OUT
-	.a0(load_data_0_b23_obuf), // IN
-	.a1(addqlo32[23]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[23]),
+	.a0 /* IN */ (load_data_0_b23_obuf),
+	.a1 /* IN */ (addqlo32[23]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_24
 (
-	.z(local_data_0[24]), // OUT
-	.a0(load_data_0_b24_obuf), // IN
-	.a1(addqlo32[24]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[24]),
+	.a0 /* IN */ (load_data_0_b24_obuf),
+	.a1 /* IN */ (addqlo32[24]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_25
 (
-	.z(local_data_0[25]), // OUT
-	.a0(load_data_0_b25_obuf), // IN
-	.a1(addqlo32[25]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[25]),
+	.a0 /* IN */ (load_data_0_b25_obuf),
+	.a1 /* IN */ (addqlo32[25]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_26
 (
-	.z(local_data_0[26]), // OUT
-	.a0(load_data_0_b26_obuf), // IN
-	.a1(addqlo32[26]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[26]),
+	.a0 /* IN */ (load_data_0_b26_obuf),
+	.a1 /* IN */ (addqlo32[26]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_27
 (
-	.z(local_data_0[27]), // OUT
-	.a0(load_data_0_b27_obuf), // IN
-	.a1(addqlo32[27]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[27]),
+	.a0 /* IN */ (load_data_0_b27_obuf),
+	.a1 /* IN */ (addqlo32[27]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_28
 (
-	.z(local_data_0[28]), // OUT
-	.a0(load_data_0_b28_obuf), // IN
-	.a1(addqlo32[28]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[28]),
+	.a0 /* IN */ (load_data_0_b28_obuf),
+	.a1 /* IN */ (addqlo32[28]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_29
 (
-	.z(local_data_0[29]), // OUT
-	.a0(load_data_0_b29_obuf), // IN
-	.a1(addqlo32[29]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[29]),
+	.a0 /* IN */ (load_data_0_b29_obuf),
+	.a1 /* IN */ (addqlo32[29]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_30
 (
-	.z(local_data_0[30]), // OUT
-	.a0(load_data_0_b30_obuf), // IN
-	.a1(addqlo32[30]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[30]),
+	.a0 /* IN */ (load_data_0_b30_obuf),
+	.a1 /* IN */ (addqlo32[30]),
+	.s /* IN */ (daddq_selb_0)
 );
 mx2 local_data_index_0_inst_31
 (
-	.z(local_data_0[31]), // OUT
-	.a0(load_data_0_b31_obuf), // IN
-	.a1(addqlo32[31]), // IN
-	.s(daddq_selb_0)  // IN
+	.z /* OUT */ (local_data_0[31]),
+	.a0 /* IN */ (load_data_0_b31_obuf),
+	.a1 /* IN */ (addqlo32[31]),
+	.s /* IN */ (daddq_selb_0)
 );
 
 // DATAMUX.NET (139) - local_data[1] : mx2p
 mx2 local_data_index_1_inst_0
 (
-	.z(local_data_1[0]), // OUT
-	.a0(load_data_1_b0_obuf), // IN
-	.a1(addqhi32[0]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[0]),
+	.a0 /* IN */ (load_data_1_b0_obuf),
+	.a1 /* IN */ (addqhi32[0]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_1
 (
-	.z(local_data_1[1]), // OUT
-	.a0(load_data_1_b1_obuf), // IN
-	.a1(addqhi32[1]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[1]),
+	.a0 /* IN */ (load_data_1_b1_obuf),
+	.a1 /* IN */ (addqhi32[1]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_2
 (
-	.z(local_data_1[2]), // OUT
-	.a0(load_data_1_b2_obuf), // IN
-	.a1(addqhi32[2]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[2]),
+	.a0 /* IN */ (load_data_1_b2_obuf),
+	.a1 /* IN */ (addqhi32[2]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_3
 (
-	.z(local_data_1[3]), // OUT
-	.a0(load_data_1_b3_obuf), // IN
-	.a1(addqhi32[3]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[3]),
+	.a0 /* IN */ (load_data_1_b3_obuf),
+	.a1 /* IN */ (addqhi32[3]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_4
 (
-	.z(local_data_1[4]), // OUT
-	.a0(load_data_1_b4_obuf), // IN
-	.a1(addqhi32[4]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[4]),
+	.a0 /* IN */ (load_data_1_b4_obuf),
+	.a1 /* IN */ (addqhi32[4]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_5
 (
-	.z(local_data_1[5]), // OUT
-	.a0(load_data_1_b5_obuf), // IN
-	.a1(addqhi32[5]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[5]),
+	.a0 /* IN */ (load_data_1_b5_obuf),
+	.a1 /* IN */ (addqhi32[5]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_6
 (
-	.z(local_data_1[6]), // OUT
-	.a0(load_data_1_b6_obuf), // IN
-	.a1(addqhi32[6]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[6]),
+	.a0 /* IN */ (load_data_1_b6_obuf),
+	.a1 /* IN */ (addqhi32[6]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_7
 (
-	.z(local_data_1[7]), // OUT
-	.a0(load_data_1_b7_obuf), // IN
-	.a1(addqhi32[7]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[7]),
+	.a0 /* IN */ (load_data_1_b7_obuf),
+	.a1 /* IN */ (addqhi32[7]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_8
 (
-	.z(local_data_1[8]), // OUT
-	.a0(load_data_1_b8_obuf), // IN
-	.a1(addqhi32[8]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[8]),
+	.a0 /* IN */ (load_data_1_b8_obuf),
+	.a1 /* IN */ (addqhi32[8]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_9
 (
-	.z(local_data_1[9]), // OUT
-	.a0(load_data_1_b9_obuf), // IN
-	.a1(addqhi32[9]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[9]),
+	.a0 /* IN */ (load_data_1_b9_obuf),
+	.a1 /* IN */ (addqhi32[9]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_10
 (
-	.z(local_data_1[10]), // OUT
-	.a0(load_data_1_b10_obuf), // IN
-	.a1(addqhi32[10]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[10]),
+	.a0 /* IN */ (load_data_1_b10_obuf),
+	.a1 /* IN */ (addqhi32[10]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_11
 (
-	.z(local_data_1[11]), // OUT
-	.a0(load_data_1_b11_obuf), // IN
-	.a1(addqhi32[11]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[11]),
+	.a0 /* IN */ (load_data_1_b11_obuf),
+	.a1 /* IN */ (addqhi32[11]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_12
 (
-	.z(local_data_1[12]), // OUT
-	.a0(load_data_1_b12_obuf), // IN
-	.a1(addqhi32[12]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[12]),
+	.a0 /* IN */ (load_data_1_b12_obuf),
+	.a1 /* IN */ (addqhi32[12]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_13
 (
-	.z(local_data_1[13]), // OUT
-	.a0(load_data_1_b13_obuf), // IN
-	.a1(addqhi32[13]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[13]),
+	.a0 /* IN */ (load_data_1_b13_obuf),
+	.a1 /* IN */ (addqhi32[13]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_14
 (
-	.z(local_data_1[14]), // OUT
-	.a0(load_data_1_b14_obuf), // IN
-	.a1(addqhi32[14]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[14]),
+	.a0 /* IN */ (load_data_1_b14_obuf),
+	.a1 /* IN */ (addqhi32[14]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_15
 (
-	.z(local_data_1[15]), // OUT
-	.a0(load_data_1_b15_obuf), // IN
-	.a1(addqhi32[15]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[15]),
+	.a0 /* IN */ (load_data_1_b15_obuf),
+	.a1 /* IN */ (addqhi32[15]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_16
 (
-	.z(local_data_1[16]), // OUT
-	.a0(load_data_1_b16_obuf), // IN
-	.a1(addqhi32[16]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[16]),
+	.a0 /* IN */ (load_data_1_b16_obuf),
+	.a1 /* IN */ (addqhi32[16]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_17
 (
-	.z(local_data_1[17]), // OUT
-	.a0(load_data_1_b17_obuf), // IN
-	.a1(addqhi32[17]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[17]),
+	.a0 /* IN */ (load_data_1_b17_obuf),
+	.a1 /* IN */ (addqhi32[17]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_18
 (
-	.z(local_data_1[18]), // OUT
-	.a0(load_data_1_b18_obuf), // IN
-	.a1(addqhi32[18]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[18]),
+	.a0 /* IN */ (load_data_1_b18_obuf),
+	.a1 /* IN */ (addqhi32[18]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_19
 (
-	.z(local_data_1[19]), // OUT
-	.a0(load_data_1_b19_obuf), // IN
-	.a1(addqhi32[19]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[19]),
+	.a0 /* IN */ (load_data_1_b19_obuf),
+	.a1 /* IN */ (addqhi32[19]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_20
 (
-	.z(local_data_1[20]), // OUT
-	.a0(load_data_1_b20_obuf), // IN
-	.a1(addqhi32[20]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[20]),
+	.a0 /* IN */ (load_data_1_b20_obuf),
+	.a1 /* IN */ (addqhi32[20]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_21
 (
-	.z(local_data_1[21]), // OUT
-	.a0(load_data_1_b21_obuf), // IN
-	.a1(addqhi32[21]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[21]),
+	.a0 /* IN */ (load_data_1_b21_obuf),
+	.a1 /* IN */ (addqhi32[21]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_22
 (
-	.z(local_data_1[22]), // OUT
-	.a0(load_data_1_b22_obuf), // IN
-	.a1(addqhi32[22]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[22]),
+	.a0 /* IN */ (load_data_1_b22_obuf),
+	.a1 /* IN */ (addqhi32[22]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_23
 (
-	.z(local_data_1[23]), // OUT
-	.a0(load_data_1_b23_obuf), // IN
-	.a1(addqhi32[23]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[23]),
+	.a0 /* IN */ (load_data_1_b23_obuf),
+	.a1 /* IN */ (addqhi32[23]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_24
 (
-	.z(local_data_1[24]), // OUT
-	.a0(load_data_1_b24_obuf), // IN
-	.a1(addqhi32[24]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[24]),
+	.a0 /* IN */ (load_data_1_b24_obuf),
+	.a1 /* IN */ (addqhi32[24]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_25
 (
-	.z(local_data_1[25]), // OUT
-	.a0(load_data_1_b25_obuf), // IN
-	.a1(addqhi32[25]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[25]),
+	.a0 /* IN */ (load_data_1_b25_obuf),
+	.a1 /* IN */ (addqhi32[25]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_26
 (
-	.z(local_data_1[26]), // OUT
-	.a0(load_data_1_b26_obuf), // IN
-	.a1(addqhi32[26]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[26]),
+	.a0 /* IN */ (load_data_1_b26_obuf),
+	.a1 /* IN */ (addqhi32[26]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_27
 (
-	.z(local_data_1[27]), // OUT
-	.a0(load_data_1_b27_obuf), // IN
-	.a1(addqhi32[27]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[27]),
+	.a0 /* IN */ (load_data_1_b27_obuf),
+	.a1 /* IN */ (addqhi32[27]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_28
 (
-	.z(local_data_1[28]), // OUT
-	.a0(load_data_1_b28_obuf), // IN
-	.a1(addqhi32[28]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[28]),
+	.a0 /* IN */ (load_data_1_b28_obuf),
+	.a1 /* IN */ (addqhi32[28]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_29
 (
-	.z(local_data_1[29]), // OUT
-	.a0(load_data_1_b29_obuf), // IN
-	.a1(addqhi32[29]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[29]),
+	.a0 /* IN */ (load_data_1_b29_obuf),
+	.a1 /* IN */ (addqhi32[29]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_30
 (
-	.z(local_data_1[30]), // OUT
-	.a0(load_data_1_b30_obuf), // IN
-	.a1(addqhi32[30]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[30]),
+	.a0 /* IN */ (load_data_1_b30_obuf),
+	.a1 /* IN */ (addqhi32[30]),
+	.s /* IN */ (daddq_selb_1)
 );
 mx2 local_data_index_1_inst_31
 (
-	.z(local_data_1[31]), // OUT
-	.a0(load_data_1_b31_obuf), // IN
-	.a1(addqhi32[31]), // IN
-	.s(daddq_selb_1)  // IN
+	.z /* OUT */ (local_data_1[31]),
+	.a0 /* IN */ (load_data_1_b31_obuf),
+	.a1 /* IN */ (addqhi32[31]),
+	.s /* IN */ (daddq_selb_1)
 );
 endmodule

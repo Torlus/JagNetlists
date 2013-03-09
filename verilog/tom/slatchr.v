@@ -22,10 +22,10 @@ assign q = q_obuf;
 // LEGO.NET (48) - d1 : mx2
 mx2 d1_inst
 (
-	.z(d1), // OUT
-	.a0(q_obuf), // IN
-	.a1(d), // IN
-	.s(en)  // IN
+	.z /* OUT */ (d1),
+	.a0 /* IN */ (q_obuf),
+	.a1 /* IN */ (d),
+	.s /* IN */ (en)
 );
 
 // LEGO.NET (49) - d2 : an2
@@ -34,8 +34,8 @@ assign d2 = d1 & resl;
 // LEGO.NET (50) - q : fd1q
 fd1q q_inst
 (
-	.q(q_obuf), // OUT
-	.d(d2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (q_obuf),
+	.d /* IN */ (d2),
+	.cp /* IN */ (clk)
 );
 endmodule

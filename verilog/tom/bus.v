@@ -103,38 +103,6 @@ wire dreni;
 wire xdsrc1;
 wire xdsrci;
 
-// Output buffers
-wire den_0_obuf;
-wire den_1_obuf;
-wire den_2_obuf;
-wire aen_obuf;
-wire dmuxu_0_obuf;
-wire dmuxu_1_obuf;
-wire dmuxu_2_obuf;
-wire dmuxd_0_obuf;
-wire dmuxd_1_obuf;
-wire dmuxd_2_obuf;
-wire dren_obuf;
-wire xdsrc_obuf;
-wire ainen_obuf;
-
-
-// Output buffers
-assign den_0 = den_0_obuf;
-assign den_1 = den_1_obuf;
-assign den_2 = den_2_obuf;
-assign aen = aen_obuf;
-assign dmuxu_0 = dmuxu_0_obuf;
-assign dmuxu_1 = dmuxu_1_obuf;
-assign dmuxu_2 = dmuxu_2_obuf;
-assign dmuxd_0 = dmuxd_0_obuf;
-assign dmuxd_1 = dmuxd_1_obuf;
-assign dmuxd_2 = dmuxd_2_obuf;
-assign dren = dren_obuf;
-assign xdsrc = xdsrc_obuf;
-assign ainen = ainen_obuf;
-
-
 // BUS.NET (55) - den03 : nd6
 assign den03 = ~(intbms & busy & notreads & testen & resetl & vcc);
 
@@ -160,9 +128,9 @@ assign den20 = ~(extbms & busy & notreads & testen & resetl & vcc);
 assign deni_2 = ~(den03 & den20 & den05);
 
 // BUS.NET (66) - den[0-2] : nivu2
-assign den_0_obuf = deni_0;
-assign den_1_obuf = deni_1;
-assign den_2_obuf = deni_2;
+assign den_0 = deni_0;
+assign den_1 = deni_1;
+assign den_2 = deni_2;
 
 // BUS.NET (74) - host16 : an2
 assign host16 = cpubm & cpu16;
@@ -206,28 +174,28 @@ assign pw8 = justify & wl_3 & wl_2 & wl_1;
 // BUS.NET (111) - pws8 : slatch
 slatch pws8_inst
 (
-	.q(pws8), // IO
-	.d(pw8), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (pws8),
+	.d /* IN */ (pw8),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // BUS.NET (112) - pws16 : slatch
 slatch pws16_inst
 (
-	.q(pws16), // IO
-	.d(pw16), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (pws16),
+	.d /* IN */ (pw16),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // BUS.NET (113) - pws64 : slatch
 slatch pws64_inst
 (
-	.q(pws64), // IO
-	.d(pw64), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (pws64),
+	.d /* IN */ (pw64),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // BUS.NET (115) - notpws64 : iv
@@ -243,10 +211,10 @@ assign wl_2 = ~w_2;
 assign wl_3 = ~w_3;
 
 // BUS.NET (126) - aen : nivu
-assign aen_obuf = intbms;
+assign aen = intbms;
 
 // BUS.NET (130) - ainen : nivu2
-assign ainen_obuf = xp;
+assign ainen = xp;
 
 // BUS.NET (132) - busy : ivh
 assign busy = ~idle;
@@ -276,7 +244,7 @@ assign dmuxu21 = ~(notpws64 & notreads);
 assign dmuxui_2 = ~(dmuxu20 & dmuxu21);
 
 // BUS.NET (159) - dmuxu[2] : nivu2
-assign dmuxu_2_obuf = dmuxui_2;
+assign dmuxu_2 = dmuxui_2;
 
 // BUS.NET (167) - vcc : tie1
 assign vcc = 1'b1;
@@ -291,7 +259,7 @@ assign dmuxu11 = ~(pws816 & notreads);
 assign dmuxui_1 = ~(dmuxu10 & dmuxu11);
 
 // BUS.NET (171) - dmuxu[1] : nivu2
-assign dmuxu_1_obuf = dmuxui_1;
+assign dmuxu_1 = dmuxui_1;
 
 // BUS.NET (179) - dmuxu00 : nd4
 assign dmuxu00 = ~(mws8 & ba_0 & reads & ourackl);
@@ -303,7 +271,7 @@ assign dmuxu01 = ~(pws8 & notreads);
 assign dmuxui_0 = ~(dmuxu00 & dmuxu01);
 
 // BUS.NET (182) - dmuxu[0] : nivu2
-assign dmuxu_0_obuf = dmuxui_0;
+assign dmuxu_0 = dmuxui_0;
 
 // BUS.NET (190) - dmuxd20 : nd4
 assign dmuxd20 = ~(notpws64 & ba_2 & reads & ourackl);
@@ -315,7 +283,7 @@ assign dmuxd21 = ~(notmws64 & ba_2 & notreads);
 assign dmuxdi_2 = ~(dmuxd20 & dmuxd21);
 
 // BUS.NET (193) - dmuxd[2] : nivu2
-assign dmuxd_2_obuf = dmuxdi_2;
+assign dmuxd_2 = dmuxdi_2;
 
 // BUS.NET (201) - dmuxd10 : nd4
 assign dmuxd10 = ~(pws816 & ba_1 & reads & ourackl);
@@ -327,7 +295,7 @@ assign dmuxd11 = ~(mws816 & ba_1 & notreads);
 assign dmuxdi_1 = ~(dmuxd10 & dmuxd11);
 
 // BUS.NET (204) - dmuxd[1] : nivu2
-assign dmuxd_1_obuf = dmuxdi_1;
+assign dmuxd_1 = dmuxdi_1;
 
 // BUS.NET (212) - dmuxd00 : nd4
 assign dmuxd00 = ~(pws8 & ba_0 & reads & ourackl);
@@ -339,7 +307,7 @@ assign dmuxd01 = ~(mws8 & ba_0 & notreads);
 assign dmuxdi_0 = ~(dmuxd00 & dmuxd01);
 
 // BUS.NET (215) - dmuxd[0] : nivu2
-assign dmuxd_0_obuf = dmuxdi_0;
+assign dmuxd_0 = dmuxdi_0;
 
 // BUS.NET (219) - dren0 : nd2
 assign dren0 = ~(intdev & reads);
@@ -348,7 +316,7 @@ assign dren0 = ~(intdev & reads);
 assign dreni = ~(dren0 & ourackl);
 
 // BUS.NET (221) - dren : nivh
-assign dren_obuf = dreni;
+assign dren = dreni;
 
 // BUS.NET (233) - xdsrc1 : nd2
 assign xdsrc1 = ~(intdev & reads);
@@ -360,5 +328,5 @@ assign ourackl = ~ourack;
 assign xdsrci = intbmw & xdsrc1 & ourackl;
 
 // BUS.NET (236) - xdsrc : nivu2
-assign xdsrc_obuf = xdsrci;
+assign xdsrc = xdsrci;
 endmodule

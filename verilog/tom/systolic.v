@@ -17,13 +17,13 @@ module systolic
 	output mtxaddr_11,
 	output mtx_mreq,
 	output multsel,
-	output[0:15] sysins;
+	output [0:15] sysins;
 	output sysser,
 	input movei_data,
 	input clk,
 	input datack,
-	input[0:31] gpu_din;
-	input[0:15] instruction;
+	input [0:31] gpu_din;
+	input [0:15] instruction;
 	input mtxawr,
 	input mtxcwr,
 	input reset_n,
@@ -109,14 +109,14 @@ assign mmultt = ~(instruction[10] | instruction[13]);
 // SYSTOLIC.NET (55) - mmult\ : nd7
 nd7 mmult_n_inst
 (
-	.q(mmult_n), // OUT
-	.a_0(mmultt), // IN
-	.a_1(movei_data_n), // IN
-	.a_2(romold), // IN
-	.a_3(instruction[11]), // IN
-	.a_4(instruction[12]), // IN
-	.a_5(instruction[14]), // IN
-	.a_6(instruction[15])  // IN
+	.q /* OUT */ (mmult_n),
+	.a_0 /* IN */ (mmultt),
+	.a_1 /* IN */ (movei_data_n),
+	.a_2 /* IN */ (romold),
+	.a_3 /* IN */ (instruction[11]),
+	.a_4 /* IN */ (instruction[12]),
+	.a_5 /* IN */ (instruction[14]),
+	.a_6 /* IN */ (instruction[15])
 );
 
 // SYSTOLIC.NET (57) - mmult : ivh
@@ -128,40 +128,40 @@ assign mtx_atomic = mtx_active | mmult;
 // SYSTOLIC.NET (67) - mwidth[0-3] : fdsync
 fdsync mwidth_from_0_to_3_inst_0
 (
-	.q(mwidth_0), // IO
-	.d(gpu_din[0]), // IN
-	.ld(mtxcwr), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (mwidth_0),
+	.d /* IN */ (gpu_din[0]),
+	.ld /* IN */ (mtxcwr),
+	.clk /* IN */ (clk)
 );
 fdsync mwidth_from_0_to_3_inst_1
 (
-	.q(mwidth_1), // IO
-	.d(gpu_din[1]), // IN
-	.ld(mtxcwr), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (mwidth_1),
+	.d /* IN */ (gpu_din[1]),
+	.ld /* IN */ (mtxcwr),
+	.clk /* IN */ (clk)
 );
 fdsync mwidth_from_0_to_3_inst_2
 (
-	.q(mwidth_2), // IO
-	.d(gpu_din[2]), // IN
-	.ld(mtxcwr), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (mwidth_2),
+	.d /* IN */ (gpu_din[2]),
+	.ld /* IN */ (mtxcwr),
+	.clk /* IN */ (clk)
 );
 fdsync mwidth_from_0_to_3_inst_3
 (
-	.q(mwidth_3), // IO
-	.d(gpu_din[3]), // IN
-	.ld(mtxcwr), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (mwidth_3),
+	.d /* IN */ (gpu_din[3]),
+	.ld /* IN */ (mtxcwr),
+	.clk /* IN */ (clk)
 );
 
 // SYSTOLIC.NET (69) - maddw : fdsync
 fdsync maddw_inst
 (
-	.q(maddw), // IO
-	.d(gpu_din[4]), // IN
-	.ld(mtxcwr), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (maddw),
+	.d /* IN */ (gpu_din[4]),
+	.ld /* IN */ (mtxcwr),
+	.clk /* IN */ (clk)
 );
 
 // SYSTOLIC.NET (81) - macnten : an2h
@@ -170,34 +170,34 @@ assign macnten = mtx_dover_obuf & datack;
 // SYSTOLIC.NET (82) - mtxaddr : macount
 macount mtxaddr_inst
 (
-	.maddr_0(mtxaddr_2), // IO
-	.maddr_1(mtxaddr_3), // IO
-	.maddr_2(mtxaddr_4), // IO
-	.maddr_3(mtxaddr_5), // IO
-	.maddr_4(mtxaddr_6), // IO
-	.maddr_5(mtxaddr_7), // IO
-	.maddr_6(mtxaddr_8), // IO
-	.maddr_7(mtxaddr_9), // IO
-	.maddr_8(mtxaddr_10), // IO
-	.maddr_9(mtxaddr_11), // IO
-	.clk(clk), // IN
-	.cnten(macnten), // IN
-	.cntld(mtxawr), // IN
-	.gpu_din_2(gpu_din[2]), // IN
-	.gpu_din_3(gpu_din[3]), // IN
-	.gpu_din_4(gpu_din[4]), // IN
-	.gpu_din_5(gpu_din[5]), // IN
-	.gpu_din_6(gpu_din[6]), // IN
-	.gpu_din_7(gpu_din[7]), // IN
-	.gpu_din_8(gpu_din[8]), // IN
-	.gpu_din_9(gpu_din[9]), // IN
-	.gpu_din_10(gpu_din[10]), // IN
-	.gpu_din_11(gpu_din[11]), // IN
-	.maddw(maddw), // IN
-	.mwidth_0(mwidth_0), // IN
-	.mwidth_1(mwidth_1), // IN
-	.mwidth_2(mwidth_2), // IN
-	.mwidth_3(mwidth_3)  // IN
+	.maddr_0 /* OUT */ (mtxaddr_2),
+	.maddr_1 /* OUT */ (mtxaddr_3),
+	.maddr_2 /* OUT */ (mtxaddr_4),
+	.maddr_3 /* OUT */ (mtxaddr_5),
+	.maddr_4 /* OUT */ (mtxaddr_6),
+	.maddr_5 /* OUT */ (mtxaddr_7),
+	.maddr_6 /* OUT */ (mtxaddr_8),
+	.maddr_7 /* OUT */ (mtxaddr_9),
+	.maddr_8 /* OUT */ (mtxaddr_10),
+	.maddr_9 /* OUT */ (mtxaddr_11),
+	.clk /* IN */ (clk),
+	.cnten /* IN */ (macnten),
+	.cntld /* IN */ (mtxawr),
+	.gpu_din_2 /* IN */ (gpu_din[2]),
+	.gpu_din_3 /* IN */ (gpu_din[3]),
+	.gpu_din_4 /* IN */ (gpu_din[4]),
+	.gpu_din_5 /* IN */ (gpu_din[5]),
+	.gpu_din_6 /* IN */ (gpu_din[6]),
+	.gpu_din_7 /* IN */ (gpu_din[7]),
+	.gpu_din_8 /* IN */ (gpu_din[8]),
+	.gpu_din_9 /* IN */ (gpu_din[9]),
+	.gpu_din_10 /* IN */ (gpu_din[10]),
+	.gpu_din_11 /* IN */ (gpu_din[11]),
+	.maddw /* IN */ (maddw),
+	.mwidth_0 /* IN */ (mwidth_0),
+	.mwidth_1 /* IN */ (mwidth_1),
+	.mwidth_2 /* IN */ (mwidth_2),
+	.mwidth_3 /* IN */ (mwidth_3)
 );
 
 // SYSTOLIC.NET (88) - idlet0 : nd2
@@ -212,10 +212,10 @@ assign idlet_2 = ~(idlet_0 & idlet_1);
 // SYSTOLIC.NET (91) - idle : fd4q
 fd4q idle_inst
 (
-	.q(idle), // OUT
-	.d(idlet_2), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (idle),
+	.d /* IN */ (idlet_2),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // SYSTOLIC.NET (93) - imultnt0 : nd2
@@ -230,10 +230,10 @@ assign imultnt_2 = ~(imultnt_0 & imultnt_1);
 // SYSTOLIC.NET (96) - imultn : fd2q
 fd2q imultn_inst
 (
-	.q(imultn), // OUT
-	.d(imultnt_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (imultn),
+	.d /* IN */ (imultnt_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SYSTOLIC.NET (98) - imacnt0 : nd2
@@ -251,10 +251,10 @@ assign imacnt_3 = ~(imacnt_0 & imacnt_1 & imacnt_2);
 // SYSTOLIC.NET (102) - imacn : fd2q
 fd2q imacn_inst
 (
-	.q(imacn), // OUT
-	.d(imacnt_3), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (imacn),
+	.d /* IN */ (imacnt_3),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SYSTOLIC.NET (104) - resmact0 : nd3
@@ -269,10 +269,10 @@ assign resmact_2 = ~(resmact_0 & resmact_1);
 // SYSTOLIC.NET (107) - resmac : fd2q
 fd2q resmac_inst
 (
-	.q(resmac), // OUT
-	.d(resmact_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (resmac),
+	.d /* IN */ (resmact_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SYSTOLIC.NET (109) - mtx_active : iv
@@ -284,14 +284,14 @@ assign mcnten = romold & mtx_active;
 // SYSTOLIC.NET (116) - mcount : mcount
 mcount mcount_inst
 (
-	.count1(count1), // OUT
-	.clk(clk), // IN
-	.cnten(mcnten), // IN
-	.cntld(mmult), // IN
-	.mwidth_0(mwidth_0), // IN
-	.mwidth_1(mwidth_1), // IN
-	.mwidth_2(mwidth_2), // IN
-	.mwidth_3(mwidth_3)  // IN
+	.count1 /* OUT */ (count1),
+	.clk /* IN */ (clk),
+	.cnten /* IN */ (mcnten),
+	.cntld /* IN */ (mmult),
+	.mwidth_0 /* IN */ (mwidth_0),
+	.mwidth_1 /* IN */ (mwidth_1),
+	.mwidth_2 /* IN */ (mwidth_2),
+	.mwidth_3 /* IN */ (mwidth_3)
 );
 
 // SYSTOLIC.NET (118) - count1\ : iv
@@ -300,57 +300,57 @@ assign count1_n = ~count1;
 // SYSTOLIC.NET (124) - r1count : r1count
 r1count r1count_inst
 (
-	.count_0(reghalf), // IO
-	.count_1(sysr1_0), // IO
-	.count_2(sysr1_1), // IO
-	.count_3(sysr1_2), // IO
-	.count_4(sysr1_3), // IO
-	.count_5(sysr1_4), // IO
-	.clk(clk), // IN
-	.cnten(romold), // IN
-	.cntld(mmult), // IN
-	.mr1_0(instruction[5]), // IN
-	.mr1_1(instruction[6]), // IN
-	.mr1_2(instruction[7]), // IN
-	.mr1_3(instruction[8]), // IN
-	.mr1_4(instruction[9])  // IN
+	.count_0 /* OUT */ (reghalf),
+	.count_1 /* OUT */ (sysr1_0),
+	.count_2 /* OUT */ (sysr1_1),
+	.count_3 /* OUT */ (sysr1_2),
+	.count_4 /* OUT */ (sysr1_3),
+	.count_5 /* OUT */ (sysr1_4),
+	.clk /* IN */ (clk),
+	.cnten /* IN */ (romold),
+	.cntld /* IN */ (mmult),
+	.mr1_0 /* IN */ (instruction[5]),
+	.mr1_1 /* IN */ (instruction[6]),
+	.mr1_2 /* IN */ (instruction[7]),
+	.mr1_3 /* IN */ (instruction[8]),
+	.mr1_4 /* IN */ (instruction[9])
 );
 
 // SYSTOLIC.NET (129) - sysr2[0-4] : fdsync
 fdsync sysr2_from_0_to_4_inst_0
 (
-	.q(sysr2_0), // IO
-	.d(instruction[0]), // IN
-	.ld(mmult), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (sysr2_0),
+	.d /* IN */ (instruction[0]),
+	.ld /* IN */ (mmult),
+	.clk /* IN */ (clk)
 );
 fdsync sysr2_from_0_to_4_inst_1
 (
-	.q(sysr2_1), // IO
-	.d(instruction[1]), // IN
-	.ld(mmult), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (sysr2_1),
+	.d /* IN */ (instruction[1]),
+	.ld /* IN */ (mmult),
+	.clk /* IN */ (clk)
 );
 fdsync sysr2_from_0_to_4_inst_2
 (
-	.q(sysr2_2), // IO
-	.d(instruction[2]), // IN
-	.ld(mmult), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (sysr2_2),
+	.d /* IN */ (instruction[2]),
+	.ld /* IN */ (mmult),
+	.clk /* IN */ (clk)
 );
 fdsync sysr2_from_0_to_4_inst_3
 (
-	.q(sysr2_3), // IO
-	.d(instruction[3]), // IN
-	.ld(mmult), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (sysr2_3),
+	.d /* IN */ (instruction[3]),
+	.ld /* IN */ (mmult),
+	.clk /* IN */ (clk)
 );
 fdsync sysr2_from_0_to_4_inst_4
 (
-	.q(sysr2_4), // IO
-	.d(instruction[4]), // IN
-	.ld(mmult), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (sysr2_4),
+	.d /* IN */ (instruction[4]),
+	.ld /* IN */ (mmult),
+	.clk /* IN */ (clk)
 );
 
 // SYSTOLIC.NET (141) - bit11 : or2
@@ -395,10 +395,10 @@ assign mtx_mreq_obuf = (mtx_dover_obuf & datack_n) | mtx_mreqt;
 // SYSTOLIC.NET (164) - mtx_dover : fd2qu
 fd2q mtx_dover_inst
 (
-	.q(mtx_dover_obuf), // OUT
-	.d(mtx_mreq_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (mtx_dover_obuf),
+	.d /* IN */ (mtx_mreq_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SYSTOLIC.NET (168) - mtx_wait : an2
@@ -410,9 +410,9 @@ assign multselt = reghalf & mtx_active;
 // SYSTOLIC.NET (175) - multsel : fdsync
 fdsync multsel_inst
 (
-	.q(multsel), // IO
-	.d(multselt), // IN
-	.ld(romold), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (multsel),
+	.d /* IN */ (multselt),
+	.ld /* IN */ (romold),
+	.clk /* IN */ (clk)
 );
 endmodule

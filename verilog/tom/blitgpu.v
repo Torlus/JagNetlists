@@ -52,7 +52,7 @@ module blitgpu
 	input bliten,
 	input dstdread,
 	input dstzread,
-	input[0:23] gpu_addr;
+	input [0:23] gpu_addr;
 	input gpu_memw,
 	input patdadd,
 	input patfadd,
@@ -121,23 +121,23 @@ assign gpua_n_7 = ~gpua_7;
 // BLITGPU.NET (77) - wren0 : nd5
 nd5 wren0_inst
 (
-	.q(wren_n_0), // OUT
-	.a_0(gpua_n_5), // IN
-	.a_1(gpua_n_6), // IN
-	.a_2(gpua_n_7), // IN
-	.a_3(bliten), // IN
-	.a_4(gpu_memw)  // IN
+	.q /* OUT */ (wren_n_0),
+	.a_0 /* IN */ (gpua_n_5),
+	.a_1 /* IN */ (gpua_n_6),
+	.a_2 /* IN */ (gpua_n_7),
+	.a_3 /* IN */ (bliten),
+	.a_4 /* IN */ (gpu_memw)
 );
 
 // BLITGPU.NET (79) - wren1 : nd5
 nd5 wren1_inst
 (
-	.q(wren_n_1), // OUT
-	.a_0(gpua_5), // IN
-	.a_1(gpua_n_6), // IN
-	.a_2(gpua_n_7), // IN
-	.a_3(bliten), // IN
-	.a_4(gpu_memw)  // IN
+	.q /* OUT */ (wren_n_1),
+	.a_0 /* IN */ (gpua_5),
+	.a_1 /* IN */ (gpua_n_6),
+	.a_2 /* IN */ (gpua_n_7),
+	.a_3 /* IN */ (bliten),
+	.a_4 /* IN */ (gpu_memw)
 );
 
 // BLITGPU.NET (81) - wren2 : nd6
@@ -152,86 +152,86 @@ assign wren_n_4 = ~(gpua_n_5 & gpua_n_6 & gpua_7 & bliten & gpu_memw & blit_back
 // BLITGPU.NET (88) - dec0 : d38gh
 d38gh dec0_inst
 (
-	.z0(a1baseld), // OUT
-	.z1(a1flagld), // OUT
-	.z2(a1winld), // OUT
-	.z3(a1ptrldg), // OUT
-	.z4(a1stepld), // OUT
-	.z5(a1stepfld), // OUT
-	.z6(a1fracldg), // OUT
-	.z7(a1incld), // OUT
-	.a0(gpua_2), // IN
-	.a1(gpua_3), // IN
-	.a2(gpua_4), // IN
-	.g(wren_n_0)  // IN
+	.z0 /* OUT */ (a1baseld),
+	.z1 /* OUT */ (a1flagld),
+	.z2 /* OUT */ (a1winld),
+	.z3 /* OUT */ (a1ptrldg),
+	.z4 /* OUT */ (a1stepld),
+	.z5 /* OUT */ (a1stepfld),
+	.z6 /* OUT */ (a1fracldg),
+	.z7 /* OUT */ (a1incld),
+	.a0 /* IN */ (gpua_2),
+	.a1 /* IN */ (gpua_3),
+	.a2 /* IN */ (gpua_4),
+	.g /* IN */ (wren_n_0)
 );
 
 // BLITGPU.NET (91) - dec1 : d38gh
 d38gh dec1_inst
 (
-	.z0(a1incfld), // OUT
-	.z1(a2baseld), // OUT
-	.z2(a2flagld), // OUT
-	.z3(a2winld), // OUT
-	.z4(a2ptrldg), // OUT
-	.z5(a2stepld), // OUT
-	.z6(cmdldt), // OUT
-	.z7(countldt), // OUT
-	.a0(gpua_2), // IN
-	.a1(gpua_3), // IN
-	.a2(gpua_4), // IN
-	.g(wren_n_1)  // IN
+	.z0 /* OUT */ (a1incfld),
+	.z1 /* OUT */ (a2baseld),
+	.z2 /* OUT */ (a2flagld),
+	.z3 /* OUT */ (a2winld),
+	.z4 /* OUT */ (a2ptrldg),
+	.z5 /* OUT */ (a2stepld),
+	.z6 /* OUT */ (cmdldt),
+	.z7 /* OUT */ (countldt),
+	.a0 /* IN */ (gpua_2),
+	.a1 /* IN */ (gpua_3),
+	.a2 /* IN */ (gpua_4),
+	.g /* IN */ (wren_n_1)
 );
 
 // BLITGPU.NET (94) - dec2 : d38gh
 d38gh dec2_inst
 (
-	.z0(srcd1ldg_0), // OUT
-	.z1(srcd1ldg_1), // OUT
-	.z2(dstdldg_0), // OUT
-	.z3(dstdldg_1), // OUT
-	.z4(dstzldg_0), // OUT
-	.z5(dstzldg_1), // OUT
-	.z6(srcz1ldg_0), // OUT
-	.z7(srcz1ldg_1), // OUT
-	.a0(gpua_2), // IN
-	.a1(gpua_3), // IN
-	.a2(gpua_4), // IN
-	.g(wren_n_2)  // IN
+	.z0 /* OUT */ (srcd1ldg_0),
+	.z1 /* OUT */ (srcd1ldg_1),
+	.z2 /* OUT */ (dstdldg_0),
+	.z3 /* OUT */ (dstdldg_1),
+	.z4 /* OUT */ (dstzldg_0),
+	.z5 /* OUT */ (dstzldg_1),
+	.z6 /* OUT */ (srcz1ldg_0),
+	.z7 /* OUT */ (srcz1ldg_1),
+	.a0 /* IN */ (gpua_2),
+	.a1 /* IN */ (gpua_3),
+	.a2 /* IN */ (gpua_4),
+	.g /* IN */ (wren_n_2)
 );
 
 // BLITGPU.NET (97) - dec3 : d38gh
 d38gh dec3_inst
 (
-	.z0(srcz2ld_0), // OUT
-	.z1(srcz2ld_1), // OUT
-	.z2(patdldg_0), // OUT
-	.z3(patdldg_1), // OUT
-	.z4(iincld), // OUT
-	.z5(zincld), // OUT
-	.z6(stopld), // OUT
-	.z7(intld_0), // OUT
-	.a0(gpua_2), // IN
-	.a1(gpua_3), // IN
-	.a2(gpua_4), // IN
-	.g(wren_n_3)  // IN
+	.z0 /* OUT */ (srcz2ld_0),
+	.z1 /* OUT */ (srcz2ld_1),
+	.z2 /* OUT */ (patdldg_0),
+	.z3 /* OUT */ (patdldg_1),
+	.z4 /* OUT */ (iincld),
+	.z5 /* OUT */ (zincld),
+	.z6 /* OUT */ (stopld),
+	.z7 /* OUT */ (intld_0),
+	.a0 /* IN */ (gpua_2),
+	.a1 /* IN */ (gpua_3),
+	.a2 /* IN */ (gpua_4),
+	.g /* IN */ (wren_n_3)
 );
 
 // BLITGPU.NET (100) - dec4 : d38gh
 d38gh dec4_inst
 (
-	.z0(intld_1), // OUT
-	.z1(intld_2), // OUT
-	.z2(intld_3), // OUT
-	.z3(zedld_0), // OUT
-	.z4(zedld_1), // OUT
-	.z5(zedld_2), // OUT
-	.z6(zedld_3), // OUT
-	.z7(unused_0), // OUT
-	.a0(gpua_2), // IN
-	.a1(gpua_3), // IN
-	.a2(gpua_4), // IN
-	.g(wren_n_4)  // IN
+	.z0 /* OUT */ (intld_1),
+	.z1 /* OUT */ (intld_2),
+	.z2 /* OUT */ (intld_3),
+	.z3 /* OUT */ (zedld_0),
+	.z4 /* OUT */ (zedld_1),
+	.z5 /* OUT */ (zedld_2),
+	.z6 /* OUT */ (zedld_3),
+	.z7 /* OUT */ (unused_0),
+	.a0 /* IN */ (gpua_2),
+	.a1 /* IN */ (gpua_3),
+	.a2 /* IN */ (gpua_4),
+	.g /* IN */ (wren_n_4)
 );
 
 // BLITGPU.NET (103) - cmdld : nivu

@@ -233,16 +233,7 @@ wire maska_2_obuf;
 wire at_0_obuf;
 wire at_1_obuf;
 wire at_2_obuf;
-wire lastcycle_obuf;
 wire lastc_obuf;
-wire bm_0_obuf;
-wire bm_1_obuf;
-wire bm_2_obuf;
-wire bm_3_obuf;
-wire bm_4_obuf;
-wire bm_5_obuf;
-wire bm_6_obuf;
-wire bm_7_obuf;
 
 
 // Output buffers
@@ -256,16 +247,7 @@ assign maska_2 = maska_2_obuf;
 assign at_0 = at_0_obuf;
 assign at_1 = at_1_obuf;
 assign at_2 = at_2_obuf;
-assign lastcycle = lastcycle_obuf;
 assign lastc = lastc_obuf;
-assign bm_0 = bm_0_obuf;
-assign bm_1 = bm_1_obuf;
-assign bm_2 = bm_2_obuf;
-assign bm_3 = bm_3_obuf;
-assign bm_4 = bm_4_obuf;
-assign bm_5 = bm_5_obuf;
-assign bm_6 = bm_6_obuf;
-assign bm_7 = bm_7_obuf;
 
 
 // MEMWIDTH.NET (38) - rw : join
@@ -317,84 +299,84 @@ assign ba1[2] = ba1_2;
 // MEMWIDTH.NET (69) - rw1[0-3] : mx2h
 mx2 rw1_from_0_to_3_inst_0
 (
-	.z(rw1_0), // OUT
-	.a0(rw_0), // IN
-	.a1(w_0), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (rw1_0),
+	.a0 /* IN */ (rw_0),
+	.a1 /* IN */ (w_0),
+	.s /* IN */ (ack)
 );
 mx2 rw1_from_0_to_3_inst_1
 (
-	.z(rw1_1), // OUT
-	.a0(rw_1), // IN
-	.a1(w_1), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (rw1_1),
+	.a0 /* IN */ (rw_1),
+	.a1 /* IN */ (w_1),
+	.s /* IN */ (ack)
 );
 mx2 rw1_from_0_to_3_inst_2
 (
-	.z(rw1_2), // OUT
-	.a0(rw_2), // IN
-	.a1(w_2), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (rw1_2),
+	.a0 /* IN */ (rw_2),
+	.a1 /* IN */ (w_2),
+	.s /* IN */ (ack)
 );
 mx2 rw1_from_0_to_3_inst_3
 (
-	.z(rw1_3), // OUT
-	.a0(rw_3), // IN
-	.a1(w_3), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (rw1_3),
+	.a0 /* IN */ (rw_3),
+	.a1 /* IN */ (w_3),
+	.s /* IN */ (ack)
 );
 
 // MEMWIDTH.NET (73) - pw[0-3] : slatch
 slatch pw_from_0_to_3_inst_0
 (
-	.q(pw_0), // IO
-	.d(rw1_0), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (pw_0),
+	.d /* IN */ (rw1_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch pw_from_0_to_3_inst_1
 (
-	.q(pw_1), // IO
-	.d(rw1_1), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (pw_1),
+	.d /* IN */ (rw1_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch pw_from_0_to_3_inst_2
 (
-	.q(pw_2), // IO
-	.d(rw1_2), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (pw_2),
+	.d /* IN */ (rw1_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch pw_from_0_to_3_inst_3
 (
-	.q(pw_3), // IO
-	.d(rw1_3), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (pw_3),
+	.d /* IN */ (rw1_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 
 // MEMWIDTH.NET (77) - ba1[0-2] : mx2h
 mx2 ba1_from_0_to_2_inst_0
 (
-	.z(ba1_0), // OUT
-	.a0(nba_0), // IN
-	.a1(ba_0), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (ba1_0),
+	.a0 /* IN */ (nba_0),
+	.a1 /* IN */ (ba_0),
+	.s /* IN */ (ack)
 );
 mx2 ba1_from_0_to_2_inst_1
 (
-	.z(ba1_1), // OUT
-	.a0(nba_1), // IN
-	.a1(ba_1), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (ba1_1),
+	.a0 /* IN */ (nba_1),
+	.a1 /* IN */ (ba_1),
+	.s /* IN */ (ack)
 );
 mx2 ba1_from_0_to_2_inst_2
 (
-	.z(ba1_2), // OUT
-	.a0(nba_2), // IN
-	.a1(ba_2), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (ba1_2),
+	.a0 /* IN */ (nba_2),
+	.a1 /* IN */ (ba_2),
+	.s /* IN */ (ack)
 );
 
 // MEMWIDTH.NET (78) - ba1l[0-2] : iv
@@ -405,44 +387,44 @@ assign ba1l_2 = ~ba1_2;
 // MEMWIDTH.NET (82) - maskai[0-2] : fd1q
 fd1q maskai_from_0_to_2_inst_0
 (
-	.q(maskai_0), // OUT
-	.d(at_0_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maskai_0),
+	.d /* IN */ (at_0_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q maskai_from_0_to_2_inst_1
 (
-	.q(maskai_1), // OUT
-	.d(at_1_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maskai_1),
+	.d /* IN */ (at_1_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q maskai_from_0_to_2_inst_2
 (
-	.q(maskai_2), // OUT
-	.d(at_2_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maskai_2),
+	.d /* IN */ (at_2_obuf),
+	.cp /* IN */ (clk)
 );
 
 // MEMWIDTH.NET (83) - at[0-2] : mx2
 mx2 at_from_0_to_2_inst_0
 (
-	.z(at_0_obuf), // OUT
-	.a0(maskai_0), // IN
-	.a1(ba1_0), // IN
-	.s(nextc)  // IN
+	.z /* OUT */ (at_0_obuf),
+	.a0 /* IN */ (maskai_0),
+	.a1 /* IN */ (ba1_0),
+	.s /* IN */ (nextc)
 );
 mx2 at_from_0_to_2_inst_1
 (
-	.z(at_1_obuf), // OUT
-	.a0(maskai_1), // IN
-	.a1(ba1_1), // IN
-	.s(nextc)  // IN
+	.z /* OUT */ (at_1_obuf),
+	.a0 /* IN */ (maskai_1),
+	.a1 /* IN */ (ba1_1),
+	.s /* IN */ (nextc)
 );
 mx2 at_from_0_to_2_inst_2
 (
-	.z(at_2_obuf), // OUT
-	.a0(maskai_2), // IN
-	.a1(ba1_2), // IN
-	.s(nextc)  // IN
+	.z /* OUT */ (at_2_obuf),
+	.a0 /* IN */ (maskai_2),
+	.a1 /* IN */ (ba1_2),
+	.s /* IN */ (nextc)
 );
 
 // MEMWIDTH.NET (84) - maska[0] : nivu
@@ -461,31 +443,31 @@ assign mwl_1 = ~mw_1;
 // MEMWIDTH.NET (135) - cw1[0-3] : mx2p
 mx2 cw1_from_0_to_3_inst_0
 (
-	.z(cw1_0), // OUT
-	.a0(d_0), // IN
-	.a1(rw1_0), // IN
-	.s(lastc_obuf)  // IN
+	.z /* OUT */ (cw1_0),
+	.a0 /* IN */ (d_0),
+	.a1 /* IN */ (rw1_0),
+	.s /* IN */ (lastc_obuf)
 );
 mx2 cw1_from_0_to_3_inst_1
 (
-	.z(cw1_1), // OUT
-	.a0(d_1), // IN
-	.a1(rw1_1), // IN
-	.s(lastc_obuf)  // IN
+	.z /* OUT */ (cw1_1),
+	.a0 /* IN */ (d_1),
+	.a1 /* IN */ (rw1_1),
+	.s /* IN */ (lastc_obuf)
 );
 mx2 cw1_from_0_to_3_inst_2
 (
-	.z(cw1_2), // OUT
-	.a0(d_2), // IN
-	.a1(rw1_2), // IN
-	.s(lastc_obuf)  // IN
+	.z /* OUT */ (cw1_2),
+	.a0 /* IN */ (d_2),
+	.a1 /* IN */ (rw1_2),
+	.s /* IN */ (lastc_obuf)
 );
 mx2 cw1_from_0_to_3_inst_3
 (
-	.z(cw1_3), // OUT
-	.a0(d_3), // IN
-	.a1(rw1_3), // IN
-	.s(lastc_obuf)  // IN
+	.z /* OUT */ (cw1_3),
+	.a0 /* IN */ (d_3),
+	.a1 /* IN */ (rw1_3),
+	.s /* IN */ (lastc_obuf)
 );
 
 // MEMWIDTH.NET (139) - mw8 : an2p
@@ -503,67 +485,67 @@ assign mw64 = mw_1 & mw_0;
 // MEMWIDTH.NET (144) - cw2[0] : mx2p
 mx2 cw2_index_0_inst
 (
-	.z(cw2_0), // OUT
-	.a0(cw1_0), // IN
-	.a1(mw8), // IN
-	.s(direct)  // IN
+	.z /* OUT */ (cw2_0),
+	.a0 /* IN */ (cw1_0),
+	.a1 /* IN */ (mw8),
+	.s /* IN */ (direct)
 );
 
 // MEMWIDTH.NET (145) - cw2[1] : mx2p
 mx2 cw2_index_1_inst
 (
-	.z(cw2_1), // OUT
-	.a0(cw1_1), // IN
-	.a1(mw16), // IN
-	.s(direct)  // IN
+	.z /* OUT */ (cw2_1),
+	.a0 /* IN */ (cw1_1),
+	.a1 /* IN */ (mw16),
+	.s /* IN */ (direct)
 );
 
 // MEMWIDTH.NET (146) - cw2[2] : mx2p
 mx2 cw2_index_2_inst
 (
-	.z(cw2_2), // OUT
-	.a0(cw1_2), // IN
-	.a1(mw32), // IN
-	.s(direct)  // IN
+	.z /* OUT */ (cw2_2),
+	.a0 /* IN */ (cw1_2),
+	.a1 /* IN */ (mw32),
+	.s /* IN */ (direct)
 );
 
 // MEMWIDTH.NET (147) - cw2[3] : mx2p
 mx2 cw2_index_3_inst
 (
-	.z(cw2_3), // OUT
-	.a0(cw1_3), // IN
-	.a1(mw64), // IN
-	.s(direct)  // IN
+	.z /* OUT */ (cw2_3),
+	.a0 /* IN */ (cw1_3),
+	.a1 /* IN */ (mw64),
+	.s /* IN */ (direct)
 );
 
 // MEMWIDTH.NET (149) - maskw[0-3] : slatch
 slatch maskw_from_0_to_3_inst_0
 (
-	.q(maskw_0_obuf), // IO
-	.d(cw2_0), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (maskw_0_obuf),
+	.d /* IN */ (cw2_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch maskw_from_0_to_3_inst_1
 (
-	.q(maskw_1_obuf), // IO
-	.d(cw2_1), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (maskw_1_obuf),
+	.d /* IN */ (cw2_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch maskw_from_0_to_3_inst_2
 (
-	.q(maskw_2_obuf), // IO
-	.d(cw2_2), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (maskw_2_obuf),
+	.d /* IN */ (cw2_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch maskw_from_0_to_3_inst_3
 (
-	.q(maskw_3_obuf), // IO
-	.d(cw2_3), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (maskw_3_obuf),
+	.d /* IN */ (cw2_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 
 // MEMWIDTH.NET (154) - maskwl[0-3] : iv
@@ -575,71 +557,71 @@ assign maskwl_3 = ~maskw_3_obuf;
 // MEMWIDTH.NET (156) - rw[0] : fa1
 fa1 rw_index_0_inst
 (
-	.s(rw_0), // OUT
-	.co(rwc_0), // OUT
-	.ci(pw_0), // IN
-	.a(maskwl_0), // IN
-	.b(vcc)  // IN
+	.s /* OUT */ (rw_0),
+	.co /* OUT */ (rwc_0),
+	.ci /* IN */ (pw_0),
+	.a /* IN */ (maskwl_0),
+	.b /* IN */ (vcc)
 );
 
 // MEMWIDTH.NET (157) - rw[1-3] : fa1
 fa1 rw_from_1_to_3_inst_0
 (
-	.s(rw_1), // OUT
-	.co(rwc_1), // OUT
-	.ci(pw_1), // IN
-	.a(maskwl_1), // IN
-	.b(rwc_0)  // IN
+	.s /* OUT */ (rw_1),
+	.co /* OUT */ (rwc_1),
+	.ci /* IN */ (pw_1),
+	.a /* IN */ (maskwl_1),
+	.b /* IN */ (rwc_0)
 );
 fa1 rw_from_1_to_3_inst_1
 (
-	.s(rw_2), // OUT
-	.co(rwc_2), // OUT
-	.ci(pw_2), // IN
-	.a(maskwl_2), // IN
-	.b(rwc_1)  // IN
+	.s /* OUT */ (rw_2),
+	.co /* OUT */ (rwc_2),
+	.ci /* IN */ (pw_2),
+	.a /* IN */ (maskwl_2),
+	.b /* IN */ (rwc_1)
 );
 fa1 rw_from_1_to_3_inst_2
 (
-	.s(rw_3), // OUT
-	.co(rwc_3), // OUT
-	.ci(pw_3), // IN
-	.a(maskwl_3), // IN
-	.b(rwc_2)  // IN
+	.s /* OUT */ (rw_3),
+	.co /* OUT */ (rwc_3),
+	.ci /* IN */ (pw_3),
+	.a /* IN */ (maskwl_3),
+	.b /* IN */ (rwc_2)
 );
 
 // MEMWIDTH.NET (161) - zerol : or4
 assign zerol = rw_0 | rw_1 | rw_2 | rw_3;
 
 // MEMWIDTH.NET (162) - lastcycle : nd2
-assign lastcycle_obuf = ~(zerol & rwc_3);
+assign lastcycle = ~(zerol & rwc_3);
 
 // MEMWIDTH.NET (166) - nba[0] : fa1
 fa1 nba_index_0_inst
 (
-	.s(nba_0), // OUT
-	.co(nbc_0), // OUT
-	.ci(maska_0_obuf), // IN
-	.a(maskw_0_obuf), // IN
-	.b(gnd)  // IN
+	.s /* OUT */ (nba_0),
+	.co /* OUT */ (nbc_0),
+	.ci /* IN */ (maska_0_obuf),
+	.a /* IN */ (maskw_0_obuf),
+	.b /* IN */ (gnd)
 );
 
 // MEMWIDTH.NET (167) - nba[1-2] : fa1
 fa1 nba_from_1_to_2_inst_0
 (
-	.s(nba_1), // OUT
-	.co(nbc_1), // OUT
-	.ci(maska_1_obuf), // IN
-	.a(maskw_1_obuf), // IN
-	.b(nbc_0)  // IN
+	.s /* OUT */ (nba_1),
+	.co /* OUT */ (nbc_1),
+	.ci /* IN */ (maska_1_obuf),
+	.a /* IN */ (maskw_1_obuf),
+	.b /* IN */ (nbc_0)
 );
 fa1 nba_from_1_to_2_inst_1
 (
-	.s(nba_2), // OUT
-	.co(nbc_2), // OUT
-	.ci(maska_2_obuf), // IN
-	.a(maskw_2_obuf), // IN
-	.b(nbc_1)  // IN
+	.s /* OUT */ (nba_2),
+	.co /* OUT */ (nbc_2),
+	.ci /* IN */ (maska_2_obuf),
+	.a /* IN */ (maskw_2_obuf),
+	.b /* IN */ (nbc_1)
 );
 
 // MEMWIDTH.NET (168) - nbc[2] : dummy
@@ -668,17 +650,17 @@ assign w16 = rw1_1 | rw1_2 | rw1_3;
 // MEMWIDTH.NET (190) - sa : dec38h
 dec38h sa_inst
 (
-	.z_0(sa_0), // IO
-	.z_1(sa_1), // IO
-	.z_2(sa_2), // IO
-	.z_3(sa_3), // IO
-	.z_4(sa_4), // IO
-	.z_5(sa_5), // IO
-	.z_6(sa_6), // IO
-	.z_7(sa_7), // IO
-	.a(ba1_0), // IN
-	.b(ba1_1), // IN
-	.c(ba1_2)  // IN
+	.z_0 /* OUT */ (sa_0),
+	.z_1 /* OUT */ (sa_1),
+	.z_2 /* OUT */ (sa_2),
+	.z_3 /* OUT */ (sa_3),
+	.z_4 /* OUT */ (sa_4),
+	.z_5 /* OUT */ (sa_5),
+	.z_6 /* OUT */ (sa_6),
+	.z_7 /* OUT */ (sa_7),
+	.a /* IN */ (ba1_0),
+	.b /* IN */ (ba1_1),
+	.c /* IN */ (ba1_2)
 );
 
 // MEMWIDTH.NET (192) - rwl[1-3] : ivh
@@ -914,215 +896,215 @@ assign bmd_0 = sa_0;
 // MEMWIDTH.NET (283) - bmd[1] : mx4p
 mx4 bmd_index_1_inst
 (
-	.z(bmd_1), // OUT
-	.a0(sa_1), // IN
-	.a1(bmw_1), // IN
-	.a2(bmw_1), // IN
-	.a3(bmw_1), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_1),
+	.a0 /* IN */ (sa_1),
+	.a1 /* IN */ (bmw_1),
+	.a2 /* IN */ (bmw_1),
+	.a3 /* IN */ (bmw_1),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (284) - bmd[2] : mx4p
 mx4 bmd_index_2_inst
 (
-	.z(bmd_2), // OUT
-	.a0(sa_2), // IN
-	.a1(sa_2), // IN
-	.a2(bml_2), // IN
-	.a3(bml_2), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_2),
+	.a0 /* IN */ (sa_2),
+	.a1 /* IN */ (sa_2),
+	.a2 /* IN */ (bml_2),
+	.a3 /* IN */ (bml_2),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (285) - bmd[3] : mx4p
 mx4 bmd_index_3_inst
 (
-	.z(bmd_3), // OUT
-	.a0(sa_3), // IN
-	.a1(bmw_3), // IN
-	.a2(bml_3), // IN
-	.a3(bml_3), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_3),
+	.a0 /* IN */ (sa_3),
+	.a1 /* IN */ (bmw_3),
+	.a2 /* IN */ (bml_3),
+	.a3 /* IN */ (bml_3),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (286) - bmd[4] : mx4p
 mx4 bmd_index_4_inst
 (
-	.z(bmd_4), // OUT
-	.a0(sa_4), // IN
-	.a1(sa_4), // IN
-	.a2(sa_4), // IN
-	.a3(bmp_4), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_4),
+	.a0 /* IN */ (sa_4),
+	.a1 /* IN */ (sa_4),
+	.a2 /* IN */ (sa_4),
+	.a3 /* IN */ (bmp_4),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (287) - bmd[5] : mx4p
 mx4 bmd_index_5_inst
 (
-	.z(bmd_5), // OUT
-	.a0(sa_5), // IN
-	.a1(bmw_5), // IN
-	.a2(bmw_5), // IN
-	.a3(bmp_5), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_5),
+	.a0 /* IN */ (sa_5),
+	.a1 /* IN */ (bmw_5),
+	.a2 /* IN */ (bmw_5),
+	.a3 /* IN */ (bmp_5),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (288) - bmd[6] : mx4p
 mx4 bmd_index_6_inst
 (
-	.z(bmd_6), // OUT
-	.a0(sa_6), // IN
-	.a1(sa_6), // IN
-	.a2(bml_6), // IN
-	.a3(bmp_6), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_6),
+	.a0 /* IN */ (sa_6),
+	.a1 /* IN */ (sa_6),
+	.a2 /* IN */ (bml_6),
+	.a3 /* IN */ (bmp_6),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (289) - bmd[7] : mx4p
 mx4 bmd_index_7_inst
 (
-	.z(bmd_7), // OUT
-	.a0(sa_7), // IN
-	.a1(bmw_7), // IN
-	.a2(bml_7), // IN
-	.a3(bmp_7), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (bmd_7),
+	.a0 /* IN */ (sa_7),
+	.a1 /* IN */ (bmw_7),
+	.a2 /* IN */ (bml_7),
+	.a3 /* IN */ (bmp_7),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (293) - bmd1[0] : mx2
 mx2 bmd1_index_0_inst
 (
-	.z(bmd1_0), // OUT
-	.a0(bmd_0), // IN
-	.a1(bmd_7), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_0),
+	.a0 /* IN */ (bmd_0),
+	.a1 /* IN */ (bmd_7),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (294) - bmd1[1] : mx2
 mx2 bmd1_index_1_inst
 (
-	.z(bmd1_1), // OUT
-	.a0(bmd_1), // IN
-	.a1(bmd_6), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_1),
+	.a0 /* IN */ (bmd_1),
+	.a1 /* IN */ (bmd_6),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (295) - bmd1[2] : mx2
 mx2 bmd1_index_2_inst
 (
-	.z(bmd1_2), // OUT
-	.a0(bmd_2), // IN
-	.a1(bmd_5), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_2),
+	.a0 /* IN */ (bmd_2),
+	.a1 /* IN */ (bmd_5),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (296) - bmd1[3] : mx2
 mx2 bmd1_index_3_inst
 (
-	.z(bmd1_3), // OUT
-	.a0(bmd_3), // IN
-	.a1(bmd_4), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_3),
+	.a0 /* IN */ (bmd_3),
+	.a1 /* IN */ (bmd_4),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (297) - bmd1[4] : mx2
 mx2 bmd1_index_4_inst
 (
-	.z(bmd1_4), // OUT
-	.a0(bmd_4), // IN
-	.a1(bmd_3), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_4),
+	.a0 /* IN */ (bmd_4),
+	.a1 /* IN */ (bmd_3),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (298) - bmd1[5] : mx2
 mx2 bmd1_index_5_inst
 (
-	.z(bmd1_5), // OUT
-	.a0(bmd_5), // IN
-	.a1(bmd_2), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_5),
+	.a0 /* IN */ (bmd_5),
+	.a1 /* IN */ (bmd_2),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (299) - bmd1[6] : mx2
 mx2 bmd1_index_6_inst
 (
-	.z(bmd1_6), // OUT
-	.a0(bmd_6), // IN
-	.a1(bmd_1), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_6),
+	.a0 /* IN */ (bmd_6),
+	.a1 /* IN */ (bmd_1),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (300) - bmd1[7] : mx2
 mx2 bmd1_index_7_inst
 (
-	.z(bmd1_7), // OUT
-	.a0(bmd_7), // IN
-	.a1(bmd_0), // IN
-	.s(bigend)  // IN
+	.z /* OUT */ (bmd1_7),
+	.a0 /* IN */ (bmd_7),
+	.a1 /* IN */ (bmd_0),
+	.s /* IN */ (bigend)
 );
 
 // MEMWIDTH.NET (302) - bm[0-7] : slatch
 slatch bm_from_0_to_7_inst_0
 (
-	.q(bm_0_obuf), // IO
-	.d(bmd1_0), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_0),
+	.d /* IN */ (bmd1_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_1
 (
-	.q(bm_1_obuf), // IO
-	.d(bmd1_1), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_1),
+	.d /* IN */ (bmd1_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_2
 (
-	.q(bm_2_obuf), // IO
-	.d(bmd1_2), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_2),
+	.d /* IN */ (bmd1_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_3
 (
-	.q(bm_3_obuf), // IO
-	.d(bmd1_3), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_3),
+	.d /* IN */ (bmd1_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_4
 (
-	.q(bm_4_obuf), // IO
-	.d(bmd1_4), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_4),
+	.d /* IN */ (bmd1_4),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_5
 (
-	.q(bm_5_obuf), // IO
-	.d(bmd1_5), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_5),
+	.d /* IN */ (bmd1_5),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_6
 (
-	.q(bm_6_obuf), // IO
-	.d(bmd1_6), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_6),
+	.d /* IN */ (bmd1_6),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 slatch bm_from_0_to_7_inst_7
 (
-	.q(bm_7_obuf), // IO
-	.d(bmd1_7), // IN
-	.clk(clk), // IN
-	.en(nextc)  // IN
+	.q /* OUT */ (bm_7),
+	.d /* IN */ (bmd1_7),
+	.clk /* IN */ (clk),
+	.en /* IN */ (nextc)
 );
 
 // MEMWIDTH.NET (310) - last16a : nd2
@@ -1152,88 +1134,88 @@ assign last32 = ~(last32a & last32b & last32c & last32d);
 // MEMWIDTH.NET (324) - lastc : mx4p
 mx4 lastc_inst
 (
-	.z(lastc_obuf), // OUT
-	.a0(rwlte1), // IN
-	.a1(last16), // IN
-	.a2(last32), // IN
-	.a3(vcc), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (lastc_obuf),
+	.a0 /* IN */ (rwlte1),
+	.a1 /* IN */ (last16),
+	.a2 /* IN */ (last32),
+	.a3 /* IN */ (vcc),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (333) - negba[0] : ha1p
 ha1 negba_index_0_inst
 (
-	.s(negba_0), // OUT
-	.co(nbac_0), // OUT
-	.a(ba1l_0), // IN
-	.b(vcc)  // IN
+	.s /* OUT */ (negba_0),
+	.co /* OUT */ (nbac_0),
+	.a /* IN */ (ba1l_0),
+	.b /* IN */ (vcc)
 );
 
 // MEMWIDTH.NET (334) - negba[1] : ha1p
 ha1 negba_index_1_inst
 (
-	.s(negba_1), // OUT
-	.co(nbac_1), // OUT
-	.a(ba1l_1), // IN
-	.b(nbac_0)  // IN
+	.s /* OUT */ (negba_1),
+	.co /* OUT */ (nbac_1),
+	.a /* IN */ (ba1l_1),
+	.b /* IN */ (nbac_0)
 );
 
 // MEMWIDTH.NET (335) - negba[2] : ha1p
 ha1 negba_index_2_inst
 (
-	.s(negba_2), // OUT
-	.co(negba_3), // OUT
-	.a(ba1l_2), // IN
-	.b(nbac_1)  // IN
+	.s /* OUT */ (negba_2),
+	.co /* OUT */ (negba_3),
+	.a /* IN */ (ba1l_2),
+	.b /* IN */ (nbac_1)
 );
 
 // MEMWIDTH.NET (339) - d[0] : mx4p
 mx4 d_index_0_inst
 (
-	.z(d_0), // OUT
-	.a0(vcc), // IN
-	.a1(negba_0), // IN
-	.a2(negba_0), // IN
-	.a3(negba_0), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (d_0),
+	.a0 /* IN */ (vcc),
+	.a1 /* IN */ (negba_0),
+	.a2 /* IN */ (negba_0),
+	.a3 /* IN */ (negba_0),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (340) - d[1] : mx4p
 mx4 d_index_1_inst
 (
-	.z(d_1), // OUT
-	.a0(gnd), // IN
-	.a1(ba1l_0), // IN
-	.a2(negba_1), // IN
-	.a3(negba_1), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (d_1),
+	.a0 /* IN */ (gnd),
+	.a1 /* IN */ (ba1l_0),
+	.a2 /* IN */ (negba_1),
+	.a3 /* IN */ (negba_1),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (341) - d[2] : mx4p
 mx4 d_index_2_inst
 (
-	.z(d_2), // OUT
-	.a0(gnd), // IN
-	.a1(gnd), // IN
-	.a2(d216), // IN
-	.a3(negba_2), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (d_2),
+	.a0 /* IN */ (gnd),
+	.a1 /* IN */ (gnd),
+	.a2 /* IN */ (d216),
+	.a3 /* IN */ (negba_2),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (342) - d[3] : mx4p
 mx4 d_index_3_inst
 (
-	.z(d_3), // OUT
-	.a0(gnd), // IN
-	.a1(gnd), // IN
-	.a2(gnd), // IN
-	.a3(negba_3), // IN
-	.s0(mw_0), // IN
-	.s1(mw_1)  // IN
+	.z /* OUT */ (d_3),
+	.a0 /* IN */ (gnd),
+	.a1 /* IN */ (gnd),
+	.a2 /* IN */ (gnd),
+	.a3 /* IN */ (negba_3),
+	.s0 /* IN */ (mw_0),
+	.s1 /* IN */ (mw_1)
 );
 
 // MEMWIDTH.NET (344) - d216 : an2

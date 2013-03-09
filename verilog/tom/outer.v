@@ -2,11 +2,21 @@
 
 module outer
 (
-	inout gpu_dout_11,
-	inout gpu_dout_12,
-	inout gpu_dout_13,
-	inout gpu_dout_14,
-	inout gpu_dout_15,
+	output gpu_dout_11_out,
+	output gpu_dout_11_oe,
+	input gpu_dout_11_in,
+	output gpu_dout_12_out,
+	output gpu_dout_12_oe,
+	input gpu_dout_12_in,
+	output gpu_dout_13_out,
+	output gpu_dout_13_oe,
+	input gpu_dout_13_in,
+	output gpu_dout_14_out,
+	output gpu_dout_14_oe,
+	input gpu_dout_14_in,
+	output gpu_dout_15_out,
+	output gpu_dout_15_oe,
+	input gpu_dout_15_in,
 	output a1updatei,
 	output a1fupdatei,
 	output a2updatei,
@@ -19,7 +29,7 @@ module outer
 	input clk,
 	input cmdld,
 	input countld,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input indone,
 	input reset_n,
 	input statrd,
@@ -81,54 +91,59 @@ assign instart = instart_obuf;
 
 
 // OUTER.NET (46) - stat[11] : ts
-assign gpu_dout_11 = (statrd) ? idle : 1'bz;
+assign gpu_dout_11_out = idle;
+assign gpu_dout_11_oe = statrd;
 
 // OUTER.NET (47) - stat[12] : ts
-assign gpu_dout_12 = (statrd) ? inner : 1'bz;
+assign gpu_dout_12_out = inner;
+assign gpu_dout_12_oe = statrd;
 
 // OUTER.NET (48) - stat[13] : ts
-assign gpu_dout_13 = (statrd) ? a1fupdate : 1'bz;
+assign gpu_dout_13_out = a1fupdate;
+assign gpu_dout_13_oe = statrd;
 
 // OUTER.NET (49) - stat[14] : ts
-assign gpu_dout_14 = (statrd) ? a1update : 1'bz;
+assign gpu_dout_14_out = a1update;
+assign gpu_dout_14_oe = statrd;
 
 // OUTER.NET (50) - stat[15] : ts
-assign gpu_dout_15 = (statrd) ? a2update : 1'bz;
+assign gpu_dout_15_out = a2update;
+assign gpu_dout_15_oe = statrd;
 
 // OUTER.NET (54) - upda1f : fdsync
 fdsync upda1f_inst
 (
-	.q(upda1f), // IO
-	.d(gpu_din[8]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (upda1f),
+	.d /* IN */ (gpu_din[8]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // OUTER.NET (55) - upda1 : fdsync
 fdsync upda1_inst
 (
-	.q(upda1), // IO
-	.d(gpu_din[9]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (upda1),
+	.d /* IN */ (gpu_din[9]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // OUTER.NET (56) - upda2 : fdsync
 fdsync upda2_inst
 (
-	.q(upda2), // IO
-	.d(gpu_din[10]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (upda2),
+	.d /* IN */ (gpu_din[10]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // OUTER.NET (60) - bushi : fdsync
 fdsync bushi_inst
 (
-	.q(bushi), // IO
-	.d(gpu_din[29]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (bushi),
+	.d /* IN */ (gpu_din[29]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // OUTER.NET (61) - bushi\ : iv
@@ -143,10 +158,10 @@ assign goin = cmdld & gpu_din_n_7;
 // OUTER.NET (68) - go : fd1
 fd1 go_inst
 (
-	.q(go), // OUT
-	.qn(go_n), // OUT
-	.d(goin), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (go),
+	.qn /* OUT */ (go_n),
+	.d /* IN */ (goin),
+	.cp /* IN */ (clk)
 );
 
 // OUTER.NET (72) - indone\ : iv
@@ -176,10 +191,10 @@ assign idlet_2 = ~(idlet_0 & idlet_1);
 // OUTER.NET (83) - idle : fd4q
 fd4q idle_inst
 (
-	.q(idle), // OUT
-	.d(idlet_2), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (idle),
+	.d /* IN */ (idlet_2),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // OUTER.NET (84) - idle\ : iv
@@ -194,12 +209,12 @@ assign innert_1 = ~(inner & indone_n);
 // OUTER.NET (90) - inner2t : an5
 an5 inner2t_inst
 (
-	.q(innert2t), // OUT
-	.a_0(inner), // IN
-	.a_1(outer0_n), // IN
-	.a_2(upda1f_n), // IN
-	.a_3(upda1_n), // IN
-	.a_4(upda2_n)  // IN
+	.q /* OUT */ (innert2t),
+	.a_0 /* IN */ (inner),
+	.a_1 /* IN */ (outer0_n),
+	.a_2 /* IN */ (upda1f_n),
+	.a_3 /* IN */ (upda1_n),
+	.a_4 /* IN */ (upda2_n)
 );
 
 // OUTER.NET (92) - inner2 : nd2
@@ -214,21 +229,21 @@ assign innert_4 = ~a2update;
 // OUTER.NET (95) - inner5 : nd5
 nd5 inner5_inst
 (
-	.q(innert_5), // OUT
-	.a_0(innert_0), // IN
-	.a_1(innert_1), // IN
-	.a_2(innert_2), // IN
-	.a_3(innert_3), // IN
-	.a_4(innert_4)  // IN
+	.q /* OUT */ (innert_5),
+	.a_0 /* IN */ (innert_0),
+	.a_1 /* IN */ (innert_1),
+	.a_2 /* IN */ (innert_2),
+	.a_3 /* IN */ (innert_3),
+	.a_4 /* IN */ (innert_4)
 );
 
 // OUTER.NET (96) - inner : fd2q
 fd2q inner_inst
 (
-	.q(inner), // OUT
-	.d(innert_5), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (inner),
+	.d /* IN */ (innert_5),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // OUTER.NET (100) - a1fupd0 : an4
@@ -237,10 +252,10 @@ assign a1fupdatei_obuf = inner & indone & outer0_n & upda1f;
 // OUTER.NET (102) - a1fupdate : fd2q
 fd2q a1fupdate_inst
 (
-	.q(a1fupdate), // OUT
-	.d(a1fupdatei_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (a1fupdate),
+	.d /* IN */ (a1fupdatei_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // OUTER.NET (106) - a1upd0 : iv
@@ -249,12 +264,12 @@ assign a1updt_0 = ~a1fupdate;
 // OUTER.NET (107) - a1upd1 : nd5
 nd5 a1upd1_inst
 (
-	.q(a1updt_1), // OUT
-	.a_0(inner), // IN
-	.a_1(indone), // IN
-	.a_2(outer0_n), // IN
-	.a_3(upda1f_n), // IN
-	.a_4(upda1)  // IN
+	.q /* OUT */ (a1updt_1),
+	.a_0 /* IN */ (inner),
+	.a_1 /* IN */ (indone),
+	.a_2 /* IN */ (outer0_n),
+	.a_3 /* IN */ (upda1f_n),
+	.a_4 /* IN */ (upda1)
 );
 
 // OUTER.NET (109) - a1upd2 : nd2
@@ -263,10 +278,10 @@ assign a1updatei_obuf = ~(a1updt_0 & a1updt_1);
 // OUTER.NET (110) - a1update : fd2q
 fd2q a1update_inst
 (
-	.q(a1update), // OUT
-	.d(a1updatei_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (a1update),
+	.d /* IN */ (a1updatei_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // OUTER.NET (114) - a2upd0 : nd2
@@ -281,10 +296,10 @@ assign a2updatei_obuf = ~(a2updt_0 & a2updt_1);
 // OUTER.NET (118) - a2update : fd2q
 fd2q a2update_inst
 (
-	.q(a2update), // OUT
-	.d(a2updatei_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (a2update),
+	.d /* IN */ (a2updatei_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // OUTER.NET (125) - instart : nd4u
@@ -293,9 +308,9 @@ assign instart_obuf = ~(innert_0 & innert_2 & innert_3 & innert_4);
 // OUTER.NET (129) - sshftld : fd1qm
 fd1q sshftld_inst
 (
-	.q(sshftld), // OUT
-	.d(instart_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (sshftld),
+	.d /* IN */ (instart_obuf),
+	.cp /* IN */ (clk)
 );
 
 // OUTER.NET (134) - ocntena : join
@@ -313,10 +328,10 @@ assign blit_breq_1 = ~(breqt_n | stopped | bushi_n);
 // OUTER.NET (145) - outer_cnt : outer_cnt
 outer_cnt outer_cnt_inst
 (
-	.outer0(outer0), // OUT
-	.clk(clk), // IN
-	.countld(countld), // IN
-	.gpu_din({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]})  // IN
+	.outer0 /* OUT */ (outer0),
+	.clk /* IN */ (clk),
+	.countld /* IN */ (countld),
+	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]})
 );
 
 // OUTER.NET (156) - idledt : nr2
@@ -325,10 +340,10 @@ assign idledt = ~(idle_n | active);
 // OUTER.NET (157) - idled : fd4q
 fd4q idled_inst
 (
-	.q(idled), // OUT
-	.d(idledt), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (idled),
+	.d /* IN */ (idledt),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // OUTER.NET (158) - idled\ : iv

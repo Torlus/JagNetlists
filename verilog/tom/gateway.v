@@ -2,85 +2,233 @@
 
 module gateway
 (
-	inout[0:23] address;
-	inout wdata_0,
-	inout wdata_1,
-	inout wdata_2,
-	inout wdata_3,
-	inout wdata_4,
-	inout wdata_5,
-	inout wdata_6,
-	inout wdata_7,
-	inout wdata_8,
-	inout wdata_9,
-	inout wdata_10,
-	inout wdata_11,
-	inout wdata_12,
-	inout wdata_13,
-	inout wdata_14,
-	inout wdata_15,
-	inout wdata_16,
-	inout wdata_17,
-	inout wdata_18,
-	inout wdata_19,
-	inout wdata_20,
-	inout wdata_21,
-	inout wdata_22,
-	inout wdata_23,
-	inout wdata_24,
-	inout wdata_25,
-	inout wdata_26,
-	inout wdata_27,
-	inout wdata_28,
-	inout wdata_29,
-	inout wdata_30,
-	inout wdata_31,
-	inout wdata_32,
-	inout wdata_33,
-	inout wdata_34,
-	inout wdata_35,
-	inout wdata_36,
-	inout wdata_37,
-	inout wdata_38,
-	inout wdata_39,
-	inout wdata_40,
-	inout wdata_41,
-	inout wdata_42,
-	inout wdata_43,
-	inout wdata_44,
-	inout wdata_45,
-	inout wdata_46,
-	inout wdata_47,
-	inout wdata_48,
-	inout wdata_49,
-	inout wdata_50,
-	inout wdata_51,
-	inout wdata_52,
-	inout wdata_53,
-	inout wdata_54,
-	inout wdata_55,
-	inout wdata_56,
-	inout wdata_57,
-	inout wdata_58,
-	inout wdata_59,
-	inout wdata_60,
-	inout wdata_61,
-	inout wdata_62,
-	inout wdata_63,
-	inout[0:31] gpu_data;
-	inout justify,
-	inout mreq,
-	inout read,
-	inout width_0,
-	inout width_1,
-	inout width_2,
-	inout width_3,
-	inout gpu_dout_15,
+	output [0:23] address_out;
+	output [0:23] address_oe;
+	input [0:23] address_in;
+	output wdata_0_out,
+	output wdata_0_oe,
+	input wdata_0_in,
+	output wdata_1_out,
+	output wdata_1_oe,
+	input wdata_1_in,
+	output wdata_2_out,
+	output wdata_2_oe,
+	input wdata_2_in,
+	output wdata_3_out,
+	output wdata_3_oe,
+	input wdata_3_in,
+	output wdata_4_out,
+	output wdata_4_oe,
+	input wdata_4_in,
+	output wdata_5_out,
+	output wdata_5_oe,
+	input wdata_5_in,
+	output wdata_6_out,
+	output wdata_6_oe,
+	input wdata_6_in,
+	output wdata_7_out,
+	output wdata_7_oe,
+	input wdata_7_in,
+	output wdata_8_out,
+	output wdata_8_oe,
+	input wdata_8_in,
+	output wdata_9_out,
+	output wdata_9_oe,
+	input wdata_9_in,
+	output wdata_10_out,
+	output wdata_10_oe,
+	input wdata_10_in,
+	output wdata_11_out,
+	output wdata_11_oe,
+	input wdata_11_in,
+	output wdata_12_out,
+	output wdata_12_oe,
+	input wdata_12_in,
+	output wdata_13_out,
+	output wdata_13_oe,
+	input wdata_13_in,
+	output wdata_14_out,
+	output wdata_14_oe,
+	input wdata_14_in,
+	output wdata_15_out,
+	output wdata_15_oe,
+	input wdata_15_in,
+	output wdata_16_out,
+	output wdata_16_oe,
+	input wdata_16_in,
+	output wdata_17_out,
+	output wdata_17_oe,
+	input wdata_17_in,
+	output wdata_18_out,
+	output wdata_18_oe,
+	input wdata_18_in,
+	output wdata_19_out,
+	output wdata_19_oe,
+	input wdata_19_in,
+	output wdata_20_out,
+	output wdata_20_oe,
+	input wdata_20_in,
+	output wdata_21_out,
+	output wdata_21_oe,
+	input wdata_21_in,
+	output wdata_22_out,
+	output wdata_22_oe,
+	input wdata_22_in,
+	output wdata_23_out,
+	output wdata_23_oe,
+	input wdata_23_in,
+	output wdata_24_out,
+	output wdata_24_oe,
+	input wdata_24_in,
+	output wdata_25_out,
+	output wdata_25_oe,
+	input wdata_25_in,
+	output wdata_26_out,
+	output wdata_26_oe,
+	input wdata_26_in,
+	output wdata_27_out,
+	output wdata_27_oe,
+	input wdata_27_in,
+	output wdata_28_out,
+	output wdata_28_oe,
+	input wdata_28_in,
+	output wdata_29_out,
+	output wdata_29_oe,
+	input wdata_29_in,
+	output wdata_30_out,
+	output wdata_30_oe,
+	input wdata_30_in,
+	output wdata_31_out,
+	output wdata_31_oe,
+	input wdata_31_in,
+	output wdata_32_out,
+	output wdata_32_oe,
+	input wdata_32_in,
+	output wdata_33_out,
+	output wdata_33_oe,
+	input wdata_33_in,
+	output wdata_34_out,
+	output wdata_34_oe,
+	input wdata_34_in,
+	output wdata_35_out,
+	output wdata_35_oe,
+	input wdata_35_in,
+	output wdata_36_out,
+	output wdata_36_oe,
+	input wdata_36_in,
+	output wdata_37_out,
+	output wdata_37_oe,
+	input wdata_37_in,
+	output wdata_38_out,
+	output wdata_38_oe,
+	input wdata_38_in,
+	output wdata_39_out,
+	output wdata_39_oe,
+	input wdata_39_in,
+	output wdata_40_out,
+	output wdata_40_oe,
+	input wdata_40_in,
+	output wdata_41_out,
+	output wdata_41_oe,
+	input wdata_41_in,
+	output wdata_42_out,
+	output wdata_42_oe,
+	input wdata_42_in,
+	output wdata_43_out,
+	output wdata_43_oe,
+	input wdata_43_in,
+	output wdata_44_out,
+	output wdata_44_oe,
+	input wdata_44_in,
+	output wdata_45_out,
+	output wdata_45_oe,
+	input wdata_45_in,
+	output wdata_46_out,
+	output wdata_46_oe,
+	input wdata_46_in,
+	output wdata_47_out,
+	output wdata_47_oe,
+	input wdata_47_in,
+	output wdata_48_out,
+	output wdata_48_oe,
+	input wdata_48_in,
+	output wdata_49_out,
+	output wdata_49_oe,
+	input wdata_49_in,
+	output wdata_50_out,
+	output wdata_50_oe,
+	input wdata_50_in,
+	output wdata_51_out,
+	output wdata_51_oe,
+	input wdata_51_in,
+	output wdata_52_out,
+	output wdata_52_oe,
+	input wdata_52_in,
+	output wdata_53_out,
+	output wdata_53_oe,
+	input wdata_53_in,
+	output wdata_54_out,
+	output wdata_54_oe,
+	input wdata_54_in,
+	output wdata_55_out,
+	output wdata_55_oe,
+	input wdata_55_in,
+	output wdata_56_out,
+	output wdata_56_oe,
+	input wdata_56_in,
+	output wdata_57_out,
+	output wdata_57_oe,
+	input wdata_57_in,
+	output wdata_58_out,
+	output wdata_58_oe,
+	input wdata_58_in,
+	output wdata_59_out,
+	output wdata_59_oe,
+	input wdata_59_in,
+	output wdata_60_out,
+	output wdata_60_oe,
+	input wdata_60_in,
+	output wdata_61_out,
+	output wdata_61_oe,
+	input wdata_61_in,
+	output wdata_62_out,
+	output wdata_62_oe,
+	input wdata_62_in,
+	output wdata_63_out,
+	output wdata_63_oe,
+	input wdata_63_in,
+	output [0:31] gpu_data_out;
+	output [0:31] gpu_data_oe;
+	input [0:31] gpu_data_in;
+	output justify_out,
+	output justify_oe,
+	input justify_in,
+	output mreq_out,
+	output mreq_oe,
+	input mreq_in,
+	output read_out,
+	output read_oe,
+	input read_in,
+	output width_0_out,
+	output width_0_oe,
+	input width_0_in,
+	output width_1_out,
+	output width_1_oe,
+	input width_1_in,
+	output width_2_out,
+	output width_2_oe,
+	input width_2_in,
+	output width_3_out,
+	output width_3_oe,
+	input width_3_in,
+	output gpu_dout_15_out,
+	output gpu_dout_15_oe,
+	input gpu_dout_15_in,
 	output dma_breq,
 	output gate_active,
 	output gatereq,
 	output gpu_breq,
-	output[0:31] load_data;
+	output [0:31] load_data;
 	output xld_ready,
 	input ack,
 	input bus_hog,
@@ -154,9 +302,9 @@ module gateway
 	input flagrd,
 	input flagwr,
 	input gateack,
-	input[0:23] gpu_addr;
+	input [0:23] gpu_addr;
 	input gpu_back,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input gpu_memw,
 	input hidrd,
 	input hidwr,
@@ -283,6 +431,198 @@ wire ext_req_n;
 wire gpu_bt_0;
 wire gpu_bt_1;
 wire gpu_bt_2;
+wire ts_pe_5_a0_out;
+wire ts_pe_5_a0_oe;
+wire ts_pe_5_a0_in;
+wire ts_pe_5_a1_out;
+wire ts_pe_5_a1_oe;
+wire ts_pe_5_a1_in;
+wire ts_pe_6_a0_out;
+wire ts_pe_6_a0_oe;
+wire ts_pe_6_a0_in;
+wire ts_pe_6_a1_out;
+wire ts_pe_6_a1_oe;
+wire ts_pe_6_a1_in;
+wire ts_pe_7_a0_out;
+wire ts_pe_7_a0_oe;
+wire ts_pe_7_a0_in;
+wire ts_pe_7_a1_out;
+wire ts_pe_7_a1_oe;
+wire ts_pe_7_a1_in;
+wire ts_pe_8_a0_out;
+wire ts_pe_8_a0_oe;
+wire ts_pe_8_a0_in;
+wire ts_pe_8_a1_out;
+wire ts_pe_8_a1_oe;
+wire ts_pe_8_a1_in;
+wire ts_pe_9_a0_out;
+wire ts_pe_9_a0_oe;
+wire ts_pe_9_a0_in;
+wire ts_pe_9_a1_out;
+wire ts_pe_9_a1_oe;
+wire ts_pe_9_a1_in;
+wire ts_pe_10_a0_out;
+wire ts_pe_10_a0_oe;
+wire ts_pe_10_a0_in;
+wire ts_pe_10_a1_out;
+wire ts_pe_10_a1_oe;
+wire ts_pe_10_a1_in;
+wire ts_pe_11_a0_out;
+wire ts_pe_11_a0_oe;
+wire ts_pe_11_a0_in;
+wire ts_pe_11_a1_out;
+wire ts_pe_11_a1_oe;
+wire ts_pe_11_a1_in;
+wire ts_pe_12_a0_out;
+wire ts_pe_12_a0_oe;
+wire ts_pe_12_a0_in;
+wire ts_pe_12_a1_out;
+wire ts_pe_12_a1_oe;
+wire ts_pe_12_a1_in;
+wire ts_pe_13_a0_out;
+wire ts_pe_13_a0_oe;
+wire ts_pe_13_a0_in;
+wire ts_pe_13_a1_out;
+wire ts_pe_13_a1_oe;
+wire ts_pe_13_a1_in;
+wire ts_pe_14_a0_out;
+wire ts_pe_14_a0_oe;
+wire ts_pe_14_a0_in;
+wire ts_pe_14_a1_out;
+wire ts_pe_14_a1_oe;
+wire ts_pe_14_a1_in;
+wire ts_pe_15_a0_out;
+wire ts_pe_15_a0_oe;
+wire ts_pe_15_a0_in;
+wire ts_pe_15_a1_out;
+wire ts_pe_15_a1_oe;
+wire ts_pe_15_a1_in;
+wire ts_pe_16_a0_out;
+wire ts_pe_16_a0_oe;
+wire ts_pe_16_a0_in;
+wire ts_pe_16_a1_out;
+wire ts_pe_16_a1_oe;
+wire ts_pe_16_a1_in;
+wire ts_pe_17_a0_out;
+wire ts_pe_17_a0_oe;
+wire ts_pe_17_a0_in;
+wire ts_pe_17_a1_out;
+wire ts_pe_17_a1_oe;
+wire ts_pe_17_a1_in;
+wire ts_pe_18_a0_out;
+wire ts_pe_18_a0_oe;
+wire ts_pe_18_a0_in;
+wire ts_pe_18_a1_out;
+wire ts_pe_18_a1_oe;
+wire ts_pe_18_a1_in;
+wire ts_pe_19_a0_out;
+wire ts_pe_19_a0_oe;
+wire ts_pe_19_a0_in;
+wire ts_pe_19_a1_out;
+wire ts_pe_19_a1_oe;
+wire ts_pe_19_a1_in;
+wire ts_pe_20_a0_out;
+wire ts_pe_20_a0_oe;
+wire ts_pe_20_a0_in;
+wire ts_pe_20_a1_out;
+wire ts_pe_20_a1_oe;
+wire ts_pe_20_a1_in;
+wire ts_pe_21_a0_out;
+wire ts_pe_21_a0_oe;
+wire ts_pe_21_a0_in;
+wire ts_pe_21_a1_out;
+wire ts_pe_21_a1_oe;
+wire ts_pe_21_a1_in;
+wire ts_pe_22_a0_out;
+wire ts_pe_22_a0_oe;
+wire ts_pe_22_a0_in;
+wire ts_pe_22_a1_out;
+wire ts_pe_22_a1_oe;
+wire ts_pe_22_a1_in;
+wire ts_pe_23_a0_out;
+wire ts_pe_23_a0_oe;
+wire ts_pe_23_a0_in;
+wire ts_pe_23_a1_out;
+wire ts_pe_23_a1_oe;
+wire ts_pe_23_a1_in;
+wire ts_pe_24_a0_out;
+wire ts_pe_24_a0_oe;
+wire ts_pe_24_a0_in;
+wire ts_pe_24_a1_out;
+wire ts_pe_24_a1_oe;
+wire ts_pe_24_a1_in;
+wire ts_pe_25_a0_out;
+wire ts_pe_25_a0_oe;
+wire ts_pe_25_a0_in;
+wire ts_pe_25_a1_out;
+wire ts_pe_25_a1_oe;
+wire ts_pe_25_a1_in;
+wire ts_pe_26_a0_out;
+wire ts_pe_26_a0_oe;
+wire ts_pe_26_a0_in;
+wire ts_pe_26_a1_out;
+wire ts_pe_26_a1_oe;
+wire ts_pe_26_a1_in;
+wire ts_pe_27_a0_out;
+wire ts_pe_27_a0_oe;
+wire ts_pe_27_a0_in;
+wire ts_pe_27_a1_out;
+wire ts_pe_27_a1_oe;
+wire ts_pe_27_a1_in;
+wire ts_pe_28_a0_out;
+wire ts_pe_28_a0_oe;
+wire ts_pe_28_a0_in;
+wire ts_pe_28_a1_out;
+wire ts_pe_28_a1_oe;
+wire ts_pe_28_a1_in;
+wire ts_pe_29_a0_out;
+wire ts_pe_29_a0_oe;
+wire ts_pe_29_a0_in;
+wire ts_pe_29_a1_out;
+wire ts_pe_29_a1_oe;
+wire ts_pe_29_a1_in;
+wire ts_pe_30_a0_out;
+wire ts_pe_30_a0_oe;
+wire ts_pe_30_a0_in;
+wire ts_pe_30_a1_out;
+wire ts_pe_30_a1_oe;
+wire ts_pe_30_a1_in;
+wire ts_pe_31_a0_out;
+wire ts_pe_31_a0_oe;
+wire ts_pe_31_a0_in;
+wire ts_pe_31_a1_out;
+wire ts_pe_31_a1_oe;
+wire ts_pe_31_a1_in;
+wire ts_pe_32_a0_out;
+wire ts_pe_32_a0_oe;
+wire ts_pe_32_a0_in;
+wire ts_pe_32_a1_out;
+wire ts_pe_32_a1_oe;
+wire ts_pe_32_a1_in;
+wire ts_pe_33_a0_out;
+wire ts_pe_33_a0_oe;
+wire ts_pe_33_a0_in;
+wire ts_pe_33_a1_out;
+wire ts_pe_33_a1_oe;
+wire ts_pe_33_a1_in;
+wire ts_pe_34_a0_out;
+wire ts_pe_34_a0_oe;
+wire ts_pe_34_a0_in;
+wire ts_pe_34_a1_out;
+wire ts_pe_34_a1_oe;
+wire ts_pe_34_a1_in;
+wire ts_pe_35_a0_out;
+wire ts_pe_35_a0_oe;
+wire ts_pe_35_a0_in;
+wire ts_pe_35_a1_out;
+wire ts_pe_35_a1_oe;
+wire ts_pe_35_a1_in;
+wire ts_pe_36_a0_out;
+wire ts_pe_36_a0_oe;
+wire ts_pe_36_a0_in;
+wire ts_pe_36_a1_out;
+wire ts_pe_36_a1_oe;
+wire ts_pe_36_a1_in;
 
 // Output buffers
 wire dma_breq_obuf;
@@ -447,18 +787,19 @@ assign one = 1'b1;
 // GATEWAY.NET (70) - dmaen : fdsyncr
 fdsyncr dmaen_inst
 (
-	.q(dmaen), // IO
-	.d(gpu_din[15]), // IN
-	.ld(flagwr), // IN
-	.clk(clk_0), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (dmaen),
+	.d /* IN */ (gpu_din[15]),
+	.ld /* IN */ (flagwr),
+	.clk /* IN */ (clk_0),
+	.rst_n /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (72) - dmaen\ : iv
 assign dmaen_n = ~dmaen;
 
 // GATEWAY.NET (73) - dmaenr : ts
-assign gpu_dout_15 = (flagrd) ? dmaen : 1'bz;
+assign gpu_dout_15_out = dmaen;
+assign gpu_dout_15_oe = flagrd;
 
 // GATEWAY.NET (82) - prot1 : nd3
 assign prot_1 = ~(active & gpu_ack & cycgo);
@@ -472,22 +813,22 @@ assign cycstart = ~(prot_1 & prot_2);
 // GATEWAY.NET (88) - progoi : mx4
 mx4 progoi_inst
 (
-	.z(progoi), // OUT
-	.a0(progown), // IN
-	.a1(progown), // IN
-	.a2(progserv), // IN
-	.a3(progownp), // IN
-	.s0(cycpend), // IN
-	.s1(cycstart)  // IN
+	.z /* OUT */ (progoi),
+	.a0 /* IN */ (progown),
+	.a1 /* IN */ (progown),
+	.a2 /* IN */ (progserv),
+	.a3 /* IN */ (progownp),
+	.s0 /* IN */ (cycpend),
+	.s1 /* IN */ (cycstart)
 );
 
 // GATEWAY.NET (90) - progown : fd2qu
 fd2q progown_inst
 (
-	.q(progown), // OUT
-	.d(progoi), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (progown),
+	.d /* IN */ (progoi),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (91) - progown\ : iv
@@ -496,39 +837,39 @@ assign progown_n = ~progown;
 // GATEWAY.NET (95) - progownp : fdsync
 fdsync progownp_inst
 (
-	.q(progownp), // IO
-	.d(progserv), // IN
-	.ld(external), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (progownp),
+	.d /* IN */ (progserv),
+	.ld /* IN */ (external),
+	.clk /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (99) - readp : fdsync
 fdsync readp_inst
 (
-	.q(readp), // IO
-	.d(gpu_memw_n), // IN
-	.ld(external), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (readp),
+	.d /* IN */ (gpu_memw_n),
+	.ld /* IN */ (external),
+	.clk /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (101) - readi : mx4
 mx4 readi_inst
 (
-	.z(readi), // OUT
-	.a0(reada), // IN
-	.a1(reada), // IN
-	.a2(gpu_memw_n), // IN
-	.a3(readp), // IN
-	.s0(cycpend), // IN
-	.s1(cycstart)  // IN
+	.z /* OUT */ (readi),
+	.a0 /* IN */ (reada),
+	.a1 /* IN */ (reada),
+	.a2 /* IN */ (gpu_memw_n),
+	.a3 /* IN */ (readp),
+	.s0 /* IN */ (cycpend),
+	.s1 /* IN */ (cycstart)
 );
 
 // GATEWAY.NET (103) - reada : fd1q
 fd1q reada_inst
 (
-	.q(reada), // OUT
-	.d(readi), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (reada),
+	.d /* IN */ (readi),
+	.cp /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (104) - reada\ : iv
@@ -540,15 +881,15 @@ assign msizelat = external & progserv_n & clk_2;
 // GATEWAY.NET (109) - msized[0-1] : ldp1q
 ldp1q msized_from_0_to_1_inst_0
 (
-	.q(msized_0), // OUT
-	.d(msize_0), // IN
-	.g(msizelat)  // IN
+	.q /* OUT */ (msized_0),
+	.d /* IN */ (msize_0),
+	.g /* IN */ (msizelat)
 );
 ldp1q msized_from_0_to_1_inst_1
 (
-	.q(msized_1), // OUT
-	.d(msize_1), // IN
-	.g(msizelat)  // IN
+	.q /* OUT */ (msized_1),
+	.d /* IN */ (msize_1),
+	.g /* IN */ (msizelat)
 );
 
 // GATEWAY.NET (114) - cyptset : nr3
@@ -563,10 +904,10 @@ assign cypt_1 = ~(cypt_0 | cycstart);
 // GATEWAY.NET (117) - cycpend : fd2q
 fd2q cycpend_inst
 (
-	.q(cycpend), // OUT
-	.d(cypt_1), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (cycpend),
+	.d /* IN */ (cypt_1),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (119) - cycgo : or2
@@ -587,10 +928,10 @@ assign activet_3 = ~(activet_0 & activet_1 & activet_2);
 // GATEWAY.NET (127) - activet : fd2q
 fd2q activet_inst
 (
-	.q(activet), // OUT
-	.d(activet_3), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (activet),
+	.d /* IN */ (activet_3),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (128) - active : nivm
@@ -614,10 +955,10 @@ assign pawt_1 = ~(pawset_n & pawt_0);
 // GATEWAY.NET (145) - packwt : fd2q
 fd2q packwt_inst
 (
-	.q(packwt), // OUT
-	.d(pawt_1), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (packwt),
+	.d /* IN */ (pawt_1),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (146) - pdatld : an2
@@ -632,10 +973,10 @@ assign greqt_1 = ~(gateack | greqt_0);
 // GATEWAY.NET (155) - greqt2 : fd2q
 fd2q greqt2_inst
 (
-	.q(greqt_2), // OUT
-	.d(greqt_1), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (greqt_2),
+	.d /* IN */ (greqt_1),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (156) - gatereq : oan1
@@ -653,10 +994,10 @@ assign dawt_1 = ~(dawset_n & dawt_0);
 // GATEWAY.NET (163) - dackwt : fd2q
 fd2q dackwt_inst
 (
-	.q(dackwt), // OUT
-	.d(dawt_1), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dackwt),
+	.d /* IN */ (dawt_1),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // GATEWAY.NET (164) - ddatld : an2
@@ -665,9 +1006,9 @@ assign ddatld = dackwt & ack;
 // GATEWAY.NET (168) - xld_ready : fd1qu
 fd1q xld_ready_inst
 (
-	.q(xld_ready), // OUT
-	.d(ddatld), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (xld_ready),
+	.d /* IN */ (ddatld),
+	.cp /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (172) - busack : oan1
@@ -688,147 +1029,147 @@ assign cald = external & progserv & clk_2;
 // GATEWAY.NET (186) - cpu_addr : ldp1q
 ldp1q cpu_addr_inst_0
 (
-	.q(cpu_addr[0]), // OUT
-	.d(gpu_addr[0]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[0]),
+	.d /* IN */ (gpu_addr[0]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_1
 (
-	.q(cpu_addr[1]), // OUT
-	.d(gpu_addr[1]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[1]),
+	.d /* IN */ (gpu_addr[1]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_2
 (
-	.q(cpu_addr[2]), // OUT
-	.d(gpu_addr[2]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[2]),
+	.d /* IN */ (gpu_addr[2]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_3
 (
-	.q(cpu_addr[3]), // OUT
-	.d(gpu_addr[3]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[3]),
+	.d /* IN */ (gpu_addr[3]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_4
 (
-	.q(cpu_addr[4]), // OUT
-	.d(gpu_addr[4]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[4]),
+	.d /* IN */ (gpu_addr[4]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_5
 (
-	.q(cpu_addr[5]), // OUT
-	.d(gpu_addr[5]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[5]),
+	.d /* IN */ (gpu_addr[5]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_6
 (
-	.q(cpu_addr[6]), // OUT
-	.d(gpu_addr[6]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[6]),
+	.d /* IN */ (gpu_addr[6]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_7
 (
-	.q(cpu_addr[7]), // OUT
-	.d(gpu_addr[7]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[7]),
+	.d /* IN */ (gpu_addr[7]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_8
 (
-	.q(cpu_addr[8]), // OUT
-	.d(gpu_addr[8]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[8]),
+	.d /* IN */ (gpu_addr[8]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_9
 (
-	.q(cpu_addr[9]), // OUT
-	.d(gpu_addr[9]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[9]),
+	.d /* IN */ (gpu_addr[9]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_10
 (
-	.q(cpu_addr[10]), // OUT
-	.d(gpu_addr[10]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[10]),
+	.d /* IN */ (gpu_addr[10]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_11
 (
-	.q(cpu_addr[11]), // OUT
-	.d(gpu_addr[11]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[11]),
+	.d /* IN */ (gpu_addr[11]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_12
 (
-	.q(cpu_addr[12]), // OUT
-	.d(gpu_addr[12]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[12]),
+	.d /* IN */ (gpu_addr[12]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_13
 (
-	.q(cpu_addr[13]), // OUT
-	.d(gpu_addr[13]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[13]),
+	.d /* IN */ (gpu_addr[13]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_14
 (
-	.q(cpu_addr[14]), // OUT
-	.d(gpu_addr[14]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[14]),
+	.d /* IN */ (gpu_addr[14]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_15
 (
-	.q(cpu_addr[15]), // OUT
-	.d(gpu_addr[15]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[15]),
+	.d /* IN */ (gpu_addr[15]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_16
 (
-	.q(cpu_addr[16]), // OUT
-	.d(gpu_addr[16]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[16]),
+	.d /* IN */ (gpu_addr[16]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_17
 (
-	.q(cpu_addr[17]), // OUT
-	.d(gpu_addr[17]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[17]),
+	.d /* IN */ (gpu_addr[17]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_18
 (
-	.q(cpu_addr[18]), // OUT
-	.d(gpu_addr[18]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[18]),
+	.d /* IN */ (gpu_addr[18]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_19
 (
-	.q(cpu_addr[19]), // OUT
-	.d(gpu_addr[19]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[19]),
+	.d /* IN */ (gpu_addr[19]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_20
 (
-	.q(cpu_addr[20]), // OUT
-	.d(gpu_addr[20]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[20]),
+	.d /* IN */ (gpu_addr[20]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_21
 (
-	.q(cpu_addr[21]), // OUT
-	.d(gpu_addr[21]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[21]),
+	.d /* IN */ (gpu_addr[21]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_22
 (
-	.q(cpu_addr[22]), // OUT
-	.d(gpu_addr[22]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[22]),
+	.d /* IN */ (gpu_addr[22]),
+	.g /* IN */ (cald)
 );
 ldp1q cpu_addr_inst_23
 (
-	.q(cpu_addr[23]), // OUT
-	.d(gpu_addr[23]), // IN
-	.g(cald)  // IN
+	.q /* OUT */ (cpu_addr[23]),
+	.d /* IN */ (gpu_addr[23]),
+	.g /* IN */ (cald)
 );
 
 // GATEWAY.NET (187) - dald : an3u
@@ -837,353 +1178,380 @@ assign dald = external & progserv_n & clk_2;
 // GATEWAY.NET (188) - dat_addr : ldp1q
 ldp1q dat_addr_inst_0
 (
-	.q(dat_addr[0]), // OUT
-	.d(gpu_addr[0]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[0]),
+	.d /* IN */ (gpu_addr[0]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_1
 (
-	.q(dat_addr[1]), // OUT
-	.d(gpu_addr[1]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[1]),
+	.d /* IN */ (gpu_addr[1]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_2
 (
-	.q(dat_addr[2]), // OUT
-	.d(gpu_addr[2]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[2]),
+	.d /* IN */ (gpu_addr[2]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_3
 (
-	.q(dat_addr[3]), // OUT
-	.d(gpu_addr[3]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[3]),
+	.d /* IN */ (gpu_addr[3]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_4
 (
-	.q(dat_addr[4]), // OUT
-	.d(gpu_addr[4]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[4]),
+	.d /* IN */ (gpu_addr[4]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_5
 (
-	.q(dat_addr[5]), // OUT
-	.d(gpu_addr[5]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[5]),
+	.d /* IN */ (gpu_addr[5]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_6
 (
-	.q(dat_addr[6]), // OUT
-	.d(gpu_addr[6]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[6]),
+	.d /* IN */ (gpu_addr[6]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_7
 (
-	.q(dat_addr[7]), // OUT
-	.d(gpu_addr[7]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[7]),
+	.d /* IN */ (gpu_addr[7]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_8
 (
-	.q(dat_addr[8]), // OUT
-	.d(gpu_addr[8]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[8]),
+	.d /* IN */ (gpu_addr[8]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_9
 (
-	.q(dat_addr[9]), // OUT
-	.d(gpu_addr[9]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[9]),
+	.d /* IN */ (gpu_addr[9]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_10
 (
-	.q(dat_addr[10]), // OUT
-	.d(gpu_addr[10]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[10]),
+	.d /* IN */ (gpu_addr[10]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_11
 (
-	.q(dat_addr[11]), // OUT
-	.d(gpu_addr[11]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[11]),
+	.d /* IN */ (gpu_addr[11]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_12
 (
-	.q(dat_addr[12]), // OUT
-	.d(gpu_addr[12]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[12]),
+	.d /* IN */ (gpu_addr[12]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_13
 (
-	.q(dat_addr[13]), // OUT
-	.d(gpu_addr[13]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[13]),
+	.d /* IN */ (gpu_addr[13]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_14
 (
-	.q(dat_addr[14]), // OUT
-	.d(gpu_addr[14]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[14]),
+	.d /* IN */ (gpu_addr[14]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_15
 (
-	.q(dat_addr[15]), // OUT
-	.d(gpu_addr[15]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[15]),
+	.d /* IN */ (gpu_addr[15]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_16
 (
-	.q(dat_addr[16]), // OUT
-	.d(gpu_addr[16]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[16]),
+	.d /* IN */ (gpu_addr[16]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_17
 (
-	.q(dat_addr[17]), // OUT
-	.d(gpu_addr[17]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[17]),
+	.d /* IN */ (gpu_addr[17]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_18
 (
-	.q(dat_addr[18]), // OUT
-	.d(gpu_addr[18]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[18]),
+	.d /* IN */ (gpu_addr[18]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_19
 (
-	.q(dat_addr[19]), // OUT
-	.d(gpu_addr[19]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[19]),
+	.d /* IN */ (gpu_addr[19]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_20
 (
-	.q(dat_addr[20]), // OUT
-	.d(gpu_addr[20]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[20]),
+	.d /* IN */ (gpu_addr[20]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_21
 (
-	.q(dat_addr[21]), // OUT
-	.d(gpu_addr[21]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[21]),
+	.d /* IN */ (gpu_addr[21]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_22
 (
-	.q(dat_addr[22]), // OUT
-	.d(gpu_addr[22]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[22]),
+	.d /* IN */ (gpu_addr[22]),
+	.g /* IN */ (dald)
 );
 ldp1q dat_addr_inst_23
 (
-	.q(dat_addr[23]), // OUT
-	.d(gpu_addr[23]), // IN
-	.g(dald)  // IN
+	.q /* OUT */ (dat_addr[23]),
+	.d /* IN */ (gpu_addr[23]),
+	.g /* IN */ (dald)
 );
 
 // GATEWAY.NET (192) - out_addr : mx2
 mx2 out_addr_inst_0
 (
-	.z(out_addr[0]), // OUT
-	.a0(dat_addr[0]), // IN
-	.a1(cpu_addr[0]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[0]),
+	.a0 /* IN */ (dat_addr[0]),
+	.a1 /* IN */ (cpu_addr[0]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_1
 (
-	.z(out_addr[1]), // OUT
-	.a0(dat_addr[1]), // IN
-	.a1(cpu_addr[1]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[1]),
+	.a0 /* IN */ (dat_addr[1]),
+	.a1 /* IN */ (cpu_addr[1]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_2
 (
-	.z(out_addr[2]), // OUT
-	.a0(dat_addr[2]), // IN
-	.a1(cpu_addr[2]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[2]),
+	.a0 /* IN */ (dat_addr[2]),
+	.a1 /* IN */ (cpu_addr[2]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_3
 (
-	.z(out_addr[3]), // OUT
-	.a0(dat_addr[3]), // IN
-	.a1(cpu_addr[3]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[3]),
+	.a0 /* IN */ (dat_addr[3]),
+	.a1 /* IN */ (cpu_addr[3]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_4
 (
-	.z(out_addr[4]), // OUT
-	.a0(dat_addr[4]), // IN
-	.a1(cpu_addr[4]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[4]),
+	.a0 /* IN */ (dat_addr[4]),
+	.a1 /* IN */ (cpu_addr[4]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_5
 (
-	.z(out_addr[5]), // OUT
-	.a0(dat_addr[5]), // IN
-	.a1(cpu_addr[5]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[5]),
+	.a0 /* IN */ (dat_addr[5]),
+	.a1 /* IN */ (cpu_addr[5]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_6
 (
-	.z(out_addr[6]), // OUT
-	.a0(dat_addr[6]), // IN
-	.a1(cpu_addr[6]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[6]),
+	.a0 /* IN */ (dat_addr[6]),
+	.a1 /* IN */ (cpu_addr[6]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_7
 (
-	.z(out_addr[7]), // OUT
-	.a0(dat_addr[7]), // IN
-	.a1(cpu_addr[7]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[7]),
+	.a0 /* IN */ (dat_addr[7]),
+	.a1 /* IN */ (cpu_addr[7]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_8
 (
-	.z(out_addr[8]), // OUT
-	.a0(dat_addr[8]), // IN
-	.a1(cpu_addr[8]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[8]),
+	.a0 /* IN */ (dat_addr[8]),
+	.a1 /* IN */ (cpu_addr[8]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_9
 (
-	.z(out_addr[9]), // OUT
-	.a0(dat_addr[9]), // IN
-	.a1(cpu_addr[9]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[9]),
+	.a0 /* IN */ (dat_addr[9]),
+	.a1 /* IN */ (cpu_addr[9]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_10
 (
-	.z(out_addr[10]), // OUT
-	.a0(dat_addr[10]), // IN
-	.a1(cpu_addr[10]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[10]),
+	.a0 /* IN */ (dat_addr[10]),
+	.a1 /* IN */ (cpu_addr[10]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_11
 (
-	.z(out_addr[11]), // OUT
-	.a0(dat_addr[11]), // IN
-	.a1(cpu_addr[11]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[11]),
+	.a0 /* IN */ (dat_addr[11]),
+	.a1 /* IN */ (cpu_addr[11]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_12
 (
-	.z(out_addr[12]), // OUT
-	.a0(dat_addr[12]), // IN
-	.a1(cpu_addr[12]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[12]),
+	.a0 /* IN */ (dat_addr[12]),
+	.a1 /* IN */ (cpu_addr[12]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_13
 (
-	.z(out_addr[13]), // OUT
-	.a0(dat_addr[13]), // IN
-	.a1(cpu_addr[13]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[13]),
+	.a0 /* IN */ (dat_addr[13]),
+	.a1 /* IN */ (cpu_addr[13]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_14
 (
-	.z(out_addr[14]), // OUT
-	.a0(dat_addr[14]), // IN
-	.a1(cpu_addr[14]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[14]),
+	.a0 /* IN */ (dat_addr[14]),
+	.a1 /* IN */ (cpu_addr[14]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_15
 (
-	.z(out_addr[15]), // OUT
-	.a0(dat_addr[15]), // IN
-	.a1(cpu_addr[15]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[15]),
+	.a0 /* IN */ (dat_addr[15]),
+	.a1 /* IN */ (cpu_addr[15]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_16
 (
-	.z(out_addr[16]), // OUT
-	.a0(dat_addr[16]), // IN
-	.a1(cpu_addr[16]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[16]),
+	.a0 /* IN */ (dat_addr[16]),
+	.a1 /* IN */ (cpu_addr[16]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_17
 (
-	.z(out_addr[17]), // OUT
-	.a0(dat_addr[17]), // IN
-	.a1(cpu_addr[17]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[17]),
+	.a0 /* IN */ (dat_addr[17]),
+	.a1 /* IN */ (cpu_addr[17]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_18
 (
-	.z(out_addr[18]), // OUT
-	.a0(dat_addr[18]), // IN
-	.a1(cpu_addr[18]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[18]),
+	.a0 /* IN */ (dat_addr[18]),
+	.a1 /* IN */ (cpu_addr[18]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_19
 (
-	.z(out_addr[19]), // OUT
-	.a0(dat_addr[19]), // IN
-	.a1(cpu_addr[19]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[19]),
+	.a0 /* IN */ (dat_addr[19]),
+	.a1 /* IN */ (cpu_addr[19]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_20
 (
-	.z(out_addr[20]), // OUT
-	.a0(dat_addr[20]), // IN
-	.a1(cpu_addr[20]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[20]),
+	.a0 /* IN */ (dat_addr[20]),
+	.a1 /* IN */ (cpu_addr[20]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_21
 (
-	.z(out_addr[21]), // OUT
-	.a0(dat_addr[21]), // IN
-	.a1(cpu_addr[21]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[21]),
+	.a0 /* IN */ (dat_addr[21]),
+	.a1 /* IN */ (cpu_addr[21]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_22
 (
-	.z(out_addr[22]), // OUT
-	.a0(dat_addr[22]), // IN
-	.a1(cpu_addr[22]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[22]),
+	.a0 /* IN */ (dat_addr[22]),
+	.a1 /* IN */ (cpu_addr[22]),
+	.s /* IN */ (progown)
 );
 mx2 out_addr_inst_23
 (
-	.z(out_addr[23]), // OUT
-	.a0(dat_addr[23]), // IN
-	.a1(cpu_addr[23]), // IN
-	.s(progown)  // IN
+	.z /* OUT */ (out_addr[23]),
+	.a0 /* IN */ (dat_addr[23]),
+	.a1 /* IN */ (cpu_addr[23]),
+	.s /* IN */ (progown)
 );
 
 // GATEWAY.NET (193) - address : tsm
-assign address[0] = (tri_en) ? out_addr[0] : 1'bz;
-assign address[1] = (tri_en) ? out_addr[1] : 1'bz;
-assign address[2] = (tri_en) ? out_addr[2] : 1'bz;
-assign address[3] = (tri_en) ? out_addr[3] : 1'bz;
-assign address[4] = (tri_en) ? out_addr[4] : 1'bz;
-assign address[5] = (tri_en) ? out_addr[5] : 1'bz;
-assign address[6] = (tri_en) ? out_addr[6] : 1'bz;
-assign address[7] = (tri_en) ? out_addr[7] : 1'bz;
-assign address[8] = (tri_en) ? out_addr[8] : 1'bz;
-assign address[9] = (tri_en) ? out_addr[9] : 1'bz;
-assign address[10] = (tri_en) ? out_addr[10] : 1'bz;
-assign address[11] = (tri_en) ? out_addr[11] : 1'bz;
-assign address[12] = (tri_en) ? out_addr[12] : 1'bz;
-assign address[13] = (tri_en) ? out_addr[13] : 1'bz;
-assign address[14] = (tri_en) ? out_addr[14] : 1'bz;
-assign address[15] = (tri_en) ? out_addr[15] : 1'bz;
-assign address[16] = (tri_en) ? out_addr[16] : 1'bz;
-assign address[17] = (tri_en) ? out_addr[17] : 1'bz;
-assign address[18] = (tri_en) ? out_addr[18] : 1'bz;
-assign address[19] = (tri_en) ? out_addr[19] : 1'bz;
-assign address[20] = (tri_en) ? out_addr[20] : 1'bz;
-assign address[21] = (tri_en) ? out_addr[21] : 1'bz;
-assign address[22] = (tri_en) ? out_addr[22] : 1'bz;
-assign address[23] = (tri_en) ? out_addr[23] : 1'bz;
+assign address_out[0] = out_addr[0];
+assign address_oe[0] = tri_en;
+assign address_out[1] = out_addr[1];
+assign address_oe[1] = tri_en;
+assign address_out[2] = out_addr[2];
+assign address_oe[2] = tri_en;
+assign address_out[3] = out_addr[3];
+assign address_oe[3] = tri_en;
+assign address_out[4] = out_addr[4];
+assign address_oe[4] = tri_en;
+assign address_out[5] = out_addr[5];
+assign address_oe[5] = tri_en;
+assign address_out[6] = out_addr[6];
+assign address_oe[6] = tri_en;
+assign address_out[7] = out_addr[7];
+assign address_oe[7] = tri_en;
+assign address_out[8] = out_addr[8];
+assign address_oe[8] = tri_en;
+assign address_out[9] = out_addr[9];
+assign address_oe[9] = tri_en;
+assign address_out[10] = out_addr[10];
+assign address_oe[10] = tri_en;
+assign address_out[11] = out_addr[11];
+assign address_oe[11] = tri_en;
+assign address_out[12] = out_addr[12];
+assign address_oe[12] = tri_en;
+assign address_out[13] = out_addr[13];
+assign address_oe[13] = tri_en;
+assign address_out[14] = out_addr[14];
+assign address_oe[14] = tri_en;
+assign address_out[15] = out_addr[15];
+assign address_oe[15] = tri_en;
+assign address_out[16] = out_addr[16];
+assign address_oe[16] = tri_en;
+assign address_out[17] = out_addr[17];
+assign address_oe[17] = tri_en;
+assign address_out[18] = out_addr[18];
+assign address_oe[18] = tri_en;
+assign address_out[19] = out_addr[19];
+assign address_oe[19] = tri_en;
+assign address_out[20] = out_addr[20];
+assign address_oe[20] = tri_en;
+assign address_out[21] = out_addr[21];
+assign address_oe[21] = tri_en;
+assign address_out[22] = out_addr[22];
+assign address_oe[22] = tri_en;
+assign address_out[23] = out_addr[23];
+assign address_oe[23] = tri_en;
 
 // GATEWAY.NET (197) - mreq : tsm
-assign mreq = (tri_en) ? active : 1'bz;
+assign mreq_out = active;
+assign mreq_oe = tri_en;
 
 // GATEWAY.NET (198) - read : ts
-assign read = (tri_en) ? reada : 1'bz;
+assign read_out = reada;
+assign read_oe = tri_en;
 
 // GATEWAY.NET (199) - justify : ts
-assign justify = (tri_en) ? one : 1'bz;
+assign justify_out = one;
+assign justify_oe = tri_en;
 
 // GATEWAY.NET (204) - msizet[0] : an2
 assign msizet_0 = msized_0 & progown_n;
@@ -1194,19 +1562,23 @@ assign msizet_1 = msized_1 | progown;
 // GATEWAY.NET (206) - widt : d24h
 d24h widt_inst
 (
-	.z0(widt_0), // OUT
-	.z1(widt_1), // OUT
-	.z2(widt_2), // OUT
-	.z3(widt_3), // OUT
-	.a0(msizet_0), // IN
-	.a1(msizet_1)  // IN
+	.z0 /* OUT */ (widt_0),
+	.z1 /* OUT */ (widt_1),
+	.z2 /* OUT */ (widt_2),
+	.z3 /* OUT */ (widt_3),
+	.a0 /* IN */ (msizet_0),
+	.a1 /* IN */ (msizet_1)
 );
 
 // GATEWAY.NET (207) - width[0-3] : ts
-assign width_0 = (tri_en) ? widt_0 : 1'bz;
-assign width_1 = (tri_en) ? widt_1 : 1'bz;
-assign width_2 = (tri_en) ? widt_2 : 1'bz;
-assign width_3 = (tri_en) ? widt_3 : 1'bz;
+assign width_0_out = widt_0;
+assign width_0_oe = tri_en;
+assign width_1_out = widt_1;
+assign width_1_oe = tri_en;
+assign width_2_out = widt_2;
+assign width_2_oe = tri_en;
+assign width_3_out = widt_3;
+assign width_3_oe = tri_en;
 
 // GATEWAY.NET (211) - pdatstrb : an2u
 assign pdatstrb = pdatld & clk_2;
@@ -1214,230 +1586,262 @@ assign pdatstrb = pdatld & clk_2;
 // GATEWAY.NET (212) - prog_data : ldp1q
 ldp1q prog_data_inst_0
 (
-	.q(prog_data[0]), // OUT
-	.d(lodatai[0]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[0]),
+	.d /* IN */ (lodatai[0]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_1
 (
-	.q(prog_data[1]), // OUT
-	.d(lodatai[1]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[1]),
+	.d /* IN */ (lodatai[1]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_2
 (
-	.q(prog_data[2]), // OUT
-	.d(lodatai[2]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[2]),
+	.d /* IN */ (lodatai[2]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_3
 (
-	.q(prog_data[3]), // OUT
-	.d(lodatai[3]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[3]),
+	.d /* IN */ (lodatai[3]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_4
 (
-	.q(prog_data[4]), // OUT
-	.d(lodatai[4]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[4]),
+	.d /* IN */ (lodatai[4]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_5
 (
-	.q(prog_data[5]), // OUT
-	.d(lodatai[5]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[5]),
+	.d /* IN */ (lodatai[5]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_6
 (
-	.q(prog_data[6]), // OUT
-	.d(lodatai[6]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[6]),
+	.d /* IN */ (lodatai[6]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_7
 (
-	.q(prog_data[7]), // OUT
-	.d(lodatai[7]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[7]),
+	.d /* IN */ (lodatai[7]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_8
 (
-	.q(prog_data[8]), // OUT
-	.d(lodatai[8]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[8]),
+	.d /* IN */ (lodatai[8]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_9
 (
-	.q(prog_data[9]), // OUT
-	.d(lodatai[9]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[9]),
+	.d /* IN */ (lodatai[9]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_10
 (
-	.q(prog_data[10]), // OUT
-	.d(lodatai[10]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[10]),
+	.d /* IN */ (lodatai[10]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_11
 (
-	.q(prog_data[11]), // OUT
-	.d(lodatai[11]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[11]),
+	.d /* IN */ (lodatai[11]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_12
 (
-	.q(prog_data[12]), // OUT
-	.d(lodatai[12]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[12]),
+	.d /* IN */ (lodatai[12]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_13
 (
-	.q(prog_data[13]), // OUT
-	.d(lodatai[13]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[13]),
+	.d /* IN */ (lodatai[13]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_14
 (
-	.q(prog_data[14]), // OUT
-	.d(lodatai[14]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[14]),
+	.d /* IN */ (lodatai[14]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_15
 (
-	.q(prog_data[15]), // OUT
-	.d(lodatai[15]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[15]),
+	.d /* IN */ (lodatai[15]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_16
 (
-	.q(prog_data[16]), // OUT
-	.d(lodatai[16]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[16]),
+	.d /* IN */ (lodatai[16]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_17
 (
-	.q(prog_data[17]), // OUT
-	.d(lodatai[17]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[17]),
+	.d /* IN */ (lodatai[17]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_18
 (
-	.q(prog_data[18]), // OUT
-	.d(lodatai[18]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[18]),
+	.d /* IN */ (lodatai[18]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_19
 (
-	.q(prog_data[19]), // OUT
-	.d(lodatai[19]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[19]),
+	.d /* IN */ (lodatai[19]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_20
 (
-	.q(prog_data[20]), // OUT
-	.d(lodatai[20]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[20]),
+	.d /* IN */ (lodatai[20]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_21
 (
-	.q(prog_data[21]), // OUT
-	.d(lodatai[21]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[21]),
+	.d /* IN */ (lodatai[21]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_22
 (
-	.q(prog_data[22]), // OUT
-	.d(lodatai[22]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[22]),
+	.d /* IN */ (lodatai[22]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_23
 (
-	.q(prog_data[23]), // OUT
-	.d(lodatai[23]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[23]),
+	.d /* IN */ (lodatai[23]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_24
 (
-	.q(prog_data[24]), // OUT
-	.d(lodatai[24]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[24]),
+	.d /* IN */ (lodatai[24]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_25
 (
-	.q(prog_data[25]), // OUT
-	.d(lodatai[25]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[25]),
+	.d /* IN */ (lodatai[25]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_26
 (
-	.q(prog_data[26]), // OUT
-	.d(lodatai[26]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[26]),
+	.d /* IN */ (lodatai[26]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_27
 (
-	.q(prog_data[27]), // OUT
-	.d(lodatai[27]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[27]),
+	.d /* IN */ (lodatai[27]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_28
 (
-	.q(prog_data[28]), // OUT
-	.d(lodatai[28]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[28]),
+	.d /* IN */ (lodatai[28]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_29
 (
-	.q(prog_data[29]), // OUT
-	.d(lodatai[29]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[29]),
+	.d /* IN */ (lodatai[29]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_30
 (
-	.q(prog_data[30]), // OUT
-	.d(lodatai[30]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[30]),
+	.d /* IN */ (lodatai[30]),
+	.g /* IN */ (pdatstrb)
 );
 ldp1q prog_data_inst_31
 (
-	.q(prog_data[31]), // OUT
-	.d(lodatai[31]), // IN
-	.g(pdatstrb)  // IN
+	.q /* OUT */ (prog_data[31]),
+	.d /* IN */ (lodatai[31]),
+	.g /* IN */ (pdatstrb)
 );
 
 // GATEWAY.NET (216) - lodrd : ts
-assign gpu_data[0] = (gateack) ? prog_data[0] : 1'bz;
-assign gpu_data[1] = (gateack) ? prog_data[1] : 1'bz;
-assign gpu_data[2] = (gateack) ? prog_data[2] : 1'bz;
-assign gpu_data[3] = (gateack) ? prog_data[3] : 1'bz;
-assign gpu_data[4] = (gateack) ? prog_data[4] : 1'bz;
-assign gpu_data[5] = (gateack) ? prog_data[5] : 1'bz;
-assign gpu_data[6] = (gateack) ? prog_data[6] : 1'bz;
-assign gpu_data[7] = (gateack) ? prog_data[7] : 1'bz;
-assign gpu_data[8] = (gateack) ? prog_data[8] : 1'bz;
-assign gpu_data[9] = (gateack) ? prog_data[9] : 1'bz;
-assign gpu_data[10] = (gateack) ? prog_data[10] : 1'bz;
-assign gpu_data[11] = (gateack) ? prog_data[11] : 1'bz;
-assign gpu_data[12] = (gateack) ? prog_data[12] : 1'bz;
-assign gpu_data[13] = (gateack) ? prog_data[13] : 1'bz;
-assign gpu_data[14] = (gateack) ? prog_data[14] : 1'bz;
-assign gpu_data[15] = (gateack) ? prog_data[15] : 1'bz;
-assign gpu_data[16] = (gateack) ? prog_data[16] : 1'bz;
-assign gpu_data[17] = (gateack) ? prog_data[17] : 1'bz;
-assign gpu_data[18] = (gateack) ? prog_data[18] : 1'bz;
-assign gpu_data[19] = (gateack) ? prog_data[19] : 1'bz;
-assign gpu_data[20] = (gateack) ? prog_data[20] : 1'bz;
-assign gpu_data[21] = (gateack) ? prog_data[21] : 1'bz;
-assign gpu_data[22] = (gateack) ? prog_data[22] : 1'bz;
-assign gpu_data[23] = (gateack) ? prog_data[23] : 1'bz;
-assign gpu_data[24] = (gateack) ? prog_data[24] : 1'bz;
-assign gpu_data[25] = (gateack) ? prog_data[25] : 1'bz;
-assign gpu_data[26] = (gateack) ? prog_data[26] : 1'bz;
-assign gpu_data[27] = (gateack) ? prog_data[27] : 1'bz;
-assign gpu_data[28] = (gateack) ? prog_data[28] : 1'bz;
-assign gpu_data[29] = (gateack) ? prog_data[29] : 1'bz;
-assign gpu_data[30] = (gateack) ? prog_data[30] : 1'bz;
-assign gpu_data[31] = (gateack) ? prog_data[31] : 1'bz;
+assign ts_pe_5_a0_out = prog_data[0];
+assign ts_pe_5_a0_oe = gateack;
+assign ts_pe_6_a0_out = prog_data[1];
+assign ts_pe_6_a0_oe = gateack;
+assign ts_pe_7_a0_out = prog_data[2];
+assign ts_pe_7_a0_oe = gateack;
+assign ts_pe_8_a0_out = prog_data[3];
+assign ts_pe_8_a0_oe = gateack;
+assign ts_pe_9_a0_out = prog_data[4];
+assign ts_pe_9_a0_oe = gateack;
+assign ts_pe_10_a0_out = prog_data[5];
+assign ts_pe_10_a0_oe = gateack;
+assign ts_pe_11_a0_out = prog_data[6];
+assign ts_pe_11_a0_oe = gateack;
+assign ts_pe_12_a0_out = prog_data[7];
+assign ts_pe_12_a0_oe = gateack;
+assign ts_pe_13_a0_out = prog_data[8];
+assign ts_pe_13_a0_oe = gateack;
+assign ts_pe_14_a0_out = prog_data[9];
+assign ts_pe_14_a0_oe = gateack;
+assign ts_pe_15_a0_out = prog_data[10];
+assign ts_pe_15_a0_oe = gateack;
+assign ts_pe_16_a0_out = prog_data[11];
+assign ts_pe_16_a0_oe = gateack;
+assign ts_pe_17_a0_out = prog_data[12];
+assign ts_pe_17_a0_oe = gateack;
+assign ts_pe_18_a0_out = prog_data[13];
+assign ts_pe_18_a0_oe = gateack;
+assign ts_pe_19_a0_out = prog_data[14];
+assign ts_pe_19_a0_oe = gateack;
+assign ts_pe_20_a0_out = prog_data[15];
+assign ts_pe_20_a0_oe = gateack;
+assign ts_pe_21_a0_out = prog_data[16];
+assign ts_pe_21_a0_oe = gateack;
+assign ts_pe_22_a0_out = prog_data[17];
+assign ts_pe_22_a0_oe = gateack;
+assign ts_pe_23_a0_out = prog_data[18];
+assign ts_pe_23_a0_oe = gateack;
+assign ts_pe_24_a0_out = prog_data[19];
+assign ts_pe_24_a0_oe = gateack;
+assign ts_pe_25_a0_out = prog_data[20];
+assign ts_pe_25_a0_oe = gateack;
+assign ts_pe_26_a0_out = prog_data[21];
+assign ts_pe_26_a0_oe = gateack;
+assign ts_pe_27_a0_out = prog_data[22];
+assign ts_pe_27_a0_oe = gateack;
+assign ts_pe_28_a0_out = prog_data[23];
+assign ts_pe_28_a0_oe = gateack;
+assign ts_pe_29_a0_out = prog_data[24];
+assign ts_pe_29_a0_oe = gateack;
+assign ts_pe_30_a0_out = prog_data[25];
+assign ts_pe_30_a0_oe = gateack;
+assign ts_pe_31_a0_out = prog_data[26];
+assign ts_pe_31_a0_oe = gateack;
+assign ts_pe_32_a0_out = prog_data[27];
+assign ts_pe_32_a0_oe = gateack;
+assign ts_pe_33_a0_out = prog_data[28];
+assign ts_pe_33_a0_oe = gateack;
+assign ts_pe_34_a0_out = prog_data[29];
+assign ts_pe_34_a0_oe = gateack;
+assign ts_pe_35_a0_out = prog_data[30];
+assign ts_pe_35_a0_oe = gateack;
+assign ts_pe_36_a0_out = prog_data[31];
+assign ts_pe_36_a0_oe = gateack;
 
 // GATEWAY.NET (220) - lodwr : an3u
 assign lodwr = external & progserv_n & gpu_memw;
@@ -1460,19 +1864,19 @@ assign maskld = active & gpu_ack;
 // GATEWAY.NET (234) - maskb : fdsync
 fdsync maskb_inst
 (
-	.q(maskb_n), // IO
-	.d(maskbt_n), // IN
-	.ld(maskld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (maskb_n),
+	.d /* IN */ (maskbt_n),
+	.ld /* IN */ (maskld),
+	.clk /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (235) - maskw : fdsynch
 fdsynch maskw_inst
 (
-	.q(maskw_n), // IO
-	.d(maskwt_n), // IN
-	.ld(maskld), // IN
-	.clk(clk_0)  // IN
+	.q /* OUT */ (maskw_n),
+	.d /* IN */ (maskwt_n),
+	.ld /* IN */ (maskld),
+	.clk /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (237) - lodm[8-15] : an2
@@ -1540,421 +1944,421 @@ assign lddatai[31] = lodm_31;
 // GATEWAY.NET (241) - lodin : mx2
 mx2 lodin_inst_0
 (
-	.z(lodin[0]), // OUT
-	.a0(lddatai[0]), // IN
-	.a1(gpu_din[0]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[0]),
+	.a0 /* IN */ (lddatai[0]),
+	.a1 /* IN */ (gpu_din[0]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_1
 (
-	.z(lodin[1]), // OUT
-	.a0(lddatai[1]), // IN
-	.a1(gpu_din[1]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[1]),
+	.a0 /* IN */ (lddatai[1]),
+	.a1 /* IN */ (gpu_din[1]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_2
 (
-	.z(lodin[2]), // OUT
-	.a0(lddatai[2]), // IN
-	.a1(gpu_din[2]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[2]),
+	.a0 /* IN */ (lddatai[2]),
+	.a1 /* IN */ (gpu_din[2]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_3
 (
-	.z(lodin[3]), // OUT
-	.a0(lddatai[3]), // IN
-	.a1(gpu_din[3]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[3]),
+	.a0 /* IN */ (lddatai[3]),
+	.a1 /* IN */ (gpu_din[3]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_4
 (
-	.z(lodin[4]), // OUT
-	.a0(lddatai[4]), // IN
-	.a1(gpu_din[4]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[4]),
+	.a0 /* IN */ (lddatai[4]),
+	.a1 /* IN */ (gpu_din[4]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_5
 (
-	.z(lodin[5]), // OUT
-	.a0(lddatai[5]), // IN
-	.a1(gpu_din[5]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[5]),
+	.a0 /* IN */ (lddatai[5]),
+	.a1 /* IN */ (gpu_din[5]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_6
 (
-	.z(lodin[6]), // OUT
-	.a0(lddatai[6]), // IN
-	.a1(gpu_din[6]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[6]),
+	.a0 /* IN */ (lddatai[6]),
+	.a1 /* IN */ (gpu_din[6]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_7
 (
-	.z(lodin[7]), // OUT
-	.a0(lddatai[7]), // IN
-	.a1(gpu_din[7]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[7]),
+	.a0 /* IN */ (lddatai[7]),
+	.a1 /* IN */ (gpu_din[7]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_8
 (
-	.z(lodin[8]), // OUT
-	.a0(lddatai[8]), // IN
-	.a1(gpu_din[8]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[8]),
+	.a0 /* IN */ (lddatai[8]),
+	.a1 /* IN */ (gpu_din[8]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_9
 (
-	.z(lodin[9]), // OUT
-	.a0(lddatai[9]), // IN
-	.a1(gpu_din[9]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[9]),
+	.a0 /* IN */ (lddatai[9]),
+	.a1 /* IN */ (gpu_din[9]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_10
 (
-	.z(lodin[10]), // OUT
-	.a0(lddatai[10]), // IN
-	.a1(gpu_din[10]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[10]),
+	.a0 /* IN */ (lddatai[10]),
+	.a1 /* IN */ (gpu_din[10]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_11
 (
-	.z(lodin[11]), // OUT
-	.a0(lddatai[11]), // IN
-	.a1(gpu_din[11]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[11]),
+	.a0 /* IN */ (lddatai[11]),
+	.a1 /* IN */ (gpu_din[11]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_12
 (
-	.z(lodin[12]), // OUT
-	.a0(lddatai[12]), // IN
-	.a1(gpu_din[12]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[12]),
+	.a0 /* IN */ (lddatai[12]),
+	.a1 /* IN */ (gpu_din[12]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_13
 (
-	.z(lodin[13]), // OUT
-	.a0(lddatai[13]), // IN
-	.a1(gpu_din[13]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[13]),
+	.a0 /* IN */ (lddatai[13]),
+	.a1 /* IN */ (gpu_din[13]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_14
 (
-	.z(lodin[14]), // OUT
-	.a0(lddatai[14]), // IN
-	.a1(gpu_din[14]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[14]),
+	.a0 /* IN */ (lddatai[14]),
+	.a1 /* IN */ (gpu_din[14]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_15
 (
-	.z(lodin[15]), // OUT
-	.a0(lddatai[15]), // IN
-	.a1(gpu_din[15]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[15]),
+	.a0 /* IN */ (lddatai[15]),
+	.a1 /* IN */ (gpu_din[15]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_16
 (
-	.z(lodin[16]), // OUT
-	.a0(lddatai[16]), // IN
-	.a1(gpu_din[16]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[16]),
+	.a0 /* IN */ (lddatai[16]),
+	.a1 /* IN */ (gpu_din[16]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_17
 (
-	.z(lodin[17]), // OUT
-	.a0(lddatai[17]), // IN
-	.a1(gpu_din[17]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[17]),
+	.a0 /* IN */ (lddatai[17]),
+	.a1 /* IN */ (gpu_din[17]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_18
 (
-	.z(lodin[18]), // OUT
-	.a0(lddatai[18]), // IN
-	.a1(gpu_din[18]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[18]),
+	.a0 /* IN */ (lddatai[18]),
+	.a1 /* IN */ (gpu_din[18]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_19
 (
-	.z(lodin[19]), // OUT
-	.a0(lddatai[19]), // IN
-	.a1(gpu_din[19]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[19]),
+	.a0 /* IN */ (lddatai[19]),
+	.a1 /* IN */ (gpu_din[19]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_20
 (
-	.z(lodin[20]), // OUT
-	.a0(lddatai[20]), // IN
-	.a1(gpu_din[20]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[20]),
+	.a0 /* IN */ (lddatai[20]),
+	.a1 /* IN */ (gpu_din[20]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_21
 (
-	.z(lodin[21]), // OUT
-	.a0(lddatai[21]), // IN
-	.a1(gpu_din[21]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[21]),
+	.a0 /* IN */ (lddatai[21]),
+	.a1 /* IN */ (gpu_din[21]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_22
 (
-	.z(lodin[22]), // OUT
-	.a0(lddatai[22]), // IN
-	.a1(gpu_din[22]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[22]),
+	.a0 /* IN */ (lddatai[22]),
+	.a1 /* IN */ (gpu_din[22]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_23
 (
-	.z(lodin[23]), // OUT
-	.a0(lddatai[23]), // IN
-	.a1(gpu_din[23]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[23]),
+	.a0 /* IN */ (lddatai[23]),
+	.a1 /* IN */ (gpu_din[23]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_24
 (
-	.z(lodin[24]), // OUT
-	.a0(lddatai[24]), // IN
-	.a1(gpu_din[24]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[24]),
+	.a0 /* IN */ (lddatai[24]),
+	.a1 /* IN */ (gpu_din[24]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_25
 (
-	.z(lodin[25]), // OUT
-	.a0(lddatai[25]), // IN
-	.a1(gpu_din[25]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[25]),
+	.a0 /* IN */ (lddatai[25]),
+	.a1 /* IN */ (gpu_din[25]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_26
 (
-	.z(lodin[26]), // OUT
-	.a0(lddatai[26]), // IN
-	.a1(gpu_din[26]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[26]),
+	.a0 /* IN */ (lddatai[26]),
+	.a1 /* IN */ (gpu_din[26]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_27
 (
-	.z(lodin[27]), // OUT
-	.a0(lddatai[27]), // IN
-	.a1(gpu_din[27]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[27]),
+	.a0 /* IN */ (lddatai[27]),
+	.a1 /* IN */ (gpu_din[27]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_28
 (
-	.z(lodin[28]), // OUT
-	.a0(lddatai[28]), // IN
-	.a1(gpu_din[28]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[28]),
+	.a0 /* IN */ (lddatai[28]),
+	.a1 /* IN */ (gpu_din[28]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_29
 (
-	.z(lodin[29]), // OUT
-	.a0(lddatai[29]), // IN
-	.a1(gpu_din[29]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[29]),
+	.a0 /* IN */ (lddatai[29]),
+	.a1 /* IN */ (gpu_din[29]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_30
 (
-	.z(lodin[30]), // OUT
-	.a0(lddatai[30]), // IN
-	.a1(gpu_din[30]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[30]),
+	.a0 /* IN */ (lddatai[30]),
+	.a1 /* IN */ (gpu_din[30]),
+	.s /* IN */ (lodwr)
 );
 mx2 lodin_inst_31
 (
-	.z(lodin[31]), // OUT
-	.a0(lddatai[31]), // IN
-	.a1(gpu_din[31]), // IN
-	.s(lodwr)  // IN
+	.z /* OUT */ (lodin[31]),
+	.a0 /* IN */ (lddatai[31]),
+	.a1 /* IN */ (gpu_din[31]),
+	.s /* IN */ (lodwr)
 );
 
 // GATEWAY.NET (242) - loaddata : ldp1q
 ldp1q loaddata_inst_0
 (
-	.q(load_data_b0_obuf), // OUT
-	.d(lodin[0]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b0_obuf),
+	.d /* IN */ (lodin[0]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_1
 (
-	.q(load_data_b1_obuf), // OUT
-	.d(lodin[1]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b1_obuf),
+	.d /* IN */ (lodin[1]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_2
 (
-	.q(load_data_b2_obuf), // OUT
-	.d(lodin[2]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b2_obuf),
+	.d /* IN */ (lodin[2]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_3
 (
-	.q(load_data_b3_obuf), // OUT
-	.d(lodin[3]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b3_obuf),
+	.d /* IN */ (lodin[3]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_4
 (
-	.q(load_data_b4_obuf), // OUT
-	.d(lodin[4]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b4_obuf),
+	.d /* IN */ (lodin[4]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_5
 (
-	.q(load_data_b5_obuf), // OUT
-	.d(lodin[5]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b5_obuf),
+	.d /* IN */ (lodin[5]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_6
 (
-	.q(load_data_b6_obuf), // OUT
-	.d(lodin[6]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b6_obuf),
+	.d /* IN */ (lodin[6]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_7
 (
-	.q(load_data_b7_obuf), // OUT
-	.d(lodin[7]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b7_obuf),
+	.d /* IN */ (lodin[7]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_8
 (
-	.q(load_data_b8_obuf), // OUT
-	.d(lodin[8]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b8_obuf),
+	.d /* IN */ (lodin[8]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_9
 (
-	.q(load_data_b9_obuf), // OUT
-	.d(lodin[9]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b9_obuf),
+	.d /* IN */ (lodin[9]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_10
 (
-	.q(load_data_b10_obuf), // OUT
-	.d(lodin[10]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b10_obuf),
+	.d /* IN */ (lodin[10]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_11
 (
-	.q(load_data_b11_obuf), // OUT
-	.d(lodin[11]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b11_obuf),
+	.d /* IN */ (lodin[11]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_12
 (
-	.q(load_data_b12_obuf), // OUT
-	.d(lodin[12]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b12_obuf),
+	.d /* IN */ (lodin[12]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_13
 (
-	.q(load_data_b13_obuf), // OUT
-	.d(lodin[13]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b13_obuf),
+	.d /* IN */ (lodin[13]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_14
 (
-	.q(load_data_b14_obuf), // OUT
-	.d(lodin[14]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b14_obuf),
+	.d /* IN */ (lodin[14]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_15
 (
-	.q(load_data_b15_obuf), // OUT
-	.d(lodin[15]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b15_obuf),
+	.d /* IN */ (lodin[15]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_16
 (
-	.q(load_data_b16_obuf), // OUT
-	.d(lodin[16]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b16_obuf),
+	.d /* IN */ (lodin[16]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_17
 (
-	.q(load_data_b17_obuf), // OUT
-	.d(lodin[17]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b17_obuf),
+	.d /* IN */ (lodin[17]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_18
 (
-	.q(load_data_b18_obuf), // OUT
-	.d(lodin[18]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b18_obuf),
+	.d /* IN */ (lodin[18]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_19
 (
-	.q(load_data_b19_obuf), // OUT
-	.d(lodin[19]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b19_obuf),
+	.d /* IN */ (lodin[19]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_20
 (
-	.q(load_data_b20_obuf), // OUT
-	.d(lodin[20]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b20_obuf),
+	.d /* IN */ (lodin[20]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_21
 (
-	.q(load_data_b21_obuf), // OUT
-	.d(lodin[21]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b21_obuf),
+	.d /* IN */ (lodin[21]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_22
 (
-	.q(load_data_b22_obuf), // OUT
-	.d(lodin[22]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b22_obuf),
+	.d /* IN */ (lodin[22]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_23
 (
-	.q(load_data_b23_obuf), // OUT
-	.d(lodin[23]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b23_obuf),
+	.d /* IN */ (lodin[23]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_24
 (
-	.q(load_data_b24_obuf), // OUT
-	.d(lodin[24]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b24_obuf),
+	.d /* IN */ (lodin[24]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_25
 (
-	.q(load_data_b25_obuf), // OUT
-	.d(lodin[25]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b25_obuf),
+	.d /* IN */ (lodin[25]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_26
 (
-	.q(load_data_b26_obuf), // OUT
-	.d(lodin[26]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b26_obuf),
+	.d /* IN */ (lodin[26]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_27
 (
-	.q(load_data_b27_obuf), // OUT
-	.d(lodin[27]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b27_obuf),
+	.d /* IN */ (lodin[27]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_28
 (
-	.q(load_data_b28_obuf), // OUT
-	.d(lodin[28]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b28_obuf),
+	.d /* IN */ (lodin[28]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_29
 (
-	.q(load_data_b29_obuf), // OUT
-	.d(lodin[29]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b29_obuf),
+	.d /* IN */ (lodin[29]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_30
 (
-	.q(load_data_b30_obuf), // OUT
-	.d(lodin[30]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b30_obuf),
+	.d /* IN */ (lodin[30]),
+	.g /* IN */ (lodstrb)
 );
 ldp1q loaddata_inst_31
 (
-	.q(load_data_b31_obuf), // OUT
-	.d(lodin[31]), // IN
-	.g(lodstrb)  // IN
+	.q /* OUT */ (load_data_b31_obuf),
+	.d /* IN */ (lodin[31]),
+	.g /* IN */ (lodstrb)
 );
 
 // GATEWAY.NET (246) - ddatldb : nivu
@@ -1966,552 +2370,584 @@ assign hidwrb = hidwr;
 // GATEWAY.NET (248) - hidin : mx4
 mx4 hidin_inst_0
 (
-	.z(hidin[0]), // OUT
-	.a0(hirdata[0]), // IN
-	.a1(gpu_din[0]), // IN
-	.a2(hidatai[0]), // IN
-	.a3(hidatai[0]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[0]),
+	.a0 /* IN */ (hirdata[0]),
+	.a1 /* IN */ (gpu_din[0]),
+	.a2 /* IN */ (hidatai[0]),
+	.a3 /* IN */ (hidatai[0]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_1
 (
-	.z(hidin[1]), // OUT
-	.a0(hirdata[1]), // IN
-	.a1(gpu_din[1]), // IN
-	.a2(hidatai[1]), // IN
-	.a3(hidatai[1]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[1]),
+	.a0 /* IN */ (hirdata[1]),
+	.a1 /* IN */ (gpu_din[1]),
+	.a2 /* IN */ (hidatai[1]),
+	.a3 /* IN */ (hidatai[1]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_2
 (
-	.z(hidin[2]), // OUT
-	.a0(hirdata[2]), // IN
-	.a1(gpu_din[2]), // IN
-	.a2(hidatai[2]), // IN
-	.a3(hidatai[2]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[2]),
+	.a0 /* IN */ (hirdata[2]),
+	.a1 /* IN */ (gpu_din[2]),
+	.a2 /* IN */ (hidatai[2]),
+	.a3 /* IN */ (hidatai[2]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_3
 (
-	.z(hidin[3]), // OUT
-	.a0(hirdata[3]), // IN
-	.a1(gpu_din[3]), // IN
-	.a2(hidatai[3]), // IN
-	.a3(hidatai[3]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[3]),
+	.a0 /* IN */ (hirdata[3]),
+	.a1 /* IN */ (gpu_din[3]),
+	.a2 /* IN */ (hidatai[3]),
+	.a3 /* IN */ (hidatai[3]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_4
 (
-	.z(hidin[4]), // OUT
-	.a0(hirdata[4]), // IN
-	.a1(gpu_din[4]), // IN
-	.a2(hidatai[4]), // IN
-	.a3(hidatai[4]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[4]),
+	.a0 /* IN */ (hirdata[4]),
+	.a1 /* IN */ (gpu_din[4]),
+	.a2 /* IN */ (hidatai[4]),
+	.a3 /* IN */ (hidatai[4]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_5
 (
-	.z(hidin[5]), // OUT
-	.a0(hirdata[5]), // IN
-	.a1(gpu_din[5]), // IN
-	.a2(hidatai[5]), // IN
-	.a3(hidatai[5]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[5]),
+	.a0 /* IN */ (hirdata[5]),
+	.a1 /* IN */ (gpu_din[5]),
+	.a2 /* IN */ (hidatai[5]),
+	.a3 /* IN */ (hidatai[5]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_6
 (
-	.z(hidin[6]), // OUT
-	.a0(hirdata[6]), // IN
-	.a1(gpu_din[6]), // IN
-	.a2(hidatai[6]), // IN
-	.a3(hidatai[6]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[6]),
+	.a0 /* IN */ (hirdata[6]),
+	.a1 /* IN */ (gpu_din[6]),
+	.a2 /* IN */ (hidatai[6]),
+	.a3 /* IN */ (hidatai[6]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_7
 (
-	.z(hidin[7]), // OUT
-	.a0(hirdata[7]), // IN
-	.a1(gpu_din[7]), // IN
-	.a2(hidatai[7]), // IN
-	.a3(hidatai[7]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[7]),
+	.a0 /* IN */ (hirdata[7]),
+	.a1 /* IN */ (gpu_din[7]),
+	.a2 /* IN */ (hidatai[7]),
+	.a3 /* IN */ (hidatai[7]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_8
 (
-	.z(hidin[8]), // OUT
-	.a0(hirdata[8]), // IN
-	.a1(gpu_din[8]), // IN
-	.a2(hidatai[8]), // IN
-	.a3(hidatai[8]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[8]),
+	.a0 /* IN */ (hirdata[8]),
+	.a1 /* IN */ (gpu_din[8]),
+	.a2 /* IN */ (hidatai[8]),
+	.a3 /* IN */ (hidatai[8]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_9
 (
-	.z(hidin[9]), // OUT
-	.a0(hirdata[9]), // IN
-	.a1(gpu_din[9]), // IN
-	.a2(hidatai[9]), // IN
-	.a3(hidatai[9]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[9]),
+	.a0 /* IN */ (hirdata[9]),
+	.a1 /* IN */ (gpu_din[9]),
+	.a2 /* IN */ (hidatai[9]),
+	.a3 /* IN */ (hidatai[9]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_10
 (
-	.z(hidin[10]), // OUT
-	.a0(hirdata[10]), // IN
-	.a1(gpu_din[10]), // IN
-	.a2(hidatai[10]), // IN
-	.a3(hidatai[10]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[10]),
+	.a0 /* IN */ (hirdata[10]),
+	.a1 /* IN */ (gpu_din[10]),
+	.a2 /* IN */ (hidatai[10]),
+	.a3 /* IN */ (hidatai[10]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_11
 (
-	.z(hidin[11]), // OUT
-	.a0(hirdata[11]), // IN
-	.a1(gpu_din[11]), // IN
-	.a2(hidatai[11]), // IN
-	.a3(hidatai[11]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[11]),
+	.a0 /* IN */ (hirdata[11]),
+	.a1 /* IN */ (gpu_din[11]),
+	.a2 /* IN */ (hidatai[11]),
+	.a3 /* IN */ (hidatai[11]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_12
 (
-	.z(hidin[12]), // OUT
-	.a0(hirdata[12]), // IN
-	.a1(gpu_din[12]), // IN
-	.a2(hidatai[12]), // IN
-	.a3(hidatai[12]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[12]),
+	.a0 /* IN */ (hirdata[12]),
+	.a1 /* IN */ (gpu_din[12]),
+	.a2 /* IN */ (hidatai[12]),
+	.a3 /* IN */ (hidatai[12]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_13
 (
-	.z(hidin[13]), // OUT
-	.a0(hirdata[13]), // IN
-	.a1(gpu_din[13]), // IN
-	.a2(hidatai[13]), // IN
-	.a3(hidatai[13]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[13]),
+	.a0 /* IN */ (hirdata[13]),
+	.a1 /* IN */ (gpu_din[13]),
+	.a2 /* IN */ (hidatai[13]),
+	.a3 /* IN */ (hidatai[13]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_14
 (
-	.z(hidin[14]), // OUT
-	.a0(hirdata[14]), // IN
-	.a1(gpu_din[14]), // IN
-	.a2(hidatai[14]), // IN
-	.a3(hidatai[14]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[14]),
+	.a0 /* IN */ (hirdata[14]),
+	.a1 /* IN */ (gpu_din[14]),
+	.a2 /* IN */ (hidatai[14]),
+	.a3 /* IN */ (hidatai[14]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_15
 (
-	.z(hidin[15]), // OUT
-	.a0(hirdata[15]), // IN
-	.a1(gpu_din[15]), // IN
-	.a2(hidatai[15]), // IN
-	.a3(hidatai[15]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[15]),
+	.a0 /* IN */ (hirdata[15]),
+	.a1 /* IN */ (gpu_din[15]),
+	.a2 /* IN */ (hidatai[15]),
+	.a3 /* IN */ (hidatai[15]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_16
 (
-	.z(hidin[16]), // OUT
-	.a0(hirdata[16]), // IN
-	.a1(gpu_din[16]), // IN
-	.a2(hidatai[16]), // IN
-	.a3(hidatai[16]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[16]),
+	.a0 /* IN */ (hirdata[16]),
+	.a1 /* IN */ (gpu_din[16]),
+	.a2 /* IN */ (hidatai[16]),
+	.a3 /* IN */ (hidatai[16]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_17
 (
-	.z(hidin[17]), // OUT
-	.a0(hirdata[17]), // IN
-	.a1(gpu_din[17]), // IN
-	.a2(hidatai[17]), // IN
-	.a3(hidatai[17]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[17]),
+	.a0 /* IN */ (hirdata[17]),
+	.a1 /* IN */ (gpu_din[17]),
+	.a2 /* IN */ (hidatai[17]),
+	.a3 /* IN */ (hidatai[17]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_18
 (
-	.z(hidin[18]), // OUT
-	.a0(hirdata[18]), // IN
-	.a1(gpu_din[18]), // IN
-	.a2(hidatai[18]), // IN
-	.a3(hidatai[18]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[18]),
+	.a0 /* IN */ (hirdata[18]),
+	.a1 /* IN */ (gpu_din[18]),
+	.a2 /* IN */ (hidatai[18]),
+	.a3 /* IN */ (hidatai[18]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_19
 (
-	.z(hidin[19]), // OUT
-	.a0(hirdata[19]), // IN
-	.a1(gpu_din[19]), // IN
-	.a2(hidatai[19]), // IN
-	.a3(hidatai[19]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[19]),
+	.a0 /* IN */ (hirdata[19]),
+	.a1 /* IN */ (gpu_din[19]),
+	.a2 /* IN */ (hidatai[19]),
+	.a3 /* IN */ (hidatai[19]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_20
 (
-	.z(hidin[20]), // OUT
-	.a0(hirdata[20]), // IN
-	.a1(gpu_din[20]), // IN
-	.a2(hidatai[20]), // IN
-	.a3(hidatai[20]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[20]),
+	.a0 /* IN */ (hirdata[20]),
+	.a1 /* IN */ (gpu_din[20]),
+	.a2 /* IN */ (hidatai[20]),
+	.a3 /* IN */ (hidatai[20]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_21
 (
-	.z(hidin[21]), // OUT
-	.a0(hirdata[21]), // IN
-	.a1(gpu_din[21]), // IN
-	.a2(hidatai[21]), // IN
-	.a3(hidatai[21]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[21]),
+	.a0 /* IN */ (hirdata[21]),
+	.a1 /* IN */ (gpu_din[21]),
+	.a2 /* IN */ (hidatai[21]),
+	.a3 /* IN */ (hidatai[21]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_22
 (
-	.z(hidin[22]), // OUT
-	.a0(hirdata[22]), // IN
-	.a1(gpu_din[22]), // IN
-	.a2(hidatai[22]), // IN
-	.a3(hidatai[22]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[22]),
+	.a0 /* IN */ (hirdata[22]),
+	.a1 /* IN */ (gpu_din[22]),
+	.a2 /* IN */ (hidatai[22]),
+	.a3 /* IN */ (hidatai[22]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_23
 (
-	.z(hidin[23]), // OUT
-	.a0(hirdata[23]), // IN
-	.a1(gpu_din[23]), // IN
-	.a2(hidatai[23]), // IN
-	.a3(hidatai[23]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[23]),
+	.a0 /* IN */ (hirdata[23]),
+	.a1 /* IN */ (gpu_din[23]),
+	.a2 /* IN */ (hidatai[23]),
+	.a3 /* IN */ (hidatai[23]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_24
 (
-	.z(hidin[24]), // OUT
-	.a0(hirdata[24]), // IN
-	.a1(gpu_din[24]), // IN
-	.a2(hidatai[24]), // IN
-	.a3(hidatai[24]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[24]),
+	.a0 /* IN */ (hirdata[24]),
+	.a1 /* IN */ (gpu_din[24]),
+	.a2 /* IN */ (hidatai[24]),
+	.a3 /* IN */ (hidatai[24]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_25
 (
-	.z(hidin[25]), // OUT
-	.a0(hirdata[25]), // IN
-	.a1(gpu_din[25]), // IN
-	.a2(hidatai[25]), // IN
-	.a3(hidatai[25]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[25]),
+	.a0 /* IN */ (hirdata[25]),
+	.a1 /* IN */ (gpu_din[25]),
+	.a2 /* IN */ (hidatai[25]),
+	.a3 /* IN */ (hidatai[25]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_26
 (
-	.z(hidin[26]), // OUT
-	.a0(hirdata[26]), // IN
-	.a1(gpu_din[26]), // IN
-	.a2(hidatai[26]), // IN
-	.a3(hidatai[26]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[26]),
+	.a0 /* IN */ (hirdata[26]),
+	.a1 /* IN */ (gpu_din[26]),
+	.a2 /* IN */ (hidatai[26]),
+	.a3 /* IN */ (hidatai[26]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_27
 (
-	.z(hidin[27]), // OUT
-	.a0(hirdata[27]), // IN
-	.a1(gpu_din[27]), // IN
-	.a2(hidatai[27]), // IN
-	.a3(hidatai[27]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[27]),
+	.a0 /* IN */ (hirdata[27]),
+	.a1 /* IN */ (gpu_din[27]),
+	.a2 /* IN */ (hidatai[27]),
+	.a3 /* IN */ (hidatai[27]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_28
 (
-	.z(hidin[28]), // OUT
-	.a0(hirdata[28]), // IN
-	.a1(gpu_din[28]), // IN
-	.a2(hidatai[28]), // IN
-	.a3(hidatai[28]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[28]),
+	.a0 /* IN */ (hirdata[28]),
+	.a1 /* IN */ (gpu_din[28]),
+	.a2 /* IN */ (hidatai[28]),
+	.a3 /* IN */ (hidatai[28]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_29
 (
-	.z(hidin[29]), // OUT
-	.a0(hirdata[29]), // IN
-	.a1(gpu_din[29]), // IN
-	.a2(hidatai[29]), // IN
-	.a3(hidatai[29]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[29]),
+	.a0 /* IN */ (hirdata[29]),
+	.a1 /* IN */ (gpu_din[29]),
+	.a2 /* IN */ (hidatai[29]),
+	.a3 /* IN */ (hidatai[29]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_30
 (
-	.z(hidin[30]), // OUT
-	.a0(hirdata[30]), // IN
-	.a1(gpu_din[30]), // IN
-	.a2(hidatai[30]), // IN
-	.a3(hidatai[30]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[30]),
+	.a0 /* IN */ (hirdata[30]),
+	.a1 /* IN */ (gpu_din[30]),
+	.a2 /* IN */ (hidatai[30]),
+	.a3 /* IN */ (hidatai[30]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 mx4 hidin_inst_31
 (
-	.z(hidin[31]), // OUT
-	.a0(hirdata[31]), // IN
-	.a1(gpu_din[31]), // IN
-	.a2(hidatai[31]), // IN
-	.a3(hidatai[31]), // IN
-	.s0(hidwrb), // IN
-	.s1(ddatldb)  // IN
+	.z /* OUT */ (hidin[31]),
+	.a0 /* IN */ (hirdata[31]),
+	.a1 /* IN */ (gpu_din[31]),
+	.a2 /* IN */ (hidatai[31]),
+	.a3 /* IN */ (hidatai[31]),
+	.s0 /* IN */ (hidwrb),
+	.s1 /* IN */ (ddatldb)
 );
 
 // GATEWAY.NET (250) - hirdata : fd1q
 fd1q hirdata_inst_0
 (
-	.q(hirdata[0]), // OUT
-	.d(hidin[0]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[0]),
+	.d /* IN */ (hidin[0]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_1
 (
-	.q(hirdata[1]), // OUT
-	.d(hidin[1]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[1]),
+	.d /* IN */ (hidin[1]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_2
 (
-	.q(hirdata[2]), // OUT
-	.d(hidin[2]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[2]),
+	.d /* IN */ (hidin[2]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_3
 (
-	.q(hirdata[3]), // OUT
-	.d(hidin[3]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[3]),
+	.d /* IN */ (hidin[3]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_4
 (
-	.q(hirdata[4]), // OUT
-	.d(hidin[4]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[4]),
+	.d /* IN */ (hidin[4]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_5
 (
-	.q(hirdata[5]), // OUT
-	.d(hidin[5]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[5]),
+	.d /* IN */ (hidin[5]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_6
 (
-	.q(hirdata[6]), // OUT
-	.d(hidin[6]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[6]),
+	.d /* IN */ (hidin[6]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_7
 (
-	.q(hirdata[7]), // OUT
-	.d(hidin[7]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[7]),
+	.d /* IN */ (hidin[7]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_8
 (
-	.q(hirdata[8]), // OUT
-	.d(hidin[8]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[8]),
+	.d /* IN */ (hidin[8]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_9
 (
-	.q(hirdata[9]), // OUT
-	.d(hidin[9]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[9]),
+	.d /* IN */ (hidin[9]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_10
 (
-	.q(hirdata[10]), // OUT
-	.d(hidin[10]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[10]),
+	.d /* IN */ (hidin[10]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_11
 (
-	.q(hirdata[11]), // OUT
-	.d(hidin[11]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[11]),
+	.d /* IN */ (hidin[11]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_12
 (
-	.q(hirdata[12]), // OUT
-	.d(hidin[12]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[12]),
+	.d /* IN */ (hidin[12]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_13
 (
-	.q(hirdata[13]), // OUT
-	.d(hidin[13]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[13]),
+	.d /* IN */ (hidin[13]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_14
 (
-	.q(hirdata[14]), // OUT
-	.d(hidin[14]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[14]),
+	.d /* IN */ (hidin[14]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_15
 (
-	.q(hirdata[15]), // OUT
-	.d(hidin[15]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[15]),
+	.d /* IN */ (hidin[15]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_16
 (
-	.q(hirdata[16]), // OUT
-	.d(hidin[16]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[16]),
+	.d /* IN */ (hidin[16]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_17
 (
-	.q(hirdata[17]), // OUT
-	.d(hidin[17]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[17]),
+	.d /* IN */ (hidin[17]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_18
 (
-	.q(hirdata[18]), // OUT
-	.d(hidin[18]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[18]),
+	.d /* IN */ (hidin[18]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_19
 (
-	.q(hirdata[19]), // OUT
-	.d(hidin[19]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[19]),
+	.d /* IN */ (hidin[19]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_20
 (
-	.q(hirdata[20]), // OUT
-	.d(hidin[20]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[20]),
+	.d /* IN */ (hidin[20]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_21
 (
-	.q(hirdata[21]), // OUT
-	.d(hidin[21]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[21]),
+	.d /* IN */ (hidin[21]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_22
 (
-	.q(hirdata[22]), // OUT
-	.d(hidin[22]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[22]),
+	.d /* IN */ (hidin[22]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_23
 (
-	.q(hirdata[23]), // OUT
-	.d(hidin[23]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[23]),
+	.d /* IN */ (hidin[23]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_24
 (
-	.q(hirdata[24]), // OUT
-	.d(hidin[24]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[24]),
+	.d /* IN */ (hidin[24]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_25
 (
-	.q(hirdata[25]), // OUT
-	.d(hidin[25]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[25]),
+	.d /* IN */ (hidin[25]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_26
 (
-	.q(hirdata[26]), // OUT
-	.d(hidin[26]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[26]),
+	.d /* IN */ (hidin[26]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_27
 (
-	.q(hirdata[27]), // OUT
-	.d(hidin[27]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[27]),
+	.d /* IN */ (hidin[27]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_28
 (
-	.q(hirdata[28]), // OUT
-	.d(hidin[28]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[28]),
+	.d /* IN */ (hidin[28]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_29
 (
-	.q(hirdata[29]), // OUT
-	.d(hidin[29]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[29]),
+	.d /* IN */ (hidin[29]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_30
 (
-	.q(hirdata[30]), // OUT
-	.d(hidin[30]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[30]),
+	.d /* IN */ (hidin[30]),
+	.cp /* IN */ (clk_0)
 );
 fd1q hirdata_inst_31
 (
-	.q(hirdata[31]), // OUT
-	.d(hidin[31]), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (hirdata[31]),
+	.d /* IN */ (hidin[31]),
+	.cp /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (251) - hidrd : ts
-assign gpu_data[0] = (hidrd) ? hirdata[0] : 1'bz;
-assign gpu_data[1] = (hidrd) ? hirdata[1] : 1'bz;
-assign gpu_data[2] = (hidrd) ? hirdata[2] : 1'bz;
-assign gpu_data[3] = (hidrd) ? hirdata[3] : 1'bz;
-assign gpu_data[4] = (hidrd) ? hirdata[4] : 1'bz;
-assign gpu_data[5] = (hidrd) ? hirdata[5] : 1'bz;
-assign gpu_data[6] = (hidrd) ? hirdata[6] : 1'bz;
-assign gpu_data[7] = (hidrd) ? hirdata[7] : 1'bz;
-assign gpu_data[8] = (hidrd) ? hirdata[8] : 1'bz;
-assign gpu_data[9] = (hidrd) ? hirdata[9] : 1'bz;
-assign gpu_data[10] = (hidrd) ? hirdata[10] : 1'bz;
-assign gpu_data[11] = (hidrd) ? hirdata[11] : 1'bz;
-assign gpu_data[12] = (hidrd) ? hirdata[12] : 1'bz;
-assign gpu_data[13] = (hidrd) ? hirdata[13] : 1'bz;
-assign gpu_data[14] = (hidrd) ? hirdata[14] : 1'bz;
-assign gpu_data[15] = (hidrd) ? hirdata[15] : 1'bz;
-assign gpu_data[16] = (hidrd) ? hirdata[16] : 1'bz;
-assign gpu_data[17] = (hidrd) ? hirdata[17] : 1'bz;
-assign gpu_data[18] = (hidrd) ? hirdata[18] : 1'bz;
-assign gpu_data[19] = (hidrd) ? hirdata[19] : 1'bz;
-assign gpu_data[20] = (hidrd) ? hirdata[20] : 1'bz;
-assign gpu_data[21] = (hidrd) ? hirdata[21] : 1'bz;
-assign gpu_data[22] = (hidrd) ? hirdata[22] : 1'bz;
-assign gpu_data[23] = (hidrd) ? hirdata[23] : 1'bz;
-assign gpu_data[24] = (hidrd) ? hirdata[24] : 1'bz;
-assign gpu_data[25] = (hidrd) ? hirdata[25] : 1'bz;
-assign gpu_data[26] = (hidrd) ? hirdata[26] : 1'bz;
-assign gpu_data[27] = (hidrd) ? hirdata[27] : 1'bz;
-assign gpu_data[28] = (hidrd) ? hirdata[28] : 1'bz;
-assign gpu_data[29] = (hidrd) ? hirdata[29] : 1'bz;
-assign gpu_data[30] = (hidrd) ? hirdata[30] : 1'bz;
-assign gpu_data[31] = (hidrd) ? hirdata[31] : 1'bz;
+assign ts_pe_5_a1_out = hirdata[0];
+assign ts_pe_5_a1_oe = hidrd;
+assign ts_pe_6_a1_out = hirdata[1];
+assign ts_pe_6_a1_oe = hidrd;
+assign ts_pe_7_a1_out = hirdata[2];
+assign ts_pe_7_a1_oe = hidrd;
+assign ts_pe_8_a1_out = hirdata[3];
+assign ts_pe_8_a1_oe = hidrd;
+assign ts_pe_9_a1_out = hirdata[4];
+assign ts_pe_9_a1_oe = hidrd;
+assign ts_pe_10_a1_out = hirdata[5];
+assign ts_pe_10_a1_oe = hidrd;
+assign ts_pe_11_a1_out = hirdata[6];
+assign ts_pe_11_a1_oe = hidrd;
+assign ts_pe_12_a1_out = hirdata[7];
+assign ts_pe_12_a1_oe = hidrd;
+assign ts_pe_13_a1_out = hirdata[8];
+assign ts_pe_13_a1_oe = hidrd;
+assign ts_pe_14_a1_out = hirdata[9];
+assign ts_pe_14_a1_oe = hidrd;
+assign ts_pe_15_a1_out = hirdata[10];
+assign ts_pe_15_a1_oe = hidrd;
+assign ts_pe_16_a1_out = hirdata[11];
+assign ts_pe_16_a1_oe = hidrd;
+assign ts_pe_17_a1_out = hirdata[12];
+assign ts_pe_17_a1_oe = hidrd;
+assign ts_pe_18_a1_out = hirdata[13];
+assign ts_pe_18_a1_oe = hidrd;
+assign ts_pe_19_a1_out = hirdata[14];
+assign ts_pe_19_a1_oe = hidrd;
+assign ts_pe_20_a1_out = hirdata[15];
+assign ts_pe_20_a1_oe = hidrd;
+assign ts_pe_21_a1_out = hirdata[16];
+assign ts_pe_21_a1_oe = hidrd;
+assign ts_pe_22_a1_out = hirdata[17];
+assign ts_pe_22_a1_oe = hidrd;
+assign ts_pe_23_a1_out = hirdata[18];
+assign ts_pe_23_a1_oe = hidrd;
+assign ts_pe_24_a1_out = hirdata[19];
+assign ts_pe_24_a1_oe = hidrd;
+assign ts_pe_25_a1_out = hirdata[20];
+assign ts_pe_25_a1_oe = hidrd;
+assign ts_pe_26_a1_out = hirdata[21];
+assign ts_pe_26_a1_oe = hidrd;
+assign ts_pe_27_a1_out = hirdata[22];
+assign ts_pe_27_a1_oe = hidrd;
+assign ts_pe_28_a1_out = hirdata[23];
+assign ts_pe_28_a1_oe = hidrd;
+assign ts_pe_29_a1_out = hirdata[24];
+assign ts_pe_29_a1_oe = hidrd;
+assign ts_pe_30_a1_out = hirdata[25];
+assign ts_pe_30_a1_oe = hidrd;
+assign ts_pe_31_a1_out = hirdata[26];
+assign ts_pe_31_a1_oe = hidrd;
+assign ts_pe_32_a1_out = hirdata[27];
+assign ts_pe_32_a1_oe = hidrd;
+assign ts_pe_33_a1_out = hirdata[28];
+assign ts_pe_33_a1_oe = hidrd;
+assign ts_pe_34_a1_out = hirdata[29];
+assign ts_pe_34_a1_oe = hidrd;
+assign ts_pe_35_a1_out = hirdata[30];
+assign ts_pe_35_a1_oe = hidrd;
+assign ts_pe_36_a1_out = hirdata[31];
+assign ts_pe_36_a1_oe = hidrd;
 
 // GATEWAY.NET (256) - wdlat : an3
 assign wdlat = active & reada_n & gpu_ack;
@@ -2519,9 +2955,9 @@ assign wdlat = active & reada_n & gpu_ack;
 // GATEWAY.NET (257) - wden : fd1q
 fd1q wden_inst
 (
-	.q(wden), // OUT
-	.d(wdlat), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (wden),
+	.d /* IN */ (wdlat),
+	.cp /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (258) - wdenb[0-1] : nivu
@@ -2529,72 +2965,136 @@ assign wdenb_0 = wden;
 assign wdenb_1 = wden;
 
 // GATEWAY.NET (259) - wddrv[0-31] : ts
-assign wdata_0 = (wdenb_0) ? load_data_b0_obuf : 1'bz;
-assign wdata_1 = (wdenb_0) ? load_data_b1_obuf : 1'bz;
-assign wdata_2 = (wdenb_0) ? load_data_b2_obuf : 1'bz;
-assign wdata_3 = (wdenb_0) ? load_data_b3_obuf : 1'bz;
-assign wdata_4 = (wdenb_0) ? load_data_b4_obuf : 1'bz;
-assign wdata_5 = (wdenb_0) ? load_data_b5_obuf : 1'bz;
-assign wdata_6 = (wdenb_0) ? load_data_b6_obuf : 1'bz;
-assign wdata_7 = (wdenb_0) ? load_data_b7_obuf : 1'bz;
-assign wdata_8 = (wdenb_0) ? load_data_b8_obuf : 1'bz;
-assign wdata_9 = (wdenb_0) ? load_data_b9_obuf : 1'bz;
-assign wdata_10 = (wdenb_0) ? load_data_b10_obuf : 1'bz;
-assign wdata_11 = (wdenb_0) ? load_data_b11_obuf : 1'bz;
-assign wdata_12 = (wdenb_0) ? load_data_b12_obuf : 1'bz;
-assign wdata_13 = (wdenb_0) ? load_data_b13_obuf : 1'bz;
-assign wdata_14 = (wdenb_0) ? load_data_b14_obuf : 1'bz;
-assign wdata_15 = (wdenb_0) ? load_data_b15_obuf : 1'bz;
-assign wdata_16 = (wdenb_0) ? load_data_b16_obuf : 1'bz;
-assign wdata_17 = (wdenb_0) ? load_data_b17_obuf : 1'bz;
-assign wdata_18 = (wdenb_0) ? load_data_b18_obuf : 1'bz;
-assign wdata_19 = (wdenb_0) ? load_data_b19_obuf : 1'bz;
-assign wdata_20 = (wdenb_0) ? load_data_b20_obuf : 1'bz;
-assign wdata_21 = (wdenb_0) ? load_data_b21_obuf : 1'bz;
-assign wdata_22 = (wdenb_0) ? load_data_b22_obuf : 1'bz;
-assign wdata_23 = (wdenb_0) ? load_data_b23_obuf : 1'bz;
-assign wdata_24 = (wdenb_0) ? load_data_b24_obuf : 1'bz;
-assign wdata_25 = (wdenb_0) ? load_data_b25_obuf : 1'bz;
-assign wdata_26 = (wdenb_0) ? load_data_b26_obuf : 1'bz;
-assign wdata_27 = (wdenb_0) ? load_data_b27_obuf : 1'bz;
-assign wdata_28 = (wdenb_0) ? load_data_b28_obuf : 1'bz;
-assign wdata_29 = (wdenb_0) ? load_data_b29_obuf : 1'bz;
-assign wdata_30 = (wdenb_0) ? load_data_b30_obuf : 1'bz;
-assign wdata_31 = (wdenb_0) ? load_data_b31_obuf : 1'bz;
+assign wdata_0_out = load_data_b0_obuf;
+assign wdata_0_oe = wdenb_0;
+assign wdata_1_out = load_data_b1_obuf;
+assign wdata_1_oe = wdenb_0;
+assign wdata_2_out = load_data_b2_obuf;
+assign wdata_2_oe = wdenb_0;
+assign wdata_3_out = load_data_b3_obuf;
+assign wdata_3_oe = wdenb_0;
+assign wdata_4_out = load_data_b4_obuf;
+assign wdata_4_oe = wdenb_0;
+assign wdata_5_out = load_data_b5_obuf;
+assign wdata_5_oe = wdenb_0;
+assign wdata_6_out = load_data_b6_obuf;
+assign wdata_6_oe = wdenb_0;
+assign wdata_7_out = load_data_b7_obuf;
+assign wdata_7_oe = wdenb_0;
+assign wdata_8_out = load_data_b8_obuf;
+assign wdata_8_oe = wdenb_0;
+assign wdata_9_out = load_data_b9_obuf;
+assign wdata_9_oe = wdenb_0;
+assign wdata_10_out = load_data_b10_obuf;
+assign wdata_10_oe = wdenb_0;
+assign wdata_11_out = load_data_b11_obuf;
+assign wdata_11_oe = wdenb_0;
+assign wdata_12_out = load_data_b12_obuf;
+assign wdata_12_oe = wdenb_0;
+assign wdata_13_out = load_data_b13_obuf;
+assign wdata_13_oe = wdenb_0;
+assign wdata_14_out = load_data_b14_obuf;
+assign wdata_14_oe = wdenb_0;
+assign wdata_15_out = load_data_b15_obuf;
+assign wdata_15_oe = wdenb_0;
+assign wdata_16_out = load_data_b16_obuf;
+assign wdata_16_oe = wdenb_0;
+assign wdata_17_out = load_data_b17_obuf;
+assign wdata_17_oe = wdenb_0;
+assign wdata_18_out = load_data_b18_obuf;
+assign wdata_18_oe = wdenb_0;
+assign wdata_19_out = load_data_b19_obuf;
+assign wdata_19_oe = wdenb_0;
+assign wdata_20_out = load_data_b20_obuf;
+assign wdata_20_oe = wdenb_0;
+assign wdata_21_out = load_data_b21_obuf;
+assign wdata_21_oe = wdenb_0;
+assign wdata_22_out = load_data_b22_obuf;
+assign wdata_22_oe = wdenb_0;
+assign wdata_23_out = load_data_b23_obuf;
+assign wdata_23_oe = wdenb_0;
+assign wdata_24_out = load_data_b24_obuf;
+assign wdata_24_oe = wdenb_0;
+assign wdata_25_out = load_data_b25_obuf;
+assign wdata_25_oe = wdenb_0;
+assign wdata_26_out = load_data_b26_obuf;
+assign wdata_26_oe = wdenb_0;
+assign wdata_27_out = load_data_b27_obuf;
+assign wdata_27_oe = wdenb_0;
+assign wdata_28_out = load_data_b28_obuf;
+assign wdata_28_oe = wdenb_0;
+assign wdata_29_out = load_data_b29_obuf;
+assign wdata_29_oe = wdenb_0;
+assign wdata_30_out = load_data_b30_obuf;
+assign wdata_30_oe = wdenb_0;
+assign wdata_31_out = load_data_b31_obuf;
+assign wdata_31_oe = wdenb_0;
 
 // GATEWAY.NET (260) - wddrv[32-63] : ts
-assign wdata_32 = (wdenb_1) ? hirdata[0] : 1'bz;
-assign wdata_33 = (wdenb_1) ? hirdata[1] : 1'bz;
-assign wdata_34 = (wdenb_1) ? hirdata[2] : 1'bz;
-assign wdata_35 = (wdenb_1) ? hirdata[3] : 1'bz;
-assign wdata_36 = (wdenb_1) ? hirdata[4] : 1'bz;
-assign wdata_37 = (wdenb_1) ? hirdata[5] : 1'bz;
-assign wdata_38 = (wdenb_1) ? hirdata[6] : 1'bz;
-assign wdata_39 = (wdenb_1) ? hirdata[7] : 1'bz;
-assign wdata_40 = (wdenb_1) ? hirdata[8] : 1'bz;
-assign wdata_41 = (wdenb_1) ? hirdata[9] : 1'bz;
-assign wdata_42 = (wdenb_1) ? hirdata[10] : 1'bz;
-assign wdata_43 = (wdenb_1) ? hirdata[11] : 1'bz;
-assign wdata_44 = (wdenb_1) ? hirdata[12] : 1'bz;
-assign wdata_45 = (wdenb_1) ? hirdata[13] : 1'bz;
-assign wdata_46 = (wdenb_1) ? hirdata[14] : 1'bz;
-assign wdata_47 = (wdenb_1) ? hirdata[15] : 1'bz;
-assign wdata_48 = (wdenb_1) ? hirdata[16] : 1'bz;
-assign wdata_49 = (wdenb_1) ? hirdata[17] : 1'bz;
-assign wdata_50 = (wdenb_1) ? hirdata[18] : 1'bz;
-assign wdata_51 = (wdenb_1) ? hirdata[19] : 1'bz;
-assign wdata_52 = (wdenb_1) ? hirdata[20] : 1'bz;
-assign wdata_53 = (wdenb_1) ? hirdata[21] : 1'bz;
-assign wdata_54 = (wdenb_1) ? hirdata[22] : 1'bz;
-assign wdata_55 = (wdenb_1) ? hirdata[23] : 1'bz;
-assign wdata_56 = (wdenb_1) ? hirdata[24] : 1'bz;
-assign wdata_57 = (wdenb_1) ? hirdata[25] : 1'bz;
-assign wdata_58 = (wdenb_1) ? hirdata[26] : 1'bz;
-assign wdata_59 = (wdenb_1) ? hirdata[27] : 1'bz;
-assign wdata_60 = (wdenb_1) ? hirdata[28] : 1'bz;
-assign wdata_61 = (wdenb_1) ? hirdata[29] : 1'bz;
-assign wdata_62 = (wdenb_1) ? hirdata[30] : 1'bz;
-assign wdata_63 = (wdenb_1) ? hirdata[31] : 1'bz;
+assign wdata_32_out = hirdata[0];
+assign wdata_32_oe = wdenb_1;
+assign wdata_33_out = hirdata[1];
+assign wdata_33_oe = wdenb_1;
+assign wdata_34_out = hirdata[2];
+assign wdata_34_oe = wdenb_1;
+assign wdata_35_out = hirdata[3];
+assign wdata_35_oe = wdenb_1;
+assign wdata_36_out = hirdata[4];
+assign wdata_36_oe = wdenb_1;
+assign wdata_37_out = hirdata[5];
+assign wdata_37_oe = wdenb_1;
+assign wdata_38_out = hirdata[6];
+assign wdata_38_oe = wdenb_1;
+assign wdata_39_out = hirdata[7];
+assign wdata_39_oe = wdenb_1;
+assign wdata_40_out = hirdata[8];
+assign wdata_40_oe = wdenb_1;
+assign wdata_41_out = hirdata[9];
+assign wdata_41_oe = wdenb_1;
+assign wdata_42_out = hirdata[10];
+assign wdata_42_oe = wdenb_1;
+assign wdata_43_out = hirdata[11];
+assign wdata_43_oe = wdenb_1;
+assign wdata_44_out = hirdata[12];
+assign wdata_44_oe = wdenb_1;
+assign wdata_45_out = hirdata[13];
+assign wdata_45_oe = wdenb_1;
+assign wdata_46_out = hirdata[14];
+assign wdata_46_oe = wdenb_1;
+assign wdata_47_out = hirdata[15];
+assign wdata_47_oe = wdenb_1;
+assign wdata_48_out = hirdata[16];
+assign wdata_48_oe = wdenb_1;
+assign wdata_49_out = hirdata[17];
+assign wdata_49_oe = wdenb_1;
+assign wdata_50_out = hirdata[18];
+assign wdata_50_oe = wdenb_1;
+assign wdata_51_out = hirdata[19];
+assign wdata_51_oe = wdenb_1;
+assign wdata_52_out = hirdata[20];
+assign wdata_52_oe = wdenb_1;
+assign wdata_53_out = hirdata[21];
+assign wdata_53_oe = wdenb_1;
+assign wdata_54_out = hirdata[22];
+assign wdata_54_oe = wdenb_1;
+assign wdata_55_out = hirdata[23];
+assign wdata_55_oe = wdenb_1;
+assign wdata_56_out = hirdata[24];
+assign wdata_56_oe = wdenb_1;
+assign wdata_57_out = hirdata[25];
+assign wdata_57_oe = wdenb_1;
+assign wdata_58_out = hirdata[26];
+assign wdata_58_oe = wdenb_1;
+assign wdata_59_out = hirdata[27];
+assign wdata_59_oe = wdenb_1;
+assign wdata_60_out = hirdata[28];
+assign wdata_60_oe = wdenb_1;
+assign wdata_61_out = hirdata[29];
+assign wdata_61_oe = wdenb_1;
+assign wdata_62_out = hirdata[30];
+assign wdata_62_oe = wdenb_1;
+assign wdata_63_out = hirdata[31];
+assign wdata_63_oe = wdenb_1;
 
 // GATEWAY.NET (267) - ext_reqt0 : an2
 assign ext_reqt_0 = active & progown;
@@ -2602,27 +3102,27 @@ assign ext_reqt_0 = active & progown;
 // GATEWAY.NET (268) - ext_reqt[1-4] : fd1q
 fd1q ext_reqt_from_1_to_4_inst_0
 (
-	.q(ext_reqt_1), // OUT
-	.d(ext_reqt_0), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (ext_reqt_1),
+	.d /* IN */ (ext_reqt_0),
+	.cp /* IN */ (clk_0)
 );
 fd1q ext_reqt_from_1_to_4_inst_1
 (
-	.q(ext_reqt_2), // OUT
-	.d(ext_reqt_1), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (ext_reqt_2),
+	.d /* IN */ (ext_reqt_1),
+	.cp /* IN */ (clk_0)
 );
 fd1q ext_reqt_from_1_to_4_inst_2
 (
-	.q(ext_reqt_3), // OUT
-	.d(ext_reqt_2), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (ext_reqt_3),
+	.d /* IN */ (ext_reqt_2),
+	.cp /* IN */ (clk_0)
 );
 fd1q ext_reqt_from_1_to_4_inst_3
 (
-	.q(ext_reqt_4), // OUT
-	.d(ext_reqt_3), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (ext_reqt_4),
+	.d /* IN */ (ext_reqt_3),
+	.cp /* IN */ (clk_0)
 );
 
 // GATEWAY.NET (269) - ext_reqt[5] : or4
@@ -2645,4 +3145,292 @@ assign gpu_breq_obuf = ~(gpu_bt_2 & ext_req_n);
 
 // GATEWAY.NET (283) - dma_breq : an3
 assign dma_breq_obuf = active & progown_n & dmaen;
+
+// --- Compiler-generated PE for BUS gpu_data<0>
+assign gpu_data_out[0] =
+	(ts_pe_5_a0_oe) ? ts_pe_5_a0_out :
+	(ts_pe_5_a1_oe) ? ts_pe_5_a1_out :
+	1'bz;
+assign gpu_data_oe[0] = ts_pe_5_a0_oe | ts_pe_5_a1_oe;
+assign ts_pe_5_a0_in = gpu_data_in[0];
+assign ts_pe_5_a1_in = gpu_data_in[0];
+
+// --- Compiler-generated PE for BUS gpu_data<1>
+assign gpu_data_out[1] =
+	(ts_pe_6_a0_oe) ? ts_pe_6_a0_out :
+	(ts_pe_6_a1_oe) ? ts_pe_6_a1_out :
+	1'bz;
+assign gpu_data_oe[1] = ts_pe_6_a0_oe | ts_pe_6_a1_oe;
+assign ts_pe_6_a0_in = gpu_data_in[1];
+assign ts_pe_6_a1_in = gpu_data_in[1];
+
+// --- Compiler-generated PE for BUS gpu_data<2>
+assign gpu_data_out[2] =
+	(ts_pe_7_a0_oe) ? ts_pe_7_a0_out :
+	(ts_pe_7_a1_oe) ? ts_pe_7_a1_out :
+	1'bz;
+assign gpu_data_oe[2] = ts_pe_7_a0_oe | ts_pe_7_a1_oe;
+assign ts_pe_7_a0_in = gpu_data_in[2];
+assign ts_pe_7_a1_in = gpu_data_in[2];
+
+// --- Compiler-generated PE for BUS gpu_data<3>
+assign gpu_data_out[3] =
+	(ts_pe_8_a0_oe) ? ts_pe_8_a0_out :
+	(ts_pe_8_a1_oe) ? ts_pe_8_a1_out :
+	1'bz;
+assign gpu_data_oe[3] = ts_pe_8_a0_oe | ts_pe_8_a1_oe;
+assign ts_pe_8_a0_in = gpu_data_in[3];
+assign ts_pe_8_a1_in = gpu_data_in[3];
+
+// --- Compiler-generated PE for BUS gpu_data<4>
+assign gpu_data_out[4] =
+	(ts_pe_9_a0_oe) ? ts_pe_9_a0_out :
+	(ts_pe_9_a1_oe) ? ts_pe_9_a1_out :
+	1'bz;
+assign gpu_data_oe[4] = ts_pe_9_a0_oe | ts_pe_9_a1_oe;
+assign ts_pe_9_a0_in = gpu_data_in[4];
+assign ts_pe_9_a1_in = gpu_data_in[4];
+
+// --- Compiler-generated PE for BUS gpu_data<5>
+assign gpu_data_out[5] =
+	(ts_pe_10_a0_oe) ? ts_pe_10_a0_out :
+	(ts_pe_10_a1_oe) ? ts_pe_10_a1_out :
+	1'bz;
+assign gpu_data_oe[5] = ts_pe_10_a0_oe | ts_pe_10_a1_oe;
+assign ts_pe_10_a0_in = gpu_data_in[5];
+assign ts_pe_10_a1_in = gpu_data_in[5];
+
+// --- Compiler-generated PE for BUS gpu_data<6>
+assign gpu_data_out[6] =
+	(ts_pe_11_a0_oe) ? ts_pe_11_a0_out :
+	(ts_pe_11_a1_oe) ? ts_pe_11_a1_out :
+	1'bz;
+assign gpu_data_oe[6] = ts_pe_11_a0_oe | ts_pe_11_a1_oe;
+assign ts_pe_11_a0_in = gpu_data_in[6];
+assign ts_pe_11_a1_in = gpu_data_in[6];
+
+// --- Compiler-generated PE for BUS gpu_data<7>
+assign gpu_data_out[7] =
+	(ts_pe_12_a0_oe) ? ts_pe_12_a0_out :
+	(ts_pe_12_a1_oe) ? ts_pe_12_a1_out :
+	1'bz;
+assign gpu_data_oe[7] = ts_pe_12_a0_oe | ts_pe_12_a1_oe;
+assign ts_pe_12_a0_in = gpu_data_in[7];
+assign ts_pe_12_a1_in = gpu_data_in[7];
+
+// --- Compiler-generated PE for BUS gpu_data<8>
+assign gpu_data_out[8] =
+	(ts_pe_13_a0_oe) ? ts_pe_13_a0_out :
+	(ts_pe_13_a1_oe) ? ts_pe_13_a1_out :
+	1'bz;
+assign gpu_data_oe[8] = ts_pe_13_a0_oe | ts_pe_13_a1_oe;
+assign ts_pe_13_a0_in = gpu_data_in[8];
+assign ts_pe_13_a1_in = gpu_data_in[8];
+
+// --- Compiler-generated PE for BUS gpu_data<9>
+assign gpu_data_out[9] =
+	(ts_pe_14_a0_oe) ? ts_pe_14_a0_out :
+	(ts_pe_14_a1_oe) ? ts_pe_14_a1_out :
+	1'bz;
+assign gpu_data_oe[9] = ts_pe_14_a0_oe | ts_pe_14_a1_oe;
+assign ts_pe_14_a0_in = gpu_data_in[9];
+assign ts_pe_14_a1_in = gpu_data_in[9];
+
+// --- Compiler-generated PE for BUS gpu_data<10>
+assign gpu_data_out[10] =
+	(ts_pe_15_a0_oe) ? ts_pe_15_a0_out :
+	(ts_pe_15_a1_oe) ? ts_pe_15_a1_out :
+	1'bz;
+assign gpu_data_oe[10] = ts_pe_15_a0_oe | ts_pe_15_a1_oe;
+assign ts_pe_15_a0_in = gpu_data_in[10];
+assign ts_pe_15_a1_in = gpu_data_in[10];
+
+// --- Compiler-generated PE for BUS gpu_data<11>
+assign gpu_data_out[11] =
+	(ts_pe_16_a0_oe) ? ts_pe_16_a0_out :
+	(ts_pe_16_a1_oe) ? ts_pe_16_a1_out :
+	1'bz;
+assign gpu_data_oe[11] = ts_pe_16_a0_oe | ts_pe_16_a1_oe;
+assign ts_pe_16_a0_in = gpu_data_in[11];
+assign ts_pe_16_a1_in = gpu_data_in[11];
+
+// --- Compiler-generated PE for BUS gpu_data<12>
+assign gpu_data_out[12] =
+	(ts_pe_17_a0_oe) ? ts_pe_17_a0_out :
+	(ts_pe_17_a1_oe) ? ts_pe_17_a1_out :
+	1'bz;
+assign gpu_data_oe[12] = ts_pe_17_a0_oe | ts_pe_17_a1_oe;
+assign ts_pe_17_a0_in = gpu_data_in[12];
+assign ts_pe_17_a1_in = gpu_data_in[12];
+
+// --- Compiler-generated PE for BUS gpu_data<13>
+assign gpu_data_out[13] =
+	(ts_pe_18_a0_oe) ? ts_pe_18_a0_out :
+	(ts_pe_18_a1_oe) ? ts_pe_18_a1_out :
+	1'bz;
+assign gpu_data_oe[13] = ts_pe_18_a0_oe | ts_pe_18_a1_oe;
+assign ts_pe_18_a0_in = gpu_data_in[13];
+assign ts_pe_18_a1_in = gpu_data_in[13];
+
+// --- Compiler-generated PE for BUS gpu_data<14>
+assign gpu_data_out[14] =
+	(ts_pe_19_a0_oe) ? ts_pe_19_a0_out :
+	(ts_pe_19_a1_oe) ? ts_pe_19_a1_out :
+	1'bz;
+assign gpu_data_oe[14] = ts_pe_19_a0_oe | ts_pe_19_a1_oe;
+assign ts_pe_19_a0_in = gpu_data_in[14];
+assign ts_pe_19_a1_in = gpu_data_in[14];
+
+// --- Compiler-generated PE for BUS gpu_data<15>
+assign gpu_data_out[15] =
+	(ts_pe_20_a0_oe) ? ts_pe_20_a0_out :
+	(ts_pe_20_a1_oe) ? ts_pe_20_a1_out :
+	1'bz;
+assign gpu_data_oe[15] = ts_pe_20_a0_oe | ts_pe_20_a1_oe;
+assign ts_pe_20_a0_in = gpu_data_in[15];
+assign ts_pe_20_a1_in = gpu_data_in[15];
+
+// --- Compiler-generated PE for BUS gpu_data<16>
+assign gpu_data_out[16] =
+	(ts_pe_21_a0_oe) ? ts_pe_21_a0_out :
+	(ts_pe_21_a1_oe) ? ts_pe_21_a1_out :
+	1'bz;
+assign gpu_data_oe[16] = ts_pe_21_a0_oe | ts_pe_21_a1_oe;
+assign ts_pe_21_a0_in = gpu_data_in[16];
+assign ts_pe_21_a1_in = gpu_data_in[16];
+
+// --- Compiler-generated PE for BUS gpu_data<17>
+assign gpu_data_out[17] =
+	(ts_pe_22_a0_oe) ? ts_pe_22_a0_out :
+	(ts_pe_22_a1_oe) ? ts_pe_22_a1_out :
+	1'bz;
+assign gpu_data_oe[17] = ts_pe_22_a0_oe | ts_pe_22_a1_oe;
+assign ts_pe_22_a0_in = gpu_data_in[17];
+assign ts_pe_22_a1_in = gpu_data_in[17];
+
+// --- Compiler-generated PE for BUS gpu_data<18>
+assign gpu_data_out[18] =
+	(ts_pe_23_a0_oe) ? ts_pe_23_a0_out :
+	(ts_pe_23_a1_oe) ? ts_pe_23_a1_out :
+	1'bz;
+assign gpu_data_oe[18] = ts_pe_23_a0_oe | ts_pe_23_a1_oe;
+assign ts_pe_23_a0_in = gpu_data_in[18];
+assign ts_pe_23_a1_in = gpu_data_in[18];
+
+// --- Compiler-generated PE for BUS gpu_data<19>
+assign gpu_data_out[19] =
+	(ts_pe_24_a0_oe) ? ts_pe_24_a0_out :
+	(ts_pe_24_a1_oe) ? ts_pe_24_a1_out :
+	1'bz;
+assign gpu_data_oe[19] = ts_pe_24_a0_oe | ts_pe_24_a1_oe;
+assign ts_pe_24_a0_in = gpu_data_in[19];
+assign ts_pe_24_a1_in = gpu_data_in[19];
+
+// --- Compiler-generated PE for BUS gpu_data<20>
+assign gpu_data_out[20] =
+	(ts_pe_25_a0_oe) ? ts_pe_25_a0_out :
+	(ts_pe_25_a1_oe) ? ts_pe_25_a1_out :
+	1'bz;
+assign gpu_data_oe[20] = ts_pe_25_a0_oe | ts_pe_25_a1_oe;
+assign ts_pe_25_a0_in = gpu_data_in[20];
+assign ts_pe_25_a1_in = gpu_data_in[20];
+
+// --- Compiler-generated PE for BUS gpu_data<21>
+assign gpu_data_out[21] =
+	(ts_pe_26_a0_oe) ? ts_pe_26_a0_out :
+	(ts_pe_26_a1_oe) ? ts_pe_26_a1_out :
+	1'bz;
+assign gpu_data_oe[21] = ts_pe_26_a0_oe | ts_pe_26_a1_oe;
+assign ts_pe_26_a0_in = gpu_data_in[21];
+assign ts_pe_26_a1_in = gpu_data_in[21];
+
+// --- Compiler-generated PE for BUS gpu_data<22>
+assign gpu_data_out[22] =
+	(ts_pe_27_a0_oe) ? ts_pe_27_a0_out :
+	(ts_pe_27_a1_oe) ? ts_pe_27_a1_out :
+	1'bz;
+assign gpu_data_oe[22] = ts_pe_27_a0_oe | ts_pe_27_a1_oe;
+assign ts_pe_27_a0_in = gpu_data_in[22];
+assign ts_pe_27_a1_in = gpu_data_in[22];
+
+// --- Compiler-generated PE for BUS gpu_data<23>
+assign gpu_data_out[23] =
+	(ts_pe_28_a0_oe) ? ts_pe_28_a0_out :
+	(ts_pe_28_a1_oe) ? ts_pe_28_a1_out :
+	1'bz;
+assign gpu_data_oe[23] = ts_pe_28_a0_oe | ts_pe_28_a1_oe;
+assign ts_pe_28_a0_in = gpu_data_in[23];
+assign ts_pe_28_a1_in = gpu_data_in[23];
+
+// --- Compiler-generated PE for BUS gpu_data<24>
+assign gpu_data_out[24] =
+	(ts_pe_29_a0_oe) ? ts_pe_29_a0_out :
+	(ts_pe_29_a1_oe) ? ts_pe_29_a1_out :
+	1'bz;
+assign gpu_data_oe[24] = ts_pe_29_a0_oe | ts_pe_29_a1_oe;
+assign ts_pe_29_a0_in = gpu_data_in[24];
+assign ts_pe_29_a1_in = gpu_data_in[24];
+
+// --- Compiler-generated PE for BUS gpu_data<25>
+assign gpu_data_out[25] =
+	(ts_pe_30_a0_oe) ? ts_pe_30_a0_out :
+	(ts_pe_30_a1_oe) ? ts_pe_30_a1_out :
+	1'bz;
+assign gpu_data_oe[25] = ts_pe_30_a0_oe | ts_pe_30_a1_oe;
+assign ts_pe_30_a0_in = gpu_data_in[25];
+assign ts_pe_30_a1_in = gpu_data_in[25];
+
+// --- Compiler-generated PE for BUS gpu_data<26>
+assign gpu_data_out[26] =
+	(ts_pe_31_a0_oe) ? ts_pe_31_a0_out :
+	(ts_pe_31_a1_oe) ? ts_pe_31_a1_out :
+	1'bz;
+assign gpu_data_oe[26] = ts_pe_31_a0_oe | ts_pe_31_a1_oe;
+assign ts_pe_31_a0_in = gpu_data_in[26];
+assign ts_pe_31_a1_in = gpu_data_in[26];
+
+// --- Compiler-generated PE for BUS gpu_data<27>
+assign gpu_data_out[27] =
+	(ts_pe_32_a0_oe) ? ts_pe_32_a0_out :
+	(ts_pe_32_a1_oe) ? ts_pe_32_a1_out :
+	1'bz;
+assign gpu_data_oe[27] = ts_pe_32_a0_oe | ts_pe_32_a1_oe;
+assign ts_pe_32_a0_in = gpu_data_in[27];
+assign ts_pe_32_a1_in = gpu_data_in[27];
+
+// --- Compiler-generated PE for BUS gpu_data<28>
+assign gpu_data_out[28] =
+	(ts_pe_33_a0_oe) ? ts_pe_33_a0_out :
+	(ts_pe_33_a1_oe) ? ts_pe_33_a1_out :
+	1'bz;
+assign gpu_data_oe[28] = ts_pe_33_a0_oe | ts_pe_33_a1_oe;
+assign ts_pe_33_a0_in = gpu_data_in[28];
+assign ts_pe_33_a1_in = gpu_data_in[28];
+
+// --- Compiler-generated PE for BUS gpu_data<29>
+assign gpu_data_out[29] =
+	(ts_pe_34_a0_oe) ? ts_pe_34_a0_out :
+	(ts_pe_34_a1_oe) ? ts_pe_34_a1_out :
+	1'bz;
+assign gpu_data_oe[29] = ts_pe_34_a0_oe | ts_pe_34_a1_oe;
+assign ts_pe_34_a0_in = gpu_data_in[29];
+assign ts_pe_34_a1_in = gpu_data_in[29];
+
+// --- Compiler-generated PE for BUS gpu_data<30>
+assign gpu_data_out[30] =
+	(ts_pe_35_a0_oe) ? ts_pe_35_a0_out :
+	(ts_pe_35_a1_oe) ? ts_pe_35_a1_out :
+	1'bz;
+assign gpu_data_oe[30] = ts_pe_35_a0_oe | ts_pe_35_a1_oe;
+assign ts_pe_35_a0_in = gpu_data_in[30];
+assign ts_pe_35_a1_in = gpu_data_in[30];
+
+// --- Compiler-generated PE for BUS gpu_data<31>
+assign gpu_data_out[31] =
+	(ts_pe_36_a0_oe) ? ts_pe_36_a0_out :
+	(ts_pe_36_a1_oe) ? ts_pe_36_a1_out :
+	1'bz;
+assign gpu_data_oe[31] = ts_pe_36_a0_oe | ts_pe_36_a1_oe;
+assign ts_pe_36_a0_in = gpu_data_in[31];
+assign ts_pe_36_a1_in = gpu_data_in[31];
 endmodule

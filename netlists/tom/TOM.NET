@@ -102,14 +102,19 @@ bus ownership. This is when bg is active *)
 	xintl, (* active low interrupt output *)
 	cfgen,brlout,ba,aen:IO); (* GE *)	
 
-	INT8/xd0_7,xd8_15,xd16_23,xd24_31,xd32_39,xd40_47,xd48_55,xd56_63,
-	INT24/xa:IO;
-
+	(* GE - commented out *)
+	(* INT8/xd0_7,xd8_15,xd16_23,xd24_31,xd32_39,xd40_47,xd48_55,xd56_63,
+	INT24/xa:IO; *)
+	(* GE - added *)
+	wd[0..63],a[0..23],w[0..3],rw,mreq,dr[0..15],justify:BUS;
+	
+	
 BEGIN
 
 (* Byte lanes for display purposes *)
 
-D0 :=	JOIN_BUS (xd0_7,xd[0..7]);
+(* GE - commented out *)
+(* D0 :=	JOIN_BUS (xd0_7,xd[0..7]);
 D1 :=	JOIN_BUS (xd8_15,xd[8..15]);
 D2 :=	JOIN_BUS (xd16_23,xd[16..23]);
 D3 :=	JOIN_BUS (xd24_31,xd[24..31]);
@@ -127,7 +132,7 @@ D6u :=	DUMMY (xd48_55);
 D7u :=	DUMMY (xd56_63);
 
 Xa :=	JOIN_BUS (xa,gnd,xa[1..23]);
-Xau :=	DUMMY (xa);
+Xau :=	DUMMY (xa); *)
 
 (* Pads (assumes Toshiba 24SC cell library) *)
 

@@ -1,7 +1,6 @@
 package com.torlus.jnl;
 
 import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.Vector;
 
 public abstract class Entity {
@@ -15,7 +14,11 @@ public abstract class Entity {
 	public boolean resize(int max) {
 		return false;
 	}
-
+	
+	public boolean requireSysclk() {
+		return false;
+	}
+	
 	public void findDeps(TreeMap<String, Entity> map) {
 		String name = getBaseName();
 		if (name != null)
@@ -65,7 +68,7 @@ public abstract class Entity {
 		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
 			if (io.bit == Signal.NONE) {
-				vlog += "\t" + io.type.verilogPortType() + " " + io.verilogName() + ",\n";
+				vlog += verilogExpand("\t" + io.type.verilogPortType() + " " + io.verilogName() + ",\n");
 			} else {
 				int start = io.bit;
 				int current = start;
@@ -88,8 +91,12 @@ public abstract class Entity {
 					n--;
 					io = ios.get(n);
 				}
-				vlog += "\t" + io.type.verilogPortType() + "[" + start + ":" + current + "] " + io.verilogName() + ";\n";
+				vlog += verilogExpand("\t" + io.type.verilogPortType() + " [" + start + ":" + current + "] " + io.verilogName() + ";\n");
 			}
+		}
+		if (requireSysclk()) {
+			vlog += "\t" + SignalType.IN.verilogPortType() + " sys_clk // Generated\n";
+			return vlog;
 		}
 		return vlog.substring(0, vlog.length() - 2) + "\n";
 	}
@@ -168,13 +175,20 @@ public abstract class Entity {
 			Signal port = inst.entity.ios.get(n);
 			Signal wire = inst.wires.get(n);
 
-			vlog += "\t." + port.verilogName() + "(";
+			boolean bus2in = false;
+			if (port.type == SignalType.IN && wire.type == SignalType.BUS) {
+				bus2in = true;
+			}
+			
+			String vt = "";
+
+			vt += "\t." + port.verilogName() + " /* " + port.type + " */ (";
 			if (port.bit != Signal.NONE) {
 				String name = port.verilogName();
-				vlog += "{";
+				vt += "{";
 				while (n < inst.entity.ios.size()) {
 					if (name.equals(inst.entity.ios.get(n).verilogName())) {
-						vlog += inst.wires.get(n).verilogWireName() + ",";
+						vt += inst.wires.get(n).verilogWireName() + ",";
 					} else {
 						break;
 					}
@@ -186,15 +200,27 @@ public abstract class Entity {
 					// Different signal, rewind
 					n--;
 				}
-				vlog = vlog.substring(0, vlog.length() - 1) + "}";
+				vt = vt.substring(0, vt.length() - 1) + "}";
 			} else {
-				vlog += wire.verilogWireName();
+				vt += wire.verilogWireName();
 			}
-			if (n == inst.entity.ios.size() - 1) {
-				vlog += ")  // " + port.type + "\n";
+			/*if (n == inst.entity.ios.size() - 1) {
+				vt += ")  // " + port.type + "\n";
 			} else {
-				vlog += "), // " + port.type + "\n";
+				vt += "), // " + port.type + "\n";
+			}*/
+			vt += "),\n";
+			
+			if (bus2in) {
+				vt = vt.replaceAll("##SIG##", "in");
 			}
+			vlog += verilogExpand(vt);
+			if (n == inst.entity.ios.size() - 1 && !requireSysclk()) {
+				vlog = vlog.substring(0, vlog.length() - 2) + "\n";
+			}
+		}
+		if (requireSysclk()) {
+			vlog += "\t.sys_clk(sys_clk) // Generated\n";
 		}
 		vlog += ");\n";
 		return vlog;
@@ -203,8 +229,28 @@ public abstract class Entity {
 	public String verilogMap(Instance inst, String vlogTemplate) {
 		for (int i = 0; i < inst.wires.size(); i++) {
 			vlogTemplate = vlogTemplate.replaceAll("\\$" + ios.get(i).verilogName() + "\\$", inst.wires.get(i).verilogWireName());
+			if (ios.get(i).type == SignalType.IN && inst.wires.get(i).type == SignalType.BUS) {
+				// Wire BUS IN to IN
+				vlogTemplate = vlogTemplate.replaceAll("##SIG##", "in");
+			}
 		}
 		return vlogTemplate;
 	}
-	
+
+	public String verilogExpand(String template) {
+		if (template.contains("##SIG##") || template.contains("##DIR##")) {
+			String t1 = template;
+			String t2 = template;
+			String t3 = template;
+			t1 = t1.replaceAll("##SIG##", "out");
+			t1 = t1.replaceAll("##DIR##", "output");
+			t2 = t2.replaceAll("##SIG##", "oe");
+			t2 = t2.replaceAll("##DIR##", "output");
+			t3 = t3.replaceAll("##SIG##", "in");
+			t3 = t3.replaceAll("##DIR##", "input");
+			return t1 + t2 + t3;
+		}
+		return template;
+	}
+
 }

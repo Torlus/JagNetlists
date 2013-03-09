@@ -2,14 +2,30 @@
 
 module mcontrol
 (
-	inout[0:23] blit_addr;
-	inout justify,
-	inout mreq,
-	inout width_0,
-	inout width_1,
-	inout width_2,
-	inout width_3,
-	inout read,
+	output [0:23] blit_addr_out;
+	output [0:23] blit_addr_oe;
+	input [0:23] blit_addr_in;
+	output justify_out,
+	output justify_oe,
+	input justify_in,
+	output mreq_out,
+	output mreq_oe,
+	input mreq_in,
+	output width_0_out,
+	output width_0_oe,
+	input width_0_in,
+	output width_1_out,
+	output width_1_oe,
+	input width_1_in,
+	output width_2_out,
+	output width_2_oe,
+	input width_2_in,
+	output width_3_out,
+	output width_3_oe,
+	input width_3_in,
+	output read_out,
+	output read_oe,
+	input read_in,
 	output active,
 	output blitack,
 	output memidle,
@@ -17,7 +33,7 @@ module mcontrol
 	output read_ack,
 	output wactive,
 	input ack,
-	input[0:23] address;
+	input [0:23] address;
 	input bcompen,
 	input blit_back,
 	input clk,
@@ -118,11 +134,11 @@ assign ractvt_3 = ~(ractvt_0 & ractvt_1 & ractvt_2);
 // MCONTROL.NET (64) - ractive : fd2
 fd2 ractive_inst
 (
-	.q(ractive), // OUT
-	.qn(ractive_n), // OUT
-	.d(ractvt_3), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ractive),
+	.qn /* OUT */ (ractive_n),
+	.d /* IN */ (ractvt_3),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // MCONTROL.NET (66) - wactvt0 : nd2
@@ -140,11 +156,11 @@ assign wactvt_3 = ~(wactvt_0 & wactvt_1 & wactvt_2);
 // MCONTROL.NET (70) - wactive : fd2
 fd2 wactive_inst
 (
-	.q(wactive_obuf), // OUT
-	.qn(wactive_n), // OUT
-	.d(wactvt_3), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (wactive_obuf),
+	.qn /* OUT */ (wactive_n),
+	.d /* IN */ (wactvt_3),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // MCONTROL.NET (73) - active\ : nr2
@@ -160,10 +176,12 @@ assign memready = blitack_obuf & active_obuf;
 assign memidle = ~active_obuf;
 
 // MCONTROL.NET (86) - mreq : tsm
-assign mreq = (busen) ? active_obuf : 1'bz;
+assign mreq_out = active_obuf;
+assign mreq_oe = busen;
 
 // MCONTROL.NET (88) - read : ts
-assign read = (busen) ? ractive : 1'bz;
+assign read_out = ractive;
+assign read_oe = busen;
 
 // MCONTROL.NET (101) - wt0t : nr2
 assign wt0t = ~(pixsize_n_2 | fontread);
@@ -174,23 +192,23 @@ assign wt_0 = ~(wt0t | phrase_cycle);
 // MCONTROL.NET (103) - wt1 : nr5
 nr5 wt1_inst
 (
-	.z(wt_1), // IO
-	.a(pixsize_n_2), // IN
-	.b(pixsize_1), // IN
-	.c(pixsize_0), // IN
-	.d(phrase_cycle), // IN
-	.e(fontread)  // IN
+	.z /* OUT */ (wt_1),
+	.a /* IN */ (pixsize_n_2),
+	.b /* IN */ (pixsize_1),
+	.c /* IN */ (pixsize_0),
+	.d /* IN */ (phrase_cycle),
+	.e /* IN */ (fontread)
 );
 
 // MCONTROL.NET (105) - wt2 : nr5
 nr5 wt2_inst
 (
-	.z(wt_2), // IO
-	.a(pixsize_n_2), // IN
-	.b(pixsize_1), // IN
-	.c(pixsize_n_0), // IN
-	.d(phrase_cycle), // IN
-	.e(fontread)  // IN
+	.z /* OUT */ (wt_2),
+	.a /* IN */ (pixsize_n_2),
+	.b /* IN */ (pixsize_1),
+	.c /* IN */ (pixsize_n_0),
+	.d /* IN */ (phrase_cycle),
+	.e /* IN */ (fontread)
 );
 
 // MCONTROL.NET (107) - pwrite : an2
@@ -199,40 +217,44 @@ assign pwrite = phrase_cycle & wactive_obuf;
 // MCONTROL.NET (108) - wout[0-2] : mx2
 mx2 wout_from_0_to_2_inst_0
 (
-	.z(wout_0), // OUT
-	.a0(wt_0), // IN
-	.a1(pwidth_0), // IN
-	.s(pwrite)  // IN
+	.z /* OUT */ (wout_0),
+	.a0 /* IN */ (wt_0),
+	.a1 /* IN */ (pwidth_0),
+	.s /* IN */ (pwrite)
 );
 mx2 wout_from_0_to_2_inst_1
 (
-	.z(wout_1), // OUT
-	.a0(wt_1), // IN
-	.a1(pwidth_1), // IN
-	.s(pwrite)  // IN
+	.z /* OUT */ (wout_1),
+	.a0 /* IN */ (wt_1),
+	.a1 /* IN */ (pwidth_1),
+	.s /* IN */ (pwrite)
 );
 mx2 wout_from_0_to_2_inst_2
 (
-	.z(wout_2), // OUT
-	.a0(wt_2), // IN
-	.a1(pwidth_2), // IN
-	.s(pwrite)  // IN
+	.z /* OUT */ (wout_2),
+	.a0 /* IN */ (wt_2),
+	.a1 /* IN */ (pwidth_2),
+	.s /* IN */ (pwrite)
 );
 
 // MCONTROL.NET (109) - wout[3] : mx2
 mx2 wout_index_3_inst
 (
-	.z(wout_3), // OUT
-	.a0(phrase_cycle), // IN
-	.a1(pwidth_3), // IN
-	.s(pwrite)  // IN
+	.z /* OUT */ (wout_3),
+	.a0 /* IN */ (phrase_cycle),
+	.a1 /* IN */ (pwidth_3),
+	.s /* IN */ (pwrite)
 );
 
 // MCONTROL.NET (111) - width[0-3] : ts
-assign width_0 = (busen) ? wout_0 : 1'bz;
-assign width_1 = (busen) ? wout_1 : 1'bz;
-assign width_2 = (busen) ? wout_2 : 1'bz;
-assign width_3 = (busen) ? wout_3 : 1'bz;
+assign width_0_out = wout_0;
+assign width_0_oe = busen;
+assign width_1_out = wout_1;
+assign width_1_oe = busen;
+assign width_2_out = wout_2;
+assign width_2_oe = busen;
+assign width_3_out = wout_3;
+assign width_3_oe = busen;
 
 // MCONTROL.NET (118) - fontread\ : ond1
 assign fontread_n = ~( (sread_1 | sreadx_1) & bcompen );
@@ -244,7 +266,8 @@ assign fontread = ~fontread_n;
 assign justt = ~(fontread_n & phrase_mode);
 
 // MCONTROL.NET (122) - justify : ts
-assign justify = (busen) ? justt : 1'bz;
+assign justify_out = justt;
+assign justify_oe = busen;
 
 // MCONTROL.NET (129) - step_innerb : nivu
 assign step_innerb = step_inner;
@@ -252,37 +275,61 @@ assign step_innerb = step_inner;
 // MCONTROL.NET (130) - blita : fdsync24
 fdsync24 blita_inst
 (
-	.q({blita[0],blita[1],blita[2],blita[3],blita[4],blita[5],blita[6],blita[7],blita[8],blita[9],blita[10],blita[11],blita[12],blita[13],blita[14],blita[15],blita[16],blita[17],blita[18],blita[19],blita[20],blita[21],blita[22],blita[23]}), // IO
-	.d({address[0],address[1],address[2],address[3],address[4],address[5],address[6],address[7],address[8],address[9],address[10],address[11],address[12],address[13],address[14],address[15],address[16],address[17],address[18],address[19],address[20],address[21],address[22],address[23]}), // IN
-	.ld(step_innerb), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({blita[0],blita[1],blita[2],blita[3],blita[4],blita[5],blita[6],blita[7],blita[8],blita[9],blita[10],blita[11],blita[12],blita[13],blita[14],blita[15],blita[16],blita[17],blita[18],blita[19],blita[20],blita[21],blita[22],blita[23]}),
+	.d /* IN */ ({address[0],address[1],address[2],address[3],address[4],address[5],address[6],address[7],address[8],address[9],address[10],address[11],address[12],address[13],address[14],address[15],address[16],address[17],address[18],address[19],address[20],address[21],address[22],address[23]}),
+	.ld /* IN */ (step_innerb),
+	.clk /* IN */ (clk)
 );
 
 // MCONTROL.NET (131) - blit_addr : tsm
-assign blit_addr[0] = (busen) ? blita[0] : 1'bz;
-assign blit_addr[1] = (busen) ? blita[1] : 1'bz;
-assign blit_addr[2] = (busen) ? blita[2] : 1'bz;
-assign blit_addr[3] = (busen) ? blita[3] : 1'bz;
-assign blit_addr[4] = (busen) ? blita[4] : 1'bz;
-assign blit_addr[5] = (busen) ? blita[5] : 1'bz;
-assign blit_addr[6] = (busen) ? blita[6] : 1'bz;
-assign blit_addr[7] = (busen) ? blita[7] : 1'bz;
-assign blit_addr[8] = (busen) ? blita[8] : 1'bz;
-assign blit_addr[9] = (busen) ? blita[9] : 1'bz;
-assign blit_addr[10] = (busen) ? blita[10] : 1'bz;
-assign blit_addr[11] = (busen) ? blita[11] : 1'bz;
-assign blit_addr[12] = (busen) ? blita[12] : 1'bz;
-assign blit_addr[13] = (busen) ? blita[13] : 1'bz;
-assign blit_addr[14] = (busen) ? blita[14] : 1'bz;
-assign blit_addr[15] = (busen) ? blita[15] : 1'bz;
-assign blit_addr[16] = (busen) ? blita[16] : 1'bz;
-assign blit_addr[17] = (busen) ? blita[17] : 1'bz;
-assign blit_addr[18] = (busen) ? blita[18] : 1'bz;
-assign blit_addr[19] = (busen) ? blita[19] : 1'bz;
-assign blit_addr[20] = (busen) ? blita[20] : 1'bz;
-assign blit_addr[21] = (busen) ? blita[21] : 1'bz;
-assign blit_addr[22] = (busen) ? blita[22] : 1'bz;
-assign blit_addr[23] = (busen) ? blita[23] : 1'bz;
+assign blit_addr_out[0] = blita[0];
+assign blit_addr_oe[0] = busen;
+assign blit_addr_out[1] = blita[1];
+assign blit_addr_oe[1] = busen;
+assign blit_addr_out[2] = blita[2];
+assign blit_addr_oe[2] = busen;
+assign blit_addr_out[3] = blita[3];
+assign blit_addr_oe[3] = busen;
+assign blit_addr_out[4] = blita[4];
+assign blit_addr_oe[4] = busen;
+assign blit_addr_out[5] = blita[5];
+assign blit_addr_oe[5] = busen;
+assign blit_addr_out[6] = blita[6];
+assign blit_addr_oe[6] = busen;
+assign blit_addr_out[7] = blita[7];
+assign blit_addr_oe[7] = busen;
+assign blit_addr_out[8] = blita[8];
+assign blit_addr_oe[8] = busen;
+assign blit_addr_out[9] = blita[9];
+assign blit_addr_oe[9] = busen;
+assign blit_addr_out[10] = blita[10];
+assign blit_addr_oe[10] = busen;
+assign blit_addr_out[11] = blita[11];
+assign blit_addr_oe[11] = busen;
+assign blit_addr_out[12] = blita[12];
+assign blit_addr_oe[12] = busen;
+assign blit_addr_out[13] = blita[13];
+assign blit_addr_oe[13] = busen;
+assign blit_addr_out[14] = blita[14];
+assign blit_addr_oe[14] = busen;
+assign blit_addr_out[15] = blita[15];
+assign blit_addr_oe[15] = busen;
+assign blit_addr_out[16] = blita[16];
+assign blit_addr_oe[16] = busen;
+assign blit_addr_out[17] = blita[17];
+assign blit_addr_oe[17] = busen;
+assign blit_addr_out[18] = blita[18];
+assign blit_addr_oe[18] = busen;
+assign blit_addr_out[19] = blita[19];
+assign blit_addr_oe[19] = busen;
+assign blit_addr_out[20] = blita[20];
+assign blit_addr_oe[20] = busen;
+assign blit_addr_out[21] = blita[21];
+assign blit_addr_oe[21] = busen;
+assign blit_addr_out[22] = blita[22];
+assign blit_addr_oe[22] = busen;
+assign blit_addr_out[23] = blita[23];
+assign blit_addr_oe[23] = busen;
 
 // MCONTROL.NET (137) - waitackset : nd2
 assign waset_n = ~(ractive & blitack_obuf);
@@ -296,10 +343,10 @@ assign wat1 = ~(waset_n & wat0);
 // MCONTROL.NET (140) - waitack : fd2q
 fd2q waitack_inst
 (
-	.q(waitack), // OUT
-	.d(wat1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (waitack),
+	.d /* IN */ (wat1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // MCONTROL.NET (141) - read_ack : an2

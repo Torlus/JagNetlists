@@ -3,13 +3,13 @@
 module srcdgen
 (
 	output locdent,
-	output[0:31] locsrc;
-	input[0:31] program_count;
+	output [0:31] locsrc;
+	input [0:31] program_count;
 	input srcdat_0,
 	input srcdat_1,
 	input srcdat_2,
 	input srcdat_3,
-	input[0:4] srcop
+	input [0:4] srcop
 );
 wire [0:4] botsrc;
 wire [0:4] const;
@@ -138,10 +138,10 @@ assign topsrc = topsrct;
 // INS_EXEC.NET (677) - srcb7 : mx2
 mx2 srcb7_inst
 (
-	.z(srcb7), // OUT
-	.a0(topsrc), // IN
-	.a1(opzero), // IN
-	.s(type2)  // IN
+	.z /* OUT */ (srcb7),
+	.a0 /* IN */ (topsrc),
+	.a1 /* IN */ (opzero),
+	.s /* IN */ (type2)
 );
 
 // INS_EXEC.NET (682) - type2 : an4m
@@ -150,10 +150,10 @@ assign type2 = srcdat_n_0 & srcdat_1 & srcdat_n_2 & srcdat_n_3;
 // INS_EXEC.NET (684) - srcb6 : mx2
 mx2 srcb6_inst
 (
-	.z(srcb6), // OUT
-	.a0(topsrc), // IN
-	.a1(srcop[4]), // IN
-	.s(type2)  // IN
+	.z /* OUT */ (srcb6),
+	.a0 /* IN */ (topsrc),
+	.a1 /* IN */ (srcop[4]),
+	.s /* IN */ (type2)
 );
 
 // INS_EXEC.NET (689) - type8 : an4
@@ -162,24 +162,24 @@ assign type8 = srcdat_n_0 & srcdat_n_1 & srcdat_n_2 & srcdat_3;
 // INS_EXEC.NET (690) - opzero : nr5
 nr5 opzero_inst
 (
-	.z(opzero), // IO
-	.a(srcop[0]), // IN
-	.b(srcop[1]), // IN
-	.c(srcop[2]), // IN
-	.d(srcop[3]), // IN
-	.e(srcop[4])  // IN
+	.z /* OUT */ (opzero),
+	.a /* IN */ (srcop[0]),
+	.b /* IN */ (srcop[1]),
+	.c /* IN */ (srcop[2]),
+	.d /* IN */ (srcop[3]),
+	.e /* IN */ (srcop[4])
 );
 
 // INS_EXEC.NET (691) - srcb5 : mx4
 mx4 srcb5_inst
 (
-	.z(srcb5), // OUT
-	.a0(topsrc), // IN
-	.a1(opzero), // IN
-	.a2(srcop[3]), // IN
-	.a3(zero), // IN
-	.s0(type8), // IN
-	.s1(type2)  // IN
+	.z /* OUT */ (srcb5),
+	.a0 /* IN */ (topsrc),
+	.a1 /* IN */ (opzero),
+	.a2 /* IN */ (srcop[3]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (type8),
+	.s1 /* IN */ (type2)
 );
 
 // INS_EXEC.NET (697) - type6 : an4
@@ -205,53 +205,53 @@ assign opshft[4] = srcop[2];
 // INS_EXEC.NET (708) - botsrc : mx4
 mx4 botsrc_inst_0
 (
-	.z(botsrc[0]), // OUT
-	.a0(srcop[0]), // IN
-	.a1(const[0]), // IN
-	.a2(opshft[0]), // IN
-	.a3(opshft[0]), // IN
-	.s0(constsel), // IN
-	.s1(type2)  // IN
+	.z /* OUT */ (botsrc[0]),
+	.a0 /* IN */ (srcop[0]),
+	.a1 /* IN */ (const[0]),
+	.a2 /* IN */ (opshft[0]),
+	.a3 /* IN */ (opshft[0]),
+	.s0 /* IN */ (constsel),
+	.s1 /* IN */ (type2)
 );
 mx4 botsrc_inst_1
 (
-	.z(botsrc[1]), // OUT
-	.a0(srcop[1]), // IN
-	.a1(const[1]), // IN
-	.a2(opshft[1]), // IN
-	.a3(opshft[1]), // IN
-	.s0(constsel), // IN
-	.s1(type2)  // IN
+	.z /* OUT */ (botsrc[1]),
+	.a0 /* IN */ (srcop[1]),
+	.a1 /* IN */ (const[1]),
+	.a2 /* IN */ (opshft[1]),
+	.a3 /* IN */ (opshft[1]),
+	.s0 /* IN */ (constsel),
+	.s1 /* IN */ (type2)
 );
 mx4 botsrc_inst_2
 (
-	.z(botsrc[2]), // OUT
-	.a0(srcop[2]), // IN
-	.a1(const[2]), // IN
-	.a2(opshft[2]), // IN
-	.a3(opshft[2]), // IN
-	.s0(constsel), // IN
-	.s1(type2)  // IN
+	.z /* OUT */ (botsrc[2]),
+	.a0 /* IN */ (srcop[2]),
+	.a1 /* IN */ (const[2]),
+	.a2 /* IN */ (opshft[2]),
+	.a3 /* IN */ (opshft[2]),
+	.s0 /* IN */ (constsel),
+	.s1 /* IN */ (type2)
 );
 mx4 botsrc_inst_3
 (
-	.z(botsrc[3]), // OUT
-	.a0(srcop[3]), // IN
-	.a1(const[3]), // IN
-	.a2(opshft[3]), // IN
-	.a3(opshft[3]), // IN
-	.s0(constsel), // IN
-	.s1(type2)  // IN
+	.z /* OUT */ (botsrc[3]),
+	.a0 /* IN */ (srcop[3]),
+	.a1 /* IN */ (const[3]),
+	.a2 /* IN */ (opshft[3]),
+	.a3 /* IN */ (opshft[3]),
+	.s0 /* IN */ (constsel),
+	.s1 /* IN */ (type2)
 );
 mx4 botsrc_inst_4
 (
-	.z(botsrc[4]), // OUT
-	.a0(srcop[4]), // IN
-	.a1(const[4]), // IN
-	.a2(opshft[4]), // IN
-	.a3(opshft[4]), // IN
-	.s0(constsel), // IN
-	.s1(type2)  // IN
+	.z /* OUT */ (botsrc[4]),
+	.a0 /* IN */ (srcop[4]),
+	.a1 /* IN */ (const[4]),
+	.a2 /* IN */ (opshft[4]),
+	.a3 /* IN */ (opshft[4]),
+	.s0 /* IN */ (constsel),
+	.s1 /* IN */ (type2)
 );
 
 // INS_EXEC.NET (713) - gensrc : join
@@ -291,55 +291,55 @@ assign gensrc[31] = topsrc;
 // INS_EXEC.NET (722) - masklo : d416g2l
 d416g2l masklo_inst
 (
-	.z0(maskt_n_0), // OUT
-	.z1(maskt_n_1), // OUT
-	.z2(maskt_n_2), // OUT
-	.z3(maskt_n_3), // OUT
-	.z4(maskt_n_4), // OUT
-	.z5(maskt_n_5), // OUT
-	.z6(maskt_n_6), // OUT
-	.z7(maskt_n_7), // OUT
-	.z8(maskt_n_8), // OUT
-	.z9(maskt_n_9), // OUT
-	.z10(maskt_n_10), // OUT
-	.z11(maskt_n_11), // OUT
-	.z12(maskt_n_12), // OUT
-	.z13(maskt_n_13), // OUT
-	.z14(maskt_n_14), // OUT
-	.z15(maskt_n_15), // OUT
-	.a0(srcop[0]), // IN
-	.a1(srcop[1]), // IN
-	.a2(srcop[2]), // IN
-	.a3(srcop[3]), // IN
-	.g1n(srcop[4]), // IN
-	.g2n(zero)  // IN
+	.z0 /* OUT */ (maskt_n_0),
+	.z1 /* OUT */ (maskt_n_1),
+	.z2 /* OUT */ (maskt_n_2),
+	.z3 /* OUT */ (maskt_n_3),
+	.z4 /* OUT */ (maskt_n_4),
+	.z5 /* OUT */ (maskt_n_5),
+	.z6 /* OUT */ (maskt_n_6),
+	.z7 /* OUT */ (maskt_n_7),
+	.z8 /* OUT */ (maskt_n_8),
+	.z9 /* OUT */ (maskt_n_9),
+	.z10 /* OUT */ (maskt_n_10),
+	.z11 /* OUT */ (maskt_n_11),
+	.z12 /* OUT */ (maskt_n_12),
+	.z13 /* OUT */ (maskt_n_13),
+	.z14 /* OUT */ (maskt_n_14),
+	.z15 /* OUT */ (maskt_n_15),
+	.a0 /* IN */ (srcop[0]),
+	.a1 /* IN */ (srcop[1]),
+	.a2 /* IN */ (srcop[2]),
+	.a3 /* IN */ (srcop[3]),
+	.g1n /* IN */ (srcop[4]),
+	.g2n /* IN */ (zero)
 );
 
 // INS_EXEC.NET (724) - maskhi : d416g2l
 d416g2l maskhi_inst
 (
-	.z0(maskt_n_16), // OUT
-	.z1(maskt_n_17), // OUT
-	.z2(maskt_n_18), // OUT
-	.z3(maskt_n_19), // OUT
-	.z4(maskt_n_20), // OUT
-	.z5(maskt_n_21), // OUT
-	.z6(maskt_n_22), // OUT
-	.z7(maskt_n_23), // OUT
-	.z8(maskt_n_24), // OUT
-	.z9(maskt_n_25), // OUT
-	.z10(maskt_n_26), // OUT
-	.z11(maskt_n_27), // OUT
-	.z12(maskt_n_28), // OUT
-	.z13(maskt_n_29), // OUT
-	.z14(maskt_n_30), // OUT
-	.z15(maskt_n_31), // OUT
-	.a0(srcop[0]), // IN
-	.a1(srcop[1]), // IN
-	.a2(srcop[2]), // IN
-	.a3(srcop[3]), // IN
-	.g1n(srcop_n_4), // IN
-	.g2n(zero)  // IN
+	.z0 /* OUT */ (maskt_n_16),
+	.z1 /* OUT */ (maskt_n_17),
+	.z2 /* OUT */ (maskt_n_18),
+	.z3 /* OUT */ (maskt_n_19),
+	.z4 /* OUT */ (maskt_n_20),
+	.z5 /* OUT */ (maskt_n_21),
+	.z6 /* OUT */ (maskt_n_22),
+	.z7 /* OUT */ (maskt_n_23),
+	.z8 /* OUT */ (maskt_n_24),
+	.z9 /* OUT */ (maskt_n_25),
+	.z10 /* OUT */ (maskt_n_26),
+	.z11 /* OUT */ (maskt_n_27),
+	.z12 /* OUT */ (maskt_n_28),
+	.z13 /* OUT */ (maskt_n_29),
+	.z14 /* OUT */ (maskt_n_30),
+	.z15 /* OUT */ (maskt_n_31),
+	.a0 /* IN */ (srcop[0]),
+	.a1 /* IN */ (srcop[1]),
+	.a2 /* IN */ (srcop[2]),
+	.a3 /* IN */ (srcop[3]),
+	.g1n /* IN */ (srcop_n_4),
+	.g2n /* IN */ (zero)
 );
 
 // INS_EXEC.NET (726) - type9 : an4u
@@ -428,322 +428,322 @@ assign sdsel_1 = type7;
 // INS_EXEC.NET (746) - locsrc : mx4
 mx4 locsrc_inst_0
 (
-	.z(locsrc[0]), // OUT
-	.a0(gensrc[0]), // IN
-	.a1(mask[0]), // IN
-	.a2(program_count[0]), // IN
-	.a3(program_count[0]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[0]),
+	.a0 /* IN */ (gensrc[0]),
+	.a1 /* IN */ (mask[0]),
+	.a2 /* IN */ (program_count[0]),
+	.a3 /* IN */ (program_count[0]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_1
 (
-	.z(locsrc[1]), // OUT
-	.a0(gensrc[1]), // IN
-	.a1(mask[1]), // IN
-	.a2(program_count[1]), // IN
-	.a3(program_count[1]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[1]),
+	.a0 /* IN */ (gensrc[1]),
+	.a1 /* IN */ (mask[1]),
+	.a2 /* IN */ (program_count[1]),
+	.a3 /* IN */ (program_count[1]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_2
 (
-	.z(locsrc[2]), // OUT
-	.a0(gensrc[2]), // IN
-	.a1(mask[2]), // IN
-	.a2(program_count[2]), // IN
-	.a3(program_count[2]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[2]),
+	.a0 /* IN */ (gensrc[2]),
+	.a1 /* IN */ (mask[2]),
+	.a2 /* IN */ (program_count[2]),
+	.a3 /* IN */ (program_count[2]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_3
 (
-	.z(locsrc[3]), // OUT
-	.a0(gensrc[3]), // IN
-	.a1(mask[3]), // IN
-	.a2(program_count[3]), // IN
-	.a3(program_count[3]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[3]),
+	.a0 /* IN */ (gensrc[3]),
+	.a1 /* IN */ (mask[3]),
+	.a2 /* IN */ (program_count[3]),
+	.a3 /* IN */ (program_count[3]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_4
 (
-	.z(locsrc[4]), // OUT
-	.a0(gensrc[4]), // IN
-	.a1(mask[4]), // IN
-	.a2(program_count[4]), // IN
-	.a3(program_count[4]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[4]),
+	.a0 /* IN */ (gensrc[4]),
+	.a1 /* IN */ (mask[4]),
+	.a2 /* IN */ (program_count[4]),
+	.a3 /* IN */ (program_count[4]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_5
 (
-	.z(locsrc[5]), // OUT
-	.a0(gensrc[5]), // IN
-	.a1(mask[5]), // IN
-	.a2(program_count[5]), // IN
-	.a3(program_count[5]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[5]),
+	.a0 /* IN */ (gensrc[5]),
+	.a1 /* IN */ (mask[5]),
+	.a2 /* IN */ (program_count[5]),
+	.a3 /* IN */ (program_count[5]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_6
 (
-	.z(locsrc[6]), // OUT
-	.a0(gensrc[6]), // IN
-	.a1(mask[6]), // IN
-	.a2(program_count[6]), // IN
-	.a3(program_count[6]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[6]),
+	.a0 /* IN */ (gensrc[6]),
+	.a1 /* IN */ (mask[6]),
+	.a2 /* IN */ (program_count[6]),
+	.a3 /* IN */ (program_count[6]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_7
 (
-	.z(locsrc[7]), // OUT
-	.a0(gensrc[7]), // IN
-	.a1(mask[7]), // IN
-	.a2(program_count[7]), // IN
-	.a3(program_count[7]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[7]),
+	.a0 /* IN */ (gensrc[7]),
+	.a1 /* IN */ (mask[7]),
+	.a2 /* IN */ (program_count[7]),
+	.a3 /* IN */ (program_count[7]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_8
 (
-	.z(locsrc[8]), // OUT
-	.a0(gensrc[8]), // IN
-	.a1(mask[8]), // IN
-	.a2(program_count[8]), // IN
-	.a3(program_count[8]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[8]),
+	.a0 /* IN */ (gensrc[8]),
+	.a1 /* IN */ (mask[8]),
+	.a2 /* IN */ (program_count[8]),
+	.a3 /* IN */ (program_count[8]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_9
 (
-	.z(locsrc[9]), // OUT
-	.a0(gensrc[9]), // IN
-	.a1(mask[9]), // IN
-	.a2(program_count[9]), // IN
-	.a3(program_count[9]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[9]),
+	.a0 /* IN */ (gensrc[9]),
+	.a1 /* IN */ (mask[9]),
+	.a2 /* IN */ (program_count[9]),
+	.a3 /* IN */ (program_count[9]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_10
 (
-	.z(locsrc[10]), // OUT
-	.a0(gensrc[10]), // IN
-	.a1(mask[10]), // IN
-	.a2(program_count[10]), // IN
-	.a3(program_count[10]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[10]),
+	.a0 /* IN */ (gensrc[10]),
+	.a1 /* IN */ (mask[10]),
+	.a2 /* IN */ (program_count[10]),
+	.a3 /* IN */ (program_count[10]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_11
 (
-	.z(locsrc[11]), // OUT
-	.a0(gensrc[11]), // IN
-	.a1(mask[11]), // IN
-	.a2(program_count[11]), // IN
-	.a3(program_count[11]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[11]),
+	.a0 /* IN */ (gensrc[11]),
+	.a1 /* IN */ (mask[11]),
+	.a2 /* IN */ (program_count[11]),
+	.a3 /* IN */ (program_count[11]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_12
 (
-	.z(locsrc[12]), // OUT
-	.a0(gensrc[12]), // IN
-	.a1(mask[12]), // IN
-	.a2(program_count[12]), // IN
-	.a3(program_count[12]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[12]),
+	.a0 /* IN */ (gensrc[12]),
+	.a1 /* IN */ (mask[12]),
+	.a2 /* IN */ (program_count[12]),
+	.a3 /* IN */ (program_count[12]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_13
 (
-	.z(locsrc[13]), // OUT
-	.a0(gensrc[13]), // IN
-	.a1(mask[13]), // IN
-	.a2(program_count[13]), // IN
-	.a3(program_count[13]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[13]),
+	.a0 /* IN */ (gensrc[13]),
+	.a1 /* IN */ (mask[13]),
+	.a2 /* IN */ (program_count[13]),
+	.a3 /* IN */ (program_count[13]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_14
 (
-	.z(locsrc[14]), // OUT
-	.a0(gensrc[14]), // IN
-	.a1(mask[14]), // IN
-	.a2(program_count[14]), // IN
-	.a3(program_count[14]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[14]),
+	.a0 /* IN */ (gensrc[14]),
+	.a1 /* IN */ (mask[14]),
+	.a2 /* IN */ (program_count[14]),
+	.a3 /* IN */ (program_count[14]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_15
 (
-	.z(locsrc[15]), // OUT
-	.a0(gensrc[15]), // IN
-	.a1(mask[15]), // IN
-	.a2(program_count[15]), // IN
-	.a3(program_count[15]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[15]),
+	.a0 /* IN */ (gensrc[15]),
+	.a1 /* IN */ (mask[15]),
+	.a2 /* IN */ (program_count[15]),
+	.a3 /* IN */ (program_count[15]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_16
 (
-	.z(locsrc[16]), // OUT
-	.a0(gensrc[16]), // IN
-	.a1(mask[16]), // IN
-	.a2(program_count[16]), // IN
-	.a3(program_count[16]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[16]),
+	.a0 /* IN */ (gensrc[16]),
+	.a1 /* IN */ (mask[16]),
+	.a2 /* IN */ (program_count[16]),
+	.a3 /* IN */ (program_count[16]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_17
 (
-	.z(locsrc[17]), // OUT
-	.a0(gensrc[17]), // IN
-	.a1(mask[17]), // IN
-	.a2(program_count[17]), // IN
-	.a3(program_count[17]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[17]),
+	.a0 /* IN */ (gensrc[17]),
+	.a1 /* IN */ (mask[17]),
+	.a2 /* IN */ (program_count[17]),
+	.a3 /* IN */ (program_count[17]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_18
 (
-	.z(locsrc[18]), // OUT
-	.a0(gensrc[18]), // IN
-	.a1(mask[18]), // IN
-	.a2(program_count[18]), // IN
-	.a3(program_count[18]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[18]),
+	.a0 /* IN */ (gensrc[18]),
+	.a1 /* IN */ (mask[18]),
+	.a2 /* IN */ (program_count[18]),
+	.a3 /* IN */ (program_count[18]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_19
 (
-	.z(locsrc[19]), // OUT
-	.a0(gensrc[19]), // IN
-	.a1(mask[19]), // IN
-	.a2(program_count[19]), // IN
-	.a3(program_count[19]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[19]),
+	.a0 /* IN */ (gensrc[19]),
+	.a1 /* IN */ (mask[19]),
+	.a2 /* IN */ (program_count[19]),
+	.a3 /* IN */ (program_count[19]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_20
 (
-	.z(locsrc[20]), // OUT
-	.a0(gensrc[20]), // IN
-	.a1(mask[20]), // IN
-	.a2(program_count[20]), // IN
-	.a3(program_count[20]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[20]),
+	.a0 /* IN */ (gensrc[20]),
+	.a1 /* IN */ (mask[20]),
+	.a2 /* IN */ (program_count[20]),
+	.a3 /* IN */ (program_count[20]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_21
 (
-	.z(locsrc[21]), // OUT
-	.a0(gensrc[21]), // IN
-	.a1(mask[21]), // IN
-	.a2(program_count[21]), // IN
-	.a3(program_count[21]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[21]),
+	.a0 /* IN */ (gensrc[21]),
+	.a1 /* IN */ (mask[21]),
+	.a2 /* IN */ (program_count[21]),
+	.a3 /* IN */ (program_count[21]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_22
 (
-	.z(locsrc[22]), // OUT
-	.a0(gensrc[22]), // IN
-	.a1(mask[22]), // IN
-	.a2(program_count[22]), // IN
-	.a3(program_count[22]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[22]),
+	.a0 /* IN */ (gensrc[22]),
+	.a1 /* IN */ (mask[22]),
+	.a2 /* IN */ (program_count[22]),
+	.a3 /* IN */ (program_count[22]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_23
 (
-	.z(locsrc[23]), // OUT
-	.a0(gensrc[23]), // IN
-	.a1(mask[23]), // IN
-	.a2(program_count[23]), // IN
-	.a3(program_count[23]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[23]),
+	.a0 /* IN */ (gensrc[23]),
+	.a1 /* IN */ (mask[23]),
+	.a2 /* IN */ (program_count[23]),
+	.a3 /* IN */ (program_count[23]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_24
 (
-	.z(locsrc[24]), // OUT
-	.a0(gensrc[24]), // IN
-	.a1(mask[24]), // IN
-	.a2(program_count[24]), // IN
-	.a3(program_count[24]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[24]),
+	.a0 /* IN */ (gensrc[24]),
+	.a1 /* IN */ (mask[24]),
+	.a2 /* IN */ (program_count[24]),
+	.a3 /* IN */ (program_count[24]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_25
 (
-	.z(locsrc[25]), // OUT
-	.a0(gensrc[25]), // IN
-	.a1(mask[25]), // IN
-	.a2(program_count[25]), // IN
-	.a3(program_count[25]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[25]),
+	.a0 /* IN */ (gensrc[25]),
+	.a1 /* IN */ (mask[25]),
+	.a2 /* IN */ (program_count[25]),
+	.a3 /* IN */ (program_count[25]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_26
 (
-	.z(locsrc[26]), // OUT
-	.a0(gensrc[26]), // IN
-	.a1(mask[26]), // IN
-	.a2(program_count[26]), // IN
-	.a3(program_count[26]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[26]),
+	.a0 /* IN */ (gensrc[26]),
+	.a1 /* IN */ (mask[26]),
+	.a2 /* IN */ (program_count[26]),
+	.a3 /* IN */ (program_count[26]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_27
 (
-	.z(locsrc[27]), // OUT
-	.a0(gensrc[27]), // IN
-	.a1(mask[27]), // IN
-	.a2(program_count[27]), // IN
-	.a3(program_count[27]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[27]),
+	.a0 /* IN */ (gensrc[27]),
+	.a1 /* IN */ (mask[27]),
+	.a2 /* IN */ (program_count[27]),
+	.a3 /* IN */ (program_count[27]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_28
 (
-	.z(locsrc[28]), // OUT
-	.a0(gensrc[28]), // IN
-	.a1(mask[28]), // IN
-	.a2(program_count[28]), // IN
-	.a3(program_count[28]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[28]),
+	.a0 /* IN */ (gensrc[28]),
+	.a1 /* IN */ (mask[28]),
+	.a2 /* IN */ (program_count[28]),
+	.a3 /* IN */ (program_count[28]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_29
 (
-	.z(locsrc[29]), // OUT
-	.a0(gensrc[29]), // IN
-	.a1(mask[29]), // IN
-	.a2(program_count[29]), // IN
-	.a3(program_count[29]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[29]),
+	.a0 /* IN */ (gensrc[29]),
+	.a1 /* IN */ (mask[29]),
+	.a2 /* IN */ (program_count[29]),
+	.a3 /* IN */ (program_count[29]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_30
 (
-	.z(locsrc[30]), // OUT
-	.a0(gensrc[30]), // IN
-	.a1(mask[30]), // IN
-	.a2(program_count[30]), // IN
-	.a3(program_count[30]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[30]),
+	.a0 /* IN */ (gensrc[30]),
+	.a1 /* IN */ (mask[30]),
+	.a2 /* IN */ (program_count[30]),
+	.a3 /* IN */ (program_count[30]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 mx4 locsrc_inst_31
 (
-	.z(locsrc[31]), // OUT
-	.a0(gensrc[31]), // IN
-	.a1(mask[31]), // IN
-	.a2(program_count[31]), // IN
-	.a3(program_count[31]), // IN
-	.s0(sdsel_0), // IN
-	.s1(sdsel_1)  // IN
+	.z /* OUT */ (locsrc[31]),
+	.a0 /* IN */ (gensrc[31]),
+	.a1 /* IN */ (mask[31]),
+	.a2 /* IN */ (program_count[31]),
+	.a3 /* IN */ (program_count[31]),
+	.s0 /* IN */ (sdsel_0),
+	.s1 /* IN */ (sdsel_1)
 );
 endmodule

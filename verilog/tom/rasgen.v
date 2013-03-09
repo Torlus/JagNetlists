@@ -16,14 +16,6 @@ wire ron;
 wire roff;
 wire cs;
 
-// Output buffers
-wire csl_obuf;
-
-
-// Output buffers
-assign csl = csl_obuf;
-
-
 // MEM.NET (729) - ronl : nd2
 assign ronl = ~(bs & on1);
 
@@ -36,12 +28,12 @@ assign roff = ~(roffl & alloffl);
 // MEM.NET (732) - cs : fjk2
 fjk2 cs_inst
 (
-	.q(cs), // OUT
-	.qn(csl_obuf), // OUT
-	.j(ron), // IN
-	.k(roff), // IN
-	.cp(clk), // IN
-	.cd(resl)  // IN
+	.q /* OUT */ (cs),
+	.qn /* OUT */ (csl),
+	.j /* IN */ (ron),
+	.k /* IN */ (roff),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resl)
 );
 
 // MEM.NET (733) - csl : dummy

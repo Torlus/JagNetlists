@@ -39,18 +39,6 @@ wire agb_1;
 wire aeb_1;
 wire alb_1;
 
-// Output buffers
-wire agb_obuf;
-wire aeb_obuf;
-wire alb_obuf;
-
-
-// Output buffers
-assign agb = agb_obuf;
-assign aeb = aeb_obuf;
-assign alb = alb_obuf;
-
-
 // OB.NET (736) - vcc : tie1
 assign vcc = 1'b1;
 
@@ -60,57 +48,57 @@ assign gnd = 1'b0;
 // OB.NET (739) - m0 : mag4
 mag4 m0_inst
 (
-	.agb(agb_0), // OUT
-	.aeb(aeb_0), // OUT
-	.alb(alb_0), // OUT
-	.agbi(gnd), // IN
-	.aebi(vcc), // IN
-	.albi(gnd), // IN
-	.a3(a_11), // IN
-	.b3(b_11), // IN
-	.a2(a_10), // IN
-	.b2(b_10), // IN
-	.a1(a_9), // IN
-	.b1(b_9), // IN
-	.a0(a_8), // IN
-	.b0(b_8)  // IN
+	.agb /* OUT */ (agb_0),
+	.aeb /* OUT */ (aeb_0),
+	.alb /* OUT */ (alb_0),
+	.agbi /* IN */ (gnd),
+	.aebi /* IN */ (vcc),
+	.albi /* IN */ (gnd),
+	.a3 /* IN */ (a_11),
+	.b3 /* IN */ (b_11),
+	.a2 /* IN */ (a_10),
+	.b2 /* IN */ (b_10),
+	.a1 /* IN */ (a_9),
+	.b1 /* IN */ (b_9),
+	.a0 /* IN */ (a_8),
+	.b0 /* IN */ (b_8)
 );
 
 // OB.NET (741) - m1 : mag4
 mag4 m1_inst
 (
-	.agb(agb_1), // OUT
-	.aeb(aeb_1), // OUT
-	.alb(alb_1), // OUT
-	.agbi(agb_0), // IN
-	.aebi(aeb_0), // IN
-	.albi(alb_0), // IN
-	.a3(a_7), // IN
-	.b3(b_7), // IN
-	.a2(a_6), // IN
-	.b2(b_6), // IN
-	.a1(a_5), // IN
-	.b1(b_5), // IN
-	.a0(a_4), // IN
-	.b0(b_4)  // IN
+	.agb /* OUT */ (agb_1),
+	.aeb /* OUT */ (aeb_1),
+	.alb /* OUT */ (alb_1),
+	.agbi /* IN */ (agb_0),
+	.aebi /* IN */ (aeb_0),
+	.albi /* IN */ (alb_0),
+	.a3 /* IN */ (a_7),
+	.b3 /* IN */ (b_7),
+	.a2 /* IN */ (a_6),
+	.b2 /* IN */ (b_6),
+	.a1 /* IN */ (a_5),
+	.b1 /* IN */ (b_5),
+	.a0 /* IN */ (a_4),
+	.b0 /* IN */ (b_4)
 );
 
 // OB.NET (743) - m2 : mag4
 mag4 m2_inst
 (
-	.agb(agb_obuf), // OUT
-	.aeb(aeb_obuf), // OUT
-	.alb(alb_obuf), // OUT
-	.agbi(agb_1), // IN
-	.aebi(aeb_1), // IN
-	.albi(alb_1), // IN
-	.a3(a_3), // IN
-	.b3(b_3), // IN
-	.a2(a_2), // IN
-	.b2(b_2), // IN
-	.a1(a_1), // IN
-	.b1(b_1), // IN
-	.a0(a_0), // IN
-	.b0(b_0)  // IN
+	.agb /* OUT */ (agb),
+	.aeb /* OUT */ (aeb),
+	.alb /* OUT */ (alb),
+	.agbi /* IN */ (agb_1),
+	.aebi /* IN */ (aeb_1),
+	.albi /* IN */ (alb_1),
+	.a3 /* IN */ (a_3),
+	.b3 /* IN */ (b_3),
+	.a2 /* IN */ (a_2),
+	.b2 /* IN */ (b_2),
+	.a1 /* IN */ (a_1),
+	.b1 /* IN */ (b_1),
+	.a0 /* IN */ (a_0),
+	.b0 /* IN */ (b_0)
 );
 endmodule

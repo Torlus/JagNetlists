@@ -21,19 +21,19 @@ module add4
 // DUPLO.NET (47) - add4 : fa4r
 fa4r add4_inst
 (
-	.s0(q_0), // OUT
-	.s1(q_1), // OUT
-	.s2(q_2), // OUT
-	.s3(q_3), // OUT
-	.co(co), // OUT
-	.ci(ci), // IN
-	.a0(a_0), // IN
-	.b0(b_0), // IN
-	.a1(a_1), // IN
-	.b1(b_1), // IN
-	.a2(a_2), // IN
-	.b2(b_2), // IN
-	.a3(a_3), // IN
-	.b3(b_3)  // IN
+	.s0 /* OUT */ (q_0),
+	.s1 /* OUT */ (q_1),
+	.s2 /* OUT */ (q_2),
+	.s3 /* OUT */ (q_3),
+	.co /* OUT */ (co),
+	.ci /* IN */ (ci),
+	.a0 /* IN */ (a_0),
+	.b0 /* IN */ (b_0),
+	.a1 /* IN */ (a_1),
+	.b1 /* IN */ (b_1),
+	.a2 /* IN */ (a_2),
+	.b2 /* IN */ (b_2),
+	.a3 /* IN */ (a_3),
+	.b3 /* IN */ (b_3)
 );
 endmodule

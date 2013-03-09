@@ -31,18 +31,6 @@ module mag11
 wire gnd1;
 wire gnd2;
 
-// Output buffers
-wire agb_obuf;
-wire aeb_obuf;
-wire alb_obuf;
-
-
-// Output buffers
-assign agb = agb_obuf;
-assign aeb = aeb_obuf;
-assign alb = alb_obuf;
-
-
 // OB.NET (699) - gnd1 : tie0
 assign gnd1 = 1'b0;
 
@@ -52,32 +40,32 @@ assign gnd2 = 1'b0;
 // OB.NET (711) - m : mag12
 mag12 m_inst
 (
-	.agb(agb_obuf), // IO
-	.aeb(aeb_obuf), // IO
-	.alb(alb_obuf), // IO
-	.a_0(a_0), // IN
-	.a_1(a_1), // IN
-	.a_2(a_2), // IN
-	.a_3(a_3), // IN
-	.a_4(a_4), // IN
-	.a_5(a_5), // IN
-	.a_6(a_6), // IN
-	.a_7(a_7), // IN
-	.a_8(a_8), // IN
-	.a_9(a_9), // IN
-	.a_10(a_10), // IN
-	.a_11(gnd1), // IN
-	.b_0(b_0), // IN
-	.b_1(b_1), // IN
-	.b_2(b_2), // IN
-	.b_3(b_3), // IN
-	.b_4(b_4), // IN
-	.b_5(b_5), // IN
-	.b_6(b_6), // IN
-	.b_7(b_7), // IN
-	.b_8(b_8), // IN
-	.b_9(b_9), // IN
-	.b_10(b_10), // IN
-	.b_11(gnd2)  // IN
+	.agb /* OUT */ (agb),
+	.aeb /* OUT */ (aeb),
+	.alb /* OUT */ (alb),
+	.a_0 /* IN */ (a_0),
+	.a_1 /* IN */ (a_1),
+	.a_2 /* IN */ (a_2),
+	.a_3 /* IN */ (a_3),
+	.a_4 /* IN */ (a_4),
+	.a_5 /* IN */ (a_5),
+	.a_6 /* IN */ (a_6),
+	.a_7 /* IN */ (a_7),
+	.a_8 /* IN */ (a_8),
+	.a_9 /* IN */ (a_9),
+	.a_10 /* IN */ (a_10),
+	.a_11 /* IN */ (gnd1),
+	.b_0 /* IN */ (b_0),
+	.b_1 /* IN */ (b_1),
+	.b_2 /* IN */ (b_2),
+	.b_3 /* IN */ (b_3),
+	.b_4 /* IN */ (b_4),
+	.b_5 /* IN */ (b_5),
+	.b_6 /* IN */ (b_6),
+	.b_7 /* IN */ (b_7),
+	.b_8 /* IN */ (b_8),
+	.b_9 /* IN */ (b_9),
+	.b_10 /* IN */ (b_10),
+	.b_11 /* IN */ (gnd2)
 );
 endmodule

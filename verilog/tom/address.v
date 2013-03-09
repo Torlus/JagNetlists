@@ -2,44 +2,108 @@
 
 module address
 (
-	inout gpu_dout_0,
-	inout gpu_dout_1,
-	inout gpu_dout_2,
-	inout gpu_dout_3,
-	inout gpu_dout_4,
-	inout gpu_dout_5,
-	inout gpu_dout_6,
-	inout gpu_dout_7,
-	inout gpu_dout_8,
-	inout gpu_dout_9,
-	inout gpu_dout_10,
-	inout gpu_dout_11,
-	inout gpu_dout_12,
-	inout gpu_dout_13,
-	inout gpu_dout_14,
-	inout gpu_dout_15,
-	inout gpu_dout_16,
-	inout gpu_dout_17,
-	inout gpu_dout_18,
-	inout gpu_dout_19,
-	inout gpu_dout_20,
-	inout gpu_dout_21,
-	inout gpu_dout_22,
-	inout gpu_dout_23,
-	inout gpu_dout_24,
-	inout gpu_dout_25,
-	inout gpu_dout_26,
-	inout gpu_dout_27,
-	inout gpu_dout_28,
-	inout gpu_dout_29,
-	inout gpu_dout_30,
-	inout gpu_dout_31,
+	output gpu_dout_0_out,
+	output gpu_dout_0_oe,
+	input gpu_dout_0_in,
+	output gpu_dout_1_out,
+	output gpu_dout_1_oe,
+	input gpu_dout_1_in,
+	output gpu_dout_2_out,
+	output gpu_dout_2_oe,
+	input gpu_dout_2_in,
+	output gpu_dout_3_out,
+	output gpu_dout_3_oe,
+	input gpu_dout_3_in,
+	output gpu_dout_4_out,
+	output gpu_dout_4_oe,
+	input gpu_dout_4_in,
+	output gpu_dout_5_out,
+	output gpu_dout_5_oe,
+	input gpu_dout_5_in,
+	output gpu_dout_6_out,
+	output gpu_dout_6_oe,
+	input gpu_dout_6_in,
+	output gpu_dout_7_out,
+	output gpu_dout_7_oe,
+	input gpu_dout_7_in,
+	output gpu_dout_8_out,
+	output gpu_dout_8_oe,
+	input gpu_dout_8_in,
+	output gpu_dout_9_out,
+	output gpu_dout_9_oe,
+	input gpu_dout_9_in,
+	output gpu_dout_10_out,
+	output gpu_dout_10_oe,
+	input gpu_dout_10_in,
+	output gpu_dout_11_out,
+	output gpu_dout_11_oe,
+	input gpu_dout_11_in,
+	output gpu_dout_12_out,
+	output gpu_dout_12_oe,
+	input gpu_dout_12_in,
+	output gpu_dout_13_out,
+	output gpu_dout_13_oe,
+	input gpu_dout_13_in,
+	output gpu_dout_14_out,
+	output gpu_dout_14_oe,
+	input gpu_dout_14_in,
+	output gpu_dout_15_out,
+	output gpu_dout_15_oe,
+	input gpu_dout_15_in,
+	output gpu_dout_16_out,
+	output gpu_dout_16_oe,
+	input gpu_dout_16_in,
+	output gpu_dout_17_out,
+	output gpu_dout_17_oe,
+	input gpu_dout_17_in,
+	output gpu_dout_18_out,
+	output gpu_dout_18_oe,
+	input gpu_dout_18_in,
+	output gpu_dout_19_out,
+	output gpu_dout_19_oe,
+	input gpu_dout_19_in,
+	output gpu_dout_20_out,
+	output gpu_dout_20_oe,
+	input gpu_dout_20_in,
+	output gpu_dout_21_out,
+	output gpu_dout_21_oe,
+	input gpu_dout_21_in,
+	output gpu_dout_22_out,
+	output gpu_dout_22_oe,
+	input gpu_dout_22_in,
+	output gpu_dout_23_out,
+	output gpu_dout_23_oe,
+	input gpu_dout_23_in,
+	output gpu_dout_24_out,
+	output gpu_dout_24_oe,
+	input gpu_dout_24_in,
+	output gpu_dout_25_out,
+	output gpu_dout_25_oe,
+	input gpu_dout_25_in,
+	output gpu_dout_26_out,
+	output gpu_dout_26_oe,
+	input gpu_dout_26_in,
+	output gpu_dout_27_out,
+	output gpu_dout_27_oe,
+	input gpu_dout_27_in,
+	output gpu_dout_28_out,
+	output gpu_dout_28_oe,
+	input gpu_dout_28_in,
+	output gpu_dout_29_out,
+	output gpu_dout_29_oe,
+	input gpu_dout_29_in,
+	output gpu_dout_30_out,
+	output gpu_dout_30_oe,
+	input gpu_dout_30_in,
+	output gpu_dout_31_out,
+	output gpu_dout_31_oe,
+	input gpu_dout_31_in,
 	output a1_outside,
 	output a1_pixsize_0,
 	output a1_pixsize_1,
 	output a1_pixsize_2,
-	output[0:14] a1_win_x;
-	output[0:15] a1_x;
+	output [0:14] a1_win_x;
+	output [0:15] a1_x;
 	output a1addx_0,
 	output a1addx_1,
 	output a1addy,
@@ -48,13 +112,13 @@ module address
 	output a2_pixsize_0,
 	output a2_pixsize_1,
 	output a2_pixsize_2,
-	output[0:15] a2_x;
+	output [0:15] a2_x;
 	output a2addx_0,
 	output a2addx_1,
 	output a2addy,
 	output a2xsign,
 	output a2ysign,
-	output[0:23] address;
+	output [0:23] address;
 	output pixa_0,
 	output pixa_1,
 	output pixa_2,
@@ -89,7 +153,7 @@ module address
 	input apipe,
 	input clk,
 	input gena2,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input load_strobe,
 	input modx_0,
 	input modx_1,
@@ -569,129 +633,129 @@ assign a1baseldg = a1baseld & load_strobe;
 // ADDRESS.NET (93) - a1base : ldp1q
 ldp1q a1base_inst_0
 (
-	.q(a1_base[0]), // OUT
-	.d(gpu_d_m21[0]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[0]),
+	.d /* IN */ (gpu_d_m21[0]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_1
 (
-	.q(a1_base[1]), // OUT
-	.d(gpu_d_m21[1]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[1]),
+	.d /* IN */ (gpu_d_m21[1]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_2
 (
-	.q(a1_base[2]), // OUT
-	.d(gpu_d_m21[2]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[2]),
+	.d /* IN */ (gpu_d_m21[2]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_3
 (
-	.q(a1_base[3]), // OUT
-	.d(gpu_d_m21[3]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[3]),
+	.d /* IN */ (gpu_d_m21[3]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_4
 (
-	.q(a1_base[4]), // OUT
-	.d(gpu_d_m21[4]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[4]),
+	.d /* IN */ (gpu_d_m21[4]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_5
 (
-	.q(a1_base[5]), // OUT
-	.d(gpu_d_m21[5]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[5]),
+	.d /* IN */ (gpu_d_m21[5]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_6
 (
-	.q(a1_base[6]), // OUT
-	.d(gpu_d_m21[6]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[6]),
+	.d /* IN */ (gpu_d_m21[6]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_7
 (
-	.q(a1_base[7]), // OUT
-	.d(gpu_d_m21[7]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[7]),
+	.d /* IN */ (gpu_d_m21[7]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_8
 (
-	.q(a1_base[8]), // OUT
-	.d(gpu_d_m21[8]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[8]),
+	.d /* IN */ (gpu_d_m21[8]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_9
 (
-	.q(a1_base[9]), // OUT
-	.d(gpu_d_m21[9]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[9]),
+	.d /* IN */ (gpu_d_m21[9]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_10
 (
-	.q(a1_base[10]), // OUT
-	.d(gpu_d_m21[10]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[10]),
+	.d /* IN */ (gpu_d_m21[10]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_11
 (
-	.q(a1_base[11]), // OUT
-	.d(gpu_d_m21[11]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[11]),
+	.d /* IN */ (gpu_d_m21[11]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_12
 (
-	.q(a1_base[12]), // OUT
-	.d(gpu_d_m21[12]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[12]),
+	.d /* IN */ (gpu_d_m21[12]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_13
 (
-	.q(a1_base[13]), // OUT
-	.d(gpu_d_m21[13]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[13]),
+	.d /* IN */ (gpu_d_m21[13]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_14
 (
-	.q(a1_base[14]), // OUT
-	.d(gpu_d_m21[14]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[14]),
+	.d /* IN */ (gpu_d_m21[14]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_15
 (
-	.q(a1_base[15]), // OUT
-	.d(gpu_d_m21[15]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[15]),
+	.d /* IN */ (gpu_d_m21[15]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_16
 (
-	.q(a1_base[16]), // OUT
-	.d(gpu_d_m21[16]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[16]),
+	.d /* IN */ (gpu_d_m21[16]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_17
 (
-	.q(a1_base[17]), // OUT
-	.d(gpu_d_m21[17]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[17]),
+	.d /* IN */ (gpu_d_m21[17]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_18
 (
-	.q(a1_base[18]), // OUT
-	.d(gpu_d_m21[18]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[18]),
+	.d /* IN */ (gpu_d_m21[18]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_19
 (
-	.q(a1_base[19]), // OUT
-	.d(gpu_d_m21[19]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[19]),
+	.d /* IN */ (gpu_d_m21[19]),
+	.g /* IN */ (a1baseldg)
 );
 ldp1q a1base_inst_20
 (
-	.q(a1_base[20]), // OUT
-	.d(gpu_d_m21[20]), // IN
-	.g(a1baseldg)  // IN
+	.q /* OUT */ (a1_base[20]),
+	.d /* IN */ (gpu_d_m21[20]),
+	.g /* IN */ (a1baseldg)
 );
 
 // ADDRESS.NET (97) - a1flagldg : an2h
@@ -700,129 +764,129 @@ assign a1flagldg = a1flagld & load_strobe;
 // ADDRESS.NET (98) - a1flags : ldp1q
 ldp1q a1flags_inst_0
 (
-	.q(a1_flags[0]), // OUT
-	.d(gpu_d_lo21[0]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[0]),
+	.d /* IN */ (gpu_d_lo21[0]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_1
 (
-	.q(a1_flags[1]), // OUT
-	.d(gpu_d_lo21[1]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[1]),
+	.d /* IN */ (gpu_d_lo21[1]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_2
 (
-	.q(a1_flags[2]), // OUT
-	.d(gpu_d_lo21[2]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[2]),
+	.d /* IN */ (gpu_d_lo21[2]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_3
 (
-	.q(a1_flags[3]), // OUT
-	.d(gpu_d_lo21[3]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[3]),
+	.d /* IN */ (gpu_d_lo21[3]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_4
 (
-	.q(a1_flags[4]), // OUT
-	.d(gpu_d_lo21[4]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[4]),
+	.d /* IN */ (gpu_d_lo21[4]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_5
 (
-	.q(a1_flags[5]), // OUT
-	.d(gpu_d_lo21[5]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[5]),
+	.d /* IN */ (gpu_d_lo21[5]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_6
 (
-	.q(a1_flags[6]), // OUT
-	.d(gpu_d_lo21[6]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[6]),
+	.d /* IN */ (gpu_d_lo21[6]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_7
 (
-	.q(a1_flags[7]), // OUT
-	.d(gpu_d_lo21[7]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[7]),
+	.d /* IN */ (gpu_d_lo21[7]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_8
 (
-	.q(a1_flags[8]), // OUT
-	.d(gpu_d_lo21[8]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[8]),
+	.d /* IN */ (gpu_d_lo21[8]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_9
 (
-	.q(a1_flags[9]), // OUT
-	.d(gpu_d_lo21[9]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[9]),
+	.d /* IN */ (gpu_d_lo21[9]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_10
 (
-	.q(a1_flags[10]), // OUT
-	.d(gpu_d_lo21[10]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[10]),
+	.d /* IN */ (gpu_d_lo21[10]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_11
 (
-	.q(a1_flags[11]), // OUT
-	.d(gpu_d_lo21[11]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[11]),
+	.d /* IN */ (gpu_d_lo21[11]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_12
 (
-	.q(a1_flags[12]), // OUT
-	.d(gpu_d_lo21[12]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[12]),
+	.d /* IN */ (gpu_d_lo21[12]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_13
 (
-	.q(a1_flags[13]), // OUT
-	.d(gpu_d_lo21[13]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[13]),
+	.d /* IN */ (gpu_d_lo21[13]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_14
 (
-	.q(a1_flags[14]), // OUT
-	.d(gpu_d_lo21[14]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[14]),
+	.d /* IN */ (gpu_d_lo21[14]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_15
 (
-	.q(a1_flags[15]), // OUT
-	.d(gpu_d_lo21[15]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[15]),
+	.d /* IN */ (gpu_d_lo21[15]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_16
 (
-	.q(a1_flags[16]), // OUT
-	.d(gpu_d_lo21[16]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[16]),
+	.d /* IN */ (gpu_d_lo21[16]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_17
 (
-	.q(a1_flags[17]), // OUT
-	.d(gpu_d_lo21[17]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[17]),
+	.d /* IN */ (gpu_d_lo21[17]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_18
 (
-	.q(a1_flags[18]), // OUT
-	.d(gpu_d_lo21[18]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[18]),
+	.d /* IN */ (gpu_d_lo21[18]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_19
 (
-	.q(a1_flags[19]), // OUT
-	.d(gpu_d_lo21[19]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[19]),
+	.d /* IN */ (gpu_d_lo21[19]),
+	.g /* IN */ (a1flagldg)
 );
 ldp1q a1flags_inst_20
 (
-	.q(a1_flags[20]), // OUT
-	.d(gpu_d_lo21[20]), // IN
-	.g(a1flagldg)  // IN
+	.q /* OUT */ (a1_flags[20]),
+	.d /* IN */ (gpu_d_lo21[20]),
+	.g /* IN */ (a1flagldg)
 );
 
 // ADDRESS.NET (99) - a1_pixp[0-1] : join
@@ -873,194 +937,194 @@ assign a1winldg = a1winld & load_strobe;
 // ADDRESS.NET (114) - a1winx : ldp1q
 ldp1q a1winx_inst_0
 (
-	.q(a1_win_x_b0_obuf), // OUT
-	.d(gpu_d_lo15[0]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b0_obuf),
+	.d /* IN */ (gpu_d_lo15[0]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_1
 (
-	.q(a1_win_x_b1_obuf), // OUT
-	.d(gpu_d_lo15[1]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b1_obuf),
+	.d /* IN */ (gpu_d_lo15[1]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_2
 (
-	.q(a1_win_x_b2_obuf), // OUT
-	.d(gpu_d_lo15[2]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b2_obuf),
+	.d /* IN */ (gpu_d_lo15[2]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_3
 (
-	.q(a1_win_x_b3_obuf), // OUT
-	.d(gpu_d_lo15[3]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b3_obuf),
+	.d /* IN */ (gpu_d_lo15[3]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_4
 (
-	.q(a1_win_x_b4_obuf), // OUT
-	.d(gpu_d_lo15[4]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b4_obuf),
+	.d /* IN */ (gpu_d_lo15[4]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_5
 (
-	.q(a1_win_x_b5_obuf), // OUT
-	.d(gpu_d_lo15[5]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b5_obuf),
+	.d /* IN */ (gpu_d_lo15[5]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_6
 (
-	.q(a1_win_x_b6_obuf), // OUT
-	.d(gpu_d_lo15[6]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b6_obuf),
+	.d /* IN */ (gpu_d_lo15[6]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_7
 (
-	.q(a1_win_x_b7_obuf), // OUT
-	.d(gpu_d_lo15[7]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b7_obuf),
+	.d /* IN */ (gpu_d_lo15[7]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_8
 (
-	.q(a1_win_x_b8_obuf), // OUT
-	.d(gpu_d_lo15[8]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b8_obuf),
+	.d /* IN */ (gpu_d_lo15[8]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_9
 (
-	.q(a1_win_x_b9_obuf), // OUT
-	.d(gpu_d_lo15[9]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b9_obuf),
+	.d /* IN */ (gpu_d_lo15[9]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_10
 (
-	.q(a1_win_x_b10_obuf), // OUT
-	.d(gpu_d_lo15[10]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b10_obuf),
+	.d /* IN */ (gpu_d_lo15[10]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_11
 (
-	.q(a1_win_x_b11_obuf), // OUT
-	.d(gpu_d_lo15[11]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b11_obuf),
+	.d /* IN */ (gpu_d_lo15[11]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_12
 (
-	.q(a1_win_x_b12_obuf), // OUT
-	.d(gpu_d_lo15[12]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b12_obuf),
+	.d /* IN */ (gpu_d_lo15[12]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_13
 (
-	.q(a1_win_x_b13_obuf), // OUT
-	.d(gpu_d_lo15[13]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b13_obuf),
+	.d /* IN */ (gpu_d_lo15[13]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winx_inst_14
 (
-	.q(a1_win_x_b14_obuf), // OUT
-	.d(gpu_d_lo15[14]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_x_b14_obuf),
+	.d /* IN */ (gpu_d_lo15[14]),
+	.g /* IN */ (a1winldg)
 );
 
 // ADDRESS.NET (115) - a1winy : ldp1q
 ldp1q a1winy_inst_0
 (
-	.q(a1_win_y[0]), // OUT
-	.d(gpu_d_hi15[0]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[0]),
+	.d /* IN */ (gpu_d_hi15[0]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_1
 (
-	.q(a1_win_y[1]), // OUT
-	.d(gpu_d_hi15[1]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[1]),
+	.d /* IN */ (gpu_d_hi15[1]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_2
 (
-	.q(a1_win_y[2]), // OUT
-	.d(gpu_d_hi15[2]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[2]),
+	.d /* IN */ (gpu_d_hi15[2]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_3
 (
-	.q(a1_win_y[3]), // OUT
-	.d(gpu_d_hi15[3]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[3]),
+	.d /* IN */ (gpu_d_hi15[3]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_4
 (
-	.q(a1_win_y[4]), // OUT
-	.d(gpu_d_hi15[4]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[4]),
+	.d /* IN */ (gpu_d_hi15[4]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_5
 (
-	.q(a1_win_y[5]), // OUT
-	.d(gpu_d_hi15[5]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[5]),
+	.d /* IN */ (gpu_d_hi15[5]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_6
 (
-	.q(a1_win_y[6]), // OUT
-	.d(gpu_d_hi15[6]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[6]),
+	.d /* IN */ (gpu_d_hi15[6]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_7
 (
-	.q(a1_win_y[7]), // OUT
-	.d(gpu_d_hi15[7]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[7]),
+	.d /* IN */ (gpu_d_hi15[7]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_8
 (
-	.q(a1_win_y[8]), // OUT
-	.d(gpu_d_hi15[8]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[8]),
+	.d /* IN */ (gpu_d_hi15[8]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_9
 (
-	.q(a1_win_y[9]), // OUT
-	.d(gpu_d_hi15[9]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[9]),
+	.d /* IN */ (gpu_d_hi15[9]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_10
 (
-	.q(a1_win_y[10]), // OUT
-	.d(gpu_d_hi15[10]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[10]),
+	.d /* IN */ (gpu_d_hi15[10]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_11
 (
-	.q(a1_win_y[11]), // OUT
-	.d(gpu_d_hi15[11]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[11]),
+	.d /* IN */ (gpu_d_hi15[11]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_12
 (
-	.q(a1_win_y[12]), // OUT
-	.d(gpu_d_hi15[12]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[12]),
+	.d /* IN */ (gpu_d_hi15[12]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_13
 (
-	.q(a1_win_y[13]), // OUT
-	.d(gpu_d_hi15[13]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[13]),
+	.d /* IN */ (gpu_d_hi15[13]),
+	.g /* IN */ (a1winldg)
 );
 ldp1q a1winy_inst_14
 (
-	.q(a1_win_y[14]), // OUT
-	.d(gpu_d_hi15[14]), // IN
-	.g(a1winldg)  // IN
+	.q /* OUT */ (a1_win_y[14]),
+	.d /* IN */ (gpu_d_hi15[14]),
+	.g /* IN */ (a1winldg)
 );
 
 // ADDRESS.NET (119) - a1xt : fdsync16
 fdsync16 a1xt_inst
 (
-	.q({a1_xt[0],a1_xt[1],a1_xt[2],a1_xt[3],a1_xt[4],a1_xt[5],a1_xt[6],a1_xt[7],a1_xt[8],a1_xt[9],a1_xt[10],a1_xt[11],a1_xt[12],a1_xt[13],a1_xt[14],a1_xt[15]}), // IO
-	.d({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}), // IN
-	.ld(a1ptrld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({a1_xt[0],a1_xt[1],a1_xt[2],a1_xt[3],a1_xt[4],a1_xt[5],a1_xt[6],a1_xt[7],a1_xt[8],a1_xt[9],a1_xt[10],a1_xt[11],a1_xt[12],a1_xt[13],a1_xt[14],a1_xt[15]}),
+	.d /* IN */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
+	.ld /* IN */ (a1ptrld),
+	.clk /* IN */ (clk)
 );
 
 // ADDRESS.NET (120) - a1x : nivm
@@ -1084,10 +1148,10 @@ assign a1_x_b15_obuf = a1_xt[15];
 // ADDRESS.NET (121) - a1y : fdsync16
 fdsync16 a1y_inst
 (
-	.q({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}), // IO
-	.d({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}), // IN
-	.ld(a1ptrld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}),
+	.d /* IN */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
+	.ld /* IN */ (a1ptrld),
+	.clk /* IN */ (clk)
 );
 
 // ADDRESS.NET (125) - a1stepldg : an2u
@@ -1099,411 +1163,411 @@ assign a1stepfldg = a1stepfld & load_strobe;
 // ADDRESS.NET (127) - a1stepx : ldp1q
 ldp1q a1stepx_inst_0
 (
-	.q(a1_step_x[0]), // OUT
-	.d(gpu_d_lo16[0]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[0]),
+	.d /* IN */ (gpu_d_lo16[0]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_1
 (
-	.q(a1_step_x[1]), // OUT
-	.d(gpu_d_lo16[1]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[1]),
+	.d /* IN */ (gpu_d_lo16[1]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_2
 (
-	.q(a1_step_x[2]), // OUT
-	.d(gpu_d_lo16[2]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[2]),
+	.d /* IN */ (gpu_d_lo16[2]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_3
 (
-	.q(a1_step_x[3]), // OUT
-	.d(gpu_d_lo16[3]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[3]),
+	.d /* IN */ (gpu_d_lo16[3]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_4
 (
-	.q(a1_step_x[4]), // OUT
-	.d(gpu_d_lo16[4]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[4]),
+	.d /* IN */ (gpu_d_lo16[4]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_5
 (
-	.q(a1_step_x[5]), // OUT
-	.d(gpu_d_lo16[5]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[5]),
+	.d /* IN */ (gpu_d_lo16[5]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_6
 (
-	.q(a1_step_x[6]), // OUT
-	.d(gpu_d_lo16[6]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[6]),
+	.d /* IN */ (gpu_d_lo16[6]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_7
 (
-	.q(a1_step_x[7]), // OUT
-	.d(gpu_d_lo16[7]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[7]),
+	.d /* IN */ (gpu_d_lo16[7]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_8
 (
-	.q(a1_step_x[8]), // OUT
-	.d(gpu_d_lo16[8]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[8]),
+	.d /* IN */ (gpu_d_lo16[8]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_9
 (
-	.q(a1_step_x[9]), // OUT
-	.d(gpu_d_lo16[9]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[9]),
+	.d /* IN */ (gpu_d_lo16[9]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_10
 (
-	.q(a1_step_x[10]), // OUT
-	.d(gpu_d_lo16[10]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[10]),
+	.d /* IN */ (gpu_d_lo16[10]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_11
 (
-	.q(a1_step_x[11]), // OUT
-	.d(gpu_d_lo16[11]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[11]),
+	.d /* IN */ (gpu_d_lo16[11]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_12
 (
-	.q(a1_step_x[12]), // OUT
-	.d(gpu_d_lo16[12]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[12]),
+	.d /* IN */ (gpu_d_lo16[12]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_13
 (
-	.q(a1_step_x[13]), // OUT
-	.d(gpu_d_lo16[13]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[13]),
+	.d /* IN */ (gpu_d_lo16[13]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_14
 (
-	.q(a1_step_x[14]), // OUT
-	.d(gpu_d_lo16[14]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[14]),
+	.d /* IN */ (gpu_d_lo16[14]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepx_inst_15
 (
-	.q(a1_step_x[15]), // OUT
-	.d(gpu_d_lo16[15]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_x[15]),
+	.d /* IN */ (gpu_d_lo16[15]),
+	.g /* IN */ (a1stepldg)
 );
 
 // ADDRESS.NET (128) - a1stepy : ldp1q
 ldp1q a1stepy_inst_0
 (
-	.q(a1_step_y[0]), // OUT
-	.d(gpu_d_hi16[0]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[0]),
+	.d /* IN */ (gpu_d_hi16[0]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_1
 (
-	.q(a1_step_y[1]), // OUT
-	.d(gpu_d_hi16[1]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[1]),
+	.d /* IN */ (gpu_d_hi16[1]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_2
 (
-	.q(a1_step_y[2]), // OUT
-	.d(gpu_d_hi16[2]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[2]),
+	.d /* IN */ (gpu_d_hi16[2]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_3
 (
-	.q(a1_step_y[3]), // OUT
-	.d(gpu_d_hi16[3]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[3]),
+	.d /* IN */ (gpu_d_hi16[3]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_4
 (
-	.q(a1_step_y[4]), // OUT
-	.d(gpu_d_hi16[4]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[4]),
+	.d /* IN */ (gpu_d_hi16[4]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_5
 (
-	.q(a1_step_y[5]), // OUT
-	.d(gpu_d_hi16[5]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[5]),
+	.d /* IN */ (gpu_d_hi16[5]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_6
 (
-	.q(a1_step_y[6]), // OUT
-	.d(gpu_d_hi16[6]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[6]),
+	.d /* IN */ (gpu_d_hi16[6]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_7
 (
-	.q(a1_step_y[7]), // OUT
-	.d(gpu_d_hi16[7]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[7]),
+	.d /* IN */ (gpu_d_hi16[7]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_8
 (
-	.q(a1_step_y[8]), // OUT
-	.d(gpu_d_hi16[8]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[8]),
+	.d /* IN */ (gpu_d_hi16[8]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_9
 (
-	.q(a1_step_y[9]), // OUT
-	.d(gpu_d_hi16[9]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[9]),
+	.d /* IN */ (gpu_d_hi16[9]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_10
 (
-	.q(a1_step_y[10]), // OUT
-	.d(gpu_d_hi16[10]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[10]),
+	.d /* IN */ (gpu_d_hi16[10]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_11
 (
-	.q(a1_step_y[11]), // OUT
-	.d(gpu_d_hi16[11]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[11]),
+	.d /* IN */ (gpu_d_hi16[11]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_12
 (
-	.q(a1_step_y[12]), // OUT
-	.d(gpu_d_hi16[12]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[12]),
+	.d /* IN */ (gpu_d_hi16[12]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_13
 (
-	.q(a1_step_y[13]), // OUT
-	.d(gpu_d_hi16[13]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[13]),
+	.d /* IN */ (gpu_d_hi16[13]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_14
 (
-	.q(a1_step_y[14]), // OUT
-	.d(gpu_d_hi16[14]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[14]),
+	.d /* IN */ (gpu_d_hi16[14]),
+	.g /* IN */ (a1stepldg)
 );
 ldp1q a1stepy_inst_15
 (
-	.q(a1_step_y[15]), // OUT
-	.d(gpu_d_hi16[15]), // IN
-	.g(a1stepldg)  // IN
+	.q /* OUT */ (a1_step_y[15]),
+	.d /* IN */ (gpu_d_hi16[15]),
+	.g /* IN */ (a1stepldg)
 );
 
 // ADDRESS.NET (129) - a1stepfx : ldp1q
 ldp1q a1stepfx_inst_0
 (
-	.q(a1_stepf_x[0]), // OUT
-	.d(gpu_d_lo16[0]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[0]),
+	.d /* IN */ (gpu_d_lo16[0]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_1
 (
-	.q(a1_stepf_x[1]), // OUT
-	.d(gpu_d_lo16[1]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[1]),
+	.d /* IN */ (gpu_d_lo16[1]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_2
 (
-	.q(a1_stepf_x[2]), // OUT
-	.d(gpu_d_lo16[2]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[2]),
+	.d /* IN */ (gpu_d_lo16[2]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_3
 (
-	.q(a1_stepf_x[3]), // OUT
-	.d(gpu_d_lo16[3]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[3]),
+	.d /* IN */ (gpu_d_lo16[3]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_4
 (
-	.q(a1_stepf_x[4]), // OUT
-	.d(gpu_d_lo16[4]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[4]),
+	.d /* IN */ (gpu_d_lo16[4]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_5
 (
-	.q(a1_stepf_x[5]), // OUT
-	.d(gpu_d_lo16[5]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[5]),
+	.d /* IN */ (gpu_d_lo16[5]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_6
 (
-	.q(a1_stepf_x[6]), // OUT
-	.d(gpu_d_lo16[6]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[6]),
+	.d /* IN */ (gpu_d_lo16[6]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_7
 (
-	.q(a1_stepf_x[7]), // OUT
-	.d(gpu_d_lo16[7]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[7]),
+	.d /* IN */ (gpu_d_lo16[7]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_8
 (
-	.q(a1_stepf_x[8]), // OUT
-	.d(gpu_d_lo16[8]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[8]),
+	.d /* IN */ (gpu_d_lo16[8]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_9
 (
-	.q(a1_stepf_x[9]), // OUT
-	.d(gpu_d_lo16[9]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[9]),
+	.d /* IN */ (gpu_d_lo16[9]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_10
 (
-	.q(a1_stepf_x[10]), // OUT
-	.d(gpu_d_lo16[10]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[10]),
+	.d /* IN */ (gpu_d_lo16[10]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_11
 (
-	.q(a1_stepf_x[11]), // OUT
-	.d(gpu_d_lo16[11]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[11]),
+	.d /* IN */ (gpu_d_lo16[11]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_12
 (
-	.q(a1_stepf_x[12]), // OUT
-	.d(gpu_d_lo16[12]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[12]),
+	.d /* IN */ (gpu_d_lo16[12]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_13
 (
-	.q(a1_stepf_x[13]), // OUT
-	.d(gpu_d_lo16[13]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[13]),
+	.d /* IN */ (gpu_d_lo16[13]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_14
 (
-	.q(a1_stepf_x[14]), // OUT
-	.d(gpu_d_lo16[14]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[14]),
+	.d /* IN */ (gpu_d_lo16[14]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfx_inst_15
 (
-	.q(a1_stepf_x[15]), // OUT
-	.d(gpu_d_lo16[15]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_x[15]),
+	.d /* IN */ (gpu_d_lo16[15]),
+	.g /* IN */ (a1stepfldg)
 );
 
 // ADDRESS.NET (130) - a1stepfy : ldp1q
 ldp1q a1stepfy_inst_0
 (
-	.q(a1_stepf_y[0]), // OUT
-	.d(gpu_d_hi16[0]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[0]),
+	.d /* IN */ (gpu_d_hi16[0]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_1
 (
-	.q(a1_stepf_y[1]), // OUT
-	.d(gpu_d_hi16[1]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[1]),
+	.d /* IN */ (gpu_d_hi16[1]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_2
 (
-	.q(a1_stepf_y[2]), // OUT
-	.d(gpu_d_hi16[2]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[2]),
+	.d /* IN */ (gpu_d_hi16[2]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_3
 (
-	.q(a1_stepf_y[3]), // OUT
-	.d(gpu_d_hi16[3]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[3]),
+	.d /* IN */ (gpu_d_hi16[3]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_4
 (
-	.q(a1_stepf_y[4]), // OUT
-	.d(gpu_d_hi16[4]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[4]),
+	.d /* IN */ (gpu_d_hi16[4]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_5
 (
-	.q(a1_stepf_y[5]), // OUT
-	.d(gpu_d_hi16[5]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[5]),
+	.d /* IN */ (gpu_d_hi16[5]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_6
 (
-	.q(a1_stepf_y[6]), // OUT
-	.d(gpu_d_hi16[6]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[6]),
+	.d /* IN */ (gpu_d_hi16[6]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_7
 (
-	.q(a1_stepf_y[7]), // OUT
-	.d(gpu_d_hi16[7]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[7]),
+	.d /* IN */ (gpu_d_hi16[7]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_8
 (
-	.q(a1_stepf_y[8]), // OUT
-	.d(gpu_d_hi16[8]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[8]),
+	.d /* IN */ (gpu_d_hi16[8]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_9
 (
-	.q(a1_stepf_y[9]), // OUT
-	.d(gpu_d_hi16[9]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[9]),
+	.d /* IN */ (gpu_d_hi16[9]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_10
 (
-	.q(a1_stepf_y[10]), // OUT
-	.d(gpu_d_hi16[10]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[10]),
+	.d /* IN */ (gpu_d_hi16[10]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_11
 (
-	.q(a1_stepf_y[11]), // OUT
-	.d(gpu_d_hi16[11]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[11]),
+	.d /* IN */ (gpu_d_hi16[11]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_12
 (
-	.q(a1_stepf_y[12]), // OUT
-	.d(gpu_d_hi16[12]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[12]),
+	.d /* IN */ (gpu_d_hi16[12]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_13
 (
-	.q(a1_stepf_y[13]), // OUT
-	.d(gpu_d_hi16[13]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[13]),
+	.d /* IN */ (gpu_d_hi16[13]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_14
 (
-	.q(a1_stepf_y[14]), // OUT
-	.d(gpu_d_hi16[14]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[14]),
+	.d /* IN */ (gpu_d_hi16[14]),
+	.g /* IN */ (a1stepfldg)
 );
 ldp1q a1stepfy_inst_15
 (
-	.q(a1_stepf_y[15]), // OUT
-	.d(gpu_d_hi16[15]), // IN
-	.g(a1stepfldg)  // IN
+	.q /* OUT */ (a1_stepf_y[15]),
+	.d /* IN */ (gpu_d_hi16[15]),
+	.g /* IN */ (a1stepfldg)
 );
 
 // ADDRESS.NET (134) - a1fracx : fdsync16
 fdsync16 a1fracx_inst
 (
-	.q({a1_frac_x[0],a1_frac_x[1],a1_frac_x[2],a1_frac_x[3],a1_frac_x[4],a1_frac_x[5],a1_frac_x[6],a1_frac_x[7],a1_frac_x[8],a1_frac_x[9],a1_frac_x[10],a1_frac_x[11],a1_frac_x[12],a1_frac_x[13],a1_frac_x[14],a1_frac_x[15]}), // IO
-	.d({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}), // IN
-	.ld(a1fracld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({a1_frac_x[0],a1_frac_x[1],a1_frac_x[2],a1_frac_x[3],a1_frac_x[4],a1_frac_x[5],a1_frac_x[6],a1_frac_x[7],a1_frac_x[8],a1_frac_x[9],a1_frac_x[10],a1_frac_x[11],a1_frac_x[12],a1_frac_x[13],a1_frac_x[14],a1_frac_x[15]}),
+	.d /* IN */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
+	.ld /* IN */ (a1fracld),
+	.clk /* IN */ (clk)
 );
 
 // ADDRESS.NET (135) - a1fracy : fdsync16
 fdsync16 a1fracy_inst
 (
-	.q({a1_frac_y[0],a1_frac_y[1],a1_frac_y[2],a1_frac_y[3],a1_frac_y[4],a1_frac_y[5],a1_frac_y[6],a1_frac_y[7],a1_frac_y[8],a1_frac_y[9],a1_frac_y[10],a1_frac_y[11],a1_frac_y[12],a1_frac_y[13],a1_frac_y[14],a1_frac_y[15]}), // IO
-	.d({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}), // IN
-	.ld(a1fracld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({a1_frac_y[0],a1_frac_y[1],a1_frac_y[2],a1_frac_y[3],a1_frac_y[4],a1_frac_y[5],a1_frac_y[6],a1_frac_y[7],a1_frac_y[8],a1_frac_y[9],a1_frac_y[10],a1_frac_y[11],a1_frac_y[12],a1_frac_y[13],a1_frac_y[14],a1_frac_y[15]}),
+	.d /* IN */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
+	.ld /* IN */ (a1fracld),
+	.clk /* IN */ (clk)
 );
 
 // ADDRESS.NET (139) - a1incldg : an2u
@@ -1515,393 +1579,393 @@ assign a1incfldg = a1incfld & load_strobe;
 // ADDRESS.NET (141) - a1incx : ldp1q
 ldp1q a1incx_inst_0
 (
-	.q(a1_inc_x[0]), // OUT
-	.d(gpu_d_lo16[0]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[0]),
+	.d /* IN */ (gpu_d_lo16[0]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_1
 (
-	.q(a1_inc_x[1]), // OUT
-	.d(gpu_d_lo16[1]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[1]),
+	.d /* IN */ (gpu_d_lo16[1]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_2
 (
-	.q(a1_inc_x[2]), // OUT
-	.d(gpu_d_lo16[2]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[2]),
+	.d /* IN */ (gpu_d_lo16[2]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_3
 (
-	.q(a1_inc_x[3]), // OUT
-	.d(gpu_d_lo16[3]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[3]),
+	.d /* IN */ (gpu_d_lo16[3]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_4
 (
-	.q(a1_inc_x[4]), // OUT
-	.d(gpu_d_lo16[4]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[4]),
+	.d /* IN */ (gpu_d_lo16[4]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_5
 (
-	.q(a1_inc_x[5]), // OUT
-	.d(gpu_d_lo16[5]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[5]),
+	.d /* IN */ (gpu_d_lo16[5]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_6
 (
-	.q(a1_inc_x[6]), // OUT
-	.d(gpu_d_lo16[6]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[6]),
+	.d /* IN */ (gpu_d_lo16[6]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_7
 (
-	.q(a1_inc_x[7]), // OUT
-	.d(gpu_d_lo16[7]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[7]),
+	.d /* IN */ (gpu_d_lo16[7]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_8
 (
-	.q(a1_inc_x[8]), // OUT
-	.d(gpu_d_lo16[8]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[8]),
+	.d /* IN */ (gpu_d_lo16[8]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_9
 (
-	.q(a1_inc_x[9]), // OUT
-	.d(gpu_d_lo16[9]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[9]),
+	.d /* IN */ (gpu_d_lo16[9]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_10
 (
-	.q(a1_inc_x[10]), // OUT
-	.d(gpu_d_lo16[10]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[10]),
+	.d /* IN */ (gpu_d_lo16[10]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_11
 (
-	.q(a1_inc_x[11]), // OUT
-	.d(gpu_d_lo16[11]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[11]),
+	.d /* IN */ (gpu_d_lo16[11]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_12
 (
-	.q(a1_inc_x[12]), // OUT
-	.d(gpu_d_lo16[12]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[12]),
+	.d /* IN */ (gpu_d_lo16[12]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_13
 (
-	.q(a1_inc_x[13]), // OUT
-	.d(gpu_d_lo16[13]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[13]),
+	.d /* IN */ (gpu_d_lo16[13]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_14
 (
-	.q(a1_inc_x[14]), // OUT
-	.d(gpu_d_lo16[14]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[14]),
+	.d /* IN */ (gpu_d_lo16[14]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incx_inst_15
 (
-	.q(a1_inc_x[15]), // OUT
-	.d(gpu_d_lo16[15]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_x[15]),
+	.d /* IN */ (gpu_d_lo16[15]),
+	.g /* IN */ (a1incldg)
 );
 
 // ADDRESS.NET (142) - a1incy : ldp1q
 ldp1q a1incy_inst_0
 (
-	.q(a1_inc_y[0]), // OUT
-	.d(gpu_d_hi16[0]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[0]),
+	.d /* IN */ (gpu_d_hi16[0]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_1
 (
-	.q(a1_inc_y[1]), // OUT
-	.d(gpu_d_hi16[1]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[1]),
+	.d /* IN */ (gpu_d_hi16[1]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_2
 (
-	.q(a1_inc_y[2]), // OUT
-	.d(gpu_d_hi16[2]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[2]),
+	.d /* IN */ (gpu_d_hi16[2]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_3
 (
-	.q(a1_inc_y[3]), // OUT
-	.d(gpu_d_hi16[3]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[3]),
+	.d /* IN */ (gpu_d_hi16[3]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_4
 (
-	.q(a1_inc_y[4]), // OUT
-	.d(gpu_d_hi16[4]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[4]),
+	.d /* IN */ (gpu_d_hi16[4]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_5
 (
-	.q(a1_inc_y[5]), // OUT
-	.d(gpu_d_hi16[5]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[5]),
+	.d /* IN */ (gpu_d_hi16[5]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_6
 (
-	.q(a1_inc_y[6]), // OUT
-	.d(gpu_d_hi16[6]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[6]),
+	.d /* IN */ (gpu_d_hi16[6]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_7
 (
-	.q(a1_inc_y[7]), // OUT
-	.d(gpu_d_hi16[7]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[7]),
+	.d /* IN */ (gpu_d_hi16[7]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_8
 (
-	.q(a1_inc_y[8]), // OUT
-	.d(gpu_d_hi16[8]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[8]),
+	.d /* IN */ (gpu_d_hi16[8]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_9
 (
-	.q(a1_inc_y[9]), // OUT
-	.d(gpu_d_hi16[9]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[9]),
+	.d /* IN */ (gpu_d_hi16[9]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_10
 (
-	.q(a1_inc_y[10]), // OUT
-	.d(gpu_d_hi16[10]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[10]),
+	.d /* IN */ (gpu_d_hi16[10]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_11
 (
-	.q(a1_inc_y[11]), // OUT
-	.d(gpu_d_hi16[11]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[11]),
+	.d /* IN */ (gpu_d_hi16[11]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_12
 (
-	.q(a1_inc_y[12]), // OUT
-	.d(gpu_d_hi16[12]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[12]),
+	.d /* IN */ (gpu_d_hi16[12]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_13
 (
-	.q(a1_inc_y[13]), // OUT
-	.d(gpu_d_hi16[13]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[13]),
+	.d /* IN */ (gpu_d_hi16[13]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_14
 (
-	.q(a1_inc_y[14]), // OUT
-	.d(gpu_d_hi16[14]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[14]),
+	.d /* IN */ (gpu_d_hi16[14]),
+	.g /* IN */ (a1incldg)
 );
 ldp1q a1incy_inst_15
 (
-	.q(a1_inc_y[15]), // OUT
-	.d(gpu_d_hi16[15]), // IN
-	.g(a1incldg)  // IN
+	.q /* OUT */ (a1_inc_y[15]),
+	.d /* IN */ (gpu_d_hi16[15]),
+	.g /* IN */ (a1incldg)
 );
 
 // ADDRESS.NET (143) - a1incfx : ldp1q
 ldp1q a1incfx_inst_0
 (
-	.q(a1_incf_x[0]), // OUT
-	.d(gpu_d_lo16[0]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[0]),
+	.d /* IN */ (gpu_d_lo16[0]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_1
 (
-	.q(a1_incf_x[1]), // OUT
-	.d(gpu_d_lo16[1]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[1]),
+	.d /* IN */ (gpu_d_lo16[1]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_2
 (
-	.q(a1_incf_x[2]), // OUT
-	.d(gpu_d_lo16[2]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[2]),
+	.d /* IN */ (gpu_d_lo16[2]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_3
 (
-	.q(a1_incf_x[3]), // OUT
-	.d(gpu_d_lo16[3]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[3]),
+	.d /* IN */ (gpu_d_lo16[3]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_4
 (
-	.q(a1_incf_x[4]), // OUT
-	.d(gpu_d_lo16[4]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[4]),
+	.d /* IN */ (gpu_d_lo16[4]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_5
 (
-	.q(a1_incf_x[5]), // OUT
-	.d(gpu_d_lo16[5]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[5]),
+	.d /* IN */ (gpu_d_lo16[5]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_6
 (
-	.q(a1_incf_x[6]), // OUT
-	.d(gpu_d_lo16[6]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[6]),
+	.d /* IN */ (gpu_d_lo16[6]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_7
 (
-	.q(a1_incf_x[7]), // OUT
-	.d(gpu_d_lo16[7]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[7]),
+	.d /* IN */ (gpu_d_lo16[7]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_8
 (
-	.q(a1_incf_x[8]), // OUT
-	.d(gpu_d_lo16[8]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[8]),
+	.d /* IN */ (gpu_d_lo16[8]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_9
 (
-	.q(a1_incf_x[9]), // OUT
-	.d(gpu_d_lo16[9]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[9]),
+	.d /* IN */ (gpu_d_lo16[9]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_10
 (
-	.q(a1_incf_x[10]), // OUT
-	.d(gpu_d_lo16[10]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[10]),
+	.d /* IN */ (gpu_d_lo16[10]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_11
 (
-	.q(a1_incf_x[11]), // OUT
-	.d(gpu_d_lo16[11]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[11]),
+	.d /* IN */ (gpu_d_lo16[11]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_12
 (
-	.q(a1_incf_x[12]), // OUT
-	.d(gpu_d_lo16[12]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[12]),
+	.d /* IN */ (gpu_d_lo16[12]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_13
 (
-	.q(a1_incf_x[13]), // OUT
-	.d(gpu_d_lo16[13]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[13]),
+	.d /* IN */ (gpu_d_lo16[13]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_14
 (
-	.q(a1_incf_x[14]), // OUT
-	.d(gpu_d_lo16[14]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[14]),
+	.d /* IN */ (gpu_d_lo16[14]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfx_inst_15
 (
-	.q(a1_incf_x[15]), // OUT
-	.d(gpu_d_lo16[15]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_x[15]),
+	.d /* IN */ (gpu_d_lo16[15]),
+	.g /* IN */ (a1incfldg)
 );
 
 // ADDRESS.NET (144) - a1incfy : ldp1q
 ldp1q a1incfy_inst_0
 (
-	.q(a1_incf_y[0]), // OUT
-	.d(gpu_d_hi16[0]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[0]),
+	.d /* IN */ (gpu_d_hi16[0]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_1
 (
-	.q(a1_incf_y[1]), // OUT
-	.d(gpu_d_hi16[1]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[1]),
+	.d /* IN */ (gpu_d_hi16[1]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_2
 (
-	.q(a1_incf_y[2]), // OUT
-	.d(gpu_d_hi16[2]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[2]),
+	.d /* IN */ (gpu_d_hi16[2]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_3
 (
-	.q(a1_incf_y[3]), // OUT
-	.d(gpu_d_hi16[3]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[3]),
+	.d /* IN */ (gpu_d_hi16[3]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_4
 (
-	.q(a1_incf_y[4]), // OUT
-	.d(gpu_d_hi16[4]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[4]),
+	.d /* IN */ (gpu_d_hi16[4]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_5
 (
-	.q(a1_incf_y[5]), // OUT
-	.d(gpu_d_hi16[5]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[5]),
+	.d /* IN */ (gpu_d_hi16[5]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_6
 (
-	.q(a1_incf_y[6]), // OUT
-	.d(gpu_d_hi16[6]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[6]),
+	.d /* IN */ (gpu_d_hi16[6]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_7
 (
-	.q(a1_incf_y[7]), // OUT
-	.d(gpu_d_hi16[7]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[7]),
+	.d /* IN */ (gpu_d_hi16[7]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_8
 (
-	.q(a1_incf_y[8]), // OUT
-	.d(gpu_d_hi16[8]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[8]),
+	.d /* IN */ (gpu_d_hi16[8]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_9
 (
-	.q(a1_incf_y[9]), // OUT
-	.d(gpu_d_hi16[9]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[9]),
+	.d /* IN */ (gpu_d_hi16[9]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_10
 (
-	.q(a1_incf_y[10]), // OUT
-	.d(gpu_d_hi16[10]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[10]),
+	.d /* IN */ (gpu_d_hi16[10]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_11
 (
-	.q(a1_incf_y[11]), // OUT
-	.d(gpu_d_hi16[11]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[11]),
+	.d /* IN */ (gpu_d_hi16[11]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_12
 (
-	.q(a1_incf_y[12]), // OUT
-	.d(gpu_d_hi16[12]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[12]),
+	.d /* IN */ (gpu_d_hi16[12]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_13
 (
-	.q(a1_incf_y[13]), // OUT
-	.d(gpu_d_hi16[13]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[13]),
+	.d /* IN */ (gpu_d_hi16[13]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_14
 (
-	.q(a1_incf_y[14]), // OUT
-	.d(gpu_d_hi16[14]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[14]),
+	.d /* IN */ (gpu_d_hi16[14]),
+	.g /* IN */ (a1incfldg)
 );
 ldp1q a1incfy_inst_15
 (
-	.q(a1_incf_y[15]), // OUT
-	.d(gpu_d_hi16[15]), // IN
-	.g(a1incfldg)  // IN
+	.q /* OUT */ (a1_incf_y[15]),
+	.d /* IN */ (gpu_d_hi16[15]),
+	.g /* IN */ (a1incfldg)
 );
 
 // ADDRESS.NET (150) - a2baseldg : an2u
@@ -1910,129 +1974,129 @@ assign a2baseldg = a2baseld & load_strobe;
 // ADDRESS.NET (151) - a2base : ldp1q
 ldp1q a2base_inst_0
 (
-	.q(a2_base[0]), // OUT
-	.d(gpu_d_m21[0]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[0]),
+	.d /* IN */ (gpu_d_m21[0]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_1
 (
-	.q(a2_base[1]), // OUT
-	.d(gpu_d_m21[1]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[1]),
+	.d /* IN */ (gpu_d_m21[1]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_2
 (
-	.q(a2_base[2]), // OUT
-	.d(gpu_d_m21[2]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[2]),
+	.d /* IN */ (gpu_d_m21[2]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_3
 (
-	.q(a2_base[3]), // OUT
-	.d(gpu_d_m21[3]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[3]),
+	.d /* IN */ (gpu_d_m21[3]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_4
 (
-	.q(a2_base[4]), // OUT
-	.d(gpu_d_m21[4]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[4]),
+	.d /* IN */ (gpu_d_m21[4]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_5
 (
-	.q(a2_base[5]), // OUT
-	.d(gpu_d_m21[5]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[5]),
+	.d /* IN */ (gpu_d_m21[5]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_6
 (
-	.q(a2_base[6]), // OUT
-	.d(gpu_d_m21[6]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[6]),
+	.d /* IN */ (gpu_d_m21[6]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_7
 (
-	.q(a2_base[7]), // OUT
-	.d(gpu_d_m21[7]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[7]),
+	.d /* IN */ (gpu_d_m21[7]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_8
 (
-	.q(a2_base[8]), // OUT
-	.d(gpu_d_m21[8]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[8]),
+	.d /* IN */ (gpu_d_m21[8]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_9
 (
-	.q(a2_base[9]), // OUT
-	.d(gpu_d_m21[9]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[9]),
+	.d /* IN */ (gpu_d_m21[9]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_10
 (
-	.q(a2_base[10]), // OUT
-	.d(gpu_d_m21[10]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[10]),
+	.d /* IN */ (gpu_d_m21[10]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_11
 (
-	.q(a2_base[11]), // OUT
-	.d(gpu_d_m21[11]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[11]),
+	.d /* IN */ (gpu_d_m21[11]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_12
 (
-	.q(a2_base[12]), // OUT
-	.d(gpu_d_m21[12]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[12]),
+	.d /* IN */ (gpu_d_m21[12]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_13
 (
-	.q(a2_base[13]), // OUT
-	.d(gpu_d_m21[13]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[13]),
+	.d /* IN */ (gpu_d_m21[13]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_14
 (
-	.q(a2_base[14]), // OUT
-	.d(gpu_d_m21[14]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[14]),
+	.d /* IN */ (gpu_d_m21[14]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_15
 (
-	.q(a2_base[15]), // OUT
-	.d(gpu_d_m21[15]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[15]),
+	.d /* IN */ (gpu_d_m21[15]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_16
 (
-	.q(a2_base[16]), // OUT
-	.d(gpu_d_m21[16]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[16]),
+	.d /* IN */ (gpu_d_m21[16]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_17
 (
-	.q(a2_base[17]), // OUT
-	.d(gpu_d_m21[17]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[17]),
+	.d /* IN */ (gpu_d_m21[17]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_18
 (
-	.q(a2_base[18]), // OUT
-	.d(gpu_d_m21[18]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[18]),
+	.d /* IN */ (gpu_d_m21[18]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_19
 (
-	.q(a2_base[19]), // OUT
-	.d(gpu_d_m21[19]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[19]),
+	.d /* IN */ (gpu_d_m21[19]),
+	.g /* IN */ (a2baseldg)
 );
 ldp1q a2base_inst_20
 (
-	.q(a2_base[20]), // OUT
-	.d(gpu_d_m21[20]), // IN
-	.g(a2baseldg)  // IN
+	.q /* OUT */ (a2_base[20]),
+	.d /* IN */ (gpu_d_m21[20]),
+	.g /* IN */ (a2baseldg)
 );
 
 // ADDRESS.NET (155) - a2flagldg : an2h
@@ -2041,129 +2105,129 @@ assign a2flagldg = a2flagld & load_strobe;
 // ADDRESS.NET (156) - a2flags : ldp1q
 ldp1q a2flags_inst_0
 (
-	.q(a2_flags[0]), // OUT
-	.d(gpu_d_lo21[0]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[0]),
+	.d /* IN */ (gpu_d_lo21[0]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_1
 (
-	.q(a2_flags[1]), // OUT
-	.d(gpu_d_lo21[1]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[1]),
+	.d /* IN */ (gpu_d_lo21[1]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_2
 (
-	.q(a2_flags[2]), // OUT
-	.d(gpu_d_lo21[2]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[2]),
+	.d /* IN */ (gpu_d_lo21[2]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_3
 (
-	.q(a2_flags[3]), // OUT
-	.d(gpu_d_lo21[3]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[3]),
+	.d /* IN */ (gpu_d_lo21[3]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_4
 (
-	.q(a2_flags[4]), // OUT
-	.d(gpu_d_lo21[4]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[4]),
+	.d /* IN */ (gpu_d_lo21[4]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_5
 (
-	.q(a2_flags[5]), // OUT
-	.d(gpu_d_lo21[5]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[5]),
+	.d /* IN */ (gpu_d_lo21[5]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_6
 (
-	.q(a2_flags[6]), // OUT
-	.d(gpu_d_lo21[6]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[6]),
+	.d /* IN */ (gpu_d_lo21[6]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_7
 (
-	.q(a2_flags[7]), // OUT
-	.d(gpu_d_lo21[7]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[7]),
+	.d /* IN */ (gpu_d_lo21[7]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_8
 (
-	.q(a2_flags[8]), // OUT
-	.d(gpu_d_lo21[8]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[8]),
+	.d /* IN */ (gpu_d_lo21[8]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_9
 (
-	.q(a2_flags[9]), // OUT
-	.d(gpu_d_lo21[9]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[9]),
+	.d /* IN */ (gpu_d_lo21[9]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_10
 (
-	.q(a2_flags[10]), // OUT
-	.d(gpu_d_lo21[10]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[10]),
+	.d /* IN */ (gpu_d_lo21[10]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_11
 (
-	.q(a2_flags[11]), // OUT
-	.d(gpu_d_lo21[11]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[11]),
+	.d /* IN */ (gpu_d_lo21[11]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_12
 (
-	.q(a2_flags[12]), // OUT
-	.d(gpu_d_lo21[12]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[12]),
+	.d /* IN */ (gpu_d_lo21[12]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_13
 (
-	.q(a2_flags[13]), // OUT
-	.d(gpu_d_lo21[13]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[13]),
+	.d /* IN */ (gpu_d_lo21[13]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_14
 (
-	.q(a2_flags[14]), // OUT
-	.d(gpu_d_lo21[14]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[14]),
+	.d /* IN */ (gpu_d_lo21[14]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_15
 (
-	.q(a2_flags[15]), // OUT
-	.d(gpu_d_lo21[15]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[15]),
+	.d /* IN */ (gpu_d_lo21[15]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_16
 (
-	.q(a2_flags[16]), // OUT
-	.d(gpu_d_lo21[16]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[16]),
+	.d /* IN */ (gpu_d_lo21[16]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_17
 (
-	.q(a2_flags[17]), // OUT
-	.d(gpu_d_lo21[17]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[17]),
+	.d /* IN */ (gpu_d_lo21[17]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_18
 (
-	.q(a2_flags[18]), // OUT
-	.d(gpu_d_lo21[18]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[18]),
+	.d /* IN */ (gpu_d_lo21[18]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_19
 (
-	.q(a2_flags[19]), // OUT
-	.d(gpu_d_lo21[19]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[19]),
+	.d /* IN */ (gpu_d_lo21[19]),
+	.g /* IN */ (a2flagldg)
 );
 ldp1q a2flags_inst_20
 (
-	.q(a2_flags[20]), // OUT
-	.d(gpu_d_lo21[20]), // IN
-	.g(a2flagldg)  // IN
+	.q /* OUT */ (a2_flags[20]),
+	.d /* IN */ (gpu_d_lo21[20]),
+	.g /* IN */ (a2flagldg)
 );
 
 // ADDRESS.NET (157) - a2_pixp[0-1] : join
@@ -2212,215 +2276,215 @@ assign a2winldg = a2winld & load_strobe;
 // ADDRESS.NET (172) - a2winx : ldp1q
 ldp1q a2winx_inst_0
 (
-	.q(a2_mask_x[0]), // OUT
-	.d(gpu_d_lo16[0]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[0]),
+	.d /* IN */ (gpu_d_lo16[0]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_1
 (
-	.q(a2_mask_x[1]), // OUT
-	.d(gpu_d_lo16[1]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[1]),
+	.d /* IN */ (gpu_d_lo16[1]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_2
 (
-	.q(a2_mask_x[2]), // OUT
-	.d(gpu_d_lo16[2]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[2]),
+	.d /* IN */ (gpu_d_lo16[2]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_3
 (
-	.q(a2_mask_x[3]), // OUT
-	.d(gpu_d_lo16[3]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[3]),
+	.d /* IN */ (gpu_d_lo16[3]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_4
 (
-	.q(a2_mask_x[4]), // OUT
-	.d(gpu_d_lo16[4]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[4]),
+	.d /* IN */ (gpu_d_lo16[4]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_5
 (
-	.q(a2_mask_x[5]), // OUT
-	.d(gpu_d_lo16[5]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[5]),
+	.d /* IN */ (gpu_d_lo16[5]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_6
 (
-	.q(a2_mask_x[6]), // OUT
-	.d(gpu_d_lo16[6]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[6]),
+	.d /* IN */ (gpu_d_lo16[6]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_7
 (
-	.q(a2_mask_x[7]), // OUT
-	.d(gpu_d_lo16[7]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[7]),
+	.d /* IN */ (gpu_d_lo16[7]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_8
 (
-	.q(a2_mask_x[8]), // OUT
-	.d(gpu_d_lo16[8]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[8]),
+	.d /* IN */ (gpu_d_lo16[8]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_9
 (
-	.q(a2_mask_x[9]), // OUT
-	.d(gpu_d_lo16[9]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[9]),
+	.d /* IN */ (gpu_d_lo16[9]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_10
 (
-	.q(a2_mask_x[10]), // OUT
-	.d(gpu_d_lo16[10]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[10]),
+	.d /* IN */ (gpu_d_lo16[10]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_11
 (
-	.q(a2_mask_x[11]), // OUT
-	.d(gpu_d_lo16[11]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[11]),
+	.d /* IN */ (gpu_d_lo16[11]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_12
 (
-	.q(a2_mask_x[12]), // OUT
-	.d(gpu_d_lo16[12]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[12]),
+	.d /* IN */ (gpu_d_lo16[12]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_13
 (
-	.q(a2_mask_x[13]), // OUT
-	.d(gpu_d_lo16[13]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[13]),
+	.d /* IN */ (gpu_d_lo16[13]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_14
 (
-	.q(a2_mask_x[14]), // OUT
-	.d(gpu_d_lo16[14]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[14]),
+	.d /* IN */ (gpu_d_lo16[14]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winx_inst_15
 (
-	.q(a2_mask_x[15]), // OUT
-	.d(gpu_d_lo16[15]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_x[15]),
+	.d /* IN */ (gpu_d_lo16[15]),
+	.g /* IN */ (a2winldg)
 );
 
 // ADDRESS.NET (173) - a2winy : ldp1q
 ldp1q a2winy_inst_0
 (
-	.q(a2_mask_y[0]), // OUT
-	.d(gpu_d_hi16[0]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[0]),
+	.d /* IN */ (gpu_d_hi16[0]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_1
 (
-	.q(a2_mask_y[1]), // OUT
-	.d(gpu_d_hi16[1]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[1]),
+	.d /* IN */ (gpu_d_hi16[1]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_2
 (
-	.q(a2_mask_y[2]), // OUT
-	.d(gpu_d_hi16[2]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[2]),
+	.d /* IN */ (gpu_d_hi16[2]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_3
 (
-	.q(a2_mask_y[3]), // OUT
-	.d(gpu_d_hi16[3]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[3]),
+	.d /* IN */ (gpu_d_hi16[3]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_4
 (
-	.q(a2_mask_y[4]), // OUT
-	.d(gpu_d_hi16[4]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[4]),
+	.d /* IN */ (gpu_d_hi16[4]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_5
 (
-	.q(a2_mask_y[5]), // OUT
-	.d(gpu_d_hi16[5]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[5]),
+	.d /* IN */ (gpu_d_hi16[5]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_6
 (
-	.q(a2_mask_y[6]), // OUT
-	.d(gpu_d_hi16[6]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[6]),
+	.d /* IN */ (gpu_d_hi16[6]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_7
 (
-	.q(a2_mask_y[7]), // OUT
-	.d(gpu_d_hi16[7]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[7]),
+	.d /* IN */ (gpu_d_hi16[7]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_8
 (
-	.q(a2_mask_y[8]), // OUT
-	.d(gpu_d_hi16[8]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[8]),
+	.d /* IN */ (gpu_d_hi16[8]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_9
 (
-	.q(a2_mask_y[9]), // OUT
-	.d(gpu_d_hi16[9]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[9]),
+	.d /* IN */ (gpu_d_hi16[9]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_10
 (
-	.q(a2_mask_y[10]), // OUT
-	.d(gpu_d_hi16[10]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[10]),
+	.d /* IN */ (gpu_d_hi16[10]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_11
 (
-	.q(a2_mask_y[11]), // OUT
-	.d(gpu_d_hi16[11]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[11]),
+	.d /* IN */ (gpu_d_hi16[11]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_12
 (
-	.q(a2_mask_y[12]), // OUT
-	.d(gpu_d_hi16[12]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[12]),
+	.d /* IN */ (gpu_d_hi16[12]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_13
 (
-	.q(a2_mask_y[13]), // OUT
-	.d(gpu_d_hi16[13]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[13]),
+	.d /* IN */ (gpu_d_hi16[13]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_14
 (
-	.q(a2_mask_y[14]), // OUT
-	.d(gpu_d_hi16[14]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[14]),
+	.d /* IN */ (gpu_d_hi16[14]),
+	.g /* IN */ (a2winldg)
 );
 ldp1q a2winy_inst_15
 (
-	.q(a2_mask_y[15]), // OUT
-	.d(gpu_d_hi16[15]), // IN
-	.g(a2winldg)  // IN
+	.q /* OUT */ (a2_mask_y[15]),
+	.d /* IN */ (gpu_d_hi16[15]),
+	.g /* IN */ (a2winldg)
 );
 
 // ADDRESS.NET (177) - a2x : fdsync16
 fdsync16 a2x_inst
 (
-	.q({a2_xr[0],a2_xr[1],a2_xr[2],a2_xr[3],a2_xr[4],a2_xr[5],a2_xr[6],a2_xr[7],a2_xr[8],a2_xr[9],a2_xr[10],a2_xr[11],a2_xr[12],a2_xr[13],a2_xr[14],a2_xr[15]}), // IO
-	.d({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}), // IN
-	.ld(a2ptrld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({a2_xr[0],a2_xr[1],a2_xr[2],a2_xr[3],a2_xr[4],a2_xr[5],a2_xr[6],a2_xr[7],a2_xr[8],a2_xr[9],a2_xr[10],a2_xr[11],a2_xr[12],a2_xr[13],a2_xr[14],a2_xr[15]}),
+	.d /* IN */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
+	.ld /* IN */ (a2ptrld),
+	.clk /* IN */ (clk)
 );
 
 // ADDRESS.NET (178) - a2y : fdsync16
 fdsync16 a2y_inst
 (
-	.q({a2_yr[0],a2_yr[1],a2_yr[2],a2_yr[3],a2_yr[4],a2_yr[5],a2_yr[6],a2_yr[7],a2_yr[8],a2_yr[9],a2_yr[10],a2_yr[11],a2_yr[12],a2_yr[13],a2_yr[14],a2_yr[15]}), // IO
-	.d({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}), // IN
-	.ld(a2ptrld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({a2_yr[0],a2_yr[1],a2_yr[2],a2_yr[3],a2_yr[4],a2_yr[5],a2_yr[6],a2_yr[7],a2_yr[8],a2_yr[9],a2_yr[10],a2_yr[11],a2_yr[12],a2_yr[13],a2_yr[14],a2_yr[15]}),
+	.d /* IN */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
+	.ld /* IN */ (a2ptrld),
+	.clk /* IN */ (clk)
 );
 
 // ADDRESS.NET (182) - a2_xm : an2
@@ -2444,115 +2508,115 @@ assign a2_xm[15] = a2_xr[15] & a2_mask_x[15];
 // ADDRESS.NET (183) - a2_x : mx2
 mx2 a2_x_inst_0
 (
-	.z(a2_x_b0_obuf), // OUT
-	.a0(a2_xr[0]), // IN
-	.a1(a2_xm[0]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b0_obuf),
+	.a0 /* IN */ (a2_xr[0]),
+	.a1 /* IN */ (a2_xm[0]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_1
 (
-	.z(a2_x_b1_obuf), // OUT
-	.a0(a2_xr[1]), // IN
-	.a1(a2_xm[1]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b1_obuf),
+	.a0 /* IN */ (a2_xr[1]),
+	.a1 /* IN */ (a2_xm[1]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_2
 (
-	.z(a2_x_b2_obuf), // OUT
-	.a0(a2_xr[2]), // IN
-	.a1(a2_xm[2]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b2_obuf),
+	.a0 /* IN */ (a2_xr[2]),
+	.a1 /* IN */ (a2_xm[2]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_3
 (
-	.z(a2_x_b3_obuf), // OUT
-	.a0(a2_xr[3]), // IN
-	.a1(a2_xm[3]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b3_obuf),
+	.a0 /* IN */ (a2_xr[3]),
+	.a1 /* IN */ (a2_xm[3]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_4
 (
-	.z(a2_x_b4_obuf), // OUT
-	.a0(a2_xr[4]), // IN
-	.a1(a2_xm[4]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b4_obuf),
+	.a0 /* IN */ (a2_xr[4]),
+	.a1 /* IN */ (a2_xm[4]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_5
 (
-	.z(a2_x_b5_obuf), // OUT
-	.a0(a2_xr[5]), // IN
-	.a1(a2_xm[5]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b5_obuf),
+	.a0 /* IN */ (a2_xr[5]),
+	.a1 /* IN */ (a2_xm[5]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_6
 (
-	.z(a2_x_b6_obuf), // OUT
-	.a0(a2_xr[6]), // IN
-	.a1(a2_xm[6]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b6_obuf),
+	.a0 /* IN */ (a2_xr[6]),
+	.a1 /* IN */ (a2_xm[6]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_7
 (
-	.z(a2_x_b7_obuf), // OUT
-	.a0(a2_xr[7]), // IN
-	.a1(a2_xm[7]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b7_obuf),
+	.a0 /* IN */ (a2_xr[7]),
+	.a1 /* IN */ (a2_xm[7]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_8
 (
-	.z(a2_x_b8_obuf), // OUT
-	.a0(a2_xr[8]), // IN
-	.a1(a2_xm[8]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b8_obuf),
+	.a0 /* IN */ (a2_xr[8]),
+	.a1 /* IN */ (a2_xm[8]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_9
 (
-	.z(a2_x_b9_obuf), // OUT
-	.a0(a2_xr[9]), // IN
-	.a1(a2_xm[9]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b9_obuf),
+	.a0 /* IN */ (a2_xr[9]),
+	.a1 /* IN */ (a2_xm[9]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_10
 (
-	.z(a2_x_b10_obuf), // OUT
-	.a0(a2_xr[10]), // IN
-	.a1(a2_xm[10]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b10_obuf),
+	.a0 /* IN */ (a2_xr[10]),
+	.a1 /* IN */ (a2_xm[10]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_11
 (
-	.z(a2_x_b11_obuf), // OUT
-	.a0(a2_xr[11]), // IN
-	.a1(a2_xm[11]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b11_obuf),
+	.a0 /* IN */ (a2_xr[11]),
+	.a1 /* IN */ (a2_xm[11]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_12
 (
-	.z(a2_x_b12_obuf), // OUT
-	.a0(a2_xr[12]), // IN
-	.a1(a2_xm[12]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b12_obuf),
+	.a0 /* IN */ (a2_xr[12]),
+	.a1 /* IN */ (a2_xm[12]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_13
 (
-	.z(a2_x_b13_obuf), // OUT
-	.a0(a2_xr[13]), // IN
-	.a1(a2_xm[13]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b13_obuf),
+	.a0 /* IN */ (a2_xr[13]),
+	.a1 /* IN */ (a2_xm[13]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_14
 (
-	.z(a2_x_b14_obuf), // OUT
-	.a0(a2_xr[14]), // IN
-	.a1(a2_xm[14]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b14_obuf),
+	.a0 /* IN */ (a2_xr[14]),
+	.a1 /* IN */ (a2_xm[14]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_x_inst_15
 (
-	.z(a2_x_b15_obuf), // OUT
-	.a0(a2_xr[15]), // IN
-	.a1(a2_xm[15]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_x_b15_obuf),
+	.a0 /* IN */ (a2_xr[15]),
+	.a1 /* IN */ (a2_xm[15]),
+	.s /* IN */ (a2_mask)
 );
 
 // ADDRESS.NET (184) - a2_ym : an2
@@ -2576,115 +2640,115 @@ assign a2_ym[15] = a2_yr[15] & a2_mask_y[15];
 // ADDRESS.NET (185) - a2_y : mx2
 mx2 a2_y_inst_0
 (
-	.z(a2_y[0]), // OUT
-	.a0(a2_yr[0]), // IN
-	.a1(a2_ym[0]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[0]),
+	.a0 /* IN */ (a2_yr[0]),
+	.a1 /* IN */ (a2_ym[0]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_1
 (
-	.z(a2_y[1]), // OUT
-	.a0(a2_yr[1]), // IN
-	.a1(a2_ym[1]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[1]),
+	.a0 /* IN */ (a2_yr[1]),
+	.a1 /* IN */ (a2_ym[1]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_2
 (
-	.z(a2_y[2]), // OUT
-	.a0(a2_yr[2]), // IN
-	.a1(a2_ym[2]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[2]),
+	.a0 /* IN */ (a2_yr[2]),
+	.a1 /* IN */ (a2_ym[2]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_3
 (
-	.z(a2_y[3]), // OUT
-	.a0(a2_yr[3]), // IN
-	.a1(a2_ym[3]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[3]),
+	.a0 /* IN */ (a2_yr[3]),
+	.a1 /* IN */ (a2_ym[3]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_4
 (
-	.z(a2_y[4]), // OUT
-	.a0(a2_yr[4]), // IN
-	.a1(a2_ym[4]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[4]),
+	.a0 /* IN */ (a2_yr[4]),
+	.a1 /* IN */ (a2_ym[4]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_5
 (
-	.z(a2_y[5]), // OUT
-	.a0(a2_yr[5]), // IN
-	.a1(a2_ym[5]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[5]),
+	.a0 /* IN */ (a2_yr[5]),
+	.a1 /* IN */ (a2_ym[5]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_6
 (
-	.z(a2_y[6]), // OUT
-	.a0(a2_yr[6]), // IN
-	.a1(a2_ym[6]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[6]),
+	.a0 /* IN */ (a2_yr[6]),
+	.a1 /* IN */ (a2_ym[6]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_7
 (
-	.z(a2_y[7]), // OUT
-	.a0(a2_yr[7]), // IN
-	.a1(a2_ym[7]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[7]),
+	.a0 /* IN */ (a2_yr[7]),
+	.a1 /* IN */ (a2_ym[7]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_8
 (
-	.z(a2_y[8]), // OUT
-	.a0(a2_yr[8]), // IN
-	.a1(a2_ym[8]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[8]),
+	.a0 /* IN */ (a2_yr[8]),
+	.a1 /* IN */ (a2_ym[8]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_9
 (
-	.z(a2_y[9]), // OUT
-	.a0(a2_yr[9]), // IN
-	.a1(a2_ym[9]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[9]),
+	.a0 /* IN */ (a2_yr[9]),
+	.a1 /* IN */ (a2_ym[9]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_10
 (
-	.z(a2_y[10]), // OUT
-	.a0(a2_yr[10]), // IN
-	.a1(a2_ym[10]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[10]),
+	.a0 /* IN */ (a2_yr[10]),
+	.a1 /* IN */ (a2_ym[10]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_11
 (
-	.z(a2_y[11]), // OUT
-	.a0(a2_yr[11]), // IN
-	.a1(a2_ym[11]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[11]),
+	.a0 /* IN */ (a2_yr[11]),
+	.a1 /* IN */ (a2_ym[11]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_12
 (
-	.z(a2_y[12]), // OUT
-	.a0(a2_yr[12]), // IN
-	.a1(a2_ym[12]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[12]),
+	.a0 /* IN */ (a2_yr[12]),
+	.a1 /* IN */ (a2_ym[12]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_13
 (
-	.z(a2_y[13]), // OUT
-	.a0(a2_yr[13]), // IN
-	.a1(a2_ym[13]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[13]),
+	.a0 /* IN */ (a2_yr[13]),
+	.a1 /* IN */ (a2_ym[13]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_14
 (
-	.z(a2_y[14]), // OUT
-	.a0(a2_yr[14]), // IN
-	.a1(a2_ym[14]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[14]),
+	.a0 /* IN */ (a2_yr[14]),
+	.a1 /* IN */ (a2_ym[14]),
+	.s /* IN */ (a2_mask)
 );
 mx2 a2_y_inst_15
 (
-	.z(a2_y[15]), // OUT
-	.a0(a2_yr[15]), // IN
-	.a1(a2_ym[15]), // IN
-	.s(a2_mask)  // IN
+	.z /* OUT */ (a2_y[15]),
+	.a0 /* IN */ (a2_yr[15]),
+	.a1 /* IN */ (a2_ym[15]),
+	.s /* IN */ (a2_mask)
 );
 
 // ADDRESS.NET (189) - a2stepldg : an2u
@@ -2693,322 +2757,322 @@ assign a2stepldg = a2stepld & load_strobe;
 // ADDRESS.NET (190) - a2stepx : ldp1q
 ldp1q a2stepx_inst_0
 (
-	.q(a2_step_x[0]), // OUT
-	.d(gpu_d_lo16[0]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[0]),
+	.d /* IN */ (gpu_d_lo16[0]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_1
 (
-	.q(a2_step_x[1]), // OUT
-	.d(gpu_d_lo16[1]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[1]),
+	.d /* IN */ (gpu_d_lo16[1]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_2
 (
-	.q(a2_step_x[2]), // OUT
-	.d(gpu_d_lo16[2]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[2]),
+	.d /* IN */ (gpu_d_lo16[2]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_3
 (
-	.q(a2_step_x[3]), // OUT
-	.d(gpu_d_lo16[3]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[3]),
+	.d /* IN */ (gpu_d_lo16[3]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_4
 (
-	.q(a2_step_x[4]), // OUT
-	.d(gpu_d_lo16[4]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[4]),
+	.d /* IN */ (gpu_d_lo16[4]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_5
 (
-	.q(a2_step_x[5]), // OUT
-	.d(gpu_d_lo16[5]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[5]),
+	.d /* IN */ (gpu_d_lo16[5]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_6
 (
-	.q(a2_step_x[6]), // OUT
-	.d(gpu_d_lo16[6]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[6]),
+	.d /* IN */ (gpu_d_lo16[6]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_7
 (
-	.q(a2_step_x[7]), // OUT
-	.d(gpu_d_lo16[7]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[7]),
+	.d /* IN */ (gpu_d_lo16[7]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_8
 (
-	.q(a2_step_x[8]), // OUT
-	.d(gpu_d_lo16[8]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[8]),
+	.d /* IN */ (gpu_d_lo16[8]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_9
 (
-	.q(a2_step_x[9]), // OUT
-	.d(gpu_d_lo16[9]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[9]),
+	.d /* IN */ (gpu_d_lo16[9]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_10
 (
-	.q(a2_step_x[10]), // OUT
-	.d(gpu_d_lo16[10]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[10]),
+	.d /* IN */ (gpu_d_lo16[10]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_11
 (
-	.q(a2_step_x[11]), // OUT
-	.d(gpu_d_lo16[11]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[11]),
+	.d /* IN */ (gpu_d_lo16[11]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_12
 (
-	.q(a2_step_x[12]), // OUT
-	.d(gpu_d_lo16[12]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[12]),
+	.d /* IN */ (gpu_d_lo16[12]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_13
 (
-	.q(a2_step_x[13]), // OUT
-	.d(gpu_d_lo16[13]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[13]),
+	.d /* IN */ (gpu_d_lo16[13]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_14
 (
-	.q(a2_step_x[14]), // OUT
-	.d(gpu_d_lo16[14]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[14]),
+	.d /* IN */ (gpu_d_lo16[14]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepx_inst_15
 (
-	.q(a2_step_x[15]), // OUT
-	.d(gpu_d_lo16[15]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_x[15]),
+	.d /* IN */ (gpu_d_lo16[15]),
+	.g /* IN */ (a2stepldg)
 );
 
 // ADDRESS.NET (191) - a2stepy : ldp1q
 ldp1q a2stepy_inst_0
 (
-	.q(a2_step_y[0]), // OUT
-	.d(gpu_d_hi16[0]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[0]),
+	.d /* IN */ (gpu_d_hi16[0]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_1
 (
-	.q(a2_step_y[1]), // OUT
-	.d(gpu_d_hi16[1]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[1]),
+	.d /* IN */ (gpu_d_hi16[1]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_2
 (
-	.q(a2_step_y[2]), // OUT
-	.d(gpu_d_hi16[2]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[2]),
+	.d /* IN */ (gpu_d_hi16[2]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_3
 (
-	.q(a2_step_y[3]), // OUT
-	.d(gpu_d_hi16[3]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[3]),
+	.d /* IN */ (gpu_d_hi16[3]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_4
 (
-	.q(a2_step_y[4]), // OUT
-	.d(gpu_d_hi16[4]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[4]),
+	.d /* IN */ (gpu_d_hi16[4]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_5
 (
-	.q(a2_step_y[5]), // OUT
-	.d(gpu_d_hi16[5]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[5]),
+	.d /* IN */ (gpu_d_hi16[5]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_6
 (
-	.q(a2_step_y[6]), // OUT
-	.d(gpu_d_hi16[6]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[6]),
+	.d /* IN */ (gpu_d_hi16[6]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_7
 (
-	.q(a2_step_y[7]), // OUT
-	.d(gpu_d_hi16[7]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[7]),
+	.d /* IN */ (gpu_d_hi16[7]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_8
 (
-	.q(a2_step_y[8]), // OUT
-	.d(gpu_d_hi16[8]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[8]),
+	.d /* IN */ (gpu_d_hi16[8]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_9
 (
-	.q(a2_step_y[9]), // OUT
-	.d(gpu_d_hi16[9]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[9]),
+	.d /* IN */ (gpu_d_hi16[9]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_10
 (
-	.q(a2_step_y[10]), // OUT
-	.d(gpu_d_hi16[10]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[10]),
+	.d /* IN */ (gpu_d_hi16[10]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_11
 (
-	.q(a2_step_y[11]), // OUT
-	.d(gpu_d_hi16[11]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[11]),
+	.d /* IN */ (gpu_d_hi16[11]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_12
 (
-	.q(a2_step_y[12]), // OUT
-	.d(gpu_d_hi16[12]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[12]),
+	.d /* IN */ (gpu_d_hi16[12]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_13
 (
-	.q(a2_step_y[13]), // OUT
-	.d(gpu_d_hi16[13]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[13]),
+	.d /* IN */ (gpu_d_hi16[13]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_14
 (
-	.q(a2_step_y[14]), // OUT
-	.d(gpu_d_hi16[14]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[14]),
+	.d /* IN */ (gpu_d_hi16[14]),
+	.g /* IN */ (a2stepldg)
 );
 ldp1q a2stepy_inst_15
 (
-	.q(a2_step_y[15]), // OUT
-	.d(gpu_d_hi16[15]), // IN
-	.g(a2stepldg)  // IN
+	.q /* OUT */ (a2_step_y[15]),
+	.d /* IN */ (gpu_d_hi16[15]),
+	.g /* IN */ (a2stepldg)
 );
 
 // ADDRESS.NET (195) - addamux : addamux
 addamux addamux_inst
 (
-	.adda_x({adda_x[0],adda_x[1],adda_x[2],adda_x[3],adda_x[4],adda_x[5],adda_x[6],adda_x[7],adda_x[8],adda_x[9],adda_x[10],adda_x[11],adda_x[12],adda_x[13],adda_x[14],adda_x[15]}), // OUT
-	.adda_y({adda_y[0],adda_y[1],adda_y[2],adda_y[3],adda_y[4],adda_y[5],adda_y[6],adda_y[7],adda_y[8],adda_y[9],adda_y[10],adda_y[11],adda_y[12],adda_y[13],adda_y[14],adda_y[15]}), // OUT
-	.addasel_0(addasel_0), // IN
-	.addasel_1(addasel_1), // IN
-	.addasel_2(addasel_2), // IN
-	.a1_step_x({a1_step_x[0],a1_step_x[1],a1_step_x[2],a1_step_x[3],a1_step_x[4],a1_step_x[5],a1_step_x[6],a1_step_x[7],a1_step_x[8],a1_step_x[9],a1_step_x[10],a1_step_x[11],a1_step_x[12],a1_step_x[13],a1_step_x[14],a1_step_x[15]}), // IN
-	.a1_step_y({a1_step_y[0],a1_step_y[1],a1_step_y[2],a1_step_y[3],a1_step_y[4],a1_step_y[5],a1_step_y[6],a1_step_y[7],a1_step_y[8],a1_step_y[9],a1_step_y[10],a1_step_y[11],a1_step_y[12],a1_step_y[13],a1_step_y[14],a1_step_y[15]}), // IN
-	.a1_stepf_x({a1_stepf_x[0],a1_stepf_x[1],a1_stepf_x[2],a1_stepf_x[3],a1_stepf_x[4],a1_stepf_x[5],a1_stepf_x[6],a1_stepf_x[7],a1_stepf_x[8],a1_stepf_x[9],a1_stepf_x[10],a1_stepf_x[11],a1_stepf_x[12],a1_stepf_x[13],a1_stepf_x[14],a1_stepf_x[15]}), // IN
-	.a1_stepf_y({a1_stepf_y[0],a1_stepf_y[1],a1_stepf_y[2],a1_stepf_y[3],a1_stepf_y[4],a1_stepf_y[5],a1_stepf_y[6],a1_stepf_y[7],a1_stepf_y[8],a1_stepf_y[9],a1_stepf_y[10],a1_stepf_y[11],a1_stepf_y[12],a1_stepf_y[13],a1_stepf_y[14],a1_stepf_y[15]}), // IN
-	.a2_step_x({a2_step_x[0],a2_step_x[1],a2_step_x[2],a2_step_x[3],a2_step_x[4],a2_step_x[5],a2_step_x[6],a2_step_x[7],a2_step_x[8],a2_step_x[9],a2_step_x[10],a2_step_x[11],a2_step_x[12],a2_step_x[13],a2_step_x[14],a2_step_x[15]}), // IN
-	.a2_step_y({a2_step_y[0],a2_step_y[1],a2_step_y[2],a2_step_y[3],a2_step_y[4],a2_step_y[5],a2_step_y[6],a2_step_y[7],a2_step_y[8],a2_step_y[9],a2_step_y[10],a2_step_y[11],a2_step_y[12],a2_step_y[13],a2_step_y[14],a2_step_y[15]}), // IN
-	.a1_inc_x({a1_inc_x[0],a1_inc_x[1],a1_inc_x[2],a1_inc_x[3],a1_inc_x[4],a1_inc_x[5],a1_inc_x[6],a1_inc_x[7],a1_inc_x[8],a1_inc_x[9],a1_inc_x[10],a1_inc_x[11],a1_inc_x[12],a1_inc_x[13],a1_inc_x[14],a1_inc_x[15]}), // IN
-	.a1_inc_y({a1_inc_y[0],a1_inc_y[1],a1_inc_y[2],a1_inc_y[3],a1_inc_y[4],a1_inc_y[5],a1_inc_y[6],a1_inc_y[7],a1_inc_y[8],a1_inc_y[9],a1_inc_y[10],a1_inc_y[11],a1_inc_y[12],a1_inc_y[13],a1_inc_y[14],a1_inc_y[15]}), // IN
-	.a1_incf_x({a1_incf_x[0],a1_incf_x[1],a1_incf_x[2],a1_incf_x[3],a1_incf_x[4],a1_incf_x[5],a1_incf_x[6],a1_incf_x[7],a1_incf_x[8],a1_incf_x[9],a1_incf_x[10],a1_incf_x[11],a1_incf_x[12],a1_incf_x[13],a1_incf_x[14],a1_incf_x[15]}), // IN
-	.a1_incf_y({a1_incf_y[0],a1_incf_y[1],a1_incf_y[2],a1_incf_y[3],a1_incf_y[4],a1_incf_y[5],a1_incf_y[6],a1_incf_y[7],a1_incf_y[8],a1_incf_y[9],a1_incf_y[10],a1_incf_y[11],a1_incf_y[12],a1_incf_y[13],a1_incf_y[14],a1_incf_y[15]}), // IN
-	.adda_xconst_0(adda_xconst_0), // IN
-	.adda_xconst_1(adda_xconst_1), // IN
-	.adda_xconst_2(adda_xconst_2), // IN
-	.adda_yconst(adda_yconst), // IN
-	.addareg(addareg), // IN
-	.suba_x(suba_x), // IN
-	.suba_y(suba_y)  // IN
+	.adda_x /* OUT */ ({adda_x[0],adda_x[1],adda_x[2],adda_x[3],adda_x[4],adda_x[5],adda_x[6],adda_x[7],adda_x[8],adda_x[9],adda_x[10],adda_x[11],adda_x[12],adda_x[13],adda_x[14],adda_x[15]}),
+	.adda_y /* OUT */ ({adda_y[0],adda_y[1],adda_y[2],adda_y[3],adda_y[4],adda_y[5],adda_y[6],adda_y[7],adda_y[8],adda_y[9],adda_y[10],adda_y[11],adda_y[12],adda_y[13],adda_y[14],adda_y[15]}),
+	.addasel_0 /* IN */ (addasel_0),
+	.addasel_1 /* IN */ (addasel_1),
+	.addasel_2 /* IN */ (addasel_2),
+	.a1_step_x /* IN */ ({a1_step_x[0],a1_step_x[1],a1_step_x[2],a1_step_x[3],a1_step_x[4],a1_step_x[5],a1_step_x[6],a1_step_x[7],a1_step_x[8],a1_step_x[9],a1_step_x[10],a1_step_x[11],a1_step_x[12],a1_step_x[13],a1_step_x[14],a1_step_x[15]}),
+	.a1_step_y /* IN */ ({a1_step_y[0],a1_step_y[1],a1_step_y[2],a1_step_y[3],a1_step_y[4],a1_step_y[5],a1_step_y[6],a1_step_y[7],a1_step_y[8],a1_step_y[9],a1_step_y[10],a1_step_y[11],a1_step_y[12],a1_step_y[13],a1_step_y[14],a1_step_y[15]}),
+	.a1_stepf_x /* IN */ ({a1_stepf_x[0],a1_stepf_x[1],a1_stepf_x[2],a1_stepf_x[3],a1_stepf_x[4],a1_stepf_x[5],a1_stepf_x[6],a1_stepf_x[7],a1_stepf_x[8],a1_stepf_x[9],a1_stepf_x[10],a1_stepf_x[11],a1_stepf_x[12],a1_stepf_x[13],a1_stepf_x[14],a1_stepf_x[15]}),
+	.a1_stepf_y /* IN */ ({a1_stepf_y[0],a1_stepf_y[1],a1_stepf_y[2],a1_stepf_y[3],a1_stepf_y[4],a1_stepf_y[5],a1_stepf_y[6],a1_stepf_y[7],a1_stepf_y[8],a1_stepf_y[9],a1_stepf_y[10],a1_stepf_y[11],a1_stepf_y[12],a1_stepf_y[13],a1_stepf_y[14],a1_stepf_y[15]}),
+	.a2_step_x /* IN */ ({a2_step_x[0],a2_step_x[1],a2_step_x[2],a2_step_x[3],a2_step_x[4],a2_step_x[5],a2_step_x[6],a2_step_x[7],a2_step_x[8],a2_step_x[9],a2_step_x[10],a2_step_x[11],a2_step_x[12],a2_step_x[13],a2_step_x[14],a2_step_x[15]}),
+	.a2_step_y /* IN */ ({a2_step_y[0],a2_step_y[1],a2_step_y[2],a2_step_y[3],a2_step_y[4],a2_step_y[5],a2_step_y[6],a2_step_y[7],a2_step_y[8],a2_step_y[9],a2_step_y[10],a2_step_y[11],a2_step_y[12],a2_step_y[13],a2_step_y[14],a2_step_y[15]}),
+	.a1_inc_x /* IN */ ({a1_inc_x[0],a1_inc_x[1],a1_inc_x[2],a1_inc_x[3],a1_inc_x[4],a1_inc_x[5],a1_inc_x[6],a1_inc_x[7],a1_inc_x[8],a1_inc_x[9],a1_inc_x[10],a1_inc_x[11],a1_inc_x[12],a1_inc_x[13],a1_inc_x[14],a1_inc_x[15]}),
+	.a1_inc_y /* IN */ ({a1_inc_y[0],a1_inc_y[1],a1_inc_y[2],a1_inc_y[3],a1_inc_y[4],a1_inc_y[5],a1_inc_y[6],a1_inc_y[7],a1_inc_y[8],a1_inc_y[9],a1_inc_y[10],a1_inc_y[11],a1_inc_y[12],a1_inc_y[13],a1_inc_y[14],a1_inc_y[15]}),
+	.a1_incf_x /* IN */ ({a1_incf_x[0],a1_incf_x[1],a1_incf_x[2],a1_incf_x[3],a1_incf_x[4],a1_incf_x[5],a1_incf_x[6],a1_incf_x[7],a1_incf_x[8],a1_incf_x[9],a1_incf_x[10],a1_incf_x[11],a1_incf_x[12],a1_incf_x[13],a1_incf_x[14],a1_incf_x[15]}),
+	.a1_incf_y /* IN */ ({a1_incf_y[0],a1_incf_y[1],a1_incf_y[2],a1_incf_y[3],a1_incf_y[4],a1_incf_y[5],a1_incf_y[6],a1_incf_y[7],a1_incf_y[8],a1_incf_y[9],a1_incf_y[10],a1_incf_y[11],a1_incf_y[12],a1_incf_y[13],a1_incf_y[14],a1_incf_y[15]}),
+	.adda_xconst_0 /* IN */ (adda_xconst_0),
+	.adda_xconst_1 /* IN */ (adda_xconst_1),
+	.adda_xconst_2 /* IN */ (adda_xconst_2),
+	.adda_yconst /* IN */ (adda_yconst),
+	.addareg /* IN */ (addareg),
+	.suba_x /* IN */ (suba_x),
+	.suba_y /* IN */ (suba_y)
 );
 
 // ADDRESS.NET (202) - addbmux : addbmux
 addbmux addbmux_inst
 (
-	.addb_x({addb_x[0],addb_x[1],addb_x[2],addb_x[3],addb_x[4],addb_x[5],addb_x[6],addb_x[7],addb_x[8],addb_x[9],addb_x[10],addb_x[11],addb_x[12],addb_x[13],addb_x[14],addb_x[15]}), // OUT
-	.addb_y({addb_y[0],addb_y[1],addb_y[2],addb_y[3],addb_y[4],addb_y[5],addb_y[6],addb_y[7],addb_y[8],addb_y[9],addb_y[10],addb_y[11],addb_y[12],addb_y[13],addb_y[14],addb_y[15]}), // OUT
-	.addbsel_0(addbsel_0), // IN
-	.addbsel_1(addbsel_1), // IN
-	.a1_x({a1_x_b0_obuf,a1_x_b1_obuf,a1_x_b2_obuf,a1_x_b3_obuf,a1_x_b4_obuf,a1_x_b5_obuf,a1_x_b6_obuf,a1_x_b7_obuf,a1_x_b8_obuf,a1_x_b9_obuf,a1_x_b10_obuf,a1_x_b11_obuf,a1_x_b12_obuf,a1_x_b13_obuf,a1_x_b14_obuf,a1_x_b15_obuf}), // IN
-	.a1_y({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}), // IN
-	.a2_x({a2_x_b0_obuf,a2_x_b1_obuf,a2_x_b2_obuf,a2_x_b3_obuf,a2_x_b4_obuf,a2_x_b5_obuf,a2_x_b6_obuf,a2_x_b7_obuf,a2_x_b8_obuf,a2_x_b9_obuf,a2_x_b10_obuf,a2_x_b11_obuf,a2_x_b12_obuf,a2_x_b13_obuf,a2_x_b14_obuf,a2_x_b15_obuf}), // IN
-	.a2_y({a2_y[0],a2_y[1],a2_y[2],a2_y[3],a2_y[4],a2_y[5],a2_y[6],a2_y[7],a2_y[8],a2_y[9],a2_y[10],a2_y[11],a2_y[12],a2_y[13],a2_y[14],a2_y[15]}), // IN
-	.a1_frac_x({a1_frac_x[0],a1_frac_x[1],a1_frac_x[2],a1_frac_x[3],a1_frac_x[4],a1_frac_x[5],a1_frac_x[6],a1_frac_x[7],a1_frac_x[8],a1_frac_x[9],a1_frac_x[10],a1_frac_x[11],a1_frac_x[12],a1_frac_x[13],a1_frac_x[14],a1_frac_x[15]}), // IN
-	.a1_frac_y({a1_frac_y[0],a1_frac_y[1],a1_frac_y[2],a1_frac_y[3],a1_frac_y[4],a1_frac_y[5],a1_frac_y[6],a1_frac_y[7],a1_frac_y[8],a1_frac_y[9],a1_frac_y[10],a1_frac_y[11],a1_frac_y[12],a1_frac_y[13],a1_frac_y[14],a1_frac_y[15]})  // IN
+	.addb_x /* OUT */ ({addb_x[0],addb_x[1],addb_x[2],addb_x[3],addb_x[4],addb_x[5],addb_x[6],addb_x[7],addb_x[8],addb_x[9],addb_x[10],addb_x[11],addb_x[12],addb_x[13],addb_x[14],addb_x[15]}),
+	.addb_y /* OUT */ ({addb_y[0],addb_y[1],addb_y[2],addb_y[3],addb_y[4],addb_y[5],addb_y[6],addb_y[7],addb_y[8],addb_y[9],addb_y[10],addb_y[11],addb_y[12],addb_y[13],addb_y[14],addb_y[15]}),
+	.addbsel_0 /* IN */ (addbsel_0),
+	.addbsel_1 /* IN */ (addbsel_1),
+	.a1_x /* IN */ ({a1_x_b0_obuf,a1_x_b1_obuf,a1_x_b2_obuf,a1_x_b3_obuf,a1_x_b4_obuf,a1_x_b5_obuf,a1_x_b6_obuf,a1_x_b7_obuf,a1_x_b8_obuf,a1_x_b9_obuf,a1_x_b10_obuf,a1_x_b11_obuf,a1_x_b12_obuf,a1_x_b13_obuf,a1_x_b14_obuf,a1_x_b15_obuf}),
+	.a1_y /* IN */ ({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}),
+	.a2_x /* IN */ ({a2_x_b0_obuf,a2_x_b1_obuf,a2_x_b2_obuf,a2_x_b3_obuf,a2_x_b4_obuf,a2_x_b5_obuf,a2_x_b6_obuf,a2_x_b7_obuf,a2_x_b8_obuf,a2_x_b9_obuf,a2_x_b10_obuf,a2_x_b11_obuf,a2_x_b12_obuf,a2_x_b13_obuf,a2_x_b14_obuf,a2_x_b15_obuf}),
+	.a2_y /* IN */ ({a2_y[0],a2_y[1],a2_y[2],a2_y[3],a2_y[4],a2_y[5],a2_y[6],a2_y[7],a2_y[8],a2_y[9],a2_y[10],a2_y[11],a2_y[12],a2_y[13],a2_y[14],a2_y[15]}),
+	.a1_frac_x /* IN */ ({a1_frac_x[0],a1_frac_x[1],a1_frac_x[2],a1_frac_x[3],a1_frac_x[4],a1_frac_x[5],a1_frac_x[6],a1_frac_x[7],a1_frac_x[8],a1_frac_x[9],a1_frac_x[10],a1_frac_x[11],a1_frac_x[12],a1_frac_x[13],a1_frac_x[14],a1_frac_x[15]}),
+	.a1_frac_y /* IN */ ({a1_frac_y[0],a1_frac_y[1],a1_frac_y[2],a1_frac_y[3],a1_frac_y[4],a1_frac_y[5],a1_frac_y[6],a1_frac_y[7],a1_frac_y[8],a1_frac_y[9],a1_frac_y[10],a1_frac_y[11],a1_frac_y[12],a1_frac_y[13],a1_frac_y[14],a1_frac_y[15]})
 );
 
 // ADDRESS.NET (205) - addradd : addradd
 addradd addradd_inst
 (
-	.addq_x({addq_x[0],addq_x[1],addq_x[2],addq_x[3],addq_x[4],addq_x[5],addq_x[6],addq_x[7],addq_x[8],addq_x[9],addq_x[10],addq_x[11],addq_x[12],addq_x[13],addq_x[14],addq_x[15]}), // OUT
-	.addq_y({addq_y[0],addq_y[1],addq_y[2],addq_y[3],addq_y[4],addq_y[5],addq_y[6],addq_y[7],addq_y[8],addq_y[9],addq_y[10],addq_y[11],addq_y[12],addq_y[13],addq_y[14],addq_y[15]}), // OUT
-	.a1fracld(a1fracld), // IN
-	.adda_x({adda_x[0],adda_x[1],adda_x[2],adda_x[3],adda_x[4],adda_x[5],adda_x[6],adda_x[7],adda_x[8],adda_x[9],adda_x[10],adda_x[11],adda_x[12],adda_x[13],adda_x[14],adda_x[15]}), // IN
-	.adda_y({adda_y[0],adda_y[1],adda_y[2],adda_y[3],adda_y[4],adda_y[5],adda_y[6],adda_y[7],adda_y[8],adda_y[9],adda_y[10],adda_y[11],adda_y[12],adda_y[13],adda_y[14],adda_y[15]}), // IN
-	.addb_x({addb_x[0],addb_x[1],addb_x[2],addb_x[3],addb_x[4],addb_x[5],addb_x[6],addb_x[7],addb_x[8],addb_x[9],addb_x[10],addb_x[11],addb_x[12],addb_x[13],addb_x[14],addb_x[15]}), // IN
-	.addb_y({addb_y[0],addb_y[1],addb_y[2],addb_y[3],addb_y[4],addb_y[5],addb_y[6],addb_y[7],addb_y[8],addb_y[9],addb_y[10],addb_y[11],addb_y[12],addb_y[13],addb_y[14],addb_y[15]}), // IN
-	.clk_0(clk), // IN
-	.modx_0(modx_0), // IN
-	.modx_1(modx_1), // IN
-	.modx_2(modx_2), // IN
-	.suba_x(suba_x), // IN
-	.suba_y(suba_y)  // IN
+	.addq_x /* OUT */ ({addq_x[0],addq_x[1],addq_x[2],addq_x[3],addq_x[4],addq_x[5],addq_x[6],addq_x[7],addq_x[8],addq_x[9],addq_x[10],addq_x[11],addq_x[12],addq_x[13],addq_x[14],addq_x[15]}),
+	.addq_y /* OUT */ ({addq_y[0],addq_y[1],addq_y[2],addq_y[3],addq_y[4],addq_y[5],addq_y[6],addq_y[7],addq_y[8],addq_y[9],addq_y[10],addq_y[11],addq_y[12],addq_y[13],addq_y[14],addq_y[15]}),
+	.a1fracld /* IN */ (a1fracld),
+	.adda_x /* IN */ ({adda_x[0],adda_x[1],adda_x[2],adda_x[3],adda_x[4],adda_x[5],adda_x[6],adda_x[7],adda_x[8],adda_x[9],adda_x[10],adda_x[11],adda_x[12],adda_x[13],adda_x[14],adda_x[15]}),
+	.adda_y /* IN */ ({adda_y[0],adda_y[1],adda_y[2],adda_y[3],adda_y[4],adda_y[5],adda_y[6],adda_y[7],adda_y[8],adda_y[9],adda_y[10],adda_y[11],adda_y[12],adda_y[13],adda_y[14],adda_y[15]}),
+	.addb_x /* IN */ ({addb_x[0],addb_x[1],addb_x[2],addb_x[3],addb_x[4],addb_x[5],addb_x[6],addb_x[7],addb_x[8],addb_x[9],addb_x[10],addb_x[11],addb_x[12],addb_x[13],addb_x[14],addb_x[15]}),
+	.addb_y /* IN */ ({addb_y[0],addb_y[1],addb_y[2],addb_y[3],addb_y[4],addb_y[5],addb_y[6],addb_y[7],addb_y[8],addb_y[9],addb_y[10],addb_y[11],addb_y[12],addb_y[13],addb_y[14],addb_y[15]}),
+	.clk_0 /* IN */ (clk),
+	.modx_0 /* IN */ (modx_0),
+	.modx_1 /* IN */ (modx_1),
+	.modx_2 /* IN */ (modx_2),
+	.suba_x /* IN */ (suba_x),
+	.suba_y /* IN */ (suba_y)
 );
 
 // ADDRESS.NET (211) - datamux : datamux
 datamux datamux_inst
 (
-	.data_x({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}), // OUT
-	.data_y({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}), // OUT
-	.gpu_din({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}), // IN
-	.addq_x({addq_x[0],addq_x[1],addq_x[2],addq_x[3],addq_x[4],addq_x[5],addq_x[6],addq_x[7],addq_x[8],addq_x[9],addq_x[10],addq_x[11],addq_x[12],addq_x[13],addq_x[14],addq_x[15]}), // IN
-	.addq_y({addq_y[0],addq_y[1],addq_y[2],addq_y[3],addq_y[4],addq_y[5],addq_y[6],addq_y[7],addq_y[8],addq_y[9],addq_y[10],addq_y[11],addq_y[12],addq_y[13],addq_y[14],addq_y[15]})  // IN
+	.data_x /* OUT */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
+	.data_y /* OUT */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
+	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
+	.addq_x /* IN */ ({addq_x[0],addq_x[1],addq_x[2],addq_x[3],addq_x[4],addq_x[5],addq_x[6],addq_x[7],addq_x[8],addq_x[9],addq_x[10],addq_x[11],addq_x[12],addq_x[13],addq_x[14],addq_x[15]}),
+	.addq_y /* IN */ ({addq_y[0],addq_y[1],addq_y[2],addq_y[3],addq_y[4],addq_y[5],addq_y[6],addq_y[7],addq_y[8],addq_y[9],addq_y[10],addq_y[11],addq_y[12],addq_y[13],addq_y[14],addq_y[15]})
 );
 
 // ADDRESS.NET (216) - addrgen : addrgen
 addrgen addrgen_inst
 (
-	.address({address[0],address[1],address[2],address[3],address[4],address[5],address[6],address[7],address[8],address[9],address[10],address[11],address[12],address[13],address[14],address[15],address[16],address[17],address[18],address[19],address[20],address[21],address[22],address[23]}), // IO
-	.pixa_0(pixa_0), // IO
-	.pixa_1(pixa_1), // IO
-	.pixa_2(pixa_2), // IO
-	.a1_x({a1_x_b0_obuf,a1_x_b1_obuf,a1_x_b2_obuf,a1_x_b3_obuf,a1_x_b4_obuf,a1_x_b5_obuf,a1_x_b6_obuf,a1_x_b7_obuf,a1_x_b8_obuf,a1_x_b9_obuf,a1_x_b10_obuf,a1_x_b11_obuf,a1_x_b12_obuf,a1_x_b13_obuf,a1_x_b14_obuf,a1_x_b15_obuf}), // IN
-	.a1_y({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}), // IN
-	.a1_base({a1_base[0],a1_base[1],a1_base[2],a1_base[3],a1_base[4],a1_base[5],a1_base[6],a1_base[7],a1_base[8],a1_base[9],a1_base[10],a1_base[11],a1_base[12],a1_base[13],a1_base[14],a1_base[15],a1_base[16],a1_base[17],a1_base[18],a1_base[19],a1_base[20]}), // IN
-	.a1_pitch_0(a1_pitch_0), // IN
-	.a1_pitch_1(a1_pitch_1), // IN
-	.a1_pixsize_0(a1_pixsize_0_obuf), // IN
-	.a1_pixsize_1(a1_pixsize_1_obuf), // IN
-	.a1_pixsize_2(a1_pixsize_2_obuf), // IN
-	.a1_width_0(a1_width_0), // IN
-	.a1_width_1(a1_width_1), // IN
-	.a1_width_2(a1_width_2), // IN
-	.a1_width_3(a1_width_3), // IN
-	.a1_width_4(a1_width_4), // IN
-	.a1_width_5(a1_width_5), // IN
-	.a1_zoffset_0(a1_zoffset_0), // IN
-	.a1_zoffset_1(a1_zoffset_1), // IN
-	.a2_x({a2_x_b0_obuf,a2_x_b1_obuf,a2_x_b2_obuf,a2_x_b3_obuf,a2_x_b4_obuf,a2_x_b5_obuf,a2_x_b6_obuf,a2_x_b7_obuf,a2_x_b8_obuf,a2_x_b9_obuf,a2_x_b10_obuf,a2_x_b11_obuf,a2_x_b12_obuf,a2_x_b13_obuf,a2_x_b14_obuf,a2_x_b15_obuf}), // IN
-	.a2_y({a2_y[0],a2_y[1],a2_y[2],a2_y[3],a2_y[4],a2_y[5],a2_y[6],a2_y[7],a2_y[8],a2_y[9],a2_y[10],a2_y[11],a2_y[12],a2_y[13],a2_y[14],a2_y[15]}), // IN
-	.a2_base({a2_base[0],a2_base[1],a2_base[2],a2_base[3],a2_base[4],a2_base[5],a2_base[6],a2_base[7],a2_base[8],a2_base[9],a2_base[10],a2_base[11],a2_base[12],a2_base[13],a2_base[14],a2_base[15],a2_base[16],a2_base[17],a2_base[18],a2_base[19],a2_base[20]}), // IN
-	.a2_pitch_0(a2_pitch_0), // IN
-	.a2_pitch_1(a2_pitch_1), // IN
-	.a2_pixsize_0(a2_pixsize_0_obuf), // IN
-	.a2_pixsize_1(a2_pixsize_1_obuf), // IN
-	.a2_pixsize_2(a2_pixsize_2_obuf), // IN
-	.a2_width_0(a2_width_0), // IN
-	.a2_width_1(a2_width_1), // IN
-	.a2_width_2(a2_width_2), // IN
-	.a2_width_3(a2_width_3), // IN
-	.a2_width_4(a2_width_4), // IN
-	.a2_width_5(a2_width_5), // IN
-	.a2_zoffset_0(a2_zoffset_0), // IN
-	.a2_zoffset_1(a2_zoffset_1), // IN
-	.apipe(apipe), // IN
-	.clk(clk), // IN
-	.gena2(gena2), // IN
-	.zaddr(zaddr)  // IN
+	.address /* OUT */ ({address[0],address[1],address[2],address[3],address[4],address[5],address[6],address[7],address[8],address[9],address[10],address[11],address[12],address[13],address[14],address[15],address[16],address[17],address[18],address[19],address[20],address[21],address[22],address[23]}),
+	.pixa_0 /* OUT */ (pixa_0),
+	.pixa_1 /* OUT */ (pixa_1),
+	.pixa_2 /* OUT */ (pixa_2),
+	.a1_x /* IN */ ({a1_x_b0_obuf,a1_x_b1_obuf,a1_x_b2_obuf,a1_x_b3_obuf,a1_x_b4_obuf,a1_x_b5_obuf,a1_x_b6_obuf,a1_x_b7_obuf,a1_x_b8_obuf,a1_x_b9_obuf,a1_x_b10_obuf,a1_x_b11_obuf,a1_x_b12_obuf,a1_x_b13_obuf,a1_x_b14_obuf,a1_x_b15_obuf}),
+	.a1_y /* IN */ ({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}),
+	.a1_base /* IN */ ({a1_base[0],a1_base[1],a1_base[2],a1_base[3],a1_base[4],a1_base[5],a1_base[6],a1_base[7],a1_base[8],a1_base[9],a1_base[10],a1_base[11],a1_base[12],a1_base[13],a1_base[14],a1_base[15],a1_base[16],a1_base[17],a1_base[18],a1_base[19],a1_base[20]}),
+	.a1_pitch_0 /* IN */ (a1_pitch_0),
+	.a1_pitch_1 /* IN */ (a1_pitch_1),
+	.a1_pixsize_0 /* IN */ (a1_pixsize_0_obuf),
+	.a1_pixsize_1 /* IN */ (a1_pixsize_1_obuf),
+	.a1_pixsize_2 /* IN */ (a1_pixsize_2_obuf),
+	.a1_width_0 /* IN */ (a1_width_0),
+	.a1_width_1 /* IN */ (a1_width_1),
+	.a1_width_2 /* IN */ (a1_width_2),
+	.a1_width_3 /* IN */ (a1_width_3),
+	.a1_width_4 /* IN */ (a1_width_4),
+	.a1_width_5 /* IN */ (a1_width_5),
+	.a1_zoffset_0 /* IN */ (a1_zoffset_0),
+	.a1_zoffset_1 /* IN */ (a1_zoffset_1),
+	.a2_x /* IN */ ({a2_x_b0_obuf,a2_x_b1_obuf,a2_x_b2_obuf,a2_x_b3_obuf,a2_x_b4_obuf,a2_x_b5_obuf,a2_x_b6_obuf,a2_x_b7_obuf,a2_x_b8_obuf,a2_x_b9_obuf,a2_x_b10_obuf,a2_x_b11_obuf,a2_x_b12_obuf,a2_x_b13_obuf,a2_x_b14_obuf,a2_x_b15_obuf}),
+	.a2_y /* IN */ ({a2_y[0],a2_y[1],a2_y[2],a2_y[3],a2_y[4],a2_y[5],a2_y[6],a2_y[7],a2_y[8],a2_y[9],a2_y[10],a2_y[11],a2_y[12],a2_y[13],a2_y[14],a2_y[15]}),
+	.a2_base /* IN */ ({a2_base[0],a2_base[1],a2_base[2],a2_base[3],a2_base[4],a2_base[5],a2_base[6],a2_base[7],a2_base[8],a2_base[9],a2_base[10],a2_base[11],a2_base[12],a2_base[13],a2_base[14],a2_base[15],a2_base[16],a2_base[17],a2_base[18],a2_base[19],a2_base[20]}),
+	.a2_pitch_0 /* IN */ (a2_pitch_0),
+	.a2_pitch_1 /* IN */ (a2_pitch_1),
+	.a2_pixsize_0 /* IN */ (a2_pixsize_0_obuf),
+	.a2_pixsize_1 /* IN */ (a2_pixsize_1_obuf),
+	.a2_pixsize_2 /* IN */ (a2_pixsize_2_obuf),
+	.a2_width_0 /* IN */ (a2_width_0),
+	.a2_width_1 /* IN */ (a2_width_1),
+	.a2_width_2 /* IN */ (a2_width_2),
+	.a2_width_3 /* IN */ (a2_width_3),
+	.a2_width_4 /* IN */ (a2_width_4),
+	.a2_width_5 /* IN */ (a2_width_5),
+	.a2_zoffset_0 /* IN */ (a2_zoffset_0),
+	.a2_zoffset_1 /* IN */ (a2_zoffset_1),
+	.apipe /* IN */ (apipe),
+	.clk /* IN */ (clk),
+	.gena2 /* IN */ (gena2),
+	.zaddr /* IN */ (zaddr)
 );
 
 // ADDRESS.NET (226) - addrcomp : addrcomp
 addrcomp addrcomp_inst
 (
-	.a1_outside(a1_outside), // OUT
-	.a1_x({a1_x_b0_obuf,a1_x_b1_obuf,a1_x_b2_obuf,a1_x_b3_obuf,a1_x_b4_obuf,a1_x_b5_obuf,a1_x_b6_obuf,a1_x_b7_obuf,a1_x_b8_obuf,a1_x_b9_obuf,a1_x_b10_obuf,a1_x_b11_obuf,a1_x_b12_obuf,a1_x_b13_obuf,a1_x_b14_obuf,a1_x_b15_obuf}), // IN
-	.a1_y({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}), // IN
-	.a1_win_x({a1_win_x_b0_obuf,a1_win_x_b1_obuf,a1_win_x_b2_obuf,a1_win_x_b3_obuf,a1_win_x_b4_obuf,a1_win_x_b5_obuf,a1_win_x_b6_obuf,a1_win_x_b7_obuf,a1_win_x_b8_obuf,a1_win_x_b9_obuf,a1_win_x_b10_obuf,a1_win_x_b11_obuf,a1_win_x_b12_obuf,a1_win_x_b13_obuf,a1_win_x_b14_obuf}), // IN
-	.a1_win_y({a1_win_y[0],a1_win_y[1],a1_win_y[2],a1_win_y[3],a1_win_y[4],a1_win_y[5],a1_win_y[6],a1_win_y[7],a1_win_y[8],a1_win_y[9],a1_win_y[10],a1_win_y[11],a1_win_y[12],a1_win_y[13],a1_win_y[14]})  // IN
+	.a1_outside /* OUT */ (a1_outside),
+	.a1_x /* IN */ ({a1_x_b0_obuf,a1_x_b1_obuf,a1_x_b2_obuf,a1_x_b3_obuf,a1_x_b4_obuf,a1_x_b5_obuf,a1_x_b6_obuf,a1_x_b7_obuf,a1_x_b8_obuf,a1_x_b9_obuf,a1_x_b10_obuf,a1_x_b11_obuf,a1_x_b12_obuf,a1_x_b13_obuf,a1_x_b14_obuf,a1_x_b15_obuf}),
+	.a1_y /* IN */ ({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}),
+	.a1_win_x /* IN */ ({a1_win_x_b0_obuf,a1_win_x_b1_obuf,a1_win_x_b2_obuf,a1_win_x_b3_obuf,a1_win_x_b4_obuf,a1_win_x_b5_obuf,a1_win_x_b6_obuf,a1_win_x_b7_obuf,a1_win_x_b8_obuf,a1_win_x_b9_obuf,a1_win_x_b10_obuf,a1_win_x_b11_obuf,a1_win_x_b12_obuf,a1_win_x_b13_obuf,a1_win_x_b14_obuf}),
+	.a1_win_y /* IN */ ({a1_win_y[0],a1_win_y[1],a1_win_y[2],a1_win_y[3],a1_win_y[4],a1_win_y[5],a1_win_y[6],a1_win_y[7],a1_win_y[8],a1_win_y[9],a1_win_y[10],a1_win_y[11],a1_win_y[12],a1_win_y[13],a1_win_y[14]})
 );
 
 // ADDRESS.NET (231) - a1_pos[0-15] : join
@@ -3122,491 +3186,523 @@ assign a2_pos_31 = a2_y[15];
 // ADDRESS.NET (238) - grdt0[0-31] : mx2
 mx2 grdt0_from_0_to_31_inst_0
 (
-	.z(grdt0_0), // OUT
-	.a0(a1_pos_0), // IN
-	.a1(a1_posf_0), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_0),
+	.a0 /* IN */ (a1_pos_0),
+	.a1 /* IN */ (a1_posf_0),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_1
 (
-	.z(grdt0_1), // OUT
-	.a0(a1_pos_1), // IN
-	.a1(a1_posf_1), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_1),
+	.a0 /* IN */ (a1_pos_1),
+	.a1 /* IN */ (a1_posf_1),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_2
 (
-	.z(grdt0_2), // OUT
-	.a0(a1_pos_2), // IN
-	.a1(a1_posf_2), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_2),
+	.a0 /* IN */ (a1_pos_2),
+	.a1 /* IN */ (a1_posf_2),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_3
 (
-	.z(grdt0_3), // OUT
-	.a0(a1_pos_3), // IN
-	.a1(a1_posf_3), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_3),
+	.a0 /* IN */ (a1_pos_3),
+	.a1 /* IN */ (a1_posf_3),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_4
 (
-	.z(grdt0_4), // OUT
-	.a0(a1_pos_4), // IN
-	.a1(a1_posf_4), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_4),
+	.a0 /* IN */ (a1_pos_4),
+	.a1 /* IN */ (a1_posf_4),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_5
 (
-	.z(grdt0_5), // OUT
-	.a0(a1_pos_5), // IN
-	.a1(a1_posf_5), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_5),
+	.a0 /* IN */ (a1_pos_5),
+	.a1 /* IN */ (a1_posf_5),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_6
 (
-	.z(grdt0_6), // OUT
-	.a0(a1_pos_6), // IN
-	.a1(a1_posf_6), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_6),
+	.a0 /* IN */ (a1_pos_6),
+	.a1 /* IN */ (a1_posf_6),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_7
 (
-	.z(grdt0_7), // OUT
-	.a0(a1_pos_7), // IN
-	.a1(a1_posf_7), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_7),
+	.a0 /* IN */ (a1_pos_7),
+	.a1 /* IN */ (a1_posf_7),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_8
 (
-	.z(grdt0_8), // OUT
-	.a0(a1_pos_8), // IN
-	.a1(a1_posf_8), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_8),
+	.a0 /* IN */ (a1_pos_8),
+	.a1 /* IN */ (a1_posf_8),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_9
 (
-	.z(grdt0_9), // OUT
-	.a0(a1_pos_9), // IN
-	.a1(a1_posf_9), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_9),
+	.a0 /* IN */ (a1_pos_9),
+	.a1 /* IN */ (a1_posf_9),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_10
 (
-	.z(grdt0_10), // OUT
-	.a0(a1_pos_10), // IN
-	.a1(a1_posf_10), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_10),
+	.a0 /* IN */ (a1_pos_10),
+	.a1 /* IN */ (a1_posf_10),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_11
 (
-	.z(grdt0_11), // OUT
-	.a0(a1_pos_11), // IN
-	.a1(a1_posf_11), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_11),
+	.a0 /* IN */ (a1_pos_11),
+	.a1 /* IN */ (a1_posf_11),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_12
 (
-	.z(grdt0_12), // OUT
-	.a0(a1_pos_12), // IN
-	.a1(a1_posf_12), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_12),
+	.a0 /* IN */ (a1_pos_12),
+	.a1 /* IN */ (a1_posf_12),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_13
 (
-	.z(grdt0_13), // OUT
-	.a0(a1_pos_13), // IN
-	.a1(a1_posf_13), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_13),
+	.a0 /* IN */ (a1_pos_13),
+	.a1 /* IN */ (a1_posf_13),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_14
 (
-	.z(grdt0_14), // OUT
-	.a0(a1_pos_14), // IN
-	.a1(a1_posf_14), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_14),
+	.a0 /* IN */ (a1_pos_14),
+	.a1 /* IN */ (a1_posf_14),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_15
 (
-	.z(grdt0_15), // OUT
-	.a0(a1_pos_15), // IN
-	.a1(a1_posf_15), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_15),
+	.a0 /* IN */ (a1_pos_15),
+	.a1 /* IN */ (a1_posf_15),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_16
 (
-	.z(grdt0_16), // OUT
-	.a0(a1_pos_16), // IN
-	.a1(a1_posf_16), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_16),
+	.a0 /* IN */ (a1_pos_16),
+	.a1 /* IN */ (a1_posf_16),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_17
 (
-	.z(grdt0_17), // OUT
-	.a0(a1_pos_17), // IN
-	.a1(a1_posf_17), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_17),
+	.a0 /* IN */ (a1_pos_17),
+	.a1 /* IN */ (a1_posf_17),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_18
 (
-	.z(grdt0_18), // OUT
-	.a0(a1_pos_18), // IN
-	.a1(a1_posf_18), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_18),
+	.a0 /* IN */ (a1_pos_18),
+	.a1 /* IN */ (a1_posf_18),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_19
 (
-	.z(grdt0_19), // OUT
-	.a0(a1_pos_19), // IN
-	.a1(a1_posf_19), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_19),
+	.a0 /* IN */ (a1_pos_19),
+	.a1 /* IN */ (a1_posf_19),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_20
 (
-	.z(grdt0_20), // OUT
-	.a0(a1_pos_20), // IN
-	.a1(a1_posf_20), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_20),
+	.a0 /* IN */ (a1_pos_20),
+	.a1 /* IN */ (a1_posf_20),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_21
 (
-	.z(grdt0_21), // OUT
-	.a0(a1_pos_21), // IN
-	.a1(a1_posf_21), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_21),
+	.a0 /* IN */ (a1_pos_21),
+	.a1 /* IN */ (a1_posf_21),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_22
 (
-	.z(grdt0_22), // OUT
-	.a0(a1_pos_22), // IN
-	.a1(a1_posf_22), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_22),
+	.a0 /* IN */ (a1_pos_22),
+	.a1 /* IN */ (a1_posf_22),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_23
 (
-	.z(grdt0_23), // OUT
-	.a0(a1_pos_23), // IN
-	.a1(a1_posf_23), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_23),
+	.a0 /* IN */ (a1_pos_23),
+	.a1 /* IN */ (a1_posf_23),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_24
 (
-	.z(grdt0_24), // OUT
-	.a0(a1_pos_24), // IN
-	.a1(a1_posf_24), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_24),
+	.a0 /* IN */ (a1_pos_24),
+	.a1 /* IN */ (a1_posf_24),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_25
 (
-	.z(grdt0_25), // OUT
-	.a0(a1_pos_25), // IN
-	.a1(a1_posf_25), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_25),
+	.a0 /* IN */ (a1_pos_25),
+	.a1 /* IN */ (a1_posf_25),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_26
 (
-	.z(grdt0_26), // OUT
-	.a0(a1_pos_26), // IN
-	.a1(a1_posf_26), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_26),
+	.a0 /* IN */ (a1_pos_26),
+	.a1 /* IN */ (a1_posf_26),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_27
 (
-	.z(grdt0_27), // OUT
-	.a0(a1_pos_27), // IN
-	.a1(a1_posf_27), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_27),
+	.a0 /* IN */ (a1_pos_27),
+	.a1 /* IN */ (a1_posf_27),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_28
 (
-	.z(grdt0_28), // OUT
-	.a0(a1_pos_28), // IN
-	.a1(a1_posf_28), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_28),
+	.a0 /* IN */ (a1_pos_28),
+	.a1 /* IN */ (a1_posf_28),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_29
 (
-	.z(grdt0_29), // OUT
-	.a0(a1_pos_29), // IN
-	.a1(a1_posf_29), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_29),
+	.a0 /* IN */ (a1_pos_29),
+	.a1 /* IN */ (a1_posf_29),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_30
 (
-	.z(grdt0_30), // OUT
-	.a0(a1_pos_30), // IN
-	.a1(a1_posf_30), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_30),
+	.a0 /* IN */ (a1_pos_30),
+	.a1 /* IN */ (a1_posf_30),
+	.s /* IN */ (a1posfrd)
 );
 mx2 grdt0_from_0_to_31_inst_31
 (
-	.z(grdt0_31), // OUT
-	.a0(a1_pos_31), // IN
-	.a1(a1_posf_31), // IN
-	.s(a1posfrd)  // IN
+	.z /* OUT */ (grdt0_31),
+	.a0 /* IN */ (a1_pos_31),
+	.a1 /* IN */ (a1_posf_31),
+	.s /* IN */ (a1posfrd)
 );
 
 // ADDRESS.NET (240) - grdt1[0-31] : mx2
 mx2 grdt1_from_0_to_31_inst_0
 (
-	.z(grdt1_0), // OUT
-	.a0(grdt0_0), // IN
-	.a1(a2_pos_0), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_0),
+	.a0 /* IN */ (grdt0_0),
+	.a1 /* IN */ (a2_pos_0),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_1
 (
-	.z(grdt1_1), // OUT
-	.a0(grdt0_1), // IN
-	.a1(a2_pos_1), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_1),
+	.a0 /* IN */ (grdt0_1),
+	.a1 /* IN */ (a2_pos_1),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_2
 (
-	.z(grdt1_2), // OUT
-	.a0(grdt0_2), // IN
-	.a1(a2_pos_2), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_2),
+	.a0 /* IN */ (grdt0_2),
+	.a1 /* IN */ (a2_pos_2),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_3
 (
-	.z(grdt1_3), // OUT
-	.a0(grdt0_3), // IN
-	.a1(a2_pos_3), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_3),
+	.a0 /* IN */ (grdt0_3),
+	.a1 /* IN */ (a2_pos_3),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_4
 (
-	.z(grdt1_4), // OUT
-	.a0(grdt0_4), // IN
-	.a1(a2_pos_4), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_4),
+	.a0 /* IN */ (grdt0_4),
+	.a1 /* IN */ (a2_pos_4),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_5
 (
-	.z(grdt1_5), // OUT
-	.a0(grdt0_5), // IN
-	.a1(a2_pos_5), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_5),
+	.a0 /* IN */ (grdt0_5),
+	.a1 /* IN */ (a2_pos_5),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_6
 (
-	.z(grdt1_6), // OUT
-	.a0(grdt0_6), // IN
-	.a1(a2_pos_6), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_6),
+	.a0 /* IN */ (grdt0_6),
+	.a1 /* IN */ (a2_pos_6),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_7
 (
-	.z(grdt1_7), // OUT
-	.a0(grdt0_7), // IN
-	.a1(a2_pos_7), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_7),
+	.a0 /* IN */ (grdt0_7),
+	.a1 /* IN */ (a2_pos_7),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_8
 (
-	.z(grdt1_8), // OUT
-	.a0(grdt0_8), // IN
-	.a1(a2_pos_8), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_8),
+	.a0 /* IN */ (grdt0_8),
+	.a1 /* IN */ (a2_pos_8),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_9
 (
-	.z(grdt1_9), // OUT
-	.a0(grdt0_9), // IN
-	.a1(a2_pos_9), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_9),
+	.a0 /* IN */ (grdt0_9),
+	.a1 /* IN */ (a2_pos_9),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_10
 (
-	.z(grdt1_10), // OUT
-	.a0(grdt0_10), // IN
-	.a1(a2_pos_10), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_10),
+	.a0 /* IN */ (grdt0_10),
+	.a1 /* IN */ (a2_pos_10),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_11
 (
-	.z(grdt1_11), // OUT
-	.a0(grdt0_11), // IN
-	.a1(a2_pos_11), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_11),
+	.a0 /* IN */ (grdt0_11),
+	.a1 /* IN */ (a2_pos_11),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_12
 (
-	.z(grdt1_12), // OUT
-	.a0(grdt0_12), // IN
-	.a1(a2_pos_12), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_12),
+	.a0 /* IN */ (grdt0_12),
+	.a1 /* IN */ (a2_pos_12),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_13
 (
-	.z(grdt1_13), // OUT
-	.a0(grdt0_13), // IN
-	.a1(a2_pos_13), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_13),
+	.a0 /* IN */ (grdt0_13),
+	.a1 /* IN */ (a2_pos_13),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_14
 (
-	.z(grdt1_14), // OUT
-	.a0(grdt0_14), // IN
-	.a1(a2_pos_14), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_14),
+	.a0 /* IN */ (grdt0_14),
+	.a1 /* IN */ (a2_pos_14),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_15
 (
-	.z(grdt1_15), // OUT
-	.a0(grdt0_15), // IN
-	.a1(a2_pos_15), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_15),
+	.a0 /* IN */ (grdt0_15),
+	.a1 /* IN */ (a2_pos_15),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_16
 (
-	.z(grdt1_16), // OUT
-	.a0(grdt0_16), // IN
-	.a1(a2_pos_16), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_16),
+	.a0 /* IN */ (grdt0_16),
+	.a1 /* IN */ (a2_pos_16),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_17
 (
-	.z(grdt1_17), // OUT
-	.a0(grdt0_17), // IN
-	.a1(a2_pos_17), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_17),
+	.a0 /* IN */ (grdt0_17),
+	.a1 /* IN */ (a2_pos_17),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_18
 (
-	.z(grdt1_18), // OUT
-	.a0(grdt0_18), // IN
-	.a1(a2_pos_18), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_18),
+	.a0 /* IN */ (grdt0_18),
+	.a1 /* IN */ (a2_pos_18),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_19
 (
-	.z(grdt1_19), // OUT
-	.a0(grdt0_19), // IN
-	.a1(a2_pos_19), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_19),
+	.a0 /* IN */ (grdt0_19),
+	.a1 /* IN */ (a2_pos_19),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_20
 (
-	.z(grdt1_20), // OUT
-	.a0(grdt0_20), // IN
-	.a1(a2_pos_20), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_20),
+	.a0 /* IN */ (grdt0_20),
+	.a1 /* IN */ (a2_pos_20),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_21
 (
-	.z(grdt1_21), // OUT
-	.a0(grdt0_21), // IN
-	.a1(a2_pos_21), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_21),
+	.a0 /* IN */ (grdt0_21),
+	.a1 /* IN */ (a2_pos_21),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_22
 (
-	.z(grdt1_22), // OUT
-	.a0(grdt0_22), // IN
-	.a1(a2_pos_22), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_22),
+	.a0 /* IN */ (grdt0_22),
+	.a1 /* IN */ (a2_pos_22),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_23
 (
-	.z(grdt1_23), // OUT
-	.a0(grdt0_23), // IN
-	.a1(a2_pos_23), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_23),
+	.a0 /* IN */ (grdt0_23),
+	.a1 /* IN */ (a2_pos_23),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_24
 (
-	.z(grdt1_24), // OUT
-	.a0(grdt0_24), // IN
-	.a1(a2_pos_24), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_24),
+	.a0 /* IN */ (grdt0_24),
+	.a1 /* IN */ (a2_pos_24),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_25
 (
-	.z(grdt1_25), // OUT
-	.a0(grdt0_25), // IN
-	.a1(a2_pos_25), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_25),
+	.a0 /* IN */ (grdt0_25),
+	.a1 /* IN */ (a2_pos_25),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_26
 (
-	.z(grdt1_26), // OUT
-	.a0(grdt0_26), // IN
-	.a1(a2_pos_26), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_26),
+	.a0 /* IN */ (grdt0_26),
+	.a1 /* IN */ (a2_pos_26),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_27
 (
-	.z(grdt1_27), // OUT
-	.a0(grdt0_27), // IN
-	.a1(a2_pos_27), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_27),
+	.a0 /* IN */ (grdt0_27),
+	.a1 /* IN */ (a2_pos_27),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_28
 (
-	.z(grdt1_28), // OUT
-	.a0(grdt0_28), // IN
-	.a1(a2_pos_28), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_28),
+	.a0 /* IN */ (grdt0_28),
+	.a1 /* IN */ (a2_pos_28),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_29
 (
-	.z(grdt1_29), // OUT
-	.a0(grdt0_29), // IN
-	.a1(a2_pos_29), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_29),
+	.a0 /* IN */ (grdt0_29),
+	.a1 /* IN */ (a2_pos_29),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_30
 (
-	.z(grdt1_30), // OUT
-	.a0(grdt0_30), // IN
-	.a1(a2_pos_30), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_30),
+	.a0 /* IN */ (grdt0_30),
+	.a1 /* IN */ (a2_pos_30),
+	.s /* IN */ (a2posrd)
 );
 mx2 grdt1_from_0_to_31_inst_31
 (
-	.z(grdt1_31), // OUT
-	.a0(grdt0_31), // IN
-	.a1(a2_pos_31), // IN
-	.s(a2posrd)  // IN
+	.z /* OUT */ (grdt1_31),
+	.a0 /* IN */ (grdt0_31),
+	.a1 /* IN */ (a2_pos_31),
+	.s /* IN */ (a2posrd)
 );
 
 // ADDRESS.NET (242) - grden : or3u
 assign grden = a1posrd | a1posfrd | a2posrd;
 
 // ADDRESS.NET (243) - grd[0-31] : ts
-assign gpu_dout_0 = (grden) ? grdt1_0 : 1'bz;
-assign gpu_dout_1 = (grden) ? grdt1_1 : 1'bz;
-assign gpu_dout_2 = (grden) ? grdt1_2 : 1'bz;
-assign gpu_dout_3 = (grden) ? grdt1_3 : 1'bz;
-assign gpu_dout_4 = (grden) ? grdt1_4 : 1'bz;
-assign gpu_dout_5 = (grden) ? grdt1_5 : 1'bz;
-assign gpu_dout_6 = (grden) ? grdt1_6 : 1'bz;
-assign gpu_dout_7 = (grden) ? grdt1_7 : 1'bz;
-assign gpu_dout_8 = (grden) ? grdt1_8 : 1'bz;
-assign gpu_dout_9 = (grden) ? grdt1_9 : 1'bz;
-assign gpu_dout_10 = (grden) ? grdt1_10 : 1'bz;
-assign gpu_dout_11 = (grden) ? grdt1_11 : 1'bz;
-assign gpu_dout_12 = (grden) ? grdt1_12 : 1'bz;
-assign gpu_dout_13 = (grden) ? grdt1_13 : 1'bz;
-assign gpu_dout_14 = (grden) ? grdt1_14 : 1'bz;
-assign gpu_dout_15 = (grden) ? grdt1_15 : 1'bz;
-assign gpu_dout_16 = (grden) ? grdt1_16 : 1'bz;
-assign gpu_dout_17 = (grden) ? grdt1_17 : 1'bz;
-assign gpu_dout_18 = (grden) ? grdt1_18 : 1'bz;
-assign gpu_dout_19 = (grden) ? grdt1_19 : 1'bz;
-assign gpu_dout_20 = (grden) ? grdt1_20 : 1'bz;
-assign gpu_dout_21 = (grden) ? grdt1_21 : 1'bz;
-assign gpu_dout_22 = (grden) ? grdt1_22 : 1'bz;
-assign gpu_dout_23 = (grden) ? grdt1_23 : 1'bz;
-assign gpu_dout_24 = (grden) ? grdt1_24 : 1'bz;
-assign gpu_dout_25 = (grden) ? grdt1_25 : 1'bz;
-assign gpu_dout_26 = (grden) ? grdt1_26 : 1'bz;
-assign gpu_dout_27 = (grden) ? grdt1_27 : 1'bz;
-assign gpu_dout_28 = (grden) ? grdt1_28 : 1'bz;
-assign gpu_dout_29 = (grden) ? grdt1_29 : 1'bz;
-assign gpu_dout_30 = (grden) ? grdt1_30 : 1'bz;
-assign gpu_dout_31 = (grden) ? grdt1_31 : 1'bz;
+assign gpu_dout_0_out = grdt1_0;
+assign gpu_dout_0_oe = grden;
+assign gpu_dout_1_out = grdt1_1;
+assign gpu_dout_1_oe = grden;
+assign gpu_dout_2_out = grdt1_2;
+assign gpu_dout_2_oe = grden;
+assign gpu_dout_3_out = grdt1_3;
+assign gpu_dout_3_oe = grden;
+assign gpu_dout_4_out = grdt1_4;
+assign gpu_dout_4_oe = grden;
+assign gpu_dout_5_out = grdt1_5;
+assign gpu_dout_5_oe = grden;
+assign gpu_dout_6_out = grdt1_6;
+assign gpu_dout_6_oe = grden;
+assign gpu_dout_7_out = grdt1_7;
+assign gpu_dout_7_oe = grden;
+assign gpu_dout_8_out = grdt1_8;
+assign gpu_dout_8_oe = grden;
+assign gpu_dout_9_out = grdt1_9;
+assign gpu_dout_9_oe = grden;
+assign gpu_dout_10_out = grdt1_10;
+assign gpu_dout_10_oe = grden;
+assign gpu_dout_11_out = grdt1_11;
+assign gpu_dout_11_oe = grden;
+assign gpu_dout_12_out = grdt1_12;
+assign gpu_dout_12_oe = grden;
+assign gpu_dout_13_out = grdt1_13;
+assign gpu_dout_13_oe = grden;
+assign gpu_dout_14_out = grdt1_14;
+assign gpu_dout_14_oe = grden;
+assign gpu_dout_15_out = grdt1_15;
+assign gpu_dout_15_oe = grden;
+assign gpu_dout_16_out = grdt1_16;
+assign gpu_dout_16_oe = grden;
+assign gpu_dout_17_out = grdt1_17;
+assign gpu_dout_17_oe = grden;
+assign gpu_dout_18_out = grdt1_18;
+assign gpu_dout_18_oe = grden;
+assign gpu_dout_19_out = grdt1_19;
+assign gpu_dout_19_oe = grden;
+assign gpu_dout_20_out = grdt1_20;
+assign gpu_dout_20_oe = grden;
+assign gpu_dout_21_out = grdt1_21;
+assign gpu_dout_21_oe = grden;
+assign gpu_dout_22_out = grdt1_22;
+assign gpu_dout_22_oe = grden;
+assign gpu_dout_23_out = grdt1_23;
+assign gpu_dout_23_oe = grden;
+assign gpu_dout_24_out = grdt1_24;
+assign gpu_dout_24_oe = grden;
+assign gpu_dout_25_out = grdt1_25;
+assign gpu_dout_25_oe = grden;
+assign gpu_dout_26_out = grdt1_26;
+assign gpu_dout_26_oe = grden;
+assign gpu_dout_27_out = grdt1_27;
+assign gpu_dout_27_oe = grden;
+assign gpu_dout_28_out = grdt1_28;
+assign gpu_dout_28_oe = grden;
+assign gpu_dout_29_out = grdt1_29;
+assign gpu_dout_29_oe = grden;
+assign gpu_dout_30_out = grdt1_30;
+assign gpu_dout_30_oe = grden;
+assign gpu_dout_31_out = grdt1_31;
+assign gpu_dout_31_oe = grden;
 
 // ADDRESS.NET (245) - unused[0-2] : dummy
 endmodule

@@ -25,14 +25,6 @@ wire c;
 wire d;
 wire e;
 
-// Output buffers
-wire z_obuf;
-
-
-// Output buffers
-assign z = z_obuf;
-
-
 // DUPLO.NET (710) - gate1 : nr4
 assign b = ~(a_0 | a_1 | a_2 | a_3);
 
@@ -46,5 +38,5 @@ assign d = ~(a_8 | a_9 | a_10 | a_11);
 assign e = ~(a_12 | a_13 | a_14 | a_15);
 
 // DUPLO.NET (714) - z : an4
-assign z_obuf = b & c & d & e;
+assign z = b & c & d & e;
 endmodule

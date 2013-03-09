@@ -21,7 +21,9 @@ public class Bd extends Entity {
 		ios.add(new Signal("pi", SignalType.IN));*/
 
 		// 260c_pri_e.pdf - BD8x
-		ios.add(new Signal("io", SignalType.BUS));
+		Signal s = new Signal("io", SignalType.BUS);
+		ios.add(s);
+
 		ios.add(new Signal("zi", SignalType.OUT));
 		ios.add(new Signal("po", SignalType.OUT));
 		ios.add(new Signal("a", SignalType.IN));

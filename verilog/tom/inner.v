@@ -2,31 +2,81 @@
 
 module inner
 (
-	inout gpu_dout_2,
-	inout gpu_dout_3,
-	inout gpu_dout_4,
-	inout gpu_dout_5,
-	inout gpu_dout_6,
-	inout gpu_dout_7,
-	inout gpu_dout_8,
-	inout gpu_dout_9,
-	inout gpu_dout_10,
-	inout gpu_dout_16,
-	inout gpu_dout_17,
-	inout gpu_dout_18,
-	inout gpu_dout_19,
-	inout gpu_dout_20,
-	inout gpu_dout_21,
-	inout gpu_dout_22,
-	inout gpu_dout_23,
-	inout gpu_dout_24,
-	inout gpu_dout_25,
-	inout gpu_dout_26,
-	inout gpu_dout_27,
-	inout gpu_dout_28,
-	inout gpu_dout_29,
-	inout gpu_dout_30,
-	inout gpu_dout_31,
+	output gpu_dout_2_out,
+	output gpu_dout_2_oe,
+	input gpu_dout_2_in,
+	output gpu_dout_3_out,
+	output gpu_dout_3_oe,
+	input gpu_dout_3_in,
+	output gpu_dout_4_out,
+	output gpu_dout_4_oe,
+	input gpu_dout_4_in,
+	output gpu_dout_5_out,
+	output gpu_dout_5_oe,
+	input gpu_dout_5_in,
+	output gpu_dout_6_out,
+	output gpu_dout_6_oe,
+	input gpu_dout_6_in,
+	output gpu_dout_7_out,
+	output gpu_dout_7_oe,
+	input gpu_dout_7_in,
+	output gpu_dout_8_out,
+	output gpu_dout_8_oe,
+	input gpu_dout_8_in,
+	output gpu_dout_9_out,
+	output gpu_dout_9_oe,
+	input gpu_dout_9_in,
+	output gpu_dout_10_out,
+	output gpu_dout_10_oe,
+	input gpu_dout_10_in,
+	output gpu_dout_16_out,
+	output gpu_dout_16_oe,
+	input gpu_dout_16_in,
+	output gpu_dout_17_out,
+	output gpu_dout_17_oe,
+	input gpu_dout_17_in,
+	output gpu_dout_18_out,
+	output gpu_dout_18_oe,
+	input gpu_dout_18_in,
+	output gpu_dout_19_out,
+	output gpu_dout_19_oe,
+	input gpu_dout_19_in,
+	output gpu_dout_20_out,
+	output gpu_dout_20_oe,
+	input gpu_dout_20_in,
+	output gpu_dout_21_out,
+	output gpu_dout_21_oe,
+	input gpu_dout_21_in,
+	output gpu_dout_22_out,
+	output gpu_dout_22_oe,
+	input gpu_dout_22_in,
+	output gpu_dout_23_out,
+	output gpu_dout_23_oe,
+	input gpu_dout_23_in,
+	output gpu_dout_24_out,
+	output gpu_dout_24_oe,
+	input gpu_dout_24_in,
+	output gpu_dout_25_out,
+	output gpu_dout_25_oe,
+	input gpu_dout_25_in,
+	output gpu_dout_26_out,
+	output gpu_dout_26_oe,
+	input gpu_dout_26_in,
+	output gpu_dout_27_out,
+	output gpu_dout_27_oe,
+	input gpu_dout_27_in,
+	output gpu_dout_28_out,
+	output gpu_dout_28_oe,
+	input gpu_dout_28_in,
+	output gpu_dout_29_out,
+	output gpu_dout_29_oe,
+	input gpu_dout_29_in,
+	output gpu_dout_30_out,
+	output gpu_dout_30_oe,
+	input gpu_dout_30_in,
+	output gpu_dout_31_out,
+	output gpu_dout_31_oe,
+	input gpu_dout_31_in,
 	output apipe,
 	output atick_0,
 	output atick_1,
@@ -67,10 +117,10 @@ module inner
 	input cmdld,
 	input countld,
 	input dsta2,
-	input[0:15] dstxp;
+	input [0:15] dstxp;
 	input gourd,
 	input gourz,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input inhiben,
 	input instart,
 	input memidle,
@@ -301,31 +351,40 @@ assign writereq = writereq_obuf;
 
 
 // INNER.NET (83) - stat[2] : ts
-assign gpu_dout_2 = (statrd) ? idle : 1'bz;
+assign gpu_dout_2_out = idle;
+assign gpu_dout_2_oe = statrd;
 
 // INNER.NET (84) - stat[3] : ts
-assign gpu_dout_3 = (statrd) ? sreadx : 1'bz;
+assign gpu_dout_3_out = sreadx;
+assign gpu_dout_3_oe = statrd;
 
 // INNER.NET (85) - stat[4] : ts
-assign gpu_dout_4 = (statrd) ? szreadx : 1'bz;
+assign gpu_dout_4_out = szreadx;
+assign gpu_dout_4_oe = statrd;
 
 // INNER.NET (86) - stat[5] : ts
-assign gpu_dout_5 = (statrd) ? sread : 1'bz;
+assign gpu_dout_5_out = sread;
+assign gpu_dout_5_oe = statrd;
 
 // INNER.NET (87) - stat[6] : ts
-assign gpu_dout_6 = (statrd) ? szread : 1'bz;
+assign gpu_dout_6_out = szread;
+assign gpu_dout_6_oe = statrd;
 
 // INNER.NET (88) - stat[7] : ts
-assign gpu_dout_7 = (statrd) ? dread : 1'bz;
+assign gpu_dout_7_out = dread;
+assign gpu_dout_7_oe = statrd;
 
 // INNER.NET (89) - stat[8] : ts
-assign gpu_dout_8 = (statrd) ? dzread : 1'bz;
+assign gpu_dout_8_out = dzread;
+assign gpu_dout_8_oe = statrd;
 
 // INNER.NET (90) - stat[9] : ts
-assign gpu_dout_9 = (statrd) ? dwrite_obuf : 1'bz;
+assign gpu_dout_9_out = dwrite_obuf;
+assign gpu_dout_9_oe = statrd;
 
 // INNER.NET (91) - stat[10] : ts
-assign gpu_dout_10 = (statrd) ? dzwrite_obuf : 1'bz;
+assign gpu_dout_10_out = dzwrite_obuf;
+assign gpu_dout_10_oe = statrd;
 
 // INNER.NET (93) - gourd\ : iv
 assign gourd_n = ~gourd;
@@ -345,46 +404,46 @@ assign instart_n = ~instart;
 // INNER.NET (101) - srcen : fdsync
 fdsync srcen_inst
 (
-	.q(srcen_obuf), // IO
-	.d(gpu_din[0]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (srcen_obuf),
+	.d /* IN */ (gpu_din[0]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (102) - srcenz : fdsync
 fdsync srcenz_inst
 (
-	.q(srcenz), // IO
-	.d(gpu_din[1]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (srcenz),
+	.d /* IN */ (gpu_din[1]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (103) - srcenx : fdsync
 fdsync srcenx_inst
 (
-	.q(srcenx), // IO
-	.d(gpu_din[2]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (srcenx),
+	.d /* IN */ (gpu_din[2]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (104) - dsten : fdsync
 fdsync dsten_inst
 (
-	.q(dsten), // IO
-	.d(gpu_din[3]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (dsten),
+	.d /* IN */ (gpu_din[3]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (105) - dstenzt : fdsync
 fdsync dstenzt_inst
 (
-	.q(dstenzt), // IO
-	.d(gpu_din[4]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (dstenzt),
+	.d /* IN */ (gpu_din[4]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (106) - dstenz : nivm
@@ -393,19 +452,19 @@ assign dstenz = dstenzt;
 // INNER.NET (107) - dstwrz : fdsync
 fdsync dstwrz_inst
 (
-	.q(dstwrz), // IO
-	.d(gpu_din[5]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (dstwrz),
+	.d /* IN */ (gpu_din[5]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (108) - diso_a1 : fdsync
 fdsync diso_a1_inst
 (
-	.q(diso_a1), // IO
-	.d(gpu_din[6]), // IN
-	.ld(cmdld), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (diso_a1),
+	.d /* IN */ (gpu_din[6]),
+	.ld /* IN */ (cmdld),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (114) - stupt : nd2
@@ -417,10 +476,10 @@ assign stupi = ~(instart_n & stupt);
 // INNER.NET (116) - stupl : fd2q
 fd2q stupl_inst
 (
-	.q(stupl), // OUT
-	.d(stupi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (stupl),
+	.d /* IN */ (stupi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (117) - startup : or2
@@ -438,12 +497,12 @@ assign dnrt_2 = ~(szread_1 & dsten_n & dstenz_n & srczack_n);
 // INNER.NET (162) - dnrt3 : nd5
 nd5 dnrt3_inst
 (
-	.q(dnrt_3), // OUT
-	.a_0(sread_1_obuf), // IN
-	.a_1(srcenz_n), // IN
-	.a_2(dsten_n), // IN
-	.a_3(dstenz_n), // IN
-	.a_4(srcdack_n)  // IN
+	.q /* OUT */ (dnrt_3),
+	.a_0 /* IN */ (sread_1_obuf),
+	.a_1 /* IN */ (srcenz_n),
+	.a_2 /* IN */ (dsten_n),
+	.a_3 /* IN */ (dstenz_n),
+	.a_4 /* IN */ (srcdack_n)
 );
 
 // INNER.NET (164) - dnrt4 : nd6
@@ -452,20 +511,20 @@ assign dnrt_4 = ~(sreadx_1_obuf & srcenz_n & srcen_n & dsten_n & dstenz_n & srcd
 // INNER.NET (166) - dnrt5 : nd5
 nd5 dnrt5_inst
 (
-	.q(dnrt_5), // OUT
-	.a_0(dnrt_0), // IN
-	.a_1(dnrt_1), // IN
-	.a_2(dnrt_2), // IN
-	.a_3(dnrt_3), // IN
-	.a_4(dnrt_4)  // IN
+	.q /* OUT */ (dnrt_5),
+	.a_0 /* IN */ (dnrt_0),
+	.a_1 /* IN */ (dnrt_1),
+	.a_2 /* IN */ (dnrt_2),
+	.a_3 /* IN */ (dnrt_3),
+	.a_4 /* IN */ (dnrt_4)
 );
 
 // INNER.NET (167) - dnrt6 : fd1q
 fd1q dnrt6_inst
 (
-	.q(dnrt_6), // OUT
-	.d(dnrt_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dnrt_6),
+	.d /* IN */ (dnrt_5),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (168) - dnreadyd : aor1
@@ -474,10 +533,10 @@ assign dnreadyd = (srcshade & gourz) | inhiben;
 // INNER.NET (169) - dnready : mxi2
 mxi2 dnready_inst
 (
-	.z(dnready_n), // OUT
-	.a0(dnrt_5), // IN
-	.a1(dnrt_6), // IN
-	.s(dnreadyd)  // IN
+	.z /* OUT */ (dnready_n),
+	.a0 /* IN */ (dnrt_5),
+	.a1 /* IN */ (dnrt_6),
+	.s /* IN */ (dnreadyd)
 );
 
 // INNER.NET (171) - mready\ : nr2
@@ -546,10 +605,10 @@ assign idlei = ~(idlet_0 & idlet_1 & idlet_2);
 // INNER.NET (207) - idlet : fd4q
 fd4q idlet_inst
 (
-	.q(idlet), // OUT
-	.d(idlei), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (idlet),
+	.d /* IN */ (idlei),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // INNER.NET (208) - idle\ : iv
@@ -570,10 +629,10 @@ assign sreadxi = ~(sreadxt_0 & sreadxt_1);
 // INNER.NET (216) - sreadx : fd2qm
 fd2q sreadx_inst
 (
-	.q(sreadx), // OUT
-	.d(sreadxi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (sreadx),
+	.d /* IN */ (sreadxi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (220) - szreadxt0 : nd3
@@ -588,10 +647,10 @@ assign szreadxi = ~(szreadxt_0 & szreadxt_1);
 // INNER.NET (223) - szreadx : fd2q
 fd2q szreadx_inst
 (
-	.q(szreadx), // OUT
-	.d(szreadxi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (szreadx),
+	.d /* IN */ (szreadxi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (227) - sreadt0 : nd2
@@ -609,12 +668,12 @@ assign sreadt_3 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_obuf);
 // INNER.NET (231) - sreadt4 : nd5
 nd5 sreadt4_inst
 (
-	.q(sreadt_4), // OUT
-	.a_0(dwrite_obuf), // IN
-	.a_1(step_obuf), // IN
-	.a_2(dstwrz_n), // IN
-	.a_3(inner0_n), // IN
-	.a_4(srcen_obuf)  // IN
+	.q /* OUT */ (sreadt_4),
+	.a_0 /* IN */ (dwrite_obuf),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (dstwrz_n),
+	.a_3 /* IN */ (inner0_n),
+	.a_4 /* IN */ (srcen_obuf)
 );
 
 // INNER.NET (233) - sreadt5 : nd2
@@ -626,10 +685,10 @@ assign sreadi = ~(sreadt_0 & sreadt_1 & sreadt_2 & sreadt_3 & sreadt_4 & sreadt_
 // INNER.NET (235) - sread : fd2qm
 fd2q sread_inst
 (
-	.q(sread), // OUT
-	.d(sreadi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (sread),
+	.d /* IN */ (sreadi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (239) - szreadt0 : nd3
@@ -644,10 +703,10 @@ assign szreadi = ~(szreadt_0 & szreadt_1);
 // INNER.NET (242) - szread : fd2qm
 fd2q szread_inst
 (
-	.q(szread), // OUT
-	.d(szreadi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (szread),
+	.d /* IN */ (szreadi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (246) - dreadt0 : nd3
@@ -659,34 +718,34 @@ assign dreadt_1 = ~(sread & step_obuf & srcenz_n & dsten);
 // INNER.NET (248) - dreadt2 : nd5
 nd5 dreadt2_inst
 (
-	.q(dreadt_2), // OUT
-	.a_0(sreadx), // IN
-	.a_1(step_obuf), // IN
-	.a_2(srcenz_n), // IN
-	.a_3(srcen_n), // IN
-	.a_4(dsten)  // IN
+	.q /* OUT */ (dreadt_2),
+	.a_0 /* IN */ (sreadx),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (srcenz_n),
+	.a_3 /* IN */ (srcen_n),
+	.a_4 /* IN */ (dsten)
 );
 
 // INNER.NET (250) - dreadt3 : nd5
 nd5 dreadt3_inst
 (
-	.q(dreadt_3), // OUT
-	.a_0(idle), // IN
-	.a_1(step_obuf), // IN
-	.a_2(srcenx_n), // IN
-	.a_3(srcen_n), // IN
-	.a_4(dsten)  // IN
+	.q /* OUT */ (dreadt_3),
+	.a_0 /* IN */ (idle),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (srcenx_n),
+	.a_3 /* IN */ (srcen_n),
+	.a_4 /* IN */ (dsten)
 );
 
 // INNER.NET (252) - dreadt4 : nd5
 nd5 dreadt4_inst
 (
-	.q(dreadt_4), // OUT
-	.a_0(dzwrite_obuf), // IN
-	.a_1(step_obuf), // IN
-	.a_2(inner0_n), // IN
-	.a_3(srcen_n), // IN
-	.a_4(dsten)  // IN
+	.q /* OUT */ (dreadt_4),
+	.a_0 /* IN */ (dzwrite_obuf),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (inner0_n),
+	.a_3 /* IN */ (srcen_n),
+	.a_4 /* IN */ (dsten)
 );
 
 // INNER.NET (254) - dreadt5 : nd6
@@ -698,23 +757,23 @@ assign dreadt_6 = ~(dread & step_n);
 // INNER.NET (257) - dreadt7 : nd7
 nd7 dreadt7_inst
 (
-	.q(dreadi), // OUT
-	.a_0(dreadt_0), // IN
-	.a_1(dreadt_1), // IN
-	.a_2(dreadt_2), // IN
-	.a_3(dreadt_3), // IN
-	.a_4(dreadt_4), // IN
-	.a_5(dreadt_5), // IN
-	.a_6(dreadt_6)  // IN
+	.q /* OUT */ (dreadi),
+	.a_0 /* IN */ (dreadt_0),
+	.a_1 /* IN */ (dreadt_1),
+	.a_2 /* IN */ (dreadt_2),
+	.a_3 /* IN */ (dreadt_3),
+	.a_4 /* IN */ (dreadt_4),
+	.a_5 /* IN */ (dreadt_5),
+	.a_6 /* IN */ (dreadt_6)
 );
 
 // INNER.NET (258) - dread : fd2q
 fd2q dread_inst
 (
-	.q(dread), // OUT
-	.d(dreadi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dread),
+	.d /* IN */ (dreadi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (262) - dzreadt0 : nd3
@@ -726,12 +785,12 @@ assign dzreadt_1 = ~(szread & step_obuf & dsten_n & dstenz);
 // INNER.NET (264) - dzreadt2 : nd5
 nd5 dzreadt2_inst
 (
-	.q(dzreadt_2), // OUT
-	.a_0(sread), // IN
-	.a_1(step_obuf), // IN
-	.a_2(srcenz_n), // IN
-	.a_3(dsten_n), // IN
-	.a_4(dstenz)  // IN
+	.q /* OUT */ (dzreadt_2),
+	.a_0 /* IN */ (sread),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (srcenz_n),
+	.a_3 /* IN */ (dsten_n),
+	.a_4 /* IN */ (dstenz)
 );
 
 // INNER.NET (266) - dzreadt3 : nd6
@@ -746,14 +805,14 @@ assign dzreadt_5 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_n & dsten_n & d
 // INNER.NET (272) - dzreadt6 : nd7
 nd7 dzreadt6_inst
 (
-	.q(dzreadt_6), // OUT
-	.a_0(dwrite_obuf), // IN
-	.a_1(step_obuf), // IN
-	.a_2(dstwrz_n), // IN
-	.a_3(inner0_n), // IN
-	.a_4(srcen_n), // IN
-	.a_5(dsten_n), // IN
-	.a_6(dstenz)  // IN
+	.q /* OUT */ (dzreadt_6),
+	.a_0 /* IN */ (dwrite_obuf),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (dstwrz_n),
+	.a_3 /* IN */ (inner0_n),
+	.a_4 /* IN */ (srcen_n),
+	.a_5 /* IN */ (dsten_n),
+	.a_6 /* IN */ (dstenz)
 );
 
 // INNER.NET (274) - dzreadt7 : nd2
@@ -765,10 +824,10 @@ assign dzreadi = ~(dzreadt_0 & dzreadt_1 & dzreadt_2 & dzreadt_3 & dzreadt_4 & d
 // INNER.NET (276) - dzread : fd2q
 fd2q dzread_inst
 (
-	.q(dzread), // OUT
-	.d(dzreadi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dzread),
+	.d /* IN */ (dzreadi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (280) - dwritet0 : nd2
@@ -783,12 +842,12 @@ assign dwritet_2 = ~(szread & step_obuf & dsten_n & dstenz_n);
 // INNER.NET (283) - dwritet3 : nd5
 nd5 dwritet3_inst
 (
-	.q(dwritet_3), // OUT
-	.a_0(sread), // IN
-	.a_1(step_obuf), // IN
-	.a_2(srcenz_n), // IN
-	.a_3(dsten_n), // IN
-	.a_4(dstenz_n)  // IN
+	.q /* OUT */ (dwritet_3),
+	.a_0 /* IN */ (sread),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (srcenz_n),
+	.a_3 /* IN */ (dsten_n),
+	.a_4 /* IN */ (dstenz_n)
 );
 
 // INNER.NET (285) - dwritet4 : nd6
@@ -803,14 +862,14 @@ assign dwritet_6 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_n & dsten_n & d
 // INNER.NET (291) - dwritet7 : nd7
 nd7 dwritet7_inst
 (
-	.q(dwritet_7), // OUT
-	.a_0(dwrite_obuf), // IN
-	.a_1(step_obuf), // IN
-	.a_2(dstwrz_n), // IN
-	.a_3(inner0_n), // IN
-	.a_4(srcen_n), // IN
-	.a_5(dsten_n), // IN
-	.a_6(dstenz_n)  // IN
+	.q /* OUT */ (dwritet_7),
+	.a_0 /* IN */ (dwrite_obuf),
+	.a_1 /* IN */ (step_obuf),
+	.a_2 /* IN */ (dstwrz_n),
+	.a_3 /* IN */ (inner0_n),
+	.a_4 /* IN */ (srcen_n),
+	.a_5 /* IN */ (dsten_n),
+	.a_6 /* IN */ (dstenz_n)
 );
 
 // INNER.NET (293) - dwritet8 : nd2
@@ -819,25 +878,25 @@ assign dwritet_8 = ~(dwrite_obuf & step_n);
 // INNER.NET (294) - dwritet9 : nd9
 nd9 dwritet9_inst
 (
-	.q(dwritei), // OUT
-	.a_0(dwritet_0), // IN
-	.a_1(dwritet_1), // IN
-	.a_2(dwritet_2), // IN
-	.a_3(dwritet_3), // IN
-	.a_4(dwritet_4), // IN
-	.a_5(dwritet_5), // IN
-	.a_6(dwritet_6), // IN
-	.a_7(dwritet_7), // IN
-	.a_8(dwritet_8)  // IN
+	.q /* OUT */ (dwritei),
+	.a_0 /* IN */ (dwritet_0),
+	.a_1 /* IN */ (dwritet_1),
+	.a_2 /* IN */ (dwritet_2),
+	.a_3 /* IN */ (dwritet_3),
+	.a_4 /* IN */ (dwritet_4),
+	.a_5 /* IN */ (dwritet_5),
+	.a_6 /* IN */ (dwritet_6),
+	.a_7 /* IN */ (dwritet_7),
+	.a_8 /* IN */ (dwritet_8)
 );
 
 // INNER.NET (295) - dwrite : fd2qh
 fd2q dwrite_inst
 (
-	.q(dwrite_obuf), // OUT
-	.d(dwritei), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dwrite_obuf),
+	.d /* IN */ (dwritei),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (299) - dzwritet0 : nd2
@@ -852,10 +911,10 @@ assign dzwritei = ~(dzwritet_0 & dzwritet_1);
 // INNER.NET (302) - dzwrite : fd2qu
 fd2q dzwrite_inst
 (
-	.q(dzwrite_obuf), // OUT
-	.d(dzwritei), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dzwrite_obuf),
+	.d /* IN */ (dzwritei),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (309) - atick0t0 : nd4
@@ -870,20 +929,20 @@ assign aticki_0_obuf = ~(atick0t_0 & atick0t_1);
 // INNER.NET (312) - atick0 : fd2h
 fd2 atick0_inst
 (
-	.q(atick_0_obuf), // OUT
-	.qn(atick_n_0), // OUT
-	.d(aticki_0_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (atick_0_obuf),
+	.qn /* OUT */ (atick_n_0),
+	.d /* IN */ (aticki_0_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (314) - atick1 : fd2qp
 fd2q atick1_inst
 (
-	.q(atickt_1), // OUT
-	.d(atick_0_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (atickt_1),
+	.d /* IN */ (atick_0_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (315) - atick\[1] : iv
@@ -910,9 +969,9 @@ assign dpipe1t0 = writereq_obuf & dwrite_obuf;
 // INNER.NET (340) - dpipe1t1 : fd1q
 fd1q dpipe1t1_inst
 (
-	.q(dpipe1t1), // OUT
-	.d(dpipe1t0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dpipe1t1),
+	.d /* IN */ (dpipe1t0),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (341) - dpipe[1] : or2
@@ -930,9 +989,9 @@ assign zpipe1t0 = writereq_obuf & dzwrite_obuf;
 // INNER.NET (353) - zpipe1t1 : fd1q
 fd1q zpipe1t1_inst
 (
-	.q(zpipe1t1), // OUT
-	.d(zpipe1t0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (zpipe1t1),
+	.d /* IN */ (zpipe1t0),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (354) - zpipe[1] : or2p
@@ -956,37 +1015,69 @@ assign icntena = atick_0_obuf & dwrite_obuf;
 // INNER.NET (369) - inner_count : inner_cnt
 inner_cnt inner_count_inst
 (
-	.gpu_dout_16(gpu_dout_16), // TRI
-	.gpu_dout_17(gpu_dout_17), // TRI
-	.gpu_dout_18(gpu_dout_18), // TRI
-	.gpu_dout_19(gpu_dout_19), // TRI
-	.gpu_dout_20(gpu_dout_20), // TRI
-	.gpu_dout_21(gpu_dout_21), // TRI
-	.gpu_dout_22(gpu_dout_22), // TRI
-	.gpu_dout_23(gpu_dout_23), // TRI
-	.gpu_dout_24(gpu_dout_24), // TRI
-	.gpu_dout_25(gpu_dout_25), // TRI
-	.gpu_dout_26(gpu_dout_26), // TRI
-	.gpu_dout_27(gpu_dout_27), // TRI
-	.gpu_dout_28(gpu_dout_28), // TRI
-	.gpu_dout_29(gpu_dout_29), // TRI
-	.gpu_dout_30(gpu_dout_30), // TRI
-	.gpu_dout_31(gpu_dout_31), // TRI
-	.icount_0(icount_0), // IO
-	.icount_1(icount_1), // IO
-	.icount_2(icount_2), // IO
-	.inner0(inner0_obuf), // OUT
-	.clk(clk), // IN
-	.countld(countld), // IN
-	.dstxp({dstxp[0],dstxp[1],dstxp[2],dstxp[3],dstxp[4],dstxp[5],dstxp[6],dstxp[7],dstxp[8],dstxp[9],dstxp[10],dstxp[11],dstxp[12],dstxp[13],dstxp[14],dstxp[15]}), // IN
-	.gpu_din({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}), // IN
-	.icntena(icntena), // IN
-	.ireload(instart), // IN
-	.phrase_mode(phrase_mode), // IN
-	.pixsize_0(pixsize_0), // IN
-	.pixsize_1(pixsize_1), // IN
-	.pixsize_2(pixsize_2), // IN
-	.statrd(statrd)  // IN
+	.gpu_dout_16_out /* BUS */ (gpu_dout_16_out),
+	.gpu_dout_16_oe /* BUS */ (gpu_dout_16_oe),
+	.gpu_dout_16_in /* BUS */ (gpu_dout_16_in),
+	.gpu_dout_17_out /* BUS */ (gpu_dout_17_out),
+	.gpu_dout_17_oe /* BUS */ (gpu_dout_17_oe),
+	.gpu_dout_17_in /* BUS */ (gpu_dout_17_in),
+	.gpu_dout_18_out /* BUS */ (gpu_dout_18_out),
+	.gpu_dout_18_oe /* BUS */ (gpu_dout_18_oe),
+	.gpu_dout_18_in /* BUS */ (gpu_dout_18_in),
+	.gpu_dout_19_out /* BUS */ (gpu_dout_19_out),
+	.gpu_dout_19_oe /* BUS */ (gpu_dout_19_oe),
+	.gpu_dout_19_in /* BUS */ (gpu_dout_19_in),
+	.gpu_dout_20_out /* BUS */ (gpu_dout_20_out),
+	.gpu_dout_20_oe /* BUS */ (gpu_dout_20_oe),
+	.gpu_dout_20_in /* BUS */ (gpu_dout_20_in),
+	.gpu_dout_21_out /* BUS */ (gpu_dout_21_out),
+	.gpu_dout_21_oe /* BUS */ (gpu_dout_21_oe),
+	.gpu_dout_21_in /* BUS */ (gpu_dout_21_in),
+	.gpu_dout_22_out /* BUS */ (gpu_dout_22_out),
+	.gpu_dout_22_oe /* BUS */ (gpu_dout_22_oe),
+	.gpu_dout_22_in /* BUS */ (gpu_dout_22_in),
+	.gpu_dout_23_out /* BUS */ (gpu_dout_23_out),
+	.gpu_dout_23_oe /* BUS */ (gpu_dout_23_oe),
+	.gpu_dout_23_in /* BUS */ (gpu_dout_23_in),
+	.gpu_dout_24_out /* BUS */ (gpu_dout_24_out),
+	.gpu_dout_24_oe /* BUS */ (gpu_dout_24_oe),
+	.gpu_dout_24_in /* BUS */ (gpu_dout_24_in),
+	.gpu_dout_25_out /* BUS */ (gpu_dout_25_out),
+	.gpu_dout_25_oe /* BUS */ (gpu_dout_25_oe),
+	.gpu_dout_25_in /* BUS */ (gpu_dout_25_in),
+	.gpu_dout_26_out /* BUS */ (gpu_dout_26_out),
+	.gpu_dout_26_oe /* BUS */ (gpu_dout_26_oe),
+	.gpu_dout_26_in /* BUS */ (gpu_dout_26_in),
+	.gpu_dout_27_out /* BUS */ (gpu_dout_27_out),
+	.gpu_dout_27_oe /* BUS */ (gpu_dout_27_oe),
+	.gpu_dout_27_in /* BUS */ (gpu_dout_27_in),
+	.gpu_dout_28_out /* BUS */ (gpu_dout_28_out),
+	.gpu_dout_28_oe /* BUS */ (gpu_dout_28_oe),
+	.gpu_dout_28_in /* BUS */ (gpu_dout_28_in),
+	.gpu_dout_29_out /* BUS */ (gpu_dout_29_out),
+	.gpu_dout_29_oe /* BUS */ (gpu_dout_29_oe),
+	.gpu_dout_29_in /* BUS */ (gpu_dout_29_in),
+	.gpu_dout_30_out /* BUS */ (gpu_dout_30_out),
+	.gpu_dout_30_oe /* BUS */ (gpu_dout_30_oe),
+	.gpu_dout_30_in /* BUS */ (gpu_dout_30_in),
+	.gpu_dout_31_out /* BUS */ (gpu_dout_31_out),
+	.gpu_dout_31_oe /* BUS */ (gpu_dout_31_oe),
+	.gpu_dout_31_in /* BUS */ (gpu_dout_31_in),
+	.icount_0 /* OUT */ (icount_0),
+	.icount_1 /* OUT */ (icount_1),
+	.icount_2 /* OUT */ (icount_2),
+	.inner0 /* OUT */ (inner0_obuf),
+	.clk /* IN */ (clk),
+	.countld /* IN */ (countld),
+	.dstxp /* IN */ ({dstxp[0],dstxp[1],dstxp[2],dstxp[3],dstxp[4],dstxp[5],dstxp[6],dstxp[7],dstxp[8],dstxp[9],dstxp[10],dstxp[11],dstxp[12],dstxp[13],dstxp[14],dstxp[15]}),
+	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
+	.icntena /* IN */ (icntena),
+	.ireload /* IN */ (instart),
+	.phrase_mode /* IN */ (phrase_mode),
+	.pixsize_0 /* IN */ (pixsize_0),
+	.pixsize_1 /* IN */ (pixsize_1),
+	.pixsize_2 /* IN */ (pixsize_2),
+	.statrd /* IN */ (statrd)
 );
 
 // INNER.NET (385) - oldoutld : an2
@@ -995,27 +1086,27 @@ assign oldoutld = srca_add & atick_1_obuf;
 // INNER.NET (386) - oldoutside : mx2
 mx2 oldoutside_inst
 (
-	.z(oldoutside), // OUT
-	.a0(oldoutsidel), // IN
-	.a1(a1_outside), // IN
-	.s(oldoutld)  // IN
+	.z /* OUT */ (oldoutside),
+	.a0 /* IN */ (oldoutsidel),
+	.a1 /* IN */ (a1_outside),
+	.s /* IN */ (oldoutld)
 );
 
 // INNER.NET (388) - oldoutsidel : fd1q
 fd1q oldoutsidel_inst
 (
-	.q(oldoutsidel), // OUT
-	.d(oldoutside), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (oldoutsidel),
+	.d /* IN */ (oldoutside),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (389) - outside : mx2
 mx2 outside_inst
 (
-	.z(outside), // OUT
-	.a0(a1_outside), // IN
-	.a1(oldoutside), // IN
-	.s(dsta2)  // IN
+	.z /* OUT */ (outside),
+	.a0 /* IN */ (a1_outside),
+	.a1 /* IN */ (oldoutside),
+	.s /* IN */ (dsta2)
 );
 
 // INNER.NET (390) - clip\ : nd2
@@ -1045,9 +1136,9 @@ assign srca_addi_obuf = szreadxi | szreadi | sraat_0 | sraat_1;
 // INNER.NET (409) - srca_add : fd1q
 fd1q srca_add_inst
 (
-	.q(srca_add), // OUT
-	.d(srca_addi_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srca_add),
+	.d /* IN */ (srca_addi_obuf),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (411) - dstaat : an2
@@ -1077,9 +1168,9 @@ assign gena2i = ~(gena2t_0 & gena2t_1);
 // INNER.NET (424) - gena2 : fd1qu
 fd1q gena2_inst
 (
-	.q(gena2), // OUT
-	.d(gena2i), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (gena2),
+	.d /* IN */ (gena2i),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (426) - zaddr : or4
@@ -1088,69 +1179,69 @@ assign zaddr = szreadx | szread | dzread | dzwrite_obuf;
 // INNER.NET (430) - sreadx1 : fdsyncr
 fdsyncr sreadx1_inst
 (
-	.q(sreadx_1_obuf), // IO
-	.d(sreadx), // IN
-	.ld(step_p1), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (sreadx_1_obuf),
+	.d /* IN */ (sreadx),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // INNER.NET (432) - sread1 : fdsyncr
 fdsyncr sread1_inst
 (
-	.q(sread_1_obuf), // IO
-	.d(sread), // IN
-	.ld(step_p1), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (sread_1_obuf),
+	.d /* IN */ (sread),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // INNER.NET (434) - szread1 : fdsyncr
 fdsyncr szread1_inst
 (
-	.q(szread_1), // IO
-	.d(szread), // IN
-	.ld(step_p1), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (szread_1),
+	.d /* IN */ (szread),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // INNER.NET (436) - dread1 : fdsyncr
 fdsyncr dread1_inst
 (
-	.q(dread_1), // IO
-	.d(dread), // IN
-	.ld(step_p1), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (dread_1),
+	.d /* IN */ (dread),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // INNER.NET (438) - dzread1 : fdsyncr
 fdsyncr dzread1_inst
 (
-	.q(dzread_1), // IO
-	.d(dzread), // IN
-	.ld(step_p1), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (dzread_1),
+	.d /* IN */ (dzread),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // INNER.NET (440) - dwrite1 : fdsync
 fdsync dwrite1_inst
 (
-	.q(dwrite1_obuf), // IO
-	.d(dwrite_obuf), // IN
-	.ld(step_p1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (dwrite1_obuf),
+	.d /* IN */ (dwrite_obuf),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (441) - dzwrite1 : fdsync
 fdsync dzwrite1_inst
 (
-	.q(dzwrite1_obuf), // IO
-	.d(dzwrite_obuf), // IN
-	.ld(step_p1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (dzwrite1_obuf),
+	.d /* IN */ (dzwrite_obuf),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (445) - dest_cycle[1] : or4
@@ -1171,12 +1262,12 @@ assign srczack_n = read_ack_n | srcdpend | srcdxpend | srczxpend;
 // INNER.NET (459) - dstdack : or5
 or5 dstdack_inst
 (
-	.z(dstdack_n), // IO
-	.a(read_ack_n), // IN
-	.b(srcdpend), // IN
-	.c(srczpend), // IN
-	.d(srcdxpend), // IN
-	.e(srczxpend)  // IN
+	.z /* OUT */ (dstdack_n),
+	.a /* IN */ (read_ack_n),
+	.b /* IN */ (srcdpend),
+	.c /* IN */ (srczpend),
+	.d /* IN */ (srcdxpend),
+	.e /* IN */ (srczxpend)
 );
 
 // INNER.NET (461) - dstzack : or6
@@ -1194,10 +1285,10 @@ assign srcdpt_2 = ~(srcdpset_n & srcdpt_1);
 // INNER.NET (469) - srcdpend : fd2q
 fd2q srcdpend_inst
 (
-	.q(srcdpend), // OUT
-	.d(srcdpt_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (srcdpend),
+	.d /* IN */ (srcdpt_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (471) - srcdxpset\ : nd2
@@ -1212,10 +1303,10 @@ assign srcdxpt_2 = ~(srcdxpset_n & srcdxpt_1);
 // INNER.NET (474) - srcdxpend : fd2q
 fd2q srcdxpend_inst
 (
-	.q(srcdxpend), // OUT
-	.d(srcdxpt_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (srcdxpend),
+	.d /* IN */ (srcdxpt_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (476) - sdpend : or2
@@ -1227,9 +1318,9 @@ assign srcdreadt = sdpend & read_ack;
 // INNER.NET (484) - srcdreadd : fd1q
 fd1q srcdreadd_inst
 (
-	.q(srcdreadd_obuf), // OUT
-	.d(srcdreadt), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcdreadd_obuf),
+	.d /* IN */ (srcdreadt),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (485) - srcdread : aor1
@@ -1247,10 +1338,10 @@ assign srczpt_2 = ~(srczpset_n & srczpt_1);
 // INNER.NET (492) - srczpend : fd2q
 fd2q srczpend_inst
 (
-	.q(srczpend), // OUT
-	.d(srczpt_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (srczpend),
+	.d /* IN */ (srczpt_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (494) - srczxpset\ : nd2
@@ -1265,10 +1356,10 @@ assign srczxpt_2 = ~(srczxpset_n & srczxpt_1);
 // INNER.NET (497) - srczxpend : fd2q
 fd2q srczxpend_inst
 (
-	.q(srczxpend), // OUT
-	.d(srczxpt_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (srczxpend),
+	.d /* IN */ (srczxpt_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (499) - szpend : or2
@@ -1289,10 +1380,10 @@ assign dstdpt_1 = ~(dstdpset_n & dstdpt_0);
 // INNER.NET (507) - dstdpend : fd2q
 fd2q dstdpend_inst
 (
-	.q(dstdpend), // OUT
-	.d(dstdpt_1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dstdpend),
+	.d /* IN */ (dstdpt_1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (508) - dstdread : an2
@@ -1310,10 +1401,10 @@ assign dstzpt_1 = ~(dstzpset_n & dstzpt_0);
 // INNER.NET (515) - dstzpend : fd2q
 fd2q dstzpend_inst
 (
-	.q(dstzpend), // OUT
-	.d(dstzpt_1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (dstzpend),
+	.d /* IN */ (dstzpt_1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INNER.NET (516) - dstzread : an2
@@ -1328,11 +1419,11 @@ assign denat_1 = denat_0 & nowrite_n & clip_n;
 // INNER.NET (525) - denat2 : fdsyncr
 fdsyncr denat2_inst
 (
-	.q(denat_2), // IO
-	.d(denat_1), // IN
-	.ld(step_p1), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (denat_2),
+	.d /* IN */ (denat_1),
+	.ld /* IN */ (step_p1),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // INNER.NET (527) - dstdwt : an3
@@ -1341,8 +1432,8 @@ assign denat_3 = blitack & wactive & denat_2;
 // INNER.NET (528) - data_ena : fd1qp
 fd1q data_ena_inst
 (
-	.q(data_ena), // OUT
-	.d(denat_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (data_ena),
+	.d /* IN */ (denat_3),
+	.cp /* IN */ (clk)
 );
 endmodule

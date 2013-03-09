@@ -2,16 +2,16 @@
 
 module sboard
 (
-	output[0:5] dsta;
+	output [0:5] dsta;
 	output sdatreq,
 	output dstrwen_n,
-	output[0:31] dstwd;
+	output [0:31] dstwd;
 	output resaddrldi,
 	output sbwait,
-	output[0:5] srca;
+	output [0:5] srca;
 	output srcaddrldi,
 	output srcrwen_n,
-	output[0:31] srcwd;
+	output [0:31] srcwd;
 	input clk,
 	input datack,
 	input datwe,
@@ -20,8 +20,8 @@ module sboard
 	input div_activei,
 	input div_instr,
 	input div_start,
-	input[0:5] dstanwi;
-	input[0:5] dstat;
+	input [0:5] dstanwi;
+	input [0:5] dstat;
 	input dstrrd,
 	input dstrrdi,
 	input dstrwr,
@@ -31,21 +31,21 @@ module sboard
 	input flag_depend,
 	input flagld,
 	input gate_active,
-	input[0:31] immdata;
+	input [0:31] immdata;
 	input immld,
 	input immwri,
 	input insexei,
-	input[0:31] load_data;
-	input[0:31] mem_data;
+	input [0:31] load_data;
+	input [0:31] mem_data;
 	input memrw,
 	input mtx_dover,
 	input precomp,
-	input[0:31] quotient;
+	input [0:31] quotient;
 	input reset_n,
 	input reswr,
-	input[0:31] result;
-	input[0:5] srcanwi;
-	input[0:31] srcdp;
+	input [0:31] result;
+	input [0:5] srcanwi;
+	input [0:31] srcdp;
 	input srcrrd,
 	input xld_ready
 );
@@ -297,85 +297,85 @@ assign zero6[5] = zero;
 // SBOARD.NET (102) - insexe : fd1q
 fd1q insexe_inst
 (
-	.q(insexe), // OUT
-	.d(insexei), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (insexe),
+	.d /* IN */ (insexei),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (103) - dstanw : fd1q
 fd1q dstanw_inst_0
 (
-	.q(dstanw[0]), // OUT
-	.d(dstanwi[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstanw[0]),
+	.d /* IN */ (dstanwi[0]),
+	.cp /* IN */ (clk)
 );
 fd1q dstanw_inst_1
 (
-	.q(dstanw[1]), // OUT
-	.d(dstanwi[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstanw[1]),
+	.d /* IN */ (dstanwi[1]),
+	.cp /* IN */ (clk)
 );
 fd1q dstanw_inst_2
 (
-	.q(dstanw[2]), // OUT
-	.d(dstanwi[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstanw[2]),
+	.d /* IN */ (dstanwi[2]),
+	.cp /* IN */ (clk)
 );
 fd1q dstanw_inst_3
 (
-	.q(dstanw[3]), // OUT
-	.d(dstanwi[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstanw[3]),
+	.d /* IN */ (dstanwi[3]),
+	.cp /* IN */ (clk)
 );
 fd1q dstanw_inst_4
 (
-	.q(dstanw[4]), // OUT
-	.d(dstanwi[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstanw[4]),
+	.d /* IN */ (dstanwi[4]),
+	.cp /* IN */ (clk)
 );
 fd1q dstanw_inst_5
 (
-	.q(dstanw[5]), // OUT
-	.d(dstanwi[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstanw[5]),
+	.d /* IN */ (dstanwi[5]),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (104) - srcanw : fd1q
 fd1q srcanw_inst_0
 (
-	.q(srcanw[0]), // OUT
-	.d(srcanwi[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcanw[0]),
+	.d /* IN */ (srcanwi[0]),
+	.cp /* IN */ (clk)
 );
 fd1q srcanw_inst_1
 (
-	.q(srcanw[1]), // OUT
-	.d(srcanwi[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcanw[1]),
+	.d /* IN */ (srcanwi[1]),
+	.cp /* IN */ (clk)
 );
 fd1q srcanw_inst_2
 (
-	.q(srcanw[2]), // OUT
-	.d(srcanwi[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcanw[2]),
+	.d /* IN */ (srcanwi[2]),
+	.cp /* IN */ (clk)
 );
 fd1q srcanw_inst_3
 (
-	.q(srcanw[3]), // OUT
-	.d(srcanwi[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcanw[3]),
+	.d /* IN */ (srcanwi[3]),
+	.cp /* IN */ (clk)
 );
 fd1q srcanw_inst_4
 (
-	.q(srcanw[4]), // OUT
-	.d(srcanwi[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcanw[4]),
+	.d /* IN */ (srcanwi[4]),
+	.cp /* IN */ (clk)
 );
 fd1q srcanw_inst_5
 (
-	.q(srcanw[5]), // OUT
-	.d(srcanwi[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcanw[5]),
+	.d /* IN */ (srcanwi[5]),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (108) - dstren : or2
@@ -406,45 +406,45 @@ assign srca_reg_ena = srcrrd | precomp;
 // SBOARD.NET (136) - alu_wbaddr : fd2qp
 fd2q alu_wbaddr_inst_0
 (
-	.q(alu_wbaddr[0]), // OUT
-	.d(dstanw[0]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wbaddr[0]),
+	.d /* IN */ (dstanw[0]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q alu_wbaddr_inst_1
 (
-	.q(alu_wbaddr[1]), // OUT
-	.d(dstanw[1]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wbaddr[1]),
+	.d /* IN */ (dstanw[1]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q alu_wbaddr_inst_2
 (
-	.q(alu_wbaddr[2]), // OUT
-	.d(dstanw[2]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wbaddr[2]),
+	.d /* IN */ (dstanw[2]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q alu_wbaddr_inst_3
 (
-	.q(alu_wbaddr[3]), // OUT
-	.d(dstanw[3]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wbaddr[3]),
+	.d /* IN */ (dstanw[3]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q alu_wbaddr_inst_4
 (
-	.q(alu_wbaddr[4]), // OUT
-	.d(dstanw[4]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wbaddr[4]),
+	.d /* IN */ (dstanw[4]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q alu_wbaddr_inst_5
 (
-	.q(alu_wbaddr[5]), // OUT
-	.d(dstanw[5]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wbaddr[5]),
+	.d /* IN */ (dstanw[5]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (140) - pendwr : an2
@@ -453,10 +453,10 @@ assign pendwr = reswr & exe;
 // SBOARD.NET (141) - alu_wback : fd2qp
 fd2q alu_wback_inst
 (
-	.q(alu_wback), // OUT
-	.d(pendwr), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (alu_wback),
+	.d /* IN */ (pendwr),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (142) - alu_wback\ : iv
@@ -465,17 +465,17 @@ assign alu_wback_n = ~alu_wback;
 // SBOARD.NET (152) - dp1cmp : cmp6
 cmp6 dp1cmp_inst
 (
-	.equal(dp1eq), // OUT
-	.a({alu_wbaddr[0],alu_wbaddr[1],alu_wbaddr[2],alu_wbaddr[3],alu_wbaddr[4],alu_wbaddr[5]}), // IN
-	.b({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]})  // IN
+	.equal /* OUT */ (dp1eq),
+	.a /* IN */ ({alu_wbaddr[0],alu_wbaddr[1],alu_wbaddr[2],alu_wbaddr[3],alu_wbaddr[4],alu_wbaddr[5]}),
+	.b /* IN */ ({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]})
 );
 
 // SBOARD.NET (153) - sp1cmp : cmp6
 cmp6 sp1cmp_inst
 (
-	.equal(sp1eq), // OUT
-	.a({alu_wbaddr[0],alu_wbaddr[1],alu_wbaddr[2],alu_wbaddr[3],alu_wbaddr[4],alu_wbaddr[5]}), // IN
-	.b({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]})  // IN
+	.equal /* OUT */ (sp1eq),
+	.a /* IN */ ({alu_wbaddr[0],alu_wbaddr[1],alu_wbaddr[2],alu_wbaddr[3],alu_wbaddr[4],alu_wbaddr[5]}),
+	.b /* IN */ ({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]})
 );
 
 // SBOARD.NET (154) - aluwt : aor2
@@ -504,10 +504,10 @@ assign immasel = immld & exe;
 // SBOARD.NET (172) - imm_wbaddr : fdsync6
 fdsync6 imm_wbaddr_inst
 (
-	.q({imm_wbaddr[0],imm_wbaddr[1],imm_wbaddr[2],imm_wbaddr[3],imm_wbaddr[4],imm_wbaddr[5]}), // IO
-	.d({dstanw[0],dstanw[1],dstanw[2],dstanw[3],dstanw[4],dstanw[5]}), // IN
-	.ld(immasel), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({imm_wbaddr[0],imm_wbaddr[1],imm_wbaddr[2],imm_wbaddr[3],imm_wbaddr[4],imm_wbaddr[5]}),
+	.d /* IN */ ({dstanw[0],dstanw[1],dstanw[2],dstanw[3],dstanw[4],dstanw[5]}),
+	.ld /* IN */ (immasel),
+	.clk /* IN */ (clk)
 );
 
 // SBOARD.NET (174) - imm_wback : join
@@ -522,89 +522,89 @@ assign ildwal = memrw & exe;
 // SBOARD.NET (189) - ild_wbaddr : mx2
 mx2 ild_wbaddr_inst_0
 (
-	.z(ild_wbaddr[0]), // OUT
-	.a0(ild_wbaddrl[0]), // IN
-	.a1(dstat[0]), // IN
-	.s(ildwal)  // IN
+	.z /* OUT */ (ild_wbaddr[0]),
+	.a0 /* IN */ (ild_wbaddrl[0]),
+	.a1 /* IN */ (dstat[0]),
+	.s /* IN */ (ildwal)
 );
 mx2 ild_wbaddr_inst_1
 (
-	.z(ild_wbaddr[1]), // OUT
-	.a0(ild_wbaddrl[1]), // IN
-	.a1(dstat[1]), // IN
-	.s(ildwal)  // IN
+	.z /* OUT */ (ild_wbaddr[1]),
+	.a0 /* IN */ (ild_wbaddrl[1]),
+	.a1 /* IN */ (dstat[1]),
+	.s /* IN */ (ildwal)
 );
 mx2 ild_wbaddr_inst_2
 (
-	.z(ild_wbaddr[2]), // OUT
-	.a0(ild_wbaddrl[2]), // IN
-	.a1(dstat[2]), // IN
-	.s(ildwal)  // IN
+	.z /* OUT */ (ild_wbaddr[2]),
+	.a0 /* IN */ (ild_wbaddrl[2]),
+	.a1 /* IN */ (dstat[2]),
+	.s /* IN */ (ildwal)
 );
 mx2 ild_wbaddr_inst_3
 (
-	.z(ild_wbaddr[3]), // OUT
-	.a0(ild_wbaddrl[3]), // IN
-	.a1(dstat[3]), // IN
-	.s(ildwal)  // IN
+	.z /* OUT */ (ild_wbaddr[3]),
+	.a0 /* IN */ (ild_wbaddrl[3]),
+	.a1 /* IN */ (dstat[3]),
+	.s /* IN */ (ildwal)
 );
 mx2 ild_wbaddr_inst_4
 (
-	.z(ild_wbaddr[4]), // OUT
-	.a0(ild_wbaddrl[4]), // IN
-	.a1(dstat[4]), // IN
-	.s(ildwal)  // IN
+	.z /* OUT */ (ild_wbaddr[4]),
+	.a0 /* IN */ (ild_wbaddrl[4]),
+	.a1 /* IN */ (dstat[4]),
+	.s /* IN */ (ildwal)
 );
 mx2 ild_wbaddr_inst_5
 (
-	.z(ild_wbaddr[5]), // OUT
-	.a0(ild_wbaddrl[5]), // IN
-	.a1(dstat[5]), // IN
-	.s(ildwal)  // IN
+	.z /* OUT */ (ild_wbaddr[5]),
+	.a0 /* IN */ (ild_wbaddrl[5]),
+	.a1 /* IN */ (dstat[5]),
+	.s /* IN */ (ildwal)
 );
 
 // SBOARD.NET (190) - ild_wbaddrl : fd2q
 fd2q ild_wbaddrl_inst_0
 (
-	.q(ild_wbaddrl[0]), // OUT
-	.d(ild_wbaddr[0]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbaddrl[0]),
+	.d /* IN */ (ild_wbaddr[0]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ild_wbaddrl_inst_1
 (
-	.q(ild_wbaddrl[1]), // OUT
-	.d(ild_wbaddr[1]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbaddrl[1]),
+	.d /* IN */ (ild_wbaddr[1]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ild_wbaddrl_inst_2
 (
-	.q(ild_wbaddrl[2]), // OUT
-	.d(ild_wbaddr[2]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbaddrl[2]),
+	.d /* IN */ (ild_wbaddr[2]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ild_wbaddrl_inst_3
 (
-	.q(ild_wbaddrl[3]), // OUT
-	.d(ild_wbaddr[3]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbaddrl[3]),
+	.d /* IN */ (ild_wbaddr[3]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ild_wbaddrl_inst_4
 (
-	.q(ild_wbaddrl[4]), // OUT
-	.d(ild_wbaddr[4]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbaddrl[4]),
+	.d /* IN */ (ild_wbaddr[4]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ild_wbaddrl_inst_5
 (
-	.q(ild_wbaddrl[5]), // OUT
-	.d(ild_wbaddr[5]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbaddrl[5]),
+	.d /* IN */ (ild_wbaddr[5]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (198) - ildwbset\ : nd4
@@ -625,11 +625,11 @@ assign ild_wbacki = ~(ildwbclr | ildwbt);
 // SBOARD.NET (204) - ild_wbackd : fd2
 fd2 ild_wbackd_inst
 (
-	.q(ild_wbackd), // OUT
-	.qn(ild_wbackd_n), // OUT
-	.d(ild_wbacki), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ild_wbackd),
+	.qn /* OUT */ (ild_wbackd_n),
+	.d /* IN */ (ild_wbacki),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (206) - ild_wback : nd2
@@ -641,9 +641,9 @@ assign ild_wback_n = ~ild_wback;
 // SBOARD.NET (209) - ilddselt\ : fd1q
 fd1q ilddselt_n_inst
 (
-	.q(ilddselt_n), // OUT
-	.d(ildwbset_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ilddselt_n),
+	.d /* IN */ (ildwbset_n),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (210) - ilddsel\ : nivu
@@ -652,421 +652,421 @@ assign ilddsel_n = ilddselt_n;
 // SBOARD.NET (211) - ild_data : mx2
 mx2 ild_data_inst_0
 (
-	.z(ild_data[0]), // OUT
-	.a0(mem_data[0]), // IN
-	.a1(ild_datad[0]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[0]),
+	.a0 /* IN */ (mem_data[0]),
+	.a1 /* IN */ (ild_datad[0]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_1
 (
-	.z(ild_data[1]), // OUT
-	.a0(mem_data[1]), // IN
-	.a1(ild_datad[1]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[1]),
+	.a0 /* IN */ (mem_data[1]),
+	.a1 /* IN */ (ild_datad[1]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_2
 (
-	.z(ild_data[2]), // OUT
-	.a0(mem_data[2]), // IN
-	.a1(ild_datad[2]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[2]),
+	.a0 /* IN */ (mem_data[2]),
+	.a1 /* IN */ (ild_datad[2]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_3
 (
-	.z(ild_data[3]), // OUT
-	.a0(mem_data[3]), // IN
-	.a1(ild_datad[3]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[3]),
+	.a0 /* IN */ (mem_data[3]),
+	.a1 /* IN */ (ild_datad[3]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_4
 (
-	.z(ild_data[4]), // OUT
-	.a0(mem_data[4]), // IN
-	.a1(ild_datad[4]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[4]),
+	.a0 /* IN */ (mem_data[4]),
+	.a1 /* IN */ (ild_datad[4]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_5
 (
-	.z(ild_data[5]), // OUT
-	.a0(mem_data[5]), // IN
-	.a1(ild_datad[5]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[5]),
+	.a0 /* IN */ (mem_data[5]),
+	.a1 /* IN */ (ild_datad[5]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_6
 (
-	.z(ild_data[6]), // OUT
-	.a0(mem_data[6]), // IN
-	.a1(ild_datad[6]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[6]),
+	.a0 /* IN */ (mem_data[6]),
+	.a1 /* IN */ (ild_datad[6]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_7
 (
-	.z(ild_data[7]), // OUT
-	.a0(mem_data[7]), // IN
-	.a1(ild_datad[7]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[7]),
+	.a0 /* IN */ (mem_data[7]),
+	.a1 /* IN */ (ild_datad[7]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_8
 (
-	.z(ild_data[8]), // OUT
-	.a0(mem_data[8]), // IN
-	.a1(ild_datad[8]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[8]),
+	.a0 /* IN */ (mem_data[8]),
+	.a1 /* IN */ (ild_datad[8]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_9
 (
-	.z(ild_data[9]), // OUT
-	.a0(mem_data[9]), // IN
-	.a1(ild_datad[9]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[9]),
+	.a0 /* IN */ (mem_data[9]),
+	.a1 /* IN */ (ild_datad[9]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_10
 (
-	.z(ild_data[10]), // OUT
-	.a0(mem_data[10]), // IN
-	.a1(ild_datad[10]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[10]),
+	.a0 /* IN */ (mem_data[10]),
+	.a1 /* IN */ (ild_datad[10]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_11
 (
-	.z(ild_data[11]), // OUT
-	.a0(mem_data[11]), // IN
-	.a1(ild_datad[11]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[11]),
+	.a0 /* IN */ (mem_data[11]),
+	.a1 /* IN */ (ild_datad[11]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_12
 (
-	.z(ild_data[12]), // OUT
-	.a0(mem_data[12]), // IN
-	.a1(ild_datad[12]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[12]),
+	.a0 /* IN */ (mem_data[12]),
+	.a1 /* IN */ (ild_datad[12]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_13
 (
-	.z(ild_data[13]), // OUT
-	.a0(mem_data[13]), // IN
-	.a1(ild_datad[13]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[13]),
+	.a0 /* IN */ (mem_data[13]),
+	.a1 /* IN */ (ild_datad[13]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_14
 (
-	.z(ild_data[14]), // OUT
-	.a0(mem_data[14]), // IN
-	.a1(ild_datad[14]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[14]),
+	.a0 /* IN */ (mem_data[14]),
+	.a1 /* IN */ (ild_datad[14]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_15
 (
-	.z(ild_data[15]), // OUT
-	.a0(mem_data[15]), // IN
-	.a1(ild_datad[15]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[15]),
+	.a0 /* IN */ (mem_data[15]),
+	.a1 /* IN */ (ild_datad[15]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_16
 (
-	.z(ild_data[16]), // OUT
-	.a0(mem_data[16]), // IN
-	.a1(ild_datad[16]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[16]),
+	.a0 /* IN */ (mem_data[16]),
+	.a1 /* IN */ (ild_datad[16]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_17
 (
-	.z(ild_data[17]), // OUT
-	.a0(mem_data[17]), // IN
-	.a1(ild_datad[17]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[17]),
+	.a0 /* IN */ (mem_data[17]),
+	.a1 /* IN */ (ild_datad[17]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_18
 (
-	.z(ild_data[18]), // OUT
-	.a0(mem_data[18]), // IN
-	.a1(ild_datad[18]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[18]),
+	.a0 /* IN */ (mem_data[18]),
+	.a1 /* IN */ (ild_datad[18]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_19
 (
-	.z(ild_data[19]), // OUT
-	.a0(mem_data[19]), // IN
-	.a1(ild_datad[19]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[19]),
+	.a0 /* IN */ (mem_data[19]),
+	.a1 /* IN */ (ild_datad[19]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_20
 (
-	.z(ild_data[20]), // OUT
-	.a0(mem_data[20]), // IN
-	.a1(ild_datad[20]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[20]),
+	.a0 /* IN */ (mem_data[20]),
+	.a1 /* IN */ (ild_datad[20]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_21
 (
-	.z(ild_data[21]), // OUT
-	.a0(mem_data[21]), // IN
-	.a1(ild_datad[21]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[21]),
+	.a0 /* IN */ (mem_data[21]),
+	.a1 /* IN */ (ild_datad[21]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_22
 (
-	.z(ild_data[22]), // OUT
-	.a0(mem_data[22]), // IN
-	.a1(ild_datad[22]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[22]),
+	.a0 /* IN */ (mem_data[22]),
+	.a1 /* IN */ (ild_datad[22]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_23
 (
-	.z(ild_data[23]), // OUT
-	.a0(mem_data[23]), // IN
-	.a1(ild_datad[23]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[23]),
+	.a0 /* IN */ (mem_data[23]),
+	.a1 /* IN */ (ild_datad[23]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_24
 (
-	.z(ild_data[24]), // OUT
-	.a0(mem_data[24]), // IN
-	.a1(ild_datad[24]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[24]),
+	.a0 /* IN */ (mem_data[24]),
+	.a1 /* IN */ (ild_datad[24]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_25
 (
-	.z(ild_data[25]), // OUT
-	.a0(mem_data[25]), // IN
-	.a1(ild_datad[25]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[25]),
+	.a0 /* IN */ (mem_data[25]),
+	.a1 /* IN */ (ild_datad[25]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_26
 (
-	.z(ild_data[26]), // OUT
-	.a0(mem_data[26]), // IN
-	.a1(ild_datad[26]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[26]),
+	.a0 /* IN */ (mem_data[26]),
+	.a1 /* IN */ (ild_datad[26]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_27
 (
-	.z(ild_data[27]), // OUT
-	.a0(mem_data[27]), // IN
-	.a1(ild_datad[27]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[27]),
+	.a0 /* IN */ (mem_data[27]),
+	.a1 /* IN */ (ild_datad[27]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_28
 (
-	.z(ild_data[28]), // OUT
-	.a0(mem_data[28]), // IN
-	.a1(ild_datad[28]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[28]),
+	.a0 /* IN */ (mem_data[28]),
+	.a1 /* IN */ (ild_datad[28]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_29
 (
-	.z(ild_data[29]), // OUT
-	.a0(mem_data[29]), // IN
-	.a1(ild_datad[29]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[29]),
+	.a0 /* IN */ (mem_data[29]),
+	.a1 /* IN */ (ild_datad[29]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_30
 (
-	.z(ild_data[30]), // OUT
-	.a0(mem_data[30]), // IN
-	.a1(ild_datad[30]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[30]),
+	.a0 /* IN */ (mem_data[30]),
+	.a1 /* IN */ (ild_datad[30]),
+	.s /* IN */ (ilddsel_n)
 );
 mx2 ild_data_inst_31
 (
-	.z(ild_data[31]), // OUT
-	.a0(mem_data[31]), // IN
-	.a1(ild_datad[31]), // IN
-	.s(ilddsel_n)  // IN
+	.z /* OUT */ (ild_data[31]),
+	.a0 /* IN */ (mem_data[31]),
+	.a1 /* IN */ (ild_datad[31]),
+	.s /* IN */ (ilddsel_n)
 );
 
 // SBOARD.NET (212) - ild_datad : fd1q
 fd1q ild_datad_inst_0
 (
-	.q(ild_datad[0]), // OUT
-	.d(ild_data[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[0]),
+	.d /* IN */ (ild_data[0]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_1
 (
-	.q(ild_datad[1]), // OUT
-	.d(ild_data[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[1]),
+	.d /* IN */ (ild_data[1]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_2
 (
-	.q(ild_datad[2]), // OUT
-	.d(ild_data[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[2]),
+	.d /* IN */ (ild_data[2]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_3
 (
-	.q(ild_datad[3]), // OUT
-	.d(ild_data[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[3]),
+	.d /* IN */ (ild_data[3]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_4
 (
-	.q(ild_datad[4]), // OUT
-	.d(ild_data[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[4]),
+	.d /* IN */ (ild_data[4]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_5
 (
-	.q(ild_datad[5]), // OUT
-	.d(ild_data[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[5]),
+	.d /* IN */ (ild_data[5]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_6
 (
-	.q(ild_datad[6]), // OUT
-	.d(ild_data[6]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[6]),
+	.d /* IN */ (ild_data[6]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_7
 (
-	.q(ild_datad[7]), // OUT
-	.d(ild_data[7]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[7]),
+	.d /* IN */ (ild_data[7]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_8
 (
-	.q(ild_datad[8]), // OUT
-	.d(ild_data[8]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[8]),
+	.d /* IN */ (ild_data[8]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_9
 (
-	.q(ild_datad[9]), // OUT
-	.d(ild_data[9]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[9]),
+	.d /* IN */ (ild_data[9]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_10
 (
-	.q(ild_datad[10]), // OUT
-	.d(ild_data[10]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[10]),
+	.d /* IN */ (ild_data[10]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_11
 (
-	.q(ild_datad[11]), // OUT
-	.d(ild_data[11]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[11]),
+	.d /* IN */ (ild_data[11]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_12
 (
-	.q(ild_datad[12]), // OUT
-	.d(ild_data[12]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[12]),
+	.d /* IN */ (ild_data[12]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_13
 (
-	.q(ild_datad[13]), // OUT
-	.d(ild_data[13]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[13]),
+	.d /* IN */ (ild_data[13]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_14
 (
-	.q(ild_datad[14]), // OUT
-	.d(ild_data[14]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[14]),
+	.d /* IN */ (ild_data[14]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_15
 (
-	.q(ild_datad[15]), // OUT
-	.d(ild_data[15]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[15]),
+	.d /* IN */ (ild_data[15]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_16
 (
-	.q(ild_datad[16]), // OUT
-	.d(ild_data[16]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[16]),
+	.d /* IN */ (ild_data[16]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_17
 (
-	.q(ild_datad[17]), // OUT
-	.d(ild_data[17]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[17]),
+	.d /* IN */ (ild_data[17]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_18
 (
-	.q(ild_datad[18]), // OUT
-	.d(ild_data[18]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[18]),
+	.d /* IN */ (ild_data[18]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_19
 (
-	.q(ild_datad[19]), // OUT
-	.d(ild_data[19]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[19]),
+	.d /* IN */ (ild_data[19]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_20
 (
-	.q(ild_datad[20]), // OUT
-	.d(ild_data[20]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[20]),
+	.d /* IN */ (ild_data[20]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_21
 (
-	.q(ild_datad[21]), // OUT
-	.d(ild_data[21]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[21]),
+	.d /* IN */ (ild_data[21]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_22
 (
-	.q(ild_datad[22]), // OUT
-	.d(ild_data[22]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[22]),
+	.d /* IN */ (ild_data[22]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_23
 (
-	.q(ild_datad[23]), // OUT
-	.d(ild_data[23]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[23]),
+	.d /* IN */ (ild_data[23]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_24
 (
-	.q(ild_datad[24]), // OUT
-	.d(ild_data[24]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[24]),
+	.d /* IN */ (ild_data[24]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_25
 (
-	.q(ild_datad[25]), // OUT
-	.d(ild_data[25]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[25]),
+	.d /* IN */ (ild_data[25]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_26
 (
-	.q(ild_datad[26]), // OUT
-	.d(ild_data[26]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[26]),
+	.d /* IN */ (ild_data[26]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_27
 (
-	.q(ild_datad[27]), // OUT
-	.d(ild_data[27]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[27]),
+	.d /* IN */ (ild_data[27]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_28
 (
-	.q(ild_datad[28]), // OUT
-	.d(ild_data[28]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[28]),
+	.d /* IN */ (ild_data[28]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_29
 (
-	.q(ild_datad[29]), // OUT
-	.d(ild_data[29]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[29]),
+	.d /* IN */ (ild_data[29]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_30
 (
-	.q(ild_datad[30]), // OUT
-	.d(ild_data[30]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[30]),
+	.d /* IN */ (ild_data[30]),
+	.cp /* IN */ (clk)
 );
 fd1q ild_datad_inst_31
 (
-	.q(ild_datad[31]), // OUT
-	.d(ild_data[31]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ild_datad[31]),
+	.d /* IN */ (ild_data[31]),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (216) - idlet[0] : nd2
@@ -1084,10 +1084,10 @@ assign idlei = ~(idlet_0 & idlet_1 & idlet_2);
 // SBOARD.NET (220) - idle : fd4q
 fd4q idle_inst
 (
-	.q(idle), // OUT
-	.d(idlei), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (idle),
+	.d /* IN */ (idlei),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (221) - idle\ : iv
@@ -1099,10 +1099,10 @@ assign comp1i = idle & memrw & precomp & exe;
 // SBOARD.NET (224) - comp1 : fd2q
 fd2q comp1_inst
 (
-	.q(comp1), // OUT
-	.d(comp1i), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (comp1),
+	.d /* IN */ (comp1i),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (226) - comp2i : join
@@ -1111,10 +1111,10 @@ assign comp2i = comp1;
 // SBOARD.NET (227) - comp2 : fd2q
 fd2q comp2_inst
 (
-	.q(comp2), // OUT
-	.d(comp2i), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (comp2),
+	.d /* IN */ (comp2i),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (228) - comp2\ : iv
@@ -1135,26 +1135,26 @@ assign loadingi = ~(loadingt_0 & loadingt_1 & loadingt_2);
 // SBOARD.NET (234) - loading : fd2q
 fd2q loading_inst
 (
-	.q(loading), // OUT
-	.d(loadingi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (loading),
+	.d /* IN */ (loadingi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (239) - dlacmp : cmp6
 cmp6 dlacmp_inst
 (
-	.equal(dlaeq), // OUT
-	.a({ild_wbaddrl[0],ild_wbaddrl[1],ild_wbaddrl[2],ild_wbaddrl[3],ild_wbaddrl[4],ild_wbaddrl[5]}), // IN
-	.b({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]})  // IN
+	.equal /* OUT */ (dlaeq),
+	.a /* IN */ ({ild_wbaddrl[0],ild_wbaddrl[1],ild_wbaddrl[2],ild_wbaddrl[3],ild_wbaddrl[4],ild_wbaddrl[5]}),
+	.b /* IN */ ({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]})
 );
 
 // SBOARD.NET (240) - slacmp : cmp6
 cmp6 slacmp_inst
 (
-	.equal(slaeq), // OUT
-	.a({ild_wbaddrl[0],ild_wbaddrl[1],ild_wbaddrl[2],ild_wbaddrl[3],ild_wbaddrl[4],ild_wbaddrl[5]}), // IN
-	.b({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]})  // IN
+	.equal /* OUT */ (slaeq),
+	.a /* IN */ ({ild_wbaddrl[0],ild_wbaddrl[1],ild_wbaddrl[2],ild_wbaddrl[3],ild_wbaddrl[4],ild_wbaddrl[5]}),
+	.b /* IN */ ({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]})
 );
 
 // SBOARD.NET (241) - ldwaitt0 : aor2
@@ -1178,11 +1178,11 @@ assign drqt_1 = ~(drqt_0 & comp2_n);
 // SBOARD.NET (256) - drqt[2] : cp_latch
 cp_latch drqt_index_2_inst
 (
-	.q(drqt_2), // IO
-	.set(drqt_1), // IN
-	.clear(datack), // IN
-	.clock(clk), // IN
-	.reset_n(reset_n)  // IN
+	.q /* OUT */ (drqt_2),
+	.set /* IN */ (drqt_1),
+	.clear /* IN */ (datack),
+	.clock /* IN */ (clk),
+	.reset_n /* IN */ (reset_n)
 );
 
 // SBOARD.NET (258) - datreq : oan1
@@ -1212,10 +1212,10 @@ assign oneldi = ~(ld1t_0 & ld1t_1 & ld1t_2 & ld1t_3);
 // SBOARD.NET (289) - oneld : fd2qp
 fd2q oneld_inst
 (
-	.q(oneld), // OUT
-	.d(oneldi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (oneld),
+	.d /* IN */ (oneldi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (291) - ld2t0 : nd3
@@ -1230,10 +1230,10 @@ assign twoldi = ~(ld2t_0 & ld2t_1);
 // SBOARD.NET (294) - twold : fd2qp
 fd2q twold_inst
 (
-	.q(twold), // OUT
-	.d(twoldi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (twold),
+	.d /* IN */ (twoldi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (296) - ldidle : nr2p
@@ -1257,133 +1257,133 @@ assign xlddt_3 = xldd_sel & twold;
 // SBOARD.NET (318) - xlddsti : mx4
 mx4 xlddsti_inst_0
 (
-	.z(xld_wbaddr[0]), // OUT
-	.a0(xlddst[0]), // IN
-	.a1(ild_wbaddr[0]), // IN
-	.a2(xlddst2[0]), // IN
-	.a3(xlddst2[0]), // IN
-	.s0(xlddt_2), // IN
-	.s1(xlddt_3)  // IN
+	.z /* OUT */ (xld_wbaddr[0]),
+	.a0 /* IN */ (xlddst[0]),
+	.a1 /* IN */ (ild_wbaddr[0]),
+	.a2 /* IN */ (xlddst2[0]),
+	.a3 /* IN */ (xlddst2[0]),
+	.s0 /* IN */ (xlddt_2),
+	.s1 /* IN */ (xlddt_3)
 );
 mx4 xlddsti_inst_1
 (
-	.z(xld_wbaddr[1]), // OUT
-	.a0(xlddst[1]), // IN
-	.a1(ild_wbaddr[1]), // IN
-	.a2(xlddst2[1]), // IN
-	.a3(xlddst2[1]), // IN
-	.s0(xlddt_2), // IN
-	.s1(xlddt_3)  // IN
+	.z /* OUT */ (xld_wbaddr[1]),
+	.a0 /* IN */ (xlddst[1]),
+	.a1 /* IN */ (ild_wbaddr[1]),
+	.a2 /* IN */ (xlddst2[1]),
+	.a3 /* IN */ (xlddst2[1]),
+	.s0 /* IN */ (xlddt_2),
+	.s1 /* IN */ (xlddt_3)
 );
 mx4 xlddsti_inst_2
 (
-	.z(xld_wbaddr[2]), // OUT
-	.a0(xlddst[2]), // IN
-	.a1(ild_wbaddr[2]), // IN
-	.a2(xlddst2[2]), // IN
-	.a3(xlddst2[2]), // IN
-	.s0(xlddt_2), // IN
-	.s1(xlddt_3)  // IN
+	.z /* OUT */ (xld_wbaddr[2]),
+	.a0 /* IN */ (xlddst[2]),
+	.a1 /* IN */ (ild_wbaddr[2]),
+	.a2 /* IN */ (xlddst2[2]),
+	.a3 /* IN */ (xlddst2[2]),
+	.s0 /* IN */ (xlddt_2),
+	.s1 /* IN */ (xlddt_3)
 );
 mx4 xlddsti_inst_3
 (
-	.z(xld_wbaddr[3]), // OUT
-	.a0(xlddst[3]), // IN
-	.a1(ild_wbaddr[3]), // IN
-	.a2(xlddst2[3]), // IN
-	.a3(xlddst2[3]), // IN
-	.s0(xlddt_2), // IN
-	.s1(xlddt_3)  // IN
+	.z /* OUT */ (xld_wbaddr[3]),
+	.a0 /* IN */ (xlddst[3]),
+	.a1 /* IN */ (ild_wbaddr[3]),
+	.a2 /* IN */ (xlddst2[3]),
+	.a3 /* IN */ (xlddst2[3]),
+	.s0 /* IN */ (xlddt_2),
+	.s1 /* IN */ (xlddt_3)
 );
 mx4 xlddsti_inst_4
 (
-	.z(xld_wbaddr[4]), // OUT
-	.a0(xlddst[4]), // IN
-	.a1(ild_wbaddr[4]), // IN
-	.a2(xlddst2[4]), // IN
-	.a3(xlddst2[4]), // IN
-	.s0(xlddt_2), // IN
-	.s1(xlddt_3)  // IN
+	.z /* OUT */ (xld_wbaddr[4]),
+	.a0 /* IN */ (xlddst[4]),
+	.a1 /* IN */ (ild_wbaddr[4]),
+	.a2 /* IN */ (xlddst2[4]),
+	.a3 /* IN */ (xlddst2[4]),
+	.s0 /* IN */ (xlddt_2),
+	.s1 /* IN */ (xlddt_3)
 );
 mx4 xlddsti_inst_5
 (
-	.z(xld_wbaddr[5]), // OUT
-	.a0(xlddst[5]), // IN
-	.a1(ild_wbaddr[5]), // IN
-	.a2(xlddst2[5]), // IN
-	.a3(xlddst2[5]), // IN
-	.s0(xlddt_2), // IN
-	.s1(xlddt_3)  // IN
+	.z /* OUT */ (xld_wbaddr[5]),
+	.a0 /* IN */ (xlddst[5]),
+	.a1 /* IN */ (ild_wbaddr[5]),
+	.a2 /* IN */ (xlddst2[5]),
+	.a3 /* IN */ (xlddst2[5]),
+	.s0 /* IN */ (xlddt_2),
+	.s1 /* IN */ (xlddt_3)
 );
 
 // SBOARD.NET (320) - xlddst : fd2q
 fd2q xlddst_inst_0
 (
-	.q(xlddst[0]), // OUT
-	.d(xld_wbaddr[0]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xlddst[0]),
+	.d /* IN */ (xld_wbaddr[0]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q xlddst_inst_1
 (
-	.q(xlddst[1]), // OUT
-	.d(xld_wbaddr[1]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xlddst[1]),
+	.d /* IN */ (xld_wbaddr[1]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q xlddst_inst_2
 (
-	.q(xlddst[2]), // OUT
-	.d(xld_wbaddr[2]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xlddst[2]),
+	.d /* IN */ (xld_wbaddr[2]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q xlddst_inst_3
 (
-	.q(xlddst[3]), // OUT
-	.d(xld_wbaddr[3]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xlddst[3]),
+	.d /* IN */ (xld_wbaddr[3]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q xlddst_inst_4
 (
-	.q(xlddst[4]), // OUT
-	.d(xld_wbaddr[4]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xlddst[4]),
+	.d /* IN */ (xld_wbaddr[4]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q xlddst_inst_5
 (
-	.q(xlddst[5]), // OUT
-	.d(xld_wbaddr[5]), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xlddst[5]),
+	.d /* IN */ (xld_wbaddr[5]),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (322) - xlddst2 : fdsyncr6
 fdsyncr6 xlddst2_inst
 (
-	.q({xlddst2[0],xlddst2[1],xlddst2[2],xlddst2[3],xlddst2[4],xlddst2[5]}), // IO
-	.d({ild_wbaddr[0],ild_wbaddr[1],ild_wbaddr[2],ild_wbaddr[3],ild_wbaddr[4],ild_wbaddr[5]}), // IN
-	.ld(del_xld), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ ({xlddst2[0],xlddst2[1],xlddst2[2],xlddst2[3],xlddst2[4],xlddst2[5]}),
+	.d /* IN */ ({ild_wbaddr[0],ild_wbaddr[1],ild_wbaddr[2],ild_wbaddr[3],ild_wbaddr[4],ild_wbaddr[5]}),
+	.ld /* IN */ (del_xld),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // SBOARD.NET (330) - xlddmatch : cmp6
 cmp6 xlddmatch_inst
 (
-	.equal(xlddeq), // OUT
-	.a({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]}), // IN
-	.b({xlddst[0],xlddst[1],xlddst[2],xlddst[3],xlddst[4],xlddst[5]})  // IN
+	.equal /* OUT */ (xlddeq),
+	.a /* IN */ ({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]}),
+	.b /* IN */ ({xlddst[0],xlddst[1],xlddst[2],xlddst[3],xlddst[4],xlddst[5]})
 );
 
 // SBOARD.NET (331) - xldsmatch : cmp6
 cmp6 xldsmatch_inst
 (
-	.equal(xldseq), // OUT
-	.a({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]}), // IN
-	.b({xlddst[0],xlddst[1],xlddst[2],xlddst[3],xlddst[4],xlddst[5]})  // IN
+	.equal /* OUT */ (xldseq),
+	.a /* IN */ ({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]}),
+	.b /* IN */ ({xlddst[0],xlddst[1],xlddst[2],xlddst[3],xlddst[4],xlddst[5]})
 );
 
 // SBOARD.NET (332) - xldeq : aor2
@@ -1392,17 +1392,17 @@ assign xldeq = (xlddeq & dsta_reg_ena) | (xldseq & srca_reg_ena);
 // SBOARD.NET (334) - xld2dmatch : cmp6
 cmp6 xld2dmatch_inst
 (
-	.equal(xld2deq), // OUT
-	.a({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]}), // IN
-	.b({xlddst2[0],xlddst2[1],xlddst2[2],xlddst2[3],xlddst2[4],xlddst2[5]})  // IN
+	.equal /* OUT */ (xld2deq),
+	.a /* IN */ ({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]}),
+	.b /* IN */ ({xlddst2[0],xlddst2[1],xlddst2[2],xlddst2[3],xlddst2[4],xlddst2[5]})
 );
 
 // SBOARD.NET (335) - xld2smatch : cmp6
 cmp6 xld2smatch_inst
 (
-	.equal(xld2seq), // OUT
-	.a({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]}), // IN
-	.b({xlddst2[0],xlddst2[1],xlddst2[2],xlddst2[3],xlddst2[4],xlddst2[5]})  // IN
+	.equal /* OUT */ (xld2seq),
+	.a /* IN */ ({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]}),
+	.b /* IN */ ({xlddst2[0],xlddst2[1],xlddst2[2],xlddst2[3],xlddst2[4],xlddst2[5]})
 );
 
 // SBOARD.NET (336) - xld2eq : aor2
@@ -1414,10 +1414,10 @@ assign xlddwait = (ldidle_n & xldeq) | (twold & xld2eq);
 // SBOARD.NET (343) - xld_data : fdsync32
 fdsync32 xld_data_inst
 (
-	.q({xld_data[0],xld_data[1],xld_data[2],xld_data[3],xld_data[4],xld_data[5],xld_data[6],xld_data[7],xld_data[8],xld_data[9],xld_data[10],xld_data[11],xld_data[12],xld_data[13],xld_data[14],xld_data[15],xld_data[16],xld_data[17],xld_data[18],xld_data[19],xld_data[20],xld_data[21],xld_data[22],xld_data[23],xld_data[24],xld_data[25],xld_data[26],xld_data[27],xld_data[28],xld_data[29],xld_data[30],xld_data[31]}), // IO
-	.d({load_data[0],load_data[1],load_data[2],load_data[3],load_data[4],load_data[5],load_data[6],load_data[7],load_data[8],load_data[9],load_data[10],load_data[11],load_data[12],load_data[13],load_data[14],load_data[15],load_data[16],load_data[17],load_data[18],load_data[19],load_data[20],load_data[21],load_data[22],load_data[23],load_data[24],load_data[25],load_data[26],load_data[27],load_data[28],load_data[29],load_data[30],load_data[31]}), // IN
-	.ld(xld_ready), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({xld_data[0],xld_data[1],xld_data[2],xld_data[3],xld_data[4],xld_data[5],xld_data[6],xld_data[7],xld_data[8],xld_data[9],xld_data[10],xld_data[11],xld_data[12],xld_data[13],xld_data[14],xld_data[15],xld_data[16],xld_data[17],xld_data[18],xld_data[19],xld_data[20],xld_data[21],xld_data[22],xld_data[23],xld_data[24],xld_data[25],xld_data[26],xld_data[27],xld_data[28],xld_data[29],xld_data[30],xld_data[31]}),
+	.d /* IN */ ({load_data[0],load_data[1],load_data[2],load_data[3],load_data[4],load_data[5],load_data[6],load_data[7],load_data[8],load_data[9],load_data[10],load_data[11],load_data[12],load_data[13],load_data[14],load_data[15],load_data[16],load_data[17],load_data[18],load_data[19],load_data[20],load_data[21],load_data[22],load_data[23],load_data[24],load_data[25],load_data[26],load_data[27],load_data[28],load_data[29],load_data[30],load_data[31]}),
+	.ld /* IN */ (xld_ready),
+	.clk /* IN */ (clk)
 );
 
 // SBOARD.NET (353) - mbsywt0 : or2
@@ -1447,10 +1447,10 @@ assign xwbat_1 = ~(xwbclr | xwbat_0);
 // SBOARD.NET (365) - xldpend : fd2q
 fd2q xldpend_inst
 (
-	.q(xld_wbackl), // OUT
-	.d(xwbat_1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xld_wbackl),
+	.d /* IN */ (xwbat_1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (366) - xld_wback : or2
@@ -1462,9 +1462,9 @@ assign xld_wback_n = ~xld_wback;
 // SBOARD.NET (375) - div_active : fd1q
 fd1q div_active_inst
 (
-	.q(div_active), // OUT
-	.d(div_activei), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (div_active),
+	.d /* IN */ (div_activei),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (376) - div_activei\ : iv
@@ -1473,27 +1473,27 @@ assign div_activei_n = ~div_activei;
 // SBOARD.NET (378) - divdst : fdsyncr6
 fdsyncr6 divdst_inst
 (
-	.q({div_wbaddr[0],div_wbaddr[1],div_wbaddr[2],div_wbaddr[3],div_wbaddr[4],div_wbaddr[5]}), // IO
-	.d({dstanw[0],dstanw[1],dstanw[2],dstanw[3],dstanw[4],dstanw[5]}), // IN
-	.ld(div_start), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ ({div_wbaddr[0],div_wbaddr[1],div_wbaddr[2],div_wbaddr[3],div_wbaddr[4],div_wbaddr[5]}),
+	.d /* IN */ ({dstanw[0],dstanw[1],dstanw[2],dstanw[3],dstanw[4],dstanw[5]}),
+	.ld /* IN */ (div_start),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // SBOARD.NET (380) - divdmatch : cmp6
 cmp6 divdmatch_inst
 (
-	.equal(divdeq), // OUT
-	.a({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]}), // IN
-	.b({div_wbaddr[0],div_wbaddr[1],div_wbaddr[2],div_wbaddr[3],div_wbaddr[4],div_wbaddr[5]})  // IN
+	.equal /* OUT */ (divdeq),
+	.a /* IN */ ({dsta_reg[0],dsta_reg[1],dsta_reg[2],dsta_reg[3],dsta_reg[4],dsta_reg[5]}),
+	.b /* IN */ ({div_wbaddr[0],div_wbaddr[1],div_wbaddr[2],div_wbaddr[3],div_wbaddr[4],div_wbaddr[5]})
 );
 
 // SBOARD.NET (381) - divsmatch : cmp6
 cmp6 divsmatch_inst
 (
-	.equal(divseq), // OUT
-	.a({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]}), // IN
-	.b({div_wbaddr[0],div_wbaddr[1],div_wbaddr[2],div_wbaddr[3],div_wbaddr[4],div_wbaddr[5]})  // IN
+	.equal /* OUT */ (divseq),
+	.a /* IN */ ({srca_reg[0],srca_reg[1],srca_reg[2],srca_reg[3],srca_reg[4],srca_reg[5]}),
+	.b /* IN */ ({div_wbaddr[0],div_wbaddr[1],div_wbaddr[2],div_wbaddr[3],div_wbaddr[4],div_wbaddr[5]})
 );
 
 // SBOARD.NET (382) - diveq : aor2
@@ -1517,10 +1517,10 @@ assign dwbat_1 = ~(dwbat_0 | dwbclr);
 // SBOARD.NET (394) - dwbat2 : fd2q
 fd2q dwbat2_inst
 (
-	.q(div_wbackl), // OUT
-	.d(dwbat_1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (div_wbackl),
+	.d /* IN */ (dwbat_1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // SBOARD.NET (395) - div_wback : or2
@@ -1535,9 +1535,9 @@ assign diviwait = (div_active | div_wback) & div_instr;
 // SBOARD.NET (411) - flag_pend : fd1q
 fd1q flag_pend_inst
 (
-	.q(flag_pend), // OUT
-	.d(flagld), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (flag_pend),
+	.d /* IN */ (flagld),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (412) - flagwait : an2
@@ -1549,9 +1549,9 @@ assign wbacki = ~(alu_wback_n & mov_wback_n & imm_wback_n & div_wback_n & xld_wb
 // SBOARD.NET (449) - wback : fd1q
 fd1q wback_inst
 (
-	.q(wback), // OUT
-	.d(wbacki), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (wback),
+	.d /* IN */ (wbacki),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (453) - alu_wbackh : iv
@@ -1569,12 +1569,12 @@ assign ild_wbackh_n = ~(ild_wback & imm_wback_n & mov_wback_n & alu_wback_n);
 // SBOARD.NET (459) - xld_wbackh : nd5
 nd5 xld_wbackh_inst
 (
-	.q(xld_wbackh_n), // OUT
-	.a_0(xld_wback), // IN
-	.a_1(ild_wback_n), // IN
-	.a_2(imm_wback_n), // IN
-	.a_3(mov_wback_n), // IN
-	.a_4(alu_wback_n)  // IN
+	.q /* OUT */ (xld_wbackh_n),
+	.a_0 /* IN */ (xld_wback),
+	.a_1 /* IN */ (ild_wback_n),
+	.a_2 /* IN */ (imm_wback_n),
+	.a_3 /* IN */ (mov_wback_n),
+	.a_4 /* IN */ (alu_wback_n)
 );
 
 // SBOARD.NET (461) - div_wbackh : nd6
@@ -1601,23 +1601,23 @@ assign xld_wbackst = ~(ild_wbackh_n & imm_wbackh_n & mov_wbackh_n & alu_wbackh_n
 // SBOARD.NET (488) - xld_wbacks : nd5
 nd5 xld_wbacks_inst
 (
-	.q(xld_wbacks_n), // OUT
-	.a_0(xld_wback), // IN
-	.a_1(xld_wbackst), // IN
-	.a_2(imm_wback_n), // IN
-	.a_3(ild_wbacks_n), // IN
-	.a_4(mov_wbacks_n)  // IN
+	.q /* OUT */ (xld_wbacks_n),
+	.a_0 /* IN */ (xld_wback),
+	.a_1 /* IN */ (xld_wbackst),
+	.a_2 /* IN */ (imm_wback_n),
+	.a_3 /* IN */ (ild_wbacks_n),
+	.a_4 /* IN */ (mov_wbacks_n)
 );
 
 // SBOARD.NET (490) - div_wbackst : nd5
 nd5 div_wbackst_inst
 (
-	.q(div_wbackst), // OUT
-	.a_0(xld_wbackh_n), // IN
-	.a_1(ild_wbackh_n), // IN
-	.a_2(imm_wbackh_n), // IN
-	.a_3(mov_wbackh_n), // IN
-	.a_4(alu_wbackh_n)  // IN
+	.q /* OUT */ (div_wbackst),
+	.a_0 /* IN */ (xld_wbackh_n),
+	.a_1 /* IN */ (ild_wbackh_n),
+	.a_2 /* IN */ (imm_wbackh_n),
+	.a_3 /* IN */ (mov_wbackh_n),
+	.a_4 /* IN */ (alu_wbackh_n)
 );
 
 // SBOARD.NET (492) - div_wbacks : nd6
@@ -1626,20 +1626,20 @@ assign div_wbacks_n = ~(div_wback & div_wbackst & xld_wback_n & imm_wback_n & il
 // SBOARD.NET (498) - mult_wbacki : nd5
 nd5 mult_wbacki_inst
 (
-	.q(mult_wbacki), // OUT
-	.a_0(mov_wbacks_n), // IN
-	.a_1(imm_wbacks_n), // IN
-	.a_2(ild_wbacks_n), // IN
-	.a_3(xld_wbacks_n), // IN
-	.a_4(div_wbacks_n)  // IN
+	.q /* OUT */ (mult_wbacki),
+	.a_0 /* IN */ (mov_wbacks_n),
+	.a_1 /* IN */ (imm_wbacks_n),
+	.a_2 /* IN */ (ild_wbacks_n),
+	.a_3 /* IN */ (xld_wbacks_n),
+	.a_4 /* IN */ (div_wbacks_n)
 );
 
 // SBOARD.NET (500) - mult_wback : fd1q
 fd1q mult_wback_inst
 (
-	.q(mult_wback), // OUT
-	.d(mult_wbacki), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mult_wback),
+	.d /* IN */ (mult_wbacki),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (501) - mult_wback\ : iv
@@ -1657,93 +1657,93 @@ assign hasel_2 = ~(xld_wbackh_n & div_wbackh_n);
 // SBOARD.NET (509) - hwbaddr : mx8p
 mx8 hwbaddr_inst_0
 (
-	.z(hwbaddr[0]), // OUT
-	.a0(alu_wbaddr[0]), // IN
-	.a1(mov_wbaddr[0]), // IN
-	.a2(imm_wbaddr[0]), // IN
-	.a3(ild_wbaddr[0]), // IN
-	.a4(xld_wbaddr[0]), // IN
-	.a5(div_wbaddr[0]), // IN
-	.a6(zero6[0]), // IN
-	.a7(zero6[0]), // IN
-	.s0(hasel_0), // IN
-	.s1(hasel_1), // IN
-	.s2(hasel_2)  // IN
+	.z /* OUT */ (hwbaddr[0]),
+	.a0 /* IN */ (alu_wbaddr[0]),
+	.a1 /* IN */ (mov_wbaddr[0]),
+	.a2 /* IN */ (imm_wbaddr[0]),
+	.a3 /* IN */ (ild_wbaddr[0]),
+	.a4 /* IN */ (xld_wbaddr[0]),
+	.a5 /* IN */ (div_wbaddr[0]),
+	.a6 /* IN */ (zero6[0]),
+	.a7 /* IN */ (zero6[0]),
+	.s0 /* IN */ (hasel_0),
+	.s1 /* IN */ (hasel_1),
+	.s2 /* IN */ (hasel_2)
 );
 mx8 hwbaddr_inst_1
 (
-	.z(hwbaddr[1]), // OUT
-	.a0(alu_wbaddr[1]), // IN
-	.a1(mov_wbaddr[1]), // IN
-	.a2(imm_wbaddr[1]), // IN
-	.a3(ild_wbaddr[1]), // IN
-	.a4(xld_wbaddr[1]), // IN
-	.a5(div_wbaddr[1]), // IN
-	.a6(zero6[1]), // IN
-	.a7(zero6[1]), // IN
-	.s0(hasel_0), // IN
-	.s1(hasel_1), // IN
-	.s2(hasel_2)  // IN
+	.z /* OUT */ (hwbaddr[1]),
+	.a0 /* IN */ (alu_wbaddr[1]),
+	.a1 /* IN */ (mov_wbaddr[1]),
+	.a2 /* IN */ (imm_wbaddr[1]),
+	.a3 /* IN */ (ild_wbaddr[1]),
+	.a4 /* IN */ (xld_wbaddr[1]),
+	.a5 /* IN */ (div_wbaddr[1]),
+	.a6 /* IN */ (zero6[1]),
+	.a7 /* IN */ (zero6[1]),
+	.s0 /* IN */ (hasel_0),
+	.s1 /* IN */ (hasel_1),
+	.s2 /* IN */ (hasel_2)
 );
 mx8 hwbaddr_inst_2
 (
-	.z(hwbaddr[2]), // OUT
-	.a0(alu_wbaddr[2]), // IN
-	.a1(mov_wbaddr[2]), // IN
-	.a2(imm_wbaddr[2]), // IN
-	.a3(ild_wbaddr[2]), // IN
-	.a4(xld_wbaddr[2]), // IN
-	.a5(div_wbaddr[2]), // IN
-	.a6(zero6[2]), // IN
-	.a7(zero6[2]), // IN
-	.s0(hasel_0), // IN
-	.s1(hasel_1), // IN
-	.s2(hasel_2)  // IN
+	.z /* OUT */ (hwbaddr[2]),
+	.a0 /* IN */ (alu_wbaddr[2]),
+	.a1 /* IN */ (mov_wbaddr[2]),
+	.a2 /* IN */ (imm_wbaddr[2]),
+	.a3 /* IN */ (ild_wbaddr[2]),
+	.a4 /* IN */ (xld_wbaddr[2]),
+	.a5 /* IN */ (div_wbaddr[2]),
+	.a6 /* IN */ (zero6[2]),
+	.a7 /* IN */ (zero6[2]),
+	.s0 /* IN */ (hasel_0),
+	.s1 /* IN */ (hasel_1),
+	.s2 /* IN */ (hasel_2)
 );
 mx8 hwbaddr_inst_3
 (
-	.z(hwbaddr[3]), // OUT
-	.a0(alu_wbaddr[3]), // IN
-	.a1(mov_wbaddr[3]), // IN
-	.a2(imm_wbaddr[3]), // IN
-	.a3(ild_wbaddr[3]), // IN
-	.a4(xld_wbaddr[3]), // IN
-	.a5(div_wbaddr[3]), // IN
-	.a6(zero6[3]), // IN
-	.a7(zero6[3]), // IN
-	.s0(hasel_0), // IN
-	.s1(hasel_1), // IN
-	.s2(hasel_2)  // IN
+	.z /* OUT */ (hwbaddr[3]),
+	.a0 /* IN */ (alu_wbaddr[3]),
+	.a1 /* IN */ (mov_wbaddr[3]),
+	.a2 /* IN */ (imm_wbaddr[3]),
+	.a3 /* IN */ (ild_wbaddr[3]),
+	.a4 /* IN */ (xld_wbaddr[3]),
+	.a5 /* IN */ (div_wbaddr[3]),
+	.a6 /* IN */ (zero6[3]),
+	.a7 /* IN */ (zero6[3]),
+	.s0 /* IN */ (hasel_0),
+	.s1 /* IN */ (hasel_1),
+	.s2 /* IN */ (hasel_2)
 );
 mx8 hwbaddr_inst_4
 (
-	.z(hwbaddr[4]), // OUT
-	.a0(alu_wbaddr[4]), // IN
-	.a1(mov_wbaddr[4]), // IN
-	.a2(imm_wbaddr[4]), // IN
-	.a3(ild_wbaddr[4]), // IN
-	.a4(xld_wbaddr[4]), // IN
-	.a5(div_wbaddr[4]), // IN
-	.a6(zero6[4]), // IN
-	.a7(zero6[4]), // IN
-	.s0(hasel_0), // IN
-	.s1(hasel_1), // IN
-	.s2(hasel_2)  // IN
+	.z /* OUT */ (hwbaddr[4]),
+	.a0 /* IN */ (alu_wbaddr[4]),
+	.a1 /* IN */ (mov_wbaddr[4]),
+	.a2 /* IN */ (imm_wbaddr[4]),
+	.a3 /* IN */ (ild_wbaddr[4]),
+	.a4 /* IN */ (xld_wbaddr[4]),
+	.a5 /* IN */ (div_wbaddr[4]),
+	.a6 /* IN */ (zero6[4]),
+	.a7 /* IN */ (zero6[4]),
+	.s0 /* IN */ (hasel_0),
+	.s1 /* IN */ (hasel_1),
+	.s2 /* IN */ (hasel_2)
 );
 mx8 hwbaddr_inst_5
 (
-	.z(hwbaddr[5]), // OUT
-	.a0(alu_wbaddr[5]), // IN
-	.a1(mov_wbaddr[5]), // IN
-	.a2(imm_wbaddr[5]), // IN
-	.a3(ild_wbaddr[5]), // IN
-	.a4(xld_wbaddr[5]), // IN
-	.a5(div_wbaddr[5]), // IN
-	.a6(zero6[5]), // IN
-	.a7(zero6[5]), // IN
-	.s0(hasel_0), // IN
-	.s1(hasel_1), // IN
-	.s2(hasel_2)  // IN
+	.z /* OUT */ (hwbaddr[5]),
+	.a0 /* IN */ (alu_wbaddr[5]),
+	.a1 /* IN */ (mov_wbaddr[5]),
+	.a2 /* IN */ (imm_wbaddr[5]),
+	.a3 /* IN */ (ild_wbaddr[5]),
+	.a4 /* IN */ (xld_wbaddr[5]),
+	.a5 /* IN */ (div_wbaddr[5]),
+	.a6 /* IN */ (zero6[5]),
+	.a7 /* IN */ (zero6[5]),
+	.s0 /* IN */ (hasel_0),
+	.s1 /* IN */ (hasel_1),
+	.s2 /* IN */ (hasel_2)
 );
 
 // SBOARD.NET (515) - sasel[0] : nd3
@@ -1758,93 +1758,93 @@ assign sasel_2 = ~(xld_wbacks_n & div_wbacks_n);
 // SBOARD.NET (519) - swbaddr : mx8
 mx8 swbaddr_inst_0
 (
-	.z(swbaddr[0]), // OUT
-	.a0(alu_wbaddr[0]), // IN
-	.a1(mov_wbaddr[0]), // IN
-	.a2(imm_wbaddr[0]), // IN
-	.a3(ild_wbaddr[0]), // IN
-	.a4(xld_wbaddr[0]), // IN
-	.a5(div_wbaddr[0]), // IN
-	.a6(zero6[0]), // IN
-	.a7(zero6[0]), // IN
-	.s0(sasel_0), // IN
-	.s1(sasel_1), // IN
-	.s2(sasel_2)  // IN
+	.z /* OUT */ (swbaddr[0]),
+	.a0 /* IN */ (alu_wbaddr[0]),
+	.a1 /* IN */ (mov_wbaddr[0]),
+	.a2 /* IN */ (imm_wbaddr[0]),
+	.a3 /* IN */ (ild_wbaddr[0]),
+	.a4 /* IN */ (xld_wbaddr[0]),
+	.a5 /* IN */ (div_wbaddr[0]),
+	.a6 /* IN */ (zero6[0]),
+	.a7 /* IN */ (zero6[0]),
+	.s0 /* IN */ (sasel_0),
+	.s1 /* IN */ (sasel_1),
+	.s2 /* IN */ (sasel_2)
 );
 mx8 swbaddr_inst_1
 (
-	.z(swbaddr[1]), // OUT
-	.a0(alu_wbaddr[1]), // IN
-	.a1(mov_wbaddr[1]), // IN
-	.a2(imm_wbaddr[1]), // IN
-	.a3(ild_wbaddr[1]), // IN
-	.a4(xld_wbaddr[1]), // IN
-	.a5(div_wbaddr[1]), // IN
-	.a6(zero6[1]), // IN
-	.a7(zero6[1]), // IN
-	.s0(sasel_0), // IN
-	.s1(sasel_1), // IN
-	.s2(sasel_2)  // IN
+	.z /* OUT */ (swbaddr[1]),
+	.a0 /* IN */ (alu_wbaddr[1]),
+	.a1 /* IN */ (mov_wbaddr[1]),
+	.a2 /* IN */ (imm_wbaddr[1]),
+	.a3 /* IN */ (ild_wbaddr[1]),
+	.a4 /* IN */ (xld_wbaddr[1]),
+	.a5 /* IN */ (div_wbaddr[1]),
+	.a6 /* IN */ (zero6[1]),
+	.a7 /* IN */ (zero6[1]),
+	.s0 /* IN */ (sasel_0),
+	.s1 /* IN */ (sasel_1),
+	.s2 /* IN */ (sasel_2)
 );
 mx8 swbaddr_inst_2
 (
-	.z(swbaddr[2]), // OUT
-	.a0(alu_wbaddr[2]), // IN
-	.a1(mov_wbaddr[2]), // IN
-	.a2(imm_wbaddr[2]), // IN
-	.a3(ild_wbaddr[2]), // IN
-	.a4(xld_wbaddr[2]), // IN
-	.a5(div_wbaddr[2]), // IN
-	.a6(zero6[2]), // IN
-	.a7(zero6[2]), // IN
-	.s0(sasel_0), // IN
-	.s1(sasel_1), // IN
-	.s2(sasel_2)  // IN
+	.z /* OUT */ (swbaddr[2]),
+	.a0 /* IN */ (alu_wbaddr[2]),
+	.a1 /* IN */ (mov_wbaddr[2]),
+	.a2 /* IN */ (imm_wbaddr[2]),
+	.a3 /* IN */ (ild_wbaddr[2]),
+	.a4 /* IN */ (xld_wbaddr[2]),
+	.a5 /* IN */ (div_wbaddr[2]),
+	.a6 /* IN */ (zero6[2]),
+	.a7 /* IN */ (zero6[2]),
+	.s0 /* IN */ (sasel_0),
+	.s1 /* IN */ (sasel_1),
+	.s2 /* IN */ (sasel_2)
 );
 mx8 swbaddr_inst_3
 (
-	.z(swbaddr[3]), // OUT
-	.a0(alu_wbaddr[3]), // IN
-	.a1(mov_wbaddr[3]), // IN
-	.a2(imm_wbaddr[3]), // IN
-	.a3(ild_wbaddr[3]), // IN
-	.a4(xld_wbaddr[3]), // IN
-	.a5(div_wbaddr[3]), // IN
-	.a6(zero6[3]), // IN
-	.a7(zero6[3]), // IN
-	.s0(sasel_0), // IN
-	.s1(sasel_1), // IN
-	.s2(sasel_2)  // IN
+	.z /* OUT */ (swbaddr[3]),
+	.a0 /* IN */ (alu_wbaddr[3]),
+	.a1 /* IN */ (mov_wbaddr[3]),
+	.a2 /* IN */ (imm_wbaddr[3]),
+	.a3 /* IN */ (ild_wbaddr[3]),
+	.a4 /* IN */ (xld_wbaddr[3]),
+	.a5 /* IN */ (div_wbaddr[3]),
+	.a6 /* IN */ (zero6[3]),
+	.a7 /* IN */ (zero6[3]),
+	.s0 /* IN */ (sasel_0),
+	.s1 /* IN */ (sasel_1),
+	.s2 /* IN */ (sasel_2)
 );
 mx8 swbaddr_inst_4
 (
-	.z(swbaddr[4]), // OUT
-	.a0(alu_wbaddr[4]), // IN
-	.a1(mov_wbaddr[4]), // IN
-	.a2(imm_wbaddr[4]), // IN
-	.a3(ild_wbaddr[4]), // IN
-	.a4(xld_wbaddr[4]), // IN
-	.a5(div_wbaddr[4]), // IN
-	.a6(zero6[4]), // IN
-	.a7(zero6[4]), // IN
-	.s0(sasel_0), // IN
-	.s1(sasel_1), // IN
-	.s2(sasel_2)  // IN
+	.z /* OUT */ (swbaddr[4]),
+	.a0 /* IN */ (alu_wbaddr[4]),
+	.a1 /* IN */ (mov_wbaddr[4]),
+	.a2 /* IN */ (imm_wbaddr[4]),
+	.a3 /* IN */ (ild_wbaddr[4]),
+	.a4 /* IN */ (xld_wbaddr[4]),
+	.a5 /* IN */ (div_wbaddr[4]),
+	.a6 /* IN */ (zero6[4]),
+	.a7 /* IN */ (zero6[4]),
+	.s0 /* IN */ (sasel_0),
+	.s1 /* IN */ (sasel_1),
+	.s2 /* IN */ (sasel_2)
 );
 mx8 swbaddr_inst_5
 (
-	.z(swbaddr[5]), // OUT
-	.a0(alu_wbaddr[5]), // IN
-	.a1(mov_wbaddr[5]), // IN
-	.a2(imm_wbaddr[5]), // IN
-	.a3(ild_wbaddr[5]), // IN
-	.a4(xld_wbaddr[5]), // IN
-	.a5(div_wbaddr[5]), // IN
-	.a6(zero6[5]), // IN
-	.a7(zero6[5]), // IN
-	.s0(sasel_0), // IN
-	.s1(sasel_1), // IN
-	.s2(sasel_2)  // IN
+	.z /* OUT */ (swbaddr[5]),
+	.a0 /* IN */ (alu_wbaddr[5]),
+	.a1 /* IN */ (mov_wbaddr[5]),
+	.a2 /* IN */ (imm_wbaddr[5]),
+	.a3 /* IN */ (ild_wbaddr[5]),
+	.a4 /* IN */ (xld_wbaddr[5]),
+	.a5 /* IN */ (div_wbaddr[5]),
+	.a6 /* IN */ (zero6[5]),
+	.a7 /* IN */ (zero6[5]),
+	.s0 /* IN */ (sasel_0),
+	.s1 /* IN */ (sasel_1),
+	.s2 /* IN */ (sasel_2)
 );
 
 // SBOARD.NET (531) - wbdcmpt[0-5] : enp
@@ -1867,25 +1867,25 @@ assign wbdeqi = wbdeqit & wbdcmpt_4 & wbdcmpt_5;
 // SBOARD.NET (536) - wbdeq\ : fd1q
 fd1q wbdeq_n_inst
 (
-	.q(wbdeq_n), // OUT
-	.d(wbdeqi_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (wbdeq_n),
+	.d /* IN */ (wbdeqi_n),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (537) - wbscmp : cmp6i
 cmp6i wbscmp_inst
 (
-	.equal_n(wbseqi_n), // OUT
-	.a({hwbaddr[0],hwbaddr[1],hwbaddr[2],hwbaddr[3],hwbaddr[4],hwbaddr[5]}), // IN
-	.b({srcanwi[0],srcanwi[1],srcanwi[2],srcanwi[3],srcanwi[4],srcanwi[5]})  // IN
+	.equal_n /* OUT */ (wbseqi_n),
+	.a /* IN */ ({hwbaddr[0],hwbaddr[1],hwbaddr[2],hwbaddr[3],hwbaddr[4],hwbaddr[5]}),
+	.b /* IN */ ({srcanwi[0],srcanwi[1],srcanwi[2],srcanwi[3],srcanwi[4],srcanwi[5]})
 );
 
 // SBOARD.NET (538) - wbdsq : fd1q
 fd1q wbdsq_inst
 (
-	.q(wbseq_n), // OUT
-	.d(wbseqi_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (wbseq_n),
+	.d /* IN */ (wbseqi_n),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (539) - bothen : an3
@@ -1924,10 +1924,10 @@ assign dstwbwei = ~(dwbt_0 & dwbt_2 & dwbt_3);
 // SBOARD.NET (561) - dstwbwe : fd1p
 fd1 dstwbwe_inst
 (
-	.q(dstwbwet), // OUT
-	.qn(dstwbwe_n), // OUT
-	.d(dstwbwei), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbwet),
+	.qn /* OUT */ (dstwbwe_n),
+	.d /* IN */ (dstwbwei),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (562) - dstwbweb : nivm
@@ -1945,191 +1945,191 @@ assign srcwbwei = ~(swbt_0 & swbt_1);
 // SBOARD.NET (576) - srcwbwe : fd1qm
 fd1q srcwbwe_inst
 (
-	.q(srcwbwe), // OUT
-	.d(srcwbwei), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbwe),
+	.d /* IN */ (srcwbwei),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (580) - dstwbaddr : fd1q
 fd1q dstwbaddr_inst_0
 (
-	.q(dstwbaddr[0]), // OUT
-	.d(hwbaddr[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbaddr[0]),
+	.d /* IN */ (hwbaddr[0]),
+	.cp /* IN */ (clk)
 );
 fd1q dstwbaddr_inst_1
 (
-	.q(dstwbaddr[1]), // OUT
-	.d(hwbaddr[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbaddr[1]),
+	.d /* IN */ (hwbaddr[1]),
+	.cp /* IN */ (clk)
 );
 fd1q dstwbaddr_inst_2
 (
-	.q(dstwbaddr[2]), // OUT
-	.d(hwbaddr[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbaddr[2]),
+	.d /* IN */ (hwbaddr[2]),
+	.cp /* IN */ (clk)
 );
 fd1q dstwbaddr_inst_3
 (
-	.q(dstwbaddr[3]), // OUT
-	.d(hwbaddr[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbaddr[3]),
+	.d /* IN */ (hwbaddr[3]),
+	.cp /* IN */ (clk)
 );
 fd1q dstwbaddr_inst_4
 (
-	.q(dstwbaddr[4]), // OUT
-	.d(hwbaddr[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbaddr[4]),
+	.d /* IN */ (hwbaddr[4]),
+	.cp /* IN */ (clk)
 );
 fd1q dstwbaddr_inst_5
 (
-	.q(dstwbaddr[5]), // OUT
-	.d(hwbaddr[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstwbaddr[5]),
+	.d /* IN */ (hwbaddr[5]),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (581) - dsta : mx2
 mx2 dsta_inst_0
 (
-	.z(dsta[0]), // OUT
-	.a0(dstanw[0]), // IN
-	.a1(dstwbaddr[0]), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (dsta[0]),
+	.a0 /* IN */ (dstanw[0]),
+	.a1 /* IN */ (dstwbaddr[0]),
+	.s /* IN */ (dstwbwe)
 );
 mx2 dsta_inst_1
 (
-	.z(dsta[1]), // OUT
-	.a0(dstanw[1]), // IN
-	.a1(dstwbaddr[1]), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (dsta[1]),
+	.a0 /* IN */ (dstanw[1]),
+	.a1 /* IN */ (dstwbaddr[1]),
+	.s /* IN */ (dstwbwe)
 );
 mx2 dsta_inst_2
 (
-	.z(dsta[2]), // OUT
-	.a0(dstanw[2]), // IN
-	.a1(dstwbaddr[2]), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (dsta[2]),
+	.a0 /* IN */ (dstanw[2]),
+	.a1 /* IN */ (dstwbaddr[2]),
+	.s /* IN */ (dstwbwe)
 );
 mx2 dsta_inst_3
 (
-	.z(dsta[3]), // OUT
-	.a0(dstanw[3]), // IN
-	.a1(dstwbaddr[3]), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (dsta[3]),
+	.a0 /* IN */ (dstanw[3]),
+	.a1 /* IN */ (dstwbaddr[3]),
+	.s /* IN */ (dstwbwe)
 );
 mx2 dsta_inst_4
 (
-	.z(dsta[4]), // OUT
-	.a0(dstanw[4]), // IN
-	.a1(dstwbaddr[4]), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (dsta[4]),
+	.a0 /* IN */ (dstanw[4]),
+	.a1 /* IN */ (dstwbaddr[4]),
+	.s /* IN */ (dstwbwe)
 );
 mx2 dsta_inst_5
 (
-	.z(dsta[5]), // OUT
-	.a0(dstanw[5]), // IN
-	.a1(dstwbaddr[5]), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (dsta[5]),
+	.a0 /* IN */ (dstanw[5]),
+	.a1 /* IN */ (dstwbaddr[5]),
+	.s /* IN */ (dstwbwe)
 );
 
 // SBOARD.NET (585) - srcwbaddr : fd1q
 fd1q srcwbaddr_inst_0
 (
-	.q(srcwbaddr[0]), // OUT
-	.d(swbaddr[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbaddr[0]),
+	.d /* IN */ (swbaddr[0]),
+	.cp /* IN */ (clk)
 );
 fd1q srcwbaddr_inst_1
 (
-	.q(srcwbaddr[1]), // OUT
-	.d(swbaddr[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbaddr[1]),
+	.d /* IN */ (swbaddr[1]),
+	.cp /* IN */ (clk)
 );
 fd1q srcwbaddr_inst_2
 (
-	.q(srcwbaddr[2]), // OUT
-	.d(swbaddr[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbaddr[2]),
+	.d /* IN */ (swbaddr[2]),
+	.cp /* IN */ (clk)
 );
 fd1q srcwbaddr_inst_3
 (
-	.q(srcwbaddr[3]), // OUT
-	.d(swbaddr[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbaddr[3]),
+	.d /* IN */ (swbaddr[3]),
+	.cp /* IN */ (clk)
 );
 fd1q srcwbaddr_inst_4
 (
-	.q(srcwbaddr[4]), // OUT
-	.d(swbaddr[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbaddr[4]),
+	.d /* IN */ (swbaddr[4]),
+	.cp /* IN */ (clk)
 );
 fd1q srcwbaddr_inst_5
 (
-	.q(srcwbaddr[5]), // OUT
-	.d(swbaddr[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (srcwbaddr[5]),
+	.d /* IN */ (swbaddr[5]),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (586) - srca : mx4
 mx4 srca_inst_0
 (
-	.z(srca[0]), // OUT
-	.a0(srcanw[0]), // IN
-	.a1(srcwbaddr[0]), // IN
-	.a2(srcanw[0]), // IN
-	.a3(dstwbaddr[0]), // IN
-	.s0(srcwbwe), // IN
-	.s1(dstwbwe_n)  // IN
+	.z /* OUT */ (srca[0]),
+	.a0 /* IN */ (srcanw[0]),
+	.a1 /* IN */ (srcwbaddr[0]),
+	.a2 /* IN */ (srcanw[0]),
+	.a3 /* IN */ (dstwbaddr[0]),
+	.s0 /* IN */ (srcwbwe),
+	.s1 /* IN */ (dstwbwe_n)
 );
 mx4 srca_inst_1
 (
-	.z(srca[1]), // OUT
-	.a0(srcanw[1]), // IN
-	.a1(srcwbaddr[1]), // IN
-	.a2(srcanw[1]), // IN
-	.a3(dstwbaddr[1]), // IN
-	.s0(srcwbwe), // IN
-	.s1(dstwbwe_n)  // IN
+	.z /* OUT */ (srca[1]),
+	.a0 /* IN */ (srcanw[1]),
+	.a1 /* IN */ (srcwbaddr[1]),
+	.a2 /* IN */ (srcanw[1]),
+	.a3 /* IN */ (dstwbaddr[1]),
+	.s0 /* IN */ (srcwbwe),
+	.s1 /* IN */ (dstwbwe_n)
 );
 mx4 srca_inst_2
 (
-	.z(srca[2]), // OUT
-	.a0(srcanw[2]), // IN
-	.a1(srcwbaddr[2]), // IN
-	.a2(srcanw[2]), // IN
-	.a3(dstwbaddr[2]), // IN
-	.s0(srcwbwe), // IN
-	.s1(dstwbwe_n)  // IN
+	.z /* OUT */ (srca[2]),
+	.a0 /* IN */ (srcanw[2]),
+	.a1 /* IN */ (srcwbaddr[2]),
+	.a2 /* IN */ (srcanw[2]),
+	.a3 /* IN */ (dstwbaddr[2]),
+	.s0 /* IN */ (srcwbwe),
+	.s1 /* IN */ (dstwbwe_n)
 );
 mx4 srca_inst_3
 (
-	.z(srca[3]), // OUT
-	.a0(srcanw[3]), // IN
-	.a1(srcwbaddr[3]), // IN
-	.a2(srcanw[3]), // IN
-	.a3(dstwbaddr[3]), // IN
-	.s0(srcwbwe), // IN
-	.s1(dstwbwe_n)  // IN
+	.z /* OUT */ (srca[3]),
+	.a0 /* IN */ (srcanw[3]),
+	.a1 /* IN */ (srcwbaddr[3]),
+	.a2 /* IN */ (srcanw[3]),
+	.a3 /* IN */ (dstwbaddr[3]),
+	.s0 /* IN */ (srcwbwe),
+	.s1 /* IN */ (dstwbwe_n)
 );
 mx4 srca_inst_4
 (
-	.z(srca[4]), // OUT
-	.a0(srcanw[4]), // IN
-	.a1(srcwbaddr[4]), // IN
-	.a2(srcanw[4]), // IN
-	.a3(dstwbaddr[4]), // IN
-	.s0(srcwbwe), // IN
-	.s1(dstwbwe_n)  // IN
+	.z /* OUT */ (srca[4]),
+	.a0 /* IN */ (srcanw[4]),
+	.a1 /* IN */ (srcwbaddr[4]),
+	.a2 /* IN */ (srcanw[4]),
+	.a3 /* IN */ (dstwbaddr[4]),
+	.s0 /* IN */ (srcwbwe),
+	.s1 /* IN */ (dstwbwe_n)
 );
 mx4 srca_inst_5
 (
-	.z(srca[5]), // OUT
-	.a0(srcanw[5]), // IN
-	.a1(srcwbaddr[5]), // IN
-	.a2(srcanw[5]), // IN
-	.a3(dstwbaddr[5]), // IN
-	.s0(srcwbwe), // IN
-	.s1(dstwbwe_n)  // IN
+	.z /* OUT */ (srca[5]),
+	.a0 /* IN */ (srcanw[5]),
+	.a1 /* IN */ (srcwbaddr[5]),
+	.a2 /* IN */ (srcanw[5]),
+	.a3 /* IN */ (dstwbaddr[5]),
+	.s0 /* IN */ (srcwbwe),
+	.s1 /* IN */ (dstwbwe_n)
 );
 
 // SBOARD.NET (596) - xldd_selt : nd2
@@ -2138,9 +2138,9 @@ assign xldd_selt = ~(xld_wbackh_n & xld_wbacks_n);
 // SBOARD.NET (597) - xldd_sel : fd1qu
 fd1q xldd_sel_inst
 (
-	.q(xldd_sel), // OUT
-	.d(xldd_selt), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (xldd_sel),
+	.d /* IN */ (xldd_selt),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (598) - xldd_sel\ : iv
@@ -2152,331 +2152,331 @@ assign divd_selt = ~(div_wbackh_n & div_wbacks_n);
 // SBOARD.NET (600) - divd_sel : fd1qu
 fd1q divd_sel_inst
 (
-	.q(divd_sel), // OUT
-	.d(divd_selt), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (divd_sel),
+	.d /* IN */ (divd_selt),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (601) - mxdata : mx4
 mx4 mxdata_inst_0
 (
-	.z(mxdata[0]), // OUT
-	.a0(immdata[0]), // IN
-	.a1(quotient[0]), // IN
-	.a2(xld_data[0]), // IN
-	.a3(xld_data[0]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[0]),
+	.a0 /* IN */ (immdata[0]),
+	.a1 /* IN */ (quotient[0]),
+	.a2 /* IN */ (xld_data[0]),
+	.a3 /* IN */ (xld_data[0]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_1
 (
-	.z(mxdata[1]), // OUT
-	.a0(immdata[1]), // IN
-	.a1(quotient[1]), // IN
-	.a2(xld_data[1]), // IN
-	.a3(xld_data[1]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[1]),
+	.a0 /* IN */ (immdata[1]),
+	.a1 /* IN */ (quotient[1]),
+	.a2 /* IN */ (xld_data[1]),
+	.a3 /* IN */ (xld_data[1]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_2
 (
-	.z(mxdata[2]), // OUT
-	.a0(immdata[2]), // IN
-	.a1(quotient[2]), // IN
-	.a2(xld_data[2]), // IN
-	.a3(xld_data[2]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[2]),
+	.a0 /* IN */ (immdata[2]),
+	.a1 /* IN */ (quotient[2]),
+	.a2 /* IN */ (xld_data[2]),
+	.a3 /* IN */ (xld_data[2]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_3
 (
-	.z(mxdata[3]), // OUT
-	.a0(immdata[3]), // IN
-	.a1(quotient[3]), // IN
-	.a2(xld_data[3]), // IN
-	.a3(xld_data[3]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[3]),
+	.a0 /* IN */ (immdata[3]),
+	.a1 /* IN */ (quotient[3]),
+	.a2 /* IN */ (xld_data[3]),
+	.a3 /* IN */ (xld_data[3]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_4
 (
-	.z(mxdata[4]), // OUT
-	.a0(immdata[4]), // IN
-	.a1(quotient[4]), // IN
-	.a2(xld_data[4]), // IN
-	.a3(xld_data[4]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[4]),
+	.a0 /* IN */ (immdata[4]),
+	.a1 /* IN */ (quotient[4]),
+	.a2 /* IN */ (xld_data[4]),
+	.a3 /* IN */ (xld_data[4]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_5
 (
-	.z(mxdata[5]), // OUT
-	.a0(immdata[5]), // IN
-	.a1(quotient[5]), // IN
-	.a2(xld_data[5]), // IN
-	.a3(xld_data[5]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[5]),
+	.a0 /* IN */ (immdata[5]),
+	.a1 /* IN */ (quotient[5]),
+	.a2 /* IN */ (xld_data[5]),
+	.a3 /* IN */ (xld_data[5]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_6
 (
-	.z(mxdata[6]), // OUT
-	.a0(immdata[6]), // IN
-	.a1(quotient[6]), // IN
-	.a2(xld_data[6]), // IN
-	.a3(xld_data[6]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[6]),
+	.a0 /* IN */ (immdata[6]),
+	.a1 /* IN */ (quotient[6]),
+	.a2 /* IN */ (xld_data[6]),
+	.a3 /* IN */ (xld_data[6]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_7
 (
-	.z(mxdata[7]), // OUT
-	.a0(immdata[7]), // IN
-	.a1(quotient[7]), // IN
-	.a2(xld_data[7]), // IN
-	.a3(xld_data[7]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[7]),
+	.a0 /* IN */ (immdata[7]),
+	.a1 /* IN */ (quotient[7]),
+	.a2 /* IN */ (xld_data[7]),
+	.a3 /* IN */ (xld_data[7]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_8
 (
-	.z(mxdata[8]), // OUT
-	.a0(immdata[8]), // IN
-	.a1(quotient[8]), // IN
-	.a2(xld_data[8]), // IN
-	.a3(xld_data[8]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[8]),
+	.a0 /* IN */ (immdata[8]),
+	.a1 /* IN */ (quotient[8]),
+	.a2 /* IN */ (xld_data[8]),
+	.a3 /* IN */ (xld_data[8]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_9
 (
-	.z(mxdata[9]), // OUT
-	.a0(immdata[9]), // IN
-	.a1(quotient[9]), // IN
-	.a2(xld_data[9]), // IN
-	.a3(xld_data[9]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[9]),
+	.a0 /* IN */ (immdata[9]),
+	.a1 /* IN */ (quotient[9]),
+	.a2 /* IN */ (xld_data[9]),
+	.a3 /* IN */ (xld_data[9]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_10
 (
-	.z(mxdata[10]), // OUT
-	.a0(immdata[10]), // IN
-	.a1(quotient[10]), // IN
-	.a2(xld_data[10]), // IN
-	.a3(xld_data[10]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[10]),
+	.a0 /* IN */ (immdata[10]),
+	.a1 /* IN */ (quotient[10]),
+	.a2 /* IN */ (xld_data[10]),
+	.a3 /* IN */ (xld_data[10]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_11
 (
-	.z(mxdata[11]), // OUT
-	.a0(immdata[11]), // IN
-	.a1(quotient[11]), // IN
-	.a2(xld_data[11]), // IN
-	.a3(xld_data[11]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[11]),
+	.a0 /* IN */ (immdata[11]),
+	.a1 /* IN */ (quotient[11]),
+	.a2 /* IN */ (xld_data[11]),
+	.a3 /* IN */ (xld_data[11]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_12
 (
-	.z(mxdata[12]), // OUT
-	.a0(immdata[12]), // IN
-	.a1(quotient[12]), // IN
-	.a2(xld_data[12]), // IN
-	.a3(xld_data[12]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[12]),
+	.a0 /* IN */ (immdata[12]),
+	.a1 /* IN */ (quotient[12]),
+	.a2 /* IN */ (xld_data[12]),
+	.a3 /* IN */ (xld_data[12]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_13
 (
-	.z(mxdata[13]), // OUT
-	.a0(immdata[13]), // IN
-	.a1(quotient[13]), // IN
-	.a2(xld_data[13]), // IN
-	.a3(xld_data[13]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[13]),
+	.a0 /* IN */ (immdata[13]),
+	.a1 /* IN */ (quotient[13]),
+	.a2 /* IN */ (xld_data[13]),
+	.a3 /* IN */ (xld_data[13]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_14
 (
-	.z(mxdata[14]), // OUT
-	.a0(immdata[14]), // IN
-	.a1(quotient[14]), // IN
-	.a2(xld_data[14]), // IN
-	.a3(xld_data[14]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[14]),
+	.a0 /* IN */ (immdata[14]),
+	.a1 /* IN */ (quotient[14]),
+	.a2 /* IN */ (xld_data[14]),
+	.a3 /* IN */ (xld_data[14]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_15
 (
-	.z(mxdata[15]), // OUT
-	.a0(immdata[15]), // IN
-	.a1(quotient[15]), // IN
-	.a2(xld_data[15]), // IN
-	.a3(xld_data[15]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[15]),
+	.a0 /* IN */ (immdata[15]),
+	.a1 /* IN */ (quotient[15]),
+	.a2 /* IN */ (xld_data[15]),
+	.a3 /* IN */ (xld_data[15]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_16
 (
-	.z(mxdata[16]), // OUT
-	.a0(immdata[16]), // IN
-	.a1(quotient[16]), // IN
-	.a2(xld_data[16]), // IN
-	.a3(xld_data[16]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[16]),
+	.a0 /* IN */ (immdata[16]),
+	.a1 /* IN */ (quotient[16]),
+	.a2 /* IN */ (xld_data[16]),
+	.a3 /* IN */ (xld_data[16]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_17
 (
-	.z(mxdata[17]), // OUT
-	.a0(immdata[17]), // IN
-	.a1(quotient[17]), // IN
-	.a2(xld_data[17]), // IN
-	.a3(xld_data[17]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[17]),
+	.a0 /* IN */ (immdata[17]),
+	.a1 /* IN */ (quotient[17]),
+	.a2 /* IN */ (xld_data[17]),
+	.a3 /* IN */ (xld_data[17]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_18
 (
-	.z(mxdata[18]), // OUT
-	.a0(immdata[18]), // IN
-	.a1(quotient[18]), // IN
-	.a2(xld_data[18]), // IN
-	.a3(xld_data[18]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[18]),
+	.a0 /* IN */ (immdata[18]),
+	.a1 /* IN */ (quotient[18]),
+	.a2 /* IN */ (xld_data[18]),
+	.a3 /* IN */ (xld_data[18]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_19
 (
-	.z(mxdata[19]), // OUT
-	.a0(immdata[19]), // IN
-	.a1(quotient[19]), // IN
-	.a2(xld_data[19]), // IN
-	.a3(xld_data[19]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[19]),
+	.a0 /* IN */ (immdata[19]),
+	.a1 /* IN */ (quotient[19]),
+	.a2 /* IN */ (xld_data[19]),
+	.a3 /* IN */ (xld_data[19]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_20
 (
-	.z(mxdata[20]), // OUT
-	.a0(immdata[20]), // IN
-	.a1(quotient[20]), // IN
-	.a2(xld_data[20]), // IN
-	.a3(xld_data[20]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[20]),
+	.a0 /* IN */ (immdata[20]),
+	.a1 /* IN */ (quotient[20]),
+	.a2 /* IN */ (xld_data[20]),
+	.a3 /* IN */ (xld_data[20]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_21
 (
-	.z(mxdata[21]), // OUT
-	.a0(immdata[21]), // IN
-	.a1(quotient[21]), // IN
-	.a2(xld_data[21]), // IN
-	.a3(xld_data[21]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[21]),
+	.a0 /* IN */ (immdata[21]),
+	.a1 /* IN */ (quotient[21]),
+	.a2 /* IN */ (xld_data[21]),
+	.a3 /* IN */ (xld_data[21]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_22
 (
-	.z(mxdata[22]), // OUT
-	.a0(immdata[22]), // IN
-	.a1(quotient[22]), // IN
-	.a2(xld_data[22]), // IN
-	.a3(xld_data[22]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[22]),
+	.a0 /* IN */ (immdata[22]),
+	.a1 /* IN */ (quotient[22]),
+	.a2 /* IN */ (xld_data[22]),
+	.a3 /* IN */ (xld_data[22]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_23
 (
-	.z(mxdata[23]), // OUT
-	.a0(immdata[23]), // IN
-	.a1(quotient[23]), // IN
-	.a2(xld_data[23]), // IN
-	.a3(xld_data[23]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[23]),
+	.a0 /* IN */ (immdata[23]),
+	.a1 /* IN */ (quotient[23]),
+	.a2 /* IN */ (xld_data[23]),
+	.a3 /* IN */ (xld_data[23]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_24
 (
-	.z(mxdata[24]), // OUT
-	.a0(immdata[24]), // IN
-	.a1(quotient[24]), // IN
-	.a2(xld_data[24]), // IN
-	.a3(xld_data[24]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[24]),
+	.a0 /* IN */ (immdata[24]),
+	.a1 /* IN */ (quotient[24]),
+	.a2 /* IN */ (xld_data[24]),
+	.a3 /* IN */ (xld_data[24]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_25
 (
-	.z(mxdata[25]), // OUT
-	.a0(immdata[25]), // IN
-	.a1(quotient[25]), // IN
-	.a2(xld_data[25]), // IN
-	.a3(xld_data[25]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[25]),
+	.a0 /* IN */ (immdata[25]),
+	.a1 /* IN */ (quotient[25]),
+	.a2 /* IN */ (xld_data[25]),
+	.a3 /* IN */ (xld_data[25]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_26
 (
-	.z(mxdata[26]), // OUT
-	.a0(immdata[26]), // IN
-	.a1(quotient[26]), // IN
-	.a2(xld_data[26]), // IN
-	.a3(xld_data[26]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[26]),
+	.a0 /* IN */ (immdata[26]),
+	.a1 /* IN */ (quotient[26]),
+	.a2 /* IN */ (xld_data[26]),
+	.a3 /* IN */ (xld_data[26]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_27
 (
-	.z(mxdata[27]), // OUT
-	.a0(immdata[27]), // IN
-	.a1(quotient[27]), // IN
-	.a2(xld_data[27]), // IN
-	.a3(xld_data[27]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[27]),
+	.a0 /* IN */ (immdata[27]),
+	.a1 /* IN */ (quotient[27]),
+	.a2 /* IN */ (xld_data[27]),
+	.a3 /* IN */ (xld_data[27]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_28
 (
-	.z(mxdata[28]), // OUT
-	.a0(immdata[28]), // IN
-	.a1(quotient[28]), // IN
-	.a2(xld_data[28]), // IN
-	.a3(xld_data[28]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[28]),
+	.a0 /* IN */ (immdata[28]),
+	.a1 /* IN */ (quotient[28]),
+	.a2 /* IN */ (xld_data[28]),
+	.a3 /* IN */ (xld_data[28]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_29
 (
-	.z(mxdata[29]), // OUT
-	.a0(immdata[29]), // IN
-	.a1(quotient[29]), // IN
-	.a2(xld_data[29]), // IN
-	.a3(xld_data[29]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[29]),
+	.a0 /* IN */ (immdata[29]),
+	.a1 /* IN */ (quotient[29]),
+	.a2 /* IN */ (xld_data[29]),
+	.a3 /* IN */ (xld_data[29]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_30
 (
-	.z(mxdata[30]), // OUT
-	.a0(immdata[30]), // IN
-	.a1(quotient[30]), // IN
-	.a2(xld_data[30]), // IN
-	.a3(xld_data[30]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[30]),
+	.a0 /* IN */ (immdata[30]),
+	.a1 /* IN */ (quotient[30]),
+	.a2 /* IN */ (xld_data[30]),
+	.a3 /* IN */ (xld_data[30]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 mx4 mxdata_inst_31
 (
-	.z(mxdata[31]), // OUT
-	.a0(immdata[31]), // IN
-	.a1(quotient[31]), // IN
-	.a2(xld_data[31]), // IN
-	.a3(xld_data[31]), // IN
-	.s0(divd_sel), // IN
-	.s1(xldd_sel)  // IN
+	.z /* OUT */ (mxdata[31]),
+	.a0 /* IN */ (immdata[31]),
+	.a1 /* IN */ (quotient[31]),
+	.a2 /* IN */ (xld_data[31]),
+	.a3 /* IN */ (xld_data[31]),
+	.s0 /* IN */ (divd_sel),
+	.s1 /* IN */ (xldd_sel)
 );
 
 // SBOARD.NET (609) - dwselt[0] : nd2
@@ -2488,15 +2488,15 @@ assign dwselt_1 = ~(ild_wbackh_n & mov_wbackh_n);
 // SBOARD.NET (611) - dwsel[0-1] : fd1q
 fd1q dwsel_from_0_to_1_inst_0
 (
-	.q(dwsel_0), // OUT
-	.d(dwselt_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dwsel_0),
+	.d /* IN */ (dwselt_0),
+	.cp /* IN */ (clk)
 );
 fd1q dwsel_from_0_to_1_inst_1
 (
-	.q(dwsel_1), // OUT
-	.d(dwselt_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dwsel_1),
+	.d /* IN */ (dwselt_1),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (612) - dwselb[0-1] : nivu
@@ -2506,323 +2506,323 @@ assign dwselb_1 = dwsel_1;
 // SBOARD.NET (613) - dstwdmux : mx4
 mx4 dstwdmux_inst_0
 (
-	.z(dstwd[0]), // OUT
-	.a0(mxdata[0]), // IN
-	.a1(result[0]), // IN
-	.a2(ild_data[0]), // IN
-	.a3(srcdp[0]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[0]),
+	.a0 /* IN */ (mxdata[0]),
+	.a1 /* IN */ (result[0]),
+	.a2 /* IN */ (ild_data[0]),
+	.a3 /* IN */ (srcdp[0]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_1
 (
-	.z(dstwd[1]), // OUT
-	.a0(mxdata[1]), // IN
-	.a1(result[1]), // IN
-	.a2(ild_data[1]), // IN
-	.a3(srcdp[1]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[1]),
+	.a0 /* IN */ (mxdata[1]),
+	.a1 /* IN */ (result[1]),
+	.a2 /* IN */ (ild_data[1]),
+	.a3 /* IN */ (srcdp[1]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_2
 (
-	.z(dstwd[2]), // OUT
-	.a0(mxdata[2]), // IN
-	.a1(result[2]), // IN
-	.a2(ild_data[2]), // IN
-	.a3(srcdp[2]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[2]),
+	.a0 /* IN */ (mxdata[2]),
+	.a1 /* IN */ (result[2]),
+	.a2 /* IN */ (ild_data[2]),
+	.a3 /* IN */ (srcdp[2]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_3
 (
-	.z(dstwd[3]), // OUT
-	.a0(mxdata[3]), // IN
-	.a1(result[3]), // IN
-	.a2(ild_data[3]), // IN
-	.a3(srcdp[3]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[3]),
+	.a0 /* IN */ (mxdata[3]),
+	.a1 /* IN */ (result[3]),
+	.a2 /* IN */ (ild_data[3]),
+	.a3 /* IN */ (srcdp[3]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_4
 (
-	.z(dstwd[4]), // OUT
-	.a0(mxdata[4]), // IN
-	.a1(result[4]), // IN
-	.a2(ild_data[4]), // IN
-	.a3(srcdp[4]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[4]),
+	.a0 /* IN */ (mxdata[4]),
+	.a1 /* IN */ (result[4]),
+	.a2 /* IN */ (ild_data[4]),
+	.a3 /* IN */ (srcdp[4]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_5
 (
-	.z(dstwd[5]), // OUT
-	.a0(mxdata[5]), // IN
-	.a1(result[5]), // IN
-	.a2(ild_data[5]), // IN
-	.a3(srcdp[5]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[5]),
+	.a0 /* IN */ (mxdata[5]),
+	.a1 /* IN */ (result[5]),
+	.a2 /* IN */ (ild_data[5]),
+	.a3 /* IN */ (srcdp[5]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_6
 (
-	.z(dstwd[6]), // OUT
-	.a0(mxdata[6]), // IN
-	.a1(result[6]), // IN
-	.a2(ild_data[6]), // IN
-	.a3(srcdp[6]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[6]),
+	.a0 /* IN */ (mxdata[6]),
+	.a1 /* IN */ (result[6]),
+	.a2 /* IN */ (ild_data[6]),
+	.a3 /* IN */ (srcdp[6]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_7
 (
-	.z(dstwd[7]), // OUT
-	.a0(mxdata[7]), // IN
-	.a1(result[7]), // IN
-	.a2(ild_data[7]), // IN
-	.a3(srcdp[7]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[7]),
+	.a0 /* IN */ (mxdata[7]),
+	.a1 /* IN */ (result[7]),
+	.a2 /* IN */ (ild_data[7]),
+	.a3 /* IN */ (srcdp[7]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_8
 (
-	.z(dstwd[8]), // OUT
-	.a0(mxdata[8]), // IN
-	.a1(result[8]), // IN
-	.a2(ild_data[8]), // IN
-	.a3(srcdp[8]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[8]),
+	.a0 /* IN */ (mxdata[8]),
+	.a1 /* IN */ (result[8]),
+	.a2 /* IN */ (ild_data[8]),
+	.a3 /* IN */ (srcdp[8]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_9
 (
-	.z(dstwd[9]), // OUT
-	.a0(mxdata[9]), // IN
-	.a1(result[9]), // IN
-	.a2(ild_data[9]), // IN
-	.a3(srcdp[9]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[9]),
+	.a0 /* IN */ (mxdata[9]),
+	.a1 /* IN */ (result[9]),
+	.a2 /* IN */ (ild_data[9]),
+	.a3 /* IN */ (srcdp[9]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_10
 (
-	.z(dstwd[10]), // OUT
-	.a0(mxdata[10]), // IN
-	.a1(result[10]), // IN
-	.a2(ild_data[10]), // IN
-	.a3(srcdp[10]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[10]),
+	.a0 /* IN */ (mxdata[10]),
+	.a1 /* IN */ (result[10]),
+	.a2 /* IN */ (ild_data[10]),
+	.a3 /* IN */ (srcdp[10]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_11
 (
-	.z(dstwd[11]), // OUT
-	.a0(mxdata[11]), // IN
-	.a1(result[11]), // IN
-	.a2(ild_data[11]), // IN
-	.a3(srcdp[11]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[11]),
+	.a0 /* IN */ (mxdata[11]),
+	.a1 /* IN */ (result[11]),
+	.a2 /* IN */ (ild_data[11]),
+	.a3 /* IN */ (srcdp[11]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_12
 (
-	.z(dstwd[12]), // OUT
-	.a0(mxdata[12]), // IN
-	.a1(result[12]), // IN
-	.a2(ild_data[12]), // IN
-	.a3(srcdp[12]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[12]),
+	.a0 /* IN */ (mxdata[12]),
+	.a1 /* IN */ (result[12]),
+	.a2 /* IN */ (ild_data[12]),
+	.a3 /* IN */ (srcdp[12]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_13
 (
-	.z(dstwd[13]), // OUT
-	.a0(mxdata[13]), // IN
-	.a1(result[13]), // IN
-	.a2(ild_data[13]), // IN
-	.a3(srcdp[13]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[13]),
+	.a0 /* IN */ (mxdata[13]),
+	.a1 /* IN */ (result[13]),
+	.a2 /* IN */ (ild_data[13]),
+	.a3 /* IN */ (srcdp[13]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_14
 (
-	.z(dstwd[14]), // OUT
-	.a0(mxdata[14]), // IN
-	.a1(result[14]), // IN
-	.a2(ild_data[14]), // IN
-	.a3(srcdp[14]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[14]),
+	.a0 /* IN */ (mxdata[14]),
+	.a1 /* IN */ (result[14]),
+	.a2 /* IN */ (ild_data[14]),
+	.a3 /* IN */ (srcdp[14]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_15
 (
-	.z(dstwd[15]), // OUT
-	.a0(mxdata[15]), // IN
-	.a1(result[15]), // IN
-	.a2(ild_data[15]), // IN
-	.a3(srcdp[15]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[15]),
+	.a0 /* IN */ (mxdata[15]),
+	.a1 /* IN */ (result[15]),
+	.a2 /* IN */ (ild_data[15]),
+	.a3 /* IN */ (srcdp[15]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_16
 (
-	.z(dstwd[16]), // OUT
-	.a0(mxdata[16]), // IN
-	.a1(result[16]), // IN
-	.a2(ild_data[16]), // IN
-	.a3(srcdp[16]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[16]),
+	.a0 /* IN */ (mxdata[16]),
+	.a1 /* IN */ (result[16]),
+	.a2 /* IN */ (ild_data[16]),
+	.a3 /* IN */ (srcdp[16]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_17
 (
-	.z(dstwd[17]), // OUT
-	.a0(mxdata[17]), // IN
-	.a1(result[17]), // IN
-	.a2(ild_data[17]), // IN
-	.a3(srcdp[17]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[17]),
+	.a0 /* IN */ (mxdata[17]),
+	.a1 /* IN */ (result[17]),
+	.a2 /* IN */ (ild_data[17]),
+	.a3 /* IN */ (srcdp[17]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_18
 (
-	.z(dstwd[18]), // OUT
-	.a0(mxdata[18]), // IN
-	.a1(result[18]), // IN
-	.a2(ild_data[18]), // IN
-	.a3(srcdp[18]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[18]),
+	.a0 /* IN */ (mxdata[18]),
+	.a1 /* IN */ (result[18]),
+	.a2 /* IN */ (ild_data[18]),
+	.a3 /* IN */ (srcdp[18]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_19
 (
-	.z(dstwd[19]), // OUT
-	.a0(mxdata[19]), // IN
-	.a1(result[19]), // IN
-	.a2(ild_data[19]), // IN
-	.a3(srcdp[19]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[19]),
+	.a0 /* IN */ (mxdata[19]),
+	.a1 /* IN */ (result[19]),
+	.a2 /* IN */ (ild_data[19]),
+	.a3 /* IN */ (srcdp[19]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_20
 (
-	.z(dstwd[20]), // OUT
-	.a0(mxdata[20]), // IN
-	.a1(result[20]), // IN
-	.a2(ild_data[20]), // IN
-	.a3(srcdp[20]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[20]),
+	.a0 /* IN */ (mxdata[20]),
+	.a1 /* IN */ (result[20]),
+	.a2 /* IN */ (ild_data[20]),
+	.a3 /* IN */ (srcdp[20]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_21
 (
-	.z(dstwd[21]), // OUT
-	.a0(mxdata[21]), // IN
-	.a1(result[21]), // IN
-	.a2(ild_data[21]), // IN
-	.a3(srcdp[21]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[21]),
+	.a0 /* IN */ (mxdata[21]),
+	.a1 /* IN */ (result[21]),
+	.a2 /* IN */ (ild_data[21]),
+	.a3 /* IN */ (srcdp[21]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_22
 (
-	.z(dstwd[22]), // OUT
-	.a0(mxdata[22]), // IN
-	.a1(result[22]), // IN
-	.a2(ild_data[22]), // IN
-	.a3(srcdp[22]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[22]),
+	.a0 /* IN */ (mxdata[22]),
+	.a1 /* IN */ (result[22]),
+	.a2 /* IN */ (ild_data[22]),
+	.a3 /* IN */ (srcdp[22]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_23
 (
-	.z(dstwd[23]), // OUT
-	.a0(mxdata[23]), // IN
-	.a1(result[23]), // IN
-	.a2(ild_data[23]), // IN
-	.a3(srcdp[23]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[23]),
+	.a0 /* IN */ (mxdata[23]),
+	.a1 /* IN */ (result[23]),
+	.a2 /* IN */ (ild_data[23]),
+	.a3 /* IN */ (srcdp[23]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_24
 (
-	.z(dstwd[24]), // OUT
-	.a0(mxdata[24]), // IN
-	.a1(result[24]), // IN
-	.a2(ild_data[24]), // IN
-	.a3(srcdp[24]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[24]),
+	.a0 /* IN */ (mxdata[24]),
+	.a1 /* IN */ (result[24]),
+	.a2 /* IN */ (ild_data[24]),
+	.a3 /* IN */ (srcdp[24]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_25
 (
-	.z(dstwd[25]), // OUT
-	.a0(mxdata[25]), // IN
-	.a1(result[25]), // IN
-	.a2(ild_data[25]), // IN
-	.a3(srcdp[25]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[25]),
+	.a0 /* IN */ (mxdata[25]),
+	.a1 /* IN */ (result[25]),
+	.a2 /* IN */ (ild_data[25]),
+	.a3 /* IN */ (srcdp[25]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_26
 (
-	.z(dstwd[26]), // OUT
-	.a0(mxdata[26]), // IN
-	.a1(result[26]), // IN
-	.a2(ild_data[26]), // IN
-	.a3(srcdp[26]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[26]),
+	.a0 /* IN */ (mxdata[26]),
+	.a1 /* IN */ (result[26]),
+	.a2 /* IN */ (ild_data[26]),
+	.a3 /* IN */ (srcdp[26]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_27
 (
-	.z(dstwd[27]), // OUT
-	.a0(mxdata[27]), // IN
-	.a1(result[27]), // IN
-	.a2(ild_data[27]), // IN
-	.a3(srcdp[27]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[27]),
+	.a0 /* IN */ (mxdata[27]),
+	.a1 /* IN */ (result[27]),
+	.a2 /* IN */ (ild_data[27]),
+	.a3 /* IN */ (srcdp[27]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_28
 (
-	.z(dstwd[28]), // OUT
-	.a0(mxdata[28]), // IN
-	.a1(result[28]), // IN
-	.a2(ild_data[28]), // IN
-	.a3(srcdp[28]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[28]),
+	.a0 /* IN */ (mxdata[28]),
+	.a1 /* IN */ (result[28]),
+	.a2 /* IN */ (ild_data[28]),
+	.a3 /* IN */ (srcdp[28]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_29
 (
-	.z(dstwd[29]), // OUT
-	.a0(mxdata[29]), // IN
-	.a1(result[29]), // IN
-	.a2(ild_data[29]), // IN
-	.a3(srcdp[29]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[29]),
+	.a0 /* IN */ (mxdata[29]),
+	.a1 /* IN */ (result[29]),
+	.a2 /* IN */ (ild_data[29]),
+	.a3 /* IN */ (srcdp[29]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_30
 (
-	.z(dstwd[30]), // OUT
-	.a0(mxdata[30]), // IN
-	.a1(result[30]), // IN
-	.a2(ild_data[30]), // IN
-	.a3(srcdp[30]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[30]),
+	.a0 /* IN */ (mxdata[30]),
+	.a1 /* IN */ (result[30]),
+	.a2 /* IN */ (ild_data[30]),
+	.a3 /* IN */ (srcdp[30]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 mx4 dstwdmux_inst_31
 (
-	.z(dstwd[31]), // OUT
-	.a0(mxdata[31]), // IN
-	.a1(result[31]), // IN
-	.a2(ild_data[31]), // IN
-	.a3(srcdp[31]), // IN
-	.s0(dwselb_0), // IN
-	.s1(dwselb_1)  // IN
+	.z /* OUT */ (dstwd[31]),
+	.a0 /* IN */ (mxdata[31]),
+	.a1 /* IN */ (result[31]),
+	.a2 /* IN */ (ild_data[31]),
+	.a3 /* IN */ (srcdp[31]),
+	.s0 /* IN */ (dwselb_0),
+	.s1 /* IN */ (dwselb_1)
 );
 
 // SBOARD.NET (622) - swselti[0] : iv
@@ -2834,31 +2834,31 @@ assign swselti_1 = ~(ild_wbacks_n & mov_wbacks_n);
 // SBOARD.NET (624) - swselt[0-1] : fd1q
 fd1q swselt_from_0_to_1_inst_0
 (
-	.q(swselt_0), // OUT
-	.d(swselti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (swselt_0),
+	.d /* IN */ (swselti_0),
+	.cp /* IN */ (clk)
 );
 fd1q swselt_from_0_to_1_inst_1
 (
-	.q(swselt_1), // OUT
-	.d(swselti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (swselt_1),
+	.d /* IN */ (swselti_1),
+	.cp /* IN */ (clk)
 );
 
 // SBOARD.NET (625) - swsel[0-1] : mx2
 mx2 swsel_from_0_to_1_inst_0
 (
-	.z(swsel_0), // OUT
-	.a0(dwsel_0), // IN
-	.a1(swselt_0), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (swsel_0),
+	.a0 /* IN */ (dwsel_0),
+	.a1 /* IN */ (swselt_0),
+	.s /* IN */ (dstwbwe)
 );
 mx2 swsel_from_0_to_1_inst_1
 (
-	.z(swsel_1), // OUT
-	.a0(dwsel_1), // IN
-	.a1(swselt_1), // IN
-	.s(dstwbwe)  // IN
+	.z /* OUT */ (swsel_1),
+	.a0 /* IN */ (dwsel_1),
+	.a1 /* IN */ (swselt_1),
+	.s /* IN */ (dstwbwe)
 );
 
 // SBOARD.NET (627) - swselb[0-1] : nivu
@@ -2868,323 +2868,323 @@ assign swselb_1 = swsel_1;
 // SBOARD.NET (628) - srcwdmux : mx4
 mx4 srcwdmux_inst_0
 (
-	.z(srcwd[0]), // OUT
-	.a0(mxdata[0]), // IN
-	.a1(result[0]), // IN
-	.a2(ild_data[0]), // IN
-	.a3(srcdp[0]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[0]),
+	.a0 /* IN */ (mxdata[0]),
+	.a1 /* IN */ (result[0]),
+	.a2 /* IN */ (ild_data[0]),
+	.a3 /* IN */ (srcdp[0]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_1
 (
-	.z(srcwd[1]), // OUT
-	.a0(mxdata[1]), // IN
-	.a1(result[1]), // IN
-	.a2(ild_data[1]), // IN
-	.a3(srcdp[1]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[1]),
+	.a0 /* IN */ (mxdata[1]),
+	.a1 /* IN */ (result[1]),
+	.a2 /* IN */ (ild_data[1]),
+	.a3 /* IN */ (srcdp[1]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_2
 (
-	.z(srcwd[2]), // OUT
-	.a0(mxdata[2]), // IN
-	.a1(result[2]), // IN
-	.a2(ild_data[2]), // IN
-	.a3(srcdp[2]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[2]),
+	.a0 /* IN */ (mxdata[2]),
+	.a1 /* IN */ (result[2]),
+	.a2 /* IN */ (ild_data[2]),
+	.a3 /* IN */ (srcdp[2]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_3
 (
-	.z(srcwd[3]), // OUT
-	.a0(mxdata[3]), // IN
-	.a1(result[3]), // IN
-	.a2(ild_data[3]), // IN
-	.a3(srcdp[3]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[3]),
+	.a0 /* IN */ (mxdata[3]),
+	.a1 /* IN */ (result[3]),
+	.a2 /* IN */ (ild_data[3]),
+	.a3 /* IN */ (srcdp[3]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_4
 (
-	.z(srcwd[4]), // OUT
-	.a0(mxdata[4]), // IN
-	.a1(result[4]), // IN
-	.a2(ild_data[4]), // IN
-	.a3(srcdp[4]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[4]),
+	.a0 /* IN */ (mxdata[4]),
+	.a1 /* IN */ (result[4]),
+	.a2 /* IN */ (ild_data[4]),
+	.a3 /* IN */ (srcdp[4]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_5
 (
-	.z(srcwd[5]), // OUT
-	.a0(mxdata[5]), // IN
-	.a1(result[5]), // IN
-	.a2(ild_data[5]), // IN
-	.a3(srcdp[5]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[5]),
+	.a0 /* IN */ (mxdata[5]),
+	.a1 /* IN */ (result[5]),
+	.a2 /* IN */ (ild_data[5]),
+	.a3 /* IN */ (srcdp[5]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_6
 (
-	.z(srcwd[6]), // OUT
-	.a0(mxdata[6]), // IN
-	.a1(result[6]), // IN
-	.a2(ild_data[6]), // IN
-	.a3(srcdp[6]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[6]),
+	.a0 /* IN */ (mxdata[6]),
+	.a1 /* IN */ (result[6]),
+	.a2 /* IN */ (ild_data[6]),
+	.a3 /* IN */ (srcdp[6]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_7
 (
-	.z(srcwd[7]), // OUT
-	.a0(mxdata[7]), // IN
-	.a1(result[7]), // IN
-	.a2(ild_data[7]), // IN
-	.a3(srcdp[7]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[7]),
+	.a0 /* IN */ (mxdata[7]),
+	.a1 /* IN */ (result[7]),
+	.a2 /* IN */ (ild_data[7]),
+	.a3 /* IN */ (srcdp[7]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_8
 (
-	.z(srcwd[8]), // OUT
-	.a0(mxdata[8]), // IN
-	.a1(result[8]), // IN
-	.a2(ild_data[8]), // IN
-	.a3(srcdp[8]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[8]),
+	.a0 /* IN */ (mxdata[8]),
+	.a1 /* IN */ (result[8]),
+	.a2 /* IN */ (ild_data[8]),
+	.a3 /* IN */ (srcdp[8]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_9
 (
-	.z(srcwd[9]), // OUT
-	.a0(mxdata[9]), // IN
-	.a1(result[9]), // IN
-	.a2(ild_data[9]), // IN
-	.a3(srcdp[9]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[9]),
+	.a0 /* IN */ (mxdata[9]),
+	.a1 /* IN */ (result[9]),
+	.a2 /* IN */ (ild_data[9]),
+	.a3 /* IN */ (srcdp[9]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_10
 (
-	.z(srcwd[10]), // OUT
-	.a0(mxdata[10]), // IN
-	.a1(result[10]), // IN
-	.a2(ild_data[10]), // IN
-	.a3(srcdp[10]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[10]),
+	.a0 /* IN */ (mxdata[10]),
+	.a1 /* IN */ (result[10]),
+	.a2 /* IN */ (ild_data[10]),
+	.a3 /* IN */ (srcdp[10]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_11
 (
-	.z(srcwd[11]), // OUT
-	.a0(mxdata[11]), // IN
-	.a1(result[11]), // IN
-	.a2(ild_data[11]), // IN
-	.a3(srcdp[11]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[11]),
+	.a0 /* IN */ (mxdata[11]),
+	.a1 /* IN */ (result[11]),
+	.a2 /* IN */ (ild_data[11]),
+	.a3 /* IN */ (srcdp[11]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_12
 (
-	.z(srcwd[12]), // OUT
-	.a0(mxdata[12]), // IN
-	.a1(result[12]), // IN
-	.a2(ild_data[12]), // IN
-	.a3(srcdp[12]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[12]),
+	.a0 /* IN */ (mxdata[12]),
+	.a1 /* IN */ (result[12]),
+	.a2 /* IN */ (ild_data[12]),
+	.a3 /* IN */ (srcdp[12]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_13
 (
-	.z(srcwd[13]), // OUT
-	.a0(mxdata[13]), // IN
-	.a1(result[13]), // IN
-	.a2(ild_data[13]), // IN
-	.a3(srcdp[13]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[13]),
+	.a0 /* IN */ (mxdata[13]),
+	.a1 /* IN */ (result[13]),
+	.a2 /* IN */ (ild_data[13]),
+	.a3 /* IN */ (srcdp[13]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_14
 (
-	.z(srcwd[14]), // OUT
-	.a0(mxdata[14]), // IN
-	.a1(result[14]), // IN
-	.a2(ild_data[14]), // IN
-	.a3(srcdp[14]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[14]),
+	.a0 /* IN */ (mxdata[14]),
+	.a1 /* IN */ (result[14]),
+	.a2 /* IN */ (ild_data[14]),
+	.a3 /* IN */ (srcdp[14]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_15
 (
-	.z(srcwd[15]), // OUT
-	.a0(mxdata[15]), // IN
-	.a1(result[15]), // IN
-	.a2(ild_data[15]), // IN
-	.a3(srcdp[15]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[15]),
+	.a0 /* IN */ (mxdata[15]),
+	.a1 /* IN */ (result[15]),
+	.a2 /* IN */ (ild_data[15]),
+	.a3 /* IN */ (srcdp[15]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_16
 (
-	.z(srcwd[16]), // OUT
-	.a0(mxdata[16]), // IN
-	.a1(result[16]), // IN
-	.a2(ild_data[16]), // IN
-	.a3(srcdp[16]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[16]),
+	.a0 /* IN */ (mxdata[16]),
+	.a1 /* IN */ (result[16]),
+	.a2 /* IN */ (ild_data[16]),
+	.a3 /* IN */ (srcdp[16]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_17
 (
-	.z(srcwd[17]), // OUT
-	.a0(mxdata[17]), // IN
-	.a1(result[17]), // IN
-	.a2(ild_data[17]), // IN
-	.a3(srcdp[17]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[17]),
+	.a0 /* IN */ (mxdata[17]),
+	.a1 /* IN */ (result[17]),
+	.a2 /* IN */ (ild_data[17]),
+	.a3 /* IN */ (srcdp[17]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_18
 (
-	.z(srcwd[18]), // OUT
-	.a0(mxdata[18]), // IN
-	.a1(result[18]), // IN
-	.a2(ild_data[18]), // IN
-	.a3(srcdp[18]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[18]),
+	.a0 /* IN */ (mxdata[18]),
+	.a1 /* IN */ (result[18]),
+	.a2 /* IN */ (ild_data[18]),
+	.a3 /* IN */ (srcdp[18]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_19
 (
-	.z(srcwd[19]), // OUT
-	.a0(mxdata[19]), // IN
-	.a1(result[19]), // IN
-	.a2(ild_data[19]), // IN
-	.a3(srcdp[19]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[19]),
+	.a0 /* IN */ (mxdata[19]),
+	.a1 /* IN */ (result[19]),
+	.a2 /* IN */ (ild_data[19]),
+	.a3 /* IN */ (srcdp[19]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_20
 (
-	.z(srcwd[20]), // OUT
-	.a0(mxdata[20]), // IN
-	.a1(result[20]), // IN
-	.a2(ild_data[20]), // IN
-	.a3(srcdp[20]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[20]),
+	.a0 /* IN */ (mxdata[20]),
+	.a1 /* IN */ (result[20]),
+	.a2 /* IN */ (ild_data[20]),
+	.a3 /* IN */ (srcdp[20]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_21
 (
-	.z(srcwd[21]), // OUT
-	.a0(mxdata[21]), // IN
-	.a1(result[21]), // IN
-	.a2(ild_data[21]), // IN
-	.a3(srcdp[21]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[21]),
+	.a0 /* IN */ (mxdata[21]),
+	.a1 /* IN */ (result[21]),
+	.a2 /* IN */ (ild_data[21]),
+	.a3 /* IN */ (srcdp[21]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_22
 (
-	.z(srcwd[22]), // OUT
-	.a0(mxdata[22]), // IN
-	.a1(result[22]), // IN
-	.a2(ild_data[22]), // IN
-	.a3(srcdp[22]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[22]),
+	.a0 /* IN */ (mxdata[22]),
+	.a1 /* IN */ (result[22]),
+	.a2 /* IN */ (ild_data[22]),
+	.a3 /* IN */ (srcdp[22]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_23
 (
-	.z(srcwd[23]), // OUT
-	.a0(mxdata[23]), // IN
-	.a1(result[23]), // IN
-	.a2(ild_data[23]), // IN
-	.a3(srcdp[23]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[23]),
+	.a0 /* IN */ (mxdata[23]),
+	.a1 /* IN */ (result[23]),
+	.a2 /* IN */ (ild_data[23]),
+	.a3 /* IN */ (srcdp[23]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_24
 (
-	.z(srcwd[24]), // OUT
-	.a0(mxdata[24]), // IN
-	.a1(result[24]), // IN
-	.a2(ild_data[24]), // IN
-	.a3(srcdp[24]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[24]),
+	.a0 /* IN */ (mxdata[24]),
+	.a1 /* IN */ (result[24]),
+	.a2 /* IN */ (ild_data[24]),
+	.a3 /* IN */ (srcdp[24]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_25
 (
-	.z(srcwd[25]), // OUT
-	.a0(mxdata[25]), // IN
-	.a1(result[25]), // IN
-	.a2(ild_data[25]), // IN
-	.a3(srcdp[25]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[25]),
+	.a0 /* IN */ (mxdata[25]),
+	.a1 /* IN */ (result[25]),
+	.a2 /* IN */ (ild_data[25]),
+	.a3 /* IN */ (srcdp[25]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_26
 (
-	.z(srcwd[26]), // OUT
-	.a0(mxdata[26]), // IN
-	.a1(result[26]), // IN
-	.a2(ild_data[26]), // IN
-	.a3(srcdp[26]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[26]),
+	.a0 /* IN */ (mxdata[26]),
+	.a1 /* IN */ (result[26]),
+	.a2 /* IN */ (ild_data[26]),
+	.a3 /* IN */ (srcdp[26]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_27
 (
-	.z(srcwd[27]), // OUT
-	.a0(mxdata[27]), // IN
-	.a1(result[27]), // IN
-	.a2(ild_data[27]), // IN
-	.a3(srcdp[27]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[27]),
+	.a0 /* IN */ (mxdata[27]),
+	.a1 /* IN */ (result[27]),
+	.a2 /* IN */ (ild_data[27]),
+	.a3 /* IN */ (srcdp[27]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_28
 (
-	.z(srcwd[28]), // OUT
-	.a0(mxdata[28]), // IN
-	.a1(result[28]), // IN
-	.a2(ild_data[28]), // IN
-	.a3(srcdp[28]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[28]),
+	.a0 /* IN */ (mxdata[28]),
+	.a1 /* IN */ (result[28]),
+	.a2 /* IN */ (ild_data[28]),
+	.a3 /* IN */ (srcdp[28]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_29
 (
-	.z(srcwd[29]), // OUT
-	.a0(mxdata[29]), // IN
-	.a1(result[29]), // IN
-	.a2(ild_data[29]), // IN
-	.a3(srcdp[29]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[29]),
+	.a0 /* IN */ (mxdata[29]),
+	.a1 /* IN */ (result[29]),
+	.a2 /* IN */ (ild_data[29]),
+	.a3 /* IN */ (srcdp[29]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_30
 (
-	.z(srcwd[30]), // OUT
-	.a0(mxdata[30]), // IN
-	.a1(result[30]), // IN
-	.a2(ild_data[30]), // IN
-	.a3(srcdp[30]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[30]),
+	.a0 /* IN */ (mxdata[30]),
+	.a1 /* IN */ (result[30]),
+	.a2 /* IN */ (ild_data[30]),
+	.a3 /* IN */ (srcdp[30]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 mx4 srcwdmux_inst_31
 (
-	.z(srcwd[31]), // OUT
-	.a0(mxdata[31]), // IN
-	.a1(result[31]), // IN
-	.a2(ild_data[31]), // IN
-	.a3(srcdp[31]), // IN
-	.s0(swselb_0), // IN
-	.s1(swselb_1)  // IN
+	.z /* OUT */ (srcwd[31]),
+	.a0 /* IN */ (mxdata[31]),
+	.a1 /* IN */ (result[31]),
+	.a2 /* IN */ (ild_data[31]),
+	.a3 /* IN */ (srcdp[31]),
+	.s0 /* IN */ (swselb_0),
+	.s1 /* IN */ (swselb_1)
 );
 
 // SBOARD.NET (633) - srcrwen\ : iv

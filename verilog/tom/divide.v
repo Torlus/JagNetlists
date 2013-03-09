@@ -2,17 +2,19 @@
 
 module divide
 (
-	inout[0:31] gpu_data;
+	output [0:31] gpu_data_out;
+	output [0:31] gpu_data_oe;
+	input [0:31] gpu_data_in;
 	output div_activei,
-	output[0:31] quotient;
+	output [0:31] quotient;
 	input clk,
 	input div_start,
 	input divwr,
-	input[0:31] dstd;
-	input[0:31] gpu_din;
+	input [0:31] dstd;
+	input [0:31] gpu_din;
 	input remrd,
 	input reset_n,
-	input[0:31] srcd
+	input [0:31] srcd
 );
 wire [0:31] divhit;
 wire [0:31] dividend_hi;
@@ -246,11 +248,11 @@ assign div_startb_2 = div_start;
 // DIVIDE.NET (77) - div_offsett : fdsyncr
 fdsyncr div_offsett_inst
 (
-	.q(div_offsett), // IO
-	.d(gpu_din[0]), // IN
-	.ld(divwr), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (div_offsett),
+	.d /* IN */ (gpu_din[0]),
+	.ld /* IN */ (divwr),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // DIVIDE.NET (79) - div_offset : nivh
@@ -371,13 +373,13 @@ assign divr1[31] = divr1_31;
 // DIVIDE.NET (97) - adder1 : fa32_int
 fa32_int adder1_inst
 (
-	.s({addq1[0],addq1[1],addq1[2],addq1[3],addq1[4],addq1[5],addq1[6],addq1[7],addq1[8],addq1[9],addq1[10],addq1[11],addq1[12],addq1[13],addq1[14],addq1[15],addq1[16],addq1[17],addq1[18],addq1[19],addq1[20],addq1[21],addq1[22],addq1[23],addq1[24],addq1[25],addq1[26],addq1[27],addq1[28],addq1[29],addq1[30],addq1[31]}), // OUT
-	.co32(carry1), // OUT
-	.co31(unused_0), // OUT
-	.co24(unused_1), // OUT
-	.c(last_neg_n_5), // IN
-	.a({dend1[0],dend1[1],dend1[2],dend1[3],dend1[4],dend1[5],dend1[6],dend1[7],dend1[8],dend1[9],dend1[10],dend1[11],dend1[12],dend1[13],dend1[14],dend1[15],dend1[16],dend1[17],dend1[18],dend1[19],dend1[20],dend1[21],dend1[22],dend1[23],dend1[24],dend1[25],dend1[26],dend1[27],dend1[28],dend1[29],dend1[30],dend1[31]}), // IN
-	.b({divr1[0],divr1[1],divr1[2],divr1[3],divr1[4],divr1[5],divr1[6],divr1[7],divr1[8],divr1[9],divr1[10],divr1[11],divr1[12],divr1[13],divr1[14],divr1[15],divr1[16],divr1[17],divr1[18],divr1[19],divr1[20],divr1[21],divr1[22],divr1[23],divr1[24],divr1[25],divr1[26],divr1[27],divr1[28],divr1[29],divr1[30],divr1[31]})  // IN
+	.s /* OUT */ ({addq1[0],addq1[1],addq1[2],addq1[3],addq1[4],addq1[5],addq1[6],addq1[7],addq1[8],addq1[9],addq1[10],addq1[11],addq1[12],addq1[13],addq1[14],addq1[15],addq1[16],addq1[17],addq1[18],addq1[19],addq1[20],addq1[21],addq1[22],addq1[23],addq1[24],addq1[25],addq1[26],addq1[27],addq1[28],addq1[29],addq1[30],addq1[31]}),
+	.co32 /* OUT */ (carry1),
+	.co31 /* OUT */ (unused_0),
+	.co24 /* OUT */ (unused_1),
+	.c /* IN */ (last_neg_n_5),
+	.a /* IN */ ({dend1[0],dend1[1],dend1[2],dend1[3],dend1[4],dend1[5],dend1[6],dend1[7],dend1[8],dend1[9],dend1[10],dend1[11],dend1[12],dend1[13],dend1[14],dend1[15],dend1[16],dend1[17],dend1[18],dend1[19],dend1[20],dend1[21],dend1[22],dend1[23],dend1[24],dend1[25],dend1[26],dend1[27],dend1[28],dend1[29],dend1[30],dend1[31]}),
+	.b /* IN */ ({divr1[0],divr1[1],divr1[2],divr1[3],divr1[4],divr1[5],divr1[6],divr1[7],divr1[8],divr1[9],divr1[10],divr1[11],divr1[12],divr1[13],divr1[14],divr1[15],divr1[16],divr1[17],divr1[18],divr1[19],divr1[20],divr1[21],divr1[22],divr1[23],divr1[24],divr1[25],divr1[26],divr1[27],divr1[28],divr1[29],divr1[30],divr1[31]})
 );
 
 // DIVIDE.NET (101) - carry1\ : ivs
@@ -525,23 +527,23 @@ assign divr2[31] = divisor[31] ^ thisneg32_n[31];
 // DIVIDE.NET (136) - adder2 : fa32_int
 fa32_int adder2_inst
 (
-	.s({addq2[0],addq2[1],addq2[2],addq2[3],addq2[4],addq2[5],addq2[6],addq2[7],addq2[8],addq2[9],addq2[10],addq2[11],addq2[12],addq2[13],addq2[14],addq2[15],addq2[16],addq2[17],addq2[18],addq2[19],addq2[20],addq2[21],addq2[22],addq2[23],addq2[24],addq2[25],addq2[26],addq2[27],addq2[28],addq2[29],addq2[30],addq2[31]}), // OUT
-	.co32(carry2), // OUT
-	.co31(unused_3), // OUT
-	.co24(unused_4), // OUT
-	.c(thisnegb_n_3), // IN
-	.a({dend2[0],dend2[1],dend2[2],dend2[3],dend2[4],dend2[5],dend2[6],dend2[7],dend2[8],dend2[9],dend2[10],dend2[11],dend2[12],dend2[13],dend2[14],dend2[15],dend2[16],dend2[17],dend2[18],dend2[19],dend2[20],dend2[21],dend2[22],dend2[23],dend2[24],dend2[25],dend2[26],dend2[27],dend2[28],dend2[29],dend2[30],dend2[31]}), // IN
-	.b({divr2[0],divr2[1],divr2[2],divr2[3],divr2[4],divr2[5],divr2[6],divr2[7],divr2[8],divr2[9],divr2[10],divr2[11],divr2[12],divr2[13],divr2[14],divr2[15],divr2[16],divr2[17],divr2[18],divr2[19],divr2[20],divr2[21],divr2[22],divr2[23],divr2[24],divr2[25],divr2[26],divr2[27],divr2[28],divr2[29],divr2[30],divr2[31]})  // IN
+	.s /* OUT */ ({addq2[0],addq2[1],addq2[2],addq2[3],addq2[4],addq2[5],addq2[6],addq2[7],addq2[8],addq2[9],addq2[10],addq2[11],addq2[12],addq2[13],addq2[14],addq2[15],addq2[16],addq2[17],addq2[18],addq2[19],addq2[20],addq2[21],addq2[22],addq2[23],addq2[24],addq2[25],addq2[26],addq2[27],addq2[28],addq2[29],addq2[30],addq2[31]}),
+	.co32 /* OUT */ (carry2),
+	.co31 /* OUT */ (unused_3),
+	.co24 /* OUT */ (unused_4),
+	.c /* IN */ (thisnegb_n_3),
+	.a /* IN */ ({dend2[0],dend2[1],dend2[2],dend2[3],dend2[4],dend2[5],dend2[6],dend2[7],dend2[8],dend2[9],dend2[10],dend2[11],dend2[12],dend2[13],dend2[14],dend2[15],dend2[16],dend2[17],dend2[18],dend2[19],dend2[20],dend2[21],dend2[22],dend2[23],dend2[24],dend2[25],dend2[26],dend2[27],dend2[28],dend2[29],dend2[30],dend2[31]}),
+	.b /* IN */ ({divr2[0],divr2[1],divr2[2],divr2[3],divr2[4],divr2[5],divr2[6],divr2[7],divr2[8],divr2[9],divr2[10],divr2[11],divr2[12],divr2[13],divr2[14],divr2[15],divr2[16],divr2[17],divr2[18],divr2[19],divr2[20],divr2[21],divr2[22],divr2[23],divr2[24],divr2[25],divr2[26],divr2[27],divr2[28],divr2[29],divr2[30],divr2[31]})
 );
 
 // DIVIDE.NET (138) - adder2_33 : fa1p
 fa1 adder2_33_inst
 (
-	.s(addq2_32), // OUT
-	.co(unused_2), // OUT
-	.ci(addq1[31]), // IN
-	.a(carry2), // IN
-	.b(thisnegb_n_3)  // IN
+	.s /* OUT */ (addq2_32),
+	.co /* OUT */ (unused_2),
+	.ci /* IN */ (addq1[31]),
+	.a /* IN */ (carry2),
+	.b /* IN */ (thisnegb_n_3)
 );
 
 // DIVIDE.NET (153) - addq1\[31] : iv
@@ -568,345 +570,345 @@ assign lnegt_n = lnegt_0 & lnegt_1 & lnegt_2 & lnegt_3;
 // DIVIDE.NET (164) - last_neg\[0-2] : fd1qp
 fd1q last_neg_n_from_0_to_2_inst_0
 (
-	.q(last_neg_n_0), // OUT
-	.d(lnegt_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (last_neg_n_0),
+	.d /* IN */ (lnegt_n),
+	.cp /* IN */ (clk)
 );
 fd1q last_neg_n_from_0_to_2_inst_1
 (
-	.q(last_neg_n_1), // OUT
-	.d(lnegt_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (last_neg_n_1),
+	.d /* IN */ (lnegt_n),
+	.cp /* IN */ (clk)
 );
 fd1q last_neg_n_from_0_to_2_inst_2
 (
-	.q(last_neg_n_2), // OUT
-	.d(lnegt_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (last_neg_n_2),
+	.d /* IN */ (lnegt_n),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (165) - last_neg\[3-4] : fd1qp
 fd1q last_neg_n_from_3_to_4_inst_0
 (
-	.q(last_neg_n_3), // OUT
-	.d(lnegt_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (last_neg_n_3),
+	.d /* IN */ (lnegt_n),
+	.cp /* IN */ (clk)
 );
 fd1q last_neg_n_from_3_to_4_inst_1
 (
-	.q(last_neg_n_4), // OUT
-	.d(lnegt_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (last_neg_n_4),
+	.d /* IN */ (lnegt_n),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (166) - last_neg\[5] : fd1p
 fd1 last_neg_n_index_5_inst
 (
-	.q(last_neg_n_5), // OUT
-	.qn(last_neg_5), // OUT
-	.d(lnegt_n), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (last_neg_n_5),
+	.qn /* OUT */ (last_neg_5),
+	.d /* IN */ (lnegt_n),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (187) - dhlsel[0] : mx2h
 mx2 dhlsel_index_0_inst
 (
-	.z(dhlsel_0), // OUT
-	.a0(div_activeb_2), // IN
-	.a1(div_offset), // IN
-	.s(div_startb_0)  // IN
+	.z /* OUT */ (dhlsel_0),
+	.a0 /* IN */ (div_activeb_2),
+	.a1 /* IN */ (div_offset),
+	.s /* IN */ (div_startb_0)
 );
 
 // DIVIDE.NET (189) - divhit[0-15] : mx4
 mx4 divhit_from_0_to_15_inst_0
 (
-	.z(divhit_0), // OUT
-	.a0(dividend_hi[0]), // IN
-	.a1(addq2[0]), // IN
-	.a2(zero), // IN
-	.a3(dstd[16]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_0),
+	.a0 /* IN */ (dividend_hi[0]),
+	.a1 /* IN */ (addq2[0]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[16]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_1
 (
-	.z(divhit_1), // OUT
-	.a0(dividend_hi[1]), // IN
-	.a1(addq2[1]), // IN
-	.a2(zero), // IN
-	.a3(dstd[17]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_1),
+	.a0 /* IN */ (dividend_hi[1]),
+	.a1 /* IN */ (addq2[1]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[17]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_2
 (
-	.z(divhit_2), // OUT
-	.a0(dividend_hi[2]), // IN
-	.a1(addq2[2]), // IN
-	.a2(zero), // IN
-	.a3(dstd[18]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_2),
+	.a0 /* IN */ (dividend_hi[2]),
+	.a1 /* IN */ (addq2[2]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[18]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_3
 (
-	.z(divhit_3), // OUT
-	.a0(dividend_hi[3]), // IN
-	.a1(addq2[3]), // IN
-	.a2(zero), // IN
-	.a3(dstd[19]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_3),
+	.a0 /* IN */ (dividend_hi[3]),
+	.a1 /* IN */ (addq2[3]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[19]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_4
 (
-	.z(divhit_4), // OUT
-	.a0(dividend_hi[4]), // IN
-	.a1(addq2[4]), // IN
-	.a2(zero), // IN
-	.a3(dstd[20]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_4),
+	.a0 /* IN */ (dividend_hi[4]),
+	.a1 /* IN */ (addq2[4]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[20]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_5
 (
-	.z(divhit_5), // OUT
-	.a0(dividend_hi[5]), // IN
-	.a1(addq2[5]), // IN
-	.a2(zero), // IN
-	.a3(dstd[21]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_5),
+	.a0 /* IN */ (dividend_hi[5]),
+	.a1 /* IN */ (addq2[5]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[21]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_6
 (
-	.z(divhit_6), // OUT
-	.a0(dividend_hi[6]), // IN
-	.a1(addq2[6]), // IN
-	.a2(zero), // IN
-	.a3(dstd[22]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_6),
+	.a0 /* IN */ (dividend_hi[6]),
+	.a1 /* IN */ (addq2[6]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[22]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_7
 (
-	.z(divhit_7), // OUT
-	.a0(dividend_hi[7]), // IN
-	.a1(addq2[7]), // IN
-	.a2(zero), // IN
-	.a3(dstd[23]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_7),
+	.a0 /* IN */ (dividend_hi[7]),
+	.a1 /* IN */ (addq2[7]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[23]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_8
 (
-	.z(divhit_8), // OUT
-	.a0(dividend_hi[8]), // IN
-	.a1(addq2[8]), // IN
-	.a2(zero), // IN
-	.a3(dstd[24]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_8),
+	.a0 /* IN */ (dividend_hi[8]),
+	.a1 /* IN */ (addq2[8]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[24]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_9
 (
-	.z(divhit_9), // OUT
-	.a0(dividend_hi[9]), // IN
-	.a1(addq2[9]), // IN
-	.a2(zero), // IN
-	.a3(dstd[25]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_9),
+	.a0 /* IN */ (dividend_hi[9]),
+	.a1 /* IN */ (addq2[9]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[25]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_10
 (
-	.z(divhit_10), // OUT
-	.a0(dividend_hi[10]), // IN
-	.a1(addq2[10]), // IN
-	.a2(zero), // IN
-	.a3(dstd[26]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_10),
+	.a0 /* IN */ (dividend_hi[10]),
+	.a1 /* IN */ (addq2[10]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[26]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_11
 (
-	.z(divhit_11), // OUT
-	.a0(dividend_hi[11]), // IN
-	.a1(addq2[11]), // IN
-	.a2(zero), // IN
-	.a3(dstd[27]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_11),
+	.a0 /* IN */ (dividend_hi[11]),
+	.a1 /* IN */ (addq2[11]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[27]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_12
 (
-	.z(divhit_12), // OUT
-	.a0(dividend_hi[12]), // IN
-	.a1(addq2[12]), // IN
-	.a2(zero), // IN
-	.a3(dstd[28]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_12),
+	.a0 /* IN */ (dividend_hi[12]),
+	.a1 /* IN */ (addq2[12]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[28]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_13
 (
-	.z(divhit_13), // OUT
-	.a0(dividend_hi[13]), // IN
-	.a1(addq2[13]), // IN
-	.a2(zero), // IN
-	.a3(dstd[29]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_13),
+	.a0 /* IN */ (dividend_hi[13]),
+	.a1 /* IN */ (addq2[13]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[29]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_14
 (
-	.z(divhit_14), // OUT
-	.a0(dividend_hi[14]), // IN
-	.a1(addq2[14]), // IN
-	.a2(zero), // IN
-	.a3(dstd[30]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_14),
+	.a0 /* IN */ (dividend_hi[14]),
+	.a1 /* IN */ (addq2[14]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[30]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 mx4 divhit_from_0_to_15_inst_15
 (
-	.z(divhit_15), // OUT
-	.a0(dividend_hi[15]), // IN
-	.a1(addq2[15]), // IN
-	.a2(zero), // IN
-	.a3(dstd[31]), // IN
-	.s0(dhlsel_0), // IN
-	.s1(div_startb_0)  // IN
+	.z /* OUT */ (divhit_15),
+	.a0 /* IN */ (dividend_hi[15]),
+	.a1 /* IN */ (addq2[15]),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (dstd[31]),
+	.s0 /* IN */ (dhlsel_0),
+	.s1 /* IN */ (div_startb_0)
 );
 
 // DIVIDE.NET (192) - divhit[16-31] : mx2g
 mx2g divhit_from_16_to_31_inst_0
 (
-	.z(divhit_16), // OUT
-	.a0(dividend_hi[16]), // IN
-	.a1(addq2[16]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_16),
+	.a0 /* IN */ (dividend_hi[16]),
+	.a1 /* IN */ (addq2[16]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_1
 (
-	.z(divhit_17), // OUT
-	.a0(dividend_hi[17]), // IN
-	.a1(addq2[17]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_17),
+	.a0 /* IN */ (dividend_hi[17]),
+	.a1 /* IN */ (addq2[17]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_2
 (
-	.z(divhit_18), // OUT
-	.a0(dividend_hi[18]), // IN
-	.a1(addq2[18]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_18),
+	.a0 /* IN */ (dividend_hi[18]),
+	.a1 /* IN */ (addq2[18]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_3
 (
-	.z(divhit_19), // OUT
-	.a0(dividend_hi[19]), // IN
-	.a1(addq2[19]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_19),
+	.a0 /* IN */ (dividend_hi[19]),
+	.a1 /* IN */ (addq2[19]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_4
 (
-	.z(divhit_20), // OUT
-	.a0(dividend_hi[20]), // IN
-	.a1(addq2[20]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_20),
+	.a0 /* IN */ (dividend_hi[20]),
+	.a1 /* IN */ (addq2[20]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_5
 (
-	.z(divhit_21), // OUT
-	.a0(dividend_hi[21]), // IN
-	.a1(addq2[21]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_21),
+	.a0 /* IN */ (dividend_hi[21]),
+	.a1 /* IN */ (addq2[21]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_6
 (
-	.z(divhit_22), // OUT
-	.a0(dividend_hi[22]), // IN
-	.a1(addq2[22]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_22),
+	.a0 /* IN */ (dividend_hi[22]),
+	.a1 /* IN */ (addq2[22]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_7
 (
-	.z(divhit_23), // OUT
-	.a0(dividend_hi[23]), // IN
-	.a1(addq2[23]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_23),
+	.a0 /* IN */ (dividend_hi[23]),
+	.a1 /* IN */ (addq2[23]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_8
 (
-	.z(divhit_24), // OUT
-	.a0(dividend_hi[24]), // IN
-	.a1(addq2[24]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_24),
+	.a0 /* IN */ (dividend_hi[24]),
+	.a1 /* IN */ (addq2[24]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_9
 (
-	.z(divhit_25), // OUT
-	.a0(dividend_hi[25]), // IN
-	.a1(addq2[25]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_25),
+	.a0 /* IN */ (dividend_hi[25]),
+	.a1 /* IN */ (addq2[25]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_10
 (
-	.z(divhit_26), // OUT
-	.a0(dividend_hi[26]), // IN
-	.a1(addq2[26]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_26),
+	.a0 /* IN */ (dividend_hi[26]),
+	.a1 /* IN */ (addq2[26]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_11
 (
-	.z(divhit_27), // OUT
-	.a0(dividend_hi[27]), // IN
-	.a1(addq2[27]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_27),
+	.a0 /* IN */ (dividend_hi[27]),
+	.a1 /* IN */ (addq2[27]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_12
 (
-	.z(divhit_28), // OUT
-	.a0(dividend_hi[28]), // IN
-	.a1(addq2[28]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_28),
+	.a0 /* IN */ (dividend_hi[28]),
+	.a1 /* IN */ (addq2[28]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_13
 (
-	.z(divhit_29), // OUT
-	.a0(dividend_hi[29]), // IN
-	.a1(addq2[29]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_29),
+	.a0 /* IN */ (dividend_hi[29]),
+	.a1 /* IN */ (addq2[29]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_14
 (
-	.z(divhit_30), // OUT
-	.a0(dividend_hi[30]), // IN
-	.a1(addq2[30]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_30),
+	.a0 /* IN */ (dividend_hi[30]),
+	.a1 /* IN */ (addq2[30]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 mx2g divhit_from_16_to_31_inst_15
 (
-	.z(divhit_31), // OUT
-	.a0(dividend_hi[31]), // IN
-	.a1(addq2[31]), // IN
-	.s(div_activeb_2), // IN
-	.gn(div_startb_0)  // IN
+	.z /* OUT */ (divhit_31),
+	.a0 /* IN */ (dividend_hi[31]),
+	.a1 /* IN */ (addq2[31]),
+	.s /* IN */ (div_activeb_2),
+	.gn /* IN */ (div_startb_0)
 );
 
 // DIVIDE.NET (195) - divhit : join
@@ -946,230 +948,262 @@ assign divhit[31] = divhit_31;
 // DIVIDE.NET (196) - dividend_hi : fd1qp
 fd1q dividend_hi_inst_0
 (
-	.q(dividend_hi[0]), // OUT
-	.d(divhit[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[0]),
+	.d /* IN */ (divhit[0]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_1
 (
-	.q(dividend_hi[1]), // OUT
-	.d(divhit[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[1]),
+	.d /* IN */ (divhit[1]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_2
 (
-	.q(dividend_hi[2]), // OUT
-	.d(divhit[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[2]),
+	.d /* IN */ (divhit[2]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_3
 (
-	.q(dividend_hi[3]), // OUT
-	.d(divhit[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[3]),
+	.d /* IN */ (divhit[3]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_4
 (
-	.q(dividend_hi[4]), // OUT
-	.d(divhit[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[4]),
+	.d /* IN */ (divhit[4]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_5
 (
-	.q(dividend_hi[5]), // OUT
-	.d(divhit[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[5]),
+	.d /* IN */ (divhit[5]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_6
 (
-	.q(dividend_hi[6]), // OUT
-	.d(divhit[6]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[6]),
+	.d /* IN */ (divhit[6]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_7
 (
-	.q(dividend_hi[7]), // OUT
-	.d(divhit[7]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[7]),
+	.d /* IN */ (divhit[7]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_8
 (
-	.q(dividend_hi[8]), // OUT
-	.d(divhit[8]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[8]),
+	.d /* IN */ (divhit[8]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_9
 (
-	.q(dividend_hi[9]), // OUT
-	.d(divhit[9]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[9]),
+	.d /* IN */ (divhit[9]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_10
 (
-	.q(dividend_hi[10]), // OUT
-	.d(divhit[10]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[10]),
+	.d /* IN */ (divhit[10]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_11
 (
-	.q(dividend_hi[11]), // OUT
-	.d(divhit[11]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[11]),
+	.d /* IN */ (divhit[11]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_12
 (
-	.q(dividend_hi[12]), // OUT
-	.d(divhit[12]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[12]),
+	.d /* IN */ (divhit[12]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_13
 (
-	.q(dividend_hi[13]), // OUT
-	.d(divhit[13]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[13]),
+	.d /* IN */ (divhit[13]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_14
 (
-	.q(dividend_hi[14]), // OUT
-	.d(divhit[14]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[14]),
+	.d /* IN */ (divhit[14]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_15
 (
-	.q(dividend_hi[15]), // OUT
-	.d(divhit[15]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[15]),
+	.d /* IN */ (divhit[15]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_16
 (
-	.q(dividend_hi[16]), // OUT
-	.d(divhit[16]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[16]),
+	.d /* IN */ (divhit[16]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_17
 (
-	.q(dividend_hi[17]), // OUT
-	.d(divhit[17]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[17]),
+	.d /* IN */ (divhit[17]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_18
 (
-	.q(dividend_hi[18]), // OUT
-	.d(divhit[18]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[18]),
+	.d /* IN */ (divhit[18]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_19
 (
-	.q(dividend_hi[19]), // OUT
-	.d(divhit[19]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[19]),
+	.d /* IN */ (divhit[19]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_20
 (
-	.q(dividend_hi[20]), // OUT
-	.d(divhit[20]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[20]),
+	.d /* IN */ (divhit[20]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_21
 (
-	.q(dividend_hi[21]), // OUT
-	.d(divhit[21]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[21]),
+	.d /* IN */ (divhit[21]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_22
 (
-	.q(dividend_hi[22]), // OUT
-	.d(divhit[22]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[22]),
+	.d /* IN */ (divhit[22]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_23
 (
-	.q(dividend_hi[23]), // OUT
-	.d(divhit[23]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[23]),
+	.d /* IN */ (divhit[23]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_24
 (
-	.q(dividend_hi[24]), // OUT
-	.d(divhit[24]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[24]),
+	.d /* IN */ (divhit[24]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_25
 (
-	.q(dividend_hi[25]), // OUT
-	.d(divhit[25]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[25]),
+	.d /* IN */ (divhit[25]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_26
 (
-	.q(dividend_hi[26]), // OUT
-	.d(divhit[26]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[26]),
+	.d /* IN */ (divhit[26]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_27
 (
-	.q(dividend_hi[27]), // OUT
-	.d(divhit[27]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[27]),
+	.d /* IN */ (divhit[27]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_28
 (
-	.q(dividend_hi[28]), // OUT
-	.d(divhit[28]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[28]),
+	.d /* IN */ (divhit[28]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_29
 (
-	.q(dividend_hi[29]), // OUT
-	.d(divhit[29]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[29]),
+	.d /* IN */ (divhit[29]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_30
 (
-	.q(dividend_hi[30]), // OUT
-	.d(divhit[30]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[30]),
+	.d /* IN */ (divhit[30]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_hi_inst_31
 (
-	.q(dividend_hi[31]), // OUT
-	.d(divhit[31]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_hi[31]),
+	.d /* IN */ (divhit[31]),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (197) - remrd : ts
-assign gpu_data[0] = (remrd) ? dividend_hi[0] : 1'bz;
-assign gpu_data[1] = (remrd) ? dividend_hi[1] : 1'bz;
-assign gpu_data[2] = (remrd) ? dividend_hi[2] : 1'bz;
-assign gpu_data[3] = (remrd) ? dividend_hi[3] : 1'bz;
-assign gpu_data[4] = (remrd) ? dividend_hi[4] : 1'bz;
-assign gpu_data[5] = (remrd) ? dividend_hi[5] : 1'bz;
-assign gpu_data[6] = (remrd) ? dividend_hi[6] : 1'bz;
-assign gpu_data[7] = (remrd) ? dividend_hi[7] : 1'bz;
-assign gpu_data[8] = (remrd) ? dividend_hi[8] : 1'bz;
-assign gpu_data[9] = (remrd) ? dividend_hi[9] : 1'bz;
-assign gpu_data[10] = (remrd) ? dividend_hi[10] : 1'bz;
-assign gpu_data[11] = (remrd) ? dividend_hi[11] : 1'bz;
-assign gpu_data[12] = (remrd) ? dividend_hi[12] : 1'bz;
-assign gpu_data[13] = (remrd) ? dividend_hi[13] : 1'bz;
-assign gpu_data[14] = (remrd) ? dividend_hi[14] : 1'bz;
-assign gpu_data[15] = (remrd) ? dividend_hi[15] : 1'bz;
-assign gpu_data[16] = (remrd) ? dividend_hi[16] : 1'bz;
-assign gpu_data[17] = (remrd) ? dividend_hi[17] : 1'bz;
-assign gpu_data[18] = (remrd) ? dividend_hi[18] : 1'bz;
-assign gpu_data[19] = (remrd) ? dividend_hi[19] : 1'bz;
-assign gpu_data[20] = (remrd) ? dividend_hi[20] : 1'bz;
-assign gpu_data[21] = (remrd) ? dividend_hi[21] : 1'bz;
-assign gpu_data[22] = (remrd) ? dividend_hi[22] : 1'bz;
-assign gpu_data[23] = (remrd) ? dividend_hi[23] : 1'bz;
-assign gpu_data[24] = (remrd) ? dividend_hi[24] : 1'bz;
-assign gpu_data[25] = (remrd) ? dividend_hi[25] : 1'bz;
-assign gpu_data[26] = (remrd) ? dividend_hi[26] : 1'bz;
-assign gpu_data[27] = (remrd) ? dividend_hi[27] : 1'bz;
-assign gpu_data[28] = (remrd) ? dividend_hi[28] : 1'bz;
-assign gpu_data[29] = (remrd) ? dividend_hi[29] : 1'bz;
-assign gpu_data[30] = (remrd) ? dividend_hi[30] : 1'bz;
-assign gpu_data[31] = (remrd) ? dividend_hi[31] : 1'bz;
+assign gpu_data_out[0] = dividend_hi[0];
+assign gpu_data_oe[0] = remrd;
+assign gpu_data_out[1] = dividend_hi[1];
+assign gpu_data_oe[1] = remrd;
+assign gpu_data_out[2] = dividend_hi[2];
+assign gpu_data_oe[2] = remrd;
+assign gpu_data_out[3] = dividend_hi[3];
+assign gpu_data_oe[3] = remrd;
+assign gpu_data_out[4] = dividend_hi[4];
+assign gpu_data_oe[4] = remrd;
+assign gpu_data_out[5] = dividend_hi[5];
+assign gpu_data_oe[5] = remrd;
+assign gpu_data_out[6] = dividend_hi[6];
+assign gpu_data_oe[6] = remrd;
+assign gpu_data_out[7] = dividend_hi[7];
+assign gpu_data_oe[7] = remrd;
+assign gpu_data_out[8] = dividend_hi[8];
+assign gpu_data_oe[8] = remrd;
+assign gpu_data_out[9] = dividend_hi[9];
+assign gpu_data_oe[9] = remrd;
+assign gpu_data_out[10] = dividend_hi[10];
+assign gpu_data_oe[10] = remrd;
+assign gpu_data_out[11] = dividend_hi[11];
+assign gpu_data_oe[11] = remrd;
+assign gpu_data_out[12] = dividend_hi[12];
+assign gpu_data_oe[12] = remrd;
+assign gpu_data_out[13] = dividend_hi[13];
+assign gpu_data_oe[13] = remrd;
+assign gpu_data_out[14] = dividend_hi[14];
+assign gpu_data_oe[14] = remrd;
+assign gpu_data_out[15] = dividend_hi[15];
+assign gpu_data_oe[15] = remrd;
+assign gpu_data_out[16] = dividend_hi[16];
+assign gpu_data_oe[16] = remrd;
+assign gpu_data_out[17] = dividend_hi[17];
+assign gpu_data_oe[17] = remrd;
+assign gpu_data_out[18] = dividend_hi[18];
+assign gpu_data_oe[18] = remrd;
+assign gpu_data_out[19] = dividend_hi[19];
+assign gpu_data_oe[19] = remrd;
+assign gpu_data_out[20] = dividend_hi[20];
+assign gpu_data_oe[20] = remrd;
+assign gpu_data_out[21] = dividend_hi[21];
+assign gpu_data_oe[21] = remrd;
+assign gpu_data_out[22] = dividend_hi[22];
+assign gpu_data_oe[22] = remrd;
+assign gpu_data_out[23] = dividend_hi[23];
+assign gpu_data_oe[23] = remrd;
+assign gpu_data_out[24] = dividend_hi[24];
+assign gpu_data_oe[24] = remrd;
+assign gpu_data_out[25] = dividend_hi[25];
+assign gpu_data_oe[25] = remrd;
+assign gpu_data_out[26] = dividend_hi[26];
+assign gpu_data_oe[26] = remrd;
+assign gpu_data_out[27] = dividend_hi[27];
+assign gpu_data_oe[27] = remrd;
+assign gpu_data_out[28] = dividend_hi[28];
+assign gpu_data_oe[28] = remrd;
+assign gpu_data_out[29] = dividend_hi[29];
+assign gpu_data_oe[29] = remrd;
+assign gpu_data_out[30] = dividend_hi[30];
+assign gpu_data_oe[30] = remrd;
+assign gpu_data_out[31] = dividend_hi[31];
+assign gpu_data_oe[31] = remrd;
 
 // DIVIDE.NET (206) - diveif0 : an2h
 assign diveif0 = div_startb_1 & div_offset;
@@ -1177,295 +1211,295 @@ assign diveif0 = div_startb_1 & div_offset;
 // DIVIDE.NET (207) - divein[0-1] : mx2g
 mx2g divein_from_0_to_1_inst_0
 (
-	.z(divein_0), // OUT
-	.a0(zero), // IN
-	.a1(dstd[0]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_0),
+	.a0 /* IN */ (zero),
+	.a1 /* IN */ (dstd[0]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_0_to_1_inst_1
 (
-	.z(divein_1), // OUT
-	.a0(zero), // IN
-	.a1(dstd[1]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_1),
+	.a0 /* IN */ (zero),
+	.a1 /* IN */ (dstd[1]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 
 // DIVIDE.NET (209) - divein[2-15] : mx2g
 mx2g divein_from_2_to_15_inst_0
 (
-	.z(divein_2), // OUT
-	.a0(dividend_lo[0]), // IN
-	.a1(dstd[2]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_2),
+	.a0 /* IN */ (dividend_lo[0]),
+	.a1 /* IN */ (dstd[2]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_1
 (
-	.z(divein_3), // OUT
-	.a0(dividend_lo[1]), // IN
-	.a1(dstd[3]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_3),
+	.a0 /* IN */ (dividend_lo[1]),
+	.a1 /* IN */ (dstd[3]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_2
 (
-	.z(divein_4), // OUT
-	.a0(dividend_lo[2]), // IN
-	.a1(dstd[4]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_4),
+	.a0 /* IN */ (dividend_lo[2]),
+	.a1 /* IN */ (dstd[4]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_3
 (
-	.z(divein_5), // OUT
-	.a0(dividend_lo[3]), // IN
-	.a1(dstd[5]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_5),
+	.a0 /* IN */ (dividend_lo[3]),
+	.a1 /* IN */ (dstd[5]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_4
 (
-	.z(divein_6), // OUT
-	.a0(dividend_lo[4]), // IN
-	.a1(dstd[6]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_6),
+	.a0 /* IN */ (dividend_lo[4]),
+	.a1 /* IN */ (dstd[6]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_5
 (
-	.z(divein_7), // OUT
-	.a0(dividend_lo[5]), // IN
-	.a1(dstd[7]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_7),
+	.a0 /* IN */ (dividend_lo[5]),
+	.a1 /* IN */ (dstd[7]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_6
 (
-	.z(divein_8), // OUT
-	.a0(dividend_lo[6]), // IN
-	.a1(dstd[8]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_8),
+	.a0 /* IN */ (dividend_lo[6]),
+	.a1 /* IN */ (dstd[8]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_7
 (
-	.z(divein_9), // OUT
-	.a0(dividend_lo[7]), // IN
-	.a1(dstd[9]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_9),
+	.a0 /* IN */ (dividend_lo[7]),
+	.a1 /* IN */ (dstd[9]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_8
 (
-	.z(divein_10), // OUT
-	.a0(dividend_lo[8]), // IN
-	.a1(dstd[10]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_10),
+	.a0 /* IN */ (dividend_lo[8]),
+	.a1 /* IN */ (dstd[10]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_9
 (
-	.z(divein_11), // OUT
-	.a0(dividend_lo[9]), // IN
-	.a1(dstd[11]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_11),
+	.a0 /* IN */ (dividend_lo[9]),
+	.a1 /* IN */ (dstd[11]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_10
 (
-	.z(divein_12), // OUT
-	.a0(dividend_lo[10]), // IN
-	.a1(dstd[12]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_12),
+	.a0 /* IN */ (dividend_lo[10]),
+	.a1 /* IN */ (dstd[12]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_11
 (
-	.z(divein_13), // OUT
-	.a0(dividend_lo[11]), // IN
-	.a1(dstd[13]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_13),
+	.a0 /* IN */ (dividend_lo[11]),
+	.a1 /* IN */ (dstd[13]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_12
 (
-	.z(divein_14), // OUT
-	.a0(dividend_lo[12]), // IN
-	.a1(dstd[14]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_14),
+	.a0 /* IN */ (dividend_lo[12]),
+	.a1 /* IN */ (dstd[14]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 mx2g divein_from_2_to_15_inst_13
 (
-	.z(divein_15), // OUT
-	.a0(dividend_lo[13]), // IN
-	.a1(dstd[15]), // IN
-	.s(div_startb_1), // IN
-	.gn(diveif0)  // IN
+	.z /* OUT */ (divein_15),
+	.a0 /* IN */ (dividend_lo[13]),
+	.a1 /* IN */ (dstd[15]),
+	.s /* IN */ (div_startb_1),
+	.gn /* IN */ (diveif0)
 );
 
 // DIVIDE.NET (211) - divein[16-31] : mx4
 mx4 divein_from_16_to_31_inst_0
 (
-	.z(divein_16), // OUT
-	.a0(dividend_lo[14]), // IN
-	.a1(dstd[16]), // IN
-	.a2(dividend_lo[14]), // IN
-	.a3(dstd[0]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_16),
+	.a0 /* IN */ (dividend_lo[14]),
+	.a1 /* IN */ (dstd[16]),
+	.a2 /* IN */ (dividend_lo[14]),
+	.a3 /* IN */ (dstd[0]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_1
 (
-	.z(divein_17), // OUT
-	.a0(dividend_lo[15]), // IN
-	.a1(dstd[17]), // IN
-	.a2(dividend_lo[15]), // IN
-	.a3(dstd[1]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_17),
+	.a0 /* IN */ (dividend_lo[15]),
+	.a1 /* IN */ (dstd[17]),
+	.a2 /* IN */ (dividend_lo[15]),
+	.a3 /* IN */ (dstd[1]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_2
 (
-	.z(divein_18), // OUT
-	.a0(dividend_lo[16]), // IN
-	.a1(dstd[18]), // IN
-	.a2(dividend_lo[16]), // IN
-	.a3(dstd[2]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_18),
+	.a0 /* IN */ (dividend_lo[16]),
+	.a1 /* IN */ (dstd[18]),
+	.a2 /* IN */ (dividend_lo[16]),
+	.a3 /* IN */ (dstd[2]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_3
 (
-	.z(divein_19), // OUT
-	.a0(dividend_lo[17]), // IN
-	.a1(dstd[19]), // IN
-	.a2(dividend_lo[17]), // IN
-	.a3(dstd[3]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_19),
+	.a0 /* IN */ (dividend_lo[17]),
+	.a1 /* IN */ (dstd[19]),
+	.a2 /* IN */ (dividend_lo[17]),
+	.a3 /* IN */ (dstd[3]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_4
 (
-	.z(divein_20), // OUT
-	.a0(dividend_lo[18]), // IN
-	.a1(dstd[20]), // IN
-	.a2(dividend_lo[18]), // IN
-	.a3(dstd[4]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_20),
+	.a0 /* IN */ (dividend_lo[18]),
+	.a1 /* IN */ (dstd[20]),
+	.a2 /* IN */ (dividend_lo[18]),
+	.a3 /* IN */ (dstd[4]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_5
 (
-	.z(divein_21), // OUT
-	.a0(dividend_lo[19]), // IN
-	.a1(dstd[21]), // IN
-	.a2(dividend_lo[19]), // IN
-	.a3(dstd[5]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_21),
+	.a0 /* IN */ (dividend_lo[19]),
+	.a1 /* IN */ (dstd[21]),
+	.a2 /* IN */ (dividend_lo[19]),
+	.a3 /* IN */ (dstd[5]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_6
 (
-	.z(divein_22), // OUT
-	.a0(dividend_lo[20]), // IN
-	.a1(dstd[22]), // IN
-	.a2(dividend_lo[20]), // IN
-	.a3(dstd[6]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_22),
+	.a0 /* IN */ (dividend_lo[20]),
+	.a1 /* IN */ (dstd[22]),
+	.a2 /* IN */ (dividend_lo[20]),
+	.a3 /* IN */ (dstd[6]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_7
 (
-	.z(divein_23), // OUT
-	.a0(dividend_lo[21]), // IN
-	.a1(dstd[23]), // IN
-	.a2(dividend_lo[21]), // IN
-	.a3(dstd[7]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_23),
+	.a0 /* IN */ (dividend_lo[21]),
+	.a1 /* IN */ (dstd[23]),
+	.a2 /* IN */ (dividend_lo[21]),
+	.a3 /* IN */ (dstd[7]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_8
 (
-	.z(divein_24), // OUT
-	.a0(dividend_lo[22]), // IN
-	.a1(dstd[24]), // IN
-	.a2(dividend_lo[22]), // IN
-	.a3(dstd[8]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_24),
+	.a0 /* IN */ (dividend_lo[22]),
+	.a1 /* IN */ (dstd[24]),
+	.a2 /* IN */ (dividend_lo[22]),
+	.a3 /* IN */ (dstd[8]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_9
 (
-	.z(divein_25), // OUT
-	.a0(dividend_lo[23]), // IN
-	.a1(dstd[25]), // IN
-	.a2(dividend_lo[23]), // IN
-	.a3(dstd[9]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_25),
+	.a0 /* IN */ (dividend_lo[23]),
+	.a1 /* IN */ (dstd[25]),
+	.a2 /* IN */ (dividend_lo[23]),
+	.a3 /* IN */ (dstd[9]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_10
 (
-	.z(divein_26), // OUT
-	.a0(dividend_lo[24]), // IN
-	.a1(dstd[26]), // IN
-	.a2(dividend_lo[24]), // IN
-	.a3(dstd[10]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_26),
+	.a0 /* IN */ (dividend_lo[24]),
+	.a1 /* IN */ (dstd[26]),
+	.a2 /* IN */ (dividend_lo[24]),
+	.a3 /* IN */ (dstd[10]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_11
 (
-	.z(divein_27), // OUT
-	.a0(dividend_lo[25]), // IN
-	.a1(dstd[27]), // IN
-	.a2(dividend_lo[25]), // IN
-	.a3(dstd[11]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_27),
+	.a0 /* IN */ (dividend_lo[25]),
+	.a1 /* IN */ (dstd[27]),
+	.a2 /* IN */ (dividend_lo[25]),
+	.a3 /* IN */ (dstd[11]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_12
 (
-	.z(divein_28), // OUT
-	.a0(dividend_lo[26]), // IN
-	.a1(dstd[28]), // IN
-	.a2(dividend_lo[26]), // IN
-	.a3(dstd[12]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_28),
+	.a0 /* IN */ (dividend_lo[26]),
+	.a1 /* IN */ (dstd[28]),
+	.a2 /* IN */ (dividend_lo[26]),
+	.a3 /* IN */ (dstd[12]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_13
 (
-	.z(divein_29), // OUT
-	.a0(dividend_lo[27]), // IN
-	.a1(dstd[29]), // IN
-	.a2(dividend_lo[27]), // IN
-	.a3(dstd[13]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_29),
+	.a0 /* IN */ (dividend_lo[27]),
+	.a1 /* IN */ (dstd[29]),
+	.a2 /* IN */ (dividend_lo[27]),
+	.a3 /* IN */ (dstd[13]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_14
 (
-	.z(divein_30), // OUT
-	.a0(dividend_lo[28]), // IN
-	.a1(dstd[30]), // IN
-	.a2(dividend_lo[28]), // IN
-	.a3(dstd[14]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_30),
+	.a0 /* IN */ (dividend_lo[28]),
+	.a1 /* IN */ (dstd[30]),
+	.a2 /* IN */ (dividend_lo[28]),
+	.a3 /* IN */ (dstd[14]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 mx4 divein_from_16_to_31_inst_15
 (
-	.z(divein_31), // OUT
-	.a0(dividend_lo[29]), // IN
-	.a1(dstd[31]), // IN
-	.a2(dividend_lo[29]), // IN
-	.a3(dstd[15]), // IN
-	.s0(div_startb_1), // IN
-	.s1(div_offset)  // IN
+	.z /* OUT */ (divein_31),
+	.a0 /* IN */ (dividend_lo[29]),
+	.a1 /* IN */ (dstd[31]),
+	.a2 /* IN */ (dividend_lo[29]),
+	.a3 /* IN */ (dstd[15]),
+	.s0 /* IN */ (div_startb_1),
+	.s1 /* IN */ (div_offset)
 );
 
 // DIVIDE.NET (214) - divein : join
@@ -1505,204 +1539,204 @@ assign divein[31] = divein_31;
 // DIVIDE.NET (215) - dividend_lo : fd1qp
 fd1q dividend_lo_inst_0
 (
-	.q(dividend_lo[0]), // OUT
-	.d(divein[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[0]),
+	.d /* IN */ (divein[0]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_1
 (
-	.q(dividend_lo[1]), // OUT
-	.d(divein[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[1]),
+	.d /* IN */ (divein[1]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_2
 (
-	.q(dividend_lo[2]), // OUT
-	.d(divein[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[2]),
+	.d /* IN */ (divein[2]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_3
 (
-	.q(dividend_lo[3]), // OUT
-	.d(divein[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[3]),
+	.d /* IN */ (divein[3]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_4
 (
-	.q(dividend_lo[4]), // OUT
-	.d(divein[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[4]),
+	.d /* IN */ (divein[4]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_5
 (
-	.q(dividend_lo[5]), // OUT
-	.d(divein[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[5]),
+	.d /* IN */ (divein[5]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_6
 (
-	.q(dividend_lo[6]), // OUT
-	.d(divein[6]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[6]),
+	.d /* IN */ (divein[6]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_7
 (
-	.q(dividend_lo[7]), // OUT
-	.d(divein[7]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[7]),
+	.d /* IN */ (divein[7]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_8
 (
-	.q(dividend_lo[8]), // OUT
-	.d(divein[8]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[8]),
+	.d /* IN */ (divein[8]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_9
 (
-	.q(dividend_lo[9]), // OUT
-	.d(divein[9]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[9]),
+	.d /* IN */ (divein[9]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_10
 (
-	.q(dividend_lo[10]), // OUT
-	.d(divein[10]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[10]),
+	.d /* IN */ (divein[10]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_11
 (
-	.q(dividend_lo[11]), // OUT
-	.d(divein[11]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[11]),
+	.d /* IN */ (divein[11]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_12
 (
-	.q(dividend_lo[12]), // OUT
-	.d(divein[12]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[12]),
+	.d /* IN */ (divein[12]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_13
 (
-	.q(dividend_lo[13]), // OUT
-	.d(divein[13]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[13]),
+	.d /* IN */ (divein[13]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_14
 (
-	.q(dividend_lo[14]), // OUT
-	.d(divein[14]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[14]),
+	.d /* IN */ (divein[14]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_15
 (
-	.q(dividend_lo[15]), // OUT
-	.d(divein[15]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[15]),
+	.d /* IN */ (divein[15]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_16
 (
-	.q(dividend_lo[16]), // OUT
-	.d(divein[16]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[16]),
+	.d /* IN */ (divein[16]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_17
 (
-	.q(dividend_lo[17]), // OUT
-	.d(divein[17]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[17]),
+	.d /* IN */ (divein[17]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_18
 (
-	.q(dividend_lo[18]), // OUT
-	.d(divein[18]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[18]),
+	.d /* IN */ (divein[18]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_19
 (
-	.q(dividend_lo[19]), // OUT
-	.d(divein[19]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[19]),
+	.d /* IN */ (divein[19]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_20
 (
-	.q(dividend_lo[20]), // OUT
-	.d(divein[20]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[20]),
+	.d /* IN */ (divein[20]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_21
 (
-	.q(dividend_lo[21]), // OUT
-	.d(divein[21]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[21]),
+	.d /* IN */ (divein[21]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_22
 (
-	.q(dividend_lo[22]), // OUT
-	.d(divein[22]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[22]),
+	.d /* IN */ (divein[22]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_23
 (
-	.q(dividend_lo[23]), // OUT
-	.d(divein[23]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[23]),
+	.d /* IN */ (divein[23]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_24
 (
-	.q(dividend_lo[24]), // OUT
-	.d(divein[24]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[24]),
+	.d /* IN */ (divein[24]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_25
 (
-	.q(dividend_lo[25]), // OUT
-	.d(divein[25]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[25]),
+	.d /* IN */ (divein[25]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_26
 (
-	.q(dividend_lo[26]), // OUT
-	.d(divein[26]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[26]),
+	.d /* IN */ (divein[26]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_27
 (
-	.q(dividend_lo[27]), // OUT
-	.d(divein[27]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[27]),
+	.d /* IN */ (divein[27]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_28
 (
-	.q(dividend_lo[28]), // OUT
-	.d(divein[28]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[28]),
+	.d /* IN */ (divein[28]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_29
 (
-	.q(dividend_lo[29]), // OUT
-	.d(divein[29]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[29]),
+	.d /* IN */ (divein[29]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_30
 (
-	.q(dividend_lo[30]), // OUT
-	.d(divein[30]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[30]),
+	.d /* IN */ (divein[30]),
+	.cp /* IN */ (clk)
 );
 fd1q dividend_lo_inst_31
 (
-	.q(dividend_lo[31]), // OUT
-	.d(divein[31]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dividend_lo[31]),
+	.d /* IN */ (divein[31]),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (222) - divisor : fdsync32
 fdsync32 divisor_inst
 (
-	.q({divisor[0],divisor[1],divisor[2],divisor[3],divisor[4],divisor[5],divisor[6],divisor[7],divisor[8],divisor[9],divisor[10],divisor[11],divisor[12],divisor[13],divisor[14],divisor[15],divisor[16],divisor[17],divisor[18],divisor[19],divisor[20],divisor[21],divisor[22],divisor[23],divisor[24],divisor[25],divisor[26],divisor[27],divisor[28],divisor[29],divisor[30],divisor[31]}), // IO
-	.d({srcd[0],srcd[1],srcd[2],srcd[3],srcd[4],srcd[5],srcd[6],srcd[7],srcd[8],srcd[9],srcd[10],srcd[11],srcd[12],srcd[13],srcd[14],srcd[15],srcd[16],srcd[17],srcd[18],srcd[19],srcd[20],srcd[21],srcd[22],srcd[23],srcd[24],srcd[25],srcd[26],srcd[27],srcd[28],srcd[29],srcd[30],srcd[31]}), // IN
-	.ld(div_startb_2), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({divisor[0],divisor[1],divisor[2],divisor[3],divisor[4],divisor[5],divisor[6],divisor[7],divisor[8],divisor[9],divisor[10],divisor[11],divisor[12],divisor[13],divisor[14],divisor[15],divisor[16],divisor[17],divisor[18],divisor[19],divisor[20],divisor[21],divisor[22],divisor[23],divisor[24],divisor[25],divisor[26],divisor[27],divisor[28],divisor[29],divisor[30],divisor[31]}),
+	.d /* IN */ ({srcd[0],srcd[1],srcd[2],srcd[3],srcd[4],srcd[5],srcd[6],srcd[7],srcd[8],srcd[9],srcd[10],srcd[11],srcd[12],srcd[13],srcd[14],srcd[15],srcd[16],srcd[17],srcd[18],srcd[19],srcd[20],srcd[21],srcd[22],srcd[23],srcd[24],srcd[25],srcd[26],srcd[27],srcd[28],srcd[29],srcd[30],srcd[31]}),
+	.ld /* IN */ (div_startb_2),
+	.clk /* IN */ (clk)
 );
 
 // DIVIDE.NET (229) - quosh[1] : iv
@@ -1711,240 +1745,240 @@ assign quosh_1 = ~addq1_32;
 // DIVIDE.NET (230) - quoti[0] : mxi2
 mxi2 quoti_index_0_inst
 (
-	.z(quoti_0), // OUT
-	.a0(quotient_n_0), // IN
-	.a1(addq2_32), // IN
-	.s(div_activeb_0)  // IN
+	.z /* OUT */ (quoti_0),
+	.a0 /* IN */ (quotient_n_0),
+	.a1 /* IN */ (addq2_32),
+	.s /* IN */ (div_activeb_0)
 );
 
 // DIVIDE.NET (232) - quotient[0] : fd1
 fd1 quotient_index_0_inst
 (
-	.q(quotient_0), // OUT
-	.qn(quotient_n_0), // OUT
-	.d(quoti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (quotient_0),
+	.qn /* OUT */ (quotient_n_0),
+	.d /* IN */ (quoti_0),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (233) - quotient[1] : fdsync
 fdsync quotient_index_1_inst
 (
-	.q(quotient_1), // IO
-	.d(quosh_1), // IN
-	.ld(div_activeb_0), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_1),
+	.d /* IN */ (quosh_1),
+	.ld /* IN */ (div_activeb_0),
+	.clk /* IN */ (clk)
 );
 
 // DIVIDE.NET (235) - quotient[2-31] : fdsync
 fdsync quotient_from_2_to_31_inst_0
 (
-	.q(quotient_2), // IO
-	.d(quotient_0), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_2),
+	.d /* IN */ (quotient_0),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_1
 (
-	.q(quotient_3), // IO
-	.d(quotient_1), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_3),
+	.d /* IN */ (quotient_1),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_2
 (
-	.q(quotient_4), // IO
-	.d(quotient_2), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_4),
+	.d /* IN */ (quotient_2),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_3
 (
-	.q(quotient_5), // IO
-	.d(quotient_3), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_5),
+	.d /* IN */ (quotient_3),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_4
 (
-	.q(quotient_6), // IO
-	.d(quotient_4), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_6),
+	.d /* IN */ (quotient_4),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_5
 (
-	.q(quotient_7), // IO
-	.d(quotient_5), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_7),
+	.d /* IN */ (quotient_5),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_6
 (
-	.q(quotient_8), // IO
-	.d(quotient_6), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_8),
+	.d /* IN */ (quotient_6),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_7
 (
-	.q(quotient_9), // IO
-	.d(quotient_7), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_9),
+	.d /* IN */ (quotient_7),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_8
 (
-	.q(quotient_10), // IO
-	.d(quotient_8), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_10),
+	.d /* IN */ (quotient_8),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_9
 (
-	.q(quotient_11), // IO
-	.d(quotient_9), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_11),
+	.d /* IN */ (quotient_9),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_10
 (
-	.q(quotient_12), // IO
-	.d(quotient_10), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_12),
+	.d /* IN */ (quotient_10),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_11
 (
-	.q(quotient_13), // IO
-	.d(quotient_11), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_13),
+	.d /* IN */ (quotient_11),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_12
 (
-	.q(quotient_14), // IO
-	.d(quotient_12), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_14),
+	.d /* IN */ (quotient_12),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_13
 (
-	.q(quotient_15), // IO
-	.d(quotient_13), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_15),
+	.d /* IN */ (quotient_13),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_14
 (
-	.q(quotient_16), // IO
-	.d(quotient_14), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_16),
+	.d /* IN */ (quotient_14),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_15
 (
-	.q(quotient_17), // IO
-	.d(quotient_15), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_17),
+	.d /* IN */ (quotient_15),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_16
 (
-	.q(quotient_18), // IO
-	.d(quotient_16), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_18),
+	.d /* IN */ (quotient_16),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_17
 (
-	.q(quotient_19), // IO
-	.d(quotient_17), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_19),
+	.d /* IN */ (quotient_17),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_18
 (
-	.q(quotient_20), // IO
-	.d(quotient_18), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_20),
+	.d /* IN */ (quotient_18),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_19
 (
-	.q(quotient_21), // IO
-	.d(quotient_19), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_21),
+	.d /* IN */ (quotient_19),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_20
 (
-	.q(quotient_22), // IO
-	.d(quotient_20), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_22),
+	.d /* IN */ (quotient_20),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_21
 (
-	.q(quotient_23), // IO
-	.d(quotient_21), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_23),
+	.d /* IN */ (quotient_21),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_22
 (
-	.q(quotient_24), // IO
-	.d(quotient_22), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_24),
+	.d /* IN */ (quotient_22),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_23
 (
-	.q(quotient_25), // IO
-	.d(quotient_23), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_25),
+	.d /* IN */ (quotient_23),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_24
 (
-	.q(quotient_26), // IO
-	.d(quotient_24), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_26),
+	.d /* IN */ (quotient_24),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_25
 (
-	.q(quotient_27), // IO
-	.d(quotient_25), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_27),
+	.d /* IN */ (quotient_25),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_26
 (
-	.q(quotient_28), // IO
-	.d(quotient_26), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_28),
+	.d /* IN */ (quotient_26),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_27
 (
-	.q(quotient_29), // IO
-	.d(quotient_27), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_29),
+	.d /* IN */ (quotient_27),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_28
 (
-	.q(quotient_30), // IO
-	.d(quotient_28), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_30),
+	.d /* IN */ (quotient_28),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 fdsync quotient_from_2_to_31_inst_29
 (
-	.q(quotient_31), // IO
-	.d(quotient_29), // IN
-	.ld(div_activeb_1), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (quotient_31),
+	.d /* IN */ (quotient_29),
+	.ld /* IN */ (div_activeb_1),
+	.clk /* IN */ (clk)
 );
 
 // DIVIDE.NET (237) - quotient : join
@@ -1990,19 +2024,19 @@ assign cntt_0 = ~count_0;
 // DIVIDE.NET (249) - cntt1 : ha1
 ha1 cntt1_inst
 (
-	.s(cntt_1), // OUT
-	.co(cntc_1), // OUT
-	.a(count_1), // IN
-	.b(count_0)  // IN
+	.s /* OUT */ (cntt_1),
+	.co /* OUT */ (cntc_1),
+	.a /* IN */ (count_1),
+	.b /* IN */ (count_0)
 );
 
 // DIVIDE.NET (250) - cntt2 : ha1
 ha1 cntt2_inst
 (
-	.s(cntt_2), // OUT
-	.co(cntc_2), // OUT
-	.a(count_2), // IN
-	.b(cntc_1)  // IN
+	.s /* OUT */ (cntt_2),
+	.co /* OUT */ (cntc_2),
+	.a /* IN */ (count_2),
+	.b /* IN */ (cntc_1)
 );
 
 // DIVIDE.NET (251) - cntt3 : eo
@@ -2017,27 +2051,27 @@ assign cnti_3 = cntt_3 & cnten;
 // DIVIDE.NET (254) - count[0-3] : fd1q
 fd1q count_from_0_to_3_inst_0
 (
-	.q(count_0), // OUT
-	.d(cnti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_0),
+	.d /* IN */ (cnti_0),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_3_inst_1
 (
-	.q(count_1), // OUT
-	.d(cnti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_1),
+	.d /* IN */ (cnti_1),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_3_inst_2
 (
-	.q(count_2), // OUT
-	.d(cnti_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_2),
+	.d /* IN */ (cnti_2),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_3_inst_3
 (
-	.q(count_3), // OUT
-	.d(cnti_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_3),
+	.d /* IN */ (cnti_3),
+	.cp /* IN */ (clk)
 );
 
 // DIVIDE.NET (256) - cnt_zero : or4
@@ -2052,10 +2086,10 @@ assign div_activei_obuf = ~(div_start_n & dat_0);
 // DIVIDE.NET (260) - div_active : fd2q
 fd2q div_active_inst
 (
-	.q(div_active), // OUT
-	.d(div_activei_obuf), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (div_active),
+	.d /* IN */ (div_activei_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // DIVIDE.NET (261) - div_activeb[0-2] : nivu

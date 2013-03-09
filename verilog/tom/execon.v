@@ -121,11 +121,11 @@ assign single_step_n = ~single_step;
 // EXECON.NET (58) - insrdy : fd2
 fd2 insrdy_inst
 (
-	.q(insrdyp), // OUT
-	.qn(insrdyp_n), // OUT
-	.d(insrdy), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (insrdyp),
+	.qn /* OUT */ (insrdyp_n),
+	.d /* IN */ (insrdy),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (70) - vinsset\ : nd2
@@ -146,10 +146,10 @@ assign vinsi = ~(vinst_0 & vinsset_n);
 // EXECON.NET (75) - vins : fd2qp
 fd2q vins_inst
 (
-	.q(vins), // OUT
-	.d(vinsi), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (vins),
+	.d /* IN */ (vinsi),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (77) - wait\ : nr3p
@@ -176,10 +176,10 @@ assign insexei_obuf = vinsi & execi & compdwaiti_n;
 // EXECON.NET (93) - insexe : fd2qp
 fd2q insexe_inst
 (
-	.q(insexe), // OUT
-	.d(insexei_obuf), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (insexe),
+	.d /* IN */ (insexei_obuf),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (102) - idlet0 : nd2
@@ -197,10 +197,10 @@ assign idlet_3 = ~(idlet_0 & idlet_1 & idlet_2);
 // EXECON.NET (106) - idle : fd4q
 fd4q idle_inst
 (
-	.q(idle), // OUT
-	.d(idlet_3), // IN
-	.cp(clk_0), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (idle),
+	.d /* IN */ (idlet_3),
+	.cp /* IN */ (clk_0),
+	.sd /* IN */ (reset_n)
 );
 
 // EXECON.NET (108) - exect0 : nd2
@@ -212,12 +212,12 @@ assign exect_1 = ~(exec & go & exe_n);
 // EXECON.NET (110) - exect2 : nd5
 nd5 exect2_inst
 (
-	.q(exect_2), // OUT
-	.a_0(exec), // IN
-	.a_1(go), // IN
-	.a_2(exe_obuf), // IN
-	.a_3(single_step_n), // IN
-	.a_4(immld_n)  // IN
+	.q /* OUT */ (exect_2),
+	.a_0 /* IN */ (exec),
+	.a_1 /* IN */ (go),
+	.a_2 /* IN */ (exe_obuf),
+	.a_3 /* IN */ (single_step_n),
+	.a_4 /* IN */ (immld_n)
 );
 
 // EXECON.NET (112) - exect3 : nd3
@@ -229,21 +229,21 @@ assign exect_4 = ~(stop_obuf & single_go & go);
 // EXECON.NET (114) - exect5 : nd5
 nd5 exect5_inst
 (
-	.q(execi), // OUT
-	.a_0(exect_0), // IN
-	.a_1(exect_1), // IN
-	.a_2(exect_2), // IN
-	.a_3(exect_3), // IN
-	.a_4(exect_4)  // IN
+	.q /* OUT */ (execi),
+	.a_0 /* IN */ (exect_0),
+	.a_1 /* IN */ (exect_1),
+	.a_2 /* IN */ (exect_2),
+	.a_3 /* IN */ (exect_3),
+	.a_4 /* IN */ (exect_4)
 );
 
 // EXECON.NET (115) - exect : fd2q
 fd2q exect_inst
 (
-	.q(exect), // OUT
-	.d(execi), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (exect),
+	.d /* IN */ (execi),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (116) - exec : nivm
@@ -261,10 +261,10 @@ assign imm1t_2 = ~(imm1t_0 & imm1t_1);
 // EXECON.NET (121) - imm1 : fd2q
 fd2q imm1_inst
 (
-	.q(imm1), // OUT
-	.d(imm1t_2), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (imm1),
+	.d /* IN */ (imm1t_2),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (123) - imm2t0 : nd2
@@ -279,21 +279,21 @@ assign imm2i = ~(imm2t_0 & imm2t_1);
 // EXECON.NET (126) - imm2 : fd2q
 fd2q imm2_inst
 (
-	.q(imm2), // OUT
-	.d(imm2i), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (imm2),
+	.d /* IN */ (imm2i),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (128) - stopt0 : nd5
 nd5 stopt0_inst
 (
-	.q(stopt_0), // OUT
-	.a_0(exec), // IN
-	.a_1(go), // IN
-	.a_2(exe_obuf), // IN
-	.a_3(immld_n), // IN
-	.a_4(single_step)  // IN
+	.q /* OUT */ (stopt_0),
+	.a_0 /* IN */ (exec),
+	.a_1 /* IN */ (go),
+	.a_2 /* IN */ (exe_obuf),
+	.a_3 /* IN */ (immld_n),
+	.a_4 /* IN */ (single_step)
 );
 
 // EXECON.NET (130) - stopt1 : nd3
@@ -308,10 +308,10 @@ assign stopt_3 = ~(stopt_0 & stopt_1 & stopt_2);
 // EXECON.NET (133) - stop : fd2q
 fd2q stop_inst
 (
-	.q(stop_obuf), // OUT
-	.d(stopt_3), // IN
-	.cp(clk_0), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (stop_obuf),
+	.d /* IN */ (stopt_3),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (reset_n)
 );
 
 // EXECON.NET (150) - romot0 : nd2p
@@ -326,12 +326,12 @@ assign romot2t = ~(memrw & datwe & precomp);
 // EXECON.NET (153) - romot2 : nd5p
 nd5p romot2_inst
 (
-	.q(romot_2), // OUT
-	.a_0(exec), // IN
-	.a_1(exeb_0), // IN
-	.a_2(single_step_n), // IN
-	.a_3(insrdy), // IN
-	.a_4(romot2t)  // IN
+	.q /* OUT */ (romot_2),
+	.a_0 /* IN */ (exec),
+	.a_1 /* IN */ (exeb_0),
+	.a_2 /* IN */ (single_step_n),
+	.a_3 /* IN */ (insrdy),
+	.a_4 /* IN */ (romot2t)
 );
 
 // EXECON.NET (155) - romot3 : nd3
@@ -340,12 +340,12 @@ assign romot_3 = ~(exec & exe_n & compdwait);
 // EXECON.NET (156) - romot4 : nd5
 nd5 romot4_inst
 (
-	.q(romot_4), // OUT
-	.a_0(exec), // IN
-	.a_1(exeb_0), // IN
-	.a_2(immld), // IN
-	.a_3(single_step), // IN
-	.a_4(insrdy)  // IN
+	.q /* OUT */ (romot_4),
+	.a_0 /* IN */ (exec),
+	.a_1 /* IN */ (exeb_0),
+	.a_2 /* IN */ (immld),
+	.a_3 /* IN */ (single_step),
+	.a_4 /* IN */ (insrdy)
 );
 
 // EXECON.NET (158) - romot5 : nd4
@@ -387,9 +387,9 @@ assign compdldt_n = ~(exe_obuf & memrw & datwe & precomp);
 // EXECON.NET (184) - compdld : fd1q
 fd1q compdld_inst
 (
-	.q(compdld_n), // OUT
-	.d(compdldt_n), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (compdld_n),
+	.d /* IN */ (compdldt_n),
+	.cp /* IN */ (clk_0)
 );
 
 // EXECON.NET (185) - dstdgt0 : nd4

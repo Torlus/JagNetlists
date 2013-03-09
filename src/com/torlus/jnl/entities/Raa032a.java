@@ -13,7 +13,7 @@ public class Raa032a extends Entity {
 	// Unused
 	public Raa032a() {
 		for (int i = 0; i < 32; i++) {
-			Signal s = new Signal("z", SignalType.TRI);
+			Signal s = new Signal("z", SignalType.BUS);
 			s.bit = i;
 			ios.add(s);
 		}

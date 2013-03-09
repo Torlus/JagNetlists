@@ -12,9 +12,9 @@ public class Aba032a extends Entity {
 
 	public Aba032a() {
 		for (int i = 0; i < 32; i++) {
-			Signal s = new Signal("z", SignalType.BUS);
-			s.bit = i;
-			ios.add(s);
+			Signal z = new Signal("z", SignalType.BUS);
+			z.bit = i;
+			ios.add(z);
 		}
 		ios.add(new Signal("cs", SignalType.IN));
 		ios.add(new Signal("we", SignalType.IN));

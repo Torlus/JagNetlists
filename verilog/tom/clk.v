@@ -25,18 +25,10 @@ wire internal;
 
 // Output buffers
 wire cfgw_obuf;
-wire cfgen_obuf;
-wire clk_obuf;
-wire vclk_obuf;
-wire tlw_obuf;
 
 
 // Output buffers
 assign cfgw = cfgw_obuf;
-assign cfgen = cfgen_obuf;
-assign clk = clk_obuf;
-assign vclk = vclk_obuf;
-assign tlw = tlw_obuf;
 
 
 // CLK.NET (35) - clk1 : niv
@@ -46,23 +38,23 @@ assign clk1 = pclk;
 assign clk2 = clk1;
 
 // CLK.NET (37) - clk : bniv310
-assign clk_obuf = clk2;
+assign clk = clk2;
 
 // CLK.NET (42) - tlw : ivu
-assign tlw_obuf = ~clk1;
+assign tlw = ~clk1;
 
 // CLK.NET (58) - vclk1 : nivh
 assign vclk1 = vxclk;
 
 // CLK.NET (59) - vclk : bniv34
-assign vclk_obuf = vclk1;
+assign vclk = vclk1;
 
 // CLK.NET (80) - cfgwl : fd1q
 fd1q cfgwl_inst
 (
-	.q(cfgwl), // OUT
-	.d(resetl), // IN
-	.cp(pclk)  // IN
+	.q /* OUT */ (cfgwl),
+	.d /* IN */ (resetl),
+	.cp /* IN */ (pclk)
 );
 
 // CLK.NET (81) - cfgw : iv
@@ -71,10 +63,10 @@ assign cfgw_obuf = ~cfgwl;
 // CLK.NET (82) - cfgend : fd2q
 fd2q cfgend_inst
 (
-	.q(cfgend), // OUT
-	.d(cfgwl), // IN
-	.cp(pclk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (cfgend),
+	.d /* IN */ (cfgwl),
+	.cp /* IN */ (pclk),
+	.cd /* IN */ (resetl)
 );
 
 // CLK.NET (83) - nottest : iv
@@ -84,14 +76,14 @@ assign nottest = ~ndtest;
 assign cfgeni = ~(cfgend & nottest);
 
 // CLK.NET (85) - cfgen : ivh
-assign cfgen_obuf = ~cfgeni;
+assign cfgen = ~cfgeni;
 
 // CLK.NET (87) - external : ldp1q
 ldp1q external_inst
 (
-	.q(external), // OUT
-	.d(cfg_7), // IN
-	.g(cfgw_obuf)  // IN
+	.q /* OUT */ (external),
+	.d /* IN */ (cfg_7),
+	.g /* IN */ (cfgw_obuf)
 );
 
 // CLK.NET (88) - internal : iv

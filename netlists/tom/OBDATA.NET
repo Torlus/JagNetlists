@@ -24,8 +24,9 @@ DEF 	OBDATA	(aout[9],din[0..15],reads,palen,clutt,d[0..63],
 		dr[0..15]:TRI);
 
 
-		INT16/di, INT8/aa, INT8/ab, INT16/pda, INT16/pdb, INT9/xrem,
+		INT16/di, INT8/aa, INT8/ab, INT9/xrem,
 		INT16/d9h, INT16/d9l:IO;
+		INT16/pda, INT16/pdb:BUS; (* GE - declared as BUS *)
 (*
 
 obdlatch	synchronously latches a phrase from the main data bus

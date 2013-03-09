@@ -15,12 +15,10 @@ wire d;
 wire e;
 
 // Output buffers
-wire q_obuf;
 wire ql_obuf;
 
 
 // Output buffers
-assign q = q_obuf;
 assign ql = ql_obuf;
 
 
@@ -39,9 +37,9 @@ assign e = d & r;
 // LEGO.NET (235) - q : fd1
 fd1 q_inst
 (
-	.q(q_obuf), // OUT
-	.qn(ql_obuf), // OUT
-	.d(e), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (q),
+	.qn /* OUT */ (ql_obuf),
+	.d /* IN */ (e),
+	.cp /* IN */ (clk)
 );
 endmodule

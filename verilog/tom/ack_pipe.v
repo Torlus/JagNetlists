@@ -14,14 +14,6 @@ wire q;
 wire d1;
 wire d;
 
-// Output buffers
-wire latch_obuf;
-
-
-// Output buffers
-assign latch = latch_obuf;
-
-
 // OB.NET (683) - notack : iv
 assign notack = ~ack;
 
@@ -37,12 +29,12 @@ assign d = ~(d0 & d1);
 // OB.NET (687) - q : fd2q
 fd2q q_inst
 (
-	.q(q), // OUT
-	.d(d), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q),
+	.d /* IN */ (d),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (688) - latch : an2
-assign latch_obuf = q & ack;
+assign latch = q & ack;
 endmodule

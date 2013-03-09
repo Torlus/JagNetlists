@@ -91,22 +91,54 @@ module vid
 	output lbaactive,
 	output lbbactive,
 	output hcb_10,
-	inout dr_0,
-	inout dr_1,
-	inout dr_2,
-	inout dr_3,
-	inout dr_4,
-	inout dr_5,
-	inout dr_6,
-	inout dr_7,
-	inout dr_8,
-	inout dr_9,
-	inout dr_10,
-	inout dr_11,
-	inout dr_12,
-	inout dr_13,
-	inout dr_14,
-	inout dr_15
+	output dr_0_out,
+	output dr_0_oe,
+	input dr_0_in,
+	output dr_1_out,
+	output dr_1_oe,
+	input dr_1_in,
+	output dr_2_out,
+	output dr_2_oe,
+	input dr_2_in,
+	output dr_3_out,
+	output dr_3_oe,
+	input dr_3_in,
+	output dr_4_out,
+	output dr_4_oe,
+	input dr_4_in,
+	output dr_5_out,
+	output dr_5_oe,
+	input dr_5_in,
+	output dr_6_out,
+	output dr_6_oe,
+	input dr_6_in,
+	output dr_7_out,
+	output dr_7_oe,
+	input dr_7_in,
+	output dr_8_out,
+	output dr_8_oe,
+	input dr_8_in,
+	output dr_9_out,
+	output dr_9_oe,
+	input dr_9_in,
+	output dr_10_out,
+	output dr_10_oe,
+	input dr_10_in,
+	output dr_11_out,
+	output dr_11_oe,
+	input dr_11_in,
+	output dr_12_out,
+	output dr_12_oe,
+	input dr_12_in,
+	output dr_13_out,
+	output dr_13_oe,
+	input dr_13_in,
+	output dr_14_out,
+	output dr_14_oe,
+	input dr_14_in,
+	output dr_15_out,
+	output dr_15_oe,
+	input dr_15_in
 );
 wire [0:10] hc;
 wire [0:11] vc;
@@ -428,6 +460,648 @@ wire notlpe;
 wire gnd;
 wire e11;
 wire e1215;
+wire ts_pe_260_a0_out;
+wire ts_pe_260_a0_oe;
+wire ts_pe_260_a0_in;
+wire ts_pe_260_a1_out;
+wire ts_pe_260_a1_oe;
+wire ts_pe_260_a1_in;
+wire ts_pe_260_a2_out;
+wire ts_pe_260_a2_oe;
+wire ts_pe_260_a2_in;
+wire ts_pe_260_a3_out;
+wire ts_pe_260_a3_oe;
+wire ts_pe_260_a3_in;
+wire ts_pe_260_a4_out;
+wire ts_pe_260_a4_oe;
+wire ts_pe_260_a4_in;
+wire ts_pe_260_a5_out;
+wire ts_pe_260_a5_oe;
+wire ts_pe_260_a5_in;
+wire ts_pe_260_a6_out;
+wire ts_pe_260_a6_oe;
+wire ts_pe_260_a6_in;
+wire ts_pe_260_a7_out;
+wire ts_pe_260_a7_oe;
+wire ts_pe_260_a7_in;
+wire ts_pe_260_a8_out;
+wire ts_pe_260_a8_oe;
+wire ts_pe_260_a8_in;
+wire ts_pe_260_a9_out;
+wire ts_pe_260_a9_oe;
+wire ts_pe_260_a9_in;
+wire ts_pe_260_a10_out;
+wire ts_pe_260_a10_oe;
+wire ts_pe_260_a10_in;
+wire ts_pe_260_a11_out;
+wire ts_pe_260_a11_oe;
+wire ts_pe_260_a11_in;
+wire ts_pe_260_a12_out;
+wire ts_pe_260_a12_oe;
+wire ts_pe_260_a12_in;
+wire ts_pe_260_a13_out;
+wire ts_pe_260_a13_oe;
+wire ts_pe_260_a13_in;
+wire ts_pe_260_a14_out;
+wire ts_pe_260_a14_oe;
+wire ts_pe_260_a14_in;
+wire ts_pe_260_a15_out;
+wire ts_pe_260_a15_oe;
+wire ts_pe_260_a15_in;
+wire ts_pe_260_a16_out;
+wire ts_pe_260_a16_oe;
+wire ts_pe_260_a16_in;
+wire ts_pe_260_a17_out;
+wire ts_pe_260_a17_oe;
+wire ts_pe_260_a17_in;
+wire ts_pe_260_a18_out;
+wire ts_pe_260_a18_oe;
+wire ts_pe_260_a18_in;
+wire ts_pe_261_a0_out;
+wire ts_pe_261_a0_oe;
+wire ts_pe_261_a0_in;
+wire ts_pe_261_a1_out;
+wire ts_pe_261_a1_oe;
+wire ts_pe_261_a1_in;
+wire ts_pe_261_a2_out;
+wire ts_pe_261_a2_oe;
+wire ts_pe_261_a2_in;
+wire ts_pe_261_a3_out;
+wire ts_pe_261_a3_oe;
+wire ts_pe_261_a3_in;
+wire ts_pe_261_a4_out;
+wire ts_pe_261_a4_oe;
+wire ts_pe_261_a4_in;
+wire ts_pe_261_a5_out;
+wire ts_pe_261_a5_oe;
+wire ts_pe_261_a5_in;
+wire ts_pe_261_a6_out;
+wire ts_pe_261_a6_oe;
+wire ts_pe_261_a6_in;
+wire ts_pe_261_a7_out;
+wire ts_pe_261_a7_oe;
+wire ts_pe_261_a7_in;
+wire ts_pe_261_a8_out;
+wire ts_pe_261_a8_oe;
+wire ts_pe_261_a8_in;
+wire ts_pe_261_a9_out;
+wire ts_pe_261_a9_oe;
+wire ts_pe_261_a9_in;
+wire ts_pe_261_a10_out;
+wire ts_pe_261_a10_oe;
+wire ts_pe_261_a10_in;
+wire ts_pe_261_a11_out;
+wire ts_pe_261_a11_oe;
+wire ts_pe_261_a11_in;
+wire ts_pe_261_a12_out;
+wire ts_pe_261_a12_oe;
+wire ts_pe_261_a12_in;
+wire ts_pe_261_a13_out;
+wire ts_pe_261_a13_oe;
+wire ts_pe_261_a13_in;
+wire ts_pe_261_a14_out;
+wire ts_pe_261_a14_oe;
+wire ts_pe_261_a14_in;
+wire ts_pe_261_a15_out;
+wire ts_pe_261_a15_oe;
+wire ts_pe_261_a15_in;
+wire ts_pe_261_a16_out;
+wire ts_pe_261_a16_oe;
+wire ts_pe_261_a16_in;
+wire ts_pe_261_a17_out;
+wire ts_pe_261_a17_oe;
+wire ts_pe_261_a17_in;
+wire ts_pe_261_a18_out;
+wire ts_pe_261_a18_oe;
+wire ts_pe_261_a18_in;
+wire ts_pe_262_a0_out;
+wire ts_pe_262_a0_oe;
+wire ts_pe_262_a0_in;
+wire ts_pe_262_a1_out;
+wire ts_pe_262_a1_oe;
+wire ts_pe_262_a1_in;
+wire ts_pe_262_a2_out;
+wire ts_pe_262_a2_oe;
+wire ts_pe_262_a2_in;
+wire ts_pe_262_a3_out;
+wire ts_pe_262_a3_oe;
+wire ts_pe_262_a3_in;
+wire ts_pe_262_a4_out;
+wire ts_pe_262_a4_oe;
+wire ts_pe_262_a4_in;
+wire ts_pe_262_a5_out;
+wire ts_pe_262_a5_oe;
+wire ts_pe_262_a5_in;
+wire ts_pe_262_a6_out;
+wire ts_pe_262_a6_oe;
+wire ts_pe_262_a6_in;
+wire ts_pe_262_a7_out;
+wire ts_pe_262_a7_oe;
+wire ts_pe_262_a7_in;
+wire ts_pe_262_a8_out;
+wire ts_pe_262_a8_oe;
+wire ts_pe_262_a8_in;
+wire ts_pe_262_a9_out;
+wire ts_pe_262_a9_oe;
+wire ts_pe_262_a9_in;
+wire ts_pe_262_a10_out;
+wire ts_pe_262_a10_oe;
+wire ts_pe_262_a10_in;
+wire ts_pe_262_a11_out;
+wire ts_pe_262_a11_oe;
+wire ts_pe_262_a11_in;
+wire ts_pe_262_a12_out;
+wire ts_pe_262_a12_oe;
+wire ts_pe_262_a12_in;
+wire ts_pe_262_a13_out;
+wire ts_pe_262_a13_oe;
+wire ts_pe_262_a13_in;
+wire ts_pe_262_a14_out;
+wire ts_pe_262_a14_oe;
+wire ts_pe_262_a14_in;
+wire ts_pe_262_a15_out;
+wire ts_pe_262_a15_oe;
+wire ts_pe_262_a15_in;
+wire ts_pe_262_a16_out;
+wire ts_pe_262_a16_oe;
+wire ts_pe_262_a16_in;
+wire ts_pe_262_a17_out;
+wire ts_pe_262_a17_oe;
+wire ts_pe_262_a17_in;
+wire ts_pe_262_a18_out;
+wire ts_pe_262_a18_oe;
+wire ts_pe_262_a18_in;
+wire ts_pe_263_a0_out;
+wire ts_pe_263_a0_oe;
+wire ts_pe_263_a0_in;
+wire ts_pe_263_a1_out;
+wire ts_pe_263_a1_oe;
+wire ts_pe_263_a1_in;
+wire ts_pe_263_a2_out;
+wire ts_pe_263_a2_oe;
+wire ts_pe_263_a2_in;
+wire ts_pe_263_a3_out;
+wire ts_pe_263_a3_oe;
+wire ts_pe_263_a3_in;
+wire ts_pe_263_a4_out;
+wire ts_pe_263_a4_oe;
+wire ts_pe_263_a4_in;
+wire ts_pe_263_a5_out;
+wire ts_pe_263_a5_oe;
+wire ts_pe_263_a5_in;
+wire ts_pe_263_a6_out;
+wire ts_pe_263_a6_oe;
+wire ts_pe_263_a6_in;
+wire ts_pe_263_a7_out;
+wire ts_pe_263_a7_oe;
+wire ts_pe_263_a7_in;
+wire ts_pe_263_a8_out;
+wire ts_pe_263_a8_oe;
+wire ts_pe_263_a8_in;
+wire ts_pe_263_a9_out;
+wire ts_pe_263_a9_oe;
+wire ts_pe_263_a9_in;
+wire ts_pe_263_a10_out;
+wire ts_pe_263_a10_oe;
+wire ts_pe_263_a10_in;
+wire ts_pe_263_a11_out;
+wire ts_pe_263_a11_oe;
+wire ts_pe_263_a11_in;
+wire ts_pe_263_a12_out;
+wire ts_pe_263_a12_oe;
+wire ts_pe_263_a12_in;
+wire ts_pe_263_a13_out;
+wire ts_pe_263_a13_oe;
+wire ts_pe_263_a13_in;
+wire ts_pe_263_a14_out;
+wire ts_pe_263_a14_oe;
+wire ts_pe_263_a14_in;
+wire ts_pe_263_a15_out;
+wire ts_pe_263_a15_oe;
+wire ts_pe_263_a15_in;
+wire ts_pe_263_a16_out;
+wire ts_pe_263_a16_oe;
+wire ts_pe_263_a16_in;
+wire ts_pe_263_a17_out;
+wire ts_pe_263_a17_oe;
+wire ts_pe_263_a17_in;
+wire ts_pe_263_a18_out;
+wire ts_pe_263_a18_oe;
+wire ts_pe_263_a18_in;
+wire ts_pe_264_a0_out;
+wire ts_pe_264_a0_oe;
+wire ts_pe_264_a0_in;
+wire ts_pe_264_a1_out;
+wire ts_pe_264_a1_oe;
+wire ts_pe_264_a1_in;
+wire ts_pe_264_a2_out;
+wire ts_pe_264_a2_oe;
+wire ts_pe_264_a2_in;
+wire ts_pe_264_a3_out;
+wire ts_pe_264_a3_oe;
+wire ts_pe_264_a3_in;
+wire ts_pe_264_a4_out;
+wire ts_pe_264_a4_oe;
+wire ts_pe_264_a4_in;
+wire ts_pe_264_a5_out;
+wire ts_pe_264_a5_oe;
+wire ts_pe_264_a5_in;
+wire ts_pe_264_a6_out;
+wire ts_pe_264_a6_oe;
+wire ts_pe_264_a6_in;
+wire ts_pe_264_a7_out;
+wire ts_pe_264_a7_oe;
+wire ts_pe_264_a7_in;
+wire ts_pe_264_a8_out;
+wire ts_pe_264_a8_oe;
+wire ts_pe_264_a8_in;
+wire ts_pe_264_a9_out;
+wire ts_pe_264_a9_oe;
+wire ts_pe_264_a9_in;
+wire ts_pe_264_a10_out;
+wire ts_pe_264_a10_oe;
+wire ts_pe_264_a10_in;
+wire ts_pe_264_a11_out;
+wire ts_pe_264_a11_oe;
+wire ts_pe_264_a11_in;
+wire ts_pe_264_a12_out;
+wire ts_pe_264_a12_oe;
+wire ts_pe_264_a12_in;
+wire ts_pe_264_a13_out;
+wire ts_pe_264_a13_oe;
+wire ts_pe_264_a13_in;
+wire ts_pe_264_a14_out;
+wire ts_pe_264_a14_oe;
+wire ts_pe_264_a14_in;
+wire ts_pe_264_a15_out;
+wire ts_pe_264_a15_oe;
+wire ts_pe_264_a15_in;
+wire ts_pe_264_a16_out;
+wire ts_pe_264_a16_oe;
+wire ts_pe_264_a16_in;
+wire ts_pe_264_a17_out;
+wire ts_pe_264_a17_oe;
+wire ts_pe_264_a17_in;
+wire ts_pe_264_a18_out;
+wire ts_pe_264_a18_oe;
+wire ts_pe_264_a18_in;
+wire ts_pe_265_a0_out;
+wire ts_pe_265_a0_oe;
+wire ts_pe_265_a0_in;
+wire ts_pe_265_a1_out;
+wire ts_pe_265_a1_oe;
+wire ts_pe_265_a1_in;
+wire ts_pe_265_a2_out;
+wire ts_pe_265_a2_oe;
+wire ts_pe_265_a2_in;
+wire ts_pe_265_a3_out;
+wire ts_pe_265_a3_oe;
+wire ts_pe_265_a3_in;
+wire ts_pe_265_a4_out;
+wire ts_pe_265_a4_oe;
+wire ts_pe_265_a4_in;
+wire ts_pe_265_a5_out;
+wire ts_pe_265_a5_oe;
+wire ts_pe_265_a5_in;
+wire ts_pe_265_a6_out;
+wire ts_pe_265_a6_oe;
+wire ts_pe_265_a6_in;
+wire ts_pe_265_a7_out;
+wire ts_pe_265_a7_oe;
+wire ts_pe_265_a7_in;
+wire ts_pe_265_a8_out;
+wire ts_pe_265_a8_oe;
+wire ts_pe_265_a8_in;
+wire ts_pe_265_a9_out;
+wire ts_pe_265_a9_oe;
+wire ts_pe_265_a9_in;
+wire ts_pe_265_a10_out;
+wire ts_pe_265_a10_oe;
+wire ts_pe_265_a10_in;
+wire ts_pe_265_a11_out;
+wire ts_pe_265_a11_oe;
+wire ts_pe_265_a11_in;
+wire ts_pe_265_a12_out;
+wire ts_pe_265_a12_oe;
+wire ts_pe_265_a12_in;
+wire ts_pe_265_a13_out;
+wire ts_pe_265_a13_oe;
+wire ts_pe_265_a13_in;
+wire ts_pe_265_a14_out;
+wire ts_pe_265_a14_oe;
+wire ts_pe_265_a14_in;
+wire ts_pe_265_a15_out;
+wire ts_pe_265_a15_oe;
+wire ts_pe_265_a15_in;
+wire ts_pe_265_a16_out;
+wire ts_pe_265_a16_oe;
+wire ts_pe_265_a16_in;
+wire ts_pe_265_a17_out;
+wire ts_pe_265_a17_oe;
+wire ts_pe_265_a17_in;
+wire ts_pe_265_a18_out;
+wire ts_pe_265_a18_oe;
+wire ts_pe_265_a18_in;
+wire ts_pe_266_a0_out;
+wire ts_pe_266_a0_oe;
+wire ts_pe_266_a0_in;
+wire ts_pe_266_a1_out;
+wire ts_pe_266_a1_oe;
+wire ts_pe_266_a1_in;
+wire ts_pe_266_a2_out;
+wire ts_pe_266_a2_oe;
+wire ts_pe_266_a2_in;
+wire ts_pe_266_a3_out;
+wire ts_pe_266_a3_oe;
+wire ts_pe_266_a3_in;
+wire ts_pe_266_a4_out;
+wire ts_pe_266_a4_oe;
+wire ts_pe_266_a4_in;
+wire ts_pe_266_a5_out;
+wire ts_pe_266_a5_oe;
+wire ts_pe_266_a5_in;
+wire ts_pe_266_a6_out;
+wire ts_pe_266_a6_oe;
+wire ts_pe_266_a6_in;
+wire ts_pe_266_a7_out;
+wire ts_pe_266_a7_oe;
+wire ts_pe_266_a7_in;
+wire ts_pe_266_a8_out;
+wire ts_pe_266_a8_oe;
+wire ts_pe_266_a8_in;
+wire ts_pe_266_a9_out;
+wire ts_pe_266_a9_oe;
+wire ts_pe_266_a9_in;
+wire ts_pe_266_a10_out;
+wire ts_pe_266_a10_oe;
+wire ts_pe_266_a10_in;
+wire ts_pe_266_a11_out;
+wire ts_pe_266_a11_oe;
+wire ts_pe_266_a11_in;
+wire ts_pe_266_a12_out;
+wire ts_pe_266_a12_oe;
+wire ts_pe_266_a12_in;
+wire ts_pe_266_a13_out;
+wire ts_pe_266_a13_oe;
+wire ts_pe_266_a13_in;
+wire ts_pe_266_a14_out;
+wire ts_pe_266_a14_oe;
+wire ts_pe_266_a14_in;
+wire ts_pe_266_a15_out;
+wire ts_pe_266_a15_oe;
+wire ts_pe_266_a15_in;
+wire ts_pe_266_a16_out;
+wire ts_pe_266_a16_oe;
+wire ts_pe_266_a16_in;
+wire ts_pe_266_a17_out;
+wire ts_pe_266_a17_oe;
+wire ts_pe_266_a17_in;
+wire ts_pe_266_a18_out;
+wire ts_pe_266_a18_oe;
+wire ts_pe_266_a18_in;
+wire ts_pe_267_a0_out;
+wire ts_pe_267_a0_oe;
+wire ts_pe_267_a0_in;
+wire ts_pe_267_a1_out;
+wire ts_pe_267_a1_oe;
+wire ts_pe_267_a1_in;
+wire ts_pe_267_a2_out;
+wire ts_pe_267_a2_oe;
+wire ts_pe_267_a2_in;
+wire ts_pe_267_a3_out;
+wire ts_pe_267_a3_oe;
+wire ts_pe_267_a3_in;
+wire ts_pe_267_a4_out;
+wire ts_pe_267_a4_oe;
+wire ts_pe_267_a4_in;
+wire ts_pe_267_a5_out;
+wire ts_pe_267_a5_oe;
+wire ts_pe_267_a5_in;
+wire ts_pe_267_a6_out;
+wire ts_pe_267_a6_oe;
+wire ts_pe_267_a6_in;
+wire ts_pe_267_a7_out;
+wire ts_pe_267_a7_oe;
+wire ts_pe_267_a7_in;
+wire ts_pe_267_a8_out;
+wire ts_pe_267_a8_oe;
+wire ts_pe_267_a8_in;
+wire ts_pe_267_a9_out;
+wire ts_pe_267_a9_oe;
+wire ts_pe_267_a9_in;
+wire ts_pe_267_a10_out;
+wire ts_pe_267_a10_oe;
+wire ts_pe_267_a10_in;
+wire ts_pe_267_a11_out;
+wire ts_pe_267_a11_oe;
+wire ts_pe_267_a11_in;
+wire ts_pe_267_a12_out;
+wire ts_pe_267_a12_oe;
+wire ts_pe_267_a12_in;
+wire ts_pe_267_a13_out;
+wire ts_pe_267_a13_oe;
+wire ts_pe_267_a13_in;
+wire ts_pe_267_a14_out;
+wire ts_pe_267_a14_oe;
+wire ts_pe_267_a14_in;
+wire ts_pe_267_a15_out;
+wire ts_pe_267_a15_oe;
+wire ts_pe_267_a15_in;
+wire ts_pe_267_a16_out;
+wire ts_pe_267_a16_oe;
+wire ts_pe_267_a16_in;
+wire ts_pe_267_a17_out;
+wire ts_pe_267_a17_oe;
+wire ts_pe_267_a17_in;
+wire ts_pe_267_a18_out;
+wire ts_pe_267_a18_oe;
+wire ts_pe_267_a18_in;
+wire ts_pe_268_a0_out;
+wire ts_pe_268_a0_oe;
+wire ts_pe_268_a0_in;
+wire ts_pe_268_a1_out;
+wire ts_pe_268_a1_oe;
+wire ts_pe_268_a1_in;
+wire ts_pe_268_a2_out;
+wire ts_pe_268_a2_oe;
+wire ts_pe_268_a2_in;
+wire ts_pe_268_a3_out;
+wire ts_pe_268_a3_oe;
+wire ts_pe_268_a3_in;
+wire ts_pe_268_a4_out;
+wire ts_pe_268_a4_oe;
+wire ts_pe_268_a4_in;
+wire ts_pe_268_a5_out;
+wire ts_pe_268_a5_oe;
+wire ts_pe_268_a5_in;
+wire ts_pe_268_a6_out;
+wire ts_pe_268_a6_oe;
+wire ts_pe_268_a6_in;
+wire ts_pe_268_a7_out;
+wire ts_pe_268_a7_oe;
+wire ts_pe_268_a7_in;
+wire ts_pe_268_a8_out;
+wire ts_pe_268_a8_oe;
+wire ts_pe_268_a8_in;
+wire ts_pe_268_a9_out;
+wire ts_pe_268_a9_oe;
+wire ts_pe_268_a9_in;
+wire ts_pe_268_a10_out;
+wire ts_pe_268_a10_oe;
+wire ts_pe_268_a10_in;
+wire ts_pe_268_a11_out;
+wire ts_pe_268_a11_oe;
+wire ts_pe_268_a11_in;
+wire ts_pe_268_a12_out;
+wire ts_pe_268_a12_oe;
+wire ts_pe_268_a12_in;
+wire ts_pe_268_a13_out;
+wire ts_pe_268_a13_oe;
+wire ts_pe_268_a13_in;
+wire ts_pe_268_a14_out;
+wire ts_pe_268_a14_oe;
+wire ts_pe_268_a14_in;
+wire ts_pe_268_a15_out;
+wire ts_pe_268_a15_oe;
+wire ts_pe_268_a15_in;
+wire ts_pe_268_a16_out;
+wire ts_pe_268_a16_oe;
+wire ts_pe_268_a16_in;
+wire ts_pe_268_a17_out;
+wire ts_pe_268_a17_oe;
+wire ts_pe_268_a17_in;
+wire ts_pe_268_a18_out;
+wire ts_pe_268_a18_oe;
+wire ts_pe_268_a18_in;
+wire ts_pe_269_a0_out;
+wire ts_pe_269_a0_oe;
+wire ts_pe_269_a0_in;
+wire ts_pe_269_a1_out;
+wire ts_pe_269_a1_oe;
+wire ts_pe_269_a1_in;
+wire ts_pe_269_a2_out;
+wire ts_pe_269_a2_oe;
+wire ts_pe_269_a2_in;
+wire ts_pe_269_a3_out;
+wire ts_pe_269_a3_oe;
+wire ts_pe_269_a3_in;
+wire ts_pe_269_a4_out;
+wire ts_pe_269_a4_oe;
+wire ts_pe_269_a4_in;
+wire ts_pe_269_a5_out;
+wire ts_pe_269_a5_oe;
+wire ts_pe_269_a5_in;
+wire ts_pe_269_a6_out;
+wire ts_pe_269_a6_oe;
+wire ts_pe_269_a6_in;
+wire ts_pe_269_a7_out;
+wire ts_pe_269_a7_oe;
+wire ts_pe_269_a7_in;
+wire ts_pe_269_a8_out;
+wire ts_pe_269_a8_oe;
+wire ts_pe_269_a8_in;
+wire ts_pe_269_a9_out;
+wire ts_pe_269_a9_oe;
+wire ts_pe_269_a9_in;
+wire ts_pe_269_a10_out;
+wire ts_pe_269_a10_oe;
+wire ts_pe_269_a10_in;
+wire ts_pe_269_a11_out;
+wire ts_pe_269_a11_oe;
+wire ts_pe_269_a11_in;
+wire ts_pe_269_a12_out;
+wire ts_pe_269_a12_oe;
+wire ts_pe_269_a12_in;
+wire ts_pe_269_a13_out;
+wire ts_pe_269_a13_oe;
+wire ts_pe_269_a13_in;
+wire ts_pe_269_a14_out;
+wire ts_pe_269_a14_oe;
+wire ts_pe_269_a14_in;
+wire ts_pe_269_a15_out;
+wire ts_pe_269_a15_oe;
+wire ts_pe_269_a15_in;
+wire ts_pe_269_a16_out;
+wire ts_pe_269_a16_oe;
+wire ts_pe_269_a16_in;
+wire ts_pe_269_a17_out;
+wire ts_pe_269_a17_oe;
+wire ts_pe_269_a17_in;
+wire ts_pe_269_a18_out;
+wire ts_pe_269_a18_oe;
+wire ts_pe_269_a18_in;
+wire ts_pe_270_a0_out;
+wire ts_pe_270_a0_oe;
+wire ts_pe_270_a0_in;
+wire ts_pe_270_a1_out;
+wire ts_pe_270_a1_oe;
+wire ts_pe_270_a1_in;
+wire ts_pe_270_a2_out;
+wire ts_pe_270_a2_oe;
+wire ts_pe_270_a2_in;
+wire ts_pe_270_a3_out;
+wire ts_pe_270_a3_oe;
+wire ts_pe_270_a3_in;
+wire ts_pe_270_a4_out;
+wire ts_pe_270_a4_oe;
+wire ts_pe_270_a4_in;
+wire ts_pe_270_a5_out;
+wire ts_pe_270_a5_oe;
+wire ts_pe_270_a5_in;
+wire ts_pe_270_a6_out;
+wire ts_pe_270_a6_oe;
+wire ts_pe_270_a6_in;
+wire ts_pe_270_a7_out;
+wire ts_pe_270_a7_oe;
+wire ts_pe_270_a7_in;
+wire ts_pe_270_a8_out;
+wire ts_pe_270_a8_oe;
+wire ts_pe_270_a8_in;
+wire ts_pe_270_a9_out;
+wire ts_pe_270_a9_oe;
+wire ts_pe_270_a9_in;
+wire ts_pe_270_a10_out;
+wire ts_pe_270_a10_oe;
+wire ts_pe_270_a10_in;
+wire ts_pe_270_a11_out;
+wire ts_pe_270_a11_oe;
+wire ts_pe_270_a11_in;
+wire ts_pe_270_a12_out;
+wire ts_pe_270_a12_oe;
+wire ts_pe_270_a12_in;
+wire ts_pe_270_a13_out;
+wire ts_pe_270_a13_oe;
+wire ts_pe_270_a13_in;
+wire ts_pe_270_a14_out;
+wire ts_pe_270_a14_oe;
+wire ts_pe_270_a14_in;
+wire ts_pe_270_a15_out;
+wire ts_pe_270_a15_oe;
+wire ts_pe_270_a15_in;
+wire ts_pe_270_a16_out;
+wire ts_pe_270_a16_oe;
+wire ts_pe_270_a16_in;
+wire ts_pe_270_a17_out;
+wire ts_pe_270_a17_oe;
+wire ts_pe_270_a17_in;
+wire ts_pe_270_a18_out;
+wire ts_pe_270_a18_oe;
+wire ts_pe_270_a18_in;
+wire ts_pe_271_a0_out;
+wire ts_pe_271_a0_oe;
+wire ts_pe_271_a0_in;
+wire ts_pe_271_a1_out;
+wire ts_pe_271_a1_oe;
+wire ts_pe_271_a1_in;
+wire ts_pe_271_a2_out;
+wire ts_pe_271_a2_oe;
+wire ts_pe_271_a2_in;
+wire ts_pe_271_a3_out;
+wire ts_pe_271_a3_oe;
+wire ts_pe_271_a3_in;
+wire ts_pe_271_a4_out;
+wire ts_pe_271_a4_oe;
+wire ts_pe_271_a4_in;
 
 // Output buffers
 wire start_obuf;
@@ -435,39 +1109,14 @@ wire dd_obuf;
 wire lbufa_obuf;
 wire lbufb_obuf;
 wire noths_obuf;
-wire notvs_obuf;
-wire syncen_obuf;
-wire vint_obuf;
 wire vactive_obuf;
-wire blank_obuf;
 wire nextpixa_obuf;
 wire nextpixd_obuf;
 wire cry16_obuf;
-wire rgb24_obuf;
-wire rg16_obuf;
 wire rgb16_obuf;
-wire mptest_obuf;
-wire ndtest_obuf;
-wire varmod_obuf;
-wire vcl_0_obuf;
-wire vcl_1_obuf;
-wire vcl_2_obuf;
-wire vcl_3_obuf;
-wire vcl_4_obuf;
-wire vcl_5_obuf;
-wire vcl_6_obuf;
-wire vcl_7_obuf;
-wire vcl_8_obuf;
-wire vcl_9_obuf;
-wire vcl_10_obuf;
 wire tcount_obuf;
-wire incen_obuf;
-wire binc_obuf;
-wire bgw_obuf;
 wire word2_obuf;
 wire pp_obuf;
-wire lbaactive_obuf;
-wire lbbactive_obuf;
 wire hcb_10_obuf;
 
 
@@ -477,39 +1126,14 @@ assign dd = dd_obuf;
 assign lbufa = lbufa_obuf;
 assign lbufb = lbufb_obuf;
 assign noths = noths_obuf;
-assign notvs = notvs_obuf;
-assign syncen = syncen_obuf;
-assign vint = vint_obuf;
 assign vactive = vactive_obuf;
-assign blank = blank_obuf;
 assign nextpixa = nextpixa_obuf;
 assign nextpixd = nextpixd_obuf;
 assign cry16 = cry16_obuf;
-assign rgb24 = rgb24_obuf;
-assign rg16 = rg16_obuf;
 assign rgb16 = rgb16_obuf;
-assign mptest = mptest_obuf;
-assign ndtest = ndtest_obuf;
-assign varmod = varmod_obuf;
-assign vcl_0 = vcl_0_obuf;
-assign vcl_1 = vcl_1_obuf;
-assign vcl_2 = vcl_2_obuf;
-assign vcl_3 = vcl_3_obuf;
-assign vcl_4 = vcl_4_obuf;
-assign vcl_5 = vcl_5_obuf;
-assign vcl_6 = vcl_6_obuf;
-assign vcl_7 = vcl_7_obuf;
-assign vcl_8 = vcl_8_obuf;
-assign vcl_9 = vcl_9_obuf;
-assign vcl_10 = vcl_10_obuf;
 assign tcount = tcount_obuf;
-assign incen = incen_obuf;
-assign binc = binc_obuf;
-assign bgw = bgw_obuf;
 assign word2 = word2_obuf;
 assign pp = pp_obuf;
-assign lbaactive = lbaactive_obuf;
-assign lbbactive = lbbactive_obuf;
 assign hcb_10 = hcb_10_obuf;
 
 
@@ -519,122 +1143,122 @@ assign lockl = ~lock;
 // VID.NET (54) - vm[0] : ldp2
 ldp2 vm_index_0_inst
 (
-	.q(viden), // OUT
-	.qn(videnl), // OUT
-	.d(din_0), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (viden),
+	.qn /* OUT */ (videnl),
+	.d /* IN */ (din_0),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (55) - vm[1] : ldp1
 ldp1 vm_index_1_inst
 (
-	.q(vm_1), // OUT
-	.qn(vml_1), // OUT
-	.d(din_1), // IN
-	.g(vmwr)  // IN
+	.q /* OUT */ (vm_1),
+	.qn /* OUT */ (vml_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (vmwr)
 );
 
 // VID.NET (56) - vm[2] : ldp1
 ldp1 vm_index_2_inst
 (
-	.q(vm_2), // OUT
-	.qn(vml_2), // OUT
-	.d(din_2), // IN
-	.g(vmwr)  // IN
+	.q /* OUT */ (vm_2),
+	.qn /* OUT */ (vml_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (vmwr)
 );
 
 // VID.NET (57) - vm[3] : ldp2q
 ldp2q vm_index_3_inst
 (
-	.q(vm_3), // OUT
-	.d(din_3), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (vm_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (58) - vm[4] : ldp2q
 ldp2q vm_index_4_inst
 (
-	.q(incen_obuf), // OUT
-	.d(din_4), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (incen),
+	.d /* IN */ (din_4),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (59) - vm[5] : ldp1q
 ldp1q vm_index_5_inst
 (
-	.q(binc_obuf), // OUT
-	.d(din_5), // IN
-	.g(vmwr)  // IN
+	.q /* OUT */ (binc),
+	.d /* IN */ (din_5),
+	.g /* IN */ (vmwr)
 );
 
 // VID.NET (60) - vm[6] : ldp1q
 ldp1q vm_index_6_inst
 (
-	.q(csyncen), // OUT
-	.d(din_6), // IN
-	.g(vmwr)  // IN
+	.q /* OUT */ (csyncen),
+	.d /* IN */ (din_6),
+	.g /* IN */ (vmwr)
 );
 
 // VID.NET (61) - vm[7] : ldp2q
 ldp2q vm_index_7_inst
 (
-	.q(bgwen), // OUT
-	.d(din_7), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (bgwen),
+	.d /* IN */ (din_7),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (62) - vm[8] : ldp1q
 ldp1q vm_index_8_inst
 (
-	.q(varmod_obuf), // OUT
-	.d(din_8), // IN
-	.g(vmwr)  // IN
+	.q /* OUT */ (varmod),
+	.d /* IN */ (din_8),
+	.g /* IN */ (vmwr)
 );
 
 // VID.NET (63) - ppn[9-11] : ldp2q
 ldp2q ppn_from_9_to_11_inst_0
 (
-	.q(ppn_0), // OUT
-	.d(din_9), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (ppn_0),
+	.d /* IN */ (din_9),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 ldp2q ppn_from_9_to_11_inst_1
 (
-	.q(ppn_1), // OUT
-	.d(din_10), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (ppn_1),
+	.d /* IN */ (din_10),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 ldp2q ppn_from_9_to_11_inst_2
 (
-	.q(ppn_2), // OUT
-	.d(din_11), // IN
-	.g(vmwr), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (ppn_2),
+	.d /* IN */ (din_11),
+	.g /* IN */ (vmwr),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (65) - cry16 : an2
 assign cry16_obuf = vml_2 & vml_1;
 
 // VID.NET (66) - rgb24 : an2
-assign rgb24_obuf = vml_2 & vm_1;
+assign rgb24 = vml_2 & vm_1;
 
 // VID.NET (67) - rg16i : nd2
 assign rg16i = ~(vm_2 & vml_1);
 
 // VID.NET (68) - rg16 : ivu
-assign rg16_obuf = ~rg16i;
+assign rg16 = ~rg16i;
 
 // VID.NET (69) - rgb16 : an2
 assign rgb16_obuf = vm_2 & vm_1;
 
 // VID.NET (70) - syncen : iv
-assign syncen_obuf = ~vm_3;
+assign syncen = ~vm_3;
 
 // VID.NET (82) - tcountl : nd2
 assign tcountl = ~(test1w & din_0);
@@ -651,14 +1275,14 @@ assign test1ws = test1w & wet;
 // VID.NET (86) - mptesti : ldp2q
 ldp2q mptesti_inst
 (
-	.q(mptesti), // OUT
-	.d(din_2), // IN
-	.g(test1ws), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (mptesti),
+	.d /* IN */ (din_2),
+	.g /* IN */ (test1ws),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (87) - mptest : nivh
-assign mptest_obuf = mptesti;
+assign mptest = mptesti;
 
 // VID.NET (88) - vcl : an2
 assign vcl = test1w & din_3;
@@ -666,14 +1290,14 @@ assign vcl = test1w & din_3;
 // VID.NET (89) - ndtesti : ldp2q
 ldp2q ndtesti_inst
 (
-	.q(ndtesti), // OUT
-	.d(din_4), // IN
-	.g(test1ws), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (ndtesti),
+	.d /* IN */ (din_4),
+	.g /* IN */ (test1ws),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (90) - ndtest : nivh
-assign ndtest_obuf = ndtesti;
+assign ndtest = ndtesti;
 
 // VID.NET (97) - ppresl : an2
 assign ppresl = notstartd & resetl;
@@ -681,37 +1305,37 @@ assign ppresl = notstartd & resetl;
 // VID.NET (98) - pp[0] : dncnts
 dncnts pp_index_0_inst
 (
-	.q(pp_0), // IO
-	.co(ppco_0), // IO
-	.d(ppn_0), // IN
-	.clk(vclk), // IN
-	.ci(vcc), // IN
-	.ld(pp_obuf), // IN
-	.resl(ppresl)  // IN
+	.q /* OUT */ (pp_0),
+	.co /* OUT */ (ppco_0),
+	.d /* IN */ (ppn_0),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vcc),
+	.ld /* IN */ (pp_obuf),
+	.resl /* IN */ (ppresl)
 );
 
 // VID.NET (99) - pp[1] : dncnts
 dncnts pp_index_1_inst
 (
-	.q(pp_1), // IO
-	.co(ppco_1), // IO
-	.d(ppn_1), // IN
-	.clk(vclk), // IN
-	.ci(ppco_0), // IN
-	.ld(pp_obuf), // IN
-	.resl(ppresl)  // IN
+	.q /* OUT */ (pp_1),
+	.co /* OUT */ (ppco_1),
+	.d /* IN */ (ppn_1),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (ppco_0),
+	.ld /* IN */ (pp_obuf),
+	.resl /* IN */ (ppresl)
 );
 
 // VID.NET (100) - pp[2] : dncnts
 dncnts pp_index_2_inst
 (
-	.q(pp_2), // IO
-	.co(ppco_2), // IO
-	.d(ppn_2), // IN
-	.clk(vclk), // IN
-	.ci(ppco_1), // IN
-	.ld(pp_obuf), // IN
-	.resl(ppresl)  // IN
+	.q /* OUT */ (pp_2),
+	.co /* OUT */ (ppco_2),
+	.d /* IN */ (ppn_2),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (ppco_1),
+	.ld /* IN */ (pp_obuf),
+	.resl /* IN */ (ppresl)
 );
 
 // VID.NET (101) - pp : nivm
@@ -737,10 +1361,10 @@ assign word2d = ~(word2d0 & word2d1 & notstartd);
 // VID.NET (114) - word2 : fd1
 fd1 word2_inst
 (
-	.q(word2_obuf), // OUT
-	.qn(word2l), // OUT
-	.d(word2d), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (word2_obuf),
+	.qn /* OUT */ (word2l),
+	.d /* IN */ (word2d),
+	.cp /* IN */ (vclk)
 );
 
 // VID.NET (125) - hc : join
@@ -798,117 +1422,117 @@ assign hcount = ~(videnl & tcountl);
 // VID.NET (138) - hc[0] : upcnts
 upcnts hc_index_0_inst
 (
-	.q(hc_0), // IO
-	.co(hco_0), // IO
-	.d(din_0), // IN
-	.clk(vclk), // IN
-	.ci(hcount), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_0),
+	.co /* OUT */ (hco_0),
+	.d /* IN */ (din_0),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hcount),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 
 // VID.NET (139) - hc[1-9] : upcnts
 upcnts hc_from_1_to_9_inst_0
 (
-	.q(hc_1), // IO
-	.co(hco_1), // IO
-	.d(din_1), // IN
-	.clk(vclk), // IN
-	.ci(hco_0), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_1),
+	.co /* OUT */ (hco_1),
+	.d /* IN */ (din_1),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_0),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_1
 (
-	.q(hc_2), // IO
-	.co(hco_2), // IO
-	.d(din_2), // IN
-	.clk(vclk), // IN
-	.ci(hco_1), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_2),
+	.co /* OUT */ (hco_2),
+	.d /* IN */ (din_2),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_1),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_2
 (
-	.q(hc_3), // IO
-	.co(hco_3), // IO
-	.d(din_3), // IN
-	.clk(vclk), // IN
-	.ci(hco_2), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_3),
+	.co /* OUT */ (hco_3),
+	.d /* IN */ (din_3),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_2),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_3
 (
-	.q(hc_4), // IO
-	.co(hco_4), // IO
-	.d(din_4), // IN
-	.clk(vclk), // IN
-	.ci(hco_3), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_4),
+	.co /* OUT */ (hco_4),
+	.d /* IN */ (din_4),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_3),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_4
 (
-	.q(hc_5), // IO
-	.co(hco_5), // IO
-	.d(din_5), // IN
-	.clk(vclk), // IN
-	.ci(hco_4), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_5),
+	.co /* OUT */ (hco_5),
+	.d /* IN */ (din_5),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_4),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_5
 (
-	.q(hc_6), // IO
-	.co(hco_6), // IO
-	.d(din_6), // IN
-	.clk(vclk), // IN
-	.ci(hco_5), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_6),
+	.co /* OUT */ (hco_6),
+	.d /* IN */ (din_6),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_5),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_6
 (
-	.q(hc_7), // IO
-	.co(hco_7), // IO
-	.d(din_7), // IN
-	.clk(vclk), // IN
-	.ci(hco_6), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_7),
+	.co /* OUT */ (hco_7),
+	.d /* IN */ (din_7),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_6),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_7
 (
-	.q(hc_8), // IO
-	.co(hco_8), // IO
-	.d(din_8), // IN
-	.clk(vclk), // IN
-	.ci(hco_7), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_8),
+	.co /* OUT */ (hco_8),
+	.d /* IN */ (din_8),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_7),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 upcnts hc_from_1_to_9_inst_8
 (
-	.q(hc_9), // IO
-	.co(hco_9), // IO
-	.d(din_9), // IN
-	.clk(vclk), // IN
-	.ci(hco_8), // IN
-	.ld(hcwr), // IN
-	.res(hcres)  // IN
+	.q /* OUT */ (hc_9),
+	.co /* OUT */ (hco_9),
+	.d /* IN */ (din_9),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hco_8),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hcres)
 );
 
 // VID.NET (141) - hc[10] : upcnts
 upcnts hc_index_10_inst
 (
-	.q(hc_10), // IO
-	.co(hco_10), // IO
-	.d(din_10), // IN
-	.clk(vclk), // IN
-	.ci(hpeq), // IN
-	.ld(hcwr), // IN
-	.res(hmres)  // IN
+	.q /* OUT */ (hc_10),
+	.co /* OUT */ (hco_10),
+	.d /* IN */ (din_10),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (hpeq),
+	.ld /* IN */ (hcwr),
+	.res /* IN */ (hmres)
 );
 
 // VID.NET (142) - hcb[0-10] : nivh
@@ -925,17 +1549,28 @@ assign hcb_9 = hc_9;
 assign hcb_10_obuf = hc_10;
 
 // VID.NET (144) - hcd[0-10] : ts
-assign dr_0 = (hcrd) ? hcb_0 : 1'bz;
-assign dr_1 = (hcrd) ? hcb_1 : 1'bz;
-assign dr_2 = (hcrd) ? hcb_2 : 1'bz;
-assign dr_3 = (hcrd) ? hcb_3 : 1'bz;
-assign dr_4 = (hcrd) ? hcb_4 : 1'bz;
-assign dr_5 = (hcrd) ? hcb_5 : 1'bz;
-assign dr_6 = (hcrd) ? hcb_6 : 1'bz;
-assign dr_7 = (hcrd) ? hcb_7 : 1'bz;
-assign dr_8 = (hcrd) ? hcb_8 : 1'bz;
-assign dr_9 = (hcrd) ? hcb_9 : 1'bz;
-assign dr_10 = (hcrd) ? hcb_10_obuf : 1'bz;
+assign ts_pe_260_a0_out = hcb_0;
+assign ts_pe_260_a0_oe = hcrd;
+assign ts_pe_261_a0_out = hcb_1;
+assign ts_pe_261_a0_oe = hcrd;
+assign ts_pe_262_a0_out = hcb_2;
+assign ts_pe_262_a0_oe = hcrd;
+assign ts_pe_263_a0_out = hcb_3;
+assign ts_pe_263_a0_oe = hcrd;
+assign ts_pe_264_a0_out = hcb_4;
+assign ts_pe_264_a0_oe = hcrd;
+assign ts_pe_265_a0_out = hcb_5;
+assign ts_pe_265_a0_oe = hcrd;
+assign ts_pe_266_a0_out = hcb_6;
+assign ts_pe_266_a0_oe = hcrd;
+assign ts_pe_267_a0_out = hcb_7;
+assign ts_pe_267_a0_oe = hcrd;
+assign ts_pe_268_a0_out = hcb_8;
+assign ts_pe_268_a0_oe = hcrd;
+assign ts_pe_269_a0_out = hcb_9;
+assign ts_pe_269_a0_oe = hcrd;
+assign ts_pe_270_a0_out = hcb_10_obuf;
+assign ts_pe_270_a0_oe = hcrd;
 
 // VID.NET (146) - hco[9] : dummy
 
@@ -944,63 +1579,63 @@ assign dr_10 = (hcrd) ? hcb_10_obuf : 1'bz;
 // VID.NET (152) - hp[0-9] : ldp1q
 ldp1q hp_from_0_to_9_inst_0
 (
-	.q(hp_0), // OUT
-	.d(din_0), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_1
 (
-	.q(hp_1), // OUT
-	.d(din_1), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_2
 (
-	.q(hp_2), // OUT
-	.d(din_2), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_3
 (
-	.q(hp_3), // OUT
-	.d(din_3), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_4
 (
-	.q(hp_4), // OUT
-	.d(din_4), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_5
 (
-	.q(hp_5), // OUT
-	.d(din_5), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_6
 (
-	.q(hp_6), // OUT
-	.d(din_6), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_7
 (
-	.q(hp_7), // OUT
-	.d(din_7), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_8
 (
-	.q(hp_8), // OUT
-	.d(din_8), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (hpwr)
 );
 ldp1q hp_from_0_to_9_inst_9
 (
-	.q(hp_9), // OUT
-	.d(din_9), // IN
-	.g(hpwr)  // IN
+	.q /* OUT */ (hp_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (hpwr)
 );
 
 // VID.NET (156) - hpe[0-9] : en
@@ -1018,34 +1653,34 @@ assign hpe_9 = ~(hp_9 ^ hcb_9);
 // VID.NET (157) - hpeqt : and10
 and10 hpeqt_inst
 (
-	.z(hpeqt), // IO
-	.a_0(hpe_0), // IN
-	.a_1(hpe_1), // IN
-	.a_2(hpe_2), // IN
-	.a_3(hpe_3), // IN
-	.a_4(hpe_4), // IN
-	.a_5(hpe_5), // IN
-	.a_6(hpe_6), // IN
-	.a_7(hpe_7), // IN
-	.a_8(hpe_8), // IN
-	.a_9(hpe_9)  // IN
+	.z /* OUT */ (hpeqt),
+	.a_0 /* IN */ (hpe_0),
+	.a_1 /* IN */ (hpe_1),
+	.a_2 /* IN */ (hpe_2),
+	.a_3 /* IN */ (hpe_3),
+	.a_4 /* IN */ (hpe_4),
+	.a_5 /* IN */ (hpe_5),
+	.a_6 /* IN */ (hpe_6),
+	.a_7 /* IN */ (hpe_7),
+	.a_8 /* IN */ (hpe_8),
+	.a_9 /* IN */ (hpe_9)
 );
 
 // VID.NET (158) - hpeqi : and11
 and11 hpeqi_inst
 (
-	.z(hpeqi), // IO
-	.a_0(hpe_0), // IN
-	.a_1(hpe_1), // IN
-	.a_2(hpe_2), // IN
-	.a_3(hpe_3), // IN
-	.a_4(hpe_4), // IN
-	.a_5(hpe_5), // IN
-	.a_6(hpe_6), // IN
-	.a_7(hpe_7), // IN
-	.a_8(hpe_8), // IN
-	.a_9(hpe_9), // IN
-	.a_10(viden)  // IN
+	.z /* OUT */ (hpeqi),
+	.a_0 /* IN */ (hpe_0),
+	.a_1 /* IN */ (hpe_1),
+	.a_2 /* IN */ (hpe_2),
+	.a_3 /* IN */ (hpe_3),
+	.a_4 /* IN */ (hpe_4),
+	.a_5 /* IN */ (hpe_5),
+	.a_6 /* IN */ (hpe_6),
+	.a_7 /* IN */ (hpe_7),
+	.a_8 /* IN */ (hpe_8),
+	.a_9 /* IN */ (hpe_9),
+	.a_10 /* IN */ (viden)
 );
 
 // VID.NET (159) - hpeq : niv
@@ -1057,269 +1692,379 @@ assign hpeql = ~hpeq;
 // VID.NET (164) - hbb : creg11
 creg11 hbb_inst
 (
-	.creq(hbbeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(hcb_0), // IN
-	.count_1(hcb_1), // IN
-	.count_2(hcb_2), // IN
-	.count_3(hcb_3), // IN
-	.count_4(hcb_4), // IN
-	.count_5(hcb_5), // IN
-	.count_6(hcb_6), // IN
-	.count_7(hcb_7), // IN
-	.count_8(hcb_8), // IN
-	.count_9(hcb_9), // IN
-	.count_10(hcb_10_obuf), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(hbbwr)  // IN
+	.creq /* OUT */ (hbbeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a1_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a1_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a1_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a1_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a1_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a1_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a1_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a1_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a1_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a1_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a1_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a1_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a1_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a1_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a1_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a1_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a1_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a1_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a1_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a1_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a1_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a1_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a1_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a1_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a1_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a1_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a1_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a1_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a1_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a1_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a1_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a1_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a1_in),
+	.count_0 /* IN */ (hcb_0),
+	.count_1 /* IN */ (hcb_1),
+	.count_2 /* IN */ (hcb_2),
+	.count_3 /* IN */ (hcb_3),
+	.count_4 /* IN */ (hcb_4),
+	.count_5 /* IN */ (hcb_5),
+	.count_6 /* IN */ (hcb_6),
+	.count_7 /* IN */ (hcb_7),
+	.count_8 /* IN */ (hcb_8),
+	.count_9 /* IN */ (hcb_9),
+	.count_10 /* IN */ (hcb_10_obuf),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (hbbwr)
 );
 
 // VID.NET (165) - hbe : creg11
 creg11 hbe_inst
 (
-	.creq(hbeeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(hcb_0), // IN
-	.count_1(hcb_1), // IN
-	.count_2(hcb_2), // IN
-	.count_3(hcb_3), // IN
-	.count_4(hcb_4), // IN
-	.count_5(hcb_5), // IN
-	.count_6(hcb_6), // IN
-	.count_7(hcb_7), // IN
-	.count_8(hcb_8), // IN
-	.count_9(hcb_9), // IN
-	.count_10(hcb_10_obuf), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(hbewr)  // IN
+	.creq /* OUT */ (hbeeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a2_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a2_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a2_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a2_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a2_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a2_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a2_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a2_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a2_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a2_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a2_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a2_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a2_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a2_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a2_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a2_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a2_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a2_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a2_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a2_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a2_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a2_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a2_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a2_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a2_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a2_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a2_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a2_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a2_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a2_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a2_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a2_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a2_in),
+	.count_0 /* IN */ (hcb_0),
+	.count_1 /* IN */ (hcb_1),
+	.count_2 /* IN */ (hcb_2),
+	.count_3 /* IN */ (hcb_3),
+	.count_4 /* IN */ (hcb_4),
+	.count_5 /* IN */ (hcb_5),
+	.count_6 /* IN */ (hcb_6),
+	.count_7 /* IN */ (hcb_7),
+	.count_8 /* IN */ (hcb_8),
+	.count_9 /* IN */ (hcb_9),
+	.count_10 /* IN */ (hcb_10_obuf),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (hbewr)
 );
 
 // VID.NET (166) - hdb1 : creg11
 creg11 hdb1_inst
 (
-	.creq(hdb1eq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(hcb_0), // IN
-	.count_1(hcb_1), // IN
-	.count_2(hcb_2), // IN
-	.count_3(hcb_3), // IN
-	.count_4(hcb_4), // IN
-	.count_5(hcb_5), // IN
-	.count_6(hcb_6), // IN
-	.count_7(hcb_7), // IN
-	.count_8(hcb_8), // IN
-	.count_9(hcb_9), // IN
-	.count_10(hcb_10_obuf), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(hdb1wr)  // IN
+	.creq /* OUT */ (hdb1eq),
+	.dout_0_out /* BUS */ (ts_pe_260_a3_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a3_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a3_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a3_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a3_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a3_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a3_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a3_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a3_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a3_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a3_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a3_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a3_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a3_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a3_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a3_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a3_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a3_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a3_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a3_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a3_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a3_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a3_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a3_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a3_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a3_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a3_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a3_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a3_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a3_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a3_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a3_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a3_in),
+	.count_0 /* IN */ (hcb_0),
+	.count_1 /* IN */ (hcb_1),
+	.count_2 /* IN */ (hcb_2),
+	.count_3 /* IN */ (hcb_3),
+	.count_4 /* IN */ (hcb_4),
+	.count_5 /* IN */ (hcb_5),
+	.count_6 /* IN */ (hcb_6),
+	.count_7 /* IN */ (hcb_7),
+	.count_8 /* IN */ (hcb_8),
+	.count_9 /* IN */ (hcb_9),
+	.count_10 /* IN */ (hcb_10_obuf),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (hdb1wr)
 );
 
 // VID.NET (167) - hdb2 : creg11
 creg11 hdb2_inst
 (
-	.creq(hdb2eq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(hcb_0), // IN
-	.count_1(hcb_1), // IN
-	.count_2(hcb_2), // IN
-	.count_3(hcb_3), // IN
-	.count_4(hcb_4), // IN
-	.count_5(hcb_5), // IN
-	.count_6(hcb_6), // IN
-	.count_7(hcb_7), // IN
-	.count_8(hcb_8), // IN
-	.count_9(hcb_9), // IN
-	.count_10(hcb_10_obuf), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(hdb2wr)  // IN
+	.creq /* OUT */ (hdb2eq),
+	.dout_0_out /* BUS */ (ts_pe_260_a4_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a4_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a4_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a4_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a4_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a4_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a4_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a4_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a4_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a4_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a4_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a4_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a4_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a4_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a4_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a4_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a4_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a4_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a4_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a4_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a4_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a4_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a4_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a4_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a4_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a4_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a4_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a4_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a4_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a4_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a4_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a4_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a4_in),
+	.count_0 /* IN */ (hcb_0),
+	.count_1 /* IN */ (hcb_1),
+	.count_2 /* IN */ (hcb_2),
+	.count_3 /* IN */ (hcb_3),
+	.count_4 /* IN */ (hcb_4),
+	.count_5 /* IN */ (hcb_5),
+	.count_6 /* IN */ (hcb_6),
+	.count_7 /* IN */ (hcb_7),
+	.count_8 /* IN */ (hcb_8),
+	.count_9 /* IN */ (hcb_9),
+	.count_10 /* IN */ (hcb_10_obuf),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (hdb2wr)
 );
 
 // VID.NET (168) - hde : creg11
 creg11 hde_inst
 (
-	.creq(hdeeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(hcb_0), // IN
-	.count_1(hcb_1), // IN
-	.count_2(hcb_2), // IN
-	.count_3(hcb_3), // IN
-	.count_4(hcb_4), // IN
-	.count_5(hcb_5), // IN
-	.count_6(hcb_6), // IN
-	.count_7(hcb_7), // IN
-	.count_8(hcb_8), // IN
-	.count_9(hcb_9), // IN
-	.count_10(hcb_10_obuf), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(hdewr)  // IN
+	.creq /* OUT */ (hdeeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a5_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a5_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a5_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a5_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a5_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a5_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a5_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a5_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a5_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a5_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a5_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a5_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a5_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a5_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a5_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a5_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a5_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a5_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a5_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a5_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a5_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a5_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a5_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a5_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a5_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a5_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a5_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a5_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a5_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a5_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a5_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a5_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a5_in),
+	.count_0 /* IN */ (hcb_0),
+	.count_1 /* IN */ (hcb_1),
+	.count_2 /* IN */ (hcb_2),
+	.count_3 /* IN */ (hcb_3),
+	.count_4 /* IN */ (hcb_4),
+	.count_5 /* IN */ (hcb_5),
+	.count_6 /* IN */ (hcb_6),
+	.count_7 /* IN */ (hcb_7),
+	.count_8 /* IN */ (hcb_8),
+	.count_9 /* IN */ (hcb_9),
+	.count_10 /* IN */ (hcb_10_obuf),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (hdewr)
 );
 
 // VID.NET (175) - hs[0-10] : ldp1q
 ldp1q hs_from_0_to_10_inst_0
 (
-	.q(hs_0), // OUT
-	.d(din_0), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_1
 (
-	.q(hs_1), // OUT
-	.d(din_1), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_2
 (
-	.q(hs_2), // OUT
-	.d(din_2), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_3
 (
-	.q(hs_3), // OUT
-	.d(din_3), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_4
 (
-	.q(hs_4), // OUT
-	.d(din_4), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_5
 (
-	.q(hs_5), // OUT
-	.d(din_5), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_6
 (
-	.q(hs_6), // OUT
-	.d(din_6), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_7
 (
-	.q(hs_7), // OUT
-	.d(din_7), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_8
 (
-	.q(hs_8), // OUT
-	.d(din_8), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_9
 (
-	.q(hs_9), // OUT
-	.d(din_9), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (hswr)
 );
 ldp1q hs_from_0_to_10_inst_10
 (
-	.q(hs_10), // OUT
-	.d(din_10), // IN
-	.g(hswr)  // IN
+	.q /* OUT */ (hs_10),
+	.d /* IN */ (din_10),
+	.g /* IN */ (hswr)
 );
 
 // VID.NET (176) - hse[0-10] : en
@@ -1338,96 +2083,96 @@ assign hse_10 = ~(hs_10 ^ hcb_10_obuf);
 // VID.NET (177) - hseq : and11
 and11 hseq_inst
 (
-	.z(hseq), // IO
-	.a_0(hse_0), // IN
-	.a_1(hse_1), // IN
-	.a_2(hse_2), // IN
-	.a_3(hse_3), // IN
-	.a_4(hse_4), // IN
-	.a_5(hse_5), // IN
-	.a_6(hse_6), // IN
-	.a_7(hse_7), // IN
-	.a_8(hse_8), // IN
-	.a_9(hse_9), // IN
-	.a_10(hse_10)  // IN
+	.z /* OUT */ (hseq),
+	.a_0 /* IN */ (hse_0),
+	.a_1 /* IN */ (hse_1),
+	.a_2 /* IN */ (hse_2),
+	.a_3 /* IN */ (hse_3),
+	.a_4 /* IN */ (hse_4),
+	.a_5 /* IN */ (hse_5),
+	.a_6 /* IN */ (hse_6),
+	.a_7 /* IN */ (hse_7),
+	.a_8 /* IN */ (hse_8),
+	.a_9 /* IN */ (hse_9),
+	.a_10 /* IN */ (hse_10)
 );
 
 // VID.NET (178) - hvsb : and10
 and10 hvsb_inst
 (
-	.z(hvsb), // IO
-	.a_0(hse_0), // IN
-	.a_1(hse_1), // IN
-	.a_2(hse_2), // IN
-	.a_3(hse_3), // IN
-	.a_4(hse_4), // IN
-	.a_5(hse_5), // IN
-	.a_6(hse_6), // IN
-	.a_7(hse_7), // IN
-	.a_8(hse_8), // IN
-	.a_9(hse_9)  // IN
+	.z /* OUT */ (hvsb),
+	.a_0 /* IN */ (hse_0),
+	.a_1 /* IN */ (hse_1),
+	.a_2 /* IN */ (hse_2),
+	.a_3 /* IN */ (hse_3),
+	.a_4 /* IN */ (hse_4),
+	.a_5 /* IN */ (hse_5),
+	.a_6 /* IN */ (hse_6),
+	.a_7 /* IN */ (hse_7),
+	.a_8 /* IN */ (hse_8),
+	.a_9 /* IN */ (hse_9)
 );
 
 // VID.NET (184) - hvs[0-9] : ldp1q
 ldp1q hvs_from_0_to_9_inst_0
 (
-	.q(hvs_0), // OUT
-	.d(din_0), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_1
 (
-	.q(hvs_1), // OUT
-	.d(din_1), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_2
 (
-	.q(hvs_2), // OUT
-	.d(din_2), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_3
 (
-	.q(hvs_3), // OUT
-	.d(din_3), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_4
 (
-	.q(hvs_4), // OUT
-	.d(din_4), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_5
 (
-	.q(hvs_5), // OUT
-	.d(din_5), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_6
 (
-	.q(hvs_6), // OUT
-	.d(din_6), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_7
 (
-	.q(hvs_7), // OUT
-	.d(din_7), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_8
 (
-	.q(hvs_8), // OUT
-	.d(din_8), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (hvswr)
 );
 ldp1q hvs_from_0_to_9_inst_9
 (
-	.q(hvs_9), // OUT
-	.d(din_9), // IN
-	.g(hvswr)  // IN
+	.q /* OUT */ (hvs_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (hvswr)
 );
 
 // VID.NET (185) - hvse[0-9] : en
@@ -1445,79 +2190,79 @@ assign hvse_9 = ~(hvs_9 ^ hcb_9);
 // VID.NET (186) - hvse : and10
 and10 hvse_inst
 (
-	.z(hvse), // IO
-	.a_0(hvse_0), // IN
-	.a_1(hvse_1), // IN
-	.a_2(hvse_2), // IN
-	.a_3(hvse_3), // IN
-	.a_4(hvse_4), // IN
-	.a_5(hvse_5), // IN
-	.a_6(hvse_6), // IN
-	.a_7(hvse_7), // IN
-	.a_8(hvse_8), // IN
-	.a_9(hvse_9)  // IN
+	.z /* OUT */ (hvse),
+	.a_0 /* IN */ (hvse_0),
+	.a_1 /* IN */ (hvse_1),
+	.a_2 /* IN */ (hvse_2),
+	.a_3 /* IN */ (hvse_3),
+	.a_4 /* IN */ (hvse_4),
+	.a_5 /* IN */ (hvse_5),
+	.a_6 /* IN */ (hvse_6),
+	.a_7 /* IN */ (hvse_7),
+	.a_8 /* IN */ (hvse_8),
+	.a_9 /* IN */ (hvse_9)
 );
 
 // VID.NET (191) - heq[0-9] : ldp1q
 ldp1q heq_from_0_to_9_inst_0
 (
-	.q(heq_0), // OUT
-	.d(din_0), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_1
 (
-	.q(heq_1), // OUT
-	.d(din_1), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_2
 (
-	.q(heq_2), // OUT
-	.d(din_2), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_3
 (
-	.q(heq_3), // OUT
-	.d(din_3), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_4
 (
-	.q(heq_4), // OUT
-	.d(din_4), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_5
 (
-	.q(heq_5), // OUT
-	.d(din_5), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_6
 (
-	.q(heq_6), // OUT
-	.d(din_6), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_7
 (
-	.q(heq_7), // OUT
-	.d(din_7), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_8
 (
-	.q(heq_8), // OUT
-	.d(din_8), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (heqw)
 );
 ldp1q heq_from_0_to_9_inst_9
 (
-	.q(heq_9), // OUT
-	.d(din_9), // IN
-	.g(heqw)  // IN
+	.q /* OUT */ (heq_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (heqw)
 );
 
 // VID.NET (192) - heqe[0-9] : en
@@ -1535,17 +2280,17 @@ assign heqe_9 = ~(heq_9 ^ hcb_9);
 // VID.NET (193) - heqe : and10
 and10 heqe_inst
 (
-	.z(heqe), // IO
-	.a_0(heqe_0), // IN
-	.a_1(heqe_1), // IN
-	.a_2(heqe_2), // IN
-	.a_3(heqe_3), // IN
-	.a_4(heqe_4), // IN
-	.a_5(heqe_5), // IN
-	.a_6(heqe_6), // IN
-	.a_7(heqe_7), // IN
-	.a_8(heqe_8), // IN
-	.a_9(heqe_9)  // IN
+	.z /* OUT */ (heqe),
+	.a_0 /* IN */ (heqe_0),
+	.a_1 /* IN */ (heqe_1),
+	.a_2 /* IN */ (heqe_2),
+	.a_3 /* IN */ (heqe_3),
+	.a_4 /* IN */ (heqe_4),
+	.a_5 /* IN */ (heqe_5),
+	.a_6 /* IN */ (heqe_6),
+	.a_7 /* IN */ (heqe_7),
+	.a_8 /* IN */ (heqe_8),
+	.a_9 /* IN */ (heqe_9)
 );
 
 // VID.NET (202) - nextfieldl : nd2
@@ -1572,127 +2317,127 @@ assign vcount = hpeq | tcount_obuf;
 // VID.NET (210) - vc[0] : upcnts
 upcnts vc_index_0_inst
 (
-	.q(vc_0), // IO
-	.co(vco_0), // IO
-	.d(din_0), // IN
-	.clk(vclk), // IN
-	.ci(vcount), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_0),
+	.co /* OUT */ (vco_0),
+	.d /* IN */ (din_0),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vcount),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 
 // VID.NET (211) - vc[1-10] : upcnts
 upcnts vc_from_1_to_10_inst_0
 (
-	.q(vc_1), // IO
-	.co(vco_1), // IO
-	.d(din_1), // IN
-	.clk(vclk), // IN
-	.ci(vco_0), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_1),
+	.co /* OUT */ (vco_1),
+	.d /* IN */ (din_1),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_0),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_1
 (
-	.q(vc_2), // IO
-	.co(vco_2), // IO
-	.d(din_2), // IN
-	.clk(vclk), // IN
-	.ci(vco_1), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_2),
+	.co /* OUT */ (vco_2),
+	.d /* IN */ (din_2),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_1),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_2
 (
-	.q(vc_3), // IO
-	.co(vco_3), // IO
-	.d(din_3), // IN
-	.clk(vclk), // IN
-	.ci(vco_2), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_3),
+	.co /* OUT */ (vco_3),
+	.d /* IN */ (din_3),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_2),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_3
 (
-	.q(vc_4), // IO
-	.co(vco_4), // IO
-	.d(din_4), // IN
-	.clk(vclk), // IN
-	.ci(vco_3), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_4),
+	.co /* OUT */ (vco_4),
+	.d /* IN */ (din_4),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_3),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_4
 (
-	.q(vc_5), // IO
-	.co(vco_5), // IO
-	.d(din_5), // IN
-	.clk(vclk), // IN
-	.ci(vco_4), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_5),
+	.co /* OUT */ (vco_5),
+	.d /* IN */ (din_5),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_4),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_5
 (
-	.q(vc_6), // IO
-	.co(vco_6), // IO
-	.d(din_6), // IN
-	.clk(vclk), // IN
-	.ci(vco_5), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_6),
+	.co /* OUT */ (vco_6),
+	.d /* IN */ (din_6),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_5),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_6
 (
-	.q(vc_7), // IO
-	.co(vco_7), // IO
-	.d(din_7), // IN
-	.clk(vclk), // IN
-	.ci(vco_6), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_7),
+	.co /* OUT */ (vco_7),
+	.d /* IN */ (din_7),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_6),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_7
 (
-	.q(vc_8), // IO
-	.co(vco_8), // IO
-	.d(din_8), // IN
-	.clk(vclk), // IN
-	.ci(vco_7), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_8),
+	.co /* OUT */ (vco_8),
+	.d /* IN */ (din_8),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_7),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_8
 (
-	.q(vc_9), // IO
-	.co(vco_9), // IO
-	.d(din_9), // IN
-	.clk(vclk), // IN
-	.ci(vco_8), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_9),
+	.co /* OUT */ (vco_9),
+	.d /* IN */ (din_9),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_8),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 upcnts vc_from_1_to_10_inst_9
 (
-	.q(vc_10), // IO
-	.co(vco_10), // IO
-	.d(din_10), // IN
-	.clk(vclk), // IN
-	.ci(vco_9), // IN
-	.ld(vcwr), // IN
-	.res(vcres)  // IN
+	.q /* OUT */ (vc_10),
+	.co /* OUT */ (vco_10),
+	.d /* IN */ (din_10),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (vco_9),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (vcres)
 );
 
 // VID.NET (212) - vc[11] : upcnts
 upcnts vc_index_11_inst
 (
-	.q(vc_11), // IO
-	.co(vco_11), // IO
-	.d(din_11), // IN
-	.clk(vclk), // IN
-	.ci(nextfield), // IN
-	.ld(vcwr), // IN
-	.res(res)  // IN
+	.q /* OUT */ (vc_11),
+	.co /* OUT */ (vco_11),
+	.d /* IN */ (din_11),
+	.clk /* IN */ (vclk),
+	.ci /* IN */ (nextfield),
+	.ld /* IN */ (vcwr),
+	.res /* IN */ (res)
 );
 
 // VID.NET (213) - vcb[0-10] : nivm
@@ -1709,18 +2454,30 @@ assign vcb_9 = vc_9;
 assign vcb_10 = vc_10;
 
 // VID.NET (215) - vcd[0-11] : ts
-assign dr_0 = (vcrd) ? vc_0 : 1'bz;
-assign dr_1 = (vcrd) ? vc_1 : 1'bz;
-assign dr_2 = (vcrd) ? vc_2 : 1'bz;
-assign dr_3 = (vcrd) ? vc_3 : 1'bz;
-assign dr_4 = (vcrd) ? vc_4 : 1'bz;
-assign dr_5 = (vcrd) ? vc_5 : 1'bz;
-assign dr_6 = (vcrd) ? vc_6 : 1'bz;
-assign dr_7 = (vcrd) ? vc_7 : 1'bz;
-assign dr_8 = (vcrd) ? vc_8 : 1'bz;
-assign dr_9 = (vcrd) ? vc_9 : 1'bz;
-assign dr_10 = (vcrd) ? vc_10 : 1'bz;
-assign dr_11 = (vcrd) ? vc_11 : 1'bz;
+assign ts_pe_260_a6_out = vc_0;
+assign ts_pe_260_a6_oe = vcrd;
+assign ts_pe_261_a6_out = vc_1;
+assign ts_pe_261_a6_oe = vcrd;
+assign ts_pe_262_a6_out = vc_2;
+assign ts_pe_262_a6_oe = vcrd;
+assign ts_pe_263_a6_out = vc_3;
+assign ts_pe_263_a6_oe = vcrd;
+assign ts_pe_264_a6_out = vc_4;
+assign ts_pe_264_a6_oe = vcrd;
+assign ts_pe_265_a6_out = vc_5;
+assign ts_pe_265_a6_oe = vcrd;
+assign ts_pe_266_a6_out = vc_6;
+assign ts_pe_266_a6_oe = vcrd;
+assign ts_pe_267_a6_out = vc_7;
+assign ts_pe_267_a6_oe = vcrd;
+assign ts_pe_268_a6_out = vc_8;
+assign ts_pe_268_a6_oe = vcrd;
+assign ts_pe_269_a6_out = vc_9;
+assign ts_pe_269_a6_oe = vcrd;
+assign ts_pe_270_a6_out = vc_10;
+assign ts_pe_270_a6_oe = vcrd;
+assign ts_pe_271_a0_out = vc_11;
+assign ts_pe_271_a0_oe = vcrd;
 
 // VID.NET (217) - vco[10] : dummy
 
@@ -1729,69 +2486,69 @@ assign dr_11 = (vcrd) ? vc_11 : 1'bz;
 // VID.NET (222) - vp[0-10] : ldp1q
 ldp1q vp_from_0_to_10_inst_0
 (
-	.q(vp_0), // OUT
-	.d(din_0), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_1
 (
-	.q(vp_1), // OUT
-	.d(din_1), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_2
 (
-	.q(vp_2), // OUT
-	.d(din_2), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_3
 (
-	.q(vp_3), // OUT
-	.d(din_3), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_4
 (
-	.q(vp_4), // OUT
-	.d(din_4), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_5
 (
-	.q(vp_5), // OUT
-	.d(din_5), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_6
 (
-	.q(vp_6), // OUT
-	.d(din_6), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_7
 (
-	.q(vp_7), // OUT
-	.d(din_7), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_8
 (
-	.q(vp_8), // OUT
-	.d(din_8), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_9
 (
-	.q(vp_9), // OUT
-	.d(din_9), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (vpwr)
 );
 ldp1q vp_from_0_to_10_inst_10
 (
-	.q(vp_10), // OUT
-	.d(din_10), // IN
-	.g(vpwr)  // IN
+	.q /* OUT */ (vp_10),
+	.d /* IN */ (din_10),
+	.g /* IN */ (vpwr)
 );
 
 // VID.NET (223) - vpe[0-10] : en
@@ -1810,367 +2567,543 @@ assign vpe_10 = ~(vp_10 ^ vcb_10);
 // VID.NET (224) - vpeqt : and11
 and11 vpeqt_inst
 (
-	.z(vpeqt), // IO
-	.a_0(vpe_0), // IN
-	.a_1(vpe_1), // IN
-	.a_2(vpe_2), // IN
-	.a_3(vpe_3), // IN
-	.a_4(vpe_4), // IN
-	.a_5(vpe_5), // IN
-	.a_6(vpe_6), // IN
-	.a_7(vpe_7), // IN
-	.a_8(vpe_8), // IN
-	.a_9(vpe_9), // IN
-	.a_10(vpe_10)  // IN
+	.z /* OUT */ (vpeqt),
+	.a_0 /* IN */ (vpe_0),
+	.a_1 /* IN */ (vpe_1),
+	.a_2 /* IN */ (vpe_2),
+	.a_3 /* IN */ (vpe_3),
+	.a_4 /* IN */ (vpe_4),
+	.a_5 /* IN */ (vpe_5),
+	.a_6 /* IN */ (vpe_6),
+	.a_7 /* IN */ (vpe_7),
+	.a_8 /* IN */ (vpe_8),
+	.a_9 /* IN */ (vpe_9),
+	.a_10 /* IN */ (vpe_10)
 );
 
 // VID.NET (225) - vpeq : and12
 and12 vpeq_inst
 (
-	.z(vpeq), // IO
-	.a_0(vpe_0), // IN
-	.a_1(vpe_1), // IN
-	.a_2(vpe_2), // IN
-	.a_3(vpe_3), // IN
-	.a_4(vpe_4), // IN
-	.a_5(vpe_5), // IN
-	.a_6(vpe_6), // IN
-	.a_7(vpe_7), // IN
-	.a_8(vpe_8), // IN
-	.a_9(vpe_9), // IN
-	.a_10(vpe_10), // IN
-	.a_11(viden)  // IN
+	.z /* OUT */ (vpeq),
+	.a_0 /* IN */ (vpe_0),
+	.a_1 /* IN */ (vpe_1),
+	.a_2 /* IN */ (vpe_2),
+	.a_3 /* IN */ (vpe_3),
+	.a_4 /* IN */ (vpe_4),
+	.a_5 /* IN */ (vpe_5),
+	.a_6 /* IN */ (vpe_6),
+	.a_7 /* IN */ (vpe_7),
+	.a_8 /* IN */ (vpe_8),
+	.a_9 /* IN */ (vpe_9),
+	.a_10 /* IN */ (vpe_10),
+	.a_11 /* IN */ (viden)
 );
 
 // VID.NET (227) - vbb : creg11
 creg11 vbb_inst
 (
-	.creq(vbbeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(vbbwr)  // IN
+	.creq /* OUT */ (vbbeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a7_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a7_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a7_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a7_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a7_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a7_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a7_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a7_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a7_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a7_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a7_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a7_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a7_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a7_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a7_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a7_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a7_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a7_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a7_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a7_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a7_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a7_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a7_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a7_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a7_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a7_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a7_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a7_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a7_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a7_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a7_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a7_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a7_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (vbbwr)
 );
 
 // VID.NET (228) - vbe : creg11
 creg11 vbe_inst
 (
-	.creq(vbeeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(vbewr)  // IN
+	.creq /* OUT */ (vbeeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a8_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a8_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a8_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a8_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a8_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a8_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a8_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a8_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a8_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a8_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a8_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a8_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a8_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a8_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a8_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a8_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a8_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a8_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a8_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a8_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a8_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a8_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a8_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a8_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a8_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a8_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a8_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a8_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a8_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a8_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a8_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a8_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a8_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (vbewr)
 );
 
 // VID.NET (229) - vdb : creg11
 creg11 vdb_inst
 (
-	.creq(vdbeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(vdbwr)  // IN
+	.creq /* OUT */ (vdbeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a9_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a9_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a9_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a9_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a9_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a9_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a9_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a9_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a9_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a9_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a9_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a9_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a9_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a9_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a9_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a9_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a9_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a9_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a9_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a9_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a9_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a9_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a9_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a9_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a9_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a9_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a9_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a9_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a9_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a9_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a9_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a9_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a9_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (vdbwr)
 );
 
 // VID.NET (230) - vde : creg11
 creg11 vde_inst
 (
-	.creq(vdeeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(vdewr)  // IN
+	.creq /* OUT */ (vdeeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a10_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a10_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a10_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a10_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a10_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a10_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a10_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a10_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a10_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a10_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a10_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a10_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a10_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a10_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a10_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a10_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a10_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a10_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a10_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a10_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a10_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a10_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a10_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a10_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a10_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a10_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a10_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a10_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a10_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a10_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a10_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a10_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a10_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (vdewr)
 );
 
 // VID.NET (231) - veb : creg11
 creg11 veb_inst
 (
-	.creq(vebeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(vebwr)  // IN
+	.creq /* OUT */ (vebeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a11_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a11_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a11_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a11_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a11_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a11_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a11_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a11_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a11_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a11_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a11_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a11_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a11_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a11_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a11_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a11_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a11_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a11_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a11_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a11_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a11_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a11_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a11_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a11_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a11_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a11_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a11_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a11_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a11_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a11_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a11_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a11_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a11_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (vebwr)
 );
 
 // VID.NET (232) - vee : creg11
 creg11 vee_inst
 (
-	.creq(veeeq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(veewr)  // IN
+	.creq /* OUT */ (veeeq),
+	.dout_0_out /* BUS */ (ts_pe_260_a12_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a12_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a12_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a12_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a12_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a12_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a12_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a12_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a12_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a12_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a12_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a12_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a12_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a12_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a12_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a12_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a12_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a12_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a12_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a12_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a12_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a12_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a12_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a12_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a12_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a12_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a12_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a12_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a12_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a12_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a12_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a12_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a12_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (veewr)
 );
 
 // VID.NET (233) - vs : creg11
 creg11 vs_inst
 (
-	.creq(vseq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(vswr)  // IN
+	.creq /* OUT */ (vseq),
+	.dout_0_out /* BUS */ (ts_pe_260_a13_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a13_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a13_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a13_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a13_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a13_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a13_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a13_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a13_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a13_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a13_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a13_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a13_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a13_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a13_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a13_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a13_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a13_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a13_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a13_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a13_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a13_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a13_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a13_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a13_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a13_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a13_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a13_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a13_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a13_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a13_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a13_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a13_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (vswr)
 );
 
 // VID.NET (234) - vi : creg11
 creg11 vi_inst
 (
-	.creq(vieq), // IO
-	.dout_0(dr_0), // BUS
-	.dout_1(dr_1), // BUS
-	.dout_2(dr_2), // BUS
-	.dout_3(dr_3), // BUS
-	.dout_4(dr_4), // BUS
-	.dout_5(dr_5), // BUS
-	.dout_6(dr_6), // BUS
-	.dout_7(dr_7), // BUS
-	.dout_8(dr_8), // BUS
-	.dout_9(dr_9), // BUS
-	.dout_10(dr_10), // BUS
-	.count_0(vcb_0), // IN
-	.count_1(vcb_1), // IN
-	.count_2(vcb_2), // IN
-	.count_3(vcb_3), // IN
-	.count_4(vcb_4), // IN
-	.count_5(vcb_5), // IN
-	.count_6(vcb_6), // IN
-	.count_7(vcb_7), // IN
-	.count_8(vcb_8), // IN
-	.count_9(vcb_9), // IN
-	.count_10(vcb_10), // IN
-	.din_0(din_0), // IN
-	.din_1(din_1), // IN
-	.din_2(din_2), // IN
-	.din_3(din_3), // IN
-	.din_4(din_4), // IN
-	.din_5(din_5), // IN
-	.din_6(din_6), // IN
-	.din_7(din_7), // IN
-	.din_8(din_8), // IN
-	.din_9(din_9), // IN
-	.din_10(din_10), // IN
-	.crwr(viwr)  // IN
+	.creq /* OUT */ (vieq),
+	.dout_0_out /* BUS */ (ts_pe_260_a14_out),
+	.dout_0_oe /* BUS */ (ts_pe_260_a14_oe),
+	.dout_0_in /* BUS */ (ts_pe_260_a14_in),
+	.dout_1_out /* BUS */ (ts_pe_261_a14_out),
+	.dout_1_oe /* BUS */ (ts_pe_261_a14_oe),
+	.dout_1_in /* BUS */ (ts_pe_261_a14_in),
+	.dout_2_out /* BUS */ (ts_pe_262_a14_out),
+	.dout_2_oe /* BUS */ (ts_pe_262_a14_oe),
+	.dout_2_in /* BUS */ (ts_pe_262_a14_in),
+	.dout_3_out /* BUS */ (ts_pe_263_a14_out),
+	.dout_3_oe /* BUS */ (ts_pe_263_a14_oe),
+	.dout_3_in /* BUS */ (ts_pe_263_a14_in),
+	.dout_4_out /* BUS */ (ts_pe_264_a14_out),
+	.dout_4_oe /* BUS */ (ts_pe_264_a14_oe),
+	.dout_4_in /* BUS */ (ts_pe_264_a14_in),
+	.dout_5_out /* BUS */ (ts_pe_265_a14_out),
+	.dout_5_oe /* BUS */ (ts_pe_265_a14_oe),
+	.dout_5_in /* BUS */ (ts_pe_265_a14_in),
+	.dout_6_out /* BUS */ (ts_pe_266_a14_out),
+	.dout_6_oe /* BUS */ (ts_pe_266_a14_oe),
+	.dout_6_in /* BUS */ (ts_pe_266_a14_in),
+	.dout_7_out /* BUS */ (ts_pe_267_a14_out),
+	.dout_7_oe /* BUS */ (ts_pe_267_a14_oe),
+	.dout_7_in /* BUS */ (ts_pe_267_a14_in),
+	.dout_8_out /* BUS */ (ts_pe_268_a14_out),
+	.dout_8_oe /* BUS */ (ts_pe_268_a14_oe),
+	.dout_8_in /* BUS */ (ts_pe_268_a14_in),
+	.dout_9_out /* BUS */ (ts_pe_269_a14_out),
+	.dout_9_oe /* BUS */ (ts_pe_269_a14_oe),
+	.dout_9_in /* BUS */ (ts_pe_269_a14_in),
+	.dout_10_out /* BUS */ (ts_pe_270_a14_out),
+	.dout_10_oe /* BUS */ (ts_pe_270_a14_oe),
+	.dout_10_in /* BUS */ (ts_pe_270_a14_in),
+	.count_0 /* IN */ (vcb_0),
+	.count_1 /* IN */ (vcb_1),
+	.count_2 /* IN */ (vcb_2),
+	.count_3 /* IN */ (vcb_3),
+	.count_4 /* IN */ (vcb_4),
+	.count_5 /* IN */ (vcb_5),
+	.count_6 /* IN */ (vcb_6),
+	.count_7 /* IN */ (vcb_7),
+	.count_8 /* IN */ (vcb_8),
+	.count_9 /* IN */ (vcb_9),
+	.count_10 /* IN */ (vcb_10),
+	.din_0 /* IN */ (din_0),
+	.din_1 /* IN */ (din_1),
+	.din_2 /* IN */ (din_2),
+	.din_3 /* IN */ (din_3),
+	.din_4 /* IN */ (din_4),
+	.din_5 /* IN */ (din_5),
+	.din_6 /* IN */ (din_6),
+	.din_7 /* IN */ (din_7),
+	.din_8 /* IN */ (din_8),
+	.din_9 /* IN */ (din_9),
+	.din_10 /* IN */ (din_10),
+	.crwr /* IN */ (viwr)
 );
 
 // VID.NET (238) - vvactive : fjkr
 fjkr vvactive_inst
 (
-	.q(vvactive), // IO
-	.ql(notvvactive), // IO
-	.j(vdbeq), // IN
-	.k(vdeeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (vvactive),
+	.ql /* OUT */ (notvvactive),
+	.j /* IN */ (vdbeq),
+	.k /* IN */ (vdeeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (239) - nvvu : dummy
@@ -2187,10 +3120,10 @@ assign startd = ~(startd1 & startd2 & startd3);
 // VID.NET (258) - start : fd2q
 fd2q start_inst
 (
-	.q(start_obuf), // OUT
-	.d(startd), // IN
-	.cp(vclk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (start_obuf),
+	.d /* IN */ (startd),
+	.cp /* IN */ (vclk),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (262) - vcli : nr2
@@ -2202,80 +3135,80 @@ assign vclb = ~vcli;
 // VID.NET (264) - vcl[0-10] : slatch
 slatch vcl_from_0_to_10_inst_0
 (
-	.q(vcl_0_obuf), // IO
-	.d(vcb_0), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_0),
+	.d /* IN */ (vcb_0),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_1
 (
-	.q(vcl_1_obuf), // IO
-	.d(vcb_1), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_1),
+	.d /* IN */ (vcb_1),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_2
 (
-	.q(vcl_2_obuf), // IO
-	.d(vcb_2), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_2),
+	.d /* IN */ (vcb_2),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_3
 (
-	.q(vcl_3_obuf), // IO
-	.d(vcb_3), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_3),
+	.d /* IN */ (vcb_3),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_4
 (
-	.q(vcl_4_obuf), // IO
-	.d(vcb_4), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_4),
+	.d /* IN */ (vcb_4),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_5
 (
-	.q(vcl_5_obuf), // IO
-	.d(vcb_5), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_5),
+	.d /* IN */ (vcb_5),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_6
 (
-	.q(vcl_6_obuf), // IO
-	.d(vcb_6), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_6),
+	.d /* IN */ (vcb_6),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_7
 (
-	.q(vcl_7_obuf), // IO
-	.d(vcb_7), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_7),
+	.d /* IN */ (vcb_7),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_8
 (
-	.q(vcl_8_obuf), // IO
-	.d(vcb_8), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_8),
+	.d /* IN */ (vcb_8),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_9
 (
-	.q(vcl_9_obuf), // IO
-	.d(vcb_9), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_9),
+	.d /* IN */ (vcb_9),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 slatch vcl_from_0_to_10_inst_10
 (
-	.q(vcl_10_obuf), // IO
-	.d(vcb_10), // IN
-	.clk(vclk), // IN
-	.en(vclb)  // IN
+	.q /* OUT */ (vcl_10),
+	.d /* IN */ (vcb_10),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (vclb)
 );
 
 // VID.NET (271) - startd3p : iv
@@ -2287,11 +3220,11 @@ assign hdb = hdb1eq | hdb2eq | startd3p;
 // VID.NET (273) - vdactive : slatchr
 slatchr vdactive_inst
 (
-	.q(vdactive), // IO
-	.d(vvactive), // IN
-	.clk(vclk), // IN
-	.en(hdb), // IN
-	.resl(vresl)  // IN
+	.q /* OUT */ (vdactive),
+	.d /* IN */ (vvactive),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (hdb),
+	.resl /* IN */ (vresl)
 );
 
 // VID.NET (274) - dd : an2
@@ -2300,12 +3233,12 @@ assign dd_obuf = vdactive & hdb;
 // VID.NET (275) - vactive : fjkr
 fjkr vactive_inst
 (
-	.q(vactive_obuf), // IO
-	.ql(notvactive), // IO
-	.j(dd_obuf), // IN
-	.k(hdeeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (vactive_obuf),
+	.ql /* OUT */ (notvactive),
+	.j /* IN */ (dd_obuf),
+	.k /* IN */ (hdeeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (276) - nvu : dummy
@@ -2313,20 +3246,20 @@ fjkr vactive_inst
 // VID.NET (278) - lbufai : fdr
 fdr lbufai_inst
 (
-	.q(lbufai), // IO
-	.ql(lbufbi), // IO
-	.d(lbufad), // IN
-	.clk(vclk), // IN
-	.resl(vresl)  // IN
+	.q /* OUT */ (lbufai),
+	.ql /* OUT */ (lbufbi),
+	.d /* IN */ (lbufad),
+	.clk /* IN */ (vclk),
+	.resl /* IN */ (vresl)
 );
 
 // VID.NET (279) - lbufd : mx2
 mx2 lbufd_inst
 (
-	.z(lbufad), // OUT
-	.a0(lbufa_obuf), // IN
-	.a1(lbufb_obuf), // IN
-	.s(dd_obuf)  // IN
+	.z /* OUT */ (lbufad),
+	.a0 /* IN */ (lbufa_obuf),
+	.a1 /* IN */ (lbufb_obuf),
+	.s /* IN */ (dd_obuf)
 );
 
 // VID.NET (280) - lbufa : nivu2
@@ -2342,35 +3275,35 @@ assign lbaai = ~(lbufai & vactive_obuf);
 assign lbbai = ~(lbufbi & vactive_obuf);
 
 // VID.NET (285) - lbaactive : ivu
-assign lbaactive_obuf = ~lbaai;
+assign lbaactive = ~lbaai;
 
 // VID.NET (286) - lbbactive : ivu
-assign lbbactive_obuf = ~lbbai;
+assign lbbactive = ~lbbai;
 
 // VID.NET (288) - vblank : fjkr
 fjkr vblank_inst
 (
-	.q(vblank), // IO
-	.ql(notvblank), // IO
-	.j(vbbeq), // IN
-	.k(vbeeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (vblank),
+	.ql /* OUT */ (notvblank),
+	.j /* IN */ (vbbeq),
+	.k /* IN */ (vbeeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (289) - hblank : fjkr
 fjkr hblank_inst
 (
-	.q(hblank), // IO
-	.ql(nothblank), // IO
-	.j(hbbeq), // IN
-	.k(hbeeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (hblank),
+	.ql /* OUT */ (nothblank),
+	.j /* IN */ (hbbeq),
+	.k /* IN */ (hbeeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (290) - blank : nd2
-assign blank_obuf = ~(notvblank & nothblank);
+assign blank = ~(notvblank & nothblank);
 
 // VID.NET (292) - unused1 : dummy
 
@@ -2379,12 +3312,12 @@ assign blank_obuf = ~(notvblank & nothblank);
 // VID.NET (295) - hs : fjkr
 fjkr hs_inst
 (
-	.q(hs), // IO
-	.ql(noths_obuf), // IO
-	.j(hseq), // IN
-	.k(hpeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (hs),
+	.ql /* OUT */ (noths_obuf),
+	.j /* IN */ (hseq),
+	.k /* IN */ (hpeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (296) - hsu : dummy
@@ -2392,12 +3325,12 @@ fjkr hs_inst
 // VID.NET (303) - vvsync : fjkr
 fjkr vvsync_inst
 (
-	.q(vvs), // IO
-	.ql(notvvs), // IO
-	.j(vseq), // IN
-	.k(vpeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (vvs),
+	.ql /* OUT */ (notvvs),
+	.j /* IN */ (vseq),
+	.k /* IN */ (vpeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (304) - nvsu : dummy
@@ -2408,23 +3341,23 @@ assign hvstart = hvsb & vvs;
 // VID.NET (306) - hvsync : fjkr
 fjkr hvsync_inst
 (
-	.q(hvs), // IO
-	.ql(nothvs), // IO
-	.j(hvstart), // IN
-	.k(hvse), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (hvs),
+	.ql /* OUT */ (nothvs),
+	.j /* IN */ (hvstart),
+	.k /* IN */ (hvse),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (307) - vesync : fjkr
 fjkr vesync_inst
 (
-	.q(ves), // IO
-	.ql(notves), // IO
-	.j(vebeq), // IN
-	.k(veeeq), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (ves),
+	.ql /* OUT */ (notves),
+	.j /* IN */ (vebeq),
+	.k /* IN */ (veeeq),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (308) - nvesu : dummy
@@ -2435,12 +3368,12 @@ assign hestart = hvsb & ves;
 // VID.NET (310) - hesync : fjkr
 fjkr hesync_inst
 (
-	.q(hes), // IO
-	.ql(nothes), // IO
-	.j(hestart), // IN
-	.k(heqe), // IN
-	.clk(vclk), // IN
-	.r(vresl)  // IN
+	.q /* OUT */ (hes),
+	.ql /* OUT */ (nothes),
+	.j /* IN */ (hestart),
+	.k /* IN */ (heqe),
+	.clk /* IN */ (vclk),
+	.r /* IN */ (vresl)
 );
 
 // VID.NET (311) - vsync : an2
@@ -2449,19 +3382,19 @@ assign vsl = nothvs & nothes;
 // VID.NET (312) - csync : mx2
 mx2 csync_inst
 (
-	.z(csync), // OUT
-	.a0(noths_obuf), // IN
-	.a1(vsl), // IN
-	.s(ves)  // IN
+	.z /* OUT */ (csync),
+	.a0 /* IN */ (noths_obuf),
+	.a1 /* IN */ (vsl),
+	.s /* IN */ (ves)
 );
 
 // VID.NET (313) - notvs : mx2
 mx2 notvs_inst
 (
-	.z(notvs_obuf), // OUT
-	.a0(vsl), // IN
-	.a1(csync), // IN
-	.s(csyncen)  // IN
+	.z /* OUT */ (notvs),
+	.a0 /* IN */ (vsl),
+	.a1 /* IN */ (csync),
+	.s /* IN */ (csyncen)
 );
 
 // VID.NET (314) - hvs : dummy
@@ -2474,11 +3407,11 @@ assign vintd = vieq & hdeeq;
 // VID.NET (320) - vint : fdr
 fdr vint_inst
 (
-	.q(vint_obuf), // IO
-	.ql(vintl), // IO
-	.d(vintd), // IN
-	.clk(vclk), // IN
-	.resl(vresl)  // IN
+	.q /* OUT */ (vint),
+	.ql /* OUT */ (vintl),
+	.d /* IN */ (vintd),
+	.clk /* IN */ (vclk),
+	.resl /* IN */ (vresl)
 );
 
 // VID.NET (321) - vintl : dummy
@@ -2513,38 +3446,38 @@ assign nextpixad = nextpixd_obuf & notstartd;
 // VID.NET (342) - nextpixaq : fd1q
 fd1q nextpixaq_inst
 (
-	.q(nextpixaq), // OUT
-	.d(nextpixad), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (nextpixaq),
+	.d /* IN */ (nextpixad),
+	.cp /* IN */ (vclk)
 );
 
 // VID.NET (343) - nextpixa : mx2
 mx2 nextpixa_inst
 (
-	.z(nextpixa_obuf), // OUT
-	.a0(nextpixd_obuf), // IN
-	.a1(nextpixaq), // IN
-	.s(sxp)  // IN
+	.z /* OUT */ (nextpixa_obuf),
+	.a0 /* IN */ (nextpixd_obuf),
+	.a1 /* IN */ (nextpixaq),
+	.s /* IN */ (sxp)
 );
 
 // VID.NET (344) - bgw : an3
-assign bgw_obuf = bgwen & nextpixa_obuf & sxp;
+assign bgw = bgwen & nextpixa_obuf & sxp;
 
 // VID.NET (348) - lp1 : fd1q
 fd1q lp1_inst
 (
-	.q(lp1), // OUT
-	.d(lp), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (lp1),
+	.d /* IN */ (lp),
+	.cp /* IN */ (vclk)
 );
 
 // VID.NET (349) - lp2 : fd1
 fd1 lp2_inst
 (
-	.q(lp2), // OUT
-	.qn(lp2l), // OUT
-	.d(lp1), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (lp2),
+	.qn /* OUT */ (lp2l),
+	.d /* IN */ (lp1),
+	.cp /* IN */ (vclk)
 );
 
 // VID.NET (350) - lpldi : nd2
@@ -2558,279 +3491,326 @@ assign lpld = ~lpldi;
 // VID.NET (354) - lph[0-10] : slatch
 slatch lph_from_0_to_10_inst_0
 (
-	.q(lph_0), // IO
-	.d(hcb_0), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_0),
+	.d /* IN */ (hcb_0),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_1
 (
-	.q(lph_1), // IO
-	.d(hcb_1), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_1),
+	.d /* IN */ (hcb_1),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_2
 (
-	.q(lph_2), // IO
-	.d(hcb_2), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_2),
+	.d /* IN */ (hcb_2),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_3
 (
-	.q(lph_3), // IO
-	.d(hcb_3), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_3),
+	.d /* IN */ (hcb_3),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_4
 (
-	.q(lph_4), // IO
-	.d(hcb_4), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_4),
+	.d /* IN */ (hcb_4),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_5
 (
-	.q(lph_5), // IO
-	.d(hcb_5), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_5),
+	.d /* IN */ (hcb_5),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_6
 (
-	.q(lph_6), // IO
-	.d(hcb_6), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_6),
+	.d /* IN */ (hcb_6),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_7
 (
-	.q(lph_7), // IO
-	.d(hcb_7), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_7),
+	.d /* IN */ (hcb_7),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_8
 (
-	.q(lph_8), // IO
-	.d(hcb_8), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_8),
+	.d /* IN */ (hcb_8),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_9
 (
-	.q(lph_9), // IO
-	.d(hcb_9), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_9),
+	.d /* IN */ (hcb_9),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lph_from_0_to_10_inst_10
 (
-	.q(lph_10), // IO
-	.d(hcb_10_obuf), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lph_10),
+	.d /* IN */ (hcb_10_obuf),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 
 // VID.NET (355) - lpv[0-11] : slatch
 slatch lpv_from_0_to_11_inst_0
 (
-	.q(lpv_0), // IO
-	.d(vc_0), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_0),
+	.d /* IN */ (vc_0),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_1
 (
-	.q(lpv_1), // IO
-	.d(vc_1), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_1),
+	.d /* IN */ (vc_1),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_2
 (
-	.q(lpv_2), // IO
-	.d(vc_2), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_2),
+	.d /* IN */ (vc_2),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_3
 (
-	.q(lpv_3), // IO
-	.d(vc_3), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_3),
+	.d /* IN */ (vc_3),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_4
 (
-	.q(lpv_4), // IO
-	.d(vc_4), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_4),
+	.d /* IN */ (vc_4),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_5
 (
-	.q(lpv_5), // IO
-	.d(vc_5), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_5),
+	.d /* IN */ (vc_5),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_6
 (
-	.q(lpv_6), // IO
-	.d(vc_6), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_6),
+	.d /* IN */ (vc_6),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_7
 (
-	.q(lpv_7), // IO
-	.d(vc_7), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_7),
+	.d /* IN */ (vc_7),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_8
 (
-	.q(lpv_8), // IO
-	.d(vc_8), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_8),
+	.d /* IN */ (vc_8),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_9
 (
-	.q(lpv_9), // IO
-	.d(vc_9), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_9),
+	.d /* IN */ (vc_9),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_10
 (
-	.q(lpv_10), // IO
-	.d(vc_10), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_10),
+	.d /* IN */ (vc_10),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 slatch lpv_from_0_to_11_inst_11
 (
-	.q(lpv_11), // IO
-	.d(vc_11), // IN
-	.clk(vclk), // IN
-	.en(lpld)  // IN
+	.q /* OUT */ (lpv_11),
+	.d /* IN */ (vc_11),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (lpld)
 );
 
 // VID.NET (356) - lphd[0-10] : ts
-assign dr_0 = (lphrd) ? lph_0 : 1'bz;
-assign dr_1 = (lphrd) ? lph_1 : 1'bz;
-assign dr_2 = (lphrd) ? lph_2 : 1'bz;
-assign dr_3 = (lphrd) ? lph_3 : 1'bz;
-assign dr_4 = (lphrd) ? lph_4 : 1'bz;
-assign dr_5 = (lphrd) ? lph_5 : 1'bz;
-assign dr_6 = (lphrd) ? lph_6 : 1'bz;
-assign dr_7 = (lphrd) ? lph_7 : 1'bz;
-assign dr_8 = (lphrd) ? lph_8 : 1'bz;
-assign dr_9 = (lphrd) ? lph_9 : 1'bz;
-assign dr_10 = (lphrd) ? lph_10 : 1'bz;
+assign ts_pe_260_a15_out = lph_0;
+assign ts_pe_260_a15_oe = lphrd;
+assign ts_pe_261_a15_out = lph_1;
+assign ts_pe_261_a15_oe = lphrd;
+assign ts_pe_262_a15_out = lph_2;
+assign ts_pe_262_a15_oe = lphrd;
+assign ts_pe_263_a15_out = lph_3;
+assign ts_pe_263_a15_oe = lphrd;
+assign ts_pe_264_a15_out = lph_4;
+assign ts_pe_264_a15_oe = lphrd;
+assign ts_pe_265_a15_out = lph_5;
+assign ts_pe_265_a15_oe = lphrd;
+assign ts_pe_266_a15_out = lph_6;
+assign ts_pe_266_a15_oe = lphrd;
+assign ts_pe_267_a15_out = lph_7;
+assign ts_pe_267_a15_oe = lphrd;
+assign ts_pe_268_a15_out = lph_8;
+assign ts_pe_268_a15_oe = lphrd;
+assign ts_pe_269_a15_out = lph_9;
+assign ts_pe_269_a15_oe = lphrd;
+assign ts_pe_270_a15_out = lph_10;
+assign ts_pe_270_a15_oe = lphrd;
 
 // VID.NET (357) - lphd[11] : ts
-assign dr_11 = (lphrd) ? lpe : 1'bz;
+assign ts_pe_271_a1_out = lpe;
+assign ts_pe_271_a1_oe = lphrd;
 
 // VID.NET (358) - lpvd[0-11] : ts
-assign dr_0 = (lpvrd) ? lpv_0 : 1'bz;
-assign dr_1 = (lpvrd) ? lpv_1 : 1'bz;
-assign dr_2 = (lpvrd) ? lpv_2 : 1'bz;
-assign dr_3 = (lpvrd) ? lpv_3 : 1'bz;
-assign dr_4 = (lpvrd) ? lpv_4 : 1'bz;
-assign dr_5 = (lpvrd) ? lpv_5 : 1'bz;
-assign dr_6 = (lpvrd) ? lpv_6 : 1'bz;
-assign dr_7 = (lpvrd) ? lpv_7 : 1'bz;
-assign dr_8 = (lpvrd) ? lpv_8 : 1'bz;
-assign dr_9 = (lpvrd) ? lpv_9 : 1'bz;
-assign dr_10 = (lpvrd) ? lpv_10 : 1'bz;
-assign dr_11 = (lpvrd) ? lpv_11 : 1'bz;
+assign ts_pe_260_a16_out = lpv_0;
+assign ts_pe_260_a16_oe = lpvrd;
+assign ts_pe_261_a16_out = lpv_1;
+assign ts_pe_261_a16_oe = lpvrd;
+assign ts_pe_262_a16_out = lpv_2;
+assign ts_pe_262_a16_oe = lpvrd;
+assign ts_pe_263_a16_out = lpv_3;
+assign ts_pe_263_a16_oe = lpvrd;
+assign ts_pe_264_a16_out = lpv_4;
+assign ts_pe_264_a16_oe = lpvrd;
+assign ts_pe_265_a16_out = lpv_5;
+assign ts_pe_265_a16_oe = lpvrd;
+assign ts_pe_266_a16_out = lpv_6;
+assign ts_pe_266_a16_oe = lpvrd;
+assign ts_pe_267_a16_out = lpv_7;
+assign ts_pe_267_a16_oe = lpvrd;
+assign ts_pe_268_a16_out = lpv_8;
+assign ts_pe_268_a16_oe = lpvrd;
+assign ts_pe_269_a16_out = lpv_9;
+assign ts_pe_269_a16_oe = lpvrd;
+assign ts_pe_270_a16_out = lpv_10;
+assign ts_pe_270_a16_oe = lpvrd;
+assign ts_pe_271_a2_out = lpv_11;
+assign ts_pe_271_a2_oe = lpvrd;
 
 // VID.NET (360) - lp_event : fjk2
 fjk2 lp_event_inst
 (
-	.q(lpe), // OUT
-	.qn(notlpe), // OUT
-	.j(lpld), // IN
-	.k(nextfield), // IN
-	.cp(vclk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (lpe),
+	.qn /* OUT */ (notlpe),
+	.j /* IN */ (lpld),
+	.k /* IN */ (nextfield),
+	.cp /* IN */ (vclk),
+	.cd /* IN */ (resetl)
 );
 
 // VID.NET (361) - lpeu : dummy
 
 // VID.NET (365) - td2[0] : ts
-assign dr_0 = (test2r) ? hpeqt : 1'bz;
+assign ts_pe_260_a17_out = hpeqt;
+assign ts_pe_260_a17_oe = test2r;
 
 // VID.NET (366) - td2[1] : ts
-assign dr_1 = (test2r) ? hbbeq : 1'bz;
+assign ts_pe_261_a17_out = hbbeq;
+assign ts_pe_261_a17_oe = test2r;
 
 // VID.NET (367) - td2[2] : ts
-assign dr_2 = (test2r) ? hbeeq : 1'bz;
+assign ts_pe_262_a17_out = hbeeq;
+assign ts_pe_262_a17_oe = test2r;
 
 // VID.NET (368) - td2[3] : ts
-assign dr_3 = (test2r) ? hdb1eq : 1'bz;
+assign ts_pe_263_a17_out = hdb1eq;
+assign ts_pe_263_a17_oe = test2r;
 
 // VID.NET (369) - td2[4] : ts
-assign dr_4 = (test2r) ? hdb2eq : 1'bz;
+assign ts_pe_264_a17_out = hdb2eq;
+assign ts_pe_264_a17_oe = test2r;
 
 // VID.NET (370) - td2[5] : ts
-assign dr_5 = (test2r) ? hdeeq : 1'bz;
+assign ts_pe_265_a17_out = hdeeq;
+assign ts_pe_265_a17_oe = test2r;
 
 // VID.NET (371) - td2[6] : ts
-assign dr_6 = (test2r) ? hseq : 1'bz;
+assign ts_pe_266_a17_out = hseq;
+assign ts_pe_266_a17_oe = test2r;
 
 // VID.NET (372) - td2[7] : ts
-assign dr_7 = (test2r) ? hvsb : 1'bz;
+assign ts_pe_267_a17_out = hvsb;
+assign ts_pe_267_a17_oe = test2r;
 
 // VID.NET (373) - td2[8] : ts
-assign dr_8 = (test2r) ? hvse : 1'bz;
+assign ts_pe_268_a17_out = hvse;
+assign ts_pe_268_a17_oe = test2r;
 
 // VID.NET (374) - td2[9] : ts
-assign dr_9 = (test2r) ? heqe : 1'bz;
+assign ts_pe_269_a17_out = heqe;
+assign ts_pe_269_a17_oe = test2r;
 
 // VID.NET (375) - td2[10] : ts
-assign dr_10 = (test2r) ? gnd : 1'bz;
+assign ts_pe_270_a17_out = gnd;
+assign ts_pe_270_a17_oe = test2r;
 
 // VID.NET (377) - td3[0] : ts
-assign dr_0 = (test3r) ? vpeqt : 1'bz;
+assign ts_pe_260_a18_out = vpeqt;
+assign ts_pe_260_a18_oe = test3r;
 
 // VID.NET (378) - td3[1] : ts
-assign dr_1 = (test3r) ? vbbeq : 1'bz;
+assign ts_pe_261_a18_out = vbbeq;
+assign ts_pe_261_a18_oe = test3r;
 
 // VID.NET (379) - td3[2] : ts
-assign dr_2 = (test3r) ? vbeeq : 1'bz;
+assign ts_pe_262_a18_out = vbeeq;
+assign ts_pe_262_a18_oe = test3r;
 
 // VID.NET (380) - td3[3] : ts
-assign dr_3 = (test3r) ? vdbeq : 1'bz;
+assign ts_pe_263_a18_out = vdbeq;
+assign ts_pe_263_a18_oe = test3r;
 
 // VID.NET (381) - td3[4] : ts
-assign dr_4 = (test3r) ? vdeeq : 1'bz;
+assign ts_pe_264_a18_out = vdeeq;
+assign ts_pe_264_a18_oe = test3r;
 
 // VID.NET (382) - td3[5] : ts
-assign dr_5 = (test3r) ? vebeq : 1'bz;
+assign ts_pe_265_a18_out = vebeq;
+assign ts_pe_265_a18_oe = test3r;
 
 // VID.NET (383) - td3[6] : ts
-assign dr_6 = (test3r) ? veeeq : 1'bz;
+assign ts_pe_266_a18_out = veeeq;
+assign ts_pe_266_a18_oe = test3r;
 
 // VID.NET (384) - td3[7] : ts
-assign dr_7 = (test3r) ? vseq : 1'bz;
+assign ts_pe_267_a18_out = vseq;
+assign ts_pe_267_a18_oe = test3r;
 
 // VID.NET (385) - td3[8] : ts
-assign dr_8 = (test3r) ? vieq : 1'bz;
+assign ts_pe_268_a18_out = vieq;
+assign ts_pe_268_a18_oe = test3r;
 
 // VID.NET (386) - td3[9] : ts
-assign dr_9 = (test3r) ? vgy : 1'bz;
+assign ts_pe_269_a18_out = vgy;
+assign ts_pe_269_a18_oe = test3r;
 
 // VID.NET (387) - td3[10] : ts
-assign dr_10 = (test3r) ? vey : 1'bz;
+assign ts_pe_270_a18_out = vey;
+assign ts_pe_270_a18_oe = test3r;
 
 // VID.NET (388) - td3[11] : ts
-assign dr_11 = (test3r) ? vly : 1'bz;
+assign ts_pe_271_a3_out = vly;
+assign ts_pe_271_a3_oe = test3r;
 
 // VID.NET (395) - e11 : or2
 assign e11 = hcrd | test2r;
@@ -2842,11 +3822,504 @@ assign e1215 = e11 | vcrd | lpvrd | lphrd;
 assign gnd = 1'b0;
 
 // VID.NET (398) - dr[11] : ts
-assign dr_11 = (e11) ? gnd : 1'bz;
+assign ts_pe_271_a4_out = gnd;
+assign ts_pe_271_a4_oe = e11;
 
 // VID.NET (399) - dr[12-15] : ts
-assign dr_12 = (e1215) ? gnd : 1'bz;
-assign dr_13 = (e1215) ? gnd : 1'bz;
-assign dr_14 = (e1215) ? gnd : 1'bz;
-assign dr_15 = (e1215) ? gnd : 1'bz;
+assign dr_12_out = gnd;
+assign dr_12_oe = e1215;
+assign dr_13_out = gnd;
+assign dr_13_oe = e1215;
+assign dr_14_out = gnd;
+assign dr_14_oe = e1215;
+assign dr_15_out = gnd;
+assign dr_15_oe = e1215;
+
+// --- Compiler-generated PE for BUS dr[0]
+assign dr_0_out =
+	(ts_pe_260_a0_oe) ? ts_pe_260_a0_out :
+	(ts_pe_260_a1_oe) ? ts_pe_260_a1_out :
+	(ts_pe_260_a2_oe) ? ts_pe_260_a2_out :
+	(ts_pe_260_a3_oe) ? ts_pe_260_a3_out :
+	(ts_pe_260_a4_oe) ? ts_pe_260_a4_out :
+	(ts_pe_260_a5_oe) ? ts_pe_260_a5_out :
+	(ts_pe_260_a6_oe) ? ts_pe_260_a6_out :
+	(ts_pe_260_a7_oe) ? ts_pe_260_a7_out :
+	(ts_pe_260_a8_oe) ? ts_pe_260_a8_out :
+	(ts_pe_260_a9_oe) ? ts_pe_260_a9_out :
+	(ts_pe_260_a10_oe) ? ts_pe_260_a10_out :
+	(ts_pe_260_a11_oe) ? ts_pe_260_a11_out :
+	(ts_pe_260_a12_oe) ? ts_pe_260_a12_out :
+	(ts_pe_260_a13_oe) ? ts_pe_260_a13_out :
+	(ts_pe_260_a14_oe) ? ts_pe_260_a14_out :
+	(ts_pe_260_a15_oe) ? ts_pe_260_a15_out :
+	(ts_pe_260_a16_oe) ? ts_pe_260_a16_out :
+	(ts_pe_260_a17_oe) ? ts_pe_260_a17_out :
+	(ts_pe_260_a18_oe) ? ts_pe_260_a18_out :
+	1'bz;
+assign dr_0_oe = ts_pe_260_a0_oe | ts_pe_260_a1_oe | ts_pe_260_a2_oe | ts_pe_260_a3_oe | ts_pe_260_a4_oe | ts_pe_260_a5_oe | ts_pe_260_a6_oe | ts_pe_260_a7_oe | ts_pe_260_a8_oe | ts_pe_260_a9_oe | ts_pe_260_a10_oe | ts_pe_260_a11_oe | ts_pe_260_a12_oe | ts_pe_260_a13_oe | ts_pe_260_a14_oe | ts_pe_260_a15_oe | ts_pe_260_a16_oe | ts_pe_260_a17_oe | ts_pe_260_a18_oe;
+assign ts_pe_260_a0_in = dr_0_in;
+assign ts_pe_260_a1_in = dr_0_in;
+assign ts_pe_260_a2_in = dr_0_in;
+assign ts_pe_260_a3_in = dr_0_in;
+assign ts_pe_260_a4_in = dr_0_in;
+assign ts_pe_260_a5_in = dr_0_in;
+assign ts_pe_260_a6_in = dr_0_in;
+assign ts_pe_260_a7_in = dr_0_in;
+assign ts_pe_260_a8_in = dr_0_in;
+assign ts_pe_260_a9_in = dr_0_in;
+assign ts_pe_260_a10_in = dr_0_in;
+assign ts_pe_260_a11_in = dr_0_in;
+assign ts_pe_260_a12_in = dr_0_in;
+assign ts_pe_260_a13_in = dr_0_in;
+assign ts_pe_260_a14_in = dr_0_in;
+assign ts_pe_260_a15_in = dr_0_in;
+assign ts_pe_260_a16_in = dr_0_in;
+assign ts_pe_260_a17_in = dr_0_in;
+assign ts_pe_260_a18_in = dr_0_in;
+
+// --- Compiler-generated PE for BUS dr[1]
+assign dr_1_out =
+	(ts_pe_261_a0_oe) ? ts_pe_261_a0_out :
+	(ts_pe_261_a1_oe) ? ts_pe_261_a1_out :
+	(ts_pe_261_a2_oe) ? ts_pe_261_a2_out :
+	(ts_pe_261_a3_oe) ? ts_pe_261_a3_out :
+	(ts_pe_261_a4_oe) ? ts_pe_261_a4_out :
+	(ts_pe_261_a5_oe) ? ts_pe_261_a5_out :
+	(ts_pe_261_a6_oe) ? ts_pe_261_a6_out :
+	(ts_pe_261_a7_oe) ? ts_pe_261_a7_out :
+	(ts_pe_261_a8_oe) ? ts_pe_261_a8_out :
+	(ts_pe_261_a9_oe) ? ts_pe_261_a9_out :
+	(ts_pe_261_a10_oe) ? ts_pe_261_a10_out :
+	(ts_pe_261_a11_oe) ? ts_pe_261_a11_out :
+	(ts_pe_261_a12_oe) ? ts_pe_261_a12_out :
+	(ts_pe_261_a13_oe) ? ts_pe_261_a13_out :
+	(ts_pe_261_a14_oe) ? ts_pe_261_a14_out :
+	(ts_pe_261_a15_oe) ? ts_pe_261_a15_out :
+	(ts_pe_261_a16_oe) ? ts_pe_261_a16_out :
+	(ts_pe_261_a17_oe) ? ts_pe_261_a17_out :
+	(ts_pe_261_a18_oe) ? ts_pe_261_a18_out :
+	1'bz;
+assign dr_1_oe = ts_pe_261_a0_oe | ts_pe_261_a1_oe | ts_pe_261_a2_oe | ts_pe_261_a3_oe | ts_pe_261_a4_oe | ts_pe_261_a5_oe | ts_pe_261_a6_oe | ts_pe_261_a7_oe | ts_pe_261_a8_oe | ts_pe_261_a9_oe | ts_pe_261_a10_oe | ts_pe_261_a11_oe | ts_pe_261_a12_oe | ts_pe_261_a13_oe | ts_pe_261_a14_oe | ts_pe_261_a15_oe | ts_pe_261_a16_oe | ts_pe_261_a17_oe | ts_pe_261_a18_oe;
+assign ts_pe_261_a0_in = dr_1_in;
+assign ts_pe_261_a1_in = dr_1_in;
+assign ts_pe_261_a2_in = dr_1_in;
+assign ts_pe_261_a3_in = dr_1_in;
+assign ts_pe_261_a4_in = dr_1_in;
+assign ts_pe_261_a5_in = dr_1_in;
+assign ts_pe_261_a6_in = dr_1_in;
+assign ts_pe_261_a7_in = dr_1_in;
+assign ts_pe_261_a8_in = dr_1_in;
+assign ts_pe_261_a9_in = dr_1_in;
+assign ts_pe_261_a10_in = dr_1_in;
+assign ts_pe_261_a11_in = dr_1_in;
+assign ts_pe_261_a12_in = dr_1_in;
+assign ts_pe_261_a13_in = dr_1_in;
+assign ts_pe_261_a14_in = dr_1_in;
+assign ts_pe_261_a15_in = dr_1_in;
+assign ts_pe_261_a16_in = dr_1_in;
+assign ts_pe_261_a17_in = dr_1_in;
+assign ts_pe_261_a18_in = dr_1_in;
+
+// --- Compiler-generated PE for BUS dr[2]
+assign dr_2_out =
+	(ts_pe_262_a0_oe) ? ts_pe_262_a0_out :
+	(ts_pe_262_a1_oe) ? ts_pe_262_a1_out :
+	(ts_pe_262_a2_oe) ? ts_pe_262_a2_out :
+	(ts_pe_262_a3_oe) ? ts_pe_262_a3_out :
+	(ts_pe_262_a4_oe) ? ts_pe_262_a4_out :
+	(ts_pe_262_a5_oe) ? ts_pe_262_a5_out :
+	(ts_pe_262_a6_oe) ? ts_pe_262_a6_out :
+	(ts_pe_262_a7_oe) ? ts_pe_262_a7_out :
+	(ts_pe_262_a8_oe) ? ts_pe_262_a8_out :
+	(ts_pe_262_a9_oe) ? ts_pe_262_a9_out :
+	(ts_pe_262_a10_oe) ? ts_pe_262_a10_out :
+	(ts_pe_262_a11_oe) ? ts_pe_262_a11_out :
+	(ts_pe_262_a12_oe) ? ts_pe_262_a12_out :
+	(ts_pe_262_a13_oe) ? ts_pe_262_a13_out :
+	(ts_pe_262_a14_oe) ? ts_pe_262_a14_out :
+	(ts_pe_262_a15_oe) ? ts_pe_262_a15_out :
+	(ts_pe_262_a16_oe) ? ts_pe_262_a16_out :
+	(ts_pe_262_a17_oe) ? ts_pe_262_a17_out :
+	(ts_pe_262_a18_oe) ? ts_pe_262_a18_out :
+	1'bz;
+assign dr_2_oe = ts_pe_262_a0_oe | ts_pe_262_a1_oe | ts_pe_262_a2_oe | ts_pe_262_a3_oe | ts_pe_262_a4_oe | ts_pe_262_a5_oe | ts_pe_262_a6_oe | ts_pe_262_a7_oe | ts_pe_262_a8_oe | ts_pe_262_a9_oe | ts_pe_262_a10_oe | ts_pe_262_a11_oe | ts_pe_262_a12_oe | ts_pe_262_a13_oe | ts_pe_262_a14_oe | ts_pe_262_a15_oe | ts_pe_262_a16_oe | ts_pe_262_a17_oe | ts_pe_262_a18_oe;
+assign ts_pe_262_a0_in = dr_2_in;
+assign ts_pe_262_a1_in = dr_2_in;
+assign ts_pe_262_a2_in = dr_2_in;
+assign ts_pe_262_a3_in = dr_2_in;
+assign ts_pe_262_a4_in = dr_2_in;
+assign ts_pe_262_a5_in = dr_2_in;
+assign ts_pe_262_a6_in = dr_2_in;
+assign ts_pe_262_a7_in = dr_2_in;
+assign ts_pe_262_a8_in = dr_2_in;
+assign ts_pe_262_a9_in = dr_2_in;
+assign ts_pe_262_a10_in = dr_2_in;
+assign ts_pe_262_a11_in = dr_2_in;
+assign ts_pe_262_a12_in = dr_2_in;
+assign ts_pe_262_a13_in = dr_2_in;
+assign ts_pe_262_a14_in = dr_2_in;
+assign ts_pe_262_a15_in = dr_2_in;
+assign ts_pe_262_a16_in = dr_2_in;
+assign ts_pe_262_a17_in = dr_2_in;
+assign ts_pe_262_a18_in = dr_2_in;
+
+// --- Compiler-generated PE for BUS dr[3]
+assign dr_3_out =
+	(ts_pe_263_a0_oe) ? ts_pe_263_a0_out :
+	(ts_pe_263_a1_oe) ? ts_pe_263_a1_out :
+	(ts_pe_263_a2_oe) ? ts_pe_263_a2_out :
+	(ts_pe_263_a3_oe) ? ts_pe_263_a3_out :
+	(ts_pe_263_a4_oe) ? ts_pe_263_a4_out :
+	(ts_pe_263_a5_oe) ? ts_pe_263_a5_out :
+	(ts_pe_263_a6_oe) ? ts_pe_263_a6_out :
+	(ts_pe_263_a7_oe) ? ts_pe_263_a7_out :
+	(ts_pe_263_a8_oe) ? ts_pe_263_a8_out :
+	(ts_pe_263_a9_oe) ? ts_pe_263_a9_out :
+	(ts_pe_263_a10_oe) ? ts_pe_263_a10_out :
+	(ts_pe_263_a11_oe) ? ts_pe_263_a11_out :
+	(ts_pe_263_a12_oe) ? ts_pe_263_a12_out :
+	(ts_pe_263_a13_oe) ? ts_pe_263_a13_out :
+	(ts_pe_263_a14_oe) ? ts_pe_263_a14_out :
+	(ts_pe_263_a15_oe) ? ts_pe_263_a15_out :
+	(ts_pe_263_a16_oe) ? ts_pe_263_a16_out :
+	(ts_pe_263_a17_oe) ? ts_pe_263_a17_out :
+	(ts_pe_263_a18_oe) ? ts_pe_263_a18_out :
+	1'bz;
+assign dr_3_oe = ts_pe_263_a0_oe | ts_pe_263_a1_oe | ts_pe_263_a2_oe | ts_pe_263_a3_oe | ts_pe_263_a4_oe | ts_pe_263_a5_oe | ts_pe_263_a6_oe | ts_pe_263_a7_oe | ts_pe_263_a8_oe | ts_pe_263_a9_oe | ts_pe_263_a10_oe | ts_pe_263_a11_oe | ts_pe_263_a12_oe | ts_pe_263_a13_oe | ts_pe_263_a14_oe | ts_pe_263_a15_oe | ts_pe_263_a16_oe | ts_pe_263_a17_oe | ts_pe_263_a18_oe;
+assign ts_pe_263_a0_in = dr_3_in;
+assign ts_pe_263_a1_in = dr_3_in;
+assign ts_pe_263_a2_in = dr_3_in;
+assign ts_pe_263_a3_in = dr_3_in;
+assign ts_pe_263_a4_in = dr_3_in;
+assign ts_pe_263_a5_in = dr_3_in;
+assign ts_pe_263_a6_in = dr_3_in;
+assign ts_pe_263_a7_in = dr_3_in;
+assign ts_pe_263_a8_in = dr_3_in;
+assign ts_pe_263_a9_in = dr_3_in;
+assign ts_pe_263_a10_in = dr_3_in;
+assign ts_pe_263_a11_in = dr_3_in;
+assign ts_pe_263_a12_in = dr_3_in;
+assign ts_pe_263_a13_in = dr_3_in;
+assign ts_pe_263_a14_in = dr_3_in;
+assign ts_pe_263_a15_in = dr_3_in;
+assign ts_pe_263_a16_in = dr_3_in;
+assign ts_pe_263_a17_in = dr_3_in;
+assign ts_pe_263_a18_in = dr_3_in;
+
+// --- Compiler-generated PE for BUS dr[4]
+assign dr_4_out =
+	(ts_pe_264_a0_oe) ? ts_pe_264_a0_out :
+	(ts_pe_264_a1_oe) ? ts_pe_264_a1_out :
+	(ts_pe_264_a2_oe) ? ts_pe_264_a2_out :
+	(ts_pe_264_a3_oe) ? ts_pe_264_a3_out :
+	(ts_pe_264_a4_oe) ? ts_pe_264_a4_out :
+	(ts_pe_264_a5_oe) ? ts_pe_264_a5_out :
+	(ts_pe_264_a6_oe) ? ts_pe_264_a6_out :
+	(ts_pe_264_a7_oe) ? ts_pe_264_a7_out :
+	(ts_pe_264_a8_oe) ? ts_pe_264_a8_out :
+	(ts_pe_264_a9_oe) ? ts_pe_264_a9_out :
+	(ts_pe_264_a10_oe) ? ts_pe_264_a10_out :
+	(ts_pe_264_a11_oe) ? ts_pe_264_a11_out :
+	(ts_pe_264_a12_oe) ? ts_pe_264_a12_out :
+	(ts_pe_264_a13_oe) ? ts_pe_264_a13_out :
+	(ts_pe_264_a14_oe) ? ts_pe_264_a14_out :
+	(ts_pe_264_a15_oe) ? ts_pe_264_a15_out :
+	(ts_pe_264_a16_oe) ? ts_pe_264_a16_out :
+	(ts_pe_264_a17_oe) ? ts_pe_264_a17_out :
+	(ts_pe_264_a18_oe) ? ts_pe_264_a18_out :
+	1'bz;
+assign dr_4_oe = ts_pe_264_a0_oe | ts_pe_264_a1_oe | ts_pe_264_a2_oe | ts_pe_264_a3_oe | ts_pe_264_a4_oe | ts_pe_264_a5_oe | ts_pe_264_a6_oe | ts_pe_264_a7_oe | ts_pe_264_a8_oe | ts_pe_264_a9_oe | ts_pe_264_a10_oe | ts_pe_264_a11_oe | ts_pe_264_a12_oe | ts_pe_264_a13_oe | ts_pe_264_a14_oe | ts_pe_264_a15_oe | ts_pe_264_a16_oe | ts_pe_264_a17_oe | ts_pe_264_a18_oe;
+assign ts_pe_264_a0_in = dr_4_in;
+assign ts_pe_264_a1_in = dr_4_in;
+assign ts_pe_264_a2_in = dr_4_in;
+assign ts_pe_264_a3_in = dr_4_in;
+assign ts_pe_264_a4_in = dr_4_in;
+assign ts_pe_264_a5_in = dr_4_in;
+assign ts_pe_264_a6_in = dr_4_in;
+assign ts_pe_264_a7_in = dr_4_in;
+assign ts_pe_264_a8_in = dr_4_in;
+assign ts_pe_264_a9_in = dr_4_in;
+assign ts_pe_264_a10_in = dr_4_in;
+assign ts_pe_264_a11_in = dr_4_in;
+assign ts_pe_264_a12_in = dr_4_in;
+assign ts_pe_264_a13_in = dr_4_in;
+assign ts_pe_264_a14_in = dr_4_in;
+assign ts_pe_264_a15_in = dr_4_in;
+assign ts_pe_264_a16_in = dr_4_in;
+assign ts_pe_264_a17_in = dr_4_in;
+assign ts_pe_264_a18_in = dr_4_in;
+
+// --- Compiler-generated PE for BUS dr[5]
+assign dr_5_out =
+	(ts_pe_265_a0_oe) ? ts_pe_265_a0_out :
+	(ts_pe_265_a1_oe) ? ts_pe_265_a1_out :
+	(ts_pe_265_a2_oe) ? ts_pe_265_a2_out :
+	(ts_pe_265_a3_oe) ? ts_pe_265_a3_out :
+	(ts_pe_265_a4_oe) ? ts_pe_265_a4_out :
+	(ts_pe_265_a5_oe) ? ts_pe_265_a5_out :
+	(ts_pe_265_a6_oe) ? ts_pe_265_a6_out :
+	(ts_pe_265_a7_oe) ? ts_pe_265_a7_out :
+	(ts_pe_265_a8_oe) ? ts_pe_265_a8_out :
+	(ts_pe_265_a9_oe) ? ts_pe_265_a9_out :
+	(ts_pe_265_a10_oe) ? ts_pe_265_a10_out :
+	(ts_pe_265_a11_oe) ? ts_pe_265_a11_out :
+	(ts_pe_265_a12_oe) ? ts_pe_265_a12_out :
+	(ts_pe_265_a13_oe) ? ts_pe_265_a13_out :
+	(ts_pe_265_a14_oe) ? ts_pe_265_a14_out :
+	(ts_pe_265_a15_oe) ? ts_pe_265_a15_out :
+	(ts_pe_265_a16_oe) ? ts_pe_265_a16_out :
+	(ts_pe_265_a17_oe) ? ts_pe_265_a17_out :
+	(ts_pe_265_a18_oe) ? ts_pe_265_a18_out :
+	1'bz;
+assign dr_5_oe = ts_pe_265_a0_oe | ts_pe_265_a1_oe | ts_pe_265_a2_oe | ts_pe_265_a3_oe | ts_pe_265_a4_oe | ts_pe_265_a5_oe | ts_pe_265_a6_oe | ts_pe_265_a7_oe | ts_pe_265_a8_oe | ts_pe_265_a9_oe | ts_pe_265_a10_oe | ts_pe_265_a11_oe | ts_pe_265_a12_oe | ts_pe_265_a13_oe | ts_pe_265_a14_oe | ts_pe_265_a15_oe | ts_pe_265_a16_oe | ts_pe_265_a17_oe | ts_pe_265_a18_oe;
+assign ts_pe_265_a0_in = dr_5_in;
+assign ts_pe_265_a1_in = dr_5_in;
+assign ts_pe_265_a2_in = dr_5_in;
+assign ts_pe_265_a3_in = dr_5_in;
+assign ts_pe_265_a4_in = dr_5_in;
+assign ts_pe_265_a5_in = dr_5_in;
+assign ts_pe_265_a6_in = dr_5_in;
+assign ts_pe_265_a7_in = dr_5_in;
+assign ts_pe_265_a8_in = dr_5_in;
+assign ts_pe_265_a9_in = dr_5_in;
+assign ts_pe_265_a10_in = dr_5_in;
+assign ts_pe_265_a11_in = dr_5_in;
+assign ts_pe_265_a12_in = dr_5_in;
+assign ts_pe_265_a13_in = dr_5_in;
+assign ts_pe_265_a14_in = dr_5_in;
+assign ts_pe_265_a15_in = dr_5_in;
+assign ts_pe_265_a16_in = dr_5_in;
+assign ts_pe_265_a17_in = dr_5_in;
+assign ts_pe_265_a18_in = dr_5_in;
+
+// --- Compiler-generated PE for BUS dr[6]
+assign dr_6_out =
+	(ts_pe_266_a0_oe) ? ts_pe_266_a0_out :
+	(ts_pe_266_a1_oe) ? ts_pe_266_a1_out :
+	(ts_pe_266_a2_oe) ? ts_pe_266_a2_out :
+	(ts_pe_266_a3_oe) ? ts_pe_266_a3_out :
+	(ts_pe_266_a4_oe) ? ts_pe_266_a4_out :
+	(ts_pe_266_a5_oe) ? ts_pe_266_a5_out :
+	(ts_pe_266_a6_oe) ? ts_pe_266_a6_out :
+	(ts_pe_266_a7_oe) ? ts_pe_266_a7_out :
+	(ts_pe_266_a8_oe) ? ts_pe_266_a8_out :
+	(ts_pe_266_a9_oe) ? ts_pe_266_a9_out :
+	(ts_pe_266_a10_oe) ? ts_pe_266_a10_out :
+	(ts_pe_266_a11_oe) ? ts_pe_266_a11_out :
+	(ts_pe_266_a12_oe) ? ts_pe_266_a12_out :
+	(ts_pe_266_a13_oe) ? ts_pe_266_a13_out :
+	(ts_pe_266_a14_oe) ? ts_pe_266_a14_out :
+	(ts_pe_266_a15_oe) ? ts_pe_266_a15_out :
+	(ts_pe_266_a16_oe) ? ts_pe_266_a16_out :
+	(ts_pe_266_a17_oe) ? ts_pe_266_a17_out :
+	(ts_pe_266_a18_oe) ? ts_pe_266_a18_out :
+	1'bz;
+assign dr_6_oe = ts_pe_266_a0_oe | ts_pe_266_a1_oe | ts_pe_266_a2_oe | ts_pe_266_a3_oe | ts_pe_266_a4_oe | ts_pe_266_a5_oe | ts_pe_266_a6_oe | ts_pe_266_a7_oe | ts_pe_266_a8_oe | ts_pe_266_a9_oe | ts_pe_266_a10_oe | ts_pe_266_a11_oe | ts_pe_266_a12_oe | ts_pe_266_a13_oe | ts_pe_266_a14_oe | ts_pe_266_a15_oe | ts_pe_266_a16_oe | ts_pe_266_a17_oe | ts_pe_266_a18_oe;
+assign ts_pe_266_a0_in = dr_6_in;
+assign ts_pe_266_a1_in = dr_6_in;
+assign ts_pe_266_a2_in = dr_6_in;
+assign ts_pe_266_a3_in = dr_6_in;
+assign ts_pe_266_a4_in = dr_6_in;
+assign ts_pe_266_a5_in = dr_6_in;
+assign ts_pe_266_a6_in = dr_6_in;
+assign ts_pe_266_a7_in = dr_6_in;
+assign ts_pe_266_a8_in = dr_6_in;
+assign ts_pe_266_a9_in = dr_6_in;
+assign ts_pe_266_a10_in = dr_6_in;
+assign ts_pe_266_a11_in = dr_6_in;
+assign ts_pe_266_a12_in = dr_6_in;
+assign ts_pe_266_a13_in = dr_6_in;
+assign ts_pe_266_a14_in = dr_6_in;
+assign ts_pe_266_a15_in = dr_6_in;
+assign ts_pe_266_a16_in = dr_6_in;
+assign ts_pe_266_a17_in = dr_6_in;
+assign ts_pe_266_a18_in = dr_6_in;
+
+// --- Compiler-generated PE for BUS dr[7]
+assign dr_7_out =
+	(ts_pe_267_a0_oe) ? ts_pe_267_a0_out :
+	(ts_pe_267_a1_oe) ? ts_pe_267_a1_out :
+	(ts_pe_267_a2_oe) ? ts_pe_267_a2_out :
+	(ts_pe_267_a3_oe) ? ts_pe_267_a3_out :
+	(ts_pe_267_a4_oe) ? ts_pe_267_a4_out :
+	(ts_pe_267_a5_oe) ? ts_pe_267_a5_out :
+	(ts_pe_267_a6_oe) ? ts_pe_267_a6_out :
+	(ts_pe_267_a7_oe) ? ts_pe_267_a7_out :
+	(ts_pe_267_a8_oe) ? ts_pe_267_a8_out :
+	(ts_pe_267_a9_oe) ? ts_pe_267_a9_out :
+	(ts_pe_267_a10_oe) ? ts_pe_267_a10_out :
+	(ts_pe_267_a11_oe) ? ts_pe_267_a11_out :
+	(ts_pe_267_a12_oe) ? ts_pe_267_a12_out :
+	(ts_pe_267_a13_oe) ? ts_pe_267_a13_out :
+	(ts_pe_267_a14_oe) ? ts_pe_267_a14_out :
+	(ts_pe_267_a15_oe) ? ts_pe_267_a15_out :
+	(ts_pe_267_a16_oe) ? ts_pe_267_a16_out :
+	(ts_pe_267_a17_oe) ? ts_pe_267_a17_out :
+	(ts_pe_267_a18_oe) ? ts_pe_267_a18_out :
+	1'bz;
+assign dr_7_oe = ts_pe_267_a0_oe | ts_pe_267_a1_oe | ts_pe_267_a2_oe | ts_pe_267_a3_oe | ts_pe_267_a4_oe | ts_pe_267_a5_oe | ts_pe_267_a6_oe | ts_pe_267_a7_oe | ts_pe_267_a8_oe | ts_pe_267_a9_oe | ts_pe_267_a10_oe | ts_pe_267_a11_oe | ts_pe_267_a12_oe | ts_pe_267_a13_oe | ts_pe_267_a14_oe | ts_pe_267_a15_oe | ts_pe_267_a16_oe | ts_pe_267_a17_oe | ts_pe_267_a18_oe;
+assign ts_pe_267_a0_in = dr_7_in;
+assign ts_pe_267_a1_in = dr_7_in;
+assign ts_pe_267_a2_in = dr_7_in;
+assign ts_pe_267_a3_in = dr_7_in;
+assign ts_pe_267_a4_in = dr_7_in;
+assign ts_pe_267_a5_in = dr_7_in;
+assign ts_pe_267_a6_in = dr_7_in;
+assign ts_pe_267_a7_in = dr_7_in;
+assign ts_pe_267_a8_in = dr_7_in;
+assign ts_pe_267_a9_in = dr_7_in;
+assign ts_pe_267_a10_in = dr_7_in;
+assign ts_pe_267_a11_in = dr_7_in;
+assign ts_pe_267_a12_in = dr_7_in;
+assign ts_pe_267_a13_in = dr_7_in;
+assign ts_pe_267_a14_in = dr_7_in;
+assign ts_pe_267_a15_in = dr_7_in;
+assign ts_pe_267_a16_in = dr_7_in;
+assign ts_pe_267_a17_in = dr_7_in;
+assign ts_pe_267_a18_in = dr_7_in;
+
+// --- Compiler-generated PE for BUS dr[8]
+assign dr_8_out =
+	(ts_pe_268_a0_oe) ? ts_pe_268_a0_out :
+	(ts_pe_268_a1_oe) ? ts_pe_268_a1_out :
+	(ts_pe_268_a2_oe) ? ts_pe_268_a2_out :
+	(ts_pe_268_a3_oe) ? ts_pe_268_a3_out :
+	(ts_pe_268_a4_oe) ? ts_pe_268_a4_out :
+	(ts_pe_268_a5_oe) ? ts_pe_268_a5_out :
+	(ts_pe_268_a6_oe) ? ts_pe_268_a6_out :
+	(ts_pe_268_a7_oe) ? ts_pe_268_a7_out :
+	(ts_pe_268_a8_oe) ? ts_pe_268_a8_out :
+	(ts_pe_268_a9_oe) ? ts_pe_268_a9_out :
+	(ts_pe_268_a10_oe) ? ts_pe_268_a10_out :
+	(ts_pe_268_a11_oe) ? ts_pe_268_a11_out :
+	(ts_pe_268_a12_oe) ? ts_pe_268_a12_out :
+	(ts_pe_268_a13_oe) ? ts_pe_268_a13_out :
+	(ts_pe_268_a14_oe) ? ts_pe_268_a14_out :
+	(ts_pe_268_a15_oe) ? ts_pe_268_a15_out :
+	(ts_pe_268_a16_oe) ? ts_pe_268_a16_out :
+	(ts_pe_268_a17_oe) ? ts_pe_268_a17_out :
+	(ts_pe_268_a18_oe) ? ts_pe_268_a18_out :
+	1'bz;
+assign dr_8_oe = ts_pe_268_a0_oe | ts_pe_268_a1_oe | ts_pe_268_a2_oe | ts_pe_268_a3_oe | ts_pe_268_a4_oe | ts_pe_268_a5_oe | ts_pe_268_a6_oe | ts_pe_268_a7_oe | ts_pe_268_a8_oe | ts_pe_268_a9_oe | ts_pe_268_a10_oe | ts_pe_268_a11_oe | ts_pe_268_a12_oe | ts_pe_268_a13_oe | ts_pe_268_a14_oe | ts_pe_268_a15_oe | ts_pe_268_a16_oe | ts_pe_268_a17_oe | ts_pe_268_a18_oe;
+assign ts_pe_268_a0_in = dr_8_in;
+assign ts_pe_268_a1_in = dr_8_in;
+assign ts_pe_268_a2_in = dr_8_in;
+assign ts_pe_268_a3_in = dr_8_in;
+assign ts_pe_268_a4_in = dr_8_in;
+assign ts_pe_268_a5_in = dr_8_in;
+assign ts_pe_268_a6_in = dr_8_in;
+assign ts_pe_268_a7_in = dr_8_in;
+assign ts_pe_268_a8_in = dr_8_in;
+assign ts_pe_268_a9_in = dr_8_in;
+assign ts_pe_268_a10_in = dr_8_in;
+assign ts_pe_268_a11_in = dr_8_in;
+assign ts_pe_268_a12_in = dr_8_in;
+assign ts_pe_268_a13_in = dr_8_in;
+assign ts_pe_268_a14_in = dr_8_in;
+assign ts_pe_268_a15_in = dr_8_in;
+assign ts_pe_268_a16_in = dr_8_in;
+assign ts_pe_268_a17_in = dr_8_in;
+assign ts_pe_268_a18_in = dr_8_in;
+
+// --- Compiler-generated PE for BUS dr[9]
+assign dr_9_out =
+	(ts_pe_269_a0_oe) ? ts_pe_269_a0_out :
+	(ts_pe_269_a1_oe) ? ts_pe_269_a1_out :
+	(ts_pe_269_a2_oe) ? ts_pe_269_a2_out :
+	(ts_pe_269_a3_oe) ? ts_pe_269_a3_out :
+	(ts_pe_269_a4_oe) ? ts_pe_269_a4_out :
+	(ts_pe_269_a5_oe) ? ts_pe_269_a5_out :
+	(ts_pe_269_a6_oe) ? ts_pe_269_a6_out :
+	(ts_pe_269_a7_oe) ? ts_pe_269_a7_out :
+	(ts_pe_269_a8_oe) ? ts_pe_269_a8_out :
+	(ts_pe_269_a9_oe) ? ts_pe_269_a9_out :
+	(ts_pe_269_a10_oe) ? ts_pe_269_a10_out :
+	(ts_pe_269_a11_oe) ? ts_pe_269_a11_out :
+	(ts_pe_269_a12_oe) ? ts_pe_269_a12_out :
+	(ts_pe_269_a13_oe) ? ts_pe_269_a13_out :
+	(ts_pe_269_a14_oe) ? ts_pe_269_a14_out :
+	(ts_pe_269_a15_oe) ? ts_pe_269_a15_out :
+	(ts_pe_269_a16_oe) ? ts_pe_269_a16_out :
+	(ts_pe_269_a17_oe) ? ts_pe_269_a17_out :
+	(ts_pe_269_a18_oe) ? ts_pe_269_a18_out :
+	1'bz;
+assign dr_9_oe = ts_pe_269_a0_oe | ts_pe_269_a1_oe | ts_pe_269_a2_oe | ts_pe_269_a3_oe | ts_pe_269_a4_oe | ts_pe_269_a5_oe | ts_pe_269_a6_oe | ts_pe_269_a7_oe | ts_pe_269_a8_oe | ts_pe_269_a9_oe | ts_pe_269_a10_oe | ts_pe_269_a11_oe | ts_pe_269_a12_oe | ts_pe_269_a13_oe | ts_pe_269_a14_oe | ts_pe_269_a15_oe | ts_pe_269_a16_oe | ts_pe_269_a17_oe | ts_pe_269_a18_oe;
+assign ts_pe_269_a0_in = dr_9_in;
+assign ts_pe_269_a1_in = dr_9_in;
+assign ts_pe_269_a2_in = dr_9_in;
+assign ts_pe_269_a3_in = dr_9_in;
+assign ts_pe_269_a4_in = dr_9_in;
+assign ts_pe_269_a5_in = dr_9_in;
+assign ts_pe_269_a6_in = dr_9_in;
+assign ts_pe_269_a7_in = dr_9_in;
+assign ts_pe_269_a8_in = dr_9_in;
+assign ts_pe_269_a9_in = dr_9_in;
+assign ts_pe_269_a10_in = dr_9_in;
+assign ts_pe_269_a11_in = dr_9_in;
+assign ts_pe_269_a12_in = dr_9_in;
+assign ts_pe_269_a13_in = dr_9_in;
+assign ts_pe_269_a14_in = dr_9_in;
+assign ts_pe_269_a15_in = dr_9_in;
+assign ts_pe_269_a16_in = dr_9_in;
+assign ts_pe_269_a17_in = dr_9_in;
+assign ts_pe_269_a18_in = dr_9_in;
+
+// --- Compiler-generated PE for BUS dr[10]
+assign dr_10_out =
+	(ts_pe_270_a0_oe) ? ts_pe_270_a0_out :
+	(ts_pe_270_a1_oe) ? ts_pe_270_a1_out :
+	(ts_pe_270_a2_oe) ? ts_pe_270_a2_out :
+	(ts_pe_270_a3_oe) ? ts_pe_270_a3_out :
+	(ts_pe_270_a4_oe) ? ts_pe_270_a4_out :
+	(ts_pe_270_a5_oe) ? ts_pe_270_a5_out :
+	(ts_pe_270_a6_oe) ? ts_pe_270_a6_out :
+	(ts_pe_270_a7_oe) ? ts_pe_270_a7_out :
+	(ts_pe_270_a8_oe) ? ts_pe_270_a8_out :
+	(ts_pe_270_a9_oe) ? ts_pe_270_a9_out :
+	(ts_pe_270_a10_oe) ? ts_pe_270_a10_out :
+	(ts_pe_270_a11_oe) ? ts_pe_270_a11_out :
+	(ts_pe_270_a12_oe) ? ts_pe_270_a12_out :
+	(ts_pe_270_a13_oe) ? ts_pe_270_a13_out :
+	(ts_pe_270_a14_oe) ? ts_pe_270_a14_out :
+	(ts_pe_270_a15_oe) ? ts_pe_270_a15_out :
+	(ts_pe_270_a16_oe) ? ts_pe_270_a16_out :
+	(ts_pe_270_a17_oe) ? ts_pe_270_a17_out :
+	(ts_pe_270_a18_oe) ? ts_pe_270_a18_out :
+	1'bz;
+assign dr_10_oe = ts_pe_270_a0_oe | ts_pe_270_a1_oe | ts_pe_270_a2_oe | ts_pe_270_a3_oe | ts_pe_270_a4_oe | ts_pe_270_a5_oe | ts_pe_270_a6_oe | ts_pe_270_a7_oe | ts_pe_270_a8_oe | ts_pe_270_a9_oe | ts_pe_270_a10_oe | ts_pe_270_a11_oe | ts_pe_270_a12_oe | ts_pe_270_a13_oe | ts_pe_270_a14_oe | ts_pe_270_a15_oe | ts_pe_270_a16_oe | ts_pe_270_a17_oe | ts_pe_270_a18_oe;
+assign ts_pe_270_a0_in = dr_10_in;
+assign ts_pe_270_a1_in = dr_10_in;
+assign ts_pe_270_a2_in = dr_10_in;
+assign ts_pe_270_a3_in = dr_10_in;
+assign ts_pe_270_a4_in = dr_10_in;
+assign ts_pe_270_a5_in = dr_10_in;
+assign ts_pe_270_a6_in = dr_10_in;
+assign ts_pe_270_a7_in = dr_10_in;
+assign ts_pe_270_a8_in = dr_10_in;
+assign ts_pe_270_a9_in = dr_10_in;
+assign ts_pe_270_a10_in = dr_10_in;
+assign ts_pe_270_a11_in = dr_10_in;
+assign ts_pe_270_a12_in = dr_10_in;
+assign ts_pe_270_a13_in = dr_10_in;
+assign ts_pe_270_a14_in = dr_10_in;
+assign ts_pe_270_a15_in = dr_10_in;
+assign ts_pe_270_a16_in = dr_10_in;
+assign ts_pe_270_a17_in = dr_10_in;
+assign ts_pe_270_a18_in = dr_10_in;
+
+// --- Compiler-generated PE for BUS dr[11]
+assign dr_11_out =
+	(ts_pe_271_a0_oe) ? ts_pe_271_a0_out :
+	(ts_pe_271_a1_oe) ? ts_pe_271_a1_out :
+	(ts_pe_271_a2_oe) ? ts_pe_271_a2_out :
+	(ts_pe_271_a3_oe) ? ts_pe_271_a3_out :
+	(ts_pe_271_a4_oe) ? ts_pe_271_a4_out :
+	1'bz;
+assign dr_11_oe = ts_pe_271_a0_oe | ts_pe_271_a1_oe | ts_pe_271_a2_oe | ts_pe_271_a3_oe | ts_pe_271_a4_oe;
+assign ts_pe_271_a0_in = dr_11_in;
+assign ts_pe_271_a1_in = dr_11_in;
+assign ts_pe_271_a2_in = dr_11_in;
+assign ts_pe_271_a3_in = dr_11_in;
+assign ts_pe_271_a4_in = dr_11_in;
 endmodule

@@ -128,18 +128,18 @@ assign bcompselt_2 = icount_2 ^ big_pix;
 // INNER.NET (745) - bcompbit : mx8
 mx8 bcompbit_inst
 (
-	.z(bcompbit), // OUT
-	.a0(srcd_7), // IN
-	.a1(srcd_6), // IN
-	.a2(srcd_5), // IN
-	.a3(srcd_4), // IN
-	.a4(srcd_3), // IN
-	.a5(srcd_2), // IN
-	.a6(srcd_1), // IN
-	.a7(srcd_0), // IN
-	.s0(bcompselt_0), // IN
-	.s1(bcompselt_1), // IN
-	.s2(bcompselt_2)  // IN
+	.z /* OUT */ (bcompbit),
+	.a0 /* IN */ (srcd_7),
+	.a1 /* IN */ (srcd_6),
+	.a2 /* IN */ (srcd_5),
+	.a3 /* IN */ (srcd_4),
+	.a4 /* IN */ (srcd_3),
+	.a5 /* IN */ (srcd_2),
+	.a6 /* IN */ (srcd_1),
+	.a7 /* IN */ (srcd_0),
+	.s0 /* IN */ (bcompselt_0),
+	.s1 /* IN */ (bcompselt_1),
+	.s2 /* IN */ (bcompselt_2)
 );
 
 // INNER.NET (748) - bcompbit\ : iv
@@ -148,49 +148,49 @@ assign bcompbit_n = ~bcompbit;
 // INNER.NET (751) - bcompsel[0-2] : fdsync
 fdsync bcompsel_from_0_to_2_inst_0
 (
-	.q(bcompsel_0), // IO
-	.d(bcompselt_0), // IN
-	.ld(step_inner), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (bcompsel_0),
+	.d /* IN */ (bcompselt_0),
+	.ld /* IN */ (step_inner),
+	.clk /* IN */ (clk)
 );
 fdsync bcompsel_from_0_to_2_inst_1
 (
-	.q(bcompsel_1), // IO
-	.d(bcompselt_1), // IN
-	.ld(step_inner), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (bcompsel_1),
+	.d /* IN */ (bcompselt_1),
+	.ld /* IN */ (step_inner),
+	.clk /* IN */ (clk)
 );
 fdsync bcompsel_from_0_to_2_inst_2
 (
-	.q(bcompsel_2), // IO
-	.d(bcompselt_2), // IN
-	.ld(step_inner), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ (bcompsel_2),
+	.d /* IN */ (bcompselt_2),
+	.ld /* IN */ (step_inner),
+	.clk /* IN */ (clk)
 );
 
 // INNER.NET (753) - bcompbt : mx8
 mx8 bcompbt_inst
 (
-	.z(bcompbitpt), // OUT
-	.a0(srcd_7), // IN
-	.a1(srcd_6), // IN
-	.a2(srcd_5), // IN
-	.a3(srcd_4), // IN
-	.a4(srcd_3), // IN
-	.a5(srcd_2), // IN
-	.a6(srcd_1), // IN
-	.a7(srcd_0), // IN
-	.s0(bcompsel_0), // IN
-	.s1(bcompsel_1), // IN
-	.s2(bcompsel_2)  // IN
+	.z /* OUT */ (bcompbitpt),
+	.a0 /* IN */ (srcd_7),
+	.a1 /* IN */ (srcd_6),
+	.a2 /* IN */ (srcd_5),
+	.a3 /* IN */ (srcd_4),
+	.a4 /* IN */ (srcd_3),
+	.a5 /* IN */ (srcd_2),
+	.a6 /* IN */ (srcd_1),
+	.a7 /* IN */ (srcd_0),
+	.s0 /* IN */ (bcompsel_0),
+	.s1 /* IN */ (bcompsel_1),
+	.s2 /* IN */ (bcompsel_2)
 );
 
 // INNER.NET (756) - bcompbitp : fd1q
 fd1q bcompbitp_inst
 (
-	.q(bcompbitp), // OUT
-	.d(bcompbitpt), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (bcompbitp),
+	.d /* IN */ (bcompbitpt),
+	.cp /* IN */ (clk)
 );
 
 // INNER.NET (757) - bcompbitp\ : iv
@@ -205,25 +205,25 @@ assign nowt_1 = ~(dcompen & dcomp_0 & phrase_mode_n & pixsize_n_2 & pixsize_0 & 
 // INNER.NET (772) - nowt2 : nd7
 nd7 nowt2_inst
 (
-	.q(nowt_2), // OUT
-	.a_0(dcompen), // IN
-	.a_1(dcomp_0), // IN
-	.a_2(dcomp_1), // IN
-	.a_3(phrase_mode_n), // IN
-	.a_4(pixsize_2), // IN
-	.a_5(pixsize_n_0), // IN
-	.a_6(pixsize_n_1)  // IN
+	.q /* OUT */ (nowt_2),
+	.a_0 /* IN */ (dcompen),
+	.a_1 /* IN */ (dcomp_0),
+	.a_2 /* IN */ (dcomp_1),
+	.a_3 /* IN */ (phrase_mode_n),
+	.a_4 /* IN */ (pixsize_2),
+	.a_5 /* IN */ (pixsize_n_0),
+	.a_6 /* IN */ (pixsize_n_1)
 );
 
 // INNER.NET (774) - nowt3 : nd5
 nd5 nowt3_inst
 (
-	.q(nowt_3), // OUT
-	.a_0(zcomp_0), // IN
-	.a_1(phrase_mode_n), // IN
-	.a_2(pixsize_2), // IN
-	.a_3(pixsize_n_0), // IN
-	.a_4(pixsize_n_1)  // IN
+	.q /* OUT */ (nowt_3),
+	.a_0 /* IN */ (zcomp_0),
+	.a_1 /* IN */ (phrase_mode_n),
+	.a_2 /* IN */ (pixsize_2),
+	.a_3 /* IN */ (pixsize_n_0),
+	.a_4 /* IN */ (pixsize_n_1)
 );
 
 // INNER.NET (776) - nowt4 : nd4

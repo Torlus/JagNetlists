@@ -44,80 +44,72 @@ wire m_10;
 wire m1;
 wire m2;
 
-// Output buffers
-wire match_obuf;
-
-
-// Output buffers
-assign match = match_obuf;
-
-
 // ABUS.NET (483) - ra[0-10] : ldp1q
 ldp1q ra_from_0_to_10_inst_0
 (
-	.q(ra_0), // OUT
-	.d(a_0), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_0),
+	.d /* IN */ (a_0),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_1
 (
-	.q(ra_1), // OUT
-	.d(a_1), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_1),
+	.d /* IN */ (a_1),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_2
 (
-	.q(ra_2), // OUT
-	.d(a_2), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_2),
+	.d /* IN */ (a_2),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_3
 (
-	.q(ra_3), // OUT
-	.d(a_3), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_3),
+	.d /* IN */ (a_3),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_4
 (
-	.q(ra_4), // OUT
-	.d(a_4), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_4),
+	.d /* IN */ (a_4),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_5
 (
-	.q(ra_5), // OUT
-	.d(a_5), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_5),
+	.d /* IN */ (a_5),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_6
 (
-	.q(ra_6), // OUT
-	.d(a_6), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_6),
+	.d /* IN */ (a_6),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_7
 (
-	.q(ra_7), // OUT
-	.d(a_7), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_7),
+	.d /* IN */ (a_7),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_8
 (
-	.q(ra_8), // OUT
-	.d(a_8), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_8),
+	.d /* IN */ (a_8),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_9
 (
-	.q(ra_9), // OUT
-	.d(a_9), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_9),
+	.d /* IN */ (a_9),
+	.g /* IN */ (newrow)
 );
 ldp1q ra_from_0_to_10_inst_10
 (
-	.q(ra_10), // OUT
-	.d(a_10), // IN
-	.g(newrow)  // IN
+	.q /* OUT */ (ra_10),
+	.d /* IN */ (a_10),
+	.g /* IN */ (newrow)
 );
 
 // ABUS.NET (487) - newrowl : iv
@@ -126,9 +118,9 @@ assign newrowl = ~newrow;
 // ABUS.NET (488) - valid : lsra
 lsra valid_inst
 (
-	.q(valid), // OUT
-	.rn(resl), // IN
-	.sn(newrowl)  // IN
+	.q /* OUT */ (valid),
+	.rn /* IN */ (resl),
+	.sn /* IN */ (newrowl)
 );
 
 // ABUS.NET (492) - m[0-10] : en
@@ -151,5 +143,5 @@ assign m1 = ~(m_0 & m_1 & m_2 & m_3 & m_4 & m_5);
 assign m2 = ~(m_6 & m_7 & m_8 & m_9 & m_10 & valid);
 
 // ABUS.NET (496) - match : nr2
-assign match_obuf = ~(m1 | m2);
+assign match = ~(m1 | m2);
 endmodule

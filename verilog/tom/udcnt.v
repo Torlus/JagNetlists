@@ -16,29 +16,27 @@ wire q1;
 
 // Output buffers
 wire q_obuf;
-wire co_obuf;
 
 
 // Output buffers
 assign q = q_obuf;
-assign co = co_obuf;
 
 
 // LEGO.NET (194) - q : fd1q
 fd1q q_inst
 (
-	.q(q_obuf), // OUT
-	.d(d2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (q_obuf),
+	.d /* IN */ (d2),
+	.cp /* IN */ (clk)
 );
 
 // LEGO.NET (195) - d2 : mx2
 mx2 d2_inst
 (
-	.z(d2), // OUT
-	.a0(d1), // IN
-	.a1(d), // IN
-	.s(ld)  // IN
+	.z /* OUT */ (d2),
+	.a0 /* IN */ (d1),
+	.a1 /* IN */ (d),
+	.s /* IN */ (ld)
 );
 
 // LEGO.NET (196) - d1 : eo
@@ -48,5 +46,5 @@ assign d1 = q_obuf ^ ci;
 assign q1 = ~(q_obuf ^ up);
 
 // LEGO.NET (198) - co : an2
-assign co_obuf = ci & q1;
+assign co = ci & q1;
 endmodule

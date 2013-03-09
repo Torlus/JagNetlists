@@ -21,13 +21,13 @@ assign q = q_obuf;
 // LEGO.NET (64) - q : fd4e
 fd4e q_inst
 (
-	.q(q_obuf), // OUT
-	.qn(qb), // OUT
-	.d(q_obuf), // IN
-	.cp(clk), // IN
-	.sd(setl), // IN
-	.ti(d), // IN
-	.te(en)  // IN
+	.q /* OUT */ (q_obuf),
+	.qn /* OUT */ (qb),
+	.d /* IN */ (q_obuf),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (setl),
+	.ti /* IN */ (d),
+	.te /* IN */ (en)
 );
 
 // LEGO.NET (65) - dummy : dummy

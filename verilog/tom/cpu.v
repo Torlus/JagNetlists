@@ -17,13 +17,27 @@ module cpu
 	input dbgl,
 	output dtackl,
 	output erd,
-	inout w_0,
-	inout w_1,
-	inout w_2,
-	inout w_3,
-	inout rw,
-	inout mreq,
-	inout justify
+	output w_0_out,
+	output w_0_oe,
+	input w_0_in,
+	output w_1_out,
+	output w_1_oe,
+	input w_1_in,
+	output w_2_out,
+	output w_2_oe,
+	input w_2_in,
+	output w_3_out,
+	output w_3_oe,
+	input w_3_in,
+	output rw_out,
+	output rw_oe,
+	input rw_in,
+	output mreq_out,
+	output mreq_oe,
+	input mreq_in,
+	output justify_out,
+	output justify_oe,
+	input justify_in
 );
 wire w68k_1;
 wire w68k_0;
@@ -64,16 +78,6 @@ wire mt13c;
 wire mt13d;
 wire readcycle;
 
-// Output buffers
-wire dtackl_obuf;
-wire erd_obuf;
-
-
-// Output buffers
-assign dtackl = dtackl_obuf;
-assign erd = erd_obuf;
-
-
 // CPU.NET (31) - w68k[1] : nr2
 assign w68k_1 = ~(sizin_0 | sizin_1);
 
@@ -92,28 +96,28 @@ assign sizin_2 = ~(sizin_0 | sizin_1);
 // CPU.NET (38) - xw[0] : mx2
 mx2 xw_index_0_inst
 (
-	.z(xw_0), // OUT
-	.a0(sizin_0), // IN
-	.a1(w68k_0), // IN
-	.s(bm68k)  // IN
+	.z /* OUT */ (xw_0),
+	.a0 /* IN */ (sizin_0),
+	.a1 /* IN */ (w68k_0),
+	.s /* IN */ (bm68k)
 );
 
 // CPU.NET (39) - xw[1] : mx2
 mx2 xw_index_1_inst
 (
-	.z(xw_1), // OUT
-	.a0(sizin_1), // IN
-	.a1(w68k_1), // IN
-	.s(bm68k)  // IN
+	.z /* OUT */ (xw_1),
+	.a0 /* IN */ (sizin_1),
+	.a1 /* IN */ (w68k_1),
+	.s /* IN */ (bm68k)
 );
 
 // CPU.NET (40) - xw[2] : mx2
 mx2 xw_index_2_inst
 (
-	.z(xw_2), // OUT
-	.a0(sizin_2), // IN
-	.a1(gnd), // IN
-	.s(bm68k)  // IN
+	.z /* OUT */ (xw_2),
+	.a0 /* IN */ (sizin_2),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (bm68k)
 );
 
 // CPU.NET (42) - xp : ivm
@@ -126,21 +130,28 @@ assign extbms = ~intbms;
 assign dbg = ~dbgl;
 
 // CPU.NET (46) - w[0-2] : ts
-assign w_0 = (xp) ? xw_0 : 1'bz;
-assign w_1 = (xp) ? xw_1 : 1'bz;
-assign w_2 = (xp) ? xw_2 : 1'bz;
+assign w_0_out = xw_0;
+assign w_0_oe = xp;
+assign w_1_out = xw_1;
+assign w_1_oe = xp;
+assign w_2_out = xw_2;
+assign w_2_oe = xp;
 
 // CPU.NET (47) - w[3] : ts
-assign w_3 = (xp) ? gnd : 1'bz;
+assign w_3_out = gnd;
+assign w_3_oe = xp;
 
 // CPU.NET (48) - rw : ts
-assign rw = (xp) ? rwin : 1'bz;
+assign rw_out = rwin;
+assign rw_oe = xp;
 
 // CPU.NET (49) - mreq : tsm
-assign mreq = (xp) ? cmreq : 1'bz;
+assign mreq_out = cmreq;
+assign mreq_oe = xp;
 
 // CPU.NET (50) - justify : ts
-assign justify = (xp) ? gnd : 1'bz;
+assign justify_out = gnd;
+assign justify_oe = xp;
 
 // CPU.NET (51) - gnd : tie0
 assign gnd = 1'b0;
@@ -151,28 +162,28 @@ assign vcc = 1'b1;
 // CPU.NET (74) - q11 : fd2q
 fd2q q11_inst
 (
-	.q(q11), // OUT
-	.d(d11), // IN
-	.cp(clk_0), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q11),
+	.d /* IN */ (d11),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (resetl)
 );
 
 // CPU.NET (75) - q12 : fd2q
 fd2q q12_inst
 (
-	.q(q12), // OUT
-	.d(d12), // IN
-	.cp(clk_0), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q12),
+	.d /* IN */ (d12),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (resetl)
 );
 
 // CPU.NET (76) - q13 : fd2q
 fd2q q13_inst
 (
-	.q(q13), // OUT
-	.d(d13), // IN
-	.cp(clk_0), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q13),
+	.d /* IN */ (d13),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (resetl)
 );
 
 // CPU.NET (78) - idlei : nr3
@@ -230,18 +241,18 @@ assign d13 = ~(mt130 & mt13a & mt13b & mt13c & mt13d & vcc);
 assign cmreq = q11;
 
 // CPU.NET (101) - dt1 : iv
-assign dtackl_obuf = ~q13;
+assign dtackl = ~q13;
 
 // CPU.NET (103) - erd1 : an2
-assign erd_obuf = q13 & readcycle;
+assign erd = q13 & readcycle;
 
 // CPU.NET (107) - readcycle : slatch
 slatch readcycle_inst
 (
-	.q(readcycle), // IO
-	.d(rw), // IN
-	.clk(clk_0), // IN
-	.en(q11)  // IN
+	.q /* OUT */ (readcycle),
+	.d /* IN */ (rw_in),
+	.clk /* IN */ (clk_0),
+	.en /* IN */ (q11)
 );
 
 // CPU.NET (109) - lds : iv

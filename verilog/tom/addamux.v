@@ -2,21 +2,21 @@
 
 module addamux
 (
-	output[0:15] adda_x;
-	output[0:15] adda_y;
+	output [0:15] adda_x;
+	output [0:15] adda_y;
 	input addasel_0,
 	input addasel_1,
 	input addasel_2,
-	input[0:15] a1_step_x;
-	input[0:15] a1_step_y;
-	input[0:15] a1_stepf_x;
-	input[0:15] a1_stepf_y;
-	input[0:15] a2_step_x;
-	input[0:15] a2_step_y;
-	input[0:15] a1_inc_x;
-	input[0:15] a1_inc_y;
-	input[0:15] a1_incf_x;
-	input[0:15] a1_incf_y;
+	input [0:15] a1_step_x;
+	input [0:15] a1_step_y;
+	input [0:15] a1_stepf_x;
+	input [0:15] a1_stepf_y;
+	input [0:15] a2_step_x;
+	input [0:15] a2_step_y;
+	input [0:15] a1_inc_x;
+	input [0:15] a1_inc_y;
+	input [0:15] a1_incf_x;
+	input [0:15] a1_incf_y;
 	input adda_xconst_0,
 	input adda_xconst_1,
 	input adda_xconst_2,
@@ -59,569 +59,569 @@ assign addaselb_2 = addasel_2;
 // ADDRMUX.NET (71) - addart_x : mx4
 mx4 addart_x_inst_0
 (
-	.z(addart_x[0]), // OUT
-	.a0(a1_step_x[0]), // IN
-	.a1(a1_stepf_x[0]), // IN
-	.a2(a1_inc_x[0]), // IN
-	.a3(a1_incf_x[0]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[0]),
+	.a0 /* IN */ (a1_step_x[0]),
+	.a1 /* IN */ (a1_stepf_x[0]),
+	.a2 /* IN */ (a1_inc_x[0]),
+	.a3 /* IN */ (a1_incf_x[0]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_1
 (
-	.z(addart_x[1]), // OUT
-	.a0(a1_step_x[1]), // IN
-	.a1(a1_stepf_x[1]), // IN
-	.a2(a1_inc_x[1]), // IN
-	.a3(a1_incf_x[1]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[1]),
+	.a0 /* IN */ (a1_step_x[1]),
+	.a1 /* IN */ (a1_stepf_x[1]),
+	.a2 /* IN */ (a1_inc_x[1]),
+	.a3 /* IN */ (a1_incf_x[1]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_2
 (
-	.z(addart_x[2]), // OUT
-	.a0(a1_step_x[2]), // IN
-	.a1(a1_stepf_x[2]), // IN
-	.a2(a1_inc_x[2]), // IN
-	.a3(a1_incf_x[2]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[2]),
+	.a0 /* IN */ (a1_step_x[2]),
+	.a1 /* IN */ (a1_stepf_x[2]),
+	.a2 /* IN */ (a1_inc_x[2]),
+	.a3 /* IN */ (a1_incf_x[2]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_3
 (
-	.z(addart_x[3]), // OUT
-	.a0(a1_step_x[3]), // IN
-	.a1(a1_stepf_x[3]), // IN
-	.a2(a1_inc_x[3]), // IN
-	.a3(a1_incf_x[3]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[3]),
+	.a0 /* IN */ (a1_step_x[3]),
+	.a1 /* IN */ (a1_stepf_x[3]),
+	.a2 /* IN */ (a1_inc_x[3]),
+	.a3 /* IN */ (a1_incf_x[3]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_4
 (
-	.z(addart_x[4]), // OUT
-	.a0(a1_step_x[4]), // IN
-	.a1(a1_stepf_x[4]), // IN
-	.a2(a1_inc_x[4]), // IN
-	.a3(a1_incf_x[4]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[4]),
+	.a0 /* IN */ (a1_step_x[4]),
+	.a1 /* IN */ (a1_stepf_x[4]),
+	.a2 /* IN */ (a1_inc_x[4]),
+	.a3 /* IN */ (a1_incf_x[4]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_5
 (
-	.z(addart_x[5]), // OUT
-	.a0(a1_step_x[5]), // IN
-	.a1(a1_stepf_x[5]), // IN
-	.a2(a1_inc_x[5]), // IN
-	.a3(a1_incf_x[5]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[5]),
+	.a0 /* IN */ (a1_step_x[5]),
+	.a1 /* IN */ (a1_stepf_x[5]),
+	.a2 /* IN */ (a1_inc_x[5]),
+	.a3 /* IN */ (a1_incf_x[5]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_6
 (
-	.z(addart_x[6]), // OUT
-	.a0(a1_step_x[6]), // IN
-	.a1(a1_stepf_x[6]), // IN
-	.a2(a1_inc_x[6]), // IN
-	.a3(a1_incf_x[6]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[6]),
+	.a0 /* IN */ (a1_step_x[6]),
+	.a1 /* IN */ (a1_stepf_x[6]),
+	.a2 /* IN */ (a1_inc_x[6]),
+	.a3 /* IN */ (a1_incf_x[6]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_7
 (
-	.z(addart_x[7]), // OUT
-	.a0(a1_step_x[7]), // IN
-	.a1(a1_stepf_x[7]), // IN
-	.a2(a1_inc_x[7]), // IN
-	.a3(a1_incf_x[7]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[7]),
+	.a0 /* IN */ (a1_step_x[7]),
+	.a1 /* IN */ (a1_stepf_x[7]),
+	.a2 /* IN */ (a1_inc_x[7]),
+	.a3 /* IN */ (a1_incf_x[7]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_8
 (
-	.z(addart_x[8]), // OUT
-	.a0(a1_step_x[8]), // IN
-	.a1(a1_stepf_x[8]), // IN
-	.a2(a1_inc_x[8]), // IN
-	.a3(a1_incf_x[8]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[8]),
+	.a0 /* IN */ (a1_step_x[8]),
+	.a1 /* IN */ (a1_stepf_x[8]),
+	.a2 /* IN */ (a1_inc_x[8]),
+	.a3 /* IN */ (a1_incf_x[8]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_9
 (
-	.z(addart_x[9]), // OUT
-	.a0(a1_step_x[9]), // IN
-	.a1(a1_stepf_x[9]), // IN
-	.a2(a1_inc_x[9]), // IN
-	.a3(a1_incf_x[9]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[9]),
+	.a0 /* IN */ (a1_step_x[9]),
+	.a1 /* IN */ (a1_stepf_x[9]),
+	.a2 /* IN */ (a1_inc_x[9]),
+	.a3 /* IN */ (a1_incf_x[9]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_10
 (
-	.z(addart_x[10]), // OUT
-	.a0(a1_step_x[10]), // IN
-	.a1(a1_stepf_x[10]), // IN
-	.a2(a1_inc_x[10]), // IN
-	.a3(a1_incf_x[10]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[10]),
+	.a0 /* IN */ (a1_step_x[10]),
+	.a1 /* IN */ (a1_stepf_x[10]),
+	.a2 /* IN */ (a1_inc_x[10]),
+	.a3 /* IN */ (a1_incf_x[10]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_11
 (
-	.z(addart_x[11]), // OUT
-	.a0(a1_step_x[11]), // IN
-	.a1(a1_stepf_x[11]), // IN
-	.a2(a1_inc_x[11]), // IN
-	.a3(a1_incf_x[11]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[11]),
+	.a0 /* IN */ (a1_step_x[11]),
+	.a1 /* IN */ (a1_stepf_x[11]),
+	.a2 /* IN */ (a1_inc_x[11]),
+	.a3 /* IN */ (a1_incf_x[11]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_12
 (
-	.z(addart_x[12]), // OUT
-	.a0(a1_step_x[12]), // IN
-	.a1(a1_stepf_x[12]), // IN
-	.a2(a1_inc_x[12]), // IN
-	.a3(a1_incf_x[12]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[12]),
+	.a0 /* IN */ (a1_step_x[12]),
+	.a1 /* IN */ (a1_stepf_x[12]),
+	.a2 /* IN */ (a1_inc_x[12]),
+	.a3 /* IN */ (a1_incf_x[12]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_13
 (
-	.z(addart_x[13]), // OUT
-	.a0(a1_step_x[13]), // IN
-	.a1(a1_stepf_x[13]), // IN
-	.a2(a1_inc_x[13]), // IN
-	.a3(a1_incf_x[13]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[13]),
+	.a0 /* IN */ (a1_step_x[13]),
+	.a1 /* IN */ (a1_stepf_x[13]),
+	.a2 /* IN */ (a1_inc_x[13]),
+	.a3 /* IN */ (a1_incf_x[13]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_14
 (
-	.z(addart_x[14]), // OUT
-	.a0(a1_step_x[14]), // IN
-	.a1(a1_stepf_x[14]), // IN
-	.a2(a1_inc_x[14]), // IN
-	.a3(a1_incf_x[14]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[14]),
+	.a0 /* IN */ (a1_step_x[14]),
+	.a1 /* IN */ (a1_stepf_x[14]),
+	.a2 /* IN */ (a1_inc_x[14]),
+	.a3 /* IN */ (a1_incf_x[14]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_x_inst_15
 (
-	.z(addart_x[15]), // OUT
-	.a0(a1_step_x[15]), // IN
-	.a1(a1_stepf_x[15]), // IN
-	.a2(a1_inc_x[15]), // IN
-	.a3(a1_incf_x[15]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_x[15]),
+	.a0 /* IN */ (a1_step_x[15]),
+	.a1 /* IN */ (a1_stepf_x[15]),
+	.a2 /* IN */ (a1_inc_x[15]),
+	.a3 /* IN */ (a1_incf_x[15]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 
 // ADDRMUX.NET (73) - addar_x : mx2
 mx2 addar_x_inst_0
 (
-	.z(addar_x[0]), // OUT
-	.a0(addart_x[0]), // IN
-	.a1(a2_step_x[0]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[0]),
+	.a0 /* IN */ (addart_x[0]),
+	.a1 /* IN */ (a2_step_x[0]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_1
 (
-	.z(addar_x[1]), // OUT
-	.a0(addart_x[1]), // IN
-	.a1(a2_step_x[1]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[1]),
+	.a0 /* IN */ (addart_x[1]),
+	.a1 /* IN */ (a2_step_x[1]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_2
 (
-	.z(addar_x[2]), // OUT
-	.a0(addart_x[2]), // IN
-	.a1(a2_step_x[2]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[2]),
+	.a0 /* IN */ (addart_x[2]),
+	.a1 /* IN */ (a2_step_x[2]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_3
 (
-	.z(addar_x[3]), // OUT
-	.a0(addart_x[3]), // IN
-	.a1(a2_step_x[3]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[3]),
+	.a0 /* IN */ (addart_x[3]),
+	.a1 /* IN */ (a2_step_x[3]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_4
 (
-	.z(addar_x[4]), // OUT
-	.a0(addart_x[4]), // IN
-	.a1(a2_step_x[4]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[4]),
+	.a0 /* IN */ (addart_x[4]),
+	.a1 /* IN */ (a2_step_x[4]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_5
 (
-	.z(addar_x[5]), // OUT
-	.a0(addart_x[5]), // IN
-	.a1(a2_step_x[5]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[5]),
+	.a0 /* IN */ (addart_x[5]),
+	.a1 /* IN */ (a2_step_x[5]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_6
 (
-	.z(addar_x[6]), // OUT
-	.a0(addart_x[6]), // IN
-	.a1(a2_step_x[6]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[6]),
+	.a0 /* IN */ (addart_x[6]),
+	.a1 /* IN */ (a2_step_x[6]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_7
 (
-	.z(addar_x[7]), // OUT
-	.a0(addart_x[7]), // IN
-	.a1(a2_step_x[7]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[7]),
+	.a0 /* IN */ (addart_x[7]),
+	.a1 /* IN */ (a2_step_x[7]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_8
 (
-	.z(addar_x[8]), // OUT
-	.a0(addart_x[8]), // IN
-	.a1(a2_step_x[8]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[8]),
+	.a0 /* IN */ (addart_x[8]),
+	.a1 /* IN */ (a2_step_x[8]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_9
 (
-	.z(addar_x[9]), // OUT
-	.a0(addart_x[9]), // IN
-	.a1(a2_step_x[9]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[9]),
+	.a0 /* IN */ (addart_x[9]),
+	.a1 /* IN */ (a2_step_x[9]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_10
 (
-	.z(addar_x[10]), // OUT
-	.a0(addart_x[10]), // IN
-	.a1(a2_step_x[10]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[10]),
+	.a0 /* IN */ (addart_x[10]),
+	.a1 /* IN */ (a2_step_x[10]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_11
 (
-	.z(addar_x[11]), // OUT
-	.a0(addart_x[11]), // IN
-	.a1(a2_step_x[11]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[11]),
+	.a0 /* IN */ (addart_x[11]),
+	.a1 /* IN */ (a2_step_x[11]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_12
 (
-	.z(addar_x[12]), // OUT
-	.a0(addart_x[12]), // IN
-	.a1(a2_step_x[12]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[12]),
+	.a0 /* IN */ (addart_x[12]),
+	.a1 /* IN */ (a2_step_x[12]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_13
 (
-	.z(addar_x[13]), // OUT
-	.a0(addart_x[13]), // IN
-	.a1(a2_step_x[13]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[13]),
+	.a0 /* IN */ (addart_x[13]),
+	.a1 /* IN */ (a2_step_x[13]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_14
 (
-	.z(addar_x[14]), // OUT
-	.a0(addart_x[14]), // IN
-	.a1(a2_step_x[14]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[14]),
+	.a0 /* IN */ (addart_x[14]),
+	.a1 /* IN */ (a2_step_x[14]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_x_inst_15
 (
-	.z(addar_x[15]), // OUT
-	.a0(addart_x[15]), // IN
-	.a1(a2_step_x[15]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_x[15]),
+	.a0 /* IN */ (addart_x[15]),
+	.a1 /* IN */ (a2_step_x[15]),
+	.s /* IN */ (addaselb_2)
 );
 
 // ADDRMUX.NET (74) - addart_y : mx4
 mx4 addart_y_inst_0
 (
-	.z(addart_y[0]), // OUT
-	.a0(a1_step_y[0]), // IN
-	.a1(a1_stepf_y[0]), // IN
-	.a2(a1_inc_y[0]), // IN
-	.a3(a1_incf_y[0]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[0]),
+	.a0 /* IN */ (a1_step_y[0]),
+	.a1 /* IN */ (a1_stepf_y[0]),
+	.a2 /* IN */ (a1_inc_y[0]),
+	.a3 /* IN */ (a1_incf_y[0]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_1
 (
-	.z(addart_y[1]), // OUT
-	.a0(a1_step_y[1]), // IN
-	.a1(a1_stepf_y[1]), // IN
-	.a2(a1_inc_y[1]), // IN
-	.a3(a1_incf_y[1]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[1]),
+	.a0 /* IN */ (a1_step_y[1]),
+	.a1 /* IN */ (a1_stepf_y[1]),
+	.a2 /* IN */ (a1_inc_y[1]),
+	.a3 /* IN */ (a1_incf_y[1]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_2
 (
-	.z(addart_y[2]), // OUT
-	.a0(a1_step_y[2]), // IN
-	.a1(a1_stepf_y[2]), // IN
-	.a2(a1_inc_y[2]), // IN
-	.a3(a1_incf_y[2]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[2]),
+	.a0 /* IN */ (a1_step_y[2]),
+	.a1 /* IN */ (a1_stepf_y[2]),
+	.a2 /* IN */ (a1_inc_y[2]),
+	.a3 /* IN */ (a1_incf_y[2]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_3
 (
-	.z(addart_y[3]), // OUT
-	.a0(a1_step_y[3]), // IN
-	.a1(a1_stepf_y[3]), // IN
-	.a2(a1_inc_y[3]), // IN
-	.a3(a1_incf_y[3]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[3]),
+	.a0 /* IN */ (a1_step_y[3]),
+	.a1 /* IN */ (a1_stepf_y[3]),
+	.a2 /* IN */ (a1_inc_y[3]),
+	.a3 /* IN */ (a1_incf_y[3]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_4
 (
-	.z(addart_y[4]), // OUT
-	.a0(a1_step_y[4]), // IN
-	.a1(a1_stepf_y[4]), // IN
-	.a2(a1_inc_y[4]), // IN
-	.a3(a1_incf_y[4]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[4]),
+	.a0 /* IN */ (a1_step_y[4]),
+	.a1 /* IN */ (a1_stepf_y[4]),
+	.a2 /* IN */ (a1_inc_y[4]),
+	.a3 /* IN */ (a1_incf_y[4]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_5
 (
-	.z(addart_y[5]), // OUT
-	.a0(a1_step_y[5]), // IN
-	.a1(a1_stepf_y[5]), // IN
-	.a2(a1_inc_y[5]), // IN
-	.a3(a1_incf_y[5]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[5]),
+	.a0 /* IN */ (a1_step_y[5]),
+	.a1 /* IN */ (a1_stepf_y[5]),
+	.a2 /* IN */ (a1_inc_y[5]),
+	.a3 /* IN */ (a1_incf_y[5]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_6
 (
-	.z(addart_y[6]), // OUT
-	.a0(a1_step_y[6]), // IN
-	.a1(a1_stepf_y[6]), // IN
-	.a2(a1_inc_y[6]), // IN
-	.a3(a1_incf_y[6]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[6]),
+	.a0 /* IN */ (a1_step_y[6]),
+	.a1 /* IN */ (a1_stepf_y[6]),
+	.a2 /* IN */ (a1_inc_y[6]),
+	.a3 /* IN */ (a1_incf_y[6]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_7
 (
-	.z(addart_y[7]), // OUT
-	.a0(a1_step_y[7]), // IN
-	.a1(a1_stepf_y[7]), // IN
-	.a2(a1_inc_y[7]), // IN
-	.a3(a1_incf_y[7]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[7]),
+	.a0 /* IN */ (a1_step_y[7]),
+	.a1 /* IN */ (a1_stepf_y[7]),
+	.a2 /* IN */ (a1_inc_y[7]),
+	.a3 /* IN */ (a1_incf_y[7]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_8
 (
-	.z(addart_y[8]), // OUT
-	.a0(a1_step_y[8]), // IN
-	.a1(a1_stepf_y[8]), // IN
-	.a2(a1_inc_y[8]), // IN
-	.a3(a1_incf_y[8]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[8]),
+	.a0 /* IN */ (a1_step_y[8]),
+	.a1 /* IN */ (a1_stepf_y[8]),
+	.a2 /* IN */ (a1_inc_y[8]),
+	.a3 /* IN */ (a1_incf_y[8]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_9
 (
-	.z(addart_y[9]), // OUT
-	.a0(a1_step_y[9]), // IN
-	.a1(a1_stepf_y[9]), // IN
-	.a2(a1_inc_y[9]), // IN
-	.a3(a1_incf_y[9]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[9]),
+	.a0 /* IN */ (a1_step_y[9]),
+	.a1 /* IN */ (a1_stepf_y[9]),
+	.a2 /* IN */ (a1_inc_y[9]),
+	.a3 /* IN */ (a1_incf_y[9]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_10
 (
-	.z(addart_y[10]), // OUT
-	.a0(a1_step_y[10]), // IN
-	.a1(a1_stepf_y[10]), // IN
-	.a2(a1_inc_y[10]), // IN
-	.a3(a1_incf_y[10]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[10]),
+	.a0 /* IN */ (a1_step_y[10]),
+	.a1 /* IN */ (a1_stepf_y[10]),
+	.a2 /* IN */ (a1_inc_y[10]),
+	.a3 /* IN */ (a1_incf_y[10]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_11
 (
-	.z(addart_y[11]), // OUT
-	.a0(a1_step_y[11]), // IN
-	.a1(a1_stepf_y[11]), // IN
-	.a2(a1_inc_y[11]), // IN
-	.a3(a1_incf_y[11]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[11]),
+	.a0 /* IN */ (a1_step_y[11]),
+	.a1 /* IN */ (a1_stepf_y[11]),
+	.a2 /* IN */ (a1_inc_y[11]),
+	.a3 /* IN */ (a1_incf_y[11]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_12
 (
-	.z(addart_y[12]), // OUT
-	.a0(a1_step_y[12]), // IN
-	.a1(a1_stepf_y[12]), // IN
-	.a2(a1_inc_y[12]), // IN
-	.a3(a1_incf_y[12]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[12]),
+	.a0 /* IN */ (a1_step_y[12]),
+	.a1 /* IN */ (a1_stepf_y[12]),
+	.a2 /* IN */ (a1_inc_y[12]),
+	.a3 /* IN */ (a1_incf_y[12]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_13
 (
-	.z(addart_y[13]), // OUT
-	.a0(a1_step_y[13]), // IN
-	.a1(a1_stepf_y[13]), // IN
-	.a2(a1_inc_y[13]), // IN
-	.a3(a1_incf_y[13]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[13]),
+	.a0 /* IN */ (a1_step_y[13]),
+	.a1 /* IN */ (a1_stepf_y[13]),
+	.a2 /* IN */ (a1_inc_y[13]),
+	.a3 /* IN */ (a1_incf_y[13]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_14
 (
-	.z(addart_y[14]), // OUT
-	.a0(a1_step_y[14]), // IN
-	.a1(a1_stepf_y[14]), // IN
-	.a2(a1_inc_y[14]), // IN
-	.a3(a1_incf_y[14]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[14]),
+	.a0 /* IN */ (a1_step_y[14]),
+	.a1 /* IN */ (a1_stepf_y[14]),
+	.a2 /* IN */ (a1_inc_y[14]),
+	.a3 /* IN */ (a1_incf_y[14]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 mx4 addart_y_inst_15
 (
-	.z(addart_y[15]), // OUT
-	.a0(a1_step_y[15]), // IN
-	.a1(a1_stepf_y[15]), // IN
-	.a2(a1_inc_y[15]), // IN
-	.a3(a1_incf_y[15]), // IN
-	.s0(addaselb_0), // IN
-	.s1(addaselb_1)  // IN
+	.z /* OUT */ (addart_y[15]),
+	.a0 /* IN */ (a1_step_y[15]),
+	.a1 /* IN */ (a1_stepf_y[15]),
+	.a2 /* IN */ (a1_inc_y[15]),
+	.a3 /* IN */ (a1_incf_y[15]),
+	.s0 /* IN */ (addaselb_0),
+	.s1 /* IN */ (addaselb_1)
 );
 
 // ADDRMUX.NET (76) - addar_y : mx2
 mx2 addar_y_inst_0
 (
-	.z(addar_y[0]), // OUT
-	.a0(addart_y[0]), // IN
-	.a1(a2_step_y[0]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[0]),
+	.a0 /* IN */ (addart_y[0]),
+	.a1 /* IN */ (a2_step_y[0]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_1
 (
-	.z(addar_y[1]), // OUT
-	.a0(addart_y[1]), // IN
-	.a1(a2_step_y[1]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[1]),
+	.a0 /* IN */ (addart_y[1]),
+	.a1 /* IN */ (a2_step_y[1]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_2
 (
-	.z(addar_y[2]), // OUT
-	.a0(addart_y[2]), // IN
-	.a1(a2_step_y[2]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[2]),
+	.a0 /* IN */ (addart_y[2]),
+	.a1 /* IN */ (a2_step_y[2]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_3
 (
-	.z(addar_y[3]), // OUT
-	.a0(addart_y[3]), // IN
-	.a1(a2_step_y[3]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[3]),
+	.a0 /* IN */ (addart_y[3]),
+	.a1 /* IN */ (a2_step_y[3]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_4
 (
-	.z(addar_y[4]), // OUT
-	.a0(addart_y[4]), // IN
-	.a1(a2_step_y[4]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[4]),
+	.a0 /* IN */ (addart_y[4]),
+	.a1 /* IN */ (a2_step_y[4]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_5
 (
-	.z(addar_y[5]), // OUT
-	.a0(addart_y[5]), // IN
-	.a1(a2_step_y[5]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[5]),
+	.a0 /* IN */ (addart_y[5]),
+	.a1 /* IN */ (a2_step_y[5]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_6
 (
-	.z(addar_y[6]), // OUT
-	.a0(addart_y[6]), // IN
-	.a1(a2_step_y[6]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[6]),
+	.a0 /* IN */ (addart_y[6]),
+	.a1 /* IN */ (a2_step_y[6]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_7
 (
-	.z(addar_y[7]), // OUT
-	.a0(addart_y[7]), // IN
-	.a1(a2_step_y[7]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[7]),
+	.a0 /* IN */ (addart_y[7]),
+	.a1 /* IN */ (a2_step_y[7]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_8
 (
-	.z(addar_y[8]), // OUT
-	.a0(addart_y[8]), // IN
-	.a1(a2_step_y[8]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[8]),
+	.a0 /* IN */ (addart_y[8]),
+	.a1 /* IN */ (a2_step_y[8]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_9
 (
-	.z(addar_y[9]), // OUT
-	.a0(addart_y[9]), // IN
-	.a1(a2_step_y[9]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[9]),
+	.a0 /* IN */ (addart_y[9]),
+	.a1 /* IN */ (a2_step_y[9]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_10
 (
-	.z(addar_y[10]), // OUT
-	.a0(addart_y[10]), // IN
-	.a1(a2_step_y[10]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[10]),
+	.a0 /* IN */ (addart_y[10]),
+	.a1 /* IN */ (a2_step_y[10]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_11
 (
-	.z(addar_y[11]), // OUT
-	.a0(addart_y[11]), // IN
-	.a1(a2_step_y[11]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[11]),
+	.a0 /* IN */ (addart_y[11]),
+	.a1 /* IN */ (a2_step_y[11]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_12
 (
-	.z(addar_y[12]), // OUT
-	.a0(addart_y[12]), // IN
-	.a1(a2_step_y[12]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[12]),
+	.a0 /* IN */ (addart_y[12]),
+	.a1 /* IN */ (a2_step_y[12]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_13
 (
-	.z(addar_y[13]), // OUT
-	.a0(addart_y[13]), // IN
-	.a1(a2_step_y[13]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[13]),
+	.a0 /* IN */ (addart_y[13]),
+	.a1 /* IN */ (a2_step_y[13]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_14
 (
-	.z(addar_y[14]), // OUT
-	.a0(addart_y[14]), // IN
-	.a1(a2_step_y[14]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[14]),
+	.a0 /* IN */ (addart_y[14]),
+	.a1 /* IN */ (a2_step_y[14]),
+	.s /* IN */ (addaselb_2)
 );
 mx2 addar_y_inst_15
 (
-	.z(addar_y[15]), // OUT
-	.a0(addart_y[15]), // IN
-	.a1(a2_step_y[15]), // IN
-	.s(addaselb_2)  // IN
+	.z /* OUT */ (addar_y[15]),
+	.a0 /* IN */ (addart_y[15]),
+	.a1 /* IN */ (a2_step_y[15]),
+	.s /* IN */ (addaselb_2)
 );
 
 // ADDRMUX.NET (83) - addac_xlo : d38h
 d38h addac_xlo_inst
 (
-	.z0(addac_x_0), // OUT
-	.z1(addac_x_1), // OUT
-	.z2(addac_x_2), // OUT
-	.z3(addac_x_3), // OUT
-	.z4(addac_x_4), // OUT
-	.z5(addac_x_5), // OUT
-	.z6(addac_x_6), // OUT
-	.z7(unused_0), // OUT
-	.a0(adda_xconst_0), // IN
-	.a1(adda_xconst_1), // IN
-	.a2(adda_xconst_2)  // IN
+	.z0 /* OUT */ (addac_x_0),
+	.z1 /* OUT */ (addac_x_1),
+	.z2 /* OUT */ (addac_x_2),
+	.z3 /* OUT */ (addac_x_3),
+	.z4 /* OUT */ (addac_x_4),
+	.z5 /* OUT */ (addac_x_5),
+	.z6 /* OUT */ (addac_x_6),
+	.z7 /* OUT */ (unused_0),
+	.a0 /* IN */ (adda_xconst_0),
+	.a1 /* IN */ (adda_xconst_1),
+	.a2 /* IN */ (adda_xconst_2)
 );
 
 // ADDRMUX.NET (85) - unused[0] : dummy
@@ -665,229 +665,229 @@ assign addac_y[15] = zero;
 // ADDRMUX.NET (95) - addas_x : mx2
 mx2 addas_x_inst_0
 (
-	.z(addas_x[0]), // OUT
-	.a0(addac_x[0]), // IN
-	.a1(addar_x[0]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[0]),
+	.a0 /* IN */ (addac_x[0]),
+	.a1 /* IN */ (addar_x[0]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_1
 (
-	.z(addas_x[1]), // OUT
-	.a0(addac_x[1]), // IN
-	.a1(addar_x[1]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[1]),
+	.a0 /* IN */ (addac_x[1]),
+	.a1 /* IN */ (addar_x[1]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_2
 (
-	.z(addas_x[2]), // OUT
-	.a0(addac_x[2]), // IN
-	.a1(addar_x[2]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[2]),
+	.a0 /* IN */ (addac_x[2]),
+	.a1 /* IN */ (addar_x[2]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_3
 (
-	.z(addas_x[3]), // OUT
-	.a0(addac_x[3]), // IN
-	.a1(addar_x[3]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[3]),
+	.a0 /* IN */ (addac_x[3]),
+	.a1 /* IN */ (addar_x[3]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_4
 (
-	.z(addas_x[4]), // OUT
-	.a0(addac_x[4]), // IN
-	.a1(addar_x[4]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[4]),
+	.a0 /* IN */ (addac_x[4]),
+	.a1 /* IN */ (addar_x[4]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_5
 (
-	.z(addas_x[5]), // OUT
-	.a0(addac_x[5]), // IN
-	.a1(addar_x[5]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[5]),
+	.a0 /* IN */ (addac_x[5]),
+	.a1 /* IN */ (addar_x[5]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_6
 (
-	.z(addas_x[6]), // OUT
-	.a0(addac_x[6]), // IN
-	.a1(addar_x[6]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[6]),
+	.a0 /* IN */ (addac_x[6]),
+	.a1 /* IN */ (addar_x[6]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_7
 (
-	.z(addas_x[7]), // OUT
-	.a0(addac_x[7]), // IN
-	.a1(addar_x[7]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[7]),
+	.a0 /* IN */ (addac_x[7]),
+	.a1 /* IN */ (addar_x[7]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_8
 (
-	.z(addas_x[8]), // OUT
-	.a0(addac_x[8]), // IN
-	.a1(addar_x[8]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[8]),
+	.a0 /* IN */ (addac_x[8]),
+	.a1 /* IN */ (addar_x[8]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_9
 (
-	.z(addas_x[9]), // OUT
-	.a0(addac_x[9]), // IN
-	.a1(addar_x[9]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[9]),
+	.a0 /* IN */ (addac_x[9]),
+	.a1 /* IN */ (addar_x[9]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_10
 (
-	.z(addas_x[10]), // OUT
-	.a0(addac_x[10]), // IN
-	.a1(addar_x[10]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[10]),
+	.a0 /* IN */ (addac_x[10]),
+	.a1 /* IN */ (addar_x[10]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_11
 (
-	.z(addas_x[11]), // OUT
-	.a0(addac_x[11]), // IN
-	.a1(addar_x[11]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[11]),
+	.a0 /* IN */ (addac_x[11]),
+	.a1 /* IN */ (addar_x[11]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_12
 (
-	.z(addas_x[12]), // OUT
-	.a0(addac_x[12]), // IN
-	.a1(addar_x[12]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[12]),
+	.a0 /* IN */ (addac_x[12]),
+	.a1 /* IN */ (addar_x[12]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_13
 (
-	.z(addas_x[13]), // OUT
-	.a0(addac_x[13]), // IN
-	.a1(addar_x[13]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[13]),
+	.a0 /* IN */ (addac_x[13]),
+	.a1 /* IN */ (addar_x[13]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_14
 (
-	.z(addas_x[14]), // OUT
-	.a0(addac_x[14]), // IN
-	.a1(addar_x[14]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[14]),
+	.a0 /* IN */ (addac_x[14]),
+	.a1 /* IN */ (addar_x[14]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_x_inst_15
 (
-	.z(addas_x[15]), // OUT
-	.a0(addac_x[15]), // IN
-	.a1(addar_x[15]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_x[15]),
+	.a0 /* IN */ (addac_x[15]),
+	.a1 /* IN */ (addar_x[15]),
+	.s /* IN */ (addareg)
 );
 
 // ADDRMUX.NET (96) - addas_y : mx2
 mx2 addas_y_inst_0
 (
-	.z(addas_y[0]), // OUT
-	.a0(addac_y[0]), // IN
-	.a1(addar_y[0]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[0]),
+	.a0 /* IN */ (addac_y[0]),
+	.a1 /* IN */ (addar_y[0]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_1
 (
-	.z(addas_y[1]), // OUT
-	.a0(addac_y[1]), // IN
-	.a1(addar_y[1]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[1]),
+	.a0 /* IN */ (addac_y[1]),
+	.a1 /* IN */ (addar_y[1]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_2
 (
-	.z(addas_y[2]), // OUT
-	.a0(addac_y[2]), // IN
-	.a1(addar_y[2]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[2]),
+	.a0 /* IN */ (addac_y[2]),
+	.a1 /* IN */ (addar_y[2]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_3
 (
-	.z(addas_y[3]), // OUT
-	.a0(addac_y[3]), // IN
-	.a1(addar_y[3]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[3]),
+	.a0 /* IN */ (addac_y[3]),
+	.a1 /* IN */ (addar_y[3]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_4
 (
-	.z(addas_y[4]), // OUT
-	.a0(addac_y[4]), // IN
-	.a1(addar_y[4]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[4]),
+	.a0 /* IN */ (addac_y[4]),
+	.a1 /* IN */ (addar_y[4]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_5
 (
-	.z(addas_y[5]), // OUT
-	.a0(addac_y[5]), // IN
-	.a1(addar_y[5]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[5]),
+	.a0 /* IN */ (addac_y[5]),
+	.a1 /* IN */ (addar_y[5]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_6
 (
-	.z(addas_y[6]), // OUT
-	.a0(addac_y[6]), // IN
-	.a1(addar_y[6]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[6]),
+	.a0 /* IN */ (addac_y[6]),
+	.a1 /* IN */ (addar_y[6]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_7
 (
-	.z(addas_y[7]), // OUT
-	.a0(addac_y[7]), // IN
-	.a1(addar_y[7]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[7]),
+	.a0 /* IN */ (addac_y[7]),
+	.a1 /* IN */ (addar_y[7]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_8
 (
-	.z(addas_y[8]), // OUT
-	.a0(addac_y[8]), // IN
-	.a1(addar_y[8]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[8]),
+	.a0 /* IN */ (addac_y[8]),
+	.a1 /* IN */ (addar_y[8]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_9
 (
-	.z(addas_y[9]), // OUT
-	.a0(addac_y[9]), // IN
-	.a1(addar_y[9]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[9]),
+	.a0 /* IN */ (addac_y[9]),
+	.a1 /* IN */ (addar_y[9]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_10
 (
-	.z(addas_y[10]), // OUT
-	.a0(addac_y[10]), // IN
-	.a1(addar_y[10]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[10]),
+	.a0 /* IN */ (addac_y[10]),
+	.a1 /* IN */ (addar_y[10]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_11
 (
-	.z(addas_y[11]), // OUT
-	.a0(addac_y[11]), // IN
-	.a1(addar_y[11]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[11]),
+	.a0 /* IN */ (addac_y[11]),
+	.a1 /* IN */ (addar_y[11]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_12
 (
-	.z(addas_y[12]), // OUT
-	.a0(addac_y[12]), // IN
-	.a1(addar_y[12]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[12]),
+	.a0 /* IN */ (addac_y[12]),
+	.a1 /* IN */ (addar_y[12]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_13
 (
-	.z(addas_y[13]), // OUT
-	.a0(addac_y[13]), // IN
-	.a1(addar_y[13]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[13]),
+	.a0 /* IN */ (addac_y[13]),
+	.a1 /* IN */ (addar_y[13]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_14
 (
-	.z(addas_y[14]), // OUT
-	.a0(addac_y[14]), // IN
-	.a1(addar_y[14]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[14]),
+	.a0 /* IN */ (addac_y[14]),
+	.a1 /* IN */ (addar_y[14]),
+	.s /* IN */ (addareg)
 );
 mx2 addas_y_inst_15
 (
-	.z(addas_y[15]), // OUT
-	.a0(addac_y[15]), // IN
-	.a1(addar_y[15]), // IN
-	.s(addareg)  // IN
+	.z /* OUT */ (addas_y[15]),
+	.a0 /* IN */ (addac_y[15]),
+	.a1 /* IN */ (addar_y[15]),
+	.s /* IN */ (addareg)
 );
 
 // ADDRMUX.NET (100) - suba_x16 : join

@@ -2,12 +2,14 @@
 
 module blitstop
 (
-	inout gpu_dout_1,
+	output gpu_dout_1_out,
+	output gpu_dout_1_oe,
+	input gpu_dout_1_in,
 	output stopped,
 	output reset_n,
 	input clk_0,
 	input dwrite_1,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input nowrite,
 	input statrd,
 	input stopld,
@@ -49,15 +51,16 @@ assign coll_abort = ~coll_abort_n;
 // BLITSTOP.NET (41) - stopen : fdsyncr
 fdsyncr stopen_inst
 (
-	.q(stopen), // IO
-	.d(gpu_din[2]), // IN
-	.ld(stopld), // IN
-	.clk(clk_0), // IN
-	.rst_n(xreset_n)  // IN
+	.q /* OUT */ (stopen),
+	.d /* IN */ (gpu_din[2]),
+	.ld /* IN */ (stopld),
+	.clk /* IN */ (clk_0),
+	.rst_n /* IN */ (xreset_n)
 );
 
 // BLITSTOP.NET (46) - stat[1] : ts
-assign gpu_dout_1 = (statrd) ? stopped_obuf : 1'bz;
+assign gpu_dout_1_out = stopped_obuf;
+assign gpu_dout_1_oe = statrd;
 
 // BLITSTOP.NET (53) - collidea : an3
 assign collidea = nowrite & stopen & dwrite_1;
@@ -65,9 +68,9 @@ assign collidea = nowrite & stopen & dwrite_1;
 // BLITSTOP.NET (54) - collideb : fd1q
 fd1q collideb_inst
 (
-	.q(collideb), // OUT
-	.d(collidea), // IN
-	.cp(clk_0)  // IN
+	.q /* OUT */ (collideb),
+	.d /* IN */ (collidea),
+	.cp /* IN */ (clk_0)
 );
 
 // BLITSTOP.NET (55) - collideb\ : iv
@@ -91,10 +94,10 @@ assign stt_2 = ~(stt_0 & stt_1);
 // BLITSTOP.NET (65) - stopped : fd2q
 fd2q stopped_inst
 (
-	.q(stopped_obuf), // OUT
-	.d(stt_2), // IN
-	.cp(clk_0), // IN
-	.cd(xreset_n)  // IN
+	.q /* OUT */ (stopped_obuf),
+	.d /* IN */ (stt_2),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (xreset_n)
 );
 
 // BLITSTOP.NET (67) - drst : an2
@@ -103,10 +106,10 @@ assign drst = stopped_obuf & coll_abort;
 // BLITSTOP.NET (68) - drv_reset : fd2q
 fd2q drv_reset_inst
 (
-	.q(drv_reset), // OUT
-	.d(drst), // IN
-	.cp(clk_0), // IN
-	.cd(xreset_n)  // IN
+	.q /* OUT */ (drv_reset),
+	.d /* IN */ (drst),
+	.cp /* IN */ (clk_0),
+	.cd /* IN */ (xreset_n)
 );
 
 // BLITSTOP.NET (73) - drv_reset\ : iv

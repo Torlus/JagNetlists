@@ -2,8 +2,8 @@
 
 module subsize
 (
-	output[0:22] sub;
-	input[0:22] a;
+	output [0:22] sub;
+	input [0:22] a;
 	input b_0,
 	input b_1,
 	input b_2
@@ -57,74 +57,74 @@ wire sub_22;
 // PREFETCH.NET (389) - sub[0] : ha1
 ha1 sub_index_0_inst
 (
-	.s(sub_0), // OUT
-	.co(co_0), // OUT
-	.a(a[0]), // IN
-	.b(b_0)  // IN
+	.s /* OUT */ (sub_0),
+	.co /* OUT */ (co_0),
+	.a /* IN */ (a[0]),
+	.b /* IN */ (b_0)
 );
 
 // PREFETCH.NET (390) - sub[1] : fa1
 fa1 sub_index_1_inst
 (
-	.s(sub_1), // OUT
-	.co(co_1), // OUT
-	.ci(a[1]), // IN
-	.a(b_1), // IN
-	.b(co_0)  // IN
+	.s /* OUT */ (sub_1),
+	.co /* OUT */ (co_1),
+	.ci /* IN */ (a[1]),
+	.a /* IN */ (b_1),
+	.b /* IN */ (co_0)
 );
 
 // PREFETCH.NET (391) - sub[2] : fa1
 fa1 sub_index_2_inst
 (
-	.s(sub_2), // OUT
-	.co(co_2), // OUT
-	.ci(a[2]), // IN
-	.a(b_2), // IN
-	.b(co_1)  // IN
+	.s /* OUT */ (sub_2),
+	.co /* OUT */ (co_2),
+	.ci /* IN */ (a[2]),
+	.a /* IN */ (b_2),
+	.b /* IN */ (co_1)
 );
 
 // PREFETCH.NET (392) - sub[3-8] : hs1
 hs1 sub_from_3_to_8_inst_0
 (
-	.q(sub_3), // OUT
-	.co(co_3), // OUT
-	.a(a[3]), // IN
-	.ci(co_2)  // IN
+	.q /* OUT */ (sub_3),
+	.co /* OUT */ (co_3),
+	.a /* IN */ (a[3]),
+	.ci /* IN */ (co_2)
 );
 hs1 sub_from_3_to_8_inst_1
 (
-	.q(sub_4), // OUT
-	.co(co_4), // OUT
-	.a(a[4]), // IN
-	.ci(co_3)  // IN
+	.q /* OUT */ (sub_4),
+	.co /* OUT */ (co_4),
+	.a /* IN */ (a[4]),
+	.ci /* IN */ (co_3)
 );
 hs1 sub_from_3_to_8_inst_2
 (
-	.q(sub_5), // OUT
-	.co(co_5), // OUT
-	.a(a[5]), // IN
-	.ci(co_4)  // IN
+	.q /* OUT */ (sub_5),
+	.co /* OUT */ (co_5),
+	.a /* IN */ (a[5]),
+	.ci /* IN */ (co_4)
 );
 hs1 sub_from_3_to_8_inst_3
 (
-	.q(sub_6), // OUT
-	.co(co_6), // OUT
-	.a(a[6]), // IN
-	.ci(co_5)  // IN
+	.q /* OUT */ (sub_6),
+	.co /* OUT */ (co_6),
+	.a /* IN */ (a[6]),
+	.ci /* IN */ (co_5)
 );
 hs1 sub_from_3_to_8_inst_4
 (
-	.q(sub_7), // OUT
-	.co(co_7), // OUT
-	.a(a[7]), // IN
-	.ci(co_6)  // IN
+	.q /* OUT */ (sub_7),
+	.co /* OUT */ (co_7),
+	.a /* IN */ (a[7]),
+	.ci /* IN */ (co_6)
 );
 hs1 sub_from_3_to_8_inst_5
 (
-	.q(sub_8), // OUT
-	.co(co_8), // OUT
-	.a(a[8]), // IN
-	.ci(co_7)  // IN
+	.q /* OUT */ (sub_8),
+	.co /* OUT */ (co_8),
+	.a /* IN */ (a[8]),
+	.ci /* IN */ (co_7)
 );
 
 // PREFETCH.NET (393) - sub[9] : en
@@ -136,45 +136,45 @@ assign co_9 = a[3] | a[4] | a[5] | a[6] | a[7] | a[8] | a[9] | co_2;
 // PREFETCH.NET (395) - sub[10-15] : hs1
 hs1 sub_from_10_to_15_inst_0
 (
-	.q(sub_10), // OUT
-	.co(co_10), // OUT
-	.a(a[10]), // IN
-	.ci(co_9)  // IN
+	.q /* OUT */ (sub_10),
+	.co /* OUT */ (co_10),
+	.a /* IN */ (a[10]),
+	.ci /* IN */ (co_9)
 );
 hs1 sub_from_10_to_15_inst_1
 (
-	.q(sub_11), // OUT
-	.co(co_11), // OUT
-	.a(a[11]), // IN
-	.ci(co_10)  // IN
+	.q /* OUT */ (sub_11),
+	.co /* OUT */ (co_11),
+	.a /* IN */ (a[11]),
+	.ci /* IN */ (co_10)
 );
 hs1 sub_from_10_to_15_inst_2
 (
-	.q(sub_12), // OUT
-	.co(co_12), // OUT
-	.a(a[12]), // IN
-	.ci(co_11)  // IN
+	.q /* OUT */ (sub_12),
+	.co /* OUT */ (co_12),
+	.a /* IN */ (a[12]),
+	.ci /* IN */ (co_11)
 );
 hs1 sub_from_10_to_15_inst_3
 (
-	.q(sub_13), // OUT
-	.co(co_13), // OUT
-	.a(a[13]), // IN
-	.ci(co_12)  // IN
+	.q /* OUT */ (sub_13),
+	.co /* OUT */ (co_13),
+	.a /* IN */ (a[13]),
+	.ci /* IN */ (co_12)
 );
 hs1 sub_from_10_to_15_inst_4
 (
-	.q(sub_14), // OUT
-	.co(co_14), // OUT
-	.a(a[14]), // IN
-	.ci(co_13)  // IN
+	.q /* OUT */ (sub_14),
+	.co /* OUT */ (co_14),
+	.a /* IN */ (a[14]),
+	.ci /* IN */ (co_13)
 );
 hs1 sub_from_10_to_15_inst_5
 (
-	.q(sub_15), // OUT
-	.co(co_15), // OUT
-	.a(a[15]), // IN
-	.ci(co_14)  // IN
+	.q /* OUT */ (sub_15),
+	.co /* OUT */ (co_15),
+	.a /* IN */ (a[15]),
+	.ci /* IN */ (co_14)
 );
 
 // PREFETCH.NET (396) - sub[16] : en
@@ -186,38 +186,38 @@ assign co_16 = a[10] | a[11] | a[12] | a[13] | a[14] | a[15] | a[16] | co_9;
 // PREFETCH.NET (398) - sub[17-21] : hs1
 hs1 sub_from_17_to_21_inst_0
 (
-	.q(sub_17), // OUT
-	.co(co_17), // OUT
-	.a(a[17]), // IN
-	.ci(co_16)  // IN
+	.q /* OUT */ (sub_17),
+	.co /* OUT */ (co_17),
+	.a /* IN */ (a[17]),
+	.ci /* IN */ (co_16)
 );
 hs1 sub_from_17_to_21_inst_1
 (
-	.q(sub_18), // OUT
-	.co(co_18), // OUT
-	.a(a[18]), // IN
-	.ci(co_17)  // IN
+	.q /* OUT */ (sub_18),
+	.co /* OUT */ (co_18),
+	.a /* IN */ (a[18]),
+	.ci /* IN */ (co_17)
 );
 hs1 sub_from_17_to_21_inst_2
 (
-	.q(sub_19), // OUT
-	.co(co_19), // OUT
-	.a(a[19]), // IN
-	.ci(co_18)  // IN
+	.q /* OUT */ (sub_19),
+	.co /* OUT */ (co_19),
+	.a /* IN */ (a[19]),
+	.ci /* IN */ (co_18)
 );
 hs1 sub_from_17_to_21_inst_3
 (
-	.q(sub_20), // OUT
-	.co(co_20), // OUT
-	.a(a[20]), // IN
-	.ci(co_19)  // IN
+	.q /* OUT */ (sub_20),
+	.co /* OUT */ (co_20),
+	.a /* IN */ (a[20]),
+	.ci /* IN */ (co_19)
 );
 hs1 sub_from_17_to_21_inst_4
 (
-	.q(sub_21), // OUT
-	.co(co_21), // OUT
-	.a(a[21]), // IN
-	.ci(co_20)  // IN
+	.q /* OUT */ (sub_21),
+	.co /* OUT */ (co_21),
+	.a /* IN */ (a[21]),
+	.ci /* IN */ (co_20)
 );
 
 // PREFETCH.NET (399) - sub[22] : en

@@ -2,10 +2,10 @@
 
 module add16sat
 (
-	output[0:15] r;
+	output [0:15] r;
 	output co,
-	input[0:15] a;
-	input[0:15] b;
+	input [0:15] a;
+	input [0:15] b;
 	input cin,
 	input sat,
 	input eightbit,
@@ -84,42 +84,10 @@ wire r_14;
 wire r_15;
 
 // Output buffers
-wire r_b0_obuf;
-wire r_b1_obuf;
-wire r_b2_obuf;
-wire r_b3_obuf;
-wire r_b4_obuf;
-wire r_b5_obuf;
-wire r_b6_obuf;
-wire r_b7_obuf;
-wire r_b8_obuf;
-wire r_b9_obuf;
-wire r_b10_obuf;
-wire r_b11_obuf;
-wire r_b12_obuf;
-wire r_b13_obuf;
-wire r_b14_obuf;
-wire r_b15_obuf;
 wire co_obuf;
 
 
 // Output buffers
-assign r[0] = r_b0_obuf;
-assign r[1] = r_b1_obuf;
-assign r[2] = r_b2_obuf;
-assign r[3] = r_b3_obuf;
-assign r[4] = r_b4_obuf;
-assign r[5] = r_b5_obuf;
-assign r[6] = r_b6_obuf;
-assign r[7] = r_b7_obuf;
-assign r[8] = r_b8_obuf;
-assign r[9] = r_b9_obuf;
-assign r[10] = r_b10_obuf;
-assign r[11] = r_b11_obuf;
-assign r[12] = r_b12_obuf;
-assign r[13] = r_b13_obuf;
-assign r[14] = r_b14_obuf;
-assign r[15] = r_b15_obuf;
 assign co = co_obuf;
 
 
@@ -138,120 +106,120 @@ assign zero = 1'b0;
 // ADDARRAY.NET (177) - add0 : fa4cs
 fa4cs add0_inst
 (
-	.s0(q_0), // OUT
-	.s1(q_1), // OUT
-	.s2(q_2), // OUT
-	.s3(q_3), // OUT
-	.con(co_n_0), // OUT
-	.co0n(co0_n_0), // OUT
-	.co1n(co1_n_0), // OUT
-	.g(g_0), // OUT
-	.p(p_0), // OUT
-	.cin(cin_n), // IN
-	.ci0n(one), // IN
-	.ci1n(zero), // IN
-	.a0(a[0]), // IN
-	.b0(b[0]), // IN
-	.a1(a[1]), // IN
-	.b1(b[1]), // IN
-	.a2(a[2]), // IN
-	.b2(b[2]), // IN
-	.a3(a[3]), // IN
-	.b3(b[3])  // IN
+	.s0 /* OUT */ (q_0),
+	.s1 /* OUT */ (q_1),
+	.s2 /* OUT */ (q_2),
+	.s3 /* OUT */ (q_3),
+	.con /* OUT */ (co_n_0),
+	.co0n /* OUT */ (co0_n_0),
+	.co1n /* OUT */ (co1_n_0),
+	.g /* OUT */ (g_0),
+	.p /* OUT */ (p_0),
+	.cin /* IN */ (cin_n),
+	.ci0n /* IN */ (one),
+	.ci1n /* IN */ (zero),
+	.a0 /* IN */ (a[0]),
+	.b0 /* IN */ (b[0]),
+	.a1 /* IN */ (a[1]),
+	.b1 /* IN */ (b[1]),
+	.a2 /* IN */ (a[2]),
+	.b2 /* IN */ (b[2]),
+	.a3 /* IN */ (a[3]),
+	.b3 /* IN */ (b[3])
 );
 
 // ADDARRAY.NET (180) - add1 : fa4cs
 fa4cs add1_inst
 (
-	.s0(q_4), // OUT
-	.s1(q_5), // OUT
-	.s2(q_6), // OUT
-	.s3(q_7), // OUT
-	.con(co_n_1), // OUT
-	.co0n(co0_n_1), // OUT
-	.co1n(co1_n_1), // OUT
-	.g(g_1), // OUT
-	.p(p_1), // OUT
-	.cin(cin_n_1), // IN
-	.ci0n(one), // IN
-	.ci1n(zero), // IN
-	.a0(a[4]), // IN
-	.b0(b[4]), // IN
-	.a1(a[5]), // IN
-	.b1(b[5]), // IN
-	.a2(a[6]), // IN
-	.b2(b[6]), // IN
-	.a3(a[7]), // IN
-	.b3(b[7])  // IN
+	.s0 /* OUT */ (q_4),
+	.s1 /* OUT */ (q_5),
+	.s2 /* OUT */ (q_6),
+	.s3 /* OUT */ (q_7),
+	.con /* OUT */ (co_n_1),
+	.co0n /* OUT */ (co0_n_1),
+	.co1n /* OUT */ (co1_n_1),
+	.g /* OUT */ (g_1),
+	.p /* OUT */ (p_1),
+	.cin /* IN */ (cin_n_1),
+	.ci0n /* IN */ (one),
+	.ci1n /* IN */ (zero),
+	.a0 /* IN */ (a[4]),
+	.b0 /* IN */ (b[4]),
+	.a1 /* IN */ (a[5]),
+	.b1 /* IN */ (b[5]),
+	.a2 /* IN */ (a[6]),
+	.b2 /* IN */ (b[6]),
+	.a3 /* IN */ (a[7]),
+	.b3 /* IN */ (b[7])
 );
 
 // ADDARRAY.NET (183) - add2 : fa4cs
 fa4cs add2_inst
 (
-	.s0(q_8), // OUT
-	.s1(q_9), // OUT
-	.s2(q_10), // OUT
-	.s3(q_11), // OUT
-	.con(co_n_2), // OUT
-	.co0n(co0_n_2), // OUT
-	.co1n(co1_n_2), // OUT
-	.g(g_2), // OUT
-	.p(p_2), // OUT
-	.cin(cin_n_2), // IN
-	.ci0n(one), // IN
-	.ci1n(zero), // IN
-	.a0(a[8]), // IN
-	.b0(b[8]), // IN
-	.a1(a[9]), // IN
-	.b1(b[9]), // IN
-	.a2(a[10]), // IN
-	.b2(b[10]), // IN
-	.a3(a[11]), // IN
-	.b3(b[11])  // IN
+	.s0 /* OUT */ (q_8),
+	.s1 /* OUT */ (q_9),
+	.s2 /* OUT */ (q_10),
+	.s3 /* OUT */ (q_11),
+	.con /* OUT */ (co_n_2),
+	.co0n /* OUT */ (co0_n_2),
+	.co1n /* OUT */ (co1_n_2),
+	.g /* OUT */ (g_2),
+	.p /* OUT */ (p_2),
+	.cin /* IN */ (cin_n_2),
+	.ci0n /* IN */ (one),
+	.ci1n /* IN */ (zero),
+	.a0 /* IN */ (a[8]),
+	.b0 /* IN */ (b[8]),
+	.a1 /* IN */ (a[9]),
+	.b1 /* IN */ (b[9]),
+	.a2 /* IN */ (a[10]),
+	.b2 /* IN */ (b[10]),
+	.a3 /* IN */ (a[11]),
+	.b3 /* IN */ (b[11])
 );
 
 // ADDARRAY.NET (186) - add3 : fa4cs
 fa4cs add3_inst
 (
-	.s0(q_12), // OUT
-	.s1(q_13), // OUT
-	.s2(q_14), // OUT
-	.s3(q_15), // OUT
-	.con(co_n_3), // OUT
-	.co0n(co0_n_3), // OUT
-	.co1n(co1_n_3), // OUT
-	.g(g_3), // OUT
-	.p(p_3), // OUT
-	.cin(cin_n_3), // IN
-	.ci0n(one), // IN
-	.ci1n(zero), // IN
-	.a0(a[12]), // IN
-	.b0(b[12]), // IN
-	.a1(a[13]), // IN
-	.b1(b[13]), // IN
-	.a2(a[14]), // IN
-	.b2(b[14]), // IN
-	.a3(a[15]), // IN
-	.b3(b[15])  // IN
+	.s0 /* OUT */ (q_12),
+	.s1 /* OUT */ (q_13),
+	.s2 /* OUT */ (q_14),
+	.s3 /* OUT */ (q_15),
+	.con /* OUT */ (co_n_3),
+	.co0n /* OUT */ (co0_n_3),
+	.co1n /* OUT */ (co1_n_3),
+	.g /* OUT */ (g_3),
+	.p /* OUT */ (p_3),
+	.cin /* IN */ (cin_n_3),
+	.ci0n /* IN */ (one),
+	.ci1n /* IN */ (zero),
+	.a0 /* IN */ (a[12]),
+	.b0 /* IN */ (b[12]),
+	.a1 /* IN */ (a[13]),
+	.b1 /* IN */ (b[13]),
+	.a2 /* IN */ (a[14]),
+	.b2 /* IN */ (b[14]),
+	.a3 /* IN */ (a[15]),
+	.b3 /* IN */ (b[15])
 );
 
 // ADDARRAY.NET (189) - addcg : cg4
 cg4 addcg_inst
 (
-	.co0l(cin_n_1), // OUT
-	.co1l(cint_n_2), // OUT
-	.co2l(cint_n_3), // OUT
-	.g(g), // OUT
-	.p(p), // OUT
-	.cin(cin_n), // IN
-	.g0(g_0), // IN
-	.g1(g_1), // IN
-	.g2(g_2), // IN
-	.g3(g_3), // IN
-	.p0(p_0), // IN
-	.p1(p_1), // IN
-	.p2(p_2), // IN
-	.p3(p_3)  // IN
+	.co0l /* OUT */ (cin_n_1),
+	.co1l /* OUT */ (cint_n_2),
+	.co2l /* OUT */ (cint_n_3),
+	.g /* OUT */ (g),
+	.p /* OUT */ (p),
+	.cin /* IN */ (cin_n),
+	.g0 /* IN */ (g_0),
+	.g1 /* IN */ (g_1),
+	.g2 /* IN */ (g_2),
+	.g3 /* IN */ (g_3),
+	.p0 /* IN */ (p_0),
+	.p1 /* IN */ (p_1),
+	.p2 /* IN */ (p_2),
+	.p3 /* IN */ (p_3)
 );
 
 // ADDARRAY.NET (191) - cin\[2] : or2
@@ -275,19 +243,19 @@ assign co_obuf = (p & cin) | g;
 // ADDARRAY.NET (204) - btop : mx2
 mx2 btop_inst
 (
-	.z(btop), // OUT
-	.a0(b[15]), // IN
-	.a1(b[7]), // IN
-	.s(eightbit)  // IN
+	.z /* OUT */ (btop),
+	.a0 /* IN */ (b[15]),
+	.a1 /* IN */ (b[7]),
+	.s /* IN */ (eightbit)
 );
 
 // ADDARRAY.NET (205) - ctop : mx2p
 mx2 ctop_inst
 (
-	.z(ctop), // OUT
-	.a0(co_obuf), // IN
-	.a1(carry_0), // IN
-	.s(eightbit)  // IN
+	.z /* OUT */ (ctop),
+	.a0 /* IN */ (co_obuf),
+	.a1 /* IN */ (carry_0),
+	.s /* IN */ (eightbit)
 );
 
 // ADDARRAY.NET (206) - ctopb : nivh
@@ -308,134 +276,134 @@ assign hisaturate = eightbit_n & saturate;
 // ADDARRAY.NET (220) - r[0-7] : mx2p
 mx2 r_from_0_to_7_inst_0
 (
-	.z(r_0), // OUT
-	.a0(q_0), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_0),
+	.a0 /* IN */ (q_0),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_1
 (
-	.z(r_1), // OUT
-	.a0(q_1), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_1),
+	.a0 /* IN */ (q_1),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_2
 (
-	.z(r_2), // OUT
-	.a0(q_2), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_2),
+	.a0 /* IN */ (q_2),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_3
 (
-	.z(r_3), // OUT
-	.a0(q_3), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_3),
+	.a0 /* IN */ (q_3),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_4
 (
-	.z(r_4), // OUT
-	.a0(q_4), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_4),
+	.a0 /* IN */ (q_4),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_5
 (
-	.z(r_5), // OUT
-	.a0(q_5), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_5),
+	.a0 /* IN */ (q_5),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_6
 (
-	.z(r_6), // OUT
-	.a0(q_6), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_6),
+	.a0 /* IN */ (q_6),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 mx2 r_from_0_to_7_inst_7
 (
-	.z(r_7), // OUT
-	.a0(q_7), // IN
-	.a1(ctopb), // IN
-	.s(saturateb)  // IN
+	.z /* OUT */ (r_7),
+	.a0 /* IN */ (q_7),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (saturateb)
 );
 
 // ADDARRAY.NET (221) - r[8-15] : mx2p
 mx2 r_from_8_to_15_inst_0
 (
-	.z(r_8), // OUT
-	.a0(q_8), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_8),
+	.a0 /* IN */ (q_8),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_1
 (
-	.z(r_9), // OUT
-	.a0(q_9), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_9),
+	.a0 /* IN */ (q_9),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_2
 (
-	.z(r_10), // OUT
-	.a0(q_10), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_10),
+	.a0 /* IN */ (q_10),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_3
 (
-	.z(r_11), // OUT
-	.a0(q_11), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_11),
+	.a0 /* IN */ (q_11),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_4
 (
-	.z(r_12), // OUT
-	.a0(q_12), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_12),
+	.a0 /* IN */ (q_12),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_5
 (
-	.z(r_13), // OUT
-	.a0(q_13), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_13),
+	.a0 /* IN */ (q_13),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_6
 (
-	.z(r_14), // OUT
-	.a0(q_14), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_14),
+	.a0 /* IN */ (q_14),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 mx2 r_from_8_to_15_inst_7
 (
-	.z(r_15), // OUT
-	.a0(q_15), // IN
-	.a1(ctopb), // IN
-	.s(hisaturate)  // IN
+	.z /* OUT */ (r_15),
+	.a0 /* IN */ (q_15),
+	.a1 /* IN */ (ctopb),
+	.s /* IN */ (hisaturate)
 );
 
 // ADDARRAY.NET (223) - r : join
-assign r_b0_obuf = r_0;
-assign r_b1_obuf = r_1;
-assign r_b2_obuf = r_2;
-assign r_b3_obuf = r_3;
-assign r_b4_obuf = r_4;
-assign r_b5_obuf = r_5;
-assign r_b6_obuf = r_6;
-assign r_b7_obuf = r_7;
-assign r_b8_obuf = r_8;
-assign r_b9_obuf = r_9;
-assign r_b10_obuf = r_10;
-assign r_b11_obuf = r_11;
-assign r_b12_obuf = r_12;
-assign r_b13_obuf = r_13;
-assign r_b14_obuf = r_14;
-assign r_b15_obuf = r_15;
+assign r[0] = r_0;
+assign r[1] = r_1;
+assign r[2] = r_2;
+assign r[3] = r_3;
+assign r[4] = r_4;
+assign r[5] = r_5;
+assign r[6] = r_6;
+assign r[7] = r_7;
+assign r[8] = r_8;
+assign r[9] = r_9;
+assign r[10] = r_10;
+assign r[11] = r_11;
+assign r[12] = r_12;
+assign r[13] = r_13;
+assign r[14] = r_14;
+assign r[15] = r_15;
 endmodule

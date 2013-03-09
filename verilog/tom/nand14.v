@@ -23,14 +23,6 @@ wire z1;
 wire z2;
 wire z3;
 
-// Output buffers
-wire z_obuf;
-
-
-// Output buffers
-assign z = z_obuf;
-
-
 // ABUS.NET (507) - z0 : an4
 assign z0 = a & b & c & d;
 
@@ -44,5 +36,5 @@ assign z2 = i & j & k & l;
 assign z3 = m & n;
 
 // ABUS.NET (511) - z : nd4p
-assign z_obuf = ~(z0 & z1 & z2 & z3);
+assign z = ~(z0 & z1 & z2 & z3);
 endmodule

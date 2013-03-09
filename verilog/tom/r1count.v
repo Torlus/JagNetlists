@@ -58,37 +58,37 @@ assign cntt_0 = ~count_0_obuf;
 // SYSTOLIC.NET (223) - cntt1 : ha1
 ha1 cntt1_inst
 (
-	.s(cntt_1), // OUT
-	.co(cntc_1), // OUT
-	.a(count_1_obuf), // IN
-	.b(count_0_obuf)  // IN
+	.s /* OUT */ (cntt_1),
+	.co /* OUT */ (cntc_1),
+	.a /* IN */ (count_1_obuf),
+	.b /* IN */ (count_0_obuf)
 );
 
 // SYSTOLIC.NET (224) - cntt2 : ha1
 ha1 cntt2_inst
 (
-	.s(cntt_2), // OUT
-	.co(cntc_2), // OUT
-	.a(count_2_obuf), // IN
-	.b(cntc_1)  // IN
+	.s /* OUT */ (cntt_2),
+	.co /* OUT */ (cntc_2),
+	.a /* IN */ (count_2_obuf),
+	.b /* IN */ (cntc_1)
 );
 
 // SYSTOLIC.NET (225) - cntt3 : ha1
 ha1 cntt3_inst
 (
-	.s(cntt_3), // OUT
-	.co(cntc_3), // OUT
-	.a(count_3_obuf), // IN
-	.b(cntc_2)  // IN
+	.s /* OUT */ (cntt_3),
+	.co /* OUT */ (cntc_3),
+	.a /* IN */ (count_3_obuf),
+	.b /* IN */ (cntc_2)
 );
 
 // SYSTOLIC.NET (226) - cntt4 : ha1
 ha1 cntt4_inst
 (
-	.s(cntt_4), // OUT
-	.co(cntc_4), // OUT
-	.a(count_4_obuf), // IN
-	.b(cntc_3)  // IN
+	.s /* OUT */ (cntt_4),
+	.co /* OUT */ (cntc_4),
+	.a /* IN */ (count_4_obuf),
+	.b /* IN */ (cntc_3)
 );
 
 // SYSTOLIC.NET (227) - cntt5 : eo
@@ -97,100 +97,100 @@ assign cntt_5 = count_5_obuf ^ cntc_4;
 // SYSTOLIC.NET (229) - cnti[0] : mx2g
 mx2g cnti_index_0_inst
 (
-	.z(cnti_0), // OUT
-	.a0(count_0_obuf), // IN
-	.a1(cntt_0), // IN
-	.s(cnten), // IN
-	.gn(cntld)  // IN
+	.z /* OUT */ (cnti_0),
+	.a0 /* IN */ (count_0_obuf),
+	.a1 /* IN */ (cntt_0),
+	.s /* IN */ (cnten),
+	.gn /* IN */ (cntld)
 );
 
 // SYSTOLIC.NET (230) - cnti[1-5] : mx4
 mx4 cnti_from_1_to_5_inst_0
 (
-	.z(cnti_1), // OUT
-	.a0(count_1_obuf), // IN
-	.a1(cntt_1), // IN
-	.a2(mr1_0), // IN
-	.a3(mr1_0), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_1),
+	.a0 /* IN */ (count_1_obuf),
+	.a1 /* IN */ (cntt_1),
+	.a2 /* IN */ (mr1_0),
+	.a3 /* IN */ (mr1_0),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_1_to_5_inst_1
 (
-	.z(cnti_2), // OUT
-	.a0(count_2_obuf), // IN
-	.a1(cntt_2), // IN
-	.a2(mr1_1), // IN
-	.a3(mr1_1), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_2),
+	.a0 /* IN */ (count_2_obuf),
+	.a1 /* IN */ (cntt_2),
+	.a2 /* IN */ (mr1_1),
+	.a3 /* IN */ (mr1_1),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_1_to_5_inst_2
 (
-	.z(cnti_3), // OUT
-	.a0(count_3_obuf), // IN
-	.a1(cntt_3), // IN
-	.a2(mr1_2), // IN
-	.a3(mr1_2), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_3),
+	.a0 /* IN */ (count_3_obuf),
+	.a1 /* IN */ (cntt_3),
+	.a2 /* IN */ (mr1_2),
+	.a3 /* IN */ (mr1_2),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_1_to_5_inst_3
 (
-	.z(cnti_4), // OUT
-	.a0(count_4_obuf), // IN
-	.a1(cntt_4), // IN
-	.a2(mr1_3), // IN
-	.a3(mr1_3), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_4),
+	.a0 /* IN */ (count_4_obuf),
+	.a1 /* IN */ (cntt_4),
+	.a2 /* IN */ (mr1_3),
+	.a3 /* IN */ (mr1_3),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_1_to_5_inst_4
 (
-	.z(cnti_5), // OUT
-	.a0(count_5_obuf), // IN
-	.a1(cntt_5), // IN
-	.a2(mr1_4), // IN
-	.a3(mr1_4), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_5),
+	.a0 /* IN */ (count_5_obuf),
+	.a1 /* IN */ (cntt_5),
+	.a2 /* IN */ (mr1_4),
+	.a3 /* IN */ (mr1_4),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 
 // SYSTOLIC.NET (233) - count[0-5] : fd1q
 fd1q count_from_0_to_5_inst_0
 (
-	.q(count_0_obuf), // OUT
-	.d(cnti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_0_obuf),
+	.d /* IN */ (cnti_0),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_5_inst_1
 (
-	.q(count_1_obuf), // OUT
-	.d(cnti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_1_obuf),
+	.d /* IN */ (cnti_1),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_5_inst_2
 (
-	.q(count_2_obuf), // OUT
-	.d(cnti_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_2_obuf),
+	.d /* IN */ (cnti_2),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_5_inst_3
 (
-	.q(count_3_obuf), // OUT
-	.d(cnti_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_3_obuf),
+	.d /* IN */ (cnti_3),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_5_inst_4
 (
-	.q(count_4_obuf), // OUT
-	.d(cnti_4), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_4_obuf),
+	.d /* IN */ (cnti_4),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_5_inst_5
 (
-	.q(count_5_obuf), // OUT
-	.d(cnti_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_5_obuf),
+	.d /* IN */ (cnti_5),
+	.cp /* IN */ (clk)
 );
 endmodule

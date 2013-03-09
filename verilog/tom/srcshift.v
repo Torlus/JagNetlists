@@ -2,13 +2,13 @@
 
 module srcshift
 (
-	output[0:31] srcd_0;
-	output[0:31] srcd_1;
+	output [0:31] srcd_0;
+	output [0:31] srcd_1;
 	input big_pix,
-	input[0:31] srcd1lo;
-	input[0:31] srcd1hi;
-	input[0:31] srcd2lo;
-	input[0:31] srcd2hi;
+	input [0:31] srcd1lo;
+	input [0:31] srcd1hi;
+	input [0:31] srcd2lo;
+	input [0:31] srcd2hi;
 	input srcshift_0,
 	input srcshift_1,
 	input srcshift_2,
@@ -685,10 +685,10 @@ assign srcshift_n_5 = ~srcshift_5;
 // SRCSHIFT.NET (41) - besh[1] : ha1
 ha1 besh_index_1_inst
 (
-	.s(besh_1), // OUT
-	.co(bec_1), // OUT
-	.a(srcshift_n_0), // IN
-	.b(srcshift_n_1)  // IN
+	.s /* OUT */ (besh_1),
+	.co /* OUT */ (bec_1),
+	.a /* IN */ (srcshift_n_0),
+	.b /* IN */ (srcshift_n_1)
 );
 
 // SRCSHIFT.NET (43) - besh[2] : eo
@@ -697,19 +697,19 @@ assign besh_2 = bec_1 ^ srcshift_n_2;
 // SRCSHIFT.NET (48) - besh[4] : ha1
 ha1 besh_index_4_inst
 (
-	.s(besh_4), // OUT
-	.co(bec_4), // OUT
-	.a(srcshift_n_3), // IN
-	.b(srcshift_n_4)  // IN
+	.s /* OUT */ (besh_4),
+	.co /* OUT */ (bec_4),
+	.a /* IN */ (srcshift_n_3),
+	.b /* IN */ (srcshift_n_4)
 );
 
 // SRCSHIFT.NET (50) - besh[5] : ha1
 ha1 besh_index_5_inst
 (
-	.s(besh_5), // OUT
-	.co(bec_5), // OUT
-	.a(bec_4), // IN
-	.b(srcshift_n_5)  // IN
+	.s /* OUT */ (besh_5),
+	.co /* OUT */ (bec_5),
+	.a /* IN */ (bec_4),
+	.b /* IN */ (srcshift_n_5)
 );
 
 // SRCSHIFT.NET (51) - besh[6] : iv
@@ -721,19 +721,19 @@ assign shift_0 = srcshift_0;
 // SRCSHIFT.NET (54) - shift[1] : mx2m
 mx2 shift_index_1_inst
 (
-	.z(shift_1), // OUT
-	.a0(srcshift_1), // IN
-	.a1(besh_1), // IN
-	.s(big_pix)  // IN
+	.z /* OUT */ (shift_1),
+	.a0 /* IN */ (srcshift_1),
+	.a1 /* IN */ (besh_1),
+	.s /* IN */ (big_pix)
 );
 
 // SRCSHIFT.NET (55) - shift[2] : mx2m
 mx2 shift_index_2_inst
 (
-	.z(shift_2), // OUT
-	.a0(srcshift_2), // IN
-	.a1(besh_2), // IN
-	.s(big_pix)  // IN
+	.z /* OUT */ (shift_2),
+	.a0 /* IN */ (srcshift_2),
+	.a1 /* IN */ (besh_2),
+	.s /* IN */ (big_pix)
 );
 
 // SRCSHIFT.NET (56) - shiftt[3] : niv
@@ -742,19 +742,19 @@ assign shiftt_3 = srcshift_3;
 // SRCSHIFT.NET (57) - shiftt[4] : mx2
 mx2 shiftt_index_4_inst
 (
-	.z(shiftt_4), // OUT
-	.a0(srcshift_4), // IN
-	.a1(besh_4), // IN
-	.s(big_pix)  // IN
+	.z /* OUT */ (shiftt_4),
+	.a0 /* IN */ (srcshift_4),
+	.a1 /* IN */ (besh_4),
+	.s /* IN */ (big_pix)
 );
 
 // SRCSHIFT.NET (58) - shiftt[5] : mx2
 mx2 shiftt_index_5_inst
 (
-	.z(shiftt_5), // OUT
-	.a0(srcshift_5), // IN
-	.a1(besh_5), // IN
-	.s(big_pix)  // IN
+	.z /* OUT */ (shiftt_5),
+	.a0 /* IN */ (srcshift_5),
+	.a1 /* IN */ (besh_5),
+	.s /* IN */ (big_pix)
 );
 
 // SRCSHIFT.NET (59) - shiftt[6] : an2
@@ -775,2599 +775,2599 @@ assign shift_6 = shiftt_6;
 // SRCSHIFT.NET (68) - onep[8-63] : mx2
 mx2 onep_from_8_to_63_inst_0
 (
-	.z(onep_8), // OUT
-	.a0(shsrc_8), // IN
-	.a1(shsrc_72), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_8),
+	.a0 /* IN */ (shsrc_8),
+	.a1 /* IN */ (shsrc_72),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_1
 (
-	.z(onep_9), // OUT
-	.a0(shsrc_9), // IN
-	.a1(shsrc_73), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_9),
+	.a0 /* IN */ (shsrc_9),
+	.a1 /* IN */ (shsrc_73),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_2
 (
-	.z(onep_10), // OUT
-	.a0(shsrc_10), // IN
-	.a1(shsrc_74), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_10),
+	.a0 /* IN */ (shsrc_10),
+	.a1 /* IN */ (shsrc_74),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_3
 (
-	.z(onep_11), // OUT
-	.a0(shsrc_11), // IN
-	.a1(shsrc_75), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_11),
+	.a0 /* IN */ (shsrc_11),
+	.a1 /* IN */ (shsrc_75),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_4
 (
-	.z(onep_12), // OUT
-	.a0(shsrc_12), // IN
-	.a1(shsrc_76), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_12),
+	.a0 /* IN */ (shsrc_12),
+	.a1 /* IN */ (shsrc_76),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_5
 (
-	.z(onep_13), // OUT
-	.a0(shsrc_13), // IN
-	.a1(shsrc_77), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_13),
+	.a0 /* IN */ (shsrc_13),
+	.a1 /* IN */ (shsrc_77),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_6
 (
-	.z(onep_14), // OUT
-	.a0(shsrc_14), // IN
-	.a1(shsrc_78), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_14),
+	.a0 /* IN */ (shsrc_14),
+	.a1 /* IN */ (shsrc_78),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_7
 (
-	.z(onep_15), // OUT
-	.a0(shsrc_15), // IN
-	.a1(shsrc_79), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_15),
+	.a0 /* IN */ (shsrc_15),
+	.a1 /* IN */ (shsrc_79),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_8
 (
-	.z(onep_16), // OUT
-	.a0(shsrc_16), // IN
-	.a1(shsrc_80), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_16),
+	.a0 /* IN */ (shsrc_16),
+	.a1 /* IN */ (shsrc_80),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_9
 (
-	.z(onep_17), // OUT
-	.a0(shsrc_17), // IN
-	.a1(shsrc_81), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_17),
+	.a0 /* IN */ (shsrc_17),
+	.a1 /* IN */ (shsrc_81),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_10
 (
-	.z(onep_18), // OUT
-	.a0(shsrc_18), // IN
-	.a1(shsrc_82), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_18),
+	.a0 /* IN */ (shsrc_18),
+	.a1 /* IN */ (shsrc_82),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_11
 (
-	.z(onep_19), // OUT
-	.a0(shsrc_19), // IN
-	.a1(shsrc_83), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_19),
+	.a0 /* IN */ (shsrc_19),
+	.a1 /* IN */ (shsrc_83),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_12
 (
-	.z(onep_20), // OUT
-	.a0(shsrc_20), // IN
-	.a1(shsrc_84), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_20),
+	.a0 /* IN */ (shsrc_20),
+	.a1 /* IN */ (shsrc_84),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_13
 (
-	.z(onep_21), // OUT
-	.a0(shsrc_21), // IN
-	.a1(shsrc_85), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_21),
+	.a0 /* IN */ (shsrc_21),
+	.a1 /* IN */ (shsrc_85),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_14
 (
-	.z(onep_22), // OUT
-	.a0(shsrc_22), // IN
-	.a1(shsrc_86), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_22),
+	.a0 /* IN */ (shsrc_22),
+	.a1 /* IN */ (shsrc_86),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_15
 (
-	.z(onep_23), // OUT
-	.a0(shsrc_23), // IN
-	.a1(shsrc_87), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_23),
+	.a0 /* IN */ (shsrc_23),
+	.a1 /* IN */ (shsrc_87),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_16
 (
-	.z(onep_24), // OUT
-	.a0(shsrc_24), // IN
-	.a1(shsrc_88), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_24),
+	.a0 /* IN */ (shsrc_24),
+	.a1 /* IN */ (shsrc_88),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_17
 (
-	.z(onep_25), // OUT
-	.a0(shsrc_25), // IN
-	.a1(shsrc_89), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_25),
+	.a0 /* IN */ (shsrc_25),
+	.a1 /* IN */ (shsrc_89),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_18
 (
-	.z(onep_26), // OUT
-	.a0(shsrc_26), // IN
-	.a1(shsrc_90), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_26),
+	.a0 /* IN */ (shsrc_26),
+	.a1 /* IN */ (shsrc_90),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_19
 (
-	.z(onep_27), // OUT
-	.a0(shsrc_27), // IN
-	.a1(shsrc_91), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_27),
+	.a0 /* IN */ (shsrc_27),
+	.a1 /* IN */ (shsrc_91),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_20
 (
-	.z(onep_28), // OUT
-	.a0(shsrc_28), // IN
-	.a1(shsrc_92), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_28),
+	.a0 /* IN */ (shsrc_28),
+	.a1 /* IN */ (shsrc_92),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_21
 (
-	.z(onep_29), // OUT
-	.a0(shsrc_29), // IN
-	.a1(shsrc_93), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_29),
+	.a0 /* IN */ (shsrc_29),
+	.a1 /* IN */ (shsrc_93),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_22
 (
-	.z(onep_30), // OUT
-	.a0(shsrc_30), // IN
-	.a1(shsrc_94), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_30),
+	.a0 /* IN */ (shsrc_30),
+	.a1 /* IN */ (shsrc_94),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_23
 (
-	.z(onep_31), // OUT
-	.a0(shsrc_31), // IN
-	.a1(shsrc_95), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_31),
+	.a0 /* IN */ (shsrc_31),
+	.a1 /* IN */ (shsrc_95),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_24
 (
-	.z(onep_32), // OUT
-	.a0(shsrc_32), // IN
-	.a1(shsrc_96), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_32),
+	.a0 /* IN */ (shsrc_32),
+	.a1 /* IN */ (shsrc_96),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_25
 (
-	.z(onep_33), // OUT
-	.a0(shsrc_33), // IN
-	.a1(shsrc_97), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_33),
+	.a0 /* IN */ (shsrc_33),
+	.a1 /* IN */ (shsrc_97),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_26
 (
-	.z(onep_34), // OUT
-	.a0(shsrc_34), // IN
-	.a1(shsrc_98), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_34),
+	.a0 /* IN */ (shsrc_34),
+	.a1 /* IN */ (shsrc_98),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_27
 (
-	.z(onep_35), // OUT
-	.a0(shsrc_35), // IN
-	.a1(shsrc_99), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_35),
+	.a0 /* IN */ (shsrc_35),
+	.a1 /* IN */ (shsrc_99),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_28
 (
-	.z(onep_36), // OUT
-	.a0(shsrc_36), // IN
-	.a1(shsrc_100), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_36),
+	.a0 /* IN */ (shsrc_36),
+	.a1 /* IN */ (shsrc_100),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_29
 (
-	.z(onep_37), // OUT
-	.a0(shsrc_37), // IN
-	.a1(shsrc_101), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_37),
+	.a0 /* IN */ (shsrc_37),
+	.a1 /* IN */ (shsrc_101),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_30
 (
-	.z(onep_38), // OUT
-	.a0(shsrc_38), // IN
-	.a1(shsrc_102), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_38),
+	.a0 /* IN */ (shsrc_38),
+	.a1 /* IN */ (shsrc_102),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_31
 (
-	.z(onep_39), // OUT
-	.a0(shsrc_39), // IN
-	.a1(shsrc_103), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_39),
+	.a0 /* IN */ (shsrc_39),
+	.a1 /* IN */ (shsrc_103),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_32
 (
-	.z(onep_40), // OUT
-	.a0(shsrc_40), // IN
-	.a1(shsrc_104), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_40),
+	.a0 /* IN */ (shsrc_40),
+	.a1 /* IN */ (shsrc_104),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_33
 (
-	.z(onep_41), // OUT
-	.a0(shsrc_41), // IN
-	.a1(shsrc_105), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_41),
+	.a0 /* IN */ (shsrc_41),
+	.a1 /* IN */ (shsrc_105),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_34
 (
-	.z(onep_42), // OUT
-	.a0(shsrc_42), // IN
-	.a1(shsrc_106), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_42),
+	.a0 /* IN */ (shsrc_42),
+	.a1 /* IN */ (shsrc_106),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_35
 (
-	.z(onep_43), // OUT
-	.a0(shsrc_43), // IN
-	.a1(shsrc_107), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_43),
+	.a0 /* IN */ (shsrc_43),
+	.a1 /* IN */ (shsrc_107),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_36
 (
-	.z(onep_44), // OUT
-	.a0(shsrc_44), // IN
-	.a1(shsrc_108), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_44),
+	.a0 /* IN */ (shsrc_44),
+	.a1 /* IN */ (shsrc_108),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_37
 (
-	.z(onep_45), // OUT
-	.a0(shsrc_45), // IN
-	.a1(shsrc_109), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_45),
+	.a0 /* IN */ (shsrc_45),
+	.a1 /* IN */ (shsrc_109),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_38
 (
-	.z(onep_46), // OUT
-	.a0(shsrc_46), // IN
-	.a1(shsrc_110), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_46),
+	.a0 /* IN */ (shsrc_46),
+	.a1 /* IN */ (shsrc_110),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_39
 (
-	.z(onep_47), // OUT
-	.a0(shsrc_47), // IN
-	.a1(shsrc_111), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_47),
+	.a0 /* IN */ (shsrc_47),
+	.a1 /* IN */ (shsrc_111),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_40
 (
-	.z(onep_48), // OUT
-	.a0(shsrc_48), // IN
-	.a1(shsrc_112), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_48),
+	.a0 /* IN */ (shsrc_48),
+	.a1 /* IN */ (shsrc_112),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_41
 (
-	.z(onep_49), // OUT
-	.a0(shsrc_49), // IN
-	.a1(shsrc_113), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_49),
+	.a0 /* IN */ (shsrc_49),
+	.a1 /* IN */ (shsrc_113),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_42
 (
-	.z(onep_50), // OUT
-	.a0(shsrc_50), // IN
-	.a1(shsrc_114), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_50),
+	.a0 /* IN */ (shsrc_50),
+	.a1 /* IN */ (shsrc_114),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_43
 (
-	.z(onep_51), // OUT
-	.a0(shsrc_51), // IN
-	.a1(shsrc_115), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_51),
+	.a0 /* IN */ (shsrc_51),
+	.a1 /* IN */ (shsrc_115),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_44
 (
-	.z(onep_52), // OUT
-	.a0(shsrc_52), // IN
-	.a1(shsrc_116), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_52),
+	.a0 /* IN */ (shsrc_52),
+	.a1 /* IN */ (shsrc_116),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_45
 (
-	.z(onep_53), // OUT
-	.a0(shsrc_53), // IN
-	.a1(shsrc_117), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_53),
+	.a0 /* IN */ (shsrc_53),
+	.a1 /* IN */ (shsrc_117),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_46
 (
-	.z(onep_54), // OUT
-	.a0(shsrc_54), // IN
-	.a1(shsrc_118), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_54),
+	.a0 /* IN */ (shsrc_54),
+	.a1 /* IN */ (shsrc_118),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_47
 (
-	.z(onep_55), // OUT
-	.a0(shsrc_55), // IN
-	.a1(shsrc_119), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_55),
+	.a0 /* IN */ (shsrc_55),
+	.a1 /* IN */ (shsrc_119),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_48
 (
-	.z(onep_56), // OUT
-	.a0(shsrc_56), // IN
-	.a1(shsrc_120), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_56),
+	.a0 /* IN */ (shsrc_56),
+	.a1 /* IN */ (shsrc_120),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_49
 (
-	.z(onep_57), // OUT
-	.a0(shsrc_57), // IN
-	.a1(shsrc_121), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_57),
+	.a0 /* IN */ (shsrc_57),
+	.a1 /* IN */ (shsrc_121),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_50
 (
-	.z(onep_58), // OUT
-	.a0(shsrc_58), // IN
-	.a1(shsrc_122), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_58),
+	.a0 /* IN */ (shsrc_58),
+	.a1 /* IN */ (shsrc_122),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_51
 (
-	.z(onep_59), // OUT
-	.a0(shsrc_59), // IN
-	.a1(shsrc_123), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_59),
+	.a0 /* IN */ (shsrc_59),
+	.a1 /* IN */ (shsrc_123),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_52
 (
-	.z(onep_60), // OUT
-	.a0(shsrc_60), // IN
-	.a1(shsrc_124), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_60),
+	.a0 /* IN */ (shsrc_60),
+	.a1 /* IN */ (shsrc_124),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_53
 (
-	.z(onep_61), // OUT
-	.a0(shsrc_61), // IN
-	.a1(shsrc_125), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_61),
+	.a0 /* IN */ (shsrc_61),
+	.a1 /* IN */ (shsrc_125),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_54
 (
-	.z(onep_62), // OUT
-	.a0(shsrc_62), // IN
-	.a1(shsrc_126), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_62),
+	.a0 /* IN */ (shsrc_62),
+	.a1 /* IN */ (shsrc_126),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_8_to_63_inst_55
 (
-	.z(onep_63), // OUT
-	.a0(shsrc_63), // IN
-	.a1(shsrc_127), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_63),
+	.a0 /* IN */ (shsrc_63),
+	.a1 /* IN */ (shsrc_127),
+	.s /* IN */ (shift_6)
 );
 
 // SRCSHIFT.NET (70) - onep[64-127] : mx2
 mx2 onep_from_64_to_127_inst_0
 (
-	.z(onep_64), // OUT
-	.a0(shsrc_64), // IN
-	.a1(shsrc_0), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_64),
+	.a0 /* IN */ (shsrc_64),
+	.a1 /* IN */ (shsrc_0),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_1
 (
-	.z(onep_65), // OUT
-	.a0(shsrc_65), // IN
-	.a1(shsrc_1), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_65),
+	.a0 /* IN */ (shsrc_65),
+	.a1 /* IN */ (shsrc_1),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_2
 (
-	.z(onep_66), // OUT
-	.a0(shsrc_66), // IN
-	.a1(shsrc_2), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_66),
+	.a0 /* IN */ (shsrc_66),
+	.a1 /* IN */ (shsrc_2),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_3
 (
-	.z(onep_67), // OUT
-	.a0(shsrc_67), // IN
-	.a1(shsrc_3), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_67),
+	.a0 /* IN */ (shsrc_67),
+	.a1 /* IN */ (shsrc_3),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_4
 (
-	.z(onep_68), // OUT
-	.a0(shsrc_68), // IN
-	.a1(shsrc_4), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_68),
+	.a0 /* IN */ (shsrc_68),
+	.a1 /* IN */ (shsrc_4),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_5
 (
-	.z(onep_69), // OUT
-	.a0(shsrc_69), // IN
-	.a1(shsrc_5), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_69),
+	.a0 /* IN */ (shsrc_69),
+	.a1 /* IN */ (shsrc_5),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_6
 (
-	.z(onep_70), // OUT
-	.a0(shsrc_70), // IN
-	.a1(shsrc_6), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_70),
+	.a0 /* IN */ (shsrc_70),
+	.a1 /* IN */ (shsrc_6),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_7
 (
-	.z(onep_71), // OUT
-	.a0(shsrc_71), // IN
-	.a1(shsrc_7), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_71),
+	.a0 /* IN */ (shsrc_71),
+	.a1 /* IN */ (shsrc_7),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_8
 (
-	.z(onep_72), // OUT
-	.a0(shsrc_72), // IN
-	.a1(shsrc_8), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_72),
+	.a0 /* IN */ (shsrc_72),
+	.a1 /* IN */ (shsrc_8),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_9
 (
-	.z(onep_73), // OUT
-	.a0(shsrc_73), // IN
-	.a1(shsrc_9), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_73),
+	.a0 /* IN */ (shsrc_73),
+	.a1 /* IN */ (shsrc_9),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_10
 (
-	.z(onep_74), // OUT
-	.a0(shsrc_74), // IN
-	.a1(shsrc_10), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_74),
+	.a0 /* IN */ (shsrc_74),
+	.a1 /* IN */ (shsrc_10),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_11
 (
-	.z(onep_75), // OUT
-	.a0(shsrc_75), // IN
-	.a1(shsrc_11), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_75),
+	.a0 /* IN */ (shsrc_75),
+	.a1 /* IN */ (shsrc_11),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_12
 (
-	.z(onep_76), // OUT
-	.a0(shsrc_76), // IN
-	.a1(shsrc_12), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_76),
+	.a0 /* IN */ (shsrc_76),
+	.a1 /* IN */ (shsrc_12),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_13
 (
-	.z(onep_77), // OUT
-	.a0(shsrc_77), // IN
-	.a1(shsrc_13), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_77),
+	.a0 /* IN */ (shsrc_77),
+	.a1 /* IN */ (shsrc_13),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_14
 (
-	.z(onep_78), // OUT
-	.a0(shsrc_78), // IN
-	.a1(shsrc_14), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_78),
+	.a0 /* IN */ (shsrc_78),
+	.a1 /* IN */ (shsrc_14),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_15
 (
-	.z(onep_79), // OUT
-	.a0(shsrc_79), // IN
-	.a1(shsrc_15), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_79),
+	.a0 /* IN */ (shsrc_79),
+	.a1 /* IN */ (shsrc_15),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_16
 (
-	.z(onep_80), // OUT
-	.a0(shsrc_80), // IN
-	.a1(shsrc_16), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_80),
+	.a0 /* IN */ (shsrc_80),
+	.a1 /* IN */ (shsrc_16),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_17
 (
-	.z(onep_81), // OUT
-	.a0(shsrc_81), // IN
-	.a1(shsrc_17), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_81),
+	.a0 /* IN */ (shsrc_81),
+	.a1 /* IN */ (shsrc_17),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_18
 (
-	.z(onep_82), // OUT
-	.a0(shsrc_82), // IN
-	.a1(shsrc_18), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_82),
+	.a0 /* IN */ (shsrc_82),
+	.a1 /* IN */ (shsrc_18),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_19
 (
-	.z(onep_83), // OUT
-	.a0(shsrc_83), // IN
-	.a1(shsrc_19), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_83),
+	.a0 /* IN */ (shsrc_83),
+	.a1 /* IN */ (shsrc_19),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_20
 (
-	.z(onep_84), // OUT
-	.a0(shsrc_84), // IN
-	.a1(shsrc_20), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_84),
+	.a0 /* IN */ (shsrc_84),
+	.a1 /* IN */ (shsrc_20),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_21
 (
-	.z(onep_85), // OUT
-	.a0(shsrc_85), // IN
-	.a1(shsrc_21), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_85),
+	.a0 /* IN */ (shsrc_85),
+	.a1 /* IN */ (shsrc_21),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_22
 (
-	.z(onep_86), // OUT
-	.a0(shsrc_86), // IN
-	.a1(shsrc_22), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_86),
+	.a0 /* IN */ (shsrc_86),
+	.a1 /* IN */ (shsrc_22),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_23
 (
-	.z(onep_87), // OUT
-	.a0(shsrc_87), // IN
-	.a1(shsrc_23), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_87),
+	.a0 /* IN */ (shsrc_87),
+	.a1 /* IN */ (shsrc_23),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_24
 (
-	.z(onep_88), // OUT
-	.a0(shsrc_88), // IN
-	.a1(shsrc_24), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_88),
+	.a0 /* IN */ (shsrc_88),
+	.a1 /* IN */ (shsrc_24),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_25
 (
-	.z(onep_89), // OUT
-	.a0(shsrc_89), // IN
-	.a1(shsrc_25), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_89),
+	.a0 /* IN */ (shsrc_89),
+	.a1 /* IN */ (shsrc_25),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_26
 (
-	.z(onep_90), // OUT
-	.a0(shsrc_90), // IN
-	.a1(shsrc_26), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_90),
+	.a0 /* IN */ (shsrc_90),
+	.a1 /* IN */ (shsrc_26),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_27
 (
-	.z(onep_91), // OUT
-	.a0(shsrc_91), // IN
-	.a1(shsrc_27), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_91),
+	.a0 /* IN */ (shsrc_91),
+	.a1 /* IN */ (shsrc_27),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_28
 (
-	.z(onep_92), // OUT
-	.a0(shsrc_92), // IN
-	.a1(shsrc_28), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_92),
+	.a0 /* IN */ (shsrc_92),
+	.a1 /* IN */ (shsrc_28),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_29
 (
-	.z(onep_93), // OUT
-	.a0(shsrc_93), // IN
-	.a1(shsrc_29), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_93),
+	.a0 /* IN */ (shsrc_93),
+	.a1 /* IN */ (shsrc_29),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_30
 (
-	.z(onep_94), // OUT
-	.a0(shsrc_94), // IN
-	.a1(shsrc_30), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_94),
+	.a0 /* IN */ (shsrc_94),
+	.a1 /* IN */ (shsrc_30),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_31
 (
-	.z(onep_95), // OUT
-	.a0(shsrc_95), // IN
-	.a1(shsrc_31), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_95),
+	.a0 /* IN */ (shsrc_95),
+	.a1 /* IN */ (shsrc_31),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_32
 (
-	.z(onep_96), // OUT
-	.a0(shsrc_96), // IN
-	.a1(shsrc_32), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_96),
+	.a0 /* IN */ (shsrc_96),
+	.a1 /* IN */ (shsrc_32),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_33
 (
-	.z(onep_97), // OUT
-	.a0(shsrc_97), // IN
-	.a1(shsrc_33), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_97),
+	.a0 /* IN */ (shsrc_97),
+	.a1 /* IN */ (shsrc_33),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_34
 (
-	.z(onep_98), // OUT
-	.a0(shsrc_98), // IN
-	.a1(shsrc_34), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_98),
+	.a0 /* IN */ (shsrc_98),
+	.a1 /* IN */ (shsrc_34),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_35
 (
-	.z(onep_99), // OUT
-	.a0(shsrc_99), // IN
-	.a1(shsrc_35), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_99),
+	.a0 /* IN */ (shsrc_99),
+	.a1 /* IN */ (shsrc_35),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_36
 (
-	.z(onep_100), // OUT
-	.a0(shsrc_100), // IN
-	.a1(shsrc_36), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_100),
+	.a0 /* IN */ (shsrc_100),
+	.a1 /* IN */ (shsrc_36),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_37
 (
-	.z(onep_101), // OUT
-	.a0(shsrc_101), // IN
-	.a1(shsrc_37), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_101),
+	.a0 /* IN */ (shsrc_101),
+	.a1 /* IN */ (shsrc_37),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_38
 (
-	.z(onep_102), // OUT
-	.a0(shsrc_102), // IN
-	.a1(shsrc_38), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_102),
+	.a0 /* IN */ (shsrc_102),
+	.a1 /* IN */ (shsrc_38),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_39
 (
-	.z(onep_103), // OUT
-	.a0(shsrc_103), // IN
-	.a1(shsrc_39), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_103),
+	.a0 /* IN */ (shsrc_103),
+	.a1 /* IN */ (shsrc_39),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_40
 (
-	.z(onep_104), // OUT
-	.a0(shsrc_104), // IN
-	.a1(shsrc_40), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_104),
+	.a0 /* IN */ (shsrc_104),
+	.a1 /* IN */ (shsrc_40),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_41
 (
-	.z(onep_105), // OUT
-	.a0(shsrc_105), // IN
-	.a1(shsrc_41), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_105),
+	.a0 /* IN */ (shsrc_105),
+	.a1 /* IN */ (shsrc_41),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_42
 (
-	.z(onep_106), // OUT
-	.a0(shsrc_106), // IN
-	.a1(shsrc_42), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_106),
+	.a0 /* IN */ (shsrc_106),
+	.a1 /* IN */ (shsrc_42),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_43
 (
-	.z(onep_107), // OUT
-	.a0(shsrc_107), // IN
-	.a1(shsrc_43), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_107),
+	.a0 /* IN */ (shsrc_107),
+	.a1 /* IN */ (shsrc_43),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_44
 (
-	.z(onep_108), // OUT
-	.a0(shsrc_108), // IN
-	.a1(shsrc_44), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_108),
+	.a0 /* IN */ (shsrc_108),
+	.a1 /* IN */ (shsrc_44),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_45
 (
-	.z(onep_109), // OUT
-	.a0(shsrc_109), // IN
-	.a1(shsrc_45), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_109),
+	.a0 /* IN */ (shsrc_109),
+	.a1 /* IN */ (shsrc_45),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_46
 (
-	.z(onep_110), // OUT
-	.a0(shsrc_110), // IN
-	.a1(shsrc_46), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_110),
+	.a0 /* IN */ (shsrc_110),
+	.a1 /* IN */ (shsrc_46),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_47
 (
-	.z(onep_111), // OUT
-	.a0(shsrc_111), // IN
-	.a1(shsrc_47), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_111),
+	.a0 /* IN */ (shsrc_111),
+	.a1 /* IN */ (shsrc_47),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_48
 (
-	.z(onep_112), // OUT
-	.a0(shsrc_112), // IN
-	.a1(shsrc_48), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_112),
+	.a0 /* IN */ (shsrc_112),
+	.a1 /* IN */ (shsrc_48),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_49
 (
-	.z(onep_113), // OUT
-	.a0(shsrc_113), // IN
-	.a1(shsrc_49), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_113),
+	.a0 /* IN */ (shsrc_113),
+	.a1 /* IN */ (shsrc_49),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_50
 (
-	.z(onep_114), // OUT
-	.a0(shsrc_114), // IN
-	.a1(shsrc_50), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_114),
+	.a0 /* IN */ (shsrc_114),
+	.a1 /* IN */ (shsrc_50),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_51
 (
-	.z(onep_115), // OUT
-	.a0(shsrc_115), // IN
-	.a1(shsrc_51), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_115),
+	.a0 /* IN */ (shsrc_115),
+	.a1 /* IN */ (shsrc_51),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_52
 (
-	.z(onep_116), // OUT
-	.a0(shsrc_116), // IN
-	.a1(shsrc_52), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_116),
+	.a0 /* IN */ (shsrc_116),
+	.a1 /* IN */ (shsrc_52),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_53
 (
-	.z(onep_117), // OUT
-	.a0(shsrc_117), // IN
-	.a1(shsrc_53), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_117),
+	.a0 /* IN */ (shsrc_117),
+	.a1 /* IN */ (shsrc_53),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_54
 (
-	.z(onep_118), // OUT
-	.a0(shsrc_118), // IN
-	.a1(shsrc_54), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_118),
+	.a0 /* IN */ (shsrc_118),
+	.a1 /* IN */ (shsrc_54),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_55
 (
-	.z(onep_119), // OUT
-	.a0(shsrc_119), // IN
-	.a1(shsrc_55), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_119),
+	.a0 /* IN */ (shsrc_119),
+	.a1 /* IN */ (shsrc_55),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_56
 (
-	.z(onep_120), // OUT
-	.a0(shsrc_120), // IN
-	.a1(shsrc_56), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_120),
+	.a0 /* IN */ (shsrc_120),
+	.a1 /* IN */ (shsrc_56),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_57
 (
-	.z(onep_121), // OUT
-	.a0(shsrc_121), // IN
-	.a1(shsrc_57), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_121),
+	.a0 /* IN */ (shsrc_121),
+	.a1 /* IN */ (shsrc_57),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_58
 (
-	.z(onep_122), // OUT
-	.a0(shsrc_122), // IN
-	.a1(shsrc_58), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_122),
+	.a0 /* IN */ (shsrc_122),
+	.a1 /* IN */ (shsrc_58),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_59
 (
-	.z(onep_123), // OUT
-	.a0(shsrc_123), // IN
-	.a1(shsrc_59), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_123),
+	.a0 /* IN */ (shsrc_123),
+	.a1 /* IN */ (shsrc_59),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_60
 (
-	.z(onep_124), // OUT
-	.a0(shsrc_124), // IN
-	.a1(shsrc_60), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_124),
+	.a0 /* IN */ (shsrc_124),
+	.a1 /* IN */ (shsrc_60),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_61
 (
-	.z(onep_125), // OUT
-	.a0(shsrc_125), // IN
-	.a1(shsrc_61), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_125),
+	.a0 /* IN */ (shsrc_125),
+	.a1 /* IN */ (shsrc_61),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_62
 (
-	.z(onep_126), // OUT
-	.a0(shsrc_126), // IN
-	.a1(shsrc_62), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_126),
+	.a0 /* IN */ (shsrc_126),
+	.a1 /* IN */ (shsrc_62),
+	.s /* IN */ (shift_6)
 );
 mx2 onep_from_64_to_127_inst_63
 (
-	.z(onep_127), // OUT
-	.a0(shsrc_127), // IN
-	.a1(shsrc_63), // IN
-	.s(shift_6)  // IN
+	.z /* OUT */ (onep_127),
+	.a0 /* IN */ (shsrc_127),
+	.a1 /* IN */ (shsrc_63),
+	.s /* IN */ (shift_6)
 );
 
 // SRCSHIFT.NET (75) - onel[40-127] : mx2
 mx2 onel_from_40_to_127_inst_0
 (
-	.z(onel_40), // OUT
-	.a0(onep_40), // IN
-	.a1(onep_8), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_40),
+	.a0 /* IN */ (onep_40),
+	.a1 /* IN */ (onep_8),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_1
 (
-	.z(onel_41), // OUT
-	.a0(onep_41), // IN
-	.a1(onep_9), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_41),
+	.a0 /* IN */ (onep_41),
+	.a1 /* IN */ (onep_9),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_2
 (
-	.z(onel_42), // OUT
-	.a0(onep_42), // IN
-	.a1(onep_10), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_42),
+	.a0 /* IN */ (onep_42),
+	.a1 /* IN */ (onep_10),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_3
 (
-	.z(onel_43), // OUT
-	.a0(onep_43), // IN
-	.a1(onep_11), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_43),
+	.a0 /* IN */ (onep_43),
+	.a1 /* IN */ (onep_11),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_4
 (
-	.z(onel_44), // OUT
-	.a0(onep_44), // IN
-	.a1(onep_12), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_44),
+	.a0 /* IN */ (onep_44),
+	.a1 /* IN */ (onep_12),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_5
 (
-	.z(onel_45), // OUT
-	.a0(onep_45), // IN
-	.a1(onep_13), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_45),
+	.a0 /* IN */ (onep_45),
+	.a1 /* IN */ (onep_13),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_6
 (
-	.z(onel_46), // OUT
-	.a0(onep_46), // IN
-	.a1(onep_14), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_46),
+	.a0 /* IN */ (onep_46),
+	.a1 /* IN */ (onep_14),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_7
 (
-	.z(onel_47), // OUT
-	.a0(onep_47), // IN
-	.a1(onep_15), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_47),
+	.a0 /* IN */ (onep_47),
+	.a1 /* IN */ (onep_15),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_8
 (
-	.z(onel_48), // OUT
-	.a0(onep_48), // IN
-	.a1(onep_16), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_48),
+	.a0 /* IN */ (onep_48),
+	.a1 /* IN */ (onep_16),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_9
 (
-	.z(onel_49), // OUT
-	.a0(onep_49), // IN
-	.a1(onep_17), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_49),
+	.a0 /* IN */ (onep_49),
+	.a1 /* IN */ (onep_17),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_10
 (
-	.z(onel_50), // OUT
-	.a0(onep_50), // IN
-	.a1(onep_18), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_50),
+	.a0 /* IN */ (onep_50),
+	.a1 /* IN */ (onep_18),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_11
 (
-	.z(onel_51), // OUT
-	.a0(onep_51), // IN
-	.a1(onep_19), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_51),
+	.a0 /* IN */ (onep_51),
+	.a1 /* IN */ (onep_19),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_12
 (
-	.z(onel_52), // OUT
-	.a0(onep_52), // IN
-	.a1(onep_20), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_52),
+	.a0 /* IN */ (onep_52),
+	.a1 /* IN */ (onep_20),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_13
 (
-	.z(onel_53), // OUT
-	.a0(onep_53), // IN
-	.a1(onep_21), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_53),
+	.a0 /* IN */ (onep_53),
+	.a1 /* IN */ (onep_21),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_14
 (
-	.z(onel_54), // OUT
-	.a0(onep_54), // IN
-	.a1(onep_22), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_54),
+	.a0 /* IN */ (onep_54),
+	.a1 /* IN */ (onep_22),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_15
 (
-	.z(onel_55), // OUT
-	.a0(onep_55), // IN
-	.a1(onep_23), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_55),
+	.a0 /* IN */ (onep_55),
+	.a1 /* IN */ (onep_23),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_16
 (
-	.z(onel_56), // OUT
-	.a0(onep_56), // IN
-	.a1(onep_24), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_56),
+	.a0 /* IN */ (onep_56),
+	.a1 /* IN */ (onep_24),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_17
 (
-	.z(onel_57), // OUT
-	.a0(onep_57), // IN
-	.a1(onep_25), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_57),
+	.a0 /* IN */ (onep_57),
+	.a1 /* IN */ (onep_25),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_18
 (
-	.z(onel_58), // OUT
-	.a0(onep_58), // IN
-	.a1(onep_26), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_58),
+	.a0 /* IN */ (onep_58),
+	.a1 /* IN */ (onep_26),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_19
 (
-	.z(onel_59), // OUT
-	.a0(onep_59), // IN
-	.a1(onep_27), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_59),
+	.a0 /* IN */ (onep_59),
+	.a1 /* IN */ (onep_27),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_20
 (
-	.z(onel_60), // OUT
-	.a0(onep_60), // IN
-	.a1(onep_28), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_60),
+	.a0 /* IN */ (onep_60),
+	.a1 /* IN */ (onep_28),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_21
 (
-	.z(onel_61), // OUT
-	.a0(onep_61), // IN
-	.a1(onep_29), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_61),
+	.a0 /* IN */ (onep_61),
+	.a1 /* IN */ (onep_29),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_22
 (
-	.z(onel_62), // OUT
-	.a0(onep_62), // IN
-	.a1(onep_30), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_62),
+	.a0 /* IN */ (onep_62),
+	.a1 /* IN */ (onep_30),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_23
 (
-	.z(onel_63), // OUT
-	.a0(onep_63), // IN
-	.a1(onep_31), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_63),
+	.a0 /* IN */ (onep_63),
+	.a1 /* IN */ (onep_31),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_24
 (
-	.z(onel_64), // OUT
-	.a0(onep_64), // IN
-	.a1(onep_32), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_64),
+	.a0 /* IN */ (onep_64),
+	.a1 /* IN */ (onep_32),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_25
 (
-	.z(onel_65), // OUT
-	.a0(onep_65), // IN
-	.a1(onep_33), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_65),
+	.a0 /* IN */ (onep_65),
+	.a1 /* IN */ (onep_33),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_26
 (
-	.z(onel_66), // OUT
-	.a0(onep_66), // IN
-	.a1(onep_34), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_66),
+	.a0 /* IN */ (onep_66),
+	.a1 /* IN */ (onep_34),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_27
 (
-	.z(onel_67), // OUT
-	.a0(onep_67), // IN
-	.a1(onep_35), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_67),
+	.a0 /* IN */ (onep_67),
+	.a1 /* IN */ (onep_35),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_28
 (
-	.z(onel_68), // OUT
-	.a0(onep_68), // IN
-	.a1(onep_36), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_68),
+	.a0 /* IN */ (onep_68),
+	.a1 /* IN */ (onep_36),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_29
 (
-	.z(onel_69), // OUT
-	.a0(onep_69), // IN
-	.a1(onep_37), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_69),
+	.a0 /* IN */ (onep_69),
+	.a1 /* IN */ (onep_37),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_30
 (
-	.z(onel_70), // OUT
-	.a0(onep_70), // IN
-	.a1(onep_38), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_70),
+	.a0 /* IN */ (onep_70),
+	.a1 /* IN */ (onep_38),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_31
 (
-	.z(onel_71), // OUT
-	.a0(onep_71), // IN
-	.a1(onep_39), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_71),
+	.a0 /* IN */ (onep_71),
+	.a1 /* IN */ (onep_39),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_32
 (
-	.z(onel_72), // OUT
-	.a0(onep_72), // IN
-	.a1(onep_40), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_72),
+	.a0 /* IN */ (onep_72),
+	.a1 /* IN */ (onep_40),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_33
 (
-	.z(onel_73), // OUT
-	.a0(onep_73), // IN
-	.a1(onep_41), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_73),
+	.a0 /* IN */ (onep_73),
+	.a1 /* IN */ (onep_41),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_34
 (
-	.z(onel_74), // OUT
-	.a0(onep_74), // IN
-	.a1(onep_42), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_74),
+	.a0 /* IN */ (onep_74),
+	.a1 /* IN */ (onep_42),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_35
 (
-	.z(onel_75), // OUT
-	.a0(onep_75), // IN
-	.a1(onep_43), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_75),
+	.a0 /* IN */ (onep_75),
+	.a1 /* IN */ (onep_43),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_36
 (
-	.z(onel_76), // OUT
-	.a0(onep_76), // IN
-	.a1(onep_44), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_76),
+	.a0 /* IN */ (onep_76),
+	.a1 /* IN */ (onep_44),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_37
 (
-	.z(onel_77), // OUT
-	.a0(onep_77), // IN
-	.a1(onep_45), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_77),
+	.a0 /* IN */ (onep_77),
+	.a1 /* IN */ (onep_45),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_38
 (
-	.z(onel_78), // OUT
-	.a0(onep_78), // IN
-	.a1(onep_46), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_78),
+	.a0 /* IN */ (onep_78),
+	.a1 /* IN */ (onep_46),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_39
 (
-	.z(onel_79), // OUT
-	.a0(onep_79), // IN
-	.a1(onep_47), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_79),
+	.a0 /* IN */ (onep_79),
+	.a1 /* IN */ (onep_47),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_40
 (
-	.z(onel_80), // OUT
-	.a0(onep_80), // IN
-	.a1(onep_48), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_80),
+	.a0 /* IN */ (onep_80),
+	.a1 /* IN */ (onep_48),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_41
 (
-	.z(onel_81), // OUT
-	.a0(onep_81), // IN
-	.a1(onep_49), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_81),
+	.a0 /* IN */ (onep_81),
+	.a1 /* IN */ (onep_49),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_42
 (
-	.z(onel_82), // OUT
-	.a0(onep_82), // IN
-	.a1(onep_50), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_82),
+	.a0 /* IN */ (onep_82),
+	.a1 /* IN */ (onep_50),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_43
 (
-	.z(onel_83), // OUT
-	.a0(onep_83), // IN
-	.a1(onep_51), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_83),
+	.a0 /* IN */ (onep_83),
+	.a1 /* IN */ (onep_51),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_44
 (
-	.z(onel_84), // OUT
-	.a0(onep_84), // IN
-	.a1(onep_52), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_84),
+	.a0 /* IN */ (onep_84),
+	.a1 /* IN */ (onep_52),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_45
 (
-	.z(onel_85), // OUT
-	.a0(onep_85), // IN
-	.a1(onep_53), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_85),
+	.a0 /* IN */ (onep_85),
+	.a1 /* IN */ (onep_53),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_46
 (
-	.z(onel_86), // OUT
-	.a0(onep_86), // IN
-	.a1(onep_54), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_86),
+	.a0 /* IN */ (onep_86),
+	.a1 /* IN */ (onep_54),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_47
 (
-	.z(onel_87), // OUT
-	.a0(onep_87), // IN
-	.a1(onep_55), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_87),
+	.a0 /* IN */ (onep_87),
+	.a1 /* IN */ (onep_55),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_48
 (
-	.z(onel_88), // OUT
-	.a0(onep_88), // IN
-	.a1(onep_56), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_88),
+	.a0 /* IN */ (onep_88),
+	.a1 /* IN */ (onep_56),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_49
 (
-	.z(onel_89), // OUT
-	.a0(onep_89), // IN
-	.a1(onep_57), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_89),
+	.a0 /* IN */ (onep_89),
+	.a1 /* IN */ (onep_57),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_50
 (
-	.z(onel_90), // OUT
-	.a0(onep_90), // IN
-	.a1(onep_58), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_90),
+	.a0 /* IN */ (onep_90),
+	.a1 /* IN */ (onep_58),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_51
 (
-	.z(onel_91), // OUT
-	.a0(onep_91), // IN
-	.a1(onep_59), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_91),
+	.a0 /* IN */ (onep_91),
+	.a1 /* IN */ (onep_59),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_52
 (
-	.z(onel_92), // OUT
-	.a0(onep_92), // IN
-	.a1(onep_60), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_92),
+	.a0 /* IN */ (onep_92),
+	.a1 /* IN */ (onep_60),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_53
 (
-	.z(onel_93), // OUT
-	.a0(onep_93), // IN
-	.a1(onep_61), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_93),
+	.a0 /* IN */ (onep_93),
+	.a1 /* IN */ (onep_61),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_54
 (
-	.z(onel_94), // OUT
-	.a0(onep_94), // IN
-	.a1(onep_62), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_94),
+	.a0 /* IN */ (onep_94),
+	.a1 /* IN */ (onep_62),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_55
 (
-	.z(onel_95), // OUT
-	.a0(onep_95), // IN
-	.a1(onep_63), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_95),
+	.a0 /* IN */ (onep_95),
+	.a1 /* IN */ (onep_63),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_56
 (
-	.z(onel_96), // OUT
-	.a0(onep_96), // IN
-	.a1(onep_64), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_96),
+	.a0 /* IN */ (onep_96),
+	.a1 /* IN */ (onep_64),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_57
 (
-	.z(onel_97), // OUT
-	.a0(onep_97), // IN
-	.a1(onep_65), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_97),
+	.a0 /* IN */ (onep_97),
+	.a1 /* IN */ (onep_65),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_58
 (
-	.z(onel_98), // OUT
-	.a0(onep_98), // IN
-	.a1(onep_66), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_98),
+	.a0 /* IN */ (onep_98),
+	.a1 /* IN */ (onep_66),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_59
 (
-	.z(onel_99), // OUT
-	.a0(onep_99), // IN
-	.a1(onep_67), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_99),
+	.a0 /* IN */ (onep_99),
+	.a1 /* IN */ (onep_67),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_60
 (
-	.z(onel_100), // OUT
-	.a0(onep_100), // IN
-	.a1(onep_68), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_100),
+	.a0 /* IN */ (onep_100),
+	.a1 /* IN */ (onep_68),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_61
 (
-	.z(onel_101), // OUT
-	.a0(onep_101), // IN
-	.a1(onep_69), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_101),
+	.a0 /* IN */ (onep_101),
+	.a1 /* IN */ (onep_69),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_62
 (
-	.z(onel_102), // OUT
-	.a0(onep_102), // IN
-	.a1(onep_70), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_102),
+	.a0 /* IN */ (onep_102),
+	.a1 /* IN */ (onep_70),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_63
 (
-	.z(onel_103), // OUT
-	.a0(onep_103), // IN
-	.a1(onep_71), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_103),
+	.a0 /* IN */ (onep_103),
+	.a1 /* IN */ (onep_71),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_64
 (
-	.z(onel_104), // OUT
-	.a0(onep_104), // IN
-	.a1(onep_72), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_104),
+	.a0 /* IN */ (onep_104),
+	.a1 /* IN */ (onep_72),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_65
 (
-	.z(onel_105), // OUT
-	.a0(onep_105), // IN
-	.a1(onep_73), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_105),
+	.a0 /* IN */ (onep_105),
+	.a1 /* IN */ (onep_73),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_66
 (
-	.z(onel_106), // OUT
-	.a0(onep_106), // IN
-	.a1(onep_74), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_106),
+	.a0 /* IN */ (onep_106),
+	.a1 /* IN */ (onep_74),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_67
 (
-	.z(onel_107), // OUT
-	.a0(onep_107), // IN
-	.a1(onep_75), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_107),
+	.a0 /* IN */ (onep_107),
+	.a1 /* IN */ (onep_75),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_68
 (
-	.z(onel_108), // OUT
-	.a0(onep_108), // IN
-	.a1(onep_76), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_108),
+	.a0 /* IN */ (onep_108),
+	.a1 /* IN */ (onep_76),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_69
 (
-	.z(onel_109), // OUT
-	.a0(onep_109), // IN
-	.a1(onep_77), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_109),
+	.a0 /* IN */ (onep_109),
+	.a1 /* IN */ (onep_77),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_70
 (
-	.z(onel_110), // OUT
-	.a0(onep_110), // IN
-	.a1(onep_78), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_110),
+	.a0 /* IN */ (onep_110),
+	.a1 /* IN */ (onep_78),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_71
 (
-	.z(onel_111), // OUT
-	.a0(onep_111), // IN
-	.a1(onep_79), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_111),
+	.a0 /* IN */ (onep_111),
+	.a1 /* IN */ (onep_79),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_72
 (
-	.z(onel_112), // OUT
-	.a0(onep_112), // IN
-	.a1(onep_80), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_112),
+	.a0 /* IN */ (onep_112),
+	.a1 /* IN */ (onep_80),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_73
 (
-	.z(onel_113), // OUT
-	.a0(onep_113), // IN
-	.a1(onep_81), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_113),
+	.a0 /* IN */ (onep_113),
+	.a1 /* IN */ (onep_81),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_74
 (
-	.z(onel_114), // OUT
-	.a0(onep_114), // IN
-	.a1(onep_82), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_114),
+	.a0 /* IN */ (onep_114),
+	.a1 /* IN */ (onep_82),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_75
 (
-	.z(onel_115), // OUT
-	.a0(onep_115), // IN
-	.a1(onep_83), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_115),
+	.a0 /* IN */ (onep_115),
+	.a1 /* IN */ (onep_83),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_76
 (
-	.z(onel_116), // OUT
-	.a0(onep_116), // IN
-	.a1(onep_84), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_116),
+	.a0 /* IN */ (onep_116),
+	.a1 /* IN */ (onep_84),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_77
 (
-	.z(onel_117), // OUT
-	.a0(onep_117), // IN
-	.a1(onep_85), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_117),
+	.a0 /* IN */ (onep_117),
+	.a1 /* IN */ (onep_85),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_78
 (
-	.z(onel_118), // OUT
-	.a0(onep_118), // IN
-	.a1(onep_86), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_118),
+	.a0 /* IN */ (onep_118),
+	.a1 /* IN */ (onep_86),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_79
 (
-	.z(onel_119), // OUT
-	.a0(onep_119), // IN
-	.a1(onep_87), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_119),
+	.a0 /* IN */ (onep_119),
+	.a1 /* IN */ (onep_87),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_80
 (
-	.z(onel_120), // OUT
-	.a0(onep_120), // IN
-	.a1(onep_88), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_120),
+	.a0 /* IN */ (onep_120),
+	.a1 /* IN */ (onep_88),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_81
 (
-	.z(onel_121), // OUT
-	.a0(onep_121), // IN
-	.a1(onep_89), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_121),
+	.a0 /* IN */ (onep_121),
+	.a1 /* IN */ (onep_89),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_82
 (
-	.z(onel_122), // OUT
-	.a0(onep_122), // IN
-	.a1(onep_90), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_122),
+	.a0 /* IN */ (onep_122),
+	.a1 /* IN */ (onep_90),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_83
 (
-	.z(onel_123), // OUT
-	.a0(onep_123), // IN
-	.a1(onep_91), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_123),
+	.a0 /* IN */ (onep_123),
+	.a1 /* IN */ (onep_91),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_84
 (
-	.z(onel_124), // OUT
-	.a0(onep_124), // IN
-	.a1(onep_92), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_124),
+	.a0 /* IN */ (onep_124),
+	.a1 /* IN */ (onep_92),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_85
 (
-	.z(onel_125), // OUT
-	.a0(onep_125), // IN
-	.a1(onep_93), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_125),
+	.a0 /* IN */ (onep_125),
+	.a1 /* IN */ (onep_93),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_86
 (
-	.z(onel_126), // OUT
-	.a0(onep_126), // IN
-	.a1(onep_94), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_126),
+	.a0 /* IN */ (onep_126),
+	.a1 /* IN */ (onep_94),
+	.s /* IN */ (shift_5)
 );
 mx2 onel_from_40_to_127_inst_87
 (
-	.z(onel_127), // OUT
-	.a0(onep_127), // IN
-	.a1(onep_95), // IN
-	.s(shift_5)  // IN
+	.z /* OUT */ (onel_127),
+	.a0 /* IN */ (onep_127),
+	.a1 /* IN */ (onep_95),
+	.s /* IN */ (shift_5)
 );
 
 // SRCSHIFT.NET (80) - onew[56-127] : mx2
 mx2 onew_from_56_to_127_inst_0
 (
-	.z(onew_56), // OUT
-	.a0(onel_56), // IN
-	.a1(onel_40), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_56),
+	.a0 /* IN */ (onel_56),
+	.a1 /* IN */ (onel_40),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_1
 (
-	.z(onew_57), // OUT
-	.a0(onel_57), // IN
-	.a1(onel_41), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_57),
+	.a0 /* IN */ (onel_57),
+	.a1 /* IN */ (onel_41),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_2
 (
-	.z(onew_58), // OUT
-	.a0(onel_58), // IN
-	.a1(onel_42), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_58),
+	.a0 /* IN */ (onel_58),
+	.a1 /* IN */ (onel_42),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_3
 (
-	.z(onew_59), // OUT
-	.a0(onel_59), // IN
-	.a1(onel_43), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_59),
+	.a0 /* IN */ (onel_59),
+	.a1 /* IN */ (onel_43),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_4
 (
-	.z(onew_60), // OUT
-	.a0(onel_60), // IN
-	.a1(onel_44), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_60),
+	.a0 /* IN */ (onel_60),
+	.a1 /* IN */ (onel_44),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_5
 (
-	.z(onew_61), // OUT
-	.a0(onel_61), // IN
-	.a1(onel_45), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_61),
+	.a0 /* IN */ (onel_61),
+	.a1 /* IN */ (onel_45),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_6
 (
-	.z(onew_62), // OUT
-	.a0(onel_62), // IN
-	.a1(onel_46), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_62),
+	.a0 /* IN */ (onel_62),
+	.a1 /* IN */ (onel_46),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_7
 (
-	.z(onew_63), // OUT
-	.a0(onel_63), // IN
-	.a1(onel_47), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_63),
+	.a0 /* IN */ (onel_63),
+	.a1 /* IN */ (onel_47),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_8
 (
-	.z(onew_64), // OUT
-	.a0(onel_64), // IN
-	.a1(onel_48), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_64),
+	.a0 /* IN */ (onel_64),
+	.a1 /* IN */ (onel_48),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_9
 (
-	.z(onew_65), // OUT
-	.a0(onel_65), // IN
-	.a1(onel_49), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_65),
+	.a0 /* IN */ (onel_65),
+	.a1 /* IN */ (onel_49),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_10
 (
-	.z(onew_66), // OUT
-	.a0(onel_66), // IN
-	.a1(onel_50), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_66),
+	.a0 /* IN */ (onel_66),
+	.a1 /* IN */ (onel_50),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_11
 (
-	.z(onew_67), // OUT
-	.a0(onel_67), // IN
-	.a1(onel_51), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_67),
+	.a0 /* IN */ (onel_67),
+	.a1 /* IN */ (onel_51),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_12
 (
-	.z(onew_68), // OUT
-	.a0(onel_68), // IN
-	.a1(onel_52), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_68),
+	.a0 /* IN */ (onel_68),
+	.a1 /* IN */ (onel_52),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_13
 (
-	.z(onew_69), // OUT
-	.a0(onel_69), // IN
-	.a1(onel_53), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_69),
+	.a0 /* IN */ (onel_69),
+	.a1 /* IN */ (onel_53),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_14
 (
-	.z(onew_70), // OUT
-	.a0(onel_70), // IN
-	.a1(onel_54), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_70),
+	.a0 /* IN */ (onel_70),
+	.a1 /* IN */ (onel_54),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_15
 (
-	.z(onew_71), // OUT
-	.a0(onel_71), // IN
-	.a1(onel_55), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_71),
+	.a0 /* IN */ (onel_71),
+	.a1 /* IN */ (onel_55),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_16
 (
-	.z(onew_72), // OUT
-	.a0(onel_72), // IN
-	.a1(onel_56), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_72),
+	.a0 /* IN */ (onel_72),
+	.a1 /* IN */ (onel_56),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_17
 (
-	.z(onew_73), // OUT
-	.a0(onel_73), // IN
-	.a1(onel_57), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_73),
+	.a0 /* IN */ (onel_73),
+	.a1 /* IN */ (onel_57),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_18
 (
-	.z(onew_74), // OUT
-	.a0(onel_74), // IN
-	.a1(onel_58), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_74),
+	.a0 /* IN */ (onel_74),
+	.a1 /* IN */ (onel_58),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_19
 (
-	.z(onew_75), // OUT
-	.a0(onel_75), // IN
-	.a1(onel_59), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_75),
+	.a0 /* IN */ (onel_75),
+	.a1 /* IN */ (onel_59),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_20
 (
-	.z(onew_76), // OUT
-	.a0(onel_76), // IN
-	.a1(onel_60), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_76),
+	.a0 /* IN */ (onel_76),
+	.a1 /* IN */ (onel_60),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_21
 (
-	.z(onew_77), // OUT
-	.a0(onel_77), // IN
-	.a1(onel_61), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_77),
+	.a0 /* IN */ (onel_77),
+	.a1 /* IN */ (onel_61),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_22
 (
-	.z(onew_78), // OUT
-	.a0(onel_78), // IN
-	.a1(onel_62), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_78),
+	.a0 /* IN */ (onel_78),
+	.a1 /* IN */ (onel_62),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_23
 (
-	.z(onew_79), // OUT
-	.a0(onel_79), // IN
-	.a1(onel_63), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_79),
+	.a0 /* IN */ (onel_79),
+	.a1 /* IN */ (onel_63),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_24
 (
-	.z(onew_80), // OUT
-	.a0(onel_80), // IN
-	.a1(onel_64), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_80),
+	.a0 /* IN */ (onel_80),
+	.a1 /* IN */ (onel_64),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_25
 (
-	.z(onew_81), // OUT
-	.a0(onel_81), // IN
-	.a1(onel_65), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_81),
+	.a0 /* IN */ (onel_81),
+	.a1 /* IN */ (onel_65),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_26
 (
-	.z(onew_82), // OUT
-	.a0(onel_82), // IN
-	.a1(onel_66), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_82),
+	.a0 /* IN */ (onel_82),
+	.a1 /* IN */ (onel_66),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_27
 (
-	.z(onew_83), // OUT
-	.a0(onel_83), // IN
-	.a1(onel_67), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_83),
+	.a0 /* IN */ (onel_83),
+	.a1 /* IN */ (onel_67),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_28
 (
-	.z(onew_84), // OUT
-	.a0(onel_84), // IN
-	.a1(onel_68), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_84),
+	.a0 /* IN */ (onel_84),
+	.a1 /* IN */ (onel_68),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_29
 (
-	.z(onew_85), // OUT
-	.a0(onel_85), // IN
-	.a1(onel_69), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_85),
+	.a0 /* IN */ (onel_85),
+	.a1 /* IN */ (onel_69),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_30
 (
-	.z(onew_86), // OUT
-	.a0(onel_86), // IN
-	.a1(onel_70), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_86),
+	.a0 /* IN */ (onel_86),
+	.a1 /* IN */ (onel_70),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_31
 (
-	.z(onew_87), // OUT
-	.a0(onel_87), // IN
-	.a1(onel_71), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_87),
+	.a0 /* IN */ (onel_87),
+	.a1 /* IN */ (onel_71),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_32
 (
-	.z(onew_88), // OUT
-	.a0(onel_88), // IN
-	.a1(onel_72), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_88),
+	.a0 /* IN */ (onel_88),
+	.a1 /* IN */ (onel_72),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_33
 (
-	.z(onew_89), // OUT
-	.a0(onel_89), // IN
-	.a1(onel_73), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_89),
+	.a0 /* IN */ (onel_89),
+	.a1 /* IN */ (onel_73),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_34
 (
-	.z(onew_90), // OUT
-	.a0(onel_90), // IN
-	.a1(onel_74), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_90),
+	.a0 /* IN */ (onel_90),
+	.a1 /* IN */ (onel_74),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_35
 (
-	.z(onew_91), // OUT
-	.a0(onel_91), // IN
-	.a1(onel_75), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_91),
+	.a0 /* IN */ (onel_91),
+	.a1 /* IN */ (onel_75),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_36
 (
-	.z(onew_92), // OUT
-	.a0(onel_92), // IN
-	.a1(onel_76), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_92),
+	.a0 /* IN */ (onel_92),
+	.a1 /* IN */ (onel_76),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_37
 (
-	.z(onew_93), // OUT
-	.a0(onel_93), // IN
-	.a1(onel_77), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_93),
+	.a0 /* IN */ (onel_93),
+	.a1 /* IN */ (onel_77),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_38
 (
-	.z(onew_94), // OUT
-	.a0(onel_94), // IN
-	.a1(onel_78), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_94),
+	.a0 /* IN */ (onel_94),
+	.a1 /* IN */ (onel_78),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_39
 (
-	.z(onew_95), // OUT
-	.a0(onel_95), // IN
-	.a1(onel_79), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_95),
+	.a0 /* IN */ (onel_95),
+	.a1 /* IN */ (onel_79),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_40
 (
-	.z(onew_96), // OUT
-	.a0(onel_96), // IN
-	.a1(onel_80), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_96),
+	.a0 /* IN */ (onel_96),
+	.a1 /* IN */ (onel_80),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_41
 (
-	.z(onew_97), // OUT
-	.a0(onel_97), // IN
-	.a1(onel_81), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_97),
+	.a0 /* IN */ (onel_97),
+	.a1 /* IN */ (onel_81),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_42
 (
-	.z(onew_98), // OUT
-	.a0(onel_98), // IN
-	.a1(onel_82), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_98),
+	.a0 /* IN */ (onel_98),
+	.a1 /* IN */ (onel_82),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_43
 (
-	.z(onew_99), // OUT
-	.a0(onel_99), // IN
-	.a1(onel_83), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_99),
+	.a0 /* IN */ (onel_99),
+	.a1 /* IN */ (onel_83),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_44
 (
-	.z(onew_100), // OUT
-	.a0(onel_100), // IN
-	.a1(onel_84), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_100),
+	.a0 /* IN */ (onel_100),
+	.a1 /* IN */ (onel_84),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_45
 (
-	.z(onew_101), // OUT
-	.a0(onel_101), // IN
-	.a1(onel_85), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_101),
+	.a0 /* IN */ (onel_101),
+	.a1 /* IN */ (onel_85),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_46
 (
-	.z(onew_102), // OUT
-	.a0(onel_102), // IN
-	.a1(onel_86), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_102),
+	.a0 /* IN */ (onel_102),
+	.a1 /* IN */ (onel_86),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_47
 (
-	.z(onew_103), // OUT
-	.a0(onel_103), // IN
-	.a1(onel_87), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_103),
+	.a0 /* IN */ (onel_103),
+	.a1 /* IN */ (onel_87),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_48
 (
-	.z(onew_104), // OUT
-	.a0(onel_104), // IN
-	.a1(onel_88), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_104),
+	.a0 /* IN */ (onel_104),
+	.a1 /* IN */ (onel_88),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_49
 (
-	.z(onew_105), // OUT
-	.a0(onel_105), // IN
-	.a1(onel_89), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_105),
+	.a0 /* IN */ (onel_105),
+	.a1 /* IN */ (onel_89),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_50
 (
-	.z(onew_106), // OUT
-	.a0(onel_106), // IN
-	.a1(onel_90), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_106),
+	.a0 /* IN */ (onel_106),
+	.a1 /* IN */ (onel_90),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_51
 (
-	.z(onew_107), // OUT
-	.a0(onel_107), // IN
-	.a1(onel_91), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_107),
+	.a0 /* IN */ (onel_107),
+	.a1 /* IN */ (onel_91),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_52
 (
-	.z(onew_108), // OUT
-	.a0(onel_108), // IN
-	.a1(onel_92), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_108),
+	.a0 /* IN */ (onel_108),
+	.a1 /* IN */ (onel_92),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_53
 (
-	.z(onew_109), // OUT
-	.a0(onel_109), // IN
-	.a1(onel_93), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_109),
+	.a0 /* IN */ (onel_109),
+	.a1 /* IN */ (onel_93),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_54
 (
-	.z(onew_110), // OUT
-	.a0(onel_110), // IN
-	.a1(onel_94), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_110),
+	.a0 /* IN */ (onel_110),
+	.a1 /* IN */ (onel_94),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_55
 (
-	.z(onew_111), // OUT
-	.a0(onel_111), // IN
-	.a1(onel_95), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_111),
+	.a0 /* IN */ (onel_111),
+	.a1 /* IN */ (onel_95),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_56
 (
-	.z(onew_112), // OUT
-	.a0(onel_112), // IN
-	.a1(onel_96), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_112),
+	.a0 /* IN */ (onel_112),
+	.a1 /* IN */ (onel_96),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_57
 (
-	.z(onew_113), // OUT
-	.a0(onel_113), // IN
-	.a1(onel_97), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_113),
+	.a0 /* IN */ (onel_113),
+	.a1 /* IN */ (onel_97),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_58
 (
-	.z(onew_114), // OUT
-	.a0(onel_114), // IN
-	.a1(onel_98), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_114),
+	.a0 /* IN */ (onel_114),
+	.a1 /* IN */ (onel_98),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_59
 (
-	.z(onew_115), // OUT
-	.a0(onel_115), // IN
-	.a1(onel_99), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_115),
+	.a0 /* IN */ (onel_115),
+	.a1 /* IN */ (onel_99),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_60
 (
-	.z(onew_116), // OUT
-	.a0(onel_116), // IN
-	.a1(onel_100), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_116),
+	.a0 /* IN */ (onel_116),
+	.a1 /* IN */ (onel_100),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_61
 (
-	.z(onew_117), // OUT
-	.a0(onel_117), // IN
-	.a1(onel_101), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_117),
+	.a0 /* IN */ (onel_117),
+	.a1 /* IN */ (onel_101),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_62
 (
-	.z(onew_118), // OUT
-	.a0(onel_118), // IN
-	.a1(onel_102), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_118),
+	.a0 /* IN */ (onel_118),
+	.a1 /* IN */ (onel_102),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_63
 (
-	.z(onew_119), // OUT
-	.a0(onel_119), // IN
-	.a1(onel_103), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_119),
+	.a0 /* IN */ (onel_119),
+	.a1 /* IN */ (onel_103),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_64
 (
-	.z(onew_120), // OUT
-	.a0(onel_120), // IN
-	.a1(onel_104), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_120),
+	.a0 /* IN */ (onel_120),
+	.a1 /* IN */ (onel_104),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_65
 (
-	.z(onew_121), // OUT
-	.a0(onel_121), // IN
-	.a1(onel_105), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_121),
+	.a0 /* IN */ (onel_121),
+	.a1 /* IN */ (onel_105),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_66
 (
-	.z(onew_122), // OUT
-	.a0(onel_122), // IN
-	.a1(onel_106), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_122),
+	.a0 /* IN */ (onel_122),
+	.a1 /* IN */ (onel_106),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_67
 (
-	.z(onew_123), // OUT
-	.a0(onel_123), // IN
-	.a1(onel_107), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_123),
+	.a0 /* IN */ (onel_123),
+	.a1 /* IN */ (onel_107),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_68
 (
-	.z(onew_124), // OUT
-	.a0(onel_124), // IN
-	.a1(onel_108), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_124),
+	.a0 /* IN */ (onel_124),
+	.a1 /* IN */ (onel_108),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_69
 (
-	.z(onew_125), // OUT
-	.a0(onel_125), // IN
-	.a1(onel_109), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_125),
+	.a0 /* IN */ (onel_125),
+	.a1 /* IN */ (onel_109),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_70
 (
-	.z(onew_126), // OUT
-	.a0(onel_126), // IN
-	.a1(onel_110), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_126),
+	.a0 /* IN */ (onel_126),
+	.a1 /* IN */ (onel_110),
+	.s /* IN */ (shift_4)
 );
 mx2 onew_from_56_to_127_inst_71
 (
-	.z(onew_127), // OUT
-	.a0(onel_127), // IN
-	.a1(onel_111), // IN
-	.s(shift_4)  // IN
+	.z /* OUT */ (onew_127),
+	.a0 /* IN */ (onel_127),
+	.a1 /* IN */ (onel_111),
+	.s /* IN */ (shift_4)
 );
 
 // SRCSHIFT.NET (85) - oneb[64-127] : mx2
 mx2 oneb_from_64_to_127_inst_0
 (
-	.z(oneb_64), // OUT
-	.a0(onew_64), // IN
-	.a1(onew_56), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_64),
+	.a0 /* IN */ (onew_64),
+	.a1 /* IN */ (onew_56),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_1
 (
-	.z(oneb_65), // OUT
-	.a0(onew_65), // IN
-	.a1(onew_57), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_65),
+	.a0 /* IN */ (onew_65),
+	.a1 /* IN */ (onew_57),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_2
 (
-	.z(oneb_66), // OUT
-	.a0(onew_66), // IN
-	.a1(onew_58), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_66),
+	.a0 /* IN */ (onew_66),
+	.a1 /* IN */ (onew_58),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_3
 (
-	.z(oneb_67), // OUT
-	.a0(onew_67), // IN
-	.a1(onew_59), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_67),
+	.a0 /* IN */ (onew_67),
+	.a1 /* IN */ (onew_59),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_4
 (
-	.z(oneb_68), // OUT
-	.a0(onew_68), // IN
-	.a1(onew_60), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_68),
+	.a0 /* IN */ (onew_68),
+	.a1 /* IN */ (onew_60),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_5
 (
-	.z(oneb_69), // OUT
-	.a0(onew_69), // IN
-	.a1(onew_61), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_69),
+	.a0 /* IN */ (onew_69),
+	.a1 /* IN */ (onew_61),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_6
 (
-	.z(oneb_70), // OUT
-	.a0(onew_70), // IN
-	.a1(onew_62), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_70),
+	.a0 /* IN */ (onew_70),
+	.a1 /* IN */ (onew_62),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_7
 (
-	.z(oneb_71), // OUT
-	.a0(onew_71), // IN
-	.a1(onew_63), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_71),
+	.a0 /* IN */ (onew_71),
+	.a1 /* IN */ (onew_63),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_8
 (
-	.z(oneb_72), // OUT
-	.a0(onew_72), // IN
-	.a1(onew_64), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_72),
+	.a0 /* IN */ (onew_72),
+	.a1 /* IN */ (onew_64),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_9
 (
-	.z(oneb_73), // OUT
-	.a0(onew_73), // IN
-	.a1(onew_65), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_73),
+	.a0 /* IN */ (onew_73),
+	.a1 /* IN */ (onew_65),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_10
 (
-	.z(oneb_74), // OUT
-	.a0(onew_74), // IN
-	.a1(onew_66), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_74),
+	.a0 /* IN */ (onew_74),
+	.a1 /* IN */ (onew_66),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_11
 (
-	.z(oneb_75), // OUT
-	.a0(onew_75), // IN
-	.a1(onew_67), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_75),
+	.a0 /* IN */ (onew_75),
+	.a1 /* IN */ (onew_67),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_12
 (
-	.z(oneb_76), // OUT
-	.a0(onew_76), // IN
-	.a1(onew_68), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_76),
+	.a0 /* IN */ (onew_76),
+	.a1 /* IN */ (onew_68),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_13
 (
-	.z(oneb_77), // OUT
-	.a0(onew_77), // IN
-	.a1(onew_69), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_77),
+	.a0 /* IN */ (onew_77),
+	.a1 /* IN */ (onew_69),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_14
 (
-	.z(oneb_78), // OUT
-	.a0(onew_78), // IN
-	.a1(onew_70), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_78),
+	.a0 /* IN */ (onew_78),
+	.a1 /* IN */ (onew_70),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_15
 (
-	.z(oneb_79), // OUT
-	.a0(onew_79), // IN
-	.a1(onew_71), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_79),
+	.a0 /* IN */ (onew_79),
+	.a1 /* IN */ (onew_71),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_16
 (
-	.z(oneb_80), // OUT
-	.a0(onew_80), // IN
-	.a1(onew_72), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_80),
+	.a0 /* IN */ (onew_80),
+	.a1 /* IN */ (onew_72),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_17
 (
-	.z(oneb_81), // OUT
-	.a0(onew_81), // IN
-	.a1(onew_73), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_81),
+	.a0 /* IN */ (onew_81),
+	.a1 /* IN */ (onew_73),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_18
 (
-	.z(oneb_82), // OUT
-	.a0(onew_82), // IN
-	.a1(onew_74), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_82),
+	.a0 /* IN */ (onew_82),
+	.a1 /* IN */ (onew_74),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_19
 (
-	.z(oneb_83), // OUT
-	.a0(onew_83), // IN
-	.a1(onew_75), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_83),
+	.a0 /* IN */ (onew_83),
+	.a1 /* IN */ (onew_75),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_20
 (
-	.z(oneb_84), // OUT
-	.a0(onew_84), // IN
-	.a1(onew_76), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_84),
+	.a0 /* IN */ (onew_84),
+	.a1 /* IN */ (onew_76),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_21
 (
-	.z(oneb_85), // OUT
-	.a0(onew_85), // IN
-	.a1(onew_77), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_85),
+	.a0 /* IN */ (onew_85),
+	.a1 /* IN */ (onew_77),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_22
 (
-	.z(oneb_86), // OUT
-	.a0(onew_86), // IN
-	.a1(onew_78), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_86),
+	.a0 /* IN */ (onew_86),
+	.a1 /* IN */ (onew_78),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_23
 (
-	.z(oneb_87), // OUT
-	.a0(onew_87), // IN
-	.a1(onew_79), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_87),
+	.a0 /* IN */ (onew_87),
+	.a1 /* IN */ (onew_79),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_24
 (
-	.z(oneb_88), // OUT
-	.a0(onew_88), // IN
-	.a1(onew_80), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_88),
+	.a0 /* IN */ (onew_88),
+	.a1 /* IN */ (onew_80),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_25
 (
-	.z(oneb_89), // OUT
-	.a0(onew_89), // IN
-	.a1(onew_81), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_89),
+	.a0 /* IN */ (onew_89),
+	.a1 /* IN */ (onew_81),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_26
 (
-	.z(oneb_90), // OUT
-	.a0(onew_90), // IN
-	.a1(onew_82), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_90),
+	.a0 /* IN */ (onew_90),
+	.a1 /* IN */ (onew_82),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_27
 (
-	.z(oneb_91), // OUT
-	.a0(onew_91), // IN
-	.a1(onew_83), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_91),
+	.a0 /* IN */ (onew_91),
+	.a1 /* IN */ (onew_83),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_28
 (
-	.z(oneb_92), // OUT
-	.a0(onew_92), // IN
-	.a1(onew_84), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_92),
+	.a0 /* IN */ (onew_92),
+	.a1 /* IN */ (onew_84),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_29
 (
-	.z(oneb_93), // OUT
-	.a0(onew_93), // IN
-	.a1(onew_85), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_93),
+	.a0 /* IN */ (onew_93),
+	.a1 /* IN */ (onew_85),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_30
 (
-	.z(oneb_94), // OUT
-	.a0(onew_94), // IN
-	.a1(onew_86), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_94),
+	.a0 /* IN */ (onew_94),
+	.a1 /* IN */ (onew_86),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_31
 (
-	.z(oneb_95), // OUT
-	.a0(onew_95), // IN
-	.a1(onew_87), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_95),
+	.a0 /* IN */ (onew_95),
+	.a1 /* IN */ (onew_87),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_32
 (
-	.z(oneb_96), // OUT
-	.a0(onew_96), // IN
-	.a1(onew_88), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_96),
+	.a0 /* IN */ (onew_96),
+	.a1 /* IN */ (onew_88),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_33
 (
-	.z(oneb_97), // OUT
-	.a0(onew_97), // IN
-	.a1(onew_89), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_97),
+	.a0 /* IN */ (onew_97),
+	.a1 /* IN */ (onew_89),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_34
 (
-	.z(oneb_98), // OUT
-	.a0(onew_98), // IN
-	.a1(onew_90), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_98),
+	.a0 /* IN */ (onew_98),
+	.a1 /* IN */ (onew_90),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_35
 (
-	.z(oneb_99), // OUT
-	.a0(onew_99), // IN
-	.a1(onew_91), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_99),
+	.a0 /* IN */ (onew_99),
+	.a1 /* IN */ (onew_91),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_36
 (
-	.z(oneb_100), // OUT
-	.a0(onew_100), // IN
-	.a1(onew_92), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_100),
+	.a0 /* IN */ (onew_100),
+	.a1 /* IN */ (onew_92),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_37
 (
-	.z(oneb_101), // OUT
-	.a0(onew_101), // IN
-	.a1(onew_93), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_101),
+	.a0 /* IN */ (onew_101),
+	.a1 /* IN */ (onew_93),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_38
 (
-	.z(oneb_102), // OUT
-	.a0(onew_102), // IN
-	.a1(onew_94), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_102),
+	.a0 /* IN */ (onew_102),
+	.a1 /* IN */ (onew_94),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_39
 (
-	.z(oneb_103), // OUT
-	.a0(onew_103), // IN
-	.a1(onew_95), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_103),
+	.a0 /* IN */ (onew_103),
+	.a1 /* IN */ (onew_95),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_40
 (
-	.z(oneb_104), // OUT
-	.a0(onew_104), // IN
-	.a1(onew_96), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_104),
+	.a0 /* IN */ (onew_104),
+	.a1 /* IN */ (onew_96),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_41
 (
-	.z(oneb_105), // OUT
-	.a0(onew_105), // IN
-	.a1(onew_97), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_105),
+	.a0 /* IN */ (onew_105),
+	.a1 /* IN */ (onew_97),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_42
 (
-	.z(oneb_106), // OUT
-	.a0(onew_106), // IN
-	.a1(onew_98), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_106),
+	.a0 /* IN */ (onew_106),
+	.a1 /* IN */ (onew_98),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_43
 (
-	.z(oneb_107), // OUT
-	.a0(onew_107), // IN
-	.a1(onew_99), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_107),
+	.a0 /* IN */ (onew_107),
+	.a1 /* IN */ (onew_99),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_44
 (
-	.z(oneb_108), // OUT
-	.a0(onew_108), // IN
-	.a1(onew_100), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_108),
+	.a0 /* IN */ (onew_108),
+	.a1 /* IN */ (onew_100),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_45
 (
-	.z(oneb_109), // OUT
-	.a0(onew_109), // IN
-	.a1(onew_101), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_109),
+	.a0 /* IN */ (onew_109),
+	.a1 /* IN */ (onew_101),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_46
 (
-	.z(oneb_110), // OUT
-	.a0(onew_110), // IN
-	.a1(onew_102), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_110),
+	.a0 /* IN */ (onew_110),
+	.a1 /* IN */ (onew_102),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_47
 (
-	.z(oneb_111), // OUT
-	.a0(onew_111), // IN
-	.a1(onew_103), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_111),
+	.a0 /* IN */ (onew_111),
+	.a1 /* IN */ (onew_103),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_48
 (
-	.z(oneb_112), // OUT
-	.a0(onew_112), // IN
-	.a1(onew_104), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_112),
+	.a0 /* IN */ (onew_112),
+	.a1 /* IN */ (onew_104),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_49
 (
-	.z(oneb_113), // OUT
-	.a0(onew_113), // IN
-	.a1(onew_105), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_113),
+	.a0 /* IN */ (onew_113),
+	.a1 /* IN */ (onew_105),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_50
 (
-	.z(oneb_114), // OUT
-	.a0(onew_114), // IN
-	.a1(onew_106), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_114),
+	.a0 /* IN */ (onew_114),
+	.a1 /* IN */ (onew_106),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_51
 (
-	.z(oneb_115), // OUT
-	.a0(onew_115), // IN
-	.a1(onew_107), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_115),
+	.a0 /* IN */ (onew_115),
+	.a1 /* IN */ (onew_107),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_52
 (
-	.z(oneb_116), // OUT
-	.a0(onew_116), // IN
-	.a1(onew_108), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_116),
+	.a0 /* IN */ (onew_116),
+	.a1 /* IN */ (onew_108),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_53
 (
-	.z(oneb_117), // OUT
-	.a0(onew_117), // IN
-	.a1(onew_109), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_117),
+	.a0 /* IN */ (onew_117),
+	.a1 /* IN */ (onew_109),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_54
 (
-	.z(oneb_118), // OUT
-	.a0(onew_118), // IN
-	.a1(onew_110), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_118),
+	.a0 /* IN */ (onew_118),
+	.a1 /* IN */ (onew_110),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_55
 (
-	.z(oneb_119), // OUT
-	.a0(onew_119), // IN
-	.a1(onew_111), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_119),
+	.a0 /* IN */ (onew_119),
+	.a1 /* IN */ (onew_111),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_56
 (
-	.z(oneb_120), // OUT
-	.a0(onew_120), // IN
-	.a1(onew_112), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_120),
+	.a0 /* IN */ (onew_120),
+	.a1 /* IN */ (onew_112),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_57
 (
-	.z(oneb_121), // OUT
-	.a0(onew_121), // IN
-	.a1(onew_113), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_121),
+	.a0 /* IN */ (onew_121),
+	.a1 /* IN */ (onew_113),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_58
 (
-	.z(oneb_122), // OUT
-	.a0(onew_122), // IN
-	.a1(onew_114), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_122),
+	.a0 /* IN */ (onew_122),
+	.a1 /* IN */ (onew_114),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_59
 (
-	.z(oneb_123), // OUT
-	.a0(onew_123), // IN
-	.a1(onew_115), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_123),
+	.a0 /* IN */ (onew_123),
+	.a1 /* IN */ (onew_115),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_60
 (
-	.z(oneb_124), // OUT
-	.a0(onew_124), // IN
-	.a1(onew_116), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_124),
+	.a0 /* IN */ (onew_124),
+	.a1 /* IN */ (onew_116),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_61
 (
-	.z(oneb_125), // OUT
-	.a0(onew_125), // IN
-	.a1(onew_117), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_125),
+	.a0 /* IN */ (onew_125),
+	.a1 /* IN */ (onew_117),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_62
 (
-	.z(oneb_126), // OUT
-	.a0(onew_126), // IN
-	.a1(onew_118), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_126),
+	.a0 /* IN */ (onew_126),
+	.a1 /* IN */ (onew_118),
+	.s /* IN */ (shift_3)
 );
 mx2 oneb_from_64_to_127_inst_63
 (
-	.z(oneb_127), // OUT
-	.a0(onew_127), // IN
-	.a1(onew_119), // IN
-	.s(shift_3)  // IN
+	.z /* OUT */ (oneb_127),
+	.a0 /* IN */ (onew_127),
+	.a1 /* IN */ (onew_119),
+	.s /* IN */ (shift_3)
 );
 
 // SRCSHIFT.NET (90) - onen[64-67] : mx2
 mx2 onen_from_64_to_67_inst_0
 (
-	.z(onen_64), // OUT
-	.a0(oneb_64), // IN
-	.a1(oneb_68), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_64),
+	.a0 /* IN */ (oneb_64),
+	.a1 /* IN */ (oneb_68),
+	.s /* IN */ (shift_2)
 );
 mx2 onen_from_64_to_67_inst_1
 (
-	.z(onen_65), // OUT
-	.a0(oneb_65), // IN
-	.a1(oneb_69), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_65),
+	.a0 /* IN */ (oneb_65),
+	.a1 /* IN */ (oneb_69),
+	.s /* IN */ (shift_2)
 );
 mx2 onen_from_64_to_67_inst_2
 (
-	.z(onen_66), // OUT
-	.a0(oneb_66), // IN
-	.a1(oneb_70), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_66),
+	.a0 /* IN */ (oneb_66),
+	.a1 /* IN */ (oneb_70),
+	.s /* IN */ (shift_2)
 );
 mx2 onen_from_64_to_67_inst_3
 (
-	.z(onen_67), // OUT
-	.a0(oneb_67), // IN
-	.a1(oneb_71), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_67),
+	.a0 /* IN */ (oneb_67),
+	.a1 /* IN */ (oneb_71),
+	.s /* IN */ (shift_2)
 );
 
 // SRCSHIFT.NET (92) - onen[68-71] : mx2
 mx2 onen_from_68_to_71_inst_0
 (
-	.z(onen_68), // OUT
-	.a0(oneb_68), // IN
-	.a1(oneb_64), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_68),
+	.a0 /* IN */ (oneb_68),
+	.a1 /* IN */ (oneb_64),
+	.s /* IN */ (shift_2)
 );
 mx2 onen_from_68_to_71_inst_1
 (
-	.z(onen_69), // OUT
-	.a0(oneb_69), // IN
-	.a1(oneb_65), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_69),
+	.a0 /* IN */ (oneb_69),
+	.a1 /* IN */ (oneb_65),
+	.s /* IN */ (shift_2)
 );
 mx2 onen_from_68_to_71_inst_2
 (
-	.z(onen_70), // OUT
-	.a0(oneb_70), // IN
-	.a1(oneb_66), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_70),
+	.a0 /* IN */ (oneb_70),
+	.a1 /* IN */ (oneb_66),
+	.s /* IN */ (shift_2)
 );
 mx2 onen_from_68_to_71_inst_3
 (
-	.z(onen_71), // OUT
-	.a0(oneb_71), // IN
-	.a1(oneb_67), // IN
-	.s(shift_2)  // IN
+	.z /* OUT */ (onen_71),
+	.a0 /* IN */ (oneb_71),
+	.a1 /* IN */ (oneb_67),
+	.s /* IN */ (shift_2)
 );
 
 // SRCSHIFT.NET (97) - onet[64-65] : mx2
 mx2 onet_from_64_to_65_inst_0
 (
-	.z(onet_64), // OUT
-	.a0(onen_64), // IN
-	.a1(onen_70), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_64),
+	.a0 /* IN */ (onen_64),
+	.a1 /* IN */ (onen_70),
+	.s /* IN */ (shift_1)
 );
 mx2 onet_from_64_to_65_inst_1
 (
-	.z(onet_65), // OUT
-	.a0(onen_65), // IN
-	.a1(onen_71), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_65),
+	.a0 /* IN */ (onen_65),
+	.a1 /* IN */ (onen_71),
+	.s /* IN */ (shift_1)
 );
 
 // SRCSHIFT.NET (99) - onet[66-71] : mx2
 mx2 onet_from_66_to_71_inst_0
 (
-	.z(onet_66), // OUT
-	.a0(onen_66), // IN
-	.a1(onen_64), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_66),
+	.a0 /* IN */ (onen_66),
+	.a1 /* IN */ (onen_64),
+	.s /* IN */ (shift_1)
 );
 mx2 onet_from_66_to_71_inst_1
 (
-	.z(onet_67), // OUT
-	.a0(onen_67), // IN
-	.a1(onen_65), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_67),
+	.a0 /* IN */ (onen_67),
+	.a1 /* IN */ (onen_65),
+	.s /* IN */ (shift_1)
 );
 mx2 onet_from_66_to_71_inst_2
 (
-	.z(onet_68), // OUT
-	.a0(onen_68), // IN
-	.a1(onen_66), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_68),
+	.a0 /* IN */ (onen_68),
+	.a1 /* IN */ (onen_66),
+	.s /* IN */ (shift_1)
 );
 mx2 onet_from_66_to_71_inst_3
 (
-	.z(onet_69), // OUT
-	.a0(onen_69), // IN
-	.a1(onen_67), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_69),
+	.a0 /* IN */ (onen_69),
+	.a1 /* IN */ (onen_67),
+	.s /* IN */ (shift_1)
 );
 mx2 onet_from_66_to_71_inst_4
 (
-	.z(onet_70), // OUT
-	.a0(onen_70), // IN
-	.a1(onen_68), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_70),
+	.a0 /* IN */ (onen_70),
+	.a1 /* IN */ (onen_68),
+	.s /* IN */ (shift_1)
 );
 mx2 onet_from_66_to_71_inst_5
 (
-	.z(onet_71), // OUT
-	.a0(onen_71), // IN
-	.a1(onen_69), // IN
-	.s(shift_1)  // IN
+	.z /* OUT */ (onet_71),
+	.a0 /* IN */ (onen_71),
+	.a1 /* IN */ (onen_69),
+	.s /* IN */ (shift_1)
 );
 
 // SRCSHIFT.NET (104) - oneo[64] : mx2
 mx2 oneo_index_64_inst
 (
-	.z(oneo_64), // OUT
-	.a0(onet_64), // IN
-	.a1(onet_71), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_64),
+	.a0 /* IN */ (onet_64),
+	.a1 /* IN */ (onet_71),
+	.s /* IN */ (shift_0)
 );
 
 // SRCSHIFT.NET (106) - oneo[65-71] : mx2
 mx2 oneo_from_65_to_71_inst_0
 (
-	.z(oneo_65), // OUT
-	.a0(onet_65), // IN
-	.a1(onet_64), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_65),
+	.a0 /* IN */ (onet_65),
+	.a1 /* IN */ (onet_64),
+	.s /* IN */ (shift_0)
 );
 mx2 oneo_from_65_to_71_inst_1
 (
-	.z(oneo_66), // OUT
-	.a0(onet_66), // IN
-	.a1(onet_65), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_66),
+	.a0 /* IN */ (onet_66),
+	.a1 /* IN */ (onet_65),
+	.s /* IN */ (shift_0)
 );
 mx2 oneo_from_65_to_71_inst_2
 (
-	.z(oneo_67), // OUT
-	.a0(onet_67), // IN
-	.a1(onet_66), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_67),
+	.a0 /* IN */ (onet_67),
+	.a1 /* IN */ (onet_66),
+	.s /* IN */ (shift_0)
 );
 mx2 oneo_from_65_to_71_inst_3
 (
-	.z(oneo_68), // OUT
-	.a0(onet_68), // IN
-	.a1(onet_67), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_68),
+	.a0 /* IN */ (onet_68),
+	.a1 /* IN */ (onet_67),
+	.s /* IN */ (shift_0)
 );
 mx2 oneo_from_65_to_71_inst_4
 (
-	.z(oneo_69), // OUT
-	.a0(onet_69), // IN
-	.a1(onet_68), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_69),
+	.a0 /* IN */ (onet_69),
+	.a1 /* IN */ (onet_68),
+	.s /* IN */ (shift_0)
 );
 mx2 oneo_from_65_to_71_inst_5
 (
-	.z(oneo_70), // OUT
-	.a0(onet_70), // IN
-	.a1(onet_69), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_70),
+	.a0 /* IN */ (onet_70),
+	.a1 /* IN */ (onet_69),
+	.s /* IN */ (shift_0)
 );
 mx2 oneo_from_65_to_71_inst_6
 (
-	.z(oneo_71), // OUT
-	.a0(onet_71), // IN
-	.a1(onet_70), // IN
-	.s(shift_0)  // IN
+	.z /* OUT */ (oneo_71),
+	.a0 /* IN */ (onet_71),
+	.a1 /* IN */ (onet_70),
+	.s /* IN */ (shift_0)
 );
 
 // SRCSHIFT.NET (110) - srcd[0] : join

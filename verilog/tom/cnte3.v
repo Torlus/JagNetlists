@@ -35,10 +35,10 @@ assign count_2 = count_2_obuf;
 // INTER-UA.NET (161) - add1 : ha1
 ha1 add1_inst
 (
-	.s(sum_1), // OUT
-	.co(carry_1), // OUT
-	.a(count_1_obuf), // IN
-	.b(count_0_obuf)  // IN
+	.s /* OUT */ (sum_1),
+	.co /* OUT */ (carry_1),
+	.a /* IN */ (count_1_obuf),
+	.b /* IN */ (count_0_obuf)
 );
 
 // INTER-UA.NET (162) - add2 : eo
@@ -47,56 +47,56 @@ assign sum_2 = count_2_obuf ^ carry_1;
 // INTER-UA.NET (163) - cnti0 : mx2
 mx2 cnti0_inst
 (
-	.z(cnti_0), // OUT
-	.a0(count_0_obuf), // IN
-	.a1(count_n_0), // IN
-	.s(cnten)  // IN
+	.z /* OUT */ (cnti_0),
+	.a0 /* IN */ (count_0_obuf),
+	.a1 /* IN */ (count_n_0),
+	.s /* IN */ (cnten)
 );
 
 // INTER-UA.NET (164) - cnti1 : mx2
 mx2 cnti1_inst
 (
-	.z(cnti_1), // OUT
-	.a0(count_1_obuf), // IN
-	.a1(sum_1), // IN
-	.s(cnten)  // IN
+	.z /* OUT */ (cnti_1),
+	.a0 /* IN */ (count_1_obuf),
+	.a1 /* IN */ (sum_1),
+	.s /* IN */ (cnten)
 );
 
 // INTER-UA.NET (165) - cnti2 : mx2
 mx2 cnti2_inst
 (
-	.z(cnti_2), // OUT
-	.a0(count_2_obuf), // IN
-	.a1(sum_2), // IN
-	.s(cnten)  // IN
+	.z /* OUT */ (cnti_2),
+	.a0 /* IN */ (count_2_obuf),
+	.a1 /* IN */ (sum_2),
+	.s /* IN */ (cnten)
 );
 
 // INTER-UA.NET (166) - count0 : fd2p
 fd2 count0_inst
 (
-	.q(countt_0), // OUT
-	.qn(count_n_0), // OUT
-	.d(cnti_0), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (countt_0),
+	.qn /* OUT */ (count_n_0),
+	.d /* IN */ (cnti_0),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INTER-UA.NET (167) - count1 : fd2qp
 fd2q count1_inst
 (
-	.q(countt_1), // OUT
-	.d(cnti_1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (countt_1),
+	.d /* IN */ (cnti_1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INTER-UA.NET (168) - count2 : fd2qp
 fd2q count2_inst
 (
-	.q(countt_2), // OUT
-	.d(cnti_2), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (countt_2),
+	.d /* IN */ (cnti_2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // INTER-UA.NET (169) - icount[0-2] : nivu

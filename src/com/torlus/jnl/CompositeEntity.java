@@ -16,6 +16,16 @@ public class CompositeEntity extends Entity {
 		map.put(getBaseName(), this);
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		for(Instance inst : instances) {
+			if (inst.entity.requireSysclk())
+				return true;
+		}
+		return false;
+	}
+
+	
 	public Signal findSignal(String name, int bit, int index) {
 		Signal res = null;
 		int maxIndex = 0;
@@ -27,6 +37,7 @@ public class CompositeEntity extends Entity {
 
 		for (int i = 0; i < candidates.size(); i++) {
 			Signal s = candidates.get(i);
+
 			if (name.equals(s.name)) {
 				if ((index != Signal.NONE && s.index >= 0) || (index == Signal.NONE && s.index == Signal.NONE)) {
 					if ((bit != Signal.NONE && s.bit >= 0) || (bit == Signal.NONE && s.bit == Signal.NONE)) {
@@ -56,6 +67,21 @@ public class CompositeEntity extends Entity {
 			}
 		}
 
+		return res;
+	}
+
+	public Vector<Signal> getAllSignals(Signal org) {
+		Vector<Signal> res = new Vector<Signal>();
+
+		Vector<Signal> candidates = new Vector<Signal>();
+		candidates.addAll(ios);
+		candidates.addAll(locals);
+		for (int i = 0; i < candidates.size(); i++) {
+			Signal s = candidates.get(i);
+			if (org.equals(s)) {
+				res.add(s);
+			}
+		}
 		return res;
 	}
 
@@ -95,12 +121,12 @@ public class CompositeEntity extends Entity {
 		return vhdl;
 	}
 
-	public String veriloglLocalDecl() {
+	public String verilogLocalDecl() {
 		String vlog = "";
 		for (int n = 0; n < locals.size(); n++) {
 			Signal io = locals.get(n);
 			if (io.bit == Signal.NONE) {
-				vlog += "wire " + io.verilogName() + ";\n";
+				vlog += verilogExpand("wire " + io.verilogName() + ";\n");
 			} else {
 				int start = io.bit;
 				int current = start;
@@ -123,7 +149,7 @@ public class CompositeEntity extends Entity {
 					n--;
 					io = locals.get(n);
 				}
-				vlog += "wire [" + start + ":" + current + "] " + io.verilogName() + ";\n";
+				vlog += verilogExpand("wire [" + start + ":" + current + "] " + io.verilogName() + ";\n");
 			}
 		}
 
@@ -134,7 +160,7 @@ public class CompositeEntity extends Entity {
 		String vhdl = "";
 		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
-			if (io.type.equals(SignalType.IO)) {
+			if (io.type != SignalType.BUS && io.buffered) {
 				if (io.bit != Signal.NONE) {
 					vhdl += "signal " + io.vhdlName() + "_b" + io.bit + "_obuf : std_logic;\n";
 				} else {
@@ -152,7 +178,7 @@ public class CompositeEntity extends Entity {
 		String vlog = "";
 		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
-			if (io.type.equals(SignalType.IO)) {
+			if (io.type != SignalType.BUS && io.buffered) {
 				if (io.bit != Signal.NONE) {
 					vlog += "wire " + io.verilogName() + "_b" + io.bit + "_obuf;\n";
 				} else {
@@ -170,7 +196,7 @@ public class CompositeEntity extends Entity {
 		String vhdl = "";
 		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
-			if (io.type.equals(SignalType.IO)) {
+			if (io.type != SignalType.BUS && io.buffered) {
 				if (io.bit != Signal.NONE) {
 					vhdl += io.vhdlName() + "(" + io.bit + ") <= " + io.vhdlName() + "_b" + io.bit + "_obuf;\n";
 				} else {
@@ -188,7 +214,7 @@ public class CompositeEntity extends Entity {
 		String vlog = "";
 		for (int n = 0; n < ios.size(); n++) {
 			Signal io = ios.get(n);
-			if (io.type.equals(SignalType.IO)) {
+			if (io.type != SignalType.BUS && io.buffered) {
 				if (io.bit != Signal.NONE) {
 					vlog += "assign " + io.verilogName() + "[" + io.bit + "] = " + io.verilogName() + "_b" + io.bit + "_obuf;\n";
 				} else {

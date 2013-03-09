@@ -411,6 +411,9 @@ BEGIN
 Cr[0-10] :=	LDP1Q (cr[0-10],din[0-10],crwr);
 Cre[0-10] :=	EN (cre[0-10],cr[0-10],count[0-10]);
 Creq :=		AND11 (creq,cre[0..10]);
+(* GE - to pass connectivity checks *)
+Zero := TIE0(zero);
+Dout[0-10] := TS(dout[0-10], cr[0-10], zero);
 
 END;
 

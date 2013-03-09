@@ -3,17 +3,39 @@
 module creg11
 (
 	output creq,
-	inout dout_0,
-	inout dout_1,
-	inout dout_2,
-	inout dout_3,
-	inout dout_4,
-	inout dout_5,
-	inout dout_6,
-	inout dout_7,
-	inout dout_8,
-	inout dout_9,
-	inout dout_10,
+	output dout_0_out,
+	output dout_0_oe,
+	input dout_0_in,
+	output dout_1_out,
+	output dout_1_oe,
+	input dout_1_in,
+	output dout_2_out,
+	output dout_2_oe,
+	input dout_2_in,
+	output dout_3_out,
+	output dout_3_oe,
+	input dout_3_in,
+	output dout_4_out,
+	output dout_4_oe,
+	input dout_4_in,
+	output dout_5_out,
+	output dout_5_oe,
+	input dout_5_in,
+	output dout_6_out,
+	output dout_6_oe,
+	input dout_6_in,
+	output dout_7_out,
+	output dout_7_oe,
+	input dout_7_in,
+	output dout_8_out,
+	output dout_8_oe,
+	input dout_8_in,
+	output dout_9_out,
+	output dout_9_oe,
+	input dout_9_in,
+	output dout_10_out,
+	output dout_10_oe,
+	input dout_10_in,
 	input count_0,
 	input count_1,
 	input count_2,
@@ -60,81 +82,74 @@ wire cre_7;
 wire cre_8;
 wire cre_9;
 wire cre_10;
-
-// Output buffers
-wire creq_obuf;
-
-
-// Output buffers
-assign creq = creq_obuf;
-
+wire zero;
 
 // VID.NET (411) - cr[0-10] : ldp1q
 ldp1q cr_from_0_to_10_inst_0
 (
-	.q(cr_0), // OUT
-	.d(din_0), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_1
 (
-	.q(cr_1), // OUT
-	.d(din_1), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_2
 (
-	.q(cr_2), // OUT
-	.d(din_2), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_2),
+	.d /* IN */ (din_2),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_3
 (
-	.q(cr_3), // OUT
-	.d(din_3), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_4
 (
-	.q(cr_4), // OUT
-	.d(din_4), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_5
 (
-	.q(cr_5), // OUT
-	.d(din_5), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_6
 (
-	.q(cr_6), // OUT
-	.d(din_6), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_7
 (
-	.q(cr_7), // OUT
-	.d(din_7), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_8
 (
-	.q(cr_8), // OUT
-	.d(din_8), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_9
 (
-	.q(cr_9), // OUT
-	.d(din_9), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (crwr)
 );
 ldp1q cr_from_0_to_10_inst_10
 (
-	.q(cr_10), // OUT
-	.d(din_10), // IN
-	.g(crwr)  // IN
+	.q /* OUT */ (cr_10),
+	.d /* IN */ (din_10),
+	.g /* IN */ (crwr)
 );
 
 // VID.NET (412) - cre[0-10] : en
@@ -153,17 +168,44 @@ assign cre_10 = ~(cr_10 ^ count_10);
 // VID.NET (413) - creq : and11
 and11 creq_inst
 (
-	.z(creq_obuf), // IO
-	.a_0(cre_0), // IN
-	.a_1(cre_1), // IN
-	.a_2(cre_2), // IN
-	.a_3(cre_3), // IN
-	.a_4(cre_4), // IN
-	.a_5(cre_5), // IN
-	.a_6(cre_6), // IN
-	.a_7(cre_7), // IN
-	.a_8(cre_8), // IN
-	.a_9(cre_9), // IN
-	.a_10(cre_10)  // IN
+	.z /* OUT */ (creq),
+	.a_0 /* IN */ (cre_0),
+	.a_1 /* IN */ (cre_1),
+	.a_2 /* IN */ (cre_2),
+	.a_3 /* IN */ (cre_3),
+	.a_4 /* IN */ (cre_4),
+	.a_5 /* IN */ (cre_5),
+	.a_6 /* IN */ (cre_6),
+	.a_7 /* IN */ (cre_7),
+	.a_8 /* IN */ (cre_8),
+	.a_9 /* IN */ (cre_9),
+	.a_10 /* IN */ (cre_10)
 );
+
+// VID.NET (415) - zero : tie0
+assign zero = 1'b0;
+
+// VID.NET (416) - dout[0-10] : ts
+assign dout_0_out = cr_0;
+assign dout_0_oe = zero;
+assign dout_1_out = cr_1;
+assign dout_1_oe = zero;
+assign dout_2_out = cr_2;
+assign dout_2_oe = zero;
+assign dout_3_out = cr_3;
+assign dout_3_oe = zero;
+assign dout_4_out = cr_4;
+assign dout_4_oe = zero;
+assign dout_5_out = cr_5;
+assign dout_5_oe = zero;
+assign dout_6_out = cr_6;
+assign dout_6_oe = zero;
+assign dout_7_out = cr_7;
+assign dout_7_oe = zero;
+assign dout_8_out = cr_8;
+assign dout_8_oe = zero;
+assign dout_9_out = cr_9;
+assign dout_9_oe = zero;
+assign dout_10_out = cr_10;
+assign dout_10_oe = zero;
 endmodule

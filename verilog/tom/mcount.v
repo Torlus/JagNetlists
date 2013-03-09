@@ -48,69 +48,69 @@ assign cntt_3 = ~(cntc_2 ^ count_3);
 // SYSTOLIC.NET (199) - cnti[0-3] : mx4
 mx4 cnti_from_0_to_3_inst_0
 (
-	.z(cnti_0), // OUT
-	.a0(count_0), // IN
-	.a1(cntt_0), // IN
-	.a2(mwidth_0), // IN
-	.a3(mwidth_0), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_0),
+	.a0 /* IN */ (count_0),
+	.a1 /* IN */ (cntt_0),
+	.a2 /* IN */ (mwidth_0),
+	.a3 /* IN */ (mwidth_0),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_3_inst_1
 (
-	.z(cnti_1), // OUT
-	.a0(count_1), // IN
-	.a1(cntt_1), // IN
-	.a2(mwidth_1), // IN
-	.a3(mwidth_1), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_1),
+	.a0 /* IN */ (count_1),
+	.a1 /* IN */ (cntt_1),
+	.a2 /* IN */ (mwidth_1),
+	.a3 /* IN */ (mwidth_1),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_3_inst_2
 (
-	.z(cnti_2), // OUT
-	.a0(count_2), // IN
-	.a1(cntt_2), // IN
-	.a2(mwidth_2), // IN
-	.a3(mwidth_2), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_2),
+	.a0 /* IN */ (count_2),
+	.a1 /* IN */ (cntt_2),
+	.a2 /* IN */ (mwidth_2),
+	.a3 /* IN */ (mwidth_2),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_3_inst_3
 (
-	.z(cnti_3), // OUT
-	.a0(count_3), // IN
-	.a1(cntt_3), // IN
-	.a2(mwidth_3), // IN
-	.a3(mwidth_3), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_3),
+	.a0 /* IN */ (count_3),
+	.a1 /* IN */ (cntt_3),
+	.a2 /* IN */ (mwidth_3),
+	.a3 /* IN */ (mwidth_3),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 
 // SYSTOLIC.NET (202) - count[0-3] : fd1q
 fd1q count_from_0_to_3_inst_0
 (
-	.q(count_0), // OUT
-	.d(cnti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_0),
+	.d /* IN */ (cnti_0),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_3_inst_1
 (
-	.q(count_1), // OUT
-	.d(cnti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_1),
+	.d /* IN */ (cnti_1),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_3_inst_2
 (
-	.q(count_2), // OUT
-	.d(cnti_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_2),
+	.d /* IN */ (cnti_2),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_3_inst_3
 (
-	.q(count_3), // OUT
-	.d(cnti_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_3),
+	.d /* IN */ (cnti_3),
+	.cp /* IN */ (clk)
 );
 
 // SYSTOLIC.NET (204) - count\[0] : iv

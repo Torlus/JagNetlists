@@ -3,8 +3,8 @@
 module cmp8_int
 (
 	output equal,
-	input[0:7] a;
-	input[0:7] b
+	input [0:7] a;
+	input [0:7] b
 );
 
 // DUPLO.NET (922) - comp : cmp8

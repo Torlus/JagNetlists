@@ -2,7 +2,9 @@
 
 module gpu_mem
 (
-	inout[0:31] gpu_data;
+	output [0:31] gpu_data_out;
+	output [0:31] gpu_data_oe;
+	input [0:31] gpu_data_in;
 	output big_instr,
 	output big_io,
 	output big_pix,
@@ -17,12 +19,12 @@ module gpu_mem
 	output flagrd,
 	output flagwr,
 	output gateack,
-	output[0:23] gpu_addr;
+	output [0:23] gpu_addr;
 	output gpu_memw,
 	output hidrd,
 	output hidwr,
 	output lock,
-	output[0:31] mem_data;
+	output [0:31] mem_data;
 	output mtxawr,
 	output mtxcwr,
 	output pcrd,
@@ -43,20 +45,20 @@ module gpu_mem
 	output remrd,
 	output statrd,
 	input clk,
-	input[0:12] cpuaddr;
-	input[0:31] cpudata;
-	input[0:23] dataddr;
-	input[0:31] dstd;
+	input [0:12] cpuaddr;
+	input [0:31] cpudata;
+	input [0:23] dataddr;
+	input [0:31] dstd;
 	input dstdgate,
 	input datreq,
 	input datwe,
 	input gatereq,
 	input go,
-	input[0:31] gpu_din;
+	input [0:31] gpu_din;
 	input ioreq,
 	input iowr,
 	input pabort,
-	input[0:21] progaddr;
+	input [0:21] progaddr;
 	input progreq,
 	input reset_n,
 	input reset_lock
@@ -287,21 +289,21 @@ assign datreqa = datreq & gatereq_n & ioreq_n;
 // GPU_MEM.NET (125) - progreqa : an5p
 an5p progreqa_inst
 (
-	.q(progreqa), // OUT
-	.a_0(progreq), // IN
-	.a_1(datreq_n), // IN
-	.a_2(gatereq_n), // IN
-	.a_3(ioreq_n), // IN
-	.a_4(xprogi_n)  // IN
+	.q /* OUT */ (progreqa),
+	.a_0 /* IN */ (progreq),
+	.a_1 /* IN */ (datreq_n),
+	.a_2 /* IN */ (gatereq_n),
+	.a_3 /* IN */ (ioreq_n),
+	.a_4 /* IN */ (xprogi_n)
 );
 
 // GPU_MEM.NET (131) - ioservt : fd2q
 fd2q ioservt_inst
 (
-	.q(ioservt), // OUT
-	.d(ioreq), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ioservt),
+	.d /* IN */ (ioreq),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (132) - ioserv : niv
@@ -313,33 +315,33 @@ assign ioserv_n = ~ioservt;
 // GPU_MEM.NET (134) - ioserva[0-2] : fd2q
 fd2q ioserva_from_0_to_2_inst_0
 (
-	.q(ioserva_0), // OUT
-	.d(ioreq), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ioserva_0),
+	.d /* IN */ (ioreq),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ioserva_from_0_to_2_inst_1
 (
-	.q(ioserva_1), // OUT
-	.d(ioreq), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ioserva_1),
+	.d /* IN */ (ioreq),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q ioserva_from_0_to_2_inst_2
 (
-	.q(ioserva_2), // OUT
-	.d(ioreq), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (ioserva_2),
+	.d /* IN */ (ioreq),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (135) - gateserv : fd2q
 fd2q gateserv_inst
 (
-	.q(gateserv), // OUT
-	.d(gatereqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (gateserv),
+	.d /* IN */ (gatereqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (136) - gateserv\ : iv
@@ -348,47 +350,47 @@ assign gateserv_n = ~gateserv;
 // GPU_MEM.NET (137) - datservt : fd2q
 fd2q datservt_inst
 (
-	.q(datservt), // OUT
-	.d(datreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (datservt),
+	.d /* IN */ (datreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (138) - datservb[0-4] : fd2qp
 fd2q datservb_from_0_to_4_inst_0
 (
-	.q(datservb_0), // OUT
-	.d(datreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (datservb_0),
+	.d /* IN */ (datreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q datservb_from_0_to_4_inst_1
 (
-	.q(datservb_1), // OUT
-	.d(datreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (datservb_1),
+	.d /* IN */ (datreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q datservb_from_0_to_4_inst_2
 (
-	.q(datservb_2), // OUT
-	.d(datreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (datservb_2),
+	.d /* IN */ (datreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q datservb_from_0_to_4_inst_3
 (
-	.q(datservb_3), // OUT
-	.d(datreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (datservb_3),
+	.d /* IN */ (datreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 fd2q datservb_from_0_to_4_inst_4
 (
-	.q(datservb_4), // OUT
-	.d(datreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (datservb_4),
+	.d /* IN */ (datreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (139) - datserv : nivu
@@ -400,10 +402,10 @@ assign datserv_n = ~datservt;
 // GPU_MEM.NET (141) - progservt : fd2q
 fd2q progservt_inst
 (
-	.q(progservt), // OUT
-	.d(progreqa), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (progservt),
+	.d /* IN */ (progreqa),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (142) - progserv : nivm
@@ -427,10 +429,10 @@ assign xpabortt_1 = ~(xpabortset_n & xpabortt_0);
 // GPU_MEM.NET (162) - xpabort : fd2q
 fd2q xpabort_inst
 (
-	.q(xpabort), // OUT
-	.d(xpabortt_1), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xpabort),
+	.d /* IN */ (xpabortt_1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (163) - xpabort\ : iv
@@ -451,10 +453,10 @@ assign xprogi_n = ~xprogi;
 // GPU_MEM.NET (180) - xprog : fd2q
 fd2q xprog_inst
 (
-	.q(xprog), // OUT
-	.d(xprogi), // IN
-	.cp(clk), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (xprog),
+	.d /* IN */ (xprogi),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (181) - xprog\ : iv
@@ -490,9 +492,9 @@ assign gpu_memwi = (datwe & datreqa) | (iowr & ioreq);
 // GPU_MEM.NET (222) - gpu_memwt : fd1q
 fd1q gpu_memwt_inst
 (
-	.q(gpu_memwt), // OUT
-	.d(gpu_memwi), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (gpu_memwt),
+	.d /* IN */ (gpu_memwi),
+	.cp /* IN */ (clk)
 );
 
 // GPU_MEM.NET (223) - gpu_memw\ : iv
@@ -507,291 +509,291 @@ assign dstdld_n = ~(dstdgate | go_n);
 // GPU_MEM.NET (239) - datdata : fd1e
 fd1e datdata_inst_0
 (
-	.q(datdata[0]), // OUT
-	.qn(datdata_n[0]), // OUT
-	.d(dstd[0]), // IN
-	.cp(clk), // IN
-	.ti(datdata[0]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[0]),
+	.qn /* OUT */ (datdata_n[0]),
+	.d /* IN */ (dstd[0]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[0]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_1
 (
-	.q(datdata[1]), // OUT
-	.qn(datdata_n[1]), // OUT
-	.d(dstd[1]), // IN
-	.cp(clk), // IN
-	.ti(datdata[1]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[1]),
+	.qn /* OUT */ (datdata_n[1]),
+	.d /* IN */ (dstd[1]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[1]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_2
 (
-	.q(datdata[2]), // OUT
-	.qn(datdata_n[2]), // OUT
-	.d(dstd[2]), // IN
-	.cp(clk), // IN
-	.ti(datdata[2]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[2]),
+	.qn /* OUT */ (datdata_n[2]),
+	.d /* IN */ (dstd[2]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[2]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_3
 (
-	.q(datdata[3]), // OUT
-	.qn(datdata_n[3]), // OUT
-	.d(dstd[3]), // IN
-	.cp(clk), // IN
-	.ti(datdata[3]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[3]),
+	.qn /* OUT */ (datdata_n[3]),
+	.d /* IN */ (dstd[3]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[3]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_4
 (
-	.q(datdata[4]), // OUT
-	.qn(datdata_n[4]), // OUT
-	.d(dstd[4]), // IN
-	.cp(clk), // IN
-	.ti(datdata[4]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[4]),
+	.qn /* OUT */ (datdata_n[4]),
+	.d /* IN */ (dstd[4]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[4]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_5
 (
-	.q(datdata[5]), // OUT
-	.qn(datdata_n[5]), // OUT
-	.d(dstd[5]), // IN
-	.cp(clk), // IN
-	.ti(datdata[5]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[5]),
+	.qn /* OUT */ (datdata_n[5]),
+	.d /* IN */ (dstd[5]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[5]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_6
 (
-	.q(datdata[6]), // OUT
-	.qn(datdata_n[6]), // OUT
-	.d(dstd[6]), // IN
-	.cp(clk), // IN
-	.ti(datdata[6]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[6]),
+	.qn /* OUT */ (datdata_n[6]),
+	.d /* IN */ (dstd[6]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[6]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_7
 (
-	.q(datdata[7]), // OUT
-	.qn(datdata_n[7]), // OUT
-	.d(dstd[7]), // IN
-	.cp(clk), // IN
-	.ti(datdata[7]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[7]),
+	.qn /* OUT */ (datdata_n[7]),
+	.d /* IN */ (dstd[7]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[7]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_8
 (
-	.q(datdata[8]), // OUT
-	.qn(datdata_n[8]), // OUT
-	.d(dstd[8]), // IN
-	.cp(clk), // IN
-	.ti(datdata[8]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[8]),
+	.qn /* OUT */ (datdata_n[8]),
+	.d /* IN */ (dstd[8]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[8]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_9
 (
-	.q(datdata[9]), // OUT
-	.qn(datdata_n[9]), // OUT
-	.d(dstd[9]), // IN
-	.cp(clk), // IN
-	.ti(datdata[9]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[9]),
+	.qn /* OUT */ (datdata_n[9]),
+	.d /* IN */ (dstd[9]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[9]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_10
 (
-	.q(datdata[10]), // OUT
-	.qn(datdata_n[10]), // OUT
-	.d(dstd[10]), // IN
-	.cp(clk), // IN
-	.ti(datdata[10]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[10]),
+	.qn /* OUT */ (datdata_n[10]),
+	.d /* IN */ (dstd[10]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[10]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_11
 (
-	.q(datdata[11]), // OUT
-	.qn(datdata_n[11]), // OUT
-	.d(dstd[11]), // IN
-	.cp(clk), // IN
-	.ti(datdata[11]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[11]),
+	.qn /* OUT */ (datdata_n[11]),
+	.d /* IN */ (dstd[11]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[11]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_12
 (
-	.q(datdata[12]), // OUT
-	.qn(datdata_n[12]), // OUT
-	.d(dstd[12]), // IN
-	.cp(clk), // IN
-	.ti(datdata[12]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[12]),
+	.qn /* OUT */ (datdata_n[12]),
+	.d /* IN */ (dstd[12]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[12]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_13
 (
-	.q(datdata[13]), // OUT
-	.qn(datdata_n[13]), // OUT
-	.d(dstd[13]), // IN
-	.cp(clk), // IN
-	.ti(datdata[13]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[13]),
+	.qn /* OUT */ (datdata_n[13]),
+	.d /* IN */ (dstd[13]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[13]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_14
 (
-	.q(datdata[14]), // OUT
-	.qn(datdata_n[14]), // OUT
-	.d(dstd[14]), // IN
-	.cp(clk), // IN
-	.ti(datdata[14]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[14]),
+	.qn /* OUT */ (datdata_n[14]),
+	.d /* IN */ (dstd[14]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[14]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_15
 (
-	.q(datdata[15]), // OUT
-	.qn(datdata_n[15]), // OUT
-	.d(dstd[15]), // IN
-	.cp(clk), // IN
-	.ti(datdata[15]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[15]),
+	.qn /* OUT */ (datdata_n[15]),
+	.d /* IN */ (dstd[15]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[15]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_16
 (
-	.q(datdata[16]), // OUT
-	.qn(datdata_n[16]), // OUT
-	.d(dstd[16]), // IN
-	.cp(clk), // IN
-	.ti(datdata[16]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[16]),
+	.qn /* OUT */ (datdata_n[16]),
+	.d /* IN */ (dstd[16]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[16]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_17
 (
-	.q(datdata[17]), // OUT
-	.qn(datdata_n[17]), // OUT
-	.d(dstd[17]), // IN
-	.cp(clk), // IN
-	.ti(datdata[17]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[17]),
+	.qn /* OUT */ (datdata_n[17]),
+	.d /* IN */ (dstd[17]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[17]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_18
 (
-	.q(datdata[18]), // OUT
-	.qn(datdata_n[18]), // OUT
-	.d(dstd[18]), // IN
-	.cp(clk), // IN
-	.ti(datdata[18]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[18]),
+	.qn /* OUT */ (datdata_n[18]),
+	.d /* IN */ (dstd[18]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[18]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_19
 (
-	.q(datdata[19]), // OUT
-	.qn(datdata_n[19]), // OUT
-	.d(dstd[19]), // IN
-	.cp(clk), // IN
-	.ti(datdata[19]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[19]),
+	.qn /* OUT */ (datdata_n[19]),
+	.d /* IN */ (dstd[19]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[19]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_20
 (
-	.q(datdata[20]), // OUT
-	.qn(datdata_n[20]), // OUT
-	.d(dstd[20]), // IN
-	.cp(clk), // IN
-	.ti(datdata[20]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[20]),
+	.qn /* OUT */ (datdata_n[20]),
+	.d /* IN */ (dstd[20]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[20]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_21
 (
-	.q(datdata[21]), // OUT
-	.qn(datdata_n[21]), // OUT
-	.d(dstd[21]), // IN
-	.cp(clk), // IN
-	.ti(datdata[21]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[21]),
+	.qn /* OUT */ (datdata_n[21]),
+	.d /* IN */ (dstd[21]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[21]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_22
 (
-	.q(datdata[22]), // OUT
-	.qn(datdata_n[22]), // OUT
-	.d(dstd[22]), // IN
-	.cp(clk), // IN
-	.ti(datdata[22]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[22]),
+	.qn /* OUT */ (datdata_n[22]),
+	.d /* IN */ (dstd[22]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[22]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_23
 (
-	.q(datdata[23]), // OUT
-	.qn(datdata_n[23]), // OUT
-	.d(dstd[23]), // IN
-	.cp(clk), // IN
-	.ti(datdata[23]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[23]),
+	.qn /* OUT */ (datdata_n[23]),
+	.d /* IN */ (dstd[23]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[23]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_24
 (
-	.q(datdata[24]), // OUT
-	.qn(datdata_n[24]), // OUT
-	.d(dstd[24]), // IN
-	.cp(clk), // IN
-	.ti(datdata[24]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[24]),
+	.qn /* OUT */ (datdata_n[24]),
+	.d /* IN */ (dstd[24]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[24]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_25
 (
-	.q(datdata[25]), // OUT
-	.qn(datdata_n[25]), // OUT
-	.d(dstd[25]), // IN
-	.cp(clk), // IN
-	.ti(datdata[25]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[25]),
+	.qn /* OUT */ (datdata_n[25]),
+	.d /* IN */ (dstd[25]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[25]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_26
 (
-	.q(datdata[26]), // OUT
-	.qn(datdata_n[26]), // OUT
-	.d(dstd[26]), // IN
-	.cp(clk), // IN
-	.ti(datdata[26]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[26]),
+	.qn /* OUT */ (datdata_n[26]),
+	.d /* IN */ (dstd[26]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[26]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_27
 (
-	.q(datdata[27]), // OUT
-	.qn(datdata_n[27]), // OUT
-	.d(dstd[27]), // IN
-	.cp(clk), // IN
-	.ti(datdata[27]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[27]),
+	.qn /* OUT */ (datdata_n[27]),
+	.d /* IN */ (dstd[27]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[27]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_28
 (
-	.q(datdata[28]), // OUT
-	.qn(datdata_n[28]), // OUT
-	.d(dstd[28]), // IN
-	.cp(clk), // IN
-	.ti(datdata[28]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[28]),
+	.qn /* OUT */ (datdata_n[28]),
+	.d /* IN */ (dstd[28]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[28]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_29
 (
-	.q(datdata[29]), // OUT
-	.qn(datdata_n[29]), // OUT
-	.d(dstd[29]), // IN
-	.cp(clk), // IN
-	.ti(datdata[29]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[29]),
+	.qn /* OUT */ (datdata_n[29]),
+	.d /* IN */ (dstd[29]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[29]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_30
 (
-	.q(datdata[30]), // OUT
-	.qn(datdata_n[30]), // OUT
-	.d(dstd[30]), // IN
-	.cp(clk), // IN
-	.ti(datdata[30]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[30]),
+	.qn /* OUT */ (datdata_n[30]),
+	.d /* IN */ (dstd[30]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[30]),
+	.te /* IN */ (dstdld_n)
 );
 fd1e datdata_inst_31
 (
-	.q(datdata[31]), // OUT
-	.qn(datdata_n[31]), // OUT
-	.d(dstd[31]), // IN
-	.cp(clk), // IN
-	.ti(datdata[31]), // IN
-	.te(dstdld_n)  // IN
+	.q /* OUT */ (datdata[31]),
+	.qn /* OUT */ (datdata_n[31]),
+	.d /* IN */ (dstd[31]),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (datdata[31]),
+	.te /* IN */ (dstdld_n)
 );
 
 // GPU_MEM.NET (241) - dummy : dummy
@@ -805,455 +807,487 @@ assign gpuden = gpu_memw_obuf | gpuprd | busactive_n | externalb_obuf;
 // GPU_MEM.NET (246) - wseld : mx2
 mx2 wseld_inst_0
 (
-	.z(wdata[0]), // OUT
-	.a0(datdata[0]), // IN
-	.a1(cpudata[0]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[0]),
+	.a0 /* IN */ (datdata[0]),
+	.a1 /* IN */ (cpudata[0]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_1
 (
-	.z(wdata[1]), // OUT
-	.a0(datdata[1]), // IN
-	.a1(cpudata[1]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[1]),
+	.a0 /* IN */ (datdata[1]),
+	.a1 /* IN */ (cpudata[1]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_2
 (
-	.z(wdata[2]), // OUT
-	.a0(datdata[2]), // IN
-	.a1(cpudata[2]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[2]),
+	.a0 /* IN */ (datdata[2]),
+	.a1 /* IN */ (cpudata[2]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_3
 (
-	.z(wdata[3]), // OUT
-	.a0(datdata[3]), // IN
-	.a1(cpudata[3]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[3]),
+	.a0 /* IN */ (datdata[3]),
+	.a1 /* IN */ (cpudata[3]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_4
 (
-	.z(wdata[4]), // OUT
-	.a0(datdata[4]), // IN
-	.a1(cpudata[4]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[4]),
+	.a0 /* IN */ (datdata[4]),
+	.a1 /* IN */ (cpudata[4]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_5
 (
-	.z(wdata[5]), // OUT
-	.a0(datdata[5]), // IN
-	.a1(cpudata[5]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[5]),
+	.a0 /* IN */ (datdata[5]),
+	.a1 /* IN */ (cpudata[5]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_6
 (
-	.z(wdata[6]), // OUT
-	.a0(datdata[6]), // IN
-	.a1(cpudata[6]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[6]),
+	.a0 /* IN */ (datdata[6]),
+	.a1 /* IN */ (cpudata[6]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_7
 (
-	.z(wdata[7]), // OUT
-	.a0(datdata[7]), // IN
-	.a1(cpudata[7]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[7]),
+	.a0 /* IN */ (datdata[7]),
+	.a1 /* IN */ (cpudata[7]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_8
 (
-	.z(wdata[8]), // OUT
-	.a0(datdata[8]), // IN
-	.a1(cpudata[8]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[8]),
+	.a0 /* IN */ (datdata[8]),
+	.a1 /* IN */ (cpudata[8]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_9
 (
-	.z(wdata[9]), // OUT
-	.a0(datdata[9]), // IN
-	.a1(cpudata[9]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[9]),
+	.a0 /* IN */ (datdata[9]),
+	.a1 /* IN */ (cpudata[9]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_10
 (
-	.z(wdata[10]), // OUT
-	.a0(datdata[10]), // IN
-	.a1(cpudata[10]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[10]),
+	.a0 /* IN */ (datdata[10]),
+	.a1 /* IN */ (cpudata[10]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_11
 (
-	.z(wdata[11]), // OUT
-	.a0(datdata[11]), // IN
-	.a1(cpudata[11]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[11]),
+	.a0 /* IN */ (datdata[11]),
+	.a1 /* IN */ (cpudata[11]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_12
 (
-	.z(wdata[12]), // OUT
-	.a0(datdata[12]), // IN
-	.a1(cpudata[12]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[12]),
+	.a0 /* IN */ (datdata[12]),
+	.a1 /* IN */ (cpudata[12]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_13
 (
-	.z(wdata[13]), // OUT
-	.a0(datdata[13]), // IN
-	.a1(cpudata[13]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[13]),
+	.a0 /* IN */ (datdata[13]),
+	.a1 /* IN */ (cpudata[13]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_14
 (
-	.z(wdata[14]), // OUT
-	.a0(datdata[14]), // IN
-	.a1(cpudata[14]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[14]),
+	.a0 /* IN */ (datdata[14]),
+	.a1 /* IN */ (cpudata[14]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_15
 (
-	.z(wdata[15]), // OUT
-	.a0(datdata[15]), // IN
-	.a1(cpudata[15]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[15]),
+	.a0 /* IN */ (datdata[15]),
+	.a1 /* IN */ (cpudata[15]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_16
 (
-	.z(wdata[16]), // OUT
-	.a0(datdata[16]), // IN
-	.a1(cpudata[16]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[16]),
+	.a0 /* IN */ (datdata[16]),
+	.a1 /* IN */ (cpudata[16]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_17
 (
-	.z(wdata[17]), // OUT
-	.a0(datdata[17]), // IN
-	.a1(cpudata[17]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[17]),
+	.a0 /* IN */ (datdata[17]),
+	.a1 /* IN */ (cpudata[17]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_18
 (
-	.z(wdata[18]), // OUT
-	.a0(datdata[18]), // IN
-	.a1(cpudata[18]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[18]),
+	.a0 /* IN */ (datdata[18]),
+	.a1 /* IN */ (cpudata[18]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_19
 (
-	.z(wdata[19]), // OUT
-	.a0(datdata[19]), // IN
-	.a1(cpudata[19]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[19]),
+	.a0 /* IN */ (datdata[19]),
+	.a1 /* IN */ (cpudata[19]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_20
 (
-	.z(wdata[20]), // OUT
-	.a0(datdata[20]), // IN
-	.a1(cpudata[20]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[20]),
+	.a0 /* IN */ (datdata[20]),
+	.a1 /* IN */ (cpudata[20]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_21
 (
-	.z(wdata[21]), // OUT
-	.a0(datdata[21]), // IN
-	.a1(cpudata[21]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[21]),
+	.a0 /* IN */ (datdata[21]),
+	.a1 /* IN */ (cpudata[21]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_22
 (
-	.z(wdata[22]), // OUT
-	.a0(datdata[22]), // IN
-	.a1(cpudata[22]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[22]),
+	.a0 /* IN */ (datdata[22]),
+	.a1 /* IN */ (cpudata[22]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_23
 (
-	.z(wdata[23]), // OUT
-	.a0(datdata[23]), // IN
-	.a1(cpudata[23]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[23]),
+	.a0 /* IN */ (datdata[23]),
+	.a1 /* IN */ (cpudata[23]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_24
 (
-	.z(wdata[24]), // OUT
-	.a0(datdata[24]), // IN
-	.a1(cpudata[24]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[24]),
+	.a0 /* IN */ (datdata[24]),
+	.a1 /* IN */ (cpudata[24]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_25
 (
-	.z(wdata[25]), // OUT
-	.a0(datdata[25]), // IN
-	.a1(cpudata[25]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[25]),
+	.a0 /* IN */ (datdata[25]),
+	.a1 /* IN */ (cpudata[25]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_26
 (
-	.z(wdata[26]), // OUT
-	.a0(datdata[26]), // IN
-	.a1(cpudata[26]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[26]),
+	.a0 /* IN */ (datdata[26]),
+	.a1 /* IN */ (cpudata[26]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_27
 (
-	.z(wdata[27]), // OUT
-	.a0(datdata[27]), // IN
-	.a1(cpudata[27]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[27]),
+	.a0 /* IN */ (datdata[27]),
+	.a1 /* IN */ (cpudata[27]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_28
 (
-	.z(wdata[28]), // OUT
-	.a0(datdata[28]), // IN
-	.a1(cpudata[28]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[28]),
+	.a0 /* IN */ (datdata[28]),
+	.a1 /* IN */ (cpudata[28]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_29
 (
-	.z(wdata[29]), // OUT
-	.a0(datdata[29]), // IN
-	.a1(cpudata[29]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[29]),
+	.a0 /* IN */ (datdata[29]),
+	.a1 /* IN */ (cpudata[29]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_30
 (
-	.z(wdata[30]), // OUT
-	.a0(datdata[30]), // IN
-	.a1(cpudata[30]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[30]),
+	.a0 /* IN */ (datdata[30]),
+	.a1 /* IN */ (cpudata[30]),
+	.s /* IN */ (cpudsel)
 );
 mx2 wseld_inst_31
 (
-	.z(wdata[31]), // OUT
-	.a0(datdata[31]), // IN
-	.a1(cpudata[31]), // IN
-	.s(cpudsel)  // IN
+	.z /* OUT */ (wdata[31]),
+	.a0 /* IN */ (datdata[31]),
+	.a1 /* IN */ (cpudata[31]),
+	.s /* IN */ (cpudsel)
 );
 
 // GPU_MEM.NET (247) - gpu_data : ts
-assign gpu_data[0] = (gpuden) ? wdata[0] : 1'bz;
-assign gpu_data[1] = (gpuden) ? wdata[1] : 1'bz;
-assign gpu_data[2] = (gpuden) ? wdata[2] : 1'bz;
-assign gpu_data[3] = (gpuden) ? wdata[3] : 1'bz;
-assign gpu_data[4] = (gpuden) ? wdata[4] : 1'bz;
-assign gpu_data[5] = (gpuden) ? wdata[5] : 1'bz;
-assign gpu_data[6] = (gpuden) ? wdata[6] : 1'bz;
-assign gpu_data[7] = (gpuden) ? wdata[7] : 1'bz;
-assign gpu_data[8] = (gpuden) ? wdata[8] : 1'bz;
-assign gpu_data[9] = (gpuden) ? wdata[9] : 1'bz;
-assign gpu_data[10] = (gpuden) ? wdata[10] : 1'bz;
-assign gpu_data[11] = (gpuden) ? wdata[11] : 1'bz;
-assign gpu_data[12] = (gpuden) ? wdata[12] : 1'bz;
-assign gpu_data[13] = (gpuden) ? wdata[13] : 1'bz;
-assign gpu_data[14] = (gpuden) ? wdata[14] : 1'bz;
-assign gpu_data[15] = (gpuden) ? wdata[15] : 1'bz;
-assign gpu_data[16] = (gpuden) ? wdata[16] : 1'bz;
-assign gpu_data[17] = (gpuden) ? wdata[17] : 1'bz;
-assign gpu_data[18] = (gpuden) ? wdata[18] : 1'bz;
-assign gpu_data[19] = (gpuden) ? wdata[19] : 1'bz;
-assign gpu_data[20] = (gpuden) ? wdata[20] : 1'bz;
-assign gpu_data[21] = (gpuden) ? wdata[21] : 1'bz;
-assign gpu_data[22] = (gpuden) ? wdata[22] : 1'bz;
-assign gpu_data[23] = (gpuden) ? wdata[23] : 1'bz;
-assign gpu_data[24] = (gpuden) ? wdata[24] : 1'bz;
-assign gpu_data[25] = (gpuden) ? wdata[25] : 1'bz;
-assign gpu_data[26] = (gpuden) ? wdata[26] : 1'bz;
-assign gpu_data[27] = (gpuden) ? wdata[27] : 1'bz;
-assign gpu_data[28] = (gpuden) ? wdata[28] : 1'bz;
-assign gpu_data[29] = (gpuden) ? wdata[29] : 1'bz;
-assign gpu_data[30] = (gpuden) ? wdata[30] : 1'bz;
-assign gpu_data[31] = (gpuden) ? wdata[31] : 1'bz;
+assign gpu_data_out[0] = wdata[0];
+assign gpu_data_oe[0] = gpuden;
+assign gpu_data_out[1] = wdata[1];
+assign gpu_data_oe[1] = gpuden;
+assign gpu_data_out[2] = wdata[2];
+assign gpu_data_oe[2] = gpuden;
+assign gpu_data_out[3] = wdata[3];
+assign gpu_data_oe[3] = gpuden;
+assign gpu_data_out[4] = wdata[4];
+assign gpu_data_oe[4] = gpuden;
+assign gpu_data_out[5] = wdata[5];
+assign gpu_data_oe[5] = gpuden;
+assign gpu_data_out[6] = wdata[6];
+assign gpu_data_oe[6] = gpuden;
+assign gpu_data_out[7] = wdata[7];
+assign gpu_data_oe[7] = gpuden;
+assign gpu_data_out[8] = wdata[8];
+assign gpu_data_oe[8] = gpuden;
+assign gpu_data_out[9] = wdata[9];
+assign gpu_data_oe[9] = gpuden;
+assign gpu_data_out[10] = wdata[10];
+assign gpu_data_oe[10] = gpuden;
+assign gpu_data_out[11] = wdata[11];
+assign gpu_data_oe[11] = gpuden;
+assign gpu_data_out[12] = wdata[12];
+assign gpu_data_oe[12] = gpuden;
+assign gpu_data_out[13] = wdata[13];
+assign gpu_data_oe[13] = gpuden;
+assign gpu_data_out[14] = wdata[14];
+assign gpu_data_oe[14] = gpuden;
+assign gpu_data_out[15] = wdata[15];
+assign gpu_data_oe[15] = gpuden;
+assign gpu_data_out[16] = wdata[16];
+assign gpu_data_oe[16] = gpuden;
+assign gpu_data_out[17] = wdata[17];
+assign gpu_data_oe[17] = gpuden;
+assign gpu_data_out[18] = wdata[18];
+assign gpu_data_oe[18] = gpuden;
+assign gpu_data_out[19] = wdata[19];
+assign gpu_data_oe[19] = gpuden;
+assign gpu_data_out[20] = wdata[20];
+assign gpu_data_oe[20] = gpuden;
+assign gpu_data_out[21] = wdata[21];
+assign gpu_data_oe[21] = gpuden;
+assign gpu_data_out[22] = wdata[22];
+assign gpu_data_oe[22] = gpuden;
+assign gpu_data_out[23] = wdata[23];
+assign gpu_data_oe[23] = gpuden;
+assign gpu_data_out[24] = wdata[24];
+assign gpu_data_oe[24] = gpuden;
+assign gpu_data_out[25] = wdata[25];
+assign gpu_data_oe[25] = gpuden;
+assign gpu_data_out[26] = wdata[26];
+assign gpu_data_oe[26] = gpuden;
+assign gpu_data_out[27] = wdata[27];
+assign gpu_data_oe[27] = gpuden;
+assign gpu_data_out[28] = wdata[28];
+assign gpu_data_oe[28] = gpuden;
+assign gpu_data_out[29] = wdata[29];
+assign gpu_data_oe[29] = gpuden;
+assign gpu_data_out[30] = wdata[30];
+assign gpu_data_oe[30] = gpuden;
+assign gpu_data_out[31] = wdata[31];
+assign gpu_data_oe[31] = gpuden;
 
 // GPU_MEM.NET (252) - mem_data : fd1q
 fd1q mem_data_inst_0
 (
-	.q(mem_data[0]), // OUT
-	.d(gpu_din[0]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[0]),
+	.d /* IN */ (gpu_din[0]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_1
 (
-	.q(mem_data[1]), // OUT
-	.d(gpu_din[1]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[1]),
+	.d /* IN */ (gpu_din[1]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_2
 (
-	.q(mem_data[2]), // OUT
-	.d(gpu_din[2]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[2]),
+	.d /* IN */ (gpu_din[2]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_3
 (
-	.q(mem_data[3]), // OUT
-	.d(gpu_din[3]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[3]),
+	.d /* IN */ (gpu_din[3]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_4
 (
-	.q(mem_data[4]), // OUT
-	.d(gpu_din[4]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[4]),
+	.d /* IN */ (gpu_din[4]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_5
 (
-	.q(mem_data[5]), // OUT
-	.d(gpu_din[5]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[5]),
+	.d /* IN */ (gpu_din[5]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_6
 (
-	.q(mem_data[6]), // OUT
-	.d(gpu_din[6]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[6]),
+	.d /* IN */ (gpu_din[6]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_7
 (
-	.q(mem_data[7]), // OUT
-	.d(gpu_din[7]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[7]),
+	.d /* IN */ (gpu_din[7]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_8
 (
-	.q(mem_data[8]), // OUT
-	.d(gpu_din[8]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[8]),
+	.d /* IN */ (gpu_din[8]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_9
 (
-	.q(mem_data[9]), // OUT
-	.d(gpu_din[9]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[9]),
+	.d /* IN */ (gpu_din[9]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_10
 (
-	.q(mem_data[10]), // OUT
-	.d(gpu_din[10]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[10]),
+	.d /* IN */ (gpu_din[10]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_11
 (
-	.q(mem_data[11]), // OUT
-	.d(gpu_din[11]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[11]),
+	.d /* IN */ (gpu_din[11]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_12
 (
-	.q(mem_data[12]), // OUT
-	.d(gpu_din[12]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[12]),
+	.d /* IN */ (gpu_din[12]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_13
 (
-	.q(mem_data[13]), // OUT
-	.d(gpu_din[13]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[13]),
+	.d /* IN */ (gpu_din[13]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_14
 (
-	.q(mem_data[14]), // OUT
-	.d(gpu_din[14]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[14]),
+	.d /* IN */ (gpu_din[14]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_15
 (
-	.q(mem_data[15]), // OUT
-	.d(gpu_din[15]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[15]),
+	.d /* IN */ (gpu_din[15]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_16
 (
-	.q(mem_data[16]), // OUT
-	.d(gpu_din[16]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[16]),
+	.d /* IN */ (gpu_din[16]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_17
 (
-	.q(mem_data[17]), // OUT
-	.d(gpu_din[17]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[17]),
+	.d /* IN */ (gpu_din[17]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_18
 (
-	.q(mem_data[18]), // OUT
-	.d(gpu_din[18]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[18]),
+	.d /* IN */ (gpu_din[18]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_19
 (
-	.q(mem_data[19]), // OUT
-	.d(gpu_din[19]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[19]),
+	.d /* IN */ (gpu_din[19]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_20
 (
-	.q(mem_data[20]), // OUT
-	.d(gpu_din[20]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[20]),
+	.d /* IN */ (gpu_din[20]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_21
 (
-	.q(mem_data[21]), // OUT
-	.d(gpu_din[21]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[21]),
+	.d /* IN */ (gpu_din[21]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_22
 (
-	.q(mem_data[22]), // OUT
-	.d(gpu_din[22]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[22]),
+	.d /* IN */ (gpu_din[22]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_23
 (
-	.q(mem_data[23]), // OUT
-	.d(gpu_din[23]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[23]),
+	.d /* IN */ (gpu_din[23]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_24
 (
-	.q(mem_data[24]), // OUT
-	.d(gpu_din[24]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[24]),
+	.d /* IN */ (gpu_din[24]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_25
 (
-	.q(mem_data[25]), // OUT
-	.d(gpu_din[25]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[25]),
+	.d /* IN */ (gpu_din[25]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_26
 (
-	.q(mem_data[26]), // OUT
-	.d(gpu_din[26]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[26]),
+	.d /* IN */ (gpu_din[26]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_27
 (
-	.q(mem_data[27]), // OUT
-	.d(gpu_din[27]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[27]),
+	.d /* IN */ (gpu_din[27]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_28
 (
-	.q(mem_data[28]), // OUT
-	.d(gpu_din[28]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[28]),
+	.d /* IN */ (gpu_din[28]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_29
 (
-	.q(mem_data[29]), // OUT
-	.d(gpu_din[29]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[29]),
+	.d /* IN */ (gpu_din[29]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_30
 (
-	.q(mem_data[30]), // OUT
-	.d(gpu_din[30]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[30]),
+	.d /* IN */ (gpu_din[30]),
+	.cp /* IN */ (clk)
 );
 fd1q mem_data_inst_31
 (
-	.q(mem_data[31]), // OUT
-	.d(gpu_din[31]), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mem_data[31]),
+	.d /* IN */ (gpu_din[31]),
+	.cp /* IN */ (clk)
 );
 
 // GPU_MEM.NET (265) - gpu_addr[0-1] : an2
@@ -1263,137 +1297,137 @@ assign gpu_addr_1 = dataddr[1] & datserv;
 // GPU_MEM.NET (266) - amux[2-5] : mx4p
 mx4 amux_from_2_to_5_inst_0
 (
-	.z(ram_addr_2_obuf), // OUT
-	.a0(progaddr[0]), // IN
-	.a1(dataddr[2]), // IN
-	.a2(cpuaddr[0]), // IN
-	.a3(zero), // IN
-	.s0(datservb_0), // IN
-	.s1(ioserva_0)  // IN
+	.z /* OUT */ (ram_addr_2_obuf),
+	.a0 /* IN */ (progaddr[0]),
+	.a1 /* IN */ (dataddr[2]),
+	.a2 /* IN */ (cpuaddr[0]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_0),
+	.s1 /* IN */ (ioserva_0)
 );
 mx4 amux_from_2_to_5_inst_1
 (
-	.z(ram_addr_3_obuf), // OUT
-	.a0(progaddr[1]), // IN
-	.a1(dataddr[3]), // IN
-	.a2(cpuaddr[1]), // IN
-	.a3(zero), // IN
-	.s0(datservb_0), // IN
-	.s1(ioserva_0)  // IN
+	.z /* OUT */ (ram_addr_3_obuf),
+	.a0 /* IN */ (progaddr[1]),
+	.a1 /* IN */ (dataddr[3]),
+	.a2 /* IN */ (cpuaddr[1]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_0),
+	.s1 /* IN */ (ioserva_0)
 );
 mx4 amux_from_2_to_5_inst_2
 (
-	.z(ram_addr_4_obuf), // OUT
-	.a0(progaddr[2]), // IN
-	.a1(dataddr[4]), // IN
-	.a2(cpuaddr[2]), // IN
-	.a3(zero), // IN
-	.s0(datservb_0), // IN
-	.s1(ioserva_0)  // IN
+	.z /* OUT */ (ram_addr_4_obuf),
+	.a0 /* IN */ (progaddr[2]),
+	.a1 /* IN */ (dataddr[4]),
+	.a2 /* IN */ (cpuaddr[2]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_0),
+	.s1 /* IN */ (ioserva_0)
 );
 mx4 amux_from_2_to_5_inst_3
 (
-	.z(ram_addr_5_obuf), // OUT
-	.a0(progaddr[3]), // IN
-	.a1(dataddr[5]), // IN
-	.a2(cpuaddr[3]), // IN
-	.a3(zero), // IN
-	.s0(datservb_0), // IN
-	.s1(ioserva_0)  // IN
+	.z /* OUT */ (ram_addr_5_obuf),
+	.a0 /* IN */ (progaddr[3]),
+	.a1 /* IN */ (dataddr[5]),
+	.a2 /* IN */ (cpuaddr[3]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_0),
+	.s1 /* IN */ (ioserva_0)
 );
 
 // GPU_MEM.NET (269) - amux[6-9] : mx4p
 mx4 amux_from_6_to_9_inst_0
 (
-	.z(ram_addr_6_obuf), // OUT
-	.a0(progaddr[4]), // IN
-	.a1(dataddr[6]), // IN
-	.a2(cpuaddr[4]), // IN
-	.a3(zero), // IN
-	.s0(datservb_1), // IN
-	.s1(ioserva_1)  // IN
+	.z /* OUT */ (ram_addr_6_obuf),
+	.a0 /* IN */ (progaddr[4]),
+	.a1 /* IN */ (dataddr[6]),
+	.a2 /* IN */ (cpuaddr[4]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_1),
+	.s1 /* IN */ (ioserva_1)
 );
 mx4 amux_from_6_to_9_inst_1
 (
-	.z(ram_addr_7_obuf), // OUT
-	.a0(progaddr[5]), // IN
-	.a1(dataddr[7]), // IN
-	.a2(cpuaddr[5]), // IN
-	.a3(zero), // IN
-	.s0(datservb_1), // IN
-	.s1(ioserva_1)  // IN
+	.z /* OUT */ (ram_addr_7_obuf),
+	.a0 /* IN */ (progaddr[5]),
+	.a1 /* IN */ (dataddr[7]),
+	.a2 /* IN */ (cpuaddr[5]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_1),
+	.s1 /* IN */ (ioserva_1)
 );
 mx4 amux_from_6_to_9_inst_2
 (
-	.z(ram_addr_8_obuf), // OUT
-	.a0(progaddr[6]), // IN
-	.a1(dataddr[8]), // IN
-	.a2(cpuaddr[6]), // IN
-	.a3(zero), // IN
-	.s0(datservb_1), // IN
-	.s1(ioserva_1)  // IN
+	.z /* OUT */ (ram_addr_8_obuf),
+	.a0 /* IN */ (progaddr[6]),
+	.a1 /* IN */ (dataddr[8]),
+	.a2 /* IN */ (cpuaddr[6]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_1),
+	.s1 /* IN */ (ioserva_1)
 );
 mx4 amux_from_6_to_9_inst_3
 (
-	.z(ram_addr_9_obuf), // OUT
-	.a0(progaddr[7]), // IN
-	.a1(dataddr[9]), // IN
-	.a2(cpuaddr[7]), // IN
-	.a3(zero), // IN
-	.s0(datservb_1), // IN
-	.s1(ioserva_1)  // IN
+	.z /* OUT */ (ram_addr_9_obuf),
+	.a0 /* IN */ (progaddr[7]),
+	.a1 /* IN */ (dataddr[9]),
+	.a2 /* IN */ (cpuaddr[7]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_1),
+	.s1 /* IN */ (ioserva_1)
 );
 
 // GPU_MEM.NET (272) - amux[10-14] : mx4p
 mx4 amux_from_10_to_14_inst_0
 (
-	.z(ram_addr_10_obuf), // OUT
-	.a0(progaddr[8]), // IN
-	.a1(dataddr[10]), // IN
-	.a2(cpuaddr[8]), // IN
-	.a3(zero), // IN
-	.s0(datservb_2), // IN
-	.s1(ioserva_2)  // IN
+	.z /* OUT */ (ram_addr_10_obuf),
+	.a0 /* IN */ (progaddr[8]),
+	.a1 /* IN */ (dataddr[10]),
+	.a2 /* IN */ (cpuaddr[8]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_2),
+	.s1 /* IN */ (ioserva_2)
 );
 mx4 amux_from_10_to_14_inst_1
 (
-	.z(ram_addr_11_obuf), // OUT
-	.a0(progaddr[9]), // IN
-	.a1(dataddr[11]), // IN
-	.a2(cpuaddr[9]), // IN
-	.a3(zero), // IN
-	.s0(datservb_2), // IN
-	.s1(ioserva_2)  // IN
+	.z /* OUT */ (ram_addr_11_obuf),
+	.a0 /* IN */ (progaddr[9]),
+	.a1 /* IN */ (dataddr[11]),
+	.a2 /* IN */ (cpuaddr[9]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_2),
+	.s1 /* IN */ (ioserva_2)
 );
 mx4 amux_from_10_to_14_inst_2
 (
-	.z(ram_addr_12), // OUT
-	.a0(progaddr[10]), // IN
-	.a1(dataddr[12]), // IN
-	.a2(cpuaddr[10]), // IN
-	.a3(zero), // IN
-	.s0(datservb_2), // IN
-	.s1(ioserva_2)  // IN
+	.z /* OUT */ (ram_addr_12),
+	.a0 /* IN */ (progaddr[10]),
+	.a1 /* IN */ (dataddr[12]),
+	.a2 /* IN */ (cpuaddr[10]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_2),
+	.s1 /* IN */ (ioserva_2)
 );
 mx4 amux_from_10_to_14_inst_3
 (
-	.z(ram_addr_13), // OUT
-	.a0(progaddr[11]), // IN
-	.a1(dataddr[13]), // IN
-	.a2(cpuaddr[11]), // IN
-	.a3(zero), // IN
-	.s0(datservb_2), // IN
-	.s1(ioserva_2)  // IN
+	.z /* OUT */ (ram_addr_13),
+	.a0 /* IN */ (progaddr[11]),
+	.a1 /* IN */ (dataddr[13]),
+	.a2 /* IN */ (cpuaddr[11]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_2),
+	.s1 /* IN */ (ioserva_2)
 );
 mx4 amux_from_10_to_14_inst_4
 (
-	.z(ram_addr_14), // OUT
-	.a0(progaddr[12]), // IN
-	.a1(dataddr[14]), // IN
-	.a2(cpuaddr[12]), // IN
-	.a3(zero), // IN
-	.s0(datservb_2), // IN
-	.s1(ioserva_2)  // IN
+	.z /* OUT */ (ram_addr_14),
+	.a0 /* IN */ (progaddr[12]),
+	.a1 /* IN */ (dataddr[14]),
+	.a2 /* IN */ (cpuaddr[12]),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (datservb_2),
+	.s1 /* IN */ (ioserva_2)
 );
 
 // GPU_MEM.NET (275) - ram_addr\[14] : iv
@@ -1417,66 +1451,66 @@ assign gpu_addr_14 = ram_addr_14;
 // GPU_MEM.NET (277) - amux[15-23] : mx2
 mx2 amux_from_15_to_23_inst_0
 (
-	.z(gpu_addr_15), // OUT
-	.a0(progaddr[13]), // IN
-	.a1(dataddr[15]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_15),
+	.a0 /* IN */ (progaddr[13]),
+	.a1 /* IN */ (dataddr[15]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_1
 (
-	.z(gpu_addr_16), // OUT
-	.a0(progaddr[14]), // IN
-	.a1(dataddr[16]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_16),
+	.a0 /* IN */ (progaddr[14]),
+	.a1 /* IN */ (dataddr[16]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_2
 (
-	.z(gpu_addr_17), // OUT
-	.a0(progaddr[15]), // IN
-	.a1(dataddr[17]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_17),
+	.a0 /* IN */ (progaddr[15]),
+	.a1 /* IN */ (dataddr[17]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_3
 (
-	.z(gpu_addr_18), // OUT
-	.a0(progaddr[16]), // IN
-	.a1(dataddr[18]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_18),
+	.a0 /* IN */ (progaddr[16]),
+	.a1 /* IN */ (dataddr[18]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_4
 (
-	.z(gpu_addr_19), // OUT
-	.a0(progaddr[17]), // IN
-	.a1(dataddr[19]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_19),
+	.a0 /* IN */ (progaddr[17]),
+	.a1 /* IN */ (dataddr[19]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_5
 (
-	.z(gpu_addr_20), // OUT
-	.a0(progaddr[18]), // IN
-	.a1(dataddr[20]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_20),
+	.a0 /* IN */ (progaddr[18]),
+	.a1 /* IN */ (dataddr[20]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_6
 (
-	.z(gpu_addr_21), // OUT
-	.a0(progaddr[19]), // IN
-	.a1(dataddr[21]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_21),
+	.a0 /* IN */ (progaddr[19]),
+	.a1 /* IN */ (dataddr[21]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_7
 (
-	.z(gpu_addr_22), // OUT
-	.a0(progaddr[20]), // IN
-	.a1(dataddr[22]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_22),
+	.a0 /* IN */ (progaddr[20]),
+	.a1 /* IN */ (dataddr[22]),
+	.s /* IN */ (datserv)
 );
 mx2 amux_from_15_to_23_inst_8
 (
-	.z(gpu_addr_23), // OUT
-	.a0(progaddr[21]), // IN
-	.a1(dataddr[23]), // IN
-	.s(datserv)  // IN
+	.z /* OUT */ (gpu_addr_23),
+	.a0 /* IN */ (progaddr[21]),
+	.a1 /* IN */ (dataddr[23]),
+	.s /* IN */ (datserv)
 );
 
 // GPU_MEM.NET (279) - gpu_addr : join
@@ -1532,86 +1566,86 @@ assign gpu_addr_n_14 = ~gpu_addr_b14_obuf;
 // GPU_MEM.NET (303) - locala[13-14] : mx2
 mx2 locala_from_13_to_14_inst_0
 (
-	.z(locala_13), // OUT
-	.a0(progaddr[11]), // IN
-	.a1(dataddr[13]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_13),
+	.a0 /* IN */ (progaddr[11]),
+	.a1 /* IN */ (dataddr[13]),
+	.s /* IN */ (datservb_3)
 );
 mx2 locala_from_13_to_14_inst_1
 (
-	.z(locala_14), // OUT
-	.a0(progaddr[12]), // IN
-	.a1(dataddr[14]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_14),
+	.a0 /* IN */ (progaddr[12]),
+	.a1 /* IN */ (dataddr[14]),
+	.s /* IN */ (datservb_3)
 );
 
 // GPU_MEM.NET (305) - locala[15-19] : mxi2p
 mxi2 locala_from_15_to_19_inst_0
 (
-	.z(locala_n_15), // OUT
-	.a0(progaddr[13]), // IN
-	.a1(dataddr[15]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_n_15),
+	.a0 /* IN */ (progaddr[13]),
+	.a1 /* IN */ (dataddr[15]),
+	.s /* IN */ (datservb_3)
 );
 mxi2 locala_from_15_to_19_inst_1
 (
-	.z(locala_n_16), // OUT
-	.a0(progaddr[14]), // IN
-	.a1(dataddr[16]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_n_16),
+	.a0 /* IN */ (progaddr[14]),
+	.a1 /* IN */ (dataddr[16]),
+	.s /* IN */ (datservb_3)
 );
 mxi2 locala_from_15_to_19_inst_2
 (
-	.z(locala_n_17), // OUT
-	.a0(progaddr[15]), // IN
-	.a1(dataddr[17]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_n_17),
+	.a0 /* IN */ (progaddr[15]),
+	.a1 /* IN */ (dataddr[17]),
+	.s /* IN */ (datservb_3)
 );
 mxi2 locala_from_15_to_19_inst_3
 (
-	.z(locala_n_18), // OUT
-	.a0(progaddr[16]), // IN
-	.a1(dataddr[18]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_n_18),
+	.a0 /* IN */ (progaddr[16]),
+	.a1 /* IN */ (dataddr[18]),
+	.s /* IN */ (datservb_3)
 );
 mxi2 locala_from_15_to_19_inst_4
 (
-	.z(locala_n_19), // OUT
-	.a0(progaddr[17]), // IN
-	.a1(dataddr[19]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_n_19),
+	.a0 /* IN */ (progaddr[17]),
+	.a1 /* IN */ (dataddr[19]),
+	.s /* IN */ (datservb_3)
 );
 
 // GPU_MEM.NET (307) - locala[20-21] : mx2p
 mx2 locala_from_20_to_21_inst_0
 (
-	.z(locala_20), // OUT
-	.a0(progaddr[18]), // IN
-	.a1(dataddr[20]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_20),
+	.a0 /* IN */ (progaddr[18]),
+	.a1 /* IN */ (dataddr[20]),
+	.s /* IN */ (datservb_3)
 );
 mx2 locala_from_20_to_21_inst_1
 (
-	.z(locala_21), // OUT
-	.a0(progaddr[19]), // IN
-	.a1(dataddr[21]), // IN
-	.s(datservb_3)  // IN
+	.z /* OUT */ (locala_21),
+	.a0 /* IN */ (progaddr[19]),
+	.a1 /* IN */ (dataddr[21]),
+	.s /* IN */ (datservb_3)
 );
 
 // GPU_MEM.NET (309) - locala[22-23] : mx2p
 mx2 locala_from_22_to_23_inst_0
 (
-	.z(locala_22), // OUT
-	.a0(progaddr[20]), // IN
-	.a1(dataddr[22]), // IN
-	.s(datservb_4)  // IN
+	.z /* OUT */ (locala_22),
+	.a0 /* IN */ (progaddr[20]),
+	.a1 /* IN */ (dataddr[22]),
+	.s /* IN */ (datservb_4)
 );
 mx2 locala_from_22_to_23_inst_1
 (
-	.z(locala_23), // OUT
-	.a0(progaddr[21]), // IN
-	.a1(dataddr[23]), // IN
-	.s(datservb_4)  // IN
+	.z /* OUT */ (locala_23),
+	.a0 /* IN */ (progaddr[21]),
+	.a1 /* IN */ (dataddr[23]),
+	.s /* IN */ (datservb_4)
 );
 
 // GPU_MEM.NET (311) - localat : or2p
@@ -1620,17 +1654,17 @@ assign localat = locala_13 | locala_14;
 // GPU_MEM.NET (312) - localaddr\ : nd10
 nd10 localaddr_n_inst
 (
-	.q(localaddr_n), // OUT
-	.a_0(locala_n_15), // IN
-	.a_1(locala_n_16), // IN
-	.a_2(locala_n_17), // IN
-	.a_3(locala_n_18), // IN
-	.a_4(locala_n_19), // IN
-	.a_5(locala_20), // IN
-	.a_6(locala_21), // IN
-	.a_7(locala_22), // IN
-	.a_8(locala_23), // IN
-	.a_9(localat)  // IN
+	.q /* OUT */ (localaddr_n),
+	.a_0 /* IN */ (locala_n_15),
+	.a_1 /* IN */ (locala_n_16),
+	.a_2 /* IN */ (locala_n_17),
+	.a_3 /* IN */ (locala_n_18),
+	.a_4 /* IN */ (locala_n_19),
+	.a_5 /* IN */ (locala_20),
+	.a_6 /* IN */ (locala_21),
+	.a_7 /* IN */ (locala_22),
+	.a_8 /* IN */ (locala_23),
+	.a_9 /* IN */ (localat)
 );
 
 // GPU_MEM.NET (315) - localt0 : nd2
@@ -1639,18 +1673,18 @@ assign localt_0 = ~(progserv_n & datserv_n);
 // GPU_MEM.NET (316) - localt1 : nd11
 nd11 localt1_inst
 (
-	.q(localt_1), // OUT
-	.a_0(locala_20), // IN
-	.a_1(locala_21), // IN
-	.a_2(locala_22), // IN
-	.a_3(locala_23), // IN
-	.a_4(locala_n_15), // IN
-	.a_5(locala_n_16), // IN
-	.a_6(locala_n_17), // IN
-	.a_7(locala_n_18), // IN
-	.a_8(locala_n_19), // IN
-	.a_9(localt_0), // IN
-	.a_10(localat)  // IN
+	.q /* OUT */ (localt_1),
+	.a_0 /* IN */ (locala_20),
+	.a_1 /* IN */ (locala_21),
+	.a_2 /* IN */ (locala_22),
+	.a_3 /* IN */ (locala_23),
+	.a_4 /* IN */ (locala_n_15),
+	.a_5 /* IN */ (locala_n_16),
+	.a_6 /* IN */ (locala_n_17),
+	.a_7 /* IN */ (locala_n_18),
+	.a_8 /* IN */ (locala_n_19),
+	.a_9 /* IN */ (localt_0),
+	.a_10 /* IN */ (localat)
 );
 
 // GPU_MEM.NET (318) - local : nd2p
@@ -1677,17 +1711,17 @@ assign gpuen = gpu_addr_n_9 & gpu_addr_n_10 & gpu_addr_n_11 & gpu_addr_n_12 & gp
 // GPU_MEM.NET (339) - bliten : an10
 an10 bliten_inst
 (
-	.q(bliten), // OUT
-	.a_0(gpu_addr_n_8), // IN
-	.a_1(gpu_addr_9), // IN
-	.a_2(gpu_addr_n_10), // IN
-	.a_3(gpu_addr_n_11), // IN
-	.a_4(gpu_addr_n_12), // IN
-	.a_5(gpu_addr_13), // IN
-	.a_6(gpu_addr_n_14), // IN
-	.a_7(local), // IN
-	.a_8(idle_n), // IN
-	.a_9(disable_n)  // IN
+	.q /* OUT */ (bliten),
+	.a_0 /* IN */ (gpu_addr_n_8),
+	.a_1 /* IN */ (gpu_addr_9),
+	.a_2 /* IN */ (gpu_addr_n_10),
+	.a_3 /* IN */ (gpu_addr_n_11),
+	.a_4 /* IN */ (gpu_addr_n_12),
+	.a_5 /* IN */ (gpu_addr_13),
+	.a_6 /* IN */ (gpu_addr_n_14),
+	.a_7 /* IN */ (local),
+	.a_8 /* IN */ (idle_n),
+	.a_9 /* IN */ (disable_n)
 );
 
 // GPU_MEM.NET (342) - rament : an3
@@ -1768,19 +1802,19 @@ assign dbgrd = flagrd_obuf | statrd_obuf;
 // GPU_MEM.NET (415) - big_ioi : mx2
 mx2 big_ioi_inst
 (
-	.z(big_ioi), // OUT
-	.a0(big_iot), // IN
-	.a1(gpu_din[0]), // IN
-	.s(bigwr)  // IN
+	.z /* OUT */ (big_ioi),
+	.a0 /* IN */ (big_iot),
+	.a1 /* IN */ (gpu_din[0]),
+	.s /* IN */ (bigwr)
 );
 
 // GPU_MEM.NET (416) - big_iot : fd4q
 fd4q big_iot_inst
 (
-	.q(big_iot), // OUT
-	.d(big_ioi), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (big_iot),
+	.d /* IN */ (big_ioi),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (417) - big_io : nivu
@@ -1789,19 +1823,19 @@ assign big_io = big_iot;
 // GPU_MEM.NET (419) - big_pixi : mx2
 mx2 big_pixi_inst
 (
-	.z(big_pixi), // OUT
-	.a0(big_pixt), // IN
-	.a1(gpu_din[1]), // IN
-	.s(bigwr)  // IN
+	.z /* OUT */ (big_pixi),
+	.a0 /* IN */ (big_pixt),
+	.a1 /* IN */ (gpu_din[1]),
+	.s /* IN */ (bigwr)
 );
 
 // GPU_MEM.NET (420) - big_pixt : fd4q
 fd4q big_pixt_inst
 (
-	.q(big_pixt), // OUT
-	.d(big_pixi), // IN
-	.cp(clk), // IN
-	.sd(reset_n)  // IN
+	.q /* OUT */ (big_pixt),
+	.d /* IN */ (big_pixi),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (421) - big_pix : nivm
@@ -1810,30 +1844,30 @@ assign big_pix = big_pixt;
 // GPU_MEM.NET (423) - big_instr : fdsyncr
 fdsyncr big_instr_inst
 (
-	.q(big_instr), // IO
-	.d(gpu_din[2]), // IN
-	.ld(bigwr), // IN
-	.clk(clk), // IN
-	.rst_n(reset_n)  // IN
+	.q /* OUT */ (big_instr),
+	.d /* IN */ (gpu_din[2]),
+	.ld /* IN */ (bigwr),
+	.clk /* IN */ (clk),
+	.rst_n /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (429) - locki : mx4
 mx4 locki_inst
 (
-	.z(locki), // OUT
-	.a0(reset_lock), // IN
-	.a1(lock_obuf), // IN
-	.a2(lock_obuf), // IN
-	.a3(zero), // IN
-	.s0(bigwr), // IN
-	.s1(reset_n)  // IN
+	.z /* OUT */ (locki),
+	.a0 /* IN */ (reset_lock),
+	.a1 /* IN */ (lock_obuf),
+	.a2 /* IN */ (lock_obuf),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (bigwr),
+	.s1 /* IN */ (reset_n)
 );
 
 // GPU_MEM.NET (431) - lock : fd1q
 fd1q lock_inst
 (
-	.q(lock_obuf), // OUT
-	.d(locki), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (lock_obuf),
+	.d /* IN */ (locki),
+	.cp /* IN */ (clk)
 );
 endmodule

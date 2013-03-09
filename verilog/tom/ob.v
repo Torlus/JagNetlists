@@ -212,117 +212,339 @@ module ob
 	output vgy,
 	output vey,
 	output vly,
-	inout wd_0,
-	inout wd_1,
-	inout wd_2,
-	inout wd_3,
-	inout wd_4,
-	inout wd_5,
-	inout wd_6,
-	inout wd_7,
-	inout wd_8,
-	inout wd_9,
-	inout wd_10,
-	inout wd_11,
-	inout wd_12,
-	inout wd_13,
-	inout wd_14,
-	inout wd_15,
-	inout wd_16,
-	inout wd_17,
-	inout wd_18,
-	inout wd_19,
-	inout wd_20,
-	inout wd_21,
-	inout wd_22,
-	inout wd_23,
-	inout wd_24,
-	inout wd_25,
-	inout wd_26,
-	inout wd_27,
-	inout wd_28,
-	inout wd_29,
-	inout wd_30,
-	inout wd_31,
-	inout wd_32,
-	inout wd_33,
-	inout wd_34,
-	inout wd_35,
-	inout wd_36,
-	inout wd_37,
-	inout wd_38,
-	inout wd_39,
-	inout wd_40,
-	inout wd_41,
-	inout wd_42,
-	inout wd_43,
-	inout wd_44,
-	inout wd_45,
-	inout wd_46,
-	inout wd_47,
-	inout wd_48,
-	inout wd_49,
-	inout wd_50,
-	inout wd_51,
-	inout wd_52,
-	inout wd_53,
-	inout wd_54,
-	inout wd_55,
-	inout wd_56,
-	inout wd_57,
-	inout wd_58,
-	inout wd_59,
-	inout wd_60,
-	inout wd_61,
-	inout wd_62,
-	inout wd_63,
-	inout a_0,
-	inout a_1,
-	inout a_2,
-	inout a_3,
-	inout a_4,
-	inout a_5,
-	inout a_6,
-	inout a_7,
-	inout a_8,
-	inout a_9,
-	inout a_10,
-	inout a_11,
-	inout a_12,
-	inout a_13,
-	inout a_14,
-	inout a_15,
-	inout a_16,
-	inout a_17,
-	inout a_18,
-	inout a_19,
-	inout a_20,
-	inout a_21,
-	inout a_22,
-	inout a_23,
-	inout w_0,
-	inout w_1,
-	inout w_2,
-	inout w_3,
-	inout rw,
-	inout mreq,
-	inout justify,
-	inout dr_0,
-	inout dr_1,
-	inout dr_2,
-	inout dr_3,
-	inout dr_4,
-	inout dr_5,
-	inout dr_6,
-	inout dr_7,
-	inout dr_8,
-	inout dr_9,
-	inout dr_10,
-	inout dr_11,
-	inout dr_12,
-	inout dr_13,
-	inout dr_14,
-	inout dr_15
+	output wd_0_out,
+	output wd_0_oe,
+	input wd_0_in,
+	output wd_1_out,
+	output wd_1_oe,
+	input wd_1_in,
+	output wd_2_out,
+	output wd_2_oe,
+	input wd_2_in,
+	output wd_3_out,
+	output wd_3_oe,
+	input wd_3_in,
+	output wd_4_out,
+	output wd_4_oe,
+	input wd_4_in,
+	output wd_5_out,
+	output wd_5_oe,
+	input wd_5_in,
+	output wd_6_out,
+	output wd_6_oe,
+	input wd_6_in,
+	output wd_7_out,
+	output wd_7_oe,
+	input wd_7_in,
+	output wd_8_out,
+	output wd_8_oe,
+	input wd_8_in,
+	output wd_9_out,
+	output wd_9_oe,
+	input wd_9_in,
+	output wd_10_out,
+	output wd_10_oe,
+	input wd_10_in,
+	output wd_11_out,
+	output wd_11_oe,
+	input wd_11_in,
+	output wd_12_out,
+	output wd_12_oe,
+	input wd_12_in,
+	output wd_13_out,
+	output wd_13_oe,
+	input wd_13_in,
+	output wd_14_out,
+	output wd_14_oe,
+	input wd_14_in,
+	output wd_15_out,
+	output wd_15_oe,
+	input wd_15_in,
+	output wd_16_out,
+	output wd_16_oe,
+	input wd_16_in,
+	output wd_17_out,
+	output wd_17_oe,
+	input wd_17_in,
+	output wd_18_out,
+	output wd_18_oe,
+	input wd_18_in,
+	output wd_19_out,
+	output wd_19_oe,
+	input wd_19_in,
+	output wd_20_out,
+	output wd_20_oe,
+	input wd_20_in,
+	output wd_21_out,
+	output wd_21_oe,
+	input wd_21_in,
+	output wd_22_out,
+	output wd_22_oe,
+	input wd_22_in,
+	output wd_23_out,
+	output wd_23_oe,
+	input wd_23_in,
+	output wd_24_out,
+	output wd_24_oe,
+	input wd_24_in,
+	output wd_25_out,
+	output wd_25_oe,
+	input wd_25_in,
+	output wd_26_out,
+	output wd_26_oe,
+	input wd_26_in,
+	output wd_27_out,
+	output wd_27_oe,
+	input wd_27_in,
+	output wd_28_out,
+	output wd_28_oe,
+	input wd_28_in,
+	output wd_29_out,
+	output wd_29_oe,
+	input wd_29_in,
+	output wd_30_out,
+	output wd_30_oe,
+	input wd_30_in,
+	output wd_31_out,
+	output wd_31_oe,
+	input wd_31_in,
+	output wd_32_out,
+	output wd_32_oe,
+	input wd_32_in,
+	output wd_33_out,
+	output wd_33_oe,
+	input wd_33_in,
+	output wd_34_out,
+	output wd_34_oe,
+	input wd_34_in,
+	output wd_35_out,
+	output wd_35_oe,
+	input wd_35_in,
+	output wd_36_out,
+	output wd_36_oe,
+	input wd_36_in,
+	output wd_37_out,
+	output wd_37_oe,
+	input wd_37_in,
+	output wd_38_out,
+	output wd_38_oe,
+	input wd_38_in,
+	output wd_39_out,
+	output wd_39_oe,
+	input wd_39_in,
+	output wd_40_out,
+	output wd_40_oe,
+	input wd_40_in,
+	output wd_41_out,
+	output wd_41_oe,
+	input wd_41_in,
+	output wd_42_out,
+	output wd_42_oe,
+	input wd_42_in,
+	output wd_43_out,
+	output wd_43_oe,
+	input wd_43_in,
+	output wd_44_out,
+	output wd_44_oe,
+	input wd_44_in,
+	output wd_45_out,
+	output wd_45_oe,
+	input wd_45_in,
+	output wd_46_out,
+	output wd_46_oe,
+	input wd_46_in,
+	output wd_47_out,
+	output wd_47_oe,
+	input wd_47_in,
+	output wd_48_out,
+	output wd_48_oe,
+	input wd_48_in,
+	output wd_49_out,
+	output wd_49_oe,
+	input wd_49_in,
+	output wd_50_out,
+	output wd_50_oe,
+	input wd_50_in,
+	output wd_51_out,
+	output wd_51_oe,
+	input wd_51_in,
+	output wd_52_out,
+	output wd_52_oe,
+	input wd_52_in,
+	output wd_53_out,
+	output wd_53_oe,
+	input wd_53_in,
+	output wd_54_out,
+	output wd_54_oe,
+	input wd_54_in,
+	output wd_55_out,
+	output wd_55_oe,
+	input wd_55_in,
+	output wd_56_out,
+	output wd_56_oe,
+	input wd_56_in,
+	output wd_57_out,
+	output wd_57_oe,
+	input wd_57_in,
+	output wd_58_out,
+	output wd_58_oe,
+	input wd_58_in,
+	output wd_59_out,
+	output wd_59_oe,
+	input wd_59_in,
+	output wd_60_out,
+	output wd_60_oe,
+	input wd_60_in,
+	output wd_61_out,
+	output wd_61_oe,
+	input wd_61_in,
+	output wd_62_out,
+	output wd_62_oe,
+	input wd_62_in,
+	output wd_63_out,
+	output wd_63_oe,
+	input wd_63_in,
+	output a_0_out,
+	output a_0_oe,
+	input a_0_in,
+	output a_1_out,
+	output a_1_oe,
+	input a_1_in,
+	output a_2_out,
+	output a_2_oe,
+	input a_2_in,
+	output a_3_out,
+	output a_3_oe,
+	input a_3_in,
+	output a_4_out,
+	output a_4_oe,
+	input a_4_in,
+	output a_5_out,
+	output a_5_oe,
+	input a_5_in,
+	output a_6_out,
+	output a_6_oe,
+	input a_6_in,
+	output a_7_out,
+	output a_7_oe,
+	input a_7_in,
+	output a_8_out,
+	output a_8_oe,
+	input a_8_in,
+	output a_9_out,
+	output a_9_oe,
+	input a_9_in,
+	output a_10_out,
+	output a_10_oe,
+	input a_10_in,
+	output a_11_out,
+	output a_11_oe,
+	input a_11_in,
+	output a_12_out,
+	output a_12_oe,
+	input a_12_in,
+	output a_13_out,
+	output a_13_oe,
+	input a_13_in,
+	output a_14_out,
+	output a_14_oe,
+	input a_14_in,
+	output a_15_out,
+	output a_15_oe,
+	input a_15_in,
+	output a_16_out,
+	output a_16_oe,
+	input a_16_in,
+	output a_17_out,
+	output a_17_oe,
+	input a_17_in,
+	output a_18_out,
+	output a_18_oe,
+	input a_18_in,
+	output a_19_out,
+	output a_19_oe,
+	input a_19_in,
+	output a_20_out,
+	output a_20_oe,
+	input a_20_in,
+	output a_21_out,
+	output a_21_oe,
+	input a_21_in,
+	output a_22_out,
+	output a_22_oe,
+	input a_22_in,
+	output a_23_out,
+	output a_23_oe,
+	input a_23_in,
+	output w_0_out,
+	output w_0_oe,
+	input w_0_in,
+	output w_1_out,
+	output w_1_oe,
+	input w_1_in,
+	output w_2_out,
+	output w_2_oe,
+	input w_2_in,
+	output w_3_out,
+	output w_3_oe,
+	input w_3_in,
+	output rw_out,
+	output rw_oe,
+	input rw_in,
+	output mreq_out,
+	output mreq_oe,
+	input mreq_in,
+	output justify_out,
+	output justify_oe,
+	input justify_in,
+	output dr_0_out,
+	output dr_0_oe,
+	input dr_0_in,
+	output dr_1_out,
+	output dr_1_oe,
+	input dr_1_in,
+	output dr_2_out,
+	output dr_2_oe,
+	input dr_2_in,
+	output dr_3_out,
+	output dr_3_oe,
+	input dr_3_in,
+	output dr_4_out,
+	output dr_4_oe,
+	input dr_4_in,
+	output dr_5_out,
+	output dr_5_oe,
+	input dr_5_in,
+	output dr_6_out,
+	output dr_6_oe,
+	input dr_6_in,
+	output dr_7_out,
+	output dr_7_oe,
+	input dr_7_in,
+	output dr_8_out,
+	output dr_8_oe,
+	input dr_8_in,
+	output dr_9_out,
+	output dr_9_oe,
+	input dr_9_in,
+	output dr_10_out,
+	output dr_10_oe,
+	input dr_10_in,
+	output dr_11_out,
+	output dr_11_oe,
+	input dr_11_in,
+	output dr_12_out,
+	output dr_12_oe,
+	input dr_12_in,
+	output dr_13_out,
+	output dr_13_oe,
+	input dr_13_in,
+	output dr_14_out,
+	output dr_14_oe,
+	input dr_14_in,
+	output dr_15_out,
+	output dr_15_oe,
+	input dr_15_in
 );
 wire type_0;
 wire type_1;
@@ -732,27 +954,585 @@ wire oa_20;
 wire oa_21;
 wire oa_22;
 wire oa_23;
+wire ts_pe_288_a0_out;
+wire ts_pe_288_a0_oe;
+wire ts_pe_288_a0_in;
+wire ts_pe_288_a1_out;
+wire ts_pe_288_a1_oe;
+wire ts_pe_288_a1_in;
+wire ts_pe_289_a0_out;
+wire ts_pe_289_a0_oe;
+wire ts_pe_289_a0_in;
+wire ts_pe_289_a1_out;
+wire ts_pe_289_a1_oe;
+wire ts_pe_289_a1_in;
+wire ts_pe_290_a0_out;
+wire ts_pe_290_a0_oe;
+wire ts_pe_290_a0_in;
+wire ts_pe_290_a1_out;
+wire ts_pe_290_a1_oe;
+wire ts_pe_290_a1_in;
+wire ts_pe_291_a0_out;
+wire ts_pe_291_a0_oe;
+wire ts_pe_291_a0_in;
+wire ts_pe_291_a1_out;
+wire ts_pe_291_a1_oe;
+wire ts_pe_291_a1_in;
+wire ts_pe_292_a0_out;
+wire ts_pe_292_a0_oe;
+wire ts_pe_292_a0_in;
+wire ts_pe_292_a1_out;
+wire ts_pe_292_a1_oe;
+wire ts_pe_292_a1_in;
+wire ts_pe_293_a0_out;
+wire ts_pe_293_a0_oe;
+wire ts_pe_293_a0_in;
+wire ts_pe_293_a1_out;
+wire ts_pe_293_a1_oe;
+wire ts_pe_293_a1_in;
+wire ts_pe_294_a0_out;
+wire ts_pe_294_a0_oe;
+wire ts_pe_294_a0_in;
+wire ts_pe_294_a1_out;
+wire ts_pe_294_a1_oe;
+wire ts_pe_294_a1_in;
+wire ts_pe_295_a0_out;
+wire ts_pe_295_a0_oe;
+wire ts_pe_295_a0_in;
+wire ts_pe_295_a1_out;
+wire ts_pe_295_a1_oe;
+wire ts_pe_295_a1_in;
+wire ts_pe_296_a0_out;
+wire ts_pe_296_a0_oe;
+wire ts_pe_296_a0_in;
+wire ts_pe_296_a1_out;
+wire ts_pe_296_a1_oe;
+wire ts_pe_296_a1_in;
+wire ts_pe_297_a0_out;
+wire ts_pe_297_a0_oe;
+wire ts_pe_297_a0_in;
+wire ts_pe_297_a1_out;
+wire ts_pe_297_a1_oe;
+wire ts_pe_297_a1_in;
+wire ts_pe_298_a0_out;
+wire ts_pe_298_a0_oe;
+wire ts_pe_298_a0_in;
+wire ts_pe_298_a1_out;
+wire ts_pe_298_a1_oe;
+wire ts_pe_298_a1_in;
+wire ts_pe_299_a0_out;
+wire ts_pe_299_a0_oe;
+wire ts_pe_299_a0_in;
+wire ts_pe_299_a1_out;
+wire ts_pe_299_a1_oe;
+wire ts_pe_299_a1_in;
+wire ts_pe_300_a0_out;
+wire ts_pe_300_a0_oe;
+wire ts_pe_300_a0_in;
+wire ts_pe_300_a1_out;
+wire ts_pe_300_a1_oe;
+wire ts_pe_300_a1_in;
+wire ts_pe_301_a0_out;
+wire ts_pe_301_a0_oe;
+wire ts_pe_301_a0_in;
+wire ts_pe_301_a1_out;
+wire ts_pe_301_a1_oe;
+wire ts_pe_301_a1_in;
+wire ts_pe_302_a0_out;
+wire ts_pe_302_a0_oe;
+wire ts_pe_302_a0_in;
+wire ts_pe_302_a1_out;
+wire ts_pe_302_a1_oe;
+wire ts_pe_302_a1_in;
+wire ts_pe_303_a0_out;
+wire ts_pe_303_a0_oe;
+wire ts_pe_303_a0_in;
+wire ts_pe_303_a1_out;
+wire ts_pe_303_a1_oe;
+wire ts_pe_303_a1_in;
+wire ts_pe_304_a0_out;
+wire ts_pe_304_a0_oe;
+wire ts_pe_304_a0_in;
+wire ts_pe_304_a1_out;
+wire ts_pe_304_a1_oe;
+wire ts_pe_304_a1_in;
+wire ts_pe_305_a0_out;
+wire ts_pe_305_a0_oe;
+wire ts_pe_305_a0_in;
+wire ts_pe_305_a1_out;
+wire ts_pe_305_a1_oe;
+wire ts_pe_305_a1_in;
+wire ts_pe_306_a0_out;
+wire ts_pe_306_a0_oe;
+wire ts_pe_306_a0_in;
+wire ts_pe_306_a1_out;
+wire ts_pe_306_a1_oe;
+wire ts_pe_306_a1_in;
+wire ts_pe_307_a0_out;
+wire ts_pe_307_a0_oe;
+wire ts_pe_307_a0_in;
+wire ts_pe_307_a1_out;
+wire ts_pe_307_a1_oe;
+wire ts_pe_307_a1_in;
+wire ts_pe_308_a0_out;
+wire ts_pe_308_a0_oe;
+wire ts_pe_308_a0_in;
+wire ts_pe_308_a1_out;
+wire ts_pe_308_a1_oe;
+wire ts_pe_308_a1_in;
+wire ts_pe_309_a0_out;
+wire ts_pe_309_a0_oe;
+wire ts_pe_309_a0_in;
+wire ts_pe_309_a1_out;
+wire ts_pe_309_a1_oe;
+wire ts_pe_309_a1_in;
+wire ts_pe_310_a0_out;
+wire ts_pe_310_a0_oe;
+wire ts_pe_310_a0_in;
+wire ts_pe_310_a1_out;
+wire ts_pe_310_a1_oe;
+wire ts_pe_310_a1_in;
+wire ts_pe_311_a0_out;
+wire ts_pe_311_a0_oe;
+wire ts_pe_311_a0_in;
+wire ts_pe_311_a1_out;
+wire ts_pe_311_a1_oe;
+wire ts_pe_311_a1_in;
+wire ts_pe_312_a0_out;
+wire ts_pe_312_a0_oe;
+wire ts_pe_312_a0_in;
+wire ts_pe_312_a1_out;
+wire ts_pe_312_a1_oe;
+wire ts_pe_312_a1_in;
+wire ts_pe_313_a0_out;
+wire ts_pe_313_a0_oe;
+wire ts_pe_313_a0_in;
+wire ts_pe_313_a1_out;
+wire ts_pe_313_a1_oe;
+wire ts_pe_313_a1_in;
+wire ts_pe_314_a0_out;
+wire ts_pe_314_a0_oe;
+wire ts_pe_314_a0_in;
+wire ts_pe_314_a1_out;
+wire ts_pe_314_a1_oe;
+wire ts_pe_314_a1_in;
+wire ts_pe_315_a0_out;
+wire ts_pe_315_a0_oe;
+wire ts_pe_315_a0_in;
+wire ts_pe_315_a1_out;
+wire ts_pe_315_a1_oe;
+wire ts_pe_315_a1_in;
+wire ts_pe_316_a0_out;
+wire ts_pe_316_a0_oe;
+wire ts_pe_316_a0_in;
+wire ts_pe_316_a1_out;
+wire ts_pe_316_a1_oe;
+wire ts_pe_316_a1_in;
+wire ts_pe_317_a0_out;
+wire ts_pe_317_a0_oe;
+wire ts_pe_317_a0_in;
+wire ts_pe_317_a1_out;
+wire ts_pe_317_a1_oe;
+wire ts_pe_317_a1_in;
+wire ts_pe_318_a0_out;
+wire ts_pe_318_a0_oe;
+wire ts_pe_318_a0_in;
+wire ts_pe_318_a1_out;
+wire ts_pe_318_a1_oe;
+wire ts_pe_318_a1_in;
+wire ts_pe_319_a0_out;
+wire ts_pe_319_a0_oe;
+wire ts_pe_319_a0_in;
+wire ts_pe_319_a1_out;
+wire ts_pe_319_a1_oe;
+wire ts_pe_319_a1_in;
+wire ts_pe_320_a0_out;
+wire ts_pe_320_a0_oe;
+wire ts_pe_320_a0_in;
+wire ts_pe_320_a1_out;
+wire ts_pe_320_a1_oe;
+wire ts_pe_320_a1_in;
+wire ts_pe_321_a0_out;
+wire ts_pe_321_a0_oe;
+wire ts_pe_321_a0_in;
+wire ts_pe_321_a1_out;
+wire ts_pe_321_a1_oe;
+wire ts_pe_321_a1_in;
+wire ts_pe_322_a0_out;
+wire ts_pe_322_a0_oe;
+wire ts_pe_322_a0_in;
+wire ts_pe_322_a1_out;
+wire ts_pe_322_a1_oe;
+wire ts_pe_322_a1_in;
+wire ts_pe_323_a0_out;
+wire ts_pe_323_a0_oe;
+wire ts_pe_323_a0_in;
+wire ts_pe_323_a1_out;
+wire ts_pe_323_a1_oe;
+wire ts_pe_323_a1_in;
+wire ts_pe_324_a0_out;
+wire ts_pe_324_a0_oe;
+wire ts_pe_324_a0_in;
+wire ts_pe_324_a1_out;
+wire ts_pe_324_a1_oe;
+wire ts_pe_324_a1_in;
+wire ts_pe_325_a0_out;
+wire ts_pe_325_a0_oe;
+wire ts_pe_325_a0_in;
+wire ts_pe_325_a1_out;
+wire ts_pe_325_a1_oe;
+wire ts_pe_325_a1_in;
+wire ts_pe_326_a0_out;
+wire ts_pe_326_a0_oe;
+wire ts_pe_326_a0_in;
+wire ts_pe_326_a1_out;
+wire ts_pe_326_a1_oe;
+wire ts_pe_326_a1_in;
+wire ts_pe_327_a0_out;
+wire ts_pe_327_a0_oe;
+wire ts_pe_327_a0_in;
+wire ts_pe_327_a1_out;
+wire ts_pe_327_a1_oe;
+wire ts_pe_327_a1_in;
+wire ts_pe_328_a0_out;
+wire ts_pe_328_a0_oe;
+wire ts_pe_328_a0_in;
+wire ts_pe_328_a1_out;
+wire ts_pe_328_a1_oe;
+wire ts_pe_328_a1_in;
+wire ts_pe_329_a0_out;
+wire ts_pe_329_a0_oe;
+wire ts_pe_329_a0_in;
+wire ts_pe_329_a1_out;
+wire ts_pe_329_a1_oe;
+wire ts_pe_329_a1_in;
+wire ts_pe_330_a0_out;
+wire ts_pe_330_a0_oe;
+wire ts_pe_330_a0_in;
+wire ts_pe_330_a1_out;
+wire ts_pe_330_a1_oe;
+wire ts_pe_330_a1_in;
+wire ts_pe_331_a0_out;
+wire ts_pe_331_a0_oe;
+wire ts_pe_331_a0_in;
+wire ts_pe_331_a1_out;
+wire ts_pe_331_a1_oe;
+wire ts_pe_331_a1_in;
+wire ts_pe_332_a0_out;
+wire ts_pe_332_a0_oe;
+wire ts_pe_332_a0_in;
+wire ts_pe_332_a1_out;
+wire ts_pe_332_a1_oe;
+wire ts_pe_332_a1_in;
+wire ts_pe_333_a0_out;
+wire ts_pe_333_a0_oe;
+wire ts_pe_333_a0_in;
+wire ts_pe_333_a1_out;
+wire ts_pe_333_a1_oe;
+wire ts_pe_333_a1_in;
+wire ts_pe_334_a0_out;
+wire ts_pe_334_a0_oe;
+wire ts_pe_334_a0_in;
+wire ts_pe_334_a1_out;
+wire ts_pe_334_a1_oe;
+wire ts_pe_334_a1_in;
+wire ts_pe_335_a0_out;
+wire ts_pe_335_a0_oe;
+wire ts_pe_335_a0_in;
+wire ts_pe_335_a1_out;
+wire ts_pe_335_a1_oe;
+wire ts_pe_335_a1_in;
+wire ts_pe_336_a0_out;
+wire ts_pe_336_a0_oe;
+wire ts_pe_336_a0_in;
+wire ts_pe_336_a1_out;
+wire ts_pe_336_a1_oe;
+wire ts_pe_336_a1_in;
+wire ts_pe_337_a0_out;
+wire ts_pe_337_a0_oe;
+wire ts_pe_337_a0_in;
+wire ts_pe_337_a1_out;
+wire ts_pe_337_a1_oe;
+wire ts_pe_337_a1_in;
+wire ts_pe_338_a0_out;
+wire ts_pe_338_a0_oe;
+wire ts_pe_338_a0_in;
+wire ts_pe_338_a1_out;
+wire ts_pe_338_a1_oe;
+wire ts_pe_338_a1_in;
+wire ts_pe_339_a0_out;
+wire ts_pe_339_a0_oe;
+wire ts_pe_339_a0_in;
+wire ts_pe_339_a1_out;
+wire ts_pe_339_a1_oe;
+wire ts_pe_339_a1_in;
+wire ts_pe_340_a0_out;
+wire ts_pe_340_a0_oe;
+wire ts_pe_340_a0_in;
+wire ts_pe_340_a1_out;
+wire ts_pe_340_a1_oe;
+wire ts_pe_340_a1_in;
+wire ts_pe_341_a0_out;
+wire ts_pe_341_a0_oe;
+wire ts_pe_341_a0_in;
+wire ts_pe_341_a1_out;
+wire ts_pe_341_a1_oe;
+wire ts_pe_341_a1_in;
+wire ts_pe_342_a0_out;
+wire ts_pe_342_a0_oe;
+wire ts_pe_342_a0_in;
+wire ts_pe_342_a1_out;
+wire ts_pe_342_a1_oe;
+wire ts_pe_342_a1_in;
+wire ts_pe_343_a0_out;
+wire ts_pe_343_a0_oe;
+wire ts_pe_343_a0_in;
+wire ts_pe_343_a1_out;
+wire ts_pe_343_a1_oe;
+wire ts_pe_343_a1_in;
+wire ts_pe_344_a0_out;
+wire ts_pe_344_a0_oe;
+wire ts_pe_344_a0_in;
+wire ts_pe_344_a1_out;
+wire ts_pe_344_a1_oe;
+wire ts_pe_344_a1_in;
+wire ts_pe_345_a0_out;
+wire ts_pe_345_a0_oe;
+wire ts_pe_345_a0_in;
+wire ts_pe_345_a1_out;
+wire ts_pe_345_a1_oe;
+wire ts_pe_345_a1_in;
+wire ts_pe_346_a0_out;
+wire ts_pe_346_a0_oe;
+wire ts_pe_346_a0_in;
+wire ts_pe_346_a1_out;
+wire ts_pe_346_a1_oe;
+wire ts_pe_346_a1_in;
+wire ts_pe_347_a0_out;
+wire ts_pe_347_a0_oe;
+wire ts_pe_347_a0_in;
+wire ts_pe_347_a1_out;
+wire ts_pe_347_a1_oe;
+wire ts_pe_347_a1_in;
+wire ts_pe_348_a0_out;
+wire ts_pe_348_a0_oe;
+wire ts_pe_348_a0_in;
+wire ts_pe_348_a1_out;
+wire ts_pe_348_a1_oe;
+wire ts_pe_348_a1_in;
+wire ts_pe_349_a0_out;
+wire ts_pe_349_a0_oe;
+wire ts_pe_349_a0_in;
+wire ts_pe_349_a1_out;
+wire ts_pe_349_a1_oe;
+wire ts_pe_349_a1_in;
+wire ts_pe_350_a0_out;
+wire ts_pe_350_a0_oe;
+wire ts_pe_350_a0_in;
+wire ts_pe_350_a1_out;
+wire ts_pe_350_a1_oe;
+wire ts_pe_350_a1_in;
+wire ts_pe_351_a0_out;
+wire ts_pe_351_a0_oe;
+wire ts_pe_351_a0_in;
+wire ts_pe_351_a1_out;
+wire ts_pe_351_a1_oe;
+wire ts_pe_351_a1_in;
+wire ts_pe_352_a0_out;
+wire ts_pe_352_a0_oe;
+wire ts_pe_352_a0_in;
+wire ts_pe_352_a1_out;
+wire ts_pe_352_a1_oe;
+wire ts_pe_352_a1_in;
+wire ts_pe_352_a2_out;
+wire ts_pe_352_a2_oe;
+wire ts_pe_352_a2_in;
+wire ts_pe_352_a3_out;
+wire ts_pe_352_a3_oe;
+wire ts_pe_352_a3_in;
+wire ts_pe_353_a0_out;
+wire ts_pe_353_a0_oe;
+wire ts_pe_353_a0_in;
+wire ts_pe_353_a1_out;
+wire ts_pe_353_a1_oe;
+wire ts_pe_353_a1_in;
+wire ts_pe_353_a2_out;
+wire ts_pe_353_a2_oe;
+wire ts_pe_353_a2_in;
+wire ts_pe_353_a3_out;
+wire ts_pe_353_a3_oe;
+wire ts_pe_353_a3_in;
+wire ts_pe_354_a0_out;
+wire ts_pe_354_a0_oe;
+wire ts_pe_354_a0_in;
+wire ts_pe_354_a1_out;
+wire ts_pe_354_a1_oe;
+wire ts_pe_354_a1_in;
+wire ts_pe_354_a2_out;
+wire ts_pe_354_a2_oe;
+wire ts_pe_354_a2_in;
+wire ts_pe_354_a3_out;
+wire ts_pe_354_a3_oe;
+wire ts_pe_354_a3_in;
+wire ts_pe_355_a0_out;
+wire ts_pe_355_a0_oe;
+wire ts_pe_355_a0_in;
+wire ts_pe_355_a1_out;
+wire ts_pe_355_a1_oe;
+wire ts_pe_355_a1_in;
+wire ts_pe_355_a2_out;
+wire ts_pe_355_a2_oe;
+wire ts_pe_355_a2_in;
+wire ts_pe_355_a3_out;
+wire ts_pe_355_a3_oe;
+wire ts_pe_355_a3_in;
+wire ts_pe_356_a0_out;
+wire ts_pe_356_a0_oe;
+wire ts_pe_356_a0_in;
+wire ts_pe_356_a1_out;
+wire ts_pe_356_a1_oe;
+wire ts_pe_356_a1_in;
+wire ts_pe_356_a2_out;
+wire ts_pe_356_a2_oe;
+wire ts_pe_356_a2_in;
+wire ts_pe_356_a3_out;
+wire ts_pe_356_a3_oe;
+wire ts_pe_356_a3_in;
+wire ts_pe_357_a0_out;
+wire ts_pe_357_a0_oe;
+wire ts_pe_357_a0_in;
+wire ts_pe_357_a1_out;
+wire ts_pe_357_a1_oe;
+wire ts_pe_357_a1_in;
+wire ts_pe_357_a2_out;
+wire ts_pe_357_a2_oe;
+wire ts_pe_357_a2_in;
+wire ts_pe_357_a3_out;
+wire ts_pe_357_a3_oe;
+wire ts_pe_357_a3_in;
+wire ts_pe_358_a0_out;
+wire ts_pe_358_a0_oe;
+wire ts_pe_358_a0_in;
+wire ts_pe_358_a1_out;
+wire ts_pe_358_a1_oe;
+wire ts_pe_358_a1_in;
+wire ts_pe_358_a2_out;
+wire ts_pe_358_a2_oe;
+wire ts_pe_358_a2_in;
+wire ts_pe_358_a3_out;
+wire ts_pe_358_a3_oe;
+wire ts_pe_358_a3_in;
+wire ts_pe_359_a0_out;
+wire ts_pe_359_a0_oe;
+wire ts_pe_359_a0_in;
+wire ts_pe_359_a1_out;
+wire ts_pe_359_a1_oe;
+wire ts_pe_359_a1_in;
+wire ts_pe_359_a2_out;
+wire ts_pe_359_a2_oe;
+wire ts_pe_359_a2_in;
+wire ts_pe_359_a3_out;
+wire ts_pe_359_a3_oe;
+wire ts_pe_359_a3_in;
+wire ts_pe_360_a0_out;
+wire ts_pe_360_a0_oe;
+wire ts_pe_360_a0_in;
+wire ts_pe_360_a1_out;
+wire ts_pe_360_a1_oe;
+wire ts_pe_360_a1_in;
+wire ts_pe_360_a2_out;
+wire ts_pe_360_a2_oe;
+wire ts_pe_360_a2_in;
+wire ts_pe_360_a3_out;
+wire ts_pe_360_a3_oe;
+wire ts_pe_360_a3_in;
+wire ts_pe_361_a0_out;
+wire ts_pe_361_a0_oe;
+wire ts_pe_361_a0_in;
+wire ts_pe_361_a1_out;
+wire ts_pe_361_a1_oe;
+wire ts_pe_361_a1_in;
+wire ts_pe_361_a2_out;
+wire ts_pe_361_a2_oe;
+wire ts_pe_361_a2_in;
+wire ts_pe_361_a3_out;
+wire ts_pe_361_a3_oe;
+wire ts_pe_361_a3_in;
+wire ts_pe_362_a0_out;
+wire ts_pe_362_a0_oe;
+wire ts_pe_362_a0_in;
+wire ts_pe_362_a1_out;
+wire ts_pe_362_a1_oe;
+wire ts_pe_362_a1_in;
+wire ts_pe_362_a2_out;
+wire ts_pe_362_a2_oe;
+wire ts_pe_362_a2_in;
+wire ts_pe_362_a3_out;
+wire ts_pe_362_a3_oe;
+wire ts_pe_362_a3_in;
+wire ts_pe_363_a0_out;
+wire ts_pe_363_a0_oe;
+wire ts_pe_363_a0_in;
+wire ts_pe_363_a1_out;
+wire ts_pe_363_a1_oe;
+wire ts_pe_363_a1_in;
+wire ts_pe_363_a2_out;
+wire ts_pe_363_a2_oe;
+wire ts_pe_363_a2_in;
+wire ts_pe_363_a3_out;
+wire ts_pe_363_a3_oe;
+wire ts_pe_363_a3_in;
+wire ts_pe_364_a0_out;
+wire ts_pe_364_a0_oe;
+wire ts_pe_364_a0_in;
+wire ts_pe_364_a1_out;
+wire ts_pe_364_a1_oe;
+wire ts_pe_364_a1_in;
+wire ts_pe_364_a2_out;
+wire ts_pe_364_a2_oe;
+wire ts_pe_364_a2_in;
+wire ts_pe_364_a3_out;
+wire ts_pe_364_a3_oe;
+wire ts_pe_364_a3_in;
+wire ts_pe_365_a0_out;
+wire ts_pe_365_a0_oe;
+wire ts_pe_365_a0_in;
+wire ts_pe_365_a1_out;
+wire ts_pe_365_a1_oe;
+wire ts_pe_365_a1_in;
+wire ts_pe_365_a2_out;
+wire ts_pe_365_a2_oe;
+wire ts_pe_365_a2_in;
+wire ts_pe_365_a3_out;
+wire ts_pe_365_a3_oe;
+wire ts_pe_365_a3_in;
+wire ts_pe_366_a0_out;
+wire ts_pe_366_a0_oe;
+wire ts_pe_366_a0_in;
+wire ts_pe_366_a1_out;
+wire ts_pe_366_a1_oe;
+wire ts_pe_366_a1_in;
+wire ts_pe_366_a2_out;
+wire ts_pe_366_a2_oe;
+wire ts_pe_366_a2_in;
+wire ts_pe_366_a3_out;
+wire ts_pe_366_a3_oe;
+wire ts_pe_366_a3_in;
+wire ts_pe_367_a0_out;
+wire ts_pe_367_a0_oe;
+wire ts_pe_367_a0_in;
+wire ts_pe_367_a1_out;
+wire ts_pe_367_a1_oe;
+wire ts_pe_367_a1_in;
+wire ts_pe_367_a2_out;
+wire ts_pe_367_a2_oe;
+wire ts_pe_367_a2_in;
+wire ts_pe_367_a3_out;
+wire ts_pe_367_a3_oe;
+wire ts_pe_367_a3_in;
 
 // Output buffers
 wire scaled_obuf;
-wire obdlatch_obuf;
-wire mode1_obuf;
-wire mode2_obuf;
-wire mode4_obuf;
-wire mode8_obuf;
-wire mode16_obuf;
-wire mode24_obuf;
-wire rmw_obuf;
-wire index_1_obuf;
-wire index_2_obuf;
-wire index_3_obuf;
-wire index_4_obuf;
-wire index_5_obuf;
-wire index_6_obuf;
-wire index_7_obuf;
-wire xld_obuf;
-wire reflected_obuf;
-wire transen_obuf;
 wire hscale_0_obuf;
 wire hscale_1_obuf;
 wire hscale_2_obuf;
@@ -761,17 +1541,6 @@ wire hscale_4_obuf;
 wire hscale_5_obuf;
 wire hscale_6_obuf;
 wire hscale_7_obuf;
-wire dwidth_0_obuf;
-wire dwidth_1_obuf;
-wire dwidth_2_obuf;
-wire dwidth_3_obuf;
-wire dwidth_4_obuf;
-wire dwidth_5_obuf;
-wire dwidth_6_obuf;
-wire dwidth_7_obuf;
-wire dwidth_8_obuf;
-wire dwidth_9_obuf;
-wire obbreq_obuf;
 wire vscale_0_obuf;
 wire vscale_1_obuf;
 wire vscale_2_obuf;
@@ -780,13 +1549,9 @@ wire vscale_4_obuf;
 wire vscale_5_obuf;
 wire vscale_6_obuf;
 wire vscale_7_obuf;
-wire wbkstart_obuf;
-wire grpintreq_obuf;
-wire obint_obuf;
 wire obld_0_obuf;
 wire obld_1_obuf;
 wire obld_2_obuf;
-wire startref_obuf;
 wire vgy_obuf;
 wire vey_obuf;
 wire vly_obuf;
@@ -794,24 +1559,6 @@ wire vly_obuf;
 
 // Output buffers
 assign scaled = scaled_obuf;
-assign obdlatch = obdlatch_obuf;
-assign mode1 = mode1_obuf;
-assign mode2 = mode2_obuf;
-assign mode4 = mode4_obuf;
-assign mode8 = mode8_obuf;
-assign mode16 = mode16_obuf;
-assign mode24 = mode24_obuf;
-assign rmw = rmw_obuf;
-assign index_1 = index_1_obuf;
-assign index_2 = index_2_obuf;
-assign index_3 = index_3_obuf;
-assign index_4 = index_4_obuf;
-assign index_5 = index_5_obuf;
-assign index_6 = index_6_obuf;
-assign index_7 = index_7_obuf;
-assign xld = xld_obuf;
-assign reflected = reflected_obuf;
-assign transen = transen_obuf;
 assign hscale_0 = hscale_0_obuf;
 assign hscale_1 = hscale_1_obuf;
 assign hscale_2 = hscale_2_obuf;
@@ -820,17 +1567,6 @@ assign hscale_4 = hscale_4_obuf;
 assign hscale_5 = hscale_5_obuf;
 assign hscale_6 = hscale_6_obuf;
 assign hscale_7 = hscale_7_obuf;
-assign dwidth_0 = dwidth_0_obuf;
-assign dwidth_1 = dwidth_1_obuf;
-assign dwidth_2 = dwidth_2_obuf;
-assign dwidth_3 = dwidth_3_obuf;
-assign dwidth_4 = dwidth_4_obuf;
-assign dwidth_5 = dwidth_5_obuf;
-assign dwidth_6 = dwidth_6_obuf;
-assign dwidth_7 = dwidth_7_obuf;
-assign dwidth_8 = dwidth_8_obuf;
-assign dwidth_9 = dwidth_9_obuf;
-assign obbreq = obbreq_obuf;
 assign vscale_0 = vscale_0_obuf;
 assign vscale_1 = vscale_1_obuf;
 assign vscale_2 = vscale_2_obuf;
@@ -839,13 +1575,9 @@ assign vscale_4 = vscale_4_obuf;
 assign vscale_5 = vscale_5_obuf;
 assign vscale_6 = vscale_6_obuf;
 assign vscale_7 = vscale_7_obuf;
-assign wbkstart = wbkstart_obuf;
-assign grpintreq = grpintreq_obuf;
-assign obint = obint_obuf;
 assign obld_0 = obld_0_obuf;
 assign obld_1 = obld_1_obuf;
 assign obld_2 = obld_2_obuf;
-assign startref = startref_obuf;
 assign vgy = vgy_obuf;
 assign vey = vey_obuf;
 assign vly = vly_obuf;
@@ -854,1275 +1586,1467 @@ assign vly = vly_obuf;
 // OB.NET (48) - type[0-2] : slatch
 slatch type_from_0_to_2_inst_0
 (
-	.q(type_0), // IO
-	.d(d_0), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (type_0),
+	.d /* IN */ (d_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch type_from_0_to_2_inst_1
 (
-	.q(type_1), // IO
-	.d(d_1), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (type_1),
+	.d /* IN */ (d_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch type_from_0_to_2_inst_2
 (
-	.q(type_2), // IO
-	.d(d_2), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (type_2),
+	.d /* IN */ (d_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 
 // OB.NET (49) - ypos[0-10] : slatch
 slatch ypos_from_0_to_10_inst_0
 (
-	.q(ypos_0), // IO
-	.d(d_3), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_0),
+	.d /* IN */ (d_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_1
 (
-	.q(ypos_1), // IO
-	.d(d_4), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_1),
+	.d /* IN */ (d_4),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_2
 (
-	.q(ypos_2), // IO
-	.d(d_5), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_2),
+	.d /* IN */ (d_5),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_3
 (
-	.q(ypos_3), // IO
-	.d(d_6), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_3),
+	.d /* IN */ (d_6),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_4
 (
-	.q(ypos_4), // IO
-	.d(d_7), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_4),
+	.d /* IN */ (d_7),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_5
 (
-	.q(ypos_5), // IO
-	.d(d_8), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_5),
+	.d /* IN */ (d_8),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_6
 (
-	.q(ypos_6), // IO
-	.d(d_9), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_6),
+	.d /* IN */ (d_9),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_7
 (
-	.q(ypos_7), // IO
-	.d(d_10), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_7),
+	.d /* IN */ (d_10),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_8
 (
-	.q(ypos_8), // IO
-	.d(d_11), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_8),
+	.d /* IN */ (d_11),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_9
 (
-	.q(ypos_9), // IO
-	.d(d_12), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_9),
+	.d /* IN */ (d_12),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch ypos_from_0_to_10_inst_10
 (
-	.q(ypos_10), // IO
-	.d(d_13), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (ypos_10),
+	.d /* IN */ (d_13),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 
 // OB.NET (51) - link[0-18] : slatch
 slatch link_from_0_to_18_inst_0
 (
-	.q(link_0), // IO
-	.d(d_24), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_0),
+	.d /* IN */ (d_24),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_1
 (
-	.q(link_1), // IO
-	.d(d_25), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_1),
+	.d /* IN */ (d_25),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_2
 (
-	.q(link_2), // IO
-	.d(d_26), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_2),
+	.d /* IN */ (d_26),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_3
 (
-	.q(link_3), // IO
-	.d(d_27), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_3),
+	.d /* IN */ (d_27),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_4
 (
-	.q(link_4), // IO
-	.d(d_28), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_4),
+	.d /* IN */ (d_28),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_5
 (
-	.q(link_5), // IO
-	.d(d_29), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_5),
+	.d /* IN */ (d_29),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_6
 (
-	.q(link_6), // IO
-	.d(d_30), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_6),
+	.d /* IN */ (d_30),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_7
 (
-	.q(link_7), // IO
-	.d(d_31), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_7),
+	.d /* IN */ (d_31),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_8
 (
-	.q(link_8), // IO
-	.d(d_32), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_8),
+	.d /* IN */ (d_32),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_9
 (
-	.q(link_9), // IO
-	.d(d_33), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_9),
+	.d /* IN */ (d_33),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_10
 (
-	.q(link_10), // IO
-	.d(d_34), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_10),
+	.d /* IN */ (d_34),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_11
 (
-	.q(link_11), // IO
-	.d(d_35), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_11),
+	.d /* IN */ (d_35),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_12
 (
-	.q(link_12), // IO
-	.d(d_36), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_12),
+	.d /* IN */ (d_36),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_13
 (
-	.q(link_13), // IO
-	.d(d_37), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_13),
+	.d /* IN */ (d_37),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_14
 (
-	.q(link_14), // IO
-	.d(d_38), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_14),
+	.d /* IN */ (d_38),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_15
 (
-	.q(link_15), // IO
-	.d(d_39), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_15),
+	.d /* IN */ (d_39),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_16
 (
-	.q(link_16), // IO
-	.d(d_40), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_16),
+	.d /* IN */ (d_40),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_17
 (
-	.q(link_17), // IO
-	.d(d_41), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_17),
+	.d /* IN */ (d_41),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 slatch link_from_0_to_18_inst_18
 (
-	.q(link_18), // IO
-	.d(d_42), // IN
-	.clk(clk), // IN
-	.en(oblatch_0)  // IN
+	.q /* OUT */ (link_18),
+	.d /* IN */ (d_42),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_0)
 );
 
 // OB.NET (56) - ob0rd[0-2] : ts
-assign dr_0 = (ob0r) ? type_0 : 1'bz;
-assign dr_1 = (ob0r) ? type_1 : 1'bz;
-assign dr_2 = (ob0r) ? type_2 : 1'bz;
+assign ts_pe_352_a0_out = type_0;
+assign ts_pe_352_a0_oe = ob0r;
+assign ts_pe_353_a0_out = type_1;
+assign ts_pe_353_a0_oe = ob0r;
+assign ts_pe_354_a0_out = type_2;
+assign ts_pe_354_a0_oe = ob0r;
 
 // OB.NET (57) - ob0rd[3-13] : ts
-assign dr_3 = (ob0r) ? ypos_0 : 1'bz;
-assign dr_4 = (ob0r) ? ypos_1 : 1'bz;
-assign dr_5 = (ob0r) ? ypos_2 : 1'bz;
-assign dr_6 = (ob0r) ? ypos_3 : 1'bz;
-assign dr_7 = (ob0r) ? ypos_4 : 1'bz;
-assign dr_8 = (ob0r) ? ypos_5 : 1'bz;
-assign dr_9 = (ob0r) ? ypos_6 : 1'bz;
-assign dr_10 = (ob0r) ? ypos_7 : 1'bz;
-assign dr_11 = (ob0r) ? ypos_8 : 1'bz;
-assign dr_12 = (ob0r) ? ypos_9 : 1'bz;
-assign dr_13 = (ob0r) ? ypos_10 : 1'bz;
+assign ts_pe_355_a0_out = ypos_0;
+assign ts_pe_355_a0_oe = ob0r;
+assign ts_pe_356_a0_out = ypos_1;
+assign ts_pe_356_a0_oe = ob0r;
+assign ts_pe_357_a0_out = ypos_2;
+assign ts_pe_357_a0_oe = ob0r;
+assign ts_pe_358_a0_out = ypos_3;
+assign ts_pe_358_a0_oe = ob0r;
+assign ts_pe_359_a0_out = ypos_4;
+assign ts_pe_359_a0_oe = ob0r;
+assign ts_pe_360_a0_out = ypos_5;
+assign ts_pe_360_a0_oe = ob0r;
+assign ts_pe_361_a0_out = ypos_6;
+assign ts_pe_361_a0_oe = ob0r;
+assign ts_pe_362_a0_out = ypos_7;
+assign ts_pe_362_a0_oe = ob0r;
+assign ts_pe_363_a0_out = ypos_8;
+assign ts_pe_363_a0_oe = ob0r;
+assign ts_pe_364_a0_out = ypos_9;
+assign ts_pe_364_a0_oe = ob0r;
+assign ts_pe_365_a0_out = ypos_10;
+assign ts_pe_365_a0_oe = ob0r;
 
 // OB.NET (58) - ob0rd[14-15] : ts
-assign dr_14 = (ob0r) ? newheight_0 : 1'bz;
-assign dr_15 = (ob0r) ? newheight_1 : 1'bz;
+assign ts_pe_366_a0_out = newheight_0;
+assign ts_pe_366_a0_oe = ob0r;
+assign ts_pe_367_a0_out = newheight_1;
+assign ts_pe_367_a0_oe = ob0r;
 
 // OB.NET (60) - ob1rd[0-7] : ts
-assign dr_0 = (ob1r) ? newheight_2 : 1'bz;
-assign dr_1 = (ob1r) ? newheight_3 : 1'bz;
-assign dr_2 = (ob1r) ? newheight_4 : 1'bz;
-assign dr_3 = (ob1r) ? newheight_5 : 1'bz;
-assign dr_4 = (ob1r) ? newheight_6 : 1'bz;
-assign dr_5 = (ob1r) ? newheight_7 : 1'bz;
-assign dr_6 = (ob1r) ? newheight_8 : 1'bz;
-assign dr_7 = (ob1r) ? newheight_9 : 1'bz;
+assign ts_pe_352_a1_out = newheight_2;
+assign ts_pe_352_a1_oe = ob1r;
+assign ts_pe_353_a1_out = newheight_3;
+assign ts_pe_353_a1_oe = ob1r;
+assign ts_pe_354_a1_out = newheight_4;
+assign ts_pe_354_a1_oe = ob1r;
+assign ts_pe_355_a1_out = newheight_5;
+assign ts_pe_355_a1_oe = ob1r;
+assign ts_pe_356_a1_out = newheight_6;
+assign ts_pe_356_a1_oe = ob1r;
+assign ts_pe_357_a1_out = newheight_7;
+assign ts_pe_357_a1_oe = ob1r;
+assign ts_pe_358_a1_out = newheight_8;
+assign ts_pe_358_a1_oe = ob1r;
+assign ts_pe_359_a1_out = newheight_9;
+assign ts_pe_359_a1_oe = ob1r;
 
 // OB.NET (61) - ob1rd[8-15] : ts
-assign dr_8 = (ob1r) ? link_0 : 1'bz;
-assign dr_9 = (ob1r) ? link_1 : 1'bz;
-assign dr_10 = (ob1r) ? link_2 : 1'bz;
-assign dr_11 = (ob1r) ? link_3 : 1'bz;
-assign dr_12 = (ob1r) ? link_4 : 1'bz;
-assign dr_13 = (ob1r) ? link_5 : 1'bz;
-assign dr_14 = (ob1r) ? link_6 : 1'bz;
-assign dr_15 = (ob1r) ? link_7 : 1'bz;
+assign ts_pe_360_a1_out = link_0;
+assign ts_pe_360_a1_oe = ob1r;
+assign ts_pe_361_a1_out = link_1;
+assign ts_pe_361_a1_oe = ob1r;
+assign ts_pe_362_a1_out = link_2;
+assign ts_pe_362_a1_oe = ob1r;
+assign ts_pe_363_a1_out = link_3;
+assign ts_pe_363_a1_oe = ob1r;
+assign ts_pe_364_a1_out = link_4;
+assign ts_pe_364_a1_oe = ob1r;
+assign ts_pe_365_a1_out = link_5;
+assign ts_pe_365_a1_oe = ob1r;
+assign ts_pe_366_a1_out = link_6;
+assign ts_pe_366_a1_oe = ob1r;
+assign ts_pe_367_a1_out = link_7;
+assign ts_pe_367_a1_oe = ob1r;
 
 // OB.NET (63) - ob2rd[0-10] : ts
-assign dr_0 = (ob2r) ? link_8 : 1'bz;
-assign dr_1 = (ob2r) ? link_9 : 1'bz;
-assign dr_2 = (ob2r) ? link_10 : 1'bz;
-assign dr_3 = (ob2r) ? link_11 : 1'bz;
-assign dr_4 = (ob2r) ? link_12 : 1'bz;
-assign dr_5 = (ob2r) ? link_13 : 1'bz;
-assign dr_6 = (ob2r) ? link_14 : 1'bz;
-assign dr_7 = (ob2r) ? link_15 : 1'bz;
-assign dr_8 = (ob2r) ? link_16 : 1'bz;
-assign dr_9 = (ob2r) ? link_17 : 1'bz;
-assign dr_10 = (ob2r) ? link_18 : 1'bz;
+assign ts_pe_352_a2_out = link_8;
+assign ts_pe_352_a2_oe = ob2r;
+assign ts_pe_353_a2_out = link_9;
+assign ts_pe_353_a2_oe = ob2r;
+assign ts_pe_354_a2_out = link_10;
+assign ts_pe_354_a2_oe = ob2r;
+assign ts_pe_355_a2_out = link_11;
+assign ts_pe_355_a2_oe = ob2r;
+assign ts_pe_356_a2_out = link_12;
+assign ts_pe_356_a2_oe = ob2r;
+assign ts_pe_357_a2_out = link_13;
+assign ts_pe_357_a2_oe = ob2r;
+assign ts_pe_358_a2_out = link_14;
+assign ts_pe_358_a2_oe = ob2r;
+assign ts_pe_359_a2_out = link_15;
+assign ts_pe_359_a2_oe = ob2r;
+assign ts_pe_360_a2_out = link_16;
+assign ts_pe_360_a2_oe = ob2r;
+assign ts_pe_361_a2_out = link_17;
+assign ts_pe_361_a2_oe = ob2r;
+assign ts_pe_362_a2_out = link_18;
+assign ts_pe_362_a2_oe = ob2r;
 
 // OB.NET (64) - ob2rd[11-15] : ts
-assign dr_11 = (ob2r) ? data_0 : 1'bz;
-assign dr_12 = (ob2r) ? data_1 : 1'bz;
-assign dr_13 = (ob2r) ? data_2 : 1'bz;
-assign dr_14 = (ob2r) ? data_3 : 1'bz;
-assign dr_15 = (ob2r) ? data_4 : 1'bz;
+assign ts_pe_363_a2_out = data_0;
+assign ts_pe_363_a2_oe = ob2r;
+assign ts_pe_364_a2_out = data_1;
+assign ts_pe_364_a2_oe = ob2r;
+assign ts_pe_365_a2_out = data_2;
+assign ts_pe_365_a2_oe = ob2r;
+assign ts_pe_366_a2_out = data_3;
+assign ts_pe_366_a2_oe = ob2r;
+assign ts_pe_367_a2_out = data_4;
+assign ts_pe_367_a2_oe = ob2r;
 
 // OB.NET (66) - ob3rd[0-15] : ts
-assign dr_0 = (ob3r) ? data_5 : 1'bz;
-assign dr_1 = (ob3r) ? data_6 : 1'bz;
-assign dr_2 = (ob3r) ? data_7 : 1'bz;
-assign dr_3 = (ob3r) ? data_8 : 1'bz;
-assign dr_4 = (ob3r) ? data_9 : 1'bz;
-assign dr_5 = (ob3r) ? data_10 : 1'bz;
-assign dr_6 = (ob3r) ? data_11 : 1'bz;
-assign dr_7 = (ob3r) ? data_12 : 1'bz;
-assign dr_8 = (ob3r) ? data_13 : 1'bz;
-assign dr_9 = (ob3r) ? data_14 : 1'bz;
-assign dr_10 = (ob3r) ? data_15 : 1'bz;
-assign dr_11 = (ob3r) ? data_16 : 1'bz;
-assign dr_12 = (ob3r) ? data_17 : 1'bz;
-assign dr_13 = (ob3r) ? data_18 : 1'bz;
-assign dr_14 = (ob3r) ? data_19 : 1'bz;
-assign dr_15 = (ob3r) ? data_20 : 1'bz;
+assign ts_pe_352_a3_out = data_5;
+assign ts_pe_352_a3_oe = ob3r;
+assign ts_pe_353_a3_out = data_6;
+assign ts_pe_353_a3_oe = ob3r;
+assign ts_pe_354_a3_out = data_7;
+assign ts_pe_354_a3_oe = ob3r;
+assign ts_pe_355_a3_out = data_8;
+assign ts_pe_355_a3_oe = ob3r;
+assign ts_pe_356_a3_out = data_9;
+assign ts_pe_356_a3_oe = ob3r;
+assign ts_pe_357_a3_out = data_10;
+assign ts_pe_357_a3_oe = ob3r;
+assign ts_pe_358_a3_out = data_11;
+assign ts_pe_358_a3_oe = ob3r;
+assign ts_pe_359_a3_out = data_12;
+assign ts_pe_359_a3_oe = ob3r;
+assign ts_pe_360_a3_out = data_13;
+assign ts_pe_360_a3_oe = ob3r;
+assign ts_pe_361_a3_out = data_14;
+assign ts_pe_361_a3_oe = ob3r;
+assign ts_pe_362_a3_out = data_15;
+assign ts_pe_362_a3_oe = ob3r;
+assign ts_pe_363_a3_out = data_16;
+assign ts_pe_363_a3_oe = ob3r;
+assign ts_pe_364_a3_out = data_17;
+assign ts_pe_364_a3_oe = ob3r;
+assign ts_pe_365_a3_out = data_18;
+assign ts_pe_365_a3_oe = ob3r;
+assign ts_pe_366_a3_out = data_19;
+assign ts_pe_366_a3_oe = ob3r;
+assign ts_pe_367_a3_out = data_20;
+assign ts_pe_367_a3_oe = ob3r;
 
 // OB.NET (70) - obwbk0[0-2] : ts
-assign wd_0 = (wbken_0) ? type_0 : 1'bz;
-assign wd_1 = (wbken_0) ? type_1 : 1'bz;
-assign wd_2 = (wbken_0) ? type_2 : 1'bz;
+assign ts_pe_288_a0_out = type_0;
+assign ts_pe_288_a0_oe = wbken_0;
+assign ts_pe_289_a0_out = type_1;
+assign ts_pe_289_a0_oe = wbken_0;
+assign ts_pe_290_a0_out = type_2;
+assign ts_pe_290_a0_oe = wbken_0;
 
 // OB.NET (71) - obwbk0[3-13] : ts
-assign wd_3 = (wbken_0) ? ypos_0 : 1'bz;
-assign wd_4 = (wbken_0) ? ypos_1 : 1'bz;
-assign wd_5 = (wbken_0) ? ypos_2 : 1'bz;
-assign wd_6 = (wbken_0) ? ypos_3 : 1'bz;
-assign wd_7 = (wbken_0) ? ypos_4 : 1'bz;
-assign wd_8 = (wbken_0) ? ypos_5 : 1'bz;
-assign wd_9 = (wbken_0) ? ypos_6 : 1'bz;
-assign wd_10 = (wbken_0) ? ypos_7 : 1'bz;
-assign wd_11 = (wbken_0) ? ypos_8 : 1'bz;
-assign wd_12 = (wbken_0) ? ypos_9 : 1'bz;
-assign wd_13 = (wbken_0) ? ypos_10 : 1'bz;
+assign ts_pe_291_a0_out = ypos_0;
+assign ts_pe_291_a0_oe = wbken_0;
+assign ts_pe_292_a0_out = ypos_1;
+assign ts_pe_292_a0_oe = wbken_0;
+assign ts_pe_293_a0_out = ypos_2;
+assign ts_pe_293_a0_oe = wbken_0;
+assign ts_pe_294_a0_out = ypos_3;
+assign ts_pe_294_a0_oe = wbken_0;
+assign ts_pe_295_a0_out = ypos_4;
+assign ts_pe_295_a0_oe = wbken_0;
+assign ts_pe_296_a0_out = ypos_5;
+assign ts_pe_296_a0_oe = wbken_0;
+assign ts_pe_297_a0_out = ypos_6;
+assign ts_pe_297_a0_oe = wbken_0;
+assign ts_pe_298_a0_out = ypos_7;
+assign ts_pe_298_a0_oe = wbken_0;
+assign ts_pe_299_a0_out = ypos_8;
+assign ts_pe_299_a0_oe = wbken_0;
+assign ts_pe_300_a0_out = ypos_9;
+assign ts_pe_300_a0_oe = wbken_0;
+assign ts_pe_301_a0_out = ypos_10;
+assign ts_pe_301_a0_oe = wbken_0;
 
 // OB.NET (72) - obwbk0[14-23] : ts
-assign wd_14 = (wbken_0) ? newheight_0 : 1'bz;
-assign wd_15 = (wbken_0) ? newheight_1 : 1'bz;
-assign wd_16 = (wbken_0) ? newheight_2 : 1'bz;
-assign wd_17 = (wbken_0) ? newheight_3 : 1'bz;
-assign wd_18 = (wbken_0) ? newheight_4 : 1'bz;
-assign wd_19 = (wbken_0) ? newheight_5 : 1'bz;
-assign wd_20 = (wbken_0) ? newheight_6 : 1'bz;
-assign wd_21 = (wbken_0) ? newheight_7 : 1'bz;
-assign wd_22 = (wbken_0) ? newheight_8 : 1'bz;
-assign wd_23 = (wbken_0) ? newheight_9 : 1'bz;
+assign ts_pe_302_a0_out = newheight_0;
+assign ts_pe_302_a0_oe = wbken_0;
+assign ts_pe_303_a0_out = newheight_1;
+assign ts_pe_303_a0_oe = wbken_0;
+assign ts_pe_304_a0_out = newheight_2;
+assign ts_pe_304_a0_oe = wbken_0;
+assign ts_pe_305_a0_out = newheight_3;
+assign ts_pe_305_a0_oe = wbken_0;
+assign ts_pe_306_a0_out = newheight_4;
+assign ts_pe_306_a0_oe = wbken_0;
+assign ts_pe_307_a0_out = newheight_5;
+assign ts_pe_307_a0_oe = wbken_0;
+assign ts_pe_308_a0_out = newheight_6;
+assign ts_pe_308_a0_oe = wbken_0;
+assign ts_pe_309_a0_out = newheight_7;
+assign ts_pe_309_a0_oe = wbken_0;
+assign ts_pe_310_a0_out = newheight_8;
+assign ts_pe_310_a0_oe = wbken_0;
+assign ts_pe_311_a0_out = newheight_9;
+assign ts_pe_311_a0_oe = wbken_0;
 
 // OB.NET (73) - obwbk0[24-42] : ts
-assign wd_24 = (wbken_0) ? link_0 : 1'bz;
-assign wd_25 = (wbken_0) ? link_1 : 1'bz;
-assign wd_26 = (wbken_0) ? link_2 : 1'bz;
-assign wd_27 = (wbken_0) ? link_3 : 1'bz;
-assign wd_28 = (wbken_0) ? link_4 : 1'bz;
-assign wd_29 = (wbken_0) ? link_5 : 1'bz;
-assign wd_30 = (wbken_0) ? link_6 : 1'bz;
-assign wd_31 = (wbken_0) ? link_7 : 1'bz;
-assign wd_32 = (wbken_0) ? link_8 : 1'bz;
-assign wd_33 = (wbken_0) ? link_9 : 1'bz;
-assign wd_34 = (wbken_0) ? link_10 : 1'bz;
-assign wd_35 = (wbken_0) ? link_11 : 1'bz;
-assign wd_36 = (wbken_0) ? link_12 : 1'bz;
-assign wd_37 = (wbken_0) ? link_13 : 1'bz;
-assign wd_38 = (wbken_0) ? link_14 : 1'bz;
-assign wd_39 = (wbken_0) ? link_15 : 1'bz;
-assign wd_40 = (wbken_0) ? link_16 : 1'bz;
-assign wd_41 = (wbken_0) ? link_17 : 1'bz;
-assign wd_42 = (wbken_0) ? link_18 : 1'bz;
+assign ts_pe_312_a0_out = link_0;
+assign ts_pe_312_a0_oe = wbken_0;
+assign ts_pe_313_a0_out = link_1;
+assign ts_pe_313_a0_oe = wbken_0;
+assign ts_pe_314_a0_out = link_2;
+assign ts_pe_314_a0_oe = wbken_0;
+assign ts_pe_315_a0_out = link_3;
+assign ts_pe_315_a0_oe = wbken_0;
+assign ts_pe_316_a0_out = link_4;
+assign ts_pe_316_a0_oe = wbken_0;
+assign ts_pe_317_a0_out = link_5;
+assign ts_pe_317_a0_oe = wbken_0;
+assign ts_pe_318_a0_out = link_6;
+assign ts_pe_318_a0_oe = wbken_0;
+assign ts_pe_319_a0_out = link_7;
+assign ts_pe_319_a0_oe = wbken_0;
+assign ts_pe_320_a0_out = link_8;
+assign ts_pe_320_a0_oe = wbken_0;
+assign ts_pe_321_a0_out = link_9;
+assign ts_pe_321_a0_oe = wbken_0;
+assign ts_pe_322_a0_out = link_10;
+assign ts_pe_322_a0_oe = wbken_0;
+assign ts_pe_323_a0_out = link_11;
+assign ts_pe_323_a0_oe = wbken_0;
+assign ts_pe_324_a0_out = link_12;
+assign ts_pe_324_a0_oe = wbken_0;
+assign ts_pe_325_a0_out = link_13;
+assign ts_pe_325_a0_oe = wbken_0;
+assign ts_pe_326_a0_out = link_14;
+assign ts_pe_326_a0_oe = wbken_0;
+assign ts_pe_327_a0_out = link_15;
+assign ts_pe_327_a0_oe = wbken_0;
+assign ts_pe_328_a0_out = link_16;
+assign ts_pe_328_a0_oe = wbken_0;
+assign ts_pe_329_a0_out = link_17;
+assign ts_pe_329_a0_oe = wbken_0;
+assign ts_pe_330_a0_out = link_18;
+assign ts_pe_330_a0_oe = wbken_0;
 
 // OB.NET (74) - obwbk0[43-63] : ts
-assign wd_43 = (wbken_0) ? newdata_0 : 1'bz;
-assign wd_44 = (wbken_0) ? newdata_1 : 1'bz;
-assign wd_45 = (wbken_0) ? newdata_2 : 1'bz;
-assign wd_46 = (wbken_0) ? newdata_3 : 1'bz;
-assign wd_47 = (wbken_0) ? newdata_4 : 1'bz;
-assign wd_48 = (wbken_0) ? newdata_5 : 1'bz;
-assign wd_49 = (wbken_0) ? newdata_6 : 1'bz;
-assign wd_50 = (wbken_0) ? newdata_7 : 1'bz;
-assign wd_51 = (wbken_0) ? newdata_8 : 1'bz;
-assign wd_52 = (wbken_0) ? newdata_9 : 1'bz;
-assign wd_53 = (wbken_0) ? newdata_10 : 1'bz;
-assign wd_54 = (wbken_0) ? newdata_11 : 1'bz;
-assign wd_55 = (wbken_0) ? newdata_12 : 1'bz;
-assign wd_56 = (wbken_0) ? newdata_13 : 1'bz;
-assign wd_57 = (wbken_0) ? newdata_14 : 1'bz;
-assign wd_58 = (wbken_0) ? newdata_15 : 1'bz;
-assign wd_59 = (wbken_0) ? newdata_16 : 1'bz;
-assign wd_60 = (wbken_0) ? newdata_17 : 1'bz;
-assign wd_61 = (wbken_0) ? newdata_18 : 1'bz;
-assign wd_62 = (wbken_0) ? newdata_19 : 1'bz;
-assign wd_63 = (wbken_0) ? newdata_20 : 1'bz;
+assign ts_pe_331_a0_out = newdata_0;
+assign ts_pe_331_a0_oe = wbken_0;
+assign ts_pe_332_a0_out = newdata_1;
+assign ts_pe_332_a0_oe = wbken_0;
+assign ts_pe_333_a0_out = newdata_2;
+assign ts_pe_333_a0_oe = wbken_0;
+assign ts_pe_334_a0_out = newdata_3;
+assign ts_pe_334_a0_oe = wbken_0;
+assign ts_pe_335_a0_out = newdata_4;
+assign ts_pe_335_a0_oe = wbken_0;
+assign ts_pe_336_a0_out = newdata_5;
+assign ts_pe_336_a0_oe = wbken_0;
+assign ts_pe_337_a0_out = newdata_6;
+assign ts_pe_337_a0_oe = wbken_0;
+assign ts_pe_338_a0_out = newdata_7;
+assign ts_pe_338_a0_oe = wbken_0;
+assign ts_pe_339_a0_out = newdata_8;
+assign ts_pe_339_a0_oe = wbken_0;
+assign ts_pe_340_a0_out = newdata_9;
+assign ts_pe_340_a0_oe = wbken_0;
+assign ts_pe_341_a0_out = newdata_10;
+assign ts_pe_341_a0_oe = wbken_0;
+assign ts_pe_342_a0_out = newdata_11;
+assign ts_pe_342_a0_oe = wbken_0;
+assign ts_pe_343_a0_out = newdata_12;
+assign ts_pe_343_a0_oe = wbken_0;
+assign ts_pe_344_a0_out = newdata_13;
+assign ts_pe_344_a0_oe = wbken_0;
+assign ts_pe_345_a0_out = newdata_14;
+assign ts_pe_345_a0_oe = wbken_0;
+assign ts_pe_346_a0_out = newdata_15;
+assign ts_pe_346_a0_oe = wbken_0;
+assign ts_pe_347_a0_out = newdata_16;
+assign ts_pe_347_a0_oe = wbken_0;
+assign ts_pe_348_a0_out = newdata_17;
+assign ts_pe_348_a0_oe = wbken_0;
+assign ts_pe_349_a0_out = newdata_18;
+assign ts_pe_349_a0_oe = wbken_0;
+assign ts_pe_350_a0_out = newdata_19;
+assign ts_pe_350_a0_oe = wbken_0;
+assign ts_pe_351_a0_out = newdata_20;
+assign ts_pe_351_a0_oe = wbken_0;
 
 // OB.NET (77) - depth[0-2] : slatch
 slatch depth_from_0_to_2_inst_0
 (
-	.q(depth_0), // IO
-	.d(d_12), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (depth_0),
+	.d /* IN */ (d_12),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch depth_from_0_to_2_inst_1
 (
-	.q(depth_1), // IO
-	.d(d_13), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (depth_1),
+	.d /* IN */ (d_13),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch depth_from_0_to_2_inst_2
 (
-	.q(depth_2), // IO
-	.d(d_14), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (depth_2),
+	.d /* IN */ (d_14),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (78) - skip[0-2] : slatch
 slatch skip_from_0_to_2_inst_0
 (
-	.q(skip_0), // IO
-	.d(d_15), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (skip_0),
+	.d /* IN */ (d_15),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch skip_from_0_to_2_inst_1
 (
-	.q(skip_1), // IO
-	.d(d_16), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (skip_1),
+	.d /* IN */ (d_16),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch skip_from_0_to_2_inst_2
 (
-	.q(skip_2), // IO
-	.d(d_17), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (skip_2),
+	.d /* IN */ (d_17),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (79) - dwidth[0-9] : slatch
 slatch dwidth_from_0_to_9_inst_0
 (
-	.q(dwidth_0_obuf), // IO
-	.d(d_18), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_0),
+	.d /* IN */ (d_18),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_1
 (
-	.q(dwidth_1_obuf), // IO
-	.d(d_19), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_1),
+	.d /* IN */ (d_19),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_2
 (
-	.q(dwidth_2_obuf), // IO
-	.d(d_20), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_2),
+	.d /* IN */ (d_20),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_3
 (
-	.q(dwidth_3_obuf), // IO
-	.d(d_21), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_3),
+	.d /* IN */ (d_21),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_4
 (
-	.q(dwidth_4_obuf), // IO
-	.d(d_22), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_4),
+	.d /* IN */ (d_22),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_5
 (
-	.q(dwidth_5_obuf), // IO
-	.d(d_23), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_5),
+	.d /* IN */ (d_23),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_6
 (
-	.q(dwidth_6_obuf), // IO
-	.d(d_24), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_6),
+	.d /* IN */ (d_24),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_7
 (
-	.q(dwidth_7_obuf), // IO
-	.d(d_25), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_7),
+	.d /* IN */ (d_25),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_8
 (
-	.q(dwidth_8_obuf), // IO
-	.d(d_26), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_8),
+	.d /* IN */ (d_26),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch dwidth_from_0_to_9_inst_9
 (
-	.q(dwidth_9_obuf), // IO
-	.d(d_27), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (dwidth_9),
+	.d /* IN */ (d_27),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (81) - index[1-7] : slatch
 slatch index_from_1_to_7_inst_0
 (
-	.q(index_1_obuf), // IO
-	.d(d_38), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_1),
+	.d /* IN */ (d_38),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch index_from_1_to_7_inst_1
 (
-	.q(index_2_obuf), // IO
-	.d(d_39), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_2),
+	.d /* IN */ (d_39),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch index_from_1_to_7_inst_2
 (
-	.q(index_3_obuf), // IO
-	.d(d_40), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_3),
+	.d /* IN */ (d_40),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch index_from_1_to_7_inst_3
 (
-	.q(index_4_obuf), // IO
-	.d(d_41), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_4),
+	.d /* IN */ (d_41),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch index_from_1_to_7_inst_4
 (
-	.q(index_5_obuf), // IO
-	.d(d_42), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_5),
+	.d /* IN */ (d_42),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch index_from_1_to_7_inst_5
 (
-	.q(index_6_obuf), // IO
-	.d(d_43), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_6),
+	.d /* IN */ (d_43),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 slatch index_from_1_to_7_inst_6
 (
-	.q(index_7_obuf), // IO
-	.d(d_44), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (index_7),
+	.d /* IN */ (d_44),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (82) - reflected : slatch
 slatch reflected_inst
 (
-	.q(reflected_obuf), // IO
-	.d(d_45), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (reflected),
+	.d /* IN */ (d_45),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (83) - rmw : slatch
 slatch rmw_inst
 (
-	.q(rmw_obuf), // IO
-	.d(d_46), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (rmw),
+	.d /* IN */ (d_46),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (84) - transen : slatch
 slatch transen_inst
 (
-	.q(transen_obuf), // IO
-	.d(d_47), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (transen),
+	.d /* IN */ (d_47),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (85) - release : slatch
 slatch release_inst
 (
-	.q(_release), // IO
-	.d(d_48), // IN
-	.clk(clk), // IN
-	.en(oblatch_1)  // IN
+	.q /* OUT */ (_release),
+	.d /* IN */ (d_48),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_1)
 );
 
 // OB.NET (87) - hscale[0-7] : slatch
 slatch hscale_from_0_to_7_inst_0
 (
-	.q(hscale_0_obuf), // IO
-	.d(d_0), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_0_obuf),
+	.d /* IN */ (d_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_1
 (
-	.q(hscale_1_obuf), // IO
-	.d(d_1), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_1_obuf),
+	.d /* IN */ (d_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_2
 (
-	.q(hscale_2_obuf), // IO
-	.d(d_2), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_2_obuf),
+	.d /* IN */ (d_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_3
 (
-	.q(hscale_3_obuf), // IO
-	.d(d_3), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_3_obuf),
+	.d /* IN */ (d_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_4
 (
-	.q(hscale_4_obuf), // IO
-	.d(d_4), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_4_obuf),
+	.d /* IN */ (d_4),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_5
 (
-	.q(hscale_5_obuf), // IO
-	.d(d_5), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_5_obuf),
+	.d /* IN */ (d_5),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_6
 (
-	.q(hscale_6_obuf), // IO
-	.d(d_6), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_6_obuf),
+	.d /* IN */ (d_6),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch hscale_from_0_to_7_inst_7
 (
-	.q(hscale_7_obuf), // IO
-	.d(d_7), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (hscale_7_obuf),
+	.d /* IN */ (d_7),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 
 // OB.NET (88) - vscale[0-7] : slatch
 slatch vscale_from_0_to_7_inst_0
 (
-	.q(vscale_0_obuf), // IO
-	.d(d_8), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_0_obuf),
+	.d /* IN */ (d_8),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_1
 (
-	.q(vscale_1_obuf), // IO
-	.d(d_9), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_1_obuf),
+	.d /* IN */ (d_9),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_2
 (
-	.q(vscale_2_obuf), // IO
-	.d(d_10), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_2_obuf),
+	.d /* IN */ (d_10),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_3
 (
-	.q(vscale_3_obuf), // IO
-	.d(d_11), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_3_obuf),
+	.d /* IN */ (d_11),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_4
 (
-	.q(vscale_4_obuf), // IO
-	.d(d_12), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_4_obuf),
+	.d /* IN */ (d_12),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_5
 (
-	.q(vscale_5_obuf), // IO
-	.d(d_13), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_5_obuf),
+	.d /* IN */ (d_13),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_6
 (
-	.q(vscale_6_obuf), // IO
-	.d(d_14), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_6_obuf),
+	.d /* IN */ (d_14),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch vscale_from_0_to_7_inst_7
 (
-	.q(vscale_7_obuf), // IO
-	.d(d_15), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (vscale_7_obuf),
+	.d /* IN */ (d_15),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 
 // OB.NET (89) - rem[5-7] : slatch
 slatch rem_from_5_to_7_inst_0
 (
-	.q(rem_5), // IO
-	.d(d_21), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (rem_5),
+	.d /* IN */ (d_21),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch rem_from_5_to_7_inst_1
 (
-	.q(rem_6), // IO
-	.d(d_22), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (rem_6),
+	.d /* IN */ (d_22),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 slatch rem_from_5_to_7_inst_2
 (
-	.q(rem_7), // IO
-	.d(d_23), // IN
-	.clk(clk), // IN
-	.en(oblatch_2)  // IN
+	.q /* OUT */ (rem_7),
+	.d /* IN */ (d_23),
+	.clk /* IN */ (clk),
+	.en /* IN */ (oblatch_2)
 );
 
 // OB.NET (93) - obwbk2[0-7] : ts
-assign wd_0 = (wbken_2) ? hscale_0_obuf : 1'bz;
-assign wd_1 = (wbken_2) ? hscale_1_obuf : 1'bz;
-assign wd_2 = (wbken_2) ? hscale_2_obuf : 1'bz;
-assign wd_3 = (wbken_2) ? hscale_3_obuf : 1'bz;
-assign wd_4 = (wbken_2) ? hscale_4_obuf : 1'bz;
-assign wd_5 = (wbken_2) ? hscale_5_obuf : 1'bz;
-assign wd_6 = (wbken_2) ? hscale_6_obuf : 1'bz;
-assign wd_7 = (wbken_2) ? hscale_7_obuf : 1'bz;
+assign ts_pe_288_a1_out = hscale_0_obuf;
+assign ts_pe_288_a1_oe = wbken_2;
+assign ts_pe_289_a1_out = hscale_1_obuf;
+assign ts_pe_289_a1_oe = wbken_2;
+assign ts_pe_290_a1_out = hscale_2_obuf;
+assign ts_pe_290_a1_oe = wbken_2;
+assign ts_pe_291_a1_out = hscale_3_obuf;
+assign ts_pe_291_a1_oe = wbken_2;
+assign ts_pe_292_a1_out = hscale_4_obuf;
+assign ts_pe_292_a1_oe = wbken_2;
+assign ts_pe_293_a1_out = hscale_5_obuf;
+assign ts_pe_293_a1_oe = wbken_2;
+assign ts_pe_294_a1_out = hscale_6_obuf;
+assign ts_pe_294_a1_oe = wbken_2;
+assign ts_pe_295_a1_out = hscale_7_obuf;
+assign ts_pe_295_a1_oe = wbken_2;
 
 // OB.NET (94) - obwbk2[8-15] : ts
-assign wd_8 = (wbken_2) ? vscale_0_obuf : 1'bz;
-assign wd_9 = (wbken_2) ? vscale_1_obuf : 1'bz;
-assign wd_10 = (wbken_2) ? vscale_2_obuf : 1'bz;
-assign wd_11 = (wbken_2) ? vscale_3_obuf : 1'bz;
-assign wd_12 = (wbken_2) ? vscale_4_obuf : 1'bz;
-assign wd_13 = (wbken_2) ? vscale_5_obuf : 1'bz;
-assign wd_14 = (wbken_2) ? vscale_6_obuf : 1'bz;
-assign wd_15 = (wbken_2) ? vscale_7_obuf : 1'bz;
+assign ts_pe_296_a1_out = vscale_0_obuf;
+assign ts_pe_296_a1_oe = wbken_2;
+assign ts_pe_297_a1_out = vscale_1_obuf;
+assign ts_pe_297_a1_oe = wbken_2;
+assign ts_pe_298_a1_out = vscale_2_obuf;
+assign ts_pe_298_a1_oe = wbken_2;
+assign ts_pe_299_a1_out = vscale_3_obuf;
+assign ts_pe_299_a1_oe = wbken_2;
+assign ts_pe_300_a1_out = vscale_4_obuf;
+assign ts_pe_300_a1_oe = wbken_2;
+assign ts_pe_301_a1_out = vscale_5_obuf;
+assign ts_pe_301_a1_oe = wbken_2;
+assign ts_pe_302_a1_out = vscale_6_obuf;
+assign ts_pe_302_a1_oe = wbken_2;
+assign ts_pe_303_a1_out = vscale_7_obuf;
+assign ts_pe_303_a1_oe = wbken_2;
 
 // OB.NET (95) - obwbk2[16-23] : ts
-assign wd_16 = (wbken_2) ? newrem_0 : 1'bz;
-assign wd_17 = (wbken_2) ? newrem_1 : 1'bz;
-assign wd_18 = (wbken_2) ? newrem_2 : 1'bz;
-assign wd_19 = (wbken_2) ? newrem_3 : 1'bz;
-assign wd_20 = (wbken_2) ? newrem_4 : 1'bz;
-assign wd_21 = (wbken_2) ? newrem_5 : 1'bz;
-assign wd_22 = (wbken_2) ? newrem_6 : 1'bz;
-assign wd_23 = (wbken_2) ? newrem_7 : 1'bz;
+assign ts_pe_304_a1_out = newrem_0;
+assign ts_pe_304_a1_oe = wbken_2;
+assign ts_pe_305_a1_out = newrem_1;
+assign ts_pe_305_a1_oe = wbken_2;
+assign ts_pe_306_a1_out = newrem_2;
+assign ts_pe_306_a1_oe = wbken_2;
+assign ts_pe_307_a1_out = newrem_3;
+assign ts_pe_307_a1_oe = wbken_2;
+assign ts_pe_308_a1_out = newrem_4;
+assign ts_pe_308_a1_oe = wbken_2;
+assign ts_pe_309_a1_out = newrem_5;
+assign ts_pe_309_a1_oe = wbken_2;
+assign ts_pe_310_a1_out = newrem_6;
+assign ts_pe_310_a1_oe = wbken_2;
+assign ts_pe_311_a1_out = newrem_7;
+assign ts_pe_311_a1_oe = wbken_2;
 
 // OB.NET (96) - obwbk2[24-63] : ts
-assign wd_24 = (wbken_2) ? gnd : 1'bz;
-assign wd_25 = (wbken_2) ? gnd : 1'bz;
-assign wd_26 = (wbken_2) ? gnd : 1'bz;
-assign wd_27 = (wbken_2) ? gnd : 1'bz;
-assign wd_28 = (wbken_2) ? gnd : 1'bz;
-assign wd_29 = (wbken_2) ? gnd : 1'bz;
-assign wd_30 = (wbken_2) ? gnd : 1'bz;
-assign wd_31 = (wbken_2) ? gnd : 1'bz;
-assign wd_32 = (wbken_2) ? gnd : 1'bz;
-assign wd_33 = (wbken_2) ? gnd : 1'bz;
-assign wd_34 = (wbken_2) ? gnd : 1'bz;
-assign wd_35 = (wbken_2) ? gnd : 1'bz;
-assign wd_36 = (wbken_2) ? gnd : 1'bz;
-assign wd_37 = (wbken_2) ? gnd : 1'bz;
-assign wd_38 = (wbken_2) ? gnd : 1'bz;
-assign wd_39 = (wbken_2) ? gnd : 1'bz;
-assign wd_40 = (wbken_2) ? gnd : 1'bz;
-assign wd_41 = (wbken_2) ? gnd : 1'bz;
-assign wd_42 = (wbken_2) ? gnd : 1'bz;
-assign wd_43 = (wbken_2) ? gnd : 1'bz;
-assign wd_44 = (wbken_2) ? gnd : 1'bz;
-assign wd_45 = (wbken_2) ? gnd : 1'bz;
-assign wd_46 = (wbken_2) ? gnd : 1'bz;
-assign wd_47 = (wbken_2) ? gnd : 1'bz;
-assign wd_48 = (wbken_2) ? gnd : 1'bz;
-assign wd_49 = (wbken_2) ? gnd : 1'bz;
-assign wd_50 = (wbken_2) ? gnd : 1'bz;
-assign wd_51 = (wbken_2) ? gnd : 1'bz;
-assign wd_52 = (wbken_2) ? gnd : 1'bz;
-assign wd_53 = (wbken_2) ? gnd : 1'bz;
-assign wd_54 = (wbken_2) ? gnd : 1'bz;
-assign wd_55 = (wbken_2) ? gnd : 1'bz;
-assign wd_56 = (wbken_2) ? gnd : 1'bz;
-assign wd_57 = (wbken_2) ? gnd : 1'bz;
-assign wd_58 = (wbken_2) ? gnd : 1'bz;
-assign wd_59 = (wbken_2) ? gnd : 1'bz;
-assign wd_60 = (wbken_2) ? gnd : 1'bz;
-assign wd_61 = (wbken_2) ? gnd : 1'bz;
-assign wd_62 = (wbken_2) ? gnd : 1'bz;
-assign wd_63 = (wbken_2) ? gnd : 1'bz;
+assign ts_pe_312_a1_out = gnd;
+assign ts_pe_312_a1_oe = wbken_2;
+assign ts_pe_313_a1_out = gnd;
+assign ts_pe_313_a1_oe = wbken_2;
+assign ts_pe_314_a1_out = gnd;
+assign ts_pe_314_a1_oe = wbken_2;
+assign ts_pe_315_a1_out = gnd;
+assign ts_pe_315_a1_oe = wbken_2;
+assign ts_pe_316_a1_out = gnd;
+assign ts_pe_316_a1_oe = wbken_2;
+assign ts_pe_317_a1_out = gnd;
+assign ts_pe_317_a1_oe = wbken_2;
+assign ts_pe_318_a1_out = gnd;
+assign ts_pe_318_a1_oe = wbken_2;
+assign ts_pe_319_a1_out = gnd;
+assign ts_pe_319_a1_oe = wbken_2;
+assign ts_pe_320_a1_out = gnd;
+assign ts_pe_320_a1_oe = wbken_2;
+assign ts_pe_321_a1_out = gnd;
+assign ts_pe_321_a1_oe = wbken_2;
+assign ts_pe_322_a1_out = gnd;
+assign ts_pe_322_a1_oe = wbken_2;
+assign ts_pe_323_a1_out = gnd;
+assign ts_pe_323_a1_oe = wbken_2;
+assign ts_pe_324_a1_out = gnd;
+assign ts_pe_324_a1_oe = wbken_2;
+assign ts_pe_325_a1_out = gnd;
+assign ts_pe_325_a1_oe = wbken_2;
+assign ts_pe_326_a1_out = gnd;
+assign ts_pe_326_a1_oe = wbken_2;
+assign ts_pe_327_a1_out = gnd;
+assign ts_pe_327_a1_oe = wbken_2;
+assign ts_pe_328_a1_out = gnd;
+assign ts_pe_328_a1_oe = wbken_2;
+assign ts_pe_329_a1_out = gnd;
+assign ts_pe_329_a1_oe = wbken_2;
+assign ts_pe_330_a1_out = gnd;
+assign ts_pe_330_a1_oe = wbken_2;
+assign ts_pe_331_a1_out = gnd;
+assign ts_pe_331_a1_oe = wbken_2;
+assign ts_pe_332_a1_out = gnd;
+assign ts_pe_332_a1_oe = wbken_2;
+assign ts_pe_333_a1_out = gnd;
+assign ts_pe_333_a1_oe = wbken_2;
+assign ts_pe_334_a1_out = gnd;
+assign ts_pe_334_a1_oe = wbken_2;
+assign ts_pe_335_a1_out = gnd;
+assign ts_pe_335_a1_oe = wbken_2;
+assign ts_pe_336_a1_out = gnd;
+assign ts_pe_336_a1_oe = wbken_2;
+assign ts_pe_337_a1_out = gnd;
+assign ts_pe_337_a1_oe = wbken_2;
+assign ts_pe_338_a1_out = gnd;
+assign ts_pe_338_a1_oe = wbken_2;
+assign ts_pe_339_a1_out = gnd;
+assign ts_pe_339_a1_oe = wbken_2;
+assign ts_pe_340_a1_out = gnd;
+assign ts_pe_340_a1_oe = wbken_2;
+assign ts_pe_341_a1_out = gnd;
+assign ts_pe_341_a1_oe = wbken_2;
+assign ts_pe_342_a1_out = gnd;
+assign ts_pe_342_a1_oe = wbken_2;
+assign ts_pe_343_a1_out = gnd;
+assign ts_pe_343_a1_oe = wbken_2;
+assign ts_pe_344_a1_out = gnd;
+assign ts_pe_344_a1_oe = wbken_2;
+assign ts_pe_345_a1_out = gnd;
+assign ts_pe_345_a1_oe = wbken_2;
+assign ts_pe_346_a1_out = gnd;
+assign ts_pe_346_a1_oe = wbken_2;
+assign ts_pe_347_a1_out = gnd;
+assign ts_pe_347_a1_oe = wbken_2;
+assign ts_pe_348_a1_out = gnd;
+assign ts_pe_348_a1_oe = wbken_2;
+assign ts_pe_349_a1_out = gnd;
+assign ts_pe_349_a1_oe = wbken_2;
+assign ts_pe_350_a1_out = gnd;
+assign ts_pe_350_a1_oe = wbken_2;
+assign ts_pe_351_a1_out = gnd;
+assign ts_pe_351_a1_oe = wbken_2;
 
 // OB.NET (100) - olpd[3-15] : ldp1q
 ldp1q olpd_from_3_to_15_inst_0
 (
-	.q(olpd_3), // OUT
-	.d(din_3), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_3),
+	.d /* IN */ (din_3),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_1
 (
-	.q(olpd_4), // OUT
-	.d(din_4), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_4),
+	.d /* IN */ (din_4),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_2
 (
-	.q(olpd_5), // OUT
-	.d(din_5), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_5),
+	.d /* IN */ (din_5),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_3
 (
-	.q(olpd_6), // OUT
-	.d(din_6), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_6),
+	.d /* IN */ (din_6),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_4
 (
-	.q(olpd_7), // OUT
-	.d(din_7), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_7),
+	.d /* IN */ (din_7),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_5
 (
-	.q(olpd_8), // OUT
-	.d(din_8), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_8),
+	.d /* IN */ (din_8),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_6
 (
-	.q(olpd_9), // OUT
-	.d(din_9), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_9),
+	.d /* IN */ (din_9),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_7
 (
-	.q(olpd_10), // OUT
-	.d(din_10), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_10),
+	.d /* IN */ (din_10),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_8
 (
-	.q(olpd_11), // OUT
-	.d(din_11), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_11),
+	.d /* IN */ (din_11),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_9
 (
-	.q(olpd_12), // OUT
-	.d(din_12), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_12),
+	.d /* IN */ (din_12),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_10
 (
-	.q(olpd_13), // OUT
-	.d(din_13), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_13),
+	.d /* IN */ (din_13),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_11
 (
-	.q(olpd_14), // OUT
-	.d(din_14), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_14),
+	.d /* IN */ (din_14),
+	.g /* IN */ (olp1w)
 );
 ldp1q olpd_from_3_to_15_inst_12
 (
-	.q(olpd_15), // OUT
-	.d(din_15), // IN
-	.g(olp1w)  // IN
+	.q /* OUT */ (olpd_15),
+	.d /* IN */ (din_15),
+	.g /* IN */ (olp1w)
 );
 
 // OB.NET (101) - olpd[16-23] : ldp1q
 ldp1q olpd_from_16_to_23_inst_0
 (
-	.q(olpd_16), // OUT
-	.d(din_0), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_16),
+	.d /* IN */ (din_0),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_1
 (
-	.q(olpd_17), // OUT
-	.d(din_1), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_17),
+	.d /* IN */ (din_1),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_2
 (
-	.q(olpd_18), // OUT
-	.d(din_2), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_18),
+	.d /* IN */ (din_2),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_3
 (
-	.q(olpd_19), // OUT
-	.d(din_3), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_19),
+	.d /* IN */ (din_3),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_4
 (
-	.q(olpd_20), // OUT
-	.d(din_4), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_20),
+	.d /* IN */ (din_4),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_5
 (
-	.q(olpd_21), // OUT
-	.d(din_5), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_21),
+	.d /* IN */ (din_5),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_6
 (
-	.q(olpd_22), // OUT
-	.d(din_6), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_22),
+	.d /* IN */ (din_6),
+	.g /* IN */ (olp2w)
 );
 ldp1q olpd_from_16_to_23_inst_7
 (
-	.q(olpd_23), // OUT
-	.d(din_7), // IN
-	.g(olp2w)  // IN
+	.q /* OUT */ (olpd_23),
+	.d /* IN */ (din_7),
+	.g /* IN */ (olp2w)
 );
 
 // OB.NET (105) - olpd1[3-21] : mx2
 mx2 olpd1_from_3_to_21_inst_0
 (
-	.z(olpd1_3), // OUT
-	.a0(olpd_3), // IN
-	.a1(link_0), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_3),
+	.a0 /* IN */ (olpd_3),
+	.a1 /* IN */ (link_0),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_1
 (
-	.z(olpd1_4), // OUT
-	.a0(olpd_4), // IN
-	.a1(link_1), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_4),
+	.a0 /* IN */ (olpd_4),
+	.a1 /* IN */ (link_1),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_2
 (
-	.z(olpd1_5), // OUT
-	.a0(olpd_5), // IN
-	.a1(link_2), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_5),
+	.a0 /* IN */ (olpd_5),
+	.a1 /* IN */ (link_2),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_3
 (
-	.z(olpd1_6), // OUT
-	.a0(olpd_6), // IN
-	.a1(link_3), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_6),
+	.a0 /* IN */ (olpd_6),
+	.a1 /* IN */ (link_3),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_4
 (
-	.z(olpd1_7), // OUT
-	.a0(olpd_7), // IN
-	.a1(link_4), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_7),
+	.a0 /* IN */ (olpd_7),
+	.a1 /* IN */ (link_4),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_5
 (
-	.z(olpd1_8), // OUT
-	.a0(olpd_8), // IN
-	.a1(link_5), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_8),
+	.a0 /* IN */ (olpd_8),
+	.a1 /* IN */ (link_5),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_6
 (
-	.z(olpd1_9), // OUT
-	.a0(olpd_9), // IN
-	.a1(link_6), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_9),
+	.a0 /* IN */ (olpd_9),
+	.a1 /* IN */ (link_6),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_7
 (
-	.z(olpd1_10), // OUT
-	.a0(olpd_10), // IN
-	.a1(link_7), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_10),
+	.a0 /* IN */ (olpd_10),
+	.a1 /* IN */ (link_7),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_8
 (
-	.z(olpd1_11), // OUT
-	.a0(olpd_11), // IN
-	.a1(link_8), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_11),
+	.a0 /* IN */ (olpd_11),
+	.a1 /* IN */ (link_8),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_9
 (
-	.z(olpd1_12), // OUT
-	.a0(olpd_12), // IN
-	.a1(link_9), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_12),
+	.a0 /* IN */ (olpd_12),
+	.a1 /* IN */ (link_9),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_10
 (
-	.z(olpd1_13), // OUT
-	.a0(olpd_13), // IN
-	.a1(link_10), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_13),
+	.a0 /* IN */ (olpd_13),
+	.a1 /* IN */ (link_10),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_11
 (
-	.z(olpd1_14), // OUT
-	.a0(olpd_14), // IN
-	.a1(link_11), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_14),
+	.a0 /* IN */ (olpd_14),
+	.a1 /* IN */ (link_11),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_12
 (
-	.z(olpd1_15), // OUT
-	.a0(olpd_15), // IN
-	.a1(link_12), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_15),
+	.a0 /* IN */ (olpd_15),
+	.a1 /* IN */ (link_12),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_13
 (
-	.z(olpd1_16), // OUT
-	.a0(olpd_16), // IN
-	.a1(link_13), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_16),
+	.a0 /* IN */ (olpd_16),
+	.a1 /* IN */ (link_13),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_14
 (
-	.z(olpd1_17), // OUT
-	.a0(olpd_17), // IN
-	.a1(link_14), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_17),
+	.a0 /* IN */ (olpd_17),
+	.a1 /* IN */ (link_14),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_15
 (
-	.z(olpd1_18), // OUT
-	.a0(olpd_18), // IN
-	.a1(link_15), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_18),
+	.a0 /* IN */ (olpd_18),
+	.a1 /* IN */ (link_15),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_16
 (
-	.z(olpd1_19), // OUT
-	.a0(olpd_19), // IN
-	.a1(link_16), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_19),
+	.a0 /* IN */ (olpd_19),
+	.a1 /* IN */ (link_16),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_17
 (
-	.z(olpd1_20), // OUT
-	.a0(olpd_20), // IN
-	.a1(link_17), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_20),
+	.a0 /* IN */ (olpd_20),
+	.a1 /* IN */ (link_17),
+	.s /* IN */ (pclink)
 );
 mx2 olpd1_from_3_to_21_inst_18
 (
-	.z(olpd1_21), // OUT
-	.a0(olpd_21), // IN
-	.a1(link_18), // IN
-	.s(pclink)  // IN
+	.z /* OUT */ (olpd1_21),
+	.a0 /* IN */ (olpd_21),
+	.a1 /* IN */ (link_18),
+	.s /* IN */ (pclink)
 );
 
 // OB.NET (109) - olp[3] : upcnt
 upcnt olp_index_3_inst
 (
-	.q(olp_3), // IO
-	.co(olpco_3), // IO
-	.d(olpd1_3), // IN
-	.clk(clk), // IN
-	.ci(pcinc), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_3),
+	.co /* OUT */ (olpco_3),
+	.d /* IN */ (olpd1_3),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (pcinc),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (110) - olp[4-9] : upcnt
 upcnt olp_from_4_to_9_inst_0
 (
-	.q(olp_4), // IO
-	.co(olpco_4), // IO
-	.d(olpd1_4), // IN
-	.clk(clk), // IN
-	.ci(olpco_3), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_4),
+	.co /* OUT */ (olpco_4),
+	.d /* IN */ (olpd1_4),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_3),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_4_to_9_inst_1
 (
-	.q(olp_5), // IO
-	.co(olpco_5), // IO
-	.d(olpd1_5), // IN
-	.clk(clk), // IN
-	.ci(olpco_4), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_5),
+	.co /* OUT */ (olpco_5),
+	.d /* IN */ (olpd1_5),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_4),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_4_to_9_inst_2
 (
-	.q(olp_6), // IO
-	.co(olpco_6), // IO
-	.d(olpd1_6), // IN
-	.clk(clk), // IN
-	.ci(olpco_5), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_6),
+	.co /* OUT */ (olpco_6),
+	.d /* IN */ (olpd1_6),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_5),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_4_to_9_inst_3
 (
-	.q(olp_7), // IO
-	.co(olpco_7), // IO
-	.d(olpd1_7), // IN
-	.clk(clk), // IN
-	.ci(olpco_6), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_7),
+	.co /* OUT */ (olpco_7),
+	.d /* IN */ (olpd1_7),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_6),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_4_to_9_inst_4
 (
-	.q(olp_8), // IO
-	.co(olpco_8), // IO
-	.d(olpd1_8), // IN
-	.clk(clk), // IN
-	.ci(olpco_7), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_8),
+	.co /* OUT */ (olpco_8),
+	.d /* IN */ (olpd1_8),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_7),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_4_to_9_inst_5
 (
-	.q(olp_9), // IO
-	.co(olpco_9), // IO
-	.d(olpd1_9), // IN
-	.clk(clk), // IN
-	.ci(olpco_8), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_9),
+	.co /* OUT */ (olpco_9),
+	.d /* IN */ (olpd1_9),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_8),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (111) - olp[10] : upcnt
 upcnt olp_index_10_inst
 (
-	.q(olp_10), // IO
-	.co(olpco_10), // IO
-	.d(olpd1_10), // IN
-	.clk(clk), // IN
-	.ci(plac9), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_10),
+	.co /* OUT */ (olpco_10),
+	.d /* IN */ (olpd1_10),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (plac9),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (112) - olp[11-16] : upcnt
 upcnt olp_from_11_to_16_inst_0
 (
-	.q(olp_11), // IO
-	.co(olpco_11), // IO
-	.d(olpd1_11), // IN
-	.clk(clk), // IN
-	.ci(olpco_10), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_11),
+	.co /* OUT */ (olpco_11),
+	.d /* IN */ (olpd1_11),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_10),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_11_to_16_inst_1
 (
-	.q(olp_12), // IO
-	.co(olpco_12), // IO
-	.d(olpd1_12), // IN
-	.clk(clk), // IN
-	.ci(olpco_11), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_12),
+	.co /* OUT */ (olpco_12),
+	.d /* IN */ (olpd1_12),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_11),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_11_to_16_inst_2
 (
-	.q(olp_13), // IO
-	.co(olpco_13), // IO
-	.d(olpd1_13), // IN
-	.clk(clk), // IN
-	.ci(olpco_12), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_13),
+	.co /* OUT */ (olpco_13),
+	.d /* IN */ (olpd1_13),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_12),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_11_to_16_inst_3
 (
-	.q(olp_14), // IO
-	.co(olpco_14), // IO
-	.d(olpd1_14), // IN
-	.clk(clk), // IN
-	.ci(olpco_13), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_14),
+	.co /* OUT */ (olpco_14),
+	.d /* IN */ (olpd1_14),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_13),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_11_to_16_inst_4
 (
-	.q(olp_15), // IO
-	.co(olpco_15), // IO
-	.d(olpd1_15), // IN
-	.clk(clk), // IN
-	.ci(olpco_14), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_15),
+	.co /* OUT */ (olpco_15),
+	.d /* IN */ (olpd1_15),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_14),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_11_to_16_inst_5
 (
-	.q(olp_16), // IO
-	.co(olpco_16), // IO
-	.d(olpd1_16), // IN
-	.clk(clk), // IN
-	.ci(olpco_15), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_16),
+	.co /* OUT */ (olpco_16),
+	.d /* IN */ (olpd1_16),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_15),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (113) - olp[17] : upcnt
 upcnt olp_index_17_inst
 (
-	.q(olp_17), // IO
-	.co(olpco_17), // IO
-	.d(olpd1_17), // IN
-	.clk(clk), // IN
-	.ci(plac16), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_17),
+	.co /* OUT */ (olpco_17),
+	.d /* IN */ (olpd1_17),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (plac16),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (114) - olp[18-21] : upcnt
 upcnt olp_from_18_to_21_inst_0
 (
-	.q(olp_18), // IO
-	.co(olpco_18), // IO
-	.d(olpd1_18), // IN
-	.clk(clk), // IN
-	.ci(olpco_17), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_18),
+	.co /* OUT */ (olpco_18),
+	.d /* IN */ (olpd1_18),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_17),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_18_to_21_inst_1
 (
-	.q(olp_19), // IO
-	.co(olpco_19), // IO
-	.d(olpd1_19), // IN
-	.clk(clk), // IN
-	.ci(olpco_18), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_19),
+	.co /* OUT */ (olpco_19),
+	.d /* IN */ (olpd1_19),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_18),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_18_to_21_inst_2
 (
-	.q(olp_20), // IO
-	.co(olpco_20), // IO
-	.d(olpd1_20), // IN
-	.clk(clk), // IN
-	.ci(olpco_19), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_20),
+	.co /* OUT */ (olpco_20),
+	.d /* IN */ (olpd1_20),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_19),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 upcnt olp_from_18_to_21_inst_3
 (
-	.q(olp_21), // IO
-	.co(olpco_21), // IO
-	.d(olpd1_21), // IN
-	.clk(clk), // IN
-	.ci(olpco_20), // IN
-	.ld(olpld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (olp_21),
+	.co /* OUT */ (olpco_21),
+	.d /* IN */ (olpd1_21),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (olpco_20),
+	.ld /* IN */ (olpld),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (116) - plac9 : an8
@@ -2144,36 +3068,36 @@ assign olpld = ~olpldi;
 // OB.NET (129) - sum[0] : ha1
 ha1 sum_index_0_inst
 (
-	.s(sum_0), // OUT
-	.co(dco_0), // OUT
-	.a(skip_0), // IN
-	.b(data_0)  // IN
+	.s /* OUT */ (sum_0),
+	.co /* OUT */ (dco_0),
+	.a /* IN */ (skip_0),
+	.b /* IN */ (data_0)
 );
 
 // OB.NET (130) - sum[1-2] : fa1
 fa1 sum_from_1_to_2_inst_0
 (
-	.s(sum_1), // OUT
-	.co(dco_1), // OUT
-	.ci(skip_1), // IN
-	.a(data_1), // IN
-	.b(dco_0)  // IN
+	.s /* OUT */ (sum_1),
+	.co /* OUT */ (dco_1),
+	.ci /* IN */ (skip_1),
+	.a /* IN */ (data_1),
+	.b /* IN */ (dco_0)
 );
 fa1 sum_from_1_to_2_inst_1
 (
-	.s(sum_2), // OUT
-	.co(dco_2), // OUT
-	.ci(skip_2), // IN
-	.a(data_2), // IN
-	.b(dco_1)  // IN
+	.s /* OUT */ (sum_2),
+	.co /* OUT */ (dco_2),
+	.ci /* IN */ (skip_2),
+	.a /* IN */ (data_2),
+	.b /* IN */ (dco_1)
 );
 
 // OB.NET (134) - dmainc : fd1q
 fd1q dmainc_inst
 (
-	.q(dmainc), // OUT
-	.d(dmaen), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dmainc),
+	.d /* IN */ (dmaen),
+	.cp /* IN */ (clk)
 );
 
 // OB.NET (135) - ldinc : or2
@@ -2182,47 +3106,47 @@ assign ldinc = obld_0_obuf | dmainc;
 // OB.NET (137) - d1[0-2] : mx2
 mx2 d1_from_0_to_2_inst_0
 (
-	.z(d1_0), // OUT
-	.a0(sum_0), // IN
-	.a1(d_43), // IN
-	.s(obld_0_obuf)  // IN
+	.z /* OUT */ (d1_0),
+	.a0 /* IN */ (sum_0),
+	.a1 /* IN */ (d_43),
+	.s /* IN */ (obld_0_obuf)
 );
 mx2 d1_from_0_to_2_inst_1
 (
-	.z(d1_1), // OUT
-	.a0(sum_1), // IN
-	.a1(d_44), // IN
-	.s(obld_0_obuf)  // IN
+	.z /* OUT */ (d1_1),
+	.a0 /* IN */ (sum_1),
+	.a1 /* IN */ (d_44),
+	.s /* IN */ (obld_0_obuf)
 );
 mx2 d1_from_0_to_2_inst_2
 (
-	.z(d1_2), // OUT
-	.a0(sum_2), // IN
-	.a1(d_45), // IN
-	.s(obld_0_obuf)  // IN
+	.z /* OUT */ (d1_2),
+	.a0 /* IN */ (sum_2),
+	.a1 /* IN */ (d_45),
+	.s /* IN */ (obld_0_obuf)
 );
 
 // OB.NET (138) - data[0-2] : slatch
 slatch data_from_0_to_2_inst_0
 (
-	.q(data_0), // IO
-	.d(d1_0), // IN
-	.clk(clk), // IN
-	.en(ldinc)  // IN
+	.q /* OUT */ (data_0),
+	.d /* IN */ (d1_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ldinc)
 );
 slatch data_from_0_to_2_inst_1
 (
-	.q(data_1), // IO
-	.d(d1_1), // IN
-	.clk(clk), // IN
-	.en(ldinc)  // IN
+	.q /* OUT */ (data_1),
+	.d /* IN */ (d1_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ldinc)
 );
 slatch data_from_0_to_2_inst_2
 (
-	.q(data_2), // IO
-	.d(d1_2), // IN
-	.clk(clk), // IN
-	.en(ldinc)  // IN
+	.q /* OUT */ (data_2),
+	.d /* IN */ (d1_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ldinc)
 );
 
 // OB.NET (142) - dci : an2
@@ -2231,193 +3155,193 @@ assign dci = dco_2 & dmainc;
 // OB.NET (143) - data[3] : upcnt
 upcnt data_index_3_inst
 (
-	.q(data_3), // IO
-	.co(dco_3), // IO
-	.d(d_46), // IN
-	.clk(clk), // IN
-	.ci(dci), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_3),
+	.co /* OUT */ (dco_3),
+	.d /* IN */ (d_46),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dci),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (144) - data[4-9] : upcnt
 upcnt data_from_4_to_9_inst_0
 (
-	.q(data_4), // IO
-	.co(dco_4), // IO
-	.d(d_47), // IN
-	.clk(clk), // IN
-	.ci(dco_3), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_4),
+	.co /* OUT */ (dco_4),
+	.d /* IN */ (d_47),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_3),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_4_to_9_inst_1
 (
-	.q(data_5), // IO
-	.co(dco_5), // IO
-	.d(d_48), // IN
-	.clk(clk), // IN
-	.ci(dco_4), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_5),
+	.co /* OUT */ (dco_5),
+	.d /* IN */ (d_48),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_4),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_4_to_9_inst_2
 (
-	.q(data_6), // IO
-	.co(dco_6), // IO
-	.d(d_49), // IN
-	.clk(clk), // IN
-	.ci(dco_5), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_6),
+	.co /* OUT */ (dco_6),
+	.d /* IN */ (d_49),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_5),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_4_to_9_inst_3
 (
-	.q(data_7), // IO
-	.co(dco_7), // IO
-	.d(d_50), // IN
-	.clk(clk), // IN
-	.ci(dco_6), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_7),
+	.co /* OUT */ (dco_7),
+	.d /* IN */ (d_50),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_6),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_4_to_9_inst_4
 (
-	.q(data_8), // IO
-	.co(dco_8), // IO
-	.d(d_51), // IN
-	.clk(clk), // IN
-	.ci(dco_7), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_8),
+	.co /* OUT */ (dco_8),
+	.d /* IN */ (d_51),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_7),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_4_to_9_inst_5
 (
-	.q(data_9), // IO
-	.co(dco_9), // IO
-	.d(d_52), // IN
-	.clk(clk), // IN
-	.ci(dco_8), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_9),
+	.co /* OUT */ (dco_9),
+	.d /* IN */ (d_52),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_8),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (145) - data[10] : upcnt
 upcnt data_index_10_inst
 (
-	.q(data_10), // IO
-	.co(dco_10), // IO
-	.d(d_53), // IN
-	.clk(clk), // IN
-	.ci(dlac9), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_10),
+	.co /* OUT */ (dco_10),
+	.d /* IN */ (d_53),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dlac9),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (146) - data[11-16] : upcnt
 upcnt data_from_11_to_16_inst_0
 (
-	.q(data_11), // IO
-	.co(dco_11), // IO
-	.d(d_54), // IN
-	.clk(clk), // IN
-	.ci(dco_10), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_11),
+	.co /* OUT */ (dco_11),
+	.d /* IN */ (d_54),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_10),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_11_to_16_inst_1
 (
-	.q(data_12), // IO
-	.co(dco_12), // IO
-	.d(d_55), // IN
-	.clk(clk), // IN
-	.ci(dco_11), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_12),
+	.co /* OUT */ (dco_12),
+	.d /* IN */ (d_55),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_11),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_11_to_16_inst_2
 (
-	.q(data_13), // IO
-	.co(dco_13), // IO
-	.d(d_56), // IN
-	.clk(clk), // IN
-	.ci(dco_12), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_13),
+	.co /* OUT */ (dco_13),
+	.d /* IN */ (d_56),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_12),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_11_to_16_inst_3
 (
-	.q(data_14), // IO
-	.co(dco_14), // IO
-	.d(d_57), // IN
-	.clk(clk), // IN
-	.ci(dco_13), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_14),
+	.co /* OUT */ (dco_14),
+	.d /* IN */ (d_57),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_13),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_11_to_16_inst_4
 (
-	.q(data_15), // IO
-	.co(dco_15), // IO
-	.d(d_58), // IN
-	.clk(clk), // IN
-	.ci(dco_14), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_15),
+	.co /* OUT */ (dco_15),
+	.d /* IN */ (d_58),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_14),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_11_to_16_inst_5
 (
-	.q(data_16), // IO
-	.co(dco_16), // IO
-	.d(d_59), // IN
-	.clk(clk), // IN
-	.ci(dco_15), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_16),
+	.co /* OUT */ (dco_16),
+	.d /* IN */ (d_59),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_15),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (147) - data[17] : upcnt
 upcnt data_index_17_inst
 (
-	.q(data_17), // IO
-	.co(dco_17), // IO
-	.d(d_60), // IN
-	.clk(clk), // IN
-	.ci(dlac16), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_17),
+	.co /* OUT */ (dco_17),
+	.d /* IN */ (d_60),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dlac16),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (148) - data[18-20] : upcnt
 upcnt data_from_18_to_20_inst_0
 (
-	.q(data_18), // IO
-	.co(dco_18), // IO
-	.d(d_61), // IN
-	.clk(clk), // IN
-	.ci(dco_17), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_18),
+	.co /* OUT */ (dco_18),
+	.d /* IN */ (d_61),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_17),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_18_to_20_inst_1
 (
-	.q(data_19), // IO
-	.co(dco_19), // IO
-	.d(d_62), // IN
-	.clk(clk), // IN
-	.ci(dco_18), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_19),
+	.co /* OUT */ (dco_19),
+	.d /* IN */ (d_62),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_18),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 upcnt data_from_18_to_20_inst_2
 (
-	.q(data_20), // IO
-	.co(dco_20), // IO
-	.d(d_63), // IN
-	.clk(clk), // IN
-	.ci(dco_19), // IN
-	.ld(obld_0_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (data_20),
+	.co /* OUT */ (dco_20),
+	.d /* IN */ (d_63),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dco_19),
+	.ld /* IN */ (obld_0_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (149) - dlac9 : an8
@@ -2436,113 +3360,113 @@ assign obfws = obfw & wet;
 // OB.NET (157) - obf : ldp1q
 ldp1q obf_inst
 (
-	.q(obf), // OUT
-	.d(din_0), // IN
-	.g(obfws)  // IN
+	.q /* OUT */ (obf),
+	.d /* IN */ (din_0),
+	.g /* IN */ (obfws)
 );
 
 // OB.NET (161) - iwidth[0] : dncnt
 dncnt iwidth_index_0_inst
 (
-	.q(iwidth_0), // IO
-	.co(wco_0), // IO
-	.d(d_28), // IN
-	.clk(clk), // IN
-	.ci(dmaen), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_0),
+	.co /* OUT */ (wco_0),
+	.d /* IN */ (d_28),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (dmaen),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (162) - iwidth[1-9] : dncnt
 dncnt iwidth_from_1_to_9_inst_0
 (
-	.q(iwidth_1), // IO
-	.co(wco_1), // IO
-	.d(d_29), // IN
-	.clk(clk), // IN
-	.ci(wco_0), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_1),
+	.co /* OUT */ (wco_1),
+	.d /* IN */ (d_29),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_0),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_1
 (
-	.q(iwidth_2), // IO
-	.co(wco_2), // IO
-	.d(d_30), // IN
-	.clk(clk), // IN
-	.ci(wco_1), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_2),
+	.co /* OUT */ (wco_2),
+	.d /* IN */ (d_30),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_1),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_2
 (
-	.q(iwidth_3), // IO
-	.co(wco_3), // IO
-	.d(d_31), // IN
-	.clk(clk), // IN
-	.ci(wco_2), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_3),
+	.co /* OUT */ (wco_3),
+	.d /* IN */ (d_31),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_2),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_3
 (
-	.q(iwidth_4), // IO
-	.co(wco_4), // IO
-	.d(d_32), // IN
-	.clk(clk), // IN
-	.ci(wco_3), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_4),
+	.co /* OUT */ (wco_4),
+	.d /* IN */ (d_32),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_3),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_4
 (
-	.q(iwidth_5), // IO
-	.co(wco_5), // IO
-	.d(d_33), // IN
-	.clk(clk), // IN
-	.ci(wco_4), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_5),
+	.co /* OUT */ (wco_5),
+	.d /* IN */ (d_33),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_4),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_5
 (
-	.q(iwidth_6), // IO
-	.co(wco_6), // IO
-	.d(d_34), // IN
-	.clk(clk), // IN
-	.ci(wco_5), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_6),
+	.co /* OUT */ (wco_6),
+	.d /* IN */ (d_34),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_5),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_6
 (
-	.q(iwidth_7), // IO
-	.co(wco_7), // IO
-	.d(d_35), // IN
-	.clk(clk), // IN
-	.ci(wco_6), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_7),
+	.co /* OUT */ (wco_7),
+	.d /* IN */ (d_35),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_6),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_7
 (
-	.q(iwidth_8), // IO
-	.co(wco_8), // IO
-	.d(d_36), // IN
-	.clk(clk), // IN
-	.ci(wco_7), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_8),
+	.co /* OUT */ (wco_8),
+	.d /* IN */ (d_36),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_7),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 dncnt iwidth_from_1_to_9_inst_8
 (
-	.q(iwidth_9), // IO
-	.co(wco_9), // IO
-	.d(d_37), // IN
-	.clk(clk), // IN
-	.ci(wco_8), // IN
-	.ld(obld_1_obuf), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (iwidth_9),
+	.co /* OUT */ (wco_9),
+	.d /* IN */ (d_37),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_8),
+	.ld /* IN */ (obld_1_obuf),
+	.resl /* IN */ (resetl)
 );
 
 // OB.NET (170) - bit0 : an2
@@ -2563,37 +3487,37 @@ assign iwidthz = ~iwidthnz;
 // OB.NET (376) - q0 : fd4q
 fd4q q0_inst
 (
-	.q(q0), // OUT
-	.d(d0), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (q0),
+	.d /* IN */ (d0),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // OB.NET (377) - q1 : fd2q
 fd2q q1_inst
 (
-	.q(q1), // OUT
-	.d(d1), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1),
+	.d /* IN */ (d1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (378) - q2 : fd2q
 fd2q q2_inst
 (
-	.q(q2), // OUT
-	.d(d2), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q2),
+	.d /* IN */ (d2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (379) - q3i : fd2q
 fd2q q3i_inst
 (
-	.q(q3i), // OUT
-	.d(d3), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q3i),
+	.d /* IN */ (d3),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (380) - q3 : nivm
@@ -2602,10 +3526,10 @@ assign q3 = q3i;
 // OB.NET (381) - q4i : fd2q
 fd2q q4i_inst
 (
-	.q(q4i), // OUT
-	.d(d4), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4i),
+	.d /* IN */ (d4),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (382) - q4 : nivh
@@ -2614,37 +3538,37 @@ assign q4 = q4i;
 // OB.NET (383) - q5 : fd2q
 fd2q q5_inst
 (
-	.q(q5), // OUT
-	.d(d5), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q5),
+	.d /* IN */ (d5),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (384) - q7 : fd2q
 fd2q q7_inst
 (
-	.q(q7), // OUT
-	.d(d7), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q7),
+	.d /* IN */ (d7),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (385) - q8 : fd2q
 fd2q q8_inst
 (
-	.q(q8), // OUT
-	.d(d8), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q8),
+	.d /* IN */ (d8),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (386) - q9 : fd2q
 fd2q q9_inst
 (
-	.q(q9), // OUT
-	.d(d9), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q9),
+	.d /* IN */ (d9),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (388) - d00 : nd2
@@ -2810,7 +3734,7 @@ assign obr6 = ~(q4 & offscreen);
 assign obr7 = ~(q4 & iwidthz);
 
 // OB.NET (455) - obbreq : nd8
-assign obbreq_obuf = ~(obr0 & obr1 & obr2 & obr3 & obr4 & obr5 & obr6 & obr7);
+assign obbreq = ~(obr0 & obr1 & obr2 & obr3 & obr4 & obr5 & obr6 & obr7);
 
 // OB.NET (456) - obbr0 : or2
 assign obbr0 = obdone | hold;
@@ -2894,13 +3818,13 @@ assign pclink = pclinki;
 assign pcinc = ~(d70 & d19);
 
 // OB.NET (494) - grpintreq : iv
-assign grpintreq_obuf = ~d70;
+assign grpintreq = ~d70;
 
 // OB.NET (495) - obint : an3
-assign obint_obuf = q3 & stopob & ypos_0;
+assign obint = q3 & stopob & ypos_0;
 
 // OB.NET (496) - startref : an2
-assign startref_obuf = q3 & stopob;
+assign startref = q3 & stopob;
 
 // OB.NET (498) - obrw1 : iv
 assign obrw1 = ~q5;
@@ -2909,19 +3833,19 @@ assign obrw1 = ~q5;
 assign obrw = obrw1 & omrq3 & omrq6;
 
 // OB.NET (504) - wbkstart : nd2
-assign wbkstart_obuf = ~(d40 & omrq4);
+assign wbkstart = ~(d40 & omrq4);
 
 // OB.NET (506) - wbken2d : iv
 assign wbken2d = ~pc2en0;
 
 // OB.NET (514) - wr : iv
-assign wr = ~rw;
+assign wr = ~rw_in;
 
 // OB.NET (515) - eback : or2
 assign eback = blback | grpback;
 
 // OB.NET (516) - ewr : an4
-assign ewr = eback & wr & mack & mreq;
+assign ewr = eback & wr & mack & mreq_in;
 
 // OB.NET (517) - wbken0d : nr2
 assign wbken0d = ~(wbken2d | ewr);
@@ -2930,7 +3854,7 @@ assign wbken0d = ~(wbken2d | ewr);
 assign xldi = ~(d40 & d80);
 
 // OB.NET (520) - xld : nivm
-assign xld_obuf = xldi;
+assign xld = xldi;
 
 // OB.NET (526) - typel[0-2] : iv
 assign typel_0 = ~type_0;
@@ -3002,42 +3926,42 @@ assign depthl_1 = ~depth_1;
 assign depthl_2 = ~depth_2;
 
 // OB.NET (556) - mode1 : an3h
-assign mode1_obuf = depthl_2 & depthl_1 & depthl_0;
+assign mode1 = depthl_2 & depthl_1 & depthl_0;
 
 // OB.NET (557) - mode2 : an3h
-assign mode2_obuf = depthl_2 & depthl_1 & depth_0;
+assign mode2 = depthl_2 & depthl_1 & depth_0;
 
 // OB.NET (558) - mode4 : an3h
-assign mode4_obuf = depthl_2 & depth_1 & depthl_0;
+assign mode4 = depthl_2 & depth_1 & depthl_0;
 
 // OB.NET (559) - mode8i : nd3
 assign mode8i = ~(depthl_2 & depth_1 & depth_0);
 
 // OB.NET (560) - mode8 : ivh
-assign mode8_obuf = ~mode8i;
+assign mode8 = ~mode8i;
 
 // OB.NET (561) - mode16 : an3
-assign mode16_obuf = depth_2 & depthl_1 & depthl_0;
+assign mode16 = depth_2 & depthl_1 & depthl_0;
 
 // OB.NET (562) - mode24 : an3
-assign mode24_obuf = depth_2 & depthl_1 & depth_0;
+assign mode24 = depth_2 & depthl_1 & depth_0;
 
 // OB.NET (566) - start1 : fd2q
 fd2q start1_inst
 (
-	.q(start1), // OUT
-	.d(start), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (start1),
+	.d /* IN */ (start),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (567) - start2 : fd2q
 fd2q start2_inst
 (
-	.q(start2), // OUT
-	.d(start1), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (start2),
+	.d /* IN */ (start1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (568) - start2l : iv
@@ -3058,9 +3982,9 @@ assign overrund = ~(ov1 & ov2);
 // OB.NET (578) - overrun : fd1q
 fd1q overrun_inst
 (
-	.q(overrun), // OUT
-	.d(overrund), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (overrun),
+	.d /* IN */ (overrund),
+	.cp /* IN */ (clk)
 );
 
 // OB.NET (579) - notstartover : nr2
@@ -3085,60 +4009,67 @@ assign obeni = obback | refack;
 assign oben = obeni;
 
 // OB.NET (590) - rw : ts
-assign rw = (oben) ? obrw : 1'bz;
+assign rw_out = obrw;
+assign rw_oe = oben;
 
 // OB.NET (591) - mreq : tsm
-assign mreq = (obback) ? obmreq : 1'bz;
+assign mreq_out = obmreq;
+assign mreq_oe = obback;
 
 // OB.NET (592) - justify : ts
-assign justify = (oben) ? gnd : 1'bz;
+assign justify_out = gnd;
+assign justify_oe = oben;
 
 // OB.NET (593) - w[0-2] : ts
-assign w_0 = (oben) ? gnd : 1'bz;
-assign w_1 = (oben) ? gnd : 1'bz;
-assign w_2 = (oben) ? gnd : 1'bz;
+assign w_0_out = gnd;
+assign w_0_oe = oben;
+assign w_1_out = gnd;
+assign w_1_oe = oben;
+assign w_2_out = gnd;
+assign w_2_oe = oben;
 
 // OB.NET (594) - w[3] : ts
-assign w_3 = (oben) ? vcc : 1'bz;
+assign w_3_out = vcc;
+assign w_3_oe = oben;
 
 // OB.NET (609) - obdlatch : ack_pipe
 ack_pipe obdlatch_inst
 (
-	.latch(obdlatch_obuf), // IO
-	.latchd(obdlatchd), // IN
-	.ack(mack), // IN
-	.clk(clk), // IN
-	.resetl(resetl)  // IN
+	.latch /* OUT */ (obdlatch),
+	.latchd /* IN */ (obdlatchd),
+	.ack /* IN */ (mack),
+	.clk /* IN */ (clk),
+	.resetl /* IN */ (resetl)
 );
 
 // OB.NET (610) - obldi[0] : ack_pipe
 ack_pipe obldi_index_0_inst
 (
-	.latch(obldi_0), // IO
-	.latchd(obldd_0), // IN
-	.ack(mack), // IN
-	.clk(clk), // IN
-	.resetl(resetl)  // IN
+	.latch /* OUT */ (obldi_0),
+	.latchd /* IN */ (obldd_0),
+	.ack /* IN */ (mack),
+	.clk /* IN */ (clk),
+	.resetl /* IN */ (resetl)
 );
 
 // OB.NET (611) - obldi[1] : ack_pipe
 ack_pipe obldi_index_1_inst
 (
-	.latch(obldi_1), // IO
-	.latchd(obldd_1), // IN
-	.ack(mack), // IN
-	.clk(clk), // IN
-	.resetl(resetl)  // IN
+	.latch /* OUT */ (obldi_1),
+	.latchd /* IN */ (obldd_1),
+	.ack /* IN */ (mack),
+	.clk /* IN */ (clk),
+	.resetl /* IN */ (resetl)
 );
 
 // OB.NET (612) - obldi[2] : ack_pipe
 ack_pipe obldi_index_2_inst
 (
-	.latch(obldi_2), // IO
-	.latchd(obldd_2), // IN
-	.ack(mack), // IN
-	.clk(clk), // IN
-	.resetl(resetl)  // IN
+	.latch /* OUT */ (obldi_2),
+	.latchd /* IN */ (obldd_2),
+	.ack /* IN */ (mack),
+	.clk /* IN */ (clk),
+	.resetl /* IN */ (resetl)
 );
 
 // OB.NET (613) - obld[0] : nivu2
@@ -3158,10 +4089,10 @@ assign oblatch_2 = obld_2_obuf;
 // OB.NET (619) - wbkeni[0] : fd4q
 fd4q wbkeni_index_0_inst
 (
-	.q(wbkeni_0), // OUT
-	.d(wbken0d), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (wbkeni_0),
+	.d /* IN */ (wbken0d),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // OB.NET (620) - wbken[0] : nivu2
@@ -3170,10 +4101,10 @@ assign wbken_0 = wbkeni_0;
 // OB.NET (621) - wbkeni[2] : fd2q
 fd2q wbkeni_index_2_inst
 (
-	.q(wbkeni_2), // OUT
-	.d(wbken2d), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (wbkeni_2),
+	.d /* IN */ (wbken2d),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // OB.NET (622) - wbken[2] : nivu2
@@ -3182,31 +4113,31 @@ assign wbken_2 = wbkeni_2;
 // OB.NET (626) - comp : mag11
 mag11 comp_inst
 (
-	.agb(vgy_obuf), // IO
-	.aeb(equ), // IO
-	.alb(vly_obuf), // IO
-	.a_0(vc_0), // IN
-	.a_1(vc_1), // IN
-	.a_2(vc_2), // IN
-	.a_3(vc_3), // IN
-	.a_4(vc_4), // IN
-	.a_5(vc_5), // IN
-	.a_6(vc_6), // IN
-	.a_7(vc_7), // IN
-	.a_8(vc_8), // IN
-	.a_9(vc_9), // IN
-	.a_10(vc_10), // IN
-	.b_0(ypos_0), // IN
-	.b_1(ypos_1), // IN
-	.b_2(ypos_2), // IN
-	.b_3(ypos_3), // IN
-	.b_4(ypos_4), // IN
-	.b_5(ypos_5), // IN
-	.b_6(ypos_6), // IN
-	.b_7(ypos_7), // IN
-	.b_8(ypos_8), // IN
-	.b_9(ypos_9), // IN
-	.b_10(ypos_10)  // IN
+	.agb /* OUT */ (vgy_obuf),
+	.aeb /* OUT */ (equ),
+	.alb /* OUT */ (vly_obuf),
+	.a_0 /* IN */ (vc_0),
+	.a_1 /* IN */ (vc_1),
+	.a_2 /* IN */ (vc_2),
+	.a_3 /* IN */ (vc_3),
+	.a_4 /* IN */ (vc_4),
+	.a_5 /* IN */ (vc_5),
+	.a_6 /* IN */ (vc_6),
+	.a_7 /* IN */ (vc_7),
+	.a_8 /* IN */ (vc_8),
+	.a_9 /* IN */ (vc_9),
+	.a_10 /* IN */ (vc_10),
+	.b_0 /* IN */ (ypos_0),
+	.b_1 /* IN */ (ypos_1),
+	.b_2 /* IN */ (ypos_2),
+	.b_3 /* IN */ (ypos_3),
+	.b_4 /* IN */ (ypos_4),
+	.b_5 /* IN */ (ypos_5),
+	.b_6 /* IN */ (ypos_6),
+	.b_7 /* IN */ (ypos_7),
+	.b_8 /* IN */ (ypos_8),
+	.b_9 /* IN */ (ypos_9),
+	.b_10 /* IN */ (ypos_10)
 );
 
 // OB.NET (627) - geq : iv
@@ -3230,18 +4161,18 @@ assign ve_10 = ~(vc_10 ^ ypos_10);
 // OB.NET (633) - veyl : nd11
 nd11 veyl_inst
 (
-	.q(veyl), // OUT
-	.a_0(ve_0), // IN
-	.a_1(ve_1), // IN
-	.a_2(ve_2), // IN
-	.a_3(ve_3), // IN
-	.a_4(ve_4), // IN
-	.a_5(ve_5), // IN
-	.a_6(ve_6), // IN
-	.a_7(ve_7), // IN
-	.a_8(ve_8), // IN
-	.a_9(ve_9), // IN
-	.a_10(ve_10)  // IN
+	.q /* OUT */ (veyl),
+	.a_0 /* IN */ (ve_0),
+	.a_1 /* IN */ (ve_1),
+	.a_2 /* IN */ (ve_2),
+	.a_3 /* IN */ (ve_3),
+	.a_4 /* IN */ (ve_4),
+	.a_5 /* IN */ (ve_5),
+	.a_6 /* IN */ (ve_6),
+	.a_7 /* IN */ (ve_7),
+	.a_8 /* IN */ (ve_8),
+	.a_9 /* IN */ (ve_9),
+	.a_10 /* IN */ (ve_10)
 );
 
 // OB.NET (634) - vey : iv
@@ -3298,183 +4229,991 @@ assign olp1_4 = olp_4 | pc2en;
 // OB.NET (666) - oa[3-4] : mx2
 mx2 oa_from_3_to_4_inst_0
 (
-	.z(oa_3), // OUT
-	.a0(olp1_3), // IN
-	.a1(data_0), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_3),
+	.a0 /* IN */ (olp1_3),
+	.a1 /* IN */ (data_0),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_3_to_4_inst_1
 (
-	.z(oa_4), // OUT
-	.a0(olp1_4), // IN
-	.a1(data_1), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_4),
+	.a0 /* IN */ (olp1_4),
+	.a1 /* IN */ (data_1),
+	.s /* IN */ (datasel)
 );
 
 // OB.NET (667) - oa[5-21] : mx2
 mx2 oa_from_5_to_21_inst_0
 (
-	.z(oa_5), // OUT
-	.a0(olp_5), // IN
-	.a1(data_2), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_5),
+	.a0 /* IN */ (olp_5),
+	.a1 /* IN */ (data_2),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_1
 (
-	.z(oa_6), // OUT
-	.a0(olp_6), // IN
-	.a1(data_3), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_6),
+	.a0 /* IN */ (olp_6),
+	.a1 /* IN */ (data_3),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_2
 (
-	.z(oa_7), // OUT
-	.a0(olp_7), // IN
-	.a1(data_4), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_7),
+	.a0 /* IN */ (olp_7),
+	.a1 /* IN */ (data_4),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_3
 (
-	.z(oa_8), // OUT
-	.a0(olp_8), // IN
-	.a1(data_5), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_8),
+	.a0 /* IN */ (olp_8),
+	.a1 /* IN */ (data_5),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_4
 (
-	.z(oa_9), // OUT
-	.a0(olp_9), // IN
-	.a1(data_6), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_9),
+	.a0 /* IN */ (olp_9),
+	.a1 /* IN */ (data_6),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_5
 (
-	.z(oa_10), // OUT
-	.a0(olp_10), // IN
-	.a1(data_7), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_10),
+	.a0 /* IN */ (olp_10),
+	.a1 /* IN */ (data_7),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_6
 (
-	.z(oa_11), // OUT
-	.a0(olp_11), // IN
-	.a1(data_8), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_11),
+	.a0 /* IN */ (olp_11),
+	.a1 /* IN */ (data_8),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_7
 (
-	.z(oa_12), // OUT
-	.a0(olp_12), // IN
-	.a1(data_9), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_12),
+	.a0 /* IN */ (olp_12),
+	.a1 /* IN */ (data_9),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_8
 (
-	.z(oa_13), // OUT
-	.a0(olp_13), // IN
-	.a1(data_10), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_13),
+	.a0 /* IN */ (olp_13),
+	.a1 /* IN */ (data_10),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_9
 (
-	.z(oa_14), // OUT
-	.a0(olp_14), // IN
-	.a1(data_11), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_14),
+	.a0 /* IN */ (olp_14),
+	.a1 /* IN */ (data_11),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_10
 (
-	.z(oa_15), // OUT
-	.a0(olp_15), // IN
-	.a1(data_12), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_15),
+	.a0 /* IN */ (olp_15),
+	.a1 /* IN */ (data_12),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_11
 (
-	.z(oa_16), // OUT
-	.a0(olp_16), // IN
-	.a1(data_13), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_16),
+	.a0 /* IN */ (olp_16),
+	.a1 /* IN */ (data_13),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_12
 (
-	.z(oa_17), // OUT
-	.a0(olp_17), // IN
-	.a1(data_14), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_17),
+	.a0 /* IN */ (olp_17),
+	.a1 /* IN */ (data_14),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_13
 (
-	.z(oa_18), // OUT
-	.a0(olp_18), // IN
-	.a1(data_15), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_18),
+	.a0 /* IN */ (olp_18),
+	.a1 /* IN */ (data_15),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_14
 (
-	.z(oa_19), // OUT
-	.a0(olp_19), // IN
-	.a1(data_16), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_19),
+	.a0 /* IN */ (olp_19),
+	.a1 /* IN */ (data_16),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_15
 (
-	.z(oa_20), // OUT
-	.a0(olp_20), // IN
-	.a1(data_17), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_20),
+	.a0 /* IN */ (olp_20),
+	.a1 /* IN */ (data_17),
+	.s /* IN */ (datasel)
 );
 mx2 oa_from_5_to_21_inst_16
 (
-	.z(oa_21), // OUT
-	.a0(olp_21), // IN
-	.a1(data_18), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_21),
+	.a0 /* IN */ (olp_21),
+	.a1 /* IN */ (data_18),
+	.s /* IN */ (datasel)
 );
 
 // OB.NET (668) - oa[22] : mx2
 mx2 oa_index_22_inst
 (
-	.z(oa_22), // OUT
-	.a0(olpd_22), // IN
-	.a1(data_19), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_22),
+	.a0 /* IN */ (olpd_22),
+	.a1 /* IN */ (data_19),
+	.s /* IN */ (datasel)
 );
 
 // OB.NET (669) - oa[23] : mx2
 mx2 oa_index_23_inst
 (
-	.z(oa_23), // OUT
-	.a0(olpd_23), // IN
-	.a1(data_20), // IN
-	.s(datasel)  // IN
+	.z /* OUT */ (oa_23),
+	.a0 /* IN */ (olpd_23),
+	.a1 /* IN */ (data_20),
+	.s /* IN */ (datasel)
 );
 
 // OB.NET (673) - oa1[0-2] : tsm
-assign a_0 = (oben) ? gnd : 1'bz;
-assign a_1 = (oben) ? gnd : 1'bz;
-assign a_2 = (oben) ? gnd : 1'bz;
+assign a_0_out = gnd;
+assign a_0_oe = oben;
+assign a_1_out = gnd;
+assign a_1_oe = oben;
+assign a_2_out = gnd;
+assign a_2_oe = oben;
 
 // OB.NET (674) - oa1[3-23] : tsm
-assign a_3 = (oben) ? oa_3 : 1'bz;
-assign a_4 = (oben) ? oa_4 : 1'bz;
-assign a_5 = (oben) ? oa_5 : 1'bz;
-assign a_6 = (oben) ? oa_6 : 1'bz;
-assign a_7 = (oben) ? oa_7 : 1'bz;
-assign a_8 = (oben) ? oa_8 : 1'bz;
-assign a_9 = (oben) ? oa_9 : 1'bz;
-assign a_10 = (oben) ? oa_10 : 1'bz;
-assign a_11 = (oben) ? oa_11 : 1'bz;
-assign a_12 = (oben) ? oa_12 : 1'bz;
-assign a_13 = (oben) ? oa_13 : 1'bz;
-assign a_14 = (oben) ? oa_14 : 1'bz;
-assign a_15 = (oben) ? oa_15 : 1'bz;
-assign a_16 = (oben) ? oa_16 : 1'bz;
-assign a_17 = (oben) ? oa_17 : 1'bz;
-assign a_18 = (oben) ? oa_18 : 1'bz;
-assign a_19 = (oben) ? oa_19 : 1'bz;
-assign a_20 = (oben) ? oa_20 : 1'bz;
-assign a_21 = (oben) ? oa_21 : 1'bz;
-assign a_22 = (oben) ? oa_22 : 1'bz;
-assign a_23 = (oben) ? oa_23 : 1'bz;
+assign a_3_out = oa_3;
+assign a_3_oe = oben;
+assign a_4_out = oa_4;
+assign a_4_oe = oben;
+assign a_5_out = oa_5;
+assign a_5_oe = oben;
+assign a_6_out = oa_6;
+assign a_6_oe = oben;
+assign a_7_out = oa_7;
+assign a_7_oe = oben;
+assign a_8_out = oa_8;
+assign a_8_oe = oben;
+assign a_9_out = oa_9;
+assign a_9_oe = oben;
+assign a_10_out = oa_10;
+assign a_10_oe = oben;
+assign a_11_out = oa_11;
+assign a_11_oe = oben;
+assign a_12_out = oa_12;
+assign a_12_oe = oben;
+assign a_13_out = oa_13;
+assign a_13_oe = oben;
+assign a_14_out = oa_14;
+assign a_14_oe = oben;
+assign a_15_out = oa_15;
+assign a_15_oe = oben;
+assign a_16_out = oa_16;
+assign a_16_oe = oben;
+assign a_17_out = oa_17;
+assign a_17_oe = oben;
+assign a_18_out = oa_18;
+assign a_18_oe = oben;
+assign a_19_out = oa_19;
+assign a_19_oe = oben;
+assign a_20_out = oa_20;
+assign a_20_oe = oben;
+assign a_21_out = oa_21;
+assign a_21_oe = oben;
+assign a_22_out = oa_22;
+assign a_22_oe = oben;
+assign a_23_out = oa_23;
+assign a_23_oe = oben;
+
+// --- Compiler-generated PE for BUS wd[0]
+assign wd_0_out =
+	(ts_pe_288_a0_oe) ? ts_pe_288_a0_out :
+	(ts_pe_288_a1_oe) ? ts_pe_288_a1_out :
+	1'bz;
+assign wd_0_oe = ts_pe_288_a0_oe | ts_pe_288_a1_oe;
+assign ts_pe_288_a0_in = wd_0_in;
+assign ts_pe_288_a1_in = wd_0_in;
+
+// --- Compiler-generated PE for BUS wd[1]
+assign wd_1_out =
+	(ts_pe_289_a0_oe) ? ts_pe_289_a0_out :
+	(ts_pe_289_a1_oe) ? ts_pe_289_a1_out :
+	1'bz;
+assign wd_1_oe = ts_pe_289_a0_oe | ts_pe_289_a1_oe;
+assign ts_pe_289_a0_in = wd_1_in;
+assign ts_pe_289_a1_in = wd_1_in;
+
+// --- Compiler-generated PE for BUS wd[2]
+assign wd_2_out =
+	(ts_pe_290_a0_oe) ? ts_pe_290_a0_out :
+	(ts_pe_290_a1_oe) ? ts_pe_290_a1_out :
+	1'bz;
+assign wd_2_oe = ts_pe_290_a0_oe | ts_pe_290_a1_oe;
+assign ts_pe_290_a0_in = wd_2_in;
+assign ts_pe_290_a1_in = wd_2_in;
+
+// --- Compiler-generated PE for BUS wd[3]
+assign wd_3_out =
+	(ts_pe_291_a0_oe) ? ts_pe_291_a0_out :
+	(ts_pe_291_a1_oe) ? ts_pe_291_a1_out :
+	1'bz;
+assign wd_3_oe = ts_pe_291_a0_oe | ts_pe_291_a1_oe;
+assign ts_pe_291_a0_in = wd_3_in;
+assign ts_pe_291_a1_in = wd_3_in;
+
+// --- Compiler-generated PE for BUS wd[4]
+assign wd_4_out =
+	(ts_pe_292_a0_oe) ? ts_pe_292_a0_out :
+	(ts_pe_292_a1_oe) ? ts_pe_292_a1_out :
+	1'bz;
+assign wd_4_oe = ts_pe_292_a0_oe | ts_pe_292_a1_oe;
+assign ts_pe_292_a0_in = wd_4_in;
+assign ts_pe_292_a1_in = wd_4_in;
+
+// --- Compiler-generated PE for BUS wd[5]
+assign wd_5_out =
+	(ts_pe_293_a0_oe) ? ts_pe_293_a0_out :
+	(ts_pe_293_a1_oe) ? ts_pe_293_a1_out :
+	1'bz;
+assign wd_5_oe = ts_pe_293_a0_oe | ts_pe_293_a1_oe;
+assign ts_pe_293_a0_in = wd_5_in;
+assign ts_pe_293_a1_in = wd_5_in;
+
+// --- Compiler-generated PE for BUS wd[6]
+assign wd_6_out =
+	(ts_pe_294_a0_oe) ? ts_pe_294_a0_out :
+	(ts_pe_294_a1_oe) ? ts_pe_294_a1_out :
+	1'bz;
+assign wd_6_oe = ts_pe_294_a0_oe | ts_pe_294_a1_oe;
+assign ts_pe_294_a0_in = wd_6_in;
+assign ts_pe_294_a1_in = wd_6_in;
+
+// --- Compiler-generated PE for BUS wd[7]
+assign wd_7_out =
+	(ts_pe_295_a0_oe) ? ts_pe_295_a0_out :
+	(ts_pe_295_a1_oe) ? ts_pe_295_a1_out :
+	1'bz;
+assign wd_7_oe = ts_pe_295_a0_oe | ts_pe_295_a1_oe;
+assign ts_pe_295_a0_in = wd_7_in;
+assign ts_pe_295_a1_in = wd_7_in;
+
+// --- Compiler-generated PE for BUS wd[8]
+assign wd_8_out =
+	(ts_pe_296_a0_oe) ? ts_pe_296_a0_out :
+	(ts_pe_296_a1_oe) ? ts_pe_296_a1_out :
+	1'bz;
+assign wd_8_oe = ts_pe_296_a0_oe | ts_pe_296_a1_oe;
+assign ts_pe_296_a0_in = wd_8_in;
+assign ts_pe_296_a1_in = wd_8_in;
+
+// --- Compiler-generated PE for BUS wd[9]
+assign wd_9_out =
+	(ts_pe_297_a0_oe) ? ts_pe_297_a0_out :
+	(ts_pe_297_a1_oe) ? ts_pe_297_a1_out :
+	1'bz;
+assign wd_9_oe = ts_pe_297_a0_oe | ts_pe_297_a1_oe;
+assign ts_pe_297_a0_in = wd_9_in;
+assign ts_pe_297_a1_in = wd_9_in;
+
+// --- Compiler-generated PE for BUS wd[10]
+assign wd_10_out =
+	(ts_pe_298_a0_oe) ? ts_pe_298_a0_out :
+	(ts_pe_298_a1_oe) ? ts_pe_298_a1_out :
+	1'bz;
+assign wd_10_oe = ts_pe_298_a0_oe | ts_pe_298_a1_oe;
+assign ts_pe_298_a0_in = wd_10_in;
+assign ts_pe_298_a1_in = wd_10_in;
+
+// --- Compiler-generated PE for BUS wd[11]
+assign wd_11_out =
+	(ts_pe_299_a0_oe) ? ts_pe_299_a0_out :
+	(ts_pe_299_a1_oe) ? ts_pe_299_a1_out :
+	1'bz;
+assign wd_11_oe = ts_pe_299_a0_oe | ts_pe_299_a1_oe;
+assign ts_pe_299_a0_in = wd_11_in;
+assign ts_pe_299_a1_in = wd_11_in;
+
+// --- Compiler-generated PE for BUS wd[12]
+assign wd_12_out =
+	(ts_pe_300_a0_oe) ? ts_pe_300_a0_out :
+	(ts_pe_300_a1_oe) ? ts_pe_300_a1_out :
+	1'bz;
+assign wd_12_oe = ts_pe_300_a0_oe | ts_pe_300_a1_oe;
+assign ts_pe_300_a0_in = wd_12_in;
+assign ts_pe_300_a1_in = wd_12_in;
+
+// --- Compiler-generated PE for BUS wd[13]
+assign wd_13_out =
+	(ts_pe_301_a0_oe) ? ts_pe_301_a0_out :
+	(ts_pe_301_a1_oe) ? ts_pe_301_a1_out :
+	1'bz;
+assign wd_13_oe = ts_pe_301_a0_oe | ts_pe_301_a1_oe;
+assign ts_pe_301_a0_in = wd_13_in;
+assign ts_pe_301_a1_in = wd_13_in;
+
+// --- Compiler-generated PE for BUS wd[14]
+assign wd_14_out =
+	(ts_pe_302_a0_oe) ? ts_pe_302_a0_out :
+	(ts_pe_302_a1_oe) ? ts_pe_302_a1_out :
+	1'bz;
+assign wd_14_oe = ts_pe_302_a0_oe | ts_pe_302_a1_oe;
+assign ts_pe_302_a0_in = wd_14_in;
+assign ts_pe_302_a1_in = wd_14_in;
+
+// --- Compiler-generated PE for BUS wd[15]
+assign wd_15_out =
+	(ts_pe_303_a0_oe) ? ts_pe_303_a0_out :
+	(ts_pe_303_a1_oe) ? ts_pe_303_a1_out :
+	1'bz;
+assign wd_15_oe = ts_pe_303_a0_oe | ts_pe_303_a1_oe;
+assign ts_pe_303_a0_in = wd_15_in;
+assign ts_pe_303_a1_in = wd_15_in;
+
+// --- Compiler-generated PE for BUS wd[16]
+assign wd_16_out =
+	(ts_pe_304_a0_oe) ? ts_pe_304_a0_out :
+	(ts_pe_304_a1_oe) ? ts_pe_304_a1_out :
+	1'bz;
+assign wd_16_oe = ts_pe_304_a0_oe | ts_pe_304_a1_oe;
+assign ts_pe_304_a0_in = wd_16_in;
+assign ts_pe_304_a1_in = wd_16_in;
+
+// --- Compiler-generated PE for BUS wd[17]
+assign wd_17_out =
+	(ts_pe_305_a0_oe) ? ts_pe_305_a0_out :
+	(ts_pe_305_a1_oe) ? ts_pe_305_a1_out :
+	1'bz;
+assign wd_17_oe = ts_pe_305_a0_oe | ts_pe_305_a1_oe;
+assign ts_pe_305_a0_in = wd_17_in;
+assign ts_pe_305_a1_in = wd_17_in;
+
+// --- Compiler-generated PE for BUS wd[18]
+assign wd_18_out =
+	(ts_pe_306_a0_oe) ? ts_pe_306_a0_out :
+	(ts_pe_306_a1_oe) ? ts_pe_306_a1_out :
+	1'bz;
+assign wd_18_oe = ts_pe_306_a0_oe | ts_pe_306_a1_oe;
+assign ts_pe_306_a0_in = wd_18_in;
+assign ts_pe_306_a1_in = wd_18_in;
+
+// --- Compiler-generated PE for BUS wd[19]
+assign wd_19_out =
+	(ts_pe_307_a0_oe) ? ts_pe_307_a0_out :
+	(ts_pe_307_a1_oe) ? ts_pe_307_a1_out :
+	1'bz;
+assign wd_19_oe = ts_pe_307_a0_oe | ts_pe_307_a1_oe;
+assign ts_pe_307_a0_in = wd_19_in;
+assign ts_pe_307_a1_in = wd_19_in;
+
+// --- Compiler-generated PE for BUS wd[20]
+assign wd_20_out =
+	(ts_pe_308_a0_oe) ? ts_pe_308_a0_out :
+	(ts_pe_308_a1_oe) ? ts_pe_308_a1_out :
+	1'bz;
+assign wd_20_oe = ts_pe_308_a0_oe | ts_pe_308_a1_oe;
+assign ts_pe_308_a0_in = wd_20_in;
+assign ts_pe_308_a1_in = wd_20_in;
+
+// --- Compiler-generated PE for BUS wd[21]
+assign wd_21_out =
+	(ts_pe_309_a0_oe) ? ts_pe_309_a0_out :
+	(ts_pe_309_a1_oe) ? ts_pe_309_a1_out :
+	1'bz;
+assign wd_21_oe = ts_pe_309_a0_oe | ts_pe_309_a1_oe;
+assign ts_pe_309_a0_in = wd_21_in;
+assign ts_pe_309_a1_in = wd_21_in;
+
+// --- Compiler-generated PE for BUS wd[22]
+assign wd_22_out =
+	(ts_pe_310_a0_oe) ? ts_pe_310_a0_out :
+	(ts_pe_310_a1_oe) ? ts_pe_310_a1_out :
+	1'bz;
+assign wd_22_oe = ts_pe_310_a0_oe | ts_pe_310_a1_oe;
+assign ts_pe_310_a0_in = wd_22_in;
+assign ts_pe_310_a1_in = wd_22_in;
+
+// --- Compiler-generated PE for BUS wd[23]
+assign wd_23_out =
+	(ts_pe_311_a0_oe) ? ts_pe_311_a0_out :
+	(ts_pe_311_a1_oe) ? ts_pe_311_a1_out :
+	1'bz;
+assign wd_23_oe = ts_pe_311_a0_oe | ts_pe_311_a1_oe;
+assign ts_pe_311_a0_in = wd_23_in;
+assign ts_pe_311_a1_in = wd_23_in;
+
+// --- Compiler-generated PE for BUS wd[24]
+assign wd_24_out =
+	(ts_pe_312_a0_oe) ? ts_pe_312_a0_out :
+	(ts_pe_312_a1_oe) ? ts_pe_312_a1_out :
+	1'bz;
+assign wd_24_oe = ts_pe_312_a0_oe | ts_pe_312_a1_oe;
+assign ts_pe_312_a0_in = wd_24_in;
+assign ts_pe_312_a1_in = wd_24_in;
+
+// --- Compiler-generated PE for BUS wd[25]
+assign wd_25_out =
+	(ts_pe_313_a0_oe) ? ts_pe_313_a0_out :
+	(ts_pe_313_a1_oe) ? ts_pe_313_a1_out :
+	1'bz;
+assign wd_25_oe = ts_pe_313_a0_oe | ts_pe_313_a1_oe;
+assign ts_pe_313_a0_in = wd_25_in;
+assign ts_pe_313_a1_in = wd_25_in;
+
+// --- Compiler-generated PE for BUS wd[26]
+assign wd_26_out =
+	(ts_pe_314_a0_oe) ? ts_pe_314_a0_out :
+	(ts_pe_314_a1_oe) ? ts_pe_314_a1_out :
+	1'bz;
+assign wd_26_oe = ts_pe_314_a0_oe | ts_pe_314_a1_oe;
+assign ts_pe_314_a0_in = wd_26_in;
+assign ts_pe_314_a1_in = wd_26_in;
+
+// --- Compiler-generated PE for BUS wd[27]
+assign wd_27_out =
+	(ts_pe_315_a0_oe) ? ts_pe_315_a0_out :
+	(ts_pe_315_a1_oe) ? ts_pe_315_a1_out :
+	1'bz;
+assign wd_27_oe = ts_pe_315_a0_oe | ts_pe_315_a1_oe;
+assign ts_pe_315_a0_in = wd_27_in;
+assign ts_pe_315_a1_in = wd_27_in;
+
+// --- Compiler-generated PE for BUS wd[28]
+assign wd_28_out =
+	(ts_pe_316_a0_oe) ? ts_pe_316_a0_out :
+	(ts_pe_316_a1_oe) ? ts_pe_316_a1_out :
+	1'bz;
+assign wd_28_oe = ts_pe_316_a0_oe | ts_pe_316_a1_oe;
+assign ts_pe_316_a0_in = wd_28_in;
+assign ts_pe_316_a1_in = wd_28_in;
+
+// --- Compiler-generated PE for BUS wd[29]
+assign wd_29_out =
+	(ts_pe_317_a0_oe) ? ts_pe_317_a0_out :
+	(ts_pe_317_a1_oe) ? ts_pe_317_a1_out :
+	1'bz;
+assign wd_29_oe = ts_pe_317_a0_oe | ts_pe_317_a1_oe;
+assign ts_pe_317_a0_in = wd_29_in;
+assign ts_pe_317_a1_in = wd_29_in;
+
+// --- Compiler-generated PE for BUS wd[30]
+assign wd_30_out =
+	(ts_pe_318_a0_oe) ? ts_pe_318_a0_out :
+	(ts_pe_318_a1_oe) ? ts_pe_318_a1_out :
+	1'bz;
+assign wd_30_oe = ts_pe_318_a0_oe | ts_pe_318_a1_oe;
+assign ts_pe_318_a0_in = wd_30_in;
+assign ts_pe_318_a1_in = wd_30_in;
+
+// --- Compiler-generated PE for BUS wd[31]
+assign wd_31_out =
+	(ts_pe_319_a0_oe) ? ts_pe_319_a0_out :
+	(ts_pe_319_a1_oe) ? ts_pe_319_a1_out :
+	1'bz;
+assign wd_31_oe = ts_pe_319_a0_oe | ts_pe_319_a1_oe;
+assign ts_pe_319_a0_in = wd_31_in;
+assign ts_pe_319_a1_in = wd_31_in;
+
+// --- Compiler-generated PE for BUS wd[32]
+assign wd_32_out =
+	(ts_pe_320_a0_oe) ? ts_pe_320_a0_out :
+	(ts_pe_320_a1_oe) ? ts_pe_320_a1_out :
+	1'bz;
+assign wd_32_oe = ts_pe_320_a0_oe | ts_pe_320_a1_oe;
+assign ts_pe_320_a0_in = wd_32_in;
+assign ts_pe_320_a1_in = wd_32_in;
+
+// --- Compiler-generated PE for BUS wd[33]
+assign wd_33_out =
+	(ts_pe_321_a0_oe) ? ts_pe_321_a0_out :
+	(ts_pe_321_a1_oe) ? ts_pe_321_a1_out :
+	1'bz;
+assign wd_33_oe = ts_pe_321_a0_oe | ts_pe_321_a1_oe;
+assign ts_pe_321_a0_in = wd_33_in;
+assign ts_pe_321_a1_in = wd_33_in;
+
+// --- Compiler-generated PE for BUS wd[34]
+assign wd_34_out =
+	(ts_pe_322_a0_oe) ? ts_pe_322_a0_out :
+	(ts_pe_322_a1_oe) ? ts_pe_322_a1_out :
+	1'bz;
+assign wd_34_oe = ts_pe_322_a0_oe | ts_pe_322_a1_oe;
+assign ts_pe_322_a0_in = wd_34_in;
+assign ts_pe_322_a1_in = wd_34_in;
+
+// --- Compiler-generated PE for BUS wd[35]
+assign wd_35_out =
+	(ts_pe_323_a0_oe) ? ts_pe_323_a0_out :
+	(ts_pe_323_a1_oe) ? ts_pe_323_a1_out :
+	1'bz;
+assign wd_35_oe = ts_pe_323_a0_oe | ts_pe_323_a1_oe;
+assign ts_pe_323_a0_in = wd_35_in;
+assign ts_pe_323_a1_in = wd_35_in;
+
+// --- Compiler-generated PE for BUS wd[36]
+assign wd_36_out =
+	(ts_pe_324_a0_oe) ? ts_pe_324_a0_out :
+	(ts_pe_324_a1_oe) ? ts_pe_324_a1_out :
+	1'bz;
+assign wd_36_oe = ts_pe_324_a0_oe | ts_pe_324_a1_oe;
+assign ts_pe_324_a0_in = wd_36_in;
+assign ts_pe_324_a1_in = wd_36_in;
+
+// --- Compiler-generated PE for BUS wd[37]
+assign wd_37_out =
+	(ts_pe_325_a0_oe) ? ts_pe_325_a0_out :
+	(ts_pe_325_a1_oe) ? ts_pe_325_a1_out :
+	1'bz;
+assign wd_37_oe = ts_pe_325_a0_oe | ts_pe_325_a1_oe;
+assign ts_pe_325_a0_in = wd_37_in;
+assign ts_pe_325_a1_in = wd_37_in;
+
+// --- Compiler-generated PE for BUS wd[38]
+assign wd_38_out =
+	(ts_pe_326_a0_oe) ? ts_pe_326_a0_out :
+	(ts_pe_326_a1_oe) ? ts_pe_326_a1_out :
+	1'bz;
+assign wd_38_oe = ts_pe_326_a0_oe | ts_pe_326_a1_oe;
+assign ts_pe_326_a0_in = wd_38_in;
+assign ts_pe_326_a1_in = wd_38_in;
+
+// --- Compiler-generated PE for BUS wd[39]
+assign wd_39_out =
+	(ts_pe_327_a0_oe) ? ts_pe_327_a0_out :
+	(ts_pe_327_a1_oe) ? ts_pe_327_a1_out :
+	1'bz;
+assign wd_39_oe = ts_pe_327_a0_oe | ts_pe_327_a1_oe;
+assign ts_pe_327_a0_in = wd_39_in;
+assign ts_pe_327_a1_in = wd_39_in;
+
+// --- Compiler-generated PE for BUS wd[40]
+assign wd_40_out =
+	(ts_pe_328_a0_oe) ? ts_pe_328_a0_out :
+	(ts_pe_328_a1_oe) ? ts_pe_328_a1_out :
+	1'bz;
+assign wd_40_oe = ts_pe_328_a0_oe | ts_pe_328_a1_oe;
+assign ts_pe_328_a0_in = wd_40_in;
+assign ts_pe_328_a1_in = wd_40_in;
+
+// --- Compiler-generated PE for BUS wd[41]
+assign wd_41_out =
+	(ts_pe_329_a0_oe) ? ts_pe_329_a0_out :
+	(ts_pe_329_a1_oe) ? ts_pe_329_a1_out :
+	1'bz;
+assign wd_41_oe = ts_pe_329_a0_oe | ts_pe_329_a1_oe;
+assign ts_pe_329_a0_in = wd_41_in;
+assign ts_pe_329_a1_in = wd_41_in;
+
+// --- Compiler-generated PE for BUS wd[42]
+assign wd_42_out =
+	(ts_pe_330_a0_oe) ? ts_pe_330_a0_out :
+	(ts_pe_330_a1_oe) ? ts_pe_330_a1_out :
+	1'bz;
+assign wd_42_oe = ts_pe_330_a0_oe | ts_pe_330_a1_oe;
+assign ts_pe_330_a0_in = wd_42_in;
+assign ts_pe_330_a1_in = wd_42_in;
+
+// --- Compiler-generated PE for BUS wd[43]
+assign wd_43_out =
+	(ts_pe_331_a0_oe) ? ts_pe_331_a0_out :
+	(ts_pe_331_a1_oe) ? ts_pe_331_a1_out :
+	1'bz;
+assign wd_43_oe = ts_pe_331_a0_oe | ts_pe_331_a1_oe;
+assign ts_pe_331_a0_in = wd_43_in;
+assign ts_pe_331_a1_in = wd_43_in;
+
+// --- Compiler-generated PE for BUS wd[44]
+assign wd_44_out =
+	(ts_pe_332_a0_oe) ? ts_pe_332_a0_out :
+	(ts_pe_332_a1_oe) ? ts_pe_332_a1_out :
+	1'bz;
+assign wd_44_oe = ts_pe_332_a0_oe | ts_pe_332_a1_oe;
+assign ts_pe_332_a0_in = wd_44_in;
+assign ts_pe_332_a1_in = wd_44_in;
+
+// --- Compiler-generated PE for BUS wd[45]
+assign wd_45_out =
+	(ts_pe_333_a0_oe) ? ts_pe_333_a0_out :
+	(ts_pe_333_a1_oe) ? ts_pe_333_a1_out :
+	1'bz;
+assign wd_45_oe = ts_pe_333_a0_oe | ts_pe_333_a1_oe;
+assign ts_pe_333_a0_in = wd_45_in;
+assign ts_pe_333_a1_in = wd_45_in;
+
+// --- Compiler-generated PE for BUS wd[46]
+assign wd_46_out =
+	(ts_pe_334_a0_oe) ? ts_pe_334_a0_out :
+	(ts_pe_334_a1_oe) ? ts_pe_334_a1_out :
+	1'bz;
+assign wd_46_oe = ts_pe_334_a0_oe | ts_pe_334_a1_oe;
+assign ts_pe_334_a0_in = wd_46_in;
+assign ts_pe_334_a1_in = wd_46_in;
+
+// --- Compiler-generated PE for BUS wd[47]
+assign wd_47_out =
+	(ts_pe_335_a0_oe) ? ts_pe_335_a0_out :
+	(ts_pe_335_a1_oe) ? ts_pe_335_a1_out :
+	1'bz;
+assign wd_47_oe = ts_pe_335_a0_oe | ts_pe_335_a1_oe;
+assign ts_pe_335_a0_in = wd_47_in;
+assign ts_pe_335_a1_in = wd_47_in;
+
+// --- Compiler-generated PE for BUS wd[48]
+assign wd_48_out =
+	(ts_pe_336_a0_oe) ? ts_pe_336_a0_out :
+	(ts_pe_336_a1_oe) ? ts_pe_336_a1_out :
+	1'bz;
+assign wd_48_oe = ts_pe_336_a0_oe | ts_pe_336_a1_oe;
+assign ts_pe_336_a0_in = wd_48_in;
+assign ts_pe_336_a1_in = wd_48_in;
+
+// --- Compiler-generated PE for BUS wd[49]
+assign wd_49_out =
+	(ts_pe_337_a0_oe) ? ts_pe_337_a0_out :
+	(ts_pe_337_a1_oe) ? ts_pe_337_a1_out :
+	1'bz;
+assign wd_49_oe = ts_pe_337_a0_oe | ts_pe_337_a1_oe;
+assign ts_pe_337_a0_in = wd_49_in;
+assign ts_pe_337_a1_in = wd_49_in;
+
+// --- Compiler-generated PE for BUS wd[50]
+assign wd_50_out =
+	(ts_pe_338_a0_oe) ? ts_pe_338_a0_out :
+	(ts_pe_338_a1_oe) ? ts_pe_338_a1_out :
+	1'bz;
+assign wd_50_oe = ts_pe_338_a0_oe | ts_pe_338_a1_oe;
+assign ts_pe_338_a0_in = wd_50_in;
+assign ts_pe_338_a1_in = wd_50_in;
+
+// --- Compiler-generated PE for BUS wd[51]
+assign wd_51_out =
+	(ts_pe_339_a0_oe) ? ts_pe_339_a0_out :
+	(ts_pe_339_a1_oe) ? ts_pe_339_a1_out :
+	1'bz;
+assign wd_51_oe = ts_pe_339_a0_oe | ts_pe_339_a1_oe;
+assign ts_pe_339_a0_in = wd_51_in;
+assign ts_pe_339_a1_in = wd_51_in;
+
+// --- Compiler-generated PE for BUS wd[52]
+assign wd_52_out =
+	(ts_pe_340_a0_oe) ? ts_pe_340_a0_out :
+	(ts_pe_340_a1_oe) ? ts_pe_340_a1_out :
+	1'bz;
+assign wd_52_oe = ts_pe_340_a0_oe | ts_pe_340_a1_oe;
+assign ts_pe_340_a0_in = wd_52_in;
+assign ts_pe_340_a1_in = wd_52_in;
+
+// --- Compiler-generated PE for BUS wd[53]
+assign wd_53_out =
+	(ts_pe_341_a0_oe) ? ts_pe_341_a0_out :
+	(ts_pe_341_a1_oe) ? ts_pe_341_a1_out :
+	1'bz;
+assign wd_53_oe = ts_pe_341_a0_oe | ts_pe_341_a1_oe;
+assign ts_pe_341_a0_in = wd_53_in;
+assign ts_pe_341_a1_in = wd_53_in;
+
+// --- Compiler-generated PE for BUS wd[54]
+assign wd_54_out =
+	(ts_pe_342_a0_oe) ? ts_pe_342_a0_out :
+	(ts_pe_342_a1_oe) ? ts_pe_342_a1_out :
+	1'bz;
+assign wd_54_oe = ts_pe_342_a0_oe | ts_pe_342_a1_oe;
+assign ts_pe_342_a0_in = wd_54_in;
+assign ts_pe_342_a1_in = wd_54_in;
+
+// --- Compiler-generated PE for BUS wd[55]
+assign wd_55_out =
+	(ts_pe_343_a0_oe) ? ts_pe_343_a0_out :
+	(ts_pe_343_a1_oe) ? ts_pe_343_a1_out :
+	1'bz;
+assign wd_55_oe = ts_pe_343_a0_oe | ts_pe_343_a1_oe;
+assign ts_pe_343_a0_in = wd_55_in;
+assign ts_pe_343_a1_in = wd_55_in;
+
+// --- Compiler-generated PE for BUS wd[56]
+assign wd_56_out =
+	(ts_pe_344_a0_oe) ? ts_pe_344_a0_out :
+	(ts_pe_344_a1_oe) ? ts_pe_344_a1_out :
+	1'bz;
+assign wd_56_oe = ts_pe_344_a0_oe | ts_pe_344_a1_oe;
+assign ts_pe_344_a0_in = wd_56_in;
+assign ts_pe_344_a1_in = wd_56_in;
+
+// --- Compiler-generated PE for BUS wd[57]
+assign wd_57_out =
+	(ts_pe_345_a0_oe) ? ts_pe_345_a0_out :
+	(ts_pe_345_a1_oe) ? ts_pe_345_a1_out :
+	1'bz;
+assign wd_57_oe = ts_pe_345_a0_oe | ts_pe_345_a1_oe;
+assign ts_pe_345_a0_in = wd_57_in;
+assign ts_pe_345_a1_in = wd_57_in;
+
+// --- Compiler-generated PE for BUS wd[58]
+assign wd_58_out =
+	(ts_pe_346_a0_oe) ? ts_pe_346_a0_out :
+	(ts_pe_346_a1_oe) ? ts_pe_346_a1_out :
+	1'bz;
+assign wd_58_oe = ts_pe_346_a0_oe | ts_pe_346_a1_oe;
+assign ts_pe_346_a0_in = wd_58_in;
+assign ts_pe_346_a1_in = wd_58_in;
+
+// --- Compiler-generated PE for BUS wd[59]
+assign wd_59_out =
+	(ts_pe_347_a0_oe) ? ts_pe_347_a0_out :
+	(ts_pe_347_a1_oe) ? ts_pe_347_a1_out :
+	1'bz;
+assign wd_59_oe = ts_pe_347_a0_oe | ts_pe_347_a1_oe;
+assign ts_pe_347_a0_in = wd_59_in;
+assign ts_pe_347_a1_in = wd_59_in;
+
+// --- Compiler-generated PE for BUS wd[60]
+assign wd_60_out =
+	(ts_pe_348_a0_oe) ? ts_pe_348_a0_out :
+	(ts_pe_348_a1_oe) ? ts_pe_348_a1_out :
+	1'bz;
+assign wd_60_oe = ts_pe_348_a0_oe | ts_pe_348_a1_oe;
+assign ts_pe_348_a0_in = wd_60_in;
+assign ts_pe_348_a1_in = wd_60_in;
+
+// --- Compiler-generated PE for BUS wd[61]
+assign wd_61_out =
+	(ts_pe_349_a0_oe) ? ts_pe_349_a0_out :
+	(ts_pe_349_a1_oe) ? ts_pe_349_a1_out :
+	1'bz;
+assign wd_61_oe = ts_pe_349_a0_oe | ts_pe_349_a1_oe;
+assign ts_pe_349_a0_in = wd_61_in;
+assign ts_pe_349_a1_in = wd_61_in;
+
+// --- Compiler-generated PE for BUS wd[62]
+assign wd_62_out =
+	(ts_pe_350_a0_oe) ? ts_pe_350_a0_out :
+	(ts_pe_350_a1_oe) ? ts_pe_350_a1_out :
+	1'bz;
+assign wd_62_oe = ts_pe_350_a0_oe | ts_pe_350_a1_oe;
+assign ts_pe_350_a0_in = wd_62_in;
+assign ts_pe_350_a1_in = wd_62_in;
+
+// --- Compiler-generated PE for BUS wd[63]
+assign wd_63_out =
+	(ts_pe_351_a0_oe) ? ts_pe_351_a0_out :
+	(ts_pe_351_a1_oe) ? ts_pe_351_a1_out :
+	1'bz;
+assign wd_63_oe = ts_pe_351_a0_oe | ts_pe_351_a1_oe;
+assign ts_pe_351_a0_in = wd_63_in;
+assign ts_pe_351_a1_in = wd_63_in;
+
+// --- Compiler-generated PE for BUS dr[0]
+assign dr_0_out =
+	(ts_pe_352_a0_oe) ? ts_pe_352_a0_out :
+	(ts_pe_352_a1_oe) ? ts_pe_352_a1_out :
+	(ts_pe_352_a2_oe) ? ts_pe_352_a2_out :
+	(ts_pe_352_a3_oe) ? ts_pe_352_a3_out :
+	1'bz;
+assign dr_0_oe = ts_pe_352_a0_oe | ts_pe_352_a1_oe | ts_pe_352_a2_oe | ts_pe_352_a3_oe;
+assign ts_pe_352_a0_in = dr_0_in;
+assign ts_pe_352_a1_in = dr_0_in;
+assign ts_pe_352_a2_in = dr_0_in;
+assign ts_pe_352_a3_in = dr_0_in;
+
+// --- Compiler-generated PE for BUS dr[1]
+assign dr_1_out =
+	(ts_pe_353_a0_oe) ? ts_pe_353_a0_out :
+	(ts_pe_353_a1_oe) ? ts_pe_353_a1_out :
+	(ts_pe_353_a2_oe) ? ts_pe_353_a2_out :
+	(ts_pe_353_a3_oe) ? ts_pe_353_a3_out :
+	1'bz;
+assign dr_1_oe = ts_pe_353_a0_oe | ts_pe_353_a1_oe | ts_pe_353_a2_oe | ts_pe_353_a3_oe;
+assign ts_pe_353_a0_in = dr_1_in;
+assign ts_pe_353_a1_in = dr_1_in;
+assign ts_pe_353_a2_in = dr_1_in;
+assign ts_pe_353_a3_in = dr_1_in;
+
+// --- Compiler-generated PE for BUS dr[2]
+assign dr_2_out =
+	(ts_pe_354_a0_oe) ? ts_pe_354_a0_out :
+	(ts_pe_354_a1_oe) ? ts_pe_354_a1_out :
+	(ts_pe_354_a2_oe) ? ts_pe_354_a2_out :
+	(ts_pe_354_a3_oe) ? ts_pe_354_a3_out :
+	1'bz;
+assign dr_2_oe = ts_pe_354_a0_oe | ts_pe_354_a1_oe | ts_pe_354_a2_oe | ts_pe_354_a3_oe;
+assign ts_pe_354_a0_in = dr_2_in;
+assign ts_pe_354_a1_in = dr_2_in;
+assign ts_pe_354_a2_in = dr_2_in;
+assign ts_pe_354_a3_in = dr_2_in;
+
+// --- Compiler-generated PE for BUS dr[3]
+assign dr_3_out =
+	(ts_pe_355_a0_oe) ? ts_pe_355_a0_out :
+	(ts_pe_355_a1_oe) ? ts_pe_355_a1_out :
+	(ts_pe_355_a2_oe) ? ts_pe_355_a2_out :
+	(ts_pe_355_a3_oe) ? ts_pe_355_a3_out :
+	1'bz;
+assign dr_3_oe = ts_pe_355_a0_oe | ts_pe_355_a1_oe | ts_pe_355_a2_oe | ts_pe_355_a3_oe;
+assign ts_pe_355_a0_in = dr_3_in;
+assign ts_pe_355_a1_in = dr_3_in;
+assign ts_pe_355_a2_in = dr_3_in;
+assign ts_pe_355_a3_in = dr_3_in;
+
+// --- Compiler-generated PE for BUS dr[4]
+assign dr_4_out =
+	(ts_pe_356_a0_oe) ? ts_pe_356_a0_out :
+	(ts_pe_356_a1_oe) ? ts_pe_356_a1_out :
+	(ts_pe_356_a2_oe) ? ts_pe_356_a2_out :
+	(ts_pe_356_a3_oe) ? ts_pe_356_a3_out :
+	1'bz;
+assign dr_4_oe = ts_pe_356_a0_oe | ts_pe_356_a1_oe | ts_pe_356_a2_oe | ts_pe_356_a3_oe;
+assign ts_pe_356_a0_in = dr_4_in;
+assign ts_pe_356_a1_in = dr_4_in;
+assign ts_pe_356_a2_in = dr_4_in;
+assign ts_pe_356_a3_in = dr_4_in;
+
+// --- Compiler-generated PE for BUS dr[5]
+assign dr_5_out =
+	(ts_pe_357_a0_oe) ? ts_pe_357_a0_out :
+	(ts_pe_357_a1_oe) ? ts_pe_357_a1_out :
+	(ts_pe_357_a2_oe) ? ts_pe_357_a2_out :
+	(ts_pe_357_a3_oe) ? ts_pe_357_a3_out :
+	1'bz;
+assign dr_5_oe = ts_pe_357_a0_oe | ts_pe_357_a1_oe | ts_pe_357_a2_oe | ts_pe_357_a3_oe;
+assign ts_pe_357_a0_in = dr_5_in;
+assign ts_pe_357_a1_in = dr_5_in;
+assign ts_pe_357_a2_in = dr_5_in;
+assign ts_pe_357_a3_in = dr_5_in;
+
+// --- Compiler-generated PE for BUS dr[6]
+assign dr_6_out =
+	(ts_pe_358_a0_oe) ? ts_pe_358_a0_out :
+	(ts_pe_358_a1_oe) ? ts_pe_358_a1_out :
+	(ts_pe_358_a2_oe) ? ts_pe_358_a2_out :
+	(ts_pe_358_a3_oe) ? ts_pe_358_a3_out :
+	1'bz;
+assign dr_6_oe = ts_pe_358_a0_oe | ts_pe_358_a1_oe | ts_pe_358_a2_oe | ts_pe_358_a3_oe;
+assign ts_pe_358_a0_in = dr_6_in;
+assign ts_pe_358_a1_in = dr_6_in;
+assign ts_pe_358_a2_in = dr_6_in;
+assign ts_pe_358_a3_in = dr_6_in;
+
+// --- Compiler-generated PE for BUS dr[7]
+assign dr_7_out =
+	(ts_pe_359_a0_oe) ? ts_pe_359_a0_out :
+	(ts_pe_359_a1_oe) ? ts_pe_359_a1_out :
+	(ts_pe_359_a2_oe) ? ts_pe_359_a2_out :
+	(ts_pe_359_a3_oe) ? ts_pe_359_a3_out :
+	1'bz;
+assign dr_7_oe = ts_pe_359_a0_oe | ts_pe_359_a1_oe | ts_pe_359_a2_oe | ts_pe_359_a3_oe;
+assign ts_pe_359_a0_in = dr_7_in;
+assign ts_pe_359_a1_in = dr_7_in;
+assign ts_pe_359_a2_in = dr_7_in;
+assign ts_pe_359_a3_in = dr_7_in;
+
+// --- Compiler-generated PE for BUS dr[8]
+assign dr_8_out =
+	(ts_pe_360_a0_oe) ? ts_pe_360_a0_out :
+	(ts_pe_360_a1_oe) ? ts_pe_360_a1_out :
+	(ts_pe_360_a2_oe) ? ts_pe_360_a2_out :
+	(ts_pe_360_a3_oe) ? ts_pe_360_a3_out :
+	1'bz;
+assign dr_8_oe = ts_pe_360_a0_oe | ts_pe_360_a1_oe | ts_pe_360_a2_oe | ts_pe_360_a3_oe;
+assign ts_pe_360_a0_in = dr_8_in;
+assign ts_pe_360_a1_in = dr_8_in;
+assign ts_pe_360_a2_in = dr_8_in;
+assign ts_pe_360_a3_in = dr_8_in;
+
+// --- Compiler-generated PE for BUS dr[9]
+assign dr_9_out =
+	(ts_pe_361_a0_oe) ? ts_pe_361_a0_out :
+	(ts_pe_361_a1_oe) ? ts_pe_361_a1_out :
+	(ts_pe_361_a2_oe) ? ts_pe_361_a2_out :
+	(ts_pe_361_a3_oe) ? ts_pe_361_a3_out :
+	1'bz;
+assign dr_9_oe = ts_pe_361_a0_oe | ts_pe_361_a1_oe | ts_pe_361_a2_oe | ts_pe_361_a3_oe;
+assign ts_pe_361_a0_in = dr_9_in;
+assign ts_pe_361_a1_in = dr_9_in;
+assign ts_pe_361_a2_in = dr_9_in;
+assign ts_pe_361_a3_in = dr_9_in;
+
+// --- Compiler-generated PE for BUS dr[10]
+assign dr_10_out =
+	(ts_pe_362_a0_oe) ? ts_pe_362_a0_out :
+	(ts_pe_362_a1_oe) ? ts_pe_362_a1_out :
+	(ts_pe_362_a2_oe) ? ts_pe_362_a2_out :
+	(ts_pe_362_a3_oe) ? ts_pe_362_a3_out :
+	1'bz;
+assign dr_10_oe = ts_pe_362_a0_oe | ts_pe_362_a1_oe | ts_pe_362_a2_oe | ts_pe_362_a3_oe;
+assign ts_pe_362_a0_in = dr_10_in;
+assign ts_pe_362_a1_in = dr_10_in;
+assign ts_pe_362_a2_in = dr_10_in;
+assign ts_pe_362_a3_in = dr_10_in;
+
+// --- Compiler-generated PE for BUS dr[11]
+assign dr_11_out =
+	(ts_pe_363_a0_oe) ? ts_pe_363_a0_out :
+	(ts_pe_363_a1_oe) ? ts_pe_363_a1_out :
+	(ts_pe_363_a2_oe) ? ts_pe_363_a2_out :
+	(ts_pe_363_a3_oe) ? ts_pe_363_a3_out :
+	1'bz;
+assign dr_11_oe = ts_pe_363_a0_oe | ts_pe_363_a1_oe | ts_pe_363_a2_oe | ts_pe_363_a3_oe;
+assign ts_pe_363_a0_in = dr_11_in;
+assign ts_pe_363_a1_in = dr_11_in;
+assign ts_pe_363_a2_in = dr_11_in;
+assign ts_pe_363_a3_in = dr_11_in;
+
+// --- Compiler-generated PE for BUS dr[12]
+assign dr_12_out =
+	(ts_pe_364_a0_oe) ? ts_pe_364_a0_out :
+	(ts_pe_364_a1_oe) ? ts_pe_364_a1_out :
+	(ts_pe_364_a2_oe) ? ts_pe_364_a2_out :
+	(ts_pe_364_a3_oe) ? ts_pe_364_a3_out :
+	1'bz;
+assign dr_12_oe = ts_pe_364_a0_oe | ts_pe_364_a1_oe | ts_pe_364_a2_oe | ts_pe_364_a3_oe;
+assign ts_pe_364_a0_in = dr_12_in;
+assign ts_pe_364_a1_in = dr_12_in;
+assign ts_pe_364_a2_in = dr_12_in;
+assign ts_pe_364_a3_in = dr_12_in;
+
+// --- Compiler-generated PE for BUS dr[13]
+assign dr_13_out =
+	(ts_pe_365_a0_oe) ? ts_pe_365_a0_out :
+	(ts_pe_365_a1_oe) ? ts_pe_365_a1_out :
+	(ts_pe_365_a2_oe) ? ts_pe_365_a2_out :
+	(ts_pe_365_a3_oe) ? ts_pe_365_a3_out :
+	1'bz;
+assign dr_13_oe = ts_pe_365_a0_oe | ts_pe_365_a1_oe | ts_pe_365_a2_oe | ts_pe_365_a3_oe;
+assign ts_pe_365_a0_in = dr_13_in;
+assign ts_pe_365_a1_in = dr_13_in;
+assign ts_pe_365_a2_in = dr_13_in;
+assign ts_pe_365_a3_in = dr_13_in;
+
+// --- Compiler-generated PE for BUS dr[14]
+assign dr_14_out =
+	(ts_pe_366_a0_oe) ? ts_pe_366_a0_out :
+	(ts_pe_366_a1_oe) ? ts_pe_366_a1_out :
+	(ts_pe_366_a2_oe) ? ts_pe_366_a2_out :
+	(ts_pe_366_a3_oe) ? ts_pe_366_a3_out :
+	1'bz;
+assign dr_14_oe = ts_pe_366_a0_oe | ts_pe_366_a1_oe | ts_pe_366_a2_oe | ts_pe_366_a3_oe;
+assign ts_pe_366_a0_in = dr_14_in;
+assign ts_pe_366_a1_in = dr_14_in;
+assign ts_pe_366_a2_in = dr_14_in;
+assign ts_pe_366_a3_in = dr_14_in;
+
+// --- Compiler-generated PE for BUS dr[15]
+assign dr_15_out =
+	(ts_pe_367_a0_oe) ? ts_pe_367_a0_out :
+	(ts_pe_367_a1_oe) ? ts_pe_367_a1_out :
+	(ts_pe_367_a2_oe) ? ts_pe_367_a2_out :
+	(ts_pe_367_a3_oe) ? ts_pe_367_a3_out :
+	1'bz;
+assign dr_15_oe = ts_pe_367_a0_oe | ts_pe_367_a1_oe | ts_pe_367_a2_oe | ts_pe_367_a3_oe;
+assign ts_pe_367_a0_in = dr_15_in;
+assign ts_pe_367_a1_in = dr_15_in;
+assign ts_pe_367_a2_in = dr_15_in;
+assign ts_pe_367_a3_in = dr_15_in;
 endmodule

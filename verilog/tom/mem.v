@@ -122,13 +122,27 @@ module mem
 	output intswe,
 	output intwe,
 	output dspcsl,
-	inout w_0,
-	inout w_1,
-	inout w_2,
-	inout w_3,
-	inout rw,
-	inout mreq,
-	inout justify
+	output w_0_out,
+	output w_0_oe,
+	input w_0_in,
+	output w_1_out,
+	output w_1_oe,
+	input w_1_in,
+	output w_2_out,
+	output w_2_oe,
+	input w_2_in,
+	output w_3_out,
+	output w_3_oe,
+	input w_3_in,
+	output rw_out,
+	output rw_oe,
+	input rw_in,
+	output mreq_out,
+	output mreq_oe,
+	input mreq_in,
+	output justify_out,
+	output justify_oe,
+	input justify_in
 );
 wire notreadt;
 wire intbm;
@@ -420,541 +434,443 @@ wire dreqd;
 
 // Output buffers
 wire ack_obuf;
-wire bback_obuf;
-wire gback_obuf;
-wire obback_obuf;
-wire romcsl_0_obuf;
-wire romcsl_1_obuf;
-wire rasl_0_obuf;
-wire rasl_1_obuf;
-wire casl_0_obuf;
-wire casl_1_obuf;
-wire oel_0_obuf;
-wire oel_1_obuf;
-wire oel_2_obuf;
-wire wel_0_obuf;
-wire wel_1_obuf;
-wire wel_2_obuf;
-wire wel_3_obuf;
-wire wel_4_obuf;
-wire wel_5_obuf;
-wire wel_6_obuf;
-wire wel_7_obuf;
-wire sizout_0_obuf;
-wire sizout_1_obuf;
-wire sizout_2_obuf;
-wire den_0_obuf;
-wire den_1_obuf;
-wire den_2_obuf;
-wire aen_obuf;
-wire dtackl_obuf;
-wire brlout_obuf;
 wire dbgl_obuf;
-wire dreqlout_obuf;
 wire d7a_obuf;
 wire readt_obuf;
-wire dinlatch_0_obuf;
-wire dinlatch_1_obuf;
-wire dinlatch_2_obuf;
-wire dinlatch_3_obuf;
-wire dinlatch_4_obuf;
-wire dinlatch_5_obuf;
-wire dinlatch_6_obuf;
-wire dinlatch_7_obuf;
-wire dmuxu_0_obuf;
-wire dmuxu_1_obuf;
-wire dmuxu_2_obuf;
-wire dmuxd_0_obuf;
-wire dmuxd_1_obuf;
-wire dmuxd_2_obuf;
-wire dren_obuf;
-wire xdsrc_obuf;
 wire maska_0_obuf;
 wire maska_1_obuf;
 wire maska_2_obuf;
-wire at_0_obuf;
-wire at_1_obuf;
-wire at_2_obuf;
-wire ainen_obuf;
-wire newrow_obuf;
-wire resrow_obuf;
-wire mux_obuf;
 wire refack_obuf;
 wire reads_obuf;
 wire wet_obuf;
 wire oet_obuf;
 wire ba_obuf;
-wire intswe_obuf;
-wire intwe_obuf;
-wire dspcsl_obuf;
 
 
 // Output buffers
 assign ack = ack_obuf;
-assign bback = bback_obuf;
-assign gback = gback_obuf;
-assign obback = obback_obuf;
-assign romcsl_0 = romcsl_0_obuf;
-assign romcsl_1 = romcsl_1_obuf;
-assign rasl_0 = rasl_0_obuf;
-assign rasl_1 = rasl_1_obuf;
-assign casl_0 = casl_0_obuf;
-assign casl_1 = casl_1_obuf;
-assign oel_0 = oel_0_obuf;
-assign oel_1 = oel_1_obuf;
-assign oel_2 = oel_2_obuf;
-assign wel_0 = wel_0_obuf;
-assign wel_1 = wel_1_obuf;
-assign wel_2 = wel_2_obuf;
-assign wel_3 = wel_3_obuf;
-assign wel_4 = wel_4_obuf;
-assign wel_5 = wel_5_obuf;
-assign wel_6 = wel_6_obuf;
-assign wel_7 = wel_7_obuf;
-assign sizout_0 = sizout_0_obuf;
-assign sizout_1 = sizout_1_obuf;
-assign sizout_2 = sizout_2_obuf;
-assign den_0 = den_0_obuf;
-assign den_1 = den_1_obuf;
-assign den_2 = den_2_obuf;
-assign aen = aen_obuf;
-assign dtackl = dtackl_obuf;
-assign brlout = brlout_obuf;
 assign dbgl = dbgl_obuf;
-assign dreqlout = dreqlout_obuf;
 assign d7a = d7a_obuf;
 assign readt = readt_obuf;
-assign dinlatch_0 = dinlatch_0_obuf;
-assign dinlatch_1 = dinlatch_1_obuf;
-assign dinlatch_2 = dinlatch_2_obuf;
-assign dinlatch_3 = dinlatch_3_obuf;
-assign dinlatch_4 = dinlatch_4_obuf;
-assign dinlatch_5 = dinlatch_5_obuf;
-assign dinlatch_6 = dinlatch_6_obuf;
-assign dinlatch_7 = dinlatch_7_obuf;
-assign dmuxu_0 = dmuxu_0_obuf;
-assign dmuxu_1 = dmuxu_1_obuf;
-assign dmuxu_2 = dmuxu_2_obuf;
-assign dmuxd_0 = dmuxd_0_obuf;
-assign dmuxd_1 = dmuxd_1_obuf;
-assign dmuxd_2 = dmuxd_2_obuf;
-assign dren = dren_obuf;
-assign xdsrc = xdsrc_obuf;
 assign maska_0 = maska_0_obuf;
 assign maska_1 = maska_1_obuf;
 assign maska_2 = maska_2_obuf;
-assign at_0 = at_0_obuf;
-assign at_1 = at_1_obuf;
-assign at_2 = at_2_obuf;
-assign ainen = ainen_obuf;
-assign newrow = newrow_obuf;
-assign resrow = resrow_obuf;
-assign mux = mux_obuf;
 assign refack = refack_obuf;
 assign reads = reads_obuf;
 assign wet = wet_obuf;
 assign oet = oet_obuf;
 assign ba = ba_obuf;
-assign intswe = intswe_obuf;
-assign intwe = intwe_obuf;
-assign dspcsl = dspcsl_obuf;
 
 
 // MEM.NET (116) - arb : arb
 arb arb_inst
 (
-	.bbreq_0(bbreq_0), // IN
-	.bbreq_1(bbreq_1), // IN
-	.gbreq_0(gbreq_0), // IN
-	.gbreq_1(gbreq_1), // IN
-	.obbreq(obbreq), // IN
-	.bglin(bglin), // IN
-	.brlin(brlin), // IN
-	.dbrl_0(dbrl_0), // IN
-	.dbrl_1(dbrl_1), // IN
-	.refreq(refreq), // IN
-	.ihandler(ihandler), // IN
-	.ack(ack_obuf), // IN
-	.resetl(resetl), // IN
-	.clk(clk), // IN
-	.vcc(vcc), // IN
-	.bgain(bgain), // IN
-	.notreadt(notreadt), // IN
-	.dreqin(dreqin), // IN
-	.bback(bback_obuf), // IO
-	.gback(gback_obuf), // IO
-	.obback(obback_obuf), // IO
-	.brlout(brlout_obuf), // IO
-	.dbgl(dbgl_obuf), // IO
-	.refack(refack_obuf), // IO
-	.ba(ba_obuf), // IO
-	.intbm(intbm), // IO
-	.cpubm(cpubm), // IO
-	.intbms(intbms), // IO
-	.intbmw(intbmw)  // IO
+	.bbreq_0 /* IN */ (bbreq_0),
+	.bbreq_1 /* IN */ (bbreq_1),
+	.gbreq_0 /* IN */ (gbreq_0),
+	.gbreq_1 /* IN */ (gbreq_1),
+	.obbreq /* IN */ (obbreq),
+	.bglin /* IN */ (bglin),
+	.brlin /* IN */ (brlin),
+	.dbrl_0 /* IN */ (dbrl_0),
+	.dbrl_1 /* IN */ (dbrl_1),
+	.refreq /* IN */ (refreq),
+	.ihandler /* IN */ (ihandler),
+	.ack /* IN */ (ack_obuf),
+	.resetl /* IN */ (resetl),
+	.clk /* IN */ (clk),
+	.vcc /* IN */ (vcc),
+	.bgain /* IN */ (bgain),
+	.notreadt /* IN */ (notreadt),
+	.dreqin /* IN */ (dreqin),
+	.bback /* OUT */ (bback),
+	.gback /* OUT */ (gback),
+	.obback /* OUT */ (obback),
+	.brlout /* OUT */ (brlout),
+	.dbgl /* OUT */ (dbgl_obuf),
+	.refack /* OUT */ (refack_obuf),
+	.ba /* OUT */ (ba_obuf),
+	.intbm /* OUT */ (intbm),
+	.cpubm /* OUT */ (cpubm),
+	.intbms /* OUT */ (intbms),
+	.intbmw /* OUT */ (intbmw)
 );
 
 // MEM.NET (123) - mw : memwidth
 memwidth mw_inst
 (
-	.w_0(w_0), // IN
-	.w_1(w_1), // IN
-	.w_2(w_2), // IN
-	.w_3(w_3), // IN
-	.ba_0(a_0), // IN
-	.ba_1(a_1), // IN
-	.ba_2(a_2), // IN
-	.mw_0(mwt_0), // IN
-	.mw_1(mwt_1), // IN
-	.ack(ack_obuf), // IN
-	.nextc(nextc), // IN
-	.clk(clk), // IN
-	.vcc(vcc), // IN
-	.gnd(gnd), // IN
-	.bigend(bigend), // IN
-	.maskw_0(maskw_0), // IO
-	.maskw_1(maskw_1), // IO
-	.maskw_2(maskw_2), // IO
-	.maskw_3(maskw_3), // IO
-	.maska_0(maska_0_obuf), // IO
-	.maska_1(maska_1_obuf), // IO
-	.maska_2(maska_2_obuf), // IO
-	.at_0(at_0_obuf), // IO
-	.at_1(at_1_obuf), // IO
-	.at_2(at_2_obuf), // IO
-	.lastcycle(lastcycle), // IO
-	.lastc(lastc), // IO
-	.bm_0(bm_0), // IO
-	.bm_1(bm_1), // IO
-	.bm_2(bm_2), // IO
-	.bm_3(bm_3), // IO
-	.bm_4(bm_4), // IO
-	.bm_5(bm_5), // IO
-	.bm_6(bm_6), // IO
-	.bm_7(bm_7)  // IO
+	.w_0 /* IN */ (w_0_in),
+	.w_1 /* IN */ (w_1_in),
+	.w_2 /* IN */ (w_2_in),
+	.w_3 /* IN */ (w_3_in),
+	.ba_0 /* IN */ (a_0),
+	.ba_1 /* IN */ (a_1),
+	.ba_2 /* IN */ (a_2),
+	.mw_0 /* IN */ (mwt_0),
+	.mw_1 /* IN */ (mwt_1),
+	.ack /* IN */ (ack_obuf),
+	.nextc /* IN */ (nextc),
+	.clk /* IN */ (clk),
+	.vcc /* IN */ (vcc),
+	.gnd /* IN */ (gnd),
+	.bigend /* IN */ (bigend),
+	.maskw_0 /* OUT */ (maskw_0),
+	.maskw_1 /* OUT */ (maskw_1),
+	.maskw_2 /* OUT */ (maskw_2),
+	.maskw_3 /* OUT */ (maskw_3),
+	.maska_0 /* OUT */ (maska_0_obuf),
+	.maska_1 /* OUT */ (maska_1_obuf),
+	.maska_2 /* OUT */ (maska_2_obuf),
+	.at_0 /* OUT */ (at_0),
+	.at_1 /* OUT */ (at_1),
+	.at_2 /* OUT */ (at_2),
+	.lastcycle /* OUT */ (lastcycle),
+	.lastc /* OUT */ (lastc),
+	.bm_0 /* OUT */ (bm_0),
+	.bm_1 /* OUT */ (bm_1),
+	.bm_2 /* OUT */ (bm_2),
+	.bm_3 /* OUT */ (bm_3),
+	.bm_4 /* OUT */ (bm_4),
+	.bm_5 /* OUT */ (bm_5),
+	.bm_6 /* OUT */ (bm_6),
+	.bm_7 /* OUT */ (bm_7)
 );
 
 // MEM.NET (129) - bus : bus
 bus bus_inst
 (
-	.reads(reads_obuf), // IN
-	.ack(ack_obuf), // IN
-	.intdev(intdev), // IN
-	.cpu32(cpu32), // IN
-	.ba_0(ba_0), // IN
-	.ba_1(ba_1), // IN
-	.ba_2(ba_2), // IN
-	.mws64(mws64), // IN
-	.mws16(mws16), // IN
-	.mws8(mws8), // IN
-	.notdbg(dbgl_obuf), // IN
-	.ourack(ourack), // IN
-	.w_0(w_0), // IN
-	.w_1(w_1), // IN
-	.w_2(w_2), // IN
-	.w_3(w_3), // IN
-	.erd(erd), // IN
-	.justify(justify), // IN
-	.intbm(intbm), // IN
-	.intbms(intbms), // IN
-	.cpubm(cpubm), // IN
-	.clk(clk), // IN
-	.testen(testen), // IN
-	.intbmw(intbmw), // IN
-	.resetl(resetl), // IN
-	.idle(idle), // IN
-	.den_0(den_0_obuf), // IO
-	.den_1(den_1_obuf), // IO
-	.den_2(den_2_obuf), // IO
-	.aen(aen_obuf), // IO
-	.dmuxu_0(dmuxu_0_obuf), // IO
-	.dmuxu_1(dmuxu_1_obuf), // IO
-	.dmuxu_2(dmuxu_2_obuf), // IO
-	.dmuxd_0(dmuxd_0_obuf), // IO
-	.dmuxd_1(dmuxd_1_obuf), // IO
-	.dmuxd_2(dmuxd_2_obuf), // IO
-	.dren(dren_obuf), // IO
-	.xdsrc(xdsrc_obuf), // IO
-	.ainen(ainen_obuf)  // IO
+	.reads /* IN */ (reads_obuf),
+	.ack /* IN */ (ack_obuf),
+	.intdev /* IN */ (intdev),
+	.cpu32 /* IN */ (cpu32),
+	.ba_0 /* IN */ (ba_0),
+	.ba_1 /* IN */ (ba_1),
+	.ba_2 /* IN */ (ba_2),
+	.mws64 /* IN */ (mws64),
+	.mws16 /* IN */ (mws16),
+	.mws8 /* IN */ (mws8),
+	.notdbg /* IN */ (dbgl_obuf),
+	.ourack /* IN */ (ourack),
+	.w_0 /* IN */ (w_0_in),
+	.w_1 /* IN */ (w_1_in),
+	.w_2 /* IN */ (w_2_in),
+	.w_3 /* IN */ (w_3_in),
+	.erd /* IN */ (erd),
+	.justify /* IN */ (justify_in),
+	.intbm /* IN */ (intbm),
+	.intbms /* IN */ (intbms),
+	.cpubm /* IN */ (cpubm),
+	.clk /* IN */ (clk),
+	.testen /* IN */ (testen),
+	.intbmw /* IN */ (intbmw),
+	.resetl /* IN */ (resetl),
+	.idle /* IN */ (idle),
+	.den_0 /* OUT */ (den_0),
+	.den_1 /* OUT */ (den_1),
+	.den_2 /* OUT */ (den_2),
+	.aen /* OUT */ (aen),
+	.dmuxu_0 /* OUT */ (dmuxu_0),
+	.dmuxu_1 /* OUT */ (dmuxu_1),
+	.dmuxu_2 /* OUT */ (dmuxu_2),
+	.dmuxd_0 /* OUT */ (dmuxd_0),
+	.dmuxd_1 /* OUT */ (dmuxd_1),
+	.dmuxd_2 /* OUT */ (dmuxd_2),
+	.dren /* OUT */ (dren),
+	.xdsrc /* OUT */ (xdsrc),
+	.ainen /* OUT */ (ainen)
 );
 
 // MEM.NET (139) - cpu : cpu
 cpu cpu_inst
 (
-	.sizin_0(sizin_0), // IN
-	.sizin_1(sizin_1), // IN
-	.rwin(rwin), // IN
-	.notack(notack), // IN
-	.ack(ack_obuf), // IN
-	.dreqin(dreqin), // IN
-	.resetl(resetl), // IN
-	.clk_0(clk), // IN
-	.intbm(intbm), // IN
-	.intbms(intbms), // IN
-	.m68k(m68k), // IN
-	.ba(ba_obuf), // IN
-	.dbgl(dbgl_obuf), // IN
-	.dtackl(dtackl_obuf), // IO
-	.erd(erd), // IO
-	.w_0(w_0), // BUS
-	.w_1(w_1), // BUS
-	.w_2(w_2), // BUS
-	.w_3(w_3), // BUS
-	.rw(rw), // BUS
-	.mreq(mreq), // BUS
-	.justify(justify)  // BUS
+	.sizin_0 /* IN */ (sizin_0),
+	.sizin_1 /* IN */ (sizin_1),
+	.rwin /* IN */ (rwin),
+	.notack /* IN */ (notack),
+	.ack /* IN */ (ack_obuf),
+	.dreqin /* IN */ (dreqin),
+	.resetl /* IN */ (resetl),
+	.clk_0 /* IN */ (clk),
+	.intbm /* IN */ (intbm),
+	.intbms /* IN */ (intbms),
+	.m68k /* IN */ (m68k),
+	.ba /* IN */ (ba_obuf),
+	.dbgl /* IN */ (dbgl_obuf),
+	.dtackl /* OUT */ (dtackl),
+	.erd /* OUT */ (erd),
+	.w_0_out /* BUS */ (w_0_out),
+	.w_0_oe /* BUS */ (w_0_oe),
+	.w_0_in /* BUS */ (w_0_in),
+	.w_1_out /* BUS */ (w_1_out),
+	.w_1_oe /* BUS */ (w_1_oe),
+	.w_1_in /* BUS */ (w_1_in),
+	.w_2_out /* BUS */ (w_2_out),
+	.w_2_oe /* BUS */ (w_2_oe),
+	.w_2_in /* BUS */ (w_2_in),
+	.w_3_out /* BUS */ (w_3_out),
+	.w_3_oe /* BUS */ (w_3_oe),
+	.w_3_in /* BUS */ (w_3_in),
+	.rw_out /* BUS */ (rw_out),
+	.rw_oe /* BUS */ (rw_oe),
+	.rw_in /* BUS */ (rw_in),
+	.mreq_out /* BUS */ (mreq_out),
+	.mreq_oe /* BUS */ (mreq_oe),
+	.mreq_in /* BUS */ (mreq_in),
+	.justify_out /* BUS */ (justify_out),
+	.justify_oe /* BUS */ (justify_oe),
+	.justify_in /* BUS */ (justify_in)
 );
 
 // MEM.NET (275) - q0 : fd4q
 fd4q q0_inst
 (
-	.q(idle), // OUT
-	.d(d0), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (idle),
+	.d /* IN */ (d0),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // MEM.NET (276) - q1a : fd2q
 fd2q q1a_inst
 (
-	.q(q1a), // OUT
-	.d(d1a), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1a),
+	.d /* IN */ (d1a),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (277) - q1b : fd2q
 fd2q q1b_inst
 (
-	.q(q1b), // OUT
-	.d(d1b), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1b),
+	.d /* IN */ (d1b),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (278) - q1c : fd2q
 fd2q q1c_inst
 (
-	.q(q1c), // OUT
-	.d(d1c), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1c),
+	.d /* IN */ (d1c),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (279) - q1d : fd2q
 fd2q q1d_inst
 (
-	.q(q1d), // OUT
-	.d(d1d), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1d),
+	.d /* IN */ (d1d),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (280) - q2a : fd2q
 fd2q q2a_inst
 (
-	.q(q2a), // OUT
-	.d(q1d), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q2a),
+	.d /* IN */ (q1d),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (281) - q2b : fd2q
 fd2q q2b_inst
 (
-	.q(q2b), // OUT
-	.d(d2b), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q2b),
+	.d /* IN */ (d2b),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (282) - q2c : fd2q
 fd2q q2c_inst
 (
-	.q(q2c), // OUT
-	.d(d2c), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q2c),
+	.d /* IN */ (d2c),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (283) - q3a : fd2q
 fd2q q3a_inst
 (
-	.q(q3a), // OUT
-	.d(d3a), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q3a),
+	.d /* IN */ (d3a),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (284) - q3b : fd2q
 fd2q q3b_inst
 (
-	.q(q3b), // OUT
-	.d(q3a), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q3b),
+	.d /* IN */ (q3a),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (285) - q4a : fd2q
 fd2q q4a_inst
 (
-	.q(q4a), // OUT
-	.d(d4a), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4a),
+	.d /* IN */ (d4a),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (286) - q4b : fd2q
 fd2q q4b_inst
 (
-	.q(q4b), // OUT
-	.d(d4b), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4b),
+	.d /* IN */ (d4b),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (287) - q4c : fd2q
 fd2q q4c_inst
 (
-	.q(q4c), // OUT
-	.d(d4c), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4c),
+	.d /* IN */ (d4c),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (288) - q4d : fd2q
 fd2q q4d_inst
 (
-	.q(q4d), // OUT
-	.d(d4d), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4d),
+	.d /* IN */ (d4d),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (289) - q4e : fd2q
 fd2q q4e_inst
 (
-	.q(q4e), // OUT
-	.d(q4d), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4e),
+	.d /* IN */ (q4d),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (290) - q4f : fd2q
 fd2q q4f_inst
 (
-	.q(q4f), // OUT
-	.d(d4f), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4f),
+	.d /* IN */ (d4f),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (291) - q4g : fd2q
 fd2q q4g_inst
 (
-	.q(q4g), // OUT
-	.d(d4g), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4g),
+	.d /* IN */ (d4g),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (292) - q4h : fd2q
 fd2q q4h_inst
 (
-	.q(q4h), // OUT
-	.d(d4h), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4h),
+	.d /* IN */ (d4h),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (293) - q4i : fd2q
 fd2q q4i_inst
 (
-	.q(q4i), // OUT
-	.d(q4h), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q4i),
+	.d /* IN */ (q4h),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (294) - q5ai : fd2q
 fd2q q5ai_inst
 (
-	.q(q5ai), // OUT
-	.d(d5a), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q5ai),
+	.d /* IN */ (d5a),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (295) - q5b : fd2q
 fd2q q5b_inst
 (
-	.q(q5b), // OUT
-	.d(d5b), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q5b),
+	.d /* IN */ (d5b),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (296) - q5c : fd2q
 fd2q q5c_inst
 (
-	.q(q5c), // OUT
-	.d(d5c), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q5c),
+	.d /* IN */ (d5c),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (297) - q7a : fd2q
 fd2q q7a_inst
 (
-	.q(q7a), // OUT
-	.d(d7a_obuf), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q7a),
+	.d /* IN */ (d7a_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (298) - q7b : fd2q
 fd2q q7b_inst
 (
-	.q(q7b), // OUT
-	.d(d7b), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q7b),
+	.d /* IN */ (d7b),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (299) - q8a : fd2q
 fd2q q8a_inst
 (
-	.q(q8a), // OUT
-	.d(d8a), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q8a),
+	.d /* IN */ (d8a),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (300) - q8b : fd2q
 fd2q q8b_inst
 (
-	.q(q8b), // OUT
-	.d(d8b), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q8b),
+	.d /* IN */ (d8b),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (301) - q8c : fd2q
 fd2q q8c_inst
 (
-	.q(q8c), // OUT
-	.d(d8c), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q8c),
+	.d /* IN */ (d8c),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (302) - q10 : fd2q
 fd2q q10_inst
 (
-	.q(q10), // OUT
-	.d(d10), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q10),
+	.d /* IN */ (d10),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (304) - q5a : niv
@@ -1001,10 +917,10 @@ assign mtbd = ~(mtba & mtbb);
 // MEM.NET (326) - mtb : fd4q
 fd4q mtb_inst
 (
-	.q(mtb), // OUT
-	.d(mtbd), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (mtb),
+	.d /* IN */ (mtbd),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // MEM.NET (327) - ack : nivu2
@@ -1240,7 +1156,7 @@ assign rason = q1d;
 assign muxi = ~(d1d | q1d);
 
 // MEM.NET (438) - mux : ivm
-assign mux_obuf = ~muxi;
+assign mux = ~muxi;
 
 // MEM.NET (449) - oet0 : nd2
 assign oet0 = ~(q3a & reads_obuf);
@@ -1311,13 +1227,13 @@ assign swd = ~(sw0 | readt_obuf);
 // MEM.NET (476) - startwe : fd1q
 fd1q startwe_inst
 (
-	.q(startwe), // OUT
-	.d(swd), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (startwe),
+	.d /* IN */ (swd),
+	.cp /* IN */ (clk)
 );
 
 // MEM.NET (480) - notrw : iv
-assign notrw = ~rw;
+assign notrw = ~rw_in;
 
 // MEM.NET (481) - dol : nd3
 assign doll = ~(ack_obuf & notrw & mreqb);
@@ -1325,9 +1241,9 @@ assign doll = ~(ack_obuf & notrw & mreqb);
 // MEM.NET (482) - lwdli : fd1q
 fd1q lwdli_inst
 (
-	.q(lwdli), // OUT
-	.d(doll), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (lwdli),
+	.d /* IN */ (doll),
+	.cp /* IN */ (clk)
 );
 
 // MEM.NET (483) - lwdl : nivh
@@ -1343,54 +1259,54 @@ assign allrasonl = ~q4d;
 assign allcasonl = ~(q4d | q4e);
 
 // MEM.NET (488) - resrow : niv
-assign resrow_obuf = q4a;
+assign resrow = q4a;
 
 // MEM.NET (494) - w[0] : dncnt
 dncnt w_index_0_inst
 (
-	.q(wq_0), // IO
-	.co(wco_0), // IO
-	.d(wd_0), // IN
-	.clk(clk), // IN
-	.ci(wcen), // IN
-	.ld(wld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (wq_0),
+	.co /* OUT */ (wco_0),
+	.d /* IN */ (wd_0),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wcen),
+	.ld /* IN */ (wld),
+	.resl /* IN */ (resetl)
 );
 
 // MEM.NET (495) - w[1] : dncnt
 dncnt w_index_1_inst
 (
-	.q(wq_1), // IO
-	.co(wco_1), // IO
-	.d(wd_1), // IN
-	.clk(clk), // IN
-	.ci(wco_0), // IN
-	.ld(wld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (wq_1),
+	.co /* OUT */ (wco_1),
+	.d /* IN */ (wd_1),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_0),
+	.ld /* IN */ (wld),
+	.resl /* IN */ (resetl)
 );
 
 // MEM.NET (496) - w[2] : dncnt
 dncnt w_index_2_inst
 (
-	.q(wq_2), // IO
-	.co(wco_2), // IO
-	.d(wd_2), // IN
-	.clk(clk), // IN
-	.ci(wco_1), // IN
-	.ld(wld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (wq_2),
+	.co /* OUT */ (wco_2),
+	.d /* IN */ (wd_2),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_1),
+	.ld /* IN */ (wld),
+	.resl /* IN */ (resetl)
 );
 
 // MEM.NET (497) - w[3] : dncnt
 dncnt w_index_3_inst
 (
-	.q(wq_3), // IO
-	.co(wco_3), // IO
-	.d(wait15), // IN
-	.clk(clk), // IN
-	.ci(wco_2), // IN
-	.ld(wld), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (wq_3),
+	.co /* OUT */ (wco_3),
+	.d /* IN */ (wait15),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (wco_2),
+	.ld /* IN */ (wld),
+	.resl /* IN */ (resetl)
 );
 
 // MEM.NET (498) - wco[3] : dummy
@@ -1473,27 +1389,27 @@ assign romspeed3 = romspd_1 & romspd_0;
 // MEM.NET (534) - rasl[0] : rasgen
 rasgen rasl_index_0_inst
 (
-	.csl(rasl_0_obuf), // IO
-	.on1(rason), // IN
-	.roffl(rasoffl_2), // IN
-	.bs(bs_3), // IN
-	.allonl(allrasonl), // IN
-	.alloffl(allrasoffl), // IN
-	.clk(clk), // IN
-	.resl(resetl)  // IN
+	.csl /* OUT */ (rasl_0),
+	.on1 /* IN */ (rason),
+	.roffl /* IN */ (rasoffl_2),
+	.bs /* IN */ (bs_3),
+	.allonl /* IN */ (allrasonl),
+	.alloffl /* IN */ (allrasoffl),
+	.clk /* IN */ (clk),
+	.resl /* IN */ (resetl)
 );
 
 // MEM.NET (536) - rasl[1] : rasgen
 rasgen rasl_index_1_inst
 (
-	.csl(rasl_1_obuf), // IO
-	.on1(rason), // IN
-	.roffl(rasoffl_1), // IN
-	.bs(bs_2), // IN
-	.allonl(allrasonl), // IN
-	.alloffl(allrasoffl), // IN
-	.clk(clk), // IN
-	.resl(resetl)  // IN
+	.csl /* OUT */ (rasl_1),
+	.on1 /* IN */ (rason),
+	.roffl /* IN */ (rasoffl_1),
+	.bs /* IN */ (bs_2),
+	.allonl /* IN */ (allrasonl),
+	.alloffl /* IN */ (allrasoffl),
+	.clk /* IN */ (clk),
+	.resl /* IN */ (resetl)
 );
 
 // MEM.NET (539) - clkl : iv
@@ -1511,66 +1427,66 @@ assign casd_1 = ~(startcas & bs_2);
 // MEM.NET (543) - cas00 : fd4q
 fd4q cas00_inst
 (
-	.q(cas00), // OUT
-	.d(casd_0), // IN
-	.cp(pclkl), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (cas00),
+	.d /* IN */ (casd_0),
+	.cp /* IN */ (pclkl),
+	.sd /* IN */ (resetl)
 );
 
 // MEM.NET (544) - cas01 : fd4q
 fd4q cas01_inst
 (
-	.q(cas01), // OUT
-	.d(casd_0), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (cas01),
+	.d /* IN */ (casd_0),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // MEM.NET (545) - cas10 : fd4q
 fd4q cas10_inst
 (
-	.q(cas10), // OUT
-	.d(casd_1), // IN
-	.cp(pclkl), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (cas10),
+	.d /* IN */ (casd_1),
+	.cp /* IN */ (pclkl),
+	.sd /* IN */ (resetl)
 );
 
 // MEM.NET (546) - cas11 : fd4q
 fd4q cas11_inst
 (
-	.q(cas11), // OUT
-	.d(casd_1), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (cas11),
+	.d /* IN */ (casd_1),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // MEM.NET (547) - casl[0] : an3
-assign casl_0_obuf = cas00 & cas01 & allcasonl;
+assign casl_0 = cas00 & cas01 & allcasonl;
 
 // MEM.NET (548) - casl[1] : an3
-assign casl_1_obuf = cas10 & cas11 & allcasonl;
+assign casl_1 = cas10 & cas11 & allcasonl;
 
 // MEM.NET (550) - romcst : or3
 assign romcst = q5a | q5b | q5c;
 
 // MEM.NET (551) - romcsl[0-1] : nd2
-assign romcsl_0_obuf = ~(bs_0 & romcst);
-assign romcsl_1_obuf = ~(bs_1 & romcst);
+assign romcsl_0 = ~(bs_0 & romcst);
+assign romcsl_1 = ~(bs_1 & romcst);
 
 // MEM.NET (553) - dspcsli : nr3
 assign dspcsli = ~(q8a | q8b | q8c);
 
 // MEM.NET (554) - dspcsl : niv
-assign dspcsl_obuf = dspcsli;
+assign dspcsl = dspcsli;
 
 // MEM.NET (556) - int_we : nd3
 assign int_wel = ~(q7a & notreads & clkl);
 
 // MEM.NET (557) - intwe : ivm
-assign intwe_obuf = ~int_wel;
+assign intwe = ~int_wel;
 
 // MEM.NET (558) - intswe : an2
-assign intswe_obuf = q7a & notreads;
+assign intswe = q7a & notreads;
 
 // MEM.NET (560) - ba[0-2] : eo
 assign ba_0 = maska_0_obuf ^ bigend;
@@ -1584,11 +1500,11 @@ assign mwsl_1 = ~mws_1;
 // MEM.NET (574) - wet0 : fd2
 fd2 wet0_inst
 (
-	.q(wet0), // OUT
-	.qn(wet0l), // OUT
-	.d(startwe), // IN
-	.cp(pclkl), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (wet0),
+	.qn /* OUT */ (wet0l),
+	.d /* IN */ (startwe),
+	.cp /* IN */ (pclkl),
+	.cd /* IN */ (resetl)
 );
 
 // MEM.NET (575) - wetu : dummy
@@ -1681,16 +1597,16 @@ assign we32 = ~(mws64 & bm_3);
 assign we_3 = ~(we30 & we31 & we32);
 
 // MEM.NET (635) - wel[0-3] : nd2
-assign wel_0_obuf = ~(we_0 & wet_obuf);
-assign wel_1_obuf = ~(we_1 & wet_obuf);
-assign wel_2_obuf = ~(we_2 & wet_obuf);
-assign wel_3_obuf = ~(we_3 & wet_obuf);
+assign wel_0 = ~(we_0 & wet_obuf);
+assign wel_1 = ~(we_1 & wet_obuf);
+assign wel_2 = ~(we_2 & wet_obuf);
+assign wel_3 = ~(we_3 & wet_obuf);
 
 // MEM.NET (636) - wel[4-7] : nd3
-assign wel_4_obuf = ~(wet_obuf & mws64 & bm_4);
-assign wel_5_obuf = ~(wet_obuf & mws64 & bm_5);
-assign wel_6_obuf = ~(wet_obuf & mws64 & bm_6);
-assign wel_7_obuf = ~(wet_obuf & mws64 & bm_7);
+assign wel_4 = ~(wet_obuf & mws64 & bm_4);
+assign wel_5 = ~(wet_obuf & mws64 & bm_5);
+assign wel_6 = ~(wet_obuf & mws64 & bm_6);
+assign wel_7 = ~(wet_obuf & mws64 & bm_7);
 
 // MEM.NET (660) - oe00 : nd2
 assign oe00 = ~(oet_obuf & mws8);
@@ -1711,7 +1627,7 @@ assign oe04 = ~(oet_obuf & mws32 & bm_4);
 assign oe05 = ~(oet_obuf & mws32 & bm_5);
 
 // MEM.NET (666) - oel[0] : an6
-assign oel_0_obuf = oe00 & oe01 & oe02 & oe03 & oe04 & oe05;
+assign oel_0 = oe00 & oe01 & oe02 & oe03 & oe04 & oe05;
 
 // MEM.NET (668) - oe10 : nd3
 assign oe10 = ~(oet_obuf & mws32 & bm_2);
@@ -1732,7 +1648,7 @@ assign oe14 = ~(oet_obuf & mws64 & bm_2);
 assign oe15 = ~(oet_obuf & mws64 & bm_3);
 
 // MEM.NET (674) - oel[1] : an6
-assign oel_1_obuf = oe10 & oe11 & oe12 & oe13 & oe14 & oe15;
+assign oel_1 = oe10 & oe11 & oe12 & oe13 & oe14 & oe15;
 
 // MEM.NET (676) - oe20 : nd3
 assign oe20 = ~(oet_obuf & mws64 & bm_4);
@@ -1747,7 +1663,7 @@ assign oe22 = ~(oet_obuf & mws64 & bm_6);
 assign oe23 = ~(oet_obuf & mws64 & bm_7);
 
 // MEM.NET (680) - oel[2] : an4
-assign oel_2_obuf = oe20 & oe21 & oe22 & oe23;
+assign oel_2 = oe20 & oe21 & oe22 & oe23;
 
 // MEM.NET (684) - dinlatchl[0-7] : nd2p
 assign dinlatchl_0 = ~(dinlatch & bm_0);
@@ -1760,37 +1676,37 @@ assign dinlatchl_6 = ~(dinlatch & bm_6);
 assign dinlatchl_7 = ~(dinlatch & bm_7);
 
 // MEM.NET (685) - dinlatch[0-7] : nd2p
-assign dinlatch_0_obuf = ~(dinlatchl_0 & lwdl);
-assign dinlatch_1_obuf = ~(dinlatchl_1 & lwdl);
-assign dinlatch_2_obuf = ~(dinlatchl_2 & lwdl);
-assign dinlatch_3_obuf = ~(dinlatchl_3 & lwdl);
-assign dinlatch_4_obuf = ~(dinlatchl_4 & lwdl);
-assign dinlatch_5_obuf = ~(dinlatchl_5 & lwdl);
-assign dinlatch_6_obuf = ~(dinlatchl_6 & lwdl);
-assign dinlatch_7_obuf = ~(dinlatchl_7 & lwdl);
+assign dinlatch_0 = ~(dinlatchl_0 & lwdl);
+assign dinlatch_1 = ~(dinlatchl_1 & lwdl);
+assign dinlatch_2 = ~(dinlatchl_2 & lwdl);
+assign dinlatch_3 = ~(dinlatchl_3 & lwdl);
+assign dinlatch_4 = ~(dinlatchl_4 & lwdl);
+assign dinlatch_5 = ~(dinlatchl_5 & lwdl);
+assign dinlatch_6 = ~(dinlatchl_6 & lwdl);
+assign dinlatch_7 = ~(dinlatchl_7 & lwdl);
 
 // MEM.NET (689) - sizout[0-2] : niv
-assign sizout_0_obuf = maskw_0;
-assign sizout_1_obuf = maskw_1;
-assign sizout_2_obuf = maskw_2;
+assign sizout_0 = maskw_0;
+assign sizout_1 = maskw_1;
+assign sizout_2 = maskw_2;
 
 // MEM.NET (690) - maskwu : dummy
 
 // MEM.NET (692) - readsi : fd1q
 fd1q readsi_inst
 (
-	.q(readsi), // OUT
-	.d(readt_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (readsi),
+	.d /* IN */ (readt_obuf),
+	.cp /* IN */ (clk)
 );
 
 // MEM.NET (693) - readt : mx2p
 mx2 readt_inst
 (
-	.z(readt_obuf), // OUT
-	.a0(readsi), // IN
-	.a1(rw), // IN
-	.s(ack_obuf)  // IN
+	.z /* OUT */ (readt_obuf),
+	.a0 /* IN */ (readsi),
+	.a1 /* IN */ (rw_in),
+	.s /* IN */ (ack_obuf)
 );
 
 // MEM.NET (694) - reads : nivu
@@ -1799,31 +1715,31 @@ assign reads_obuf = readsi;
 // MEM.NET (698) - mwti[0-1] : mx2p
 mx2 mwti_from_0_to_1_inst_0
 (
-	.z(mwti_0), // OUT
-	.a0(mws_0), // IN
-	.a1(mw_0), // IN
-	.s(ack_obuf)  // IN
+	.z /* OUT */ (mwti_0),
+	.a0 /* IN */ (mws_0),
+	.a1 /* IN */ (mw_0),
+	.s /* IN */ (ack_obuf)
 );
 mx2 mwti_from_0_to_1_inst_1
 (
-	.z(mwti_1), // OUT
-	.a0(mws_1), // IN
-	.a1(mw_1), // IN
-	.s(ack_obuf)  // IN
+	.z /* OUT */ (mwti_1),
+	.a0 /* IN */ (mws_1),
+	.a1 /* IN */ (mw_1),
+	.s /* IN */ (ack_obuf)
 );
 
 // MEM.NET (699) - mws[0-1] : fd1q
 fd1q mws_from_0_to_1_inst_0
 (
-	.q(mws_0), // OUT
-	.d(mwti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mws_0),
+	.d /* IN */ (mwti_0),
+	.cp /* IN */ (clk)
 );
 fd1q mws_from_0_to_1_inst_1
 (
-	.q(mws_1), // OUT
-	.d(mwti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mws_1),
+	.d /* IN */ (mwti_1),
+	.cp /* IN */ (clk)
 );
 
 // MEM.NET (700) - mwt[0-1] : nivh
@@ -1831,7 +1747,7 @@ assign mwt_0 = mwti_0;
 assign mwt_1 = mwti_1;
 
 // MEM.NET (702) - mreqb : nivh
-assign mreqb = mreq;
+assign mreqb = mreq_in;
 
 // MEM.NET (703) - notmreq : iv
 assign notmreq = ~mreqb;
@@ -1855,7 +1771,7 @@ assign notrefack = ~refack_obuf;
 assign notourack = ~ourack;
 
 // MEM.NET (712) - newrow : niv
-assign newrow_obuf = q1a;
+assign newrow = q1a;
 
 // MEM.NET (716) - dreqd : nd2
 assign dreqd = ~(mreqb & ack_obuf);
@@ -1863,8 +1779,8 @@ assign dreqd = ~(mreqb & ack_obuf);
 // MEM.NET (717) - jdreqlout : fd1q
 fd1q jdreqlout_inst
 (
-	.q(dreqlout_obuf), // OUT
-	.d(dreqd), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dreqlout),
+	.d /* IN */ (dreqd),
+	.cp /* IN */ (clk)
 );
 endmodule

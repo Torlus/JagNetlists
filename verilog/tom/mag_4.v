@@ -75,34 +75,34 @@ assign ltot_2 = ~(a_1 & aab_n_1 & aoia_2 & aoia_3);
 // DUPLO.NET (344) - ltot3 : nd5
 nd5 ltot3_inst
 (
-	.q(ltot_3), // OUT
-	.a_0(a_0), // IN
-	.a_1(aab_n_0), // IN
-	.a_2(aoia_1), // IN
-	.a_3(aoia_2), // IN
-	.a_4(aoia_3)  // IN
+	.q /* OUT */ (ltot_3),
+	.a_0 /* IN */ (a_0),
+	.a_1 /* IN */ (aab_n_0),
+	.a_2 /* IN */ (aoia_1),
+	.a_3 /* IN */ (aoia_2),
+	.a_4 /* IN */ (aoia_3)
 );
 
 // DUPLO.NET (345) - ltot4 : nd5
 nd5 ltot4_inst
 (
-	.q(ltot_4), // OUT
-	.a_0(aoia_0), // IN
-	.a_1(aoia_1), // IN
-	.a_2(aoia_2), // IN
-	.a_3(aoia_3), // IN
-	.a_4(gti)  // IN
+	.q /* OUT */ (ltot_4),
+	.a_0 /* IN */ (aoia_0),
+	.a_1 /* IN */ (aoia_1),
+	.a_2 /* IN */ (aoia_2),
+	.a_3 /* IN */ (aoia_3),
+	.a_4 /* IN */ (gti)
 );
 
 // DUPLO.NET (346) - ltot5 : nd5
 nd5 ltot5_inst
 (
-	.q(ltot_5), // OUT
-	.a_0(aoia_0), // IN
-	.a_1(aoia_1), // IN
-	.a_2(aoia_2), // IN
-	.a_3(aoia_3), // IN
-	.a_4(eqi)  // IN
+	.q /* OUT */ (ltot_5),
+	.a_0 /* IN */ (aoia_0),
+	.a_1 /* IN */ (aoia_1),
+	.a_2 /* IN */ (aoia_2),
+	.a_3 /* IN */ (aoia_3),
+	.a_4 /* IN */ (eqi)
 );
 
 // DUPLO.NET (347) - ltot6 : an4
@@ -129,34 +129,34 @@ assign gtot_2 = ~(b_1 & aab_n_1 & aoib_2 & aoib_3);
 // DUPLO.NET (354) - gtot3 : nd5
 nd5 gtot3_inst
 (
-	.q(gtot_3), // OUT
-	.a_0(b_0), // IN
-	.a_1(aab_n_0), // IN
-	.a_2(aoib_1), // IN
-	.a_3(aoib_2), // IN
-	.a_4(aoib_3)  // IN
+	.q /* OUT */ (gtot_3),
+	.a_0 /* IN */ (b_0),
+	.a_1 /* IN */ (aab_n_0),
+	.a_2 /* IN */ (aoib_1),
+	.a_3 /* IN */ (aoib_2),
+	.a_4 /* IN */ (aoib_3)
 );
 
 // DUPLO.NET (355) - gtot4 : nd5
 nd5 gtot4_inst
 (
-	.q(gtot_4), // OUT
-	.a_0(aoib_0), // IN
-	.a_1(aoib_1), // IN
-	.a_2(aoib_2), // IN
-	.a_3(aoib_3), // IN
-	.a_4(lti)  // IN
+	.q /* OUT */ (gtot_4),
+	.a_0 /* IN */ (aoib_0),
+	.a_1 /* IN */ (aoib_1),
+	.a_2 /* IN */ (aoib_2),
+	.a_3 /* IN */ (aoib_3),
+	.a_4 /* IN */ (lti)
 );
 
 // DUPLO.NET (356) - gtot5 : nd5
 nd5 gtot5_inst
 (
-	.q(gtot_5), // OUT
-	.a_0(aoib_0), // IN
-	.a_1(aoib_1), // IN
-	.a_2(aoib_2), // IN
-	.a_3(aoib_3), // IN
-	.a_4(eqi)  // IN
+	.q /* OUT */ (gtot_5),
+	.a_0 /* IN */ (aoib_0),
+	.a_1 /* IN */ (aoib_1),
+	.a_2 /* IN */ (aoib_2),
+	.a_3 /* IN */ (aoib_3),
+	.a_4 /* IN */ (eqi)
 );
 
 // DUPLO.NET (357) - gtot6 : an4

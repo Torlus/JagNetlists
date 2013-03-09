@@ -2,8 +2,8 @@
 
 module dcount16
 (
-	output[0:15] count;
-	input[0:15] data;
+	output [0:15] count;
+	input [0:15] data;
 	input load,
 	input ena,
 	input clk
@@ -77,103 +77,103 @@ assign cnti_0 = ~count_0;
 // DUPLO.NET (774) - cnti[1] : hs1
 hs1 cnti_index_1_inst
 (
-	.q(cnti_1), // OUT
-	.co(cry_1), // OUT
-	.a(count_1), // IN
-	.ci(count_0)  // IN
+	.q /* OUT */ (cnti_1),
+	.co /* OUT */ (cry_1),
+	.a /* IN */ (count_1),
+	.ci /* IN */ (count_0)
 );
 
 // DUPLO.NET (775) - cnti[2-14] : hs1
 hs1 cnti_from_2_to_14_inst_0
 (
-	.q(cnti_2), // OUT
-	.co(cry_2), // OUT
-	.a(count_2), // IN
-	.ci(cry_1)  // IN
+	.q /* OUT */ (cnti_2),
+	.co /* OUT */ (cry_2),
+	.a /* IN */ (count_2),
+	.ci /* IN */ (cry_1)
 );
 hs1 cnti_from_2_to_14_inst_1
 (
-	.q(cnti_3), // OUT
-	.co(cry_3), // OUT
-	.a(count_3), // IN
-	.ci(cry_2)  // IN
+	.q /* OUT */ (cnti_3),
+	.co /* OUT */ (cry_3),
+	.a /* IN */ (count_3),
+	.ci /* IN */ (cry_2)
 );
 hs1 cnti_from_2_to_14_inst_2
 (
-	.q(cnti_4), // OUT
-	.co(cry_4), // OUT
-	.a(count_4), // IN
-	.ci(cry_3)  // IN
+	.q /* OUT */ (cnti_4),
+	.co /* OUT */ (cry_4),
+	.a /* IN */ (count_4),
+	.ci /* IN */ (cry_3)
 );
 hs1 cnti_from_2_to_14_inst_3
 (
-	.q(cnti_5), // OUT
-	.co(cry_5), // OUT
-	.a(count_5), // IN
-	.ci(cry_4)  // IN
+	.q /* OUT */ (cnti_5),
+	.co /* OUT */ (cry_5),
+	.a /* IN */ (count_5),
+	.ci /* IN */ (cry_4)
 );
 hs1 cnti_from_2_to_14_inst_4
 (
-	.q(cnti_6), // OUT
-	.co(cry_6), // OUT
-	.a(count_6), // IN
-	.ci(cry_5)  // IN
+	.q /* OUT */ (cnti_6),
+	.co /* OUT */ (cry_6),
+	.a /* IN */ (count_6),
+	.ci /* IN */ (cry_5)
 );
 hs1 cnti_from_2_to_14_inst_5
 (
-	.q(cnti_7), // OUT
-	.co(cry_7), // OUT
-	.a(count_7), // IN
-	.ci(cry_6)  // IN
+	.q /* OUT */ (cnti_7),
+	.co /* OUT */ (cry_7),
+	.a /* IN */ (count_7),
+	.ci /* IN */ (cry_6)
 );
 hs1 cnti_from_2_to_14_inst_6
 (
-	.q(cnti_8), // OUT
-	.co(cry_8), // OUT
-	.a(count_8), // IN
-	.ci(cry_7)  // IN
+	.q /* OUT */ (cnti_8),
+	.co /* OUT */ (cry_8),
+	.a /* IN */ (count_8),
+	.ci /* IN */ (cry_7)
 );
 hs1 cnti_from_2_to_14_inst_7
 (
-	.q(cnti_9), // OUT
-	.co(cry_9), // OUT
-	.a(count_9), // IN
-	.ci(cry_8)  // IN
+	.q /* OUT */ (cnti_9),
+	.co /* OUT */ (cry_9),
+	.a /* IN */ (count_9),
+	.ci /* IN */ (cry_8)
 );
 hs1 cnti_from_2_to_14_inst_8
 (
-	.q(cnti_10), // OUT
-	.co(cry_10), // OUT
-	.a(count_10), // IN
-	.ci(cry_9)  // IN
+	.q /* OUT */ (cnti_10),
+	.co /* OUT */ (cry_10),
+	.a /* IN */ (count_10),
+	.ci /* IN */ (cry_9)
 );
 hs1 cnti_from_2_to_14_inst_9
 (
-	.q(cnti_11), // OUT
-	.co(cry_11), // OUT
-	.a(count_11), // IN
-	.ci(cry_10)  // IN
+	.q /* OUT */ (cnti_11),
+	.co /* OUT */ (cry_11),
+	.a /* IN */ (count_11),
+	.ci /* IN */ (cry_10)
 );
 hs1 cnti_from_2_to_14_inst_10
 (
-	.q(cnti_12), // OUT
-	.co(cry_12), // OUT
-	.a(count_12), // IN
-	.ci(cry_11)  // IN
+	.q /* OUT */ (cnti_12),
+	.co /* OUT */ (cry_12),
+	.a /* IN */ (count_12),
+	.ci /* IN */ (cry_11)
 );
 hs1 cnti_from_2_to_14_inst_11
 (
-	.q(cnti_13), // OUT
-	.co(cry_13), // OUT
-	.a(count_13), // IN
-	.ci(cry_12)  // IN
+	.q /* OUT */ (cnti_13),
+	.co /* OUT */ (cry_13),
+	.a /* IN */ (count_13),
+	.ci /* IN */ (cry_12)
 );
 hs1 cnti_from_2_to_14_inst_12
 (
-	.q(cnti_14), // OUT
-	.co(cry_14), // OUT
-	.a(count_14), // IN
-	.ci(cry_13)  // IN
+	.q /* OUT */ (cnti_14),
+	.co /* OUT */ (cry_14),
+	.a /* IN */ (count_14),
+	.ci /* IN */ (cry_13)
 );
 
 // DUPLO.NET (777) - cnti[15] : en
@@ -182,261 +182,261 @@ assign cnti_15 = ~(count_15 ^ cry_14);
 // DUPLO.NET (778) - cntj[0-15] : mx4
 mx4 cntj_from_0_to_15_inst_0
 (
-	.z(cntj_0), // OUT
-	.a0(count_0), // IN
-	.a1(cnti_0), // IN
-	.a2(data[0]), // IN
-	.a3(data[0]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_0),
+	.a0 /* IN */ (count_0),
+	.a1 /* IN */ (cnti_0),
+	.a2 /* IN */ (data[0]),
+	.a3 /* IN */ (data[0]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_1
 (
-	.z(cntj_1), // OUT
-	.a0(count_1), // IN
-	.a1(cnti_1), // IN
-	.a2(data[1]), // IN
-	.a3(data[1]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_1),
+	.a0 /* IN */ (count_1),
+	.a1 /* IN */ (cnti_1),
+	.a2 /* IN */ (data[1]),
+	.a3 /* IN */ (data[1]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_2
 (
-	.z(cntj_2), // OUT
-	.a0(count_2), // IN
-	.a1(cnti_2), // IN
-	.a2(data[2]), // IN
-	.a3(data[2]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_2),
+	.a0 /* IN */ (count_2),
+	.a1 /* IN */ (cnti_2),
+	.a2 /* IN */ (data[2]),
+	.a3 /* IN */ (data[2]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_3
 (
-	.z(cntj_3), // OUT
-	.a0(count_3), // IN
-	.a1(cnti_3), // IN
-	.a2(data[3]), // IN
-	.a3(data[3]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_3),
+	.a0 /* IN */ (count_3),
+	.a1 /* IN */ (cnti_3),
+	.a2 /* IN */ (data[3]),
+	.a3 /* IN */ (data[3]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_4
 (
-	.z(cntj_4), // OUT
-	.a0(count_4), // IN
-	.a1(cnti_4), // IN
-	.a2(data[4]), // IN
-	.a3(data[4]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_4),
+	.a0 /* IN */ (count_4),
+	.a1 /* IN */ (cnti_4),
+	.a2 /* IN */ (data[4]),
+	.a3 /* IN */ (data[4]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_5
 (
-	.z(cntj_5), // OUT
-	.a0(count_5), // IN
-	.a1(cnti_5), // IN
-	.a2(data[5]), // IN
-	.a3(data[5]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_5),
+	.a0 /* IN */ (count_5),
+	.a1 /* IN */ (cnti_5),
+	.a2 /* IN */ (data[5]),
+	.a3 /* IN */ (data[5]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_6
 (
-	.z(cntj_6), // OUT
-	.a0(count_6), // IN
-	.a1(cnti_6), // IN
-	.a2(data[6]), // IN
-	.a3(data[6]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_6),
+	.a0 /* IN */ (count_6),
+	.a1 /* IN */ (cnti_6),
+	.a2 /* IN */ (data[6]),
+	.a3 /* IN */ (data[6]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_7
 (
-	.z(cntj_7), // OUT
-	.a0(count_7), // IN
-	.a1(cnti_7), // IN
-	.a2(data[7]), // IN
-	.a3(data[7]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_7),
+	.a0 /* IN */ (count_7),
+	.a1 /* IN */ (cnti_7),
+	.a2 /* IN */ (data[7]),
+	.a3 /* IN */ (data[7]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_8
 (
-	.z(cntj_8), // OUT
-	.a0(count_8), // IN
-	.a1(cnti_8), // IN
-	.a2(data[8]), // IN
-	.a3(data[8]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_8),
+	.a0 /* IN */ (count_8),
+	.a1 /* IN */ (cnti_8),
+	.a2 /* IN */ (data[8]),
+	.a3 /* IN */ (data[8]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_9
 (
-	.z(cntj_9), // OUT
-	.a0(count_9), // IN
-	.a1(cnti_9), // IN
-	.a2(data[9]), // IN
-	.a3(data[9]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_9),
+	.a0 /* IN */ (count_9),
+	.a1 /* IN */ (cnti_9),
+	.a2 /* IN */ (data[9]),
+	.a3 /* IN */ (data[9]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_10
 (
-	.z(cntj_10), // OUT
-	.a0(count_10), // IN
-	.a1(cnti_10), // IN
-	.a2(data[10]), // IN
-	.a3(data[10]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_10),
+	.a0 /* IN */ (count_10),
+	.a1 /* IN */ (cnti_10),
+	.a2 /* IN */ (data[10]),
+	.a3 /* IN */ (data[10]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_11
 (
-	.z(cntj_11), // OUT
-	.a0(count_11), // IN
-	.a1(cnti_11), // IN
-	.a2(data[11]), // IN
-	.a3(data[11]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_11),
+	.a0 /* IN */ (count_11),
+	.a1 /* IN */ (cnti_11),
+	.a2 /* IN */ (data[11]),
+	.a3 /* IN */ (data[11]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_12
 (
-	.z(cntj_12), // OUT
-	.a0(count_12), // IN
-	.a1(cnti_12), // IN
-	.a2(data[12]), // IN
-	.a3(data[12]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_12),
+	.a0 /* IN */ (count_12),
+	.a1 /* IN */ (cnti_12),
+	.a2 /* IN */ (data[12]),
+	.a3 /* IN */ (data[12]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_13
 (
-	.z(cntj_13), // OUT
-	.a0(count_13), // IN
-	.a1(cnti_13), // IN
-	.a2(data[13]), // IN
-	.a3(data[13]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_13),
+	.a0 /* IN */ (count_13),
+	.a1 /* IN */ (cnti_13),
+	.a2 /* IN */ (data[13]),
+	.a3 /* IN */ (data[13]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_14
 (
-	.z(cntj_14), // OUT
-	.a0(count_14), // IN
-	.a1(cnti_14), // IN
-	.a2(data[14]), // IN
-	.a3(data[14]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_14),
+	.a0 /* IN */ (count_14),
+	.a1 /* IN */ (cnti_14),
+	.a2 /* IN */ (data[14]),
+	.a3 /* IN */ (data[14]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 mx4 cntj_from_0_to_15_inst_15
 (
-	.z(cntj_15), // OUT
-	.a0(count_15), // IN
-	.a1(cnti_15), // IN
-	.a2(data[15]), // IN
-	.a3(data[15]), // IN
-	.s0(ena), // IN
-	.s1(load)  // IN
+	.z /* OUT */ (cntj_15),
+	.a0 /* IN */ (count_15),
+	.a1 /* IN */ (cnti_15),
+	.a2 /* IN */ (data[15]),
+	.a3 /* IN */ (data[15]),
+	.s0 /* IN */ (ena),
+	.s1 /* IN */ (load)
 );
 
 // DUPLO.NET (780) - count[0-15] : fd1q
 fd1q count_from_0_to_15_inst_0
 (
-	.q(count_0), // OUT
-	.d(cntj_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_0),
+	.d /* IN */ (cntj_0),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_1
 (
-	.q(count_1), // OUT
-	.d(cntj_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_1),
+	.d /* IN */ (cntj_1),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_2
 (
-	.q(count_2), // OUT
-	.d(cntj_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_2),
+	.d /* IN */ (cntj_2),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_3
 (
-	.q(count_3), // OUT
-	.d(cntj_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_3),
+	.d /* IN */ (cntj_3),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_4
 (
-	.q(count_4), // OUT
-	.d(cntj_4), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_4),
+	.d /* IN */ (cntj_4),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_5
 (
-	.q(count_5), // OUT
-	.d(cntj_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_5),
+	.d /* IN */ (cntj_5),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_6
 (
-	.q(count_6), // OUT
-	.d(cntj_6), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_6),
+	.d /* IN */ (cntj_6),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_7
 (
-	.q(count_7), // OUT
-	.d(cntj_7), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_7),
+	.d /* IN */ (cntj_7),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_8
 (
-	.q(count_8), // OUT
-	.d(cntj_8), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_8),
+	.d /* IN */ (cntj_8),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_9
 (
-	.q(count_9), // OUT
-	.d(cntj_9), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_9),
+	.d /* IN */ (cntj_9),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_10
 (
-	.q(count_10), // OUT
-	.d(cntj_10), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_10),
+	.d /* IN */ (cntj_10),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_11
 (
-	.q(count_11), // OUT
-	.d(cntj_11), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_11),
+	.d /* IN */ (cntj_11),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_12
 (
-	.q(count_12), // OUT
-	.d(cntj_12), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_12),
+	.d /* IN */ (cntj_12),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_13
 (
-	.q(count_13), // OUT
-	.d(cntj_13), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_13),
+	.d /* IN */ (cntj_13),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_14
 (
-	.q(count_14), // OUT
-	.d(cntj_14), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_14),
+	.d /* IN */ (cntj_14),
+	.cp /* IN */ (clk)
 );
 fd1q count_from_0_to_15_inst_15
 (
-	.q(count_15), // OUT
-	.d(cntj_15), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (count_15),
+	.d /* IN */ (cntj_15),
+	.cp /* IN */ (clk)
 );
 
 // DUPLO.NET (781) - count : join

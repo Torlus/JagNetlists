@@ -27,7 +27,7 @@ public class VerilogTranslator {
 				vlog += ");\n";
 
 				CompositeEntity ce = (CompositeEntity) e;
-				vlog += ce.veriloglLocalDecl();
+				vlog += ce.verilogLocalDecl();
 				vlog += ce.verilogBufferDecl();
 
 				vlog += ce.verilogBufferWires();
@@ -47,7 +47,7 @@ public class VerilogTranslator {
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
-				
+
 			}
 		}
 	}

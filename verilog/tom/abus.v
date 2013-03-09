@@ -155,46 +155,126 @@ module abus
 	output at_8,
 	output at_9,
 	output at_10,
-	inout a_0,
-	inout a_1,
-	inout a_2,
-	inout a_3,
-	inout a_4,
-	inout a_5,
-	inout a_6,
-	inout a_7,
-	inout a_8,
-	inout a_9,
-	inout a_10,
-	inout a_11,
-	inout a_12,
-	inout a_13,
-	inout a_14,
-	inout a_15,
-	inout a_16,
-	inout a_17,
-	inout a_18,
-	inout a_19,
-	inout a_20,
-	inout a_21,
-	inout a_22,
-	inout a_23,
-	inout dr_0,
-	inout dr_1,
-	inout dr_2,
-	inout dr_3,
-	inout dr_4,
-	inout dr_5,
-	inout dr_6,
-	inout dr_7,
-	inout dr_8,
-	inout dr_9,
-	inout dr_10,
-	inout dr_11,
-	inout dr_12,
-	inout dr_13,
-	inout dr_14,
-	inout dr_15
+	output a_0_out,
+	output a_0_oe,
+	input a_0_in,
+	output a_1_out,
+	output a_1_oe,
+	input a_1_in,
+	output a_2_out,
+	output a_2_oe,
+	input a_2_in,
+	output a_3_out,
+	output a_3_oe,
+	input a_3_in,
+	output a_4_out,
+	output a_4_oe,
+	input a_4_in,
+	output a_5_out,
+	output a_5_oe,
+	input a_5_in,
+	output a_6_out,
+	output a_6_oe,
+	input a_6_in,
+	output a_7_out,
+	output a_7_oe,
+	input a_7_in,
+	output a_8_out,
+	output a_8_oe,
+	input a_8_in,
+	output a_9_out,
+	output a_9_oe,
+	input a_9_in,
+	output a_10_out,
+	output a_10_oe,
+	input a_10_in,
+	output a_11_out,
+	output a_11_oe,
+	input a_11_in,
+	output a_12_out,
+	output a_12_oe,
+	input a_12_in,
+	output a_13_out,
+	output a_13_oe,
+	input a_13_in,
+	output a_14_out,
+	output a_14_oe,
+	input a_14_in,
+	output a_15_out,
+	output a_15_oe,
+	input a_15_in,
+	output a_16_out,
+	output a_16_oe,
+	input a_16_in,
+	output a_17_out,
+	output a_17_oe,
+	input a_17_in,
+	output a_18_out,
+	output a_18_oe,
+	input a_18_in,
+	output a_19_out,
+	output a_19_oe,
+	input a_19_in,
+	output a_20_out,
+	output a_20_oe,
+	input a_20_in,
+	output a_21_out,
+	output a_21_oe,
+	input a_21_in,
+	output a_22_out,
+	output a_22_oe,
+	input a_22_in,
+	output a_23_out,
+	output a_23_oe,
+	input a_23_in,
+	output dr_0_out,
+	output dr_0_oe,
+	input dr_0_in,
+	output dr_1_out,
+	output dr_1_oe,
+	input dr_1_in,
+	output dr_2_out,
+	output dr_2_oe,
+	input dr_2_in,
+	output dr_3_out,
+	output dr_3_oe,
+	input dr_3_in,
+	output dr_4_out,
+	output dr_4_oe,
+	input dr_4_in,
+	output dr_5_out,
+	output dr_5_oe,
+	input dr_5_in,
+	output dr_6_out,
+	output dr_6_oe,
+	input dr_6_in,
+	output dr_7_out,
+	output dr_7_oe,
+	input dr_7_in,
+	output dr_8_out,
+	output dr_8_oe,
+	input dr_8_in,
+	output dr_9_out,
+	output dr_9_oe,
+	input dr_9_in,
+	output dr_10_out,
+	output dr_10_oe,
+	input dr_10_in,
+	output dr_11_out,
+	output dr_11_oe,
+	input dr_11_in,
+	output dr_12_out,
+	output dr_12_oe,
+	input dr_12_in,
+	output dr_13_out,
+	output dr_13_oe,
+	input dr_13_in,
+	output dr_14_out,
+	output dr_14_oe,
+	input dr_14_in,
+	output dr_15_out,
+	output dr_15_oe,
+	input dr_15_in
 );
 wire [0:10] ma;
 wire m1d_0;
@@ -449,21 +529,104 @@ wire lbd;
 wire lbat;
 wire lbbt;
 wire lb;
+wire ts_pe_272_a0_out;
+wire ts_pe_272_a0_oe;
+wire ts_pe_272_a0_in;
+wire ts_pe_272_a1_out;
+wire ts_pe_272_a1_oe;
+wire ts_pe_272_a1_in;
+wire ts_pe_273_a0_out;
+wire ts_pe_273_a0_oe;
+wire ts_pe_273_a0_in;
+wire ts_pe_273_a1_out;
+wire ts_pe_273_a1_oe;
+wire ts_pe_273_a1_in;
+wire ts_pe_274_a0_out;
+wire ts_pe_274_a0_oe;
+wire ts_pe_274_a0_in;
+wire ts_pe_274_a1_out;
+wire ts_pe_274_a1_oe;
+wire ts_pe_274_a1_in;
+wire ts_pe_275_a0_out;
+wire ts_pe_275_a0_oe;
+wire ts_pe_275_a0_in;
+wire ts_pe_275_a1_out;
+wire ts_pe_275_a1_oe;
+wire ts_pe_275_a1_in;
+wire ts_pe_276_a0_out;
+wire ts_pe_276_a0_oe;
+wire ts_pe_276_a0_in;
+wire ts_pe_276_a1_out;
+wire ts_pe_276_a1_oe;
+wire ts_pe_276_a1_in;
+wire ts_pe_277_a0_out;
+wire ts_pe_277_a0_oe;
+wire ts_pe_277_a0_in;
+wire ts_pe_277_a1_out;
+wire ts_pe_277_a1_oe;
+wire ts_pe_277_a1_in;
+wire ts_pe_278_a0_out;
+wire ts_pe_278_a0_oe;
+wire ts_pe_278_a0_in;
+wire ts_pe_278_a1_out;
+wire ts_pe_278_a1_oe;
+wire ts_pe_278_a1_in;
+wire ts_pe_279_a0_out;
+wire ts_pe_279_a0_oe;
+wire ts_pe_279_a0_in;
+wire ts_pe_279_a1_out;
+wire ts_pe_279_a1_oe;
+wire ts_pe_279_a1_in;
+wire ts_pe_280_a0_out;
+wire ts_pe_280_a0_oe;
+wire ts_pe_280_a0_in;
+wire ts_pe_280_a1_out;
+wire ts_pe_280_a1_oe;
+wire ts_pe_280_a1_in;
+wire ts_pe_281_a0_out;
+wire ts_pe_281_a0_oe;
+wire ts_pe_281_a0_in;
+wire ts_pe_281_a1_out;
+wire ts_pe_281_a1_oe;
+wire ts_pe_281_a1_in;
+wire ts_pe_282_a0_out;
+wire ts_pe_282_a0_oe;
+wire ts_pe_282_a0_in;
+wire ts_pe_282_a1_out;
+wire ts_pe_282_a1_oe;
+wire ts_pe_282_a1_in;
+wire ts_pe_283_a0_out;
+wire ts_pe_283_a0_oe;
+wire ts_pe_283_a0_in;
+wire ts_pe_283_a1_out;
+wire ts_pe_283_a1_oe;
+wire ts_pe_283_a1_in;
+wire ts_pe_284_a0_out;
+wire ts_pe_284_a0_oe;
+wire ts_pe_284_a0_in;
+wire ts_pe_284_a1_out;
+wire ts_pe_284_a1_oe;
+wire ts_pe_284_a1_in;
+wire ts_pe_285_a0_out;
+wire ts_pe_285_a0_oe;
+wire ts_pe_285_a0_in;
+wire ts_pe_285_a1_out;
+wire ts_pe_285_a1_oe;
+wire ts_pe_285_a1_in;
+wire ts_pe_286_a0_out;
+wire ts_pe_286_a0_oe;
+wire ts_pe_286_a0_in;
+wire ts_pe_286_a1_out;
+wire ts_pe_286_a1_oe;
+wire ts_pe_286_a1_in;
+wire ts_pe_287_a0_out;
+wire ts_pe_287_a0_oe;
+wire ts_pe_287_a0_in;
+wire ts_pe_287_a1_out;
+wire ts_pe_287_a1_oe;
+wire ts_pe_287_a1_in;
 
 // Output buffers
-wire aout_3_obuf;
-wire aout_4_obuf;
-wire aout_5_obuf;
-wire aout_6_obuf;
-wire aout_7_obuf;
-wire aout_8_obuf;
-wire aout_9_obuf;
-wire aout_10_obuf;
-wire aout_11_obuf;
-wire aout_12_obuf;
-wire aout_13_obuf;
-wire aout_14_obuf;
-wire aout_15_obuf;
 wire aout_16_obuf;
 wire aout_17_obuf;
 wire aout_18_obuf;
@@ -483,23 +646,14 @@ wire ma_7_obuf;
 wire ma_8_obuf;
 wire ma_9_obuf;
 wire ma_10_obuf;
-wire match_obuf;
-wire intdev_obuf;
 wire fintdev_obuf;
-wire fextdev_obuf;
 wire fdram_obuf;
-wire from_obuf;
 wire dspd_0_obuf;
 wire dspd_1_obuf;
 wire romspd_0_obuf;
 wire romspd_1_obuf;
 wire iospd_0_obuf;
 wire iospd_1_obuf;
-wire dram_obuf;
-wire mw_0_obuf;
-wire mw_1_obuf;
-wire bs_0_obuf;
-wire bs_1_obuf;
 wire bs_2_obuf;
 wire bs_3_obuf;
 wire cpu32_obuf;
@@ -507,11 +661,7 @@ wire refrate_0_obuf;
 wire refrate_1_obuf;
 wire refrate_2_obuf;
 wire refrate_3_obuf;
-wire bigend_obuf;
-wire ourack_obuf;
 wire nocpu_obuf;
-wire gpuread_obuf;
-wire gpuwrite_obuf;
 wire abs_2_obuf;
 wire abs_3_obuf;
 wire hilo_obuf;
@@ -533,19 +683,6 @@ wire at_10_obuf;
 
 
 // Output buffers
-assign aout_3 = aout_3_obuf;
-assign aout_4 = aout_4_obuf;
-assign aout_5 = aout_5_obuf;
-assign aout_6 = aout_6_obuf;
-assign aout_7 = aout_7_obuf;
-assign aout_8 = aout_8_obuf;
-assign aout_9 = aout_9_obuf;
-assign aout_10 = aout_10_obuf;
-assign aout_11 = aout_11_obuf;
-assign aout_12 = aout_12_obuf;
-assign aout_13 = aout_13_obuf;
-assign aout_14 = aout_14_obuf;
-assign aout_15 = aout_15_obuf;
 assign aout_16 = aout_16_obuf;
 assign aout_17 = aout_17_obuf;
 assign aout_18 = aout_18_obuf;
@@ -565,23 +702,14 @@ assign ma_7 = ma_7_obuf;
 assign ma_8 = ma_8_obuf;
 assign ma_9 = ma_9_obuf;
 assign ma_10 = ma_10_obuf;
-assign match = match_obuf;
-assign intdev = intdev_obuf;
 assign fintdev = fintdev_obuf;
-assign fextdev = fextdev_obuf;
 assign fdram = fdram_obuf;
-assign from = from_obuf;
 assign dspd_0 = dspd_0_obuf;
 assign dspd_1 = dspd_1_obuf;
 assign romspd_0 = romspd_0_obuf;
 assign romspd_1 = romspd_1_obuf;
 assign iospd_0 = iospd_0_obuf;
 assign iospd_1 = iospd_1_obuf;
-assign dram = dram_obuf;
-assign mw_0 = mw_0_obuf;
-assign mw_1 = mw_1_obuf;
-assign bs_0 = bs_0_obuf;
-assign bs_1 = bs_1_obuf;
 assign bs_2 = bs_2_obuf;
 assign bs_3 = bs_3_obuf;
 assign cpu32 = cpu32_obuf;
@@ -589,11 +717,7 @@ assign refrate_0 = refrate_0_obuf;
 assign refrate_1 = refrate_1_obuf;
 assign refrate_2 = refrate_2_obuf;
 assign refrate_3 = refrate_3_obuf;
-assign bigend = bigend_obuf;
-assign ourack = ourack_obuf;
 assign nocpu = nocpu_obuf;
-assign gpuread = gpuread_obuf;
-assign gpuwrite = gpuwrite_obuf;
 assign abs_2 = abs_2_obuf;
 assign abs_3 = abs_3_obuf;
 assign hilo = hilo_obuf;
@@ -632,51 +756,51 @@ assign ma[10] = ma_10_obuf;
 // ABUS.NET (83) - m1d[0-2] : mx2
 mx2 m1d_from_0_to_2_inst_0
 (
-	.z(m1d_0), // OUT
-	.a0(cfg_0), // IN
-	.a1(din_0), // IN
-	.s(cfgen)  // IN
+	.z /* OUT */ (m1d_0),
+	.a0 /* IN */ (cfg_0),
+	.a1 /* IN */ (din_0),
+	.s /* IN */ (cfgen)
 );
 mx2 m1d_from_0_to_2_inst_1
 (
-	.z(m1d_1), // OUT
-	.a0(cfg_1), // IN
-	.a1(din_1), // IN
-	.s(cfgen)  // IN
+	.z /* OUT */ (m1d_1),
+	.a0 /* IN */ (cfg_1),
+	.a1 /* IN */ (din_1),
+	.s /* IN */ (cfgen)
 );
 mx2 m1d_from_0_to_2_inst_2
 (
-	.z(m1d_2), // OUT
-	.a0(cfg_2), // IN
-	.a1(din_2), // IN
-	.s(cfgen)  // IN
+	.z /* OUT */ (m1d_2),
+	.a0 /* IN */ (cfg_2),
+	.a1 /* IN */ (din_2),
+	.s /* IN */ (cfgen)
 );
 
 // ABUS.NET (84) - m1d[13] : mx2
 mx2 m1d_index_13_inst
 (
-	.z(m1d_13), // OUT
-	.a0(cfg_4), // IN
-	.a1(din_13), // IN
-	.s(cfgen)  // IN
+	.z /* OUT */ (m1d_13),
+	.a0 /* IN */ (cfg_4),
+	.a1 /* IN */ (din_13),
+	.s /* IN */ (cfgen)
 );
 
 // ABUS.NET (85) - m1d[14] : mx2
 mx2 m1d_index_14_inst
 (
-	.z(m1d_14), // OUT
-	.a0(cfg_5), // IN
-	.a1(din_14), // IN
-	.s(cfgen)  // IN
+	.z /* OUT */ (m1d_14),
+	.a0 /* IN */ (cfg_5),
+	.a1 /* IN */ (din_14),
+	.s /* IN */ (cfgen)
 );
 
 // ABUS.NET (86) - m2d[12] : mx2
 mx2 m2d_index_12_inst
 (
-	.z(m2d_12), // OUT
-	.a0(cfg_6), // IN
-	.a1(din_12), // IN
-	.s(cfgen)  // IN
+	.z /* OUT */ (m2d_12),
+	.a0 /* IN */ (cfg_6),
+	.a1 /* IN */ (din_12),
+	.s /* IN */ (cfgen)
 );
 
 // ABUS.NET (90) - m1ld : or2
@@ -688,9 +812,9 @@ assign m2ld = memc2 | cfgw;
 // ABUS.NET (94) - romhii : ldp1q
 ldp1q romhii_inst
 (
-	.q(romhii), // OUT
-	.d(m1d_0), // IN
-	.g(m1ld)  // IN
+	.q /* OUT */ (romhii),
+	.d /* IN */ (m1d_0),
+	.g /* IN */ (m1ld)
 );
 
 // ABUS.NET (95) - romhi : nivh
@@ -702,121 +826,137 @@ assign romlo = ~romhii;
 // ABUS.NET (97) - romwid[0-1] : ldp1q
 ldp1q romwid_from_0_to_1_inst_0
 (
-	.q(romwid_0), // OUT
-	.d(m1d_1), // IN
-	.g(m1ld)  // IN
+	.q /* OUT */ (romwid_0),
+	.d /* IN */ (m1d_1),
+	.g /* IN */ (m1ld)
 );
 ldp1q romwid_from_0_to_1_inst_1
 (
-	.q(romwid_1), // OUT
-	.d(m1d_2), // IN
-	.g(m1ld)  // IN
+	.q /* OUT */ (romwid_1),
+	.d /* IN */ (m1d_2),
+	.g /* IN */ (m1ld)
 );
 
 // ABUS.NET (98) - romspd[0-1] : ldp2q
 ldp2q romspd_from_0_to_1_inst_0
 (
-	.q(romspd_0_obuf), // OUT
-	.d(din_3), // IN
-	.g(memc1w), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (romspd_0_obuf),
+	.d /* IN */ (din_3),
+	.g /* IN */ (memc1w),
+	.cd /* IN */ (resetl)
 );
 ldp2q romspd_from_0_to_1_inst_1
 (
-	.q(romspd_1_obuf), // OUT
-	.d(din_4), // IN
-	.g(memc1w), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (romspd_1_obuf),
+	.d /* IN */ (din_4),
+	.g /* IN */ (memc1w),
+	.cd /* IN */ (resetl)
 );
 
 // ABUS.NET (99) - dspd[0-1] : ldp1q
 ldp1q dspd_from_0_to_1_inst_0
 (
-	.q(dspd_0_obuf), // OUT
-	.d(din_5), // IN
-	.g(memc1w)  // IN
+	.q /* OUT */ (dspd_0_obuf),
+	.d /* IN */ (din_5),
+	.g /* IN */ (memc1w)
 );
 ldp1q dspd_from_0_to_1_inst_1
 (
-	.q(dspd_1_obuf), // OUT
-	.d(din_6), // IN
-	.g(memc1w)  // IN
+	.q /* OUT */ (dspd_1_obuf),
+	.d /* IN */ (din_6),
+	.g /* IN */ (memc1w)
 );
 
 // ABUS.NET (100) - fastrom : ldp2q
 ldp2q fastrom_inst
 (
-	.q(fastrom_obuf), // OUT
-	.d(din_7), // IN
-	.g(memc1w), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (fastrom_obuf),
+	.d /* IN */ (din_7),
+	.g /* IN */ (memc1w),
+	.cd /* IN */ (resetl)
 );
 
 // ABUS.NET (101) - iospd[0-1] : ldp1q
 ldp1q iospd_from_0_to_1_inst_0
 (
-	.q(iospd_0_obuf), // OUT
-	.d(din_11), // IN
-	.g(memc1w)  // IN
+	.q /* OUT */ (iospd_0_obuf),
+	.d /* IN */ (din_11),
+	.g /* IN */ (memc1w)
 );
 ldp1q iospd_from_0_to_1_inst_1
 (
-	.q(iospd_1_obuf), // OUT
-	.d(din_12), // IN
-	.g(memc1w)  // IN
+	.q /* OUT */ (iospd_1_obuf),
+	.d /* IN */ (din_12),
+	.g /* IN */ (memc1w)
 );
 
 // ABUS.NET (102) - nocpu : ldp1q
 ldp1q nocpu_inst
 (
-	.q(nocpu_obuf), // OUT
-	.d(m1d_13), // IN
-	.g(m1ld)  // IN
+	.q /* OUT */ (nocpu_obuf),
+	.d /* IN */ (m1d_13),
+	.g /* IN */ (m1ld)
 );
 
 // ABUS.NET (103) - cpu32 : ldp1q
 ldp1q cpu32_inst
 (
-	.q(cpu32_obuf), // OUT
-	.d(m1d_14), // IN
-	.g(m1ld)  // IN
+	.q /* OUT */ (cpu32_obuf),
+	.d /* IN */ (m1d_14),
+	.g /* IN */ (m1ld)
 );
 
 // ABUS.NET (105) - d1[0] : ts
-assign dr_0 = (memc1r) ? romhi : 1'bz;
+assign ts_pe_272_a0_out = romhi;
+assign ts_pe_272_a0_oe = memc1r;
 
 // ABUS.NET (106) - d1[1-2] : ts
-assign dr_1 = (memc1r) ? romwid_0 : 1'bz;
-assign dr_2 = (memc1r) ? romwid_1 : 1'bz;
+assign ts_pe_273_a0_out = romwid_0;
+assign ts_pe_273_a0_oe = memc1r;
+assign ts_pe_274_a0_out = romwid_1;
+assign ts_pe_274_a0_oe = memc1r;
 
 // ABUS.NET (107) - d1[3-4] : ts
-assign dr_3 = (memc1r) ? romspd_0_obuf : 1'bz;
-assign dr_4 = (memc1r) ? romspd_1_obuf : 1'bz;
+assign ts_pe_275_a0_out = romspd_0_obuf;
+assign ts_pe_275_a0_oe = memc1r;
+assign ts_pe_276_a0_out = romspd_1_obuf;
+assign ts_pe_276_a0_oe = memc1r;
 
 // ABUS.NET (108) - d1[5-6] : ts
-assign dr_5 = (memc1r) ? dspd_0_obuf : 1'bz;
-assign dr_6 = (memc1r) ? dspd_1_obuf : 1'bz;
+assign ts_pe_277_a0_out = dspd_0_obuf;
+assign ts_pe_277_a0_oe = memc1r;
+assign ts_pe_278_a0_out = dspd_1_obuf;
+assign ts_pe_278_a0_oe = memc1r;
 
 // ABUS.NET (109) - d1[7] : ts
-assign dr_7 = (memc1r) ? fastrom_obuf : 1'bz;
+assign ts_pe_279_a0_out = fastrom_obuf;
+assign ts_pe_279_a0_oe = memc1r;
 
 // ABUS.NET (110) - d1[8-10] : ts
-assign dr_8 = (memc1r) ? gnd : 1'bz;
-assign dr_9 = (memc1r) ? gnd : 1'bz;
-assign dr_10 = (memc1r) ? gnd : 1'bz;
+assign ts_pe_280_a0_out = gnd;
+assign ts_pe_280_a0_oe = memc1r;
+assign ts_pe_281_a0_out = gnd;
+assign ts_pe_281_a0_oe = memc1r;
+assign ts_pe_282_a0_out = gnd;
+assign ts_pe_282_a0_oe = memc1r;
 
 // ABUS.NET (111) - d1[11-12] : ts
-assign dr_11 = (memc1r) ? iospd_0_obuf : 1'bz;
-assign dr_12 = (memc1r) ? iospd_1_obuf : 1'bz;
+assign ts_pe_283_a0_out = iospd_0_obuf;
+assign ts_pe_283_a0_oe = memc1r;
+assign ts_pe_284_a0_out = iospd_1_obuf;
+assign ts_pe_284_a0_oe = memc1r;
 
 // ABUS.NET (112) - d1[13] : ts
-assign dr_13 = (memc1r) ? nocpu_obuf : 1'bz;
+assign ts_pe_285_a0_out = nocpu_obuf;
+assign ts_pe_285_a0_oe = memc1r;
 
 // ABUS.NET (113) - d1[14] : ts
-assign dr_14 = (memc1r) ? cpu32_obuf : 1'bz;
+assign ts_pe_286_a0_out = cpu32_obuf;
+assign ts_pe_286_a0_oe = memc1r;
 
 // ABUS.NET (114) - d1[15] : ts
-assign dr_15 = (memc1r) ? gnd : 1'bz;
+assign ts_pe_287_a0_out = gnd;
+assign ts_pe_287_a0_oe = memc1r;
 
 // ABUS.NET (118) - memc2 : an2h
 assign memc2 = wet & memc2w;
@@ -824,158 +964,174 @@ assign memc2 = wet & memc2w;
 // ABUS.NET (119) - cols0[0-1] : ldp1q
 ldp1q cols0_from_0_to_1_inst_0
 (
-	.q(cols0_0), // OUT
-	.d(din_0), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (cols0_0),
+	.d /* IN */ (din_0),
+	.g /* IN */ (memc2)
 );
 ldp1q cols0_from_0_to_1_inst_1
 (
-	.q(cols0_1), // OUT
-	.d(din_1), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (cols0_1),
+	.d /* IN */ (din_1),
+	.g /* IN */ (memc2)
 );
 
 // ABUS.NET (120) - dwid0[0-1] : ldp1q
 ldp1q dwid0_from_0_to_1_inst_0
 (
-	.q(dwid0_0), // OUT
-	.d(din_2), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (dwid0_0),
+	.d /* IN */ (din_2),
+	.g /* IN */ (memc2)
 );
 ldp1q dwid0_from_0_to_1_inst_1
 (
-	.q(dwid0_1), // OUT
-	.d(din_3), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (dwid0_1),
+	.d /* IN */ (din_3),
+	.g /* IN */ (memc2)
 );
 
 // ABUS.NET (121) - cols1[0-1] : ldp1q
 ldp1q cols1_from_0_to_1_inst_0
 (
-	.q(cols1_0), // OUT
-	.d(din_4), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (cols1_0),
+	.d /* IN */ (din_4),
+	.g /* IN */ (memc2)
 );
 ldp1q cols1_from_0_to_1_inst_1
 (
-	.q(cols1_1), // OUT
-	.d(din_5), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (cols1_1),
+	.d /* IN */ (din_5),
+	.g /* IN */ (memc2)
 );
 
 // ABUS.NET (122) - dwid1[0-1] : ldp1q
 ldp1q dwid1_from_0_to_1_inst_0
 (
-	.q(dwid1_0), // OUT
-	.d(din_6), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (dwid1_0),
+	.d /* IN */ (din_6),
+	.g /* IN */ (memc2)
 );
 ldp1q dwid1_from_0_to_1_inst_1
 (
-	.q(dwid1_1), // OUT
-	.d(din_7), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (dwid1_1),
+	.d /* IN */ (din_7),
+	.g /* IN */ (memc2)
 );
 
 // ABUS.NET (123) - refrate[0-3] : slatch
 slatch refrate_from_0_to_3_inst_0
 (
-	.q(refrate_0_obuf), // IO
-	.d(din_8), // IN
-	.clk(clk), // IN
-	.en(memc2w)  // IN
+	.q /* OUT */ (refrate_0_obuf),
+	.d /* IN */ (din_8),
+	.clk /* IN */ (clk),
+	.en /* IN */ (memc2w)
 );
 slatch refrate_from_0_to_3_inst_1
 (
-	.q(refrate_1_obuf), // IO
-	.d(din_9), // IN
-	.clk(clk), // IN
-	.en(memc2w)  // IN
+	.q /* OUT */ (refrate_1_obuf),
+	.d /* IN */ (din_9),
+	.clk /* IN */ (clk),
+	.en /* IN */ (memc2w)
 );
 slatch refrate_from_0_to_3_inst_2
 (
-	.q(refrate_2_obuf), // IO
-	.d(din_10), // IN
-	.clk(clk), // IN
-	.en(memc2w)  // IN
+	.q /* OUT */ (refrate_2_obuf),
+	.d /* IN */ (din_10),
+	.clk /* IN */ (clk),
+	.en /* IN */ (memc2w)
 );
 slatch refrate_from_0_to_3_inst_3
 (
-	.q(refrate_3_obuf), // IO
-	.d(din_11), // IN
-	.clk(clk), // IN
-	.en(memc2w)  // IN
+	.q /* OUT */ (refrate_3_obuf),
+	.d /* IN */ (din_11),
+	.clk /* IN */ (clk),
+	.en /* IN */ (memc2w)
 );
 
 // ABUS.NET (124) - bigd : ldp1q
 ldp1q bigd_inst
 (
-	.q(bigd), // OUT
-	.d(m2d_12), // IN
-	.g(m2ld)  // IN
+	.q /* OUT */ (bigd),
+	.d /* IN */ (m2d_12),
+	.g /* IN */ (m2ld)
 );
 
 // ABUS.NET (125) - hiloi : ldp1q
 ldp1q hiloi_inst
 (
-	.q(hiloi), // OUT
-	.d(din_13), // IN
-	.g(memc2)  // IN
+	.q /* OUT */ (hiloi),
+	.d /* IN */ (din_13),
+	.g /* IN */ (memc2)
 );
 
 // ABUS.NET (126) - hilo : nivh
 assign hilo_obuf = hiloi;
 
 // ABUS.NET (128) - d2[0-1] : ts
-assign dr_0 = (memc2r) ? cols0_0 : 1'bz;
-assign dr_1 = (memc2r) ? cols0_1 : 1'bz;
+assign ts_pe_272_a1_out = cols0_0;
+assign ts_pe_272_a1_oe = memc2r;
+assign ts_pe_273_a1_out = cols0_1;
+assign ts_pe_273_a1_oe = memc2r;
 
 // ABUS.NET (129) - d2[2-3] : ts
-assign dr_2 = (memc2r) ? dwid0_0 : 1'bz;
-assign dr_3 = (memc2r) ? dwid0_1 : 1'bz;
+assign ts_pe_274_a1_out = dwid0_0;
+assign ts_pe_274_a1_oe = memc2r;
+assign ts_pe_275_a1_out = dwid0_1;
+assign ts_pe_275_a1_oe = memc2r;
 
 // ABUS.NET (130) - d2[4-5] : ts
-assign dr_4 = (memc2r) ? cols1_0 : 1'bz;
-assign dr_5 = (memc2r) ? cols1_1 : 1'bz;
+assign ts_pe_276_a1_out = cols1_0;
+assign ts_pe_276_a1_oe = memc2r;
+assign ts_pe_277_a1_out = cols1_1;
+assign ts_pe_277_a1_oe = memc2r;
 
 // ABUS.NET (131) - d2[6-7] : ts
-assign dr_6 = (memc2r) ? dwid1_0 : 1'bz;
-assign dr_7 = (memc2r) ? dwid1_1 : 1'bz;
+assign ts_pe_278_a1_out = dwid1_0;
+assign ts_pe_278_a1_oe = memc2r;
+assign ts_pe_279_a1_out = dwid1_1;
+assign ts_pe_279_a1_oe = memc2r;
 
 // ABUS.NET (132) - d2[8-11] : ts
-assign dr_8 = (memc2r) ? refrate_0_obuf : 1'bz;
-assign dr_9 = (memc2r) ? refrate_1_obuf : 1'bz;
-assign dr_10 = (memc2r) ? refrate_2_obuf : 1'bz;
-assign dr_11 = (memc2r) ? refrate_3_obuf : 1'bz;
+assign ts_pe_280_a1_out = refrate_0_obuf;
+assign ts_pe_280_a1_oe = memc2r;
+assign ts_pe_281_a1_out = refrate_1_obuf;
+assign ts_pe_281_a1_oe = memc2r;
+assign ts_pe_282_a1_out = refrate_2_obuf;
+assign ts_pe_282_a1_oe = memc2r;
+assign ts_pe_283_a1_out = refrate_3_obuf;
+assign ts_pe_283_a1_oe = memc2r;
 
 // ABUS.NET (133) - d2[12] : ts
-assign dr_12 = (memc2r) ? bigd : 1'bz;
+assign ts_pe_284_a1_out = bigd;
+assign ts_pe_284_a1_oe = memc2r;
 
 // ABUS.NET (134) - d2[13] : ts
-assign dr_13 = (memc2r) ? hilo_obuf : 1'bz;
+assign ts_pe_285_a1_out = hilo_obuf;
+assign ts_pe_285_a1_oe = memc2r;
 
 // ABUS.NET (135) - d2[14-15] : ts
-assign dr_14 = (memc2r) ? gnd : 1'bz;
-assign dr_15 = (memc2r) ? gnd : 1'bz;
+assign ts_pe_286_a1_out = gnd;
+assign ts_pe_286_a1_oe = memc2r;
+assign ts_pe_287_a1_out = gnd;
+assign ts_pe_287_a1_oe = memc2r;
 
 // ABUS.NET (142) - bigendi : fd1q
 fd1q bigendi_inst
 (
-	.q(bigendi), // OUT
-	.d(bigd), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (bigendi),
+	.d /* IN */ (bigd),
+	.cp /* IN */ (clk)
 );
 
 // ABUS.NET (143) - bigend : nivh
-assign bigend_obuf = bigendi;
+assign bigend = bigendi;
 
 // ABUS.NET (149) - motorola : ldp1
 ldp1 motorola_inst
 (
-	.q(m68ki), // OUT
-	.qn(not68k), // OUT
-	.d(cfg_8), // IN
-	.g(cfgw)  // IN
+	.q /* OUT */ (m68ki),
+	.qn /* OUT */ (not68k),
+	.d /* IN */ (cfg_8),
+	.g /* IN */ (cfgw)
 );
 
 // ABUS.NET (150) - m68k : nivh
@@ -984,332 +1140,332 @@ assign m68k_obuf = m68ki;
 // ABUS.NET (154) - aouti[3-15] : fd1qp
 fd1q aouti_from_3_to_15_inst_0
 (
-	.q(aouti_3), // OUT
-	.d(at_3_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_3),
+	.d /* IN */ (at_3_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_1
 (
-	.q(aouti_4), // OUT
-	.d(at_4_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_4),
+	.d /* IN */ (at_4_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_2
 (
-	.q(aouti_5), // OUT
-	.d(at_5_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_5),
+	.d /* IN */ (at_5_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_3
 (
-	.q(aouti_6), // OUT
-	.d(at_6_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_6),
+	.d /* IN */ (at_6_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_4
 (
-	.q(aouti_7), // OUT
-	.d(at_7_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_7),
+	.d /* IN */ (at_7_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_5
 (
-	.q(aouti_8), // OUT
-	.d(at_8_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_8),
+	.d /* IN */ (at_8_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_6
 (
-	.q(aouti_9), // OUT
-	.d(at_9_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_9),
+	.d /* IN */ (at_9_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_7
 (
-	.q(aouti_10), // OUT
-	.d(at_10_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_10),
+	.d /* IN */ (at_10_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_8
 (
-	.q(aouti_11), // OUT
-	.d(at_11), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_11),
+	.d /* IN */ (at_11),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_9
 (
-	.q(aouti_12), // OUT
-	.d(at_12), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_12),
+	.d /* IN */ (at_12),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_10
 (
-	.q(aouti_13), // OUT
-	.d(at_13), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_13),
+	.d /* IN */ (at_13),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_11
 (
-	.q(aouti_14), // OUT
-	.d(at_14), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_14),
+	.d /* IN */ (at_14),
+	.cp /* IN */ (clk)
 );
 fd1q aouti_from_3_to_15_inst_12
 (
-	.q(aouti_15), // OUT
-	.d(at_15), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aouti_15),
+	.d /* IN */ (at_15),
+	.cp /* IN */ (clk)
 );
 
 // ABUS.NET (155) - at[3-15] : mx2h
 mx2 at_from_3_to_15_inst_0
 (
-	.z(at_3_obuf), // OUT
-	.a0(aouti_3), // IN
-	.a1(a_3), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_3_obuf),
+	.a0 /* IN */ (aouti_3),
+	.a1 /* IN */ (a_3_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_1
 (
-	.z(at_4_obuf), // OUT
-	.a0(aouti_4), // IN
-	.a1(a_4), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_4_obuf),
+	.a0 /* IN */ (aouti_4),
+	.a1 /* IN */ (a_4_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_2
 (
-	.z(at_5_obuf), // OUT
-	.a0(aouti_5), // IN
-	.a1(a_5), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_5_obuf),
+	.a0 /* IN */ (aouti_5),
+	.a1 /* IN */ (a_5_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_3
 (
-	.z(at_6_obuf), // OUT
-	.a0(aouti_6), // IN
-	.a1(a_6), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_6_obuf),
+	.a0 /* IN */ (aouti_6),
+	.a1 /* IN */ (a_6_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_4
 (
-	.z(at_7_obuf), // OUT
-	.a0(aouti_7), // IN
-	.a1(a_7), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_7_obuf),
+	.a0 /* IN */ (aouti_7),
+	.a1 /* IN */ (a_7_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_5
 (
-	.z(at_8_obuf), // OUT
-	.a0(aouti_8), // IN
-	.a1(a_8), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_8_obuf),
+	.a0 /* IN */ (aouti_8),
+	.a1 /* IN */ (a_8_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_6
 (
-	.z(at_9_obuf), // OUT
-	.a0(aouti_9), // IN
-	.a1(a_9), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_9_obuf),
+	.a0 /* IN */ (aouti_9),
+	.a1 /* IN */ (a_9_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_7
 (
-	.z(at_10_obuf), // OUT
-	.a0(aouti_10), // IN
-	.a1(a_10), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_10_obuf),
+	.a0 /* IN */ (aouti_10),
+	.a1 /* IN */ (a_10_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_8
 (
-	.z(at_11), // OUT
-	.a0(aouti_11), // IN
-	.a1(a_11), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_11),
+	.a0 /* IN */ (aouti_11),
+	.a1 /* IN */ (a_11_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_9
 (
-	.z(at_12), // OUT
-	.a0(aouti_12), // IN
-	.a1(a_12), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_12),
+	.a0 /* IN */ (aouti_12),
+	.a1 /* IN */ (a_12_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_10
 (
-	.z(at_13), // OUT
-	.a0(aouti_13), // IN
-	.a1(a_13), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_13),
+	.a0 /* IN */ (aouti_13),
+	.a1 /* IN */ (a_13_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_11
 (
-	.z(at_14), // OUT
-	.a0(aouti_14), // IN
-	.a1(a_14), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_14),
+	.a0 /* IN */ (aouti_14),
+	.a1 /* IN */ (a_14_in),
+	.s /* IN */ (ack)
 );
 mx2 at_from_3_to_15_inst_12
 (
-	.z(at_15), // OUT
-	.a0(aouti_15), // IN
-	.a1(a_15), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_15),
+	.a0 /* IN */ (aouti_15),
+	.a1 /* IN */ (a_15_in),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (156) - aout[3-8] : nivh
-assign aout_3_obuf = aouti_3;
-assign aout_4_obuf = aouti_4;
-assign aout_5_obuf = aouti_5;
-assign aout_6_obuf = aouti_6;
-assign aout_7_obuf = aouti_7;
-assign aout_8_obuf = aouti_8;
+assign aout_3 = aouti_3;
+assign aout_4 = aouti_4;
+assign aout_5 = aouti_5;
+assign aout_6 = aouti_6;
+assign aout_7 = aouti_7;
+assign aout_8 = aouti_8;
 
 // ABUS.NET (157) - aout[9] : nivu
-assign aout_9_obuf = aouti_9;
+assign aout_9 = aouti_9;
 
 // ABUS.NET (158) - aout[10-14] : nivh
-assign aout_10_obuf = aouti_10;
-assign aout_11_obuf = aouti_11;
-assign aout_12_obuf = aouti_12;
-assign aout_13_obuf = aouti_13;
-assign aout_14_obuf = aouti_14;
+assign aout_10 = aouti_10;
+assign aout_11 = aouti_11;
+assign aout_12 = aouti_12;
+assign aout_13 = aouti_13;
+assign aout_14 = aouti_14;
 
 // ABUS.NET (159) - aout[15] : nivu
-assign aout_15_obuf = aouti_15;
+assign aout_15 = aouti_15;
 
 // ABUS.NET (160) - aout[16-23] : fd1q
 fd1q aout_from_16_to_23_inst_0
 (
-	.q(aout_16_obuf), // OUT
-	.d(at_16), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_16_obuf),
+	.d /* IN */ (at_16),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_1
 (
-	.q(aout_17_obuf), // OUT
-	.d(at_17), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_17_obuf),
+	.d /* IN */ (at_17),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_2
 (
-	.q(aout_18_obuf), // OUT
-	.d(at_18), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_18_obuf),
+	.d /* IN */ (at_18),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_3
 (
-	.q(aout_19_obuf), // OUT
-	.d(at_19), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_19_obuf),
+	.d /* IN */ (at_19),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_4
 (
-	.q(aout_20_obuf), // OUT
-	.d(at_20), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_20_obuf),
+	.d /* IN */ (at_20),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_5
 (
-	.q(aout_21_obuf), // OUT
-	.d(at_21), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_21_obuf),
+	.d /* IN */ (at_21),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_6
 (
-	.q(aout_22_obuf), // OUT
-	.d(at_22), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_22_obuf),
+	.d /* IN */ (at_22),
+	.cp /* IN */ (clk)
 );
 fd1q aout_from_16_to_23_inst_7
 (
-	.q(aout_23_obuf), // OUT
-	.d(at_23), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (aout_23_obuf),
+	.d /* IN */ (at_23),
+	.cp /* IN */ (clk)
 );
 
 // ABUS.NET (161) - at[16-23] : mx2m
 mx2 at_from_16_to_23_inst_0
 (
-	.z(at_16), // OUT
-	.a0(aout_16_obuf), // IN
-	.a1(ab_16), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_16),
+	.a0 /* IN */ (aout_16_obuf),
+	.a1 /* IN */ (ab_16),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_1
 (
-	.z(at_17), // OUT
-	.a0(aout_17_obuf), // IN
-	.a1(ab_17), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_17),
+	.a0 /* IN */ (aout_17_obuf),
+	.a1 /* IN */ (ab_17),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_2
 (
-	.z(at_18), // OUT
-	.a0(aout_18_obuf), // IN
-	.a1(ab_18), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_18),
+	.a0 /* IN */ (aout_18_obuf),
+	.a1 /* IN */ (ab_18),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_3
 (
-	.z(at_19), // OUT
-	.a0(aout_19_obuf), // IN
-	.a1(ab_19), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_19),
+	.a0 /* IN */ (aout_19_obuf),
+	.a1 /* IN */ (ab_19),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_4
 (
-	.z(at_20), // OUT
-	.a0(aout_20_obuf), // IN
-	.a1(ab_20), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_20),
+	.a0 /* IN */ (aout_20_obuf),
+	.a1 /* IN */ (ab_20),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_5
 (
-	.z(at_21), // OUT
-	.a0(aout_21_obuf), // IN
-	.a1(ab_21), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_21),
+	.a0 /* IN */ (aout_21_obuf),
+	.a1 /* IN */ (ab_21),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_6
 (
-	.z(at_22), // OUT
-	.a0(aout_22_obuf), // IN
-	.a1(ab_22), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_22),
+	.a0 /* IN */ (aout_22_obuf),
+	.a1 /* IN */ (ab_22),
+	.s /* IN */ (ack)
 );
 mx2 at_from_16_to_23_inst_7
 (
-	.z(at_23), // OUT
-	.a0(aout_23_obuf), // IN
-	.a1(ab_23), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (at_23),
+	.a0 /* IN */ (aout_23_obuf),
+	.a1 /* IN */ (ab_23),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (168) - mseti : fd2q
 fd2q mseti_inst
 (
-	.q(mseti), // OUT
-	.d(vcc), // IN
-	.cp(memc1w), // IN
-	.cd(cfgen)  // IN
+	.q /* OUT */ (mseti),
+	.d /* IN */ (vcc),
+	.cp /* IN */ (memc1w),
+	.cd /* IN */ (cfgen)
 );
 
 // ABUS.NET (169) - mset : nivh
 assign mset = mseti;
 
 // ABUS.NET (193) - alb[10-23] : ivu
-assign alb_10 = ~a_10;
-assign alb_11 = ~a_11;
-assign alb_12 = ~a_12;
-assign alb_13 = ~a_13;
-assign alb_14 = ~a_14;
-assign alb_15 = ~a_15;
-assign alb_16 = ~a_16;
-assign alb_17 = ~a_17;
-assign alb_18 = ~a_18;
-assign alb_19 = ~a_19;
-assign alb_20 = ~a_20;
-assign alb_21 = ~a_21;
-assign alb_22 = ~a_22;
-assign alb_23 = ~a_23;
+assign alb_10 = ~a_10_in;
+assign alb_11 = ~a_11_in;
+assign alb_12 = ~a_12_in;
+assign alb_13 = ~a_13_in;
+assign alb_14 = ~a_14_in;
+assign alb_15 = ~a_15_in;
+assign alb_16 = ~a_16_in;
+assign alb_17 = ~a_17_in;
+assign alb_18 = ~a_18_in;
+assign alb_19 = ~a_19_in;
+assign alb_20 = ~a_20_in;
+assign alb_21 = ~a_21_in;
+assign alb_22 = ~a_22_in;
+assign alb_23 = ~a_23_in;
 
 // ABUS.NET (194) - ab[10-12] : iv
 assign ab_10 = ~alb_10;
@@ -1393,7 +1549,7 @@ assign fintdev_obuf = ~fintdev1;
 assign fextdevl = ~(abs_0 & ab_16 & alb_17 & alb_18 & alb_19 & ab_20);
 
 // ABUS.NET (233) - fextdev : iv
-assign fextdev_obuf = ~fextdevl;
+assign fextdev = ~fextdevl;
 
 // ABUS.NET (246) - rom1 : nd6
 assign rom1 = ~(mset & romlo & alb_23 & alb_22 & alb_21 & notdev);
@@ -1417,7 +1573,7 @@ assign rom6 = ~(mset & romhi & ab_23 & alb_22);
 assign rom7 = ~(notmset & notdev);
 
 // ABUS.NET (253) - from : nd8
-assign from_obuf = ~(rom7 & rom1 & rom2 & rom3 & rom4 & rom5 & rom6 & vcc);
+assign from = ~(rom7 & rom1 & rom2 & rom3 & rom4 & rom5 & rom6 & vcc);
 
 // ABUS.NET (255) - romcsl[0] : an3
 assign romcsl_0 = rom1 & rom2 & rom7;
@@ -1425,23 +1581,23 @@ assign romcsl_0 = rom1 & rom2 & rom7;
 // ABUS.NET (260) - intdevi : slatchc
 slatchc intdevi_inst
 (
-	.q(intdevi), // IO
-	.d(fintdev_obuf), // IN
-	.clk(clk), // IN
-	.en(ack), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (intdevi),
+	.d /* IN */ (fintdev_obuf),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack),
+	.resl /* IN */ (resetl)
 );
 
 // ABUS.NET (261) - intdev : nivh
-assign intdev_obuf = intdevi;
+assign intdev = intdevi;
 
 // ABUS.NET (262) - dram : slatch
 slatch dram_inst
 (
-	.q(dram_obuf), // IO
-	.d(fdram_obuf), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (dram),
+	.d /* IN */ (fdram_obuf),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // ABUS.NET (268) - rom0 : iv
@@ -1450,36 +1606,36 @@ assign rom0 = ~romcsl_0;
 // ABUS.NET (269) - bs[0] : slatch
 slatch bs_index_0_inst
 (
-	.q(bs_0_obuf), // IO
-	.d(rom0), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (bs_0),
+	.d /* IN */ (rom0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // ABUS.NET (270) - bs[1] : slatch
 slatch bs_index_1_inst
 (
-	.q(bs_1_obuf), // IO
-	.d(abs_1), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (bs_1),
+	.d /* IN */ (abs_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // ABUS.NET (271) - bsi[2] : fd1q
 fd1q bsi_index_2_inst
 (
-	.q(bsi_2), // OUT
-	.d(abti_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (bsi_2),
+	.d /* IN */ (abti_2),
+	.cp /* IN */ (clk)
 );
 
 // ABUS.NET (272) - abti[2] : mx2
 mx2 abti_index_2_inst
 (
-	.z(abti_2), // OUT
-	.a0(bsi_2), // IN
-	.a1(abs_2_obuf), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (abti_2),
+	.a0 /* IN */ (bsi_2),
+	.a1 /* IN */ (abs_2_obuf),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (273) - abt[2] : nivh
@@ -1488,10 +1644,10 @@ assign abt_2 = abti_2;
 // ABUS.NET (274) - bs[3] : slatch
 slatch bs_index_3_inst
 (
-	.q(bs_3_obuf), // IO
-	.d(abs_3_obuf), // IN
-	.clk(clk), // IN
-	.en(ack)  // IN
+	.q /* OUT */ (bs_3_obuf),
+	.d /* IN */ (abs_3_obuf),
+	.clk /* IN */ (clk),
+	.en /* IN */ (ack)
 );
 
 // ABUS.NET (275) - bs[2] : nivm
@@ -1542,21 +1698,21 @@ assign mw0e = ~(vcc & mset & romhi & alb_23 & alb_22 & dwid0_0);
 // ABUS.NET (312) - mw[0] : nand14
 nand14 mw_index_0_inst
 (
-	.z(mw_0_obuf), // IO
-	.a(mw01), // IN
-	.b(mw02), // IN
-	.c(mw03), // IN
-	.d(mw04), // IN
-	.e(mw05), // IN
-	.f(mw06), // IN
-	.g(mw07), // IN
-	.h(mw08), // IN
-	.i(mw09), // IN
-	.j(mw0a), // IN
-	.k(mw0b), // IN
-	.l(mw0c), // IN
-	.m(mw0d), // IN
-	.n(mw0e)  // IN
+	.z /* OUT */ (mw_0),
+	.a /* IN */ (mw01),
+	.b /* IN */ (mw02),
+	.c /* IN */ (mw03),
+	.d /* IN */ (mw04),
+	.e /* IN */ (mw05),
+	.f /* IN */ (mw06),
+	.g /* IN */ (mw07),
+	.h /* IN */ (mw08),
+	.i /* IN */ (mw09),
+	.j /* IN */ (mw0a),
+	.k /* IN */ (mw0b),
+	.l /* IN */ (mw0c),
+	.m /* IN */ (mw0d),
+	.n /* IN */ (mw0e)
 );
 
 // ABUS.NET (315) - mw11 : nd3
@@ -1604,21 +1760,21 @@ assign mw1e = ~(vcc & mset & romhi & alb_23 & alb_22 & dwid0_1);
 // ABUS.NET (330) - mw[1] : nand14
 nand14 mw_index_1_inst
 (
-	.z(mw_1_obuf), // IO
-	.a(mw11), // IN
-	.b(mw12), // IN
-	.c(mw13), // IN
-	.d(mw14), // IN
-	.e(mw15), // IN
-	.f(mw16), // IN
-	.g(mw17), // IN
-	.h(mw18), // IN
-	.i(mw19), // IN
-	.j(mw1a), // IN
-	.k(mw1b), // IN
-	.l(mw1c), // IN
-	.m(mw1d), // IN
-	.n(mw1e)  // IN
+	.z /* OUT */ (mw_1),
+	.a /* IN */ (mw11),
+	.b /* IN */ (mw12),
+	.c /* IN */ (mw13),
+	.d /* IN */ (mw14),
+	.e /* IN */ (mw15),
+	.f /* IN */ (mw16),
+	.g /* IN */ (mw17),
+	.h /* IN */ (mw18),
+	.i /* IN */ (mw19),
+	.j /* IN */ (mw1a),
+	.k /* IN */ (mw1b),
+	.l /* IN */ (mw1c),
+	.m /* IN */ (mw1d),
+	.n /* IN */ (mw1e)
 );
 
 // ABUS.NET (333) - notdev : nd4p
@@ -1648,54 +1804,78 @@ assign bm68k = notba & m68k_obuf;
 // ABUS.NET (348) - ai[0] : mx2
 mx2 ai_index_0_inst
 (
-	.z(ai_0), // OUT
-	.a0(ain_0), // IN
-	.a1(siz_1), // IN
-	.s(bm68k)  // IN
+	.z /* OUT */ (ai_0),
+	.a0 /* IN */ (ain_0),
+	.a1 /* IN */ (siz_1),
+	.s /* IN */ (bm68k)
 );
 
 // ABUS.NET (350) - a[0] : tsm
-assign a_0 = (ainen) ? ai_0 : 1'bz;
+assign a_0_out = ai_0;
+assign a_0_oe = ainen;
 
 // ABUS.NET (351) - a[1-23] : tsm
-assign a_1 = (ainen) ? ain_1 : 1'bz;
-assign a_2 = (ainen) ? ain_2 : 1'bz;
-assign a_3 = (ainen) ? ain_3 : 1'bz;
-assign a_4 = (ainen) ? ain_4 : 1'bz;
-assign a_5 = (ainen) ? ain_5 : 1'bz;
-assign a_6 = (ainen) ? ain_6 : 1'bz;
-assign a_7 = (ainen) ? ain_7 : 1'bz;
-assign a_8 = (ainen) ? ain_8 : 1'bz;
-assign a_9 = (ainen) ? ain_9 : 1'bz;
-assign a_10 = (ainen) ? ain_10 : 1'bz;
-assign a_11 = (ainen) ? ain_11 : 1'bz;
-assign a_12 = (ainen) ? ain_12 : 1'bz;
-assign a_13 = (ainen) ? ain_13 : 1'bz;
-assign a_14 = (ainen) ? ain_14 : 1'bz;
-assign a_15 = (ainen) ? ain_15 : 1'bz;
-assign a_16 = (ainen) ? ain_16 : 1'bz;
-assign a_17 = (ainen) ? ain_17 : 1'bz;
-assign a_18 = (ainen) ? ain_18 : 1'bz;
-assign a_19 = (ainen) ? ain_19 : 1'bz;
-assign a_20 = (ainen) ? ain_20 : 1'bz;
-assign a_21 = (ainen) ? ain_21 : 1'bz;
-assign a_22 = (ainen) ? ain_22 : 1'bz;
-assign a_23 = (ainen) ? ain_23 : 1'bz;
+assign a_1_out = ain_1;
+assign a_1_oe = ainen;
+assign a_2_out = ain_2;
+assign a_2_oe = ainen;
+assign a_3_out = ain_3;
+assign a_3_oe = ainen;
+assign a_4_out = ain_4;
+assign a_4_oe = ainen;
+assign a_5_out = ain_5;
+assign a_5_oe = ainen;
+assign a_6_out = ain_6;
+assign a_6_oe = ainen;
+assign a_7_out = ain_7;
+assign a_7_oe = ainen;
+assign a_8_out = ain_8;
+assign a_8_oe = ainen;
+assign a_9_out = ain_9;
+assign a_9_oe = ainen;
+assign a_10_out = ain_10;
+assign a_10_oe = ainen;
+assign a_11_out = ain_11;
+assign a_11_oe = ainen;
+assign a_12_out = ain_12;
+assign a_12_oe = ainen;
+assign a_13_out = ain_13;
+assign a_13_oe = ainen;
+assign a_14_out = ain_14;
+assign a_14_oe = ainen;
+assign a_15_out = ain_15;
+assign a_15_oe = ainen;
+assign a_16_out = ain_16;
+assign a_16_oe = ainen;
+assign a_17_out = ain_17;
+assign a_17_oe = ainen;
+assign a_18_out = ain_18;
+assign a_18_oe = ainen;
+assign a_19_out = ain_19;
+assign a_19_oe = ainen;
+assign a_20_out = ain_20;
+assign a_20_oe = ainen;
+assign a_21_out = ain_21;
+assign a_21_oe = ainen;
+assign a_22_out = ain_22;
+assign a_22_oe = ainen;
+assign a_23_out = ain_23;
+assign a_23_oe = ainen;
 
 // ABUS.NET (375) - dwidi[0-1] : mx2
 mx2 dwidi_from_0_to_1_inst_0
 (
-	.z(dwidi_0), // OUT
-	.a0(dwid0_0), // IN
-	.a1(dwid1_0), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (dwidi_0),
+	.a0 /* IN */ (dwid0_0),
+	.a1 /* IN */ (dwid1_0),
+	.s /* IN */ (abt_2)
 );
 mx2 dwidi_from_0_to_1_inst_1
 (
-	.z(dwidi_1), // OUT
-	.a0(dwid0_1), // IN
-	.a1(dwid1_1), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (dwidi_1),
+	.a0 /* IN */ (dwid0_1),
+	.a1 /* IN */ (dwid1_1),
+	.s /* IN */ (abt_2)
 );
 
 // ABUS.NET (376) - dwid[0-1] : nivh
@@ -1705,132 +1885,132 @@ assign dwid_1 = dwidi_1;
 // ABUS.NET (378) - ald[0-10] : mx4
 mx4 ald_from_0_to_10_inst_0
 (
-	.z(ald_0), // OUT
-	.a0(at_0), // IN
-	.a1(at_1), // IN
-	.a2(at_2), // IN
-	.a3(at_3_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_0),
+	.a0 /* IN */ (at_0),
+	.a1 /* IN */ (at_1),
+	.a2 /* IN */ (at_2),
+	.a3 /* IN */ (at_3_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_1
 (
-	.z(ald_1), // OUT
-	.a0(at_1), // IN
-	.a1(at_2), // IN
-	.a2(at_3_obuf), // IN
-	.a3(at_4_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_1),
+	.a0 /* IN */ (at_1),
+	.a1 /* IN */ (at_2),
+	.a2 /* IN */ (at_3_obuf),
+	.a3 /* IN */ (at_4_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_2
 (
-	.z(ald_2), // OUT
-	.a0(at_2), // IN
-	.a1(at_3_obuf), // IN
-	.a2(at_4_obuf), // IN
-	.a3(at_5_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_2),
+	.a0 /* IN */ (at_2),
+	.a1 /* IN */ (at_3_obuf),
+	.a2 /* IN */ (at_4_obuf),
+	.a3 /* IN */ (at_5_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_3
 (
-	.z(ald_3), // OUT
-	.a0(at_3_obuf), // IN
-	.a1(at_4_obuf), // IN
-	.a2(at_5_obuf), // IN
-	.a3(at_6_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_3),
+	.a0 /* IN */ (at_3_obuf),
+	.a1 /* IN */ (at_4_obuf),
+	.a2 /* IN */ (at_5_obuf),
+	.a3 /* IN */ (at_6_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_4
 (
-	.z(ald_4), // OUT
-	.a0(at_4_obuf), // IN
-	.a1(at_5_obuf), // IN
-	.a2(at_6_obuf), // IN
-	.a3(at_7_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_4),
+	.a0 /* IN */ (at_4_obuf),
+	.a1 /* IN */ (at_5_obuf),
+	.a2 /* IN */ (at_6_obuf),
+	.a3 /* IN */ (at_7_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_5
 (
-	.z(ald_5), // OUT
-	.a0(at_5_obuf), // IN
-	.a1(at_6_obuf), // IN
-	.a2(at_7_obuf), // IN
-	.a3(at_8_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_5),
+	.a0 /* IN */ (at_5_obuf),
+	.a1 /* IN */ (at_6_obuf),
+	.a2 /* IN */ (at_7_obuf),
+	.a3 /* IN */ (at_8_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_6
 (
-	.z(ald_6), // OUT
-	.a0(at_6_obuf), // IN
-	.a1(at_7_obuf), // IN
-	.a2(at_8_obuf), // IN
-	.a3(at_9_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_6),
+	.a0 /* IN */ (at_6_obuf),
+	.a1 /* IN */ (at_7_obuf),
+	.a2 /* IN */ (at_8_obuf),
+	.a3 /* IN */ (at_9_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_7
 (
-	.z(ald_7), // OUT
-	.a0(at_7_obuf), // IN
-	.a1(at_8_obuf), // IN
-	.a2(at_9_obuf), // IN
-	.a3(at_10_obuf), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_7),
+	.a0 /* IN */ (at_7_obuf),
+	.a1 /* IN */ (at_8_obuf),
+	.a2 /* IN */ (at_9_obuf),
+	.a3 /* IN */ (at_10_obuf),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_8
 (
-	.z(ald_8), // OUT
-	.a0(at_8_obuf), // IN
-	.a1(at_9_obuf), // IN
-	.a2(at_10_obuf), // IN
-	.a3(at_11), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_8),
+	.a0 /* IN */ (at_8_obuf),
+	.a1 /* IN */ (at_9_obuf),
+	.a2 /* IN */ (at_10_obuf),
+	.a3 /* IN */ (at_11),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_9
 (
-	.z(ald_9), // OUT
-	.a0(at_9_obuf), // IN
-	.a1(at_10_obuf), // IN
-	.a2(at_11), // IN
-	.a3(at_12), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_9),
+	.a0 /* IN */ (at_9_obuf),
+	.a1 /* IN */ (at_10_obuf),
+	.a2 /* IN */ (at_11),
+	.a3 /* IN */ (at_12),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 mx4 ald_from_0_to_10_inst_10
 (
-	.z(ald_10), // OUT
-	.a0(at_10_obuf), // IN
-	.a1(at_11), // IN
-	.a2(at_12), // IN
-	.a3(at_13), // IN
-	.s0(dwid_0), // IN
-	.s1(dwid_1)  // IN
+	.z /* OUT */ (ald_10),
+	.a0 /* IN */ (at_10_obuf),
+	.a1 /* IN */ (at_11),
+	.a2 /* IN */ (at_12),
+	.a3 /* IN */ (at_13),
+	.s0 /* IN */ (dwid_0),
+	.s1 /* IN */ (dwid_1)
 );
 
 // ABUS.NET (383) - cw0i[0] : ha1
 ha1 cw0i_index_0_inst
 (
-	.s(cw0i_0), // OUT
-	.co(co0_0), // OUT
-	.a(dwid0_0), // IN
-	.b(cols0_0)  // IN
+	.s /* OUT */ (cw0i_0),
+	.co /* OUT */ (co0_0),
+	.a /* IN */ (dwid0_0),
+	.b /* IN */ (cols0_0)
 );
 
 // ABUS.NET (384) - cw0i[1] : fa1
 fa1 cw0i_index_1_inst
 (
-	.s(cw0i_1), // OUT
-	.co(cw0i_2), // OUT
-	.ci(dwid0_1), // IN
-	.a(cols0_1), // IN
-	.b(co0_0)  // IN
+	.s /* OUT */ (cw0i_1),
+	.co /* OUT */ (cw0i_2),
+	.ci /* IN */ (dwid0_1),
+	.a /* IN */ (cols0_1),
+	.b /* IN */ (co0_0)
 );
 
 // ABUS.NET (385) - cw0[0-2] : nivm
@@ -1841,20 +2021,20 @@ assign cw0_2 = cw0i_2;
 // ABUS.NET (387) - cw1i[0] : ha1
 ha1 cw1i_index_0_inst
 (
-	.s(cw1i_0), // OUT
-	.co(co1_0), // OUT
-	.a(dwid1_0), // IN
-	.b(cols1_0)  // IN
+	.s /* OUT */ (cw1i_0),
+	.co /* OUT */ (co1_0),
+	.a /* IN */ (dwid1_0),
+	.b /* IN */ (cols1_0)
 );
 
 // ABUS.NET (388) - cw1i[1] : fa1
 fa1 cw1i_index_1_inst
 (
-	.s(cw1i_1), // OUT
-	.co(cw1i_2), // OUT
-	.ci(dwid1_1), // IN
-	.a(cols1_1), // IN
-	.b(co1_0)  // IN
+	.s /* OUT */ (cw1i_1),
+	.co /* OUT */ (cw1i_2),
+	.ci /* IN */ (dwid1_1),
+	.a /* IN */ (cols1_1),
+	.b /* IN */ (co1_0)
 );
 
 // ABUS.NET (389) - cw1[0-2] : nivm
@@ -1865,339 +2045,339 @@ assign cw1_2 = cw1i_2;
 // ABUS.NET (393) - ahd0[0-9] : mx8
 mx8 ahd0_from_0_to_9_inst_0
 (
-	.z(ahd0_0), // OUT
-	.a0(at_8_obuf), // IN
-	.a1(at_9_obuf), // IN
-	.a2(at_10_obuf), // IN
-	.a3(at_11), // IN
-	.a4(at_12), // IN
-	.a5(at_13), // IN
-	.a6(at_14), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_0),
+	.a0 /* IN */ (at_8_obuf),
+	.a1 /* IN */ (at_9_obuf),
+	.a2 /* IN */ (at_10_obuf),
+	.a3 /* IN */ (at_11),
+	.a4 /* IN */ (at_12),
+	.a5 /* IN */ (at_13),
+	.a6 /* IN */ (at_14),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_1
 (
-	.z(ahd0_1), // OUT
-	.a0(at_9_obuf), // IN
-	.a1(at_10_obuf), // IN
-	.a2(at_11), // IN
-	.a3(at_12), // IN
-	.a4(at_13), // IN
-	.a5(at_14), // IN
-	.a6(at_15), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_1),
+	.a0 /* IN */ (at_9_obuf),
+	.a1 /* IN */ (at_10_obuf),
+	.a2 /* IN */ (at_11),
+	.a3 /* IN */ (at_12),
+	.a4 /* IN */ (at_13),
+	.a5 /* IN */ (at_14),
+	.a6 /* IN */ (at_15),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_2
 (
-	.z(ahd0_2), // OUT
-	.a0(at_10_obuf), // IN
-	.a1(at_11), // IN
-	.a2(at_12), // IN
-	.a3(at_13), // IN
-	.a4(at_14), // IN
-	.a5(at_15), // IN
-	.a6(at_16), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_2),
+	.a0 /* IN */ (at_10_obuf),
+	.a1 /* IN */ (at_11),
+	.a2 /* IN */ (at_12),
+	.a3 /* IN */ (at_13),
+	.a4 /* IN */ (at_14),
+	.a5 /* IN */ (at_15),
+	.a6 /* IN */ (at_16),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_3
 (
-	.z(ahd0_3), // OUT
-	.a0(at_11), // IN
-	.a1(at_12), // IN
-	.a2(at_13), // IN
-	.a3(at_14), // IN
-	.a4(at_15), // IN
-	.a5(at_16), // IN
-	.a6(at_17), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_3),
+	.a0 /* IN */ (at_11),
+	.a1 /* IN */ (at_12),
+	.a2 /* IN */ (at_13),
+	.a3 /* IN */ (at_14),
+	.a4 /* IN */ (at_15),
+	.a5 /* IN */ (at_16),
+	.a6 /* IN */ (at_17),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_4
 (
-	.z(ahd0_4), // OUT
-	.a0(at_12), // IN
-	.a1(at_13), // IN
-	.a2(at_14), // IN
-	.a3(at_15), // IN
-	.a4(at_16), // IN
-	.a5(at_17), // IN
-	.a6(at_18), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_4),
+	.a0 /* IN */ (at_12),
+	.a1 /* IN */ (at_13),
+	.a2 /* IN */ (at_14),
+	.a3 /* IN */ (at_15),
+	.a4 /* IN */ (at_16),
+	.a5 /* IN */ (at_17),
+	.a6 /* IN */ (at_18),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_5
 (
-	.z(ahd0_5), // OUT
-	.a0(at_13), // IN
-	.a1(at_14), // IN
-	.a2(at_15), // IN
-	.a3(at_16), // IN
-	.a4(at_17), // IN
-	.a5(at_18), // IN
-	.a6(at_19), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_5),
+	.a0 /* IN */ (at_13),
+	.a1 /* IN */ (at_14),
+	.a2 /* IN */ (at_15),
+	.a3 /* IN */ (at_16),
+	.a4 /* IN */ (at_17),
+	.a5 /* IN */ (at_18),
+	.a6 /* IN */ (at_19),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_6
 (
-	.z(ahd0_6), // OUT
-	.a0(at_14), // IN
-	.a1(at_15), // IN
-	.a2(at_16), // IN
-	.a3(at_17), // IN
-	.a4(at_18), // IN
-	.a5(at_19), // IN
-	.a6(at_20), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_6),
+	.a0 /* IN */ (at_14),
+	.a1 /* IN */ (at_15),
+	.a2 /* IN */ (at_16),
+	.a3 /* IN */ (at_17),
+	.a4 /* IN */ (at_18),
+	.a5 /* IN */ (at_19),
+	.a6 /* IN */ (at_20),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_7
 (
-	.z(ahd0_7), // OUT
-	.a0(at_15), // IN
-	.a1(at_16), // IN
-	.a2(at_17), // IN
-	.a3(at_18), // IN
-	.a4(at_19), // IN
-	.a5(at_20), // IN
-	.a6(at_21), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_7),
+	.a0 /* IN */ (at_15),
+	.a1 /* IN */ (at_16),
+	.a2 /* IN */ (at_17),
+	.a3 /* IN */ (at_18),
+	.a4 /* IN */ (at_19),
+	.a5 /* IN */ (at_20),
+	.a6 /* IN */ (at_21),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_8
 (
-	.z(ahd0_8), // OUT
-	.a0(at_16), // IN
-	.a1(at_17), // IN
-	.a2(at_18), // IN
-	.a3(at_19), // IN
-	.a4(at_20), // IN
-	.a5(at_21), // IN
-	.a6(at_22), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_8),
+	.a0 /* IN */ (at_16),
+	.a1 /* IN */ (at_17),
+	.a2 /* IN */ (at_18),
+	.a3 /* IN */ (at_19),
+	.a4 /* IN */ (at_20),
+	.a5 /* IN */ (at_21),
+	.a6 /* IN */ (at_22),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 mx8 ahd0_from_0_to_9_inst_9
 (
-	.z(ahd0_9), // OUT
-	.a0(at_17), // IN
-	.a1(at_18), // IN
-	.a2(at_19), // IN
-	.a3(at_20), // IN
-	.a4(at_21), // IN
-	.a5(at_22), // IN
-	.a6(at_23), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_9),
+	.a0 /* IN */ (at_17),
+	.a1 /* IN */ (at_18),
+	.a2 /* IN */ (at_19),
+	.a3 /* IN */ (at_20),
+	.a4 /* IN */ (at_21),
+	.a5 /* IN */ (at_22),
+	.a6 /* IN */ (at_23),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 
 // ABUS.NET (395) - ahd0[10] : mx8
 mx8 ahd0_index_10_inst
 (
-	.z(ahd0_10), // OUT
-	.a0(at_18), // IN
-	.a1(at_19), // IN
-	.a2(at_20), // IN
-	.a3(at_21), // IN
-	.a4(at_22), // IN
-	.a5(at_23), // IN
-	.a6(gnd), // IN
-	.a7(gnd), // IN
-	.s0(cw0_0), // IN
-	.s1(cw0_1), // IN
-	.s2(cw0_2)  // IN
+	.z /* OUT */ (ahd0_10),
+	.a0 /* IN */ (at_18),
+	.a1 /* IN */ (at_19),
+	.a2 /* IN */ (at_20),
+	.a3 /* IN */ (at_21),
+	.a4 /* IN */ (at_22),
+	.a5 /* IN */ (at_23),
+	.a6 /* IN */ (gnd),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw0_0),
+	.s1 /* IN */ (cw0_1),
+	.s2 /* IN */ (cw0_2)
 );
 
 // ABUS.NET (397) - ahd1[0-9] : mx8
 mx8 ahd1_from_0_to_9_inst_0
 (
-	.z(ahd1_0), // OUT
-	.a0(at_8_obuf), // IN
-	.a1(at_9_obuf), // IN
-	.a2(at_10_obuf), // IN
-	.a3(at_11), // IN
-	.a4(at_12), // IN
-	.a5(at_13), // IN
-	.a6(at_14), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_0),
+	.a0 /* IN */ (at_8_obuf),
+	.a1 /* IN */ (at_9_obuf),
+	.a2 /* IN */ (at_10_obuf),
+	.a3 /* IN */ (at_11),
+	.a4 /* IN */ (at_12),
+	.a5 /* IN */ (at_13),
+	.a6 /* IN */ (at_14),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_1
 (
-	.z(ahd1_1), // OUT
-	.a0(at_9_obuf), // IN
-	.a1(at_10_obuf), // IN
-	.a2(at_11), // IN
-	.a3(at_12), // IN
-	.a4(at_13), // IN
-	.a5(at_14), // IN
-	.a6(at_15), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_1),
+	.a0 /* IN */ (at_9_obuf),
+	.a1 /* IN */ (at_10_obuf),
+	.a2 /* IN */ (at_11),
+	.a3 /* IN */ (at_12),
+	.a4 /* IN */ (at_13),
+	.a5 /* IN */ (at_14),
+	.a6 /* IN */ (at_15),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_2
 (
-	.z(ahd1_2), // OUT
-	.a0(at_10_obuf), // IN
-	.a1(at_11), // IN
-	.a2(at_12), // IN
-	.a3(at_13), // IN
-	.a4(at_14), // IN
-	.a5(at_15), // IN
-	.a6(at_16), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_2),
+	.a0 /* IN */ (at_10_obuf),
+	.a1 /* IN */ (at_11),
+	.a2 /* IN */ (at_12),
+	.a3 /* IN */ (at_13),
+	.a4 /* IN */ (at_14),
+	.a5 /* IN */ (at_15),
+	.a6 /* IN */ (at_16),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_3
 (
-	.z(ahd1_3), // OUT
-	.a0(at_11), // IN
-	.a1(at_12), // IN
-	.a2(at_13), // IN
-	.a3(at_14), // IN
-	.a4(at_15), // IN
-	.a5(at_16), // IN
-	.a6(at_17), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_3),
+	.a0 /* IN */ (at_11),
+	.a1 /* IN */ (at_12),
+	.a2 /* IN */ (at_13),
+	.a3 /* IN */ (at_14),
+	.a4 /* IN */ (at_15),
+	.a5 /* IN */ (at_16),
+	.a6 /* IN */ (at_17),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_4
 (
-	.z(ahd1_4), // OUT
-	.a0(at_12), // IN
-	.a1(at_13), // IN
-	.a2(at_14), // IN
-	.a3(at_15), // IN
-	.a4(at_16), // IN
-	.a5(at_17), // IN
-	.a6(at_18), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_4),
+	.a0 /* IN */ (at_12),
+	.a1 /* IN */ (at_13),
+	.a2 /* IN */ (at_14),
+	.a3 /* IN */ (at_15),
+	.a4 /* IN */ (at_16),
+	.a5 /* IN */ (at_17),
+	.a6 /* IN */ (at_18),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_5
 (
-	.z(ahd1_5), // OUT
-	.a0(at_13), // IN
-	.a1(at_14), // IN
-	.a2(at_15), // IN
-	.a3(at_16), // IN
-	.a4(at_17), // IN
-	.a5(at_18), // IN
-	.a6(at_19), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_5),
+	.a0 /* IN */ (at_13),
+	.a1 /* IN */ (at_14),
+	.a2 /* IN */ (at_15),
+	.a3 /* IN */ (at_16),
+	.a4 /* IN */ (at_17),
+	.a5 /* IN */ (at_18),
+	.a6 /* IN */ (at_19),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_6
 (
-	.z(ahd1_6), // OUT
-	.a0(at_14), // IN
-	.a1(at_15), // IN
-	.a2(at_16), // IN
-	.a3(at_17), // IN
-	.a4(at_18), // IN
-	.a5(at_19), // IN
-	.a6(at_20), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_6),
+	.a0 /* IN */ (at_14),
+	.a1 /* IN */ (at_15),
+	.a2 /* IN */ (at_16),
+	.a3 /* IN */ (at_17),
+	.a4 /* IN */ (at_18),
+	.a5 /* IN */ (at_19),
+	.a6 /* IN */ (at_20),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_7
 (
-	.z(ahd1_7), // OUT
-	.a0(at_15), // IN
-	.a1(at_16), // IN
-	.a2(at_17), // IN
-	.a3(at_18), // IN
-	.a4(at_19), // IN
-	.a5(at_20), // IN
-	.a6(at_21), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_7),
+	.a0 /* IN */ (at_15),
+	.a1 /* IN */ (at_16),
+	.a2 /* IN */ (at_17),
+	.a3 /* IN */ (at_18),
+	.a4 /* IN */ (at_19),
+	.a5 /* IN */ (at_20),
+	.a6 /* IN */ (at_21),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_8
 (
-	.z(ahd1_8), // OUT
-	.a0(at_16), // IN
-	.a1(at_17), // IN
-	.a2(at_18), // IN
-	.a3(at_19), // IN
-	.a4(at_20), // IN
-	.a5(at_21), // IN
-	.a6(at_22), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_8),
+	.a0 /* IN */ (at_16),
+	.a1 /* IN */ (at_17),
+	.a2 /* IN */ (at_18),
+	.a3 /* IN */ (at_19),
+	.a4 /* IN */ (at_20),
+	.a5 /* IN */ (at_21),
+	.a6 /* IN */ (at_22),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 mx8 ahd1_from_0_to_9_inst_9
 (
-	.z(ahd1_9), // OUT
-	.a0(at_17), // IN
-	.a1(at_18), // IN
-	.a2(at_19), // IN
-	.a3(at_20), // IN
-	.a4(at_21), // IN
-	.a5(at_22), // IN
-	.a6(at_23), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_9),
+	.a0 /* IN */ (at_17),
+	.a1 /* IN */ (at_18),
+	.a2 /* IN */ (at_19),
+	.a3 /* IN */ (at_20),
+	.a4 /* IN */ (at_21),
+	.a5 /* IN */ (at_22),
+	.a6 /* IN */ (at_23),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 
 // ABUS.NET (399) - ahd1[10] : mx8
 mx8 ahd1_index_10_inst
 (
-	.z(ahd1_10), // OUT
-	.a0(at_18), // IN
-	.a1(at_19), // IN
-	.a2(at_20), // IN
-	.a3(at_21), // IN
-	.a4(at_22), // IN
-	.a5(at_23), // IN
-	.a6(gnd), // IN
-	.a7(gnd), // IN
-	.s0(cw1_0), // IN
-	.s1(cw1_1), // IN
-	.s2(cw1_2)  // IN
+	.z /* OUT */ (ahd1_10),
+	.a0 /* IN */ (at_18),
+	.a1 /* IN */ (at_19),
+	.a2 /* IN */ (at_20),
+	.a3 /* IN */ (at_21),
+	.a4 /* IN */ (at_22),
+	.a5 /* IN */ (at_23),
+	.a6 /* IN */ (gnd),
+	.a7 /* IN */ (gnd),
+	.s0 /* IN */ (cw1_0),
+	.s1 /* IN */ (cw1_1),
+	.s2 /* IN */ (cw1_2)
 );
 
 // ABUS.NET (401) - gnd : tie0
@@ -2206,227 +2386,227 @@ assign gnd = 1'b0;
 // ABUS.NET (403) - ahd[0-10] : mx2
 mx2 ahd_from_0_to_10_inst_0
 (
-	.z(ahd_0), // OUT
-	.a0(ahd0_0), // IN
-	.a1(ahd1_0), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_0),
+	.a0 /* IN */ (ahd0_0),
+	.a1 /* IN */ (ahd1_0),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_1
 (
-	.z(ahd_1), // OUT
-	.a0(ahd0_1), // IN
-	.a1(ahd1_1), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_1),
+	.a0 /* IN */ (ahd0_1),
+	.a1 /* IN */ (ahd1_1),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_2
 (
-	.z(ahd_2), // OUT
-	.a0(ahd0_2), // IN
-	.a1(ahd1_2), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_2),
+	.a0 /* IN */ (ahd0_2),
+	.a1 /* IN */ (ahd1_2),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_3
 (
-	.z(ahd_3), // OUT
-	.a0(ahd0_3), // IN
-	.a1(ahd1_3), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_3),
+	.a0 /* IN */ (ahd0_3),
+	.a1 /* IN */ (ahd1_3),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_4
 (
-	.z(ahd_4), // OUT
-	.a0(ahd0_4), // IN
-	.a1(ahd1_4), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_4),
+	.a0 /* IN */ (ahd0_4),
+	.a1 /* IN */ (ahd1_4),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_5
 (
-	.z(ahd_5), // OUT
-	.a0(ahd0_5), // IN
-	.a1(ahd1_5), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_5),
+	.a0 /* IN */ (ahd0_5),
+	.a1 /* IN */ (ahd1_5),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_6
 (
-	.z(ahd_6), // OUT
-	.a0(ahd0_6), // IN
-	.a1(ahd1_6), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_6),
+	.a0 /* IN */ (ahd0_6),
+	.a1 /* IN */ (ahd1_6),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_7
 (
-	.z(ahd_7), // OUT
-	.a0(ahd0_7), // IN
-	.a1(ahd1_7), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_7),
+	.a0 /* IN */ (ahd0_7),
+	.a1 /* IN */ (ahd1_7),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_8
 (
-	.z(ahd_8), // OUT
-	.a0(ahd0_8), // IN
-	.a1(ahd1_8), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_8),
+	.a0 /* IN */ (ahd0_8),
+	.a1 /* IN */ (ahd1_8),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_9
 (
-	.z(ahd_9), // OUT
-	.a0(ahd0_9), // IN
-	.a1(ahd1_9), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_9),
+	.a0 /* IN */ (ahd0_9),
+	.a1 /* IN */ (ahd1_9),
+	.s /* IN */ (abt_2)
 );
 mx2 ahd_from_0_to_10_inst_10
 (
-	.z(ahd_10), // OUT
-	.a0(ahd0_10), // IN
-	.a1(ahd1_10), // IN
-	.s(abt_2)  // IN
+	.z /* OUT */ (ahd_10),
+	.a0 /* IN */ (ahd0_10),
+	.a1 /* IN */ (ahd1_10),
+	.s /* IN */ (abt_2)
 );
 
 // ABUS.NET (404) - mad[0-10] : mx2
 mx2 mad_from_0_to_10_inst_0
 (
-	.z(mad_0), // OUT
-	.a0(ald_0), // IN
-	.a1(ahd_0), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_0),
+	.a0 /* IN */ (ald_0),
+	.a1 /* IN */ (ahd_0),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_1
 (
-	.z(mad_1), // OUT
-	.a0(ald_1), // IN
-	.a1(ahd_1), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_1),
+	.a0 /* IN */ (ald_1),
+	.a1 /* IN */ (ahd_1),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_2
 (
-	.z(mad_2), // OUT
-	.a0(ald_2), // IN
-	.a1(ahd_2), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_2),
+	.a0 /* IN */ (ald_2),
+	.a1 /* IN */ (ahd_2),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_3
 (
-	.z(mad_3), // OUT
-	.a0(ald_3), // IN
-	.a1(ahd_3), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_3),
+	.a0 /* IN */ (ald_3),
+	.a1 /* IN */ (ahd_3),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_4
 (
-	.z(mad_4), // OUT
-	.a0(ald_4), // IN
-	.a1(ahd_4), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_4),
+	.a0 /* IN */ (ald_4),
+	.a1 /* IN */ (ahd_4),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_5
 (
-	.z(mad_5), // OUT
-	.a0(ald_5), // IN
-	.a1(ahd_5), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_5),
+	.a0 /* IN */ (ald_5),
+	.a1 /* IN */ (ahd_5),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_6
 (
-	.z(mad_6), // OUT
-	.a0(ald_6), // IN
-	.a1(ahd_6), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_6),
+	.a0 /* IN */ (ald_6),
+	.a1 /* IN */ (ahd_6),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_7
 (
-	.z(mad_7), // OUT
-	.a0(ald_7), // IN
-	.a1(ahd_7), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_7),
+	.a0 /* IN */ (ald_7),
+	.a1 /* IN */ (ahd_7),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_8
 (
-	.z(mad_8), // OUT
-	.a0(ald_8), // IN
-	.a1(ahd_8), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_8),
+	.a0 /* IN */ (ald_8),
+	.a1 /* IN */ (ahd_8),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_9
 (
-	.z(mad_9), // OUT
-	.a0(ald_9), // IN
-	.a1(ahd_9), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_9),
+	.a0 /* IN */ (ald_9),
+	.a1 /* IN */ (ahd_9),
+	.s /* IN */ (mux)
 );
 mx2 mad_from_0_to_10_inst_10
 (
-	.z(mad_10), // OUT
-	.a0(ald_10), // IN
-	.a1(ahd_10), // IN
-	.s(mux)  // IN
+	.z /* OUT */ (mad_10),
+	.a0 /* IN */ (ald_10),
+	.a1 /* IN */ (ahd_10),
+	.s /* IN */ (mux)
 );
 
 // ABUS.NET (405) - ma[0-10] : fd1q
 fd1q ma_from_0_to_10_inst_0
 (
-	.q(ma_0_obuf), // OUT
-	.d(mad_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_0_obuf),
+	.d /* IN */ (mad_0),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_1
 (
-	.q(ma_1_obuf), // OUT
-	.d(mad_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_1_obuf),
+	.d /* IN */ (mad_1),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_2
 (
-	.q(ma_2_obuf), // OUT
-	.d(mad_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_2_obuf),
+	.d /* IN */ (mad_2),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_3
 (
-	.q(ma_3_obuf), // OUT
-	.d(mad_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_3_obuf),
+	.d /* IN */ (mad_3),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_4
 (
-	.q(ma_4_obuf), // OUT
-	.d(mad_4), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_4_obuf),
+	.d /* IN */ (mad_4),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_5
 (
-	.q(ma_5_obuf), // OUT
-	.d(mad_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_5_obuf),
+	.d /* IN */ (mad_5),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_6
 (
-	.q(ma_6_obuf), // OUT
-	.d(mad_6), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_6_obuf),
+	.d /* IN */ (mad_6),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_7
 (
-	.q(ma_7_obuf), // OUT
-	.d(mad_7), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_7_obuf),
+	.d /* IN */ (mad_7),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_8
 (
-	.q(ma_8_obuf), // OUT
-	.d(mad_8), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_8_obuf),
+	.d /* IN */ (mad_8),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_9
 (
-	.q(ma_9_obuf), // OUT
-	.d(mad_9), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_9_obuf),
+	.d /* IN */ (mad_9),
+	.cp /* IN */ (clk)
 );
 fd1q ma_from_0_to_10_inst_10
 (
-	.q(ma_10_obuf), // OUT
-	.d(mad_10), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ma_10_obuf),
+	.d /* IN */ (mad_10),
+	.cp /* IN */ (clk)
 );
 
 // ABUS.NET (411) - newrow[0] : an2h
@@ -2444,39 +2624,39 @@ assign bankresl = ~(reset | resrow);
 // ABUS.NET (416) - bank[0] : bank
 bank bank_index_0_inst
 (
-	.match(match_0), // IO
-	.a_0(ahd0_0), // IN
-	.a_1(ahd0_1), // IN
-	.a_2(ahd0_2), // IN
-	.a_3(ahd0_3), // IN
-	.a_4(ahd0_4), // IN
-	.a_5(ahd0_5), // IN
-	.a_6(ahd0_6), // IN
-	.a_7(ahd0_7), // IN
-	.a_8(ahd0_8), // IN
-	.a_9(ahd0_9), // IN
-	.a_10(ahd0_10), // IN
-	.newrow(newrow_0), // IN
-	.resl(bankresl)  // IN
+	.match /* OUT */ (match_0),
+	.a_0 /* IN */ (ahd0_0),
+	.a_1 /* IN */ (ahd0_1),
+	.a_2 /* IN */ (ahd0_2),
+	.a_3 /* IN */ (ahd0_3),
+	.a_4 /* IN */ (ahd0_4),
+	.a_5 /* IN */ (ahd0_5),
+	.a_6 /* IN */ (ahd0_6),
+	.a_7 /* IN */ (ahd0_7),
+	.a_8 /* IN */ (ahd0_8),
+	.a_9 /* IN */ (ahd0_9),
+	.a_10 /* IN */ (ahd0_10),
+	.newrow /* IN */ (newrow_0),
+	.resl /* IN */ (bankresl)
 );
 
 // ABUS.NET (417) - bank[1] : bank
 bank bank_index_1_inst
 (
-	.match(match_1), // IO
-	.a_0(ahd1_0), // IN
-	.a_1(ahd1_1), // IN
-	.a_2(ahd1_2), // IN
-	.a_3(ahd1_3), // IN
-	.a_4(ahd1_4), // IN
-	.a_5(ahd1_5), // IN
-	.a_6(ahd1_6), // IN
-	.a_7(ahd1_7), // IN
-	.a_8(ahd1_8), // IN
-	.a_9(ahd1_9), // IN
-	.a_10(ahd1_10), // IN
-	.newrow(newrow_1), // IN
-	.resl(bankresl)  // IN
+	.match /* OUT */ (match_1),
+	.a_0 /* IN */ (ahd1_0),
+	.a_1 /* IN */ (ahd1_1),
+	.a_2 /* IN */ (ahd1_2),
+	.a_3 /* IN */ (ahd1_3),
+	.a_4 /* IN */ (ahd1_4),
+	.a_5 /* IN */ (ahd1_5),
+	.a_6 /* IN */ (ahd1_6),
+	.a_7 /* IN */ (ahd1_7),
+	.a_8 /* IN */ (ahd1_8),
+	.a_9 /* IN */ (ahd1_9),
+	.a_10 /* IN */ (ahd1_10),
+	.newrow /* IN */ (newrow_1),
+	.resl /* IN */ (bankresl)
 );
 
 // ABUS.NET (419) - m[0] : nd2
@@ -2486,7 +2666,7 @@ assign m_0 = ~(match_0 & abs_3_obuf);
 assign m_1 = ~(match_1 & abs_2_obuf);
 
 // ABUS.NET (421) - match : nd2
-assign match_obuf = ~(m_0 & m_1);
+assign match = ~(m_0 & m_1);
 
 // ABUS.NET (429) - intd0 : nd6
 assign intd0 = ~(dreqin & fc_0 & fc_1 & fc_2 & ainen & m68k_obuf);
@@ -2500,16 +2680,16 @@ assign intd = ~(intd0 & intd1);
 // ABUS.NET (432) - intas : fd1q
 fd1q intas_inst
 (
-	.q(ouracki), // OUT
-	.d(intd), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (ouracki),
+	.d /* IN */ (intd),
+	.cp /* IN */ (clk)
 );
 
 // ABUS.NET (433) - notourack : ivm
 assign notourack = ~ouracki;
 
 // ABUS.NET (434) - ourack : ivh
-assign ourack_obuf = ~notourack;
+assign ourack = ~notourack;
 
 // ABUS.NET (436) - fcl[0] : iv
 assign fcl_0 = ~fc_0;
@@ -2518,10 +2698,10 @@ assign fcl_0 = ~fc_0;
 assign gpuadd = at_13 | at_14;
 
 // ABUS.NET (441) - gpuread : an3
-assign gpuread_obuf = gpuadd & readt & d7a;
+assign gpuread = gpuadd & readt & d7a;
 
 // ABUS.NET (442) - gpuwrite : an3
-assign gpuwrite_obuf = gpuadd & writet & d7a;
+assign gpuwrite = gpuadd & writet & d7a;
 
 // ABUS.NET (443) - wr : iv
 assign writet = ~readt;
@@ -2562,72 +2742,216 @@ assign lbd = ~(lb0 & lb1);
 // ABUS.NET (459) - lbat : mx2
 mx2 lbat_inst
 (
-	.z(lbat), // OUT
-	.a0(lba_obuf), // IN
-	.a1(lbad), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (lbat),
+	.a0 /* IN */ (lba_obuf),
+	.a1 /* IN */ (lbad),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (460) - lbai : fd2qp
 fd2q lbai_inst
 (
-	.q(lba_obuf), // OUT
-	.d(lbat), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (lba_obuf),
+	.d /* IN */ (lbat),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ABUS.NET (462) - lbbt : mx2
 mx2 lbbt_inst
 (
-	.z(lbbt), // OUT
-	.a0(lbb_obuf), // IN
-	.a1(lbbd), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (lbbt),
+	.a0 /* IN */ (lbb_obuf),
+	.a1 /* IN */ (lbbd),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (463) - lbbi : fd2qp
 fd2q lbbi_inst
 (
-	.q(lbb_obuf), // OUT
-	.d(lbbt), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (lbb_obuf),
+	.d /* IN */ (lbbt),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ABUS.NET (465) - lbt : mx2h
 mx2 lbt_inst
 (
-	.z(lbt_obuf), // OUT
-	.a0(lb), // IN
-	.a1(lbd), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (lbt_obuf),
+	.a0 /* IN */ (lb),
+	.a1 /* IN */ (lbd),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (466) - lbi : fd2qp
 fd2q lbi_inst
 (
-	.q(lb), // OUT
-	.d(lbt_obuf), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (lb),
+	.d /* IN */ (lbt_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // ABUS.NET (468) - clutt : mx2h
 mx2 clutt_inst
 (
-	.z(clutt_obuf), // OUT
-	.a0(clut_obuf), // IN
-	.a1(clutd), // IN
-	.s(ack)  // IN
+	.z /* OUT */ (clutt_obuf),
+	.a0 /* IN */ (clut_obuf),
+	.a1 /* IN */ (clutd),
+	.s /* IN */ (ack)
 );
 
 // ABUS.NET (469) - cluti : fd2qp
 fd2q cluti_inst
 (
-	.q(clut_obuf), // OUT
-	.d(clutt_obuf), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (clut_obuf),
+	.d /* IN */ (clutt_obuf),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
+
+// --- Compiler-generated PE for BUS dr[0]
+assign dr_0_out =
+	(ts_pe_272_a0_oe) ? ts_pe_272_a0_out :
+	(ts_pe_272_a1_oe) ? ts_pe_272_a1_out :
+	1'bz;
+assign dr_0_oe = ts_pe_272_a0_oe | ts_pe_272_a1_oe;
+assign ts_pe_272_a0_in = dr_0_in;
+assign ts_pe_272_a1_in = dr_0_in;
+
+// --- Compiler-generated PE for BUS dr[1]
+assign dr_1_out =
+	(ts_pe_273_a0_oe) ? ts_pe_273_a0_out :
+	(ts_pe_273_a1_oe) ? ts_pe_273_a1_out :
+	1'bz;
+assign dr_1_oe = ts_pe_273_a0_oe | ts_pe_273_a1_oe;
+assign ts_pe_273_a0_in = dr_1_in;
+assign ts_pe_273_a1_in = dr_1_in;
+
+// --- Compiler-generated PE for BUS dr[2]
+assign dr_2_out =
+	(ts_pe_274_a0_oe) ? ts_pe_274_a0_out :
+	(ts_pe_274_a1_oe) ? ts_pe_274_a1_out :
+	1'bz;
+assign dr_2_oe = ts_pe_274_a0_oe | ts_pe_274_a1_oe;
+assign ts_pe_274_a0_in = dr_2_in;
+assign ts_pe_274_a1_in = dr_2_in;
+
+// --- Compiler-generated PE for BUS dr[3]
+assign dr_3_out =
+	(ts_pe_275_a0_oe) ? ts_pe_275_a0_out :
+	(ts_pe_275_a1_oe) ? ts_pe_275_a1_out :
+	1'bz;
+assign dr_3_oe = ts_pe_275_a0_oe | ts_pe_275_a1_oe;
+assign ts_pe_275_a0_in = dr_3_in;
+assign ts_pe_275_a1_in = dr_3_in;
+
+// --- Compiler-generated PE for BUS dr[4]
+assign dr_4_out =
+	(ts_pe_276_a0_oe) ? ts_pe_276_a0_out :
+	(ts_pe_276_a1_oe) ? ts_pe_276_a1_out :
+	1'bz;
+assign dr_4_oe = ts_pe_276_a0_oe | ts_pe_276_a1_oe;
+assign ts_pe_276_a0_in = dr_4_in;
+assign ts_pe_276_a1_in = dr_4_in;
+
+// --- Compiler-generated PE for BUS dr[5]
+assign dr_5_out =
+	(ts_pe_277_a0_oe) ? ts_pe_277_a0_out :
+	(ts_pe_277_a1_oe) ? ts_pe_277_a1_out :
+	1'bz;
+assign dr_5_oe = ts_pe_277_a0_oe | ts_pe_277_a1_oe;
+assign ts_pe_277_a0_in = dr_5_in;
+assign ts_pe_277_a1_in = dr_5_in;
+
+// --- Compiler-generated PE for BUS dr[6]
+assign dr_6_out =
+	(ts_pe_278_a0_oe) ? ts_pe_278_a0_out :
+	(ts_pe_278_a1_oe) ? ts_pe_278_a1_out :
+	1'bz;
+assign dr_6_oe = ts_pe_278_a0_oe | ts_pe_278_a1_oe;
+assign ts_pe_278_a0_in = dr_6_in;
+assign ts_pe_278_a1_in = dr_6_in;
+
+// --- Compiler-generated PE for BUS dr[7]
+assign dr_7_out =
+	(ts_pe_279_a0_oe) ? ts_pe_279_a0_out :
+	(ts_pe_279_a1_oe) ? ts_pe_279_a1_out :
+	1'bz;
+assign dr_7_oe = ts_pe_279_a0_oe | ts_pe_279_a1_oe;
+assign ts_pe_279_a0_in = dr_7_in;
+assign ts_pe_279_a1_in = dr_7_in;
+
+// --- Compiler-generated PE for BUS dr[8]
+assign dr_8_out =
+	(ts_pe_280_a0_oe) ? ts_pe_280_a0_out :
+	(ts_pe_280_a1_oe) ? ts_pe_280_a1_out :
+	1'bz;
+assign dr_8_oe = ts_pe_280_a0_oe | ts_pe_280_a1_oe;
+assign ts_pe_280_a0_in = dr_8_in;
+assign ts_pe_280_a1_in = dr_8_in;
+
+// --- Compiler-generated PE for BUS dr[9]
+assign dr_9_out =
+	(ts_pe_281_a0_oe) ? ts_pe_281_a0_out :
+	(ts_pe_281_a1_oe) ? ts_pe_281_a1_out :
+	1'bz;
+assign dr_9_oe = ts_pe_281_a0_oe | ts_pe_281_a1_oe;
+assign ts_pe_281_a0_in = dr_9_in;
+assign ts_pe_281_a1_in = dr_9_in;
+
+// --- Compiler-generated PE for BUS dr[10]
+assign dr_10_out =
+	(ts_pe_282_a0_oe) ? ts_pe_282_a0_out :
+	(ts_pe_282_a1_oe) ? ts_pe_282_a1_out :
+	1'bz;
+assign dr_10_oe = ts_pe_282_a0_oe | ts_pe_282_a1_oe;
+assign ts_pe_282_a0_in = dr_10_in;
+assign ts_pe_282_a1_in = dr_10_in;
+
+// --- Compiler-generated PE for BUS dr[11]
+assign dr_11_out =
+	(ts_pe_283_a0_oe) ? ts_pe_283_a0_out :
+	(ts_pe_283_a1_oe) ? ts_pe_283_a1_out :
+	1'bz;
+assign dr_11_oe = ts_pe_283_a0_oe | ts_pe_283_a1_oe;
+assign ts_pe_283_a0_in = dr_11_in;
+assign ts_pe_283_a1_in = dr_11_in;
+
+// --- Compiler-generated PE for BUS dr[12]
+assign dr_12_out =
+	(ts_pe_284_a0_oe) ? ts_pe_284_a0_out :
+	(ts_pe_284_a1_oe) ? ts_pe_284_a1_out :
+	1'bz;
+assign dr_12_oe = ts_pe_284_a0_oe | ts_pe_284_a1_oe;
+assign ts_pe_284_a0_in = dr_12_in;
+assign ts_pe_284_a1_in = dr_12_in;
+
+// --- Compiler-generated PE for BUS dr[13]
+assign dr_13_out =
+	(ts_pe_285_a0_oe) ? ts_pe_285_a0_out :
+	(ts_pe_285_a1_oe) ? ts_pe_285_a1_out :
+	1'bz;
+assign dr_13_oe = ts_pe_285_a0_oe | ts_pe_285_a1_oe;
+assign ts_pe_285_a0_in = dr_13_in;
+assign ts_pe_285_a1_in = dr_13_in;
+
+// --- Compiler-generated PE for BUS dr[14]
+assign dr_14_out =
+	(ts_pe_286_a0_oe) ? ts_pe_286_a0_out :
+	(ts_pe_286_a1_oe) ? ts_pe_286_a1_out :
+	1'bz;
+assign dr_14_oe = ts_pe_286_a0_oe | ts_pe_286_a1_oe;
+assign ts_pe_286_a0_in = dr_14_in;
+assign ts_pe_286_a1_in = dr_14_in;
+
+// --- Compiler-generated PE for BUS dr[15]
+assign dr_15_out =
+	(ts_pe_287_a0_oe) ? ts_pe_287_a0_out :
+	(ts_pe_287_a1_oe) ? ts_pe_287_a1_out :
+	1'bz;
+assign dr_15_oe = ts_pe_287_a0_oe | ts_pe_287_a1_oe;
+assign ts_pe_287_a0_in = dr_15_in;
+assign ts_pe_287_a1_in = dr_15_in;
 endmodule

@@ -106,73 +106,73 @@ assign inc_3 = mwidth_3 & maddw;
 // SYSTOLIC.NET (258) - sum[0] : ha1
 ha1 sum_index_0_inst
 (
-	.s(sum_0), // OUT
-	.co(carry_0), // OUT
-	.a(maddr_0_obuf), // IN
-	.b(inc_0)  // IN
+	.s /* OUT */ (sum_0),
+	.co /* OUT */ (carry_0),
+	.a /* IN */ (maddr_0_obuf),
+	.b /* IN */ (inc_0)
 );
 
 // SYSTOLIC.NET (259) - sum[1-3] : fa1
 fa1 sum_from_1_to_3_inst_0
 (
-	.s(sum_1), // OUT
-	.co(carry_1), // OUT
-	.ci(carry_0), // IN
-	.a(maddr_1_obuf), // IN
-	.b(inc_1)  // IN
+	.s /* OUT */ (sum_1),
+	.co /* OUT */ (carry_1),
+	.ci /* IN */ (carry_0),
+	.a /* IN */ (maddr_1_obuf),
+	.b /* IN */ (inc_1)
 );
 fa1 sum_from_1_to_3_inst_1
 (
-	.s(sum_2), // OUT
-	.co(carry_2), // OUT
-	.ci(carry_1), // IN
-	.a(maddr_2_obuf), // IN
-	.b(inc_2)  // IN
+	.s /* OUT */ (sum_2),
+	.co /* OUT */ (carry_2),
+	.ci /* IN */ (carry_1),
+	.a /* IN */ (maddr_2_obuf),
+	.b /* IN */ (inc_2)
 );
 fa1 sum_from_1_to_3_inst_2
 (
-	.s(sum_3), // OUT
-	.co(carry_3), // OUT
-	.ci(carry_2), // IN
-	.a(maddr_3_obuf), // IN
-	.b(inc_3)  // IN
+	.s /* OUT */ (sum_3),
+	.co /* OUT */ (carry_3),
+	.ci /* IN */ (carry_2),
+	.a /* IN */ (maddr_3_obuf),
+	.b /* IN */ (inc_3)
 );
 
 // SYSTOLIC.NET (261) - sum[4-8] : ha1
 ha1 sum_from_4_to_8_inst_0
 (
-	.s(sum_4), // OUT
-	.co(carry_4), // OUT
-	.a(carry_3), // IN
-	.b(maddr_4_obuf)  // IN
+	.s /* OUT */ (sum_4),
+	.co /* OUT */ (carry_4),
+	.a /* IN */ (carry_3),
+	.b /* IN */ (maddr_4_obuf)
 );
 ha1 sum_from_4_to_8_inst_1
 (
-	.s(sum_5), // OUT
-	.co(carry_5), // OUT
-	.a(carry_4), // IN
-	.b(maddr_5_obuf)  // IN
+	.s /* OUT */ (sum_5),
+	.co /* OUT */ (carry_5),
+	.a /* IN */ (carry_4),
+	.b /* IN */ (maddr_5_obuf)
 );
 ha1 sum_from_4_to_8_inst_2
 (
-	.s(sum_6), // OUT
-	.co(carry_6), // OUT
-	.a(carry_5), // IN
-	.b(maddr_6_obuf)  // IN
+	.s /* OUT */ (sum_6),
+	.co /* OUT */ (carry_6),
+	.a /* IN */ (carry_5),
+	.b /* IN */ (maddr_6_obuf)
 );
 ha1 sum_from_4_to_8_inst_3
 (
-	.s(sum_7), // OUT
-	.co(carry_7), // OUT
-	.a(carry_6), // IN
-	.b(maddr_7_obuf)  // IN
+	.s /* OUT */ (sum_7),
+	.co /* OUT */ (carry_7),
+	.a /* IN */ (carry_6),
+	.b /* IN */ (maddr_7_obuf)
 );
 ha1 sum_from_4_to_8_inst_4
 (
-	.s(sum_8), // OUT
-	.co(carry_8), // OUT
-	.a(carry_7), // IN
-	.b(maddr_8_obuf)  // IN
+	.s /* OUT */ (sum_8),
+	.co /* OUT */ (carry_8),
+	.a /* IN */ (carry_7),
+	.b /* IN */ (maddr_8_obuf)
 );
 
 // SYSTOLIC.NET (263) - sum[9] : eo
@@ -181,164 +181,164 @@ assign sum_9 = maddr_9_obuf ^ carry_8;
 // SYSTOLIC.NET (265) - cnti[0-9] : mx4
 mx4 cnti_from_0_to_9_inst_0
 (
-	.z(cnti_0), // OUT
-	.a0(maddr_0_obuf), // IN
-	.a1(sum_0), // IN
-	.a2(gpu_din_2), // IN
-	.a3(gpu_din_2), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_0),
+	.a0 /* IN */ (maddr_0_obuf),
+	.a1 /* IN */ (sum_0),
+	.a2 /* IN */ (gpu_din_2),
+	.a3 /* IN */ (gpu_din_2),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_1
 (
-	.z(cnti_1), // OUT
-	.a0(maddr_1_obuf), // IN
-	.a1(sum_1), // IN
-	.a2(gpu_din_3), // IN
-	.a3(gpu_din_3), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_1),
+	.a0 /* IN */ (maddr_1_obuf),
+	.a1 /* IN */ (sum_1),
+	.a2 /* IN */ (gpu_din_3),
+	.a3 /* IN */ (gpu_din_3),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_2
 (
-	.z(cnti_2), // OUT
-	.a0(maddr_2_obuf), // IN
-	.a1(sum_2), // IN
-	.a2(gpu_din_4), // IN
-	.a3(gpu_din_4), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_2),
+	.a0 /* IN */ (maddr_2_obuf),
+	.a1 /* IN */ (sum_2),
+	.a2 /* IN */ (gpu_din_4),
+	.a3 /* IN */ (gpu_din_4),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_3
 (
-	.z(cnti_3), // OUT
-	.a0(maddr_3_obuf), // IN
-	.a1(sum_3), // IN
-	.a2(gpu_din_5), // IN
-	.a3(gpu_din_5), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_3),
+	.a0 /* IN */ (maddr_3_obuf),
+	.a1 /* IN */ (sum_3),
+	.a2 /* IN */ (gpu_din_5),
+	.a3 /* IN */ (gpu_din_5),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_4
 (
-	.z(cnti_4), // OUT
-	.a0(maddr_4_obuf), // IN
-	.a1(sum_4), // IN
-	.a2(gpu_din_6), // IN
-	.a3(gpu_din_6), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_4),
+	.a0 /* IN */ (maddr_4_obuf),
+	.a1 /* IN */ (sum_4),
+	.a2 /* IN */ (gpu_din_6),
+	.a3 /* IN */ (gpu_din_6),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_5
 (
-	.z(cnti_5), // OUT
-	.a0(maddr_5_obuf), // IN
-	.a1(sum_5), // IN
-	.a2(gpu_din_7), // IN
-	.a3(gpu_din_7), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_5),
+	.a0 /* IN */ (maddr_5_obuf),
+	.a1 /* IN */ (sum_5),
+	.a2 /* IN */ (gpu_din_7),
+	.a3 /* IN */ (gpu_din_7),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_6
 (
-	.z(cnti_6), // OUT
-	.a0(maddr_6_obuf), // IN
-	.a1(sum_6), // IN
-	.a2(gpu_din_8), // IN
-	.a3(gpu_din_8), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_6),
+	.a0 /* IN */ (maddr_6_obuf),
+	.a1 /* IN */ (sum_6),
+	.a2 /* IN */ (gpu_din_8),
+	.a3 /* IN */ (gpu_din_8),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_7
 (
-	.z(cnti_7), // OUT
-	.a0(maddr_7_obuf), // IN
-	.a1(sum_7), // IN
-	.a2(gpu_din_9), // IN
-	.a3(gpu_din_9), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_7),
+	.a0 /* IN */ (maddr_7_obuf),
+	.a1 /* IN */ (sum_7),
+	.a2 /* IN */ (gpu_din_9),
+	.a3 /* IN */ (gpu_din_9),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_8
 (
-	.z(cnti_8), // OUT
-	.a0(maddr_8_obuf), // IN
-	.a1(sum_8), // IN
-	.a2(gpu_din_10), // IN
-	.a3(gpu_din_10), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_8),
+	.a0 /* IN */ (maddr_8_obuf),
+	.a1 /* IN */ (sum_8),
+	.a2 /* IN */ (gpu_din_10),
+	.a3 /* IN */ (gpu_din_10),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 mx4 cnti_from_0_to_9_inst_9
 (
-	.z(cnti_9), // OUT
-	.a0(maddr_9_obuf), // IN
-	.a1(sum_9), // IN
-	.a2(gpu_din_11), // IN
-	.a3(gpu_din_11), // IN
-	.s0(cnten), // IN
-	.s1(cntld)  // IN
+	.z /* OUT */ (cnti_9),
+	.a0 /* IN */ (maddr_9_obuf),
+	.a1 /* IN */ (sum_9),
+	.a2 /* IN */ (gpu_din_11),
+	.a3 /* IN */ (gpu_din_11),
+	.s0 /* IN */ (cnten),
+	.s1 /* IN */ (cntld)
 );
 
 // SYSTOLIC.NET (269) - maddr[0-9] : fd1q
 fd1q maddr_from_0_to_9_inst_0
 (
-	.q(maddr_0_obuf), // OUT
-	.d(cnti_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_0_obuf),
+	.d /* IN */ (cnti_0),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_1
 (
-	.q(maddr_1_obuf), // OUT
-	.d(cnti_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_1_obuf),
+	.d /* IN */ (cnti_1),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_2
 (
-	.q(maddr_2_obuf), // OUT
-	.d(cnti_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_2_obuf),
+	.d /* IN */ (cnti_2),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_3
 (
-	.q(maddr_3_obuf), // OUT
-	.d(cnti_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_3_obuf),
+	.d /* IN */ (cnti_3),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_4
 (
-	.q(maddr_4_obuf), // OUT
-	.d(cnti_4), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_4_obuf),
+	.d /* IN */ (cnti_4),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_5
 (
-	.q(maddr_5_obuf), // OUT
-	.d(cnti_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_5_obuf),
+	.d /* IN */ (cnti_5),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_6
 (
-	.q(maddr_6_obuf), // OUT
-	.d(cnti_6), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_6_obuf),
+	.d /* IN */ (cnti_6),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_7
 (
-	.q(maddr_7_obuf), // OUT
-	.d(cnti_7), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_7_obuf),
+	.d /* IN */ (cnti_7),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_8
 (
-	.q(maddr_8_obuf), // OUT
-	.d(cnti_8), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_8_obuf),
+	.d /* IN */ (cnti_8),
+	.cp /* IN */ (clk)
 );
 fd1q maddr_from_0_to_9_inst_9
 (
-	.q(maddr_9_obuf), // OUT
-	.d(cnti_9), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (maddr_9_obuf),
+	.d /* IN */ (cnti_9),
+	.cp /* IN */ (clk)
 );
 endmodule

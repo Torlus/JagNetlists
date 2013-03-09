@@ -13,12 +13,13 @@ public class Ts extends Entity {
 
 	public Ts() {
 		// 260c_pri_e.pdf - CTSXL
-		ios.add(new Signal("z", SignalType.TRI)); // warning
-		
-		ios.add(new Signal("a", SignalType.IN));		
+		Signal z = new Signal("z", SignalType.BUS);
+		ios.add(z); // warning
+
+		ios.add(new Signal("a", SignalType.IN));
 		ios.add(new Signal("e", SignalType.IN));
 	}
-	
+
 	@Override
 	public String vhdlInstance(Instance inst) {
 		String vhdl = "$z$ <= $a$ when $e$ = '1' else 'Z';\n";
@@ -27,7 +28,10 @@ public class Ts extends Entity {
 
 	@Override
 	public String verilogInstance(Instance inst) {
-		String vlog = "assign $z$ = ($e$) ? $a$ : 1'bz;\n";
+		String vlog = "assign " + inst.wires.get(0).verilogWireName() + " = $a$;\n";
+		vlog = vlog.replaceAll("##SIG##", "out");
+		vlog += "assign " + inst.wires.get(0).verilogWireName() + " = $e$;\n";
+		vlog = vlog.replaceAll("##SIG##", "oe");
 		return verilogMap(inst, vlog);
 	}
 

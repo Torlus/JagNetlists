@@ -2,12 +2,12 @@
 
 module brlshift
 (
-	output[0:31] brlq;
+	output [0:31] brlq;
 	output brl_carry,
 	input brlmux_0,
 	input brlmux_1,
-	input[0:31] srcdp;
-	input[0:31] brld
+	input [0:31] srcdp;
+	input [0:31] brld
 );
 wire zero;
 wire brlmux_n_0;
@@ -102,28 +102,28 @@ assign srcdpc_0 = srcdp[0];
 // ARITH.NET (416) - srcdc[1] : ha1
 ha1 srcdc_index_1_inst
 (
-	.s(srcdpc_1), // OUT
-	.co(scc_1), // OUT
-	.a(srcdp_n_1), // IN
-	.b(srcdp_n_0)  // IN
+	.s /* OUT */ (srcdpc_1),
+	.co /* OUT */ (scc_1),
+	.a /* IN */ (srcdp_n_1),
+	.b /* IN */ (srcdp_n_0)
 );
 
 // ARITH.NET (417) - srcdc[2] : ha1
 ha1 srcdc_index_2_inst
 (
-	.s(srcdpc_2), // OUT
-	.co(scc_2), // OUT
-	.a(srcdp_n_2), // IN
-	.b(scc_1)  // IN
+	.s /* OUT */ (srcdpc_2),
+	.co /* OUT */ (scc_2),
+	.a /* IN */ (srcdp_n_2),
+	.b /* IN */ (scc_1)
 );
 
 // ARITH.NET (418) - srcdc[3] : ha1
 ha1 srcdc_index_3_inst
 (
-	.s(srcdpc_3), // OUT
-	.co(scc_3), // OUT
-	.a(srcdp_n_3), // IN
-	.b(scc_2)  // IN
+	.s /* OUT */ (srcdpc_3),
+	.co /* OUT */ (scc_3),
+	.a /* IN */ (srcdp_n_3),
+	.b /* IN */ (scc_2)
 );
 
 // ARITH.NET (419) - srcdc[4] : eo
@@ -138,33 +138,33 @@ assign rotate = ~rotate_n;
 // ARITH.NET (436) - uflowt : nr26
 nr26 uflowt_inst
 (
-	.q(uflowt), // OUT
-	.a_0(srcdp[5]), // IN
-	.a_1(srcdp[6]), // IN
-	.a_2(srcdp[7]), // IN
-	.a_3(srcdp[8]), // IN
-	.a_4(srcdp[9]), // IN
-	.a_5(srcdp[10]), // IN
-	.a_6(srcdp[11]), // IN
-	.a_7(srcdp[12]), // IN
-	.a_8(srcdp[13]), // IN
-	.a_9(srcdp[14]), // IN
-	.a_10(srcdp[15]), // IN
-	.a_11(srcdp[16]), // IN
-	.a_12(srcdp[17]), // IN
-	.a_13(srcdp[18]), // IN
-	.a_14(srcdp[19]), // IN
-	.a_15(srcdp[20]), // IN
-	.a_16(srcdp[21]), // IN
-	.a_17(srcdp[22]), // IN
-	.a_18(srcdp[23]), // IN
-	.a_19(srcdp[24]), // IN
-	.a_20(srcdp[25]), // IN
-	.a_21(srcdp[26]), // IN
-	.a_22(srcdp[27]), // IN
-	.a_23(srcdp[28]), // IN
-	.a_24(srcdp[29]), // IN
-	.a_25(srcdp[30])  // IN
+	.q /* OUT */ (uflowt),
+	.a_0 /* IN */ (srcdp[5]),
+	.a_1 /* IN */ (srcdp[6]),
+	.a_2 /* IN */ (srcdp[7]),
+	.a_3 /* IN */ (srcdp[8]),
+	.a_4 /* IN */ (srcdp[9]),
+	.a_5 /* IN */ (srcdp[10]),
+	.a_6 /* IN */ (srcdp[11]),
+	.a_7 /* IN */ (srcdp[12]),
+	.a_8 /* IN */ (srcdp[13]),
+	.a_9 /* IN */ (srcdp[14]),
+	.a_10 /* IN */ (srcdp[15]),
+	.a_11 /* IN */ (srcdp[16]),
+	.a_12 /* IN */ (srcdp[17]),
+	.a_13 /* IN */ (srcdp[18]),
+	.a_14 /* IN */ (srcdp[19]),
+	.a_15 /* IN */ (srcdp[20]),
+	.a_16 /* IN */ (srcdp[21]),
+	.a_17 /* IN */ (srcdp[22]),
+	.a_18 /* IN */ (srcdp[23]),
+	.a_19 /* IN */ (srcdp[24]),
+	.a_20 /* IN */ (srcdp[25]),
+	.a_21 /* IN */ (srcdp[26]),
+	.a_22 /* IN */ (srcdp[27]),
+	.a_23 /* IN */ (srcdp[28]),
+	.a_24 /* IN */ (srcdp[29]),
+	.a_25 /* IN */ (srcdp[30])
 );
 
 // ARITH.NET (437) - uflow : nr2
@@ -173,33 +173,33 @@ assign uflow = ~(srcdp[31] | uflowt);
 // ARITH.NET (443) - b5t30h\ : nd26
 nd26 b5t30h_n_inst
 (
-	.q(b5t30h_n), // OUT
-	.a_0(srcdp[5]), // IN
-	.a_1(srcdp[6]), // IN
-	.a_2(srcdp[7]), // IN
-	.a_3(srcdp[8]), // IN
-	.a_4(srcdp[9]), // IN
-	.a_5(srcdp[10]), // IN
-	.a_6(srcdp[11]), // IN
-	.a_7(srcdp[12]), // IN
-	.a_8(srcdp[13]), // IN
-	.a_9(srcdp[14]), // IN
-	.a_10(srcdp[15]), // IN
-	.a_11(srcdp[16]), // IN
-	.a_12(srcdp[17]), // IN
-	.a_13(srcdp[18]), // IN
-	.a_14(srcdp[19]), // IN
-	.a_15(srcdp[20]), // IN
-	.a_16(srcdp[21]), // IN
-	.a_17(srcdp[22]), // IN
-	.a_18(srcdp[23]), // IN
-	.a_19(srcdp[24]), // IN
-	.a_20(srcdp[25]), // IN
-	.a_21(srcdp[26]), // IN
-	.a_22(srcdp[27]), // IN
-	.a_23(srcdp[28]), // IN
-	.a_24(srcdp[29]), // IN
-	.a_25(srcdp[30])  // IN
+	.q /* OUT */ (b5t30h_n),
+	.a_0 /* IN */ (srcdp[5]),
+	.a_1 /* IN */ (srcdp[6]),
+	.a_2 /* IN */ (srcdp[7]),
+	.a_3 /* IN */ (srcdp[8]),
+	.a_4 /* IN */ (srcdp[9]),
+	.a_5 /* IN */ (srcdp[10]),
+	.a_6 /* IN */ (srcdp[11]),
+	.a_7 /* IN */ (srcdp[12]),
+	.a_8 /* IN */ (srcdp[13]),
+	.a_9 /* IN */ (srcdp[14]),
+	.a_10 /* IN */ (srcdp[15]),
+	.a_11 /* IN */ (srcdp[16]),
+	.a_12 /* IN */ (srcdp[17]),
+	.a_13 /* IN */ (srcdp[18]),
+	.a_14 /* IN */ (srcdp[19]),
+	.a_15 /* IN */ (srcdp[20]),
+	.a_16 /* IN */ (srcdp[21]),
+	.a_17 /* IN */ (srcdp[22]),
+	.a_18 /* IN */ (srcdp[23]),
+	.a_19 /* IN */ (srcdp[24]),
+	.a_20 /* IN */ (srcdp[25]),
+	.a_21 /* IN */ (srcdp[26]),
+	.a_22 /* IN */ (srcdp[27]),
+	.a_23 /* IN */ (srcdp[28]),
+	.a_24 /* IN */ (srcdp[29]),
+	.a_25 /* IN */ (srcdp[30])
 );
 
 // ARITH.NET (444) - b5t30h : iv
@@ -208,12 +208,12 @@ assign b5t30h = ~b5t30h_n;
 // ARITH.NET (445) - shzero : nr5
 nr5 shzero_inst
 (
-	.z(shzero), // IO
-	.a(srcdp[0]), // IN
-	.b(srcdp[1]), // IN
-	.c(srcdp[2]), // IN
-	.d(srcdp[3]), // IN
-	.e(srcdp[4])  // IN
+	.z /* OUT */ (shzero),
+	.a /* IN */ (srcdp[0]),
+	.b /* IN */ (srcdp[1]),
+	.c /* IN */ (srcdp[2]),
+	.d /* IN */ (srcdp[3]),
+	.e /* IN */ (srcdp[4])
 );
 
 // ARITH.NET (446) - shzero\ : iv
@@ -256,78 +256,78 @@ assign mux_1 = ~(ashr_n & rotate_n);
 // ARITH.NET (486) - brl : barrel32
 barrel32 brl_inst
 (
-	.z_0(z_0), // OUT
-	.z_1(z_1), // OUT
-	.z_2(z_2), // OUT
-	.z_3(z_3), // OUT
-	.z_4(z_4), // OUT
-	.z_5(z_5), // OUT
-	.z_6(z_6), // OUT
-	.z_7(z_7), // OUT
-	.z_8(z_8), // OUT
-	.z_9(z_9), // OUT
-	.z_10(z_10), // OUT
-	.z_11(z_11), // OUT
-	.z_12(z_12), // OUT
-	.z_13(z_13), // OUT
-	.z_14(z_14), // OUT
-	.z_15(z_15), // OUT
-	.z_16(z_16), // OUT
-	.z_17(z_17), // OUT
-	.z_18(z_18), // OUT
-	.z_19(z_19), // OUT
-	.z_20(z_20), // OUT
-	.z_21(z_21), // OUT
-	.z_22(z_22), // OUT
-	.z_23(z_23), // OUT
-	.z_24(z_24), // OUT
-	.z_25(z_25), // OUT
-	.z_26(z_26), // OUT
-	.z_27(z_27), // OUT
-	.z_28(z_28), // OUT
-	.z_29(z_29), // OUT
-	.z_30(z_30), // OUT
-	.z_31(z_31), // OUT
-	.mux_0(mux_0), // IN
-	.mux_1(mux_1), // IN
-	.sft_0(shiftcnt_0), // IN
-	.sft_1(shiftcnt_1), // IN
-	.sft_2(shiftcnt_2), // IN
-	.sft_3(shiftcnt_3), // IN
-	.sft_4(shiftcnt_4), // IN
-	.flin(zero), // IN
-	.a_0(brld[0]), // IN
-	.a_1(brld[1]), // IN
-	.a_2(brld[2]), // IN
-	.a_3(brld[3]), // IN
-	.a_4(brld[4]), // IN
-	.a_5(brld[5]), // IN
-	.a_6(brld[6]), // IN
-	.a_7(brld[7]), // IN
-	.a_8(brld[8]), // IN
-	.a_9(brld[9]), // IN
-	.a_10(brld[10]), // IN
-	.a_11(brld[11]), // IN
-	.a_12(brld[12]), // IN
-	.a_13(brld[13]), // IN
-	.a_14(brld[14]), // IN
-	.a_15(brld[15]), // IN
-	.a_16(brld[16]), // IN
-	.a_17(brld[17]), // IN
-	.a_18(brld[18]), // IN
-	.a_19(brld[19]), // IN
-	.a_20(brld[20]), // IN
-	.a_21(brld[21]), // IN
-	.a_22(brld[22]), // IN
-	.a_23(brld[23]), // IN
-	.a_24(brld[24]), // IN
-	.a_25(brld[25]), // IN
-	.a_26(brld[26]), // IN
-	.a_27(brld[27]), // IN
-	.a_28(brld[28]), // IN
-	.a_29(brld[29]), // IN
-	.a_30(brld[30]), // IN
-	.a_31(brld[31])  // IN
+	.z_0 /* OUT */ (z_0),
+	.z_1 /* OUT */ (z_1),
+	.z_2 /* OUT */ (z_2),
+	.z_3 /* OUT */ (z_3),
+	.z_4 /* OUT */ (z_4),
+	.z_5 /* OUT */ (z_5),
+	.z_6 /* OUT */ (z_6),
+	.z_7 /* OUT */ (z_7),
+	.z_8 /* OUT */ (z_8),
+	.z_9 /* OUT */ (z_9),
+	.z_10 /* OUT */ (z_10),
+	.z_11 /* OUT */ (z_11),
+	.z_12 /* OUT */ (z_12),
+	.z_13 /* OUT */ (z_13),
+	.z_14 /* OUT */ (z_14),
+	.z_15 /* OUT */ (z_15),
+	.z_16 /* OUT */ (z_16),
+	.z_17 /* OUT */ (z_17),
+	.z_18 /* OUT */ (z_18),
+	.z_19 /* OUT */ (z_19),
+	.z_20 /* OUT */ (z_20),
+	.z_21 /* OUT */ (z_21),
+	.z_22 /* OUT */ (z_22),
+	.z_23 /* OUT */ (z_23),
+	.z_24 /* OUT */ (z_24),
+	.z_25 /* OUT */ (z_25),
+	.z_26 /* OUT */ (z_26),
+	.z_27 /* OUT */ (z_27),
+	.z_28 /* OUT */ (z_28),
+	.z_29 /* OUT */ (z_29),
+	.z_30 /* OUT */ (z_30),
+	.z_31 /* OUT */ (z_31),
+	.mux_0 /* IN */ (mux_0),
+	.mux_1 /* IN */ (mux_1),
+	.sft_0 /* IN */ (shiftcnt_0),
+	.sft_1 /* IN */ (shiftcnt_1),
+	.sft_2 /* IN */ (shiftcnt_2),
+	.sft_3 /* IN */ (shiftcnt_3),
+	.sft_4 /* IN */ (shiftcnt_4),
+	.flin /* IN */ (zero),
+	.a_0 /* IN */ (brld[0]),
+	.a_1 /* IN */ (brld[1]),
+	.a_2 /* IN */ (brld[2]),
+	.a_3 /* IN */ (brld[3]),
+	.a_4 /* IN */ (brld[4]),
+	.a_5 /* IN */ (brld[5]),
+	.a_6 /* IN */ (brld[6]),
+	.a_7 /* IN */ (brld[7]),
+	.a_8 /* IN */ (brld[8]),
+	.a_9 /* IN */ (brld[9]),
+	.a_10 /* IN */ (brld[10]),
+	.a_11 /* IN */ (brld[11]),
+	.a_12 /* IN */ (brld[12]),
+	.a_13 /* IN */ (brld[13]),
+	.a_14 /* IN */ (brld[14]),
+	.a_15 /* IN */ (brld[15]),
+	.a_16 /* IN */ (brld[16]),
+	.a_17 /* IN */ (brld[17]),
+	.a_18 /* IN */ (brld[18]),
+	.a_19 /* IN */ (brld[19]),
+	.a_20 /* IN */ (brld[20]),
+	.a_21 /* IN */ (brld[21]),
+	.a_22 /* IN */ (brld[22]),
+	.a_23 /* IN */ (brld[23]),
+	.a_24 /* IN */ (brld[24]),
+	.a_25 /* IN */ (brld[25]),
+	.a_26 /* IN */ (brld[26]),
+	.a_27 /* IN */ (brld[27]),
+	.a_28 /* IN */ (brld[28]),
+	.a_29 /* IN */ (brld[29]),
+	.a_30 /* IN */ (brld[30]),
+	.a_31 /* IN */ (brld[31])
 );
 
 // ARITH.NET (489) - brlq : join
@@ -367,9 +367,9 @@ assign brlq[31] = z_31;
 // ARITH.NET (494) - brl_carry : mx2
 mx2 brl_carry_inst
 (
-	.z(brl_carry), // OUT
-	.a0(brld[31]), // IN
-	.a1(brld[0]), // IN
-	.s(mux_0)  // IN
+	.z /* OUT */ (brl_carry),
+	.a0 /* IN */ (brld[31]),
+	.a1 /* IN */ (brld[0]),
+	.s /* IN */ (mux_0)
 );
 endmodule

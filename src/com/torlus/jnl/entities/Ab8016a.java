@@ -9,7 +9,12 @@ public class Ab8016a extends Entity {
 	public String getBaseName() {
 		return "ab8016a";
 	}
-	
+
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Ab8016a() {
 		for (int i = 0; i < 16; i++) {
 			Signal s = new Signal("z", SignalType.BUS);

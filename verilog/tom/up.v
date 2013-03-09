@@ -152,38 +152,6 @@ wire dout_28_obuf;
 wire dout_29_obuf;
 wire dout_30_obuf;
 wire dout_31_obuf;
-wire dout_32_obuf;
-wire dout_33_obuf;
-wire dout_34_obuf;
-wire dout_35_obuf;
-wire dout_36_obuf;
-wire dout_37_obuf;
-wire dout_38_obuf;
-wire dout_39_obuf;
-wire dout_40_obuf;
-wire dout_41_obuf;
-wire dout_42_obuf;
-wire dout_43_obuf;
-wire dout_44_obuf;
-wire dout_45_obuf;
-wire dout_46_obuf;
-wire dout_47_obuf;
-wire dout_48_obuf;
-wire dout_49_obuf;
-wire dout_50_obuf;
-wire dout_51_obuf;
-wire dout_52_obuf;
-wire dout_53_obuf;
-wire dout_54_obuf;
-wire dout_55_obuf;
-wire dout_56_obuf;
-wire dout_57_obuf;
-wire dout_58_obuf;
-wire dout_59_obuf;
-wire dout_60_obuf;
-wire dout_61_obuf;
-wire dout_62_obuf;
-wire dout_63_obuf;
 
 
 // Output buffers
@@ -211,463 +179,431 @@ assign dout_28 = dout_28_obuf;
 assign dout_29 = dout_29_obuf;
 assign dout_30 = dout_30_obuf;
 assign dout_31 = dout_31_obuf;
-assign dout_32 = dout_32_obuf;
-assign dout_33 = dout_33_obuf;
-assign dout_34 = dout_34_obuf;
-assign dout_35 = dout_35_obuf;
-assign dout_36 = dout_36_obuf;
-assign dout_37 = dout_37_obuf;
-assign dout_38 = dout_38_obuf;
-assign dout_39 = dout_39_obuf;
-assign dout_40 = dout_40_obuf;
-assign dout_41 = dout_41_obuf;
-assign dout_42 = dout_42_obuf;
-assign dout_43 = dout_43_obuf;
-assign dout_44 = dout_44_obuf;
-assign dout_45 = dout_45_obuf;
-assign dout_46 = dout_46_obuf;
-assign dout_47 = dout_47_obuf;
-assign dout_48 = dout_48_obuf;
-assign dout_49 = dout_49_obuf;
-assign dout_50 = dout_50_obuf;
-assign dout_51 = dout_51_obuf;
-assign dout_52 = dout_52_obuf;
-assign dout_53 = dout_53_obuf;
-assign dout_54 = dout_54_obuf;
-assign dout_55 = dout_55_obuf;
-assign dout_56 = dout_56_obuf;
-assign dout_57 = dout_57_obuf;
-assign dout_58 = dout_58_obuf;
-assign dout_59 = dout_59_obuf;
-assign dout_60 = dout_60_obuf;
-assign dout_61 = dout_61_obuf;
-assign dout_62 = dout_62_obuf;
-assign dout_63 = dout_63_obuf;
 
 
 // DBUS.NET (113) - dout[8-15] : mx2p
 mx2 dout_from_8_to_15_inst_0
 (
-	.z(dout_8_obuf), // OUT
-	.a0(din_8), // IN
-	.a1(din_0), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_8_obuf),
+	.a0 /* IN */ (din_8),
+	.a1 /* IN */ (din_0),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_1
 (
-	.z(dout_9_obuf), // OUT
-	.a0(din_9), // IN
-	.a1(din_1), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_9_obuf),
+	.a0 /* IN */ (din_9),
+	.a1 /* IN */ (din_1),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_2
 (
-	.z(dout_10_obuf), // OUT
-	.a0(din_10), // IN
-	.a1(din_2), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_10_obuf),
+	.a0 /* IN */ (din_10),
+	.a1 /* IN */ (din_2),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_3
 (
-	.z(dout_11_obuf), // OUT
-	.a0(din_11), // IN
-	.a1(din_3), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_11_obuf),
+	.a0 /* IN */ (din_11),
+	.a1 /* IN */ (din_3),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_4
 (
-	.z(dout_12_obuf), // OUT
-	.a0(din_12), // IN
-	.a1(din_4), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_12_obuf),
+	.a0 /* IN */ (din_12),
+	.a1 /* IN */ (din_4),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_5
 (
-	.z(dout_13_obuf), // OUT
-	.a0(din_13), // IN
-	.a1(din_5), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_13_obuf),
+	.a0 /* IN */ (din_13),
+	.a1 /* IN */ (din_5),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_6
 (
-	.z(dout_14_obuf), // OUT
-	.a0(din_14), // IN
-	.a1(din_6), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_14_obuf),
+	.a0 /* IN */ (din_14),
+	.a1 /* IN */ (din_6),
+	.s /* IN */ (dmuxu_0)
 );
 mx2 dout_from_8_to_15_inst_7
 (
-	.z(dout_15_obuf), // OUT
-	.a0(din_15), // IN
-	.a1(din_7), // IN
-	.s(dmuxu_0)  // IN
+	.z /* OUT */ (dout_15_obuf),
+	.a0 /* IN */ (din_15),
+	.a1 /* IN */ (din_7),
+	.s /* IN */ (dmuxu_0)
 );
 
 // DBUS.NET (114) - dout[16-23] : mx2p
 mx2 dout_from_16_to_23_inst_0
 (
-	.z(dout_16_obuf), // OUT
-	.a0(din_16), // IN
-	.a1(din_0), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_16_obuf),
+	.a0 /* IN */ (din_16),
+	.a1 /* IN */ (din_0),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_1
 (
-	.z(dout_17_obuf), // OUT
-	.a0(din_17), // IN
-	.a1(din_1), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_17_obuf),
+	.a0 /* IN */ (din_17),
+	.a1 /* IN */ (din_1),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_2
 (
-	.z(dout_18_obuf), // OUT
-	.a0(din_18), // IN
-	.a1(din_2), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_18_obuf),
+	.a0 /* IN */ (din_18),
+	.a1 /* IN */ (din_2),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_3
 (
-	.z(dout_19_obuf), // OUT
-	.a0(din_19), // IN
-	.a1(din_3), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_19_obuf),
+	.a0 /* IN */ (din_19),
+	.a1 /* IN */ (din_3),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_4
 (
-	.z(dout_20_obuf), // OUT
-	.a0(din_20), // IN
-	.a1(din_4), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_20_obuf),
+	.a0 /* IN */ (din_20),
+	.a1 /* IN */ (din_4),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_5
 (
-	.z(dout_21_obuf), // OUT
-	.a0(din_21), // IN
-	.a1(din_5), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_21_obuf),
+	.a0 /* IN */ (din_21),
+	.a1 /* IN */ (din_5),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_6
 (
-	.z(dout_22_obuf), // OUT
-	.a0(din_22), // IN
-	.a1(din_6), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_22_obuf),
+	.a0 /* IN */ (din_22),
+	.a1 /* IN */ (din_6),
+	.s /* IN */ (dmuxu_1)
 );
 mx2 dout_from_16_to_23_inst_7
 (
-	.z(dout_23_obuf), // OUT
-	.a0(din_23), // IN
-	.a1(din_7), // IN
-	.s(dmuxu_1)  // IN
+	.z /* OUT */ (dout_23_obuf),
+	.a0 /* IN */ (din_23),
+	.a1 /* IN */ (din_7),
+	.s /* IN */ (dmuxu_1)
 );
 
 // DBUS.NET (115) - dout[24-31] : mx4p
 mx4 dout_from_24_to_31_inst_0
 (
-	.z(dout_24_obuf), // OUT
-	.a0(din_24), // IN
-	.a1(din_24), // IN
-	.a2(din_8), // IN
-	.a3(din_0), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_24_obuf),
+	.a0 /* IN */ (din_24),
+	.a1 /* IN */ (din_24),
+	.a2 /* IN */ (din_8),
+	.a3 /* IN */ (din_0),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_1
 (
-	.z(dout_25_obuf), // OUT
-	.a0(din_25), // IN
-	.a1(din_25), // IN
-	.a2(din_9), // IN
-	.a3(din_1), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_25_obuf),
+	.a0 /* IN */ (din_25),
+	.a1 /* IN */ (din_25),
+	.a2 /* IN */ (din_9),
+	.a3 /* IN */ (din_1),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_2
 (
-	.z(dout_26_obuf), // OUT
-	.a0(din_26), // IN
-	.a1(din_26), // IN
-	.a2(din_10), // IN
-	.a3(din_2), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_26_obuf),
+	.a0 /* IN */ (din_26),
+	.a1 /* IN */ (din_26),
+	.a2 /* IN */ (din_10),
+	.a3 /* IN */ (din_2),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_3
 (
-	.z(dout_27_obuf), // OUT
-	.a0(din_27), // IN
-	.a1(din_27), // IN
-	.a2(din_11), // IN
-	.a3(din_3), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_27_obuf),
+	.a0 /* IN */ (din_27),
+	.a1 /* IN */ (din_27),
+	.a2 /* IN */ (din_11),
+	.a3 /* IN */ (din_3),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_4
 (
-	.z(dout_28_obuf), // OUT
-	.a0(din_28), // IN
-	.a1(din_28), // IN
-	.a2(din_12), // IN
-	.a3(din_4), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_28_obuf),
+	.a0 /* IN */ (din_28),
+	.a1 /* IN */ (din_28),
+	.a2 /* IN */ (din_12),
+	.a3 /* IN */ (din_4),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_5
 (
-	.z(dout_29_obuf), // OUT
-	.a0(din_29), // IN
-	.a1(din_29), // IN
-	.a2(din_13), // IN
-	.a3(din_5), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_29_obuf),
+	.a0 /* IN */ (din_29),
+	.a1 /* IN */ (din_29),
+	.a2 /* IN */ (din_13),
+	.a3 /* IN */ (din_5),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_6
 (
-	.z(dout_30_obuf), // OUT
-	.a0(din_30), // IN
-	.a1(din_30), // IN
-	.a2(din_14), // IN
-	.a3(din_6), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_30_obuf),
+	.a0 /* IN */ (din_30),
+	.a1 /* IN */ (din_30),
+	.a2 /* IN */ (din_14),
+	.a3 /* IN */ (din_6),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 mx4 dout_from_24_to_31_inst_7
 (
-	.z(dout_31_obuf), // OUT
-	.a0(din_31), // IN
-	.a1(din_31), // IN
-	.a2(din_15), // IN
-	.a3(din_7), // IN
-	.s0(dmuxu_0), // IN
-	.s1(dmuxu_1)  // IN
+	.z /* OUT */ (dout_31_obuf),
+	.a0 /* IN */ (din_31),
+	.a1 /* IN */ (din_31),
+	.a2 /* IN */ (din_15),
+	.a3 /* IN */ (din_7),
+	.s0 /* IN */ (dmuxu_0),
+	.s1 /* IN */ (dmuxu_1)
 );
 
 // DBUS.NET (117) - dout[32-39] : mx2p
 mx2 dout_from_32_to_39_inst_0
 (
-	.z(dout_32_obuf), // OUT
-	.a0(din_32), // IN
-	.a1(din_0), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_32),
+	.a0 /* IN */ (din_32),
+	.a1 /* IN */ (din_0),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_1
 (
-	.z(dout_33_obuf), // OUT
-	.a0(din_33), // IN
-	.a1(din_1), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_33),
+	.a0 /* IN */ (din_33),
+	.a1 /* IN */ (din_1),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_2
 (
-	.z(dout_34_obuf), // OUT
-	.a0(din_34), // IN
-	.a1(din_2), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_34),
+	.a0 /* IN */ (din_34),
+	.a1 /* IN */ (din_2),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_3
 (
-	.z(dout_35_obuf), // OUT
-	.a0(din_35), // IN
-	.a1(din_3), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_35),
+	.a0 /* IN */ (din_35),
+	.a1 /* IN */ (din_3),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_4
 (
-	.z(dout_36_obuf), // OUT
-	.a0(din_36), // IN
-	.a1(din_4), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_36),
+	.a0 /* IN */ (din_36),
+	.a1 /* IN */ (din_4),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_5
 (
-	.z(dout_37_obuf), // OUT
-	.a0(din_37), // IN
-	.a1(din_5), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_37),
+	.a0 /* IN */ (din_37),
+	.a1 /* IN */ (din_5),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_6
 (
-	.z(dout_38_obuf), // OUT
-	.a0(din_38), // IN
-	.a1(din_6), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_38),
+	.a0 /* IN */ (din_38),
+	.a1 /* IN */ (din_6),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_32_to_39_inst_7
 (
-	.z(dout_39_obuf), // OUT
-	.a0(din_39), // IN
-	.a1(din_7), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_39),
+	.a0 /* IN */ (din_39),
+	.a1 /* IN */ (din_7),
+	.s /* IN */ (dmuxu_2)
 );
 
 // DBUS.NET (118) - dout[40-63] : mx2p
 mx2 dout_from_40_to_63_inst_0
 (
-	.z(dout_40_obuf), // OUT
-	.a0(din_40), // IN
-	.a1(dout_8_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_40),
+	.a0 /* IN */ (din_40),
+	.a1 /* IN */ (dout_8_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_1
 (
-	.z(dout_41_obuf), // OUT
-	.a0(din_41), // IN
-	.a1(dout_9_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_41),
+	.a0 /* IN */ (din_41),
+	.a1 /* IN */ (dout_9_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_2
 (
-	.z(dout_42_obuf), // OUT
-	.a0(din_42), // IN
-	.a1(dout_10_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_42),
+	.a0 /* IN */ (din_42),
+	.a1 /* IN */ (dout_10_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_3
 (
-	.z(dout_43_obuf), // OUT
-	.a0(din_43), // IN
-	.a1(dout_11_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_43),
+	.a0 /* IN */ (din_43),
+	.a1 /* IN */ (dout_11_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_4
 (
-	.z(dout_44_obuf), // OUT
-	.a0(din_44), // IN
-	.a1(dout_12_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_44),
+	.a0 /* IN */ (din_44),
+	.a1 /* IN */ (dout_12_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_5
 (
-	.z(dout_45_obuf), // OUT
-	.a0(din_45), // IN
-	.a1(dout_13_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_45),
+	.a0 /* IN */ (din_45),
+	.a1 /* IN */ (dout_13_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_6
 (
-	.z(dout_46_obuf), // OUT
-	.a0(din_46), // IN
-	.a1(dout_14_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_46),
+	.a0 /* IN */ (din_46),
+	.a1 /* IN */ (dout_14_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_7
 (
-	.z(dout_47_obuf), // OUT
-	.a0(din_47), // IN
-	.a1(dout_15_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_47),
+	.a0 /* IN */ (din_47),
+	.a1 /* IN */ (dout_15_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_8
 (
-	.z(dout_48_obuf), // OUT
-	.a0(din_48), // IN
-	.a1(dout_16_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_48),
+	.a0 /* IN */ (din_48),
+	.a1 /* IN */ (dout_16_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_9
 (
-	.z(dout_49_obuf), // OUT
-	.a0(din_49), // IN
-	.a1(dout_17_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_49),
+	.a0 /* IN */ (din_49),
+	.a1 /* IN */ (dout_17_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_10
 (
-	.z(dout_50_obuf), // OUT
-	.a0(din_50), // IN
-	.a1(dout_18_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_50),
+	.a0 /* IN */ (din_50),
+	.a1 /* IN */ (dout_18_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_11
 (
-	.z(dout_51_obuf), // OUT
-	.a0(din_51), // IN
-	.a1(dout_19_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_51),
+	.a0 /* IN */ (din_51),
+	.a1 /* IN */ (dout_19_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_12
 (
-	.z(dout_52_obuf), // OUT
-	.a0(din_52), // IN
-	.a1(dout_20_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_52),
+	.a0 /* IN */ (din_52),
+	.a1 /* IN */ (dout_20_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_13
 (
-	.z(dout_53_obuf), // OUT
-	.a0(din_53), // IN
-	.a1(dout_21_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_53),
+	.a0 /* IN */ (din_53),
+	.a1 /* IN */ (dout_21_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_14
 (
-	.z(dout_54_obuf), // OUT
-	.a0(din_54), // IN
-	.a1(dout_22_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_54),
+	.a0 /* IN */ (din_54),
+	.a1 /* IN */ (dout_22_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_15
 (
-	.z(dout_55_obuf), // OUT
-	.a0(din_55), // IN
-	.a1(dout_23_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_55),
+	.a0 /* IN */ (din_55),
+	.a1 /* IN */ (dout_23_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_16
 (
-	.z(dout_56_obuf), // OUT
-	.a0(din_56), // IN
-	.a1(dout_24_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_56),
+	.a0 /* IN */ (din_56),
+	.a1 /* IN */ (dout_24_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_17
 (
-	.z(dout_57_obuf), // OUT
-	.a0(din_57), // IN
-	.a1(dout_25_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_57),
+	.a0 /* IN */ (din_57),
+	.a1 /* IN */ (dout_25_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_18
 (
-	.z(dout_58_obuf), // OUT
-	.a0(din_58), // IN
-	.a1(dout_26_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_58),
+	.a0 /* IN */ (din_58),
+	.a1 /* IN */ (dout_26_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_19
 (
-	.z(dout_59_obuf), // OUT
-	.a0(din_59), // IN
-	.a1(dout_27_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_59),
+	.a0 /* IN */ (din_59),
+	.a1 /* IN */ (dout_27_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_20
 (
-	.z(dout_60_obuf), // OUT
-	.a0(din_60), // IN
-	.a1(dout_28_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_60),
+	.a0 /* IN */ (din_60),
+	.a1 /* IN */ (dout_28_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_21
 (
-	.z(dout_61_obuf), // OUT
-	.a0(din_61), // IN
-	.a1(dout_29_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_61),
+	.a0 /* IN */ (din_61),
+	.a1 /* IN */ (dout_29_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_22
 (
-	.z(dout_62_obuf), // OUT
-	.a0(din_62), // IN
-	.a1(dout_30_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_62),
+	.a0 /* IN */ (din_62),
+	.a1 /* IN */ (dout_30_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 mx2 dout_from_40_to_63_inst_23
 (
-	.z(dout_63_obuf), // OUT
-	.a0(din_63), // IN
-	.a1(dout_31_obuf), // IN
-	.s(dmuxu_2)  // IN
+	.z /* OUT */ (dout_63),
+	.a0 /* IN */ (din_63),
+	.a1 /* IN */ (dout_31_obuf),
+	.s /* IN */ (dmuxu_2)
 );
 endmodule

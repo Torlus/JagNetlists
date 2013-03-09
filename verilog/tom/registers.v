@@ -2,23 +2,23 @@
 
 module registers
 (
-	output[0:31] srcd;
-	output[0:31] srcdp;
-	output[0:31] srcdpa;
-	output[0:31] dstd;
-	output[0:31] dstdp;
+	output [0:31] srcd;
+	output [0:31] srcdp;
+	output [0:31] srcdpa;
+	output [0:31] dstd;
+	output [0:31] dstdp;
 	input clk,
-	input[0:5] dsta;
+	input [0:5] dsta;
 	input dstrwen_n,
-	input[0:31] dstwd;
+	input [0:31] dstwd;
 	input exe,
 	input locden,
-	input[0:31] locsrc;
-	input[0:31] mem_data;
+	input [0:31] locsrc;
+	input [0:31] mem_data;
 	input mtx_dover,
-	input[0:5] srca;
+	input [0:5] srca;
 	input srcrwen_n,
-	input[0:31] srcwd
+	input [0:31] srcwd
 );
 wire [0:31] dstdr;
 wire [0:31] srcdr;
@@ -359,9 +359,9 @@ assign zero32[31] = zero;
 // REGIS-WA.NET (53) - addreq : cmp6
 cmp6 addreq_inst
 (
-	.equal(addreq), // OUT
-	.a({srca[0],srca[1],srca[2],srca[3],srca[4],srca[5]}), // IN
-	.b({dsta[0],dsta[1],dsta[2],dsta[3],dsta[4],dsta[5]})  // IN
+	.equal /* OUT */ (addreq),
+	.a /* IN */ ({srca[0],srca[1],srca[2],srca[3],srca[4],srca[5]}),
+	.b /* IN */ ({dsta[0],dsta[1],dsta[2],dsta[3],dsta[4],dsta[5]})
 );
 
 // REGIS-WA.NET (54) - dwtosr : nd3
@@ -403,150 +403,150 @@ assign stb = stbe;
 // REGIS-WA.NET (93) - reg_ram : rd64x32
 rd64x32 reg_ram_inst
 (
-	.qa0(srcdr_31), // OUT
-	.qa1(srcdr_30), // OUT
-	.qa2(srcdr_29), // OUT
-	.qa3(srcdr_28), // OUT
-	.qa4(srcdr_27), // OUT
-	.qa5(srcdr_26), // OUT
-	.qa6(srcdr_25), // OUT
-	.qa7(srcdr_24), // OUT
-	.qa8(srcdr_23), // OUT
-	.qa9(srcdr_22), // OUT
-	.qa10(srcdr_21), // OUT
-	.qa11(srcdr_20), // OUT
-	.qa12(srcdr_19), // OUT
-	.qa13(srcdr_18), // OUT
-	.qa14(srcdr_17), // OUT
-	.qa15(srcdr_16), // OUT
-	.qa16(srcdr_15), // OUT
-	.qa17(srcdr_14), // OUT
-	.qa18(srcdr_13), // OUT
-	.qa19(srcdr_12), // OUT
-	.qa20(srcdr_11), // OUT
-	.qa21(srcdr_10), // OUT
-	.qa22(srcdr_9), // OUT
-	.qa23(srcdr_8), // OUT
-	.qa24(srcdr_7), // OUT
-	.qa25(srcdr_6), // OUT
-	.qa26(srcdr_5), // OUT
-	.qa27(srcdr_4), // OUT
-	.qa28(srcdr_3), // OUT
-	.qa29(srcdr_2), // OUT
-	.qa30(srcdr_1), // OUT
-	.qa31(srcdr_0), // OUT
-	.qb0(dstdr_31), // OUT
-	.qb1(dstdr_30), // OUT
-	.qb2(dstdr_29), // OUT
-	.qb3(dstdr_28), // OUT
-	.qb4(dstdr_27), // OUT
-	.qb5(dstdr_26), // OUT
-	.qb6(dstdr_25), // OUT
-	.qb7(dstdr_24), // OUT
-	.qb8(dstdr_23), // OUT
-	.qb9(dstdr_22), // OUT
-	.qb10(dstdr_21), // OUT
-	.qb11(dstdr_20), // OUT
-	.qb12(dstdr_19), // OUT
-	.qb13(dstdr_18), // OUT
-	.qb14(dstdr_17), // OUT
-	.qb15(dstdr_16), // OUT
-	.qb16(dstdr_15), // OUT
-	.qb17(dstdr_14), // OUT
-	.qb18(dstdr_13), // OUT
-	.qb19(dstdr_12), // OUT
-	.qb20(dstdr_11), // OUT
-	.qb21(dstdr_10), // OUT
-	.qb22(dstdr_9), // OUT
-	.qb23(dstdr_8), // OUT
-	.qb24(dstdr_7), // OUT
-	.qb25(dstdr_6), // OUT
-	.qb26(dstdr_5), // OUT
-	.qb27(dstdr_4), // OUT
-	.qb28(dstdr_3), // OUT
-	.qb29(dstdr_2), // OUT
-	.qb30(dstdr_1), // OUT
-	.qb31(dstdr_0), // OUT
-	.nwea(srcrwen_n), // IN
-	.clka(stb), // IN
-	.aa0(srca[5]), // IN
-	.aa1(srca[4]), // IN
-	.aa2(srca[3]), // IN
-	.aa3(srca[2]), // IN
-	.aa4(srca[1]), // IN
-	.aa5(srca[0]), // IN
-	.da0(srcwd[31]), // IN
-	.da1(srcwd[30]), // IN
-	.da2(srcwd[29]), // IN
-	.da3(srcwd[28]), // IN
-	.da4(srcwd[27]), // IN
-	.da5(srcwd[26]), // IN
-	.da6(srcwd[25]), // IN
-	.da7(srcwd[24]), // IN
-	.da8(srcwd[23]), // IN
-	.da9(srcwd[22]), // IN
-	.da10(srcwd[21]), // IN
-	.da11(srcwd[20]), // IN
-	.da12(srcwd[19]), // IN
-	.da13(srcwd[18]), // IN
-	.da14(srcwd[17]), // IN
-	.da15(srcwd[16]), // IN
-	.da16(srcwd[15]), // IN
-	.da17(srcwd[14]), // IN
-	.da18(srcwd[13]), // IN
-	.da19(srcwd[12]), // IN
-	.da20(srcwd[11]), // IN
-	.da21(srcwd[10]), // IN
-	.da22(srcwd[9]), // IN
-	.da23(srcwd[8]), // IN
-	.da24(srcwd[7]), // IN
-	.da25(srcwd[6]), // IN
-	.da26(srcwd[5]), // IN
-	.da27(srcwd[4]), // IN
-	.da28(srcwd[3]), // IN
-	.da29(srcwd[2]), // IN
-	.da30(srcwd[1]), // IN
-	.da31(srcwd[0]), // IN
-	.nweb(dstrwen_n), // IN
-	.clkb(stb), // IN
-	.ab0(dsta[5]), // IN
-	.ab1(dsta[4]), // IN
-	.ab2(dsta[3]), // IN
-	.ab3(dsta[2]), // IN
-	.ab4(dsta[1]), // IN
-	.ab5(dsta[0]), // IN
-	.db0(dstwd[31]), // IN
-	.db1(dstwd[30]), // IN
-	.db2(dstwd[29]), // IN
-	.db3(dstwd[28]), // IN
-	.db4(dstwd[27]), // IN
-	.db5(dstwd[26]), // IN
-	.db6(dstwd[25]), // IN
-	.db7(dstwd[24]), // IN
-	.db8(dstwd[23]), // IN
-	.db9(dstwd[22]), // IN
-	.db10(dstwd[21]), // IN
-	.db11(dstwd[20]), // IN
-	.db12(dstwd[19]), // IN
-	.db13(dstwd[18]), // IN
-	.db14(dstwd[17]), // IN
-	.db15(dstwd[16]), // IN
-	.db16(dstwd[15]), // IN
-	.db17(dstwd[14]), // IN
-	.db18(dstwd[13]), // IN
-	.db19(dstwd[12]), // IN
-	.db20(dstwd[11]), // IN
-	.db21(dstwd[10]), // IN
-	.db22(dstwd[9]), // IN
-	.db23(dstwd[8]), // IN
-	.db24(dstwd[7]), // IN
-	.db25(dstwd[6]), // IN
-	.db26(dstwd[5]), // IN
-	.db27(dstwd[4]), // IN
-	.db28(dstwd[3]), // IN
-	.db29(dstwd[2]), // IN
-	.db30(dstwd[1]), // IN
-	.db31(dstwd[0])  // IN
+	.qa0 /* OUT */ (srcdr_31),
+	.qa1 /* OUT */ (srcdr_30),
+	.qa2 /* OUT */ (srcdr_29),
+	.qa3 /* OUT */ (srcdr_28),
+	.qa4 /* OUT */ (srcdr_27),
+	.qa5 /* OUT */ (srcdr_26),
+	.qa6 /* OUT */ (srcdr_25),
+	.qa7 /* OUT */ (srcdr_24),
+	.qa8 /* OUT */ (srcdr_23),
+	.qa9 /* OUT */ (srcdr_22),
+	.qa10 /* OUT */ (srcdr_21),
+	.qa11 /* OUT */ (srcdr_20),
+	.qa12 /* OUT */ (srcdr_19),
+	.qa13 /* OUT */ (srcdr_18),
+	.qa14 /* OUT */ (srcdr_17),
+	.qa15 /* OUT */ (srcdr_16),
+	.qa16 /* OUT */ (srcdr_15),
+	.qa17 /* OUT */ (srcdr_14),
+	.qa18 /* OUT */ (srcdr_13),
+	.qa19 /* OUT */ (srcdr_12),
+	.qa20 /* OUT */ (srcdr_11),
+	.qa21 /* OUT */ (srcdr_10),
+	.qa22 /* OUT */ (srcdr_9),
+	.qa23 /* OUT */ (srcdr_8),
+	.qa24 /* OUT */ (srcdr_7),
+	.qa25 /* OUT */ (srcdr_6),
+	.qa26 /* OUT */ (srcdr_5),
+	.qa27 /* OUT */ (srcdr_4),
+	.qa28 /* OUT */ (srcdr_3),
+	.qa29 /* OUT */ (srcdr_2),
+	.qa30 /* OUT */ (srcdr_1),
+	.qa31 /* OUT */ (srcdr_0),
+	.qb0 /* OUT */ (dstdr_31),
+	.qb1 /* OUT */ (dstdr_30),
+	.qb2 /* OUT */ (dstdr_29),
+	.qb3 /* OUT */ (dstdr_28),
+	.qb4 /* OUT */ (dstdr_27),
+	.qb5 /* OUT */ (dstdr_26),
+	.qb6 /* OUT */ (dstdr_25),
+	.qb7 /* OUT */ (dstdr_24),
+	.qb8 /* OUT */ (dstdr_23),
+	.qb9 /* OUT */ (dstdr_22),
+	.qb10 /* OUT */ (dstdr_21),
+	.qb11 /* OUT */ (dstdr_20),
+	.qb12 /* OUT */ (dstdr_19),
+	.qb13 /* OUT */ (dstdr_18),
+	.qb14 /* OUT */ (dstdr_17),
+	.qb15 /* OUT */ (dstdr_16),
+	.qb16 /* OUT */ (dstdr_15),
+	.qb17 /* OUT */ (dstdr_14),
+	.qb18 /* OUT */ (dstdr_13),
+	.qb19 /* OUT */ (dstdr_12),
+	.qb20 /* OUT */ (dstdr_11),
+	.qb21 /* OUT */ (dstdr_10),
+	.qb22 /* OUT */ (dstdr_9),
+	.qb23 /* OUT */ (dstdr_8),
+	.qb24 /* OUT */ (dstdr_7),
+	.qb25 /* OUT */ (dstdr_6),
+	.qb26 /* OUT */ (dstdr_5),
+	.qb27 /* OUT */ (dstdr_4),
+	.qb28 /* OUT */ (dstdr_3),
+	.qb29 /* OUT */ (dstdr_2),
+	.qb30 /* OUT */ (dstdr_1),
+	.qb31 /* OUT */ (dstdr_0),
+	.nwea /* IN */ (srcrwen_n),
+	.clka /* IN */ (stb),
+	.aa0 /* IN */ (srca[5]),
+	.aa1 /* IN */ (srca[4]),
+	.aa2 /* IN */ (srca[3]),
+	.aa3 /* IN */ (srca[2]),
+	.aa4 /* IN */ (srca[1]),
+	.aa5 /* IN */ (srca[0]),
+	.da0 /* IN */ (srcwd[31]),
+	.da1 /* IN */ (srcwd[30]),
+	.da2 /* IN */ (srcwd[29]),
+	.da3 /* IN */ (srcwd[28]),
+	.da4 /* IN */ (srcwd[27]),
+	.da5 /* IN */ (srcwd[26]),
+	.da6 /* IN */ (srcwd[25]),
+	.da7 /* IN */ (srcwd[24]),
+	.da8 /* IN */ (srcwd[23]),
+	.da9 /* IN */ (srcwd[22]),
+	.da10 /* IN */ (srcwd[21]),
+	.da11 /* IN */ (srcwd[20]),
+	.da12 /* IN */ (srcwd[19]),
+	.da13 /* IN */ (srcwd[18]),
+	.da14 /* IN */ (srcwd[17]),
+	.da15 /* IN */ (srcwd[16]),
+	.da16 /* IN */ (srcwd[15]),
+	.da17 /* IN */ (srcwd[14]),
+	.da18 /* IN */ (srcwd[13]),
+	.da19 /* IN */ (srcwd[12]),
+	.da20 /* IN */ (srcwd[11]),
+	.da21 /* IN */ (srcwd[10]),
+	.da22 /* IN */ (srcwd[9]),
+	.da23 /* IN */ (srcwd[8]),
+	.da24 /* IN */ (srcwd[7]),
+	.da25 /* IN */ (srcwd[6]),
+	.da26 /* IN */ (srcwd[5]),
+	.da27 /* IN */ (srcwd[4]),
+	.da28 /* IN */ (srcwd[3]),
+	.da29 /* IN */ (srcwd[2]),
+	.da30 /* IN */ (srcwd[1]),
+	.da31 /* IN */ (srcwd[0]),
+	.nweb /* IN */ (dstrwen_n),
+	.clkb /* IN */ (stb),
+	.ab0 /* IN */ (dsta[5]),
+	.ab1 /* IN */ (dsta[4]),
+	.ab2 /* IN */ (dsta[3]),
+	.ab3 /* IN */ (dsta[2]),
+	.ab4 /* IN */ (dsta[1]),
+	.ab5 /* IN */ (dsta[0]),
+	.db0 /* IN */ (dstwd[31]),
+	.db1 /* IN */ (dstwd[30]),
+	.db2 /* IN */ (dstwd[29]),
+	.db3 /* IN */ (dstwd[28]),
+	.db4 /* IN */ (dstwd[27]),
+	.db5 /* IN */ (dstwd[26]),
+	.db6 /* IN */ (dstwd[25]),
+	.db7 /* IN */ (dstwd[24]),
+	.db8 /* IN */ (dstwd[23]),
+	.db9 /* IN */ (dstwd[22]),
+	.db10 /* IN */ (dstwd[21]),
+	.db11 /* IN */ (dstwd[20]),
+	.db12 /* IN */ (dstwd[19]),
+	.db13 /* IN */ (dstwd[18]),
+	.db14 /* IN */ (dstwd[17]),
+	.db15 /* IN */ (dstwd[16]),
+	.db16 /* IN */ (dstwd[15]),
+	.db17 /* IN */ (dstwd[14]),
+	.db18 /* IN */ (dstwd[13]),
+	.db19 /* IN */ (dstwd[12]),
+	.db20 /* IN */ (dstwd[11]),
+	.db21 /* IN */ (dstwd[10]),
+	.db22 /* IN */ (dstwd[9]),
+	.db23 /* IN */ (dstwd[8]),
+	.db24 /* IN */ (dstwd[7]),
+	.db25 /* IN */ (dstwd[6]),
+	.db26 /* IN */ (dstwd[5]),
+	.db27 /* IN */ (dstwd[4]),
+	.db28 /* IN */ (dstwd[3]),
+	.db29 /* IN */ (dstwd[2]),
+	.db30 /* IN */ (dstwd[1]),
+	.db31 /* IN */ (dstwd[0])
 );
 
 // REGIS-WA.NET (120) - srcdr : join
@@ -620,332 +620,332 @@ assign dstdr[31] = dstdr_31;
 // REGIS-WA.NET (124) - srcd : mx4p
 mx4 srcd_inst_0
 (
-	.z(srcd_b0_obuf), // OUT
-	.a0(srcdr[0]), // IN
-	.a1(srcwd[0]), // IN
-	.a2(dstwd[0]), // IN
-	.a3(locsrc[0]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b0_obuf),
+	.a0 /* IN */ (srcdr[0]),
+	.a1 /* IN */ (srcwd[0]),
+	.a2 /* IN */ (dstwd[0]),
+	.a3 /* IN */ (locsrc[0]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_1
 (
-	.z(srcd_b1_obuf), // OUT
-	.a0(srcdr[1]), // IN
-	.a1(srcwd[1]), // IN
-	.a2(dstwd[1]), // IN
-	.a3(locsrc[1]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b1_obuf),
+	.a0 /* IN */ (srcdr[1]),
+	.a1 /* IN */ (srcwd[1]),
+	.a2 /* IN */ (dstwd[1]),
+	.a3 /* IN */ (locsrc[1]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_2
 (
-	.z(srcd_b2_obuf), // OUT
-	.a0(srcdr[2]), // IN
-	.a1(srcwd[2]), // IN
-	.a2(dstwd[2]), // IN
-	.a3(locsrc[2]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b2_obuf),
+	.a0 /* IN */ (srcdr[2]),
+	.a1 /* IN */ (srcwd[2]),
+	.a2 /* IN */ (dstwd[2]),
+	.a3 /* IN */ (locsrc[2]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_3
 (
-	.z(srcd_b3_obuf), // OUT
-	.a0(srcdr[3]), // IN
-	.a1(srcwd[3]), // IN
-	.a2(dstwd[3]), // IN
-	.a3(locsrc[3]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b3_obuf),
+	.a0 /* IN */ (srcdr[3]),
+	.a1 /* IN */ (srcwd[3]),
+	.a2 /* IN */ (dstwd[3]),
+	.a3 /* IN */ (locsrc[3]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_4
 (
-	.z(srcd_b4_obuf), // OUT
-	.a0(srcdr[4]), // IN
-	.a1(srcwd[4]), // IN
-	.a2(dstwd[4]), // IN
-	.a3(locsrc[4]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b4_obuf),
+	.a0 /* IN */ (srcdr[4]),
+	.a1 /* IN */ (srcwd[4]),
+	.a2 /* IN */ (dstwd[4]),
+	.a3 /* IN */ (locsrc[4]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_5
 (
-	.z(srcd_b5_obuf), // OUT
-	.a0(srcdr[5]), // IN
-	.a1(srcwd[5]), // IN
-	.a2(dstwd[5]), // IN
-	.a3(locsrc[5]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b5_obuf),
+	.a0 /* IN */ (srcdr[5]),
+	.a1 /* IN */ (srcwd[5]),
+	.a2 /* IN */ (dstwd[5]),
+	.a3 /* IN */ (locsrc[5]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_6
 (
-	.z(srcd_b6_obuf), // OUT
-	.a0(srcdr[6]), // IN
-	.a1(srcwd[6]), // IN
-	.a2(dstwd[6]), // IN
-	.a3(locsrc[6]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b6_obuf),
+	.a0 /* IN */ (srcdr[6]),
+	.a1 /* IN */ (srcwd[6]),
+	.a2 /* IN */ (dstwd[6]),
+	.a3 /* IN */ (locsrc[6]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_7
 (
-	.z(srcd_b7_obuf), // OUT
-	.a0(srcdr[7]), // IN
-	.a1(srcwd[7]), // IN
-	.a2(dstwd[7]), // IN
-	.a3(locsrc[7]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b7_obuf),
+	.a0 /* IN */ (srcdr[7]),
+	.a1 /* IN */ (srcwd[7]),
+	.a2 /* IN */ (dstwd[7]),
+	.a3 /* IN */ (locsrc[7]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_8
 (
-	.z(srcd_b8_obuf), // OUT
-	.a0(srcdr[8]), // IN
-	.a1(srcwd[8]), // IN
-	.a2(dstwd[8]), // IN
-	.a3(locsrc[8]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b8_obuf),
+	.a0 /* IN */ (srcdr[8]),
+	.a1 /* IN */ (srcwd[8]),
+	.a2 /* IN */ (dstwd[8]),
+	.a3 /* IN */ (locsrc[8]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_9
 (
-	.z(srcd_b9_obuf), // OUT
-	.a0(srcdr[9]), // IN
-	.a1(srcwd[9]), // IN
-	.a2(dstwd[9]), // IN
-	.a3(locsrc[9]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b9_obuf),
+	.a0 /* IN */ (srcdr[9]),
+	.a1 /* IN */ (srcwd[9]),
+	.a2 /* IN */ (dstwd[9]),
+	.a3 /* IN */ (locsrc[9]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_10
 (
-	.z(srcd_b10_obuf), // OUT
-	.a0(srcdr[10]), // IN
-	.a1(srcwd[10]), // IN
-	.a2(dstwd[10]), // IN
-	.a3(locsrc[10]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b10_obuf),
+	.a0 /* IN */ (srcdr[10]),
+	.a1 /* IN */ (srcwd[10]),
+	.a2 /* IN */ (dstwd[10]),
+	.a3 /* IN */ (locsrc[10]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_11
 (
-	.z(srcd_b11_obuf), // OUT
-	.a0(srcdr[11]), // IN
-	.a1(srcwd[11]), // IN
-	.a2(dstwd[11]), // IN
-	.a3(locsrc[11]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b11_obuf),
+	.a0 /* IN */ (srcdr[11]),
+	.a1 /* IN */ (srcwd[11]),
+	.a2 /* IN */ (dstwd[11]),
+	.a3 /* IN */ (locsrc[11]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_12
 (
-	.z(srcd_b12_obuf), // OUT
-	.a0(srcdr[12]), // IN
-	.a1(srcwd[12]), // IN
-	.a2(dstwd[12]), // IN
-	.a3(locsrc[12]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b12_obuf),
+	.a0 /* IN */ (srcdr[12]),
+	.a1 /* IN */ (srcwd[12]),
+	.a2 /* IN */ (dstwd[12]),
+	.a3 /* IN */ (locsrc[12]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_13
 (
-	.z(srcd_b13_obuf), // OUT
-	.a0(srcdr[13]), // IN
-	.a1(srcwd[13]), // IN
-	.a2(dstwd[13]), // IN
-	.a3(locsrc[13]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b13_obuf),
+	.a0 /* IN */ (srcdr[13]),
+	.a1 /* IN */ (srcwd[13]),
+	.a2 /* IN */ (dstwd[13]),
+	.a3 /* IN */ (locsrc[13]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_14
 (
-	.z(srcd_b14_obuf), // OUT
-	.a0(srcdr[14]), // IN
-	.a1(srcwd[14]), // IN
-	.a2(dstwd[14]), // IN
-	.a3(locsrc[14]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b14_obuf),
+	.a0 /* IN */ (srcdr[14]),
+	.a1 /* IN */ (srcwd[14]),
+	.a2 /* IN */ (dstwd[14]),
+	.a3 /* IN */ (locsrc[14]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_15
 (
-	.z(srcd_b15_obuf), // OUT
-	.a0(srcdr[15]), // IN
-	.a1(srcwd[15]), // IN
-	.a2(dstwd[15]), // IN
-	.a3(locsrc[15]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b15_obuf),
+	.a0 /* IN */ (srcdr[15]),
+	.a1 /* IN */ (srcwd[15]),
+	.a2 /* IN */ (dstwd[15]),
+	.a3 /* IN */ (locsrc[15]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_16
 (
-	.z(srcd_b16_obuf), // OUT
-	.a0(srcdr[16]), // IN
-	.a1(srcwd[16]), // IN
-	.a2(dstwd[16]), // IN
-	.a3(locsrc[16]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b16_obuf),
+	.a0 /* IN */ (srcdr[16]),
+	.a1 /* IN */ (srcwd[16]),
+	.a2 /* IN */ (dstwd[16]),
+	.a3 /* IN */ (locsrc[16]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_17
 (
-	.z(srcd_b17_obuf), // OUT
-	.a0(srcdr[17]), // IN
-	.a1(srcwd[17]), // IN
-	.a2(dstwd[17]), // IN
-	.a3(locsrc[17]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b17_obuf),
+	.a0 /* IN */ (srcdr[17]),
+	.a1 /* IN */ (srcwd[17]),
+	.a2 /* IN */ (dstwd[17]),
+	.a3 /* IN */ (locsrc[17]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_18
 (
-	.z(srcd_b18_obuf), // OUT
-	.a0(srcdr[18]), // IN
-	.a1(srcwd[18]), // IN
-	.a2(dstwd[18]), // IN
-	.a3(locsrc[18]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b18_obuf),
+	.a0 /* IN */ (srcdr[18]),
+	.a1 /* IN */ (srcwd[18]),
+	.a2 /* IN */ (dstwd[18]),
+	.a3 /* IN */ (locsrc[18]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_19
 (
-	.z(srcd_b19_obuf), // OUT
-	.a0(srcdr[19]), // IN
-	.a1(srcwd[19]), // IN
-	.a2(dstwd[19]), // IN
-	.a3(locsrc[19]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b19_obuf),
+	.a0 /* IN */ (srcdr[19]),
+	.a1 /* IN */ (srcwd[19]),
+	.a2 /* IN */ (dstwd[19]),
+	.a3 /* IN */ (locsrc[19]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_20
 (
-	.z(srcd_b20_obuf), // OUT
-	.a0(srcdr[20]), // IN
-	.a1(srcwd[20]), // IN
-	.a2(dstwd[20]), // IN
-	.a3(locsrc[20]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b20_obuf),
+	.a0 /* IN */ (srcdr[20]),
+	.a1 /* IN */ (srcwd[20]),
+	.a2 /* IN */ (dstwd[20]),
+	.a3 /* IN */ (locsrc[20]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_21
 (
-	.z(srcd_b21_obuf), // OUT
-	.a0(srcdr[21]), // IN
-	.a1(srcwd[21]), // IN
-	.a2(dstwd[21]), // IN
-	.a3(locsrc[21]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b21_obuf),
+	.a0 /* IN */ (srcdr[21]),
+	.a1 /* IN */ (srcwd[21]),
+	.a2 /* IN */ (dstwd[21]),
+	.a3 /* IN */ (locsrc[21]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_22
 (
-	.z(srcd_b22_obuf), // OUT
-	.a0(srcdr[22]), // IN
-	.a1(srcwd[22]), // IN
-	.a2(dstwd[22]), // IN
-	.a3(locsrc[22]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b22_obuf),
+	.a0 /* IN */ (srcdr[22]),
+	.a1 /* IN */ (srcwd[22]),
+	.a2 /* IN */ (dstwd[22]),
+	.a3 /* IN */ (locsrc[22]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_23
 (
-	.z(srcd_b23_obuf), // OUT
-	.a0(srcdr[23]), // IN
-	.a1(srcwd[23]), // IN
-	.a2(dstwd[23]), // IN
-	.a3(locsrc[23]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b23_obuf),
+	.a0 /* IN */ (srcdr[23]),
+	.a1 /* IN */ (srcwd[23]),
+	.a2 /* IN */ (dstwd[23]),
+	.a3 /* IN */ (locsrc[23]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_24
 (
-	.z(srcd_b24_obuf), // OUT
-	.a0(srcdr[24]), // IN
-	.a1(srcwd[24]), // IN
-	.a2(dstwd[24]), // IN
-	.a3(locsrc[24]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b24_obuf),
+	.a0 /* IN */ (srcdr[24]),
+	.a1 /* IN */ (srcwd[24]),
+	.a2 /* IN */ (dstwd[24]),
+	.a3 /* IN */ (locsrc[24]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_25
 (
-	.z(srcd_b25_obuf), // OUT
-	.a0(srcdr[25]), // IN
-	.a1(srcwd[25]), // IN
-	.a2(dstwd[25]), // IN
-	.a3(locsrc[25]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b25_obuf),
+	.a0 /* IN */ (srcdr[25]),
+	.a1 /* IN */ (srcwd[25]),
+	.a2 /* IN */ (dstwd[25]),
+	.a3 /* IN */ (locsrc[25]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_26
 (
-	.z(srcd_b26_obuf), // OUT
-	.a0(srcdr[26]), // IN
-	.a1(srcwd[26]), // IN
-	.a2(dstwd[26]), // IN
-	.a3(locsrc[26]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b26_obuf),
+	.a0 /* IN */ (srcdr[26]),
+	.a1 /* IN */ (srcwd[26]),
+	.a2 /* IN */ (dstwd[26]),
+	.a3 /* IN */ (locsrc[26]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_27
 (
-	.z(srcd_b27_obuf), // OUT
-	.a0(srcdr[27]), // IN
-	.a1(srcwd[27]), // IN
-	.a2(dstwd[27]), // IN
-	.a3(locsrc[27]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b27_obuf),
+	.a0 /* IN */ (srcdr[27]),
+	.a1 /* IN */ (srcwd[27]),
+	.a2 /* IN */ (dstwd[27]),
+	.a3 /* IN */ (locsrc[27]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_28
 (
-	.z(srcd_b28_obuf), // OUT
-	.a0(srcdr[28]), // IN
-	.a1(srcwd[28]), // IN
-	.a2(dstwd[28]), // IN
-	.a3(locsrc[28]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b28_obuf),
+	.a0 /* IN */ (srcdr[28]),
+	.a1 /* IN */ (srcwd[28]),
+	.a2 /* IN */ (dstwd[28]),
+	.a3 /* IN */ (locsrc[28]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_29
 (
-	.z(srcd_b29_obuf), // OUT
-	.a0(srcdr[29]), // IN
-	.a1(srcwd[29]), // IN
-	.a2(dstwd[29]), // IN
-	.a3(locsrc[29]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b29_obuf),
+	.a0 /* IN */ (srcdr[29]),
+	.a1 /* IN */ (srcwd[29]),
+	.a2 /* IN */ (dstwd[29]),
+	.a3 /* IN */ (locsrc[29]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_30
 (
-	.z(srcd_b30_obuf), // OUT
-	.a0(srcdr[30]), // IN
-	.a1(srcwd[30]), // IN
-	.a2(dstwd[30]), // IN
-	.a3(locsrc[30]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b30_obuf),
+	.a0 /* IN */ (srcdr[30]),
+	.a1 /* IN */ (srcwd[30]),
+	.a2 /* IN */ (dstwd[30]),
+	.a3 /* IN */ (locsrc[30]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 mx4 srcd_inst_31
 (
-	.z(srcd_b31_obuf), // OUT
-	.a0(srcdr[31]), // IN
-	.a1(srcwd[31]), // IN
-	.a2(dstwd[31]), // IN
-	.a3(locsrc[31]), // IN
-	.s0(srcdsel_0), // IN
-	.s1(srcdsel_1)  // IN
+	.z /* OUT */ (srcd_b31_obuf),
+	.a0 /* IN */ (srcdr[31]),
+	.a1 /* IN */ (srcwd[31]),
+	.a2 /* IN */ (dstwd[31]),
+	.a3 /* IN */ (locsrc[31]),
+	.s0 /* IN */ (srcdsel_0),
+	.s1 /* IN */ (srcdsel_1)
 );
 
 // REGIS-WA.NET (126) - srcdpt : fdsync32
 fdsync32 srcdpt_inst
 (
-	.q({srcdpa_b0_obuf,srcdpa_b1_obuf,srcdpa_b2_obuf,srcdpa_b3_obuf,srcdpa_b4_obuf,srcdpa_b5_obuf,srcdpa_b6_obuf,srcdpa_b7_obuf,srcdpa_b8_obuf,srcdpa_b9_obuf,srcdpa_b10_obuf,srcdpa_b11_obuf,srcdpa_b12_obuf,srcdpa_b13_obuf,srcdpa_b14_obuf,srcdpa_b15_obuf,srcdpa_b16_obuf,srcdpa_b17_obuf,srcdpa_b18_obuf,srcdpa_b19_obuf,srcdpa_b20_obuf,srcdpa_b21_obuf,srcdpa_b22_obuf,srcdpa_b23_obuf,srcdpa_b24_obuf,srcdpa_b25_obuf,srcdpa_b26_obuf,srcdpa_b27_obuf,srcdpa_b28_obuf,srcdpa_b29_obuf,srcdpa_b30_obuf,srcdpa_b31_obuf}), // IO
-	.d({srcd_b0_obuf,srcd_b1_obuf,srcd_b2_obuf,srcd_b3_obuf,srcd_b4_obuf,srcd_b5_obuf,srcd_b6_obuf,srcd_b7_obuf,srcd_b8_obuf,srcd_b9_obuf,srcd_b10_obuf,srcd_b11_obuf,srcd_b12_obuf,srcd_b13_obuf,srcd_b14_obuf,srcd_b15_obuf,srcd_b16_obuf,srcd_b17_obuf,srcd_b18_obuf,srcd_b19_obuf,srcd_b20_obuf,srcd_b21_obuf,srcd_b22_obuf,srcd_b23_obuf,srcd_b24_obuf,srcd_b25_obuf,srcd_b26_obuf,srcd_b27_obuf,srcd_b28_obuf,srcd_b29_obuf,srcd_b30_obuf,srcd_b31_obuf}), // IN
-	.ld(exeb), // IN
-	.clk(clk)  // IN
+	.q /* OUT */ ({srcdpa_b0_obuf,srcdpa_b1_obuf,srcdpa_b2_obuf,srcdpa_b3_obuf,srcdpa_b4_obuf,srcdpa_b5_obuf,srcdpa_b6_obuf,srcdpa_b7_obuf,srcdpa_b8_obuf,srcdpa_b9_obuf,srcdpa_b10_obuf,srcdpa_b11_obuf,srcdpa_b12_obuf,srcdpa_b13_obuf,srcdpa_b14_obuf,srcdpa_b15_obuf,srcdpa_b16_obuf,srcdpa_b17_obuf,srcdpa_b18_obuf,srcdpa_b19_obuf,srcdpa_b20_obuf,srcdpa_b21_obuf,srcdpa_b22_obuf,srcdpa_b23_obuf,srcdpa_b24_obuf,srcdpa_b25_obuf,srcdpa_b26_obuf,srcdpa_b27_obuf,srcdpa_b28_obuf,srcdpa_b29_obuf,srcdpa_b30_obuf,srcdpa_b31_obuf}),
+	.d /* IN */ ({srcd_b0_obuf,srcd_b1_obuf,srcd_b2_obuf,srcd_b3_obuf,srcd_b4_obuf,srcd_b5_obuf,srcd_b6_obuf,srcd_b7_obuf,srcd_b8_obuf,srcd_b9_obuf,srcd_b10_obuf,srcd_b11_obuf,srcd_b12_obuf,srcd_b13_obuf,srcd_b14_obuf,srcd_b15_obuf,srcd_b16_obuf,srcd_b17_obuf,srcd_b18_obuf,srcd_b19_obuf,srcd_b20_obuf,srcd_b21_obuf,srcd_b22_obuf,srcd_b23_obuf,srcd_b24_obuf,srcd_b25_obuf,srcd_b26_obuf,srcd_b27_obuf,srcd_b28_obuf,srcd_b29_obuf,srcd_b30_obuf,srcd_b31_obuf}),
+	.ld /* IN */ (exeb),
+	.clk /* IN */ (clk)
 );
 
 // REGIS-WA.NET (127) - srcdp : nivh
@@ -985,751 +985,751 @@ assign srcdp[31] = srcdpa_b31_obuf;
 // REGIS-WA.NET (129) - dstd : mx4p
 mx4 dstd_inst_0
 (
-	.z(dstd_b0_obuf), // OUT
-	.a0(dstdr[0]), // IN
-	.a1(dstwd[0]), // IN
-	.a2(srcwd[0]), // IN
-	.a3(zero32[0]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b0_obuf),
+	.a0 /* IN */ (dstdr[0]),
+	.a1 /* IN */ (dstwd[0]),
+	.a2 /* IN */ (srcwd[0]),
+	.a3 /* IN */ (zero32[0]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_1
 (
-	.z(dstd_b1_obuf), // OUT
-	.a0(dstdr[1]), // IN
-	.a1(dstwd[1]), // IN
-	.a2(srcwd[1]), // IN
-	.a3(zero32[1]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b1_obuf),
+	.a0 /* IN */ (dstdr[1]),
+	.a1 /* IN */ (dstwd[1]),
+	.a2 /* IN */ (srcwd[1]),
+	.a3 /* IN */ (zero32[1]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_2
 (
-	.z(dstd_b2_obuf), // OUT
-	.a0(dstdr[2]), // IN
-	.a1(dstwd[2]), // IN
-	.a2(srcwd[2]), // IN
-	.a3(zero32[2]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b2_obuf),
+	.a0 /* IN */ (dstdr[2]),
+	.a1 /* IN */ (dstwd[2]),
+	.a2 /* IN */ (srcwd[2]),
+	.a3 /* IN */ (zero32[2]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_3
 (
-	.z(dstd_b3_obuf), // OUT
-	.a0(dstdr[3]), // IN
-	.a1(dstwd[3]), // IN
-	.a2(srcwd[3]), // IN
-	.a3(zero32[3]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b3_obuf),
+	.a0 /* IN */ (dstdr[3]),
+	.a1 /* IN */ (dstwd[3]),
+	.a2 /* IN */ (srcwd[3]),
+	.a3 /* IN */ (zero32[3]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_4
 (
-	.z(dstd_b4_obuf), // OUT
-	.a0(dstdr[4]), // IN
-	.a1(dstwd[4]), // IN
-	.a2(srcwd[4]), // IN
-	.a3(zero32[4]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b4_obuf),
+	.a0 /* IN */ (dstdr[4]),
+	.a1 /* IN */ (dstwd[4]),
+	.a2 /* IN */ (srcwd[4]),
+	.a3 /* IN */ (zero32[4]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_5
 (
-	.z(dstd_b5_obuf), // OUT
-	.a0(dstdr[5]), // IN
-	.a1(dstwd[5]), // IN
-	.a2(srcwd[5]), // IN
-	.a3(zero32[5]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b5_obuf),
+	.a0 /* IN */ (dstdr[5]),
+	.a1 /* IN */ (dstwd[5]),
+	.a2 /* IN */ (srcwd[5]),
+	.a3 /* IN */ (zero32[5]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_6
 (
-	.z(dstd_b6_obuf), // OUT
-	.a0(dstdr[6]), // IN
-	.a1(dstwd[6]), // IN
-	.a2(srcwd[6]), // IN
-	.a3(zero32[6]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b6_obuf),
+	.a0 /* IN */ (dstdr[6]),
+	.a1 /* IN */ (dstwd[6]),
+	.a2 /* IN */ (srcwd[6]),
+	.a3 /* IN */ (zero32[6]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_7
 (
-	.z(dstd_b7_obuf), // OUT
-	.a0(dstdr[7]), // IN
-	.a1(dstwd[7]), // IN
-	.a2(srcwd[7]), // IN
-	.a3(zero32[7]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b7_obuf),
+	.a0 /* IN */ (dstdr[7]),
+	.a1 /* IN */ (dstwd[7]),
+	.a2 /* IN */ (srcwd[7]),
+	.a3 /* IN */ (zero32[7]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_8
 (
-	.z(dstd_b8_obuf), // OUT
-	.a0(dstdr[8]), // IN
-	.a1(dstwd[8]), // IN
-	.a2(srcwd[8]), // IN
-	.a3(zero32[8]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b8_obuf),
+	.a0 /* IN */ (dstdr[8]),
+	.a1 /* IN */ (dstwd[8]),
+	.a2 /* IN */ (srcwd[8]),
+	.a3 /* IN */ (zero32[8]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_9
 (
-	.z(dstd_b9_obuf), // OUT
-	.a0(dstdr[9]), // IN
-	.a1(dstwd[9]), // IN
-	.a2(srcwd[9]), // IN
-	.a3(zero32[9]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b9_obuf),
+	.a0 /* IN */ (dstdr[9]),
+	.a1 /* IN */ (dstwd[9]),
+	.a2 /* IN */ (srcwd[9]),
+	.a3 /* IN */ (zero32[9]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_10
 (
-	.z(dstd_b10_obuf), // OUT
-	.a0(dstdr[10]), // IN
-	.a1(dstwd[10]), // IN
-	.a2(srcwd[10]), // IN
-	.a3(zero32[10]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b10_obuf),
+	.a0 /* IN */ (dstdr[10]),
+	.a1 /* IN */ (dstwd[10]),
+	.a2 /* IN */ (srcwd[10]),
+	.a3 /* IN */ (zero32[10]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_11
 (
-	.z(dstd_b11_obuf), // OUT
-	.a0(dstdr[11]), // IN
-	.a1(dstwd[11]), // IN
-	.a2(srcwd[11]), // IN
-	.a3(zero32[11]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b11_obuf),
+	.a0 /* IN */ (dstdr[11]),
+	.a1 /* IN */ (dstwd[11]),
+	.a2 /* IN */ (srcwd[11]),
+	.a3 /* IN */ (zero32[11]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_12
 (
-	.z(dstd_b12_obuf), // OUT
-	.a0(dstdr[12]), // IN
-	.a1(dstwd[12]), // IN
-	.a2(srcwd[12]), // IN
-	.a3(zero32[12]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b12_obuf),
+	.a0 /* IN */ (dstdr[12]),
+	.a1 /* IN */ (dstwd[12]),
+	.a2 /* IN */ (srcwd[12]),
+	.a3 /* IN */ (zero32[12]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_13
 (
-	.z(dstd_b13_obuf), // OUT
-	.a0(dstdr[13]), // IN
-	.a1(dstwd[13]), // IN
-	.a2(srcwd[13]), // IN
-	.a3(zero32[13]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b13_obuf),
+	.a0 /* IN */ (dstdr[13]),
+	.a1 /* IN */ (dstwd[13]),
+	.a2 /* IN */ (srcwd[13]),
+	.a3 /* IN */ (zero32[13]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_14
 (
-	.z(dstd_b14_obuf), // OUT
-	.a0(dstdr[14]), // IN
-	.a1(dstwd[14]), // IN
-	.a2(srcwd[14]), // IN
-	.a3(zero32[14]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b14_obuf),
+	.a0 /* IN */ (dstdr[14]),
+	.a1 /* IN */ (dstwd[14]),
+	.a2 /* IN */ (srcwd[14]),
+	.a3 /* IN */ (zero32[14]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_15
 (
-	.z(dstd_b15_obuf), // OUT
-	.a0(dstdr[15]), // IN
-	.a1(dstwd[15]), // IN
-	.a2(srcwd[15]), // IN
-	.a3(zero32[15]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b15_obuf),
+	.a0 /* IN */ (dstdr[15]),
+	.a1 /* IN */ (dstwd[15]),
+	.a2 /* IN */ (srcwd[15]),
+	.a3 /* IN */ (zero32[15]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_16
 (
-	.z(dstd_b16_obuf), // OUT
-	.a0(dstdr[16]), // IN
-	.a1(dstwd[16]), // IN
-	.a2(srcwd[16]), // IN
-	.a3(zero32[16]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b16_obuf),
+	.a0 /* IN */ (dstdr[16]),
+	.a1 /* IN */ (dstwd[16]),
+	.a2 /* IN */ (srcwd[16]),
+	.a3 /* IN */ (zero32[16]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_17
 (
-	.z(dstd_b17_obuf), // OUT
-	.a0(dstdr[17]), // IN
-	.a1(dstwd[17]), // IN
-	.a2(srcwd[17]), // IN
-	.a3(zero32[17]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b17_obuf),
+	.a0 /* IN */ (dstdr[17]),
+	.a1 /* IN */ (dstwd[17]),
+	.a2 /* IN */ (srcwd[17]),
+	.a3 /* IN */ (zero32[17]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_18
 (
-	.z(dstd_b18_obuf), // OUT
-	.a0(dstdr[18]), // IN
-	.a1(dstwd[18]), // IN
-	.a2(srcwd[18]), // IN
-	.a3(zero32[18]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b18_obuf),
+	.a0 /* IN */ (dstdr[18]),
+	.a1 /* IN */ (dstwd[18]),
+	.a2 /* IN */ (srcwd[18]),
+	.a3 /* IN */ (zero32[18]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_19
 (
-	.z(dstd_b19_obuf), // OUT
-	.a0(dstdr[19]), // IN
-	.a1(dstwd[19]), // IN
-	.a2(srcwd[19]), // IN
-	.a3(zero32[19]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b19_obuf),
+	.a0 /* IN */ (dstdr[19]),
+	.a1 /* IN */ (dstwd[19]),
+	.a2 /* IN */ (srcwd[19]),
+	.a3 /* IN */ (zero32[19]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_20
 (
-	.z(dstd_b20_obuf), // OUT
-	.a0(dstdr[20]), // IN
-	.a1(dstwd[20]), // IN
-	.a2(srcwd[20]), // IN
-	.a3(zero32[20]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b20_obuf),
+	.a0 /* IN */ (dstdr[20]),
+	.a1 /* IN */ (dstwd[20]),
+	.a2 /* IN */ (srcwd[20]),
+	.a3 /* IN */ (zero32[20]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_21
 (
-	.z(dstd_b21_obuf), // OUT
-	.a0(dstdr[21]), // IN
-	.a1(dstwd[21]), // IN
-	.a2(srcwd[21]), // IN
-	.a3(zero32[21]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b21_obuf),
+	.a0 /* IN */ (dstdr[21]),
+	.a1 /* IN */ (dstwd[21]),
+	.a2 /* IN */ (srcwd[21]),
+	.a3 /* IN */ (zero32[21]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_22
 (
-	.z(dstd_b22_obuf), // OUT
-	.a0(dstdr[22]), // IN
-	.a1(dstwd[22]), // IN
-	.a2(srcwd[22]), // IN
-	.a3(zero32[22]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b22_obuf),
+	.a0 /* IN */ (dstdr[22]),
+	.a1 /* IN */ (dstwd[22]),
+	.a2 /* IN */ (srcwd[22]),
+	.a3 /* IN */ (zero32[22]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_23
 (
-	.z(dstd_b23_obuf), // OUT
-	.a0(dstdr[23]), // IN
-	.a1(dstwd[23]), // IN
-	.a2(srcwd[23]), // IN
-	.a3(zero32[23]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b23_obuf),
+	.a0 /* IN */ (dstdr[23]),
+	.a1 /* IN */ (dstwd[23]),
+	.a2 /* IN */ (srcwd[23]),
+	.a3 /* IN */ (zero32[23]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_24
 (
-	.z(dstd_b24_obuf), // OUT
-	.a0(dstdr[24]), // IN
-	.a1(dstwd[24]), // IN
-	.a2(srcwd[24]), // IN
-	.a3(zero32[24]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b24_obuf),
+	.a0 /* IN */ (dstdr[24]),
+	.a1 /* IN */ (dstwd[24]),
+	.a2 /* IN */ (srcwd[24]),
+	.a3 /* IN */ (zero32[24]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_25
 (
-	.z(dstd_b25_obuf), // OUT
-	.a0(dstdr[25]), // IN
-	.a1(dstwd[25]), // IN
-	.a2(srcwd[25]), // IN
-	.a3(zero32[25]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b25_obuf),
+	.a0 /* IN */ (dstdr[25]),
+	.a1 /* IN */ (dstwd[25]),
+	.a2 /* IN */ (srcwd[25]),
+	.a3 /* IN */ (zero32[25]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_26
 (
-	.z(dstd_b26_obuf), // OUT
-	.a0(dstdr[26]), // IN
-	.a1(dstwd[26]), // IN
-	.a2(srcwd[26]), // IN
-	.a3(zero32[26]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b26_obuf),
+	.a0 /* IN */ (dstdr[26]),
+	.a1 /* IN */ (dstwd[26]),
+	.a2 /* IN */ (srcwd[26]),
+	.a3 /* IN */ (zero32[26]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_27
 (
-	.z(dstd_b27_obuf), // OUT
-	.a0(dstdr[27]), // IN
-	.a1(dstwd[27]), // IN
-	.a2(srcwd[27]), // IN
-	.a3(zero32[27]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b27_obuf),
+	.a0 /* IN */ (dstdr[27]),
+	.a1 /* IN */ (dstwd[27]),
+	.a2 /* IN */ (srcwd[27]),
+	.a3 /* IN */ (zero32[27]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_28
 (
-	.z(dstd_b28_obuf), // OUT
-	.a0(dstdr[28]), // IN
-	.a1(dstwd[28]), // IN
-	.a2(srcwd[28]), // IN
-	.a3(zero32[28]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b28_obuf),
+	.a0 /* IN */ (dstdr[28]),
+	.a1 /* IN */ (dstwd[28]),
+	.a2 /* IN */ (srcwd[28]),
+	.a3 /* IN */ (zero32[28]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_29
 (
-	.z(dstd_b29_obuf), // OUT
-	.a0(dstdr[29]), // IN
-	.a1(dstwd[29]), // IN
-	.a2(srcwd[29]), // IN
-	.a3(zero32[29]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b29_obuf),
+	.a0 /* IN */ (dstdr[29]),
+	.a1 /* IN */ (dstwd[29]),
+	.a2 /* IN */ (srcwd[29]),
+	.a3 /* IN */ (zero32[29]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_30
 (
-	.z(dstd_b30_obuf), // OUT
-	.a0(dstdr[30]), // IN
-	.a1(dstwd[30]), // IN
-	.a2(srcwd[30]), // IN
-	.a3(zero32[30]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b30_obuf),
+	.a0 /* IN */ (dstdr[30]),
+	.a1 /* IN */ (dstwd[30]),
+	.a2 /* IN */ (srcwd[30]),
+	.a3 /* IN */ (zero32[30]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 mx4 dstd_inst_31
 (
-	.z(dstd_b31_obuf), // OUT
-	.a0(dstdr[31]), // IN
-	.a1(dstwd[31]), // IN
-	.a2(srcwd[31]), // IN
-	.a3(zero32[31]), // IN
-	.s0(dstdsel_0), // IN
-	.s1(dstdsel_1)  // IN
+	.z /* OUT */ (dstd_b31_obuf),
+	.a0 /* IN */ (dstdr[31]),
+	.a1 /* IN */ (dstwd[31]),
+	.a2 /* IN */ (srcwd[31]),
+	.a3 /* IN */ (zero32[31]),
+	.s0 /* IN */ (dstdsel_0),
+	.s1 /* IN */ (dstdsel_1)
 );
 
 // REGIS-WA.NET (131) - dstdpt : fd1q
 fd1q dstdpt_inst_0
 (
-	.q(dstdpt0[0]), // OUT
-	.d(dstd_b0_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[0]),
+	.d /* IN */ (dstd_b0_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_1
 (
-	.q(dstdpt0[1]), // OUT
-	.d(dstd_b1_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[1]),
+	.d /* IN */ (dstd_b1_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_2
 (
-	.q(dstdpt0[2]), // OUT
-	.d(dstd_b2_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[2]),
+	.d /* IN */ (dstd_b2_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_3
 (
-	.q(dstdpt0[3]), // OUT
-	.d(dstd_b3_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[3]),
+	.d /* IN */ (dstd_b3_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_4
 (
-	.q(dstdpt0[4]), // OUT
-	.d(dstd_b4_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[4]),
+	.d /* IN */ (dstd_b4_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_5
 (
-	.q(dstdpt0[5]), // OUT
-	.d(dstd_b5_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[5]),
+	.d /* IN */ (dstd_b5_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_6
 (
-	.q(dstdpt0[6]), // OUT
-	.d(dstd_b6_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[6]),
+	.d /* IN */ (dstd_b6_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_7
 (
-	.q(dstdpt0[7]), // OUT
-	.d(dstd_b7_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[7]),
+	.d /* IN */ (dstd_b7_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_8
 (
-	.q(dstdpt0[8]), // OUT
-	.d(dstd_b8_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[8]),
+	.d /* IN */ (dstd_b8_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_9
 (
-	.q(dstdpt0[9]), // OUT
-	.d(dstd_b9_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[9]),
+	.d /* IN */ (dstd_b9_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_10
 (
-	.q(dstdpt0[10]), // OUT
-	.d(dstd_b10_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[10]),
+	.d /* IN */ (dstd_b10_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_11
 (
-	.q(dstdpt0[11]), // OUT
-	.d(dstd_b11_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[11]),
+	.d /* IN */ (dstd_b11_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_12
 (
-	.q(dstdpt0[12]), // OUT
-	.d(dstd_b12_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[12]),
+	.d /* IN */ (dstd_b12_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_13
 (
-	.q(dstdpt0[13]), // OUT
-	.d(dstd_b13_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[13]),
+	.d /* IN */ (dstd_b13_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_14
 (
-	.q(dstdpt0[14]), // OUT
-	.d(dstd_b14_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[14]),
+	.d /* IN */ (dstd_b14_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_15
 (
-	.q(dstdpt0[15]), // OUT
-	.d(dstd_b15_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[15]),
+	.d /* IN */ (dstd_b15_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_16
 (
-	.q(dstdpt0[16]), // OUT
-	.d(dstd_b16_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[16]),
+	.d /* IN */ (dstd_b16_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_17
 (
-	.q(dstdpt0[17]), // OUT
-	.d(dstd_b17_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[17]),
+	.d /* IN */ (dstd_b17_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_18
 (
-	.q(dstdpt0[18]), // OUT
-	.d(dstd_b18_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[18]),
+	.d /* IN */ (dstd_b18_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_19
 (
-	.q(dstdpt0[19]), // OUT
-	.d(dstd_b19_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[19]),
+	.d /* IN */ (dstd_b19_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_20
 (
-	.q(dstdpt0[20]), // OUT
-	.d(dstd_b20_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[20]),
+	.d /* IN */ (dstd_b20_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_21
 (
-	.q(dstdpt0[21]), // OUT
-	.d(dstd_b21_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[21]),
+	.d /* IN */ (dstd_b21_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_22
 (
-	.q(dstdpt0[22]), // OUT
-	.d(dstd_b22_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[22]),
+	.d /* IN */ (dstd_b22_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_23
 (
-	.q(dstdpt0[23]), // OUT
-	.d(dstd_b23_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[23]),
+	.d /* IN */ (dstd_b23_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_24
 (
-	.q(dstdpt0[24]), // OUT
-	.d(dstd_b24_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[24]),
+	.d /* IN */ (dstd_b24_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_25
 (
-	.q(dstdpt0[25]), // OUT
-	.d(dstd_b25_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[25]),
+	.d /* IN */ (dstd_b25_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_26
 (
-	.q(dstdpt0[26]), // OUT
-	.d(dstd_b26_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[26]),
+	.d /* IN */ (dstd_b26_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_27
 (
-	.q(dstdpt0[27]), // OUT
-	.d(dstd_b27_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[27]),
+	.d /* IN */ (dstd_b27_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_28
 (
-	.q(dstdpt0[28]), // OUT
-	.d(dstd_b28_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[28]),
+	.d /* IN */ (dstd_b28_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_29
 (
-	.q(dstdpt0[29]), // OUT
-	.d(dstd_b29_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[29]),
+	.d /* IN */ (dstd_b29_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_30
 (
-	.q(dstdpt0[30]), // OUT
-	.d(dstd_b30_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[30]),
+	.d /* IN */ (dstd_b30_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q dstdpt_inst_31
 (
-	.q(dstdpt0[31]), // OUT
-	.d(dstd_b31_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (dstdpt0[31]),
+	.d /* IN */ (dstd_b31_obuf),
+	.cp /* IN */ (clk)
 );
 
 // REGIS-WA.NET (132) - mtx_doverp : fd1qu
 fd1q mtx_doverp_inst
 (
-	.q(mtx_doverp), // OUT
-	.d(mtx_dover), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (mtx_doverp),
+	.d /* IN */ (mtx_dover),
+	.cp /* IN */ (clk)
 );
 
 // REGIS-WA.NET (133) - dstdpt1 : mx2p
 mx2 dstdpt1_inst_0
 (
-	.z(dstdpt1[0]), // OUT
-	.a0(dstdpt0[0]), // IN
-	.a1(mem_data[0]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[0]),
+	.a0 /* IN */ (dstdpt0[0]),
+	.a1 /* IN */ (mem_data[0]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_1
 (
-	.z(dstdpt1[1]), // OUT
-	.a0(dstdpt0[1]), // IN
-	.a1(mem_data[1]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[1]),
+	.a0 /* IN */ (dstdpt0[1]),
+	.a1 /* IN */ (mem_data[1]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_2
 (
-	.z(dstdpt1[2]), // OUT
-	.a0(dstdpt0[2]), // IN
-	.a1(mem_data[2]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[2]),
+	.a0 /* IN */ (dstdpt0[2]),
+	.a1 /* IN */ (mem_data[2]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_3
 (
-	.z(dstdpt1[3]), // OUT
-	.a0(dstdpt0[3]), // IN
-	.a1(mem_data[3]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[3]),
+	.a0 /* IN */ (dstdpt0[3]),
+	.a1 /* IN */ (mem_data[3]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_4
 (
-	.z(dstdpt1[4]), // OUT
-	.a0(dstdpt0[4]), // IN
-	.a1(mem_data[4]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[4]),
+	.a0 /* IN */ (dstdpt0[4]),
+	.a1 /* IN */ (mem_data[4]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_5
 (
-	.z(dstdpt1[5]), // OUT
-	.a0(dstdpt0[5]), // IN
-	.a1(mem_data[5]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[5]),
+	.a0 /* IN */ (dstdpt0[5]),
+	.a1 /* IN */ (mem_data[5]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_6
 (
-	.z(dstdpt1[6]), // OUT
-	.a0(dstdpt0[6]), // IN
-	.a1(mem_data[6]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[6]),
+	.a0 /* IN */ (dstdpt0[6]),
+	.a1 /* IN */ (mem_data[6]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_7
 (
-	.z(dstdpt1[7]), // OUT
-	.a0(dstdpt0[7]), // IN
-	.a1(mem_data[7]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[7]),
+	.a0 /* IN */ (dstdpt0[7]),
+	.a1 /* IN */ (mem_data[7]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_8
 (
-	.z(dstdpt1[8]), // OUT
-	.a0(dstdpt0[8]), // IN
-	.a1(mem_data[8]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[8]),
+	.a0 /* IN */ (dstdpt0[8]),
+	.a1 /* IN */ (mem_data[8]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_9
 (
-	.z(dstdpt1[9]), // OUT
-	.a0(dstdpt0[9]), // IN
-	.a1(mem_data[9]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[9]),
+	.a0 /* IN */ (dstdpt0[9]),
+	.a1 /* IN */ (mem_data[9]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_10
 (
-	.z(dstdpt1[10]), // OUT
-	.a0(dstdpt0[10]), // IN
-	.a1(mem_data[10]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[10]),
+	.a0 /* IN */ (dstdpt0[10]),
+	.a1 /* IN */ (mem_data[10]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_11
 (
-	.z(dstdpt1[11]), // OUT
-	.a0(dstdpt0[11]), // IN
-	.a1(mem_data[11]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[11]),
+	.a0 /* IN */ (dstdpt0[11]),
+	.a1 /* IN */ (mem_data[11]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_12
 (
-	.z(dstdpt1[12]), // OUT
-	.a0(dstdpt0[12]), // IN
-	.a1(mem_data[12]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[12]),
+	.a0 /* IN */ (dstdpt0[12]),
+	.a1 /* IN */ (mem_data[12]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_13
 (
-	.z(dstdpt1[13]), // OUT
-	.a0(dstdpt0[13]), // IN
-	.a1(mem_data[13]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[13]),
+	.a0 /* IN */ (dstdpt0[13]),
+	.a1 /* IN */ (mem_data[13]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_14
 (
-	.z(dstdpt1[14]), // OUT
-	.a0(dstdpt0[14]), // IN
-	.a1(mem_data[14]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[14]),
+	.a0 /* IN */ (dstdpt0[14]),
+	.a1 /* IN */ (mem_data[14]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_15
 (
-	.z(dstdpt1[15]), // OUT
-	.a0(dstdpt0[15]), // IN
-	.a1(mem_data[15]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[15]),
+	.a0 /* IN */ (dstdpt0[15]),
+	.a1 /* IN */ (mem_data[15]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_16
 (
-	.z(dstdpt1[16]), // OUT
-	.a0(dstdpt0[16]), // IN
-	.a1(mem_data[16]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[16]),
+	.a0 /* IN */ (dstdpt0[16]),
+	.a1 /* IN */ (mem_data[16]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_17
 (
-	.z(dstdpt1[17]), // OUT
-	.a0(dstdpt0[17]), // IN
-	.a1(mem_data[17]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[17]),
+	.a0 /* IN */ (dstdpt0[17]),
+	.a1 /* IN */ (mem_data[17]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_18
 (
-	.z(dstdpt1[18]), // OUT
-	.a0(dstdpt0[18]), // IN
-	.a1(mem_data[18]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[18]),
+	.a0 /* IN */ (dstdpt0[18]),
+	.a1 /* IN */ (mem_data[18]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_19
 (
-	.z(dstdpt1[19]), // OUT
-	.a0(dstdpt0[19]), // IN
-	.a1(mem_data[19]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[19]),
+	.a0 /* IN */ (dstdpt0[19]),
+	.a1 /* IN */ (mem_data[19]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_20
 (
-	.z(dstdpt1[20]), // OUT
-	.a0(dstdpt0[20]), // IN
-	.a1(mem_data[20]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[20]),
+	.a0 /* IN */ (dstdpt0[20]),
+	.a1 /* IN */ (mem_data[20]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_21
 (
-	.z(dstdpt1[21]), // OUT
-	.a0(dstdpt0[21]), // IN
-	.a1(mem_data[21]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[21]),
+	.a0 /* IN */ (dstdpt0[21]),
+	.a1 /* IN */ (mem_data[21]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_22
 (
-	.z(dstdpt1[22]), // OUT
-	.a0(dstdpt0[22]), // IN
-	.a1(mem_data[22]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[22]),
+	.a0 /* IN */ (dstdpt0[22]),
+	.a1 /* IN */ (mem_data[22]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_23
 (
-	.z(dstdpt1[23]), // OUT
-	.a0(dstdpt0[23]), // IN
-	.a1(mem_data[23]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[23]),
+	.a0 /* IN */ (dstdpt0[23]),
+	.a1 /* IN */ (mem_data[23]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_24
 (
-	.z(dstdpt1[24]), // OUT
-	.a0(dstdpt0[24]), // IN
-	.a1(mem_data[24]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[24]),
+	.a0 /* IN */ (dstdpt0[24]),
+	.a1 /* IN */ (mem_data[24]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_25
 (
-	.z(dstdpt1[25]), // OUT
-	.a0(dstdpt0[25]), // IN
-	.a1(mem_data[25]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[25]),
+	.a0 /* IN */ (dstdpt0[25]),
+	.a1 /* IN */ (mem_data[25]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_26
 (
-	.z(dstdpt1[26]), // OUT
-	.a0(dstdpt0[26]), // IN
-	.a1(mem_data[26]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[26]),
+	.a0 /* IN */ (dstdpt0[26]),
+	.a1 /* IN */ (mem_data[26]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_27
 (
-	.z(dstdpt1[27]), // OUT
-	.a0(dstdpt0[27]), // IN
-	.a1(mem_data[27]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[27]),
+	.a0 /* IN */ (dstdpt0[27]),
+	.a1 /* IN */ (mem_data[27]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_28
 (
-	.z(dstdpt1[28]), // OUT
-	.a0(dstdpt0[28]), // IN
-	.a1(mem_data[28]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[28]),
+	.a0 /* IN */ (dstdpt0[28]),
+	.a1 /* IN */ (mem_data[28]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_29
 (
-	.z(dstdpt1[29]), // OUT
-	.a0(dstdpt0[29]), // IN
-	.a1(mem_data[29]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[29]),
+	.a0 /* IN */ (dstdpt0[29]),
+	.a1 /* IN */ (mem_data[29]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_30
 (
-	.z(dstdpt1[30]), // OUT
-	.a0(dstdpt0[30]), // IN
-	.a1(mem_data[30]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[30]),
+	.a0 /* IN */ (dstdpt0[30]),
+	.a1 /* IN */ (mem_data[30]),
+	.s /* IN */ (mtx_doverp)
 );
 mx2 dstdpt1_inst_31
 (
-	.z(dstdpt1[31]), // OUT
-	.a0(dstdpt0[31]), // IN
-	.a1(mem_data[31]), // IN
-	.s(mtx_doverp)  // IN
+	.z /* OUT */ (dstdpt1[31]),
+	.a0 /* IN */ (dstdpt0[31]),
+	.a1 /* IN */ (mem_data[31]),
+	.s /* IN */ (mtx_doverp)
 );
 
 // REGIS-WA.NET (134) - dstdp : nivh

@@ -183,11 +183,18 @@ public class Main {
 				return;
 		}
 		
-		
+		// Run pass #3 - Arrange tristate logic
+		PassThreestate p3 = new PassThreestate(ws);
+		try {
+			p3.rewire();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			return;
+		}
 		
 		// System.exit(0);
 		
-		// Run pass #3 - Translate to VHDL/Verilog		
+		// Translate to VHDL/Verilog		
 		TreeMap<String, Entity> deps = new TreeMap<String, Entity>();
 		// ws.find("daddamux").findDeps(deps);
 		Entity root = ws.find("tom");

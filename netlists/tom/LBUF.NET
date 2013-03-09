@@ -24,7 +24,8 @@ DEF LBUF	(aout[1],aout[15],dout[0..31],siz[2],
 INT9/	lbai, lbbi
 (* GE *)
 INT32/ lbrd_d
-	INT16/wdil, wdih, lbadl, lbadh, lbbdl, lbbdh, bgc :IO;
+	INT16/wdil, wdih, bgc :IO;
+	INT16/lbadl, lbadh, lbbdl, lbbdh:BUS; (* GE - declared as BUS *)
 
 
 (*

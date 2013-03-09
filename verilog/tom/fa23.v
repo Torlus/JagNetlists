@@ -92,106 +92,106 @@ assign zero = 1'b0;
 // PREFETCH.NET (360) - fa32 : fa32
 fa32 fa32_inst
 (
-	.s0(s_0), // OUT
-	.s1(s_1), // OUT
-	.s2(s_2), // OUT
-	.s3(s_3), // OUT
-	.s4(s_4), // OUT
-	.s5(s_5), // OUT
-	.s6(s_6), // OUT
-	.s7(s_7), // OUT
-	.s8(s_8), // OUT
-	.s9(s_9), // OUT
-	.s10(s_10), // OUT
-	.s11(s_11), // OUT
-	.s12(s_12), // OUT
-	.s13(s_13), // OUT
-	.s14(s_14), // OUT
-	.s15(s_15), // OUT
-	.s16(s_16), // OUT
-	.s17(s_17), // OUT
-	.s18(s_18), // OUT
-	.s19(s_19), // OUT
-	.s20(s_20), // OUT
-	.s21(s_21), // OUT
-	.s22(s_22), // OUT
-	.s23(s_23), // OUT
-	.s24(s_24), // OUT
-	.s25(s_25), // OUT
-	.s26(s_26), // OUT
-	.s27(s_27), // OUT
-	.s28(s_28), // OUT
-	.s29(s_29), // OUT
-	.s30(s_30), // OUT
-	.s31(s_31), // OUT
-	.co32(unused_0), // OUT
-	.co31(unused_1), // OUT
-	.co24(unused_2), // OUT
-	.ci(zero), // IN
-	.a0(a_0), // IN
-	.b0(b_0), // IN
-	.a1(a_1), // IN
-	.b1(b_1), // IN
-	.a2(a_2), // IN
-	.b2(b_2), // IN
-	.a3(a_3), // IN
-	.b3(b_3), // IN
-	.a4(a_4), // IN
-	.b4(b_4), // IN
-	.a5(a_5), // IN
-	.b5(b_5), // IN
-	.a6(a_6), // IN
-	.b6(b_6), // IN
-	.a7(a_7), // IN
-	.b7(b_7), // IN
-	.a8(a_8), // IN
-	.b8(b_8), // IN
-	.a9(a_9), // IN
-	.b9(b_9), // IN
-	.a10(a_10), // IN
-	.b10(b_10), // IN
-	.a11(a_11), // IN
-	.b11(b_11), // IN
-	.a12(a_12), // IN
-	.b12(b_12), // IN
-	.a13(a_13), // IN
-	.b13(b_13), // IN
-	.a14(a_14), // IN
-	.b14(b_14), // IN
-	.a15(a_15), // IN
-	.b15(b_15), // IN
-	.a16(a_16), // IN
-	.b16(b_16), // IN
-	.a17(a_17), // IN
-	.b17(b_17), // IN
-	.a18(a_18), // IN
-	.b18(b_18), // IN
-	.a19(a_19), // IN
-	.b19(b_19), // IN
-	.a20(a_20), // IN
-	.b20(b_20), // IN
-	.a21(a_21), // IN
-	.b21(b_21), // IN
-	.a22(a_22), // IN
-	.b22(b_22), // IN
-	.a23(zero), // IN
-	.b23(zero), // IN
-	.a24(zero), // IN
-	.b24(zero), // IN
-	.a25(zero), // IN
-	.b25(zero), // IN
-	.a26(zero), // IN
-	.b26(zero), // IN
-	.a27(zero), // IN
-	.b27(zero), // IN
-	.a28(zero), // IN
-	.b28(zero), // IN
-	.a29(zero), // IN
-	.b29(zero), // IN
-	.a30(zero), // IN
-	.b30(zero), // IN
-	.a31(zero), // IN
-	.b31(zero)  // IN
+	.s0 /* OUT */ (s_0),
+	.s1 /* OUT */ (s_1),
+	.s2 /* OUT */ (s_2),
+	.s3 /* OUT */ (s_3),
+	.s4 /* OUT */ (s_4),
+	.s5 /* OUT */ (s_5),
+	.s6 /* OUT */ (s_6),
+	.s7 /* OUT */ (s_7),
+	.s8 /* OUT */ (s_8),
+	.s9 /* OUT */ (s_9),
+	.s10 /* OUT */ (s_10),
+	.s11 /* OUT */ (s_11),
+	.s12 /* OUT */ (s_12),
+	.s13 /* OUT */ (s_13),
+	.s14 /* OUT */ (s_14),
+	.s15 /* OUT */ (s_15),
+	.s16 /* OUT */ (s_16),
+	.s17 /* OUT */ (s_17),
+	.s18 /* OUT */ (s_18),
+	.s19 /* OUT */ (s_19),
+	.s20 /* OUT */ (s_20),
+	.s21 /* OUT */ (s_21),
+	.s22 /* OUT */ (s_22),
+	.s23 /* OUT */ (s_23),
+	.s24 /* OUT */ (s_24),
+	.s25 /* OUT */ (s_25),
+	.s26 /* OUT */ (s_26),
+	.s27 /* OUT */ (s_27),
+	.s28 /* OUT */ (s_28),
+	.s29 /* OUT */ (s_29),
+	.s30 /* OUT */ (s_30),
+	.s31 /* OUT */ (s_31),
+	.co32 /* OUT */ (unused_0),
+	.co31 /* OUT */ (unused_1),
+	.co24 /* OUT */ (unused_2),
+	.ci /* IN */ (zero),
+	.a0 /* IN */ (a_0),
+	.b0 /* IN */ (b_0),
+	.a1 /* IN */ (a_1),
+	.b1 /* IN */ (b_1),
+	.a2 /* IN */ (a_2),
+	.b2 /* IN */ (b_2),
+	.a3 /* IN */ (a_3),
+	.b3 /* IN */ (b_3),
+	.a4 /* IN */ (a_4),
+	.b4 /* IN */ (b_4),
+	.a5 /* IN */ (a_5),
+	.b5 /* IN */ (b_5),
+	.a6 /* IN */ (a_6),
+	.b6 /* IN */ (b_6),
+	.a7 /* IN */ (a_7),
+	.b7 /* IN */ (b_7),
+	.a8 /* IN */ (a_8),
+	.b8 /* IN */ (b_8),
+	.a9 /* IN */ (a_9),
+	.b9 /* IN */ (b_9),
+	.a10 /* IN */ (a_10),
+	.b10 /* IN */ (b_10),
+	.a11 /* IN */ (a_11),
+	.b11 /* IN */ (b_11),
+	.a12 /* IN */ (a_12),
+	.b12 /* IN */ (b_12),
+	.a13 /* IN */ (a_13),
+	.b13 /* IN */ (b_13),
+	.a14 /* IN */ (a_14),
+	.b14 /* IN */ (b_14),
+	.a15 /* IN */ (a_15),
+	.b15 /* IN */ (b_15),
+	.a16 /* IN */ (a_16),
+	.b16 /* IN */ (b_16),
+	.a17 /* IN */ (a_17),
+	.b17 /* IN */ (b_17),
+	.a18 /* IN */ (a_18),
+	.b18 /* IN */ (b_18),
+	.a19 /* IN */ (a_19),
+	.b19 /* IN */ (b_19),
+	.a20 /* IN */ (a_20),
+	.b20 /* IN */ (b_20),
+	.a21 /* IN */ (a_21),
+	.b21 /* IN */ (b_21),
+	.a22 /* IN */ (a_22),
+	.b22 /* IN */ (b_22),
+	.a23 /* IN */ (zero),
+	.b23 /* IN */ (zero),
+	.a24 /* IN */ (zero),
+	.b24 /* IN */ (zero),
+	.a25 /* IN */ (zero),
+	.b25 /* IN */ (zero),
+	.a26 /* IN */ (zero),
+	.b26 /* IN */ (zero),
+	.a27 /* IN */ (zero),
+	.b27 /* IN */ (zero),
+	.a28 /* IN */ (zero),
+	.b28 /* IN */ (zero),
+	.a29 /* IN */ (zero),
+	.b29 /* IN */ (zero),
+	.a30 /* IN */ (zero),
+	.b30 /* IN */ (zero),
+	.a31 /* IN */ (zero),
+	.b31 /* IN */ (zero)
 );
 
 // PREFETCH.NET (369) - dummy[0-2] : dummy

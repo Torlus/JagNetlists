@@ -28,9 +28,9 @@ assign ip = ~(clear | ipt);
 // DUPLO.NET (767) - q : fd2q
 fd2q q_inst
 (
-	.q(q_obuf), // OUT
-	.d(ip), // IN
-	.cp(clock), // IN
-	.cd(reset_n)  // IN
+	.q /* OUT */ (q_obuf),
+	.d /* IN */ (ip),
+	.cp /* IN */ (clock),
+	.cd /* IN */ (reset_n)
 );
 endmodule

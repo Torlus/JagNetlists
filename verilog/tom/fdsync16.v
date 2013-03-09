@@ -2,8 +2,8 @@
 
 module fdsync16
 (
-	output[0:15] q;
-	input[0:15] d;
+	output [0:15] q;
+	input [0:15] d;
 	input ld,
 	input clk
 );
@@ -50,147 +50,147 @@ assign q[15] = q_b15_obuf;
 // DUPLO.NET (266) - q : fd1e
 fd1e q_inst_0
 (
-	.q(q_b0_obuf), // OUT
-	.qn(qb[0]), // OUT
-	.d(q_b0_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[0]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b0_obuf),
+	.qn /* OUT */ (qb[0]),
+	.d /* IN */ (q_b0_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[0]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_1
 (
-	.q(q_b1_obuf), // OUT
-	.qn(qb[1]), // OUT
-	.d(q_b1_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[1]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b1_obuf),
+	.qn /* OUT */ (qb[1]),
+	.d /* IN */ (q_b1_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[1]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_2
 (
-	.q(q_b2_obuf), // OUT
-	.qn(qb[2]), // OUT
-	.d(q_b2_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[2]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b2_obuf),
+	.qn /* OUT */ (qb[2]),
+	.d /* IN */ (q_b2_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[2]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_3
 (
-	.q(q_b3_obuf), // OUT
-	.qn(qb[3]), // OUT
-	.d(q_b3_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[3]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b3_obuf),
+	.qn /* OUT */ (qb[3]),
+	.d /* IN */ (q_b3_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[3]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_4
 (
-	.q(q_b4_obuf), // OUT
-	.qn(qb[4]), // OUT
-	.d(q_b4_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[4]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b4_obuf),
+	.qn /* OUT */ (qb[4]),
+	.d /* IN */ (q_b4_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[4]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_5
 (
-	.q(q_b5_obuf), // OUT
-	.qn(qb[5]), // OUT
-	.d(q_b5_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[5]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b5_obuf),
+	.qn /* OUT */ (qb[5]),
+	.d /* IN */ (q_b5_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[5]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_6
 (
-	.q(q_b6_obuf), // OUT
-	.qn(qb[6]), // OUT
-	.d(q_b6_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[6]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b6_obuf),
+	.qn /* OUT */ (qb[6]),
+	.d /* IN */ (q_b6_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[6]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_7
 (
-	.q(q_b7_obuf), // OUT
-	.qn(qb[7]), // OUT
-	.d(q_b7_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[7]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b7_obuf),
+	.qn /* OUT */ (qb[7]),
+	.d /* IN */ (q_b7_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[7]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_8
 (
-	.q(q_b8_obuf), // OUT
-	.qn(qb[8]), // OUT
-	.d(q_b8_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[8]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b8_obuf),
+	.qn /* OUT */ (qb[8]),
+	.d /* IN */ (q_b8_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[8]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_9
 (
-	.q(q_b9_obuf), // OUT
-	.qn(qb[9]), // OUT
-	.d(q_b9_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[9]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b9_obuf),
+	.qn /* OUT */ (qb[9]),
+	.d /* IN */ (q_b9_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[9]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_10
 (
-	.q(q_b10_obuf), // OUT
-	.qn(qb[10]), // OUT
-	.d(q_b10_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[10]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b10_obuf),
+	.qn /* OUT */ (qb[10]),
+	.d /* IN */ (q_b10_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[10]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_11
 (
-	.q(q_b11_obuf), // OUT
-	.qn(qb[11]), // OUT
-	.d(q_b11_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[11]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b11_obuf),
+	.qn /* OUT */ (qb[11]),
+	.d /* IN */ (q_b11_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[11]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_12
 (
-	.q(q_b12_obuf), // OUT
-	.qn(qb[12]), // OUT
-	.d(q_b12_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[12]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b12_obuf),
+	.qn /* OUT */ (qb[12]),
+	.d /* IN */ (q_b12_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[12]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_13
 (
-	.q(q_b13_obuf), // OUT
-	.qn(qb[13]), // OUT
-	.d(q_b13_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[13]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b13_obuf),
+	.qn /* OUT */ (qb[13]),
+	.d /* IN */ (q_b13_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[13]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_14
 (
-	.q(q_b14_obuf), // OUT
-	.qn(qb[14]), // OUT
-	.d(q_b14_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[14]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b14_obuf),
+	.qn /* OUT */ (qb[14]),
+	.d /* IN */ (q_b14_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[14]),
+	.te /* IN */ (ld)
 );
 fd1e q_inst_15
 (
-	.q(q_b15_obuf), // OUT
-	.qn(qb[15]), // OUT
-	.d(q_b15_obuf), // IN
-	.cp(clk), // IN
-	.ti(d[15]), // IN
-	.te(ld)  // IN
+	.q /* OUT */ (q_b15_obuf),
+	.qn /* OUT */ (qb[15]),
+	.d /* IN */ (q_b15_obuf),
+	.cp /* IN */ (clk),
+	.ti /* IN */ (d[15]),
+	.te /* IN */ (ld)
 );
 
 // DUPLO.NET (267) - dummy : dummy

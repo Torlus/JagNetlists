@@ -96,60 +96,6 @@ wire g3b_5;
 wire g3b_6;
 wire g3b_7;
 
-// Output buffers
-wire r_0_obuf;
-wire r_1_obuf;
-wire r_2_obuf;
-wire r_3_obuf;
-wire r_4_obuf;
-wire r_5_obuf;
-wire r_6_obuf;
-wire r_7_obuf;
-wire g_0_obuf;
-wire g_1_obuf;
-wire g_2_obuf;
-wire g_3_obuf;
-wire g_4_obuf;
-wire g_5_obuf;
-wire g_6_obuf;
-wire g_7_obuf;
-wire b_0_obuf;
-wire b_1_obuf;
-wire b_2_obuf;
-wire b_3_obuf;
-wire b_4_obuf;
-wire b_5_obuf;
-wire b_6_obuf;
-wire b_7_obuf;
-
-
-// Output buffers
-assign r_0 = r_0_obuf;
-assign r_1 = r_1_obuf;
-assign r_2 = r_2_obuf;
-assign r_3 = r_3_obuf;
-assign r_4 = r_4_obuf;
-assign r_5 = r_5_obuf;
-assign r_6 = r_6_obuf;
-assign r_7 = r_7_obuf;
-assign g_0 = g_0_obuf;
-assign g_1 = g_1_obuf;
-assign g_2 = g_2_obuf;
-assign g_3 = g_3_obuf;
-assign g_4 = g_4_obuf;
-assign g_5 = g_5_obuf;
-assign g_6 = g_6_obuf;
-assign g_7 = g_7_obuf;
-assign b_0 = b_0_obuf;
-assign b_1 = b_1_obuf;
-assign b_2 = b_2_obuf;
-assign b_3 = b_3_obuf;
-assign b_4 = b_4_obuf;
-assign b_5 = b_5_obuf;
-assign b_6 = b_6_obuf;
-assign b_7 = b_7_obuf;
-
-
 // PIX.NET (184) - i : join
 assign i[0] = cry_0;
 assign i[1] = cry_1;
@@ -173,25 +119,25 @@ assign c[7] = cry_15;
 // PIX.NET (201) - red : ra8008a
 ra8008a red_inst
 (
-	.z({r1[0],r1[1],r1[2],r1[3],r1[4],r1[5],r1[6],r1[7]}), // OUT
-	.clk(vclk), // IN
-	.a({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})  // IN
+	.z /* OUT */ ({r1[0],r1[1],r1[2],r1[3],r1[4],r1[5],r1[6],r1[7]}),
+	.clk /* IN */ (vclk),
+	.a /* IN */ ({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})
 );
 
 // PIX.NET (202) - green : ra8008b
 ra8008b green_inst
 (
-	.z({g1[0],g1[1],g1[2],g1[3],g1[4],g1[5],g1[6],g1[7]}), // OUT
-	.clk(vclk), // IN
-	.a({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})  // IN
+	.z /* OUT */ ({g1[0],g1[1],g1[2],g1[3],g1[4],g1[5],g1[6],g1[7]}),
+	.clk /* IN */ (vclk),
+	.a /* IN */ ({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})
 );
 
 // PIX.NET (203) - blue : ra8008c
 ra8008c blue_inst
 (
-	.z({b1[0],b1[1],b1[2],b1[3],b1[4],b1[5],b1[6],b1[7]}), // OUT
-	.clk(vclk), // IN
-	.a({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})  // IN
+	.z /* OUT */ ({b1[0],b1[1],b1[2],b1[3],b1[4],b1[5],b1[6],b1[7]}),
+	.clk /* IN */ (vclk),
+	.a /* IN */ ({c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7]})
 );
 
 // PIX.NET (208) - rgbtsti : or2
@@ -203,383 +149,383 @@ assign rgbtst = rgbtsti;
 // PIX.NET (210) - rt : mx2
 mx2 rt_inst_0
 (
-	.z(rt[0]), // OUT
-	.a0(r1[0]), // IN
-	.a1(c[0]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[0]),
+	.a0 /* IN */ (r1[0]),
+	.a1 /* IN */ (c[0]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_1
 (
-	.z(rt[1]), // OUT
-	.a0(r1[1]), // IN
-	.a1(c[1]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[1]),
+	.a0 /* IN */ (r1[1]),
+	.a1 /* IN */ (c[1]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_2
 (
-	.z(rt[2]), // OUT
-	.a0(r1[2]), // IN
-	.a1(c[2]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[2]),
+	.a0 /* IN */ (r1[2]),
+	.a1 /* IN */ (c[2]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_3
 (
-	.z(rt[3]), // OUT
-	.a0(r1[3]), // IN
-	.a1(c[3]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[3]),
+	.a0 /* IN */ (r1[3]),
+	.a1 /* IN */ (c[3]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_4
 (
-	.z(rt[4]), // OUT
-	.a0(r1[4]), // IN
-	.a1(c[4]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[4]),
+	.a0 /* IN */ (r1[4]),
+	.a1 /* IN */ (c[4]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_5
 (
-	.z(rt[5]), // OUT
-	.a0(r1[5]), // IN
-	.a1(c[5]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[5]),
+	.a0 /* IN */ (r1[5]),
+	.a1 /* IN */ (c[5]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_6
 (
-	.z(rt[6]), // OUT
-	.a0(r1[6]), // IN
-	.a1(c[6]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[6]),
+	.a0 /* IN */ (r1[6]),
+	.a1 /* IN */ (c[6]),
+	.s /* IN */ (rgbtst)
 );
 mx2 rt_inst_7
 (
-	.z(rt[7]), // OUT
-	.a0(r1[7]), // IN
-	.a1(c[7]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (rt[7]),
+	.a0 /* IN */ (r1[7]),
+	.a1 /* IN */ (c[7]),
+	.s /* IN */ (rgbtst)
 );
 
 // PIX.NET (211) - gt : mx2
 mx2 gt_inst_0
 (
-	.z(gt[0]), // OUT
-	.a0(g1[0]), // IN
-	.a1(c[0]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[0]),
+	.a0 /* IN */ (g1[0]),
+	.a1 /* IN */ (c[0]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_1
 (
-	.z(gt[1]), // OUT
-	.a0(g1[1]), // IN
-	.a1(c[1]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[1]),
+	.a0 /* IN */ (g1[1]),
+	.a1 /* IN */ (c[1]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_2
 (
-	.z(gt[2]), // OUT
-	.a0(g1[2]), // IN
-	.a1(c[2]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[2]),
+	.a0 /* IN */ (g1[2]),
+	.a1 /* IN */ (c[2]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_3
 (
-	.z(gt[3]), // OUT
-	.a0(g1[3]), // IN
-	.a1(c[3]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[3]),
+	.a0 /* IN */ (g1[3]),
+	.a1 /* IN */ (c[3]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_4
 (
-	.z(gt[4]), // OUT
-	.a0(g1[4]), // IN
-	.a1(c[4]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[4]),
+	.a0 /* IN */ (g1[4]),
+	.a1 /* IN */ (c[4]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_5
 (
-	.z(gt[5]), // OUT
-	.a0(g1[5]), // IN
-	.a1(c[5]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[5]),
+	.a0 /* IN */ (g1[5]),
+	.a1 /* IN */ (c[5]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_6
 (
-	.z(gt[6]), // OUT
-	.a0(g1[6]), // IN
-	.a1(c[6]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[6]),
+	.a0 /* IN */ (g1[6]),
+	.a1 /* IN */ (c[6]),
+	.s /* IN */ (rgbtst)
 );
 mx2 gt_inst_7
 (
-	.z(gt[7]), // OUT
-	.a0(g1[7]), // IN
-	.a1(c[7]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (gt[7]),
+	.a0 /* IN */ (g1[7]),
+	.a1 /* IN */ (c[7]),
+	.s /* IN */ (rgbtst)
 );
 
 // PIX.NET (212) - bt : mx2
 mx2 bt_inst_0
 (
-	.z(bt[0]), // OUT
-	.a0(b1[0]), // IN
-	.a1(c[0]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[0]),
+	.a0 /* IN */ (b1[0]),
+	.a1 /* IN */ (c[0]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_1
 (
-	.z(bt[1]), // OUT
-	.a0(b1[1]), // IN
-	.a1(c[1]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[1]),
+	.a0 /* IN */ (b1[1]),
+	.a1 /* IN */ (c[1]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_2
 (
-	.z(bt[2]), // OUT
-	.a0(b1[2]), // IN
-	.a1(c[2]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[2]),
+	.a0 /* IN */ (b1[2]),
+	.a1 /* IN */ (c[2]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_3
 (
-	.z(bt[3]), // OUT
-	.a0(b1[3]), // IN
-	.a1(c[3]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[3]),
+	.a0 /* IN */ (b1[3]),
+	.a1 /* IN */ (c[3]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_4
 (
-	.z(bt[4]), // OUT
-	.a0(b1[4]), // IN
-	.a1(c[4]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[4]),
+	.a0 /* IN */ (b1[4]),
+	.a1 /* IN */ (c[4]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_5
 (
-	.z(bt[5]), // OUT
-	.a0(b1[5]), // IN
-	.a1(c[5]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[5]),
+	.a0 /* IN */ (b1[5]),
+	.a1 /* IN */ (c[5]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_6
 (
-	.z(bt[6]), // OUT
-	.a0(b1[6]), // IN
-	.a1(c[6]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[6]),
+	.a0 /* IN */ (b1[6]),
+	.a1 /* IN */ (c[6]),
+	.s /* IN */ (rgbtst)
 );
 mx2 bt_inst_7
 (
-	.z(bt[7]), // OUT
-	.a0(b1[7]), // IN
-	.a1(c[7]), // IN
-	.s(rgbtst)  // IN
+	.z /* OUT */ (bt[7]),
+	.a0 /* IN */ (b1[7]),
+	.a1 /* IN */ (c[7]),
+	.s /* IN */ (rgbtst)
 );
 
 // PIX.NET (216) - r2 : fd1q
 fd1q r2_inst_0
 (
-	.q(r2[0]), // OUT
-	.d(rt[0]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[0]),
+	.d /* IN */ (rt[0]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_1
 (
-	.q(r2[1]), // OUT
-	.d(rt[1]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[1]),
+	.d /* IN */ (rt[1]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_2
 (
-	.q(r2[2]), // OUT
-	.d(rt[2]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[2]),
+	.d /* IN */ (rt[2]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_3
 (
-	.q(r2[3]), // OUT
-	.d(rt[3]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[3]),
+	.d /* IN */ (rt[3]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_4
 (
-	.q(r2[4]), // OUT
-	.d(rt[4]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[4]),
+	.d /* IN */ (rt[4]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_5
 (
-	.q(r2[5]), // OUT
-	.d(rt[5]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[5]),
+	.d /* IN */ (rt[5]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_6
 (
-	.q(r2[6]), // OUT
-	.d(rt[6]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[6]),
+	.d /* IN */ (rt[6]),
+	.cp /* IN */ (vclk)
 );
 fd1q r2_inst_7
 (
-	.q(r2[7]), // OUT
-	.d(rt[7]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (r2[7]),
+	.d /* IN */ (rt[7]),
+	.cp /* IN */ (vclk)
 );
 
 // PIX.NET (217) - g2 : fd1q
 fd1q g2_inst_0
 (
-	.q(g2[0]), // OUT
-	.d(gt[0]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[0]),
+	.d /* IN */ (gt[0]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_1
 (
-	.q(g2[1]), // OUT
-	.d(gt[1]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[1]),
+	.d /* IN */ (gt[1]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_2
 (
-	.q(g2[2]), // OUT
-	.d(gt[2]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[2]),
+	.d /* IN */ (gt[2]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_3
 (
-	.q(g2[3]), // OUT
-	.d(gt[3]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[3]),
+	.d /* IN */ (gt[3]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_4
 (
-	.q(g2[4]), // OUT
-	.d(gt[4]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[4]),
+	.d /* IN */ (gt[4]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_5
 (
-	.q(g2[5]), // OUT
-	.d(gt[5]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[5]),
+	.d /* IN */ (gt[5]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_6
 (
-	.q(g2[6]), // OUT
-	.d(gt[6]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[6]),
+	.d /* IN */ (gt[6]),
+	.cp /* IN */ (vclk)
 );
 fd1q g2_inst_7
 (
-	.q(g2[7]), // OUT
-	.d(gt[7]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (g2[7]),
+	.d /* IN */ (gt[7]),
+	.cp /* IN */ (vclk)
 );
 
 // PIX.NET (218) - b2 : fd1q
 fd1q b2_inst_0
 (
-	.q(b2[0]), // OUT
-	.d(bt[0]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[0]),
+	.d /* IN */ (bt[0]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_1
 (
-	.q(b2[1]), // OUT
-	.d(bt[1]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[1]),
+	.d /* IN */ (bt[1]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_2
 (
-	.q(b2[2]), // OUT
-	.d(bt[2]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[2]),
+	.d /* IN */ (bt[2]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_3
 (
-	.q(b2[3]), // OUT
-	.d(bt[3]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[3]),
+	.d /* IN */ (bt[3]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_4
 (
-	.q(b2[4]), // OUT
-	.d(bt[4]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[4]),
+	.d /* IN */ (bt[4]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_5
 (
-	.q(b2[5]), // OUT
-	.d(bt[5]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[5]),
+	.d /* IN */ (bt[5]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_6
 (
-	.q(b2[6]), // OUT
-	.d(bt[6]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[6]),
+	.d /* IN */ (bt[6]),
+	.cp /* IN */ (vclk)
 );
 fd1q b2_inst_7
 (
-	.q(b2[7]), // OUT
-	.d(bt[7]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (b2[7]),
+	.d /* IN */ (bt[7]),
+	.cp /* IN */ (vclk)
 );
 
 // PIX.NET (219) - i2 : fd1q
 fd1q i2_inst_0
 (
-	.q(i2[0]), // OUT
-	.d(i[0]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[0]),
+	.d /* IN */ (i[0]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_1
 (
-	.q(i2[1]), // OUT
-	.d(i[1]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[1]),
+	.d /* IN */ (i[1]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_2
 (
-	.q(i2[2]), // OUT
-	.d(i[2]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[2]),
+	.d /* IN */ (i[2]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_3
 (
-	.q(i2[3]), // OUT
-	.d(i[3]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[3]),
+	.d /* IN */ (i[3]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_4
 (
-	.q(i2[4]), // OUT
-	.d(i[4]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[4]),
+	.d /* IN */ (i[4]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_5
 (
-	.q(i2[5]), // OUT
-	.d(i[5]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[5]),
+	.d /* IN */ (i[5]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_6
 (
-	.q(i2[6]), // OUT
-	.d(i[6]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[6]),
+	.d /* IN */ (i[6]),
+	.cp /* IN */ (vclk)
 );
 fd1q i2_inst_7
 (
-	.q(i2[7]), // OUT
-	.d(i[7]), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (i2[7]),
+	.d /* IN */ (i[7]),
+	.cp /* IN */ (vclk)
 );
 
 // PIX.NET (221) - rgbdi : fd1q
 fd1q rgbdi_inst
 (
-	.q(rgbdi), // OUT
-	.d(rgb), // IN
-	.cp(vclk)  // IN
+	.q /* OUT */ (rgbdi),
+	.d /* IN */ (rgb),
+	.cp /* IN */ (vclk)
 );
 
 // PIX.NET (222) - rgbd : nivh
@@ -639,380 +585,380 @@ assign i2a[9] = gnd;
 // PIX.NET (249) - r3 : mp1010a
 mp1010a r3_inst
 (
-	.q({r3[0],r3[1],r3[2],r3[3],r3[4],r3[5],r3[6],r3[7],r3[8],r3[9],r3[10],r3[11],r3[12],r3[13],r3[14],r3[15],r3[16],r3[17],r3[18],r3[19]}), // OUT
-	.a({r2a[0],r2a[1],r2a[2],r2a[3],r2a[4],r2a[5],r2a[6],r2a[7],r2a[8],r2a[9]}), // IN
-	.b({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})  // IN
+	.q /* OUT */ ({r3[0],r3[1],r3[2],r3[3],r3[4],r3[5],r3[6],r3[7],r3[8],r3[9],r3[10],r3[11],r3[12],r3[13],r3[14],r3[15],r3[16],r3[17],r3[18],r3[19]}),
+	.a /* IN */ ({r2a[0],r2a[1],r2a[2],r2a[3],r2a[4],r2a[5],r2a[6],r2a[7],r2a[8],r2a[9]}),
+	.b /* IN */ ({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})
 );
 
 // PIX.NET (250) - g3 : mp1010a
 mp1010a g3_inst
 (
-	.q({g3[0],g3[1],g3[2],g3[3],g3[4],g3[5],g3[6],g3[7],g3[8],g3[9],g3[10],g3[11],g3[12],g3[13],g3[14],g3[15],g3[16],g3[17],g3[18],g3[19]}), // OUT
-	.a({g2a[0],g2a[1],g2a[2],g2a[3],g2a[4],g2a[5],g2a[6],g2a[7],g2a[8],g2a[9]}), // IN
-	.b({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})  // IN
+	.q /* OUT */ ({g3[0],g3[1],g3[2],g3[3],g3[4],g3[5],g3[6],g3[7],g3[8],g3[9],g3[10],g3[11],g3[12],g3[13],g3[14],g3[15],g3[16],g3[17],g3[18],g3[19]}),
+	.a /* IN */ ({g2a[0],g2a[1],g2a[2],g2a[3],g2a[4],g2a[5],g2a[6],g2a[7],g2a[8],g2a[9]}),
+	.b /* IN */ ({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})
 );
 
 // PIX.NET (251) - b3 : mp1010a
 mp1010a b3_inst
 (
-	.q({b3[0],b3[1],b3[2],b3[3],b3[4],b3[5],b3[6],b3[7],b3[8],b3[9],b3[10],b3[11],b3[12],b3[13],b3[14],b3[15],b3[16],b3[17],b3[18],b3[19]}), // OUT
-	.a({b2a[0],b2a[1],b2a[2],b2a[3],b2a[4],b2a[5],b2a[6],b2a[7],b2a[8],b2a[9]}), // IN
-	.b({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})  // IN
+	.q /* OUT */ ({b3[0],b3[1],b3[2],b3[3],b3[4],b3[5],b3[6],b3[7],b3[8],b3[9],b3[10],b3[11],b3[12],b3[13],b3[14],b3[15],b3[16],b3[17],b3[18],b3[19]}),
+	.a /* IN */ ({b2a[0],b2a[1],b2a[2],b2a[3],b2a[4],b2a[5],b2a[6],b2a[7],b2a[8],b2a[9]}),
+	.b /* IN */ ({i2a[0],i2a[1],i2a[2],i2a[3],i2a[4],i2a[5],i2a[6],i2a[7],i2a[8],i2a[9]})
 );
 
 // PIX.NET (256) - r3b[0-2] : mx2
 mx2 r3b_from_0_to_2_inst_0
 (
-	.z(r3b_0), // OUT
-	.a0(r3[8]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_0),
+	.a0 /* IN */ (r3[8]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 mx2 r3b_from_0_to_2_inst_1
 (
-	.z(r3b_1), // OUT
-	.a0(r3[9]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_1),
+	.a0 /* IN */ (r3[9]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 mx2 r3b_from_0_to_2_inst_2
 (
-	.z(r3b_2), // OUT
-	.a0(r3[10]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_2),
+	.a0 /* IN */ (r3[10]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (257) - r3b[3-7] : mx2
 mx2 r3b_from_3_to_7_inst_0
 (
-	.z(r3b_3), // OUT
-	.a0(r3[11]), // IN
-	.a1(r2[3]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_3),
+	.a0 /* IN */ (r3[11]),
+	.a1 /* IN */ (r2[3]),
+	.s /* IN */ (rgbd)
 );
 mx2 r3b_from_3_to_7_inst_1
 (
-	.z(r3b_4), // OUT
-	.a0(r3[12]), // IN
-	.a1(r2[4]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_4),
+	.a0 /* IN */ (r3[12]),
+	.a1 /* IN */ (r2[4]),
+	.s /* IN */ (rgbd)
 );
 mx2 r3b_from_3_to_7_inst_2
 (
-	.z(r3b_5), // OUT
-	.a0(r3[13]), // IN
-	.a1(r2[5]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_5),
+	.a0 /* IN */ (r3[13]),
+	.a1 /* IN */ (r2[5]),
+	.s /* IN */ (rgbd)
 );
 mx2 r3b_from_3_to_7_inst_3
 (
-	.z(r3b_6), // OUT
-	.a0(r3[14]), // IN
-	.a1(r2[6]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_6),
+	.a0 /* IN */ (r3[14]),
+	.a1 /* IN */ (r2[6]),
+	.s /* IN */ (rgbd)
 );
 mx2 r3b_from_3_to_7_inst_4
 (
-	.z(r3b_7), // OUT
-	.a0(r3[15]), // IN
-	.a1(r2[7]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (r3b_7),
+	.a0 /* IN */ (r3[15]),
+	.a1 /* IN */ (r2[7]),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (259) - b3b[0-2] : mx2
 mx2 b3b_from_0_to_2_inst_0
 (
-	.z(b3b_0), // OUT
-	.a0(b3[8]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_0),
+	.a0 /* IN */ (b3[8]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 mx2 b3b_from_0_to_2_inst_1
 (
-	.z(b3b_1), // OUT
-	.a0(b3[9]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_1),
+	.a0 /* IN */ (b3[9]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 mx2 b3b_from_0_to_2_inst_2
 (
-	.z(b3b_2), // OUT
-	.a0(b3[10]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_2),
+	.a0 /* IN */ (b3[10]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (260) - b3b[3-4] : mx2
 mx2 b3b_from_3_to_4_inst_0
 (
-	.z(b3b_3), // OUT
-	.a0(b3[11]), // IN
-	.a1(i2[6]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_3),
+	.a0 /* IN */ (b3[11]),
+	.a1 /* IN */ (i2[6]),
+	.s /* IN */ (rgbd)
 );
 mx2 b3b_from_3_to_4_inst_1
 (
-	.z(b3b_4), // OUT
-	.a0(b3[12]), // IN
-	.a1(i2[7]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_4),
+	.a0 /* IN */ (b3[12]),
+	.a1 /* IN */ (i2[7]),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (261) - b3b[5-7] : mx2
 mx2 b3b_from_5_to_7_inst_0
 (
-	.z(b3b_5), // OUT
-	.a0(b3[13]), // IN
-	.a1(r2[0]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_5),
+	.a0 /* IN */ (b3[13]),
+	.a1 /* IN */ (r2[0]),
+	.s /* IN */ (rgbd)
 );
 mx2 b3b_from_5_to_7_inst_1
 (
-	.z(b3b_6), // OUT
-	.a0(b3[14]), // IN
-	.a1(r2[1]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_6),
+	.a0 /* IN */ (b3[14]),
+	.a1 /* IN */ (r2[1]),
+	.s /* IN */ (rgbd)
 );
 mx2 b3b_from_5_to_7_inst_2
 (
-	.z(b3b_7), // OUT
-	.a0(b3[15]), // IN
-	.a1(r2[2]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (b3b_7),
+	.a0 /* IN */ (b3[15]),
+	.a1 /* IN */ (r2[2]),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (263) - g3b[0-1] : mx2
 mx2 g3b_from_0_to_1_inst_0
 (
-	.z(g3b_0), // OUT
-	.a0(g3[8]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_0),
+	.a0 /* IN */ (g3[8]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 mx2 g3b_from_0_to_1_inst_1
 (
-	.z(g3b_1), // OUT
-	.a0(g3[9]), // IN
-	.a1(gnd), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_1),
+	.a0 /* IN */ (g3[9]),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (264) - g3b[2-7] : mx2
 mx2 g3b_from_2_to_7_inst_0
 (
-	.z(g3b_2), // OUT
-	.a0(g3[10]), // IN
-	.a1(i2[0]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_2),
+	.a0 /* IN */ (g3[10]),
+	.a1 /* IN */ (i2[0]),
+	.s /* IN */ (rgbd)
 );
 mx2 g3b_from_2_to_7_inst_1
 (
-	.z(g3b_3), // OUT
-	.a0(g3[11]), // IN
-	.a1(i2[1]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_3),
+	.a0 /* IN */ (g3[11]),
+	.a1 /* IN */ (i2[1]),
+	.s /* IN */ (rgbd)
 );
 mx2 g3b_from_2_to_7_inst_2
 (
-	.z(g3b_4), // OUT
-	.a0(g3[12]), // IN
-	.a1(i2[2]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_4),
+	.a0 /* IN */ (g3[12]),
+	.a1 /* IN */ (i2[2]),
+	.s /* IN */ (rgbd)
 );
 mx2 g3b_from_2_to_7_inst_3
 (
-	.z(g3b_5), // OUT
-	.a0(g3[13]), // IN
-	.a1(i2[3]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_5),
+	.a0 /* IN */ (g3[13]),
+	.a1 /* IN */ (i2[3]),
+	.s /* IN */ (rgbd)
 );
 mx2 g3b_from_2_to_7_inst_4
 (
-	.z(g3b_6), // OUT
-	.a0(g3[14]), // IN
-	.a1(i2[4]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_6),
+	.a0 /* IN */ (g3[14]),
+	.a1 /* IN */ (i2[4]),
+	.s /* IN */ (rgbd)
 );
 mx2 g3b_from_2_to_7_inst_5
 (
-	.z(g3b_7), // OUT
-	.a0(g3[15]), // IN
-	.a1(i2[5]), // IN
-	.s(rgbd)  // IN
+	.z /* OUT */ (g3b_7),
+	.a0 /* IN */ (g3[15]),
+	.a1 /* IN */ (i2[5]),
+	.s /* IN */ (rgbd)
 );
 
 // PIX.NET (268) - r[0-7] : slatch
 slatch r_from_0_to_7_inst_0
 (
-	.q(r_0_obuf), // IO
-	.d(r3b_0), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_0),
+	.d /* IN */ (r3b_0),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_1
 (
-	.q(r_1_obuf), // IO
-	.d(r3b_1), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_1),
+	.d /* IN */ (r3b_1),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_2
 (
-	.q(r_2_obuf), // IO
-	.d(r3b_2), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_2),
+	.d /* IN */ (r3b_2),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_3
 (
-	.q(r_3_obuf), // IO
-	.d(r3b_3), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_3),
+	.d /* IN */ (r3b_3),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_4
 (
-	.q(r_4_obuf), // IO
-	.d(r3b_4), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_4),
+	.d /* IN */ (r3b_4),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_5
 (
-	.q(r_5_obuf), // IO
-	.d(r3b_5), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_5),
+	.d /* IN */ (r3b_5),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_6
 (
-	.q(r_6_obuf), // IO
-	.d(r3b_6), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_6),
+	.d /* IN */ (r3b_6),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch r_from_0_to_7_inst_7
 (
-	.q(r_7_obuf), // IO
-	.d(r3b_7), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (r_7),
+	.d /* IN */ (r3b_7),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 
 // PIX.NET (269) - g[0-7] : slatch
 slatch g_from_0_to_7_inst_0
 (
-	.q(g_0_obuf), // IO
-	.d(g3b_0), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_0),
+	.d /* IN */ (g3b_0),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_1
 (
-	.q(g_1_obuf), // IO
-	.d(g3b_1), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_1),
+	.d /* IN */ (g3b_1),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_2
 (
-	.q(g_2_obuf), // IO
-	.d(g3b_2), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_2),
+	.d /* IN */ (g3b_2),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_3
 (
-	.q(g_3_obuf), // IO
-	.d(g3b_3), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_3),
+	.d /* IN */ (g3b_3),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_4
 (
-	.q(g_4_obuf), // IO
-	.d(g3b_4), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_4),
+	.d /* IN */ (g3b_4),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_5
 (
-	.q(g_5_obuf), // IO
-	.d(g3b_5), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_5),
+	.d /* IN */ (g3b_5),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_6
 (
-	.q(g_6_obuf), // IO
-	.d(g3b_6), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_6),
+	.d /* IN */ (g3b_6),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch g_from_0_to_7_inst_7
 (
-	.q(g_7_obuf), // IO
-	.d(g3b_7), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (g_7),
+	.d /* IN */ (g3b_7),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 
 // PIX.NET (270) - b[0-7] : slatch
 slatch b_from_0_to_7_inst_0
 (
-	.q(b_0_obuf), // IO
-	.d(b3b_0), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_0),
+	.d /* IN */ (b3b_0),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_1
 (
-	.q(b_1_obuf), // IO
-	.d(b3b_1), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_1),
+	.d /* IN */ (b3b_1),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_2
 (
-	.q(b_2_obuf), // IO
-	.d(b3b_2), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_2),
+	.d /* IN */ (b3b_2),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_3
 (
-	.q(b_3_obuf), // IO
-	.d(b3b_3), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_3),
+	.d /* IN */ (b3b_3),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_4
 (
-	.q(b_4_obuf), // IO
-	.d(b3b_4), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_4),
+	.d /* IN */ (b3b_4),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_5
 (
-	.q(b_5_obuf), // IO
-	.d(b3b_5), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_5),
+	.d /* IN */ (b3b_5),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_6
 (
-	.q(b_6_obuf), // IO
-	.d(b3b_6), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_6),
+	.d /* IN */ (b3b_6),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 slatch b_from_0_to_7_inst_7
 (
-	.q(b_7_obuf), // IO
-	.d(b3b_7), // IN
-	.clk(vclk), // IN
-	.en(ppd)  // IN
+	.q /* OUT */ (b_7),
+	.d /* IN */ (b3b_7),
+	.clk /* IN */ (vclk),
+	.en /* IN */ (ppd)
 );
 endmodule

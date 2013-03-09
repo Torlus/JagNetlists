@@ -5,7 +5,7 @@ import java.util.Vector;
 public class PassTwo {
 	private Workspace ws;
 	private String filename;
-	
+
 	public PassTwo(String filename, Workspace ws) {
 		this.filename = filename;
 		this.ws = ws;
@@ -83,7 +83,7 @@ public class PassTwo {
 			tk.consumeToken();
 		}
 
-		checkConnectivity(e);
+		Verifier.checkConnectivity(e, false);
 	}
 
 	private void evalInstance(Tokenizer tk, CompositeEntity parent, String instanceName, String childName) throws Exception {
@@ -208,7 +208,7 @@ public class PassTwo {
 		for (int attempt = 0; attempt < 2; attempt++) {
 
 			tk.rewind();
-			
+
 			instances = new Vector<Instance>();
 			for (int i = 0; i <= instmax; i++) {
 				Instance inst = new Instance();
@@ -223,233 +223,245 @@ public class PassTwo {
 				instances.add(inst);
 			}
 
-			
+			try {
+				// Lay out signals
+				while (!tk.matchTokens(TokenType.RPAREN)) {
 
-			// Lay out signals
-			while (!tk.matchTokens(TokenType.RPAREN)) {
-
-				if (tk.matchTokens(TokenType.COMMA)) {
-					tk.consumeToken();
-					continue;
-				}
-
-				index = Signal.NONE;
-				if (!tk.matchTokens(TokenType.IDENTIFIER))
-					throw new Exception("Expected identifier");
-				name = tk.nextToken().getValue();
-				tk.consumeToken();
-				if (tk.matchTokens(TokenType.LSQRBR, TokenType.NUMBER, TokenType.RSQRBR)) {
-					// Single index
-					index = Integer.parseInt(tk.nextToken(1).getValue());
-					tk.consumeToken(3);
-				}
-
-				if (tk.matchTokens(TokenType.LSQRBR, TokenType.NUMBER, TokenType.MINUS, TokenType.NUMBER, TokenType.RSQRBR)) {
-					// Repeat declaration
-					if (index != Signal.NONE)
-						throw new Exception("Unsupported");
-
-					int min = Integer.parseInt(tk.nextToken(1).getValue());
-					int max = Integer.parseInt(tk.nextToken(3).getValue());
-					if (min > max)
-						throw new Exception("TODO");
-					if (max - min != instmax) {
-						// Test for range of bit vectors
-						Signal s = parent.findSignal(name, Signal.MAX, min);
-						boolean bv = true;
-						int bitmax = 0;
-						if (s == null) {
-							bv = false;
-							bitmax = ((instmax + 1) / (max - min + 1)) - 1;
-							System.out.println("bits=" + bitmax);
-						} else {
-							bitmax = s.bit;
-						}
-
-						for (int i = min; i <= max; i++) {
-							for (int b = 0; b <= bitmax; b++) {
-								Signal s2;
-								if (bv) {
-									s2 = parent.findSignal(name, b, i);
-								} else {
-									s2 = parent.findSignal(name, Signal.NONE, i);
-								}
-								if (s2 == null)
-									throw new Exception("WTF " + name + " index=" + i);
-								instances.get((bitmax + 1) * i + b).wires.add(s2);
-							}
-						}
-						// throw new Exception("Mismatched index sizes");
-					} else {
-						for (int i = 0; i <= instmax; i++) {
-							Signal s = parent.findSignal(name, Signal.MAX, min + i);
-							if (s != null) {
-								// Indexed bit vector => flatten it on every instance
-								for (int b = 0; b <= s.bit; b++) {
-									Signal s2 = parent.findSignal(name, b, min + i);
-									if (s2 == null)
-										throw new Exception("Undeclared bit vector");
-									instances.get(i).wires.add(s2);
-								}
-							} else {
-								// Indexed single signal
-								// Infer signal if needed
-								s = parent.findSignal(name, Signal.NONE, min + i);
-								if (s == null) {
-									s = new Signal();
-									s.name = name;
-									s.index = min + i;
-									parent.locals.add(s);
-									System.out.println("        Inferred signal " + s);
-								}
-								// Lay one indexed single signal on every instance
-								instances.get(i).wires.add(s);
-							}
-						}
+					if (tk.matchTokens(TokenType.COMMA)) {
+						tk.consumeToken();
+						continue;
 					}
-					tk.consumeToken(5);
-				} else if (tk.matchTokens(TokenType.LSQRBR, TokenType.NUMBER, TokenType.DOTDOT, TokenType.NUMBER, TokenType.RSQRBR)) {
-					// Range declaration
-					int min = Integer.parseInt(tk.nextToken(1).getValue());
-					int max = Integer.parseInt(tk.nextToken(3).getValue());
-					if (min > max)
-						throw new Exception("TODO");
-					for (int i = min; i <= max; i++) {
-						Signal s = parent.findSignal(name, Signal.MAX, i);
-						if (s != null) {
-							// Range of bit vectors
-							// Lay the whole range (of flattened bit vectors) on every instance
-							// GE 17/06/2012 - Two cases (for now) :
-							// FA320 := FA332_INT (st, unused[0..1], at[0..2]); (bit vectors flattened out)
-							// Inssel := MX8P (intins, ins[0..7], icount[0..2]); (one single bit of each "ins" vectors per instance)
-							for (int j = 0; j <= instmax; j++) {
-								if (attempt == 0) {
+
+					index = Signal.NONE;
+					if (!tk.matchTokens(TokenType.IDENTIFIER))
+						throw new Exception("Expected identifier");
+					name = tk.nextToken().getValue();
+					tk.consumeToken();
+					if (tk.matchTokens(TokenType.LSQRBR, TokenType.NUMBER, TokenType.RSQRBR)) {
+						// Single index
+						index = Integer.parseInt(tk.nextToken(1).getValue());
+						tk.consumeToken(3);
+					}
+
+					if (tk.matchTokens(TokenType.LSQRBR, TokenType.NUMBER, TokenType.MINUS, TokenType.NUMBER, TokenType.RSQRBR)) {
+						// Repeat declaration
+						if (index != Signal.NONE)
+							throw new Exception("Unsupported");
+
+						int min = Integer.parseInt(tk.nextToken(1).getValue());
+						int max = Integer.parseInt(tk.nextToken(3).getValue());
+						if (min > max)
+							throw new Exception("TODO");
+						if (max - min != instmax) {
+							// Test for range of bit vectors
+							Signal s = parent.findSignal(name, Signal.MAX, min);
+							boolean bv = true;
+							int bitmax = 0;
+							if (s == null) {
+								bv = false;
+								bitmax = ((instmax + 1) / (max - min + 1)) - 1;
+								System.out.println("bits=" + bitmax);
+							} else {
+								bitmax = s.bit;
+							}
+
+							for (int i = min; i <= max; i++) {
+								for (int b = 0; b <= bitmax; b++) {
+									Signal s2;
+									if (bv) {
+										s2 = parent.findSignal(name, b, i);
+									} else {
+										s2 = parent.findSignal(name, Signal.NONE, i);
+									}
+									if (s2 == null)
+										throw new Exception("WTF " + name + " index=" + i);
+									Instance inst = instances.get((bitmax + 1) * i + b);
+									inst.wire(s2);
+
+								}
+							}
+							// throw new Exception("Mismatched index sizes");
+						} else {
+							for (int i = 0; i <= instmax; i++) {
+								Signal s = parent.findSignal(name, Signal.MAX, min + i);
+								if (s != null) {
+									// Indexed bit vector => flatten it on every instance
 									for (int b = 0; b <= s.bit; b++) {
-										Signal s2 = parent.findSignal(name, b, i);
+										Signal s2 = parent.findSignal(name, b, min + i);
 										if (s2 == null)
 											throw new Exception("Undeclared bit vector");
-										instances.get(j).wires.add(s2);
+										Instance inst = instances.get(i);
+										inst.wire(s2);
 									}
 								} else {
-									Signal s2 = parent.findSignal(name, j, i);
-									if (s2 == null)
-										throw new Exception("Undeclared bit vector");
-									instances.get(j).wires.add(s2);
+									// Indexed single signal
+									// Infer signal if needed
+									Signal s2 = parent.findSignal(name, Signal.NONE, min + i);
+									if (s2 == null) {
+										s2 = new Signal();
+										s2.name = name;
+										s2.index = min + i;
+										parent.locals.add(s2);
+										System.out.println("        Inferred signal " + s2);
+									}
+									// Lay one indexed single signal on every instance
+									Instance inst = instances.get(i);
+									inst.wire(s2);
 								}
-
 							}
-						} else {
-							// Infer signal if needed
-							s = parent.findSignal(name, Signal.NONE, i);
-							if (s == null) {
-								s = new Signal();
-								s.name = name;
-								s.index = i;
-								parent.locals.add(s);
-								System.out.println("        Inferred signal " + s);
+						}
+						tk.consumeToken(5);
+					} else if (tk.matchTokens(TokenType.LSQRBR, TokenType.NUMBER, TokenType.DOTDOT, TokenType.NUMBER, TokenType.RSQRBR)) {
+						// Range declaration
+						int min = Integer.parseInt(tk.nextToken(1).getValue());
+						int max = Integer.parseInt(tk.nextToken(3).getValue());
+						if (min > max)
+							throw new Exception("TODO");
+						for (int i = min; i <= max; i++) {
+							Signal s = parent.findSignal(name, Signal.MAX, i);
+							if (s != null) {
+								// Range of bit vectors
+								// Lay the whole range (of flattened bit vectors) on every instance
+								// GE 17/06/2012 - Two cases (for now) :
+								// FA320 := FA332_INT (st, unused[0..1], at[0..2]); (bit vectors flattened out)
+								// Inssel := MX8P (intins, ins[0..7], icount[0..2]); (one single bit of each "ins" vectors per instance)
+								for (int j = 0; j <= instmax; j++) {
+									if (attempt == 0) {
+										for (int b = 0; b <= s.bit; b++) {
+											Signal s2 = parent.findSignal(name, b, i);
+											if (s2 == null)
+												throw new Exception("Undeclared bit vector");
+											Instance inst = instances.get(j);
+											inst.wire(s2);
+										}
+									} else {
+										Signal s2 = parent.findSignal(name, j, i);
+										if (s2 == null)
+											throw new Exception("Undeclared bit vector");
+										Instance inst = instances.get(j);
+										inst.wire(s2);
+									}
+
+								}
+							} else {
+								// Infer signal if needed
+								Signal s2 = parent.findSignal(name, Signal.NONE, i);
+								if (s2 == null) {
+									s2 = new Signal(name);
+									s2.index = i;
+									parent.locals.add(s2);
+									System.out.println("        Inferred signal " + s2);
+								}
+								// Lay the whole range on every instance
+								for (int j = 0; j <= instmax; j++) {
+									Instance inst = instances.get(j);
+									inst.wire(s2);
+								}
+							}
+						}
+						tk.consumeToken(5);
+					} else if (tk.matchTokens(TokenType.LCRLBR, TokenType.NUMBER, TokenType.MINUS, TokenType.NUMBER, TokenType.RCRLBR)) {
+						// Repeat declaration on bit vector
+						int min = Integer.parseInt(tk.nextToken(1).getValue());
+						int max = Integer.parseInt(tk.nextToken(3).getValue());
+						if (min > max)
+							throw new Exception("TODO");
+						if (max - min != instmax)
+							throw new Exception("Mismatched index/bit vector sizes");
+						for (int i = 0; i <= instmax; i++) {
+							// Bit vectors have to be declared
+							Signal s2 = parent.findSignal(name, min + i, index);
+							if (s2 == null) {
+								throw new Exception("Undeclared bit vector");
+							}
+							// Lay one bit vector's bit on every instance
+							Instance inst = instances.get(i);
+							inst.wire(s2);
+						}
+						tk.consumeToken(5);
+					} else if (tk.matchTokens(TokenType.LCRLBR, TokenType.NUMBER, TokenType.DOTDOT, TokenType.NUMBER, TokenType.RCRLBR)) {
+						// Range declaration on bit vector
+						int min = Integer.parseInt(tk.nextToken(1).getValue());
+						int max = Integer.parseInt(tk.nextToken(3).getValue());
+						if (min > max)
+							throw new Exception("TODO");
+						for (int i = min; i <= max; i++) {
+							// Bit vectors have to be declared
+							Signal s2 = parent.findSignal(name, i, index);
+							if (s2 == null) {
+								throw new Exception("Undeclared bit vector");
 							}
 							// Lay the whole range on every instance
 							for (int j = 0; j <= instmax; j++) {
-								instances.get(j).wires.add(s);
+								Instance inst = instances.get(j);
+								inst.wire(s2);
 							}
 						}
-					}
-					tk.consumeToken(5);
-				} else if (tk.matchTokens(TokenType.LCRLBR, TokenType.NUMBER, TokenType.MINUS, TokenType.NUMBER, TokenType.RCRLBR)) {
-					// Repeat declaration on bit vector
-					int min = Integer.parseInt(tk.nextToken(1).getValue());
-					int max = Integer.parseInt(tk.nextToken(3).getValue());
-					if (min > max)
-						throw new Exception("TODO");
-					if (max - min != instmax)
-						throw new Exception("Mismatched index/bit vector sizes");
-					for (int i = 0; i <= instmax; i++) {
-						// Bit vectors have to be declared
-						Signal s = parent.findSignal(name, min + i, index);
-						if (s == null) {
+						tk.consumeToken(5);
+					} else if (tk.matchTokens(TokenType.LCRLBR, TokenType.NUMBER, TokenType.RCRLBR)) {
+						// Single bit index
+						int bitIndex = Integer.parseInt(tk.nextToken(1).getValue());
+						Signal s2 = parent.findSignal(name, bitIndex, index);
+						if (s2 == null) {
 							throw new Exception("Undeclared bit vector");
 						}
-						// Lay one bit vector's bit on every instance
-						instances.get(i).wires.add(s);
-					}
-					tk.consumeToken(5);
-				} else if (tk.matchTokens(TokenType.LCRLBR, TokenType.NUMBER, TokenType.DOTDOT, TokenType.NUMBER, TokenType.RCRLBR)) {
-					// Range declaration on bit vector
-					int min = Integer.parseInt(tk.nextToken(1).getValue());
-					int max = Integer.parseInt(tk.nextToken(3).getValue());
-					if (min > max)
-						throw new Exception("TODO");
-					for (int i = min; i <= max; i++) {
-						// Bit vectors have to be declared
-						Signal s = parent.findSignal(name, i, index);
-						if (s == null) {
-							throw new Exception("Undeclared bit vector");
-						}
-						// Lay the whole range on every instance
+						// Lay the bit vector's bit index on every instance
 						for (int j = 0; j <= instmax; j++) {
-							instances.get(j).wires.add(s);
+							Instance inst = instances.get(j);
+							inst.wire(s2);
 						}
-					}
-					tk.consumeToken(5);
-				} else if (tk.matchTokens(TokenType.LCRLBR, TokenType.NUMBER, TokenType.RCRLBR)) {
-					// Single bit index
-					int bitIndex = Integer.parseInt(tk.nextToken(1).getValue());
-					Signal s = parent.findSignal(name, bitIndex, index);
-					if (s == null) {
-						throw new Exception("Undeclared bit vector");
-					}
-					// Lay the bit vector's bit index on every instance
-					for (int j = 0; j <= instmax; j++) {
-						instances.get(j).wires.add(s);
-					}
-					tk.consumeToken(3);
-				} else {
-					// Single signal or single bit vector (both may be indexed)
-
-					// Check if it's a bit vector
-					Signal s = parent.findSignal(name, Signal.MAX, index);
-					if (s != null) {
-						if (instmax > 0 && s.bit != instmax)
-							throw new Exception("Mismatched index/bit vector sizes");
-						if (instmax > 0) {
-							// Lay out one bit per instance
-							for (int j = 0; j <= instmax; j++) {
-								s = parent.findSignal(name, j, index);
-								if (s == null)
-									throw new Exception("???");
-								instances.get(j).wires.add(s);
-							}
-						} else {
-							// "Flatten" the bit vector
-							int max = s.bit;
-							for (int i = 0; i <= max; i++) {
-								s = parent.findSignal(name, i, index);
-								if (s == null)
-									throw new Exception("???");
-								instances.get(0).wires.add(s);
-							}
-						}
-
+						tk.consumeToken(3);
 					} else {
-						// Single signal (may be indexed)
-						s = parent.findSignal(name, Signal.NONE, index);
-						if (s == null) {
-							s = new Signal();
-							s.name = name;
-							s.index = index;
-							parent.locals.add(s);
-							System.out.println("        Inferred signal " + s);
-						}
-						// Lay the signal on every instance
-						for (int j = 0; j <= instmax; j++) {
-							instances.get(j).wires.add(s);
+						// Single signal or single bit vector (both may be indexed)
+
+						// Check if it's a bit vector
+						Signal s = parent.findSignal(name, Signal.MAX, index);
+						if (s != null) {
+							if (instmax > 0 && s.bit != instmax)
+								throw new Exception("Mismatched index/bit vector sizes");
+							if (instmax > 0) {
+								// Lay out one bit per instance
+								for (int j = 0; j <= instmax; j++) {
+									Signal s2 = parent.findSignal(name, j, index);
+									if (s2 == null)
+										throw new Exception("???");
+									Instance inst = instances.get(j);
+									inst.wire(s2);
+								}
+							} else {
+								// "Flatten" the bit vector
+								int max = s.bit;
+								for (int i = 0; i <= max; i++) {
+									Signal s2 = parent.findSignal(name, i, index);
+									if (s2 == null)
+										throw new Exception("???");
+									Instance inst = instances.get(0);
+									inst.wire(s2);
+								}
+							}
+
+						} else {
+							// Single signal (may be indexed)
+							Signal s2 = parent.findSignal(name, Signal.NONE, index);
+							if (s2 == null) {
+								s2 = new Signal(name);
+								s2.index = index;
+								parent.locals.add(s2);
+								System.out.println("        Inferred signal " + s2);
+							}
+							// Lay the signal on every instance
+							for (int j = 0; j <= instmax; j++) {
+								Instance inst = instances.get(j);
+								inst.wire(s2);
+							}
 						}
 					}
-				}
 
-			} // RPAREN
-			tk.consumeToken();
-
+				} // RPAREN
+				tk.consumeToken();
+			} catch (Exception ex) {
+				ex.printStackTrace(System.out);
+			}
 			// Check the wiring
 			ok = true;
 			for (int i = 0; i <= instmax; i++) {
@@ -498,107 +510,11 @@ public class PassTwo {
 
 	}
 
-	private void checkConnectivity(CompositeEntity e) throws Exception {
-		System.out.println("Checking connectivity of entity " + e.getBaseName());
-
-		// Check if entity's I/Os are connected to at least one compatible instance I/O
-		// For outputs, there should be exactly one signal
-		for (int ioNo = 0; ioNo < e.ios.size(); ioNo++) {
-			Signal io = e.ios.get(ioNo);
-			Vector<Signal> connections = new Vector<Signal>();
-
-			for (int instNo = 0; instNo < e.instances.size(); instNo++) {
-				Instance inst = e.instances.get(instNo);
-				for (int instIoNo = 0; instIoNo < inst.wires.size(); instIoNo++) {
-					Signal instIoWire = inst.wires.get(instIoNo);
-					if (instIoWire.equals(io)) {
-						Signal instIo = inst.entity.ios.get(instIoNo);
-						connections.add(instIo);
-					}
-				}
-			}
-
-			if (io.type == SignalType.IN) {
-				for (Signal s : connections) {
-					if (s.type != SignalType.IN) {
-						throw new Exception("Incompatible I/O type : " + io + " vs " + s);
-					}
-				}
-			} else {
-				int outCount = 0;
-				for (Signal s : connections) {
-					if (s.type == SignalType.IN) {
-						if (io.type == SignalType.OUT) {
-							System.out.println("  Warning : unbuffered output " + io + ", setting it to IO");
-							io.type = SignalType.IO;
-						}
-					} else {
-						outCount++;
-					}
-				}
-				if (outCount > 1) {
-					if (io.type == SignalType.TRI || io.type == SignalType.BUS) {
-						System.out.println("Warning : multiple drivers for tristate signal " + io);
-					} else {
-						throw new Exception("Multiple drivers for output " + io);
-					}
-				} else if (outCount == 0) {
-					if (io.type == SignalType.BUS) {
-						System.out.println("Warning : no driver for tristate signal " + io);						
-					} else {
-						throw new Exception("No driver for output " + io);
-					}
-				}
-			}
-		} // ioNo
-
-		// Locals should be fully wired : one single source, and at least one destination
-		for (Signal local : e.locals) {
-			Vector<Signal> connections = new Vector<Signal>();
-
-			for (int instNo = 0; instNo < e.instances.size(); instNo++) {
-				Instance inst = e.instances.get(instNo);
-				for (int instIoNo = 0; instIoNo < inst.wires.size(); instIoNo++) {
-					Signal instIoWire = inst.wires.get(instIoNo);
-					if (instIoWire.equals(local)) {
-						Signal instIo = inst.entity.ios.get(instIoNo);
-						connections.add(instIo);
-					}
-				}
-			}
-
-			int inCount = 0;
-			int outCount = 0;
-			int tsCount = 0;
-			for (Signal s : connections) {
-				if (s.type == SignalType.IN) {
-					outCount++;
-				} else {
-					//System.out.println(s);
-					//inCount++;
-					if (s.type == SignalType.BUS || s.type == SignalType.TRI) {
-						tsCount++;
-					} else {
-						inCount++;
-					}
-				}
-			}
-			if (inCount > 1) {
-				//if (inCount != tsCount) {
-					throw new Exception("Multiple drivers for local " + local);
-				//} else {
-				//	System.out.println("Warning : multiple tristate drivers for local signal " + local);
-				//}
-			} else if (inCount == 0 && tsCount == 0) {
-				throw new Exception("No driver for local " + local);
-			} else if (tsCount > 1) {
-				System.out.println("Warning : possible multiple tristate drivers for local signal " + local);
-			}
-			if (outCount == 0 && tsCount == 0) {
-				System.out.println("  Warning : Local " + local + " drives nothing");
-			}
-		}
-
-	}
+	// ////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////
 
 }

@@ -273,7 +273,6 @@ wire newrem_5_obuf;
 wire newrem_6_obuf;
 wire newrem_7_obuf;
 wire heightnz_obuf;
-wire wbkdone_obuf;
 
 
 // Output buffers
@@ -317,7 +316,6 @@ assign newrem_5 = newrem_5_obuf;
 assign newrem_6 = newrem_6_obuf;
 assign newrem_7 = newrem_7_obuf;
 assign heightnz = heightnz_obuf;
-assign wbkdone = wbkdone_obuf;
 
 
 // WBK.NET (23) - newrem : join
@@ -375,28 +373,28 @@ assign newdata[20] = newdata_20_obuf;
 // WBK.NET (45) - q0 : fd4q
 fd4q q0_inst
 (
-	.q(q0), // OUT
-	.d(d0), // IN
-	.cp(clk), // IN
-	.sd(resetl)  // IN
+	.q /* OUT */ (q0),
+	.d /* IN */ (d0),
+	.cp /* IN */ (clk),
+	.sd /* IN */ (resetl)
 );
 
 // WBK.NET (46) - q1 : fd2q
 fd2q q1_inst
 (
-	.q(q1), // OUT
-	.d(d1), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q1),
+	.d /* IN */ (d1),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // WBK.NET (47) - q2 : fd2q
 fd2q q2_inst
 (
-	.q(q2), // OUT
-	.d(d2), // IN
-	.cp(clk), // IN
-	.cd(resetl)  // IN
+	.q /* OUT */ (q2),
+	.d /* IN */ (d2),
+	.cp /* IN */ (clk),
+	.cd /* IN */ (resetl)
 );
 
 // WBK.NET (49) - d00 : nd2
@@ -427,7 +425,7 @@ assign d21 = ~(q2 & heightnz_obuf & intremz);
 assign d2 = ~(d20 & d21);
 
 // WBK.NET (61) - wbkdone : nivh
-assign wbkdone_obuf = q0;
+assign wbkdone = q0;
 
 // WBK.NET (63) - decheight : nd2
 assign decheight = ~(d01 & d21);
@@ -459,61 +457,61 @@ assign intremnz = ~intremz;
 // WBK.NET (83) - rd[0-4] : mx2
 mx2 rd_from_0_to_4_inst_0
 (
-	.z(rd_0), // OUT
-	.a0(vscale_0), // IN
-	.a1(gnd), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_0),
+	.a0 /* IN */ (vscale_0),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (decrem)
 );
 mx2 rd_from_0_to_4_inst_1
 (
-	.z(rd_1), // OUT
-	.a0(vscale_1), // IN
-	.a1(gnd), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_1),
+	.a0 /* IN */ (vscale_1),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (decrem)
 );
 mx2 rd_from_0_to_4_inst_2
 (
-	.z(rd_2), // OUT
-	.a0(vscale_2), // IN
-	.a1(gnd), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_2),
+	.a0 /* IN */ (vscale_2),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (decrem)
 );
 mx2 rd_from_0_to_4_inst_3
 (
-	.z(rd_3), // OUT
-	.a0(vscale_3), // IN
-	.a1(gnd), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_3),
+	.a0 /* IN */ (vscale_3),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (decrem)
 );
 mx2 rd_from_0_to_4_inst_4
 (
-	.z(rd_4), // OUT
-	.a0(vscale_4), // IN
-	.a1(gnd), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_4),
+	.a0 /* IN */ (vscale_4),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (decrem)
 );
 
 // WBK.NET (84) - rd[5-7] : mx2
 mx2 rd_from_5_to_7_inst_0
 (
-	.z(rd_5), // OUT
-	.a0(vscale_5), // IN
-	.a1(vcc), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_5),
+	.a0 /* IN */ (vscale_5),
+	.a1 /* IN */ (vcc),
+	.s /* IN */ (decrem)
 );
 mx2 rd_from_5_to_7_inst_1
 (
-	.z(rd_6), // OUT
-	.a0(vscale_6), // IN
-	.a1(vcc), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_6),
+	.a0 /* IN */ (vscale_6),
+	.a1 /* IN */ (vcc),
+	.s /* IN */ (decrem)
 );
 mx2 rd_from_5_to_7_inst_2
 (
-	.z(rd_7), // OUT
-	.a0(vscale_7), // IN
-	.a1(vcc), // IN
-	.s(decrem)  // IN
+	.z /* OUT */ (rd_7),
+	.a0 /* IN */ (vscale_7),
+	.a1 /* IN */ (vcc),
+	.s /* IN */ (decrem)
 );
 
 // WBK.NET (85) - rd[8] : niv
@@ -522,208 +520,208 @@ assign rd_8 = decrem;
 // WBK.NET (87) - rs[0] : ha1
 ha1 rs_index_0_inst
 (
-	.s(rs_0), // OUT
-	.co(rc_0), // OUT
-	.a(newrem_0_obuf), // IN
-	.b(rd_0)  // IN
+	.s /* OUT */ (rs_0),
+	.co /* OUT */ (rc_0),
+	.a /* IN */ (newrem_0_obuf),
+	.b /* IN */ (rd_0)
 );
 
 // WBK.NET (88) - rs[1-8] : fa1
 fa1 rs_from_1_to_8_inst_0
 (
-	.s(rs_1), // OUT
-	.co(rc_1), // OUT
-	.ci(newrem_1_obuf), // IN
-	.a(rd_1), // IN
-	.b(rc_0)  // IN
+	.s /* OUT */ (rs_1),
+	.co /* OUT */ (rc_1),
+	.ci /* IN */ (newrem_1_obuf),
+	.a /* IN */ (rd_1),
+	.b /* IN */ (rc_0)
 );
 fa1 rs_from_1_to_8_inst_1
 (
-	.s(rs_2), // OUT
-	.co(rc_2), // OUT
-	.ci(newrem_2_obuf), // IN
-	.a(rd_2), // IN
-	.b(rc_1)  // IN
+	.s /* OUT */ (rs_2),
+	.co /* OUT */ (rc_2),
+	.ci /* IN */ (newrem_2_obuf),
+	.a /* IN */ (rd_2),
+	.b /* IN */ (rc_1)
 );
 fa1 rs_from_1_to_8_inst_2
 (
-	.s(rs_3), // OUT
-	.co(rc_3), // OUT
-	.ci(newrem_3_obuf), // IN
-	.a(rd_3), // IN
-	.b(rc_2)  // IN
+	.s /* OUT */ (rs_3),
+	.co /* OUT */ (rc_3),
+	.ci /* IN */ (newrem_3_obuf),
+	.a /* IN */ (rd_3),
+	.b /* IN */ (rc_2)
 );
 fa1 rs_from_1_to_8_inst_3
 (
-	.s(rs_4), // OUT
-	.co(rc_4), // OUT
-	.ci(newrem_4_obuf), // IN
-	.a(rd_4), // IN
-	.b(rc_3)  // IN
+	.s /* OUT */ (rs_4),
+	.co /* OUT */ (rc_4),
+	.ci /* IN */ (newrem_4_obuf),
+	.a /* IN */ (rd_4),
+	.b /* IN */ (rc_3)
 );
 fa1 rs_from_1_to_8_inst_4
 (
-	.s(rs_5), // OUT
-	.co(rc_5), // OUT
-	.ci(newrem_5_obuf), // IN
-	.a(rd_5), // IN
-	.b(rc_4)  // IN
+	.s /* OUT */ (rs_5),
+	.co /* OUT */ (rc_5),
+	.ci /* IN */ (newrem_5_obuf),
+	.a /* IN */ (rd_5),
+	.b /* IN */ (rc_4)
 );
 fa1 rs_from_1_to_8_inst_5
 (
-	.s(rs_6), // OUT
-	.co(rc_6), // OUT
-	.ci(newrem_6_obuf), // IN
-	.a(rd_6), // IN
-	.b(rc_5)  // IN
+	.s /* OUT */ (rs_6),
+	.co /* OUT */ (rc_6),
+	.ci /* IN */ (newrem_6_obuf),
+	.a /* IN */ (rd_6),
+	.b /* IN */ (rc_5)
 );
 fa1 rs_from_1_to_8_inst_6
 (
-	.s(rs_7), // OUT
-	.co(rc_7), // OUT
-	.ci(newrem_7_obuf), // IN
-	.a(rd_7), // IN
-	.b(rc_6)  // IN
+	.s /* OUT */ (rs_7),
+	.co /* OUT */ (rc_7),
+	.ci /* IN */ (newrem_7_obuf),
+	.a /* IN */ (rd_7),
+	.b /* IN */ (rc_6)
 );
 fa1 rs_from_1_to_8_inst_7
 (
-	.s(rs_8), // OUT
-	.co(rc_8), // OUT
-	.ci(newrem_8), // IN
-	.a(rd_8), // IN
-	.b(rc_7)  // IN
+	.s /* OUT */ (rs_8),
+	.co /* OUT */ (rc_8),
+	.ci /* IN */ (newrem_8),
+	.a /* IN */ (rd_8),
+	.b /* IN */ (rc_7)
 );
 
 // WBK.NET (92) - rem[0-7] : mx2
 mx2 rem_from_0_to_7_inst_0
 (
-	.z(rem_0), // OUT
-	.a0(rs_0), // IN
-	.a1(d_16), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_0),
+	.a0 /* IN */ (rs_0),
+	.a1 /* IN */ (d_16),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_1
 (
-	.z(rem_1), // OUT
-	.a0(rs_1), // IN
-	.a1(d_17), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_1),
+	.a0 /* IN */ (rs_1),
+	.a1 /* IN */ (d_17),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_2
 (
-	.z(rem_2), // OUT
-	.a0(rs_2), // IN
-	.a1(d_18), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_2),
+	.a0 /* IN */ (rs_2),
+	.a1 /* IN */ (d_18),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_3
 (
-	.z(rem_3), // OUT
-	.a0(rs_3), // IN
-	.a1(d_19), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_3),
+	.a0 /* IN */ (rs_3),
+	.a1 /* IN */ (d_19),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_4
 (
-	.z(rem_4), // OUT
-	.a0(rs_4), // IN
-	.a1(d_20), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_4),
+	.a0 /* IN */ (rs_4),
+	.a1 /* IN */ (d_20),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_5
 (
-	.z(rem_5), // OUT
-	.a0(rs_5), // IN
-	.a1(d_21), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_5),
+	.a0 /* IN */ (rs_5),
+	.a1 /* IN */ (d_21),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_6
 (
-	.z(rem_6), // OUT
-	.a0(rs_6), // IN
-	.a1(d_22), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_6),
+	.a0 /* IN */ (rs_6),
+	.a1 /* IN */ (d_22),
+	.s /* IN */ (obld_2)
 );
 mx2 rem_from_0_to_7_inst_7
 (
-	.z(rem_7), // OUT
-	.a0(rs_7), // IN
-	.a1(d_23), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_7),
+	.a0 /* IN */ (rs_7),
+	.a1 /* IN */ (d_23),
+	.s /* IN */ (obld_2)
 );
 
 // WBK.NET (93) - rem[8] : mx2
 mx2 rem_index_8_inst
 (
-	.z(rem_8), // OUT
-	.a0(rs_8), // IN
-	.a1(gnd), // IN
-	.s(obld_2)  // IN
+	.z /* OUT */ (rem_8),
+	.a0 /* IN */ (rs_8),
+	.a1 /* IN */ (gnd),
+	.s /* IN */ (obld_2)
 );
 
 // WBK.NET (95) - newrem[0-8] : slatch
 slatch newrem_from_0_to_8_inst_0
 (
-	.q(newrem_0_obuf), // IO
-	.d(rem_0), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_0_obuf),
+	.d /* IN */ (rem_0),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_1
 (
-	.q(newrem_1_obuf), // IO
-	.d(rem_1), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_1_obuf),
+	.d /* IN */ (rem_1),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_2
 (
-	.q(newrem_2_obuf), // IO
-	.d(rem_2), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_2_obuf),
+	.d /* IN */ (rem_2),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_3
 (
-	.q(newrem_3_obuf), // IO
-	.d(rem_3), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_3_obuf),
+	.d /* IN */ (rem_3),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_4
 (
-	.q(newrem_4_obuf), // IO
-	.d(rem_4), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_4_obuf),
+	.d /* IN */ (rem_4),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_5
 (
-	.q(newrem_5_obuf), // IO
-	.d(rem_5), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_5_obuf),
+	.d /* IN */ (rem_5),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_6
 (
-	.q(newrem_6_obuf), // IO
-	.d(rem_6), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_6_obuf),
+	.d /* IN */ (rem_6),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_7
 (
-	.q(newrem_7_obuf), // IO
-	.d(rem_7), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_7_obuf),
+	.d /* IN */ (rem_7),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 slatch newrem_from_0_to_8_inst_8
 (
-	.q(newrem_8), // IO
-	.d(rem_8), // IN
-	.clk(clk), // IN
-	.en(latchrem)  // IN
+	.q /* OUT */ (newrem_8),
+	.d /* IN */ (rem_8),
+	.clk /* IN */ (clk),
+	.en /* IN */ (latchrem)
 );
 
 // WBK.NET (97) - latchremi : nr3
@@ -735,107 +733,107 @@ assign latchrem = ~latchremi;
 // WBK.NET (103) - newheighti[0] : dncnt
 dncnt newheighti_index_0_inst
 (
-	.q(newheighti_0), // IO
-	.co(hc_0), // IO
-	.d(d_14), // IN
-	.clk(clk), // IN
-	.ci(decheight), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheighti_0),
+	.co /* OUT */ (hc_0),
+	.d /* IN */ (d_14),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (decheight),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 
 // WBK.NET (104) - newheighti[1] : dncnt
 dncnt newheighti_index_1_inst
 (
-	.q(newheighti_1), // IO
-	.co(hc_1), // IO
-	.d(d_15), // IN
-	.clk(clk), // IN
-	.ci(hc_0), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheighti_1),
+	.co /* OUT */ (hc_1),
+	.d /* IN */ (d_15),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_0),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 
 // WBK.NET (105) - newheight[2-9] : dncnt
 dncnt newheight_from_2_to_9_inst_0
 (
-	.q(newheight_2_obuf), // IO
-	.co(hc_2), // IO
-	.d(d_16), // IN
-	.clk(clk), // IN
-	.ci(hc_1), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_2_obuf),
+	.co /* OUT */ (hc_2),
+	.d /* IN */ (d_16),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_1),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_1
 (
-	.q(newheight_3_obuf), // IO
-	.co(hc_3), // IO
-	.d(d_17), // IN
-	.clk(clk), // IN
-	.ci(hc_2), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_3_obuf),
+	.co /* OUT */ (hc_3),
+	.d /* IN */ (d_17),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_2),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_2
 (
-	.q(newheight_4_obuf), // IO
-	.co(hc_4), // IO
-	.d(d_18), // IN
-	.clk(clk), // IN
-	.ci(hc_3), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_4_obuf),
+	.co /* OUT */ (hc_4),
+	.d /* IN */ (d_18),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_3),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_3
 (
-	.q(newheight_5_obuf), // IO
-	.co(hc_5), // IO
-	.d(d_19), // IN
-	.clk(clk), // IN
-	.ci(hc_4), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_5_obuf),
+	.co /* OUT */ (hc_5),
+	.d /* IN */ (d_19),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_4),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_4
 (
-	.q(newheight_6_obuf), // IO
-	.co(hc_6), // IO
-	.d(d_20), // IN
-	.clk(clk), // IN
-	.ci(hc_5), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_6_obuf),
+	.co /* OUT */ (hc_6),
+	.d /* IN */ (d_20),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_5),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_5
 (
-	.q(newheight_7_obuf), // IO
-	.co(hc_7), // IO
-	.d(d_21), // IN
-	.clk(clk), // IN
-	.ci(hc_6), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_7_obuf),
+	.co /* OUT */ (hc_7),
+	.d /* IN */ (d_21),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_6),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_6
 (
-	.q(newheight_8_obuf), // IO
-	.co(hc_8), // IO
-	.d(d_22), // IN
-	.clk(clk), // IN
-	.ci(hc_7), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_8_obuf),
+	.co /* OUT */ (hc_8),
+	.d /* IN */ (d_22),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_7),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 dncnt newheight_from_2_to_9_inst_7
 (
-	.q(newheight_9_obuf), // IO
-	.co(hc_9), // IO
-	.d(d_23), // IN
-	.clk(clk), // IN
-	.ci(hc_8), // IN
-	.ld(obld_0), // IN
-	.resl(resetl)  // IN
+	.q /* OUT */ (newheight_9_obuf),
+	.co /* OUT */ (hc_9),
+	.d /* IN */ (d_23),
+	.clk /* IN */ (clk),
+	.ci /* IN */ (hc_8),
+	.ld /* IN */ (obld_0),
+	.resl /* IN */ (resetl)
 );
 
 // WBK.NET (106) - newheight[0-1] : nivm
@@ -857,426 +855,426 @@ assign heightz = ~heightnz_obuf;
 // WBK.NET (118) - ds[0] : add4
 add4 ds_index_0_inst
 (
-	.q_0(ds_0), // OUT
-	.q_1(ds_1), // OUT
-	.q_2(ds_2), // OUT
-	.q_3(ds_3), // OUT
-	.co(dc_3), // OUT
-	.a_0(dwidth_0), // IN
-	.a_1(dwidth_1), // IN
-	.a_2(dwidth_2), // IN
-	.a_3(dwidth_3), // IN
-	.b_0(newdata_0_obuf), // IN
-	.b_1(newdata_1_obuf), // IN
-	.b_2(newdata_2_obuf), // IN
-	.b_3(newdata_3_obuf), // IN
-	.ci(gnd)  // IN
+	.q_0 /* OUT */ (ds_0),
+	.q_1 /* OUT */ (ds_1),
+	.q_2 /* OUT */ (ds_2),
+	.q_3 /* OUT */ (ds_3),
+	.co /* OUT */ (dc_3),
+	.a_0 /* IN */ (dwidth_0),
+	.a_1 /* IN */ (dwidth_1),
+	.a_2 /* IN */ (dwidth_2),
+	.a_3 /* IN */ (dwidth_3),
+	.b_0 /* IN */ (newdata_0_obuf),
+	.b_1 /* IN */ (newdata_1_obuf),
+	.b_2 /* IN */ (newdata_2_obuf),
+	.b_3 /* IN */ (newdata_3_obuf),
+	.ci /* IN */ (gnd)
 );
 
 // WBK.NET (119) - ds[1] : add4
 add4 ds_index_1_inst
 (
-	.q_0(ds_4), // OUT
-	.q_1(ds_5), // OUT
-	.q_2(ds_6), // OUT
-	.q_3(ds_7), // OUT
-	.co(dc_7), // OUT
-	.a_0(dwidth_4), // IN
-	.a_1(dwidth_5), // IN
-	.a_2(dwidth_6), // IN
-	.a_3(dwidth_7), // IN
-	.b_0(newdata_4_obuf), // IN
-	.b_1(newdata_5_obuf), // IN
-	.b_2(newdata_6_obuf), // IN
-	.b_3(newdata_7_obuf), // IN
-	.ci(dc_3)  // IN
+	.q_0 /* OUT */ (ds_4),
+	.q_1 /* OUT */ (ds_5),
+	.q_2 /* OUT */ (ds_6),
+	.q_3 /* OUT */ (ds_7),
+	.co /* OUT */ (dc_7),
+	.a_0 /* IN */ (dwidth_4),
+	.a_1 /* IN */ (dwidth_5),
+	.a_2 /* IN */ (dwidth_6),
+	.a_3 /* IN */ (dwidth_7),
+	.b_0 /* IN */ (newdata_4_obuf),
+	.b_1 /* IN */ (newdata_5_obuf),
+	.b_2 /* IN */ (newdata_6_obuf),
+	.b_3 /* IN */ (newdata_7_obuf),
+	.ci /* IN */ (dc_3)
 );
 
 // WBK.NET (120) - ds[2] : add4
 add4 ds_index_2_inst
 (
-	.q_0(ds_8), // OUT
-	.q_1(ds_9), // OUT
-	.q_2(ds_10), // OUT
-	.q_3(ds_11), // OUT
-	.co(dc_11), // OUT
-	.a_0(dwidth_8), // IN
-	.a_1(dwidth_9), // IN
-	.a_2(gnd), // IN
-	.a_3(gnd), // IN
-	.b_0(newdata_8_obuf), // IN
-	.b_1(newdata_9_obuf), // IN
-	.b_2(newdata_10_obuf), // IN
-	.b_3(newdata_11_obuf), // IN
-	.ci(dc_7)  // IN
+	.q_0 /* OUT */ (ds_8),
+	.q_1 /* OUT */ (ds_9),
+	.q_2 /* OUT */ (ds_10),
+	.q_3 /* OUT */ (ds_11),
+	.co /* OUT */ (dc_11),
+	.a_0 /* IN */ (dwidth_8),
+	.a_1 /* IN */ (dwidth_9),
+	.a_2 /* IN */ (gnd),
+	.a_3 /* IN */ (gnd),
+	.b_0 /* IN */ (newdata_8_obuf),
+	.b_1 /* IN */ (newdata_9_obuf),
+	.b_2 /* IN */ (newdata_10_obuf),
+	.b_3 /* IN */ (newdata_11_obuf),
+	.ci /* IN */ (dc_7)
 );
 
 // WBK.NET (121) - ds[3] : ha9
 ha9 ds_index_3_inst
 (
-	.q_0(ds_12), // OUT
-	.q_1(ds_13), // OUT
-	.q_2(ds_14), // OUT
-	.q_3(ds_15), // OUT
-	.q_4(ds_16), // OUT
-	.q_5(ds_17), // OUT
-	.q_6(ds_18), // OUT
-	.q_7(ds_19), // OUT
-	.q_8(ds_20), // OUT
-	.a_0(newdata_12_obuf), // IN
-	.a_1(newdata_13_obuf), // IN
-	.a_2(newdata_14_obuf), // IN
-	.a_3(newdata_15_obuf), // IN
-	.a_4(newdata_16_obuf), // IN
-	.a_5(newdata_17_obuf), // IN
-	.a_6(newdata_18_obuf), // IN
-	.a_7(newdata_19_obuf), // IN
-	.a_8(newdata_20_obuf), // IN
-	.ci(dc_11)  // IN
+	.q_0 /* OUT */ (ds_12),
+	.q_1 /* OUT */ (ds_13),
+	.q_2 /* OUT */ (ds_14),
+	.q_3 /* OUT */ (ds_15),
+	.q_4 /* OUT */ (ds_16),
+	.q_5 /* OUT */ (ds_17),
+	.q_6 /* OUT */ (ds_18),
+	.q_7 /* OUT */ (ds_19),
+	.q_8 /* OUT */ (ds_20),
+	.a_0 /* IN */ (newdata_12_obuf),
+	.a_1 /* IN */ (newdata_13_obuf),
+	.a_2 /* IN */ (newdata_14_obuf),
+	.a_3 /* IN */ (newdata_15_obuf),
+	.a_4 /* IN */ (newdata_16_obuf),
+	.a_5 /* IN */ (newdata_17_obuf),
+	.a_6 /* IN */ (newdata_18_obuf),
+	.a_7 /* IN */ (newdata_19_obuf),
+	.a_8 /* IN */ (newdata_20_obuf),
+	.ci /* IN */ (dc_11)
 );
 
 // WBK.NET (126) - data[0-20] : mx4p
 mx4 data_from_0_to_20_inst_0
 (
-	.z(data_0), // OUT
-	.a0(newdata_0_obuf), // IN
-	.a1(newdata_0_obuf), // IN
-	.a2(ds_0), // IN
-	.a3(d_43), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_0),
+	.a0 /* IN */ (newdata_0_obuf),
+	.a1 /* IN */ (newdata_0_obuf),
+	.a2 /* IN */ (ds_0),
+	.a3 /* IN */ (d_43),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_1
 (
-	.z(data_1), // OUT
-	.a0(newdata_1_obuf), // IN
-	.a1(newdata_1_obuf), // IN
-	.a2(ds_1), // IN
-	.a3(d_44), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_1),
+	.a0 /* IN */ (newdata_1_obuf),
+	.a1 /* IN */ (newdata_1_obuf),
+	.a2 /* IN */ (ds_1),
+	.a3 /* IN */ (d_44),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_2
 (
-	.z(data_2), // OUT
-	.a0(newdata_2_obuf), // IN
-	.a1(newdata_2_obuf), // IN
-	.a2(ds_2), // IN
-	.a3(d_45), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_2),
+	.a0 /* IN */ (newdata_2_obuf),
+	.a1 /* IN */ (newdata_2_obuf),
+	.a2 /* IN */ (ds_2),
+	.a3 /* IN */ (d_45),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_3
 (
-	.z(data_3), // OUT
-	.a0(newdata_3_obuf), // IN
-	.a1(newdata_3_obuf), // IN
-	.a2(ds_3), // IN
-	.a3(d_46), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_3),
+	.a0 /* IN */ (newdata_3_obuf),
+	.a1 /* IN */ (newdata_3_obuf),
+	.a2 /* IN */ (ds_3),
+	.a3 /* IN */ (d_46),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_4
 (
-	.z(data_4), // OUT
-	.a0(newdata_4_obuf), // IN
-	.a1(newdata_4_obuf), // IN
-	.a2(ds_4), // IN
-	.a3(d_47), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_4),
+	.a0 /* IN */ (newdata_4_obuf),
+	.a1 /* IN */ (newdata_4_obuf),
+	.a2 /* IN */ (ds_4),
+	.a3 /* IN */ (d_47),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_5
 (
-	.z(data_5), // OUT
-	.a0(newdata_5_obuf), // IN
-	.a1(newdata_5_obuf), // IN
-	.a2(ds_5), // IN
-	.a3(d_48), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_5),
+	.a0 /* IN */ (newdata_5_obuf),
+	.a1 /* IN */ (newdata_5_obuf),
+	.a2 /* IN */ (ds_5),
+	.a3 /* IN */ (d_48),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_6
 (
-	.z(data_6), // OUT
-	.a0(newdata_6_obuf), // IN
-	.a1(newdata_6_obuf), // IN
-	.a2(ds_6), // IN
-	.a3(d_49), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_6),
+	.a0 /* IN */ (newdata_6_obuf),
+	.a1 /* IN */ (newdata_6_obuf),
+	.a2 /* IN */ (ds_6),
+	.a3 /* IN */ (d_49),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_7
 (
-	.z(data_7), // OUT
-	.a0(newdata_7_obuf), // IN
-	.a1(newdata_7_obuf), // IN
-	.a2(ds_7), // IN
-	.a3(d_50), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_7),
+	.a0 /* IN */ (newdata_7_obuf),
+	.a1 /* IN */ (newdata_7_obuf),
+	.a2 /* IN */ (ds_7),
+	.a3 /* IN */ (d_50),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_8
 (
-	.z(data_8), // OUT
-	.a0(newdata_8_obuf), // IN
-	.a1(newdata_8_obuf), // IN
-	.a2(ds_8), // IN
-	.a3(d_51), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_8),
+	.a0 /* IN */ (newdata_8_obuf),
+	.a1 /* IN */ (newdata_8_obuf),
+	.a2 /* IN */ (ds_8),
+	.a3 /* IN */ (d_51),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_9
 (
-	.z(data_9), // OUT
-	.a0(newdata_9_obuf), // IN
-	.a1(newdata_9_obuf), // IN
-	.a2(ds_9), // IN
-	.a3(d_52), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_9),
+	.a0 /* IN */ (newdata_9_obuf),
+	.a1 /* IN */ (newdata_9_obuf),
+	.a2 /* IN */ (ds_9),
+	.a3 /* IN */ (d_52),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_10
 (
-	.z(data_10), // OUT
-	.a0(newdata_10_obuf), // IN
-	.a1(newdata_10_obuf), // IN
-	.a2(ds_10), // IN
-	.a3(d_53), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_10),
+	.a0 /* IN */ (newdata_10_obuf),
+	.a1 /* IN */ (newdata_10_obuf),
+	.a2 /* IN */ (ds_10),
+	.a3 /* IN */ (d_53),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_11
 (
-	.z(data_11), // OUT
-	.a0(newdata_11_obuf), // IN
-	.a1(newdata_11_obuf), // IN
-	.a2(ds_11), // IN
-	.a3(d_54), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_11),
+	.a0 /* IN */ (newdata_11_obuf),
+	.a1 /* IN */ (newdata_11_obuf),
+	.a2 /* IN */ (ds_11),
+	.a3 /* IN */ (d_54),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_12
 (
-	.z(data_12), // OUT
-	.a0(newdata_12_obuf), // IN
-	.a1(newdata_12_obuf), // IN
-	.a2(ds_12), // IN
-	.a3(d_55), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_12),
+	.a0 /* IN */ (newdata_12_obuf),
+	.a1 /* IN */ (newdata_12_obuf),
+	.a2 /* IN */ (ds_12),
+	.a3 /* IN */ (d_55),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_13
 (
-	.z(data_13), // OUT
-	.a0(newdata_13_obuf), // IN
-	.a1(newdata_13_obuf), // IN
-	.a2(ds_13), // IN
-	.a3(d_56), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_13),
+	.a0 /* IN */ (newdata_13_obuf),
+	.a1 /* IN */ (newdata_13_obuf),
+	.a2 /* IN */ (ds_13),
+	.a3 /* IN */ (d_56),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_14
 (
-	.z(data_14), // OUT
-	.a0(newdata_14_obuf), // IN
-	.a1(newdata_14_obuf), // IN
-	.a2(ds_14), // IN
-	.a3(d_57), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_14),
+	.a0 /* IN */ (newdata_14_obuf),
+	.a1 /* IN */ (newdata_14_obuf),
+	.a2 /* IN */ (ds_14),
+	.a3 /* IN */ (d_57),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_15
 (
-	.z(data_15), // OUT
-	.a0(newdata_15_obuf), // IN
-	.a1(newdata_15_obuf), // IN
-	.a2(ds_15), // IN
-	.a3(d_58), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_15),
+	.a0 /* IN */ (newdata_15_obuf),
+	.a1 /* IN */ (newdata_15_obuf),
+	.a2 /* IN */ (ds_15),
+	.a3 /* IN */ (d_58),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_16
 (
-	.z(data_16), // OUT
-	.a0(newdata_16_obuf), // IN
-	.a1(newdata_16_obuf), // IN
-	.a2(ds_16), // IN
-	.a3(d_59), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_16),
+	.a0 /* IN */ (newdata_16_obuf),
+	.a1 /* IN */ (newdata_16_obuf),
+	.a2 /* IN */ (ds_16),
+	.a3 /* IN */ (d_59),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_17
 (
-	.z(data_17), // OUT
-	.a0(newdata_17_obuf), // IN
-	.a1(newdata_17_obuf), // IN
-	.a2(ds_17), // IN
-	.a3(d_60), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_17),
+	.a0 /* IN */ (newdata_17_obuf),
+	.a1 /* IN */ (newdata_17_obuf),
+	.a2 /* IN */ (ds_17),
+	.a3 /* IN */ (d_60),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_18
 (
-	.z(data_18), // OUT
-	.a0(newdata_18_obuf), // IN
-	.a1(newdata_18_obuf), // IN
-	.a2(ds_18), // IN
-	.a3(d_61), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_18),
+	.a0 /* IN */ (newdata_18_obuf),
+	.a1 /* IN */ (newdata_18_obuf),
+	.a2 /* IN */ (ds_18),
+	.a3 /* IN */ (d_61),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_19
 (
-	.z(data_19), // OUT
-	.a0(newdata_19_obuf), // IN
-	.a1(newdata_19_obuf), // IN
-	.a2(ds_19), // IN
-	.a3(d_62), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_19),
+	.a0 /* IN */ (newdata_19_obuf),
+	.a1 /* IN */ (newdata_19_obuf),
+	.a2 /* IN */ (ds_19),
+	.a3 /* IN */ (d_62),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 mx4 data_from_0_to_20_inst_20
 (
-	.z(data_20), // OUT
-	.a0(newdata_20_obuf), // IN
-	.a1(newdata_20_obuf), // IN
-	.a2(ds_20), // IN
-	.a3(d_63), // IN
-	.s0(obld_0), // IN
-	.s1(newdataclk)  // IN
+	.z /* OUT */ (data_20),
+	.a0 /* IN */ (newdata_20_obuf),
+	.a1 /* IN */ (newdata_20_obuf),
+	.a2 /* IN */ (ds_20),
+	.a3 /* IN */ (d_63),
+	.s0 /* IN */ (obld_0),
+	.s1 /* IN */ (newdataclk)
 );
 
 // WBK.NET (128) - newdata[0-10] : fd1q
 fd1q newdata_from_0_to_10_inst_0
 (
-	.q(newdata_0_obuf), // OUT
-	.d(data_0), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_0_obuf),
+	.d /* IN */ (data_0),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_1
 (
-	.q(newdata_1_obuf), // OUT
-	.d(data_1), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_1_obuf),
+	.d /* IN */ (data_1),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_2
 (
-	.q(newdata_2_obuf), // OUT
-	.d(data_2), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_2_obuf),
+	.d /* IN */ (data_2),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_3
 (
-	.q(newdata_3_obuf), // OUT
-	.d(data_3), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_3_obuf),
+	.d /* IN */ (data_3),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_4
 (
-	.q(newdata_4_obuf), // OUT
-	.d(data_4), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_4_obuf),
+	.d /* IN */ (data_4),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_5
 (
-	.q(newdata_5_obuf), // OUT
-	.d(data_5), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_5_obuf),
+	.d /* IN */ (data_5),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_6
 (
-	.q(newdata_6_obuf), // OUT
-	.d(data_6), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_6_obuf),
+	.d /* IN */ (data_6),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_7
 (
-	.q(newdata_7_obuf), // OUT
-	.d(data_7), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_7_obuf),
+	.d /* IN */ (data_7),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_8
 (
-	.q(newdata_8_obuf), // OUT
-	.d(data_8), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_8_obuf),
+	.d /* IN */ (data_8),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_9
 (
-	.q(newdata_9_obuf), // OUT
-	.d(data_9), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_9_obuf),
+	.d /* IN */ (data_9),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_0_to_10_inst_10
 (
-	.q(newdata_10_obuf), // OUT
-	.d(data_10), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_10_obuf),
+	.d /* IN */ (data_10),
+	.cp /* IN */ (clk)
 );
 
 // WBK.NET (129) - newdatai[11-15] : fd1q
 fd1q newdatai_from_11_to_15_inst_0
 (
-	.q(newdatai_11), // OUT
-	.d(data_11), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdatai_11),
+	.d /* IN */ (data_11),
+	.cp /* IN */ (clk)
 );
 fd1q newdatai_from_11_to_15_inst_1
 (
-	.q(newdatai_12), // OUT
-	.d(data_12), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdatai_12),
+	.d /* IN */ (data_12),
+	.cp /* IN */ (clk)
 );
 fd1q newdatai_from_11_to_15_inst_2
 (
-	.q(newdatai_13), // OUT
-	.d(data_13), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdatai_13),
+	.d /* IN */ (data_13),
+	.cp /* IN */ (clk)
 );
 fd1q newdatai_from_11_to_15_inst_3
 (
-	.q(newdatai_14), // OUT
-	.d(data_14), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdatai_14),
+	.d /* IN */ (data_14),
+	.cp /* IN */ (clk)
 );
 fd1q newdatai_from_11_to_15_inst_4
 (
-	.q(newdatai_15), // OUT
-	.d(data_15), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdatai_15),
+	.d /* IN */ (data_15),
+	.cp /* IN */ (clk)
 );
 
 // WBK.NET (130) - newdata[16-20] : fd1q
 fd1q newdata_from_16_to_20_inst_0
 (
-	.q(newdata_16_obuf), // OUT
-	.d(data_16), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_16_obuf),
+	.d /* IN */ (data_16),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_16_to_20_inst_1
 (
-	.q(newdata_17_obuf), // OUT
-	.d(data_17), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_17_obuf),
+	.d /* IN */ (data_17),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_16_to_20_inst_2
 (
-	.q(newdata_18_obuf), // OUT
-	.d(data_18), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_18_obuf),
+	.d /* IN */ (data_18),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_16_to_20_inst_3
 (
-	.q(newdata_19_obuf), // OUT
-	.d(data_19), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_19_obuf),
+	.d /* IN */ (data_19),
+	.cp /* IN */ (clk)
 );
 fd1q newdata_from_16_to_20_inst_4
 (
-	.q(newdata_20_obuf), // OUT
-	.d(data_20), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (newdata_20_obuf),
+	.d /* IN */ (data_20),
+	.cp /* IN */ (clk)
 );
 
 // WBK.NET (131) - newdata[11-15] : nivh

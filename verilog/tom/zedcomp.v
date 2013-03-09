@@ -6,10 +6,10 @@ module zedcomp
 	output zcomp_1,
 	output zcomp_2,
 	output zcomp_3,
-	input[0:31] srczplo;
-	input[0:31] srczphi;
-	input[0:31] dstzlo;
-	input[0:31] dstzhi;
+	input [0:31] srczplo;
+	input [0:31] srczphi;
+	input [0:31] dstzlo;
+	input [0:31] dstzhi;
 	input zmode_0,
 	input zmode_1,
 	input zmode_2
@@ -42,161 +42,161 @@ wire zgt_3;
 // DATACOMP.NET (132) - zcomp[0] : mag_16
 mag_16 zcomp_index_0_inst
 (
-	.gt(zg_0), // OUT
-	.eq(ze_0), // OUT
-	.lt(zl_0), // OUT
-	.a_0(srczplo[0]), // IN
-	.a_1(srczplo[1]), // IN
-	.a_2(srczplo[2]), // IN
-	.a_3(srczplo[3]), // IN
-	.a_4(srczplo[4]), // IN
-	.a_5(srczplo[5]), // IN
-	.a_6(srczplo[6]), // IN
-	.a_7(srczplo[7]), // IN
-	.a_8(srczplo[8]), // IN
-	.a_9(srczplo[9]), // IN
-	.a_10(srczplo[10]), // IN
-	.a_11(srczplo[11]), // IN
-	.a_12(srczplo[12]), // IN
-	.a_13(srczplo[13]), // IN
-	.a_14(srczplo[14]), // IN
-	.a_15(srczplo[15]), // IN
-	.b_0(dstzlo[0]), // IN
-	.b_1(dstzlo[1]), // IN
-	.b_2(dstzlo[2]), // IN
-	.b_3(dstzlo[3]), // IN
-	.b_4(dstzlo[4]), // IN
-	.b_5(dstzlo[5]), // IN
-	.b_6(dstzlo[6]), // IN
-	.b_7(dstzlo[7]), // IN
-	.b_8(dstzlo[8]), // IN
-	.b_9(dstzlo[9]), // IN
-	.b_10(dstzlo[10]), // IN
-	.b_11(dstzlo[11]), // IN
-	.b_12(dstzlo[12]), // IN
-	.b_13(dstzlo[13]), // IN
-	.b_14(dstzlo[14]), // IN
-	.b_15(dstzlo[15])  // IN
+	.gt /* OUT */ (zg_0),
+	.eq /* OUT */ (ze_0),
+	.lt /* OUT */ (zl_0),
+	.a_0 /* IN */ (srczplo[0]),
+	.a_1 /* IN */ (srczplo[1]),
+	.a_2 /* IN */ (srczplo[2]),
+	.a_3 /* IN */ (srczplo[3]),
+	.a_4 /* IN */ (srczplo[4]),
+	.a_5 /* IN */ (srczplo[5]),
+	.a_6 /* IN */ (srczplo[6]),
+	.a_7 /* IN */ (srczplo[7]),
+	.a_8 /* IN */ (srczplo[8]),
+	.a_9 /* IN */ (srczplo[9]),
+	.a_10 /* IN */ (srczplo[10]),
+	.a_11 /* IN */ (srczplo[11]),
+	.a_12 /* IN */ (srczplo[12]),
+	.a_13 /* IN */ (srczplo[13]),
+	.a_14 /* IN */ (srczplo[14]),
+	.a_15 /* IN */ (srczplo[15]),
+	.b_0 /* IN */ (dstzlo[0]),
+	.b_1 /* IN */ (dstzlo[1]),
+	.b_2 /* IN */ (dstzlo[2]),
+	.b_3 /* IN */ (dstzlo[3]),
+	.b_4 /* IN */ (dstzlo[4]),
+	.b_5 /* IN */ (dstzlo[5]),
+	.b_6 /* IN */ (dstzlo[6]),
+	.b_7 /* IN */ (dstzlo[7]),
+	.b_8 /* IN */ (dstzlo[8]),
+	.b_9 /* IN */ (dstzlo[9]),
+	.b_10 /* IN */ (dstzlo[10]),
+	.b_11 /* IN */ (dstzlo[11]),
+	.b_12 /* IN */ (dstzlo[12]),
+	.b_13 /* IN */ (dstzlo[13]),
+	.b_14 /* IN */ (dstzlo[14]),
+	.b_15 /* IN */ (dstzlo[15])
 );
 
 // DATACOMP.NET (134) - zcomp[1] : mag_16
 mag_16 zcomp_index_1_inst
 (
-	.gt(zg_1), // OUT
-	.eq(ze_1), // OUT
-	.lt(zl_1), // OUT
-	.a_0(srczplo[16]), // IN
-	.a_1(srczplo[17]), // IN
-	.a_2(srczplo[18]), // IN
-	.a_3(srczplo[19]), // IN
-	.a_4(srczplo[20]), // IN
-	.a_5(srczplo[21]), // IN
-	.a_6(srczplo[22]), // IN
-	.a_7(srczplo[23]), // IN
-	.a_8(srczplo[24]), // IN
-	.a_9(srczplo[25]), // IN
-	.a_10(srczplo[26]), // IN
-	.a_11(srczplo[27]), // IN
-	.a_12(srczplo[28]), // IN
-	.a_13(srczplo[29]), // IN
-	.a_14(srczplo[30]), // IN
-	.a_15(srczplo[31]), // IN
-	.b_0(dstzlo[16]), // IN
-	.b_1(dstzlo[17]), // IN
-	.b_2(dstzlo[18]), // IN
-	.b_3(dstzlo[19]), // IN
-	.b_4(dstzlo[20]), // IN
-	.b_5(dstzlo[21]), // IN
-	.b_6(dstzlo[22]), // IN
-	.b_7(dstzlo[23]), // IN
-	.b_8(dstzlo[24]), // IN
-	.b_9(dstzlo[25]), // IN
-	.b_10(dstzlo[26]), // IN
-	.b_11(dstzlo[27]), // IN
-	.b_12(dstzlo[28]), // IN
-	.b_13(dstzlo[29]), // IN
-	.b_14(dstzlo[30]), // IN
-	.b_15(dstzlo[31])  // IN
+	.gt /* OUT */ (zg_1),
+	.eq /* OUT */ (ze_1),
+	.lt /* OUT */ (zl_1),
+	.a_0 /* IN */ (srczplo[16]),
+	.a_1 /* IN */ (srczplo[17]),
+	.a_2 /* IN */ (srczplo[18]),
+	.a_3 /* IN */ (srczplo[19]),
+	.a_4 /* IN */ (srczplo[20]),
+	.a_5 /* IN */ (srczplo[21]),
+	.a_6 /* IN */ (srczplo[22]),
+	.a_7 /* IN */ (srczplo[23]),
+	.a_8 /* IN */ (srczplo[24]),
+	.a_9 /* IN */ (srczplo[25]),
+	.a_10 /* IN */ (srczplo[26]),
+	.a_11 /* IN */ (srczplo[27]),
+	.a_12 /* IN */ (srczplo[28]),
+	.a_13 /* IN */ (srczplo[29]),
+	.a_14 /* IN */ (srczplo[30]),
+	.a_15 /* IN */ (srczplo[31]),
+	.b_0 /* IN */ (dstzlo[16]),
+	.b_1 /* IN */ (dstzlo[17]),
+	.b_2 /* IN */ (dstzlo[18]),
+	.b_3 /* IN */ (dstzlo[19]),
+	.b_4 /* IN */ (dstzlo[20]),
+	.b_5 /* IN */ (dstzlo[21]),
+	.b_6 /* IN */ (dstzlo[22]),
+	.b_7 /* IN */ (dstzlo[23]),
+	.b_8 /* IN */ (dstzlo[24]),
+	.b_9 /* IN */ (dstzlo[25]),
+	.b_10 /* IN */ (dstzlo[26]),
+	.b_11 /* IN */ (dstzlo[27]),
+	.b_12 /* IN */ (dstzlo[28]),
+	.b_13 /* IN */ (dstzlo[29]),
+	.b_14 /* IN */ (dstzlo[30]),
+	.b_15 /* IN */ (dstzlo[31])
 );
 
 // DATACOMP.NET (136) - zcomp[2] : mag_16
 mag_16 zcomp_index_2_inst
 (
-	.gt(zg_2), // OUT
-	.eq(ze_2), // OUT
-	.lt(zl_2), // OUT
-	.a_0(srczphi[0]), // IN
-	.a_1(srczphi[1]), // IN
-	.a_2(srczphi[2]), // IN
-	.a_3(srczphi[3]), // IN
-	.a_4(srczphi[4]), // IN
-	.a_5(srczphi[5]), // IN
-	.a_6(srczphi[6]), // IN
-	.a_7(srczphi[7]), // IN
-	.a_8(srczphi[8]), // IN
-	.a_9(srczphi[9]), // IN
-	.a_10(srczphi[10]), // IN
-	.a_11(srczphi[11]), // IN
-	.a_12(srczphi[12]), // IN
-	.a_13(srczphi[13]), // IN
-	.a_14(srczphi[14]), // IN
-	.a_15(srczphi[15]), // IN
-	.b_0(dstzhi[0]), // IN
-	.b_1(dstzhi[1]), // IN
-	.b_2(dstzhi[2]), // IN
-	.b_3(dstzhi[3]), // IN
-	.b_4(dstzhi[4]), // IN
-	.b_5(dstzhi[5]), // IN
-	.b_6(dstzhi[6]), // IN
-	.b_7(dstzhi[7]), // IN
-	.b_8(dstzhi[8]), // IN
-	.b_9(dstzhi[9]), // IN
-	.b_10(dstzhi[10]), // IN
-	.b_11(dstzhi[11]), // IN
-	.b_12(dstzhi[12]), // IN
-	.b_13(dstzhi[13]), // IN
-	.b_14(dstzhi[14]), // IN
-	.b_15(dstzhi[15])  // IN
+	.gt /* OUT */ (zg_2),
+	.eq /* OUT */ (ze_2),
+	.lt /* OUT */ (zl_2),
+	.a_0 /* IN */ (srczphi[0]),
+	.a_1 /* IN */ (srczphi[1]),
+	.a_2 /* IN */ (srczphi[2]),
+	.a_3 /* IN */ (srczphi[3]),
+	.a_4 /* IN */ (srczphi[4]),
+	.a_5 /* IN */ (srczphi[5]),
+	.a_6 /* IN */ (srczphi[6]),
+	.a_7 /* IN */ (srczphi[7]),
+	.a_8 /* IN */ (srczphi[8]),
+	.a_9 /* IN */ (srczphi[9]),
+	.a_10 /* IN */ (srczphi[10]),
+	.a_11 /* IN */ (srczphi[11]),
+	.a_12 /* IN */ (srczphi[12]),
+	.a_13 /* IN */ (srczphi[13]),
+	.a_14 /* IN */ (srczphi[14]),
+	.a_15 /* IN */ (srczphi[15]),
+	.b_0 /* IN */ (dstzhi[0]),
+	.b_1 /* IN */ (dstzhi[1]),
+	.b_2 /* IN */ (dstzhi[2]),
+	.b_3 /* IN */ (dstzhi[3]),
+	.b_4 /* IN */ (dstzhi[4]),
+	.b_5 /* IN */ (dstzhi[5]),
+	.b_6 /* IN */ (dstzhi[6]),
+	.b_7 /* IN */ (dstzhi[7]),
+	.b_8 /* IN */ (dstzhi[8]),
+	.b_9 /* IN */ (dstzhi[9]),
+	.b_10 /* IN */ (dstzhi[10]),
+	.b_11 /* IN */ (dstzhi[11]),
+	.b_12 /* IN */ (dstzhi[12]),
+	.b_13 /* IN */ (dstzhi[13]),
+	.b_14 /* IN */ (dstzhi[14]),
+	.b_15 /* IN */ (dstzhi[15])
 );
 
 // DATACOMP.NET (138) - zcomp[3] : mag_16
 mag_16 zcomp_index_3_inst
 (
-	.gt(zg_3), // OUT
-	.eq(ze_3), // OUT
-	.lt(zl_3), // OUT
-	.a_0(srczphi[16]), // IN
-	.a_1(srczphi[17]), // IN
-	.a_2(srczphi[18]), // IN
-	.a_3(srczphi[19]), // IN
-	.a_4(srczphi[20]), // IN
-	.a_5(srczphi[21]), // IN
-	.a_6(srczphi[22]), // IN
-	.a_7(srczphi[23]), // IN
-	.a_8(srczphi[24]), // IN
-	.a_9(srczphi[25]), // IN
-	.a_10(srczphi[26]), // IN
-	.a_11(srczphi[27]), // IN
-	.a_12(srczphi[28]), // IN
-	.a_13(srczphi[29]), // IN
-	.a_14(srczphi[30]), // IN
-	.a_15(srczphi[31]), // IN
-	.b_0(dstzhi[16]), // IN
-	.b_1(dstzhi[17]), // IN
-	.b_2(dstzhi[18]), // IN
-	.b_3(dstzhi[19]), // IN
-	.b_4(dstzhi[20]), // IN
-	.b_5(dstzhi[21]), // IN
-	.b_6(dstzhi[22]), // IN
-	.b_7(dstzhi[23]), // IN
-	.b_8(dstzhi[24]), // IN
-	.b_9(dstzhi[25]), // IN
-	.b_10(dstzhi[26]), // IN
-	.b_11(dstzhi[27]), // IN
-	.b_12(dstzhi[28]), // IN
-	.b_13(dstzhi[29]), // IN
-	.b_14(dstzhi[30]), // IN
-	.b_15(dstzhi[31])  // IN
+	.gt /* OUT */ (zg_3),
+	.eq /* OUT */ (ze_3),
+	.lt /* OUT */ (zl_3),
+	.a_0 /* IN */ (srczphi[16]),
+	.a_1 /* IN */ (srczphi[17]),
+	.a_2 /* IN */ (srczphi[18]),
+	.a_3 /* IN */ (srczphi[19]),
+	.a_4 /* IN */ (srczphi[20]),
+	.a_5 /* IN */ (srczphi[21]),
+	.a_6 /* IN */ (srczphi[22]),
+	.a_7 /* IN */ (srczphi[23]),
+	.a_8 /* IN */ (srczphi[24]),
+	.a_9 /* IN */ (srczphi[25]),
+	.a_10 /* IN */ (srczphi[26]),
+	.a_11 /* IN */ (srczphi[27]),
+	.a_12 /* IN */ (srczphi[28]),
+	.a_13 /* IN */ (srczphi[29]),
+	.a_14 /* IN */ (srczphi[30]),
+	.a_15 /* IN */ (srczphi[31]),
+	.b_0 /* IN */ (dstzhi[16]),
+	.b_1 /* IN */ (dstzhi[17]),
+	.b_2 /* IN */ (dstzhi[18]),
+	.b_3 /* IN */ (dstzhi[19]),
+	.b_4 /* IN */ (dstzhi[20]),
+	.b_5 /* IN */ (dstzhi[21]),
+	.b_6 /* IN */ (dstzhi[22]),
+	.b_7 /* IN */ (dstzhi[23]),
+	.b_8 /* IN */ (dstzhi[24]),
+	.b_9 /* IN */ (dstzhi[25]),
+	.b_10 /* IN */ (dstzhi[26]),
+	.b_11 /* IN */ (dstzhi[27]),
+	.b_12 /* IN */ (dstzhi[28]),
+	.b_13 /* IN */ (dstzhi[29]),
+	.b_14 /* IN */ (dstzhi[30]),
+	.b_15 /* IN */ (dstzhi[31])
 );
 
 // DATACOMP.NET (141) - zlt[0-3] : nd2

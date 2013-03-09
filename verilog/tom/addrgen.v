@@ -2,13 +2,13 @@
 
 module addrgen
 (
-	output[0:23] address;
+	output [0:23] address;
 	output pixa_0,
 	output pixa_1,
 	output pixa_2,
-	input[0:15] a1_x;
-	input[0:15] a1_y;
-	input[0:20] a1_base;
+	input [0:15] a1_x;
+	input [0:15] a1_y;
+	input [0:20] a1_base;
 	input a1_pitch_0,
 	input a1_pitch_1,
 	input a1_pixsize_0,
@@ -22,9 +22,9 @@ module addrgen
 	input a1_width_5,
 	input a1_zoffset_0,
 	input a1_zoffset_1,
-	input[0:15] a2_x;
-	input[0:15] a2_y;
-	input[0:20] a2_base;
+	input [0:15] a2_x;
+	input [0:15] a2_y;
+	input [0:20] a2_base;
 	input a2_pitch_0,
 	input a2_pitch_1,
 	input a2_pixsize_0,
@@ -430,245 +430,245 @@ assign gena2b_1 = gena2;
 // ADDRGEN.NET (75) - x[0-15] : mx2
 mx2 x_from_0_to_15_inst_0
 (
-	.z(x_0), // OUT
-	.a0(a1_x[0]), // IN
-	.a1(a2_x[0]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_0),
+	.a0 /* IN */ (a1_x[0]),
+	.a1 /* IN */ (a2_x[0]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_1
 (
-	.z(x_1), // OUT
-	.a0(a1_x[1]), // IN
-	.a1(a2_x[1]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_1),
+	.a0 /* IN */ (a1_x[1]),
+	.a1 /* IN */ (a2_x[1]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_2
 (
-	.z(x_2), // OUT
-	.a0(a1_x[2]), // IN
-	.a1(a2_x[2]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_2),
+	.a0 /* IN */ (a1_x[2]),
+	.a1 /* IN */ (a2_x[2]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_3
 (
-	.z(x_3), // OUT
-	.a0(a1_x[3]), // IN
-	.a1(a2_x[3]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_3),
+	.a0 /* IN */ (a1_x[3]),
+	.a1 /* IN */ (a2_x[3]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_4
 (
-	.z(x_4), // OUT
-	.a0(a1_x[4]), // IN
-	.a1(a2_x[4]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_4),
+	.a0 /* IN */ (a1_x[4]),
+	.a1 /* IN */ (a2_x[4]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_5
 (
-	.z(x_5), // OUT
-	.a0(a1_x[5]), // IN
-	.a1(a2_x[5]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_5),
+	.a0 /* IN */ (a1_x[5]),
+	.a1 /* IN */ (a2_x[5]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_6
 (
-	.z(x_6), // OUT
-	.a0(a1_x[6]), // IN
-	.a1(a2_x[6]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_6),
+	.a0 /* IN */ (a1_x[6]),
+	.a1 /* IN */ (a2_x[6]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_7
 (
-	.z(x_7), // OUT
-	.a0(a1_x[7]), // IN
-	.a1(a2_x[7]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_7),
+	.a0 /* IN */ (a1_x[7]),
+	.a1 /* IN */ (a2_x[7]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_8
 (
-	.z(x_8), // OUT
-	.a0(a1_x[8]), // IN
-	.a1(a2_x[8]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_8),
+	.a0 /* IN */ (a1_x[8]),
+	.a1 /* IN */ (a2_x[8]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_9
 (
-	.z(x_9), // OUT
-	.a0(a1_x[9]), // IN
-	.a1(a2_x[9]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_9),
+	.a0 /* IN */ (a1_x[9]),
+	.a1 /* IN */ (a2_x[9]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_10
 (
-	.z(x_10), // OUT
-	.a0(a1_x[10]), // IN
-	.a1(a2_x[10]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_10),
+	.a0 /* IN */ (a1_x[10]),
+	.a1 /* IN */ (a2_x[10]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_11
 (
-	.z(x_11), // OUT
-	.a0(a1_x[11]), // IN
-	.a1(a2_x[11]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_11),
+	.a0 /* IN */ (a1_x[11]),
+	.a1 /* IN */ (a2_x[11]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_12
 (
-	.z(x_12), // OUT
-	.a0(a1_x[12]), // IN
-	.a1(a2_x[12]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_12),
+	.a0 /* IN */ (a1_x[12]),
+	.a1 /* IN */ (a2_x[12]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_13
 (
-	.z(x_13), // OUT
-	.a0(a1_x[13]), // IN
-	.a1(a2_x[13]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_13),
+	.a0 /* IN */ (a1_x[13]),
+	.a1 /* IN */ (a2_x[13]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_14
 (
-	.z(x_14), // OUT
-	.a0(a1_x[14]), // IN
-	.a1(a2_x[14]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_14),
+	.a0 /* IN */ (a1_x[14]),
+	.a1 /* IN */ (a2_x[14]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 x_from_0_to_15_inst_15
 (
-	.z(x_15), // OUT
-	.a0(a1_x[15]), // IN
-	.a1(a2_x[15]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (x_15),
+	.a0 /* IN */ (a1_x[15]),
+	.a1 /* IN */ (a2_x[15]),
+	.s /* IN */ (gena2b_0)
 );
 
 // ADDRGEN.NET (78) - y[0-11] : mx2
 mx2 y_from_0_to_11_inst_0
 (
-	.z(y_0), // OUT
-	.a0(a1_y[0]), // IN
-	.a1(a2_y[0]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_0),
+	.a0 /* IN */ (a1_y[0]),
+	.a1 /* IN */ (a2_y[0]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_1
 (
-	.z(y_1), // OUT
-	.a0(a1_y[1]), // IN
-	.a1(a2_y[1]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_1),
+	.a0 /* IN */ (a1_y[1]),
+	.a1 /* IN */ (a2_y[1]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_2
 (
-	.z(y_2), // OUT
-	.a0(a1_y[2]), // IN
-	.a1(a2_y[2]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_2),
+	.a0 /* IN */ (a1_y[2]),
+	.a1 /* IN */ (a2_y[2]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_3
 (
-	.z(y_3), // OUT
-	.a0(a1_y[3]), // IN
-	.a1(a2_y[3]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_3),
+	.a0 /* IN */ (a1_y[3]),
+	.a1 /* IN */ (a2_y[3]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_4
 (
-	.z(y_4), // OUT
-	.a0(a1_y[4]), // IN
-	.a1(a2_y[4]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_4),
+	.a0 /* IN */ (a1_y[4]),
+	.a1 /* IN */ (a2_y[4]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_5
 (
-	.z(y_5), // OUT
-	.a0(a1_y[5]), // IN
-	.a1(a2_y[5]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_5),
+	.a0 /* IN */ (a1_y[5]),
+	.a1 /* IN */ (a2_y[5]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_6
 (
-	.z(y_6), // OUT
-	.a0(a1_y[6]), // IN
-	.a1(a2_y[6]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_6),
+	.a0 /* IN */ (a1_y[6]),
+	.a1 /* IN */ (a2_y[6]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_7
 (
-	.z(y_7), // OUT
-	.a0(a1_y[7]), // IN
-	.a1(a2_y[7]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_7),
+	.a0 /* IN */ (a1_y[7]),
+	.a1 /* IN */ (a2_y[7]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_8
 (
-	.z(y_8), // OUT
-	.a0(a1_y[8]), // IN
-	.a1(a2_y[8]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_8),
+	.a0 /* IN */ (a1_y[8]),
+	.a1 /* IN */ (a2_y[8]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_9
 (
-	.z(y_9), // OUT
-	.a0(a1_y[9]), // IN
-	.a1(a2_y[9]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_9),
+	.a0 /* IN */ (a1_y[9]),
+	.a1 /* IN */ (a2_y[9]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_10
 (
-	.z(y_10), // OUT
-	.a0(a1_y[10]), // IN
-	.a1(a2_y[10]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_10),
+	.a0 /* IN */ (a1_y[10]),
+	.a1 /* IN */ (a2_y[10]),
+	.s /* IN */ (gena2b_0)
 );
 mx2 y_from_0_to_11_inst_11
 (
-	.z(y_11), // OUT
-	.a0(a1_y[11]), // IN
-	.a1(a2_y[11]), // IN
-	.s(gena2b_0)  // IN
+	.z /* OUT */ (y_11),
+	.a0 /* IN */ (a1_y[11]),
+	.a1 /* IN */ (a2_y[11]),
+	.s /* IN */ (gena2b_0)
 );
 
 // ADDRGEN.NET (81) - width[0-5] : mx2u
 mx2 width_from_0_to_5_inst_0
 (
-	.z(width_0), // OUT
-	.a0(a1_width_0), // IN
-	.a1(a2_width_0), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (width_0),
+	.a0 /* IN */ (a1_width_0),
+	.a1 /* IN */ (a2_width_0),
+	.s /* IN */ (gena2b_1)
 );
 mx2 width_from_0_to_5_inst_1
 (
-	.z(width_1), // OUT
-	.a0(a1_width_1), // IN
-	.a1(a2_width_1), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (width_1),
+	.a0 /* IN */ (a1_width_1),
+	.a1 /* IN */ (a2_width_1),
+	.s /* IN */ (gena2b_1)
 );
 mx2 width_from_0_to_5_inst_2
 (
-	.z(width_2), // OUT
-	.a0(a1_width_2), // IN
-	.a1(a2_width_2), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (width_2),
+	.a0 /* IN */ (a1_width_2),
+	.a1 /* IN */ (a2_width_2),
+	.s /* IN */ (gena2b_1)
 );
 mx2 width_from_0_to_5_inst_3
 (
-	.z(width_3), // OUT
-	.a0(a1_width_3), // IN
-	.a1(a2_width_3), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (width_3),
+	.a0 /* IN */ (a1_width_3),
+	.a1 /* IN */ (a2_width_3),
+	.s /* IN */ (gena2b_1)
 );
 mx2 width_from_0_to_5_inst_4
 (
-	.z(width_4), // OUT
-	.a0(a1_width_4), // IN
-	.a1(a2_width_4), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (width_4),
+	.a0 /* IN */ (a1_width_4),
+	.a1 /* IN */ (a2_width_4),
+	.s /* IN */ (gena2b_1)
 );
 mx2 width_from_0_to_5_inst_5
 (
-	.z(width_5), // OUT
-	.a0(a1_width_5), // IN
-	.a1(a2_width_5), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (width_5),
+	.a0 /* IN */ (a1_width_5),
+	.a1 /* IN */ (a2_width_5),
+	.s /* IN */ (gena2b_1)
 );
 
 // ADDRGEN.NET (83) - width\[4] : iv
@@ -677,24 +677,24 @@ assign width_n_4 = ~width_4;
 // ADDRGEN.NET (85) - pixsize[0-2] : mx2u
 mx2 pixsize_from_0_to_2_inst_0
 (
-	.z(pixsize_0), // OUT
-	.a0(a1_pixsize_0), // IN
-	.a1(a2_pixsize_0), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (pixsize_0),
+	.a0 /* IN */ (a1_pixsize_0),
+	.a1 /* IN */ (a2_pixsize_0),
+	.s /* IN */ (gena2b_1)
 );
 mx2 pixsize_from_0_to_2_inst_1
 (
-	.z(pixsize_1), // OUT
-	.a0(a1_pixsize_1), // IN
-	.a1(a2_pixsize_1), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (pixsize_1),
+	.a0 /* IN */ (a1_pixsize_1),
+	.a1 /* IN */ (a2_pixsize_1),
+	.s /* IN */ (gena2b_1)
 );
 mx2 pixsize_from_0_to_2_inst_2
 (
-	.z(pixsize_2), // OUT
-	.a0(a1_pixsize_2), // IN
-	.a1(a2_pixsize_2), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (pixsize_2),
+	.a0 /* IN */ (a1_pixsize_2),
+	.a1 /* IN */ (a2_pixsize_2),
+	.s /* IN */ (gena2b_1)
 );
 
 // ADDRGEN.NET (87) - pissizeb[0] : nivu
@@ -703,17 +703,17 @@ assign pixsizeb_0 = pixsize_0;
 // ADDRGEN.NET (89) - pitch[0-1] : mx2p
 mx2 pitch_from_0_to_1_inst_0
 (
-	.z(pitch_0), // OUT
-	.a0(a1_pitch_0), // IN
-	.a1(a2_pitch_0), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (pitch_0),
+	.a0 /* IN */ (a1_pitch_0),
+	.a1 /* IN */ (a2_pitch_0),
+	.s /* IN */ (gena2b_1)
 );
 mx2 pitch_from_0_to_1_inst_1
 (
-	.z(pitch_1), // OUT
-	.a0(a1_pitch_1), // IN
-	.a1(a2_pitch_1), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (pitch_1),
+	.a0 /* IN */ (a1_pitch_1),
+	.a1 /* IN */ (a2_pitch_1),
+	.s /* IN */ (gena2b_1)
 );
 
 // ADDRGEN.NET (91) - pitch\[0-1] : iv
@@ -723,166 +723,166 @@ assign pitch_n_1 = ~pitch_1;
 // ADDRGEN.NET (93) - base : mx2p
 mx2 base_inst_0
 (
-	.z(base[0]), // OUT
-	.a0(a1_base[0]), // IN
-	.a1(a2_base[0]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[0]),
+	.a0 /* IN */ (a1_base[0]),
+	.a1 /* IN */ (a2_base[0]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_1
 (
-	.z(base[1]), // OUT
-	.a0(a1_base[1]), // IN
-	.a1(a2_base[1]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[1]),
+	.a0 /* IN */ (a1_base[1]),
+	.a1 /* IN */ (a2_base[1]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_2
 (
-	.z(base[2]), // OUT
-	.a0(a1_base[2]), // IN
-	.a1(a2_base[2]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[2]),
+	.a0 /* IN */ (a1_base[2]),
+	.a1 /* IN */ (a2_base[2]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_3
 (
-	.z(base[3]), // OUT
-	.a0(a1_base[3]), // IN
-	.a1(a2_base[3]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[3]),
+	.a0 /* IN */ (a1_base[3]),
+	.a1 /* IN */ (a2_base[3]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_4
 (
-	.z(base[4]), // OUT
-	.a0(a1_base[4]), // IN
-	.a1(a2_base[4]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[4]),
+	.a0 /* IN */ (a1_base[4]),
+	.a1 /* IN */ (a2_base[4]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_5
 (
-	.z(base[5]), // OUT
-	.a0(a1_base[5]), // IN
-	.a1(a2_base[5]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[5]),
+	.a0 /* IN */ (a1_base[5]),
+	.a1 /* IN */ (a2_base[5]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_6
 (
-	.z(base[6]), // OUT
-	.a0(a1_base[6]), // IN
-	.a1(a2_base[6]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[6]),
+	.a0 /* IN */ (a1_base[6]),
+	.a1 /* IN */ (a2_base[6]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_7
 (
-	.z(base[7]), // OUT
-	.a0(a1_base[7]), // IN
-	.a1(a2_base[7]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[7]),
+	.a0 /* IN */ (a1_base[7]),
+	.a1 /* IN */ (a2_base[7]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_8
 (
-	.z(base[8]), // OUT
-	.a0(a1_base[8]), // IN
-	.a1(a2_base[8]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[8]),
+	.a0 /* IN */ (a1_base[8]),
+	.a1 /* IN */ (a2_base[8]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_9
 (
-	.z(base[9]), // OUT
-	.a0(a1_base[9]), // IN
-	.a1(a2_base[9]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[9]),
+	.a0 /* IN */ (a1_base[9]),
+	.a1 /* IN */ (a2_base[9]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_10
 (
-	.z(base[10]), // OUT
-	.a0(a1_base[10]), // IN
-	.a1(a2_base[10]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[10]),
+	.a0 /* IN */ (a1_base[10]),
+	.a1 /* IN */ (a2_base[10]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_11
 (
-	.z(base[11]), // OUT
-	.a0(a1_base[11]), // IN
-	.a1(a2_base[11]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[11]),
+	.a0 /* IN */ (a1_base[11]),
+	.a1 /* IN */ (a2_base[11]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_12
 (
-	.z(base[12]), // OUT
-	.a0(a1_base[12]), // IN
-	.a1(a2_base[12]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[12]),
+	.a0 /* IN */ (a1_base[12]),
+	.a1 /* IN */ (a2_base[12]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_13
 (
-	.z(base[13]), // OUT
-	.a0(a1_base[13]), // IN
-	.a1(a2_base[13]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[13]),
+	.a0 /* IN */ (a1_base[13]),
+	.a1 /* IN */ (a2_base[13]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_14
 (
-	.z(base[14]), // OUT
-	.a0(a1_base[14]), // IN
-	.a1(a2_base[14]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[14]),
+	.a0 /* IN */ (a1_base[14]),
+	.a1 /* IN */ (a2_base[14]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_15
 (
-	.z(base[15]), // OUT
-	.a0(a1_base[15]), // IN
-	.a1(a2_base[15]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[15]),
+	.a0 /* IN */ (a1_base[15]),
+	.a1 /* IN */ (a2_base[15]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_16
 (
-	.z(base[16]), // OUT
-	.a0(a1_base[16]), // IN
-	.a1(a2_base[16]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[16]),
+	.a0 /* IN */ (a1_base[16]),
+	.a1 /* IN */ (a2_base[16]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_17
 (
-	.z(base[17]), // OUT
-	.a0(a1_base[17]), // IN
-	.a1(a2_base[17]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[17]),
+	.a0 /* IN */ (a1_base[17]),
+	.a1 /* IN */ (a2_base[17]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_18
 (
-	.z(base[18]), // OUT
-	.a0(a1_base[18]), // IN
-	.a1(a2_base[18]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[18]),
+	.a0 /* IN */ (a1_base[18]),
+	.a1 /* IN */ (a2_base[18]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_19
 (
-	.z(base[19]), // OUT
-	.a0(a1_base[19]), // IN
-	.a1(a2_base[19]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[19]),
+	.a0 /* IN */ (a1_base[19]),
+	.a1 /* IN */ (a2_base[19]),
+	.s /* IN */ (gena2)
 );
 mx2 base_inst_20
 (
-	.z(base[20]), // OUT
-	.a0(a1_base[20]), // IN
-	.a1(a2_base[20]), // IN
-	.s(gena2)  // IN
+	.z /* OUT */ (base[20]),
+	.a0 /* IN */ (a1_base[20]),
+	.a1 /* IN */ (a2_base[20]),
+	.s /* IN */ (gena2)
 );
 
 // ADDRGEN.NET (95) - zoffset[0-1] : mx2
 mx2 zoffset_from_0_to_1_inst_0
 (
-	.z(zoffset_0), // OUT
-	.a0(a1_zoffset_0), // IN
-	.a1(a2_zoffset_0), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (zoffset_0),
+	.a0 /* IN */ (a1_zoffset_0),
+	.a1 /* IN */ (a2_zoffset_0),
+	.s /* IN */ (gena2b_1)
 );
 mx2 zoffset_from_0_to_1_inst_1
 (
-	.z(zoffset_1), // OUT
-	.a0(a1_zoffset_1), // IN
-	.a1(a2_zoffset_1), // IN
-	.s(gena2b_1)  // IN
+	.z /* OUT */ (zoffset_1),
+	.a0 /* IN */ (a1_zoffset_1),
+	.a1 /* IN */ (a2_zoffset_1),
+	.s /* IN */ (gena2b_1)
 );
 
 // ADDRGEN.NET (107) - ym1[0-11] : an2p
@@ -916,138 +916,138 @@ assign ym2_11 = width_0 & y_11;
 // ADDRGEN.NET (110) - yadd : fa332
 fa332 yadd_inst
 (
-	.s0(ytmt_0), // OUT
-	.s1(ytmt_1), // OUT
-	.s2(ytmt_2), // OUT
-	.s3(ytmt_3), // OUT
-	.s4(ytmt_4), // OUT
-	.s5(ytmt_5), // OUT
-	.s6(ytmt_6), // OUT
-	.s7(ytmt_7), // OUT
-	.s8(ytmt_8), // OUT
-	.s9(ytmt_9), // OUT
-	.s10(ytmt_10), // OUT
-	.s11(ytmt_11), // OUT
-	.s12(ytmt_12), // OUT
-	.s13(ytmt_13), // OUT
-	.s14(ytmt_14), // OUT
-	.s15(ytmt_15), // OUT
-	.s16(ytmt_16), // OUT
-	.s17(ytmt_17), // OUT
-	.s18(ytmt_18), // OUT
-	.s19(ytmt_19), // OUT
-	.s20(ytmt_20), // OUT
-	.s21(ytmt_21), // OUT
-	.s22(ytmt_22), // OUT
-	.s23(ytmt_23), // OUT
-	.s24(ytmt_24), // OUT
-	.s25(ytmt_25), // OUT
-	.s26(ytmt_26), // OUT
-	.s27(ytmt_27), // OUT
-	.s28(ytmt_28), // OUT
-	.s29(ytmt_29), // OUT
-	.s30(ytmt_30), // OUT
-	.s31(ytmt_31), // OUT
-	.co0(co_0), // OUT
-	.co1(co_1), // OUT
-	.ci0(zero), // IN
-	.ci1(zero), // IN
-	.a0(ym2_0), // IN
-	.b0(zero), // IN
-	.c0(zero), // IN
-	.a1(ym2_1), // IN
-	.b1(ym1_0), // IN
-	.c1(zero), // IN
-	.a2(ym2_2), // IN
-	.b2(ym1_1), // IN
-	.c2(y_0), // IN
-	.a3(ym2_3), // IN
-	.b3(ym1_2), // IN
-	.c3(y_1), // IN
-	.a4(ym2_4), // IN
-	.b4(ym1_3), // IN
-	.c4(y_2), // IN
-	.a5(ym2_5), // IN
-	.b5(ym1_4), // IN
-	.c5(y_3), // IN
-	.a6(ym2_6), // IN
-	.b6(ym1_5), // IN
-	.c6(y_4), // IN
-	.a7(ym2_7), // IN
-	.b7(ym1_6), // IN
-	.c7(y_5), // IN
-	.a8(ym2_8), // IN
-	.b8(ym1_7), // IN
-	.c8(y_6), // IN
-	.a9(ym2_9), // IN
-	.b9(ym1_8), // IN
-	.c9(y_7), // IN
-	.a10(ym2_10), // IN
-	.b10(ym1_9), // IN
-	.c10(y_8), // IN
-	.a11(ym2_11), // IN
-	.b11(ym1_10), // IN
-	.c11(y_9), // IN
-	.a12(zero), // IN
-	.b12(ym1_11), // IN
-	.c12(y_10), // IN
-	.a13(zero), // IN
-	.b13(zero), // IN
-	.c13(y_11), // IN
-	.a14(zero), // IN
-	.b14(zero), // IN
-	.c14(zero), // IN
-	.a15(zero), // IN
-	.b15(zero), // IN
-	.c15(zero), // IN
-	.a16(zero), // IN
-	.b16(zero), // IN
-	.c16(zero), // IN
-	.a17(zero), // IN
-	.b17(zero), // IN
-	.c17(zero), // IN
-	.a18(zero), // IN
-	.b18(zero), // IN
-	.c18(zero), // IN
-	.a19(zero), // IN
-	.b19(zero), // IN
-	.c19(zero), // IN
-	.a20(zero), // IN
-	.b20(zero), // IN
-	.c20(zero), // IN
-	.a21(zero), // IN
-	.b21(zero), // IN
-	.c21(zero), // IN
-	.a22(zero), // IN
-	.b22(zero), // IN
-	.c22(zero), // IN
-	.a23(zero), // IN
-	.b23(zero), // IN
-	.c23(zero), // IN
-	.a24(zero), // IN
-	.b24(zero), // IN
-	.c24(zero), // IN
-	.a25(zero), // IN
-	.b25(zero), // IN
-	.c25(zero), // IN
-	.a26(zero), // IN
-	.b26(zero), // IN
-	.c26(zero), // IN
-	.a27(zero), // IN
-	.b27(zero), // IN
-	.c27(zero), // IN
-	.a28(zero), // IN
-	.b28(zero), // IN
-	.c28(zero), // IN
-	.a29(zero), // IN
-	.b29(zero), // IN
-	.c29(zero), // IN
-	.a30(zero), // IN
-	.b30(zero), // IN
-	.c30(zero), // IN
-	.a31(zero), // IN
-	.b31(zero), // IN
-	.c31(zero)  // IN
+	.s0 /* OUT */ (ytmt_0),
+	.s1 /* OUT */ (ytmt_1),
+	.s2 /* OUT */ (ytmt_2),
+	.s3 /* OUT */ (ytmt_3),
+	.s4 /* OUT */ (ytmt_4),
+	.s5 /* OUT */ (ytmt_5),
+	.s6 /* OUT */ (ytmt_6),
+	.s7 /* OUT */ (ytmt_7),
+	.s8 /* OUT */ (ytmt_8),
+	.s9 /* OUT */ (ytmt_9),
+	.s10 /* OUT */ (ytmt_10),
+	.s11 /* OUT */ (ytmt_11),
+	.s12 /* OUT */ (ytmt_12),
+	.s13 /* OUT */ (ytmt_13),
+	.s14 /* OUT */ (ytmt_14),
+	.s15 /* OUT */ (ytmt_15),
+	.s16 /* OUT */ (ytmt_16),
+	.s17 /* OUT */ (ytmt_17),
+	.s18 /* OUT */ (ytmt_18),
+	.s19 /* OUT */ (ytmt_19),
+	.s20 /* OUT */ (ytmt_20),
+	.s21 /* OUT */ (ytmt_21),
+	.s22 /* OUT */ (ytmt_22),
+	.s23 /* OUT */ (ytmt_23),
+	.s24 /* OUT */ (ytmt_24),
+	.s25 /* OUT */ (ytmt_25),
+	.s26 /* OUT */ (ytmt_26),
+	.s27 /* OUT */ (ytmt_27),
+	.s28 /* OUT */ (ytmt_28),
+	.s29 /* OUT */ (ytmt_29),
+	.s30 /* OUT */ (ytmt_30),
+	.s31 /* OUT */ (ytmt_31),
+	.co0 /* OUT */ (co_0),
+	.co1 /* OUT */ (co_1),
+	.ci0 /* IN */ (zero),
+	.ci1 /* IN */ (zero),
+	.a0 /* IN */ (ym2_0),
+	.b0 /* IN */ (zero),
+	.c0 /* IN */ (zero),
+	.a1 /* IN */ (ym2_1),
+	.b1 /* IN */ (ym1_0),
+	.c1 /* IN */ (zero),
+	.a2 /* IN */ (ym2_2),
+	.b2 /* IN */ (ym1_1),
+	.c2 /* IN */ (y_0),
+	.a3 /* IN */ (ym2_3),
+	.b3 /* IN */ (ym1_2),
+	.c3 /* IN */ (y_1),
+	.a4 /* IN */ (ym2_4),
+	.b4 /* IN */ (ym1_3),
+	.c4 /* IN */ (y_2),
+	.a5 /* IN */ (ym2_5),
+	.b5 /* IN */ (ym1_4),
+	.c5 /* IN */ (y_3),
+	.a6 /* IN */ (ym2_6),
+	.b6 /* IN */ (ym1_5),
+	.c6 /* IN */ (y_4),
+	.a7 /* IN */ (ym2_7),
+	.b7 /* IN */ (ym1_6),
+	.c7 /* IN */ (y_5),
+	.a8 /* IN */ (ym2_8),
+	.b8 /* IN */ (ym1_7),
+	.c8 /* IN */ (y_6),
+	.a9 /* IN */ (ym2_9),
+	.b9 /* IN */ (ym1_8),
+	.c9 /* IN */ (y_7),
+	.a10 /* IN */ (ym2_10),
+	.b10 /* IN */ (ym1_9),
+	.c10 /* IN */ (y_8),
+	.a11 /* IN */ (ym2_11),
+	.b11 /* IN */ (ym1_10),
+	.c11 /* IN */ (y_9),
+	.a12 /* IN */ (zero),
+	.b12 /* IN */ (ym1_11),
+	.c12 /* IN */ (y_10),
+	.a13 /* IN */ (zero),
+	.b13 /* IN */ (zero),
+	.c13 /* IN */ (y_11),
+	.a14 /* IN */ (zero),
+	.b14 /* IN */ (zero),
+	.c14 /* IN */ (zero),
+	.a15 /* IN */ (zero),
+	.b15 /* IN */ (zero),
+	.c15 /* IN */ (zero),
+	.a16 /* IN */ (zero),
+	.b16 /* IN */ (zero),
+	.c16 /* IN */ (zero),
+	.a17 /* IN */ (zero),
+	.b17 /* IN */ (zero),
+	.c17 /* IN */ (zero),
+	.a18 /* IN */ (zero),
+	.b18 /* IN */ (zero),
+	.c18 /* IN */ (zero),
+	.a19 /* IN */ (zero),
+	.b19 /* IN */ (zero),
+	.c19 /* IN */ (zero),
+	.a20 /* IN */ (zero),
+	.b20 /* IN */ (zero),
+	.c20 /* IN */ (zero),
+	.a21 /* IN */ (zero),
+	.b21 /* IN */ (zero),
+	.c21 /* IN */ (zero),
+	.a22 /* IN */ (zero),
+	.b22 /* IN */ (zero),
+	.c22 /* IN */ (zero),
+	.a23 /* IN */ (zero),
+	.b23 /* IN */ (zero),
+	.c23 /* IN */ (zero),
+	.a24 /* IN */ (zero),
+	.b24 /* IN */ (zero),
+	.c24 /* IN */ (zero),
+	.a25 /* IN */ (zero),
+	.b25 /* IN */ (zero),
+	.c25 /* IN */ (zero),
+	.a26 /* IN */ (zero),
+	.b26 /* IN */ (zero),
+	.c26 /* IN */ (zero),
+	.a27 /* IN */ (zero),
+	.b27 /* IN */ (zero),
+	.c27 /* IN */ (zero),
+	.a28 /* IN */ (zero),
+	.b28 /* IN */ (zero),
+	.c28 /* IN */ (zero),
+	.a29 /* IN */ (zero),
+	.b29 /* IN */ (zero),
+	.c29 /* IN */ (zero),
+	.a30 /* IN */ (zero),
+	.b30 /* IN */ (zero),
+	.c30 /* IN */ (zero),
+	.a31 /* IN */ (zero),
+	.b31 /* IN */ (zero),
+	.c31 /* IN */ (zero)
 );
 
 // ADDRGEN.NET (132) - co[0-1] : dummy
@@ -1077,319 +1077,319 @@ assign lowen = width_4 | width_5;
 // ADDRGEN.NET (142) - yaddr[0] : mx4g
 mx4g yaddr_index_0_inst
 (
-	.z(ya_0), // OUT
-	.a0(ytm_2), // IN
-	.a1(ytm_1), // IN
-	.a2(ytm_0), // IN
-	.a3(zero), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.gn(lowen)  // IN
+	.z /* OUT */ (ya_0),
+	.a0 /* IN */ (ytm_2),
+	.a1 /* IN */ (ytm_1),
+	.a2 /* IN */ (ytm_0),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.gn /* IN */ (lowen)
 );
 
 // ADDRGEN.NET (144) - yaddr[1] : mx4g
 mx4g yaddr_index_1_inst
 (
-	.z(ya_1), // OUT
-	.a0(ytm_3), // IN
-	.a1(ytm_2), // IN
-	.a2(ytm_1), // IN
-	.a3(ytm_0), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.gn(lowen)  // IN
+	.z /* OUT */ (ya_1),
+	.a0 /* IN */ (ytm_3),
+	.a1 /* IN */ (ytm_2),
+	.a2 /* IN */ (ytm_1),
+	.a3 /* IN */ (ytm_0),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.gn /* IN */ (lowen)
 );
 
 // ADDRGEN.NET (146) - yaddr[2] : mx8g
 mx8g yaddr_index_2_inst
 (
-	.z(ya_2), // OUT
-	.a0(ytm_4), // IN
-	.a1(ytm_3), // IN
-	.a2(ytm_2), // IN
-	.a3(ytm_1), // IN
-	.a4(ytm_0), // IN
-	.a5(zero), // IN
-	.a6(zero), // IN
-	.a7(zero), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(width_5)  // IN
+	.z /* OUT */ (ya_2),
+	.a0 /* IN */ (ytm_4),
+	.a1 /* IN */ (ytm_3),
+	.a2 /* IN */ (ytm_2),
+	.a3 /* IN */ (ytm_1),
+	.a4 /* IN */ (ytm_0),
+	.a5 /* IN */ (zero),
+	.a6 /* IN */ (zero),
+	.a7 /* IN */ (zero),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (149) - yaddr[3] : mx8g
 mx8g yaddr_index_3_inst
 (
-	.z(ya_3), // OUT
-	.a0(ytm_5), // IN
-	.a1(ytm_4), // IN
-	.a2(ytm_3), // IN
-	.a3(ytm_2), // IN
-	.a4(ytm_1), // IN
-	.a5(ytm_0), // IN
-	.a6(zero), // IN
-	.a7(zero), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(width_5)  // IN
+	.z /* OUT */ (ya_3),
+	.a0 /* IN */ (ytm_5),
+	.a1 /* IN */ (ytm_4),
+	.a2 /* IN */ (ytm_3),
+	.a3 /* IN */ (ytm_2),
+	.a4 /* IN */ (ytm_1),
+	.a5 /* IN */ (ytm_0),
+	.a6 /* IN */ (zero),
+	.a7 /* IN */ (zero),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (152) - yaddr[4] : mx8g
 mx8g yaddr_index_4_inst
 (
-	.z(ya_4), // OUT
-	.a0(ytm_6), // IN
-	.a1(ytm_5), // IN
-	.a2(ytm_4), // IN
-	.a3(ytm_3), // IN
-	.a4(ytm_2), // IN
-	.a5(ytm_1), // IN
-	.a6(ytm_0), // IN
-	.a7(zero), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(width_5)  // IN
+	.z /* OUT */ (ya_4),
+	.a0 /* IN */ (ytm_6),
+	.a1 /* IN */ (ytm_5),
+	.a2 /* IN */ (ytm_4),
+	.a3 /* IN */ (ytm_3),
+	.a4 /* IN */ (ytm_2),
+	.a5 /* IN */ (ytm_1),
+	.a6 /* IN */ (ytm_0),
+	.a7 /* IN */ (zero),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (155) - yaddr[5] : mx8g
 mx8g yaddr_index_5_inst
 (
-	.z(ya_5), // OUT
-	.a0(ytm_7), // IN
-	.a1(ytm_6), // IN
-	.a2(ytm_5), // IN
-	.a3(ytm_4), // IN
-	.a4(ytm_3), // IN
-	.a5(ytm_2), // IN
-	.a6(ytm_1), // IN
-	.a7(ytm_0), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(width_5)  // IN
+	.z /* OUT */ (ya_5),
+	.a0 /* IN */ (ytm_7),
+	.a1 /* IN */ (ytm_6),
+	.a2 /* IN */ (ytm_5),
+	.a3 /* IN */ (ytm_4),
+	.a4 /* IN */ (ytm_3),
+	.a5 /* IN */ (ytm_2),
+	.a6 /* IN */ (ytm_1),
+	.a7 /* IN */ (ytm_0),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (158) - yaddr[6] : mx12b
 mx12b yaddr_index_6_inst
 (
-	.q(ya_6), // OUT
-	.a_0(ytm_8), // IN
-	.a_1(ytm_7), // IN
-	.a_2(ytm_6), // IN
-	.a_3(ytm_5), // IN
-	.a_4(ytm_4), // IN
-	.a_5(ytm_3), // IN
-	.a_6(ytm_2), // IN
-	.a_7(ytm_1), // IN
-	.a_8(ytm_0), // IN
-	.a_9(zero), // IN
-	.a_10(zerob), // IN
-	.a_11(zeroc), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_6),
+	.a_0 /* IN */ (ytm_8),
+	.a_1 /* IN */ (ytm_7),
+	.a_2 /* IN */ (ytm_6),
+	.a_3 /* IN */ (ytm_5),
+	.a_4 /* IN */ (ytm_4),
+	.a_5 /* IN */ (ytm_3),
+	.a_6 /* IN */ (ytm_2),
+	.a_7 /* IN */ (ytm_1),
+	.a_8 /* IN */ (ytm_0),
+	.a_9 /* IN */ (zero),
+	.a_10 /* IN */ (zerob),
+	.a_11 /* IN */ (zeroc),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (161) - yaddr[7] : mx12b
 mx12b yaddr_index_7_inst
 (
-	.q(ya_7), // OUT
-	.a_0(ytm_9), // IN
-	.a_1(ytm_8), // IN
-	.a_2(ytm_7), // IN
-	.a_3(ytm_6), // IN
-	.a_4(ytm_5), // IN
-	.a_5(ytm_4), // IN
-	.a_6(ytm_3), // IN
-	.a_7(ytm_2), // IN
-	.a_8(ytm_1), // IN
-	.a_9(ytm_0), // IN
-	.a_10(zero), // IN
-	.a_11(zero), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_7),
+	.a_0 /* IN */ (ytm_9),
+	.a_1 /* IN */ (ytm_8),
+	.a_2 /* IN */ (ytm_7),
+	.a_3 /* IN */ (ytm_6),
+	.a_4 /* IN */ (ytm_5),
+	.a_5 /* IN */ (ytm_4),
+	.a_6 /* IN */ (ytm_3),
+	.a_7 /* IN */ (ytm_2),
+	.a_8 /* IN */ (ytm_1),
+	.a_9 /* IN */ (ytm_0),
+	.a_10 /* IN */ (zero),
+	.a_11 /* IN */ (zero),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (164) - yaddr[8] : mx12b
 mx12b yaddr_index_8_inst
 (
-	.q(ya_8), // OUT
-	.a_0(ytm_10), // IN
-	.a_1(ytm_9), // IN
-	.a_2(ytm_8), // IN
-	.a_3(ytm_7), // IN
-	.a_4(ytm_6), // IN
-	.a_5(ytm_5), // IN
-	.a_6(ytm_4), // IN
-	.a_7(ytm_3), // IN
-	.a_8(ytm_2), // IN
-	.a_9(ytm_1), // IN
-	.a_10(ytm_0), // IN
-	.a_11(zero), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_8),
+	.a_0 /* IN */ (ytm_10),
+	.a_1 /* IN */ (ytm_9),
+	.a_2 /* IN */ (ytm_8),
+	.a_3 /* IN */ (ytm_7),
+	.a_4 /* IN */ (ytm_6),
+	.a_5 /* IN */ (ytm_5),
+	.a_6 /* IN */ (ytm_4),
+	.a_7 /* IN */ (ytm_3),
+	.a_8 /* IN */ (ytm_2),
+	.a_9 /* IN */ (ytm_1),
+	.a_10 /* IN */ (ytm_0),
+	.a_11 /* IN */ (zero),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (167) - yaddr[9] : mx12b
 mx12b yaddr_index_9_inst
 (
-	.q(ya_9), // OUT
-	.a_0(ytm_11), // IN
-	.a_1(ytm_10), // IN
-	.a_2(ytm_9), // IN
-	.a_3(ytm_8), // IN
-	.a_4(ytm_7), // IN
-	.a_5(ytm_6), // IN
-	.a_6(ytm_5), // IN
-	.a_7(ytm_4), // IN
-	.a_8(ytm_3), // IN
-	.a_9(ytm_2), // IN
-	.a_10(ytm_1), // IN
-	.a_11(ytm_0), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_9),
+	.a_0 /* IN */ (ytm_11),
+	.a_1 /* IN */ (ytm_10),
+	.a_2 /* IN */ (ytm_9),
+	.a_3 /* IN */ (ytm_8),
+	.a_4 /* IN */ (ytm_7),
+	.a_5 /* IN */ (ytm_6),
+	.a_6 /* IN */ (ytm_5),
+	.a_7 /* IN */ (ytm_4),
+	.a_8 /* IN */ (ytm_3),
+	.a_9 /* IN */ (ytm_2),
+	.a_10 /* IN */ (ytm_1),
+	.a_11 /* IN */ (ytm_0),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (170) - yaddr[10] : mx12b
 mx12b yaddr_index_10_inst
 (
-	.q(ya_10), // OUT
-	.a_0(ytm_12), // IN
-	.a_1(ytm_11), // IN
-	.a_2(ytm_10), // IN
-	.a_3(ytm_9), // IN
-	.a_4(ytm_8), // IN
-	.a_5(ytm_7), // IN
-	.a_6(ytm_6), // IN
-	.a_7(ytm_5), // IN
-	.a_8(ytm_4), // IN
-	.a_9(ytm_3), // IN
-	.a_10(ytm_2), // IN
-	.a_11(ytm_1), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_10),
+	.a_0 /* IN */ (ytm_12),
+	.a_1 /* IN */ (ytm_11),
+	.a_2 /* IN */ (ytm_10),
+	.a_3 /* IN */ (ytm_9),
+	.a_4 /* IN */ (ytm_8),
+	.a_5 /* IN */ (ytm_7),
+	.a_6 /* IN */ (ytm_6),
+	.a_7 /* IN */ (ytm_5),
+	.a_8 /* IN */ (ytm_4),
+	.a_9 /* IN */ (ytm_3),
+	.a_10 /* IN */ (ytm_2),
+	.a_11 /* IN */ (ytm_1),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (174) - yaddr[11] : mx12b
 mx12b yaddr_index_11_inst
 (
-	.q(ya_11), // OUT
-	.a_0(ytm_13), // IN
-	.a_1(ytm_12), // IN
-	.a_2(ytm_11), // IN
-	.a_3(ytm_10), // IN
-	.a_4(ytm_9), // IN
-	.a_5(ytm_8), // IN
-	.a_6(ytm_7), // IN
-	.a_7(ytm_6), // IN
-	.a_8(ytm_5), // IN
-	.a_9(ytm_4), // IN
-	.a_10(ytm_3), // IN
-	.a_11(ytm_2), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_11),
+	.a_0 /* IN */ (ytm_13),
+	.a_1 /* IN */ (ytm_12),
+	.a_2 /* IN */ (ytm_11),
+	.a_3 /* IN */ (ytm_10),
+	.a_4 /* IN */ (ytm_9),
+	.a_5 /* IN */ (ytm_8),
+	.a_6 /* IN */ (ytm_7),
+	.a_7 /* IN */ (ytm_6),
+	.a_8 /* IN */ (ytm_5),
+	.a_9 /* IN */ (ytm_4),
+	.a_10 /* IN */ (ytm_3),
+	.a_11 /* IN */ (ytm_2),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (178) - yaddr[12] : mx12b
 mx12b yaddr_index_12_inst
 (
-	.q(ya_12), // OUT
-	.a_0(ytm_14), // IN
-	.a_1(ytm_13), // IN
-	.a_2(ytm_12), // IN
-	.a_3(ytm_11), // IN
-	.a_4(ytm_10), // IN
-	.a_5(ytm_9), // IN
-	.a_6(ytm_8), // IN
-	.a_7(ytm_7), // IN
-	.a_8(ytm_6), // IN
-	.a_9(ytm_5), // IN
-	.a_10(ytm_4), // IN
-	.a_11(ytm_3), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_12),
+	.a_0 /* IN */ (ytm_14),
+	.a_1 /* IN */ (ytm_13),
+	.a_2 /* IN */ (ytm_12),
+	.a_3 /* IN */ (ytm_11),
+	.a_4 /* IN */ (ytm_10),
+	.a_5 /* IN */ (ytm_9),
+	.a_6 /* IN */ (ytm_8),
+	.a_7 /* IN */ (ytm_7),
+	.a_8 /* IN */ (ytm_6),
+	.a_9 /* IN */ (ytm_5),
+	.a_10 /* IN */ (ytm_4),
+	.a_11 /* IN */ (ytm_3),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (182) - yaddr[13] : mx12b
 mx12b yaddr_index_13_inst
 (
-	.q(ya_13), // OUT
-	.a_0(zero), // IN
-	.a_1(ytm_14), // IN
-	.a_2(ytm_13), // IN
-	.a_3(ytm_12), // IN
-	.a_4(ytm_11), // IN
-	.a_5(ytm_10), // IN
-	.a_6(ytm_9), // IN
-	.a_7(ytm_8), // IN
-	.a_8(ytm_7), // IN
-	.a_9(ytm_6), // IN
-	.a_10(ytm_5), // IN
-	.a_11(ytm_4), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_13),
+	.a_0 /* IN */ (zero),
+	.a_1 /* IN */ (ytm_14),
+	.a_2 /* IN */ (ytm_13),
+	.a_3 /* IN */ (ytm_12),
+	.a_4 /* IN */ (ytm_11),
+	.a_5 /* IN */ (ytm_10),
+	.a_6 /* IN */ (ytm_9),
+	.a_7 /* IN */ (ytm_8),
+	.a_8 /* IN */ (ytm_7),
+	.a_9 /* IN */ (ytm_6),
+	.a_10 /* IN */ (ytm_5),
+	.a_11 /* IN */ (ytm_4),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (186) - yaddr[14] : mx12b
 mx12b yaddr_index_14_inst
 (
-	.q(ya_14), // OUT
-	.a_0(zero), // IN
-	.a_1(zero), // IN
-	.a_2(ytm_14), // IN
-	.a_3(ytm_13), // IN
-	.a_4(ytm_12), // IN
-	.a_5(ytm_11), // IN
-	.a_6(ytm_10), // IN
-	.a_7(ytm_9), // IN
-	.a_8(ytm_8), // IN
-	.a_9(ytm_7), // IN
-	.a_10(ytm_6), // IN
-	.a_11(ytm_5), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_14),
+	.a_0 /* IN */ (zero),
+	.a_1 /* IN */ (zero),
+	.a_2 /* IN */ (ytm_14),
+	.a_3 /* IN */ (ytm_13),
+	.a_4 /* IN */ (ytm_12),
+	.a_5 /* IN */ (ytm_11),
+	.a_6 /* IN */ (ytm_10),
+	.a_7 /* IN */ (ytm_9),
+	.a_8 /* IN */ (ytm_8),
+	.a_9 /* IN */ (ytm_7),
+	.a_10 /* IN */ (ytm_6),
+	.a_11 /* IN */ (ytm_5),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (190) - yaddr[15] : mx12b
 mx12b yaddr_index_15_inst
 (
-	.q(ya_15), // OUT
-	.a_0(zero), // IN
-	.a_1(zero), // IN
-	.a_2(zero), // IN
-	.a_3(ytm_14), // IN
-	.a_4(ytm_13), // IN
-	.a_5(ytm_12), // IN
-	.a_6(ytm_11), // IN
-	.a_7(ytm_10), // IN
-	.a_8(ytm_9), // IN
-	.a_9(ytm_8), // IN
-	.a_10(ytm_7), // IN
-	.a_11(ytm_6), // IN
-	.sel_0(width_2), // IN
-	.sel_1(width_3), // IN
-	.sel_2(width_4), // IN
-	.sel_3(width_5)  // IN
+	.q /* OUT */ (ya_15),
+	.a_0 /* IN */ (zero),
+	.a_1 /* IN */ (zero),
+	.a_2 /* IN */ (zero),
+	.a_3 /* IN */ (ytm_14),
+	.a_4 /* IN */ (ytm_13),
+	.a_5 /* IN */ (ytm_12),
+	.a_6 /* IN */ (ytm_11),
+	.a_7 /* IN */ (ytm_10),
+	.a_8 /* IN */ (ytm_9),
+	.a_9 /* IN */ (ytm_8),
+	.a_10 /* IN */ (ytm_7),
+	.a_11 /* IN */ (ytm_6),
+	.sel_0 /* IN */ (width_2),
+	.sel_1 /* IN */ (width_3),
+	.sel_2 /* IN */ (width_4),
+	.sel_3 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (196) - mid8en\ : en
@@ -1398,73 +1398,73 @@ assign mid8en_n = ~(width_4 ^ width_5);
 // ADDRGEN.NET (197) - yaddr[16] : mx8g
 mx8g yaddr_index_16_inst
 (
-	.z(ya_16), // OUT
-	.a0(ytm_10), // IN
-	.a1(ytm_9), // IN
-	.a2(ytm_8), // IN
-	.a3(ytm_7), // IN
-	.a4(ytm_14), // IN
-	.a5(ytm_13), // IN
-	.a6(ytm_12), // IN
-	.a7(ytm_11), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(mid8en_n)  // IN
+	.z /* OUT */ (ya_16),
+	.a0 /* IN */ (ytm_10),
+	.a1 /* IN */ (ytm_9),
+	.a2 /* IN */ (ytm_8),
+	.a3 /* IN */ (ytm_7),
+	.a4 /* IN */ (ytm_14),
+	.a5 /* IN */ (ytm_13),
+	.a6 /* IN */ (ytm_12),
+	.a7 /* IN */ (ytm_11),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (mid8en_n)
 );
 
 // ADDRGEN.NET (201) - yaddr[17] : mx8g
 mx8g yaddr_index_17_inst
 (
-	.z(ya_17), // OUT
-	.a0(ytm_11), // IN
-	.a1(ytm_10), // IN
-	.a2(ytm_9), // IN
-	.a3(ytm_8), // IN
-	.a4(zero), // IN
-	.a5(ytm_14), // IN
-	.a6(ytm_13), // IN
-	.a7(ytm_12), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(mid8en_n)  // IN
+	.z /* OUT */ (ya_17),
+	.a0 /* IN */ (ytm_11),
+	.a1 /* IN */ (ytm_10),
+	.a2 /* IN */ (ytm_9),
+	.a3 /* IN */ (ytm_8),
+	.a4 /* IN */ (zero),
+	.a5 /* IN */ (ytm_14),
+	.a6 /* IN */ (ytm_13),
+	.a7 /* IN */ (ytm_12),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (mid8en_n)
 );
 
 // ADDRGEN.NET (205) - yaddr[18] : mx8g
 mx8g yaddr_index_18_inst
 (
-	.z(ya_18), // OUT
-	.a0(ytm_12), // IN
-	.a1(ytm_11), // IN
-	.a2(ytm_10), // IN
-	.a3(ytm_9), // IN
-	.a4(zero), // IN
-	.a5(zero), // IN
-	.a6(ytm_14), // IN
-	.a7(ytm_13), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(mid8en_n)  // IN
+	.z /* OUT */ (ya_18),
+	.a0 /* IN */ (ytm_12),
+	.a1 /* IN */ (ytm_11),
+	.a2 /* IN */ (ytm_10),
+	.a3 /* IN */ (ytm_9),
+	.a4 /* IN */ (zero),
+	.a5 /* IN */ (zero),
+	.a6 /* IN */ (ytm_14),
+	.a7 /* IN */ (ytm_13),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (mid8en_n)
 );
 
 // ADDRGEN.NET (209) - yaddr[19] : mx8g
 mx8g yaddr_index_19_inst
 (
-	.z(ya_19), // OUT
-	.a0(ytm_13), // IN
-	.a1(ytm_12), // IN
-	.a2(ytm_11), // IN
-	.a3(ytm_10), // IN
-	.a4(zero), // IN
-	.a5(zero), // IN
-	.a6(zero), // IN
-	.a7(ytm_14), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.s2(width_4), // IN
-	.gn(mid8en_n)  // IN
+	.z /* OUT */ (ya_19),
+	.a0 /* IN */ (ytm_13),
+	.a1 /* IN */ (ytm_12),
+	.a2 /* IN */ (ytm_11),
+	.a3 /* IN */ (ytm_10),
+	.a4 /* IN */ (zero),
+	.a5 /* IN */ (zero),
+	.a6 /* IN */ (zero),
+	.a7 /* IN */ (ytm_14),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.s2 /* IN */ (width_4),
+	.gn /* IN */ (mid8en_n)
 );
 
 // ADDRGEN.NET (213) - tm4en\ : nd2
@@ -1473,51 +1473,51 @@ assign tm4en_n = ~(width_n_4 & width_5);
 // ADDRGEN.NET (214) - yaddr[20] : mx4g
 mx4g yaddr_index_20_inst
 (
-	.z(ya_20), // OUT
-	.a0(ytm_14), // IN
-	.a1(ytm_13), // IN
-	.a2(ytm_12), // IN
-	.a3(ytm_11), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.gn(tm4en_n)  // IN
+	.z /* OUT */ (ya_20),
+	.a0 /* IN */ (ytm_14),
+	.a1 /* IN */ (ytm_13),
+	.a2 /* IN */ (ytm_12),
+	.a3 /* IN */ (ytm_11),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.gn /* IN */ (tm4en_n)
 );
 
 // ADDRGEN.NET (216) - yaddr[21] : mx4g
 mx4g yaddr_index_21_inst
 (
-	.z(ya_21), // OUT
-	.a0(zero), // IN
-	.a1(ytm_14), // IN
-	.a2(ytm_13), // IN
-	.a3(ytm_12), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.gn(tm4en_n)  // IN
+	.z /* OUT */ (ya_21),
+	.a0 /* IN */ (zero),
+	.a1 /* IN */ (ytm_14),
+	.a2 /* IN */ (ytm_13),
+	.a3 /* IN */ (ytm_12),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.gn /* IN */ (tm4en_n)
 );
 
 // ADDRGEN.NET (218) - yaddr[22] : mx4g
 mx4g yaddr_index_22_inst
 (
-	.z(ya_22), // OUT
-	.a0(zero), // IN
-	.a1(zero), // IN
-	.a2(ytm_14), // IN
-	.a3(ytm_13), // IN
-	.s0(width_2), // IN
-	.s1(width_3), // IN
-	.gn(tm4en_n)  // IN
+	.z /* OUT */ (ya_22),
+	.a0 /* IN */ (zero),
+	.a1 /* IN */ (zero),
+	.a2 /* IN */ (ytm_14),
+	.a3 /* IN */ (ytm_13),
+	.s0 /* IN */ (width_2),
+	.s1 /* IN */ (width_3),
+	.gn /* IN */ (tm4en_n)
 );
 
 // ADDRGEN.NET (220) - yaddr[23] : an5
 an5 yaddr_index_23_inst
 (
-	.q(ya_23), // OUT
-	.a_0(ytm_14), // IN
-	.a_1(width_2), // IN
-	.a_2(width_3), // IN
-	.a_3(width_n_4), // IN
-	.a_4(width_5)  // IN
+	.q /* OUT */ (ya_23),
+	.a_0 /* IN */ (ytm_14),
+	.a_1 /* IN */ (width_2),
+	.a_2 /* IN */ (width_3),
+	.a_3 /* IN */ (width_n_4),
+	.a_4 /* IN */ (width_5)
 );
 
 // ADDRGEN.NET (227) - pa_a : join
@@ -1600,57 +1600,57 @@ assign pa[24] = pa_24;
 // ADDRGEN.NET (234) - palow : fas16_s
 fas16 palow_inst
 (
-	.s0(pa_0), // OUT
-	.s1(pa_1), // OUT
-	.s2(pa_2), // OUT
-	.s3(pa_3), // OUT
-	.s4(pa_4), // OUT
-	.s5(pa_5), // OUT
-	.s6(pa_6), // OUT
-	.s7(pa_7), // OUT
-	.s8(pa_8), // OUT
-	.s9(pa_9), // OUT
-	.s10(pa_10), // OUT
-	.s11(pa_11), // OUT
-	.s12(pa_12), // OUT
-	.s13(pa_13), // OUT
-	.s14(pa_14), // OUT
-	.s15(pa_15), // OUT
-	.co(pacy_n_15), // OUT
-	.as(one), // IN
-	.ci(one), // IN
-	.a0(ya_0), // IN
-	.b0(x_0), // IN
-	.a1(ya_1), // IN
-	.b1(x_1), // IN
-	.a2(ya_2), // IN
-	.b2(x_2), // IN
-	.a3(ya_3), // IN
-	.b3(x_3), // IN
-	.a4(ya_4), // IN
-	.b4(x_4), // IN
-	.a5(ya_5), // IN
-	.b5(x_5), // IN
-	.a6(ya_6), // IN
-	.b6(x_6), // IN
-	.a7(ya_7), // IN
-	.b7(x_7), // IN
-	.a8(ya_8), // IN
-	.b8(x_8), // IN
-	.a9(ya_9), // IN
-	.b9(x_9), // IN
-	.a10(ya_10), // IN
-	.b10(x_10), // IN
-	.a11(ya_11), // IN
-	.b11(x_11), // IN
-	.a12(ya_12), // IN
-	.b12(x_12), // IN
-	.a13(ya_13), // IN
-	.b13(x_13), // IN
-	.a14(ya_14), // IN
-	.b14(x_14), // IN
-	.a15(ya_15), // IN
-	.b15(x_15)  // IN
+	.s0 /* OUT */ (pa_0),
+	.s1 /* OUT */ (pa_1),
+	.s2 /* OUT */ (pa_2),
+	.s3 /* OUT */ (pa_3),
+	.s4 /* OUT */ (pa_4),
+	.s5 /* OUT */ (pa_5),
+	.s6 /* OUT */ (pa_6),
+	.s7 /* OUT */ (pa_7),
+	.s8 /* OUT */ (pa_8),
+	.s9 /* OUT */ (pa_9),
+	.s10 /* OUT */ (pa_10),
+	.s11 /* OUT */ (pa_11),
+	.s12 /* OUT */ (pa_12),
+	.s13 /* OUT */ (pa_13),
+	.s14 /* OUT */ (pa_14),
+	.s15 /* OUT */ (pa_15),
+	.co /* OUT */ (pacy_n_15),
+	.as /* IN */ (one),
+	.ci /* IN */ (one),
+	.a0 /* IN */ (ya_0),
+	.b0 /* IN */ (x_0),
+	.a1 /* IN */ (ya_1),
+	.b1 /* IN */ (x_1),
+	.a2 /* IN */ (ya_2),
+	.b2 /* IN */ (x_2),
+	.a3 /* IN */ (ya_3),
+	.b3 /* IN */ (x_3),
+	.a4 /* IN */ (ya_4),
+	.b4 /* IN */ (x_4),
+	.a5 /* IN */ (ya_5),
+	.b5 /* IN */ (x_5),
+	.a6 /* IN */ (ya_6),
+	.b6 /* IN */ (x_6),
+	.a7 /* IN */ (ya_7),
+	.b7 /* IN */ (x_7),
+	.a8 /* IN */ (ya_8),
+	.b8 /* IN */ (x_8),
+	.a9 /* IN */ (ya_9),
+	.b9 /* IN */ (x_9),
+	.a10 /* IN */ (ya_10),
+	.b10 /* IN */ (x_10),
+	.a11 /* IN */ (ya_11),
+	.b11 /* IN */ (x_11),
+	.a12 /* IN */ (ya_12),
+	.b12 /* IN */ (x_12),
+	.a13 /* IN */ (ya_13),
+	.b13 /* IN */ (x_13),
+	.a14 /* IN */ (ya_14),
+	.b14 /* IN */ (x_14),
+	.a15 /* IN */ (ya_15),
+	.b15 /* IN */ (x_15)
 );
 
 // ADDRGEN.NET (241) - pacy[15] : iv
@@ -1659,31 +1659,31 @@ assign pacy_15 = ~pacy_n_15;
 // ADDRGEN.NET (242) - pa[16-19] : ha1
 ha1 pa_from_16_to_19_inst_0
 (
-	.s(pa_16), // OUT
-	.co(pacy_16), // OUT
-	.a(ya_16), // IN
-	.b(pacy_15)  // IN
+	.s /* OUT */ (pa_16),
+	.co /* OUT */ (pacy_16),
+	.a /* IN */ (ya_16),
+	.b /* IN */ (pacy_15)
 );
 ha1 pa_from_16_to_19_inst_1
 (
-	.s(pa_17), // OUT
-	.co(pacy_17), // OUT
-	.a(ya_17), // IN
-	.b(pacy_16)  // IN
+	.s /* OUT */ (pa_17),
+	.co /* OUT */ (pacy_17),
+	.a /* IN */ (ya_17),
+	.b /* IN */ (pacy_16)
 );
 ha1 pa_from_16_to_19_inst_2
 (
-	.s(pa_18), // OUT
-	.co(pacy_18), // OUT
-	.a(ya_18), // IN
-	.b(pacy_17)  // IN
+	.s /* OUT */ (pa_18),
+	.co /* OUT */ (pacy_18),
+	.a /* IN */ (ya_18),
+	.b /* IN */ (pacy_17)
 );
 ha1 pa_from_16_to_19_inst_3
 (
-	.s(pa_19), // OUT
-	.co(pacy_19), // OUT
-	.a(ya_19), // IN
-	.b(pacy_18)  // IN
+	.s /* OUT */ (pa_19),
+	.co /* OUT */ (pacy_19),
+	.a /* IN */ (ya_19),
+	.b /* IN */ (pacy_18)
 );
 
 // ADDRGEN.NET (244) - pa[20] : eop
@@ -1695,395 +1695,395 @@ assign pacy_20 = pacy_15 & ya_16 & ya_17 & ya_18 & ya_19 & ya_20;
 // ADDRGEN.NET (246) - pa[21-22] : ha1
 ha1 pa_from_21_to_22_inst_0
 (
-	.s(pa_21), // OUT
-	.co(pacy_21), // OUT
-	.a(ya_21), // IN
-	.b(pacy_20)  // IN
+	.s /* OUT */ (pa_21),
+	.co /* OUT */ (pacy_21),
+	.a /* IN */ (ya_21),
+	.b /* IN */ (pacy_20)
 );
 ha1 pa_from_21_to_22_inst_1
 (
-	.s(pa_22), // OUT
-	.co(pacy_22), // OUT
-	.a(ya_22), // IN
-	.b(pacy_21)  // IN
+	.s /* OUT */ (pa_22),
+	.co /* OUT */ (pacy_22),
+	.a /* IN */ (ya_22),
+	.b /* IN */ (pacy_21)
 );
 
 // ADDRGEN.NET (248) - pa[23] : ha1
 ha1 pa_index_23_inst
 (
-	.s(pa_23), // OUT
-	.co(pa_24), // OUT
-	.a(ya_23), // IN
-	.b(pacy_22)  // IN
+	.s /* OUT */ (pa_23),
+	.co /* OUT */ (pa_24),
+	.a /* IN */ (ya_23),
+	.b /* IN */ (pacy_22)
 );
 
 // ADDRGEN.NET (252) - pixa4 : mx6
 mx6 pixa4_inst
 (
-	.q(pixa_4), // OUT
-	.a_0(pa_4), // IN
-	.a_1(pa_3), // IN
-	.a_2(pa_2), // IN
-	.a_3(pa_1), // IN
-	.a_4(pa_0), // IN
-	.a_5(zero), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_4),
+	.a_0 /* IN */ (pa_4),
+	.a_1 /* IN */ (pa_3),
+	.a_2 /* IN */ (pa_2),
+	.a_3 /* IN */ (pa_1),
+	.a_4 /* IN */ (pa_0),
+	.a_5 /* IN */ (zero),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (254) - pixa3 : mx6
 mx6 pixa3_inst
 (
-	.q(pixa_3), // OUT
-	.a_0(pa_3), // IN
-	.a_1(pa_2), // IN
-	.a_2(pa_1), // IN
-	.a_3(pa_0), // IN
-	.a_4(zero), // IN
-	.a_5(zero), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_3),
+	.a_0 /* IN */ (pa_3),
+	.a_1 /* IN */ (pa_2),
+	.a_2 /* IN */ (pa_1),
+	.a_3 /* IN */ (pa_0),
+	.a_4 /* IN */ (zero),
+	.a_5 /* IN */ (zero),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (256) - pixa2 : mx6
 mx6 pixa2_inst
 (
-	.q(pixa_2_obuf), // OUT
-	.a_0(pa_2), // IN
-	.a_1(pa_1), // IN
-	.a_2(pa_0), // IN
-	.a_3(zero), // IN
-	.a_4(zero), // IN
-	.a_5(zero), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_2_obuf),
+	.a_0 /* IN */ (pa_2),
+	.a_1 /* IN */ (pa_1),
+	.a_2 /* IN */ (pa_0),
+	.a_3 /* IN */ (zero),
+	.a_4 /* IN */ (zero),
+	.a_5 /* IN */ (zero),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (258) - pixa1 : mx6
 mx6 pixa1_inst
 (
-	.q(pixa_1_obuf), // OUT
-	.a_0(pa_1), // IN
-	.a_1(pa_0), // IN
-	.a_2(zero), // IN
-	.a_3(zero), // IN
-	.a_4(zero), // IN
-	.a_5(zero), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_1_obuf),
+	.a_0 /* IN */ (pa_1),
+	.a_1 /* IN */ (pa_0),
+	.a_2 /* IN */ (zero),
+	.a_3 /* IN */ (zero),
+	.a_4 /* IN */ (zero),
+	.a_5 /* IN */ (zero),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (260) - pixa0 : mx6
 mx6 pixa0_inst
 (
-	.q(pixa_0_obuf), // OUT
-	.a_0(pa_0), // IN
-	.a_1(zero), // IN
-	.a_2(zero), // IN
-	.a_3(zero), // IN
-	.a_4(zero), // IN
-	.a_5(zero), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_0_obuf),
+	.a_0 /* IN */ (pa_0),
+	.a_1 /* IN */ (zero),
+	.a_2 /* IN */ (zero),
+	.a_3 /* IN */ (zero),
+	.a_4 /* IN */ (zero),
+	.a_5 /* IN */ (zero),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (262) - pixa[5-12] : mx6
 mx6 pixa_from_5_to_12_inst_0
 (
-	.q(pixa_5), // OUT
-	.a_0(pa_5), // IN
-	.a_1(pa_4), // IN
-	.a_2(pa_3), // IN
-	.a_3(pa_2), // IN
-	.a_4(pa_1), // IN
-	.a_5(pa_0), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_5),
+	.a_0 /* IN */ (pa_5),
+	.a_1 /* IN */ (pa_4),
+	.a_2 /* IN */ (pa_3),
+	.a_3 /* IN */ (pa_2),
+	.a_4 /* IN */ (pa_1),
+	.a_5 /* IN */ (pa_0),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_1
 (
-	.q(pixa_6), // OUT
-	.a_0(pa_6), // IN
-	.a_1(pa_5), // IN
-	.a_2(pa_4), // IN
-	.a_3(pa_3), // IN
-	.a_4(pa_2), // IN
-	.a_5(pa_1), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_6),
+	.a_0 /* IN */ (pa_6),
+	.a_1 /* IN */ (pa_5),
+	.a_2 /* IN */ (pa_4),
+	.a_3 /* IN */ (pa_3),
+	.a_4 /* IN */ (pa_2),
+	.a_5 /* IN */ (pa_1),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_2
 (
-	.q(pixa_7), // OUT
-	.a_0(pa_7), // IN
-	.a_1(pa_6), // IN
-	.a_2(pa_5), // IN
-	.a_3(pa_4), // IN
-	.a_4(pa_3), // IN
-	.a_5(pa_2), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_7),
+	.a_0 /* IN */ (pa_7),
+	.a_1 /* IN */ (pa_6),
+	.a_2 /* IN */ (pa_5),
+	.a_3 /* IN */ (pa_4),
+	.a_4 /* IN */ (pa_3),
+	.a_5 /* IN */ (pa_2),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_3
 (
-	.q(pixa_8), // OUT
-	.a_0(pa_8), // IN
-	.a_1(pa_7), // IN
-	.a_2(pa_6), // IN
-	.a_3(pa_5), // IN
-	.a_4(pa_4), // IN
-	.a_5(pa_3), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_8),
+	.a_0 /* IN */ (pa_8),
+	.a_1 /* IN */ (pa_7),
+	.a_2 /* IN */ (pa_6),
+	.a_3 /* IN */ (pa_5),
+	.a_4 /* IN */ (pa_4),
+	.a_5 /* IN */ (pa_3),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_4
 (
-	.q(pixa_9), // OUT
-	.a_0(pa_9), // IN
-	.a_1(pa_8), // IN
-	.a_2(pa_7), // IN
-	.a_3(pa_6), // IN
-	.a_4(pa_5), // IN
-	.a_5(pa_4), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_9),
+	.a_0 /* IN */ (pa_9),
+	.a_1 /* IN */ (pa_8),
+	.a_2 /* IN */ (pa_7),
+	.a_3 /* IN */ (pa_6),
+	.a_4 /* IN */ (pa_5),
+	.a_5 /* IN */ (pa_4),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_5
 (
-	.q(pixa_10), // OUT
-	.a_0(pa_10), // IN
-	.a_1(pa_9), // IN
-	.a_2(pa_8), // IN
-	.a_3(pa_7), // IN
-	.a_4(pa_6), // IN
-	.a_5(pa_5), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_10),
+	.a_0 /* IN */ (pa_10),
+	.a_1 /* IN */ (pa_9),
+	.a_2 /* IN */ (pa_8),
+	.a_3 /* IN */ (pa_7),
+	.a_4 /* IN */ (pa_6),
+	.a_5 /* IN */ (pa_5),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_6
 (
-	.q(pixa_11), // OUT
-	.a_0(pa_11), // IN
-	.a_1(pa_10), // IN
-	.a_2(pa_9), // IN
-	.a_3(pa_8), // IN
-	.a_4(pa_7), // IN
-	.a_5(pa_6), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_11),
+	.a_0 /* IN */ (pa_11),
+	.a_1 /* IN */ (pa_10),
+	.a_2 /* IN */ (pa_9),
+	.a_3 /* IN */ (pa_8),
+	.a_4 /* IN */ (pa_7),
+	.a_5 /* IN */ (pa_6),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_5_to_12_inst_7
 (
-	.q(pixa_12), // OUT
-	.a_0(pa_12), // IN
-	.a_1(pa_11), // IN
-	.a_2(pa_10), // IN
-	.a_3(pa_9), // IN
-	.a_4(pa_8), // IN
-	.a_5(pa_7), // IN
-	.sel_0(pixsize_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_12),
+	.a_0 /* IN */ (pa_12),
+	.a_1 /* IN */ (pa_11),
+	.a_2 /* IN */ (pa_10),
+	.a_3 /* IN */ (pa_9),
+	.a_4 /* IN */ (pa_8),
+	.a_5 /* IN */ (pa_7),
+	.sel_0 /* IN */ (pixsize_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (265) - pixa[13-24] : mx6
 mx6 pixa_from_13_to_24_inst_0
 (
-	.q(pixa_13), // OUT
-	.a_0(pa_13), // IN
-	.a_1(pa_12), // IN
-	.a_2(pa_11), // IN
-	.a_3(pa_10), // IN
-	.a_4(pa_9), // IN
-	.a_5(pa_8), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_13),
+	.a_0 /* IN */ (pa_13),
+	.a_1 /* IN */ (pa_12),
+	.a_2 /* IN */ (pa_11),
+	.a_3 /* IN */ (pa_10),
+	.a_4 /* IN */ (pa_9),
+	.a_5 /* IN */ (pa_8),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_1
 (
-	.q(pixa_14), // OUT
-	.a_0(pa_14), // IN
-	.a_1(pa_13), // IN
-	.a_2(pa_12), // IN
-	.a_3(pa_11), // IN
-	.a_4(pa_10), // IN
-	.a_5(pa_9), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_14),
+	.a_0 /* IN */ (pa_14),
+	.a_1 /* IN */ (pa_13),
+	.a_2 /* IN */ (pa_12),
+	.a_3 /* IN */ (pa_11),
+	.a_4 /* IN */ (pa_10),
+	.a_5 /* IN */ (pa_9),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_2
 (
-	.q(pixa_15), // OUT
-	.a_0(pa_15), // IN
-	.a_1(pa_14), // IN
-	.a_2(pa_13), // IN
-	.a_3(pa_12), // IN
-	.a_4(pa_11), // IN
-	.a_5(pa_10), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_15),
+	.a_0 /* IN */ (pa_15),
+	.a_1 /* IN */ (pa_14),
+	.a_2 /* IN */ (pa_13),
+	.a_3 /* IN */ (pa_12),
+	.a_4 /* IN */ (pa_11),
+	.a_5 /* IN */ (pa_10),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_3
 (
-	.q(pixa_16), // OUT
-	.a_0(pa_16), // IN
-	.a_1(pa_15), // IN
-	.a_2(pa_14), // IN
-	.a_3(pa_13), // IN
-	.a_4(pa_12), // IN
-	.a_5(pa_11), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_16),
+	.a_0 /* IN */ (pa_16),
+	.a_1 /* IN */ (pa_15),
+	.a_2 /* IN */ (pa_14),
+	.a_3 /* IN */ (pa_13),
+	.a_4 /* IN */ (pa_12),
+	.a_5 /* IN */ (pa_11),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_4
 (
-	.q(pixa_17), // OUT
-	.a_0(pa_17), // IN
-	.a_1(pa_16), // IN
-	.a_2(pa_15), // IN
-	.a_3(pa_14), // IN
-	.a_4(pa_13), // IN
-	.a_5(pa_12), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_17),
+	.a_0 /* IN */ (pa_17),
+	.a_1 /* IN */ (pa_16),
+	.a_2 /* IN */ (pa_15),
+	.a_3 /* IN */ (pa_14),
+	.a_4 /* IN */ (pa_13),
+	.a_5 /* IN */ (pa_12),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_5
 (
-	.q(pixa_18), // OUT
-	.a_0(pa_18), // IN
-	.a_1(pa_17), // IN
-	.a_2(pa_16), // IN
-	.a_3(pa_15), // IN
-	.a_4(pa_14), // IN
-	.a_5(pa_13), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_18),
+	.a_0 /* IN */ (pa_18),
+	.a_1 /* IN */ (pa_17),
+	.a_2 /* IN */ (pa_16),
+	.a_3 /* IN */ (pa_15),
+	.a_4 /* IN */ (pa_14),
+	.a_5 /* IN */ (pa_13),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_6
 (
-	.q(pixa_19), // OUT
-	.a_0(pa_19), // IN
-	.a_1(pa_18), // IN
-	.a_2(pa_17), // IN
-	.a_3(pa_16), // IN
-	.a_4(pa_15), // IN
-	.a_5(pa_14), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_19),
+	.a_0 /* IN */ (pa_19),
+	.a_1 /* IN */ (pa_18),
+	.a_2 /* IN */ (pa_17),
+	.a_3 /* IN */ (pa_16),
+	.a_4 /* IN */ (pa_15),
+	.a_5 /* IN */ (pa_14),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_7
 (
-	.q(pixa_20), // OUT
-	.a_0(pa_20), // IN
-	.a_1(pa_19), // IN
-	.a_2(pa_18), // IN
-	.a_3(pa_17), // IN
-	.a_4(pa_16), // IN
-	.a_5(pa_15), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_20),
+	.a_0 /* IN */ (pa_20),
+	.a_1 /* IN */ (pa_19),
+	.a_2 /* IN */ (pa_18),
+	.a_3 /* IN */ (pa_17),
+	.a_4 /* IN */ (pa_16),
+	.a_5 /* IN */ (pa_15),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_8
 (
-	.q(pixa_21), // OUT
-	.a_0(pa_21), // IN
-	.a_1(pa_20), // IN
-	.a_2(pa_19), // IN
-	.a_3(pa_18), // IN
-	.a_4(pa_17), // IN
-	.a_5(pa_16), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_21),
+	.a_0 /* IN */ (pa_21),
+	.a_1 /* IN */ (pa_20),
+	.a_2 /* IN */ (pa_19),
+	.a_3 /* IN */ (pa_18),
+	.a_4 /* IN */ (pa_17),
+	.a_5 /* IN */ (pa_16),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_9
 (
-	.q(pixa_22), // OUT
-	.a_0(pa_22), // IN
-	.a_1(pa_21), // IN
-	.a_2(pa_20), // IN
-	.a_3(pa_19), // IN
-	.a_4(pa_18), // IN
-	.a_5(pa_17), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_22),
+	.a_0 /* IN */ (pa_22),
+	.a_1 /* IN */ (pa_21),
+	.a_2 /* IN */ (pa_20),
+	.a_3 /* IN */ (pa_19),
+	.a_4 /* IN */ (pa_18),
+	.a_5 /* IN */ (pa_17),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_10
 (
-	.q(pixa_23), // OUT
-	.a_0(pa_23), // IN
-	.a_1(pa_22), // IN
-	.a_2(pa_21), // IN
-	.a_3(pa_20), // IN
-	.a_4(pa_19), // IN
-	.a_5(pa_18), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_23),
+	.a_0 /* IN */ (pa_23),
+	.a_1 /* IN */ (pa_22),
+	.a_2 /* IN */ (pa_21),
+	.a_3 /* IN */ (pa_20),
+	.a_4 /* IN */ (pa_19),
+	.a_5 /* IN */ (pa_18),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 mx6 pixa_from_13_to_24_inst_11
 (
-	.q(pixa_24), // OUT
-	.a_0(pa_24), // IN
-	.a_1(pa_23), // IN
-	.a_2(pa_22), // IN
-	.a_3(pa_21), // IN
-	.a_4(pa_20), // IN
-	.a_5(pa_19), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_24),
+	.a_0 /* IN */ (pa_24),
+	.a_1 /* IN */ (pa_23),
+	.a_2 /* IN */ (pa_22),
+	.a_3 /* IN */ (pa_21),
+	.a_4 /* IN */ (pa_20),
+	.a_5 /* IN */ (pa_19),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (268) - pixa[25] : mx6
 mx6 pixa_index_25_inst
 (
-	.q(pixa_25), // OUT
-	.a_0(zero), // IN
-	.a_1(pa_24), // IN
-	.a_2(pa_23), // IN
-	.a_3(pa_22), // IN
-	.a_4(pa_21), // IN
-	.a_5(pa_20), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_25),
+	.a_0 /* IN */ (zero),
+	.a_1 /* IN */ (pa_24),
+	.a_2 /* IN */ (pa_23),
+	.a_3 /* IN */ (pa_22),
+	.a_4 /* IN */ (pa_21),
+	.a_5 /* IN */ (pa_20),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (271) - pixa[26] : mx6
 mx6 pixa_index_26_inst
 (
-	.q(pixa_26), // OUT
-	.a_0(zero), // IN
-	.a_1(zero), // IN
-	.a_2(pa_24), // IN
-	.a_3(pa_23), // IN
-	.a_4(pa_22), // IN
-	.a_5(pa_21), // IN
-	.sel_0(pixsizeb_0), // IN
-	.sel_1(pixsize_1), // IN
-	.sel_2(pixsize_2)  // IN
+	.q /* OUT */ (pixa_26),
+	.a_0 /* IN */ (zero),
+	.a_1 /* IN */ (zero),
+	.a_2 /* IN */ (pa_24),
+	.a_3 /* IN */ (pa_23),
+	.a_4 /* IN */ (pa_22),
+	.a_5 /* IN */ (pa_21),
+	.sel_0 /* IN */ (pixsizeb_0),
+	.sel_1 /* IN */ (pixsize_1),
+	.sel_2 /* IN */ (pixsize_2)
 );
 
 // ADDRGEN.NET (275) - pixadr : join
@@ -2126,219 +2126,219 @@ assign pt_1 = pitch_1 & pitch_n_0;
 // ADDRGEN.NET (289) - phradr[0] : mx4p
 mx4 phradr_index_0_inst
 (
-	.z(phradr_0), // OUT
-	.a0(pixa_6), // IN
-	.a1(zero), // IN
-	.a2(zero), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_0),
+	.a0 /* IN */ (pixa_6),
+	.a1 /* IN */ (zero),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 
 // ADDRGEN.NET (291) - phradr[1] : mx4p
 mx4 phradr_index_1_inst
 (
-	.z(phradr_1), // OUT
-	.a0(pixa_7), // IN
-	.a1(pixa_6), // IN
-	.a2(zero), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_1),
+	.a0 /* IN */ (pixa_7),
+	.a1 /* IN */ (pixa_6),
+	.a2 /* IN */ (zero),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 
 // ADDRGEN.NET (293) - phradr[2] : mx4p
 mx4 phradr_index_2_inst
 (
-	.z(phradr_2), // OUT
-	.a0(pixa_8), // IN
-	.a1(pixa_7), // IN
-	.a2(pixa_6), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_2),
+	.a0 /* IN */ (pixa_8),
+	.a1 /* IN */ (pixa_7),
+	.a2 /* IN */ (pixa_6),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 
 // ADDRGEN.NET (295) - phradr[3-20] : mx4p
 mx4 phradr_from_3_to_20_inst_0
 (
-	.z(phradr_3), // OUT
-	.a0(pixa_9), // IN
-	.a1(pixa_8), // IN
-	.a2(pixa_7), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_3),
+	.a0 /* IN */ (pixa_9),
+	.a1 /* IN */ (pixa_8),
+	.a2 /* IN */ (pixa_7),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_1
 (
-	.z(phradr_4), // OUT
-	.a0(pixa_10), // IN
-	.a1(pixa_9), // IN
-	.a2(pixa_8), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_4),
+	.a0 /* IN */ (pixa_10),
+	.a1 /* IN */ (pixa_9),
+	.a2 /* IN */ (pixa_8),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_2
 (
-	.z(phradr_5), // OUT
-	.a0(pixa_11), // IN
-	.a1(pixa_10), // IN
-	.a2(pixa_9), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_5),
+	.a0 /* IN */ (pixa_11),
+	.a1 /* IN */ (pixa_10),
+	.a2 /* IN */ (pixa_9),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_3
 (
-	.z(phradr_6), // OUT
-	.a0(pixa_12), // IN
-	.a1(pixa_11), // IN
-	.a2(pixa_10), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_6),
+	.a0 /* IN */ (pixa_12),
+	.a1 /* IN */ (pixa_11),
+	.a2 /* IN */ (pixa_10),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_4
 (
-	.z(phradr_7), // OUT
-	.a0(pixa_13), // IN
-	.a1(pixa_12), // IN
-	.a2(pixa_11), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_7),
+	.a0 /* IN */ (pixa_13),
+	.a1 /* IN */ (pixa_12),
+	.a2 /* IN */ (pixa_11),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_5
 (
-	.z(phradr_8), // OUT
-	.a0(pixa_14), // IN
-	.a1(pixa_13), // IN
-	.a2(pixa_12), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_8),
+	.a0 /* IN */ (pixa_14),
+	.a1 /* IN */ (pixa_13),
+	.a2 /* IN */ (pixa_12),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_6
 (
-	.z(phradr_9), // OUT
-	.a0(pixa_15), // IN
-	.a1(pixa_14), // IN
-	.a2(pixa_13), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_9),
+	.a0 /* IN */ (pixa_15),
+	.a1 /* IN */ (pixa_14),
+	.a2 /* IN */ (pixa_13),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_7
 (
-	.z(phradr_10), // OUT
-	.a0(pixa_16), // IN
-	.a1(pixa_15), // IN
-	.a2(pixa_14), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_10),
+	.a0 /* IN */ (pixa_16),
+	.a1 /* IN */ (pixa_15),
+	.a2 /* IN */ (pixa_14),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_8
 (
-	.z(phradr_11), // OUT
-	.a0(pixa_17), // IN
-	.a1(pixa_16), // IN
-	.a2(pixa_15), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_11),
+	.a0 /* IN */ (pixa_17),
+	.a1 /* IN */ (pixa_16),
+	.a2 /* IN */ (pixa_15),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_9
 (
-	.z(phradr_12), // OUT
-	.a0(pixa_18), // IN
-	.a1(pixa_17), // IN
-	.a2(pixa_16), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_12),
+	.a0 /* IN */ (pixa_18),
+	.a1 /* IN */ (pixa_17),
+	.a2 /* IN */ (pixa_16),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_10
 (
-	.z(phradr_13), // OUT
-	.a0(pixa_19), // IN
-	.a1(pixa_18), // IN
-	.a2(pixa_17), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_13),
+	.a0 /* IN */ (pixa_19),
+	.a1 /* IN */ (pixa_18),
+	.a2 /* IN */ (pixa_17),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_11
 (
-	.z(phradr_14), // OUT
-	.a0(pixa_20), // IN
-	.a1(pixa_19), // IN
-	.a2(pixa_18), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_14),
+	.a0 /* IN */ (pixa_20),
+	.a1 /* IN */ (pixa_19),
+	.a2 /* IN */ (pixa_18),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_12
 (
-	.z(phradr_15), // OUT
-	.a0(pixa_21), // IN
-	.a1(pixa_20), // IN
-	.a2(pixa_19), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_15),
+	.a0 /* IN */ (pixa_21),
+	.a1 /* IN */ (pixa_20),
+	.a2 /* IN */ (pixa_19),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_13
 (
-	.z(phradr_16), // OUT
-	.a0(pixa_22), // IN
-	.a1(pixa_21), // IN
-	.a2(pixa_20), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_16),
+	.a0 /* IN */ (pixa_22),
+	.a1 /* IN */ (pixa_21),
+	.a2 /* IN */ (pixa_20),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_14
 (
-	.z(phradr_17), // OUT
-	.a0(pixa_23), // IN
-	.a1(pixa_22), // IN
-	.a2(pixa_21), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_17),
+	.a0 /* IN */ (pixa_23),
+	.a1 /* IN */ (pixa_22),
+	.a2 /* IN */ (pixa_21),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_15
 (
-	.z(phradr_18), // OUT
-	.a0(pixa_24), // IN
-	.a1(pixa_23), // IN
-	.a2(pixa_22), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_18),
+	.a0 /* IN */ (pixa_24),
+	.a1 /* IN */ (pixa_23),
+	.a2 /* IN */ (pixa_22),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_16
 (
-	.z(phradr_19), // OUT
-	.a0(pixa_25), // IN
-	.a1(pixa_24), // IN
-	.a2(pixa_23), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_19),
+	.a0 /* IN */ (pixa_25),
+	.a1 /* IN */ (pixa_24),
+	.a2 /* IN */ (pixa_23),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 mx4 phradr_from_3_to_20_inst_17
 (
-	.z(phradr_20), // OUT
-	.a0(pixa_26), // IN
-	.a1(pixa_25), // IN
-	.a2(pixa_24), // IN
-	.a3(zero), // IN
-	.s0(pt_0), // IN
-	.s1(pt_1)  // IN
+	.z /* OUT */ (phradr_20),
+	.a0 /* IN */ (pixa_26),
+	.a1 /* IN */ (pixa_25),
+	.a2 /* IN */ (pixa_24),
+	.a3 /* IN */ (zero),
+	.s0 /* IN */ (pt_0),
+	.s1 /* IN */ (pt_1)
 );
 
 // ADDRGEN.NET (300) - shupen : an2u
@@ -2373,188 +2373,188 @@ assign za_1 = zoffset_1 & zaddr;
 // ADDRGEN.NET (311) - addr[0] : fa1
 fa1 addr_index_0_inst
 (
-	.s(addr_0), // OUT
-	.co(adcy0), // OUT
-	.ci(base[0]), // IN
-	.a(phradr_0), // IN
-	.b(za_0)  // IN
+	.s /* OUT */ (addr_0),
+	.co /* OUT */ (adcy0),
+	.ci /* IN */ (base[0]),
+	.a /* IN */ (phradr_0),
+	.b /* IN */ (za_0)
 );
 
 // ADDRGEN.NET (313) - addr1t : fa1
 fa1 addr1t_inst
 (
-	.s(addr1t), // OUT
-	.co(adcy1a), // OUT
-	.ci(base[1]), // IN
-	.a(phradr_1), // IN
-	.b(za_1)  // IN
+	.s /* OUT */ (addr1t),
+	.co /* OUT */ (adcy1a),
+	.ci /* IN */ (base[1]),
+	.a /* IN */ (phradr_1),
+	.b /* IN */ (za_1)
 );
 
 // ADDRGEN.NET (315) - addr[1] : fa1
 fa1 addr_index_1_inst
 (
-	.s(addr_1), // OUT
-	.co(adcy1b), // OUT
-	.ci(addr1t), // IN
-	.a(shup_0), // IN
-	.b(adcy0)  // IN
+	.s /* OUT */ (addr_1),
+	.co /* OUT */ (adcy1b),
+	.ci /* IN */ (addr1t),
+	.a /* IN */ (shup_0),
+	.b /* IN */ (adcy0)
 );
 
 // ADDRGEN.NET (317) - addr2t : fa1
 fa1 addr2t_inst
 (
-	.s(addr2t), // OUT
-	.co(adcy2a), // OUT
-	.ci(base[2]), // IN
-	.a(phradr_2), // IN
-	.b(adcy1a)  // IN
+	.s /* OUT */ (addr2t),
+	.co /* OUT */ (adcy2a),
+	.ci /* IN */ (base[2]),
+	.a /* IN */ (phradr_2),
+	.b /* IN */ (adcy1a)
 );
 
 // ADDRGEN.NET (319) - addr[2] : fa1
 fa1 addr_index_2_inst
 (
-	.s(addr_2), // OUT
-	.co(adcy2b), // OUT
-	.ci(addr2t), // IN
-	.a(shup_1), // IN
-	.b(adcy1b)  // IN
+	.s /* OUT */ (addr_2),
+	.co /* OUT */ (adcy2b),
+	.ci /* IN */ (addr2t),
+	.a /* IN */ (shup_1),
+	.b /* IN */ (adcy1b)
 );
 
 // ADDRGEN.NET (321) - addr3t28 : fa332
 fa332 addr3t28_inst
 (
-	.s0(addr_3), // OUT
-	.s1(addr_4), // OUT
-	.s2(addr_5), // OUT
-	.s3(addr_6), // OUT
-	.s4(addr_7), // OUT
-	.s5(addr_8), // OUT
-	.s6(addr_9), // OUT
-	.s7(addr_10), // OUT
-	.s8(addr_11), // OUT
-	.s9(addr_12), // OUT
-	.s10(addr_13), // OUT
-	.s11(addr_14), // OUT
-	.s12(addr_15), // OUT
-	.s13(addr_16), // OUT
-	.s14(addr_17), // OUT
-	.s15(addr_18), // OUT
-	.s16(addr_19), // OUT
-	.s17(addr_20), // OUT
-	.s18(unused_0), // OUT
-	.s19(unused_1), // OUT
-	.s20(unused_2), // OUT
-	.s21(unused_3), // OUT
-	.s22(unused_4), // OUT
-	.s23(unused_5), // OUT
-	.s24(unused_6), // OUT
-	.s25(unused_7), // OUT
-	.s26(unused_8), // OUT
-	.s27(unused_9), // OUT
-	.s28(unused_10), // OUT
-	.s29(unused_11), // OUT
-	.s30(unused_12), // OUT
-	.s31(unused_13), // OUT
-	.co0(unused_14), // OUT
-	.co1(unused_15), // OUT
-	.ci0(adcy2a), // IN
-	.ci1(adcy2b), // IN
-	.a0(shup_2), // IN
-	.b0(base[3]), // IN
-	.c0(phradr_3), // IN
-	.a1(shup_3), // IN
-	.b1(base[4]), // IN
-	.c1(phradr_4), // IN
-	.a2(shup_4), // IN
-	.b2(base[5]), // IN
-	.c2(phradr_5), // IN
-	.a3(shup_5), // IN
-	.b3(base[6]), // IN
-	.c3(phradr_6), // IN
-	.a4(shup_6), // IN
-	.b4(base[7]), // IN
-	.c4(phradr_7), // IN
-	.a5(shup_7), // IN
-	.b5(base[8]), // IN
-	.c5(phradr_8), // IN
-	.a6(shup_8), // IN
-	.b6(base[9]), // IN
-	.c6(phradr_9), // IN
-	.a7(shup_9), // IN
-	.b7(base[10]), // IN
-	.c7(phradr_10), // IN
-	.a8(shup_10), // IN
-	.b8(base[11]), // IN
-	.c8(phradr_11), // IN
-	.a9(shup_11), // IN
-	.b9(base[12]), // IN
-	.c9(phradr_12), // IN
-	.a10(shup_12), // IN
-	.b10(base[13]), // IN
-	.c10(phradr_13), // IN
-	.a11(shup_13), // IN
-	.b11(base[14]), // IN
-	.c11(phradr_14), // IN
-	.a12(shup_14), // IN
-	.b12(base[15]), // IN
-	.c12(phradr_15), // IN
-	.a13(shup_15), // IN
-	.b13(base[16]), // IN
-	.c13(phradr_16), // IN
-	.a14(shup_16), // IN
-	.b14(base[17]), // IN
-	.c14(phradr_17), // IN
-	.a15(shup_17), // IN
-	.b15(base[18]), // IN
-	.c15(phradr_18), // IN
-	.a16(shup_18), // IN
-	.b16(base[19]), // IN
-	.c16(phradr_19), // IN
-	.a17(shup_19), // IN
-	.b17(base[20]), // IN
-	.c17(phradr_20), // IN
-	.a18(zero), // IN
-	.b18(zero), // IN
-	.c18(zero), // IN
-	.a19(zero), // IN
-	.b19(zero), // IN
-	.c19(zero), // IN
-	.a20(zero), // IN
-	.b20(zero), // IN
-	.c20(zero), // IN
-	.a21(zero), // IN
-	.b21(zero), // IN
-	.c21(zero), // IN
-	.a22(zero), // IN
-	.b22(zero), // IN
-	.c22(zero), // IN
-	.a23(zero), // IN
-	.b23(zero), // IN
-	.c23(zero), // IN
-	.a24(zero), // IN
-	.b24(zero), // IN
-	.c24(zero), // IN
-	.a25(zero), // IN
-	.b25(zero), // IN
-	.c25(zero), // IN
-	.a26(zero), // IN
-	.b26(zero), // IN
-	.c26(zero), // IN
-	.a27(zero), // IN
-	.b27(zero), // IN
-	.c27(zero), // IN
-	.a28(zero), // IN
-	.b28(zero), // IN
-	.c28(zero), // IN
-	.a29(zero), // IN
-	.b29(zero), // IN
-	.c29(zero), // IN
-	.a30(zero), // IN
-	.b30(zero), // IN
-	.c30(zero), // IN
-	.a31(zero), // IN
-	.b31(zero), // IN
-	.c31(zero)  // IN
+	.s0 /* OUT */ (addr_3),
+	.s1 /* OUT */ (addr_4),
+	.s2 /* OUT */ (addr_5),
+	.s3 /* OUT */ (addr_6),
+	.s4 /* OUT */ (addr_7),
+	.s5 /* OUT */ (addr_8),
+	.s6 /* OUT */ (addr_9),
+	.s7 /* OUT */ (addr_10),
+	.s8 /* OUT */ (addr_11),
+	.s9 /* OUT */ (addr_12),
+	.s10 /* OUT */ (addr_13),
+	.s11 /* OUT */ (addr_14),
+	.s12 /* OUT */ (addr_15),
+	.s13 /* OUT */ (addr_16),
+	.s14 /* OUT */ (addr_17),
+	.s15 /* OUT */ (addr_18),
+	.s16 /* OUT */ (addr_19),
+	.s17 /* OUT */ (addr_20),
+	.s18 /* OUT */ (unused_0),
+	.s19 /* OUT */ (unused_1),
+	.s20 /* OUT */ (unused_2),
+	.s21 /* OUT */ (unused_3),
+	.s22 /* OUT */ (unused_4),
+	.s23 /* OUT */ (unused_5),
+	.s24 /* OUT */ (unused_6),
+	.s25 /* OUT */ (unused_7),
+	.s26 /* OUT */ (unused_8),
+	.s27 /* OUT */ (unused_9),
+	.s28 /* OUT */ (unused_10),
+	.s29 /* OUT */ (unused_11),
+	.s30 /* OUT */ (unused_12),
+	.s31 /* OUT */ (unused_13),
+	.co0 /* OUT */ (unused_14),
+	.co1 /* OUT */ (unused_15),
+	.ci0 /* IN */ (adcy2a),
+	.ci1 /* IN */ (adcy2b),
+	.a0 /* IN */ (shup_2),
+	.b0 /* IN */ (base[3]),
+	.c0 /* IN */ (phradr_3),
+	.a1 /* IN */ (shup_3),
+	.b1 /* IN */ (base[4]),
+	.c1 /* IN */ (phradr_4),
+	.a2 /* IN */ (shup_4),
+	.b2 /* IN */ (base[5]),
+	.c2 /* IN */ (phradr_5),
+	.a3 /* IN */ (shup_5),
+	.b3 /* IN */ (base[6]),
+	.c3 /* IN */ (phradr_6),
+	.a4 /* IN */ (shup_6),
+	.b4 /* IN */ (base[7]),
+	.c4 /* IN */ (phradr_7),
+	.a5 /* IN */ (shup_7),
+	.b5 /* IN */ (base[8]),
+	.c5 /* IN */ (phradr_8),
+	.a6 /* IN */ (shup_8),
+	.b6 /* IN */ (base[9]),
+	.c6 /* IN */ (phradr_9),
+	.a7 /* IN */ (shup_9),
+	.b7 /* IN */ (base[10]),
+	.c7 /* IN */ (phradr_10),
+	.a8 /* IN */ (shup_10),
+	.b8 /* IN */ (base[11]),
+	.c8 /* IN */ (phradr_11),
+	.a9 /* IN */ (shup_11),
+	.b9 /* IN */ (base[12]),
+	.c9 /* IN */ (phradr_12),
+	.a10 /* IN */ (shup_12),
+	.b10 /* IN */ (base[13]),
+	.c10 /* IN */ (phradr_13),
+	.a11 /* IN */ (shup_13),
+	.b11 /* IN */ (base[14]),
+	.c11 /* IN */ (phradr_14),
+	.a12 /* IN */ (shup_14),
+	.b12 /* IN */ (base[15]),
+	.c12 /* IN */ (phradr_15),
+	.a13 /* IN */ (shup_15),
+	.b13 /* IN */ (base[16]),
+	.c13 /* IN */ (phradr_16),
+	.a14 /* IN */ (shup_16),
+	.b14 /* IN */ (base[17]),
+	.c14 /* IN */ (phradr_17),
+	.a15 /* IN */ (shup_17),
+	.b15 /* IN */ (base[18]),
+	.c15 /* IN */ (phradr_18),
+	.a16 /* IN */ (shup_18),
+	.b16 /* IN */ (base[19]),
+	.c16 /* IN */ (phradr_19),
+	.a17 /* IN */ (shup_19),
+	.b17 /* IN */ (base[20]),
+	.c17 /* IN */ (phradr_20),
+	.a18 /* IN */ (zero),
+	.b18 /* IN */ (zero),
+	.c18 /* IN */ (zero),
+	.a19 /* IN */ (zero),
+	.b19 /* IN */ (zero),
+	.c19 /* IN */ (zero),
+	.a20 /* IN */ (zero),
+	.b20 /* IN */ (zero),
+	.c20 /* IN */ (zero),
+	.a21 /* IN */ (zero),
+	.b21 /* IN */ (zero),
+	.c21 /* IN */ (zero),
+	.a22 /* IN */ (zero),
+	.b22 /* IN */ (zero),
+	.c22 /* IN */ (zero),
+	.a23 /* IN */ (zero),
+	.b23 /* IN */ (zero),
+	.c23 /* IN */ (zero),
+	.a24 /* IN */ (zero),
+	.b24 /* IN */ (zero),
+	.c24 /* IN */ (zero),
+	.a25 /* IN */ (zero),
+	.b25 /* IN */ (zero),
+	.c25 /* IN */ (zero),
+	.a26 /* IN */ (zero),
+	.b26 /* IN */ (zero),
+	.c26 /* IN */ (zero),
+	.a27 /* IN */ (zero),
+	.b27 /* IN */ (zero),
+	.c27 /* IN */ (zero),
+	.a28 /* IN */ (zero),
+	.b28 /* IN */ (zero),
+	.c28 /* IN */ (zero),
+	.a29 /* IN */ (zero),
+	.b29 /* IN */ (zero),
+	.c29 /* IN */ (zero),
+	.a30 /* IN */ (zero),
+	.b30 /* IN */ (zero),
+	.c30 /* IN */ (zero),
+	.a31 /* IN */ (zero),
+	.b31 /* IN */ (zero),
+	.c31 /* IN */ (zero)
 );
 
 // ADDRGEN.NET (356) - addrgen : join
@@ -2589,317 +2589,317 @@ assign apipeb = apipe;
 // ADDRGEN.NET (361) - addressi : mx2p
 mx2 addressi_inst_0
 (
-	.z(address_b0_obuf), // OUT
-	.a0(addressi[0]), // IN
-	.a1(addrgen[0]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b0_obuf),
+	.a0 /* IN */ (addressi[0]),
+	.a1 /* IN */ (addrgen[0]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_1
 (
-	.z(address_b1_obuf), // OUT
-	.a0(addressi[1]), // IN
-	.a1(addrgen[1]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b1_obuf),
+	.a0 /* IN */ (addressi[1]),
+	.a1 /* IN */ (addrgen[1]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_2
 (
-	.z(address_b2_obuf), // OUT
-	.a0(addressi[2]), // IN
-	.a1(addrgen[2]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b2_obuf),
+	.a0 /* IN */ (addressi[2]),
+	.a1 /* IN */ (addrgen[2]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_3
 (
-	.z(address_b3_obuf), // OUT
-	.a0(addressi[3]), // IN
-	.a1(addrgen[3]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b3_obuf),
+	.a0 /* IN */ (addressi[3]),
+	.a1 /* IN */ (addrgen[3]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_4
 (
-	.z(address_b4_obuf), // OUT
-	.a0(addressi[4]), // IN
-	.a1(addrgen[4]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b4_obuf),
+	.a0 /* IN */ (addressi[4]),
+	.a1 /* IN */ (addrgen[4]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_5
 (
-	.z(address_b5_obuf), // OUT
-	.a0(addressi[5]), // IN
-	.a1(addrgen[5]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b5_obuf),
+	.a0 /* IN */ (addressi[5]),
+	.a1 /* IN */ (addrgen[5]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_6
 (
-	.z(address_b6_obuf), // OUT
-	.a0(addressi[6]), // IN
-	.a1(addrgen[6]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b6_obuf),
+	.a0 /* IN */ (addressi[6]),
+	.a1 /* IN */ (addrgen[6]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_7
 (
-	.z(address_b7_obuf), // OUT
-	.a0(addressi[7]), // IN
-	.a1(addrgen[7]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b7_obuf),
+	.a0 /* IN */ (addressi[7]),
+	.a1 /* IN */ (addrgen[7]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_8
 (
-	.z(address_b8_obuf), // OUT
-	.a0(addressi[8]), // IN
-	.a1(addrgen[8]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b8_obuf),
+	.a0 /* IN */ (addressi[8]),
+	.a1 /* IN */ (addrgen[8]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_9
 (
-	.z(address_b9_obuf), // OUT
-	.a0(addressi[9]), // IN
-	.a1(addrgen[9]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b9_obuf),
+	.a0 /* IN */ (addressi[9]),
+	.a1 /* IN */ (addrgen[9]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_10
 (
-	.z(address_b10_obuf), // OUT
-	.a0(addressi[10]), // IN
-	.a1(addrgen[10]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b10_obuf),
+	.a0 /* IN */ (addressi[10]),
+	.a1 /* IN */ (addrgen[10]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_11
 (
-	.z(address_b11_obuf), // OUT
-	.a0(addressi[11]), // IN
-	.a1(addrgen[11]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b11_obuf),
+	.a0 /* IN */ (addressi[11]),
+	.a1 /* IN */ (addrgen[11]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_12
 (
-	.z(address_b12_obuf), // OUT
-	.a0(addressi[12]), // IN
-	.a1(addrgen[12]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b12_obuf),
+	.a0 /* IN */ (addressi[12]),
+	.a1 /* IN */ (addrgen[12]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_13
 (
-	.z(address_b13_obuf), // OUT
-	.a0(addressi[13]), // IN
-	.a1(addrgen[13]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b13_obuf),
+	.a0 /* IN */ (addressi[13]),
+	.a1 /* IN */ (addrgen[13]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_14
 (
-	.z(address_b14_obuf), // OUT
-	.a0(addressi[14]), // IN
-	.a1(addrgen[14]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b14_obuf),
+	.a0 /* IN */ (addressi[14]),
+	.a1 /* IN */ (addrgen[14]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_15
 (
-	.z(address_b15_obuf), // OUT
-	.a0(addressi[15]), // IN
-	.a1(addrgen[15]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b15_obuf),
+	.a0 /* IN */ (addressi[15]),
+	.a1 /* IN */ (addrgen[15]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_16
 (
-	.z(address_b16_obuf), // OUT
-	.a0(addressi[16]), // IN
-	.a1(addrgen[16]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b16_obuf),
+	.a0 /* IN */ (addressi[16]),
+	.a1 /* IN */ (addrgen[16]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_17
 (
-	.z(address_b17_obuf), // OUT
-	.a0(addressi[17]), // IN
-	.a1(addrgen[17]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b17_obuf),
+	.a0 /* IN */ (addressi[17]),
+	.a1 /* IN */ (addrgen[17]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_18
 (
-	.z(address_b18_obuf), // OUT
-	.a0(addressi[18]), // IN
-	.a1(addrgen[18]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b18_obuf),
+	.a0 /* IN */ (addressi[18]),
+	.a1 /* IN */ (addrgen[18]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_19
 (
-	.z(address_b19_obuf), // OUT
-	.a0(addressi[19]), // IN
-	.a1(addrgen[19]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b19_obuf),
+	.a0 /* IN */ (addressi[19]),
+	.a1 /* IN */ (addrgen[19]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_20
 (
-	.z(address_b20_obuf), // OUT
-	.a0(addressi[20]), // IN
-	.a1(addrgen[20]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b20_obuf),
+	.a0 /* IN */ (addressi[20]),
+	.a1 /* IN */ (addrgen[20]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_21
 (
-	.z(address_b21_obuf), // OUT
-	.a0(addressi[21]), // IN
-	.a1(addrgen[21]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b21_obuf),
+	.a0 /* IN */ (addressi[21]),
+	.a1 /* IN */ (addrgen[21]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_22
 (
-	.z(address_b22_obuf), // OUT
-	.a0(addressi[22]), // IN
-	.a1(addrgen[22]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b22_obuf),
+	.a0 /* IN */ (addressi[22]),
+	.a1 /* IN */ (addrgen[22]),
+	.s /* IN */ (apipeb)
 );
 mx2 addressi_inst_23
 (
-	.z(address_b23_obuf), // OUT
-	.a0(addressi[23]), // IN
-	.a1(addrgen[23]), // IN
-	.s(apipeb)  // IN
+	.z /* OUT */ (address_b23_obuf),
+	.a0 /* IN */ (addressi[23]),
+	.a1 /* IN */ (addrgen[23]),
+	.s /* IN */ (apipeb)
 );
 
 // ADDRGEN.NET (362) - address : fd1q
 fd1q address_inst_0
 (
-	.q(addressi[0]), // OUT
-	.d(address_b0_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[0]),
+	.d /* IN */ (address_b0_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_1
 (
-	.q(addressi[1]), // OUT
-	.d(address_b1_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[1]),
+	.d /* IN */ (address_b1_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_2
 (
-	.q(addressi[2]), // OUT
-	.d(address_b2_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[2]),
+	.d /* IN */ (address_b2_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_3
 (
-	.q(addressi[3]), // OUT
-	.d(address_b3_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[3]),
+	.d /* IN */ (address_b3_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_4
 (
-	.q(addressi[4]), // OUT
-	.d(address_b4_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[4]),
+	.d /* IN */ (address_b4_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_5
 (
-	.q(addressi[5]), // OUT
-	.d(address_b5_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[5]),
+	.d /* IN */ (address_b5_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_6
 (
-	.q(addressi[6]), // OUT
-	.d(address_b6_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[6]),
+	.d /* IN */ (address_b6_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_7
 (
-	.q(addressi[7]), // OUT
-	.d(address_b7_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[7]),
+	.d /* IN */ (address_b7_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_8
 (
-	.q(addressi[8]), // OUT
-	.d(address_b8_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[8]),
+	.d /* IN */ (address_b8_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_9
 (
-	.q(addressi[9]), // OUT
-	.d(address_b9_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[9]),
+	.d /* IN */ (address_b9_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_10
 (
-	.q(addressi[10]), // OUT
-	.d(address_b10_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[10]),
+	.d /* IN */ (address_b10_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_11
 (
-	.q(addressi[11]), // OUT
-	.d(address_b11_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[11]),
+	.d /* IN */ (address_b11_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_12
 (
-	.q(addressi[12]), // OUT
-	.d(address_b12_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[12]),
+	.d /* IN */ (address_b12_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_13
 (
-	.q(addressi[13]), // OUT
-	.d(address_b13_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[13]),
+	.d /* IN */ (address_b13_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_14
 (
-	.q(addressi[14]), // OUT
-	.d(address_b14_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[14]),
+	.d /* IN */ (address_b14_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_15
 (
-	.q(addressi[15]), // OUT
-	.d(address_b15_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[15]),
+	.d /* IN */ (address_b15_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_16
 (
-	.q(addressi[16]), // OUT
-	.d(address_b16_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[16]),
+	.d /* IN */ (address_b16_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_17
 (
-	.q(addressi[17]), // OUT
-	.d(address_b17_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[17]),
+	.d /* IN */ (address_b17_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_18
 (
-	.q(addressi[18]), // OUT
-	.d(address_b18_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[18]),
+	.d /* IN */ (address_b18_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_19
 (
-	.q(addressi[19]), // OUT
-	.d(address_b19_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[19]),
+	.d /* IN */ (address_b19_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_20
 (
-	.q(addressi[20]), // OUT
-	.d(address_b20_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[20]),
+	.d /* IN */ (address_b20_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_21
 (
-	.q(addressi[21]), // OUT
-	.d(address_b21_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[21]),
+	.d /* IN */ (address_b21_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_22
 (
-	.q(addressi[22]), // OUT
-	.d(address_b22_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[22]),
+	.d /* IN */ (address_b22_obuf),
+	.cp /* IN */ (clk)
 );
 fd1q address_inst_23
 (
-	.q(addressi[23]), // OUT
-	.d(address_b23_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (addressi[23]),
+	.d /* IN */ (address_b23_obuf),
+	.cp /* IN */ (clk)
 );
 
 // ADDRGEN.NET (364) - unused[0-15] : dummy

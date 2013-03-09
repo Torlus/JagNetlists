@@ -20,17 +20,17 @@ assign d1 = d1_obuf;
 // LEGO.NET (74) - d : mx2
 mx2 d_inst
 (
-	.z(d1_obuf), // OUT
-	.a0(q), // IN
-	.a1(d), // IN
-	.s(en)  // IN
+	.z /* OUT */ (d1_obuf),
+	.a0 /* IN */ (q),
+	.a1 /* IN */ (d),
+	.s /* IN */ (en)
 );
 
 // LEGO.NET (75) - q : fd1q
 fd1q q_inst
 (
-	.q(q), // OUT
-	.d(d1_obuf), // IN
-	.cp(clk)  // IN
+	.q /* OUT */ (q),
+	.d /* IN */ (d1_obuf),
+	.cp /* IN */ (clk)
 );
 endmodule
