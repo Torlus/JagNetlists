@@ -92,6 +92,8 @@ wire [15:0] j68_wr_data;      // Data bus out
 // 68000 control
 wire [2:0]  j68_fc;           // Function code
 wire [2:0]  j68_ipl_n;        // Interrupt level
+// For interrupt management
+wire [23:0]	j68_address_final;
 
 // OS ROM
 wire	[16:0]	os_rom_a;
@@ -172,8 +174,8 @@ assign xba_in = xba_oe ? xba_out : 1'b1;
 assign j68_rst = ~xresetl;
 assign j68_clk = xpclk;
 
-assign j68_ipl_n = 3'b111;
-// assign j68_ipl_n = { 1'b1, xintl, 1'b1 };
+// assign j68_ipl_n = 3'b111;
+assign j68_ipl_n = { 1'b1, xintl, 1'b1 };
 
 assign j68_data_ack = ~xdtackl;
 
@@ -182,12 +184,12 @@ assign xdreql_in = xdreql_oe ? xdreql_out : ~(j68_rd_ena | j68_wr_ena);
 assign xa_in[0:23] = 
 	(~ba) ?
 		{ 
-			j68_address[0], j68_address[1], j68_address[2], j68_address[3],
-			j68_address[4], j68_address[5], j68_address[6], j68_address[7],
-			j68_address[8], j68_address[9], j68_address[10], j68_address[11],
-			j68_address[12], j68_address[13], j68_address[14], j68_address[15],
-			j68_address[16], j68_address[17], j68_address[18], j68_address[19],
-			j68_address[20], j68_address[21], j68_address[22], j68_address[23]
+			j68_address_final[0], j68_address_final[1], j68_address_final[2], j68_address_final[3],
+			j68_address_final[4], j68_address_final[5], j68_address_final[6], j68_address_final[7],
+			j68_address_final[8], j68_address_final[9], j68_address_final[10], j68_address_final[11],
+			j68_address_final[12], j68_address_final[13], j68_address_final[14], j68_address_final[15],
+			j68_address_final[16], j68_address_final[17], j68_address_final[18], j68_address_final[19],
+			j68_address_final[20], j68_address_final[21], j68_address_final[22], j68_address_final[23]
 		}
 	:
 		xa_out[0:23];
@@ -211,16 +213,23 @@ assign j68_rd_data[15:0] = {
 // 
 // "ourack" is the key signal here.
 //
-// It seems that a real 68k "emits" one FC=111 on interrupt acknowledgement
-// where the J68 seems to set FC=111 whenever the VEC register is accessed,
-// which doesn't work well with the Jaguar chipset.
-// 
-// Let's keep the FC constant for now, the interruput acknowledgement
-// will be adressed later.
+// The Jaguar chipset asserts the vector address on FC=111,
+// unfortunately it doesn't seem properly handled by the J68,
+// or there may be something I haven't found out yet.
+// There seems to be only one interrupt vector used
+// for all interrupt sources of the Jaguar chipset.
+// Its location is $100, which corresponds to User Interrupt 0.
+// Below is a quick hack to set up $100-$102 when the J68 fetchs
+// the interrupt vector corresponding to Level 2 Interrupt Autovector
 
 // assign xfc[0:2] = { j68_fc[0], j68_fc[1], j68_fc[2] };
 assign xfc_in = 3'b101;
 
+assign j68_address_final = 
+	( (j68_fc ==  3'b111) & ~xintl & (j68_address[23:2] == { 20'h00006, 2'b10 }) ) ?
+		{ 20'h00010, 2'b00, j68_address[1:0] }
+	:
+		j68_address[23:0];
 
 assign xrw_in = (~ba) ? ~j68_wr_ena : xrw_out;
 assign xsiz_in[0] = (~ba) ? ~j68_byte_ena[0] : xsiz_out[0];

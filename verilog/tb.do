@@ -129,14 +129,15 @@ add wave -noupdate -format Logic /tb/xdtackl
 add wave -noupdate -format Logic /tb/xbrl_in
 add wave -noupdate -format Logic /tb/xba_in
 add wave -noupdate -format Logic /tb/ba
-add wave -noupdate -format Logic /tb/xintl
 add wave -noupdate -format Logic /tb/tom_inst/aen
 
 
-# add wave -noupdate -format Logic /tb/j68_rst
-# add wave -noupdate -format Logic /tb/j68_clk
-# add wave -noupdate -format Literal /tb/xfc_in
+add wave -noupdate -format Logic /tb/j68_rst
+add wave -noupdate -format Logic /tb/j68_clk
+add wave -noupdate -format Logic /tb/xintl
+add wave -noupdate -format Literal /tb/j68_fc
 add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address
+add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address_final
 add wave -noupdate -format Logic /tb/j68_rd_ena
 add wave -noupdate -format Logic /tb/j68_wr_ena
 add wave -noupdate -format Literal -radix hexadecimal /tb/j68_rd_data
