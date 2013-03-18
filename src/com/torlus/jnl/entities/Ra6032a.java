@@ -10,6 +10,11 @@ public class Ra6032a extends Entity {
 		return "ra6032a";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Ra6032a() {
 		for (int i = 0; i < 27; i++) {
 			Signal s = new Signal("z", SignalType.OUT);
@@ -19,7 +24,9 @@ public class Ra6032a extends Entity {
 
 		ios.add(new Signal("clk", SignalType.IN));
 		for (int i = 0; i < 6; i++) {
-			ios.add(new Signal("a" + i, SignalType.IN));
+			Signal s = new Signal("a", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 	}
 }

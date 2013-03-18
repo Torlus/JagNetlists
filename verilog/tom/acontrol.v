@@ -29,7 +29,7 @@ module acontrol
 	output dstart_3,
 	output dstart_4,
 	output dstart_5,
-	output [0:15] dstxp;
+	output [0:15] dstxp,
 	output modx_0,
 	output modx_1,
 	output modx_2,
@@ -53,8 +53,8 @@ module acontrol
 	input a1_pixsize_0,
 	input a1_pixsize_1,
 	input a1_pixsize_2,
-	input [0:14] a1_win_x;
-	input [0:15] a1_x;
+	input [0:14] a1_win_x,
+	input [0:15] a1_x,
 	input a1addx_0,
 	input a1addx_1,
 	input a1addy,
@@ -65,7 +65,7 @@ module acontrol
 	input a2_pixsize_0,
 	input a2_pixsize_1,
 	input a2_pixsize_2,
-	input [0:15] a2_x;
+	input [0:15] a2_x,
 	input a2addx_0,
 	input a2addx_1,
 	input a2addy,
@@ -80,7 +80,7 @@ module acontrol
 	input cmdld,
 	input dest_cycle_1,
 	input dsta_addi,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input icount_0,
 	input icount_1,
 	input icount_2,
@@ -91,7 +91,8 @@ module acontrol
 	input srca_addi,
 	input srcen,
 	input sshftld,
-	input step_inner
+	input step_inner,
+	input sys_clk // Generated
 );
 wire one;
 wire zero;
@@ -416,7 +417,8 @@ fdsyncu dsta2_inst
 	.q /* OUT */ (dsta2_obuf),
 	.d /* IN */ (gpu_din[11]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (83) - a1update : fd1
@@ -425,7 +427,8 @@ fd1 a1update_inst
 	.q /* OUT */ (a1update),
 	.qn /* OUT */ (a1update_n),
 	.d /* IN */ (a1updatei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (84) - a1fupdate : fd1
@@ -434,7 +437,8 @@ fd1 a1fupdate_inst
 	.q /* OUT */ (a1fupdate),
 	.qn /* OUT */ (a1fupdate_n),
 	.d /* IN */ (a1fupdatei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (85) - a1fupdate\ : iv
@@ -446,7 +450,8 @@ fd1 a2update_inst
 	.q /* OUT */ (a2update),
 	.qn /* OUT */ (a2update_n),
 	.d /* IN */ (a2updatei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (87) - a1addx\[0-1] : iv
@@ -484,7 +489,8 @@ fd1 a1_add_inst
 	.q /* OUT */ (a1_add),
 	.qn /* OUT */ (a1_add_n),
 	.d /* IN */ (a1_addi),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (96) - a2_add : fd1
@@ -493,7 +499,8 @@ fd1 a2_add_inst
 	.q /* OUT */ (a2_add),
 	.qn /* OUT */ (a2_add_n),
 	.d /* IN */ (a2_addi),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (97) - a2_addb : niv
@@ -516,19 +523,22 @@ fd1q addasel_from_0_to_2_inst_0
 (
 	.q /* OUT */ (addasel_0),
 	.d /* IN */ (addaseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q addasel_from_0_to_2_inst_1
 (
 	.q /* OUT */ (addasel_1),
 	.d /* IN */ (addaseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q addasel_from_0_to_2_inst_2
 (
 	.q /* OUT */ (addasel_2),
 	.d /* IN */ (addaseli_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (134) - a1_pixsize\[0-2] : iv
@@ -643,7 +653,8 @@ fd1q addareg_inst
 (
 	.q /* OUT */ (addareg),
 	.d /* IN */ (addaregi),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (196) - addbseli[0] : or2
@@ -660,13 +671,15 @@ fd1q addbsel_from_0_to_1_inst_0
 (
 	.q /* OUT */ (addbsel_0),
 	.d /* IN */ (addbseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q addbsel_from_0_to_1_inst_1
 (
 	.q /* OUT */ (addbsel_1),
 	.d /* IN */ (addbseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (214) - maska1 : nr3
@@ -896,37 +909,43 @@ fd1q dstartbl_from_0_to_5_inst_0
 (
 	.q /* OUT */ (dstartbl_0),
 	.d /* IN */ (dstartb_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstartbl_from_0_to_5_inst_1
 (
 	.q /* OUT */ (dstartbl_1),
 	.d /* IN */ (dstartb_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstartbl_from_0_to_5_inst_2
 (
 	.q /* OUT */ (dstartbl_2),
 	.d /* IN */ (dstartb_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstartbl_from_0_to_5_inst_3
 (
 	.q /* OUT */ (dstartbl_3),
 	.d /* IN */ (dstartb_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstartbl_from_0_to_5_inst_4
 (
 	.q /* OUT */ (dstartbl_4),
 	.d /* IN */ (dstartb_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstartbl_from_0_to_5_inst_5
 (
 	.q /* OUT */ (dstartbl_5),
 	.d /* IN */ (dstartb_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (318) - dstartp[0-5] : fdsync
@@ -935,42 +954,48 @@ fdsync dstartp_from_0_to_5_inst_0
 	.q /* OUT */ (dstartp_0),
 	.d /* IN */ (dstartb_0),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dstartp_from_0_to_5_inst_1
 (
 	.q /* OUT */ (dstartp_1),
 	.d /* IN */ (dstartb_1),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dstartp_from_0_to_5_inst_2
 (
 	.q /* OUT */ (dstartp_2),
 	.d /* IN */ (dstartb_2),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dstartp_from_0_to_5_inst_3
 (
 	.q /* OUT */ (dstartp_3),
 	.d /* IN */ (dstartb_3),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dstartp_from_0_to_5_inst_4
 (
 	.q /* OUT */ (dstartp_4),
 	.d /* IN */ (dstartb_4),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dstartp_from_0_to_5_inst_5
 (
 	.q /* OUT */ (dstartp_5),
 	.d /* IN */ (dstartb_5),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (320) - dstart[0-5] : fd1qp
@@ -978,37 +1003,43 @@ fd1q dstart_from_0_to_5_inst_0
 (
 	.q /* OUT */ (dstart_0),
 	.d /* IN */ (dstartp_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstart_from_0_to_5_inst_1
 (
 	.q /* OUT */ (dstart_1),
 	.d /* IN */ (dstartp_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstart_from_0_to_5_inst_2
 (
 	.q /* OUT */ (dstart_2),
 	.d /* IN */ (dstartp_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstart_from_0_to_5_inst_3
 (
 	.q /* OUT */ (dstart_3),
 	.d /* IN */ (dstartp_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstart_from_0_to_5_inst_4
 (
 	.q /* OUT */ (dstart_4),
 	.d /* IN */ (dstartp_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstart_from_0_to_5_inst_5
 (
 	.q /* OUT */ (dstart_5),
 	.d /* IN */ (dstartp_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (347) - dstxp : mx2
@@ -1427,37 +1458,43 @@ fd1q dendbl_from_0_to_5_inst_0
 (
 	.q /* OUT */ (dendbl_0),
 	.d /* IN */ (dendb_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dendbl_from_0_to_5_inst_1
 (
 	.q /* OUT */ (dendbl_1),
 	.d /* IN */ (dendb_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dendbl_from_0_to_5_inst_2
 (
 	.q /* OUT */ (dendbl_2),
 	.d /* IN */ (dendb_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dendbl_from_0_to_5_inst_3
 (
 	.q /* OUT */ (dendbl_3),
 	.d /* IN */ (dendb_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dendbl_from_0_to_5_inst_4
 (
 	.q /* OUT */ (dendbl_4),
 	.d /* IN */ (dendb_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dendbl_from_0_to_5_inst_5
 (
 	.q /* OUT */ (dendbl_5),
 	.d /* IN */ (dendb_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (449) - dendp[0-5] : fdsync
@@ -1466,42 +1503,48 @@ fdsync dendp_from_0_to_5_inst_0
 	.q /* OUT */ (dendp_0),
 	.d /* IN */ (dendb_0),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dendp_from_0_to_5_inst_1
 (
 	.q /* OUT */ (dendp_1),
 	.d /* IN */ (dendb_1),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dendp_from_0_to_5_inst_2
 (
 	.q /* OUT */ (dendp_2),
 	.d /* IN */ (dendb_2),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dendp_from_0_to_5_inst_3
 (
 	.q /* OUT */ (dendp_3),
 	.d /* IN */ (dendb_3),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dendp_from_0_to_5_inst_4
 (
 	.q /* OUT */ (dendp_4),
 	.d /* IN */ (dendb_4),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync dendp_from_0_to_5_inst_5
 (
 	.q /* OUT */ (dendp_5),
 	.d /* IN */ (dendb_5),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (451) - dend[0-5] : fd1qp
@@ -1509,37 +1552,43 @@ fd1q dend_from_0_to_5_inst_0
 (
 	.q /* OUT */ (dend_0),
 	.d /* IN */ (dendp_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dend_from_0_to_5_inst_1
 (
 	.q /* OUT */ (dend_1),
 	.d /* IN */ (dendp_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dend_from_0_to_5_inst_2
 (
 	.q /* OUT */ (dend_2),
 	.d /* IN */ (dendp_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dend_from_0_to_5_inst_3
 (
 	.q /* OUT */ (dend_3),
 	.d /* IN */ (dendp_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dend_from_0_to_5_inst_4
 (
 	.q /* OUT */ (dend_4),
 	.d /* IN */ (dendp_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dend_from_0_to_5_inst_5
 (
 	.q /* OUT */ (dend_5),
 	.d /* IN */ (dendp_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (472) - srcxp\[0-5] : mxi2
@@ -1816,37 +1865,43 @@ fd1q srcshift_from_0_to_5_inst_0
 (
 	.q /* OUT */ (srcshift_0_obuf),
 	.d /* IN */ (shfti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcshift_from_0_to_5_inst_1
 (
 	.q /* OUT */ (srcshift_1_obuf),
 	.d /* IN */ (shfti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcshift_from_0_to_5_inst_2
 (
 	.q /* OUT */ (srcshift_2_obuf),
 	.d /* IN */ (shfti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcshift_from_0_to_5_inst_3
 (
 	.q /* OUT */ (srcshift_3_obuf),
 	.d /* IN */ (shfti_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcshift_from_0_to_5_inst_4
 (
 	.q /* OUT */ (srcshift_4_obuf),
 	.d /* IN */ (shfti_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcshift_from_0_to_5_inst_5
 (
 	.q /* OUT */ (srcshift_5_obuf),
 	.d /* IN */ (shfti_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ACONTROL.NET (539) - dstartp\[3-5] : iv

@@ -324,7 +324,7 @@ module data
 	input dstdld_1,
 	input dstzld_0,
 	input dstzld_1,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input iincld,
 	input intld_0,
 	input intld_1,
@@ -363,7 +363,8 @@ module data
 	input zmode_1,
 	input zmode_2,
 	input zpipe_0,
-	input zpipe_1
+	input zpipe_1,
+	input sys_clk // Generated
 );
 wire [0:15] addb_0;
 wire [0:15] addb_1;
@@ -1324,385 +1325,449 @@ fd1q sd1_from_0_to_3_inst_0
 (
 	.q /* OUT */ (sd1_0[0]),
 	.d /* IN */ (srcd1i_0[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_1
 (
 	.q /* OUT */ (sd1_0[1]),
 	.d /* IN */ (srcd1i_0[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_2
 (
 	.q /* OUT */ (sd1_0[2]),
 	.d /* IN */ (srcd1i_0[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_3
 (
 	.q /* OUT */ (sd1_0[3]),
 	.d /* IN */ (srcd1i_0[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_4
 (
 	.q /* OUT */ (sd1_0[4]),
 	.d /* IN */ (srcd1i_0[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_5
 (
 	.q /* OUT */ (sd1_0[5]),
 	.d /* IN */ (srcd1i_0[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_6
 (
 	.q /* OUT */ (sd1_0[6]),
 	.d /* IN */ (srcd1i_0[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_7
 (
 	.q /* OUT */ (sd1_0[7]),
 	.d /* IN */ (srcd1i_0[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_8
 (
 	.q /* OUT */ (sd1_0[8]),
 	.d /* IN */ (srcd1i_0[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_9
 (
 	.q /* OUT */ (sd1_0[9]),
 	.d /* IN */ (srcd1i_0[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_10
 (
 	.q /* OUT */ (sd1_0[10]),
 	.d /* IN */ (srcd1i_0[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_11
 (
 	.q /* OUT */ (sd1_0[11]),
 	.d /* IN */ (srcd1i_0[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_12
 (
 	.q /* OUT */ (sd1_0[12]),
 	.d /* IN */ (srcd1i_0[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_13
 (
 	.q /* OUT */ (sd1_0[13]),
 	.d /* IN */ (srcd1i_0[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_14
 (
 	.q /* OUT */ (sd1_0[14]),
 	.d /* IN */ (srcd1i_0[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_15
 (
 	.q /* OUT */ (sd1_0[15]),
 	.d /* IN */ (srcd1i_0[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_16
 (
 	.q /* OUT */ (sd1_1[0]),
 	.d /* IN */ (srcd1i_1[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_17
 (
 	.q /* OUT */ (sd1_1[1]),
 	.d /* IN */ (srcd1i_1[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_18
 (
 	.q /* OUT */ (sd1_1[2]),
 	.d /* IN */ (srcd1i_1[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_19
 (
 	.q /* OUT */ (sd1_1[3]),
 	.d /* IN */ (srcd1i_1[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_20
 (
 	.q /* OUT */ (sd1_1[4]),
 	.d /* IN */ (srcd1i_1[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_21
 (
 	.q /* OUT */ (sd1_1[5]),
 	.d /* IN */ (srcd1i_1[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_22
 (
 	.q /* OUT */ (sd1_1[6]),
 	.d /* IN */ (srcd1i_1[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_23
 (
 	.q /* OUT */ (sd1_1[7]),
 	.d /* IN */ (srcd1i_1[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_24
 (
 	.q /* OUT */ (sd1_1[8]),
 	.d /* IN */ (srcd1i_1[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_25
 (
 	.q /* OUT */ (sd1_1[9]),
 	.d /* IN */ (srcd1i_1[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_26
 (
 	.q /* OUT */ (sd1_1[10]),
 	.d /* IN */ (srcd1i_1[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_27
 (
 	.q /* OUT */ (sd1_1[11]),
 	.d /* IN */ (srcd1i_1[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_28
 (
 	.q /* OUT */ (sd1_1[12]),
 	.d /* IN */ (srcd1i_1[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_29
 (
 	.q /* OUT */ (sd1_1[13]),
 	.d /* IN */ (srcd1i_1[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_30
 (
 	.q /* OUT */ (sd1_1[14]),
 	.d /* IN */ (srcd1i_1[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_31
 (
 	.q /* OUT */ (sd1_1[15]),
 	.d /* IN */ (srcd1i_1[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_32
 (
 	.q /* OUT */ (sd1_2[0]),
 	.d /* IN */ (srcd1i_2[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_33
 (
 	.q /* OUT */ (sd1_2[1]),
 	.d /* IN */ (srcd1i_2[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_34
 (
 	.q /* OUT */ (sd1_2[2]),
 	.d /* IN */ (srcd1i_2[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_35
 (
 	.q /* OUT */ (sd1_2[3]),
 	.d /* IN */ (srcd1i_2[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_36
 (
 	.q /* OUT */ (sd1_2[4]),
 	.d /* IN */ (srcd1i_2[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_37
 (
 	.q /* OUT */ (sd1_2[5]),
 	.d /* IN */ (srcd1i_2[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_38
 (
 	.q /* OUT */ (sd1_2[6]),
 	.d /* IN */ (srcd1i_2[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_39
 (
 	.q /* OUT */ (sd1_2[7]),
 	.d /* IN */ (srcd1i_2[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_40
 (
 	.q /* OUT */ (sd1_2[8]),
 	.d /* IN */ (srcd1i_2[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_41
 (
 	.q /* OUT */ (sd1_2[9]),
 	.d /* IN */ (srcd1i_2[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_42
 (
 	.q /* OUT */ (sd1_2[10]),
 	.d /* IN */ (srcd1i_2[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_43
 (
 	.q /* OUT */ (sd1_2[11]),
 	.d /* IN */ (srcd1i_2[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_44
 (
 	.q /* OUT */ (sd1_2[12]),
 	.d /* IN */ (srcd1i_2[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_45
 (
 	.q /* OUT */ (sd1_2[13]),
 	.d /* IN */ (srcd1i_2[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_46
 (
 	.q /* OUT */ (sd1_2[14]),
 	.d /* IN */ (srcd1i_2[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_47
 (
 	.q /* OUT */ (sd1_2[15]),
 	.d /* IN */ (srcd1i_2[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_48
 (
 	.q /* OUT */ (sd1_3[0]),
 	.d /* IN */ (srcd1i_3[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_49
 (
 	.q /* OUT */ (sd1_3[1]),
 	.d /* IN */ (srcd1i_3[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_50
 (
 	.q /* OUT */ (sd1_3[2]),
 	.d /* IN */ (srcd1i_3[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_51
 (
 	.q /* OUT */ (sd1_3[3]),
 	.d /* IN */ (srcd1i_3[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_52
 (
 	.q /* OUT */ (sd1_3[4]),
 	.d /* IN */ (srcd1i_3[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_53
 (
 	.q /* OUT */ (sd1_3[5]),
 	.d /* IN */ (srcd1i_3[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_54
 (
 	.q /* OUT */ (sd1_3[6]),
 	.d /* IN */ (srcd1i_3[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_55
 (
 	.q /* OUT */ (sd1_3[7]),
 	.d /* IN */ (srcd1i_3[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_56
 (
 	.q /* OUT */ (sd1_3[8]),
 	.d /* IN */ (srcd1i_3[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_57
 (
 	.q /* OUT */ (sd1_3[9]),
 	.d /* IN */ (srcd1i_3[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_58
 (
 	.q /* OUT */ (sd1_3[10]),
 	.d /* IN */ (srcd1i_3[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_59
 (
 	.q /* OUT */ (sd1_3[11]),
 	.d /* IN */ (srcd1i_3[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_60
 (
 	.q /* OUT */ (sd1_3[12]),
 	.d /* IN */ (srcd1i_3[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_61
 (
 	.q /* OUT */ (sd1_3[13]),
 	.d /* IN */ (srcd1i_3[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_62
 (
 	.q /* OUT */ (sd1_3[14]),
 	.d /* IN */ (srcd1i_3[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sd1_from_0_to_3_inst_63
 (
 	.q /* OUT */ (sd1_3[15]),
 	.d /* IN */ (srcd1i_3[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (100) - srcd1[0] : join
@@ -1782,385 +1847,449 @@ ldp1q srcd2_from_0_to_1_inst_0
 (
 	.q /* OUT */ (srcd2_0[0]),
 	.d /* IN */ (srcd1_0[0]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_1
 (
 	.q /* OUT */ (srcd2_0[1]),
 	.d /* IN */ (srcd1_0[1]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_2
 (
 	.q /* OUT */ (srcd2_0[2]),
 	.d /* IN */ (srcd1_0[2]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_3
 (
 	.q /* OUT */ (srcd2_0[3]),
 	.d /* IN */ (srcd1_0[3]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_4
 (
 	.q /* OUT */ (srcd2_0[4]),
 	.d /* IN */ (srcd1_0[4]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_5
 (
 	.q /* OUT */ (srcd2_0[5]),
 	.d /* IN */ (srcd1_0[5]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_6
 (
 	.q /* OUT */ (srcd2_0[6]),
 	.d /* IN */ (srcd1_0[6]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_7
 (
 	.q /* OUT */ (srcd2_0[7]),
 	.d /* IN */ (srcd1_0[7]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_8
 (
 	.q /* OUT */ (srcd2_0[8]),
 	.d /* IN */ (srcd1_0[8]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_9
 (
 	.q /* OUT */ (srcd2_0[9]),
 	.d /* IN */ (srcd1_0[9]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_10
 (
 	.q /* OUT */ (srcd2_0[10]),
 	.d /* IN */ (srcd1_0[10]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_11
 (
 	.q /* OUT */ (srcd2_0[11]),
 	.d /* IN */ (srcd1_0[11]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_12
 (
 	.q /* OUT */ (srcd2_0[12]),
 	.d /* IN */ (srcd1_0[12]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_13
 (
 	.q /* OUT */ (srcd2_0[13]),
 	.d /* IN */ (srcd1_0[13]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_14
 (
 	.q /* OUT */ (srcd2_0[14]),
 	.d /* IN */ (srcd1_0[14]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_15
 (
 	.q /* OUT */ (srcd2_0[15]),
 	.d /* IN */ (srcd1_0[15]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_16
 (
 	.q /* OUT */ (srcd2_0[16]),
 	.d /* IN */ (srcd1_0[16]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_17
 (
 	.q /* OUT */ (srcd2_0[17]),
 	.d /* IN */ (srcd1_0[17]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_18
 (
 	.q /* OUT */ (srcd2_0[18]),
 	.d /* IN */ (srcd1_0[18]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_19
 (
 	.q /* OUT */ (srcd2_0[19]),
 	.d /* IN */ (srcd1_0[19]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_20
 (
 	.q /* OUT */ (srcd2_0[20]),
 	.d /* IN */ (srcd1_0[20]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_21
 (
 	.q /* OUT */ (srcd2_0[21]),
 	.d /* IN */ (srcd1_0[21]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_22
 (
 	.q /* OUT */ (srcd2_0[22]),
 	.d /* IN */ (srcd1_0[22]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_23
 (
 	.q /* OUT */ (srcd2_0[23]),
 	.d /* IN */ (srcd1_0[23]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_24
 (
 	.q /* OUT */ (srcd2_0[24]),
 	.d /* IN */ (srcd1_0[24]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_25
 (
 	.q /* OUT */ (srcd2_0[25]),
 	.d /* IN */ (srcd1_0[25]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_26
 (
 	.q /* OUT */ (srcd2_0[26]),
 	.d /* IN */ (srcd1_0[26]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_27
 (
 	.q /* OUT */ (srcd2_0[27]),
 	.d /* IN */ (srcd1_0[27]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_28
 (
 	.q /* OUT */ (srcd2_0[28]),
 	.d /* IN */ (srcd1_0[28]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_29
 (
 	.q /* OUT */ (srcd2_0[29]),
 	.d /* IN */ (srcd1_0[29]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_30
 (
 	.q /* OUT */ (srcd2_0[30]),
 	.d /* IN */ (srcd1_0[30]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_31
 (
 	.q /* OUT */ (srcd2_0[31]),
 	.d /* IN */ (srcd1_0[31]),
-	.g /* IN */ (srcd2ldg_0)
+	.g /* IN */ (srcd2ldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_32
 (
 	.q /* OUT */ (srcd2_1[0]),
 	.d /* IN */ (srcd1_1[0]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_33
 (
 	.q /* OUT */ (srcd2_1[1]),
 	.d /* IN */ (srcd1_1[1]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_34
 (
 	.q /* OUT */ (srcd2_1[2]),
 	.d /* IN */ (srcd1_1[2]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_35
 (
 	.q /* OUT */ (srcd2_1[3]),
 	.d /* IN */ (srcd1_1[3]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_36
 (
 	.q /* OUT */ (srcd2_1[4]),
 	.d /* IN */ (srcd1_1[4]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_37
 (
 	.q /* OUT */ (srcd2_1[5]),
 	.d /* IN */ (srcd1_1[5]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_38
 (
 	.q /* OUT */ (srcd2_1[6]),
 	.d /* IN */ (srcd1_1[6]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_39
 (
 	.q /* OUT */ (srcd2_1[7]),
 	.d /* IN */ (srcd1_1[7]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_40
 (
 	.q /* OUT */ (srcd2_1[8]),
 	.d /* IN */ (srcd1_1[8]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_41
 (
 	.q /* OUT */ (srcd2_1[9]),
 	.d /* IN */ (srcd1_1[9]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_42
 (
 	.q /* OUT */ (srcd2_1[10]),
 	.d /* IN */ (srcd1_1[10]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_43
 (
 	.q /* OUT */ (srcd2_1[11]),
 	.d /* IN */ (srcd1_1[11]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_44
 (
 	.q /* OUT */ (srcd2_1[12]),
 	.d /* IN */ (srcd1_1[12]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_45
 (
 	.q /* OUT */ (srcd2_1[13]),
 	.d /* IN */ (srcd1_1[13]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_46
 (
 	.q /* OUT */ (srcd2_1[14]),
 	.d /* IN */ (srcd1_1[14]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_47
 (
 	.q /* OUT */ (srcd2_1[15]),
 	.d /* IN */ (srcd1_1[15]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_48
 (
 	.q /* OUT */ (srcd2_1[16]),
 	.d /* IN */ (srcd1_1[16]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_49
 (
 	.q /* OUT */ (srcd2_1[17]),
 	.d /* IN */ (srcd1_1[17]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_50
 (
 	.q /* OUT */ (srcd2_1[18]),
 	.d /* IN */ (srcd1_1[18]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_51
 (
 	.q /* OUT */ (srcd2_1[19]),
 	.d /* IN */ (srcd1_1[19]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_52
 (
 	.q /* OUT */ (srcd2_1[20]),
 	.d /* IN */ (srcd1_1[20]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_53
 (
 	.q /* OUT */ (srcd2_1[21]),
 	.d /* IN */ (srcd1_1[21]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_54
 (
 	.q /* OUT */ (srcd2_1[22]),
 	.d /* IN */ (srcd1_1[22]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_55
 (
 	.q /* OUT */ (srcd2_1[23]),
 	.d /* IN */ (srcd1_1[23]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_56
 (
 	.q /* OUT */ (srcd2_1[24]),
 	.d /* IN */ (srcd1_1[24]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_57
 (
 	.q /* OUT */ (srcd2_1[25]),
 	.d /* IN */ (srcd1_1[25]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_58
 (
 	.q /* OUT */ (srcd2_1[26]),
 	.d /* IN */ (srcd1_1[26]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_59
 (
 	.q /* OUT */ (srcd2_1[27]),
 	.d /* IN */ (srcd1_1[27]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_60
 (
 	.q /* OUT */ (srcd2_1[28]),
 	.d /* IN */ (srcd1_1[28]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_61
 (
 	.q /* OUT */ (srcd2_1[29]),
 	.d /* IN */ (srcd1_1[29]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_62
 (
 	.q /* OUT */ (srcd2_1[30]),
 	.d /* IN */ (srcd1_1[30]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcd2_from_0_to_1_inst_63
 (
 	.q /* OUT */ (srcd2_1[31]),
 	.d /* IN */ (srcd1_1[31]),
-	.g /* IN */ (srcd2ldg_1)
+	.g /* IN */ (srcd2ldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (108) - src_shift : srcshift
@@ -2850,385 +2979,449 @@ fd1q sz1_from_0_to_3_inst_0
 (
 	.q /* OUT */ (sz1_0[0]),
 	.d /* IN */ (srcz1i_0[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_1
 (
 	.q /* OUT */ (sz1_0[1]),
 	.d /* IN */ (srcz1i_0[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_2
 (
 	.q /* OUT */ (sz1_0[2]),
 	.d /* IN */ (srcz1i_0[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_3
 (
 	.q /* OUT */ (sz1_0[3]),
 	.d /* IN */ (srcz1i_0[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_4
 (
 	.q /* OUT */ (sz1_0[4]),
 	.d /* IN */ (srcz1i_0[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_5
 (
 	.q /* OUT */ (sz1_0[5]),
 	.d /* IN */ (srcz1i_0[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_6
 (
 	.q /* OUT */ (sz1_0[6]),
 	.d /* IN */ (srcz1i_0[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_7
 (
 	.q /* OUT */ (sz1_0[7]),
 	.d /* IN */ (srcz1i_0[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_8
 (
 	.q /* OUT */ (sz1_0[8]),
 	.d /* IN */ (srcz1i_0[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_9
 (
 	.q /* OUT */ (sz1_0[9]),
 	.d /* IN */ (srcz1i_0[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_10
 (
 	.q /* OUT */ (sz1_0[10]),
 	.d /* IN */ (srcz1i_0[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_11
 (
 	.q /* OUT */ (sz1_0[11]),
 	.d /* IN */ (srcz1i_0[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_12
 (
 	.q /* OUT */ (sz1_0[12]),
 	.d /* IN */ (srcz1i_0[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_13
 (
 	.q /* OUT */ (sz1_0[13]),
 	.d /* IN */ (srcz1i_0[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_14
 (
 	.q /* OUT */ (sz1_0[14]),
 	.d /* IN */ (srcz1i_0[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_15
 (
 	.q /* OUT */ (sz1_0[15]),
 	.d /* IN */ (srcz1i_0[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_16
 (
 	.q /* OUT */ (sz1_1[0]),
 	.d /* IN */ (srcz1i_1[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_17
 (
 	.q /* OUT */ (sz1_1[1]),
 	.d /* IN */ (srcz1i_1[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_18
 (
 	.q /* OUT */ (sz1_1[2]),
 	.d /* IN */ (srcz1i_1[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_19
 (
 	.q /* OUT */ (sz1_1[3]),
 	.d /* IN */ (srcz1i_1[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_20
 (
 	.q /* OUT */ (sz1_1[4]),
 	.d /* IN */ (srcz1i_1[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_21
 (
 	.q /* OUT */ (sz1_1[5]),
 	.d /* IN */ (srcz1i_1[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_22
 (
 	.q /* OUT */ (sz1_1[6]),
 	.d /* IN */ (srcz1i_1[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_23
 (
 	.q /* OUT */ (sz1_1[7]),
 	.d /* IN */ (srcz1i_1[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_24
 (
 	.q /* OUT */ (sz1_1[8]),
 	.d /* IN */ (srcz1i_1[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_25
 (
 	.q /* OUT */ (sz1_1[9]),
 	.d /* IN */ (srcz1i_1[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_26
 (
 	.q /* OUT */ (sz1_1[10]),
 	.d /* IN */ (srcz1i_1[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_27
 (
 	.q /* OUT */ (sz1_1[11]),
 	.d /* IN */ (srcz1i_1[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_28
 (
 	.q /* OUT */ (sz1_1[12]),
 	.d /* IN */ (srcz1i_1[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_29
 (
 	.q /* OUT */ (sz1_1[13]),
 	.d /* IN */ (srcz1i_1[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_30
 (
 	.q /* OUT */ (sz1_1[14]),
 	.d /* IN */ (srcz1i_1[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_31
 (
 	.q /* OUT */ (sz1_1[15]),
 	.d /* IN */ (srcz1i_1[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_32
 (
 	.q /* OUT */ (sz1_2[0]),
 	.d /* IN */ (srcz1i_2[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_33
 (
 	.q /* OUT */ (sz1_2[1]),
 	.d /* IN */ (srcz1i_2[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_34
 (
 	.q /* OUT */ (sz1_2[2]),
 	.d /* IN */ (srcz1i_2[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_35
 (
 	.q /* OUT */ (sz1_2[3]),
 	.d /* IN */ (srcz1i_2[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_36
 (
 	.q /* OUT */ (sz1_2[4]),
 	.d /* IN */ (srcz1i_2[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_37
 (
 	.q /* OUT */ (sz1_2[5]),
 	.d /* IN */ (srcz1i_2[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_38
 (
 	.q /* OUT */ (sz1_2[6]),
 	.d /* IN */ (srcz1i_2[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_39
 (
 	.q /* OUT */ (sz1_2[7]),
 	.d /* IN */ (srcz1i_2[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_40
 (
 	.q /* OUT */ (sz1_2[8]),
 	.d /* IN */ (srcz1i_2[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_41
 (
 	.q /* OUT */ (sz1_2[9]),
 	.d /* IN */ (srcz1i_2[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_42
 (
 	.q /* OUT */ (sz1_2[10]),
 	.d /* IN */ (srcz1i_2[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_43
 (
 	.q /* OUT */ (sz1_2[11]),
 	.d /* IN */ (srcz1i_2[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_44
 (
 	.q /* OUT */ (sz1_2[12]),
 	.d /* IN */ (srcz1i_2[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_45
 (
 	.q /* OUT */ (sz1_2[13]),
 	.d /* IN */ (srcz1i_2[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_46
 (
 	.q /* OUT */ (sz1_2[14]),
 	.d /* IN */ (srcz1i_2[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_47
 (
 	.q /* OUT */ (sz1_2[15]),
 	.d /* IN */ (srcz1i_2[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_48
 (
 	.q /* OUT */ (sz1_3[0]),
 	.d /* IN */ (srcz1i_3[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_49
 (
 	.q /* OUT */ (sz1_3[1]),
 	.d /* IN */ (srcz1i_3[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_50
 (
 	.q /* OUT */ (sz1_3[2]),
 	.d /* IN */ (srcz1i_3[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_51
 (
 	.q /* OUT */ (sz1_3[3]),
 	.d /* IN */ (srcz1i_3[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_52
 (
 	.q /* OUT */ (sz1_3[4]),
 	.d /* IN */ (srcz1i_3[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_53
 (
 	.q /* OUT */ (sz1_3[5]),
 	.d /* IN */ (srcz1i_3[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_54
 (
 	.q /* OUT */ (sz1_3[6]),
 	.d /* IN */ (srcz1i_3[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_55
 (
 	.q /* OUT */ (sz1_3[7]),
 	.d /* IN */ (srcz1i_3[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_56
 (
 	.q /* OUT */ (sz1_3[8]),
 	.d /* IN */ (srcz1i_3[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_57
 (
 	.q /* OUT */ (sz1_3[9]),
 	.d /* IN */ (srcz1i_3[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_58
 (
 	.q /* OUT */ (sz1_3[10]),
 	.d /* IN */ (srcz1i_3[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_59
 (
 	.q /* OUT */ (sz1_3[11]),
 	.d /* IN */ (srcz1i_3[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_60
 (
 	.q /* OUT */ (sz1_3[12]),
 	.d /* IN */ (srcz1i_3[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_61
 (
 	.q /* OUT */ (sz1_3[13]),
 	.d /* IN */ (srcz1i_3[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_62
 (
 	.q /* OUT */ (sz1_3[14]),
 	.d /* IN */ (srcz1i_3[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz1_from_0_to_3_inst_63
 (
 	.q /* OUT */ (sz1_3[15]),
 	.d /* IN */ (srcz1i_3[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (132) - srcz1[0] : join
@@ -3976,385 +4169,449 @@ fd1q sz2_from_0_to_3_inst_0
 (
 	.q /* OUT */ (sz2_0[0]),
 	.d /* IN */ (srcz2i_0[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_1
 (
 	.q /* OUT */ (sz2_0[1]),
 	.d /* IN */ (srcz2i_0[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_2
 (
 	.q /* OUT */ (sz2_0[2]),
 	.d /* IN */ (srcz2i_0[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_3
 (
 	.q /* OUT */ (sz2_0[3]),
 	.d /* IN */ (srcz2i_0[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_4
 (
 	.q /* OUT */ (sz2_0[4]),
 	.d /* IN */ (srcz2i_0[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_5
 (
 	.q /* OUT */ (sz2_0[5]),
 	.d /* IN */ (srcz2i_0[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_6
 (
 	.q /* OUT */ (sz2_0[6]),
 	.d /* IN */ (srcz2i_0[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_7
 (
 	.q /* OUT */ (sz2_0[7]),
 	.d /* IN */ (srcz2i_0[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_8
 (
 	.q /* OUT */ (sz2_0[8]),
 	.d /* IN */ (srcz2i_0[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_9
 (
 	.q /* OUT */ (sz2_0[9]),
 	.d /* IN */ (srcz2i_0[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_10
 (
 	.q /* OUT */ (sz2_0[10]),
 	.d /* IN */ (srcz2i_0[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_11
 (
 	.q /* OUT */ (sz2_0[11]),
 	.d /* IN */ (srcz2i_0[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_12
 (
 	.q /* OUT */ (sz2_0[12]),
 	.d /* IN */ (srcz2i_0[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_13
 (
 	.q /* OUT */ (sz2_0[13]),
 	.d /* IN */ (srcz2i_0[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_14
 (
 	.q /* OUT */ (sz2_0[14]),
 	.d /* IN */ (srcz2i_0[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_15
 (
 	.q /* OUT */ (sz2_0[15]),
 	.d /* IN */ (srcz2i_0[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_16
 (
 	.q /* OUT */ (sz2_1[0]),
 	.d /* IN */ (srcz2i_1[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_17
 (
 	.q /* OUT */ (sz2_1[1]),
 	.d /* IN */ (srcz2i_1[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_18
 (
 	.q /* OUT */ (sz2_1[2]),
 	.d /* IN */ (srcz2i_1[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_19
 (
 	.q /* OUT */ (sz2_1[3]),
 	.d /* IN */ (srcz2i_1[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_20
 (
 	.q /* OUT */ (sz2_1[4]),
 	.d /* IN */ (srcz2i_1[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_21
 (
 	.q /* OUT */ (sz2_1[5]),
 	.d /* IN */ (srcz2i_1[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_22
 (
 	.q /* OUT */ (sz2_1[6]),
 	.d /* IN */ (srcz2i_1[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_23
 (
 	.q /* OUT */ (sz2_1[7]),
 	.d /* IN */ (srcz2i_1[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_24
 (
 	.q /* OUT */ (sz2_1[8]),
 	.d /* IN */ (srcz2i_1[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_25
 (
 	.q /* OUT */ (sz2_1[9]),
 	.d /* IN */ (srcz2i_1[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_26
 (
 	.q /* OUT */ (sz2_1[10]),
 	.d /* IN */ (srcz2i_1[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_27
 (
 	.q /* OUT */ (sz2_1[11]),
 	.d /* IN */ (srcz2i_1[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_28
 (
 	.q /* OUT */ (sz2_1[12]),
 	.d /* IN */ (srcz2i_1[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_29
 (
 	.q /* OUT */ (sz2_1[13]),
 	.d /* IN */ (srcz2i_1[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_30
 (
 	.q /* OUT */ (sz2_1[14]),
 	.d /* IN */ (srcz2i_1[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_31
 (
 	.q /* OUT */ (sz2_1[15]),
 	.d /* IN */ (srcz2i_1[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_32
 (
 	.q /* OUT */ (sz2_2[0]),
 	.d /* IN */ (srcz2i_2[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_33
 (
 	.q /* OUT */ (sz2_2[1]),
 	.d /* IN */ (srcz2i_2[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_34
 (
 	.q /* OUT */ (sz2_2[2]),
 	.d /* IN */ (srcz2i_2[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_35
 (
 	.q /* OUT */ (sz2_2[3]),
 	.d /* IN */ (srcz2i_2[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_36
 (
 	.q /* OUT */ (sz2_2[4]),
 	.d /* IN */ (srcz2i_2[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_37
 (
 	.q /* OUT */ (sz2_2[5]),
 	.d /* IN */ (srcz2i_2[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_38
 (
 	.q /* OUT */ (sz2_2[6]),
 	.d /* IN */ (srcz2i_2[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_39
 (
 	.q /* OUT */ (sz2_2[7]),
 	.d /* IN */ (srcz2i_2[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_40
 (
 	.q /* OUT */ (sz2_2[8]),
 	.d /* IN */ (srcz2i_2[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_41
 (
 	.q /* OUT */ (sz2_2[9]),
 	.d /* IN */ (srcz2i_2[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_42
 (
 	.q /* OUT */ (sz2_2[10]),
 	.d /* IN */ (srcz2i_2[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_43
 (
 	.q /* OUT */ (sz2_2[11]),
 	.d /* IN */ (srcz2i_2[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_44
 (
 	.q /* OUT */ (sz2_2[12]),
 	.d /* IN */ (srcz2i_2[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_45
 (
 	.q /* OUT */ (sz2_2[13]),
 	.d /* IN */ (srcz2i_2[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_46
 (
 	.q /* OUT */ (sz2_2[14]),
 	.d /* IN */ (srcz2i_2[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_47
 (
 	.q /* OUT */ (sz2_2[15]),
 	.d /* IN */ (srcz2i_2[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_48
 (
 	.q /* OUT */ (sz2_3[0]),
 	.d /* IN */ (srcz2i_3[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_49
 (
 	.q /* OUT */ (sz2_3[1]),
 	.d /* IN */ (srcz2i_3[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_50
 (
 	.q /* OUT */ (sz2_3[2]),
 	.d /* IN */ (srcz2i_3[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_51
 (
 	.q /* OUT */ (sz2_3[3]),
 	.d /* IN */ (srcz2i_3[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_52
 (
 	.q /* OUT */ (sz2_3[4]),
 	.d /* IN */ (srcz2i_3[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_53
 (
 	.q /* OUT */ (sz2_3[5]),
 	.d /* IN */ (srcz2i_3[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_54
 (
 	.q /* OUT */ (sz2_3[6]),
 	.d /* IN */ (srcz2i_3[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_55
 (
 	.q /* OUT */ (sz2_3[7]),
 	.d /* IN */ (srcz2i_3[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_56
 (
 	.q /* OUT */ (sz2_3[8]),
 	.d /* IN */ (srcz2i_3[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_57
 (
 	.q /* OUT */ (sz2_3[9]),
 	.d /* IN */ (srcz2i_3[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_58
 (
 	.q /* OUT */ (sz2_3[10]),
 	.d /* IN */ (srcz2i_3[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_59
 (
 	.q /* OUT */ (sz2_3[11]),
 	.d /* IN */ (srcz2i_3[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_60
 (
 	.q /* OUT */ (sz2_3[12]),
 	.d /* IN */ (srcz2i_3[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_61
 (
 	.q /* OUT */ (sz2_3[13]),
 	.d /* IN */ (srcz2i_3[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_62
 (
 	.q /* OUT */ (sz2_3[14]),
 	.d /* IN */ (srcz2i_3[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q sz2_from_0_to_3_inst_63
 (
 	.q /* OUT */ (sz2_3[15]),
 	.d /* IN */ (srcz2i_3[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (164) - srcz2[0] : join
@@ -4434,385 +4691,449 @@ ldp1q dstd_from_0_to_1_inst_0
 (
 	.q /* OUT */ (dstd_0[0]),
 	.d /* IN */ (load_data_0[0]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_1
 (
 	.q /* OUT */ (dstd_0[1]),
 	.d /* IN */ (load_data_0[1]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_2
 (
 	.q /* OUT */ (dstd_0[2]),
 	.d /* IN */ (load_data_0[2]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_3
 (
 	.q /* OUT */ (dstd_0[3]),
 	.d /* IN */ (load_data_0[3]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_4
 (
 	.q /* OUT */ (dstd_0[4]),
 	.d /* IN */ (load_data_0[4]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_5
 (
 	.q /* OUT */ (dstd_0[5]),
 	.d /* IN */ (load_data_0[5]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_6
 (
 	.q /* OUT */ (dstd_0[6]),
 	.d /* IN */ (load_data_0[6]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_7
 (
 	.q /* OUT */ (dstd_0[7]),
 	.d /* IN */ (load_data_0[7]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_8
 (
 	.q /* OUT */ (dstd_0[8]),
 	.d /* IN */ (load_data_0[8]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_9
 (
 	.q /* OUT */ (dstd_0[9]),
 	.d /* IN */ (load_data_0[9]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_10
 (
 	.q /* OUT */ (dstd_0[10]),
 	.d /* IN */ (load_data_0[10]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_11
 (
 	.q /* OUT */ (dstd_0[11]),
 	.d /* IN */ (load_data_0[11]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_12
 (
 	.q /* OUT */ (dstd_0[12]),
 	.d /* IN */ (load_data_0[12]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_13
 (
 	.q /* OUT */ (dstd_0[13]),
 	.d /* IN */ (load_data_0[13]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_14
 (
 	.q /* OUT */ (dstd_0[14]),
 	.d /* IN */ (load_data_0[14]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_15
 (
 	.q /* OUT */ (dstd_0[15]),
 	.d /* IN */ (load_data_0[15]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_16
 (
 	.q /* OUT */ (dstd_0[16]),
 	.d /* IN */ (load_data_0[16]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_17
 (
 	.q /* OUT */ (dstd_0[17]),
 	.d /* IN */ (load_data_0[17]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_18
 (
 	.q /* OUT */ (dstd_0[18]),
 	.d /* IN */ (load_data_0[18]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_19
 (
 	.q /* OUT */ (dstd_0[19]),
 	.d /* IN */ (load_data_0[19]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_20
 (
 	.q /* OUT */ (dstd_0[20]),
 	.d /* IN */ (load_data_0[20]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_21
 (
 	.q /* OUT */ (dstd_0[21]),
 	.d /* IN */ (load_data_0[21]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_22
 (
 	.q /* OUT */ (dstd_0[22]),
 	.d /* IN */ (load_data_0[22]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_23
 (
 	.q /* OUT */ (dstd_0[23]),
 	.d /* IN */ (load_data_0[23]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_24
 (
 	.q /* OUT */ (dstd_0[24]),
 	.d /* IN */ (load_data_0[24]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_25
 (
 	.q /* OUT */ (dstd_0[25]),
 	.d /* IN */ (load_data_0[25]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_26
 (
 	.q /* OUT */ (dstd_0[26]),
 	.d /* IN */ (load_data_0[26]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_27
 (
 	.q /* OUT */ (dstd_0[27]),
 	.d /* IN */ (load_data_0[27]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_28
 (
 	.q /* OUT */ (dstd_0[28]),
 	.d /* IN */ (load_data_0[28]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_29
 (
 	.q /* OUT */ (dstd_0[29]),
 	.d /* IN */ (load_data_0[29]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_30
 (
 	.q /* OUT */ (dstd_0[30]),
 	.d /* IN */ (load_data_0[30]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_31
 (
 	.q /* OUT */ (dstd_0[31]),
 	.d /* IN */ (load_data_0[31]),
-	.g /* IN */ (dstdldg_0)
+	.g /* IN */ (dstdldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_32
 (
 	.q /* OUT */ (dstd_1[0]),
 	.d /* IN */ (load_data_1[0]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_33
 (
 	.q /* OUT */ (dstd_1[1]),
 	.d /* IN */ (load_data_1[1]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_34
 (
 	.q /* OUT */ (dstd_1[2]),
 	.d /* IN */ (load_data_1[2]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_35
 (
 	.q /* OUT */ (dstd_1[3]),
 	.d /* IN */ (load_data_1[3]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_36
 (
 	.q /* OUT */ (dstd_1[4]),
 	.d /* IN */ (load_data_1[4]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_37
 (
 	.q /* OUT */ (dstd_1[5]),
 	.d /* IN */ (load_data_1[5]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_38
 (
 	.q /* OUT */ (dstd_1[6]),
 	.d /* IN */ (load_data_1[6]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_39
 (
 	.q /* OUT */ (dstd_1[7]),
 	.d /* IN */ (load_data_1[7]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_40
 (
 	.q /* OUT */ (dstd_1[8]),
 	.d /* IN */ (load_data_1[8]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_41
 (
 	.q /* OUT */ (dstd_1[9]),
 	.d /* IN */ (load_data_1[9]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_42
 (
 	.q /* OUT */ (dstd_1[10]),
 	.d /* IN */ (load_data_1[10]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_43
 (
 	.q /* OUT */ (dstd_1[11]),
 	.d /* IN */ (load_data_1[11]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_44
 (
 	.q /* OUT */ (dstd_1[12]),
 	.d /* IN */ (load_data_1[12]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_45
 (
 	.q /* OUT */ (dstd_1[13]),
 	.d /* IN */ (load_data_1[13]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_46
 (
 	.q /* OUT */ (dstd_1[14]),
 	.d /* IN */ (load_data_1[14]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_47
 (
 	.q /* OUT */ (dstd_1[15]),
 	.d /* IN */ (load_data_1[15]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_48
 (
 	.q /* OUT */ (dstd_1[16]),
 	.d /* IN */ (load_data_1[16]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_49
 (
 	.q /* OUT */ (dstd_1[17]),
 	.d /* IN */ (load_data_1[17]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_50
 (
 	.q /* OUT */ (dstd_1[18]),
 	.d /* IN */ (load_data_1[18]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_51
 (
 	.q /* OUT */ (dstd_1[19]),
 	.d /* IN */ (load_data_1[19]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_52
 (
 	.q /* OUT */ (dstd_1[20]),
 	.d /* IN */ (load_data_1[20]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_53
 (
 	.q /* OUT */ (dstd_1[21]),
 	.d /* IN */ (load_data_1[21]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_54
 (
 	.q /* OUT */ (dstd_1[22]),
 	.d /* IN */ (load_data_1[22]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_55
 (
 	.q /* OUT */ (dstd_1[23]),
 	.d /* IN */ (load_data_1[23]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_56
 (
 	.q /* OUT */ (dstd_1[24]),
 	.d /* IN */ (load_data_1[24]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_57
 (
 	.q /* OUT */ (dstd_1[25]),
 	.d /* IN */ (load_data_1[25]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_58
 (
 	.q /* OUT */ (dstd_1[26]),
 	.d /* IN */ (load_data_1[26]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_59
 (
 	.q /* OUT */ (dstd_1[27]),
 	.d /* IN */ (load_data_1[27]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_60
 (
 	.q /* OUT */ (dstd_1[28]),
 	.d /* IN */ (load_data_1[28]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_61
 (
 	.q /* OUT */ (dstd_1[29]),
 	.d /* IN */ (load_data_1[29]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_62
 (
 	.q /* OUT */ (dstd_1[30]),
 	.d /* IN */ (load_data_1[30]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstd_from_0_to_1_inst_63
 (
 	.q /* OUT */ (dstd_1[31]),
 	.d /* IN */ (load_data_1[31]),
-	.g /* IN */ (dstdldg_1)
+	.g /* IN */ (dstdldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (176) - dstzldg[0-1] : an2u
@@ -4824,385 +5145,449 @@ ldp1q dstz_from_0_to_1_inst_0
 (
 	.q /* OUT */ (dstz_0[0]),
 	.d /* IN */ (load_data_0[0]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_1
 (
 	.q /* OUT */ (dstz_0[1]),
 	.d /* IN */ (load_data_0[1]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_2
 (
 	.q /* OUT */ (dstz_0[2]),
 	.d /* IN */ (load_data_0[2]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_3
 (
 	.q /* OUT */ (dstz_0[3]),
 	.d /* IN */ (load_data_0[3]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_4
 (
 	.q /* OUT */ (dstz_0[4]),
 	.d /* IN */ (load_data_0[4]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_5
 (
 	.q /* OUT */ (dstz_0[5]),
 	.d /* IN */ (load_data_0[5]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_6
 (
 	.q /* OUT */ (dstz_0[6]),
 	.d /* IN */ (load_data_0[6]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_7
 (
 	.q /* OUT */ (dstz_0[7]),
 	.d /* IN */ (load_data_0[7]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_8
 (
 	.q /* OUT */ (dstz_0[8]),
 	.d /* IN */ (load_data_0[8]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_9
 (
 	.q /* OUT */ (dstz_0[9]),
 	.d /* IN */ (load_data_0[9]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_10
 (
 	.q /* OUT */ (dstz_0[10]),
 	.d /* IN */ (load_data_0[10]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_11
 (
 	.q /* OUT */ (dstz_0[11]),
 	.d /* IN */ (load_data_0[11]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_12
 (
 	.q /* OUT */ (dstz_0[12]),
 	.d /* IN */ (load_data_0[12]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_13
 (
 	.q /* OUT */ (dstz_0[13]),
 	.d /* IN */ (load_data_0[13]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_14
 (
 	.q /* OUT */ (dstz_0[14]),
 	.d /* IN */ (load_data_0[14]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_15
 (
 	.q /* OUT */ (dstz_0[15]),
 	.d /* IN */ (load_data_0[15]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_16
 (
 	.q /* OUT */ (dstz_0[16]),
 	.d /* IN */ (load_data_0[16]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_17
 (
 	.q /* OUT */ (dstz_0[17]),
 	.d /* IN */ (load_data_0[17]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_18
 (
 	.q /* OUT */ (dstz_0[18]),
 	.d /* IN */ (load_data_0[18]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_19
 (
 	.q /* OUT */ (dstz_0[19]),
 	.d /* IN */ (load_data_0[19]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_20
 (
 	.q /* OUT */ (dstz_0[20]),
 	.d /* IN */ (load_data_0[20]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_21
 (
 	.q /* OUT */ (dstz_0[21]),
 	.d /* IN */ (load_data_0[21]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_22
 (
 	.q /* OUT */ (dstz_0[22]),
 	.d /* IN */ (load_data_0[22]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_23
 (
 	.q /* OUT */ (dstz_0[23]),
 	.d /* IN */ (load_data_0[23]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_24
 (
 	.q /* OUT */ (dstz_0[24]),
 	.d /* IN */ (load_data_0[24]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_25
 (
 	.q /* OUT */ (dstz_0[25]),
 	.d /* IN */ (load_data_0[25]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_26
 (
 	.q /* OUT */ (dstz_0[26]),
 	.d /* IN */ (load_data_0[26]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_27
 (
 	.q /* OUT */ (dstz_0[27]),
 	.d /* IN */ (load_data_0[27]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_28
 (
 	.q /* OUT */ (dstz_0[28]),
 	.d /* IN */ (load_data_0[28]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_29
 (
 	.q /* OUT */ (dstz_0[29]),
 	.d /* IN */ (load_data_0[29]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_30
 (
 	.q /* OUT */ (dstz_0[30]),
 	.d /* IN */ (load_data_0[30]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_31
 (
 	.q /* OUT */ (dstz_0[31]),
 	.d /* IN */ (load_data_0[31]),
-	.g /* IN */ (dstzldg_0)
+	.g /* IN */ (dstzldg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_32
 (
 	.q /* OUT */ (dstz_1[0]),
 	.d /* IN */ (load_data_1[0]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_33
 (
 	.q /* OUT */ (dstz_1[1]),
 	.d /* IN */ (load_data_1[1]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_34
 (
 	.q /* OUT */ (dstz_1[2]),
 	.d /* IN */ (load_data_1[2]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_35
 (
 	.q /* OUT */ (dstz_1[3]),
 	.d /* IN */ (load_data_1[3]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_36
 (
 	.q /* OUT */ (dstz_1[4]),
 	.d /* IN */ (load_data_1[4]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_37
 (
 	.q /* OUT */ (dstz_1[5]),
 	.d /* IN */ (load_data_1[5]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_38
 (
 	.q /* OUT */ (dstz_1[6]),
 	.d /* IN */ (load_data_1[6]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_39
 (
 	.q /* OUT */ (dstz_1[7]),
 	.d /* IN */ (load_data_1[7]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_40
 (
 	.q /* OUT */ (dstz_1[8]),
 	.d /* IN */ (load_data_1[8]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_41
 (
 	.q /* OUT */ (dstz_1[9]),
 	.d /* IN */ (load_data_1[9]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_42
 (
 	.q /* OUT */ (dstz_1[10]),
 	.d /* IN */ (load_data_1[10]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_43
 (
 	.q /* OUT */ (dstz_1[11]),
 	.d /* IN */ (load_data_1[11]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_44
 (
 	.q /* OUT */ (dstz_1[12]),
 	.d /* IN */ (load_data_1[12]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_45
 (
 	.q /* OUT */ (dstz_1[13]),
 	.d /* IN */ (load_data_1[13]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_46
 (
 	.q /* OUT */ (dstz_1[14]),
 	.d /* IN */ (load_data_1[14]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_47
 (
 	.q /* OUT */ (dstz_1[15]),
 	.d /* IN */ (load_data_1[15]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_48
 (
 	.q /* OUT */ (dstz_1[16]),
 	.d /* IN */ (load_data_1[16]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_49
 (
 	.q /* OUT */ (dstz_1[17]),
 	.d /* IN */ (load_data_1[17]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_50
 (
 	.q /* OUT */ (dstz_1[18]),
 	.d /* IN */ (load_data_1[18]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_51
 (
 	.q /* OUT */ (dstz_1[19]),
 	.d /* IN */ (load_data_1[19]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_52
 (
 	.q /* OUT */ (dstz_1[20]),
 	.d /* IN */ (load_data_1[20]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_53
 (
 	.q /* OUT */ (dstz_1[21]),
 	.d /* IN */ (load_data_1[21]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_54
 (
 	.q /* OUT */ (dstz_1[22]),
 	.d /* IN */ (load_data_1[22]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_55
 (
 	.q /* OUT */ (dstz_1[23]),
 	.d /* IN */ (load_data_1[23]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_56
 (
 	.q /* OUT */ (dstz_1[24]),
 	.d /* IN */ (load_data_1[24]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_57
 (
 	.q /* OUT */ (dstz_1[25]),
 	.d /* IN */ (load_data_1[25]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_58
 (
 	.q /* OUT */ (dstz_1[26]),
 	.d /* IN */ (load_data_1[26]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_59
 (
 	.q /* OUT */ (dstz_1[27]),
 	.d /* IN */ (load_data_1[27]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_60
 (
 	.q /* OUT */ (dstz_1[28]),
 	.d /* IN */ (load_data_1[28]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_61
 (
 	.q /* OUT */ (dstz_1[29]),
 	.d /* IN */ (load_data_1[29]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_62
 (
 	.q /* OUT */ (dstz_1[30]),
 	.d /* IN */ (load_data_1[30]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dstz_from_0_to_1_inst_63
 (
 	.q /* OUT */ (dstz_1[31]),
 	.d /* IN */ (load_data_1[31]),
-	.g /* IN */ (dstzldg_1)
+	.g /* IN */ (dstzldg_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (188) - patdi[0-7] : mx4
@@ -5770,385 +6155,449 @@ fd1q pdu_from_0_to_63_inst_0
 (
 	.q /* OUT */ (pdu_0),
 	.d /* IN */ (patdi_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_1
 (
 	.q /* OUT */ (pdu_1),
 	.d /* IN */ (patdi_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_2
 (
 	.q /* OUT */ (pdu_2),
 	.d /* IN */ (patdi_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_3
 (
 	.q /* OUT */ (pdu_3),
 	.d /* IN */ (patdi_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_4
 (
 	.q /* OUT */ (pdu_4),
 	.d /* IN */ (patdi_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_5
 (
 	.q /* OUT */ (pdu_5),
 	.d /* IN */ (patdi_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_6
 (
 	.q /* OUT */ (pdu_6),
 	.d /* IN */ (patdi_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_7
 (
 	.q /* OUT */ (pdu_7),
 	.d /* IN */ (patdi_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_8
 (
 	.q /* OUT */ (pdu_8),
 	.d /* IN */ (patdi_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_9
 (
 	.q /* OUT */ (pdu_9),
 	.d /* IN */ (patdi_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_10
 (
 	.q /* OUT */ (pdu_10),
 	.d /* IN */ (patdi_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_11
 (
 	.q /* OUT */ (pdu_11),
 	.d /* IN */ (patdi_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_12
 (
 	.q /* OUT */ (pdu_12),
 	.d /* IN */ (patdi_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_13
 (
 	.q /* OUT */ (pdu_13),
 	.d /* IN */ (patdi_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_14
 (
 	.q /* OUT */ (pdu_14),
 	.d /* IN */ (patdi_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_15
 (
 	.q /* OUT */ (pdu_15),
 	.d /* IN */ (patdi_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_16
 (
 	.q /* OUT */ (pdu_16),
 	.d /* IN */ (patdi_16),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_17
 (
 	.q /* OUT */ (pdu_17),
 	.d /* IN */ (patdi_17),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_18
 (
 	.q /* OUT */ (pdu_18),
 	.d /* IN */ (patdi_18),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_19
 (
 	.q /* OUT */ (pdu_19),
 	.d /* IN */ (patdi_19),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_20
 (
 	.q /* OUT */ (pdu_20),
 	.d /* IN */ (patdi_20),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_21
 (
 	.q /* OUT */ (pdu_21),
 	.d /* IN */ (patdi_21),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_22
 (
 	.q /* OUT */ (pdu_22),
 	.d /* IN */ (patdi_22),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_23
 (
 	.q /* OUT */ (pdu_23),
 	.d /* IN */ (patdi_23),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_24
 (
 	.q /* OUT */ (pdu_24),
 	.d /* IN */ (patdi_24),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_25
 (
 	.q /* OUT */ (pdu_25),
 	.d /* IN */ (patdi_25),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_26
 (
 	.q /* OUT */ (pdu_26),
 	.d /* IN */ (patdi_26),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_27
 (
 	.q /* OUT */ (pdu_27),
 	.d /* IN */ (patdi_27),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_28
 (
 	.q /* OUT */ (pdu_28),
 	.d /* IN */ (patdi_28),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_29
 (
 	.q /* OUT */ (pdu_29),
 	.d /* IN */ (patdi_29),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_30
 (
 	.q /* OUT */ (pdu_30),
 	.d /* IN */ (patdi_30),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_31
 (
 	.q /* OUT */ (pdu_31),
 	.d /* IN */ (patdi_31),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_32
 (
 	.q /* OUT */ (pdu_32),
 	.d /* IN */ (patdi_32),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_33
 (
 	.q /* OUT */ (pdu_33),
 	.d /* IN */ (patdi_33),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_34
 (
 	.q /* OUT */ (pdu_34),
 	.d /* IN */ (patdi_34),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_35
 (
 	.q /* OUT */ (pdu_35),
 	.d /* IN */ (patdi_35),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_36
 (
 	.q /* OUT */ (pdu_36),
 	.d /* IN */ (patdi_36),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_37
 (
 	.q /* OUT */ (pdu_37),
 	.d /* IN */ (patdi_37),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_38
 (
 	.q /* OUT */ (pdu_38),
 	.d /* IN */ (patdi_38),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_39
 (
 	.q /* OUT */ (pdu_39),
 	.d /* IN */ (patdi_39),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_40
 (
 	.q /* OUT */ (pdu_40),
 	.d /* IN */ (patdi_40),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_41
 (
 	.q /* OUT */ (pdu_41),
 	.d /* IN */ (patdi_41),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_42
 (
 	.q /* OUT */ (pdu_42),
 	.d /* IN */ (patdi_42),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_43
 (
 	.q /* OUT */ (pdu_43),
 	.d /* IN */ (patdi_43),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_44
 (
 	.q /* OUT */ (pdu_44),
 	.d /* IN */ (patdi_44),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_45
 (
 	.q /* OUT */ (pdu_45),
 	.d /* IN */ (patdi_45),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_46
 (
 	.q /* OUT */ (pdu_46),
 	.d /* IN */ (patdi_46),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_47
 (
 	.q /* OUT */ (pdu_47),
 	.d /* IN */ (patdi_47),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_48
 (
 	.q /* OUT */ (pdu_48),
 	.d /* IN */ (patdi_48),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_49
 (
 	.q /* OUT */ (pdu_49),
 	.d /* IN */ (patdi_49),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_50
 (
 	.q /* OUT */ (pdu_50),
 	.d /* IN */ (patdi_50),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_51
 (
 	.q /* OUT */ (pdu_51),
 	.d /* IN */ (patdi_51),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_52
 (
 	.q /* OUT */ (pdu_52),
 	.d /* IN */ (patdi_52),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_53
 (
 	.q /* OUT */ (pdu_53),
 	.d /* IN */ (patdi_53),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_54
 (
 	.q /* OUT */ (pdu_54),
 	.d /* IN */ (patdi_54),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_55
 (
 	.q /* OUT */ (pdu_55),
 	.d /* IN */ (patdi_55),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_56
 (
 	.q /* OUT */ (pdu_56),
 	.d /* IN */ (patdi_56),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_57
 (
 	.q /* OUT */ (pdu_57),
 	.d /* IN */ (patdi_57),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_58
 (
 	.q /* OUT */ (pdu_58),
 	.d /* IN */ (patdi_58),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_59
 (
 	.q /* OUT */ (pdu_59),
 	.d /* IN */ (patdi_59),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_60
 (
 	.q /* OUT */ (pdu_60),
 	.d /* IN */ (patdi_60),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_61
 (
 	.q /* OUT */ (pdu_61),
 	.d /* IN */ (patdi_61),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_62
 (
 	.q /* OUT */ (pdu_62),
 	.d /* IN */ (patdi_62),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pdu_from_0_to_63_inst_63
 (
 	.q /* OUT */ (pdu_63),
 	.d /* IN */ (patdi_63),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (209) - patdu[0] : join
@@ -6228,385 +6677,449 @@ ldp1q patd_from_0_to_1_inst_0
 (
 	.q /* OUT */ (patd_0[0]),
 	.d /* IN */ (patdu_0[0]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_1
 (
 	.q /* OUT */ (patd_0[1]),
 	.d /* IN */ (patdu_0[1]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_2
 (
 	.q /* OUT */ (patd_0[2]),
 	.d /* IN */ (patdu_0[2]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_3
 (
 	.q /* OUT */ (patd_0[3]),
 	.d /* IN */ (patdu_0[3]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_4
 (
 	.q /* OUT */ (patd_0[4]),
 	.d /* IN */ (patdu_0[4]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_5
 (
 	.q /* OUT */ (patd_0[5]),
 	.d /* IN */ (patdu_0[5]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_6
 (
 	.q /* OUT */ (patd_0[6]),
 	.d /* IN */ (patdu_0[6]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_7
 (
 	.q /* OUT */ (patd_0[7]),
 	.d /* IN */ (patdu_0[7]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_8
 (
 	.q /* OUT */ (patd_0[8]),
 	.d /* IN */ (patdu_0[8]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_9
 (
 	.q /* OUT */ (patd_0[9]),
 	.d /* IN */ (patdu_0[9]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_10
 (
 	.q /* OUT */ (patd_0[10]),
 	.d /* IN */ (patdu_0[10]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_11
 (
 	.q /* OUT */ (patd_0[11]),
 	.d /* IN */ (patdu_0[11]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_12
 (
 	.q /* OUT */ (patd_0[12]),
 	.d /* IN */ (patdu_0[12]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_13
 (
 	.q /* OUT */ (patd_0[13]),
 	.d /* IN */ (patdu_0[13]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_14
 (
 	.q /* OUT */ (patd_0[14]),
 	.d /* IN */ (patdu_0[14]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_15
 (
 	.q /* OUT */ (patd_0[15]),
 	.d /* IN */ (patdu_0[15]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_16
 (
 	.q /* OUT */ (patd_0[16]),
 	.d /* IN */ (patdu_0[16]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_17
 (
 	.q /* OUT */ (patd_0[17]),
 	.d /* IN */ (patdu_0[17]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_18
 (
 	.q /* OUT */ (patd_0[18]),
 	.d /* IN */ (patdu_0[18]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_19
 (
 	.q /* OUT */ (patd_0[19]),
 	.d /* IN */ (patdu_0[19]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_20
 (
 	.q /* OUT */ (patd_0[20]),
 	.d /* IN */ (patdu_0[20]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_21
 (
 	.q /* OUT */ (patd_0[21]),
 	.d /* IN */ (patdu_0[21]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_22
 (
 	.q /* OUT */ (patd_0[22]),
 	.d /* IN */ (patdu_0[22]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_23
 (
 	.q /* OUT */ (patd_0[23]),
 	.d /* IN */ (patdu_0[23]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_24
 (
 	.q /* OUT */ (patd_0[24]),
 	.d /* IN */ (patdu_0[24]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_25
 (
 	.q /* OUT */ (patd_0[25]),
 	.d /* IN */ (patdu_0[25]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_26
 (
 	.q /* OUT */ (patd_0[26]),
 	.d /* IN */ (patdu_0[26]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_27
 (
 	.q /* OUT */ (patd_0[27]),
 	.d /* IN */ (patdu_0[27]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_28
 (
 	.q /* OUT */ (patd_0[28]),
 	.d /* IN */ (patdu_0[28]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_29
 (
 	.q /* OUT */ (patd_0[29]),
 	.d /* IN */ (patdu_0[29]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_30
 (
 	.q /* OUT */ (patd_0[30]),
 	.d /* IN */ (patdu_0[30]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_31
 (
 	.q /* OUT */ (patd_0[31]),
 	.d /* IN */ (patdu_0[31]),
-	.g /* IN */ (dpipeg_0)
+	.g /* IN */ (dpipeg_0),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_32
 (
 	.q /* OUT */ (patd_1[0]),
 	.d /* IN */ (patdu_1[0]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_33
 (
 	.q /* OUT */ (patd_1[1]),
 	.d /* IN */ (patdu_1[1]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_34
 (
 	.q /* OUT */ (patd_1[2]),
 	.d /* IN */ (patdu_1[2]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_35
 (
 	.q /* OUT */ (patd_1[3]),
 	.d /* IN */ (patdu_1[3]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_36
 (
 	.q /* OUT */ (patd_1[4]),
 	.d /* IN */ (patdu_1[4]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_37
 (
 	.q /* OUT */ (patd_1[5]),
 	.d /* IN */ (patdu_1[5]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_38
 (
 	.q /* OUT */ (patd_1[6]),
 	.d /* IN */ (patdu_1[6]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_39
 (
 	.q /* OUT */ (patd_1[7]),
 	.d /* IN */ (patdu_1[7]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_40
 (
 	.q /* OUT */ (patd_1[8]),
 	.d /* IN */ (patdu_1[8]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_41
 (
 	.q /* OUT */ (patd_1[9]),
 	.d /* IN */ (patdu_1[9]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_42
 (
 	.q /* OUT */ (patd_1[10]),
 	.d /* IN */ (patdu_1[10]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_43
 (
 	.q /* OUT */ (patd_1[11]),
 	.d /* IN */ (patdu_1[11]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_44
 (
 	.q /* OUT */ (patd_1[12]),
 	.d /* IN */ (patdu_1[12]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_45
 (
 	.q /* OUT */ (patd_1[13]),
 	.d /* IN */ (patdu_1[13]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_46
 (
 	.q /* OUT */ (patd_1[14]),
 	.d /* IN */ (patdu_1[14]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_47
 (
 	.q /* OUT */ (patd_1[15]),
 	.d /* IN */ (patdu_1[15]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_48
 (
 	.q /* OUT */ (patd_1[16]),
 	.d /* IN */ (patdu_1[16]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_49
 (
 	.q /* OUT */ (patd_1[17]),
 	.d /* IN */ (patdu_1[17]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_50
 (
 	.q /* OUT */ (patd_1[18]),
 	.d /* IN */ (patdu_1[18]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_51
 (
 	.q /* OUT */ (patd_1[19]),
 	.d /* IN */ (patdu_1[19]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_52
 (
 	.q /* OUT */ (patd_1[20]),
 	.d /* IN */ (patdu_1[20]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_53
 (
 	.q /* OUT */ (patd_1[21]),
 	.d /* IN */ (patdu_1[21]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_54
 (
 	.q /* OUT */ (patd_1[22]),
 	.d /* IN */ (patdu_1[22]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_55
 (
 	.q /* OUT */ (patd_1[23]),
 	.d /* IN */ (patdu_1[23]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_56
 (
 	.q /* OUT */ (patd_1[24]),
 	.d /* IN */ (patdu_1[24]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_57
 (
 	.q /* OUT */ (patd_1[25]),
 	.d /* IN */ (patdu_1[25]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_58
 (
 	.q /* OUT */ (patd_1[26]),
 	.d /* IN */ (patdu_1[26]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_59
 (
 	.q /* OUT */ (patd_1[27]),
 	.d /* IN */ (patdu_1[27]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_60
 (
 	.q /* OUT */ (patd_1[28]),
 	.d /* IN */ (patdu_1[28]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_61
 (
 	.q /* OUT */ (patd_1[29]),
 	.d /* IN */ (patdu_1[29]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_62
 (
 	.q /* OUT */ (patd_1[30]),
 	.d /* IN */ (patdu_1[30]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q patd_from_0_to_1_inst_63
 (
 	.q /* OUT */ (patd_1[31]),
 	.d /* IN */ (patdu_1[31]),
-	.g /* IN */ (dpipeg_1)
+	.g /* IN */ (dpipeg_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (219) - dpipe1b[0-1] : nivu
@@ -6619,14 +7132,16 @@ fdsync32 patdo_from_0_to_1_inst_0
 	.q /* OUT */ ({patdo_0[0],patdo_0[1],patdo_0[2],patdo_0[3],patdo_0[4],patdo_0[5],patdo_0[6],patdo_0[7],patdo_0[8],patdo_0[9],patdo_0[10],patdo_0[11],patdo_0[12],patdo_0[13],patdo_0[14],patdo_0[15],patdo_0[16],patdo_0[17],patdo_0[18],patdo_0[19],patdo_0[20],patdo_0[21],patdo_0[22],patdo_0[23],patdo_0[24],patdo_0[25],patdo_0[26],patdo_0[27],patdo_0[28],patdo_0[29],patdo_0[30],patdo_0[31]}),
 	.d /* IN */ ({patd_0[0],patd_0[1],patd_0[2],patd_0[3],patd_0[4],patd_0[5],patd_0[6],patd_0[7],patd_0[8],patd_0[9],patd_0[10],patd_0[11],patd_0[12],patd_0[13],patd_0[14],patd_0[15],patd_0[16],patd_0[17],patd_0[18],patd_0[19],patd_0[20],patd_0[21],patd_0[22],patd_0[23],patd_0[24],patd_0[25],patd_0[26],patd_0[27],patd_0[28],patd_0[29],patd_0[30],patd_0[31]}),
 	.ld /* IN */ (dpipe1b_0),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync32 patdo_from_0_to_1_inst_1
 (
 	.q /* OUT */ ({patdo_1[0],patdo_1[1],patdo_1[2],patdo_1[3],patdo_1[4],patdo_1[5],patdo_1[6],patdo_1[7],patdo_1[8],patdo_1[9],patdo_1[10],patdo_1[11],patdo_1[12],patdo_1[13],patdo_1[14],patdo_1[15],patdo_1[16],patdo_1[17],patdo_1[18],patdo_1[19],patdo_1[20],patdo_1[21],patdo_1[22],patdo_1[23],patdo_1[24],patdo_1[25],patdo_1[26],patdo_1[27],patdo_1[28],patdo_1[29],patdo_1[30],patdo_1[31]}),
 	.d /* IN */ ({patd_1[0],patd_1[1],patd_1[2],patd_1[3],patd_1[4],patd_1[5],patd_1[6],patd_1[7],patd_1[8],patd_1[9],patd_1[10],patd_1[11],patd_1[12],patd_1[13],patd_1[14],patd_1[15],patd_1[16],patd_1[17],patd_1[18],patd_1[19],patd_1[20],patd_1[21],patd_1[22],patd_1[23],patd_1[24],patd_1[25],patd_1[26],patd_1[27],patd_1[28],patd_1[29],patd_1[30],patd_1[31]}),
 	.ld /* IN */ (dpipe1b_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (225) - lfu : lfu
@@ -6652,193 +7167,225 @@ ldp1q zinc_inst_0
 (
 	.q /* OUT */ (zinc[0]),
 	.d /* IN */ (gpu_din[0]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_1
 (
 	.q /* OUT */ (zinc[1]),
 	.d /* IN */ (gpu_din[1]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_2
 (
 	.q /* OUT */ (zinc[2]),
 	.d /* IN */ (gpu_din[2]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_3
 (
 	.q /* OUT */ (zinc[3]),
 	.d /* IN */ (gpu_din[3]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_4
 (
 	.q /* OUT */ (zinc[4]),
 	.d /* IN */ (gpu_din[4]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_5
 (
 	.q /* OUT */ (zinc[5]),
 	.d /* IN */ (gpu_din[5]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_6
 (
 	.q /* OUT */ (zinc[6]),
 	.d /* IN */ (gpu_din[6]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_7
 (
 	.q /* OUT */ (zinc[7]),
 	.d /* IN */ (gpu_din[7]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_8
 (
 	.q /* OUT */ (zinc[8]),
 	.d /* IN */ (gpu_din[8]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_9
 (
 	.q /* OUT */ (zinc[9]),
 	.d /* IN */ (gpu_din[9]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_10
 (
 	.q /* OUT */ (zinc[10]),
 	.d /* IN */ (gpu_din[10]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_11
 (
 	.q /* OUT */ (zinc[11]),
 	.d /* IN */ (gpu_din[11]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_12
 (
 	.q /* OUT */ (zinc[12]),
 	.d /* IN */ (gpu_din[12]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_13
 (
 	.q /* OUT */ (zinc[13]),
 	.d /* IN */ (gpu_din[13]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_14
 (
 	.q /* OUT */ (zinc[14]),
 	.d /* IN */ (gpu_din[14]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_15
 (
 	.q /* OUT */ (zinc[15]),
 	.d /* IN */ (gpu_din[15]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_16
 (
 	.q /* OUT */ (zinc[16]),
 	.d /* IN */ (gpu_din[16]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_17
 (
 	.q /* OUT */ (zinc[17]),
 	.d /* IN */ (gpu_din[17]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_18
 (
 	.q /* OUT */ (zinc[18]),
 	.d /* IN */ (gpu_din[18]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_19
 (
 	.q /* OUT */ (zinc[19]),
 	.d /* IN */ (gpu_din[19]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_20
 (
 	.q /* OUT */ (zinc[20]),
 	.d /* IN */ (gpu_din[20]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_21
 (
 	.q /* OUT */ (zinc[21]),
 	.d /* IN */ (gpu_din[21]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_22
 (
 	.q /* OUT */ (zinc[22]),
 	.d /* IN */ (gpu_din[22]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_23
 (
 	.q /* OUT */ (zinc[23]),
 	.d /* IN */ (gpu_din[23]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_24
 (
 	.q /* OUT */ (zinc[24]),
 	.d /* IN */ (gpu_din[24]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_25
 (
 	.q /* OUT */ (zinc[25]),
 	.d /* IN */ (gpu_din[25]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_26
 (
 	.q /* OUT */ (zinc[26]),
 	.d /* IN */ (gpu_din[26]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_27
 (
 	.q /* OUT */ (zinc[27]),
 	.d /* IN */ (gpu_din[27]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_28
 (
 	.q /* OUT */ (zinc[28]),
 	.d /* IN */ (gpu_din[28]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_29
 (
 	.q /* OUT */ (zinc[29]),
 	.d /* IN */ (gpu_din[29]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_30
 (
 	.q /* OUT */ (zinc[30]),
 	.d /* IN */ (gpu_din[30]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q zinc_inst_31
 (
 	.q /* OUT */ (zinc[31]),
 	.d /* IN */ (gpu_din[31]),
-	.g /* IN */ (zincldg)
+	.g /* IN */ (zincldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (235) - iincldg : an2u
@@ -6849,193 +7396,225 @@ ldp1q iinc_inst_0
 (
 	.q /* OUT */ (iinc[0]),
 	.d /* IN */ (gpu_din[0]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_1
 (
 	.q /* OUT */ (iinc[1]),
 	.d /* IN */ (gpu_din[1]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_2
 (
 	.q /* OUT */ (iinc[2]),
 	.d /* IN */ (gpu_din[2]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_3
 (
 	.q /* OUT */ (iinc[3]),
 	.d /* IN */ (gpu_din[3]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_4
 (
 	.q /* OUT */ (iinc[4]),
 	.d /* IN */ (gpu_din[4]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_5
 (
 	.q /* OUT */ (iinc[5]),
 	.d /* IN */ (gpu_din[5]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_6
 (
 	.q /* OUT */ (iinc[6]),
 	.d /* IN */ (gpu_din[6]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_7
 (
 	.q /* OUT */ (iinc[7]),
 	.d /* IN */ (gpu_din[7]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_8
 (
 	.q /* OUT */ (iinc[8]),
 	.d /* IN */ (gpu_din[8]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_9
 (
 	.q /* OUT */ (iinc[9]),
 	.d /* IN */ (gpu_din[9]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_10
 (
 	.q /* OUT */ (iinc[10]),
 	.d /* IN */ (gpu_din[10]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_11
 (
 	.q /* OUT */ (iinc[11]),
 	.d /* IN */ (gpu_din[11]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_12
 (
 	.q /* OUT */ (iinc[12]),
 	.d /* IN */ (gpu_din[12]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_13
 (
 	.q /* OUT */ (iinc[13]),
 	.d /* IN */ (gpu_din[13]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_14
 (
 	.q /* OUT */ (iinc[14]),
 	.d /* IN */ (gpu_din[14]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_15
 (
 	.q /* OUT */ (iinc[15]),
 	.d /* IN */ (gpu_din[15]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_16
 (
 	.q /* OUT */ (iinc[16]),
 	.d /* IN */ (gpu_din[16]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_17
 (
 	.q /* OUT */ (iinc[17]),
 	.d /* IN */ (gpu_din[17]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_18
 (
 	.q /* OUT */ (iinc[18]),
 	.d /* IN */ (gpu_din[18]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_19
 (
 	.q /* OUT */ (iinc[19]),
 	.d /* IN */ (gpu_din[19]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_20
 (
 	.q /* OUT */ (iinc[20]),
 	.d /* IN */ (gpu_din[20]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_21
 (
 	.q /* OUT */ (iinc[21]),
 	.d /* IN */ (gpu_din[21]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_22
 (
 	.q /* OUT */ (iinc[22]),
 	.d /* IN */ (gpu_din[22]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_23
 (
 	.q /* OUT */ (iinc[23]),
 	.d /* IN */ (gpu_din[23]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_24
 (
 	.q /* OUT */ (iinc[24]),
 	.d /* IN */ (gpu_din[24]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_25
 (
 	.q /* OUT */ (iinc[25]),
 	.d /* IN */ (gpu_din[25]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_26
 (
 	.q /* OUT */ (iinc[26]),
 	.d /* IN */ (gpu_din[26]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_27
 (
 	.q /* OUT */ (iinc[27]),
 	.d /* IN */ (gpu_din[27]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_28
 (
 	.q /* OUT */ (iinc[28]),
 	.d /* IN */ (gpu_din[28]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_29
 (
 	.q /* OUT */ (iinc[29]),
 	.d /* IN */ (gpu_din[29]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_30
 (
 	.q /* OUT */ (iinc[30]),
 	.d /* IN */ (gpu_din[30]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iinc_inst_31
 (
 	.q /* OUT */ (iinc[31]),
 	.d /* IN */ (gpu_din[31]),
-	.g /* IN */ (iincldg)
+	.g /* IN */ (iincldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (240) - datacomp : datacomp
@@ -7532,385 +8111,449 @@ fd1q srczpt_from_0_to_1_inst_0
 (
 	.q /* OUT */ (srczpt_0[0]),
 	.d /* IN */ (srczp_0[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_1
 (
 	.q /* OUT */ (srczpt_0[1]),
 	.d /* IN */ (srczp_0[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_2
 (
 	.q /* OUT */ (srczpt_0[2]),
 	.d /* IN */ (srczp_0[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_3
 (
 	.q /* OUT */ (srczpt_0[3]),
 	.d /* IN */ (srczp_0[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_4
 (
 	.q /* OUT */ (srczpt_0[4]),
 	.d /* IN */ (srczp_0[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_5
 (
 	.q /* OUT */ (srczpt_0[5]),
 	.d /* IN */ (srczp_0[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_6
 (
 	.q /* OUT */ (srczpt_0[6]),
 	.d /* IN */ (srczp_0[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_7
 (
 	.q /* OUT */ (srczpt_0[7]),
 	.d /* IN */ (srczp_0[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_8
 (
 	.q /* OUT */ (srczpt_0[8]),
 	.d /* IN */ (srczp_0[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_9
 (
 	.q /* OUT */ (srczpt_0[9]),
 	.d /* IN */ (srczp_0[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_10
 (
 	.q /* OUT */ (srczpt_0[10]),
 	.d /* IN */ (srczp_0[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_11
 (
 	.q /* OUT */ (srczpt_0[11]),
 	.d /* IN */ (srczp_0[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_12
 (
 	.q /* OUT */ (srczpt_0[12]),
 	.d /* IN */ (srczp_0[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_13
 (
 	.q /* OUT */ (srczpt_0[13]),
 	.d /* IN */ (srczp_0[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_14
 (
 	.q /* OUT */ (srczpt_0[14]),
 	.d /* IN */ (srczp_0[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_15
 (
 	.q /* OUT */ (srczpt_0[15]),
 	.d /* IN */ (srczp_0[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_16
 (
 	.q /* OUT */ (srczpt_0[16]),
 	.d /* IN */ (srczp_0[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_17
 (
 	.q /* OUT */ (srczpt_0[17]),
 	.d /* IN */ (srczp_0[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_18
 (
 	.q /* OUT */ (srczpt_0[18]),
 	.d /* IN */ (srczp_0[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_19
 (
 	.q /* OUT */ (srczpt_0[19]),
 	.d /* IN */ (srczp_0[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_20
 (
 	.q /* OUT */ (srczpt_0[20]),
 	.d /* IN */ (srczp_0[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_21
 (
 	.q /* OUT */ (srczpt_0[21]),
 	.d /* IN */ (srczp_0[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_22
 (
 	.q /* OUT */ (srczpt_0[22]),
 	.d /* IN */ (srczp_0[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_23
 (
 	.q /* OUT */ (srczpt_0[23]),
 	.d /* IN */ (srczp_0[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_24
 (
 	.q /* OUT */ (srczpt_0[24]),
 	.d /* IN */ (srczp_0[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_25
 (
 	.q /* OUT */ (srczpt_0[25]),
 	.d /* IN */ (srczp_0[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_26
 (
 	.q /* OUT */ (srczpt_0[26]),
 	.d /* IN */ (srczp_0[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_27
 (
 	.q /* OUT */ (srczpt_0[27]),
 	.d /* IN */ (srczp_0[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_28
 (
 	.q /* OUT */ (srczpt_0[28]),
 	.d /* IN */ (srczp_0[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_29
 (
 	.q /* OUT */ (srczpt_0[29]),
 	.d /* IN */ (srczp_0[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_30
 (
 	.q /* OUT */ (srczpt_0[30]),
 	.d /* IN */ (srczp_0[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_31
 (
 	.q /* OUT */ (srczpt_0[31]),
 	.d /* IN */ (srczp_0[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_32
 (
 	.q /* OUT */ (srczpt_1[0]),
 	.d /* IN */ (srczp_1[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_33
 (
 	.q /* OUT */ (srczpt_1[1]),
 	.d /* IN */ (srczp_1[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_34
 (
 	.q /* OUT */ (srczpt_1[2]),
 	.d /* IN */ (srczp_1[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_35
 (
 	.q /* OUT */ (srczpt_1[3]),
 	.d /* IN */ (srczp_1[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_36
 (
 	.q /* OUT */ (srczpt_1[4]),
 	.d /* IN */ (srczp_1[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_37
 (
 	.q /* OUT */ (srczpt_1[5]),
 	.d /* IN */ (srczp_1[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_38
 (
 	.q /* OUT */ (srczpt_1[6]),
 	.d /* IN */ (srczp_1[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_39
 (
 	.q /* OUT */ (srczpt_1[7]),
 	.d /* IN */ (srczp_1[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_40
 (
 	.q /* OUT */ (srczpt_1[8]),
 	.d /* IN */ (srczp_1[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_41
 (
 	.q /* OUT */ (srczpt_1[9]),
 	.d /* IN */ (srczp_1[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_42
 (
 	.q /* OUT */ (srczpt_1[10]),
 	.d /* IN */ (srczp_1[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_43
 (
 	.q /* OUT */ (srczpt_1[11]),
 	.d /* IN */ (srczp_1[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_44
 (
 	.q /* OUT */ (srczpt_1[12]),
 	.d /* IN */ (srczp_1[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_45
 (
 	.q /* OUT */ (srczpt_1[13]),
 	.d /* IN */ (srczp_1[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_46
 (
 	.q /* OUT */ (srczpt_1[14]),
 	.d /* IN */ (srczp_1[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_47
 (
 	.q /* OUT */ (srczpt_1[15]),
 	.d /* IN */ (srczp_1[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_48
 (
 	.q /* OUT */ (srczpt_1[16]),
 	.d /* IN */ (srczp_1[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_49
 (
 	.q /* OUT */ (srczpt_1[17]),
 	.d /* IN */ (srczp_1[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_50
 (
 	.q /* OUT */ (srczpt_1[18]),
 	.d /* IN */ (srczp_1[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_51
 (
 	.q /* OUT */ (srczpt_1[19]),
 	.d /* IN */ (srczp_1[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_52
 (
 	.q /* OUT */ (srczpt_1[20]),
 	.d /* IN */ (srczp_1[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_53
 (
 	.q /* OUT */ (srczpt_1[21]),
 	.d /* IN */ (srczp_1[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_54
 (
 	.q /* OUT */ (srczpt_1[22]),
 	.d /* IN */ (srczp_1[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_55
 (
 	.q /* OUT */ (srczpt_1[23]),
 	.d /* IN */ (srczp_1[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_56
 (
 	.q /* OUT */ (srczpt_1[24]),
 	.d /* IN */ (srczp_1[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_57
 (
 	.q /* OUT */ (srczpt_1[25]),
 	.d /* IN */ (srczp_1[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_58
 (
 	.q /* OUT */ (srczpt_1[26]),
 	.d /* IN */ (srczp_1[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_59
 (
 	.q /* OUT */ (srczpt_1[27]),
 	.d /* IN */ (srczp_1[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_60
 (
 	.q /* OUT */ (srczpt_1[28]),
 	.d /* IN */ (srczp_1[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_61
 (
 	.q /* OUT */ (srczpt_1[29]),
 	.d /* IN */ (srczp_1[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_62
 (
 	.q /* OUT */ (srczpt_1[30]),
 	.d /* IN */ (srczp_1[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srczpt_from_0_to_1_inst_63
 (
 	.q /* OUT */ (srczpt_1[31]),
 	.d /* IN */ (srczp_1[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (259) - zedcomp : zedcomp
@@ -7939,14 +8582,16 @@ fdsync32 srczo_from_0_to_1_inst_0
 	.q /* OUT */ ({srczo_0[0],srczo_0[1],srczo_0[2],srczo_0[3],srczo_0[4],srczo_0[5],srczo_0[6],srczo_0[7],srczo_0[8],srczo_0[9],srczo_0[10],srczo_0[11],srczo_0[12],srczo_0[13],srczo_0[14],srczo_0[15],srczo_0[16],srczo_0[17],srczo_0[18],srczo_0[19],srczo_0[20],srczo_0[21],srczo_0[22],srczo_0[23],srczo_0[24],srczo_0[25],srczo_0[26],srczo_0[27],srczo_0[28],srczo_0[29],srczo_0[30],srczo_0[31]}),
 	.d /* IN */ ({srczp_0[0],srczp_0[1],srczp_0[2],srczp_0[3],srczp_0[4],srczp_0[5],srczp_0[6],srczp_0[7],srczp_0[8],srczp_0[9],srczp_0[10],srczp_0[11],srczp_0[12],srczp_0[13],srczp_0[14],srczp_0[15],srczp_0[16],srczp_0[17],srczp_0[18],srczp_0[19],srczp_0[20],srczp_0[21],srczp_0[22],srczp_0[23],srczp_0[24],srczp_0[25],srczp_0[26],srczp_0[27],srczp_0[28],srczp_0[29],srczp_0[30],srczp_0[31]}),
 	.ld /* IN */ (zpipe1b_0),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync32 srczo_from_0_to_1_inst_1
 (
 	.q /* OUT */ ({srczo_1[0],srczo_1[1],srczo_1[2],srczo_1[3],srczo_1[4],srczo_1[5],srczo_1[6],srczo_1[7],srczo_1[8],srczo_1[9],srczo_1[10],srczo_1[11],srczo_1[12],srczo_1[13],srczo_1[14],srczo_1[15],srczo_1[16],srczo_1[17],srczo_1[18],srczo_1[19],srczo_1[20],srczo_1[21],srczo_1[22],srczo_1[23],srczo_1[24],srczo_1[25],srczo_1[26],srczo_1[27],srczo_1[28],srczo_1[29],srczo_1[30],srczo_1[31]}),
 	.d /* IN */ ({srczp_1[0],srczp_1[1],srczp_1[2],srczp_1[3],srczp_1[4],srczp_1[5],srczp_1[6],srczp_1[7],srczp_1[8],srczp_1[9],srczp_1[10],srczp_1[11],srczp_1[12],srczp_1[13],srczp_1[14],srczp_1[15],srczp_1[16],srczp_1[17],srczp_1[18],srczp_1[19],srczp_1[20],srczp_1[21],srczp_1[22],srczp_1[23],srczp_1[24],srczp_1[25],srczp_1[26],srczp_1[27],srczp_1[28],srczp_1[29],srczp_1[30],srczp_1[31]}),
 	.ld /* IN */ (zpipe1b_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (273) - addamux : daddamux
@@ -8006,7 +8651,8 @@ addarray addarray_inst
 	.daddmode_1 /* IN */ (daddmode_1),
 	.daddmode_2 /* IN */ (daddmode_2),
 	.clk_0 /* IN */ (clk),
-	.reset_n /* IN */ (reset_n)
+	.reset_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DATA.NET (289) - data_local : local_mux

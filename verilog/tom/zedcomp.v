@@ -6,10 +6,10 @@ module zedcomp
 	output zcomp_1,
 	output zcomp_2,
 	output zcomp_3,
-	input [0:31] srczplo;
-	input [0:31] srczphi;
-	input [0:31] dstzlo;
-	input [0:31] dstzhi;
+	input [0:31] srczplo,
+	input [0:31] srczphi,
+	input [0:31] dstzlo,
+	input [0:31] dstzhi,
 	input zmode_0,
 	input zmode_1,
 	input zmode_2

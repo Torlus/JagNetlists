@@ -15,7 +15,8 @@ module r1count
 	input mr1_1,
 	input mr1_2,
 	input mr1_3,
-	input mr1_4
+	input mr1_4,
+	input sys_clk // Generated
 );
 wire cntt_0;
 wire cntt_1;
@@ -161,36 +162,42 @@ fd1q count_from_0_to_5_inst_0
 (
 	.q /* OUT */ (count_0_obuf),
 	.d /* IN */ (cnti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_5_inst_1
 (
 	.q /* OUT */ (count_1_obuf),
 	.d /* IN */ (cnti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_5_inst_2
 (
 	.q /* OUT */ (count_2_obuf),
 	.d /* IN */ (cnti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_5_inst_3
 (
 	.q /* OUT */ (count_3_obuf),
 	.d /* IN */ (cnti_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_5_inst_4
 (
 	.q /* OUT */ (count_4_obuf),
 	.d /* IN */ (cnti_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_5_inst_5
 (
 	.q /* OUT */ (count_5_obuf),
 	.d /* IN */ (cnti_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

@@ -2,15 +2,15 @@
 
 module local_mux
 (
-	output [0:31] local_data_0;
-	output [0:31] local_data_1;
-	output [0:31] load_data_0;
-	output [0:31] load_data_1;
-	input [0:15] addq_0;
-	input [0:15] addq_1;
-	input [0:15] addq_2;
-	input [0:15] addq_3;
-	input [0:31] gpu_din;
+	output [0:31] local_data_0,
+	output [0:31] local_data_1,
+	output [0:31] load_data_0,
+	output [0:31] load_data_1,
+	input [0:15] addq_0,
+	input [0:15] addq_1,
+	input [0:15] addq_2,
+	input [0:15] addq_3,
+	input [0:31] gpu_din,
 	input data_0,
 	input data_1,
 	input data_2,

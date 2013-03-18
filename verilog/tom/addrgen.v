@@ -2,13 +2,13 @@
 
 module addrgen
 (
-	output [0:23] address;
+	output [0:23] address,
 	output pixa_0,
 	output pixa_1,
 	output pixa_2,
-	input [0:15] a1_x;
-	input [0:15] a1_y;
-	input [0:20] a1_base;
+	input [0:15] a1_x,
+	input [0:15] a1_y,
+	input [0:20] a1_base,
 	input a1_pitch_0,
 	input a1_pitch_1,
 	input a1_pixsize_0,
@@ -22,9 +22,9 @@ module addrgen
 	input a1_width_5,
 	input a1_zoffset_0,
 	input a1_zoffset_1,
-	input [0:15] a2_x;
-	input [0:15] a2_y;
-	input [0:20] a2_base;
+	input [0:15] a2_x,
+	input [0:15] a2_y,
+	input [0:20] a2_base,
 	input a2_pitch_0,
 	input a2_pitch_1,
 	input a2_pixsize_0,
@@ -41,7 +41,8 @@ module addrgen
 	input apipe,
 	input clk,
 	input gena2,
-	input zaddr
+	input zaddr,
+	input sys_clk // Generated
 );
 wire [0:15] pa_b;
 wire [0:23] pa_a;
@@ -2761,145 +2762,169 @@ fd1q address_inst_0
 (
 	.q /* OUT */ (addressi[0]),
 	.d /* IN */ (address_b0_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_1
 (
 	.q /* OUT */ (addressi[1]),
 	.d /* IN */ (address_b1_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_2
 (
 	.q /* OUT */ (addressi[2]),
 	.d /* IN */ (address_b2_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_3
 (
 	.q /* OUT */ (addressi[3]),
 	.d /* IN */ (address_b3_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_4
 (
 	.q /* OUT */ (addressi[4]),
 	.d /* IN */ (address_b4_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_5
 (
 	.q /* OUT */ (addressi[5]),
 	.d /* IN */ (address_b5_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_6
 (
 	.q /* OUT */ (addressi[6]),
 	.d /* IN */ (address_b6_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_7
 (
 	.q /* OUT */ (addressi[7]),
 	.d /* IN */ (address_b7_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_8
 (
 	.q /* OUT */ (addressi[8]),
 	.d /* IN */ (address_b8_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_9
 (
 	.q /* OUT */ (addressi[9]),
 	.d /* IN */ (address_b9_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_10
 (
 	.q /* OUT */ (addressi[10]),
 	.d /* IN */ (address_b10_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_11
 (
 	.q /* OUT */ (addressi[11]),
 	.d /* IN */ (address_b11_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_12
 (
 	.q /* OUT */ (addressi[12]),
 	.d /* IN */ (address_b12_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_13
 (
 	.q /* OUT */ (addressi[13]),
 	.d /* IN */ (address_b13_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_14
 (
 	.q /* OUT */ (addressi[14]),
 	.d /* IN */ (address_b14_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_15
 (
 	.q /* OUT */ (addressi[15]),
 	.d /* IN */ (address_b15_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_16
 (
 	.q /* OUT */ (addressi[16]),
 	.d /* IN */ (address_b16_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_17
 (
 	.q /* OUT */ (addressi[17]),
 	.d /* IN */ (address_b17_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_18
 (
 	.q /* OUT */ (addressi[18]),
 	.d /* IN */ (address_b18_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_19
 (
 	.q /* OUT */ (addressi[19]),
 	.d /* IN */ (address_b19_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_20
 (
 	.q /* OUT */ (addressi[20]),
 	.d /* IN */ (address_b20_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_21
 (
 	.q /* OUT */ (addressi[21]),
 	.d /* IN */ (address_b21_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_22
 (
 	.q /* OUT */ (addressi[22]),
 	.d /* IN */ (address_b22_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q address_inst_23
 (
 	.q /* OUT */ (addressi[23]),
 	.d /* IN */ (address_b23_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRGEN.NET (364) - unused[0-15] : dummy

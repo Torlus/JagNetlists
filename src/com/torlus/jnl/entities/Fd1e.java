@@ -8,6 +8,11 @@ public class Fd1e extends Entity {
 		return "fd1e";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Fd1e() {
 		// 260c_pri_e.pdf - CFD1EAXL
 		ios.add(new Signal("q", SignalType.OUT));

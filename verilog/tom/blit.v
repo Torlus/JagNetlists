@@ -2,9 +2,9 @@
 
 module blit
 (
-	output [0:23] blit_addr_out;
-	output [0:23] blit_addr_oe;
-	input [0:23] blit_addr_in;
+	output [0:23] blit_addr_out,
+	output [0:23] blit_addr_oe,
+	input [0:23] blit_addr_in,
 	output wdata_0_out,
 	output wdata_0_oe,
 	input wdata_0_in,
@@ -387,10 +387,11 @@ module blit
 	input data_61,
 	input data_62,
 	input data_63,
-	input [0:23] gpu_addr;
-	input [0:31] gpu_din;
+	input [0:23] gpu_addr,
+	input [0:31] gpu_din,
 	input gpu_memw,
-	input xreset_n
+	input xreset_n,
+	input sys_clk // Generated
 );
 wire [0:23] address;
 wire [0:14] a1_win_x;
@@ -1149,7 +1150,8 @@ data data_inst
 	.zmode_1 /* IN */ (zmode_1),
 	.zmode_2 /* IN */ (zmode_2),
 	.zpipe_0 /* IN */ (zpipe_0),
-	.zpipe_1 /* IN */ (zpipe_1)
+	.zpipe_1 /* IN */ (zpipe_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLIT.NET (74) - address : address
@@ -1313,7 +1315,8 @@ address address_inst
 	.modx_2 /* IN */ (modx_2),
 	.suba_x /* IN */ (suba_x),
 	.suba_y /* IN */ (suba_y),
-	.zaddr /* IN */ (zaddr)
+	.zaddr /* IN */ (zaddr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLIT.NET (89) - state : state
@@ -1578,7 +1581,8 @@ state state_inst
 	.zcomp_0 /* IN */ (zcomp_0),
 	.zcomp_1 /* IN */ (zcomp_1),
 	.zcomp_2 /* IN */ (zcomp_2),
-	.zcomp_3 /* IN */ (zcomp_3)
+	.zcomp_3 /* IN */ (zcomp_3),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLIT.NET (111) - blitgpu : blitgpu

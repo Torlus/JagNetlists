@@ -9,11 +9,12 @@ module blitstop
 	output reset_n,
 	input clk_0,
 	input dwrite_1,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input nowrite,
 	input statrd,
 	input stopld,
-	input xreset_n
+	input xreset_n,
+	input sys_clk // Generated
 );
 wire resume_n;
 wire coll_abort_n;
@@ -55,7 +56,8 @@ fdsyncr stopen_inst
 	.d /* IN */ (gpu_din[2]),
 	.ld /* IN */ (stopld),
 	.clk /* IN */ (clk_0),
-	.rst_n /* IN */ (xreset_n)
+	.rst_n /* IN */ (xreset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLITSTOP.NET (46) - stat[1] : ts
@@ -70,7 +72,8 @@ fd1q collideb_inst
 (
 	.q /* OUT */ (collideb),
 	.d /* IN */ (collidea),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLITSTOP.NET (55) - collideb\ : iv
@@ -97,7 +100,8 @@ fd2q stopped_inst
 	.q /* OUT */ (stopped_obuf),
 	.d /* IN */ (stt_2),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (xreset_n)
+	.cd /* IN */ (xreset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLITSTOP.NET (67) - drst : an2
@@ -109,7 +113,8 @@ fd2q drv_reset_inst
 	.q /* OUT */ (drv_reset),
 	.d /* IN */ (drst),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (xreset_n)
+	.cd /* IN */ (xreset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BLITSTOP.NET (73) - drv_reset\ : iv

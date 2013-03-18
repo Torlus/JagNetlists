@@ -11,11 +11,11 @@ module datacomp
 	output dcomp_6,
 	output dcomp_7,
 	input cmpdst,
-	input [0:31] dstdlo;
-	input [0:31] dstdhi;
-	input [0:31] patdlo;
-	input [0:31] patdhi;
-	input [0:31] srcdlo;
+	input [0:31] dstdlo,
+	input [0:31] dstdhi,
+	input [0:31] patdlo,
+	input [0:31] patdhi,
+	input [0:31] srcdlo,
 	input [0:31] srcdhi
 );
 wire [0:7] patb_0;

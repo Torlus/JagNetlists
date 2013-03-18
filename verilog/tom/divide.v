@@ -2,19 +2,20 @@
 
 module divide
 (
-	output [0:31] gpu_data_out;
-	output [0:31] gpu_data_oe;
-	input [0:31] gpu_data_in;
+	output [0:31] gpu_data_out,
+	output [0:31] gpu_data_oe,
+	input [0:31] gpu_data_in,
 	output div_activei,
-	output [0:31] quotient;
+	output [0:31] quotient,
 	input clk,
 	input div_start,
 	input divwr,
-	input [0:31] dstd;
-	input [0:31] gpu_din;
+	input [0:31] dstd,
+	input [0:31] gpu_din,
 	input remrd,
 	input reset_n,
-	input [0:31] srcd
+	input [0:31] srcd,
+	input sys_clk // Generated
 );
 wire [0:31] divhit;
 wire [0:31] dividend_hi;
@@ -252,7 +253,8 @@ fdsyncr div_offsett_inst
 	.d /* IN */ (gpu_din[0]),
 	.ld /* IN */ (divwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (79) - div_offset : nivh
@@ -572,19 +574,22 @@ fd1q last_neg_n_from_0_to_2_inst_0
 (
 	.q /* OUT */ (last_neg_n_0),
 	.d /* IN */ (lnegt_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q last_neg_n_from_0_to_2_inst_1
 (
 	.q /* OUT */ (last_neg_n_1),
 	.d /* IN */ (lnegt_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q last_neg_n_from_0_to_2_inst_2
 (
 	.q /* OUT */ (last_neg_n_2),
 	.d /* IN */ (lnegt_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (165) - last_neg\[3-4] : fd1qp
@@ -592,13 +597,15 @@ fd1q last_neg_n_from_3_to_4_inst_0
 (
 	.q /* OUT */ (last_neg_n_3),
 	.d /* IN */ (lnegt_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q last_neg_n_from_3_to_4_inst_1
 (
 	.q /* OUT */ (last_neg_n_4),
 	.d /* IN */ (lnegt_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (166) - last_neg\[5] : fd1p
@@ -607,7 +614,8 @@ fd1 last_neg_n_index_5_inst
 	.q /* OUT */ (last_neg_n_5),
 	.qn /* OUT */ (last_neg_5),
 	.d /* IN */ (lnegt_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (187) - dhlsel[0] : mx2h
@@ -950,193 +958,225 @@ fd1q dividend_hi_inst_0
 (
 	.q /* OUT */ (dividend_hi[0]),
 	.d /* IN */ (divhit[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_1
 (
 	.q /* OUT */ (dividend_hi[1]),
 	.d /* IN */ (divhit[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_2
 (
 	.q /* OUT */ (dividend_hi[2]),
 	.d /* IN */ (divhit[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_3
 (
 	.q /* OUT */ (dividend_hi[3]),
 	.d /* IN */ (divhit[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_4
 (
 	.q /* OUT */ (dividend_hi[4]),
 	.d /* IN */ (divhit[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_5
 (
 	.q /* OUT */ (dividend_hi[5]),
 	.d /* IN */ (divhit[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_6
 (
 	.q /* OUT */ (dividend_hi[6]),
 	.d /* IN */ (divhit[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_7
 (
 	.q /* OUT */ (dividend_hi[7]),
 	.d /* IN */ (divhit[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_8
 (
 	.q /* OUT */ (dividend_hi[8]),
 	.d /* IN */ (divhit[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_9
 (
 	.q /* OUT */ (dividend_hi[9]),
 	.d /* IN */ (divhit[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_10
 (
 	.q /* OUT */ (dividend_hi[10]),
 	.d /* IN */ (divhit[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_11
 (
 	.q /* OUT */ (dividend_hi[11]),
 	.d /* IN */ (divhit[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_12
 (
 	.q /* OUT */ (dividend_hi[12]),
 	.d /* IN */ (divhit[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_13
 (
 	.q /* OUT */ (dividend_hi[13]),
 	.d /* IN */ (divhit[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_14
 (
 	.q /* OUT */ (dividend_hi[14]),
 	.d /* IN */ (divhit[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_15
 (
 	.q /* OUT */ (dividend_hi[15]),
 	.d /* IN */ (divhit[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_16
 (
 	.q /* OUT */ (dividend_hi[16]),
 	.d /* IN */ (divhit[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_17
 (
 	.q /* OUT */ (dividend_hi[17]),
 	.d /* IN */ (divhit[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_18
 (
 	.q /* OUT */ (dividend_hi[18]),
 	.d /* IN */ (divhit[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_19
 (
 	.q /* OUT */ (dividend_hi[19]),
 	.d /* IN */ (divhit[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_20
 (
 	.q /* OUT */ (dividend_hi[20]),
 	.d /* IN */ (divhit[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_21
 (
 	.q /* OUT */ (dividend_hi[21]),
 	.d /* IN */ (divhit[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_22
 (
 	.q /* OUT */ (dividend_hi[22]),
 	.d /* IN */ (divhit[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_23
 (
 	.q /* OUT */ (dividend_hi[23]),
 	.d /* IN */ (divhit[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_24
 (
 	.q /* OUT */ (dividend_hi[24]),
 	.d /* IN */ (divhit[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_25
 (
 	.q /* OUT */ (dividend_hi[25]),
 	.d /* IN */ (divhit[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_26
 (
 	.q /* OUT */ (dividend_hi[26]),
 	.d /* IN */ (divhit[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_27
 (
 	.q /* OUT */ (dividend_hi[27]),
 	.d /* IN */ (divhit[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_28
 (
 	.q /* OUT */ (dividend_hi[28]),
 	.d /* IN */ (divhit[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_29
 (
 	.q /* OUT */ (dividend_hi[29]),
 	.d /* IN */ (divhit[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_30
 (
 	.q /* OUT */ (dividend_hi[30]),
 	.d /* IN */ (divhit[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_hi_inst_31
 (
 	.q /* OUT */ (dividend_hi[31]),
 	.d /* IN */ (divhit[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (197) - remrd : ts
@@ -1541,193 +1581,225 @@ fd1q dividend_lo_inst_0
 (
 	.q /* OUT */ (dividend_lo[0]),
 	.d /* IN */ (divein[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_1
 (
 	.q /* OUT */ (dividend_lo[1]),
 	.d /* IN */ (divein[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_2
 (
 	.q /* OUT */ (dividend_lo[2]),
 	.d /* IN */ (divein[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_3
 (
 	.q /* OUT */ (dividend_lo[3]),
 	.d /* IN */ (divein[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_4
 (
 	.q /* OUT */ (dividend_lo[4]),
 	.d /* IN */ (divein[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_5
 (
 	.q /* OUT */ (dividend_lo[5]),
 	.d /* IN */ (divein[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_6
 (
 	.q /* OUT */ (dividend_lo[6]),
 	.d /* IN */ (divein[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_7
 (
 	.q /* OUT */ (dividend_lo[7]),
 	.d /* IN */ (divein[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_8
 (
 	.q /* OUT */ (dividend_lo[8]),
 	.d /* IN */ (divein[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_9
 (
 	.q /* OUT */ (dividend_lo[9]),
 	.d /* IN */ (divein[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_10
 (
 	.q /* OUT */ (dividend_lo[10]),
 	.d /* IN */ (divein[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_11
 (
 	.q /* OUT */ (dividend_lo[11]),
 	.d /* IN */ (divein[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_12
 (
 	.q /* OUT */ (dividend_lo[12]),
 	.d /* IN */ (divein[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_13
 (
 	.q /* OUT */ (dividend_lo[13]),
 	.d /* IN */ (divein[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_14
 (
 	.q /* OUT */ (dividend_lo[14]),
 	.d /* IN */ (divein[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_15
 (
 	.q /* OUT */ (dividend_lo[15]),
 	.d /* IN */ (divein[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_16
 (
 	.q /* OUT */ (dividend_lo[16]),
 	.d /* IN */ (divein[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_17
 (
 	.q /* OUT */ (dividend_lo[17]),
 	.d /* IN */ (divein[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_18
 (
 	.q /* OUT */ (dividend_lo[18]),
 	.d /* IN */ (divein[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_19
 (
 	.q /* OUT */ (dividend_lo[19]),
 	.d /* IN */ (divein[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_20
 (
 	.q /* OUT */ (dividend_lo[20]),
 	.d /* IN */ (divein[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_21
 (
 	.q /* OUT */ (dividend_lo[21]),
 	.d /* IN */ (divein[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_22
 (
 	.q /* OUT */ (dividend_lo[22]),
 	.d /* IN */ (divein[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_23
 (
 	.q /* OUT */ (dividend_lo[23]),
 	.d /* IN */ (divein[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_24
 (
 	.q /* OUT */ (dividend_lo[24]),
 	.d /* IN */ (divein[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_25
 (
 	.q /* OUT */ (dividend_lo[25]),
 	.d /* IN */ (divein[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_26
 (
 	.q /* OUT */ (dividend_lo[26]),
 	.d /* IN */ (divein[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_27
 (
 	.q /* OUT */ (dividend_lo[27]),
 	.d /* IN */ (divein[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_28
 (
 	.q /* OUT */ (dividend_lo[28]),
 	.d /* IN */ (divein[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_29
 (
 	.q /* OUT */ (dividend_lo[29]),
 	.d /* IN */ (divein[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_30
 (
 	.q /* OUT */ (dividend_lo[30]),
 	.d /* IN */ (divein[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dividend_lo_inst_31
 (
 	.q /* OUT */ (dividend_lo[31]),
 	.d /* IN */ (divein[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (222) - divisor : fdsync32
@@ -1736,7 +1808,8 @@ fdsync32 divisor_inst
 	.q /* OUT */ ({divisor[0],divisor[1],divisor[2],divisor[3],divisor[4],divisor[5],divisor[6],divisor[7],divisor[8],divisor[9],divisor[10],divisor[11],divisor[12],divisor[13],divisor[14],divisor[15],divisor[16],divisor[17],divisor[18],divisor[19],divisor[20],divisor[21],divisor[22],divisor[23],divisor[24],divisor[25],divisor[26],divisor[27],divisor[28],divisor[29],divisor[30],divisor[31]}),
 	.d /* IN */ ({srcd[0],srcd[1],srcd[2],srcd[3],srcd[4],srcd[5],srcd[6],srcd[7],srcd[8],srcd[9],srcd[10],srcd[11],srcd[12],srcd[13],srcd[14],srcd[15],srcd[16],srcd[17],srcd[18],srcd[19],srcd[20],srcd[21],srcd[22],srcd[23],srcd[24],srcd[25],srcd[26],srcd[27],srcd[28],srcd[29],srcd[30],srcd[31]}),
 	.ld /* IN */ (div_startb_2),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (229) - quosh[1] : iv
@@ -1757,7 +1830,8 @@ fd1 quotient_index_0_inst
 	.q /* OUT */ (quotient_0),
 	.qn /* OUT */ (quotient_n_0),
 	.d /* IN */ (quoti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (233) - quotient[1] : fdsync
@@ -1766,7 +1840,8 @@ fdsync quotient_index_1_inst
 	.q /* OUT */ (quotient_1),
 	.d /* IN */ (quosh_1),
 	.ld /* IN */ (div_activeb_0),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (235) - quotient[2-31] : fdsync
@@ -1775,210 +1850,240 @@ fdsync quotient_from_2_to_31_inst_0
 	.q /* OUT */ (quotient_2),
 	.d /* IN */ (quotient_0),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_1
 (
 	.q /* OUT */ (quotient_3),
 	.d /* IN */ (quotient_1),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_2
 (
 	.q /* OUT */ (quotient_4),
 	.d /* IN */ (quotient_2),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_3
 (
 	.q /* OUT */ (quotient_5),
 	.d /* IN */ (quotient_3),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_4
 (
 	.q /* OUT */ (quotient_6),
 	.d /* IN */ (quotient_4),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_5
 (
 	.q /* OUT */ (quotient_7),
 	.d /* IN */ (quotient_5),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_6
 (
 	.q /* OUT */ (quotient_8),
 	.d /* IN */ (quotient_6),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_7
 (
 	.q /* OUT */ (quotient_9),
 	.d /* IN */ (quotient_7),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_8
 (
 	.q /* OUT */ (quotient_10),
 	.d /* IN */ (quotient_8),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_9
 (
 	.q /* OUT */ (quotient_11),
 	.d /* IN */ (quotient_9),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_10
 (
 	.q /* OUT */ (quotient_12),
 	.d /* IN */ (quotient_10),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_11
 (
 	.q /* OUT */ (quotient_13),
 	.d /* IN */ (quotient_11),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_12
 (
 	.q /* OUT */ (quotient_14),
 	.d /* IN */ (quotient_12),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_13
 (
 	.q /* OUT */ (quotient_15),
 	.d /* IN */ (quotient_13),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_14
 (
 	.q /* OUT */ (quotient_16),
 	.d /* IN */ (quotient_14),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_15
 (
 	.q /* OUT */ (quotient_17),
 	.d /* IN */ (quotient_15),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_16
 (
 	.q /* OUT */ (quotient_18),
 	.d /* IN */ (quotient_16),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_17
 (
 	.q /* OUT */ (quotient_19),
 	.d /* IN */ (quotient_17),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_18
 (
 	.q /* OUT */ (quotient_20),
 	.d /* IN */ (quotient_18),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_19
 (
 	.q /* OUT */ (quotient_21),
 	.d /* IN */ (quotient_19),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_20
 (
 	.q /* OUT */ (quotient_22),
 	.d /* IN */ (quotient_20),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_21
 (
 	.q /* OUT */ (quotient_23),
 	.d /* IN */ (quotient_21),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_22
 (
 	.q /* OUT */ (quotient_24),
 	.d /* IN */ (quotient_22),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_23
 (
 	.q /* OUT */ (quotient_25),
 	.d /* IN */ (quotient_23),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_24
 (
 	.q /* OUT */ (quotient_26),
 	.d /* IN */ (quotient_24),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_25
 (
 	.q /* OUT */ (quotient_27),
 	.d /* IN */ (quotient_25),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_26
 (
 	.q /* OUT */ (quotient_28),
 	.d /* IN */ (quotient_26),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_27
 (
 	.q /* OUT */ (quotient_29),
 	.d /* IN */ (quotient_27),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_28
 (
 	.q /* OUT */ (quotient_30),
 	.d /* IN */ (quotient_28),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync quotient_from_2_to_31_inst_29
 (
 	.q /* OUT */ (quotient_31),
 	.d /* IN */ (quotient_29),
 	.ld /* IN */ (div_activeb_1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (237) - quotient : join
@@ -2053,25 +2158,29 @@ fd1q count_from_0_to_3_inst_0
 (
 	.q /* OUT */ (count_0),
 	.d /* IN */ (cnti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_3_inst_1
 (
 	.q /* OUT */ (count_1),
 	.d /* IN */ (cnti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_3_inst_2
 (
 	.q /* OUT */ (count_2),
 	.d /* IN */ (cnti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_3_inst_3
 (
 	.q /* OUT */ (count_3),
 	.d /* IN */ (cnti_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (256) - cnt_zero : or4
@@ -2089,7 +2198,8 @@ fd2q div_active_inst
 	.q /* OUT */ (div_active),
 	.d /* IN */ (div_activei_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DIVIDE.NET (261) - div_activeb[0-2] : nivu

@@ -2,12 +2,12 @@
 
 module lfu
 (
-	output [0:31] lfu_0;
-	output [0:31] lfu_1;
-	input [0:31] srcd_0;
-	input [0:31] srcd_1;
-	input [0:31] dstd_0;
-	input [0:31] dstd_1;
+	output [0:31] lfu_0,
+	output [0:31] lfu_1,
+	input [0:31] srcd_0,
+	input [0:31] srcd_1,
+	input [0:31] dstd_0,
+	input [0:31] dstd_1,
 	input lfc_0,
 	input lfc_1,
 	input lfc_2,

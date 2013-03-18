@@ -11,7 +11,8 @@ module clk
 	output cfgen,
 	output clk,
 	output vclk,
-	output tlw
+	output tlw,
+	input sys_clk // Generated
 );
 wire clk1;
 wire clk2;
@@ -54,7 +55,8 @@ fd1q cfgwl_inst
 (
 	.q /* OUT */ (cfgwl),
 	.d /* IN */ (resetl),
-	.cp /* IN */ (pclk)
+	.cp /* IN */ (pclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CLK.NET (81) - cfgw : iv
@@ -66,7 +68,8 @@ fd2q cfgend_inst
 	.q /* OUT */ (cfgend),
 	.d /* IN */ (cfgwl),
 	.cp /* IN */ (pclk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CLK.NET (83) - nottest : iv
@@ -83,7 +86,8 @@ ldp1q external_inst
 (
 	.q /* OUT */ (external),
 	.d /* IN */ (cfg_7),
-	.g /* IN */ (cfgw_obuf)
+	.g /* IN */ (cfgw_obuf),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CLK.NET (88) - internal : iv

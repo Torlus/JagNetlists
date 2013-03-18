@@ -1185,448 +1185,512 @@ slatch d1_from_0_to_63_inst_0
 	.q /* OUT */ (d1_0),
 	.d /* IN */ (d_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_1
 (
 	.q /* OUT */ (d1_1),
 	.d /* IN */ (d_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_2
 (
 	.q /* OUT */ (d1_2),
 	.d /* IN */ (d_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_3
 (
 	.q /* OUT */ (d1_3),
 	.d /* IN */ (d_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_4
 (
 	.q /* OUT */ (d1_4),
 	.d /* IN */ (d_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_5
 (
 	.q /* OUT */ (d1_5),
 	.d /* IN */ (d_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_6
 (
 	.q /* OUT */ (d1_6),
 	.d /* IN */ (d_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_7
 (
 	.q /* OUT */ (d1_7),
 	.d /* IN */ (d_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_8
 (
 	.q /* OUT */ (d1_8),
 	.d /* IN */ (d_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_9
 (
 	.q /* OUT */ (d1_9),
 	.d /* IN */ (d_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_10
 (
 	.q /* OUT */ (d1_10),
 	.d /* IN */ (d_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_11
 (
 	.q /* OUT */ (d1_11),
 	.d /* IN */ (d_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_12
 (
 	.q /* OUT */ (d1_12),
 	.d /* IN */ (d_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_13
 (
 	.q /* OUT */ (d1_13),
 	.d /* IN */ (d_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_14
 (
 	.q /* OUT */ (d1_14),
 	.d /* IN */ (d_14),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_15
 (
 	.q /* OUT */ (d1_15),
 	.d /* IN */ (d_15),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_16
 (
 	.q /* OUT */ (d1_16),
 	.d /* IN */ (d_16),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_17
 (
 	.q /* OUT */ (d1_17),
 	.d /* IN */ (d_17),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_18
 (
 	.q /* OUT */ (d1_18),
 	.d /* IN */ (d_18),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_19
 (
 	.q /* OUT */ (d1_19),
 	.d /* IN */ (d_19),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_20
 (
 	.q /* OUT */ (d1_20),
 	.d /* IN */ (d_20),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_21
 (
 	.q /* OUT */ (d1_21),
 	.d /* IN */ (d_21),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_22
 (
 	.q /* OUT */ (d1_22),
 	.d /* IN */ (d_22),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_23
 (
 	.q /* OUT */ (d1_23),
 	.d /* IN */ (d_23),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_24
 (
 	.q /* OUT */ (d1_24),
 	.d /* IN */ (d_24),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_25
 (
 	.q /* OUT */ (d1_25),
 	.d /* IN */ (d_25),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_26
 (
 	.q /* OUT */ (d1_26),
 	.d /* IN */ (d_26),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_27
 (
 	.q /* OUT */ (d1_27),
 	.d /* IN */ (d_27),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_28
 (
 	.q /* OUT */ (d1_28),
 	.d /* IN */ (d_28),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_29
 (
 	.q /* OUT */ (d1_29),
 	.d /* IN */ (d_29),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_30
 (
 	.q /* OUT */ (d1_30),
 	.d /* IN */ (d_30),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_31
 (
 	.q /* OUT */ (d1_31),
 	.d /* IN */ (d_31),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_32
 (
 	.q /* OUT */ (d1_32),
 	.d /* IN */ (d_32),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_33
 (
 	.q /* OUT */ (d1_33),
 	.d /* IN */ (d_33),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_34
 (
 	.q /* OUT */ (d1_34),
 	.d /* IN */ (d_34),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_35
 (
 	.q /* OUT */ (d1_35),
 	.d /* IN */ (d_35),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_36
 (
 	.q /* OUT */ (d1_36),
 	.d /* IN */ (d_36),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_37
 (
 	.q /* OUT */ (d1_37),
 	.d /* IN */ (d_37),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_38
 (
 	.q /* OUT */ (d1_38),
 	.d /* IN */ (d_38),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_39
 (
 	.q /* OUT */ (d1_39),
 	.d /* IN */ (d_39),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_40
 (
 	.q /* OUT */ (d1_40),
 	.d /* IN */ (d_40),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_41
 (
 	.q /* OUT */ (d1_41),
 	.d /* IN */ (d_41),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_42
 (
 	.q /* OUT */ (d1_42),
 	.d /* IN */ (d_42),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_43
 (
 	.q /* OUT */ (d1_43),
 	.d /* IN */ (d_43),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_44
 (
 	.q /* OUT */ (d1_44),
 	.d /* IN */ (d_44),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_45
 (
 	.q /* OUT */ (d1_45),
 	.d /* IN */ (d_45),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_46
 (
 	.q /* OUT */ (d1_46),
 	.d /* IN */ (d_46),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_47
 (
 	.q /* OUT */ (d1_47),
 	.d /* IN */ (d_47),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_48
 (
 	.q /* OUT */ (d1_48),
 	.d /* IN */ (d_48),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_49
 (
 	.q /* OUT */ (d1_49),
 	.d /* IN */ (d_49),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_50
 (
 	.q /* OUT */ (d1_50),
 	.d /* IN */ (d_50),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_51
 (
 	.q /* OUT */ (d1_51),
 	.d /* IN */ (d_51),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_52
 (
 	.q /* OUT */ (d1_52),
 	.d /* IN */ (d_52),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_53
 (
 	.q /* OUT */ (d1_53),
 	.d /* IN */ (d_53),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_54
 (
 	.q /* OUT */ (d1_54),
 	.d /* IN */ (d_54),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_55
 (
 	.q /* OUT */ (d1_55),
 	.d /* IN */ (d_55),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_56
 (
 	.q /* OUT */ (d1_56),
 	.d /* IN */ (d_56),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_57
 (
 	.q /* OUT */ (d1_57),
 	.d /* IN */ (d_57),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_58
 (
 	.q /* OUT */ (d1_58),
 	.d /* IN */ (d_58),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_59
 (
 	.q /* OUT */ (d1_59),
 	.d /* IN */ (d_59),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_60
 (
 	.q /* OUT */ (d1_60),
 	.d /* IN */ (d_60),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_61
 (
 	.q /* OUT */ (d1_61),
 	.d /* IN */ (d_61),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_62
 (
 	.q /* OUT */ (d1_62),
 	.d /* IN */ (d_62),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d1_from_0_to_63_inst_63
 (
 	.q /* OUT */ (d1_63),
 	.d /* IN */ (d_63),
 	.clk /* IN */ (clk),
-	.en /* IN */ (obdclk)
+	.en /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (71) - d2[0-63] : slatch
@@ -1635,448 +1699,512 @@ slatch d2_from_0_to_63_inst_0
 	.q /* OUT */ (d2_0),
 	.d /* IN */ (d1_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_1
 (
 	.q /* OUT */ (d2_1),
 	.d /* IN */ (d1_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_2
 (
 	.q /* OUT */ (d2_2),
 	.d /* IN */ (d1_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_3
 (
 	.q /* OUT */ (d2_3),
 	.d /* IN */ (d1_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_4
 (
 	.q /* OUT */ (d2_4),
 	.d /* IN */ (d1_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_5
 (
 	.q /* OUT */ (d2_5),
 	.d /* IN */ (d1_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_6
 (
 	.q /* OUT */ (d2_6),
 	.d /* IN */ (d1_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_7
 (
 	.q /* OUT */ (d2_7),
 	.d /* IN */ (d1_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_8
 (
 	.q /* OUT */ (d2_8),
 	.d /* IN */ (d1_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_9
 (
 	.q /* OUT */ (d2_9),
 	.d /* IN */ (d1_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_10
 (
 	.q /* OUT */ (d2_10),
 	.d /* IN */ (d1_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_11
 (
 	.q /* OUT */ (d2_11),
 	.d /* IN */ (d1_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_12
 (
 	.q /* OUT */ (d2_12),
 	.d /* IN */ (d1_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_13
 (
 	.q /* OUT */ (d2_13),
 	.d /* IN */ (d1_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_14
 (
 	.q /* OUT */ (d2_14),
 	.d /* IN */ (d1_14),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_15
 (
 	.q /* OUT */ (d2_15),
 	.d /* IN */ (d1_15),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_16
 (
 	.q /* OUT */ (d2_16),
 	.d /* IN */ (d1_16),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_17
 (
 	.q /* OUT */ (d2_17),
 	.d /* IN */ (d1_17),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_18
 (
 	.q /* OUT */ (d2_18),
 	.d /* IN */ (d1_18),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_19
 (
 	.q /* OUT */ (d2_19),
 	.d /* IN */ (d1_19),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_20
 (
 	.q /* OUT */ (d2_20),
 	.d /* IN */ (d1_20),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_21
 (
 	.q /* OUT */ (d2_21),
 	.d /* IN */ (d1_21),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_22
 (
 	.q /* OUT */ (d2_22),
 	.d /* IN */ (d1_22),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_23
 (
 	.q /* OUT */ (d2_23),
 	.d /* IN */ (d1_23),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_24
 (
 	.q /* OUT */ (d2_24),
 	.d /* IN */ (d1_24),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_25
 (
 	.q /* OUT */ (d2_25),
 	.d /* IN */ (d1_25),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_26
 (
 	.q /* OUT */ (d2_26),
 	.d /* IN */ (d1_26),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_27
 (
 	.q /* OUT */ (d2_27),
 	.d /* IN */ (d1_27),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_28
 (
 	.q /* OUT */ (d2_28),
 	.d /* IN */ (d1_28),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_29
 (
 	.q /* OUT */ (d2_29),
 	.d /* IN */ (d1_29),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_30
 (
 	.q /* OUT */ (d2_30),
 	.d /* IN */ (d1_30),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_31
 (
 	.q /* OUT */ (d2_31),
 	.d /* IN */ (d1_31),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_32
 (
 	.q /* OUT */ (d2_32),
 	.d /* IN */ (d1_32),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_33
 (
 	.q /* OUT */ (d2_33),
 	.d /* IN */ (d1_33),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_34
 (
 	.q /* OUT */ (d2_34),
 	.d /* IN */ (d1_34),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_35
 (
 	.q /* OUT */ (d2_35),
 	.d /* IN */ (d1_35),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_36
 (
 	.q /* OUT */ (d2_36),
 	.d /* IN */ (d1_36),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_37
 (
 	.q /* OUT */ (d2_37),
 	.d /* IN */ (d1_37),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_38
 (
 	.q /* OUT */ (d2_38),
 	.d /* IN */ (d1_38),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_39
 (
 	.q /* OUT */ (d2_39),
 	.d /* IN */ (d1_39),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_40
 (
 	.q /* OUT */ (d2_40),
 	.d /* IN */ (d1_40),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_41
 (
 	.q /* OUT */ (d2_41),
 	.d /* IN */ (d1_41),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_42
 (
 	.q /* OUT */ (d2_42),
 	.d /* IN */ (d1_42),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_43
 (
 	.q /* OUT */ (d2_43),
 	.d /* IN */ (d1_43),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_44
 (
 	.q /* OUT */ (d2_44),
 	.d /* IN */ (d1_44),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_45
 (
 	.q /* OUT */ (d2_45),
 	.d /* IN */ (d1_45),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_46
 (
 	.q /* OUT */ (d2_46),
 	.d /* IN */ (d1_46),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_47
 (
 	.q /* OUT */ (d2_47),
 	.d /* IN */ (d1_47),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_48
 (
 	.q /* OUT */ (d2_48),
 	.d /* IN */ (d1_48),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_49
 (
 	.q /* OUT */ (d2_49),
 	.d /* IN */ (d1_49),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_50
 (
 	.q /* OUT */ (d2_50),
 	.d /* IN */ (d1_50),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_51
 (
 	.q /* OUT */ (d2_51),
 	.d /* IN */ (d1_51),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_52
 (
 	.q /* OUT */ (d2_52),
 	.d /* IN */ (d1_52),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_53
 (
 	.q /* OUT */ (d2_53),
 	.d /* IN */ (d1_53),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_54
 (
 	.q /* OUT */ (d2_54),
 	.d /* IN */ (d1_54),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_55
 (
 	.q /* OUT */ (d2_55),
 	.d /* IN */ (d1_55),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_56
 (
 	.q /* OUT */ (d2_56),
 	.d /* IN */ (d1_56),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_57
 (
 	.q /* OUT */ (d2_57),
 	.d /* IN */ (d1_57),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_58
 (
 	.q /* OUT */ (d2_58),
 	.d /* IN */ (d1_58),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_59
 (
 	.q /* OUT */ (d2_59),
 	.d /* IN */ (d1_59),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_60
 (
 	.q /* OUT */ (d2_60),
 	.d /* IN */ (d1_60),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_61
 (
 	.q /* OUT */ (d2_61),
 	.d /* IN */ (d1_61),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_62
 (
 	.q /* OUT */ (d2_62),
 	.d /* IN */ (d1_62),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 slatch d2_from_0_to_63_inst_63
 (
 	.q /* OUT */ (d2_63),
 	.d /* IN */ (d1_63),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextphrase)
+	.en /* IN */ (nextphrase),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (75) - scaledi : ldp1q
@@ -2084,7 +2212,8 @@ ldp1q scaledi_inst
 (
 	.q /* OUT */ (scaledi),
 	.d /* IN */ (scaledtype),
-	.g /* IN */ (obdclk)
+	.g /* IN */ (obdclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (76) - scaled : nivm
@@ -2096,7 +2225,8 @@ ldp2q rmw1i_inst
 	.q /* OUT */ (rmw1i),
 	.d /* IN */ (rmw),
 	.g /* IN */ (obdclk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (78) - rmw1 : nivu
@@ -2113,7 +2243,8 @@ fjk2 full_inst
 	.j /* IN */ (obdlatch),
 	.k /* IN */ (empty),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (86) - notobdl : iv
@@ -2888,49 +3019,57 @@ fd1q pral_from_0_to_7_inst_0
 (
 	.q /* OUT */ (paaq_0),
 	.d /* IN */ (paad_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_1
 (
 	.q /* OUT */ (paaq_1),
 	.d /* IN */ (paad_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_2
 (
 	.q /* OUT */ (paaq_2),
 	.d /* IN */ (paad_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_3
 (
 	.q /* OUT */ (paaq_3),
 	.d /* IN */ (paad_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_4
 (
 	.q /* OUT */ (paaq_4),
 	.d /* IN */ (paad_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_5
 (
 	.q /* OUT */ (paaq_5),
 	.d /* IN */ (paad_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_6
 (
 	.q /* OUT */ (paaq_6),
 	.d /* IN */ (paad_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pral_from_0_to_7_inst_7
 (
 	.q /* OUT */ (paaq_7),
 	.d /* IN */ (paad_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (173) - prbl[0-7] : fd1q
@@ -2938,49 +3077,57 @@ fd1q prbl_from_0_to_7_inst_0
 (
 	.q /* OUT */ (pabq_0),
 	.d /* IN */ (pabd_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_1
 (
 	.q /* OUT */ (pabq_1),
 	.d /* IN */ (pabd_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_2
 (
 	.q /* OUT */ (pabq_2),
 	.d /* IN */ (pabd_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_3
 (
 	.q /* OUT */ (pabq_3),
 	.d /* IN */ (pabd_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_4
 (
 	.q /* OUT */ (pabq_4),
 	.d /* IN */ (pabd_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_5
 (
 	.q /* OUT */ (pabq_5),
 	.d /* IN */ (pabd_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_6
 (
 	.q /* OUT */ (pabq_6),
 	.d /* IN */ (pabd_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q prbl_from_0_to_7_inst_7
 (
 	.q /* OUT */ (pabq_7),
 	.d /* IN */ (pabd_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (175) - paa[0-7] : hdly2b
@@ -3034,7 +3181,8 @@ fd1q busy1_inst
 (
 	.q /* OUT */ (busy1),
 	.d /* IN */ (busy),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (186) - cs : or2
@@ -3186,97 +3334,113 @@ fd1q pd_from_0_to_15_inst_0
 (
 	.q /* OUT */ (pd_0),
 	.d /* IN */ (pdi_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_1
 (
 	.q /* OUT */ (pd_1),
 	.d /* IN */ (pdi_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_2
 (
 	.q /* OUT */ (pd_2),
 	.d /* IN */ (pdi_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_3
 (
 	.q /* OUT */ (pd_3),
 	.d /* IN */ (pdi_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_4
 (
 	.q /* OUT */ (pd_4),
 	.d /* IN */ (pdi_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_5
 (
 	.q /* OUT */ (pd_5),
 	.d /* IN */ (pdi_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_6
 (
 	.q /* OUT */ (pd_6),
 	.d /* IN */ (pdi_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_7
 (
 	.q /* OUT */ (pd_7),
 	.d /* IN */ (pdi_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_8
 (
 	.q /* OUT */ (pd_8),
 	.d /* IN */ (pdi_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_9
 (
 	.q /* OUT */ (pd_9),
 	.d /* IN */ (pdi_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_10
 (
 	.q /* OUT */ (pd_10),
 	.d /* IN */ (pdi_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_11
 (
 	.q /* OUT */ (pd_11),
 	.d /* IN */ (pdi_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_12
 (
 	.q /* OUT */ (pd_12),
 	.d /* IN */ (pdi_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_13
 (
 	.q /* OUT */ (pd_13),
 	.d /* IN */ (pdi_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_14
 (
 	.q /* OUT */ (pd_14),
 	.d /* IN */ (pdi_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd_from_0_to_15_inst_15
 (
 	.q /* OUT */ (pd_15),
 	.d /* IN */ (pdi_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (196) - dr[0-15] : ts
@@ -3755,193 +3919,225 @@ fd1q d9_from_0_to_31_inst_0
 (
 	.q /* OUT */ (d9_0),
 	.d /* IN */ (d8_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_1
 (
 	.q /* OUT */ (d9_1),
 	.d /* IN */ (d8_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_2
 (
 	.q /* OUT */ (d9_2),
 	.d /* IN */ (d8_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_3
 (
 	.q /* OUT */ (d9_3),
 	.d /* IN */ (d8_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_4
 (
 	.q /* OUT */ (d9_4),
 	.d /* IN */ (d8_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_5
 (
 	.q /* OUT */ (d9_5),
 	.d /* IN */ (d8_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_6
 (
 	.q /* OUT */ (d9_6),
 	.d /* IN */ (d8_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_7
 (
 	.q /* OUT */ (d9_7),
 	.d /* IN */ (d8_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_8
 (
 	.q /* OUT */ (d9_8),
 	.d /* IN */ (d8_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_9
 (
 	.q /* OUT */ (d9_9),
 	.d /* IN */ (d8_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_10
 (
 	.q /* OUT */ (d9_10),
 	.d /* IN */ (d8_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_11
 (
 	.q /* OUT */ (d9_11),
 	.d /* IN */ (d8_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_12
 (
 	.q /* OUT */ (d9_12),
 	.d /* IN */ (d8_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_13
 (
 	.q /* OUT */ (d9_13),
 	.d /* IN */ (d8_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_14
 (
 	.q /* OUT */ (d9_14),
 	.d /* IN */ (d8_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_15
 (
 	.q /* OUT */ (d9_15),
 	.d /* IN */ (d8_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_16
 (
 	.q /* OUT */ (d9_16),
 	.d /* IN */ (d8_16),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_17
 (
 	.q /* OUT */ (d9_17),
 	.d /* IN */ (d8_17),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_18
 (
 	.q /* OUT */ (d9_18),
 	.d /* IN */ (d8_18),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_19
 (
 	.q /* OUT */ (d9_19),
 	.d /* IN */ (d8_19),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_20
 (
 	.q /* OUT */ (d9_20),
 	.d /* IN */ (d8_20),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_21
 (
 	.q /* OUT */ (d9_21),
 	.d /* IN */ (d8_21),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_22
 (
 	.q /* OUT */ (d9_22),
 	.d /* IN */ (d8_22),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_23
 (
 	.q /* OUT */ (d9_23),
 	.d /* IN */ (d8_23),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_24
 (
 	.q /* OUT */ (d9_24),
 	.d /* IN */ (d8_24),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_25
 (
 	.q /* OUT */ (d9_25),
 	.d /* IN */ (d8_25),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_26
 (
 	.q /* OUT */ (d9_26),
 	.d /* IN */ (d8_26),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_27
 (
 	.q /* OUT */ (d9_27),
 	.d /* IN */ (d8_27),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_28
 (
 	.q /* OUT */ (d9_28),
 	.d /* IN */ (d8_28),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_29
 (
 	.q /* OUT */ (d9_29),
 	.d /* IN */ (d8_29),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_30
 (
 	.q /* OUT */ (d9_30),
 	.d /* IN */ (d8_30),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q d9_from_0_to_31_inst_31
 (
 	.q /* OUT */ (d9_31),
 	.d /* IN */ (d8_31),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (227) - d9l : join
@@ -3989,7 +4185,8 @@ fd1q nextbits1_inst
 (
 	.q /* OUT */ (nextbits1),
 	.d /* IN */ (nextbits),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (269) - nextbits2 : fd1q
@@ -3997,7 +4194,8 @@ fd1q nextbits2_inst
 (
 	.q /* OUT */ (nextbits2),
 	.d /* IN */ (nextbits1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (270) - delpixi : mx2
@@ -4018,112 +4216,128 @@ slatch da_from_0_to_15_inst_0
 	.q /* OUT */ (da_0),
 	.d /* IN */ (d9_16),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_1
 (
 	.q /* OUT */ (da_1),
 	.d /* IN */ (d9_17),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_2
 (
 	.q /* OUT */ (da_2),
 	.d /* IN */ (d9_18),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_3
 (
 	.q /* OUT */ (da_3),
 	.d /* IN */ (d9_19),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_4
 (
 	.q /* OUT */ (da_4),
 	.d /* IN */ (d9_20),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_5
 (
 	.q /* OUT */ (da_5),
 	.d /* IN */ (d9_21),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_6
 (
 	.q /* OUT */ (da_6),
 	.d /* IN */ (d9_22),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_7
 (
 	.q /* OUT */ (da_7),
 	.d /* IN */ (d9_23),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_8
 (
 	.q /* OUT */ (da_8),
 	.d /* IN */ (d9_24),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_9
 (
 	.q /* OUT */ (da_9),
 	.d /* IN */ (d9_25),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_10
 (
 	.q /* OUT */ (da_10),
 	.d /* IN */ (d9_26),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_11
 (
 	.q /* OUT */ (da_11),
 	.d /* IN */ (d9_27),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_12
 (
 	.q /* OUT */ (da_12),
 	.d /* IN */ (d9_28),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_13
 (
 	.q /* OUT */ (da_13),
 	.d /* IN */ (d9_29),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_14
 (
 	.q /* OUT */ (da_14),
 	.d /* IN */ (d9_30),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 slatch da_from_0_to_15_inst_15
 (
 	.q /* OUT */ (da_15),
 	.d /* IN */ (d9_31),
 	.clk /* IN */ (clk),
-	.en /* IN */ (delpix)
+	.en /* IN */ (delpix),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (274) - del1 : eo
@@ -4483,7 +4697,8 @@ upcnts pa_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ci_0),
 	.ld /* IN */ (nextphrase),
-	.res /* IN */ (reset)
+	.res /* IN */ (reset),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (295) - pad[1] : upcnts
@@ -4495,7 +4710,8 @@ upcnts pad_index_1_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ci_1),
 	.ld /* IN */ (nextphrase),
-	.res /* IN */ (reset)
+	.res /* IN */ (reset),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (296) - pad[2] : upcnts
@@ -4507,7 +4723,8 @@ upcnts pad_index_2_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ci_2),
 	.ld /* IN */ (nextphrase),
-	.res /* IN */ (reset)
+	.res /* IN */ (reset),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (297) - pad[3] : upcnts
@@ -4519,7 +4736,8 @@ upcnts pad_index_3_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ci_3),
 	.ld /* IN */ (nextphrase),
-	.res /* IN */ (reset)
+	.res /* IN */ (reset),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (298) - pad[4] : upcnts
@@ -4531,7 +4749,8 @@ upcnts pad_index_4_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ci_4),
 	.ld /* IN */ (nextphrase),
-	.res /* IN */ (reset)
+	.res /* IN */ (reset),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (299) - pad[5] : upcnts
@@ -4543,7 +4762,8 @@ upcnts pad_index_5_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ci_5),
 	.ld /* IN */ (nextphrase),
-	.res /* IN */ (reset)
+	.res /* IN */ (reset),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (300) - gnd : tie0
@@ -4584,42 +4804,48 @@ slatch ip_from_0_to_5_inst_0
 	.q /* OUT */ (ip_0),
 	.d /* IN */ (ipd_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nip)
+	.en /* IN */ (nip),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ip_from_0_to_5_inst_1
 (
 	.q /* OUT */ (ip_1),
 	.d /* IN */ (ipd_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nip)
+	.en /* IN */ (nip),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ip_from_0_to_5_inst_2
 (
 	.q /* OUT */ (ip_2),
 	.d /* IN */ (ipd_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nip)
+	.en /* IN */ (nip),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ip_from_0_to_5_inst_3
 (
 	.q /* OUT */ (ip_3),
 	.d /* IN */ (ipd_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nip)
+	.en /* IN */ (nip),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ip_from_0_to_5_inst_4
 (
 	.q /* OUT */ (ip_4),
 	.d /* IN */ (ipd_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nip)
+	.en /* IN */ (nip),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ip_from_0_to_5_inst_5
 (
 	.q /* OUT */ (ip_5),
 	.d /* IN */ (ipd_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nip)
+	.en /* IN */ (nip),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (312) - nip : or2
@@ -4693,7 +4919,8 @@ fd1q nextx1_inst
 (
 	.q /* OUT */ (nextx1),
 	.d /* IN */ (nextx),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (350) - nextxx : mx2
@@ -4714,7 +4941,8 @@ udcnt lbwad_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lci_0),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (353) - lbwad[1] : udcnt
@@ -4726,7 +4954,8 @@ udcnt lbwad_index_1_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lci_1),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (354) - lbwad[2-11] : udcnt
@@ -4738,7 +4967,8 @@ udcnt lbwad_from_2_to_11_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_1),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_1
 (
@@ -4748,7 +4978,8 @@ udcnt lbwad_from_2_to_11_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_2),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_2
 (
@@ -4758,7 +4989,8 @@ udcnt lbwad_from_2_to_11_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_3),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_3
 (
@@ -4768,7 +5000,8 @@ udcnt lbwad_from_2_to_11_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_4),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_4
 (
@@ -4778,7 +5011,8 @@ udcnt lbwad_from_2_to_11_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_5),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_5
 (
@@ -4788,7 +5022,8 @@ udcnt lbwad_from_2_to_11_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_6),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_6
 (
@@ -4798,7 +5033,8 @@ udcnt lbwad_from_2_to_11_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_7),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_7
 (
@@ -4808,7 +5044,8 @@ udcnt lbwad_from_2_to_11_inst_7
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_8),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_8
 (
@@ -4818,7 +5055,8 @@ udcnt lbwad_from_2_to_11_inst_8
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_9),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt lbwad_from_2_to_11_inst_9
 (
@@ -4828,7 +5066,8 @@ udcnt lbwad_from_2_to_11_inst_9
 	.clk /* IN */ (clk),
 	.ci /* IN */ (lco_10),
 	.ld /* IN */ (xld),
-	.up /* IN */ (up)
+	.up /* IN */ (up),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (356) - lbwadd[0-9] : mx2
@@ -4908,61 +5147,71 @@ fd1q lbwa_from_0_to_9_inst_0
 (
 	.q /* OUT */ (lbwa_0),
 	.d /* IN */ (lbwadd_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_1
 (
 	.q /* OUT */ (lbwa_1),
 	.d /* IN */ (lbwadd_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_2
 (
 	.q /* OUT */ (lbwa_2),
 	.d /* IN */ (lbwadd_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_3
 (
 	.q /* OUT */ (lbwa_3),
 	.d /* IN */ (lbwadd_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_4
 (
 	.q /* OUT */ (lbwa_4),
 	.d /* IN */ (lbwadd_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_5
 (
 	.q /* OUT */ (lbwa_5),
 	.d /* IN */ (lbwadd_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_6
 (
 	.q /* OUT */ (lbwa_6),
 	.d /* IN */ (lbwadd_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_7
 (
 	.q /* OUT */ (lbwa_7),
 	.d /* IN */ (lbwadd_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_8
 (
 	.q /* OUT */ (lbwa_8),
 	.d /* IN */ (lbwadd_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbwa_from_0_to_9_inst_9
 (
 	.q /* OUT */ (lbwa_9),
 	.d /* IN */ (lbwadd_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (359) - up : ivh
@@ -5118,7 +5367,8 @@ fd4q idle_inst
 	.q /* OUT */ (smq0),
 	.d /* IN */ (smd0),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (516) - read : fd2q
@@ -5127,7 +5377,8 @@ fd2q read_inst
 	.q /* OUT */ (smq1),
 	.d /* IN */ (smd1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (517) - write : fd2q
@@ -5136,7 +5387,8 @@ fd2q write_inst
 	.q /* OUT */ (smq2i),
 	.d /* IN */ (smd2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (518) - smq2 : nivm
@@ -5261,7 +5513,8 @@ fd1q lbwea2_inst
 (
 	.q /* OUT */ (lbwea2),
 	.d /* IN */ (lbwea1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (582) - lbweb2 : fd1q
@@ -5269,7 +5522,8 @@ fd1q lbweb2_inst
 (
 	.q /* OUT */ (lbweb2),
 	.d /* IN */ (lbweb1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (584) - lbwea4 : mx2
@@ -5295,7 +5549,8 @@ fd1q lbweb51_inst
 (
 	.q /* OUT */ (lbweb51),
 	.d /* IN */ (lbweb4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (591) - lbweb52 : fd1q
@@ -5303,7 +5558,8 @@ fd1q lbweb52_inst
 (
 	.q /* OUT */ (lbweb52),
 	.d /* IN */ (lbweb51),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (592) - lbweb5 : mx2
@@ -5365,7 +5621,8 @@ fd1q lbwe_index_0_inst
 (
 	.q /* OUT */ (lbwe_0),
 	.d /* IN */ (lbwea8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (608) - lbwe[1] : fd1q
@@ -5373,7 +5630,8 @@ fd1q lbwe_index_1_inst
 (
 	.q /* OUT */ (lbwe_1),
 	.d /* IN */ (lbweb8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (610) - notlbwad[0] : iv
@@ -5384,7 +5642,8 @@ fd1q lbw1_inst
 (
 	.q /* OUT */ (lbw1),
 	.d /* IN */ (lbwrite),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (618) - lbw2 : fd1q
@@ -5392,7 +5651,8 @@ fd1q lbw2_inst
 (
 	.q /* OUT */ (lbw2),
 	.d /* IN */ (lbw1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (619) - lbw3 : fd1q
@@ -5400,7 +5660,8 @@ fd1q lbw3_inst
 (
 	.q /* OUT */ (lbw3),
 	.d /* IN */ (lbw2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (620) - lbend : or6
@@ -5412,7 +5673,8 @@ fd2q lbeni_inst
 	.q /* OUT */ (lbeni),
 	.d /* IN */ (lbend),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (622) - lben : nivh
@@ -5423,7 +5685,8 @@ fd1q pa1_index_0_inst
 (
 	.q /* OUT */ (pa1_0),
 	.d /* IN */ (pa_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (635) - pa2[0] : mx2
@@ -5452,7 +5715,8 @@ fd1q pswapi_inst
 (
 	.q /* OUT */ (pswapi),
 	.d /* IN */ (pswapd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (639) - pswap : nivu
@@ -5463,55 +5727,64 @@ fd1q xrem_from_0_to_8_inst_0
 (
 	.q /* OUT */ (xrem_0),
 	.d /* IN */ (xrd_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_1
 (
 	.q /* OUT */ (xrem_1),
 	.d /* IN */ (xrd_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_2
 (
 	.q /* OUT */ (xrem_2),
 	.d /* IN */ (xrd_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_3
 (
 	.q /* OUT */ (xrem_3),
 	.d /* IN */ (xrd_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_4
 (
 	.q /* OUT */ (xrem_4),
 	.d /* IN */ (xrd_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_5
 (
 	.q /* OUT */ (xrem_5),
 	.d /* IN */ (xrd_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_6
 (
 	.q /* OUT */ (xrem_6),
 	.d /* IN */ (xrd_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_7
 (
 	.q /* OUT */ (xrem_7),
 	.d /* IN */ (xrd_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q xrem_from_0_to_8_inst_8
 (
 	.q /* OUT */ (xrem_8),
 	.d /* IN */ (xrd_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OBDATA.NET (648) - sum[0] : ha1

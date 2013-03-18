@@ -2,11 +2,11 @@
 
 module datamux
 (
-	output [0:15] data_x;
-	output [0:15] data_y;
-	input [0:31] gpu_din;
-	input [0:15] addq_x;
-	input [0:15] addq_y;
+	output [0:15] data_x,
+	output [0:15] data_y,
+	input [0:31] gpu_din,
+	input [0:15] addq_x,
+	input [0:15] addq_y,
 	input addqsel
 );
 wire [0:15] gpu_lo;

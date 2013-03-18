@@ -133,7 +133,8 @@ module pix
 	input dr_7_in,
 	output dr_8_out,
 	output dr_8_oe,
-	input dr_8_in
+	input dr_8_in,
+	input sys_clk // Generated
 );
 wire [0:7] red;
 wire [0:7] green;
@@ -478,7 +479,8 @@ upcnts lbra_index_0_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (nextpixa),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (42) - lbra[1-8] : upcnts
@@ -490,7 +492,8 @@ upcnts lbra_from_1_to_8_inst_0
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_0),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_1
 (
@@ -500,7 +503,8 @@ upcnts lbra_from_1_to_8_inst_1
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_1),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_2
 (
@@ -510,7 +514,8 @@ upcnts lbra_from_1_to_8_inst_2
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_2),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_3
 (
@@ -520,7 +525,8 @@ upcnts lbra_from_1_to_8_inst_3
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_3),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_4
 (
@@ -530,7 +536,8 @@ upcnts lbra_from_1_to_8_inst_4
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_4),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_5
 (
@@ -540,7 +547,8 @@ upcnts lbra_from_1_to_8_inst_5
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_5),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_6
 (
@@ -550,7 +558,8 @@ upcnts lbra_from_1_to_8_inst_6
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_6),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts lbra_from_1_to_8_inst_7
 (
@@ -560,7 +569,8 @@ upcnts lbra_from_1_to_8_inst_7
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (co_7),
 	.ld /* IN */ (lbraw),
-	.res /* IN */ (lbres)
+	.res /* IN */ (lbres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (43) - co8 : dummy
@@ -594,224 +604,256 @@ slatch pd1_from_0_to_31_inst_0
 	.q /* OUT */ (pd1_0),
 	.d /* IN */ (lbrd_0),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_1
 (
 	.q /* OUT */ (pd1_1),
 	.d /* IN */ (lbrd_1),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_2
 (
 	.q /* OUT */ (pd1_2),
 	.d /* IN */ (lbrd_2),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_3
 (
 	.q /* OUT */ (pd1_3),
 	.d /* IN */ (lbrd_3),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_4
 (
 	.q /* OUT */ (pd1_4),
 	.d /* IN */ (lbrd_4),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_5
 (
 	.q /* OUT */ (pd1_5),
 	.d /* IN */ (lbrd_5),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_6
 (
 	.q /* OUT */ (pd1_6),
 	.d /* IN */ (lbrd_6),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_7
 (
 	.q /* OUT */ (pd1_7),
 	.d /* IN */ (lbrd_7),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_8
 (
 	.q /* OUT */ (pd1_8),
 	.d /* IN */ (lbrd_8),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_9
 (
 	.q /* OUT */ (pd1_9),
 	.d /* IN */ (lbrd_9),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_10
 (
 	.q /* OUT */ (pd1_10),
 	.d /* IN */ (lbrd_10),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_11
 (
 	.q /* OUT */ (pd1_11),
 	.d /* IN */ (lbrd_11),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_12
 (
 	.q /* OUT */ (pd1_12),
 	.d /* IN */ (lbrd_12),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_13
 (
 	.q /* OUT */ (pd1_13),
 	.d /* IN */ (lbrd_13),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_14
 (
 	.q /* OUT */ (pd1_14),
 	.d /* IN */ (lbrd_14),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_15
 (
 	.q /* OUT */ (pd1_15),
 	.d /* IN */ (lbrd_15),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_16
 (
 	.q /* OUT */ (pd1_16),
 	.d /* IN */ (lbrd_16),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_17
 (
 	.q /* OUT */ (pd1_17),
 	.d /* IN */ (lbrd_17),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_18
 (
 	.q /* OUT */ (pd1_18),
 	.d /* IN */ (lbrd_18),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_19
 (
 	.q /* OUT */ (pd1_19),
 	.d /* IN */ (lbrd_19),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_20
 (
 	.q /* OUT */ (pd1_20),
 	.d /* IN */ (lbrd_20),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_21
 (
 	.q /* OUT */ (pd1_21),
 	.d /* IN */ (lbrd_21),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_22
 (
 	.q /* OUT */ (pd1_22),
 	.d /* IN */ (lbrd_22),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_23
 (
 	.q /* OUT */ (pd1_23),
 	.d /* IN */ (lbrd_23),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_24
 (
 	.q /* OUT */ (pd1_24),
 	.d /* IN */ (lbrd_24),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_25
 (
 	.q /* OUT */ (pd1_25),
 	.d /* IN */ (lbrd_25),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_26
 (
 	.q /* OUT */ (pd1_26),
 	.d /* IN */ (lbrd_26),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_27
 (
 	.q /* OUT */ (pd1_27),
 	.d /* IN */ (lbrd_27),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_28
 (
 	.q /* OUT */ (pd1_28),
 	.d /* IN */ (lbrd_28),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_29
 (
 	.q /* OUT */ (pd1_29),
 	.d /* IN */ (lbrd_29),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_30
 (
 	.q /* OUT */ (pd1_30),
 	.d /* IN */ (lbrd_30),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd1_from_0_to_31_inst_31
 (
 	.q /* OUT */ (pd1_31),
 	.d /* IN */ (lbrd_31),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (nextpixb)
+	.en /* IN */ (nextpixb),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (53) - ge1 : join
@@ -1017,7 +1059,8 @@ fd1q ppdi_inst
 (
 	.q /* OUT */ (ppdi),
 	.d /* IN */ (pp),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (80) - ppd : nivu
@@ -1069,7 +1112,8 @@ cryrgb pd3_inst
 	.vclk /* IN */ (vclk),
 	.mptest /* IN */ (mptest),
 	.rgb /* IN */ (rgb),
-	.ppd /* IN */ (ppd)
+	.ppd /* IN */ (ppd),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (87) - lpb : nivh
@@ -1194,97 +1238,113 @@ ldp1q bc_from_0_to_15_inst_0
 (
 	.q /* OUT */ (bc_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_1
 (
 	.q /* OUT */ (bc_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_2
 (
 	.q /* OUT */ (bc_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_3
 (
 	.q /* OUT */ (bc_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_4
 (
 	.q /* OUT */ (bc_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_5
 (
 	.q /* OUT */ (bc_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_6
 (
 	.q /* OUT */ (bc_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_7
 (
 	.q /* OUT */ (bc_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_8
 (
 	.q /* OUT */ (bc_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_9
 (
 	.q /* OUT */ (bc_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_10
 (
 	.q /* OUT */ (bc_10),
 	.d /* IN */ (din_10),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_11
 (
 	.q /* OUT */ (bc_11),
 	.d /* IN */ (din_11),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_12
 (
 	.q /* OUT */ (bc_12),
 	.d /* IN */ (din_12),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_13
 (
 	.q /* OUT */ (bc_13),
 	.d /* IN */ (din_13),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_14
 (
 	.q /* OUT */ (bc_14),
 	.d /* IN */ (din_14),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_0_to_15_inst_15
 (
 	.q /* OUT */ (bc_15),
 	.d /* IN */ (din_15),
-	.g /* IN */ (bcrgwr)
+	.g /* IN */ (bcrgwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (93) - bc[16-23] : ldp1q
@@ -1292,49 +1352,57 @@ ldp1q bc_from_16_to_23_inst_0
 (
 	.q /* OUT */ (bc_16),
 	.d /* IN */ (din_0),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_1
 (
 	.q /* OUT */ (bc_17),
 	.d /* IN */ (din_1),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_2
 (
 	.q /* OUT */ (bc_18),
 	.d /* IN */ (din_2),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_3
 (
 	.q /* OUT */ (bc_19),
 	.d /* IN */ (din_3),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_4
 (
 	.q /* OUT */ (bc_20),
 	.d /* IN */ (din_4),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_5
 (
 	.q /* OUT */ (bc_21),
 	.d /* IN */ (din_5),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_6
 (
 	.q /* OUT */ (bc_22),
 	.d /* IN */ (din_6),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bc_from_16_to_23_inst_7
 (
 	.q /* OUT */ (bc_23),
 	.d /* IN */ (din_7),
-	.g /* IN */ (bcbwr)
+	.g /* IN */ (bcbwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (101) - sxp : or2
@@ -1348,7 +1416,8 @@ fd1q bord1_inst
 (
 	.q /* OUT */ (bord1),
 	.d /* IN */ (notvactive),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (104) - bord2 : fd1q
@@ -1356,7 +1425,8 @@ fd1q bord2_inst
 (
 	.q /* OUT */ (bord2),
 	.d /* IN */ (bord1),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (105) - bord3 : slatch
@@ -1365,7 +1435,8 @@ slatch bord3_inst
 	.q /* OUT */ (bord3),
 	.d /* IN */ (bord2),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (ppd)
+	.en /* IN */ (ppd),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (106) - border : mx2
@@ -1645,145 +1716,169 @@ fd1q pd6_from_0_to_23_inst_0
 (
 	.q /* OUT */ (pd6_0),
 	.d /* IN */ (pd5_0),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_1
 (
 	.q /* OUT */ (pd6_1),
 	.d /* IN */ (pd5_1),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_2
 (
 	.q /* OUT */ (pd6_2),
 	.d /* IN */ (pd5_2),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_3
 (
 	.q /* OUT */ (pd6_3),
 	.d /* IN */ (pd5_3),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_4
 (
 	.q /* OUT */ (pd6_4),
 	.d /* IN */ (pd5_4),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_5
 (
 	.q /* OUT */ (pd6_5),
 	.d /* IN */ (pd5_5),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_6
 (
 	.q /* OUT */ (pd6_6),
 	.d /* IN */ (pd5_6),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_7
 (
 	.q /* OUT */ (pd6_7),
 	.d /* IN */ (pd5_7),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_8
 (
 	.q /* OUT */ (pd6_8),
 	.d /* IN */ (pd5_8),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_9
 (
 	.q /* OUT */ (pd6_9),
 	.d /* IN */ (pd5_9),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_10
 (
 	.q /* OUT */ (pd6_10),
 	.d /* IN */ (pd5_10),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_11
 (
 	.q /* OUT */ (pd6_11),
 	.d /* IN */ (pd5_11),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_12
 (
 	.q /* OUT */ (pd6_12),
 	.d /* IN */ (pd5_12),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_13
 (
 	.q /* OUT */ (pd6_13),
 	.d /* IN */ (pd5_13),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_14
 (
 	.q /* OUT */ (pd6_14),
 	.d /* IN */ (pd5_14),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_15
 (
 	.q /* OUT */ (pd6_15),
 	.d /* IN */ (pd5_15),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_16
 (
 	.q /* OUT */ (pd6_16),
 	.d /* IN */ (pd5_16),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_17
 (
 	.q /* OUT */ (pd6_17),
 	.d /* IN */ (pd5_17),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_18
 (
 	.q /* OUT */ (pd6_18),
 	.d /* IN */ (pd5_18),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_19
 (
 	.q /* OUT */ (pd6_19),
 	.d /* IN */ (pd5_19),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_20
 (
 	.q /* OUT */ (pd6_20),
 	.d /* IN */ (pd5_20),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_21
 (
 	.q /* OUT */ (pd6_21),
 	.d /* IN */ (pd5_21),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_22
 (
 	.q /* OUT */ (pd6_22),
 	.d /* IN */ (pd5_22),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q pd6_from_0_to_23_inst_23
 (
 	.q /* OUT */ (pd6_23),
 	.d /* IN */ (pd5_23),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (145) - r[0-7] : mx2
@@ -1969,7 +2064,8 @@ fd1q inc1_inst
 (
 	.q /* OUT */ (inc1),
 	.d /* IN */ (pd2_0),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (158) - inc2 : slatch
@@ -1978,7 +2074,8 @@ slatch inc2_inst
 	.q /* OUT */ (inc2),
 	.d /* IN */ (inc1),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (ppd)
+	.en /* IN */ (ppd),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (159) - inc3 : mx2
@@ -2004,7 +2101,8 @@ fd1q inc5_inst
 (
 	.q /* OUT */ (inc5),
 	.d /* IN */ (inc4),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PIX.NET (162) - inc : or2

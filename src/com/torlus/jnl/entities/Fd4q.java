@@ -10,6 +10,12 @@ public class Fd4q extends Entity {
 		return "fd4q";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
+	
 	public Fd4q() {
 		// 260c_pri_e.pdf - CFD4QXL
 		ios.add(new Signal("q", SignalType.OUT));

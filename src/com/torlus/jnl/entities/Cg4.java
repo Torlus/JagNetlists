@@ -11,7 +11,7 @@ public class Cg4 extends Entity {
 	}
 
 	public Cg4() {
-		// tosh_to_moto.v - I need to understand what it does
+		// tosh_to_moto.v
 		ios.add(new Signal("co0l", SignalType.OUT));
 		ios.add(new Signal("co1l", SignalType.OUT));
 		ios.add(new Signal("co2l", SignalType.OUT));

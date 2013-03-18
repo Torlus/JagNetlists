@@ -2,9 +2,9 @@
 
 module ins_exec
 (
-	output [0:31] gpu_data_out;
-	output [0:31] gpu_data_oe;
-	input [0:31] gpu_data_in;
+	output [0:31] gpu_data_out,
+	output [0:31] gpu_data_oe,
+	input [0:31] gpu_data_in,
 	output gpu_dout_3_out,
 	output gpu_dout_3_oe,
 	input gpu_dout_3_in,
@@ -89,17 +89,17 @@ module ins_exec
 	output gpu_dout_31_out,
 	output gpu_dout_31_oe,
 	input gpu_dout_31_in,
-	output [0:2] alufunc;
+	output [0:2] alufunc,
 	output brlmux_0,
 	output brlmux_1,
-	output [0:23] dataddr;
+	output [0:23] dataddr,
 	output datreq,
 	output datweb,
 	output datwe_raw,
 	output div_instr,
 	output div_start,
-	output [0:5] dstanwi;
-	output [0:5] dstat;
+	output [0:5] dstanwi,
+	output [0:5] dstat,
 	output dstdgate,
 	output dstrrd,
 	output dstrrdi,
@@ -109,12 +109,12 @@ module ins_exec
 	output exe,
 	output flag_depend,
 	output flagld,
-	output [0:31] immdata;
+	output [0:31] immdata,
 	output immld,
 	output immwri,
 	output insexei,
 	output locden,
-	output [0:31] locsrc;
+	output [0:31] locsrc,
 	output macop,
 	output memrw,
 	output msize_0,
@@ -124,7 +124,7 @@ module ins_exec
 	output multsign,
 	output pabort,
 	output precomp,
-	output [0:21] progaddr;
+	output [0:21] progaddr,
 	output progreq,
 	output resld,
 	output ressel_0,
@@ -136,7 +136,7 @@ module ins_exec
 	output satsz_1,
 	output srcrrd,
 	output single_stop,
-	output [0:5] srcanwi;
+	output [0:5] srcanwi,
 	input big_instr,
 	input carry_flag,
 	input clk,
@@ -149,7 +149,7 @@ module ins_exec
 	input flagwr,
 	input gate_active,
 	input go,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input gpu_irq_0,
 	input gpu_irq_1,
 	input gpu_irq_2,
@@ -163,17 +163,18 @@ module ins_exec
 	input progack,
 	input resaddrldi,
 	input reset_n,
-	input [0:31] result;
+	input [0:31] result,
 	input sbwait,
 	input sdatreq,
 	input single_go,
 	input single_step,
 	input srcaddrldi,
-	input [0:31] srcd;
-	input [0:31] srcdp;
-	input [0:31] srcdpa;
+	input [0:31] srcd,
+	input [0:31] srcdp,
+	input [0:31] srcdpa,
 	input statrd,
-	input zero_flag
+	input zero_flag,
+	input sys_clk // Generated
 );
 wire [0:4] dstop;
 wire [0:4] dstopb;
@@ -520,7 +521,8 @@ prefetch prefetch_inst
 	.single_go /* IN */ (single_go),
 	.single_step /* IN */ (single_step),
 	.srcd /* IN */ ({srcd[0],srcd[1],srcd[2],srcd[3],srcd[4],srcd[5],srcd[6],srcd[7],srcd[8],srcd[9],srcd[10],srcd[11],srcd[12],srcd[13],srcd[14],srcd[15],srcd[16],srcd[17],srcd[18],srcd[19],srcd[20],srcd[21],srcd[22],srcd[23],srcd[24],srcd[25],srcd[26],srcd[27],srcd[28],srcd[29],srcd[30],srcd[31]}),
-	.srcdp /* IN */ ({srcdp[0],srcdp[1],srcdp[2],srcdp[3],srcdp[4],srcdp[5],srcdp[6],srcdp[7],srcdp[8],srcdp[9],srcdp[10],srcdp[11],srcdp[12],srcdp[13],srcdp[14],srcdp[15],srcdp[16],srcdp[17],srcdp[18],srcdp[19],srcdp[20],srcdp[21],srcdp[22],srcdp[23],srcdp[24],srcdp[25],srcdp[26],srcdp[27],srcdp[28],srcdp[29],srcdp[30],srcdp[31]})
+	.srcdp /* IN */ ({srcdp[0],srcdp[1],srcdp[2],srcdp[3],srcdp[4],srcdp[5],srcdp[6],srcdp[7],srcdp[8],srcdp[9],srcdp[10],srcdp[11],srcdp[12],srcdp[13],srcdp[14],srcdp[15],srcdp[16],srcdp[17],srcdp[18],srcdp[19],srcdp[20],srcdp[21],srcdp[22],srcdp[23],srcdp[24],srcdp[25],srcdp[26],srcdp[27],srcdp[28],srcdp[29],srcdp[30],srcdp[31]}),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (139) - prog_cnt : join
@@ -607,7 +609,8 @@ fd4q idle_inst
 	.q /* OUT */ (idle),
 	.d /* IN */ (idlet_2),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (192) - await1t0 : nd2
@@ -625,7 +628,8 @@ fd2q await1_inst
 	.q /* OUT */ (await1),
 	.d /* IN */ (await1t_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (197) - await2t0 : nd2
@@ -643,7 +647,8 @@ fd2q await2_inst
 	.q /* OUT */ (await2),
 	.d /* IN */ (await2t_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (202) - atomict[0] : an2
@@ -691,7 +696,8 @@ cp_latch multa_inst
 	.set /* IN */ (multaset),
 	.clear /* IN */ (multaclr),
 	.clock /* IN */ (clk),
-	.reset_n /* IN */ (reset_n)
+	.reset_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (223) - mult_atomic : or2
@@ -748,7 +754,8 @@ interrupt interrupt_inst
 	.gpu_irq_4 /* IN */ (gpu_irq_4),
 	.reset_n /* IN */ (reset_n),
 	.romold /* IN */ (romoldb_2),
-	.statrd /* IN */ (statrd)
+	.statrd /* IN */ (statrd),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (234) - systolic : systolic
@@ -779,7 +786,8 @@ systolic systolic_inst
 	.mtxawr /* IN */ (mtxawr),
 	.mtxcwr /* IN */ (mtxcwr),
 	.reset_n /* IN */ (reset_n),
-	.romold /* IN */ (sromold)
+	.romold /* IN */ (sromold),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (239) - mtx_mreq\ : iv
@@ -989,12 +997,8 @@ ra6032a mcode_inst
 (
 	.z /* OUT */ ({romword[0],romword[1],romword[2],romword[3],romword[4],romword[5],romword[6],romword[7],romword[8],romword[9],romword[10],romword[11],romword[12],romword[13],romword[14],romword[15],romword[16],romword[17],romword[18],romword[19],romword[20],romword[21],romword[22],romword[23],romword[24],romword[25],romword[26]}),
 	.clk /* IN */ (clk),
-	.a0 /* IN */ (opcodei[0]),
-	.a1 /* IN */ (opcodei[1]),
-	.a2 /* IN */ (opcodei[2]),
-	.a3 /* IN */ (opcodei[3]),
-	.a4 /* IN */ (opcodei[4]),
-	.a5 /* IN */ (opcodei[5])
+	.a /* IN */ ({opcodei[0],opcodei[1],opcodei[2],opcodei[3],opcodei[4],opcodei[5]}),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (271) - romword : join
@@ -1223,189 +1227,216 @@ fd2q mcodepipe_inst_0
 	.q /* OUT */ (microword[0]),
 	.d /* IN */ (mwordi[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_1
 (
 	.q /* OUT */ (microword[1]),
 	.d /* IN */ (mwordi[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_2
 (
 	.q /* OUT */ (microword[2]),
 	.d /* IN */ (mwordi[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_3
 (
 	.q /* OUT */ (microword[3]),
 	.d /* IN */ (mwordi[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_4
 (
 	.q /* OUT */ (microword[4]),
 	.d /* IN */ (mwordi[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_5
 (
 	.q /* OUT */ (microword[5]),
 	.d /* IN */ (mwordi[5]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_6
 (
 	.q /* OUT */ (microword[6]),
 	.d /* IN */ (mwordi[6]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_7
 (
 	.q /* OUT */ (microword[7]),
 	.d /* IN */ (mwordi[7]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_8
 (
 	.q /* OUT */ (microword[8]),
 	.d /* IN */ (mwordi[8]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_9
 (
 	.q /* OUT */ (microword[9]),
 	.d /* IN */ (mwordi[9]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_10
 (
 	.q /* OUT */ (microword[10]),
 	.d /* IN */ (mwordi[10]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_11
 (
 	.q /* OUT */ (microword[11]),
 	.d /* IN */ (mwordi[11]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_12
 (
 	.q /* OUT */ (microword[12]),
 	.d /* IN */ (mwordi[12]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_13
 (
 	.q /* OUT */ (microword[13]),
 	.d /* IN */ (mwordi[13]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_14
 (
 	.q /* OUT */ (microword[14]),
 	.d /* IN */ (mwordi[14]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_15
 (
 	.q /* OUT */ (microword[15]),
 	.d /* IN */ (mwordi[15]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_16
 (
 	.q /* OUT */ (microword[16]),
 	.d /* IN */ (mwordi[16]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_17
 (
 	.q /* OUT */ (microword[17]),
 	.d /* IN */ (mwordi[17]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_18
 (
 	.q /* OUT */ (microword[18]),
 	.d /* IN */ (mwordi[18]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_19
 (
 	.q /* OUT */ (microword[19]),
 	.d /* IN */ (mwordi[19]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_20
 (
 	.q /* OUT */ (microword[20]),
 	.d /* IN */ (mwordi[20]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_21
 (
 	.q /* OUT */ (microword[21]),
 	.d /* IN */ (mwordi[21]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_22
 (
 	.q /* OUT */ (microword[22]),
 	.d /* IN */ (mwordi[22]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_23
 (
 	.q /* OUT */ (microword[23]),
 	.d /* IN */ (mwordi[23]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_24
 (
 	.q /* OUT */ (microword[24]),
 	.d /* IN */ (mwordi[24]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_25
 (
 	.q /* OUT */ (microword[25]),
 	.d /* IN */ (mwordi[25]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q mcodepipe_inst_26
 (
 	.q /* OUT */ (microword[26]),
 	.d /* IN */ (mwordi[26]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (277) - srcopin : mx2
@@ -1451,35 +1482,40 @@ fd2q srcop_inst_0
 	.q /* OUT */ (srcop[0]),
 	.d /* IN */ (srcopin[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q srcop_inst_1
 (
 	.q /* OUT */ (srcop[1]),
 	.d /* IN */ (srcopin[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q srcop_inst_2
 (
 	.q /* OUT */ (srcop[2]),
 	.d /* IN */ (srcopin[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q srcop_inst_3
 (
 	.q /* OUT */ (srcop[3]),
 	.d /* IN */ (srcopin[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q srcop_inst_4
 (
 	.q /* OUT */ (srcop[4]),
 	.d /* IN */ (srcopin[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (279) - srcopb : nivm
@@ -1532,35 +1568,40 @@ fd2q dstop_inst_0
 	.q /* OUT */ (dstop[0]),
 	.d /* IN */ (dstopin[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q dstop_inst_1
 (
 	.q /* OUT */ (dstop[1]),
 	.d /* IN */ (dstopin[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q dstop_inst_2
 (
 	.q /* OUT */ (dstop[2]),
 	.d /* IN */ (dstopin[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q dstop_inst_3
 (
 	.q /* OUT */ (dstop[3]),
 	.d /* IN */ (dstopin[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q dstop_inst_4
 (
 	.q /* OUT */ (dstop[4]),
 	.d /* IN */ (dstopin[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (282) - dstopb : nivm
@@ -1620,42 +1661,48 @@ fd2q opcode_inst_0
 	.q /* OUT */ (opcode[0]),
 	.d /* IN */ (opcodein[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q opcode_inst_1
 (
 	.q /* OUT */ (opcode[1]),
 	.d /* IN */ (opcodein[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q opcode_inst_2
 (
 	.q /* OUT */ (opcode[2]),
 	.d /* IN */ (opcodein[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q opcode_inst_3
 (
 	.q /* OUT */ (opcode[3]),
 	.d /* IN */ (opcodein[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q opcode_inst_4
 (
 	.q /* OUT */ (opcode[4]),
 	.d /* IN */ (opcodein[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q opcode_inst_5
 (
 	.q /* OUT */ (opcode[5]),
 	.d /* IN */ (opcodein[5]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (285) - opcode\[1] : iv
@@ -1847,7 +1894,8 @@ fd2q precompil_inst
 	.q /* OUT */ (precompil),
 	.d /* IN */ (precompi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (377) - dsttinvit : iv
@@ -1868,7 +1916,8 @@ fd2q dsttinvil_inst
 	.q /* OUT */ (dsttinvil),
 	.d /* IN */ (dsttinvi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (384) - srctinvit : iv
@@ -1889,7 +1938,8 @@ fd2q srctinvil_inst
 	.q /* OUT */ (srctinvil),
 	.d /* IN */ (srctinvi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (391) - indselit : nd4
@@ -1910,7 +1960,8 @@ fd2q indselil_inst
 	.q /* OUT */ (indselil),
 	.d /* IN */ (indseli),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (399) - unpack : an7
@@ -1939,7 +1990,8 @@ fd1q datwel_inst
 (
 	.q /* OUT */ (datwelat),
 	.d /* IN */ (datweb_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (424) - datwec : an2p
@@ -1951,14 +2003,16 @@ fdsync msize_from_0_to_1_inst_0
 	.q /* OUT */ (msize_0),
 	.d /* IN */ (msizet_0),
 	.ld /* IN */ (datwec),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync msize_from_0_to_1_inst_1
 (
 	.q /* OUT */ (msize_1),
 	.d /* IN */ (msizet_1),
 	.ld /* IN */ (datwec),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (430) - microword\[8] : iv
@@ -2038,7 +2092,8 @@ fdsync16 immlo_inst
 	.q /* OUT */ ({immlo[0],immlo[1],immlo[2],immlo[3],immlo[4],immlo[5],immlo[6],immlo[7],immlo[8],immlo[9],immlo[10],immlo[11],immlo[12],immlo[13],immlo[14],immlo[15]}),
 	.d /* IN */ ({insval[0],insval[1],insval[2],insval[3],insval[4],insval[5],insval[6],insval[7],insval[8],insval[9],insval[10],insval[11],insval[12],insval[13],insval[14],insval[15]}),
 	.ld /* IN */ (loimmld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (463) - immdata : join
@@ -2106,7 +2161,8 @@ fd2q regpage_inst
 	.q /* OUT */ (regpage),
 	.d /* IN */ (regpagei),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (483) - flagrd[14] : ts
@@ -2124,7 +2180,8 @@ fd1q imask_n_inst
 (
 	.q /* OUT */ (imask_n),
 	.d /* IN */ (imaski_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (487) - reghigh : an2
@@ -2257,7 +2314,8 @@ execon execon_inst
 	.reset_n /* IN */ (reset_n),
 	.sbwait /* IN */ (sbwait),
 	.single_go /* IN */ (single_go),
-	.single_step /* IN */ (single_step)
+	.single_step /* IN */ (single_step),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (544) - zero_flag\ : iv
@@ -2335,37 +2393,43 @@ fd1q datasel0_from_0_to_5_inst_0
 (
 	.q /* OUT */ (datasel0_0),
 	.d /* IN */ (dataseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel0_from_0_to_5_inst_1
 (
 	.q /* OUT */ (datasel0_1),
 	.d /* IN */ (dataseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel0_from_0_to_5_inst_2
 (
 	.q /* OUT */ (datasel0_2),
 	.d /* IN */ (dataseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel0_from_0_to_5_inst_3
 (
 	.q /* OUT */ (datasel0_3),
 	.d /* IN */ (dataseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel0_from_0_to_5_inst_4
 (
 	.q /* OUT */ (datasel0_4),
 	.d /* IN */ (dataseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel0_from_0_to_5_inst_5
 (
 	.q /* OUT */ (datasel0_5),
 	.d /* IN */ (dataseli_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (574) - datasel1[0-5] : fd1qp
@@ -2373,37 +2437,43 @@ fd1q datasel1_from_0_to_5_inst_0
 (
 	.q /* OUT */ (datasel1_0),
 	.d /* IN */ (dataseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel1_from_0_to_5_inst_1
 (
 	.q /* OUT */ (datasel1_1),
 	.d /* IN */ (dataseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel1_from_0_to_5_inst_2
 (
 	.q /* OUT */ (datasel1_2),
 	.d /* IN */ (dataseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel1_from_0_to_5_inst_3
 (
 	.q /* OUT */ (datasel1_3),
 	.d /* IN */ (dataseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel1_from_0_to_5_inst_4
 (
 	.q /* OUT */ (datasel1_4),
 	.d /* IN */ (dataseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q datasel1_from_0_to_5_inst_5
 (
 	.q /* OUT */ (datasel1_5),
 	.d /* IN */ (dataseli_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (576) - dataddr[0-3] : mx4p
@@ -2695,145 +2765,169 @@ ldp1q srcaddrl_from_0_to_23_inst_0
 (
 	.q /* OUT */ (srcaddrl_0),
 	.d /* IN */ (dataddr_0),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_1
 (
 	.q /* OUT */ (srcaddrl_1),
 	.d /* IN */ (dataddr_1),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_2
 (
 	.q /* OUT */ (srcaddrl_2),
 	.d /* IN */ (dataddr_2),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_3
 (
 	.q /* OUT */ (srcaddrl_3),
 	.d /* IN */ (dataddr_3),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_4
 (
 	.q /* OUT */ (srcaddrl_4),
 	.d /* IN */ (dataddr_4),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_5
 (
 	.q /* OUT */ (srcaddrl_5),
 	.d /* IN */ (dataddr_5),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_6
 (
 	.q /* OUT */ (srcaddrl_6),
 	.d /* IN */ (dataddr_6),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_7
 (
 	.q /* OUT */ (srcaddrl_7),
 	.d /* IN */ (dataddr_7),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_8
 (
 	.q /* OUT */ (srcaddrl_8),
 	.d /* IN */ (dataddr_8),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_9
 (
 	.q /* OUT */ (srcaddrl_9),
 	.d /* IN */ (dataddr_9),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_10
 (
 	.q /* OUT */ (srcaddrl_10),
 	.d /* IN */ (dataddr_10),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_11
 (
 	.q /* OUT */ (srcaddrl_11),
 	.d /* IN */ (dataddr_11),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_12
 (
 	.q /* OUT */ (srcaddrl_12),
 	.d /* IN */ (dataddr_12),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_13
 (
 	.q /* OUT */ (srcaddrl_13),
 	.d /* IN */ (dataddr_13),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_14
 (
 	.q /* OUT */ (srcaddrl_14),
 	.d /* IN */ (dataddr_14),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_15
 (
 	.q /* OUT */ (srcaddrl_15),
 	.d /* IN */ (dataddr_15),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_16
 (
 	.q /* OUT */ (srcaddrl_16),
 	.d /* IN */ (dataddr_16),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_17
 (
 	.q /* OUT */ (srcaddrl_17),
 	.d /* IN */ (dataddr_17),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_18
 (
 	.q /* OUT */ (srcaddrl_18),
 	.d /* IN */ (dataddr_18),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_19
 (
 	.q /* OUT */ (srcaddrl_19),
 	.d /* IN */ (dataddr_19),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_20
 (
 	.q /* OUT */ (srcaddrl_20),
 	.d /* IN */ (dataddr_20),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_21
 (
 	.q /* OUT */ (srcaddrl_21),
 	.d /* IN */ (dataddr_21),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_22
 (
 	.q /* OUT */ (srcaddrl_22),
 	.d /* IN */ (dataddr_22),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q srcaddrl_from_0_to_23_inst_23
 (
 	.q /* OUT */ (srcaddrl_23),
 	.d /* IN */ (dataddr_23),
-	.g /* IN */ (addrlat)
+	.g /* IN */ (addrlat),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INS_EXEC.NET (606) - datreq : or2

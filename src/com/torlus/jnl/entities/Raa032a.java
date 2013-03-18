@@ -10,6 +10,11 @@ public class Raa032a extends Entity {
 		return "raa032a";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	// Unused
 	public Raa032a() {
 		for (int i = 0; i < 32; i++) {

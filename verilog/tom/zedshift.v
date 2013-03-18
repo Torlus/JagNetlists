@@ -2,12 +2,12 @@
 
 module zedshift
 (
-	output [0:31] srczlo;
-	output [0:31] srczhi;
-	input [0:31] srcz1lo;
-	input [0:31] srcz1hi;
-	input [0:31] srcz2lo;
-	input [0:31] srcz2hi;
+	output [0:31] srczlo,
+	output [0:31] srczhi,
+	input [0:31] srcz1lo,
+	input [0:31] srcz1hi,
+	input [0:31] srcz2lo,
+	input [0:31] srcz2hi,
 	input srcshift_4,
 	input srcshift_5
 );

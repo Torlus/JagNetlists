@@ -95,7 +95,8 @@ module misc
 	input dr_15_in,
 	output mreq_out,
 	output mreq_oe,
-	input mreq_in
+	input mreq_in,
+	input sys_clk // Generated
 );
 wire [0:15] tp;
 wire [0:15] t;
@@ -491,35 +492,40 @@ ldp2q ie_from_0_to_4_inst_0
 	.q /* OUT */ (ie_0),
 	.d /* IN */ (din_0),
 	.g /* IN */ (intw),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q ie_from_0_to_4_inst_1
 (
 	.q /* OUT */ (ie_1),
 	.d /* IN */ (din_1),
 	.g /* IN */ (intw),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q ie_from_0_to_4_inst_2
 (
 	.q /* OUT */ (ie_2),
 	.d /* IN */ (din_2),
 	.g /* IN */ (intw),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q ie_from_0_to_4_inst_3
 (
 	.q /* OUT */ (ie_3),
 	.d /* IN */ (din_3),
 	.g /* IN */ (intw),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q ie_from_0_to_4_inst_4
 (
 	.q /* OUT */ (ie_4),
 	.d /* IN */ (din_4),
 	.g /* IN */ (intw),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (51) - ack[0-4] : an2
@@ -534,7 +540,8 @@ lsrb lvint_inst
 (
 	.q /* OUT */ (lvint),
 	.r /* IN */ (vclr),
-	.s /* IN */ (vint)
+	.s /* IN */ (vint),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (56) - vclr : nd2
@@ -549,7 +556,8 @@ fd2q vi1_inst
 	.q /* OUT */ (vi1),
 	.d /* IN */ (lvint),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (62) - vi2 : fd2q
@@ -558,7 +566,8 @@ fd2q vi2_inst
 	.q /* OUT */ (vi2),
 	.d /* IN */ (vi1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (63) - vi2l : iv
@@ -582,7 +591,8 @@ fd2q di1_inst
 	.q /* OUT */ (di1),
 	.d /* IN */ (dint),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (71) - di2 : fd2q
@@ -591,7 +601,8 @@ fd2q di2_inst
 	.q /* OUT */ (di2),
 	.d /* IN */ (di1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (72) - di2l : iv
@@ -608,7 +619,8 @@ fjk2 i_index_0_inst
 	.j /* IN */ (vip),
 	.k /* IN */ (ack_0),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (78) - i[1] : fjk2
@@ -619,7 +631,8 @@ fjk2 i_index_1_inst
 	.j /* IN */ (gip),
 	.k /* IN */ (ack_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (79) - i[2] : fjk2
@@ -630,7 +643,8 @@ fjk2 i_index_2_inst
 	.j /* IN */ (oip),
 	.k /* IN */ (ack_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (80) - i[3] : fjk2
@@ -641,7 +655,8 @@ fjk2 i_index_3_inst
 	.j /* IN */ (tip),
 	.k /* IN */ (ack_3),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (81) - i[4] : fjk2
@@ -652,7 +667,8 @@ fjk2 i_index_4_inst
 	.j /* IN */ (dip),
 	.k /* IN */ (ack_4),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (83) - ilu[0-4] : dummy
@@ -714,7 +730,8 @@ fd2q ihandler_inst
 	.q /* OUT */ (ihandler_obuf),
 	.d /* IN */ (ihd),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (110) - pit0 : nivh
@@ -729,112 +746,128 @@ slatch pd_from_0_to_15_inst_0
 	.q /* OUT */ (pd_0),
 	.d /* IN */ (din_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_1
 (
 	.q /* OUT */ (pd_1),
 	.d /* IN */ (din_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_2
 (
 	.q /* OUT */ (pd_2),
 	.d /* IN */ (din_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_3
 (
 	.q /* OUT */ (pd_3),
 	.d /* IN */ (din_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_4
 (
 	.q /* OUT */ (pd_4),
 	.d /* IN */ (din_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_5
 (
 	.q /* OUT */ (pd_5),
 	.d /* IN */ (din_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_6
 (
 	.q /* OUT */ (pd_6),
 	.d /* IN */ (din_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_7
 (
 	.q /* OUT */ (pd_7),
 	.d /* IN */ (din_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_8
 (
 	.q /* OUT */ (pd_8),
 	.d /* IN */ (din_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_9
 (
 	.q /* OUT */ (pd_9),
 	.d /* IN */ (din_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_10
 (
 	.q /* OUT */ (pd_10),
 	.d /* IN */ (din_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_11
 (
 	.q /* OUT */ (pd_11),
 	.d /* IN */ (din_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_12
 (
 	.q /* OUT */ (pd_12),
 	.d /* IN */ (din_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_13
 (
 	.q /* OUT */ (pd_13),
 	.d /* IN */ (din_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_14
 (
 	.q /* OUT */ (pd_14),
 	.d /* IN */ (din_14),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pd_from_0_to_15_inst_15
 (
 	.q /* OUT */ (pd_15),
 	.d /* IN */ (din_15),
 	.clk /* IN */ (clk),
-	.en /* IN */ (pit0)
+	.en /* IN */ (pit0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (114) - td[0-15] : ldp1q
@@ -842,97 +875,113 @@ ldp1q td_from_0_to_15_inst_0
 (
 	.q /* OUT */ (td_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_1
 (
 	.q /* OUT */ (td_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_2
 (
 	.q /* OUT */ (td_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_3
 (
 	.q /* OUT */ (td_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_4
 (
 	.q /* OUT */ (td_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_5
 (
 	.q /* OUT */ (td_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_6
 (
 	.q /* OUT */ (td_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_7
 (
 	.q /* OUT */ (td_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_8
 (
 	.q /* OUT */ (td_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_9
 (
 	.q /* OUT */ (td_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_10
 (
 	.q /* OUT */ (td_10),
 	.d /* IN */ (din_10),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_11
 (
 	.q /* OUT */ (td_11),
 	.d /* IN */ (din_11),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_12
 (
 	.q /* OUT */ (td_12),
 	.d /* IN */ (din_12),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_13
 (
 	.q /* OUT */ (td_13),
 	.d /* IN */ (din_13),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_14
 (
 	.q /* OUT */ (td_14),
 	.d /* IN */ (din_14),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q td_from_0_to_15_inst_15
 (
 	.q /* OUT */ (td_15),
 	.d /* IN */ (din_15),
-	.g /* IN */ (pit1)
+	.g /* IN */ (pit1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (118) - ten0 : or8
@@ -956,7 +1005,8 @@ dncnt tp_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (ten),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (126) - tp[1-7] : dncnt
@@ -968,7 +1018,8 @@ dncnt tp_from_1_to_7_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_0),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_1_to_7_inst_1
 (
@@ -978,7 +1029,8 @@ dncnt tp_from_1_to_7_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_1),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_1_to_7_inst_2
 (
@@ -988,7 +1040,8 @@ dncnt tp_from_1_to_7_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_2),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_1_to_7_inst_3
 (
@@ -998,7 +1051,8 @@ dncnt tp_from_1_to_7_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_3),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_1_to_7_inst_4
 (
@@ -1008,7 +1062,8 @@ dncnt tp_from_1_to_7_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_4),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_1_to_7_inst_5
 (
@@ -1018,7 +1073,8 @@ dncnt tp_from_1_to_7_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_5),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_1_to_7_inst_6
 (
@@ -1028,7 +1084,8 @@ dncnt tp_from_1_to_7_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_6),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (127) - tp[8] : dncnt
@@ -1040,7 +1097,8 @@ dncnt tp_index_8_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpc8),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (128) - tp[9-15] : dncnt
@@ -1052,7 +1110,8 @@ dncnt tp_from_9_to_15_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_8),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_9_to_15_inst_1
 (
@@ -1062,7 +1121,8 @@ dncnt tp_from_9_to_15_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_9),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_9_to_15_inst_2
 (
@@ -1072,7 +1132,8 @@ dncnt tp_from_9_to_15_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_10),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_9_to_15_inst_3
 (
@@ -1082,7 +1143,8 @@ dncnt tp_from_9_to_15_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_11),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_9_to_15_inst_4
 (
@@ -1092,7 +1154,8 @@ dncnt tp_from_9_to_15_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_12),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_9_to_15_inst_5
 (
@@ -1102,7 +1165,8 @@ dncnt tp_from_9_to_15_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_13),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt tp_from_9_to_15_inst_6
 (
@@ -1112,7 +1176,8 @@ dncnt tp_from_9_to_15_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpco_14),
 	.ld /* IN */ (tpld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (129) - tpu[0-15] : dummy
@@ -1182,7 +1247,8 @@ dncnt t_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tpc16),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (145) - t[1-7] : dncnt
@@ -1194,7 +1260,8 @@ dncnt t_from_1_to_7_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_0),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_1_to_7_inst_1
 (
@@ -1204,7 +1271,8 @@ dncnt t_from_1_to_7_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_1),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_1_to_7_inst_2
 (
@@ -1214,7 +1282,8 @@ dncnt t_from_1_to_7_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_2),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_1_to_7_inst_3
 (
@@ -1224,7 +1293,8 @@ dncnt t_from_1_to_7_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_3),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_1_to_7_inst_4
 (
@@ -1234,7 +1304,8 @@ dncnt t_from_1_to_7_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_4),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_1_to_7_inst_5
 (
@@ -1244,7 +1315,8 @@ dncnt t_from_1_to_7_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_5),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_1_to_7_inst_6
 (
@@ -1254,7 +1326,8 @@ dncnt t_from_1_to_7_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_6),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (146) - t[8] : dncnt
@@ -1266,7 +1339,8 @@ dncnt t_index_8_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tc8),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (147) - t[9-15] : dncnt
@@ -1278,7 +1352,8 @@ dncnt t_from_9_to_15_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_8),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_9_to_15_inst_1
 (
@@ -1288,7 +1363,8 @@ dncnt t_from_9_to_15_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_9),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_9_to_15_inst_2
 (
@@ -1298,7 +1374,8 @@ dncnt t_from_9_to_15_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_10),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_9_to_15_inst_3
 (
@@ -1308,7 +1385,8 @@ dncnt t_from_9_to_15_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_11),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_9_to_15_inst_4
 (
@@ -1318,7 +1396,8 @@ dncnt t_from_9_to_15_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_12),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_9_to_15_inst_5
 (
@@ -1328,7 +1407,8 @@ dncnt t_from_9_to_15_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_13),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt t_from_9_to_15_inst_6
 (
@@ -1338,7 +1418,8 @@ dncnt t_from_9_to_15_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (tco_14),
 	.ld /* IN */ (tld),
-	.resl /* IN */ (presl)
+	.resl /* IN */ (presl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (148) - tu[0-15] : dummy
@@ -1457,7 +1538,8 @@ upcnt1 ps_index_0_inst
 	.co /* OUT */ (psco_0),
 	.clk /* IN */ (clk),
 	.ci /* IN */ (vcc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (176) - ps[1-5] : upcnt1
@@ -1467,7 +1549,8 @@ upcnt1 ps_from_1_to_5_inst_0
 	.co /* OUT */ (psco_1),
 	.clk /* IN */ (clk),
 	.ci /* IN */ (psco_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt1 ps_from_1_to_5_inst_1
 (
@@ -1475,7 +1558,8 @@ upcnt1 ps_from_1_to_5_inst_1
 	.co /* OUT */ (psco_2),
 	.clk /* IN */ (clk),
 	.ci /* IN */ (psco_1),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt1 ps_from_1_to_5_inst_2
 (
@@ -1483,7 +1567,8 @@ upcnt1 ps_from_1_to_5_inst_2
 	.co /* OUT */ (psco_3),
 	.clk /* IN */ (clk),
 	.ci /* IN */ (psco_2),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt1 ps_from_1_to_5_inst_3
 (
@@ -1491,7 +1576,8 @@ upcnt1 ps_from_1_to_5_inst_3
 	.co /* OUT */ (psco_4),
 	.clk /* IN */ (clk),
 	.ci /* IN */ (psco_3),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt1 ps_from_1_to_5_inst_4
 (
@@ -1499,7 +1585,8 @@ upcnt1 ps_from_1_to_5_inst_4
 	.co /* OUT */ (psco_5),
 	.clk /* IN */ (clk),
 	.ci /* IN */ (psco_4),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (177) - pen : an6
@@ -1513,7 +1600,8 @@ fd2q rq_inst
 	.q /* OUT */ (rq),
 	.d /* IN */ (d0),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (197) - d00 : nd2
@@ -1553,7 +1641,8 @@ dncnt rp_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rpcen),
 	.ld /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (218) - rp[1-3] : dncnt
@@ -1565,7 +1654,8 @@ dncnt rp_from_1_to_3_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rpc_0),
 	.ld /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt rp_from_1_to_3_inst_1
 (
@@ -1575,7 +1665,8 @@ dncnt rp_from_1_to_3_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rpc_1),
 	.ld /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt rp_from_1_to_3_inst_2
 (
@@ -1585,7 +1676,8 @@ dncnt rp_from_1_to_3_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rpc_2),
 	.ld /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (219) - rpd[0-3] : dummy
@@ -1618,7 +1710,8 @@ udcnt1 rc_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (refcount),
 	.up /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (238) - rc[1-3] : udcnt1
@@ -1629,7 +1722,8 @@ udcnt1 rc_from_1_to_3_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rcc_0),
 	.up /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt1 rc_from_1_to_3_inst_1
 (
@@ -1638,7 +1732,8 @@ udcnt1 rc_from_1_to_3_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rcc_1),
 	.up /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 udcnt1 rc_from_1_to_3_inst_2
 (
@@ -1647,7 +1742,8 @@ udcnt1 rc_from_1_to_3_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (rcc_2),
 	.up /* IN */ (lrpc),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MISC.NET (239) - rcc[3] : dummy

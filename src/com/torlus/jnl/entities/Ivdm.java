@@ -28,7 +28,7 @@ public class Ivdm extends Entity {
 	@Override
 	public String verilogInstance(Instance inst) {
 		String vlog = "assign $z0$ = ~$a$;\n";
-		vlog += "assign $z1$ = $a$\n";
+		vlog += "assign $z1$ = $a$;\n";
 		return verilogMap(inst, vlog);
 	}
 

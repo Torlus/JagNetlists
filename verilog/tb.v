@@ -75,6 +75,8 @@ wire					aen;
 wire	[63:0]	xd_r;
 wire	[23:0]	xa_r;
 
+wire	rasl;
+wire	casl;
 
 // J68
 
@@ -107,7 +109,23 @@ wire	[0:63]	dram_d;
 wire	[0:63]	dram_q;
 wire	[0:3]		dram_oe;
 
+// Simulation with Icarus Verilog
+`ifdef ICARUS
+initial
+begin
+  $dumpfile("tb.vcd");
+  $dumpvars(0, tb);
+	#16500000
+	begin
+		$finish;
+	end
+end
+`endif
+
 // Debug
+assign rasl = xrasl[0];
+assign casl = xcasl[0];
+
 assign xa_r = { 
 	xa_in[23], xa_in[22], xa_in[21], xa_in[20], xa_in[19], xa_in[18], xa_in[17], xa_in[16], 
 	xa_in[15], xa_in[14], xa_in[13], xa_in[12], xa_in[11], xa_in[10], xa_in[9], xa_in[8], 
@@ -125,22 +143,22 @@ assign xd_r = {
 };
 
 // Clocks
-always
+initial
 begin
-	sys_clk   = 1'b1;
-	forever #9 sys_clk = ~sys_clk;
+	sys_clk   = 1'b0;
+	forever #5 sys_clk = ~sys_clk;
 end
 
-always
+initial
 begin
 	xvclk     = 1'b1;
-	forever #18 xvclk = ~xvclk;
+	forever #20 xvclk = ~xvclk;
 end
 
-always
+initial
 begin
 	xpclk     = 1'b1;
-	forever #36 xpclk = ~xpclk;
+	forever #40 xpclk = ~xpclk;
 end
 
 // Reset
@@ -801,7 +819,7 @@ module os_rom
 );
 
 reg	[7:0]	rom_blk [0:(1<<17)-1];
-reg	[7:0] r_q;
+// reg	[7:0] r_q;
 
 initial
 begin
@@ -809,13 +827,9 @@ begin
 end
 
 // assign q = (ce_n | oe_n) ? 8'bzzzzzzzz : r_q;
-assign q = r_q;
+// assign q = r_q;
 assign oe = (~ce_n & ~oe_n);
-
-always @(a)
-begin
-	r_q = rom_blk[a][7:0];
-end
+assign q = rom_blk[a][7:0];
 
 endmodule
 
@@ -846,11 +860,13 @@ end
 
 always @(negedge ras_n)
 begin
+	#1
 	ea[8:17] <= a[0:9];
 end
 
 always @(negedge cas_n)
 begin
+	#1
 	ea[0:7] <= a[0:7];
 	if (~uw_n) begin
 		ram_blk[ { a[0:7], ea[8:17] } ][8:15] <= d[8:15];
@@ -861,8 +877,8 @@ begin
 end
 
 assign oe = w_oe;
-assign w_oe = (~oe_n & ~cas_n & uw_n & lw_n);
+assign w_oe = (~oe_n & ~cas_n & (uw_n | lw_n));
 
-assign q = ram_blk[ ea ];
+assign q = ram_blk[ ea ][0:15];
 
 endmodule

@@ -2,10 +2,10 @@
 
 module add16sat
 (
-	output [0:15] r;
+	output [0:15] r,
 	output co,
-	input [0:15] a;
-	input [0:15] b;
+	input [0:15] a,
+	input [0:15] b,
 	input cin,
 	input sat,
 	input eightbit,

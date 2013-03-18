@@ -2,15 +2,15 @@
 
 module addbmux
 (
-	output [0:15] addb_x;
-	output [0:15] addb_y;
+	output [0:15] addb_x,
+	output [0:15] addb_y,
 	input addbsel_0,
 	input addbsel_1,
-	input [0:15] a1_x;
-	input [0:15] a1_y;
-	input [0:15] a2_x;
-	input [0:15] a2_y;
-	input [0:15] a1_frac_x;
+	input [0:15] a1_x,
+	input [0:15] a1_y,
+	input [0:15] a2_x,
+	input [0:15] a2_y,
+	input [0:15] a1_frac_x,
 	input [0:15] a1_frac_y
 );
 wire addbselb_0;

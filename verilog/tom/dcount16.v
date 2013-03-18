@@ -2,11 +2,12 @@
 
 module dcount16
 (
-	output [0:15] count;
-	input [0:15] data;
+	output [0:15] count,
+	input [0:15] data,
 	input load,
 	input ena,
-	input clk
+	input clk,
+	input sys_clk // Generated
 );
 wire cnti_0;
 wire count_0;
@@ -346,97 +347,113 @@ fd1q count_from_0_to_15_inst_0
 (
 	.q /* OUT */ (count_0),
 	.d /* IN */ (cntj_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_1
 (
 	.q /* OUT */ (count_1),
 	.d /* IN */ (cntj_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_2
 (
 	.q /* OUT */ (count_2),
 	.d /* IN */ (cntj_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_3
 (
 	.q /* OUT */ (count_3),
 	.d /* IN */ (cntj_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_4
 (
 	.q /* OUT */ (count_4),
 	.d /* IN */ (cntj_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_5
 (
 	.q /* OUT */ (count_5),
 	.d /* IN */ (cntj_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_6
 (
 	.q /* OUT */ (count_6),
 	.d /* IN */ (cntj_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_7
 (
 	.q /* OUT */ (count_7),
 	.d /* IN */ (cntj_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_8
 (
 	.q /* OUT */ (count_8),
 	.d /* IN */ (cntj_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_9
 (
 	.q /* OUT */ (count_9),
 	.d /* IN */ (cntj_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_10
 (
 	.q /* OUT */ (count_10),
 	.d /* IN */ (cntj_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_11
 (
 	.q /* OUT */ (count_11),
 	.d /* IN */ (cntj_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_12
 (
 	.q /* OUT */ (count_12),
 	.d /* IN */ (cntj_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_13
 (
 	.q /* OUT */ (count_13),
 	.d /* IN */ (cntj_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_14
 (
 	.q /* OUT */ (count_14),
 	.d /* IN */ (cntj_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_15_inst_15
 (
 	.q /* OUT */ (count_15),
 	.d /* IN */ (cntj_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DUPLO.NET (781) - count : join

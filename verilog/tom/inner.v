@@ -117,10 +117,10 @@ module inner
 	input cmdld,
 	input countld,
 	input dsta2,
-	input [0:15] dstxp;
+	input [0:15] dstxp,
 	input gourd,
 	input gourz,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input inhiben,
 	input instart,
 	input memidle,
@@ -134,7 +134,8 @@ module inner
 	input reset_n,
 	input srcshade,
 	input statrd,
-	input wactive
+	input wactive,
+	input sys_clk // Generated
 );
 wire idle;
 wire sreadx;
@@ -407,7 +408,8 @@ fdsync srcen_inst
 	.q /* OUT */ (srcen_obuf),
 	.d /* IN */ (gpu_din[0]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (102) - srcenz : fdsync
@@ -416,7 +418,8 @@ fdsync srcenz_inst
 	.q /* OUT */ (srcenz),
 	.d /* IN */ (gpu_din[1]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (103) - srcenx : fdsync
@@ -425,7 +428,8 @@ fdsync srcenx_inst
 	.q /* OUT */ (srcenx),
 	.d /* IN */ (gpu_din[2]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (104) - dsten : fdsync
@@ -434,7 +438,8 @@ fdsync dsten_inst
 	.q /* OUT */ (dsten),
 	.d /* IN */ (gpu_din[3]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (105) - dstenzt : fdsync
@@ -443,7 +448,8 @@ fdsync dstenzt_inst
 	.q /* OUT */ (dstenzt),
 	.d /* IN */ (gpu_din[4]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (106) - dstenz : nivm
@@ -455,7 +461,8 @@ fdsync dstwrz_inst
 	.q /* OUT */ (dstwrz),
 	.d /* IN */ (gpu_din[5]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (108) - diso_a1 : fdsync
@@ -464,7 +471,8 @@ fdsync diso_a1_inst
 	.q /* OUT */ (diso_a1),
 	.d /* IN */ (gpu_din[6]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (114) - stupt : nd2
@@ -479,7 +487,8 @@ fd2q stupl_inst
 	.q /* OUT */ (stupl),
 	.d /* IN */ (stupi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (117) - startup : or2
@@ -524,7 +533,8 @@ fd1q dnrt6_inst
 (
 	.q /* OUT */ (dnrt_6),
 	.d /* IN */ (dnrt_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (168) - dnreadyd : aor1
@@ -608,7 +618,8 @@ fd4q idlet_inst
 	.q /* OUT */ (idlet),
 	.d /* IN */ (idlei),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (208) - idle\ : iv
@@ -632,7 +643,8 @@ fd2q sreadx_inst
 	.q /* OUT */ (sreadx),
 	.d /* IN */ (sreadxi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (220) - szreadxt0 : nd3
@@ -650,7 +662,8 @@ fd2q szreadx_inst
 	.q /* OUT */ (szreadx),
 	.d /* IN */ (szreadxi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (227) - sreadt0 : nd2
@@ -688,7 +701,8 @@ fd2q sread_inst
 	.q /* OUT */ (sread),
 	.d /* IN */ (sreadi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (239) - szreadt0 : nd3
@@ -706,7 +720,8 @@ fd2q szread_inst
 	.q /* OUT */ (szread),
 	.d /* IN */ (szreadi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (246) - dreadt0 : nd3
@@ -773,7 +788,8 @@ fd2q dread_inst
 	.q /* OUT */ (dread),
 	.d /* IN */ (dreadi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (262) - dzreadt0 : nd3
@@ -827,7 +843,8 @@ fd2q dzread_inst
 	.q /* OUT */ (dzread),
 	.d /* IN */ (dzreadi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (280) - dwritet0 : nd2
@@ -896,7 +913,8 @@ fd2q dwrite_inst
 	.q /* OUT */ (dwrite_obuf),
 	.d /* IN */ (dwritei),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (299) - dzwritet0 : nd2
@@ -914,7 +932,8 @@ fd2q dzwrite_inst
 	.q /* OUT */ (dzwrite_obuf),
 	.d /* IN */ (dzwritei),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (309) - atick0t0 : nd4
@@ -933,7 +952,8 @@ fd2 atick0_inst
 	.qn /* OUT */ (atick_n_0),
 	.d /* IN */ (aticki_0_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (314) - atick1 : fd2qp
@@ -942,7 +962,8 @@ fd2q atick1_inst
 	.q /* OUT */ (atickt_1),
 	.d /* IN */ (atick_0_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (315) - atick\[1] : iv
@@ -971,7 +992,8 @@ fd1q dpipe1t1_inst
 (
 	.q /* OUT */ (dpipe1t1),
 	.d /* IN */ (dpipe1t0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (341) - dpipe[1] : or2
@@ -991,7 +1013,8 @@ fd1q zpipe1t1_inst
 (
 	.q /* OUT */ (zpipe1t1),
 	.d /* IN */ (zpipe1t0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (354) - zpipe[1] : or2p
@@ -1077,7 +1100,8 @@ inner_cnt inner_count_inst
 	.pixsize_0 /* IN */ (pixsize_0),
 	.pixsize_1 /* IN */ (pixsize_1),
 	.pixsize_2 /* IN */ (pixsize_2),
-	.statrd /* IN */ (statrd)
+	.statrd /* IN */ (statrd),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (385) - oldoutld : an2
@@ -1097,7 +1121,8 @@ fd1q oldoutsidel_inst
 (
 	.q /* OUT */ (oldoutsidel),
 	.d /* IN */ (oldoutside),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (389) - outside : mx2
@@ -1138,7 +1163,8 @@ fd1q srca_add_inst
 (
 	.q /* OUT */ (srca_add),
 	.d /* IN */ (srca_addi_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (411) - dstaat : an2
@@ -1170,7 +1196,8 @@ fd1q gena2_inst
 (
 	.q /* OUT */ (gena2),
 	.d /* IN */ (gena2i),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (426) - zaddr : or4
@@ -1183,7 +1210,8 @@ fdsyncr sreadx1_inst
 	.d /* IN */ (sreadx),
 	.ld /* IN */ (step_p1),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (432) - sread1 : fdsyncr
@@ -1193,7 +1221,8 @@ fdsyncr sread1_inst
 	.d /* IN */ (sread),
 	.ld /* IN */ (step_p1),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (434) - szread1 : fdsyncr
@@ -1203,7 +1232,8 @@ fdsyncr szread1_inst
 	.d /* IN */ (szread),
 	.ld /* IN */ (step_p1),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (436) - dread1 : fdsyncr
@@ -1213,7 +1243,8 @@ fdsyncr dread1_inst
 	.d /* IN */ (dread),
 	.ld /* IN */ (step_p1),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (438) - dzread1 : fdsyncr
@@ -1223,7 +1254,8 @@ fdsyncr dzread1_inst
 	.d /* IN */ (dzread),
 	.ld /* IN */ (step_p1),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (440) - dwrite1 : fdsync
@@ -1232,7 +1264,8 @@ fdsync dwrite1_inst
 	.q /* OUT */ (dwrite1_obuf),
 	.d /* IN */ (dwrite_obuf),
 	.ld /* IN */ (step_p1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (441) - dzwrite1 : fdsync
@@ -1241,7 +1274,8 @@ fdsync dzwrite1_inst
 	.q /* OUT */ (dzwrite1_obuf),
 	.d /* IN */ (dzwrite_obuf),
 	.ld /* IN */ (step_p1),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (445) - dest_cycle[1] : or4
@@ -1288,7 +1322,8 @@ fd2q srcdpend_inst
 	.q /* OUT */ (srcdpend),
 	.d /* IN */ (srcdpt_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (471) - srcdxpset\ : nd2
@@ -1306,7 +1341,8 @@ fd2q srcdxpend_inst
 	.q /* OUT */ (srcdxpend),
 	.d /* IN */ (srcdxpt_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (476) - sdpend : or2
@@ -1320,7 +1356,8 @@ fd1q srcdreadd_inst
 (
 	.q /* OUT */ (srcdreadd_obuf),
 	.d /* IN */ (srcdreadt),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (485) - srcdread : aor1
@@ -1341,7 +1378,8 @@ fd2q srczpend_inst
 	.q /* OUT */ (srczpend),
 	.d /* IN */ (srczpt_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (494) - srczxpset\ : nd2
@@ -1359,7 +1397,8 @@ fd2q srczxpend_inst
 	.q /* OUT */ (srczxpend),
 	.d /* IN */ (srczxpt_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (499) - szpend : or2
@@ -1383,7 +1422,8 @@ fd2q dstdpend_inst
 	.q /* OUT */ (dstdpend),
 	.d /* IN */ (dstdpt_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (508) - dstdread : an2
@@ -1404,7 +1444,8 @@ fd2q dstzpend_inst
 	.q /* OUT */ (dstzpend),
 	.d /* IN */ (dstzpt_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (516) - dstzread : an2
@@ -1423,7 +1464,8 @@ fdsyncr denat2_inst
 	.d /* IN */ (denat_1),
 	.ld /* IN */ (step_p1),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (527) - dstdwt : an3
@@ -1434,6 +1476,7 @@ fd1q data_ena_inst
 (
 	.q /* OUT */ (data_ena),
 	.d /* IN */ (denat_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

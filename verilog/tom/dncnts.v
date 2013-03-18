@@ -8,7 +8,8 @@ module dncnts
 	input clk,
 	input ci,
 	input ld,
-	input resl
+	input resl,
+	input sys_clk // Generated
 );
 wire d3;
 wire d2;
@@ -28,7 +29,8 @@ fd1q q_inst
 (
 	.q /* OUT */ (q_obuf),
 	.d /* IN */ (d3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LEGO.NET (148) - d3 : an2

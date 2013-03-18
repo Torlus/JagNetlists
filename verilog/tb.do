@@ -2,9 +2,12 @@ vlib work
 
 vlog base/bd.v
 vlog base/mx2.v
+vlog base/mx2g.v
 vlog base/mxi2.v
 vlog base/mx4.v
+vlog base/mx4g.v
 vlog base/mx8.v
+vlog base/mx8g.v
 vlog base/fd1.v
 vlog base/fd1q.v
 vlog base/fd1e.v
@@ -24,22 +27,63 @@ vlog base/lsra.v
 vlog base/lsrb.v
 vlog base/mag4.v
 vlog base/fa4r.v
+vlog base/fa32.v
 vlog base/mp1010a.v
 vlog base/ra8008a.v
 vlog base/ra8008b.v
 vlog base/ra8008c.v
 vlog base/ab8016a.v
 vlog base/ab8616a.v
+vlog base/ra6032a.v
+vlog base/d416g2l.v
+vlog base/d416gh.v
+vlog base/d24h.v
+vlog base/d38h.v
+vlog base/d38gh.v
+vlog base/fa4cs.v
+vlog base/cg4.v
+vlog base/fas16.v
+vlog base/fa332.v
+vlog base/mp16.v
+vlog base/rd64x32.v
+vlog base/aba032a.v
 
+vlog tom/an5.v
+vlog tom/an5p.v
+vlog tom/an10.v
 vlog tom/and10.v
 vlog tom/and11.v
 vlog tom/and12.v
 vlog tom/nand14.v
+vlog tom/nd5.v
+vlog tom/nd5p.v
+vlog tom/nd7.v
 vlog tom/nd9.v
+vlog tom/nd10.v
 vlog tom/nd11.v
+vlog tom/nd26.v
+vlog tom/or5.v
+vlog tom/or9.v
+vlog tom/or16.v
+vlog tom/nr5.v
+vlog tom/nr14.v
+vlog tom/nr16.v
+vlog tom/nr26.v
+vlog tom/nr32.v
 vlog tom/creg11.v
 vlog tom/fjkr.v
 vlog tom/fdr.v
+vlog tom/fdsyncr.v
+vlog tom/fdsync.v
+vlog tom/fdsynch.v
+vlog tom/fdsyncu.v
+vlog tom/fdsyncm.v
+vlog tom/fdsync24.v
+vlog tom/fdsync32.v
+vlog tom/fdsyncr32.v
+vlog tom/fdsync16.v
+vlog tom/fdsync6.v
+vlog tom/fdsyncr6.v
 vlog tom/dncnts.v
 vlog tom/upcnts.v
 vlog tom/slatchr.v
@@ -63,8 +107,90 @@ vlog tom/sadd4.v
 vlog tom/sadd8.v
 vlog tom/ha9.v
 vlog tom/twoniv.v
+vlog tom/hs1.v
+vlog tom/fa23.v
+vlog tom/cnte3.v
+vlog tom/cmp6.v
+vlog tom/cmp6i.v
+vlog tom/tben.v
+vlog tom/tbenw.v
+vlog tom/fa32_int.v
+vlog tom/nivniv.v
+vlog tom/cmp8_int.v
+vlog tom/mag_16.v
+vlog tom/mag_4.v
+vlog tom/decl38e.v
+vlog tom/dech38.v
+vlog tom/dech38el.v
+vlog tom/mx12b.v
+vlog tom/mx6.v
 
 vlog tom/_graphics.v
+# vlog tom/pc.v
+# vlog tom/cp_latch.v
+# vlog tom/subsize.v
+# vlog tom/prefetch.v
+# vlog tom/interrupt.v
+# vlog tom/macount.v
+# vlog tom/mcount.v
+# vlog tom/r1count.v
+# vlog tom/systolic.v
+# vlog tom/srcdgen.v
+# vlog tom/execon.v
+# vlog tom/ins_exec.v
+# vlog tom/sboard.v
+# vlog tom/alu32.v
+# vlog tom/barrel32.v
+# vlog tom/brlshift.v
+# vlog tom/saturate.v
+# vlog tom/arith.v
+# vlog tom/divide.v
+# vlog tom/registers.v
+# vlog tom/gpu_mem.v
+# vlog tom/gpu_ctrl.v
+# vlog tom/gpuram.v
+# vlog tom/clkgen.v
+# vlog tom/gpu_ram.v
+# vlog tom/gpu_cpu.v
+# vlog tom/gateway.v
+
+# vlog tom/_blit.v
+# vlog tom/srcshift.v
+# vlog tom/lfu.v
+# vlog tom/datacomp.v
+# vlog tom/zedshift.v
+# vlog tom/zedcomp.v
+# vlog tom/daddamux.v
+# vlog tom/daddbmux.v
+# vlog tom/add16sat.v
+# vlog tom/addarray.v
+# vlog tom/local_mux.v
+# vlog tom/data_mux.v
+# vlog tom/data.v
+# vlog tom/addamux.v
+# vlog tom/addbmux.v
+# vlog tom/addradd.v
+# vlog tom/datamux.v
+# vlog tom/addrgen.v
+# vlog tom/mag_15.v
+# vlog tom/addrcomp.v
+# vlog tom/address.v
+# vlog tom/inner_cnt.v
+# vlog tom/inner.v
+# vlog tom/dcount16.v
+# vlog tom/outer_cnt.v
+# vlog tom/outer.v
+# vlog tom/mcontrol.v
+# vlog tom/acontrol.v
+# vlog tom/dcontrol.v
+# vlog tom/comp_ctrl.v
+# vlog tom/blitstop.v
+# vlog tom/blitgpu.v
+# vlog tom/state.v
+# vlog tom/blit.v
+
+# vlog tom/graphics.v
+
 vlog tom/iodec.v
 vlog tom/vid.v
 vlog tom/cryrgb.v
@@ -115,33 +241,32 @@ add wave -noupdate -format Literal -radix hexadecimal /tb/xd_r
 
 # add wave -noupdate -format Literal /tb/xma_out
 # add wave -noupdate -format Literal /tb/xma_oe
-add wave -noupdate -format Literal -radix hexadecimal /tb/xma_in
+#add wave -noupdate -format Literal -radix hexadecimal /tb/xma_in
 
-add wave -noupdate -format Logic /tb/xrasl(0)
-add wave -noupdate -format Logic /tb/xcasl(0)
-add wave -noupdate -format Literal /tb/xoel
-
-add wave -noupdate -format Literal /tb/xwel
+#add wave -noupdate -format Logic /tb/xrasl(0)
+#add wave -noupdate -format Logic /tb/xcasl(0)
+#add wave -noupdate -format Literal /tb/xoel
+#add wave -noupdate -format Literal /tb/xwel
 
 # add wave -noupdate -format Literal /tb/xromcsl
-add wave -noupdate -format Logic /tb/xdreql_in
-add wave -noupdate -format Logic /tb/xdtackl
-add wave -noupdate -format Logic /tb/xbrl_in
-add wave -noupdate -format Logic /tb/xba_in
-add wave -noupdate -format Logic /tb/ba
-add wave -noupdate -format Logic /tb/tom_inst/aen
+#add wave -noupdate -format Logic /tb/xdreql_in
+#add wave -noupdate -format Logic /tb/xdtackl
+#add wave -noupdate -format Logic /tb/xbrl_in
+#add wave -noupdate -format Logic /tb/xba_in
+#add wave -noupdate -format Logic /tb/ba
+#add wave -noupdate -format Logic /tb/tom_inst/aen
 
 
-add wave -noupdate -format Logic /tb/j68_rst
-add wave -noupdate -format Logic /tb/j68_clk
-add wave -noupdate -format Logic /tb/xintl
-add wave -noupdate -format Literal /tb/j68_fc
-add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address
-add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address_final
-add wave -noupdate -format Logic /tb/j68_rd_ena
-add wave -noupdate -format Logic /tb/j68_wr_ena
-add wave -noupdate -format Literal -radix hexadecimal /tb/j68_rd_data
-add wave -noupdate -format Literal -radix hexadecimal /tb/j68_wr_data
+#add wave -noupdate -format Logic /tb/j68_rst
+#add wave -noupdate -format Logic /tb/j68_clk
+#add wave -noupdate -format Logic /tb/xintl
+#add wave -noupdate -format Literal /tb/j68_fc
+#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address
+#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address_final
+#add wave -noupdate -format Logic /tb/j68_rd_ena
+#add wave -noupdate -format Logic /tb/j68_wr_ena
+#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_rd_data
+#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_wr_data
 # add wave -noupdate -format Literal /tb/j68_fc
 # add wave -noupdate -format Literal -radix hexadecimal /tb/j68_inst/dbg_pc_reg
 # add wave -noupdate -format Literal -radix hexadecimal /tb/j68_inst/r_pc_reg
@@ -167,7 +292,9 @@ add wave -noupdate -format Logic /tb/tom_inst/mem_inst/obbreq
 
 add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbai
 add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbadl_in
-add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbadh_in
+#add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbadh_in
+add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbadl_out
+add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbadl_oe
 add wave -noupdate -format Logic /tb/tom_inst/lbuf_inst/cea_0
 add wave -noupdate -format Logic /tb/tom_inst/lbuf_inst/wea_0
 add wave -noupdate -format Literal -radix hexadecimal /tb/tom_inst/lbuf_inst/lbbi

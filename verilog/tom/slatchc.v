@@ -6,7 +6,8 @@ module slatchc
 	input d,
 	input clk,
 	input en,
-	input resl
+	input resl,
+	input sys_clk // Generated
 );
 wire qb;
 
@@ -27,7 +28,8 @@ fd2e q_inst
 	.cp /* IN */ (clk),
 	.cd /* IN */ (resl),
 	.ti /* IN */ (d),
-	.te /* IN */ (en)
+	.te /* IN */ (en),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LEGO.NET (39) - dummy : dummy

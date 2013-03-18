@@ -10,6 +10,11 @@ public class Fjk2 extends Entity {
 		return "fjk2";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Fjk2() {
 		// 260c_pri_e.pdf - CFJK2XL
 		ios.add(new Signal("q", SignalType.OUT));

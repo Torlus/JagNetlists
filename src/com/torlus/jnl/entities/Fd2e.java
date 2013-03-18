@@ -10,6 +10,12 @@ public class Fd2e extends Entity {
 		return "fd2e";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
+	
 	public Fd2e() {
 		// 260c_pri_e.pdf - CFD2EXL
 		ios.add(new Signal("q", SignalType.OUT));

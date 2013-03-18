@@ -8,7 +8,8 @@ module upcnt
 	input clk,
 	input ci,
 	input ld,
-	input resl
+	input resl,
+	input sys_clk // Generated
 );
 wire d2;
 wire d1;
@@ -27,7 +28,8 @@ fd2q q_inst
 	.q /* OUT */ (q_obuf),
 	.d /* IN */ (d2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resl)
+	.cd /* IN */ (resl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LEGO.NET (97) - d2 : mx2

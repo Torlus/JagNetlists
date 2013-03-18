@@ -23,15 +23,15 @@ wire s_2;
 
 // DUPLO.NET (137) - abuf : ivdm
 assign s_n_0 = ~a;
-assign s_0 = a
+assign s_0 = a;
 
 // DUPLO.NET (138) - bbuf : ivdm
 assign s_n_1 = ~b;
-assign s_1 = b
+assign s_1 = b;
 
 // DUPLO.NET (139) - cbuf : ivdm
 assign s_n_2 = ~c;
-assign s_2 = c
+assign s_2 = c;
 
 // DUPLO.NET (140) - q[0] : an3
 assign q_0 = s_n_0 & s_n_1 & s_n_2;

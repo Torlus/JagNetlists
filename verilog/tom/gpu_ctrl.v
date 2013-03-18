@@ -44,10 +44,11 @@ module gpu_ctrl
 	input clk,
 	input ctrlwr,
 	input ctrlwrgo,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input reset_n,
 	input single_stop,
-	input statrd
+	input statrd,
+	input sys_clk // Generated
 );
 wire one;
 wire zero;
@@ -88,7 +89,8 @@ fd2q got_inst
 	.q /* OUT */ (got),
 	.d /* IN */ (goi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CTRL.NET (41) - go : nivh
@@ -102,7 +104,8 @@ fd1q cpu_int_inst
 (
 	.q /* OUT */ (cpu_int),
 	.d /* IN */ (cpu_intt),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CTRL.NET (46) - gpu_intt : an2
@@ -113,7 +116,8 @@ fd1q gpu_int_inst
 (
 	.q /* OUT */ (gpu_irq_0),
 	.d /* IN */ (gpu_intt),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CTRL.NET (49) - single_step : fdsyncr
@@ -123,7 +127,8 @@ fdsyncr single_step_inst
 	.d /* IN */ (gpu_din[3]),
 	.ld /* IN */ (ctrlwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CTRL.NET (52) - single_got : an2
@@ -134,7 +139,8 @@ fd1q single_go_inst
 (
 	.q /* OUT */ (single_go),
 	.d /* IN */ (single_got),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CTRL.NET (55) - bus_hog : fdsyncr
@@ -144,7 +150,8 @@ fdsyncr bus_hog_inst
 	.d /* IN */ (gpu_din[11]),
 	.ld /* IN */ (ctrlwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CTRL.NET (60) - stat[0] : ts

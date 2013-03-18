@@ -40,7 +40,8 @@ module bus
 	output dmuxd_2,
 	output dren,
 	output xdsrc,
-	output ainen
+	output ainen,
+	input sys_clk // Generated
 );
 wire den03;
 wire busy;
@@ -177,7 +178,8 @@ slatch pws8_inst
 	.q /* OUT */ (pws8),
 	.d /* IN */ (pw8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BUS.NET (112) - pws16 : slatch
@@ -186,7 +188,8 @@ slatch pws16_inst
 	.q /* OUT */ (pws16),
 	.d /* IN */ (pw16),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BUS.NET (113) - pws64 : slatch
@@ -195,7 +198,8 @@ slatch pws64_inst
 	.q /* OUT */ (pws64),
 	.d /* IN */ (pw64),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // BUS.NET (115) - notpws64 : iv

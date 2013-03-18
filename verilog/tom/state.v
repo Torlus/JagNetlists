@@ -2,9 +2,9 @@
 
 module state
 (
-	output [0:23] blit_addr_out;
-	output [0:23] blit_addr_oe;
-	input [0:23] blit_addr_in;
+	output [0:23] blit_addr_out,
+	output [0:23] blit_addr_oe,
+	input [0:23] blit_addr_in,
 	output justify_out,
 	output justify_oe,
 	input justify_in,
@@ -212,8 +212,8 @@ module state
 	input a1_pixsize_0,
 	input a1_pixsize_1,
 	input a1_pixsize_2,
-	input [0:14] a1_win_x;
-	input [0:15] a1_x;
+	input [0:14] a1_win_x,
+	input [0:15] a1_x,
 	input a1addx_0,
 	input a1addx_1,
 	input a1addy,
@@ -222,14 +222,14 @@ module state
 	input a2_pixsize_0,
 	input a2_pixsize_1,
 	input a2_pixsize_2,
-	input [0:15] a2_x;
+	input [0:15] a2_x,
 	input a2addx_0,
 	input a2addx_1,
 	input a2addy,
 	input a2xsign,
 	input a2ysign,
 	input ack,
-	input [0:23] address;
+	input [0:23] address,
 	input big_pix,
 	input blit_back,
 	input clk,
@@ -243,7 +243,7 @@ module state
 	input dcomp_5,
 	input dcomp_6,
 	input dcomp_7,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input pixa_0,
 	input pixa_1,
 	input pixa_2,
@@ -261,7 +261,8 @@ module state
 	input zcomp_0,
 	input zcomp_1,
 	input zcomp_2,
-	input zcomp_3
+	input zcomp_3,
+	input sys_clk // Generated
 );
 wire [0:15] dstxp;
 wire bcompent;
@@ -346,21 +347,24 @@ fdsync zmode_from_0_to_2_inst_0
 	.q /* OUT */ (zmode_0_obuf),
 	.d /* IN */ (gpu_din[18]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync zmode_from_0_to_2_inst_1
 (
 	.q /* OUT */ (zmode_1_obuf),
 	.d /* IN */ (gpu_din[19]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync zmode_from_0_to_2_inst_2
 (
 	.q /* OUT */ (zmode_2_obuf),
 	.d /* IN */ (gpu_din[20]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (105) - lfu_func[0-3] : fdsyncu
@@ -369,28 +373,32 @@ fdsyncu lfu_func_from_0_to_3_inst_0
 	.q /* OUT */ (lfu_func_0),
 	.d /* IN */ (gpu_din[21]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncu lfu_func_from_0_to_3_inst_1
 (
 	.q /* OUT */ (lfu_func_1),
 	.d /* IN */ (gpu_din[22]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncu lfu_func_from_0_to_3_inst_2
 (
 	.q /* OUT */ (lfu_func_2),
 	.d /* IN */ (gpu_din[23]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncu lfu_func_from_0_to_3_inst_3
 (
 	.q /* OUT */ (lfu_func_3),
 	.d /* IN */ (gpu_din[24]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (107) - cmpdst : fdsync
@@ -399,7 +407,8 @@ fdsync cmpdst_inst
 	.q /* OUT */ (cmpdst),
 	.d /* IN */ (gpu_din[25]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (108) - bcompent : fdsync
@@ -408,7 +417,8 @@ fdsync bcompent_inst
 	.q /* OUT */ (bcompent),
 	.d /* IN */ (gpu_din[26]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (109) - bcompen : nivm
@@ -420,7 +430,8 @@ fdsync dcompent_inst
 	.q /* OUT */ (dcompent),
 	.d /* IN */ (gpu_din[27]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (111) - dcompen : nivh
@@ -432,7 +443,8 @@ fdsync bkgwren_inst
 	.q /* OUT */ (bkgwren),
 	.d /* IN */ (gpu_din[28]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (113) - srcshade : fdsync
@@ -441,7 +453,8 @@ fdsync srcshade_inst
 	.q /* OUT */ (srcshade),
 	.d /* IN */ (gpu_din[30]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (117) - blit_idle : nr3
@@ -600,7 +613,8 @@ inner inner_inst
 	.reset_n /* IN */ (reset_n_obuf),
 	.srcshade /* IN */ (srcshade),
 	.statrd /* IN */ (statrd),
-	.wactive /* IN */ (wactive)
+	.wactive /* IN */ (wactive),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (143) - outer : outer
@@ -637,7 +651,8 @@ outer outer_inst
 	.indone /* IN */ (indone),
 	.reset_n /* IN */ (reset_n_obuf),
 	.statrd /* IN */ (statrd),
-	.stopped /* IN */ (stopped)
+	.stopped /* IN */ (stopped),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (151) - mcontrol : mcontrol
@@ -692,7 +707,8 @@ mcontrol mcontrol_inst
 	.sread_1 /* IN */ (sread_1),
 	.sreadx_1 /* IN */ (sreadx_1),
 	.step_inner /* IN */ (step_inner),
-	.writereq /* IN */ (writereq)
+	.writereq /* IN */ (writereq),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (159) - acontrol : acontrol
@@ -787,7 +803,8 @@ acontrol acontrol_inst
 	.srca_addi /* IN */ (srca_addi),
 	.srcen /* IN */ (srcen),
 	.sshftld /* IN */ (sshftld),
-	.step_inner /* IN */ (step_inner)
+	.step_inner /* IN */ (step_inner),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (178) - dcontrol : dcontrol
@@ -820,7 +837,8 @@ dcontrol dcontrol_inst
 	.dzwrite1 /* IN */ (dzwrite1),
 	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
 	.srcdreadd /* IN */ (srcdreadd),
-	.srcshade /* IN */ (srcshade)
+	.srcshade /* IN */ (srcshade),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (187) - comp_ctrl : comp_ctrl
@@ -867,7 +885,8 @@ comp_ctrl comp_ctrl_inst
 	.zcomp_0 /* IN */ (zcomp_0),
 	.zcomp_1 /* IN */ (zcomp_1),
 	.zcomp_2 /* IN */ (zcomp_2),
-	.zcomp_3 /* IN */ (zcomp_3)
+	.zcomp_3 /* IN */ (zcomp_3),
+	.sys_clk(sys_clk) // Generated
 );
 
 // STATE.NET (195) - blitstop : blitstop
@@ -884,6 +903,7 @@ blitstop blitstop_inst
 	.nowrite /* IN */ (nowrite),
 	.statrd /* IN */ (statrd),
 	.stopld /* IN */ (stopld),
-	.xreset_n /* IN */ (xreset_n)
+	.xreset_n /* IN */ (xreset_n),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

@@ -36,7 +36,8 @@ module memwidth
 	output bm_4,
 	output bm_5,
 	output bm_6,
-	output bm_7
+	output bm_7,
+	input sys_clk // Generated
 );
 wire [0:3] rw;
 wire [0:3] w;
@@ -332,28 +333,32 @@ slatch pw_from_0_to_3_inst_0
 	.q /* OUT */ (pw_0),
 	.d /* IN */ (rw1_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pw_from_0_to_3_inst_1
 (
 	.q /* OUT */ (pw_1),
 	.d /* IN */ (rw1_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pw_from_0_to_3_inst_2
 (
 	.q /* OUT */ (pw_2),
 	.d /* IN */ (rw1_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch pw_from_0_to_3_inst_3
 (
 	.q /* OUT */ (pw_3),
 	.d /* IN */ (rw1_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEMWIDTH.NET (77) - ba1[0-2] : mx2h
@@ -389,19 +394,22 @@ fd1q maskai_from_0_to_2_inst_0
 (
 	.q /* OUT */ (maskai_0),
 	.d /* IN */ (at_0_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maskai_from_0_to_2_inst_1
 (
 	.q /* OUT */ (maskai_1),
 	.d /* IN */ (at_1_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maskai_from_0_to_2_inst_2
 (
 	.q /* OUT */ (maskai_2),
 	.d /* IN */ (at_2_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEMWIDTH.NET (83) - at[0-2] : mx2
@@ -524,28 +532,32 @@ slatch maskw_from_0_to_3_inst_0
 	.q /* OUT */ (maskw_0_obuf),
 	.d /* IN */ (cw2_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch maskw_from_0_to_3_inst_1
 (
 	.q /* OUT */ (maskw_1_obuf),
 	.d /* IN */ (cw2_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch maskw_from_0_to_3_inst_2
 (
 	.q /* OUT */ (maskw_2_obuf),
 	.d /* IN */ (cw2_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch maskw_from_0_to_3_inst_3
 (
 	.q /* OUT */ (maskw_3_obuf),
 	.d /* IN */ (cw2_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEMWIDTH.NET (154) - maskwl[0-3] : iv
@@ -1055,56 +1067,64 @@ slatch bm_from_0_to_7_inst_0
 	.q /* OUT */ (bm_0),
 	.d /* IN */ (bmd1_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_1
 (
 	.q /* OUT */ (bm_1),
 	.d /* IN */ (bmd1_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_2
 (
 	.q /* OUT */ (bm_2),
 	.d /* IN */ (bmd1_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_3
 (
 	.q /* OUT */ (bm_3),
 	.d /* IN */ (bmd1_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_4
 (
 	.q /* OUT */ (bm_4),
 	.d /* IN */ (bmd1_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_5
 (
 	.q /* OUT */ (bm_5),
 	.d /* IN */ (bmd1_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_6
 (
 	.q /* OUT */ (bm_6),
 	.d /* IN */ (bmd1_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch bm_from_0_to_7_inst_7
 (
 	.q /* OUT */ (bm_7),
 	.d /* IN */ (bmd1_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (nextc)
+	.en /* IN */ (nextc),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEMWIDTH.NET (310) - last16a : nd2

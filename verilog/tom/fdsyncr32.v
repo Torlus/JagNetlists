@@ -2,11 +2,12 @@
 
 module fdsyncr32
 (
-	output [0:31] q;
-	input [0:31] d;
+	output [0:31] q,
+	input [0:31] d,
 	input ld,
 	input clk,
-	input rst_n
+	input rst_n,
+	input sys_clk // Generated
 );
 wire [0:31] qb;
 
@@ -89,7 +90,8 @@ fd2e q_inst_0
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[0]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_1
 (
@@ -99,7 +101,8 @@ fd2e q_inst_1
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[1]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_2
 (
@@ -109,7 +112,8 @@ fd2e q_inst_2
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[2]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_3
 (
@@ -119,7 +123,8 @@ fd2e q_inst_3
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[3]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_4
 (
@@ -129,7 +134,8 @@ fd2e q_inst_4
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[4]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_5
 (
@@ -139,7 +145,8 @@ fd2e q_inst_5
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[5]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_6
 (
@@ -149,7 +156,8 @@ fd2e q_inst_6
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[6]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_7
 (
@@ -159,7 +167,8 @@ fd2e q_inst_7
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[7]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_8
 (
@@ -169,7 +178,8 @@ fd2e q_inst_8
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[8]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_9
 (
@@ -179,7 +189,8 @@ fd2e q_inst_9
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[9]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_10
 (
@@ -189,7 +200,8 @@ fd2e q_inst_10
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[10]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_11
 (
@@ -199,7 +211,8 @@ fd2e q_inst_11
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[11]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_12
 (
@@ -209,7 +222,8 @@ fd2e q_inst_12
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[12]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_13
 (
@@ -219,7 +233,8 @@ fd2e q_inst_13
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[13]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_14
 (
@@ -229,7 +244,8 @@ fd2e q_inst_14
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[14]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_15
 (
@@ -239,7 +255,8 @@ fd2e q_inst_15
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[15]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_16
 (
@@ -249,7 +266,8 @@ fd2e q_inst_16
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[16]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_17
 (
@@ -259,7 +277,8 @@ fd2e q_inst_17
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[17]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_18
 (
@@ -269,7 +288,8 @@ fd2e q_inst_18
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[18]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_19
 (
@@ -279,7 +299,8 @@ fd2e q_inst_19
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[19]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_20
 (
@@ -289,7 +310,8 @@ fd2e q_inst_20
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[20]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_21
 (
@@ -299,7 +321,8 @@ fd2e q_inst_21
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[21]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_22
 (
@@ -309,7 +332,8 @@ fd2e q_inst_22
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[22]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_23
 (
@@ -319,7 +343,8 @@ fd2e q_inst_23
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[23]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_24
 (
@@ -329,7 +354,8 @@ fd2e q_inst_24
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[24]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_25
 (
@@ -339,7 +365,8 @@ fd2e q_inst_25
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[25]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_26
 (
@@ -349,7 +376,8 @@ fd2e q_inst_26
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[26]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_27
 (
@@ -359,7 +387,8 @@ fd2e q_inst_27
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[27]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_28
 (
@@ -369,7 +398,8 @@ fd2e q_inst_28
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[28]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_29
 (
@@ -379,7 +409,8 @@ fd2e q_inst_29
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[29]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_30
 (
@@ -389,7 +420,8 @@ fd2e q_inst_30
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[30]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd2e q_inst_31
 (
@@ -399,7 +431,8 @@ fd2e q_inst_31
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d[31]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DUPLO.NET (322) - dummy : dummy

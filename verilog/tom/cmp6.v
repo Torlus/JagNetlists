@@ -3,7 +3,7 @@
 module cmp6
 (
 	output equal,
-	input [0:5] a;
+	input [0:5] a,
 	input [0:5] b
 );
 wire eq_0;

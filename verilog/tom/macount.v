@@ -29,7 +29,8 @@ module macount
 	input mwidth_0,
 	input mwidth_1,
 	input mwidth_2,
-	input mwidth_3
+	input mwidth_3,
+	input sys_clk // Generated
 );
 wire maddw_n;
 wire inc_0;
@@ -285,60 +286,70 @@ fd1q maddr_from_0_to_9_inst_0
 (
 	.q /* OUT */ (maddr_0_obuf),
 	.d /* IN */ (cnti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_1
 (
 	.q /* OUT */ (maddr_1_obuf),
 	.d /* IN */ (cnti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_2
 (
 	.q /* OUT */ (maddr_2_obuf),
 	.d /* IN */ (cnti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_3
 (
 	.q /* OUT */ (maddr_3_obuf),
 	.d /* IN */ (cnti_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_4
 (
 	.q /* OUT */ (maddr_4_obuf),
 	.d /* IN */ (cnti_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_5
 (
 	.q /* OUT */ (maddr_5_obuf),
 	.d /* IN */ (cnti_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_6
 (
 	.q /* OUT */ (maddr_6_obuf),
 	.d /* IN */ (cnti_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_7
 (
 	.q /* OUT */ (maddr_7_obuf),
 	.d /* IN */ (cnti_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_8
 (
 	.q /* OUT */ (maddr_8_obuf),
 	.d /* IN */ (cnti_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q maddr_from_0_to_9_inst_9
 (
 	.q /* OUT */ (maddr_9_obuf),
 	.d /* IN */ (cnti_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

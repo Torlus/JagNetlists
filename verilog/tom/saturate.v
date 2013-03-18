@@ -2,8 +2,8 @@
 
 module saturate
 (
-	output [0:23] q;
-	input [0:31] d;
+	output [0:23] q,
+	input [0:31] d,
 	input sixteen,
 	input twentyfour
 );

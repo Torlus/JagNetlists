@@ -30,7 +30,8 @@ module arb
 	output intbm,
 	output cpubm,
 	output intbms,
-	output intbmw
+	output intbmw,
+	input sys_clk // Generated
 );
 wire q0;
 wire d0;
@@ -143,7 +144,8 @@ fd4q q0_inst
 	.q /* OUT */ (q0),
 	.d /* IN */ (d0),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (49) - q1 : fd2q
@@ -152,7 +154,8 @@ fd2q q1_inst
 	.q /* OUT */ (q1),
 	.d /* IN */ (d1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (50) - q2i : fd2q
@@ -161,7 +164,8 @@ fd2q q2i_inst
 	.q /* OUT */ (q2i),
 	.d /* IN */ (d2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (51) - q2 : nivm
@@ -245,7 +249,8 @@ fd1 brs_inst
 	.q /* OUT */ (brsl),
 	.qn /* OUT */ (brs),
 	.d /* IN */ (brd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (85) - req[10] : an2
@@ -325,7 +330,8 @@ slatchc ack_from_1_to_9_inst_0
 	.d /* IN */ (pr_1),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_1
 (
@@ -333,7 +339,8 @@ slatchc ack_from_1_to_9_inst_1
 	.d /* IN */ (pr_2),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_2
 (
@@ -341,7 +348,8 @@ slatchc ack_from_1_to_9_inst_2
 	.d /* IN */ (pr_3),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_3
 (
@@ -349,7 +357,8 @@ slatchc ack_from_1_to_9_inst_3
 	.d /* IN */ (pr_4),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_4
 (
@@ -357,7 +366,8 @@ slatchc ack_from_1_to_9_inst_4
 	.d /* IN */ (pr_5),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_5
 (
@@ -365,7 +375,8 @@ slatchc ack_from_1_to_9_inst_5
 	.d /* IN */ (pr_6),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_6
 (
@@ -373,7 +384,8 @@ slatchc ack_from_1_to_9_inst_6
 	.d /* IN */ (pr_7),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_7
 (
@@ -381,7 +393,8 @@ slatchc ack_from_1_to_9_inst_7
 	.d /* IN */ (pr_8),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 slatchc ack_from_1_to_9_inst_8
 (
@@ -389,7 +402,8 @@ slatchc ack_from_1_to_9_inst_8
 	.d /* IN */ (pr_9),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (110) - ack[0] : slatchp
@@ -399,7 +413,8 @@ slatchp ack_index_0_inst
 	.d /* IN */ (pr_0),
 	.clk /* IN */ (clk),
 	.en /* IN */ (arben),
-	.setl /* IN */ (resetl)
+	.setl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (114) - lbrl : nr8
@@ -453,7 +468,8 @@ fd2q intbms_inst
 	.q /* OUT */ (intbms_obuf),
 	.d /* IN */ (intbmt),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (147) - intbmwd : nd2
@@ -464,7 +480,8 @@ fd1q intbmw_inst
 (
 	.q /* OUT */ (intbmw),
 	.d /* IN */ (intbmwd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (152) - ack48 : or2
@@ -488,7 +505,8 @@ fd2q dbg_inst
 	.q /* OUT */ (dbg),
 	.d /* IN */ (dbgd),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARB.NET (160) - dbgl : iv

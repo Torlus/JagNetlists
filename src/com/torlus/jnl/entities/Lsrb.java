@@ -8,6 +8,11 @@ public class Lsrb extends Entity {
 		return "lsrb";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	// tosh_to_moto.v
 	public Lsrb() {
 		ios.add(new Signal("q", SignalType.OUT));

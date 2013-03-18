@@ -1,0 +1,103 @@
+[*]
+[*] GTKWave Analyzer v3.3.39 (w)1999-2012 BSI
+[*] Mon Mar 18 17:50:28 2013
+[*]
+[dumpfile] "D:\FPGA\JagNetlists\verilog\tb.lxt"
+[savefile] "D:\FPGA\JagNetlists\verilog\gtkw"
+[timestart] 11916107
+[size] 1920 1021
+[pos] -9 -9
+*-6.254590 11916160 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[treeopen] tb.tom_inst.
+[treeopen] tb.tom_inst.pix_inst.
+[sst_width] 197
+[signals_width] 352
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+tb.sys_clk[0]
+tb.xpclk[0]
+tb.xvclk[0]
+@a2
+[color] 2
+tb.xa_in[0:23]
+@22
+[color] 2
+tb.xd_in[0:63]
+tb.xma_in[0:10]
+@28
+tb.rasl[0]
+tb.casl[0]
+tb.xoel[0:2]
+tb.xwel[0:7]
+tb.xdreql_in[0]
+tb.xdtackl[0]
+tb.xbrl_in[0]
+tb.xba_in[0]
+tb.ba[0]
+tb.aen[0]
+tb.xintl[0]
+@22
+tb.j68_address_final[23:0]
+@28
+tb.j68_rd_ena[0]
+tb.j68_wr_ena[0]
+@22
+tb.j68_rd_data[15:0]
+@c00022
+tb.j68_wr_data[15:0]
+@28
+(0)tb.j68_wr_data[15:0]
+(1)tb.j68_wr_data[15:0]
+(2)tb.j68_wr_data[15:0]
+(3)tb.j68_wr_data[15:0]
+(4)tb.j68_wr_data[15:0]
+(5)tb.j68_wr_data[15:0]
+(6)tb.j68_wr_data[15:0]
+(7)tb.j68_wr_data[15:0]
+(8)tb.j68_wr_data[15:0]
+(9)tb.j68_wr_data[15:0]
+(10)tb.j68_wr_data[15:0]
+(11)tb.j68_wr_data[15:0]
+(12)tb.j68_wr_data[15:0]
+(13)tb.j68_wr_data[15:0]
+(14)tb.j68_wr_data[15:0]
+(15)tb.j68_wr_data[15:0]
+@1401200
+-group_end
+@28
+tb.tom_inst.mem_inst.refreq[0]
+tb.tom_inst.mem_inst.obbreq[0]
+@22
+tb.tom_inst.lbuf_inst.lbai[0:8]
+tb.tom_inst.lbuf_inst.lbadl_in[0:15]
+tb.tom_inst.lbuf_inst.lbadl_out[0:15]
+@23
+tb.tom_inst.lbuf_inst.lbadl_oe[0:15]
+@28
+tb.tom_inst.lbuf_inst.cea_0[0]
+tb.tom_inst.lbuf_inst.wea_0[0]
+@22
+tb.tom_inst.lbuf_inst.lbbi[0:8]
+tb.tom_inst.lbuf_inst.lbbdl_in[0:15]
+tb.tom_inst.lbuf_inst.lbbdh_in[0:15]
+@28
+tb.tom_inst.lbuf_inst.ceb_0[0]
+tb.tom_inst.lbuf_inst.web_0[0]
+@22
+tb.tom_inst.pix_inst.lbra[0:8]
+@28
+tb.tom_inst.pix_inst.nextpixb[0]
+@22
+tb.tom_inst.pix_inst.lbrd_d[0:31]
+tb.tom_inst.pix_inst.pd1_d[0:31]
+@28
+tb.xhs_out[0]
+tb.xvs_out[0]
+@22
+tb.xr[0:7]
+tb.xg[0:7]
+tb.xb[0:7]
+[pattern_trace] 1
+[pattern_trace] 0

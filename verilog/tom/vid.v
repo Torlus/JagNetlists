@@ -138,7 +138,8 @@ module vid
 	input dr_14_in,
 	output dr_15_out,
 	output dr_15_oe,
-	input dr_15_in
+	input dr_15_in,
+	input sys_clk // Generated
 );
 wire [0:10] hc;
 wire [0:11] vc;
@@ -1147,7 +1148,8 @@ ldp2 vm_index_0_inst
 	.qn /* OUT */ (videnl),
 	.d /* IN */ (din_0),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (55) - vm[1] : ldp1
@@ -1156,7 +1158,8 @@ ldp1 vm_index_1_inst
 	.q /* OUT */ (vm_1),
 	.qn /* OUT */ (vml_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (vmwr)
+	.g /* IN */ (vmwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (56) - vm[2] : ldp1
@@ -1165,7 +1168,8 @@ ldp1 vm_index_2_inst
 	.q /* OUT */ (vm_2),
 	.qn /* OUT */ (vml_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (vmwr)
+	.g /* IN */ (vmwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (57) - vm[3] : ldp2q
@@ -1174,7 +1178,8 @@ ldp2q vm_index_3_inst
 	.q /* OUT */ (vm_3),
 	.d /* IN */ (din_3),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (58) - vm[4] : ldp2q
@@ -1183,7 +1188,8 @@ ldp2q vm_index_4_inst
 	.q /* OUT */ (incen),
 	.d /* IN */ (din_4),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (59) - vm[5] : ldp1q
@@ -1191,7 +1197,8 @@ ldp1q vm_index_5_inst
 (
 	.q /* OUT */ (binc),
 	.d /* IN */ (din_5),
-	.g /* IN */ (vmwr)
+	.g /* IN */ (vmwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (60) - vm[6] : ldp1q
@@ -1199,7 +1206,8 @@ ldp1q vm_index_6_inst
 (
 	.q /* OUT */ (csyncen),
 	.d /* IN */ (din_6),
-	.g /* IN */ (vmwr)
+	.g /* IN */ (vmwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (61) - vm[7] : ldp2q
@@ -1208,7 +1216,8 @@ ldp2q vm_index_7_inst
 	.q /* OUT */ (bgwen),
 	.d /* IN */ (din_7),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (62) - vm[8] : ldp1q
@@ -1216,7 +1225,8 @@ ldp1q vm_index_8_inst
 (
 	.q /* OUT */ (varmod),
 	.d /* IN */ (din_8),
-	.g /* IN */ (vmwr)
+	.g /* IN */ (vmwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (63) - ppn[9-11] : ldp2q
@@ -1225,21 +1235,24 @@ ldp2q ppn_from_9_to_11_inst_0
 	.q /* OUT */ (ppn_0),
 	.d /* IN */ (din_9),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q ppn_from_9_to_11_inst_1
 (
 	.q /* OUT */ (ppn_1),
 	.d /* IN */ (din_10),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q ppn_from_9_to_11_inst_2
 (
 	.q /* OUT */ (ppn_2),
 	.d /* IN */ (din_11),
 	.g /* IN */ (vmwr),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (65) - cry16 : an2
@@ -1278,7 +1291,8 @@ ldp2q mptesti_inst
 	.q /* OUT */ (mptesti),
 	.d /* IN */ (din_2),
 	.g /* IN */ (test1ws),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (87) - mptest : nivh
@@ -1293,7 +1307,8 @@ ldp2q ndtesti_inst
 	.q /* OUT */ (ndtesti),
 	.d /* IN */ (din_4),
 	.g /* IN */ (test1ws),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (90) - ndtest : nivh
@@ -1311,7 +1326,8 @@ dncnts pp_index_0_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vcc),
 	.ld /* IN */ (pp_obuf),
-	.resl /* IN */ (ppresl)
+	.resl /* IN */ (ppresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (99) - pp[1] : dncnts
@@ -1323,7 +1339,8 @@ dncnts pp_index_1_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (ppco_0),
 	.ld /* IN */ (pp_obuf),
-	.resl /* IN */ (ppresl)
+	.resl /* IN */ (ppresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (100) - pp[2] : dncnts
@@ -1335,7 +1352,8 @@ dncnts pp_index_2_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (ppco_1),
 	.ld /* IN */ (pp_obuf),
-	.resl /* IN */ (ppresl)
+	.resl /* IN */ (ppresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (101) - pp : nivm
@@ -1364,7 +1382,8 @@ fd1 word2_inst
 	.q /* OUT */ (word2_obuf),
 	.qn /* OUT */ (word2l),
 	.d /* IN */ (word2d),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (125) - hc : join
@@ -1428,7 +1447,8 @@ upcnts hc_index_0_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hcount),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (139) - hc[1-9] : upcnts
@@ -1440,7 +1460,8 @@ upcnts hc_from_1_to_9_inst_0
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_0),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_1
 (
@@ -1450,7 +1471,8 @@ upcnts hc_from_1_to_9_inst_1
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_1),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_2
 (
@@ -1460,7 +1482,8 @@ upcnts hc_from_1_to_9_inst_2
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_2),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_3
 (
@@ -1470,7 +1493,8 @@ upcnts hc_from_1_to_9_inst_3
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_3),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_4
 (
@@ -1480,7 +1504,8 @@ upcnts hc_from_1_to_9_inst_4
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_4),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_5
 (
@@ -1490,7 +1515,8 @@ upcnts hc_from_1_to_9_inst_5
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_5),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_6
 (
@@ -1500,7 +1526,8 @@ upcnts hc_from_1_to_9_inst_6
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_6),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_7
 (
@@ -1510,7 +1537,8 @@ upcnts hc_from_1_to_9_inst_7
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_7),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts hc_from_1_to_9_inst_8
 (
@@ -1520,7 +1548,8 @@ upcnts hc_from_1_to_9_inst_8
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hco_8),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hcres)
+	.res /* IN */ (hcres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (141) - hc[10] : upcnts
@@ -1532,7 +1561,8 @@ upcnts hc_index_10_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (hpeq),
 	.ld /* IN */ (hcwr),
-	.res /* IN */ (hmres)
+	.res /* IN */ (hmres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (142) - hcb[0-10] : nivh
@@ -1581,61 +1611,71 @@ ldp1q hp_from_0_to_9_inst_0
 (
 	.q /* OUT */ (hp_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_1
 (
 	.q /* OUT */ (hp_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_2
 (
 	.q /* OUT */ (hp_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_3
 (
 	.q /* OUT */ (hp_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_4
 (
 	.q /* OUT */ (hp_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_5
 (
 	.q /* OUT */ (hp_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_6
 (
 	.q /* OUT */ (hp_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_7
 (
 	.q /* OUT */ (hp_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_8
 (
 	.q /* OUT */ (hp_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hp_from_0_to_9_inst_9
 (
 	.q /* OUT */ (hp_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (hpwr)
+	.g /* IN */ (hpwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (156) - hpe[0-9] : en
@@ -1748,7 +1788,8 @@ creg11 hbb_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (hbbwr)
+	.crwr /* IN */ (hbbwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (165) - hbe : creg11
@@ -1810,7 +1851,8 @@ creg11 hbe_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (hbewr)
+	.crwr /* IN */ (hbewr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (166) - hdb1 : creg11
@@ -1872,7 +1914,8 @@ creg11 hdb1_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (hdb1wr)
+	.crwr /* IN */ (hdb1wr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (167) - hdb2 : creg11
@@ -1934,7 +1977,8 @@ creg11 hdb2_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (hdb2wr)
+	.crwr /* IN */ (hdb2wr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (168) - hde : creg11
@@ -1996,7 +2040,8 @@ creg11 hde_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (hdewr)
+	.crwr /* IN */ (hdewr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (175) - hs[0-10] : ldp1q
@@ -2004,67 +2049,78 @@ ldp1q hs_from_0_to_10_inst_0
 (
 	.q /* OUT */ (hs_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_1
 (
 	.q /* OUT */ (hs_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_2
 (
 	.q /* OUT */ (hs_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_3
 (
 	.q /* OUT */ (hs_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_4
 (
 	.q /* OUT */ (hs_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_5
 (
 	.q /* OUT */ (hs_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_6
 (
 	.q /* OUT */ (hs_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_7
 (
 	.q /* OUT */ (hs_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_8
 (
 	.q /* OUT */ (hs_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_9
 (
 	.q /* OUT */ (hs_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hs_from_0_to_10_inst_10
 (
 	.q /* OUT */ (hs_10),
 	.d /* IN */ (din_10),
-	.g /* IN */ (hswr)
+	.g /* IN */ (hswr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (176) - hse[0-10] : en
@@ -2118,61 +2174,71 @@ ldp1q hvs_from_0_to_9_inst_0
 (
 	.q /* OUT */ (hvs_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_1
 (
 	.q /* OUT */ (hvs_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_2
 (
 	.q /* OUT */ (hvs_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_3
 (
 	.q /* OUT */ (hvs_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_4
 (
 	.q /* OUT */ (hvs_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_5
 (
 	.q /* OUT */ (hvs_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_6
 (
 	.q /* OUT */ (hvs_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_7
 (
 	.q /* OUT */ (hvs_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_8
 (
 	.q /* OUT */ (hvs_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q hvs_from_0_to_9_inst_9
 (
 	.q /* OUT */ (hvs_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (hvswr)
+	.g /* IN */ (hvswr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (185) - hvse[0-9] : en
@@ -2208,61 +2274,71 @@ ldp1q heq_from_0_to_9_inst_0
 (
 	.q /* OUT */ (heq_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_1
 (
 	.q /* OUT */ (heq_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_2
 (
 	.q /* OUT */ (heq_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_3
 (
 	.q /* OUT */ (heq_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_4
 (
 	.q /* OUT */ (heq_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_5
 (
 	.q /* OUT */ (heq_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_6
 (
 	.q /* OUT */ (heq_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_7
 (
 	.q /* OUT */ (heq_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_8
 (
 	.q /* OUT */ (heq_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q heq_from_0_to_9_inst_9
 (
 	.q /* OUT */ (heq_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (heqw)
+	.g /* IN */ (heqw),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (192) - heqe[0-9] : en
@@ -2323,7 +2399,8 @@ upcnts vc_index_0_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vcount),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (211) - vc[1-10] : upcnts
@@ -2335,7 +2412,8 @@ upcnts vc_from_1_to_10_inst_0
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_0),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_1
 (
@@ -2345,7 +2423,8 @@ upcnts vc_from_1_to_10_inst_1
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_1),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_2
 (
@@ -2355,7 +2434,8 @@ upcnts vc_from_1_to_10_inst_2
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_2),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_3
 (
@@ -2365,7 +2445,8 @@ upcnts vc_from_1_to_10_inst_3
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_3),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_4
 (
@@ -2375,7 +2456,8 @@ upcnts vc_from_1_to_10_inst_4
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_4),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_5
 (
@@ -2385,7 +2467,8 @@ upcnts vc_from_1_to_10_inst_5
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_5),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_6
 (
@@ -2395,7 +2478,8 @@ upcnts vc_from_1_to_10_inst_6
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_6),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_7
 (
@@ -2405,7 +2489,8 @@ upcnts vc_from_1_to_10_inst_7
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_7),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_8
 (
@@ -2415,7 +2500,8 @@ upcnts vc_from_1_to_10_inst_8
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_8),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 upcnts vc_from_1_to_10_inst_9
 (
@@ -2425,7 +2511,8 @@ upcnts vc_from_1_to_10_inst_9
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (vco_9),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (vcres)
+	.res /* IN */ (vcres),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (212) - vc[11] : upcnts
@@ -2437,7 +2524,8 @@ upcnts vc_index_11_inst
 	.clk /* IN */ (vclk),
 	.ci /* IN */ (nextfield),
 	.ld /* IN */ (vcwr),
-	.res /* IN */ (res)
+	.res /* IN */ (res),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (213) - vcb[0-10] : nivm
@@ -2488,67 +2576,78 @@ ldp1q vp_from_0_to_10_inst_0
 (
 	.q /* OUT */ (vp_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_1
 (
 	.q /* OUT */ (vp_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_2
 (
 	.q /* OUT */ (vp_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_3
 (
 	.q /* OUT */ (vp_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_4
 (
 	.q /* OUT */ (vp_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_5
 (
 	.q /* OUT */ (vp_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_6
 (
 	.q /* OUT */ (vp_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_7
 (
 	.q /* OUT */ (vp_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_8
 (
 	.q /* OUT */ (vp_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_9
 (
 	.q /* OUT */ (vp_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q vp_from_0_to_10_inst_10
 (
 	.q /* OUT */ (vp_10),
 	.d /* IN */ (din_10),
-	.g /* IN */ (vpwr)
+	.g /* IN */ (vpwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (223) - vpe[0-10] : en
@@ -2658,7 +2757,8 @@ creg11 vbb_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (vbbwr)
+	.crwr /* IN */ (vbbwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (228) - vbe : creg11
@@ -2720,7 +2820,8 @@ creg11 vbe_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (vbewr)
+	.crwr /* IN */ (vbewr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (229) - vdb : creg11
@@ -2782,7 +2883,8 @@ creg11 vdb_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (vdbwr)
+	.crwr /* IN */ (vdbwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (230) - vde : creg11
@@ -2844,7 +2946,8 @@ creg11 vde_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (vdewr)
+	.crwr /* IN */ (vdewr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (231) - veb : creg11
@@ -2906,7 +3009,8 @@ creg11 veb_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (vebwr)
+	.crwr /* IN */ (vebwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (232) - vee : creg11
@@ -2968,7 +3072,8 @@ creg11 vee_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (veewr)
+	.crwr /* IN */ (veewr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (233) - vs : creg11
@@ -3030,7 +3135,8 @@ creg11 vs_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (vswr)
+	.crwr /* IN */ (vswr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (234) - vi : creg11
@@ -3092,7 +3198,8 @@ creg11 vi_inst
 	.din_8 /* IN */ (din_8),
 	.din_9 /* IN */ (din_9),
 	.din_10 /* IN */ (din_10),
-	.crwr /* IN */ (viwr)
+	.crwr /* IN */ (viwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (238) - vvactive : fjkr
@@ -3103,7 +3210,8 @@ fjkr vvactive_inst
 	.j /* IN */ (vdbeq),
 	.k /* IN */ (vdeeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (239) - nvvu : dummy
@@ -3123,7 +3231,8 @@ fd2q start_inst
 	.q /* OUT */ (start_obuf),
 	.d /* IN */ (startd),
 	.cp /* IN */ (vclk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (262) - vcli : nr2
@@ -3138,77 +3247,88 @@ slatch vcl_from_0_to_10_inst_0
 	.q /* OUT */ (vcl_0),
 	.d /* IN */ (vcb_0),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_1
 (
 	.q /* OUT */ (vcl_1),
 	.d /* IN */ (vcb_1),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_2
 (
 	.q /* OUT */ (vcl_2),
 	.d /* IN */ (vcb_2),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_3
 (
 	.q /* OUT */ (vcl_3),
 	.d /* IN */ (vcb_3),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_4
 (
 	.q /* OUT */ (vcl_4),
 	.d /* IN */ (vcb_4),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_5
 (
 	.q /* OUT */ (vcl_5),
 	.d /* IN */ (vcb_5),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_6
 (
 	.q /* OUT */ (vcl_6),
 	.d /* IN */ (vcb_6),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_7
 (
 	.q /* OUT */ (vcl_7),
 	.d /* IN */ (vcb_7),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_8
 (
 	.q /* OUT */ (vcl_8),
 	.d /* IN */ (vcb_8),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_9
 (
 	.q /* OUT */ (vcl_9),
 	.d /* IN */ (vcb_9),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vcl_from_0_to_10_inst_10
 (
 	.q /* OUT */ (vcl_10),
 	.d /* IN */ (vcb_10),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (vclb)
+	.en /* IN */ (vclb),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (271) - startd3p : iv
@@ -3224,7 +3344,8 @@ slatchr vdactive_inst
 	.d /* IN */ (vvactive),
 	.clk /* IN */ (vclk),
 	.en /* IN */ (hdb),
-	.resl /* IN */ (vresl)
+	.resl /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (274) - dd : an2
@@ -3238,7 +3359,8 @@ fjkr vactive_inst
 	.j /* IN */ (dd_obuf),
 	.k /* IN */ (hdeeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (276) - nvu : dummy
@@ -3250,7 +3372,8 @@ fdr lbufai_inst
 	.ql /* OUT */ (lbufbi),
 	.d /* IN */ (lbufad),
 	.clk /* IN */ (vclk),
-	.resl /* IN */ (vresl)
+	.resl /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (279) - lbufd : mx2
@@ -3288,7 +3411,8 @@ fjkr vblank_inst
 	.j /* IN */ (vbbeq),
 	.k /* IN */ (vbeeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (289) - hblank : fjkr
@@ -3299,7 +3423,8 @@ fjkr hblank_inst
 	.j /* IN */ (hbbeq),
 	.k /* IN */ (hbeeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (290) - blank : nd2
@@ -3317,7 +3442,8 @@ fjkr hs_inst
 	.j /* IN */ (hseq),
 	.k /* IN */ (hpeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (296) - hsu : dummy
@@ -3330,7 +3456,8 @@ fjkr vvsync_inst
 	.j /* IN */ (vseq),
 	.k /* IN */ (vpeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (304) - nvsu : dummy
@@ -3346,7 +3473,8 @@ fjkr hvsync_inst
 	.j /* IN */ (hvstart),
 	.k /* IN */ (hvse),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (307) - vesync : fjkr
@@ -3357,7 +3485,8 @@ fjkr vesync_inst
 	.j /* IN */ (vebeq),
 	.k /* IN */ (veeeq),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (308) - nvesu : dummy
@@ -3373,7 +3502,8 @@ fjkr hesync_inst
 	.j /* IN */ (hestart),
 	.k /* IN */ (heqe),
 	.clk /* IN */ (vclk),
-	.r /* IN */ (vresl)
+	.r /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (311) - vsync : an2
@@ -3411,7 +3541,8 @@ fdr vint_inst
 	.ql /* OUT */ (vintl),
 	.d /* IN */ (vintd),
 	.clk /* IN */ (vclk),
-	.resl /* IN */ (vresl)
+	.resl /* IN */ (vresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (321) - vintl : dummy
@@ -3448,7 +3579,8 @@ fd1q nextpixaq_inst
 (
 	.q /* OUT */ (nextpixaq),
 	.d /* IN */ (nextpixad),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (343) - nextpixa : mx2
@@ -3468,7 +3600,8 @@ fd1q lp1_inst
 (
 	.q /* OUT */ (lp1),
 	.d /* IN */ (lp),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (349) - lp2 : fd1
@@ -3477,7 +3610,8 @@ fd1 lp2_inst
 	.q /* OUT */ (lp2),
 	.qn /* OUT */ (lp2l),
 	.d /* IN */ (lp1),
-	.cp /* IN */ (vclk)
+	.cp /* IN */ (vclk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (350) - lpldi : nd2
@@ -3494,77 +3628,88 @@ slatch lph_from_0_to_10_inst_0
 	.q /* OUT */ (lph_0),
 	.d /* IN */ (hcb_0),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_1
 (
 	.q /* OUT */ (lph_1),
 	.d /* IN */ (hcb_1),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_2
 (
 	.q /* OUT */ (lph_2),
 	.d /* IN */ (hcb_2),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_3
 (
 	.q /* OUT */ (lph_3),
 	.d /* IN */ (hcb_3),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_4
 (
 	.q /* OUT */ (lph_4),
 	.d /* IN */ (hcb_4),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_5
 (
 	.q /* OUT */ (lph_5),
 	.d /* IN */ (hcb_5),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_6
 (
 	.q /* OUT */ (lph_6),
 	.d /* IN */ (hcb_6),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_7
 (
 	.q /* OUT */ (lph_7),
 	.d /* IN */ (hcb_7),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_8
 (
 	.q /* OUT */ (lph_8),
 	.d /* IN */ (hcb_8),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_9
 (
 	.q /* OUT */ (lph_9),
 	.d /* IN */ (hcb_9),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lph_from_0_to_10_inst_10
 (
 	.q /* OUT */ (lph_10),
 	.d /* IN */ (hcb_10_obuf),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (355) - lpv[0-11] : slatch
@@ -3573,84 +3718,96 @@ slatch lpv_from_0_to_11_inst_0
 	.q /* OUT */ (lpv_0),
 	.d /* IN */ (vc_0),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_1
 (
 	.q /* OUT */ (lpv_1),
 	.d /* IN */ (vc_1),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_2
 (
 	.q /* OUT */ (lpv_2),
 	.d /* IN */ (vc_2),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_3
 (
 	.q /* OUT */ (lpv_3),
 	.d /* IN */ (vc_3),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_4
 (
 	.q /* OUT */ (lpv_4),
 	.d /* IN */ (vc_4),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_5
 (
 	.q /* OUT */ (lpv_5),
 	.d /* IN */ (vc_5),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_6
 (
 	.q /* OUT */ (lpv_6),
 	.d /* IN */ (vc_6),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_7
 (
 	.q /* OUT */ (lpv_7),
 	.d /* IN */ (vc_7),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_8
 (
 	.q /* OUT */ (lpv_8),
 	.d /* IN */ (vc_8),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_9
 (
 	.q /* OUT */ (lpv_9),
 	.d /* IN */ (vc_9),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_10
 (
 	.q /* OUT */ (lpv_10),
 	.d /* IN */ (vc_10),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 slatch lpv_from_0_to_11_inst_11
 (
 	.q /* OUT */ (lpv_11),
 	.d /* IN */ (vc_11),
 	.clk /* IN */ (vclk),
-	.en /* IN */ (lpld)
+	.en /* IN */ (lpld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (356) - lphd[0-10] : ts
@@ -3715,7 +3872,8 @@ fjk2 lp_event_inst
 	.j /* IN */ (lpld),
 	.k /* IN */ (nextfield),
 	.cp /* IN */ (vclk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (361) - lpeu : dummy

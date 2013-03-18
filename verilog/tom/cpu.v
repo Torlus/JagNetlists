@@ -37,7 +37,8 @@ module cpu
 	input mreq_in,
 	output justify_out,
 	output justify_oe,
-	input justify_in
+	input justify_in,
+	input sys_clk // Generated
 );
 wire w68k_1;
 wire w68k_0;
@@ -165,7 +166,8 @@ fd2q q11_inst
 	.q /* OUT */ (q11),
 	.d /* IN */ (d11),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CPU.NET (75) - q12 : fd2q
@@ -174,7 +176,8 @@ fd2q q12_inst
 	.q /* OUT */ (q12),
 	.d /* IN */ (d12),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CPU.NET (76) - q13 : fd2q
@@ -183,7 +186,8 @@ fd2q q13_inst
 	.q /* OUT */ (q13),
 	.d /* IN */ (d13),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CPU.NET (78) - idlei : nr3
@@ -252,7 +256,8 @@ slatch readcycle_inst
 	.q /* OUT */ (readcycle),
 	.d /* IN */ (rw_in),
 	.clk /* IN */ (clk_0),
-	.en /* IN */ (q11)
+	.en /* IN */ (q11),
+	.sys_clk(sys_clk) // Generated
 );
 
 // CPU.NET (109) - lds : iv

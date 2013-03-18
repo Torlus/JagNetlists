@@ -2,11 +2,11 @@
 
 module gpu_cpu
 (
-	output [0:15] dread_out;
-	output [0:15] dread_oe;
-	input [0:15] dread_in;
-	output [0:12] cpuaddr;
-	output [0:31] cpudata;
+	output [0:15] dread_out,
+	output [0:15] dread_oe,
+	input [0:15] dread_in,
+	output [0:12] cpuaddr,
+	output [0:31] cpudata,
 	output ioreq,
 	input at_1,
 	input a_15,
@@ -46,11 +46,12 @@ module gpu_cpu
 	input dwrite_29,
 	input dwrite_30,
 	input dwrite_31,
-	input [0:15] io_addr;
+	input [0:15] io_addr,
 	input iord,
 	input iowr,
-	input [0:31] mem_data;
-	input reset_n
+	input [0:31] mem_data,
+	input reset_n,
+	input sys_clk // Generated
 );
 wire [0:15] cpudlo;
 wire [0:15] cpudhi;
@@ -184,7 +185,8 @@ fd1q atl_index_15_inst
 (
 	.q /* OUT */ (atl_15),
 	.d /* IN */ (at_15),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CPU.NET (67) - iorqt0 : nd2
@@ -205,7 +207,8 @@ fd2q rden_inst
 	.q /* OUT */ (rden),
 	.d /* IN */ (iord),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CPU.NET (75) - rdenp : fd2q
@@ -214,7 +217,8 @@ fd2q rdenp_inst
 	.q /* OUT */ (rdenp),
 	.d /* IN */ (rden),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CPU.NET (76) - iowrite : fd1q
@@ -222,7 +226,8 @@ fd1q iowrite_inst
 (
 	.q /* OUT */ (iowrite),
 	.d /* IN */ (iowr),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CPU.NET (86) - lodld : an3h
@@ -233,97 +238,113 @@ ldp1q lodata_inst_0
 (
 	.q /* OUT */ (lodata[0]),
 	.d /* IN */ (dwritelo[0]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_1
 (
 	.q /* OUT */ (lodata[1]),
 	.d /* IN */ (dwritelo[1]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_2
 (
 	.q /* OUT */ (lodata[2]),
 	.d /* IN */ (dwritelo[2]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_3
 (
 	.q /* OUT */ (lodata[3]),
 	.d /* IN */ (dwritelo[3]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_4
 (
 	.q /* OUT */ (lodata[4]),
 	.d /* IN */ (dwritelo[4]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_5
 (
 	.q /* OUT */ (lodata[5]),
 	.d /* IN */ (dwritelo[5]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_6
 (
 	.q /* OUT */ (lodata[6]),
 	.d /* IN */ (dwritelo[6]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_7
 (
 	.q /* OUT */ (lodata[7]),
 	.d /* IN */ (dwritelo[7]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_8
 (
 	.q /* OUT */ (lodata[8]),
 	.d /* IN */ (dwritelo[8]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_9
 (
 	.q /* OUT */ (lodata[9]),
 	.d /* IN */ (dwritelo[9]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_10
 (
 	.q /* OUT */ (lodata[10]),
 	.d /* IN */ (dwritelo[10]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_11
 (
 	.q /* OUT */ (lodata[11]),
 	.d /* IN */ (dwritelo[11]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_12
 (
 	.q /* OUT */ (lodata[12]),
 	.d /* IN */ (dwritelo[12]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_13
 (
 	.q /* OUT */ (lodata[13]),
 	.d /* IN */ (dwritelo[13]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_14
 (
 	.q /* OUT */ (lodata[14]),
 	.d /* IN */ (dwritelo[14]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q lodata_inst_15
 (
 	.q /* OUT */ (lodata[15]),
 	.d /* IN */ (dwritelo[15]),
-	.g /* IN */ (lodld)
+	.g /* IN */ (lodld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CPU.NET (89) - lodsel : or2_h
@@ -857,97 +878,113 @@ ldp1q latrdata_inst_0
 (
 	.q /* OUT */ (latrdata[0]),
 	.d /* IN */ (latrdatai[0]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_1
 (
 	.q /* OUT */ (latrdata[1]),
 	.d /* IN */ (latrdatai[1]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_2
 (
 	.q /* OUT */ (latrdata[2]),
 	.d /* IN */ (latrdatai[2]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_3
 (
 	.q /* OUT */ (latrdata[3]),
 	.d /* IN */ (latrdatai[3]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_4
 (
 	.q /* OUT */ (latrdata[4]),
 	.d /* IN */ (latrdatai[4]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_5
 (
 	.q /* OUT */ (latrdata[5]),
 	.d /* IN */ (latrdatai[5]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_6
 (
 	.q /* OUT */ (latrdata[6]),
 	.d /* IN */ (latrdatai[6]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_7
 (
 	.q /* OUT */ (latrdata[7]),
 	.d /* IN */ (latrdatai[7]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_8
 (
 	.q /* OUT */ (latrdata[8]),
 	.d /* IN */ (latrdatai[8]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_9
 (
 	.q /* OUT */ (latrdata[9]),
 	.d /* IN */ (latrdatai[9]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_10
 (
 	.q /* OUT */ (latrdata[10]),
 	.d /* IN */ (latrdatai[10]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_11
 (
 	.q /* OUT */ (latrdata[11]),
 	.d /* IN */ (latrdatai[11]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_12
 (
 	.q /* OUT */ (latrdata[12]),
 	.d /* IN */ (latrdatai[12]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_13
 (
 	.q /* OUT */ (latrdata[13]),
 	.d /* IN */ (latrdatai[13]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_14
 (
 	.q /* OUT */ (latrdata[14]),
 	.d /* IN */ (latrdatai[14]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q latrdata_inst_15
 (
 	.q /* OUT */ (latrdata[15]),
 	.d /* IN */ (latrdatai[15]),
-	.g /* IN */ (hidld)
+	.g /* IN */ (hidld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_CPU.NET (108) - immrdatai : mx2

@@ -4767,7 +4767,8 @@ graphics gpu_inst
 	.dr_15_in /* BUS */ (ts_local_pe_685_a0_in),
 	.justify_out /* BUS */ (ts_local_pe_686_a0_out),
 	.justify_oe /* BUS */ (ts_local_pe_686_a0_oe),
-	.justify_in /* BUS */ (ts_local_pe_686_a0_in)
+	.justify_in /* BUS */ (ts_local_pe_686_a0_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (320) - iodec : iodec
@@ -4995,7 +4996,8 @@ vid vid_inst
 	.dr_14_in /* BUS */ (ts_local_pe_684_a1_in),
 	.dr_15_out /* BUS */ (ts_local_pe_685_a1_out),
 	.dr_15_oe /* BUS */ (ts_local_pe_685_a1_oe),
-	.dr_15_in /* BUS */ (ts_local_pe_685_a1_in)
+	.dr_15_in /* BUS */ (ts_local_pe_685_a1_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (351) - pix : pix
@@ -5132,7 +5134,8 @@ pix pix_inst
 	.dr_7_in /* BUS */ (ts_local_pe_677_a2_in),
 	.dr_8_out /* BUS */ (ts_local_pe_678_a2_out),
 	.dr_8_oe /* BUS */ (ts_local_pe_678_a2_oe),
-	.dr_8_in /* BUS */ (ts_local_pe_678_a2_in)
+	.dr_8_in /* BUS */ (ts_local_pe_678_a2_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (362) - dbus : dbus
@@ -5443,7 +5446,8 @@ dbus dbus_inst
 	.d_60 /* OUT */ (d_60),
 	.d_61 /* OUT */ (d_61),
 	.d_62 /* OUT */ (d_62),
-	.d_63 /* OUT */ (d_63)
+	.d_63 /* OUT */ (d_63),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (368) - abus : abus
@@ -5721,7 +5725,8 @@ abus abus_inst
 	.dr_14_in /* BUS */ (ts_local_pe_684_a2_in),
 	.dr_15_out /* BUS */ (ts_local_pe_685_a2_out),
 	.dr_15_oe /* BUS */ (ts_local_pe_685_a2_oe),
-	.dr_15_in /* BUS */ (ts_local_pe_685_a2_in)
+	.dr_15_in /* BUS */ (ts_local_pe_685_a2_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (385) - mem : mem
@@ -5867,7 +5872,8 @@ mem mem_inst
 	.mreq_in /* BUS */ (ts_local_pe_669_a1_in),
 	.justify_out /* BUS */ (ts_local_pe_686_a1_out),
 	.justify_oe /* BUS */ (ts_local_pe_686_a1_oe),
-	.justify_in /* BUS */ (ts_local_pe_686_a1_in)
+	.justify_in /* BUS */ (ts_local_pe_686_a1_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (411) - ob : ob
@@ -6415,7 +6421,8 @@ ob ob_inst
 	.dr_14_in /* BUS */ (ts_local_pe_684_a3_in),
 	.dr_15_out /* BUS */ (ts_local_pe_685_a3_out),
 	.dr_15_oe /* BUS */ (ts_local_pe_685_a3_oe),
-	.dr_15_in /* BUS */ (ts_local_pe_685_a3_in)
+	.dr_15_in /* BUS */ (ts_local_pe_685_a3_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (426) - wbk : wbk
@@ -6516,7 +6523,8 @@ wbk wbk_inst
 	.newrem_6 /* OUT */ (newrem_6),
 	.newrem_7 /* OUT */ (newrem_7),
 	.heightnz /* OUT */ (heightnz),
-	.wbkdone /* OUT */ (wbkdone)
+	.wbkdone /* OUT */ (wbkdone),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (434) - obd : obdata
@@ -6948,7 +6956,8 @@ clk clk_inst
 	.cfgen /* OUT */ (cfgen_obuf),
 	.clk /* OUT */ (clk),
 	.vclk /* OUT */ (vclk),
-	.tlw /* OUT */ (tlw)
+	.tlw /* OUT */ (tlw),
+	.sys_clk(sys_clk) // Generated
 );
 
 // TOM.NET (455) - clk[0] : buf24
@@ -7071,7 +7080,8 @@ misc misc__inst
 	.dr_15_in /* BUS */ (ts_local_pe_685_a6_in),
 	.mreq_out /* BUS */ (ts_local_pe_669_a3_out),
 	.mreq_oe /* BUS */ (ts_local_pe_669_a3_oe),
-	.mreq_in /* BUS */ (ts_local_pe_669_a3_in)
+	.mreq_in /* BUS */ (ts_local_pe_669_a3_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // --- Compiler-generated local PE for BUS wd[0]

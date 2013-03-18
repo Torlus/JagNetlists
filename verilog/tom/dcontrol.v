@@ -27,9 +27,10 @@ module dcontrol
 	input dwrite,
 	input dzwrite,
 	input dzwrite1,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input srcdreadd,
-	input srcshade
+	input srcshade,
+	input sys_clk // Generated
 );
 wire topben;
 wire topnen;
@@ -83,7 +84,8 @@ fdsyncm gourd_inst
 	.q /* OUT */ (gourd_obuf),
 	.d /* IN */ (gpu_din[12]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk_0)
+	.clk /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (41) - gourz : fdsyncm
@@ -92,7 +94,8 @@ fdsyncm gourz_inst
 	.q /* OUT */ (gourz_obuf),
 	.d /* IN */ (gpu_din[13]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk_0)
+	.clk /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (42) - topben : fdsync
@@ -101,7 +104,8 @@ fdsync topben_inst
 	.q /* OUT */ (topben),
 	.d /* IN */ (gpu_din[14]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk_0)
+	.clk /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (43) - topnen : fdsync
@@ -110,7 +114,8 @@ fdsync topnen_inst
 	.q /* OUT */ (topnen),
 	.d /* IN */ (gpu_din[15]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk_0)
+	.clk /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (44) - patdsel : fdsync
@@ -119,7 +124,8 @@ fdsync patdsel_inst
 	.q /* OUT */ (patdsel),
 	.d /* IN */ (gpu_din[16]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk_0)
+	.clk /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (45) - adddsel : fdsync
@@ -128,7 +134,8 @@ fdsync adddsel_inst
 	.q /* OUT */ (adddsel),
 	.d /* IN */ (gpu_din[17]),
 	.ld /* IN */ (cmdld),
-	.clk /* IN */ (clk_0)
+	.clk /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (47) - gourd\ : iv
@@ -249,7 +256,8 @@ fd1q dzwrite1d_inst
 (
 	.q /* OUT */ (dzwrite1d),
 	.d /* IN */ (dzwrite1),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DCONTROL.NET (187) - dsel0t : nr2

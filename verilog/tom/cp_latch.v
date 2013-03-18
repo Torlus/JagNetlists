@@ -6,7 +6,8 @@ module cp_latch
 	input set,
 	input clear,
 	input clock,
-	input reset_n
+	input reset_n,
+	input sys_clk // Generated
 );
 wire ipt;
 wire ip;
@@ -31,6 +32,7 @@ fd2q q_inst
 	.q /* OUT */ (q_obuf),
 	.d /* IN */ (ip),
 	.cp /* IN */ (clock),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

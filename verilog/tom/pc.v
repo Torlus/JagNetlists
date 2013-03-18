@@ -2,11 +2,11 @@
 
 module pc
 (
-	output [0:22] pc;
-	output [0:23] program_count;
+	output [0:22] pc,
+	output [0:23] program_count,
 	input clk,
 	input go,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input progack,
 	input jabs,
 	input jrel,
@@ -15,8 +15,9 @@ module pc
 	input qs_n_1,
 	input qs_n_2,
 	input reset_n,
-	input [0:31] srcd;
-	input [0:31] srcdp
+	input [0:31] srcd,
+	input [0:31] srcdp,
+	input sys_clk // Generated
 );
 wire [0:22] subq;
 wire one;
@@ -759,14 +760,16 @@ fd2q pc_from_0_to_1_inst_0
 	.q /* OUT */ (pc_0),
 	.d /* IN */ (pcin_0),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_0_to_1_inst_1
 (
 	.q /* OUT */ (pc_1),
 	.d /* IN */ (pcin_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PREFETCH.NET (350) - pc[2] : fd4q
@@ -775,7 +778,8 @@ fd4q pc_index_2_inst
 	.q /* OUT */ (pc_2),
 	.d /* IN */ (pcin_2),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PREFETCH.NET (351) - pc[3-14] : fd2q
@@ -784,84 +788,96 @@ fd2q pc_from_3_to_14_inst_0
 	.q /* OUT */ (pc_3),
 	.d /* IN */ (pcin_3),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_1
 (
 	.q /* OUT */ (pc_4),
 	.d /* IN */ (pcin_4),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_2
 (
 	.q /* OUT */ (pc_5),
 	.d /* IN */ (pcin_5),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_3
 (
 	.q /* OUT */ (pc_6),
 	.d /* IN */ (pcin_6),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_4
 (
 	.q /* OUT */ (pc_7),
 	.d /* IN */ (pcin_7),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_5
 (
 	.q /* OUT */ (pc_8),
 	.d /* IN */ (pcin_8),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_6
 (
 	.q /* OUT */ (pc_9),
 	.d /* IN */ (pcin_9),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_7
 (
 	.q /* OUT */ (pc_10),
 	.d /* IN */ (pcin_10),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_8
 (
 	.q /* OUT */ (pc_11),
 	.d /* IN */ (pcin_11),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_9
 (
 	.q /* OUT */ (pc_12),
 	.d /* IN */ (pcin_12),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_10
 (
 	.q /* OUT */ (pc_13),
 	.d /* IN */ (pcin_13),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q pc_from_3_to_14_inst_11
 (
 	.q /* OUT */ (pc_14),
 	.d /* IN */ (pcin_14),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PREFETCH.NET (352) - pc[15-22] : fd4q
@@ -870,56 +886,64 @@ fd4q pc_from_15_to_22_inst_0
 	.q /* OUT */ (pc_15),
 	.d /* IN */ (pcin_15),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_1
 (
 	.q /* OUT */ (pc_16),
 	.d /* IN */ (pcin_16),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_2
 (
 	.q /* OUT */ (pc_17),
 	.d /* IN */ (pcin_17),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_3
 (
 	.q /* OUT */ (pc_18),
 	.d /* IN */ (pcin_18),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_4
 (
 	.q /* OUT */ (pc_19),
 	.d /* IN */ (pcin_19),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_5
 (
 	.q /* OUT */ (pc_20),
 	.d /* IN */ (pcin_20),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_6
 (
 	.q /* OUT */ (pc_21),
 	.d /* IN */ (pcin_21),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd4q pc_from_15_to_22_inst_7
 (
 	.q /* OUT */ (pc_22),
 	.d /* IN */ (pcin_22),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // PREFETCH.NET (353) - pc : join

@@ -142,7 +142,8 @@ module mem
 	input mreq_in,
 	output justify_out,
 	output justify_oe,
-	input justify_in
+	input justify_in,
+	input sys_clk // Generated
 );
 wire notreadt;
 wire intbm;
@@ -493,7 +494,8 @@ arb arb_inst
 	.intbm /* OUT */ (intbm),
 	.cpubm /* OUT */ (cpubm),
 	.intbms /* OUT */ (intbms),
-	.intbmw /* OUT */ (intbmw)
+	.intbmw /* OUT */ (intbmw),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (123) - mw : memwidth
@@ -533,7 +535,8 @@ memwidth mw_inst
 	.bm_4 /* OUT */ (bm_4),
 	.bm_5 /* OUT */ (bm_5),
 	.bm_6 /* OUT */ (bm_6),
-	.bm_7 /* OUT */ (bm_7)
+	.bm_7 /* OUT */ (bm_7),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (129) - bus : bus
@@ -577,7 +580,8 @@ bus bus_inst
 	.dmuxd_2 /* OUT */ (dmuxd_2),
 	.dren /* OUT */ (dren),
 	.xdsrc /* OUT */ (xdsrc),
-	.ainen /* OUT */ (ainen)
+	.ainen /* OUT */ (ainen),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (139) - cpu : cpu
@@ -618,7 +622,8 @@ cpu cpu_inst
 	.mreq_in /* BUS */ (mreq_in),
 	.justify_out /* BUS */ (justify_out),
 	.justify_oe /* BUS */ (justify_oe),
-	.justify_in /* BUS */ (justify_in)
+	.justify_in /* BUS */ (justify_in),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (275) - q0 : fd4q
@@ -627,7 +632,8 @@ fd4q q0_inst
 	.q /* OUT */ (idle),
 	.d /* IN */ (d0),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (276) - q1a : fd2q
@@ -636,7 +642,8 @@ fd2q q1a_inst
 	.q /* OUT */ (q1a),
 	.d /* IN */ (d1a),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (277) - q1b : fd2q
@@ -645,7 +652,8 @@ fd2q q1b_inst
 	.q /* OUT */ (q1b),
 	.d /* IN */ (d1b),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (278) - q1c : fd2q
@@ -654,7 +662,8 @@ fd2q q1c_inst
 	.q /* OUT */ (q1c),
 	.d /* IN */ (d1c),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (279) - q1d : fd2q
@@ -663,7 +672,8 @@ fd2q q1d_inst
 	.q /* OUT */ (q1d),
 	.d /* IN */ (d1d),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (280) - q2a : fd2q
@@ -672,7 +682,8 @@ fd2q q2a_inst
 	.q /* OUT */ (q2a),
 	.d /* IN */ (q1d),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (281) - q2b : fd2q
@@ -681,7 +692,8 @@ fd2q q2b_inst
 	.q /* OUT */ (q2b),
 	.d /* IN */ (d2b),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (282) - q2c : fd2q
@@ -690,7 +702,8 @@ fd2q q2c_inst
 	.q /* OUT */ (q2c),
 	.d /* IN */ (d2c),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (283) - q3a : fd2q
@@ -699,7 +712,8 @@ fd2q q3a_inst
 	.q /* OUT */ (q3a),
 	.d /* IN */ (d3a),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (284) - q3b : fd2q
@@ -708,7 +722,8 @@ fd2q q3b_inst
 	.q /* OUT */ (q3b),
 	.d /* IN */ (q3a),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (285) - q4a : fd2q
@@ -717,7 +732,8 @@ fd2q q4a_inst
 	.q /* OUT */ (q4a),
 	.d /* IN */ (d4a),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (286) - q4b : fd2q
@@ -726,7 +742,8 @@ fd2q q4b_inst
 	.q /* OUT */ (q4b),
 	.d /* IN */ (d4b),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (287) - q4c : fd2q
@@ -735,7 +752,8 @@ fd2q q4c_inst
 	.q /* OUT */ (q4c),
 	.d /* IN */ (d4c),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (288) - q4d : fd2q
@@ -744,7 +762,8 @@ fd2q q4d_inst
 	.q /* OUT */ (q4d),
 	.d /* IN */ (d4d),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (289) - q4e : fd2q
@@ -753,7 +772,8 @@ fd2q q4e_inst
 	.q /* OUT */ (q4e),
 	.d /* IN */ (q4d),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (290) - q4f : fd2q
@@ -762,7 +782,8 @@ fd2q q4f_inst
 	.q /* OUT */ (q4f),
 	.d /* IN */ (d4f),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (291) - q4g : fd2q
@@ -771,7 +792,8 @@ fd2q q4g_inst
 	.q /* OUT */ (q4g),
 	.d /* IN */ (d4g),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (292) - q4h : fd2q
@@ -780,7 +802,8 @@ fd2q q4h_inst
 	.q /* OUT */ (q4h),
 	.d /* IN */ (d4h),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (293) - q4i : fd2q
@@ -789,7 +812,8 @@ fd2q q4i_inst
 	.q /* OUT */ (q4i),
 	.d /* IN */ (q4h),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (294) - q5ai : fd2q
@@ -798,7 +822,8 @@ fd2q q5ai_inst
 	.q /* OUT */ (q5ai),
 	.d /* IN */ (d5a),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (295) - q5b : fd2q
@@ -807,7 +832,8 @@ fd2q q5b_inst
 	.q /* OUT */ (q5b),
 	.d /* IN */ (d5b),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (296) - q5c : fd2q
@@ -816,7 +842,8 @@ fd2q q5c_inst
 	.q /* OUT */ (q5c),
 	.d /* IN */ (d5c),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (297) - q7a : fd2q
@@ -825,7 +852,8 @@ fd2q q7a_inst
 	.q /* OUT */ (q7a),
 	.d /* IN */ (d7a_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (298) - q7b : fd2q
@@ -834,7 +862,8 @@ fd2q q7b_inst
 	.q /* OUT */ (q7b),
 	.d /* IN */ (d7b),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (299) - q8a : fd2q
@@ -843,7 +872,8 @@ fd2q q8a_inst
 	.q /* OUT */ (q8a),
 	.d /* IN */ (d8a),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (300) - q8b : fd2q
@@ -852,7 +882,8 @@ fd2q q8b_inst
 	.q /* OUT */ (q8b),
 	.d /* IN */ (d8b),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (301) - q8c : fd2q
@@ -861,7 +892,8 @@ fd2q q8c_inst
 	.q /* OUT */ (q8c),
 	.d /* IN */ (d8c),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (302) - q10 : fd2q
@@ -870,7 +902,8 @@ fd2q q10_inst
 	.q /* OUT */ (q10),
 	.d /* IN */ (d10),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (304) - q5a : niv
@@ -920,7 +953,8 @@ fd4q mtb_inst
 	.q /* OUT */ (mtb),
 	.d /* IN */ (mtbd),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (327) - ack : nivu2
@@ -1229,7 +1263,8 @@ fd1q startwe_inst
 (
 	.q /* OUT */ (startwe),
 	.d /* IN */ (swd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (480) - notrw : iv
@@ -1243,7 +1278,8 @@ fd1q lwdli_inst
 (
 	.q /* OUT */ (lwdli),
 	.d /* IN */ (doll),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (483) - lwdl : nivh
@@ -1270,7 +1306,8 @@ dncnt w_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wcen),
 	.ld /* IN */ (wld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (495) - w[1] : dncnt
@@ -1282,7 +1319,8 @@ dncnt w_index_1_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_0),
 	.ld /* IN */ (wld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (496) - w[2] : dncnt
@@ -1294,7 +1332,8 @@ dncnt w_index_2_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_1),
 	.ld /* IN */ (wld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (497) - w[3] : dncnt
@@ -1306,7 +1345,8 @@ dncnt w_index_3_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_2),
 	.ld /* IN */ (wld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (498) - wco[3] : dummy
@@ -1396,7 +1436,8 @@ rasgen rasl_index_0_inst
 	.allonl /* IN */ (allrasonl),
 	.alloffl /* IN */ (allrasoffl),
 	.clk /* IN */ (clk),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (536) - rasl[1] : rasgen
@@ -1409,7 +1450,8 @@ rasgen rasl_index_1_inst
 	.allonl /* IN */ (allrasonl),
 	.alloffl /* IN */ (allrasoffl),
 	.clk /* IN */ (clk),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (539) - clkl : iv
@@ -1430,7 +1472,8 @@ fd4q cas00_inst
 	.q /* OUT */ (cas00),
 	.d /* IN */ (casd_0),
 	.cp /* IN */ (pclkl),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (544) - cas01 : fd4q
@@ -1439,7 +1482,8 @@ fd4q cas01_inst
 	.q /* OUT */ (cas01),
 	.d /* IN */ (casd_0),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (545) - cas10 : fd4q
@@ -1448,7 +1492,8 @@ fd4q cas10_inst
 	.q /* OUT */ (cas10),
 	.d /* IN */ (casd_1),
 	.cp /* IN */ (pclkl),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (546) - cas11 : fd4q
@@ -1457,7 +1502,8 @@ fd4q cas11_inst
 	.q /* OUT */ (cas11),
 	.d /* IN */ (casd_1),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (547) - casl[0] : an3
@@ -1504,7 +1550,8 @@ fd2 wet0_inst
 	.qn /* OUT */ (wet0l),
 	.d /* IN */ (startwe),
 	.cp /* IN */ (pclkl),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (575) - wetu : dummy
@@ -1697,7 +1744,8 @@ fd1q readsi_inst
 (
 	.q /* OUT */ (readsi),
 	.d /* IN */ (readt_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (693) - readt : mx2p
@@ -1733,13 +1781,15 @@ fd1q mws_from_0_to_1_inst_0
 (
 	.q /* OUT */ (mws_0),
 	.d /* IN */ (mwti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mws_from_0_to_1_inst_1
 (
 	.q /* OUT */ (mws_1),
 	.d /* IN */ (mwti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (700) - mwt[0-1] : nivh
@@ -1781,6 +1831,7 @@ fd1q jdreqlout_inst
 (
 	.q /* OUT */ (dreqlout),
 	.d /* IN */ (dreqd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

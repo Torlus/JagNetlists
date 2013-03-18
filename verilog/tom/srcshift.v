@@ -2,13 +2,13 @@
 
 module srcshift
 (
-	output [0:31] srcd_0;
-	output [0:31] srcd_1;
+	output [0:31] srcd_0,
+	output [0:31] srcd_1,
 	input big_pix,
-	input [0:31] srcd1lo;
-	input [0:31] srcd1hi;
-	input [0:31] srcd2lo;
-	input [0:31] srcd2hi;
+	input [0:31] srcd1lo,
+	input [0:31] srcd1hi,
+	input [0:31] srcd2lo,
+	input [0:31] srcd2hi,
 	input srcshift_0,
 	input srcshift_1,
 	input srcshift_2,

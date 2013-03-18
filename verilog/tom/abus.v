@@ -274,7 +274,8 @@ module abus
 	input dr_14_in,
 	output dr_15_out,
 	output dr_15_oe,
-	input dr_15_in
+	input dr_15_in,
+	input sys_clk // Generated
 );
 wire [0:10] ma;
 wire m1d_0;
@@ -814,7 +815,8 @@ ldp1q romhii_inst
 (
 	.q /* OUT */ (romhii),
 	.d /* IN */ (m1d_0),
-	.g /* IN */ (m1ld)
+	.g /* IN */ (m1ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (95) - romhi : nivh
@@ -828,13 +830,15 @@ ldp1q romwid_from_0_to_1_inst_0
 (
 	.q /* OUT */ (romwid_0),
 	.d /* IN */ (m1d_1),
-	.g /* IN */ (m1ld)
+	.g /* IN */ (m1ld),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q romwid_from_0_to_1_inst_1
 (
 	.q /* OUT */ (romwid_1),
 	.d /* IN */ (m1d_2),
-	.g /* IN */ (m1ld)
+	.g /* IN */ (m1ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (98) - romspd[0-1] : ldp2q
@@ -843,14 +847,16 @@ ldp2q romspd_from_0_to_1_inst_0
 	.q /* OUT */ (romspd_0_obuf),
 	.d /* IN */ (din_3),
 	.g /* IN */ (memc1w),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 ldp2q romspd_from_0_to_1_inst_1
 (
 	.q /* OUT */ (romspd_1_obuf),
 	.d /* IN */ (din_4),
 	.g /* IN */ (memc1w),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (99) - dspd[0-1] : ldp1q
@@ -858,13 +864,15 @@ ldp1q dspd_from_0_to_1_inst_0
 (
 	.q /* OUT */ (dspd_0_obuf),
 	.d /* IN */ (din_5),
-	.g /* IN */ (memc1w)
+	.g /* IN */ (memc1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dspd_from_0_to_1_inst_1
 (
 	.q /* OUT */ (dspd_1_obuf),
 	.d /* IN */ (din_6),
-	.g /* IN */ (memc1w)
+	.g /* IN */ (memc1w),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (100) - fastrom : ldp2q
@@ -873,7 +881,8 @@ ldp2q fastrom_inst
 	.q /* OUT */ (fastrom_obuf),
 	.d /* IN */ (din_7),
 	.g /* IN */ (memc1w),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (101) - iospd[0-1] : ldp1q
@@ -881,13 +890,15 @@ ldp1q iospd_from_0_to_1_inst_0
 (
 	.q /* OUT */ (iospd_0_obuf),
 	.d /* IN */ (din_11),
-	.g /* IN */ (memc1w)
+	.g /* IN */ (memc1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q iospd_from_0_to_1_inst_1
 (
 	.q /* OUT */ (iospd_1_obuf),
 	.d /* IN */ (din_12),
-	.g /* IN */ (memc1w)
+	.g /* IN */ (memc1w),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (102) - nocpu : ldp1q
@@ -895,7 +906,8 @@ ldp1q nocpu_inst
 (
 	.q /* OUT */ (nocpu_obuf),
 	.d /* IN */ (m1d_13),
-	.g /* IN */ (m1ld)
+	.g /* IN */ (m1ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (103) - cpu32 : ldp1q
@@ -903,7 +915,8 @@ ldp1q cpu32_inst
 (
 	.q /* OUT */ (cpu32_obuf),
 	.d /* IN */ (m1d_14),
-	.g /* IN */ (m1ld)
+	.g /* IN */ (m1ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (105) - d1[0] : ts
@@ -966,13 +979,15 @@ ldp1q cols0_from_0_to_1_inst_0
 (
 	.q /* OUT */ (cols0_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cols0_from_0_to_1_inst_1
 (
 	.q /* OUT */ (cols0_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (120) - dwid0[0-1] : ldp1q
@@ -980,13 +995,15 @@ ldp1q dwid0_from_0_to_1_inst_0
 (
 	.q /* OUT */ (dwid0_0),
 	.d /* IN */ (din_2),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dwid0_from_0_to_1_inst_1
 (
 	.q /* OUT */ (dwid0_1),
 	.d /* IN */ (din_3),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (121) - cols1[0-1] : ldp1q
@@ -994,13 +1011,15 @@ ldp1q cols1_from_0_to_1_inst_0
 (
 	.q /* OUT */ (cols1_0),
 	.d /* IN */ (din_4),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cols1_from_0_to_1_inst_1
 (
 	.q /* OUT */ (cols1_1),
 	.d /* IN */ (din_5),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (122) - dwid1[0-1] : ldp1q
@@ -1008,13 +1027,15 @@ ldp1q dwid1_from_0_to_1_inst_0
 (
 	.q /* OUT */ (dwid1_0),
 	.d /* IN */ (din_6),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q dwid1_from_0_to_1_inst_1
 (
 	.q /* OUT */ (dwid1_1),
 	.d /* IN */ (din_7),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (123) - refrate[0-3] : slatch
@@ -1023,28 +1044,32 @@ slatch refrate_from_0_to_3_inst_0
 	.q /* OUT */ (refrate_0_obuf),
 	.d /* IN */ (din_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (memc2w)
+	.en /* IN */ (memc2w),
+	.sys_clk(sys_clk) // Generated
 );
 slatch refrate_from_0_to_3_inst_1
 (
 	.q /* OUT */ (refrate_1_obuf),
 	.d /* IN */ (din_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (memc2w)
+	.en /* IN */ (memc2w),
+	.sys_clk(sys_clk) // Generated
 );
 slatch refrate_from_0_to_3_inst_2
 (
 	.q /* OUT */ (refrate_2_obuf),
 	.d /* IN */ (din_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (memc2w)
+	.en /* IN */ (memc2w),
+	.sys_clk(sys_clk) // Generated
 );
 slatch refrate_from_0_to_3_inst_3
 (
 	.q /* OUT */ (refrate_3_obuf),
 	.d /* IN */ (din_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (memc2w)
+	.en /* IN */ (memc2w),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (124) - bigd : ldp1q
@@ -1052,7 +1077,8 @@ ldp1q bigd_inst
 (
 	.q /* OUT */ (bigd),
 	.d /* IN */ (m2d_12),
-	.g /* IN */ (m2ld)
+	.g /* IN */ (m2ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (125) - hiloi : ldp1q
@@ -1060,7 +1086,8 @@ ldp1q hiloi_inst
 (
 	.q /* OUT */ (hiloi),
 	.d /* IN */ (din_13),
-	.g /* IN */ (memc2)
+	.g /* IN */ (memc2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (126) - hilo : nivh
@@ -1119,7 +1146,8 @@ fd1q bigendi_inst
 (
 	.q /* OUT */ (bigendi),
 	.d /* IN */ (bigd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (143) - bigend : nivh
@@ -1131,7 +1159,8 @@ ldp1 motorola_inst
 	.q /* OUT */ (m68ki),
 	.qn /* OUT */ (not68k),
 	.d /* IN */ (cfg_8),
-	.g /* IN */ (cfgw)
+	.g /* IN */ (cfgw),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (150) - m68k : nivh
@@ -1142,79 +1171,92 @@ fd1q aouti_from_3_to_15_inst_0
 (
 	.q /* OUT */ (aouti_3),
 	.d /* IN */ (at_3_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_1
 (
 	.q /* OUT */ (aouti_4),
 	.d /* IN */ (at_4_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_2
 (
 	.q /* OUT */ (aouti_5),
 	.d /* IN */ (at_5_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_3
 (
 	.q /* OUT */ (aouti_6),
 	.d /* IN */ (at_6_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_4
 (
 	.q /* OUT */ (aouti_7),
 	.d /* IN */ (at_7_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_5
 (
 	.q /* OUT */ (aouti_8),
 	.d /* IN */ (at_8_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_6
 (
 	.q /* OUT */ (aouti_9),
 	.d /* IN */ (at_9_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_7
 (
 	.q /* OUT */ (aouti_10),
 	.d /* IN */ (at_10_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_8
 (
 	.q /* OUT */ (aouti_11),
 	.d /* IN */ (at_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_9
 (
 	.q /* OUT */ (aouti_12),
 	.d /* IN */ (at_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_10
 (
 	.q /* OUT */ (aouti_13),
 	.d /* IN */ (at_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_11
 (
 	.q /* OUT */ (aouti_14),
 	.d /* IN */ (at_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aouti_from_3_to_15_inst_12
 (
 	.q /* OUT */ (aouti_15),
 	.d /* IN */ (at_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (155) - at[3-15] : mx2h
@@ -1336,49 +1378,57 @@ fd1q aout_from_16_to_23_inst_0
 (
 	.q /* OUT */ (aout_16_obuf),
 	.d /* IN */ (at_16),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_1
 (
 	.q /* OUT */ (aout_17_obuf),
 	.d /* IN */ (at_17),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_2
 (
 	.q /* OUT */ (aout_18_obuf),
 	.d /* IN */ (at_18),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_3
 (
 	.q /* OUT */ (aout_19_obuf),
 	.d /* IN */ (at_19),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_4
 (
 	.q /* OUT */ (aout_20_obuf),
 	.d /* IN */ (at_20),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_5
 (
 	.q /* OUT */ (aout_21_obuf),
 	.d /* IN */ (at_21),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_6
 (
 	.q /* OUT */ (aout_22_obuf),
 	.d /* IN */ (at_22),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q aout_from_16_to_23_inst_7
 (
 	.q /* OUT */ (aout_23_obuf),
 	.d /* IN */ (at_23),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (161) - at[16-23] : mx2m
@@ -1445,7 +1495,8 @@ fd2q mseti_inst
 	.q /* OUT */ (mseti),
 	.d /* IN */ (vcc),
 	.cp /* IN */ (memc1w),
-	.cd /* IN */ (cfgen)
+	.cd /* IN */ (cfgen),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (169) - mset : nivh
@@ -1585,7 +1636,8 @@ slatchc intdevi_inst
 	.d /* IN */ (fintdev_obuf),
 	.clk /* IN */ (clk),
 	.en /* IN */ (ack),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (261) - intdev : nivh
@@ -1597,7 +1649,8 @@ slatch dram_inst
 	.q /* OUT */ (dram),
 	.d /* IN */ (fdram_obuf),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (268) - rom0 : iv
@@ -1609,7 +1662,8 @@ slatch bs_index_0_inst
 	.q /* OUT */ (bs_0),
 	.d /* IN */ (rom0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (270) - bs[1] : slatch
@@ -1618,7 +1672,8 @@ slatch bs_index_1_inst
 	.q /* OUT */ (bs_1),
 	.d /* IN */ (abs_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (271) - bsi[2] : fd1q
@@ -1626,7 +1681,8 @@ fd1q bsi_index_2_inst
 (
 	.q /* OUT */ (bsi_2),
 	.d /* IN */ (abti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (272) - abti[2] : mx2
@@ -1647,7 +1703,8 @@ slatch bs_index_3_inst
 	.q /* OUT */ (bs_3_obuf),
 	.d /* IN */ (abs_3_obuf),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ack)
+	.en /* IN */ (ack),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (275) - bs[2] : nivm
@@ -2546,67 +2603,78 @@ fd1q ma_from_0_to_10_inst_0
 (
 	.q /* OUT */ (ma_0_obuf),
 	.d /* IN */ (mad_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_1
 (
 	.q /* OUT */ (ma_1_obuf),
 	.d /* IN */ (mad_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_2
 (
 	.q /* OUT */ (ma_2_obuf),
 	.d /* IN */ (mad_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_3
 (
 	.q /* OUT */ (ma_3_obuf),
 	.d /* IN */ (mad_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_4
 (
 	.q /* OUT */ (ma_4_obuf),
 	.d /* IN */ (mad_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_5
 (
 	.q /* OUT */ (ma_5_obuf),
 	.d /* IN */ (mad_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_6
 (
 	.q /* OUT */ (ma_6_obuf),
 	.d /* IN */ (mad_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_7
 (
 	.q /* OUT */ (ma_7_obuf),
 	.d /* IN */ (mad_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_8
 (
 	.q /* OUT */ (ma_8_obuf),
 	.d /* IN */ (mad_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_9
 (
 	.q /* OUT */ (ma_9_obuf),
 	.d /* IN */ (mad_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ma_from_0_to_10_inst_10
 (
 	.q /* OUT */ (ma_10_obuf),
 	.d /* IN */ (mad_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (411) - newrow[0] : an2h
@@ -2637,7 +2705,8 @@ bank bank_index_0_inst
 	.a_9 /* IN */ (ahd0_9),
 	.a_10 /* IN */ (ahd0_10),
 	.newrow /* IN */ (newrow_0),
-	.resl /* IN */ (bankresl)
+	.resl /* IN */ (bankresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (417) - bank[1] : bank
@@ -2656,7 +2725,8 @@ bank bank_index_1_inst
 	.a_9 /* IN */ (ahd1_9),
 	.a_10 /* IN */ (ahd1_10),
 	.newrow /* IN */ (newrow_1),
-	.resl /* IN */ (bankresl)
+	.resl /* IN */ (bankresl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (419) - m[0] : nd2
@@ -2682,7 +2752,8 @@ fd1q intas_inst
 (
 	.q /* OUT */ (ouracki),
 	.d /* IN */ (intd),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (433) - notourack : ivm
@@ -2754,7 +2825,8 @@ fd2q lbai_inst
 	.q /* OUT */ (lba_obuf),
 	.d /* IN */ (lbat),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (462) - lbbt : mx2
@@ -2772,7 +2844,8 @@ fd2q lbbi_inst
 	.q /* OUT */ (lbb_obuf),
 	.d /* IN */ (lbbt),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (465) - lbt : mx2h
@@ -2790,7 +2863,8 @@ fd2q lbi_inst
 	.q /* OUT */ (lb),
 	.d /* IN */ (lbt_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (468) - clutt : mx2h
@@ -2808,7 +2882,8 @@ fd2q cluti_inst
 	.q /* OUT */ (clut_obuf),
 	.d /* IN */ (clutt_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // --- Compiler-generated PE for BUS dr[0]

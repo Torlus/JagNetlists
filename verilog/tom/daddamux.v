@@ -2,20 +2,20 @@
 
 module daddamux
 (
-	output [0:15] adda_0;
-	output [0:15] adda_1;
-	output [0:15] adda_2;
-	output [0:15] adda_3;
-	input [0:31] dstd_0;
-	input [0:31] dstd_1;
-	input [0:31] srcd_0;
-	input [0:31] srcd_1;
-	input [0:31] patd_0;
-	input [0:31] patd_1;
-	input [0:31] srcz1_0;
-	input [0:31] srcz1_1;
-	input [0:31] srcz2_0;
-	input [0:31] srcz2_1;
+	output [0:15] adda_0,
+	output [0:15] adda_1,
+	output [0:15] adda_2,
+	output [0:15] adda_3,
+	input [0:31] dstd_0,
+	input [0:31] dstd_1,
+	input [0:31] srcd_0,
+	input [0:31] srcd_1,
+	input [0:31] patd_0,
+	input [0:31] patd_1,
+	input [0:31] srcz1_0,
+	input [0:31] srcz1_1,
+	input [0:31] srcz2_0,
+	input [0:31] srcz2_1,
 	input daddasel_0,
 	input daddasel_1,
 	input daddasel_2

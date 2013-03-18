@@ -58,7 +58,8 @@ module creg11
 	input din_8,
 	input din_9,
 	input din_10,
-	input crwr
+	input crwr,
+	input sys_clk // Generated
 );
 wire cr_0;
 wire cr_1;
@@ -89,67 +90,78 @@ ldp1q cr_from_0_to_10_inst_0
 (
 	.q /* OUT */ (cr_0),
 	.d /* IN */ (din_0),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_1
 (
 	.q /* OUT */ (cr_1),
 	.d /* IN */ (din_1),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_2
 (
 	.q /* OUT */ (cr_2),
 	.d /* IN */ (din_2),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_3
 (
 	.q /* OUT */ (cr_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_4
 (
 	.q /* OUT */ (cr_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_5
 (
 	.q /* OUT */ (cr_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_6
 (
 	.q /* OUT */ (cr_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_7
 (
 	.q /* OUT */ (cr_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_8
 (
 	.q /* OUT */ (cr_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_9
 (
 	.q /* OUT */ (cr_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q cr_from_0_to_10_inst_10
 (
 	.q /* OUT */ (cr_10),
 	.d /* IN */ (din_10),
-	.g /* IN */ (crwr)
+	.g /* IN */ (crwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // VID.NET (412) - cre[0-10] : en

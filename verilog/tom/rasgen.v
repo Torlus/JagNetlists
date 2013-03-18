@@ -9,7 +9,8 @@ module rasgen
 	input allonl,
 	input alloffl,
 	input clk,
-	input resl
+	input resl,
+	input sys_clk // Generated
 );
 wire ronl;
 wire ron;
@@ -33,7 +34,8 @@ fjk2 cs_inst
 	.j /* IN */ (ron),
 	.k /* IN */ (roff),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resl)
+	.cd /* IN */ (resl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MEM.NET (733) - csl : dummy

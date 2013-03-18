@@ -11,7 +11,7 @@ public class Fa4cs extends Entity {
 	}
 
 	public Fa4cs() {
-		// tosh_to_moto.v - I need to understand what it does
+		// tosh_to_moto.v
 		ios.add(new Signal("s0", SignalType.OUT));
 		ios.add(new Signal("s1", SignalType.OUT));
 		ios.add(new Signal("s2", SignalType.OUT));

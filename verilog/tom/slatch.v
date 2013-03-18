@@ -5,7 +5,8 @@ module slatch
 	output q,
 	input d,
 	input clk,
-	input en
+	input en,
+	input sys_clk // Generated
 );
 wire qb;
 
@@ -25,7 +26,8 @@ fd1e q_inst
 	.d /* IN */ (q_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d),
-	.te /* IN */ (en)
+	.te /* IN */ (en),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LEGO.NET (26) - dummy : dummy

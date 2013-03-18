@@ -13,15 +13,19 @@ module ab8016a
 
 reg	[0:15]	r_z_out;
 reg	[0:15]	r_z_oe = 16'h0000;
+reg	[0:15]	r_z_out_dly;
+reg	[0:15]	r_z_oe_dly = 16'h0000;
+
 reg	[0:15]	ram_blk [0:(1<<8)-1];
 
-// assign #3 z = (~cen & rw) ? r_z : 16'bzzzzzzzzzzzzzzzz;
-assign z_out = r_z_out;
-assign z_oe = r_z_oe;
+assign z_out = r_z_out_dly;
+assign z_oe = r_z_oe_dly;
 
-// always@(a or cen or rw)
 always @(posedge sys_clk)
 begin
+	r_z_out_dly <= r_z_out;
+	r_z_oe_dly <= r_z_oe;	
+
 	if (~cen) begin
 		if (~rw) begin
 			ram_blk[a][0:15] <= z_in;

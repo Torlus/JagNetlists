@@ -97,7 +97,8 @@ module wbk
 	output newrem_6,
 	output newrem_7,
 	output heightnz,
-	output wbkdone
+	output wbkdone,
+	input sys_clk // Generated
 );
 wire [0:8] newrem;
 wire [0:9] newheight;
@@ -376,7 +377,8 @@ fd4q q0_inst
 	.q /* OUT */ (q0),
 	.d /* IN */ (d0),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (46) - q1 : fd2q
@@ -385,7 +387,8 @@ fd2q q1_inst
 	.q /* OUT */ (q1),
 	.d /* IN */ (d1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (47) - q2 : fd2q
@@ -394,7 +397,8 @@ fd2q q2_inst
 	.q /* OUT */ (q2),
 	.d /* IN */ (d2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (49) - d00 : nd2
@@ -665,63 +669,72 @@ slatch newrem_from_0_to_8_inst_0
 	.q /* OUT */ (newrem_0_obuf),
 	.d /* IN */ (rem_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_1
 (
 	.q /* OUT */ (newrem_1_obuf),
 	.d /* IN */ (rem_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_2
 (
 	.q /* OUT */ (newrem_2_obuf),
 	.d /* IN */ (rem_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_3
 (
 	.q /* OUT */ (newrem_3_obuf),
 	.d /* IN */ (rem_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_4
 (
 	.q /* OUT */ (newrem_4_obuf),
 	.d /* IN */ (rem_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_5
 (
 	.q /* OUT */ (newrem_5_obuf),
 	.d /* IN */ (rem_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_6
 (
 	.q /* OUT */ (newrem_6_obuf),
 	.d /* IN */ (rem_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_7
 (
 	.q /* OUT */ (newrem_7_obuf),
 	.d /* IN */ (rem_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 slatch newrem_from_0_to_8_inst_8
 (
 	.q /* OUT */ (newrem_8),
 	.d /* IN */ (rem_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (latchrem)
+	.en /* IN */ (latchrem),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (97) - latchremi : nr3
@@ -739,7 +752,8 @@ dncnt newheighti_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (decheight),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (104) - newheighti[1] : dncnt
@@ -751,7 +765,8 @@ dncnt newheighti_index_1_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_0),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (105) - newheight[2-9] : dncnt
@@ -763,7 +778,8 @@ dncnt newheight_from_2_to_9_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_1),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_1
 (
@@ -773,7 +789,8 @@ dncnt newheight_from_2_to_9_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_2),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_2
 (
@@ -783,7 +800,8 @@ dncnt newheight_from_2_to_9_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_3),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_3
 (
@@ -793,7 +811,8 @@ dncnt newheight_from_2_to_9_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_4),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_4
 (
@@ -803,7 +822,8 @@ dncnt newheight_from_2_to_9_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_5),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_5
 (
@@ -813,7 +833,8 @@ dncnt newheight_from_2_to_9_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_6),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_6
 (
@@ -823,7 +844,8 @@ dncnt newheight_from_2_to_9_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_7),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt newheight_from_2_to_9_inst_7
 (
@@ -833,7 +855,8 @@ dncnt newheight_from_2_to_9_inst_7
 	.clk /* IN */ (clk),
 	.ci /* IN */ (hc_8),
 	.ld /* IN */ (obld_0),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (106) - newheight[0-1] : nivm
@@ -1150,67 +1173,78 @@ fd1q newdata_from_0_to_10_inst_0
 (
 	.q /* OUT */ (newdata_0_obuf),
 	.d /* IN */ (data_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_1
 (
 	.q /* OUT */ (newdata_1_obuf),
 	.d /* IN */ (data_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_2
 (
 	.q /* OUT */ (newdata_2_obuf),
 	.d /* IN */ (data_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_3
 (
 	.q /* OUT */ (newdata_3_obuf),
 	.d /* IN */ (data_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_4
 (
 	.q /* OUT */ (newdata_4_obuf),
 	.d /* IN */ (data_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_5
 (
 	.q /* OUT */ (newdata_5_obuf),
 	.d /* IN */ (data_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_6
 (
 	.q /* OUT */ (newdata_6_obuf),
 	.d /* IN */ (data_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_7
 (
 	.q /* OUT */ (newdata_7_obuf),
 	.d /* IN */ (data_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_8
 (
 	.q /* OUT */ (newdata_8_obuf),
 	.d /* IN */ (data_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_9
 (
 	.q /* OUT */ (newdata_9_obuf),
 	.d /* IN */ (data_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_0_to_10_inst_10
 (
 	.q /* OUT */ (newdata_10_obuf),
 	.d /* IN */ (data_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (129) - newdatai[11-15] : fd1q
@@ -1218,31 +1252,36 @@ fd1q newdatai_from_11_to_15_inst_0
 (
 	.q /* OUT */ (newdatai_11),
 	.d /* IN */ (data_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdatai_from_11_to_15_inst_1
 (
 	.q /* OUT */ (newdatai_12),
 	.d /* IN */ (data_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdatai_from_11_to_15_inst_2
 (
 	.q /* OUT */ (newdatai_13),
 	.d /* IN */ (data_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdatai_from_11_to_15_inst_3
 (
 	.q /* OUT */ (newdatai_14),
 	.d /* IN */ (data_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdatai_from_11_to_15_inst_4
 (
 	.q /* OUT */ (newdatai_15),
 	.d /* IN */ (data_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (130) - newdata[16-20] : fd1q
@@ -1250,31 +1289,36 @@ fd1q newdata_from_16_to_20_inst_0
 (
 	.q /* OUT */ (newdata_16_obuf),
 	.d /* IN */ (data_16),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_16_to_20_inst_1
 (
 	.q /* OUT */ (newdata_17_obuf),
 	.d /* IN */ (data_17),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_16_to_20_inst_2
 (
 	.q /* OUT */ (newdata_18_obuf),
 	.d /* IN */ (data_18),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_16_to_20_inst_3
 (
 	.q /* OUT */ (newdata_19_obuf),
 	.d /* IN */ (data_19),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q newdata_from_16_to_20_inst_4
 (
 	.q /* OUT */ (newdata_20_obuf),
 	.d /* IN */ (data_20),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // WBK.NET (131) - newdata[11-15] : nivh

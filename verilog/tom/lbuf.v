@@ -2116,193 +2116,225 @@ fd1q rmwd1_from_0_to_31_inst_0
 (
 	.q /* OUT */ (rmwd1_0),
 	.d /* IN */ (rmwd_0),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_1
 (
 	.q /* OUT */ (rmwd1_1),
 	.d /* IN */ (rmwd_1),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_2
 (
 	.q /* OUT */ (rmwd1_2),
 	.d /* IN */ (rmwd_2),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_3
 (
 	.q /* OUT */ (rmwd1_3),
 	.d /* IN */ (rmwd_3),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_4
 (
 	.q /* OUT */ (rmwd1_4),
 	.d /* IN */ (rmwd_4),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_5
 (
 	.q /* OUT */ (rmwd1_5),
 	.d /* IN */ (rmwd_5),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_6
 (
 	.q /* OUT */ (rmwd1_6),
 	.d /* IN */ (rmwd_6),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_7
 (
 	.q /* OUT */ (rmwd1_7),
 	.d /* IN */ (rmwd_7),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_8
 (
 	.q /* OUT */ (rmwd1_8),
 	.d /* IN */ (rmwd_8),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_9
 (
 	.q /* OUT */ (rmwd1_9),
 	.d /* IN */ (rmwd_9),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_10
 (
 	.q /* OUT */ (rmwd1_10),
 	.d /* IN */ (rmwd_10),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_11
 (
 	.q /* OUT */ (rmwd1_11),
 	.d /* IN */ (rmwd_11),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_12
 (
 	.q /* OUT */ (rmwd1_12),
 	.d /* IN */ (rmwd_12),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_13
 (
 	.q /* OUT */ (rmwd1_13),
 	.d /* IN */ (rmwd_13),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_14
 (
 	.q /* OUT */ (rmwd1_14),
 	.d /* IN */ (rmwd_14),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_15
 (
 	.q /* OUT */ (rmwd1_15),
 	.d /* IN */ (rmwd_15),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_16
 (
 	.q /* OUT */ (rmwd1_16),
 	.d /* IN */ (rmwd_16),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_17
 (
 	.q /* OUT */ (rmwd1_17),
 	.d /* IN */ (rmwd_17),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_18
 (
 	.q /* OUT */ (rmwd1_18),
 	.d /* IN */ (rmwd_18),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_19
 (
 	.q /* OUT */ (rmwd1_19),
 	.d /* IN */ (rmwd_19),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_20
 (
 	.q /* OUT */ (rmwd1_20),
 	.d /* IN */ (rmwd_20),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_21
 (
 	.q /* OUT */ (rmwd1_21),
 	.d /* IN */ (rmwd_21),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_22
 (
 	.q /* OUT */ (rmwd1_22),
 	.d /* IN */ (rmwd_22),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_23
 (
 	.q /* OUT */ (rmwd1_23),
 	.d /* IN */ (rmwd_23),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_24
 (
 	.q /* OUT */ (rmwd1_24),
 	.d /* IN */ (rmwd_24),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_25
 (
 	.q /* OUT */ (rmwd1_25),
 	.d /* IN */ (rmwd_25),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_26
 (
 	.q /* OUT */ (rmwd1_26),
 	.d /* IN */ (rmwd_26),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_27
 (
 	.q /* OUT */ (rmwd1_27),
 	.d /* IN */ (rmwd_27),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_28
 (
 	.q /* OUT */ (rmwd1_28),
 	.d /* IN */ (rmwd_28),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_29
 (
 	.q /* OUT */ (rmwd1_29),
 	.d /* IN */ (rmwd_29),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_30
 (
 	.q /* OUT */ (rmwd1_30),
 	.d /* IN */ (rmwd_30),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q rmwd1_from_0_to_31_inst_31
 (
 	.q /* OUT */ (rmwd1_31),
 	.d /* IN */ (rmwd_31),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (106) - rmwd2[0] : sadd8
@@ -3348,97 +3380,113 @@ fd1q lbd_from_0_to_15_inst_0
 (
 	.q /* OUT */ (lbd_0),
 	.d /* IN */ (lbdi_0),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_1
 (
 	.q /* OUT */ (lbd_1),
 	.d /* IN */ (lbdi_1),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_2
 (
 	.q /* OUT */ (lbd_2),
 	.d /* IN */ (lbdi_2),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_3
 (
 	.q /* OUT */ (lbd_3),
 	.d /* IN */ (lbdi_3),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_4
 (
 	.q /* OUT */ (lbd_4),
 	.d /* IN */ (lbdi_4),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_5
 (
 	.q /* OUT */ (lbd_5),
 	.d /* IN */ (lbdi_5),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_6
 (
 	.q /* OUT */ (lbd_6),
 	.d /* IN */ (lbdi_6),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_7
 (
 	.q /* OUT */ (lbd_7),
 	.d /* IN */ (lbdi_7),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_8
 (
 	.q /* OUT */ (lbd_8),
 	.d /* IN */ (lbdi_8),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_9
 (
 	.q /* OUT */ (lbd_9),
 	.d /* IN */ (lbdi_9),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_10
 (
 	.q /* OUT */ (lbd_10),
 	.d /* IN */ (lbdi_10),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_11
 (
 	.q /* OUT */ (lbd_11),
 	.d /* IN */ (lbdi_11),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_12
 (
 	.q /* OUT */ (lbd_12),
 	.d /* IN */ (lbdi_12),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_13
 (
 	.q /* OUT */ (lbd_13),
 	.d /* IN */ (lbdi_13),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_14
 (
 	.q /* OUT */ (lbd_14),
 	.d /* IN */ (lbdi_14),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q lbd_from_0_to_15_inst_15
 (
 	.q /* OUT */ (lbd_15),
 	.d /* IN */ (lbdi_15),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (225) - lbdeni : nd2
@@ -3486,97 +3534,113 @@ ldp1q bgc_from_0_to_15_inst_0
 (
 	.q /* OUT */ (bgc_0),
 	.d /* IN */ (dw_0),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_1
 (
 	.q /* OUT */ (bgc_1),
 	.d /* IN */ (dw_1),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_2
 (
 	.q /* OUT */ (bgc_2),
 	.d /* IN */ (dw_2),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_3
 (
 	.q /* OUT */ (bgc_3),
 	.d /* IN */ (dw_3),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_4
 (
 	.q /* OUT */ (bgc_4),
 	.d /* IN */ (dw_4),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_5
 (
 	.q /* OUT */ (bgc_5),
 	.d /* IN */ (dw_5),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_6
 (
 	.q /* OUT */ (bgc_6),
 	.d /* IN */ (dw_6),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_7
 (
 	.q /* OUT */ (bgc_7),
 	.d /* IN */ (dw_7),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_8
 (
 	.q /* OUT */ (bgc_8),
 	.d /* IN */ (dw_8),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_9
 (
 	.q /* OUT */ (bgc_9),
 	.d /* IN */ (dw_9),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_10
 (
 	.q /* OUT */ (bgc_10),
 	.d /* IN */ (dw_10),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_11
 (
 	.q /* OUT */ (bgc_11),
 	.d /* IN */ (dw_11),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_12
 (
 	.q /* OUT */ (bgc_12),
 	.d /* IN */ (dw_12),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_13
 (
 	.q /* OUT */ (bgc_13),
 	.d /* IN */ (dw_13),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_14
 (
 	.q /* OUT */ (bgc_14),
 	.d /* IN */ (dw_14),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q bgc_from_0_to_15_inst_15
 (
 	.q /* OUT */ (bgc_15),
 	.d /* IN */ (dw_15),
-	.g /* IN */ (bgwr)
+	.g /* IN */ (bgwr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (232) - bgc : join

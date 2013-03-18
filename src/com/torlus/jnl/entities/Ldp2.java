@@ -10,6 +10,11 @@ public class Ldp2 extends Entity {
 		return "ldp2";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Ldp2() {
 		// 260c_pri_e.pdf - CLDP2XL
 		ios.add(new Signal("q", SignalType.OUT));

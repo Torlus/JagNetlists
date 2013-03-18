@@ -2,21 +2,21 @@
 
 module addamux
 (
-	output [0:15] adda_x;
-	output [0:15] adda_y;
+	output [0:15] adda_x,
+	output [0:15] adda_y,
 	input addasel_0,
 	input addasel_1,
 	input addasel_2,
-	input [0:15] a1_step_x;
-	input [0:15] a1_step_y;
-	input [0:15] a1_stepf_x;
-	input [0:15] a1_stepf_y;
-	input [0:15] a2_step_x;
-	input [0:15] a2_step_y;
-	input [0:15] a1_inc_x;
-	input [0:15] a1_inc_y;
-	input [0:15] a1_incf_x;
-	input [0:15] a1_incf_y;
+	input [0:15] a1_step_x,
+	input [0:15] a1_step_y,
+	input [0:15] a1_stepf_x,
+	input [0:15] a1_stepf_y,
+	input [0:15] a2_step_x,
+	input [0:15] a2_step_y,
+	input [0:15] a1_inc_x,
+	input [0:15] a1_inc_y,
+	input [0:15] a1_incf_x,
+	input [0:15] a1_incf_y,
 	input adda_xconst_0,
 	input adda_xconst_1,
 	input adda_xconst_2,

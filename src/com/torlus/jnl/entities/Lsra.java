@@ -8,6 +8,11 @@ public class Lsra extends Entity {
 		return "lsra";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	// tosh_to_moto.v
 	public Lsra() {
 		ios.add(new Signal("q", SignalType.OUT));

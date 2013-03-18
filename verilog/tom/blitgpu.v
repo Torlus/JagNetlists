@@ -52,7 +52,7 @@ module blitgpu
 	input bliten,
 	input dstdread,
 	input dstzread,
-	input [0:23] gpu_addr;
+	input [0:23] gpu_addr,
 	input gpu_memw,
 	input patdadd,
 	input patfadd,
@@ -163,7 +163,7 @@ d38gh dec0_inst
 	.a0 /* IN */ (gpua_2),
 	.a1 /* IN */ (gpua_3),
 	.a2 /* IN */ (gpua_4),
-	.g /* IN */ (wren_n_0)
+	.gn /* IN */ (wren_n_0)
 );
 
 // BLITGPU.NET (91) - dec1 : d38gh
@@ -180,7 +180,7 @@ d38gh dec1_inst
 	.a0 /* IN */ (gpua_2),
 	.a1 /* IN */ (gpua_3),
 	.a2 /* IN */ (gpua_4),
-	.g /* IN */ (wren_n_1)
+	.gn /* IN */ (wren_n_1)
 );
 
 // BLITGPU.NET (94) - dec2 : d38gh
@@ -197,7 +197,7 @@ d38gh dec2_inst
 	.a0 /* IN */ (gpua_2),
 	.a1 /* IN */ (gpua_3),
 	.a2 /* IN */ (gpua_4),
-	.g /* IN */ (wren_n_2)
+	.gn /* IN */ (wren_n_2)
 );
 
 // BLITGPU.NET (97) - dec3 : d38gh
@@ -214,7 +214,7 @@ d38gh dec3_inst
 	.a0 /* IN */ (gpua_2),
 	.a1 /* IN */ (gpua_3),
 	.a2 /* IN */ (gpua_4),
-	.g /* IN */ (wren_n_3)
+	.gn /* IN */ (wren_n_3)
 );
 
 // BLITGPU.NET (100) - dec4 : d38gh
@@ -231,7 +231,7 @@ d38gh dec4_inst
 	.a0 /* IN */ (gpua_2),
 	.a1 /* IN */ (gpua_3),
 	.a2 /* IN */ (gpua_4),
-	.g /* IN */ (wren_n_4)
+	.gn /* IN */ (wren_n_4)
 );
 
 // BLITGPU.NET (103) - cmdld : nivu

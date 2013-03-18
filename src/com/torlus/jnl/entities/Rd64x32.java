@@ -10,32 +10,50 @@ public class Rd64x32 extends Entity {
 		return "rd64x32";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+	
 	public Rd64x32() {
 		for (int i = 0; i < 32; i++) {
-			ios.add(new Signal("qa" + i, SignalType.OUT));
+			Signal s = new Signal("qa", SignalType.OUT);
+			s.bit = i;
+			ios.add(s);
 		}
 		for (int i = 0; i < 32; i++) {
-			ios.add(new Signal("qb" + i, SignalType.OUT));
+			Signal s = new Signal("qb", SignalType.OUT);
+			s.bit = i;
+			ios.add(s);
 		}
 
 		ios.add(new Signal("nwea", SignalType.IN));
 		ios.add(new Signal("clka", SignalType.IN));
 
 		for (int i = 0; i < 6; i++) {
-			ios.add(new Signal("aa" + i, SignalType.IN));
+			Signal s = new Signal("aa", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 		for (int i = 0; i < 32; i++) {
-			ios.add(new Signal("da" + i, SignalType.IN));
+			Signal s = new Signal("da", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 
 		ios.add(new Signal("nweb", SignalType.IN));
 		ios.add(new Signal("clkb", SignalType.IN));
 
 		for (int i = 0; i < 6; i++) {
-			ios.add(new Signal("ab" + i, SignalType.IN));
+			Signal s = new Signal("ab", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 		for (int i = 0; i < 32; i++) {
-			ios.add(new Signal("db" + i, SignalType.IN));
+			Signal s = new Signal("db", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
+
 		}
 	}
 }

@@ -102,8 +102,8 @@ module address
 	output a1_pixsize_0,
 	output a1_pixsize_1,
 	output a1_pixsize_2,
-	output [0:14] a1_win_x;
-	output [0:15] a1_x;
+	output [0:14] a1_win_x,
+	output [0:15] a1_x,
 	output a1addx_0,
 	output a1addx_1,
 	output a1addy,
@@ -112,13 +112,13 @@ module address
 	output a2_pixsize_0,
 	output a2_pixsize_1,
 	output a2_pixsize_2,
-	output [0:15] a2_x;
+	output [0:15] a2_x,
 	output a2addx_0,
 	output a2addx_1,
 	output a2addy,
 	output a2xsign,
 	output a2ysign,
-	output [0:23] address;
+	output [0:23] address,
 	output pixa_0,
 	output pixa_1,
 	output pixa_2,
@@ -153,14 +153,15 @@ module address
 	input apipe,
 	input clk,
 	input gena2,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input load_strobe,
 	input modx_0,
 	input modx_1,
 	input modx_2,
 	input suba_x,
 	input suba_y,
-	input zaddr
+	input zaddr,
+	input sys_clk // Generated
 );
 wire [0:14] gpu_d_lo15;
 wire [0:14] gpu_d_hi15;
@@ -635,127 +636,148 @@ ldp1q a1base_inst_0
 (
 	.q /* OUT */ (a1_base[0]),
 	.d /* IN */ (gpu_d_m21[0]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_1
 (
 	.q /* OUT */ (a1_base[1]),
 	.d /* IN */ (gpu_d_m21[1]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_2
 (
 	.q /* OUT */ (a1_base[2]),
 	.d /* IN */ (gpu_d_m21[2]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_3
 (
 	.q /* OUT */ (a1_base[3]),
 	.d /* IN */ (gpu_d_m21[3]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_4
 (
 	.q /* OUT */ (a1_base[4]),
 	.d /* IN */ (gpu_d_m21[4]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_5
 (
 	.q /* OUT */ (a1_base[5]),
 	.d /* IN */ (gpu_d_m21[5]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_6
 (
 	.q /* OUT */ (a1_base[6]),
 	.d /* IN */ (gpu_d_m21[6]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_7
 (
 	.q /* OUT */ (a1_base[7]),
 	.d /* IN */ (gpu_d_m21[7]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_8
 (
 	.q /* OUT */ (a1_base[8]),
 	.d /* IN */ (gpu_d_m21[8]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_9
 (
 	.q /* OUT */ (a1_base[9]),
 	.d /* IN */ (gpu_d_m21[9]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_10
 (
 	.q /* OUT */ (a1_base[10]),
 	.d /* IN */ (gpu_d_m21[10]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_11
 (
 	.q /* OUT */ (a1_base[11]),
 	.d /* IN */ (gpu_d_m21[11]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_12
 (
 	.q /* OUT */ (a1_base[12]),
 	.d /* IN */ (gpu_d_m21[12]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_13
 (
 	.q /* OUT */ (a1_base[13]),
 	.d /* IN */ (gpu_d_m21[13]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_14
 (
 	.q /* OUT */ (a1_base[14]),
 	.d /* IN */ (gpu_d_m21[14]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_15
 (
 	.q /* OUT */ (a1_base[15]),
 	.d /* IN */ (gpu_d_m21[15]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_16
 (
 	.q /* OUT */ (a1_base[16]),
 	.d /* IN */ (gpu_d_m21[16]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_17
 (
 	.q /* OUT */ (a1_base[17]),
 	.d /* IN */ (gpu_d_m21[17]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_18
 (
 	.q /* OUT */ (a1_base[18]),
 	.d /* IN */ (gpu_d_m21[18]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_19
 (
 	.q /* OUT */ (a1_base[19]),
 	.d /* IN */ (gpu_d_m21[19]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1base_inst_20
 (
 	.q /* OUT */ (a1_base[20]),
 	.d /* IN */ (gpu_d_m21[20]),
-	.g /* IN */ (a1baseldg)
+	.g /* IN */ (a1baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (97) - a1flagldg : an2h
@@ -766,127 +788,148 @@ ldp1q a1flags_inst_0
 (
 	.q /* OUT */ (a1_flags[0]),
 	.d /* IN */ (gpu_d_lo21[0]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_1
 (
 	.q /* OUT */ (a1_flags[1]),
 	.d /* IN */ (gpu_d_lo21[1]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_2
 (
 	.q /* OUT */ (a1_flags[2]),
 	.d /* IN */ (gpu_d_lo21[2]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_3
 (
 	.q /* OUT */ (a1_flags[3]),
 	.d /* IN */ (gpu_d_lo21[3]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_4
 (
 	.q /* OUT */ (a1_flags[4]),
 	.d /* IN */ (gpu_d_lo21[4]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_5
 (
 	.q /* OUT */ (a1_flags[5]),
 	.d /* IN */ (gpu_d_lo21[5]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_6
 (
 	.q /* OUT */ (a1_flags[6]),
 	.d /* IN */ (gpu_d_lo21[6]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_7
 (
 	.q /* OUT */ (a1_flags[7]),
 	.d /* IN */ (gpu_d_lo21[7]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_8
 (
 	.q /* OUT */ (a1_flags[8]),
 	.d /* IN */ (gpu_d_lo21[8]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_9
 (
 	.q /* OUT */ (a1_flags[9]),
 	.d /* IN */ (gpu_d_lo21[9]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_10
 (
 	.q /* OUT */ (a1_flags[10]),
 	.d /* IN */ (gpu_d_lo21[10]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_11
 (
 	.q /* OUT */ (a1_flags[11]),
 	.d /* IN */ (gpu_d_lo21[11]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_12
 (
 	.q /* OUT */ (a1_flags[12]),
 	.d /* IN */ (gpu_d_lo21[12]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_13
 (
 	.q /* OUT */ (a1_flags[13]),
 	.d /* IN */ (gpu_d_lo21[13]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_14
 (
 	.q /* OUT */ (a1_flags[14]),
 	.d /* IN */ (gpu_d_lo21[14]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_15
 (
 	.q /* OUT */ (a1_flags[15]),
 	.d /* IN */ (gpu_d_lo21[15]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_16
 (
 	.q /* OUT */ (a1_flags[16]),
 	.d /* IN */ (gpu_d_lo21[16]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_17
 (
 	.q /* OUT */ (a1_flags[17]),
 	.d /* IN */ (gpu_d_lo21[17]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_18
 (
 	.q /* OUT */ (a1_flags[18]),
 	.d /* IN */ (gpu_d_lo21[18]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_19
 (
 	.q /* OUT */ (a1_flags[19]),
 	.d /* IN */ (gpu_d_lo21[19]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1flags_inst_20
 (
 	.q /* OUT */ (a1_flags[20]),
 	.d /* IN */ (gpu_d_lo21[20]),
-	.g /* IN */ (a1flagldg)
+	.g /* IN */ (a1flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (99) - a1_pixp[0-1] : join
@@ -939,91 +982,106 @@ ldp1q a1winx_inst_0
 (
 	.q /* OUT */ (a1_win_x_b0_obuf),
 	.d /* IN */ (gpu_d_lo15[0]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_1
 (
 	.q /* OUT */ (a1_win_x_b1_obuf),
 	.d /* IN */ (gpu_d_lo15[1]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_2
 (
 	.q /* OUT */ (a1_win_x_b2_obuf),
 	.d /* IN */ (gpu_d_lo15[2]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_3
 (
 	.q /* OUT */ (a1_win_x_b3_obuf),
 	.d /* IN */ (gpu_d_lo15[3]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_4
 (
 	.q /* OUT */ (a1_win_x_b4_obuf),
 	.d /* IN */ (gpu_d_lo15[4]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_5
 (
 	.q /* OUT */ (a1_win_x_b5_obuf),
 	.d /* IN */ (gpu_d_lo15[5]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_6
 (
 	.q /* OUT */ (a1_win_x_b6_obuf),
 	.d /* IN */ (gpu_d_lo15[6]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_7
 (
 	.q /* OUT */ (a1_win_x_b7_obuf),
 	.d /* IN */ (gpu_d_lo15[7]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_8
 (
 	.q /* OUT */ (a1_win_x_b8_obuf),
 	.d /* IN */ (gpu_d_lo15[8]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_9
 (
 	.q /* OUT */ (a1_win_x_b9_obuf),
 	.d /* IN */ (gpu_d_lo15[9]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_10
 (
 	.q /* OUT */ (a1_win_x_b10_obuf),
 	.d /* IN */ (gpu_d_lo15[10]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_11
 (
 	.q /* OUT */ (a1_win_x_b11_obuf),
 	.d /* IN */ (gpu_d_lo15[11]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_12
 (
 	.q /* OUT */ (a1_win_x_b12_obuf),
 	.d /* IN */ (gpu_d_lo15[12]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_13
 (
 	.q /* OUT */ (a1_win_x_b13_obuf),
 	.d /* IN */ (gpu_d_lo15[13]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winx_inst_14
 (
 	.q /* OUT */ (a1_win_x_b14_obuf),
 	.d /* IN */ (gpu_d_lo15[14]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (115) - a1winy : ldp1q
@@ -1031,91 +1089,106 @@ ldp1q a1winy_inst_0
 (
 	.q /* OUT */ (a1_win_y[0]),
 	.d /* IN */ (gpu_d_hi15[0]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_1
 (
 	.q /* OUT */ (a1_win_y[1]),
 	.d /* IN */ (gpu_d_hi15[1]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_2
 (
 	.q /* OUT */ (a1_win_y[2]),
 	.d /* IN */ (gpu_d_hi15[2]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_3
 (
 	.q /* OUT */ (a1_win_y[3]),
 	.d /* IN */ (gpu_d_hi15[3]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_4
 (
 	.q /* OUT */ (a1_win_y[4]),
 	.d /* IN */ (gpu_d_hi15[4]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_5
 (
 	.q /* OUT */ (a1_win_y[5]),
 	.d /* IN */ (gpu_d_hi15[5]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_6
 (
 	.q /* OUT */ (a1_win_y[6]),
 	.d /* IN */ (gpu_d_hi15[6]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_7
 (
 	.q /* OUT */ (a1_win_y[7]),
 	.d /* IN */ (gpu_d_hi15[7]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_8
 (
 	.q /* OUT */ (a1_win_y[8]),
 	.d /* IN */ (gpu_d_hi15[8]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_9
 (
 	.q /* OUT */ (a1_win_y[9]),
 	.d /* IN */ (gpu_d_hi15[9]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_10
 (
 	.q /* OUT */ (a1_win_y[10]),
 	.d /* IN */ (gpu_d_hi15[10]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_11
 (
 	.q /* OUT */ (a1_win_y[11]),
 	.d /* IN */ (gpu_d_hi15[11]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_12
 (
 	.q /* OUT */ (a1_win_y[12]),
 	.d /* IN */ (gpu_d_hi15[12]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_13
 (
 	.q /* OUT */ (a1_win_y[13]),
 	.d /* IN */ (gpu_d_hi15[13]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1winy_inst_14
 (
 	.q /* OUT */ (a1_win_y[14]),
 	.d /* IN */ (gpu_d_hi15[14]),
-	.g /* IN */ (a1winldg)
+	.g /* IN */ (a1winldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (119) - a1xt : fdsync16
@@ -1124,7 +1197,8 @@ fdsync16 a1xt_inst
 	.q /* OUT */ ({a1_xt[0],a1_xt[1],a1_xt[2],a1_xt[3],a1_xt[4],a1_xt[5],a1_xt[6],a1_xt[7],a1_xt[8],a1_xt[9],a1_xt[10],a1_xt[11],a1_xt[12],a1_xt[13],a1_xt[14],a1_xt[15]}),
 	.d /* IN */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
 	.ld /* IN */ (a1ptrld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (120) - a1x : nivm
@@ -1151,7 +1225,8 @@ fdsync16 a1y_inst
 	.q /* OUT */ ({a1_y[0],a1_y[1],a1_y[2],a1_y[3],a1_y[4],a1_y[5],a1_y[6],a1_y[7],a1_y[8],a1_y[9],a1_y[10],a1_y[11],a1_y[12],a1_y[13],a1_y[14],a1_y[15]}),
 	.d /* IN */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
 	.ld /* IN */ (a1ptrld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (125) - a1stepldg : an2u
@@ -1165,97 +1240,113 @@ ldp1q a1stepx_inst_0
 (
 	.q /* OUT */ (a1_step_x[0]),
 	.d /* IN */ (gpu_d_lo16[0]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_1
 (
 	.q /* OUT */ (a1_step_x[1]),
 	.d /* IN */ (gpu_d_lo16[1]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_2
 (
 	.q /* OUT */ (a1_step_x[2]),
 	.d /* IN */ (gpu_d_lo16[2]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_3
 (
 	.q /* OUT */ (a1_step_x[3]),
 	.d /* IN */ (gpu_d_lo16[3]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_4
 (
 	.q /* OUT */ (a1_step_x[4]),
 	.d /* IN */ (gpu_d_lo16[4]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_5
 (
 	.q /* OUT */ (a1_step_x[5]),
 	.d /* IN */ (gpu_d_lo16[5]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_6
 (
 	.q /* OUT */ (a1_step_x[6]),
 	.d /* IN */ (gpu_d_lo16[6]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_7
 (
 	.q /* OUT */ (a1_step_x[7]),
 	.d /* IN */ (gpu_d_lo16[7]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_8
 (
 	.q /* OUT */ (a1_step_x[8]),
 	.d /* IN */ (gpu_d_lo16[8]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_9
 (
 	.q /* OUT */ (a1_step_x[9]),
 	.d /* IN */ (gpu_d_lo16[9]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_10
 (
 	.q /* OUT */ (a1_step_x[10]),
 	.d /* IN */ (gpu_d_lo16[10]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_11
 (
 	.q /* OUT */ (a1_step_x[11]),
 	.d /* IN */ (gpu_d_lo16[11]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_12
 (
 	.q /* OUT */ (a1_step_x[12]),
 	.d /* IN */ (gpu_d_lo16[12]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_13
 (
 	.q /* OUT */ (a1_step_x[13]),
 	.d /* IN */ (gpu_d_lo16[13]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_14
 (
 	.q /* OUT */ (a1_step_x[14]),
 	.d /* IN */ (gpu_d_lo16[14]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepx_inst_15
 (
 	.q /* OUT */ (a1_step_x[15]),
 	.d /* IN */ (gpu_d_lo16[15]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (128) - a1stepy : ldp1q
@@ -1263,97 +1354,113 @@ ldp1q a1stepy_inst_0
 (
 	.q /* OUT */ (a1_step_y[0]),
 	.d /* IN */ (gpu_d_hi16[0]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_1
 (
 	.q /* OUT */ (a1_step_y[1]),
 	.d /* IN */ (gpu_d_hi16[1]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_2
 (
 	.q /* OUT */ (a1_step_y[2]),
 	.d /* IN */ (gpu_d_hi16[2]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_3
 (
 	.q /* OUT */ (a1_step_y[3]),
 	.d /* IN */ (gpu_d_hi16[3]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_4
 (
 	.q /* OUT */ (a1_step_y[4]),
 	.d /* IN */ (gpu_d_hi16[4]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_5
 (
 	.q /* OUT */ (a1_step_y[5]),
 	.d /* IN */ (gpu_d_hi16[5]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_6
 (
 	.q /* OUT */ (a1_step_y[6]),
 	.d /* IN */ (gpu_d_hi16[6]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_7
 (
 	.q /* OUT */ (a1_step_y[7]),
 	.d /* IN */ (gpu_d_hi16[7]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_8
 (
 	.q /* OUT */ (a1_step_y[8]),
 	.d /* IN */ (gpu_d_hi16[8]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_9
 (
 	.q /* OUT */ (a1_step_y[9]),
 	.d /* IN */ (gpu_d_hi16[9]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_10
 (
 	.q /* OUT */ (a1_step_y[10]),
 	.d /* IN */ (gpu_d_hi16[10]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_11
 (
 	.q /* OUT */ (a1_step_y[11]),
 	.d /* IN */ (gpu_d_hi16[11]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_12
 (
 	.q /* OUT */ (a1_step_y[12]),
 	.d /* IN */ (gpu_d_hi16[12]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_13
 (
 	.q /* OUT */ (a1_step_y[13]),
 	.d /* IN */ (gpu_d_hi16[13]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_14
 (
 	.q /* OUT */ (a1_step_y[14]),
 	.d /* IN */ (gpu_d_hi16[14]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepy_inst_15
 (
 	.q /* OUT */ (a1_step_y[15]),
 	.d /* IN */ (gpu_d_hi16[15]),
-	.g /* IN */ (a1stepldg)
+	.g /* IN */ (a1stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (129) - a1stepfx : ldp1q
@@ -1361,97 +1468,113 @@ ldp1q a1stepfx_inst_0
 (
 	.q /* OUT */ (a1_stepf_x[0]),
 	.d /* IN */ (gpu_d_lo16[0]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_1
 (
 	.q /* OUT */ (a1_stepf_x[1]),
 	.d /* IN */ (gpu_d_lo16[1]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_2
 (
 	.q /* OUT */ (a1_stepf_x[2]),
 	.d /* IN */ (gpu_d_lo16[2]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_3
 (
 	.q /* OUT */ (a1_stepf_x[3]),
 	.d /* IN */ (gpu_d_lo16[3]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_4
 (
 	.q /* OUT */ (a1_stepf_x[4]),
 	.d /* IN */ (gpu_d_lo16[4]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_5
 (
 	.q /* OUT */ (a1_stepf_x[5]),
 	.d /* IN */ (gpu_d_lo16[5]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_6
 (
 	.q /* OUT */ (a1_stepf_x[6]),
 	.d /* IN */ (gpu_d_lo16[6]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_7
 (
 	.q /* OUT */ (a1_stepf_x[7]),
 	.d /* IN */ (gpu_d_lo16[7]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_8
 (
 	.q /* OUT */ (a1_stepf_x[8]),
 	.d /* IN */ (gpu_d_lo16[8]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_9
 (
 	.q /* OUT */ (a1_stepf_x[9]),
 	.d /* IN */ (gpu_d_lo16[9]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_10
 (
 	.q /* OUT */ (a1_stepf_x[10]),
 	.d /* IN */ (gpu_d_lo16[10]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_11
 (
 	.q /* OUT */ (a1_stepf_x[11]),
 	.d /* IN */ (gpu_d_lo16[11]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_12
 (
 	.q /* OUT */ (a1_stepf_x[12]),
 	.d /* IN */ (gpu_d_lo16[12]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_13
 (
 	.q /* OUT */ (a1_stepf_x[13]),
 	.d /* IN */ (gpu_d_lo16[13]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_14
 (
 	.q /* OUT */ (a1_stepf_x[14]),
 	.d /* IN */ (gpu_d_lo16[14]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfx_inst_15
 (
 	.q /* OUT */ (a1_stepf_x[15]),
 	.d /* IN */ (gpu_d_lo16[15]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (130) - a1stepfy : ldp1q
@@ -1459,97 +1582,113 @@ ldp1q a1stepfy_inst_0
 (
 	.q /* OUT */ (a1_stepf_y[0]),
 	.d /* IN */ (gpu_d_hi16[0]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_1
 (
 	.q /* OUT */ (a1_stepf_y[1]),
 	.d /* IN */ (gpu_d_hi16[1]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_2
 (
 	.q /* OUT */ (a1_stepf_y[2]),
 	.d /* IN */ (gpu_d_hi16[2]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_3
 (
 	.q /* OUT */ (a1_stepf_y[3]),
 	.d /* IN */ (gpu_d_hi16[3]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_4
 (
 	.q /* OUT */ (a1_stepf_y[4]),
 	.d /* IN */ (gpu_d_hi16[4]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_5
 (
 	.q /* OUT */ (a1_stepf_y[5]),
 	.d /* IN */ (gpu_d_hi16[5]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_6
 (
 	.q /* OUT */ (a1_stepf_y[6]),
 	.d /* IN */ (gpu_d_hi16[6]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_7
 (
 	.q /* OUT */ (a1_stepf_y[7]),
 	.d /* IN */ (gpu_d_hi16[7]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_8
 (
 	.q /* OUT */ (a1_stepf_y[8]),
 	.d /* IN */ (gpu_d_hi16[8]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_9
 (
 	.q /* OUT */ (a1_stepf_y[9]),
 	.d /* IN */ (gpu_d_hi16[9]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_10
 (
 	.q /* OUT */ (a1_stepf_y[10]),
 	.d /* IN */ (gpu_d_hi16[10]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_11
 (
 	.q /* OUT */ (a1_stepf_y[11]),
 	.d /* IN */ (gpu_d_hi16[11]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_12
 (
 	.q /* OUT */ (a1_stepf_y[12]),
 	.d /* IN */ (gpu_d_hi16[12]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_13
 (
 	.q /* OUT */ (a1_stepf_y[13]),
 	.d /* IN */ (gpu_d_hi16[13]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_14
 (
 	.q /* OUT */ (a1_stepf_y[14]),
 	.d /* IN */ (gpu_d_hi16[14]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1stepfy_inst_15
 (
 	.q /* OUT */ (a1_stepf_y[15]),
 	.d /* IN */ (gpu_d_hi16[15]),
-	.g /* IN */ (a1stepfldg)
+	.g /* IN */ (a1stepfldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (134) - a1fracx : fdsync16
@@ -1558,7 +1697,8 @@ fdsync16 a1fracx_inst
 	.q /* OUT */ ({a1_frac_x[0],a1_frac_x[1],a1_frac_x[2],a1_frac_x[3],a1_frac_x[4],a1_frac_x[5],a1_frac_x[6],a1_frac_x[7],a1_frac_x[8],a1_frac_x[9],a1_frac_x[10],a1_frac_x[11],a1_frac_x[12],a1_frac_x[13],a1_frac_x[14],a1_frac_x[15]}),
 	.d /* IN */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
 	.ld /* IN */ (a1fracld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (135) - a1fracy : fdsync16
@@ -1567,7 +1707,8 @@ fdsync16 a1fracy_inst
 	.q /* OUT */ ({a1_frac_y[0],a1_frac_y[1],a1_frac_y[2],a1_frac_y[3],a1_frac_y[4],a1_frac_y[5],a1_frac_y[6],a1_frac_y[7],a1_frac_y[8],a1_frac_y[9],a1_frac_y[10],a1_frac_y[11],a1_frac_y[12],a1_frac_y[13],a1_frac_y[14],a1_frac_y[15]}),
 	.d /* IN */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
 	.ld /* IN */ (a1fracld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (139) - a1incldg : an2u
@@ -1581,97 +1722,113 @@ ldp1q a1incx_inst_0
 (
 	.q /* OUT */ (a1_inc_x[0]),
 	.d /* IN */ (gpu_d_lo16[0]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_1
 (
 	.q /* OUT */ (a1_inc_x[1]),
 	.d /* IN */ (gpu_d_lo16[1]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_2
 (
 	.q /* OUT */ (a1_inc_x[2]),
 	.d /* IN */ (gpu_d_lo16[2]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_3
 (
 	.q /* OUT */ (a1_inc_x[3]),
 	.d /* IN */ (gpu_d_lo16[3]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_4
 (
 	.q /* OUT */ (a1_inc_x[4]),
 	.d /* IN */ (gpu_d_lo16[4]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_5
 (
 	.q /* OUT */ (a1_inc_x[5]),
 	.d /* IN */ (gpu_d_lo16[5]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_6
 (
 	.q /* OUT */ (a1_inc_x[6]),
 	.d /* IN */ (gpu_d_lo16[6]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_7
 (
 	.q /* OUT */ (a1_inc_x[7]),
 	.d /* IN */ (gpu_d_lo16[7]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_8
 (
 	.q /* OUT */ (a1_inc_x[8]),
 	.d /* IN */ (gpu_d_lo16[8]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_9
 (
 	.q /* OUT */ (a1_inc_x[9]),
 	.d /* IN */ (gpu_d_lo16[9]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_10
 (
 	.q /* OUT */ (a1_inc_x[10]),
 	.d /* IN */ (gpu_d_lo16[10]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_11
 (
 	.q /* OUT */ (a1_inc_x[11]),
 	.d /* IN */ (gpu_d_lo16[11]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_12
 (
 	.q /* OUT */ (a1_inc_x[12]),
 	.d /* IN */ (gpu_d_lo16[12]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_13
 (
 	.q /* OUT */ (a1_inc_x[13]),
 	.d /* IN */ (gpu_d_lo16[13]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_14
 (
 	.q /* OUT */ (a1_inc_x[14]),
 	.d /* IN */ (gpu_d_lo16[14]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incx_inst_15
 (
 	.q /* OUT */ (a1_inc_x[15]),
 	.d /* IN */ (gpu_d_lo16[15]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (142) - a1incy : ldp1q
@@ -1679,97 +1836,113 @@ ldp1q a1incy_inst_0
 (
 	.q /* OUT */ (a1_inc_y[0]),
 	.d /* IN */ (gpu_d_hi16[0]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_1
 (
 	.q /* OUT */ (a1_inc_y[1]),
 	.d /* IN */ (gpu_d_hi16[1]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_2
 (
 	.q /* OUT */ (a1_inc_y[2]),
 	.d /* IN */ (gpu_d_hi16[2]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_3
 (
 	.q /* OUT */ (a1_inc_y[3]),
 	.d /* IN */ (gpu_d_hi16[3]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_4
 (
 	.q /* OUT */ (a1_inc_y[4]),
 	.d /* IN */ (gpu_d_hi16[4]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_5
 (
 	.q /* OUT */ (a1_inc_y[5]),
 	.d /* IN */ (gpu_d_hi16[5]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_6
 (
 	.q /* OUT */ (a1_inc_y[6]),
 	.d /* IN */ (gpu_d_hi16[6]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_7
 (
 	.q /* OUT */ (a1_inc_y[7]),
 	.d /* IN */ (gpu_d_hi16[7]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_8
 (
 	.q /* OUT */ (a1_inc_y[8]),
 	.d /* IN */ (gpu_d_hi16[8]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_9
 (
 	.q /* OUT */ (a1_inc_y[9]),
 	.d /* IN */ (gpu_d_hi16[9]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_10
 (
 	.q /* OUT */ (a1_inc_y[10]),
 	.d /* IN */ (gpu_d_hi16[10]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_11
 (
 	.q /* OUT */ (a1_inc_y[11]),
 	.d /* IN */ (gpu_d_hi16[11]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_12
 (
 	.q /* OUT */ (a1_inc_y[12]),
 	.d /* IN */ (gpu_d_hi16[12]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_13
 (
 	.q /* OUT */ (a1_inc_y[13]),
 	.d /* IN */ (gpu_d_hi16[13]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_14
 (
 	.q /* OUT */ (a1_inc_y[14]),
 	.d /* IN */ (gpu_d_hi16[14]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incy_inst_15
 (
 	.q /* OUT */ (a1_inc_y[15]),
 	.d /* IN */ (gpu_d_hi16[15]),
-	.g /* IN */ (a1incldg)
+	.g /* IN */ (a1incldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (143) - a1incfx : ldp1q
@@ -1777,97 +1950,113 @@ ldp1q a1incfx_inst_0
 (
 	.q /* OUT */ (a1_incf_x[0]),
 	.d /* IN */ (gpu_d_lo16[0]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_1
 (
 	.q /* OUT */ (a1_incf_x[1]),
 	.d /* IN */ (gpu_d_lo16[1]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_2
 (
 	.q /* OUT */ (a1_incf_x[2]),
 	.d /* IN */ (gpu_d_lo16[2]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_3
 (
 	.q /* OUT */ (a1_incf_x[3]),
 	.d /* IN */ (gpu_d_lo16[3]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_4
 (
 	.q /* OUT */ (a1_incf_x[4]),
 	.d /* IN */ (gpu_d_lo16[4]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_5
 (
 	.q /* OUT */ (a1_incf_x[5]),
 	.d /* IN */ (gpu_d_lo16[5]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_6
 (
 	.q /* OUT */ (a1_incf_x[6]),
 	.d /* IN */ (gpu_d_lo16[6]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_7
 (
 	.q /* OUT */ (a1_incf_x[7]),
 	.d /* IN */ (gpu_d_lo16[7]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_8
 (
 	.q /* OUT */ (a1_incf_x[8]),
 	.d /* IN */ (gpu_d_lo16[8]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_9
 (
 	.q /* OUT */ (a1_incf_x[9]),
 	.d /* IN */ (gpu_d_lo16[9]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_10
 (
 	.q /* OUT */ (a1_incf_x[10]),
 	.d /* IN */ (gpu_d_lo16[10]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_11
 (
 	.q /* OUT */ (a1_incf_x[11]),
 	.d /* IN */ (gpu_d_lo16[11]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_12
 (
 	.q /* OUT */ (a1_incf_x[12]),
 	.d /* IN */ (gpu_d_lo16[12]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_13
 (
 	.q /* OUT */ (a1_incf_x[13]),
 	.d /* IN */ (gpu_d_lo16[13]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_14
 (
 	.q /* OUT */ (a1_incf_x[14]),
 	.d /* IN */ (gpu_d_lo16[14]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfx_inst_15
 (
 	.q /* OUT */ (a1_incf_x[15]),
 	.d /* IN */ (gpu_d_lo16[15]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (144) - a1incfy : ldp1q
@@ -1875,97 +2064,113 @@ ldp1q a1incfy_inst_0
 (
 	.q /* OUT */ (a1_incf_y[0]),
 	.d /* IN */ (gpu_d_hi16[0]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_1
 (
 	.q /* OUT */ (a1_incf_y[1]),
 	.d /* IN */ (gpu_d_hi16[1]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_2
 (
 	.q /* OUT */ (a1_incf_y[2]),
 	.d /* IN */ (gpu_d_hi16[2]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_3
 (
 	.q /* OUT */ (a1_incf_y[3]),
 	.d /* IN */ (gpu_d_hi16[3]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_4
 (
 	.q /* OUT */ (a1_incf_y[4]),
 	.d /* IN */ (gpu_d_hi16[4]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_5
 (
 	.q /* OUT */ (a1_incf_y[5]),
 	.d /* IN */ (gpu_d_hi16[5]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_6
 (
 	.q /* OUT */ (a1_incf_y[6]),
 	.d /* IN */ (gpu_d_hi16[6]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_7
 (
 	.q /* OUT */ (a1_incf_y[7]),
 	.d /* IN */ (gpu_d_hi16[7]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_8
 (
 	.q /* OUT */ (a1_incf_y[8]),
 	.d /* IN */ (gpu_d_hi16[8]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_9
 (
 	.q /* OUT */ (a1_incf_y[9]),
 	.d /* IN */ (gpu_d_hi16[9]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_10
 (
 	.q /* OUT */ (a1_incf_y[10]),
 	.d /* IN */ (gpu_d_hi16[10]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_11
 (
 	.q /* OUT */ (a1_incf_y[11]),
 	.d /* IN */ (gpu_d_hi16[11]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_12
 (
 	.q /* OUT */ (a1_incf_y[12]),
 	.d /* IN */ (gpu_d_hi16[12]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_13
 (
 	.q /* OUT */ (a1_incf_y[13]),
 	.d /* IN */ (gpu_d_hi16[13]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_14
 (
 	.q /* OUT */ (a1_incf_y[14]),
 	.d /* IN */ (gpu_d_hi16[14]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a1incfy_inst_15
 (
 	.q /* OUT */ (a1_incf_y[15]),
 	.d /* IN */ (gpu_d_hi16[15]),
-	.g /* IN */ (a1incfldg)
+	.g /* IN */ (a1incfldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (150) - a2baseldg : an2u
@@ -1976,127 +2181,148 @@ ldp1q a2base_inst_0
 (
 	.q /* OUT */ (a2_base[0]),
 	.d /* IN */ (gpu_d_m21[0]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_1
 (
 	.q /* OUT */ (a2_base[1]),
 	.d /* IN */ (gpu_d_m21[1]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_2
 (
 	.q /* OUT */ (a2_base[2]),
 	.d /* IN */ (gpu_d_m21[2]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_3
 (
 	.q /* OUT */ (a2_base[3]),
 	.d /* IN */ (gpu_d_m21[3]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_4
 (
 	.q /* OUT */ (a2_base[4]),
 	.d /* IN */ (gpu_d_m21[4]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_5
 (
 	.q /* OUT */ (a2_base[5]),
 	.d /* IN */ (gpu_d_m21[5]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_6
 (
 	.q /* OUT */ (a2_base[6]),
 	.d /* IN */ (gpu_d_m21[6]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_7
 (
 	.q /* OUT */ (a2_base[7]),
 	.d /* IN */ (gpu_d_m21[7]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_8
 (
 	.q /* OUT */ (a2_base[8]),
 	.d /* IN */ (gpu_d_m21[8]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_9
 (
 	.q /* OUT */ (a2_base[9]),
 	.d /* IN */ (gpu_d_m21[9]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_10
 (
 	.q /* OUT */ (a2_base[10]),
 	.d /* IN */ (gpu_d_m21[10]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_11
 (
 	.q /* OUT */ (a2_base[11]),
 	.d /* IN */ (gpu_d_m21[11]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_12
 (
 	.q /* OUT */ (a2_base[12]),
 	.d /* IN */ (gpu_d_m21[12]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_13
 (
 	.q /* OUT */ (a2_base[13]),
 	.d /* IN */ (gpu_d_m21[13]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_14
 (
 	.q /* OUT */ (a2_base[14]),
 	.d /* IN */ (gpu_d_m21[14]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_15
 (
 	.q /* OUT */ (a2_base[15]),
 	.d /* IN */ (gpu_d_m21[15]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_16
 (
 	.q /* OUT */ (a2_base[16]),
 	.d /* IN */ (gpu_d_m21[16]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_17
 (
 	.q /* OUT */ (a2_base[17]),
 	.d /* IN */ (gpu_d_m21[17]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_18
 (
 	.q /* OUT */ (a2_base[18]),
 	.d /* IN */ (gpu_d_m21[18]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_19
 (
 	.q /* OUT */ (a2_base[19]),
 	.d /* IN */ (gpu_d_m21[19]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2base_inst_20
 (
 	.q /* OUT */ (a2_base[20]),
 	.d /* IN */ (gpu_d_m21[20]),
-	.g /* IN */ (a2baseldg)
+	.g /* IN */ (a2baseldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (155) - a2flagldg : an2h
@@ -2107,127 +2333,148 @@ ldp1q a2flags_inst_0
 (
 	.q /* OUT */ (a2_flags[0]),
 	.d /* IN */ (gpu_d_lo21[0]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_1
 (
 	.q /* OUT */ (a2_flags[1]),
 	.d /* IN */ (gpu_d_lo21[1]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_2
 (
 	.q /* OUT */ (a2_flags[2]),
 	.d /* IN */ (gpu_d_lo21[2]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_3
 (
 	.q /* OUT */ (a2_flags[3]),
 	.d /* IN */ (gpu_d_lo21[3]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_4
 (
 	.q /* OUT */ (a2_flags[4]),
 	.d /* IN */ (gpu_d_lo21[4]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_5
 (
 	.q /* OUT */ (a2_flags[5]),
 	.d /* IN */ (gpu_d_lo21[5]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_6
 (
 	.q /* OUT */ (a2_flags[6]),
 	.d /* IN */ (gpu_d_lo21[6]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_7
 (
 	.q /* OUT */ (a2_flags[7]),
 	.d /* IN */ (gpu_d_lo21[7]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_8
 (
 	.q /* OUT */ (a2_flags[8]),
 	.d /* IN */ (gpu_d_lo21[8]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_9
 (
 	.q /* OUT */ (a2_flags[9]),
 	.d /* IN */ (gpu_d_lo21[9]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_10
 (
 	.q /* OUT */ (a2_flags[10]),
 	.d /* IN */ (gpu_d_lo21[10]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_11
 (
 	.q /* OUT */ (a2_flags[11]),
 	.d /* IN */ (gpu_d_lo21[11]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_12
 (
 	.q /* OUT */ (a2_flags[12]),
 	.d /* IN */ (gpu_d_lo21[12]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_13
 (
 	.q /* OUT */ (a2_flags[13]),
 	.d /* IN */ (gpu_d_lo21[13]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_14
 (
 	.q /* OUT */ (a2_flags[14]),
 	.d /* IN */ (gpu_d_lo21[14]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_15
 (
 	.q /* OUT */ (a2_flags[15]),
 	.d /* IN */ (gpu_d_lo21[15]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_16
 (
 	.q /* OUT */ (a2_flags[16]),
 	.d /* IN */ (gpu_d_lo21[16]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_17
 (
 	.q /* OUT */ (a2_flags[17]),
 	.d /* IN */ (gpu_d_lo21[17]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_18
 (
 	.q /* OUT */ (a2_flags[18]),
 	.d /* IN */ (gpu_d_lo21[18]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_19
 (
 	.q /* OUT */ (a2_flags[19]),
 	.d /* IN */ (gpu_d_lo21[19]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2flags_inst_20
 (
 	.q /* OUT */ (a2_flags[20]),
 	.d /* IN */ (gpu_d_lo21[20]),
-	.g /* IN */ (a2flagldg)
+	.g /* IN */ (a2flagldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (157) - a2_pixp[0-1] : join
@@ -2278,97 +2525,113 @@ ldp1q a2winx_inst_0
 (
 	.q /* OUT */ (a2_mask_x[0]),
 	.d /* IN */ (gpu_d_lo16[0]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_1
 (
 	.q /* OUT */ (a2_mask_x[1]),
 	.d /* IN */ (gpu_d_lo16[1]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_2
 (
 	.q /* OUT */ (a2_mask_x[2]),
 	.d /* IN */ (gpu_d_lo16[2]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_3
 (
 	.q /* OUT */ (a2_mask_x[3]),
 	.d /* IN */ (gpu_d_lo16[3]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_4
 (
 	.q /* OUT */ (a2_mask_x[4]),
 	.d /* IN */ (gpu_d_lo16[4]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_5
 (
 	.q /* OUT */ (a2_mask_x[5]),
 	.d /* IN */ (gpu_d_lo16[5]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_6
 (
 	.q /* OUT */ (a2_mask_x[6]),
 	.d /* IN */ (gpu_d_lo16[6]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_7
 (
 	.q /* OUT */ (a2_mask_x[7]),
 	.d /* IN */ (gpu_d_lo16[7]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_8
 (
 	.q /* OUT */ (a2_mask_x[8]),
 	.d /* IN */ (gpu_d_lo16[8]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_9
 (
 	.q /* OUT */ (a2_mask_x[9]),
 	.d /* IN */ (gpu_d_lo16[9]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_10
 (
 	.q /* OUT */ (a2_mask_x[10]),
 	.d /* IN */ (gpu_d_lo16[10]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_11
 (
 	.q /* OUT */ (a2_mask_x[11]),
 	.d /* IN */ (gpu_d_lo16[11]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_12
 (
 	.q /* OUT */ (a2_mask_x[12]),
 	.d /* IN */ (gpu_d_lo16[12]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_13
 (
 	.q /* OUT */ (a2_mask_x[13]),
 	.d /* IN */ (gpu_d_lo16[13]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_14
 (
 	.q /* OUT */ (a2_mask_x[14]),
 	.d /* IN */ (gpu_d_lo16[14]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winx_inst_15
 (
 	.q /* OUT */ (a2_mask_x[15]),
 	.d /* IN */ (gpu_d_lo16[15]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (173) - a2winy : ldp1q
@@ -2376,97 +2639,113 @@ ldp1q a2winy_inst_0
 (
 	.q /* OUT */ (a2_mask_y[0]),
 	.d /* IN */ (gpu_d_hi16[0]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_1
 (
 	.q /* OUT */ (a2_mask_y[1]),
 	.d /* IN */ (gpu_d_hi16[1]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_2
 (
 	.q /* OUT */ (a2_mask_y[2]),
 	.d /* IN */ (gpu_d_hi16[2]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_3
 (
 	.q /* OUT */ (a2_mask_y[3]),
 	.d /* IN */ (gpu_d_hi16[3]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_4
 (
 	.q /* OUT */ (a2_mask_y[4]),
 	.d /* IN */ (gpu_d_hi16[4]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_5
 (
 	.q /* OUT */ (a2_mask_y[5]),
 	.d /* IN */ (gpu_d_hi16[5]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_6
 (
 	.q /* OUT */ (a2_mask_y[6]),
 	.d /* IN */ (gpu_d_hi16[6]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_7
 (
 	.q /* OUT */ (a2_mask_y[7]),
 	.d /* IN */ (gpu_d_hi16[7]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_8
 (
 	.q /* OUT */ (a2_mask_y[8]),
 	.d /* IN */ (gpu_d_hi16[8]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_9
 (
 	.q /* OUT */ (a2_mask_y[9]),
 	.d /* IN */ (gpu_d_hi16[9]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_10
 (
 	.q /* OUT */ (a2_mask_y[10]),
 	.d /* IN */ (gpu_d_hi16[10]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_11
 (
 	.q /* OUT */ (a2_mask_y[11]),
 	.d /* IN */ (gpu_d_hi16[11]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_12
 (
 	.q /* OUT */ (a2_mask_y[12]),
 	.d /* IN */ (gpu_d_hi16[12]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_13
 (
 	.q /* OUT */ (a2_mask_y[13]),
 	.d /* IN */ (gpu_d_hi16[13]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_14
 (
 	.q /* OUT */ (a2_mask_y[14]),
 	.d /* IN */ (gpu_d_hi16[14]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2winy_inst_15
 (
 	.q /* OUT */ (a2_mask_y[15]),
 	.d /* IN */ (gpu_d_hi16[15]),
-	.g /* IN */ (a2winldg)
+	.g /* IN */ (a2winldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (177) - a2x : fdsync16
@@ -2475,7 +2754,8 @@ fdsync16 a2x_inst
 	.q /* OUT */ ({a2_xr[0],a2_xr[1],a2_xr[2],a2_xr[3],a2_xr[4],a2_xr[5],a2_xr[6],a2_xr[7],a2_xr[8],a2_xr[9],a2_xr[10],a2_xr[11],a2_xr[12],a2_xr[13],a2_xr[14],a2_xr[15]}),
 	.d /* IN */ ({data_x[0],data_x[1],data_x[2],data_x[3],data_x[4],data_x[5],data_x[6],data_x[7],data_x[8],data_x[9],data_x[10],data_x[11],data_x[12],data_x[13],data_x[14],data_x[15]}),
 	.ld /* IN */ (a2ptrld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (178) - a2y : fdsync16
@@ -2484,7 +2764,8 @@ fdsync16 a2y_inst
 	.q /* OUT */ ({a2_yr[0],a2_yr[1],a2_yr[2],a2_yr[3],a2_yr[4],a2_yr[5],a2_yr[6],a2_yr[7],a2_yr[8],a2_yr[9],a2_yr[10],a2_yr[11],a2_yr[12],a2_yr[13],a2_yr[14],a2_yr[15]}),
 	.d /* IN */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
 	.ld /* IN */ (a2ptrld),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (182) - a2_xm : an2
@@ -2759,97 +3040,113 @@ ldp1q a2stepx_inst_0
 (
 	.q /* OUT */ (a2_step_x[0]),
 	.d /* IN */ (gpu_d_lo16[0]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_1
 (
 	.q /* OUT */ (a2_step_x[1]),
 	.d /* IN */ (gpu_d_lo16[1]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_2
 (
 	.q /* OUT */ (a2_step_x[2]),
 	.d /* IN */ (gpu_d_lo16[2]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_3
 (
 	.q /* OUT */ (a2_step_x[3]),
 	.d /* IN */ (gpu_d_lo16[3]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_4
 (
 	.q /* OUT */ (a2_step_x[4]),
 	.d /* IN */ (gpu_d_lo16[4]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_5
 (
 	.q /* OUT */ (a2_step_x[5]),
 	.d /* IN */ (gpu_d_lo16[5]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_6
 (
 	.q /* OUT */ (a2_step_x[6]),
 	.d /* IN */ (gpu_d_lo16[6]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_7
 (
 	.q /* OUT */ (a2_step_x[7]),
 	.d /* IN */ (gpu_d_lo16[7]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_8
 (
 	.q /* OUT */ (a2_step_x[8]),
 	.d /* IN */ (gpu_d_lo16[8]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_9
 (
 	.q /* OUT */ (a2_step_x[9]),
 	.d /* IN */ (gpu_d_lo16[9]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_10
 (
 	.q /* OUT */ (a2_step_x[10]),
 	.d /* IN */ (gpu_d_lo16[10]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_11
 (
 	.q /* OUT */ (a2_step_x[11]),
 	.d /* IN */ (gpu_d_lo16[11]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_12
 (
 	.q /* OUT */ (a2_step_x[12]),
 	.d /* IN */ (gpu_d_lo16[12]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_13
 (
 	.q /* OUT */ (a2_step_x[13]),
 	.d /* IN */ (gpu_d_lo16[13]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_14
 (
 	.q /* OUT */ (a2_step_x[14]),
 	.d /* IN */ (gpu_d_lo16[14]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepx_inst_15
 (
 	.q /* OUT */ (a2_step_x[15]),
 	.d /* IN */ (gpu_d_lo16[15]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (191) - a2stepy : ldp1q
@@ -2857,97 +3154,113 @@ ldp1q a2stepy_inst_0
 (
 	.q /* OUT */ (a2_step_y[0]),
 	.d /* IN */ (gpu_d_hi16[0]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_1
 (
 	.q /* OUT */ (a2_step_y[1]),
 	.d /* IN */ (gpu_d_hi16[1]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_2
 (
 	.q /* OUT */ (a2_step_y[2]),
 	.d /* IN */ (gpu_d_hi16[2]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_3
 (
 	.q /* OUT */ (a2_step_y[3]),
 	.d /* IN */ (gpu_d_hi16[3]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_4
 (
 	.q /* OUT */ (a2_step_y[4]),
 	.d /* IN */ (gpu_d_hi16[4]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_5
 (
 	.q /* OUT */ (a2_step_y[5]),
 	.d /* IN */ (gpu_d_hi16[5]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_6
 (
 	.q /* OUT */ (a2_step_y[6]),
 	.d /* IN */ (gpu_d_hi16[6]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_7
 (
 	.q /* OUT */ (a2_step_y[7]),
 	.d /* IN */ (gpu_d_hi16[7]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_8
 (
 	.q /* OUT */ (a2_step_y[8]),
 	.d /* IN */ (gpu_d_hi16[8]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_9
 (
 	.q /* OUT */ (a2_step_y[9]),
 	.d /* IN */ (gpu_d_hi16[9]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_10
 (
 	.q /* OUT */ (a2_step_y[10]),
 	.d /* IN */ (gpu_d_hi16[10]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_11
 (
 	.q /* OUT */ (a2_step_y[11]),
 	.d /* IN */ (gpu_d_hi16[11]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_12
 (
 	.q /* OUT */ (a2_step_y[12]),
 	.d /* IN */ (gpu_d_hi16[12]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_13
 (
 	.q /* OUT */ (a2_step_y[13]),
 	.d /* IN */ (gpu_d_hi16[13]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_14
 (
 	.q /* OUT */ (a2_step_y[14]),
 	.d /* IN */ (gpu_d_hi16[14]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q a2stepy_inst_15
 (
 	.q /* OUT */ (a2_step_y[15]),
 	.d /* IN */ (gpu_d_hi16[15]),
-	.g /* IN */ (a2stepldg)
+	.g /* IN */ (a2stepldg),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (195) - addamux : addamux
@@ -3007,7 +3320,8 @@ addradd addradd_inst
 	.modx_1 /* IN */ (modx_1),
 	.modx_2 /* IN */ (modx_2),
 	.suba_x /* IN */ (suba_x),
-	.suba_y /* IN */ (suba_y)
+	.suba_y /* IN */ (suba_y),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (211) - datamux : datamux
@@ -3017,7 +3331,8 @@ datamux datamux_inst
 	.data_y /* OUT */ ({data_y[0],data_y[1],data_y[2],data_y[3],data_y[4],data_y[5],data_y[6],data_y[7],data_y[8],data_y[9],data_y[10],data_y[11],data_y[12],data_y[13],data_y[14],data_y[15]}),
 	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
 	.addq_x /* IN */ ({addq_x[0],addq_x[1],addq_x[2],addq_x[3],addq_x[4],addq_x[5],addq_x[6],addq_x[7],addq_x[8],addq_x[9],addq_x[10],addq_x[11],addq_x[12],addq_x[13],addq_x[14],addq_x[15]}),
-	.addq_y /* IN */ ({addq_y[0],addq_y[1],addq_y[2],addq_y[3],addq_y[4],addq_y[5],addq_y[6],addq_y[7],addq_y[8],addq_y[9],addq_y[10],addq_y[11],addq_y[12],addq_y[13],addq_y[14],addq_y[15]})
+	.addq_y /* IN */ ({addq_y[0],addq_y[1],addq_y[2],addq_y[3],addq_y[4],addq_y[5],addq_y[6],addq_y[7],addq_y[8],addq_y[9],addq_y[10],addq_y[11],addq_y[12],addq_y[13],addq_y[14],addq_y[15]}),
+	.addqsel /* IN */ (addqsel)
 );
 
 // ADDRESS.NET (216) - addrgen : addrgen
@@ -3062,7 +3377,8 @@ addrgen addrgen_inst
 	.apipe /* IN */ (apipe),
 	.clk /* IN */ (clk),
 	.gena2 /* IN */ (gena2),
-	.zaddr /* IN */ (zaddr)
+	.zaddr /* IN */ (zaddr),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRESS.NET (226) - addrcomp : addrcomp

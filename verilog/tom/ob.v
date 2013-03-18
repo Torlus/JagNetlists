@@ -544,7 +544,8 @@ module ob
 	input dr_14_in,
 	output dr_15_out,
 	output dr_15_oe,
-	input dr_15_in
+	input dr_15_in,
+	input sys_clk // Generated
 );
 wire type_0;
 wire type_1;
@@ -1589,21 +1590,24 @@ slatch type_from_0_to_2_inst_0
 	.q /* OUT */ (type_0),
 	.d /* IN */ (d_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch type_from_0_to_2_inst_1
 (
 	.q /* OUT */ (type_1),
 	.d /* IN */ (d_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch type_from_0_to_2_inst_2
 (
 	.q /* OUT */ (type_2),
 	.d /* IN */ (d_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (49) - ypos[0-10] : slatch
@@ -1612,77 +1616,88 @@ slatch ypos_from_0_to_10_inst_0
 	.q /* OUT */ (ypos_0),
 	.d /* IN */ (d_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_1
 (
 	.q /* OUT */ (ypos_1),
 	.d /* IN */ (d_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_2
 (
 	.q /* OUT */ (ypos_2),
 	.d /* IN */ (d_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_3
 (
 	.q /* OUT */ (ypos_3),
 	.d /* IN */ (d_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_4
 (
 	.q /* OUT */ (ypos_4),
 	.d /* IN */ (d_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_5
 (
 	.q /* OUT */ (ypos_5),
 	.d /* IN */ (d_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_6
 (
 	.q /* OUT */ (ypos_6),
 	.d /* IN */ (d_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_7
 (
 	.q /* OUT */ (ypos_7),
 	.d /* IN */ (d_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_8
 (
 	.q /* OUT */ (ypos_8),
 	.d /* IN */ (d_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_9
 (
 	.q /* OUT */ (ypos_9),
 	.d /* IN */ (d_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch ypos_from_0_to_10_inst_10
 (
 	.q /* OUT */ (ypos_10),
 	.d /* IN */ (d_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (51) - link[0-18] : slatch
@@ -1691,133 +1706,152 @@ slatch link_from_0_to_18_inst_0
 	.q /* OUT */ (link_0),
 	.d /* IN */ (d_24),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_1
 (
 	.q /* OUT */ (link_1),
 	.d /* IN */ (d_25),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_2
 (
 	.q /* OUT */ (link_2),
 	.d /* IN */ (d_26),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_3
 (
 	.q /* OUT */ (link_3),
 	.d /* IN */ (d_27),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_4
 (
 	.q /* OUT */ (link_4),
 	.d /* IN */ (d_28),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_5
 (
 	.q /* OUT */ (link_5),
 	.d /* IN */ (d_29),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_6
 (
 	.q /* OUT */ (link_6),
 	.d /* IN */ (d_30),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_7
 (
 	.q /* OUT */ (link_7),
 	.d /* IN */ (d_31),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_8
 (
 	.q /* OUT */ (link_8),
 	.d /* IN */ (d_32),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_9
 (
 	.q /* OUT */ (link_9),
 	.d /* IN */ (d_33),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_10
 (
 	.q /* OUT */ (link_10),
 	.d /* IN */ (d_34),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_11
 (
 	.q /* OUT */ (link_11),
 	.d /* IN */ (d_35),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_12
 (
 	.q /* OUT */ (link_12),
 	.d /* IN */ (d_36),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_13
 (
 	.q /* OUT */ (link_13),
 	.d /* IN */ (d_37),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_14
 (
 	.q /* OUT */ (link_14),
 	.d /* IN */ (d_38),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_15
 (
 	.q /* OUT */ (link_15),
 	.d /* IN */ (d_39),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_16
 (
 	.q /* OUT */ (link_16),
 	.d /* IN */ (d_40),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_17
 (
 	.q /* OUT */ (link_17),
 	.d /* IN */ (d_41),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 slatch link_from_0_to_18_inst_18
 (
 	.q /* OUT */ (link_18),
 	.d /* IN */ (d_42),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_0)
+	.en /* IN */ (oblatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (56) - ob0rd[0-2] : ts
@@ -2108,21 +2142,24 @@ slatch depth_from_0_to_2_inst_0
 	.q /* OUT */ (depth_0),
 	.d /* IN */ (d_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch depth_from_0_to_2_inst_1
 (
 	.q /* OUT */ (depth_1),
 	.d /* IN */ (d_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch depth_from_0_to_2_inst_2
 (
 	.q /* OUT */ (depth_2),
 	.d /* IN */ (d_14),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (78) - skip[0-2] : slatch
@@ -2131,21 +2168,24 @@ slatch skip_from_0_to_2_inst_0
 	.q /* OUT */ (skip_0),
 	.d /* IN */ (d_15),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch skip_from_0_to_2_inst_1
 (
 	.q /* OUT */ (skip_1),
 	.d /* IN */ (d_16),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch skip_from_0_to_2_inst_2
 (
 	.q /* OUT */ (skip_2),
 	.d /* IN */ (d_17),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (79) - dwidth[0-9] : slatch
@@ -2154,70 +2194,80 @@ slatch dwidth_from_0_to_9_inst_0
 	.q /* OUT */ (dwidth_0),
 	.d /* IN */ (d_18),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_1
 (
 	.q /* OUT */ (dwidth_1),
 	.d /* IN */ (d_19),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_2
 (
 	.q /* OUT */ (dwidth_2),
 	.d /* IN */ (d_20),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_3
 (
 	.q /* OUT */ (dwidth_3),
 	.d /* IN */ (d_21),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_4
 (
 	.q /* OUT */ (dwidth_4),
 	.d /* IN */ (d_22),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_5
 (
 	.q /* OUT */ (dwidth_5),
 	.d /* IN */ (d_23),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_6
 (
 	.q /* OUT */ (dwidth_6),
 	.d /* IN */ (d_24),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_7
 (
 	.q /* OUT */ (dwidth_7),
 	.d /* IN */ (d_25),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_8
 (
 	.q /* OUT */ (dwidth_8),
 	.d /* IN */ (d_26),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch dwidth_from_0_to_9_inst_9
 (
 	.q /* OUT */ (dwidth_9),
 	.d /* IN */ (d_27),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (81) - index[1-7] : slatch
@@ -2226,49 +2276,56 @@ slatch index_from_1_to_7_inst_0
 	.q /* OUT */ (index_1),
 	.d /* IN */ (d_38),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch index_from_1_to_7_inst_1
 (
 	.q /* OUT */ (index_2),
 	.d /* IN */ (d_39),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch index_from_1_to_7_inst_2
 (
 	.q /* OUT */ (index_3),
 	.d /* IN */ (d_40),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch index_from_1_to_7_inst_3
 (
 	.q /* OUT */ (index_4),
 	.d /* IN */ (d_41),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch index_from_1_to_7_inst_4
 (
 	.q /* OUT */ (index_5),
 	.d /* IN */ (d_42),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch index_from_1_to_7_inst_5
 (
 	.q /* OUT */ (index_6),
 	.d /* IN */ (d_43),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 slatch index_from_1_to_7_inst_6
 (
 	.q /* OUT */ (index_7),
 	.d /* IN */ (d_44),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (82) - reflected : slatch
@@ -2277,7 +2334,8 @@ slatch reflected_inst
 	.q /* OUT */ (reflected),
 	.d /* IN */ (d_45),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (83) - rmw : slatch
@@ -2286,7 +2344,8 @@ slatch rmw_inst
 	.q /* OUT */ (rmw),
 	.d /* IN */ (d_46),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (84) - transen : slatch
@@ -2295,7 +2354,8 @@ slatch transen_inst
 	.q /* OUT */ (transen),
 	.d /* IN */ (d_47),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (85) - release : slatch
@@ -2304,7 +2364,8 @@ slatch release_inst
 	.q /* OUT */ (_release),
 	.d /* IN */ (d_48),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_1)
+	.en /* IN */ (oblatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (87) - hscale[0-7] : slatch
@@ -2313,56 +2374,64 @@ slatch hscale_from_0_to_7_inst_0
 	.q /* OUT */ (hscale_0_obuf),
 	.d /* IN */ (d_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_1
 (
 	.q /* OUT */ (hscale_1_obuf),
 	.d /* IN */ (d_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_2
 (
 	.q /* OUT */ (hscale_2_obuf),
 	.d /* IN */ (d_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_3
 (
 	.q /* OUT */ (hscale_3_obuf),
 	.d /* IN */ (d_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_4
 (
 	.q /* OUT */ (hscale_4_obuf),
 	.d /* IN */ (d_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_5
 (
 	.q /* OUT */ (hscale_5_obuf),
 	.d /* IN */ (d_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_6
 (
 	.q /* OUT */ (hscale_6_obuf),
 	.d /* IN */ (d_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch hscale_from_0_to_7_inst_7
 (
 	.q /* OUT */ (hscale_7_obuf),
 	.d /* IN */ (d_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (88) - vscale[0-7] : slatch
@@ -2371,56 +2440,64 @@ slatch vscale_from_0_to_7_inst_0
 	.q /* OUT */ (vscale_0_obuf),
 	.d /* IN */ (d_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_1
 (
 	.q /* OUT */ (vscale_1_obuf),
 	.d /* IN */ (d_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_2
 (
 	.q /* OUT */ (vscale_2_obuf),
 	.d /* IN */ (d_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_3
 (
 	.q /* OUT */ (vscale_3_obuf),
 	.d /* IN */ (d_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_4
 (
 	.q /* OUT */ (vscale_4_obuf),
 	.d /* IN */ (d_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_5
 (
 	.q /* OUT */ (vscale_5_obuf),
 	.d /* IN */ (d_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_6
 (
 	.q /* OUT */ (vscale_6_obuf),
 	.d /* IN */ (d_14),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch vscale_from_0_to_7_inst_7
 (
 	.q /* OUT */ (vscale_7_obuf),
 	.d /* IN */ (d_15),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (89) - rem[5-7] : slatch
@@ -2429,21 +2506,24 @@ slatch rem_from_5_to_7_inst_0
 	.q /* OUT */ (rem_5),
 	.d /* IN */ (d_21),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch rem_from_5_to_7_inst_1
 (
 	.q /* OUT */ (rem_6),
 	.d /* IN */ (d_22),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 slatch rem_from_5_to_7_inst_2
 (
 	.q /* OUT */ (rem_7),
 	.d /* IN */ (d_23),
 	.clk /* IN */ (clk),
-	.en /* IN */ (oblatch_2)
+	.en /* IN */ (oblatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (93) - obwbk2[0-7] : ts
@@ -2587,79 +2667,92 @@ ldp1q olpd_from_3_to_15_inst_0
 (
 	.q /* OUT */ (olpd_3),
 	.d /* IN */ (din_3),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_1
 (
 	.q /* OUT */ (olpd_4),
 	.d /* IN */ (din_4),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_2
 (
 	.q /* OUT */ (olpd_5),
 	.d /* IN */ (din_5),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_3
 (
 	.q /* OUT */ (olpd_6),
 	.d /* IN */ (din_6),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_4
 (
 	.q /* OUT */ (olpd_7),
 	.d /* IN */ (din_7),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_5
 (
 	.q /* OUT */ (olpd_8),
 	.d /* IN */ (din_8),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_6
 (
 	.q /* OUT */ (olpd_9),
 	.d /* IN */ (din_9),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_7
 (
 	.q /* OUT */ (olpd_10),
 	.d /* IN */ (din_10),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_8
 (
 	.q /* OUT */ (olpd_11),
 	.d /* IN */ (din_11),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_9
 (
 	.q /* OUT */ (olpd_12),
 	.d /* IN */ (din_12),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_10
 (
 	.q /* OUT */ (olpd_13),
 	.d /* IN */ (din_13),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_11
 (
 	.q /* OUT */ (olpd_14),
 	.d /* IN */ (din_14),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_3_to_15_inst_12
 (
 	.q /* OUT */ (olpd_15),
 	.d /* IN */ (din_15),
-	.g /* IN */ (olp1w)
+	.g /* IN */ (olp1w),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (101) - olpd[16-23] : ldp1q
@@ -2667,49 +2760,57 @@ ldp1q olpd_from_16_to_23_inst_0
 (
 	.q /* OUT */ (olpd_16),
 	.d /* IN */ (din_0),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_1
 (
 	.q /* OUT */ (olpd_17),
 	.d /* IN */ (din_1),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_2
 (
 	.q /* OUT */ (olpd_18),
 	.d /* IN */ (din_2),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_3
 (
 	.q /* OUT */ (olpd_19),
 	.d /* IN */ (din_3),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_4
 (
 	.q /* OUT */ (olpd_20),
 	.d /* IN */ (din_4),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_5
 (
 	.q /* OUT */ (olpd_21),
 	.d /* IN */ (din_5),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_6
 (
 	.q /* OUT */ (olpd_22),
 	.d /* IN */ (din_6),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q olpd_from_16_to_23_inst_7
 (
 	.q /* OUT */ (olpd_23),
 	.d /* IN */ (din_7),
-	.g /* IN */ (olp2w)
+	.g /* IN */ (olp2w),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (105) - olpd1[3-21] : mx2
@@ -2856,7 +2957,8 @@ upcnt olp_index_3_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (pcinc),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (110) - olp[4-9] : upcnt
@@ -2868,7 +2970,8 @@ upcnt olp_from_4_to_9_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_3),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_4_to_9_inst_1
 (
@@ -2878,7 +2981,8 @@ upcnt olp_from_4_to_9_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_4),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_4_to_9_inst_2
 (
@@ -2888,7 +2992,8 @@ upcnt olp_from_4_to_9_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_5),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_4_to_9_inst_3
 (
@@ -2898,7 +3003,8 @@ upcnt olp_from_4_to_9_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_6),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_4_to_9_inst_4
 (
@@ -2908,7 +3014,8 @@ upcnt olp_from_4_to_9_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_7),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_4_to_9_inst_5
 (
@@ -2918,7 +3025,8 @@ upcnt olp_from_4_to_9_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_8),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (111) - olp[10] : upcnt
@@ -2930,7 +3038,8 @@ upcnt olp_index_10_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (plac9),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (112) - olp[11-16] : upcnt
@@ -2942,7 +3051,8 @@ upcnt olp_from_11_to_16_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_10),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_11_to_16_inst_1
 (
@@ -2952,7 +3062,8 @@ upcnt olp_from_11_to_16_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_11),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_11_to_16_inst_2
 (
@@ -2962,7 +3073,8 @@ upcnt olp_from_11_to_16_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_12),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_11_to_16_inst_3
 (
@@ -2972,7 +3084,8 @@ upcnt olp_from_11_to_16_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_13),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_11_to_16_inst_4
 (
@@ -2982,7 +3095,8 @@ upcnt olp_from_11_to_16_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_14),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_11_to_16_inst_5
 (
@@ -2992,7 +3106,8 @@ upcnt olp_from_11_to_16_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_15),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (113) - olp[17] : upcnt
@@ -3004,7 +3119,8 @@ upcnt olp_index_17_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (plac16),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (114) - olp[18-21] : upcnt
@@ -3016,7 +3132,8 @@ upcnt olp_from_18_to_21_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_17),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_18_to_21_inst_1
 (
@@ -3026,7 +3143,8 @@ upcnt olp_from_18_to_21_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_18),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_18_to_21_inst_2
 (
@@ -3036,7 +3154,8 @@ upcnt olp_from_18_to_21_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_19),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt olp_from_18_to_21_inst_3
 (
@@ -3046,7 +3165,8 @@ upcnt olp_from_18_to_21_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (olpco_20),
 	.ld /* IN */ (olpld),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (116) - plac9 : an8
@@ -3097,7 +3217,8 @@ fd1q dmainc_inst
 (
 	.q /* OUT */ (dmainc),
 	.d /* IN */ (dmaen),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (135) - ldinc : or2
@@ -3132,21 +3253,24 @@ slatch data_from_0_to_2_inst_0
 	.q /* OUT */ (data_0),
 	.d /* IN */ (d1_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ldinc)
+	.en /* IN */ (ldinc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch data_from_0_to_2_inst_1
 (
 	.q /* OUT */ (data_1),
 	.d /* IN */ (d1_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ldinc)
+	.en /* IN */ (ldinc),
+	.sys_clk(sys_clk) // Generated
 );
 slatch data_from_0_to_2_inst_2
 (
 	.q /* OUT */ (data_2),
 	.d /* IN */ (d1_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (ldinc)
+	.en /* IN */ (ldinc),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (142) - dci : an2
@@ -3161,7 +3285,8 @@ upcnt data_index_3_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dci),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (144) - data[4-9] : upcnt
@@ -3173,7 +3298,8 @@ upcnt data_from_4_to_9_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_3),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_4_to_9_inst_1
 (
@@ -3183,7 +3309,8 @@ upcnt data_from_4_to_9_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_4),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_4_to_9_inst_2
 (
@@ -3193,7 +3320,8 @@ upcnt data_from_4_to_9_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_5),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_4_to_9_inst_3
 (
@@ -3203,7 +3331,8 @@ upcnt data_from_4_to_9_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_6),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_4_to_9_inst_4
 (
@@ -3213,7 +3342,8 @@ upcnt data_from_4_to_9_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_7),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_4_to_9_inst_5
 (
@@ -3223,7 +3353,8 @@ upcnt data_from_4_to_9_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_8),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (145) - data[10] : upcnt
@@ -3235,7 +3366,8 @@ upcnt data_index_10_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dlac9),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (146) - data[11-16] : upcnt
@@ -3247,7 +3379,8 @@ upcnt data_from_11_to_16_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_10),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_11_to_16_inst_1
 (
@@ -3257,7 +3390,8 @@ upcnt data_from_11_to_16_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_11),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_11_to_16_inst_2
 (
@@ -3267,7 +3401,8 @@ upcnt data_from_11_to_16_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_12),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_11_to_16_inst_3
 (
@@ -3277,7 +3412,8 @@ upcnt data_from_11_to_16_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_13),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_11_to_16_inst_4
 (
@@ -3287,7 +3423,8 @@ upcnt data_from_11_to_16_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_14),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_11_to_16_inst_5
 (
@@ -3297,7 +3434,8 @@ upcnt data_from_11_to_16_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_15),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (147) - data[17] : upcnt
@@ -3309,7 +3447,8 @@ upcnt data_index_17_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dlac16),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (148) - data[18-20] : upcnt
@@ -3321,7 +3460,8 @@ upcnt data_from_18_to_20_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_17),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_18_to_20_inst_1
 (
@@ -3331,7 +3471,8 @@ upcnt data_from_18_to_20_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_18),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 upcnt data_from_18_to_20_inst_2
 (
@@ -3341,7 +3482,8 @@ upcnt data_from_18_to_20_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dco_19),
 	.ld /* IN */ (obld_0_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (149) - dlac9 : an8
@@ -3362,7 +3504,8 @@ ldp1q obf_inst
 (
 	.q /* OUT */ (obf),
 	.d /* IN */ (din_0),
-	.g /* IN */ (obfws)
+	.g /* IN */ (obfws),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (161) - iwidth[0] : dncnt
@@ -3374,7 +3517,8 @@ dncnt iwidth_index_0_inst
 	.clk /* IN */ (clk),
 	.ci /* IN */ (dmaen),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (162) - iwidth[1-9] : dncnt
@@ -3386,7 +3530,8 @@ dncnt iwidth_from_1_to_9_inst_0
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_0),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_1
 (
@@ -3396,7 +3541,8 @@ dncnt iwidth_from_1_to_9_inst_1
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_1),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_2
 (
@@ -3406,7 +3552,8 @@ dncnt iwidth_from_1_to_9_inst_2
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_2),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_3
 (
@@ -3416,7 +3563,8 @@ dncnt iwidth_from_1_to_9_inst_3
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_3),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_4
 (
@@ -3426,7 +3574,8 @@ dncnt iwidth_from_1_to_9_inst_4
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_4),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_5
 (
@@ -3436,7 +3585,8 @@ dncnt iwidth_from_1_to_9_inst_5
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_5),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_6
 (
@@ -3446,7 +3596,8 @@ dncnt iwidth_from_1_to_9_inst_6
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_6),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_7
 (
@@ -3456,7 +3607,8 @@ dncnt iwidth_from_1_to_9_inst_7
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_7),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 dncnt iwidth_from_1_to_9_inst_8
 (
@@ -3466,7 +3618,8 @@ dncnt iwidth_from_1_to_9_inst_8
 	.clk /* IN */ (clk),
 	.ci /* IN */ (wco_8),
 	.ld /* IN */ (obld_1_obuf),
-	.resl /* IN */ (resetl)
+	.resl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (170) - bit0 : an2
@@ -3490,7 +3643,8 @@ fd4q q0_inst
 	.q /* OUT */ (q0),
 	.d /* IN */ (d0),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (377) - q1 : fd2q
@@ -3499,7 +3653,8 @@ fd2q q1_inst
 	.q /* OUT */ (q1),
 	.d /* IN */ (d1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (378) - q2 : fd2q
@@ -3508,7 +3663,8 @@ fd2q q2_inst
 	.q /* OUT */ (q2),
 	.d /* IN */ (d2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (379) - q3i : fd2q
@@ -3517,7 +3673,8 @@ fd2q q3i_inst
 	.q /* OUT */ (q3i),
 	.d /* IN */ (d3),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (380) - q3 : nivm
@@ -3529,7 +3686,8 @@ fd2q q4i_inst
 	.q /* OUT */ (q4i),
 	.d /* IN */ (d4),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (382) - q4 : nivh
@@ -3541,7 +3699,8 @@ fd2q q5_inst
 	.q /* OUT */ (q5),
 	.d /* IN */ (d5),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (384) - q7 : fd2q
@@ -3550,7 +3709,8 @@ fd2q q7_inst
 	.q /* OUT */ (q7),
 	.d /* IN */ (d7),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (385) - q8 : fd2q
@@ -3559,7 +3719,8 @@ fd2q q8_inst
 	.q /* OUT */ (q8),
 	.d /* IN */ (d8),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (386) - q9 : fd2q
@@ -3568,7 +3729,8 @@ fd2q q9_inst
 	.q /* OUT */ (q9),
 	.d /* IN */ (d9),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (388) - d00 : nd2
@@ -3952,7 +4114,8 @@ fd2q start1_inst
 	.q /* OUT */ (start1),
 	.d /* IN */ (start),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (567) - start2 : fd2q
@@ -3961,7 +4124,8 @@ fd2q start2_inst
 	.q /* OUT */ (start2),
 	.d /* IN */ (start1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (568) - start2l : iv
@@ -3984,7 +4148,8 @@ fd1q overrun_inst
 (
 	.q /* OUT */ (overrun),
 	.d /* IN */ (overrund),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (579) - notstartover : nr2
@@ -4039,7 +4204,8 @@ ack_pipe obdlatch_inst
 	.latchd /* IN */ (obdlatchd),
 	.ack /* IN */ (mack),
 	.clk /* IN */ (clk),
-	.resetl /* IN */ (resetl)
+	.resetl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (610) - obldi[0] : ack_pipe
@@ -4049,7 +4215,8 @@ ack_pipe obldi_index_0_inst
 	.latchd /* IN */ (obldd_0),
 	.ack /* IN */ (mack),
 	.clk /* IN */ (clk),
-	.resetl /* IN */ (resetl)
+	.resetl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (611) - obldi[1] : ack_pipe
@@ -4059,7 +4226,8 @@ ack_pipe obldi_index_1_inst
 	.latchd /* IN */ (obldd_1),
 	.ack /* IN */ (mack),
 	.clk /* IN */ (clk),
-	.resetl /* IN */ (resetl)
+	.resetl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (612) - obldi[2] : ack_pipe
@@ -4069,7 +4237,8 @@ ack_pipe obldi_index_2_inst
 	.latchd /* IN */ (obldd_2),
 	.ack /* IN */ (mack),
 	.clk /* IN */ (clk),
-	.resetl /* IN */ (resetl)
+	.resetl /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (613) - obld[0] : nivu2
@@ -4092,7 +4261,8 @@ fd4q wbkeni_index_0_inst
 	.q /* OUT */ (wbkeni_0),
 	.d /* IN */ (wbken0d),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (resetl)
+	.sd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (620) - wbken[0] : nivu2
@@ -4104,7 +4274,8 @@ fd2q wbkeni_index_2_inst
 	.q /* OUT */ (wbkeni_2),
 	.d /* IN */ (wbken2d),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (622) - wbken[2] : nivu2

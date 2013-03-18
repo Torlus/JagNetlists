@@ -13,19 +13,19 @@ module arith
 	input gpu_dout_2_in,
 	output carry_flag,
 	output nega_flag,
-	output [0:31] result;
+	output [0:31] result,
 	output zero_flag,
-	input [0:31] dstdp;
-	input [0:31] srcdp;
+	input [0:31] dstdp,
+	input [0:31] srcdp,
 	input srcd_31,
-	input [0:2] alufunc;
+	input [0:2] alufunc,
 	input brlmux_0,
 	input brlmux_1,
 	input clk,
 	input flagld,
 	input flagrd,
 	input flagwr,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input macop,
 	input multsel,
 	input multsign,
@@ -36,7 +36,8 @@ module arith
 	input ressel_2,
 	input rev_sub,
 	input satsz_0,
-	input satsz_1
+	input satsz_1,
+	input sys_clk // Generated
 );
 wire [0:2] alufnc;
 wire [0:2] alufnci;
@@ -354,13 +355,15 @@ fd1q brlmuxp_from_0_to_1_inst_0
 (
 	.q /* OUT */ (brlmuxp_0),
 	.d /* IN */ (brlmux_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q brlmuxp_from_0_to_1_inst_1
 (
 	.q /* OUT */ (brlmuxp_1),
 	.d /* IN */ (brlmux_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (64) - flagldp : fd2q
@@ -369,7 +372,8 @@ fd2q flagldp_inst
 	.q /* OUT */ (flagldp),
 	.d /* IN */ (flagld),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (65) - resldp : fd1q
@@ -377,7 +381,8 @@ fd1q resldp_inst
 (
 	.q /* OUT */ (resldp),
 	.d /* IN */ (resld),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (66) - multselp : fd1qh
@@ -385,7 +390,8 @@ fd1q multselp_inst
 (
 	.q /* OUT */ (multselp),
 	.d /* IN */ (multsel),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (67) - multsignp : fd1q
@@ -393,7 +399,8 @@ fd1q multsignp_inst
 (
 	.q /* OUT */ (multsignp),
 	.d /* IN */ (multsign),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (68) - resselp[0-2] : fd1qu
@@ -401,19 +408,22 @@ fd1q resselp_from_0_to_2_inst_0
 (
 	.q /* OUT */ (resselp_0),
 	.d /* IN */ (ressel_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q resselp_from_0_to_2_inst_1
 (
 	.q /* OUT */ (resselp_1),
 	.d /* IN */ (ressel_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q resselp_from_0_to_2_inst_2
 (
 	.q /* OUT */ (resselp_2),
 	.d /* IN */ (ressel_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (69) - resselp\[0] : iv
@@ -424,7 +434,8 @@ fd1q rev_subp_inst
 (
 	.q /* OUT */ (rev_subp),
 	.d /* IN */ (rev_sub),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (71) - macop_p : fd1q
@@ -432,7 +443,8 @@ fd1q macop_p_inst
 (
 	.q /* OUT */ (macop_p),
 	.d /* IN */ (macop),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (72) - macop_ppt : fd1q
@@ -440,7 +452,8 @@ fd1q macop_ppt_inst
 (
 	.q /* OUT */ (macop_ppt),
 	.d /* IN */ (macop_p),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (73) - macop_pp : nivu2
@@ -451,13 +464,15 @@ fd1q satszp_from_0_to_1_inst_0
 (
 	.q /* OUT */ (satszp_0),
 	.d /* IN */ (satsz_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q satszp_from_0_to_1_inst_1
 (
 	.q /* OUT */ (satszp_1),
 	.d /* IN */ (satsz_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (80) - mantmodei : an3
@@ -468,7 +483,8 @@ fd1q mantmode_inst
 (
 	.q /* OUT */ (mantmode),
 	.d /* IN */ (mantmodei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (85) - addtosubi\ : nd2
@@ -490,19 +506,22 @@ fd1q alufncp_inst_0
 (
 	.q /* OUT */ (alufnc[0]),
 	.d /* IN */ (alufnci[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q alufncp_inst_1
 (
 	.q /* OUT */ (alufnc[1]),
 	.d /* IN */ (alufnci[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q alufncp_inst_2
 (
 	.q /* OUT */ (alufnc[2]),
 	.d /* IN */ (alufnci[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (98) - losrcdp : join
@@ -676,70 +695,9 @@ mx2 mula_inst_15
 // ARITH.NET (105) - mult : mp16
 mp16 mult_inst
 (
-	.q0 /* OUT */ (mulq_0),
-	.q1 /* OUT */ (mulq_1),
-	.q2 /* OUT */ (mulq_2),
-	.q3 /* OUT */ (mulq_3),
-	.q4 /* OUT */ (mulq_4),
-	.q5 /* OUT */ (mulq_5),
-	.q6 /* OUT */ (mulq_6),
-	.q7 /* OUT */ (mulq_7),
-	.q8 /* OUT */ (mulq_8),
-	.q9 /* OUT */ (mulq_9),
-	.q10 /* OUT */ (mulq_10),
-	.q11 /* OUT */ (mulq_11),
-	.q12 /* OUT */ (mulq_12),
-	.q13 /* OUT */ (mulq_13),
-	.q14 /* OUT */ (mulq_14),
-	.q15 /* OUT */ (mulq_15),
-	.q16 /* OUT */ (mulq_16),
-	.q17 /* OUT */ (mulq_17),
-	.q18 /* OUT */ (mulq_18),
-	.q19 /* OUT */ (mulq_19),
-	.q20 /* OUT */ (mulq_20),
-	.q21 /* OUT */ (mulq_21),
-	.q22 /* OUT */ (mulq_22),
-	.q23 /* OUT */ (mulq_23),
-	.q24 /* OUT */ (mulq_24),
-	.q25 /* OUT */ (mulq_25),
-	.q26 /* OUT */ (mulq_26),
-	.q27 /* OUT */ (mulq_27),
-	.q28 /* OUT */ (mulq_28),
-	.q29 /* OUT */ (mulq_29),
-	.q30 /* OUT */ (mulq_30),
-	.q31 /* OUT */ (mulq_31),
-	.a0 /* IN */ (mula[0]),
-	.a1 /* IN */ (mula[1]),
-	.a2 /* IN */ (mula[2]),
-	.a3 /* IN */ (mula[3]),
-	.a4 /* IN */ (mula[4]),
-	.a5 /* IN */ (mula[5]),
-	.a6 /* IN */ (mula[6]),
-	.a7 /* IN */ (mula[7]),
-	.a8 /* IN */ (mula[8]),
-	.a9 /* IN */ (mula[9]),
-	.a10 /* IN */ (mula[10]),
-	.a11 /* IN */ (mula[11]),
-	.a12 /* IN */ (mula[12]),
-	.a13 /* IN */ (mula[13]),
-	.a14 /* IN */ (mula[14]),
-	.a15 /* IN */ (mula[15]),
-	.b0 /* IN */ (mulb[0]),
-	.b1 /* IN */ (mulb[1]),
-	.b2 /* IN */ (mulb[2]),
-	.b3 /* IN */ (mulb[3]),
-	.b4 /* IN */ (mulb[4]),
-	.b5 /* IN */ (mulb[5]),
-	.b6 /* IN */ (mulb[6]),
-	.b7 /* IN */ (mulb[7]),
-	.b8 /* IN */ (mulb[8]),
-	.b9 /* IN */ (mulb[9]),
-	.b10 /* IN */ (mulb[10]),
-	.b11 /* IN */ (mulb[11]),
-	.b12 /* IN */ (mulb[12]),
-	.b13 /* IN */ (mulb[13]),
-	.b14 /* IN */ (mulb[14]),
-	.b15 /* IN */ (mulb[15]),
+	.q /* OUT */ ({mulq_0,mulq_1,mulq_2,mulq_3,mulq_4,mulq_5,mulq_6,mulq_7,mulq_8,mulq_9,mulq_10,mulq_11,mulq_12,mulq_13,mulq_14,mulq_15,mulq_16,mulq_17,mulq_18,mulq_19,mulq_20,mulq_21,mulq_22,mulq_23,mulq_24,mulq_25,mulq_26,mulq_27,mulq_28,mulq_29,mulq_30,mulq_31}),
+	.a /* IN */ ({mula[0],mula[1],mula[2],mula[3],mula[4],mula[5],mula[6],mula[7],mula[8],mula[9],mula[10],mula[11],mula[12],mula[13],mula[14],mula[15]}),
+	.b /* IN */ ({mulb[0],mulb[1],mulb[2],mulb[3],mulb[4],mulb[5],mulb[6],mulb[7],mulb[8],mulb[9],mulb[10],mulb[11],mulb[12],mulb[13],mulb[14],mulb[15]}),
 	.sign0 /* IN */ (multsignp),
 	.sign1 /* IN */ (multsignp),
 	.unk0 /* IN */ (one),
@@ -785,193 +743,225 @@ fd1q mulqp_inst_0
 (
 	.q /* OUT */ (mulqp[0]),
 	.d /* IN */ (mulq[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_1
 (
 	.q /* OUT */ (mulqp[1]),
 	.d /* IN */ (mulq[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_2
 (
 	.q /* OUT */ (mulqp[2]),
 	.d /* IN */ (mulq[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_3
 (
 	.q /* OUT */ (mulqp[3]),
 	.d /* IN */ (mulq[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_4
 (
 	.q /* OUT */ (mulqp[4]),
 	.d /* IN */ (mulq[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_5
 (
 	.q /* OUT */ (mulqp[5]),
 	.d /* IN */ (mulq[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_6
 (
 	.q /* OUT */ (mulqp[6]),
 	.d /* IN */ (mulq[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_7
 (
 	.q /* OUT */ (mulqp[7]),
 	.d /* IN */ (mulq[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_8
 (
 	.q /* OUT */ (mulqp[8]),
 	.d /* IN */ (mulq[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_9
 (
 	.q /* OUT */ (mulqp[9]),
 	.d /* IN */ (mulq[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_10
 (
 	.q /* OUT */ (mulqp[10]),
 	.d /* IN */ (mulq[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_11
 (
 	.q /* OUT */ (mulqp[11]),
 	.d /* IN */ (mulq[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_12
 (
 	.q /* OUT */ (mulqp[12]),
 	.d /* IN */ (mulq[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_13
 (
 	.q /* OUT */ (mulqp[13]),
 	.d /* IN */ (mulq[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_14
 (
 	.q /* OUT */ (mulqp[14]),
 	.d /* IN */ (mulq[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_15
 (
 	.q /* OUT */ (mulqp[15]),
 	.d /* IN */ (mulq[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_16
 (
 	.q /* OUT */ (mulqp[16]),
 	.d /* IN */ (mulq[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_17
 (
 	.q /* OUT */ (mulqp[17]),
 	.d /* IN */ (mulq[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_18
 (
 	.q /* OUT */ (mulqp[18]),
 	.d /* IN */ (mulq[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_19
 (
 	.q /* OUT */ (mulqp[19]),
 	.d /* IN */ (mulq[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_20
 (
 	.q /* OUT */ (mulqp[20]),
 	.d /* IN */ (mulq[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_21
 (
 	.q /* OUT */ (mulqp[21]),
 	.d /* IN */ (mulq[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_22
 (
 	.q /* OUT */ (mulqp[22]),
 	.d /* IN */ (mulq[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_23
 (
 	.q /* OUT */ (mulqp[23]),
 	.d /* IN */ (mulq[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_24
 (
 	.q /* OUT */ (mulqp[24]),
 	.d /* IN */ (mulq[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_25
 (
 	.q /* OUT */ (mulqp[25]),
 	.d /* IN */ (mulq[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_26
 (
 	.q /* OUT */ (mulqp[26]),
 	.d /* IN */ (mulq[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_27
 (
 	.q /* OUT */ (mulqp[27]),
 	.d /* IN */ (mulq[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_28
 (
 	.q /* OUT */ (mulqp[28]),
 	.d /* IN */ (mulq[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_29
 (
 	.q /* OUT */ (mulqp[29]),
 	.d /* IN */ (mulq[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_30
 (
 	.q /* OUT */ (mulqp[30]),
 	.d /* IN */ (mulq[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mulqp_inst_31
 (
 	.q /* OUT */ (mulqp[31]),
 	.d /* IN */ (mulq[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (120) - mantissa : join
@@ -2717,7 +2707,8 @@ fdsync32 resreg_inst
 	.q /* OUT */ ({result_b0_obuf,result_b1_obuf,result_b2_obuf,result_b3_obuf,result_b4_obuf,result_b5_obuf,result_b6_obuf,result_b7_obuf,result_b8_obuf,result_b9_obuf,result_b10_obuf,result_b11_obuf,result_b12_obuf,result_b13_obuf,result_b14_obuf,result_b15_obuf,result_b16_obuf,result_b17_obuf,result_b18_obuf,result_b19_obuf,result_b20_obuf,result_b21_obuf,result_b22_obuf,result_b23_obuf,result_b24_obuf,result_b25_obuf,result_b26_obuf,result_b27_obuf,result_b28_obuf,result_b29_obuf,result_b30_obuf,result_b31_obuf}),
 	.d /* IN */ ({resd[0],resd[1],resd[2],resd[3],resd[4],resd[5],resd[6],resd[7],resd[8],resd[9],resd[10],resd[11],resd[12],resd[13],resd[14],resd[15],resd[16],resd[17],resd[18],resd[19],resd[20],resd[21],resd[22],resd[23],resd[24],resd[25],resd[26],resd[27],resd[28],resd[29],resd[30],resd[31]}),
 	.ld /* IN */ (resldt),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (249) - zerodet : nr32
@@ -2776,7 +2767,8 @@ fd2q zeroflag_inst
 	.q /* OUT */ (zero_flag_obuf),
 	.d /* IN */ (zfi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (260) - cfisel0 : aor1
@@ -2803,7 +2795,8 @@ fd2q carryflag_inst
 	.q /* OUT */ (carry_flag_obuf),
 	.d /* IN */ (cfi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (267) - nfi : mx4
@@ -2824,7 +2817,8 @@ fd2q negaflag_inst
 	.q /* OUT */ (nega_flag_obuf),
 	.d /* IN */ (nfi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ARITH.NET (273) - flagrd[0] : ts

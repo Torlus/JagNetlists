@@ -6,7 +6,6 @@ public class Ra8008c extends Ra8008a {
 		return "ra8008c";
 	}
 
-	
 	public Ra8008c() {
 		super();
 	}

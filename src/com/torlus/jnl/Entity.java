@@ -91,7 +91,7 @@ public abstract class Entity {
 					n--;
 					io = ios.get(n);
 				}
-				vlog += verilogExpand("\t" + io.type.verilogPortType() + " [" + start + ":" + current + "] " + io.verilogName() + ";\n");
+				vlog += verilogExpand("\t" + io.type.verilogPortType() + " [" + start + ":" + current + "] " + io.verilogName() + ",\n");
 			}
 		}
 		if (requireSysclk()) {
@@ -194,12 +194,13 @@ public abstract class Entity {
 					}
 					n++;
 				}
-				if (n == inst.entity.ios.size() - 1) {
+				/*if (n == inst.entity.ios.size() - 1) {
 					// Last
 				} else {
 					// Different signal, rewind
 					n--;
-				}
+				}*/
+				n--;
 				vt = vt.substring(0, vt.length() - 1) + "}";
 			} else {
 				vt += wire.verilogWireName();

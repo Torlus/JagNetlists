@@ -3,9 +3,9 @@
 module addrcomp
 (
 	output a1_outside,
-	input [0:15] a1_x;
-	input [0:15] a1_y;
-	input [0:14] a1_win_x;
+	input [0:15] a1_x,
+	input [0:15] a1_y,
+	input [0:14] a1_win_x,
 	input [0:14] a1_win_y
 );
 wire a1xgr;

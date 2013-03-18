@@ -465,7 +465,8 @@ module graphics
 	input dr_15_in,
 	output justify_out,
 	output justify_oe,
-	input justify_in
+	input justify_in,
+	input sys_clk
 );
 
 assign blit_breq_0 = 1'b0;

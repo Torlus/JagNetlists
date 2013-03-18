@@ -9,7 +9,8 @@ module mcount
 	input mwidth_0,
 	input mwidth_1,
 	input mwidth_2,
-	input mwidth_3
+	input mwidth_3,
+	input sys_clk // Generated
 );
 wire cntt_0;
 wire count_0;
@@ -92,25 +93,29 @@ fd1q count_from_0_to_3_inst_0
 (
 	.q /* OUT */ (count_0),
 	.d /* IN */ (cnti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_3_inst_1
 (
 	.q /* OUT */ (count_1),
 	.d /* IN */ (cnti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_3_inst_2
 (
 	.q /* OUT */ (count_2),
 	.d /* IN */ (cnti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q count_from_0_to_3_inst_3
 (
 	.q /* OUT */ (count_3),
 	.d /* IN */ (cnti_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SYSTOLIC.NET (204) - count\[0] : iv

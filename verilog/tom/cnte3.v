@@ -7,7 +7,8 @@ module cnte3
 	output count_2,
 	input cnten,
 	input clk,
-	input reset_n
+	input reset_n,
+	input sys_clk // Generated
 );
 wire sum_1;
 wire carry_1;
@@ -78,7 +79,8 @@ fd2 count0_inst
 	.qn /* OUT */ (count_n_0),
 	.d /* IN */ (cnti_0),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (167) - count1 : fd2qp
@@ -87,7 +89,8 @@ fd2q count1_inst
 	.q /* OUT */ (countt_1),
 	.d /* IN */ (cnti_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (168) - count2 : fd2qp
@@ -96,7 +99,8 @@ fd2q count2_inst
 	.q /* OUT */ (countt_2),
 	.d /* IN */ (cnti_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (169) - icount[0-2] : nivu

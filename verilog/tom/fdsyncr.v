@@ -6,7 +6,8 @@ module fdsyncr
 	input d,
 	input ld,
 	input clk,
-	input rst_n
+	input rst_n,
+	input sys_clk // Generated
 );
 wire qb;
 
@@ -27,7 +28,8 @@ fd2e q_inst
 	.cp /* IN */ (clk),
 	.cd /* IN */ (rst_n),
 	.ti /* IN */ (d),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DUPLO.NET (310) - dummy : dummy

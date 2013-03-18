@@ -92,6 +92,8 @@ public class Signal implements Cloneable {
 		return res;
 	}
 
+	static String verilogKeywords[] = { "wait", "release", "and", "or", "xor" };
+	
 	public String verilogName() {
 		String res = name;
 		res = res.replaceAll("\\\\", "_n");
@@ -102,10 +104,10 @@ public class Signal implements Cloneable {
 			res += "_##SIG##";
 		}
 		// Keywords
-		if (res.equals("wait"))
-			return "_wait";
-		if (res.equals("release"))
-			return "_release";
+		for(String kw : verilogKeywords) {
+			if (res.equals(kw))
+				return "_" + res;
+		}
 		return res;
 	}
 

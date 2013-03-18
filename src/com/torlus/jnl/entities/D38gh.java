@@ -21,6 +21,6 @@ public class D38gh extends Entity {
 		ios.add(new Signal("a1", SignalType.IN));
 		ios.add(new Signal("a2", SignalType.IN));
 		
-		ios.add(new Signal("g", SignalType.IN));
+		ios.add(new Signal("gn", SignalType.IN));
 	}
 }

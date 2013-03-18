@@ -3,8 +3,8 @@
 module srcdgen
 (
 	output locdent,
-	output [0:31] locsrc;
-	input [0:31] program_count;
+	output [0:31] locsrc,
+	input [0:31] program_count,
 	input srcdat_0,
 	input srcdat_1,
 	input srcdat_2,

@@ -43,7 +43,8 @@ module comp_ctrl
 	input zcomp_0,
 	input zcomp_1,
 	input zcomp_2,
-	input zcomp_3
+	input zcomp_3,
+	input sys_clk // Generated
 );
 wire bkgwren_n;
 wire phrase_mode_n;
@@ -151,21 +152,24 @@ fdsync bcompsel_from_0_to_2_inst_0
 	.q /* OUT */ (bcompsel_0),
 	.d /* IN */ (bcompselt_0),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync bcompsel_from_0_to_2_inst_1
 (
 	.q /* OUT */ (bcompsel_1),
 	.d /* IN */ (bcompselt_1),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fdsync bcompsel_from_0_to_2_inst_2
 (
 	.q /* OUT */ (bcompsel_2),
 	.d /* IN */ (bcompselt_2),
 	.ld /* IN */ (step_inner),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (753) - bcompbt : mx8
@@ -190,7 +194,8 @@ fd1q bcompbitp_inst
 (
 	.q /* OUT */ (bcompbitp),
 	.d /* IN */ (bcompbitpt),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (757) - bcompbitp\ : iv

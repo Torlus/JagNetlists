@@ -2,9 +2,9 @@
 
 module gpu_mem
 (
-	output [0:31] gpu_data_out;
-	output [0:31] gpu_data_oe;
-	input [0:31] gpu_data_in;
+	output [0:31] gpu_data_out,
+	output [0:31] gpu_data_oe,
+	input [0:31] gpu_data_in,
 	output big_instr,
 	output big_io,
 	output big_pix,
@@ -19,12 +19,12 @@ module gpu_mem
 	output flagrd,
 	output flagwr,
 	output gateack,
-	output [0:23] gpu_addr;
+	output [0:23] gpu_addr,
 	output gpu_memw,
 	output hidrd,
 	output hidwr,
 	output lock,
-	output [0:31] mem_data;
+	output [0:31] mem_data,
 	output mtxawr,
 	output mtxcwr,
 	output pcrd,
@@ -45,23 +45,24 @@ module gpu_mem
 	output remrd,
 	output statrd,
 	input clk,
-	input [0:12] cpuaddr;
-	input [0:31] cpudata;
-	input [0:23] dataddr;
-	input [0:31] dstd;
+	input [0:12] cpuaddr,
+	input [0:31] cpudata,
+	input [0:23] dataddr,
+	input [0:31] dstd,
 	input dstdgate,
 	input datreq,
 	input datwe,
 	input gatereq,
 	input go,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input ioreq,
 	input iowr,
 	input pabort,
-	input [0:21] progaddr;
+	input [0:21] progaddr,
 	input progreq,
 	input reset_n,
-	input reset_lock
+	input reset_lock,
+	input sys_clk // Generated
 );
 wire [0:31] datdata;
 wire [0:31] datdata_n;
@@ -303,7 +304,8 @@ fd2q ioservt_inst
 	.q /* OUT */ (ioservt),
 	.d /* IN */ (ioreq),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (132) - ioserv : niv
@@ -318,21 +320,24 @@ fd2q ioserva_from_0_to_2_inst_0
 	.q /* OUT */ (ioserva_0),
 	.d /* IN */ (ioreq),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ioserva_from_0_to_2_inst_1
 (
 	.q /* OUT */ (ioserva_1),
 	.d /* IN */ (ioreq),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ioserva_from_0_to_2_inst_2
 (
 	.q /* OUT */ (ioserva_2),
 	.d /* IN */ (ioreq),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (135) - gateserv : fd2q
@@ -341,7 +346,8 @@ fd2q gateserv_inst
 	.q /* OUT */ (gateserv),
 	.d /* IN */ (gatereqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (136) - gateserv\ : iv
@@ -353,7 +359,8 @@ fd2q datservt_inst
 	.q /* OUT */ (datservt),
 	.d /* IN */ (datreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (138) - datservb[0-4] : fd2qp
@@ -362,35 +369,40 @@ fd2q datservb_from_0_to_4_inst_0
 	.q /* OUT */ (datservb_0),
 	.d /* IN */ (datreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q datservb_from_0_to_4_inst_1
 (
 	.q /* OUT */ (datservb_1),
 	.d /* IN */ (datreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q datservb_from_0_to_4_inst_2
 (
 	.q /* OUT */ (datservb_2),
 	.d /* IN */ (datreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q datservb_from_0_to_4_inst_3
 (
 	.q /* OUT */ (datservb_3),
 	.d /* IN */ (datreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q datservb_from_0_to_4_inst_4
 (
 	.q /* OUT */ (datservb_4),
 	.d /* IN */ (datreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (139) - datserv : nivu
@@ -405,7 +417,8 @@ fd2q progservt_inst
 	.q /* OUT */ (progservt),
 	.d /* IN */ (progreqa),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (142) - progserv : nivm
@@ -432,7 +445,8 @@ fd2q xpabort_inst
 	.q /* OUT */ (xpabort),
 	.d /* IN */ (xpabortt_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (163) - xpabort\ : iv
@@ -456,7 +470,8 @@ fd2q xprog_inst
 	.q /* OUT */ (xprog),
 	.d /* IN */ (xprogi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (181) - xprog\ : iv
@@ -494,7 +509,8 @@ fd1q gpu_memwt_inst
 (
 	.q /* OUT */ (gpu_memwt),
 	.d /* IN */ (gpu_memwi),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (223) - gpu_memw\ : iv
@@ -514,7 +530,8 @@ fd1e datdata_inst_0
 	.d /* IN */ (dstd[0]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[0]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_1
 (
@@ -523,7 +540,8 @@ fd1e datdata_inst_1
 	.d /* IN */ (dstd[1]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[1]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_2
 (
@@ -532,7 +550,8 @@ fd1e datdata_inst_2
 	.d /* IN */ (dstd[2]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[2]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_3
 (
@@ -541,7 +560,8 @@ fd1e datdata_inst_3
 	.d /* IN */ (dstd[3]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[3]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_4
 (
@@ -550,7 +570,8 @@ fd1e datdata_inst_4
 	.d /* IN */ (dstd[4]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[4]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_5
 (
@@ -559,7 +580,8 @@ fd1e datdata_inst_5
 	.d /* IN */ (dstd[5]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[5]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_6
 (
@@ -568,7 +590,8 @@ fd1e datdata_inst_6
 	.d /* IN */ (dstd[6]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[6]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_7
 (
@@ -577,7 +600,8 @@ fd1e datdata_inst_7
 	.d /* IN */ (dstd[7]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[7]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_8
 (
@@ -586,7 +610,8 @@ fd1e datdata_inst_8
 	.d /* IN */ (dstd[8]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[8]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_9
 (
@@ -595,7 +620,8 @@ fd1e datdata_inst_9
 	.d /* IN */ (dstd[9]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[9]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_10
 (
@@ -604,7 +630,8 @@ fd1e datdata_inst_10
 	.d /* IN */ (dstd[10]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[10]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_11
 (
@@ -613,7 +640,8 @@ fd1e datdata_inst_11
 	.d /* IN */ (dstd[11]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[11]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_12
 (
@@ -622,7 +650,8 @@ fd1e datdata_inst_12
 	.d /* IN */ (dstd[12]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[12]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_13
 (
@@ -631,7 +660,8 @@ fd1e datdata_inst_13
 	.d /* IN */ (dstd[13]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[13]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_14
 (
@@ -640,7 +670,8 @@ fd1e datdata_inst_14
 	.d /* IN */ (dstd[14]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[14]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_15
 (
@@ -649,7 +680,8 @@ fd1e datdata_inst_15
 	.d /* IN */ (dstd[15]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[15]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_16
 (
@@ -658,7 +690,8 @@ fd1e datdata_inst_16
 	.d /* IN */ (dstd[16]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[16]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_17
 (
@@ -667,7 +700,8 @@ fd1e datdata_inst_17
 	.d /* IN */ (dstd[17]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[17]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_18
 (
@@ -676,7 +710,8 @@ fd1e datdata_inst_18
 	.d /* IN */ (dstd[18]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[18]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_19
 (
@@ -685,7 +720,8 @@ fd1e datdata_inst_19
 	.d /* IN */ (dstd[19]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[19]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_20
 (
@@ -694,7 +730,8 @@ fd1e datdata_inst_20
 	.d /* IN */ (dstd[20]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[20]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_21
 (
@@ -703,7 +740,8 @@ fd1e datdata_inst_21
 	.d /* IN */ (dstd[21]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[21]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_22
 (
@@ -712,7 +750,8 @@ fd1e datdata_inst_22
 	.d /* IN */ (dstd[22]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[22]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_23
 (
@@ -721,7 +760,8 @@ fd1e datdata_inst_23
 	.d /* IN */ (dstd[23]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[23]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_24
 (
@@ -730,7 +770,8 @@ fd1e datdata_inst_24
 	.d /* IN */ (dstd[24]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[24]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_25
 (
@@ -739,7 +780,8 @@ fd1e datdata_inst_25
 	.d /* IN */ (dstd[25]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[25]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_26
 (
@@ -748,7 +790,8 @@ fd1e datdata_inst_26
 	.d /* IN */ (dstd[26]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[26]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_27
 (
@@ -757,7 +800,8 @@ fd1e datdata_inst_27
 	.d /* IN */ (dstd[27]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[27]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_28
 (
@@ -766,7 +810,8 @@ fd1e datdata_inst_28
 	.d /* IN */ (dstd[28]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[28]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_29
 (
@@ -775,7 +820,8 @@ fd1e datdata_inst_29
 	.d /* IN */ (dstd[29]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[29]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_30
 (
@@ -784,7 +830,8 @@ fd1e datdata_inst_30
 	.d /* IN */ (dstd[30]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[30]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e datdata_inst_31
 (
@@ -793,7 +840,8 @@ fd1e datdata_inst_31
 	.d /* IN */ (dstd[31]),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (datdata[31]),
-	.te /* IN */ (dstdld_n)
+	.te /* IN */ (dstdld_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (241) - dummy : dummy
@@ -1101,193 +1149,225 @@ fd1q mem_data_inst_0
 (
 	.q /* OUT */ (mem_data[0]),
 	.d /* IN */ (gpu_din[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_1
 (
 	.q /* OUT */ (mem_data[1]),
 	.d /* IN */ (gpu_din[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_2
 (
 	.q /* OUT */ (mem_data[2]),
 	.d /* IN */ (gpu_din[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_3
 (
 	.q /* OUT */ (mem_data[3]),
 	.d /* IN */ (gpu_din[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_4
 (
 	.q /* OUT */ (mem_data[4]),
 	.d /* IN */ (gpu_din[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_5
 (
 	.q /* OUT */ (mem_data[5]),
 	.d /* IN */ (gpu_din[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_6
 (
 	.q /* OUT */ (mem_data[6]),
 	.d /* IN */ (gpu_din[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_7
 (
 	.q /* OUT */ (mem_data[7]),
 	.d /* IN */ (gpu_din[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_8
 (
 	.q /* OUT */ (mem_data[8]),
 	.d /* IN */ (gpu_din[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_9
 (
 	.q /* OUT */ (mem_data[9]),
 	.d /* IN */ (gpu_din[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_10
 (
 	.q /* OUT */ (mem_data[10]),
 	.d /* IN */ (gpu_din[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_11
 (
 	.q /* OUT */ (mem_data[11]),
 	.d /* IN */ (gpu_din[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_12
 (
 	.q /* OUT */ (mem_data[12]),
 	.d /* IN */ (gpu_din[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_13
 (
 	.q /* OUT */ (mem_data[13]),
 	.d /* IN */ (gpu_din[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_14
 (
 	.q /* OUT */ (mem_data[14]),
 	.d /* IN */ (gpu_din[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_15
 (
 	.q /* OUT */ (mem_data[15]),
 	.d /* IN */ (gpu_din[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_16
 (
 	.q /* OUT */ (mem_data[16]),
 	.d /* IN */ (gpu_din[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_17
 (
 	.q /* OUT */ (mem_data[17]),
 	.d /* IN */ (gpu_din[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_18
 (
 	.q /* OUT */ (mem_data[18]),
 	.d /* IN */ (gpu_din[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_19
 (
 	.q /* OUT */ (mem_data[19]),
 	.d /* IN */ (gpu_din[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_20
 (
 	.q /* OUT */ (mem_data[20]),
 	.d /* IN */ (gpu_din[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_21
 (
 	.q /* OUT */ (mem_data[21]),
 	.d /* IN */ (gpu_din[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_22
 (
 	.q /* OUT */ (mem_data[22]),
 	.d /* IN */ (gpu_din[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_23
 (
 	.q /* OUT */ (mem_data[23]),
 	.d /* IN */ (gpu_din[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_24
 (
 	.q /* OUT */ (mem_data[24]),
 	.d /* IN */ (gpu_din[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_25
 (
 	.q /* OUT */ (mem_data[25]),
 	.d /* IN */ (gpu_din[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_26
 (
 	.q /* OUT */ (mem_data[26]),
 	.d /* IN */ (gpu_din[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_27
 (
 	.q /* OUT */ (mem_data[27]),
 	.d /* IN */ (gpu_din[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_28
 (
 	.q /* OUT */ (mem_data[28]),
 	.d /* IN */ (gpu_din[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_29
 (
 	.q /* OUT */ (mem_data[29]),
 	.d /* IN */ (gpu_din[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_30
 (
 	.q /* OUT */ (mem_data[30]),
 	.d /* IN */ (gpu_din[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q mem_data_inst_31
 (
 	.q /* OUT */ (mem_data[31]),
 	.d /* IN */ (gpu_din[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (265) - gpu_addr[0-1] : an2
@@ -1814,7 +1894,8 @@ fd4q big_iot_inst
 	.q /* OUT */ (big_iot),
 	.d /* IN */ (big_ioi),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (417) - big_io : nivu
@@ -1835,7 +1916,8 @@ fd4q big_pixt_inst
 	.q /* OUT */ (big_pixt),
 	.d /* IN */ (big_pixi),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (421) - big_pix : nivm
@@ -1848,7 +1930,8 @@ fdsyncr big_instr_inst
 	.d /* IN */ (gpu_din[2]),
 	.ld /* IN */ (bigwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GPU_MEM.NET (429) - locki : mx4
@@ -1868,6 +1951,7 @@ fd1q lock_inst
 (
 	.q /* OUT */ (lock_obuf),
 	.d /* IN */ (locki),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

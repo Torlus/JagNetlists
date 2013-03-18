@@ -10,6 +10,11 @@ public class Ra8008a extends Entity {
 		return "ra8008a";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Ra8008a() {
 		for (int i = 0; i < 8; i++) {
 			// Signal s = new Signal("z", SignalType.BUS);

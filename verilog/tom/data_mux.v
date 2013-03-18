@@ -194,15 +194,15 @@ module data_mux
 	output wdata_63_out,
 	output wdata_63_oe,
 	input wdata_63_in,
-	input [0:15] addq_0;
-	input [0:15] addq_1;
-	input [0:15] addq_2;
-	input [0:15] addq_3;
+	input [0:15] addq_0,
+	input [0:15] addq_1,
+	input [0:15] addq_2,
+	input [0:15] addq_3,
 	input big_pix,
-	input [0:31] dstdlo;
-	input [0:31] dstdhi;
-	input [0:31] dstzlo;
-	input [0:31] dstzhi;
+	input [0:31] dstdlo,
+	input [0:31] dstdhi,
+	input [0:31] dstzlo,
+	input [0:31] dstzhi,
 	input data_sel_0,
 	input data_sel_1,
 	input data_ena,
@@ -226,12 +226,12 @@ module data_mux
 	input dbinh_n_5,
 	input dbinh_n_6,
 	input dbinh_n_7,
-	input [0:31] lfu_0;
-	input [0:31] lfu_1;
-	input [0:31] patd_0;
-	input [0:31] patd_1;
+	input [0:31] lfu_0,
+	input [0:31] lfu_1,
+	input [0:31] patd_0,
+	input [0:31] patd_1,
 	input phrase_mode,
-	input [0:31] srczlo;
+	input [0:31] srczlo,
 	input [0:31] srczhi
 );
 wire [0:31] addql_0;

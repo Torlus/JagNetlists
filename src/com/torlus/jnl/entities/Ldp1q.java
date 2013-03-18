@@ -10,6 +10,11 @@ public class Ldp1q extends Entity {
 		return "ldp1q";
 	}
 
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
 	public Ldp1q() {
 		// 260c_pri_e.pdf - CLDP1QXL
 		ios.add(new Signal("q", SignalType.OUT));

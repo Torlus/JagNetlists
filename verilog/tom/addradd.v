@@ -2,19 +2,20 @@
 
 module addradd
 (
-	output [0:15] addq_x;
-	output [0:15] addq_y;
+	output [0:15] addq_x,
+	output [0:15] addq_y,
 	input a1fracld,
-	input [0:15] adda_x;
-	input [0:15] adda_y;
-	input [0:15] addb_x;
-	input [0:15] addb_y;
+	input [0:15] adda_x,
+	input [0:15] adda_y,
+	input [0:15] addb_x,
+	input [0:15] addb_y,
 	input clk_0,
 	input modx_0,
 	input modx_1,
 	input modx_2,
 	input suba_x,
-	input suba_y
+	input suba_y,
+	input sys_clk // Generated
 );
 wire zero;
 wire one;
@@ -209,7 +210,8 @@ fd1q cxt1_inst
 (
 	.q /* OUT */ (cxt_1),
 	.d /* IN */ (cxt_0),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRADD.NET (69) - ci_x : en
@@ -226,7 +228,8 @@ fd1q cyt1_inst
 (
 	.q /* OUT */ (cyt_1),
 	.d /* IN */ (cyt_0),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDRADD.NET (74) - ci_y : en

@@ -15,7 +15,8 @@ module bank
 	input a_9,
 	input a_10,
 	input newrow,
-	input resl
+	input resl,
+	input sys_clk // Generated
 );
 wire ra_0;
 wire ra_1;
@@ -49,67 +50,78 @@ ldp1q ra_from_0_to_10_inst_0
 (
 	.q /* OUT */ (ra_0),
 	.d /* IN */ (a_0),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_1
 (
 	.q /* OUT */ (ra_1),
 	.d /* IN */ (a_1),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_2
 (
 	.q /* OUT */ (ra_2),
 	.d /* IN */ (a_2),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_3
 (
 	.q /* OUT */ (ra_3),
 	.d /* IN */ (a_3),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_4
 (
 	.q /* OUT */ (ra_4),
 	.d /* IN */ (a_4),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_5
 (
 	.q /* OUT */ (ra_5),
 	.d /* IN */ (a_5),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_6
 (
 	.q /* OUT */ (ra_6),
 	.d /* IN */ (a_6),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_7
 (
 	.q /* OUT */ (ra_7),
 	.d /* IN */ (a_7),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_8
 (
 	.q /* OUT */ (ra_8),
 	.d /* IN */ (a_8),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_9
 (
 	.q /* OUT */ (ra_9),
 	.d /* IN */ (a_9),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 ldp1q ra_from_0_to_10_inst_10
 (
 	.q /* OUT */ (ra_10),
 	.d /* IN */ (a_10),
-	.g /* IN */ (newrow)
+	.g /* IN */ (newrow),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (487) - newrowl : iv
@@ -120,7 +132,8 @@ lsra valid_inst
 (
 	.q /* OUT */ (valid),
 	.rn /* IN */ (resl),
-	.sn /* IN */ (newrowl)
+	.sn /* IN */ (newrowl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ABUS.NET (492) - m[0-10] : en

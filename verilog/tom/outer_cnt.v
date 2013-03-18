@@ -5,8 +5,9 @@ module outer_cnt
 	output outer0,
 	input clk,
 	input countld,
-	input [0:31] gpu_din;
-	input ocntena
+	input [0:31] gpu_din,
+	input ocntena,
+	input sys_clk // Generated
 );
 wire [0:15] gpu_d_hi16;
 wire [0:15] ocount;
@@ -38,7 +39,8 @@ dcount16 counto_inst
 	.data /* IN */ ({gpu_d_hi16[0],gpu_d_hi16[1],gpu_d_hi16[2],gpu_d_hi16[3],gpu_d_hi16[4],gpu_d_hi16[5],gpu_d_hi16[6],gpu_d_hi16[7],gpu_d_hi16[8],gpu_d_hi16[9],gpu_d_hi16[10],gpu_d_hi16[11],gpu_d_hi16[12],gpu_d_hi16[13],gpu_d_hi16[14],gpu_d_hi16[15]}),
 	.load /* IN */ (countld),
 	.ena /* IN */ (ocntena),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OUTER.NET (193) - out0t0 : nr8

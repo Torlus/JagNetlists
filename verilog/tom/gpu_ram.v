@@ -2,9 +2,9 @@
 
 module gpu_ram
 (
-	output [0:31] gpu_data_out;
-	output [0:31] gpu_data_oe;
-	input [0:31] gpu_data_in;
+	output [0:31] gpu_data_out,
+	output [0:31] gpu_data_oe,
+	input [0:31] gpu_data_in,
 	input clk,
 	input gpu_memw,
 	input ram_addr_2,
@@ -17,7 +17,8 @@ module gpu_ram
 	input ram_addr_9,
 	input ram_addr_10,
 	input ram_addr_11,
-	input ramen
+	input ramen,
+	input sys_clk // Generated
 );
 wire [0:9] rama;
 wire ramad_0;
@@ -108,6 +109,7 @@ gpuram program_inst
 	.clk /* IN */ (clk),
 	.rama /* IN */ ({rama[0],rama[1],rama[2],rama[3],rama[4],rama[5],rama[6],rama[7],rama[8],rama[9]}),
 	.ramen /* IN */ (ramen),
-	.ramwe /* IN */ (ramwe)
+	.ramwe /* IN */ (ramwe),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

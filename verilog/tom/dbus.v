@@ -307,7 +307,8 @@ module dbus
 	output d_60,
 	output d_61,
 	output d_62,
-	output d_63
+	output d_63,
+	input sys_clk // Generated
 );
 wire [0:15] d;
 wire [0:2] dmuxu;
@@ -1295,56 +1296,64 @@ stlatch d5_from_0_to_7_inst_0
 	.d1 /* OUT */ (d5_0),
 	.d /* IN */ (d3_0),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_1
 (
 	.d1 /* OUT */ (d5_1),
 	.d /* IN */ (d3_1),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_2
 (
 	.d1 /* OUT */ (d5_2),
 	.d /* IN */ (d3_2),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_3
 (
 	.d1 /* OUT */ (d5_3),
 	.d /* IN */ (d3_3),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_4
 (
 	.d1 /* OUT */ (d5_4),
 	.d /* IN */ (d3_4),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_5
 (
 	.d1 /* OUT */ (d5_5),
 	.d /* IN */ (d3_5),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_6
 (
 	.d1 /* OUT */ (d5_6),
 	.d /* IN */ (d3_6),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_0_to_7_inst_7
 (
 	.d1 /* OUT */ (d5_7),
 	.d /* IN */ (d3_7),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_0)
+	.en /* IN */ (dinlatch_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (64) - d5[8-15] : stlatch
@@ -1353,56 +1362,64 @@ stlatch d5_from_8_to_15_inst_0
 	.d1 /* OUT */ (d5_8),
 	.d /* IN */ (d4_8),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_1
 (
 	.d1 /* OUT */ (d5_9),
 	.d /* IN */ (d4_9),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_2
 (
 	.d1 /* OUT */ (d5_10),
 	.d /* IN */ (d4_10),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_3
 (
 	.d1 /* OUT */ (d5_11),
 	.d /* IN */ (d4_11),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_4
 (
 	.d1 /* OUT */ (d5_12),
 	.d /* IN */ (d4_12),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_5
 (
 	.d1 /* OUT */ (d5_13),
 	.d /* IN */ (d4_13),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_6
 (
 	.d1 /* OUT */ (d5_14),
 	.d /* IN */ (d4_14),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_8_to_15_inst_7
 (
 	.d1 /* OUT */ (d5_15),
 	.d /* IN */ (d4_15),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_1)
+	.en /* IN */ (dinlatch_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (65) - d5[16-23] : stlatch
@@ -1411,56 +1428,64 @@ stlatch d5_from_16_to_23_inst_0
 	.d1 /* OUT */ (d5_16),
 	.d /* IN */ (d4_16),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_1
 (
 	.d1 /* OUT */ (d5_17),
 	.d /* IN */ (d4_17),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_2
 (
 	.d1 /* OUT */ (d5_18),
 	.d /* IN */ (d4_18),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_3
 (
 	.d1 /* OUT */ (d5_19),
 	.d /* IN */ (d4_19),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_4
 (
 	.d1 /* OUT */ (d5_20),
 	.d /* IN */ (d4_20),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_5
 (
 	.d1 /* OUT */ (d5_21),
 	.d /* IN */ (d4_21),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_6
 (
 	.d1 /* OUT */ (d5_22),
 	.d /* IN */ (d4_22),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_16_to_23_inst_7
 (
 	.d1 /* OUT */ (d5_23),
 	.d /* IN */ (d4_23),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_2)
+	.en /* IN */ (dinlatch_2),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (66) - d5[24-31] : stlatch
@@ -1469,56 +1494,64 @@ stlatch d5_from_24_to_31_inst_0
 	.d1 /* OUT */ (d5_24),
 	.d /* IN */ (d4_24),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_1
 (
 	.d1 /* OUT */ (d5_25),
 	.d /* IN */ (d4_25),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_2
 (
 	.d1 /* OUT */ (d5_26),
 	.d /* IN */ (d4_26),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_3
 (
 	.d1 /* OUT */ (d5_27),
 	.d /* IN */ (d4_27),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_4
 (
 	.d1 /* OUT */ (d5_28),
 	.d /* IN */ (d4_28),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_5
 (
 	.d1 /* OUT */ (d5_29),
 	.d /* IN */ (d4_29),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_6
 (
 	.d1 /* OUT */ (d5_30),
 	.d /* IN */ (d4_30),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_24_to_31_inst_7
 (
 	.d1 /* OUT */ (d5_31),
 	.d /* IN */ (d4_31),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_3)
+	.en /* IN */ (dinlatch_3),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (67) - d5[32-39] : stlatch
@@ -1527,56 +1560,64 @@ stlatch d5_from_32_to_39_inst_0
 	.d1 /* OUT */ (d5_32_obuf),
 	.d /* IN */ (d4_32),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_1
 (
 	.d1 /* OUT */ (d5_33_obuf),
 	.d /* IN */ (d4_33),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_2
 (
 	.d1 /* OUT */ (d5_34_obuf),
 	.d /* IN */ (d4_34),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_3
 (
 	.d1 /* OUT */ (d5_35_obuf),
 	.d /* IN */ (d4_35),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_4
 (
 	.d1 /* OUT */ (d5_36_obuf),
 	.d /* IN */ (d4_36),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_5
 (
 	.d1 /* OUT */ (d5_37_obuf),
 	.d /* IN */ (d4_37),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_6
 (
 	.d1 /* OUT */ (d5_38_obuf),
 	.d /* IN */ (d4_38),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_32_to_39_inst_7
 (
 	.d1 /* OUT */ (d5_39_obuf),
 	.d /* IN */ (d4_39),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_4)
+	.en /* IN */ (dinlatch_4),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (68) - d5[40-47] : stlatch
@@ -1585,56 +1626,64 @@ stlatch d5_from_40_to_47_inst_0
 	.d1 /* OUT */ (d5_40_obuf),
 	.d /* IN */ (d4_40),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_1
 (
 	.d1 /* OUT */ (d5_41_obuf),
 	.d /* IN */ (d4_41),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_2
 (
 	.d1 /* OUT */ (d5_42_obuf),
 	.d /* IN */ (d4_42),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_3
 (
 	.d1 /* OUT */ (d5_43_obuf),
 	.d /* IN */ (d4_43),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_4
 (
 	.d1 /* OUT */ (d5_44_obuf),
 	.d /* IN */ (d4_44),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_5
 (
 	.d1 /* OUT */ (d5_45_obuf),
 	.d /* IN */ (d4_45),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_6
 (
 	.d1 /* OUT */ (d5_46_obuf),
 	.d /* IN */ (d4_46),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_40_to_47_inst_7
 (
 	.d1 /* OUT */ (d5_47_obuf),
 	.d /* IN */ (d4_47),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_5)
+	.en /* IN */ (dinlatch_5),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (69) - d5[48-55] : stlatch
@@ -1643,56 +1692,64 @@ stlatch d5_from_48_to_55_inst_0
 	.d1 /* OUT */ (d5_48_obuf),
 	.d /* IN */ (d4_48),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_1
 (
 	.d1 /* OUT */ (d5_49_obuf),
 	.d /* IN */ (d4_49),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_2
 (
 	.d1 /* OUT */ (d5_50_obuf),
 	.d /* IN */ (d4_50),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_3
 (
 	.d1 /* OUT */ (d5_51_obuf),
 	.d /* IN */ (d4_51),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_4
 (
 	.d1 /* OUT */ (d5_52_obuf),
 	.d /* IN */ (d4_52),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_5
 (
 	.d1 /* OUT */ (d5_53_obuf),
 	.d /* IN */ (d4_53),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_6
 (
 	.d1 /* OUT */ (d5_54_obuf),
 	.d /* IN */ (d4_54),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_48_to_55_inst_7
 (
 	.d1 /* OUT */ (d5_55_obuf),
 	.d /* IN */ (d4_55),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_6)
+	.en /* IN */ (dinlatch_6),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (70) - d5[56-63] : stlatch
@@ -1701,56 +1758,64 @@ stlatch d5_from_56_to_63_inst_0
 	.d1 /* OUT */ (d5_56_obuf),
 	.d /* IN */ (d4_56),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_1
 (
 	.d1 /* OUT */ (d5_57_obuf),
 	.d /* IN */ (d4_57),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_2
 (
 	.d1 /* OUT */ (d5_58_obuf),
 	.d /* IN */ (d4_58),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_3
 (
 	.d1 /* OUT */ (d5_59_obuf),
 	.d /* IN */ (d4_59),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_4
 (
 	.d1 /* OUT */ (d5_60_obuf),
 	.d /* IN */ (d4_60),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_5
 (
 	.d1 /* OUT */ (d5_61_obuf),
 	.d /* IN */ (d4_61),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_6
 (
 	.d1 /* OUT */ (d5_62_obuf),
 	.d /* IN */ (d4_62),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 stlatch d5_from_56_to_63_inst_7
 (
 	.d1 /* OUT */ (d5_63_obuf),
 	.d /* IN */ (d4_63),
 	.clk /* IN */ (clk),
-	.en /* IN */ (dinlatch_7)
+	.en /* IN */ (dinlatch_7),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DBUS.NET (74) - dout : down

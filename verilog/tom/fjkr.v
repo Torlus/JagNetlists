@@ -7,7 +7,8 @@ module fjkr
 	input j,
 	input k,
 	input clk,
-	input r
+	input r,
+	input sys_clk // Generated
 );
 wire a;
 wire b;
@@ -40,6 +41,7 @@ fd1 q_inst
 	.q /* OUT */ (q),
 	.qn /* OUT */ (ql_obuf),
 	.d /* IN */ (e),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

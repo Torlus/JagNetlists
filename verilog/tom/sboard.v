@@ -2,16 +2,16 @@
 
 module sboard
 (
-	output [0:5] dsta;
+	output [0:5] dsta,
 	output sdatreq,
 	output dstrwen_n,
-	output [0:31] dstwd;
+	output [0:31] dstwd,
 	output resaddrldi,
 	output sbwait,
-	output [0:5] srca;
+	output [0:5] srca,
 	output srcaddrldi,
 	output srcrwen_n,
-	output [0:31] srcwd;
+	output [0:31] srcwd,
 	input clk,
 	input datack,
 	input datwe,
@@ -20,8 +20,8 @@ module sboard
 	input div_activei,
 	input div_instr,
 	input div_start,
-	input [0:5] dstanwi;
-	input [0:5] dstat;
+	input [0:5] dstanwi,
+	input [0:5] dstat,
 	input dstrrd,
 	input dstrrdi,
 	input dstrwr,
@@ -31,23 +31,24 @@ module sboard
 	input flag_depend,
 	input flagld,
 	input gate_active,
-	input [0:31] immdata;
+	input [0:31] immdata,
 	input immld,
 	input immwri,
 	input insexei,
-	input [0:31] load_data;
-	input [0:31] mem_data;
+	input [0:31] load_data,
+	input [0:31] mem_data,
 	input memrw,
 	input mtx_dover,
 	input precomp,
-	input [0:31] quotient;
+	input [0:31] quotient,
 	input reset_n,
 	input reswr,
-	input [0:31] result;
-	input [0:5] srcanwi;
-	input [0:31] srcdp;
+	input [0:31] result,
+	input [0:5] srcanwi,
+	input [0:31] srcdp,
 	input srcrrd,
-	input xld_ready
+	input xld_ready,
+	input sys_clk // Generated
 );
 wire [0:5] alu_wbaddr;
 wire [0:5] div_wbaddr;
@@ -299,7 +300,8 @@ fd1q insexe_inst
 (
 	.q /* OUT */ (insexe),
 	.d /* IN */ (insexei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (103) - dstanw : fd1q
@@ -307,37 +309,43 @@ fd1q dstanw_inst_0
 (
 	.q /* OUT */ (dstanw[0]),
 	.d /* IN */ (dstanwi[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstanw_inst_1
 (
 	.q /* OUT */ (dstanw[1]),
 	.d /* IN */ (dstanwi[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstanw_inst_2
 (
 	.q /* OUT */ (dstanw[2]),
 	.d /* IN */ (dstanwi[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstanw_inst_3
 (
 	.q /* OUT */ (dstanw[3]),
 	.d /* IN */ (dstanwi[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstanw_inst_4
 (
 	.q /* OUT */ (dstanw[4]),
 	.d /* IN */ (dstanwi[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstanw_inst_5
 (
 	.q /* OUT */ (dstanw[5]),
 	.d /* IN */ (dstanwi[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (104) - srcanw : fd1q
@@ -345,37 +353,43 @@ fd1q srcanw_inst_0
 (
 	.q /* OUT */ (srcanw[0]),
 	.d /* IN */ (srcanwi[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcanw_inst_1
 (
 	.q /* OUT */ (srcanw[1]),
 	.d /* IN */ (srcanwi[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcanw_inst_2
 (
 	.q /* OUT */ (srcanw[2]),
 	.d /* IN */ (srcanwi[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcanw_inst_3
 (
 	.q /* OUT */ (srcanw[3]),
 	.d /* IN */ (srcanwi[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcanw_inst_4
 (
 	.q /* OUT */ (srcanw[4]),
 	.d /* IN */ (srcanwi[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcanw_inst_5
 (
 	.q /* OUT */ (srcanw[5]),
 	.d /* IN */ (srcanwi[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (108) - dstren : or2
@@ -409,42 +423,48 @@ fd2q alu_wbaddr_inst_0
 	.q /* OUT */ (alu_wbaddr[0]),
 	.d /* IN */ (dstanw[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q alu_wbaddr_inst_1
 (
 	.q /* OUT */ (alu_wbaddr[1]),
 	.d /* IN */ (dstanw[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q alu_wbaddr_inst_2
 (
 	.q /* OUT */ (alu_wbaddr[2]),
 	.d /* IN */ (dstanw[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q alu_wbaddr_inst_3
 (
 	.q /* OUT */ (alu_wbaddr[3]),
 	.d /* IN */ (dstanw[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q alu_wbaddr_inst_4
 (
 	.q /* OUT */ (alu_wbaddr[4]),
 	.d /* IN */ (dstanw[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q alu_wbaddr_inst_5
 (
 	.q /* OUT */ (alu_wbaddr[5]),
 	.d /* IN */ (dstanw[5]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (140) - pendwr : an2
@@ -456,7 +476,8 @@ fd2q alu_wback_inst
 	.q /* OUT */ (alu_wback),
 	.d /* IN */ (pendwr),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (142) - alu_wback\ : iv
@@ -507,7 +528,8 @@ fdsync6 imm_wbaddr_inst
 	.q /* OUT */ ({imm_wbaddr[0],imm_wbaddr[1],imm_wbaddr[2],imm_wbaddr[3],imm_wbaddr[4],imm_wbaddr[5]}),
 	.d /* IN */ ({dstanw[0],dstanw[1],dstanw[2],dstanw[3],dstanw[4],dstanw[5]}),
 	.ld /* IN */ (immasel),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (174) - imm_wback : join
@@ -569,42 +591,48 @@ fd2q ild_wbaddrl_inst_0
 	.q /* OUT */ (ild_wbaddrl[0]),
 	.d /* IN */ (ild_wbaddr[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ild_wbaddrl_inst_1
 (
 	.q /* OUT */ (ild_wbaddrl[1]),
 	.d /* IN */ (ild_wbaddr[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ild_wbaddrl_inst_2
 (
 	.q /* OUT */ (ild_wbaddrl[2]),
 	.d /* IN */ (ild_wbaddr[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ild_wbaddrl_inst_3
 (
 	.q /* OUT */ (ild_wbaddrl[3]),
 	.d /* IN */ (ild_wbaddr[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ild_wbaddrl_inst_4
 (
 	.q /* OUT */ (ild_wbaddrl[4]),
 	.d /* IN */ (ild_wbaddr[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ild_wbaddrl_inst_5
 (
 	.q /* OUT */ (ild_wbaddrl[5]),
 	.d /* IN */ (ild_wbaddr[5]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (198) - ildwbset\ : nd4
@@ -629,7 +657,8 @@ fd2 ild_wbackd_inst
 	.qn /* OUT */ (ild_wbackd_n),
 	.d /* IN */ (ild_wbacki),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (206) - ild_wback : nd2
@@ -643,7 +672,8 @@ fd1q ilddselt_n_inst
 (
 	.q /* OUT */ (ilddselt_n),
 	.d /* IN */ (ildwbset_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (210) - ilddsel\ : nivu
@@ -880,193 +910,225 @@ fd1q ild_datad_inst_0
 (
 	.q /* OUT */ (ild_datad[0]),
 	.d /* IN */ (ild_data[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_1
 (
 	.q /* OUT */ (ild_datad[1]),
 	.d /* IN */ (ild_data[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_2
 (
 	.q /* OUT */ (ild_datad[2]),
 	.d /* IN */ (ild_data[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_3
 (
 	.q /* OUT */ (ild_datad[3]),
 	.d /* IN */ (ild_data[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_4
 (
 	.q /* OUT */ (ild_datad[4]),
 	.d /* IN */ (ild_data[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_5
 (
 	.q /* OUT */ (ild_datad[5]),
 	.d /* IN */ (ild_data[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_6
 (
 	.q /* OUT */ (ild_datad[6]),
 	.d /* IN */ (ild_data[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_7
 (
 	.q /* OUT */ (ild_datad[7]),
 	.d /* IN */ (ild_data[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_8
 (
 	.q /* OUT */ (ild_datad[8]),
 	.d /* IN */ (ild_data[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_9
 (
 	.q /* OUT */ (ild_datad[9]),
 	.d /* IN */ (ild_data[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_10
 (
 	.q /* OUT */ (ild_datad[10]),
 	.d /* IN */ (ild_data[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_11
 (
 	.q /* OUT */ (ild_datad[11]),
 	.d /* IN */ (ild_data[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_12
 (
 	.q /* OUT */ (ild_datad[12]),
 	.d /* IN */ (ild_data[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_13
 (
 	.q /* OUT */ (ild_datad[13]),
 	.d /* IN */ (ild_data[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_14
 (
 	.q /* OUT */ (ild_datad[14]),
 	.d /* IN */ (ild_data[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_15
 (
 	.q /* OUT */ (ild_datad[15]),
 	.d /* IN */ (ild_data[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_16
 (
 	.q /* OUT */ (ild_datad[16]),
 	.d /* IN */ (ild_data[16]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_17
 (
 	.q /* OUT */ (ild_datad[17]),
 	.d /* IN */ (ild_data[17]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_18
 (
 	.q /* OUT */ (ild_datad[18]),
 	.d /* IN */ (ild_data[18]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_19
 (
 	.q /* OUT */ (ild_datad[19]),
 	.d /* IN */ (ild_data[19]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_20
 (
 	.q /* OUT */ (ild_datad[20]),
 	.d /* IN */ (ild_data[20]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_21
 (
 	.q /* OUT */ (ild_datad[21]),
 	.d /* IN */ (ild_data[21]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_22
 (
 	.q /* OUT */ (ild_datad[22]),
 	.d /* IN */ (ild_data[22]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_23
 (
 	.q /* OUT */ (ild_datad[23]),
 	.d /* IN */ (ild_data[23]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_24
 (
 	.q /* OUT */ (ild_datad[24]),
 	.d /* IN */ (ild_data[24]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_25
 (
 	.q /* OUT */ (ild_datad[25]),
 	.d /* IN */ (ild_data[25]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_26
 (
 	.q /* OUT */ (ild_datad[26]),
 	.d /* IN */ (ild_data[26]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_27
 (
 	.q /* OUT */ (ild_datad[27]),
 	.d /* IN */ (ild_data[27]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_28
 (
 	.q /* OUT */ (ild_datad[28]),
 	.d /* IN */ (ild_data[28]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_29
 (
 	.q /* OUT */ (ild_datad[29]),
 	.d /* IN */ (ild_data[29]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_30
 (
 	.q /* OUT */ (ild_datad[30]),
 	.d /* IN */ (ild_data[30]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q ild_datad_inst_31
 (
 	.q /* OUT */ (ild_datad[31]),
 	.d /* IN */ (ild_data[31]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (216) - idlet[0] : nd2
@@ -1087,7 +1149,8 @@ fd4q idle_inst
 	.q /* OUT */ (idle),
 	.d /* IN */ (idlei),
 	.cp /* IN */ (clk),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (221) - idle\ : iv
@@ -1102,7 +1165,8 @@ fd2q comp1_inst
 	.q /* OUT */ (comp1),
 	.d /* IN */ (comp1i),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (226) - comp2i : join
@@ -1114,7 +1178,8 @@ fd2q comp2_inst
 	.q /* OUT */ (comp2),
 	.d /* IN */ (comp2i),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (228) - comp2\ : iv
@@ -1138,7 +1203,8 @@ fd2q loading_inst
 	.q /* OUT */ (loading),
 	.d /* IN */ (loadingi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (239) - dlacmp : cmp6
@@ -1182,7 +1248,8 @@ cp_latch drqt_index_2_inst
 	.set /* IN */ (drqt_1),
 	.clear /* IN */ (datack),
 	.clock /* IN */ (clk),
-	.reset_n /* IN */ (reset_n)
+	.reset_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (258) - datreq : oan1
@@ -1215,7 +1282,8 @@ fd2q oneld_inst
 	.q /* OUT */ (oneld),
 	.d /* IN */ (oneldi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (291) - ld2t0 : nd3
@@ -1233,7 +1301,8 @@ fd2q twold_inst
 	.q /* OUT */ (twold),
 	.d /* IN */ (twoldi),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (296) - ldidle : nr2p
@@ -1322,42 +1391,48 @@ fd2q xlddst_inst_0
 	.q /* OUT */ (xlddst[0]),
 	.d /* IN */ (xld_wbaddr[0]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q xlddst_inst_1
 (
 	.q /* OUT */ (xlddst[1]),
 	.d /* IN */ (xld_wbaddr[1]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q xlddst_inst_2
 (
 	.q /* OUT */ (xlddst[2]),
 	.d /* IN */ (xld_wbaddr[2]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q xlddst_inst_3
 (
 	.q /* OUT */ (xlddst[3]),
 	.d /* IN */ (xld_wbaddr[3]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q xlddst_inst_4
 (
 	.q /* OUT */ (xlddst[4]),
 	.d /* IN */ (xld_wbaddr[4]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q xlddst_inst_5
 (
 	.q /* OUT */ (xlddst[5]),
 	.d /* IN */ (xld_wbaddr[5]),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (322) - xlddst2 : fdsyncr6
@@ -1367,7 +1442,8 @@ fdsyncr6 xlddst2_inst
 	.d /* IN */ ({ild_wbaddr[0],ild_wbaddr[1],ild_wbaddr[2],ild_wbaddr[3],ild_wbaddr[4],ild_wbaddr[5]}),
 	.ld /* IN */ (del_xld),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (330) - xlddmatch : cmp6
@@ -1417,7 +1493,8 @@ fdsync32 xld_data_inst
 	.q /* OUT */ ({xld_data[0],xld_data[1],xld_data[2],xld_data[3],xld_data[4],xld_data[5],xld_data[6],xld_data[7],xld_data[8],xld_data[9],xld_data[10],xld_data[11],xld_data[12],xld_data[13],xld_data[14],xld_data[15],xld_data[16],xld_data[17],xld_data[18],xld_data[19],xld_data[20],xld_data[21],xld_data[22],xld_data[23],xld_data[24],xld_data[25],xld_data[26],xld_data[27],xld_data[28],xld_data[29],xld_data[30],xld_data[31]}),
 	.d /* IN */ ({load_data[0],load_data[1],load_data[2],load_data[3],load_data[4],load_data[5],load_data[6],load_data[7],load_data[8],load_data[9],load_data[10],load_data[11],load_data[12],load_data[13],load_data[14],load_data[15],load_data[16],load_data[17],load_data[18],load_data[19],load_data[20],load_data[21],load_data[22],load_data[23],load_data[24],load_data[25],load_data[26],load_data[27],load_data[28],load_data[29],load_data[30],load_data[31]}),
 	.ld /* IN */ (xld_ready),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (353) - mbsywt0 : or2
@@ -1450,7 +1527,8 @@ fd2q xldpend_inst
 	.q /* OUT */ (xld_wbackl),
 	.d /* IN */ (xwbat_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (366) - xld_wback : or2
@@ -1464,7 +1542,8 @@ fd1q div_active_inst
 (
 	.q /* OUT */ (div_active),
 	.d /* IN */ (div_activei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (376) - div_activei\ : iv
@@ -1477,7 +1556,8 @@ fdsyncr6 divdst_inst
 	.d /* IN */ ({dstanw[0],dstanw[1],dstanw[2],dstanw[3],dstanw[4],dstanw[5]}),
 	.ld /* IN */ (div_start),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (380) - divdmatch : cmp6
@@ -1520,7 +1600,8 @@ fd2q dwbat2_inst
 	.q /* OUT */ (div_wbackl),
 	.d /* IN */ (dwbat_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (395) - div_wback : or2
@@ -1537,7 +1618,8 @@ fd1q flag_pend_inst
 (
 	.q /* OUT */ (flag_pend),
 	.d /* IN */ (flagld),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (412) - flagwait : an2
@@ -1551,7 +1633,8 @@ fd1q wback_inst
 (
 	.q /* OUT */ (wback),
 	.d /* IN */ (wbacki),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (453) - alu_wbackh : iv
@@ -1639,7 +1722,8 @@ fd1q mult_wback_inst
 (
 	.q /* OUT */ (mult_wback),
 	.d /* IN */ (mult_wbacki),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (501) - mult_wback\ : iv
@@ -1869,7 +1953,8 @@ fd1q wbdeq_n_inst
 (
 	.q /* OUT */ (wbdeq_n),
 	.d /* IN */ (wbdeqi_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (537) - wbscmp : cmp6i
@@ -1885,7 +1970,8 @@ fd1q wbdsq_inst
 (
 	.q /* OUT */ (wbseq_n),
 	.d /* IN */ (wbseqi_n),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (539) - bothen : an3
@@ -1927,7 +2013,8 @@ fd1 dstwbwe_inst
 	.q /* OUT */ (dstwbwet),
 	.qn /* OUT */ (dstwbwe_n),
 	.d /* IN */ (dstwbwei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (562) - dstwbweb : nivm
@@ -1947,7 +2034,8 @@ fd1q srcwbwe_inst
 (
 	.q /* OUT */ (srcwbwe),
 	.d /* IN */ (srcwbwei),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (580) - dstwbaddr : fd1q
@@ -1955,37 +2043,43 @@ fd1q dstwbaddr_inst_0
 (
 	.q /* OUT */ (dstwbaddr[0]),
 	.d /* IN */ (hwbaddr[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstwbaddr_inst_1
 (
 	.q /* OUT */ (dstwbaddr[1]),
 	.d /* IN */ (hwbaddr[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstwbaddr_inst_2
 (
 	.q /* OUT */ (dstwbaddr[2]),
 	.d /* IN */ (hwbaddr[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstwbaddr_inst_3
 (
 	.q /* OUT */ (dstwbaddr[3]),
 	.d /* IN */ (hwbaddr[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstwbaddr_inst_4
 (
 	.q /* OUT */ (dstwbaddr[4]),
 	.d /* IN */ (hwbaddr[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstwbaddr_inst_5
 (
 	.q /* OUT */ (dstwbaddr[5]),
 	.d /* IN */ (hwbaddr[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (581) - dsta : mx2
@@ -2037,37 +2131,43 @@ fd1q srcwbaddr_inst_0
 (
 	.q /* OUT */ (srcwbaddr[0]),
 	.d /* IN */ (swbaddr[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcwbaddr_inst_1
 (
 	.q /* OUT */ (srcwbaddr[1]),
 	.d /* IN */ (swbaddr[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcwbaddr_inst_2
 (
 	.q /* OUT */ (srcwbaddr[2]),
 	.d /* IN */ (swbaddr[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcwbaddr_inst_3
 (
 	.q /* OUT */ (srcwbaddr[3]),
 	.d /* IN */ (swbaddr[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcwbaddr_inst_4
 (
 	.q /* OUT */ (srcwbaddr[4]),
 	.d /* IN */ (swbaddr[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q srcwbaddr_inst_5
 (
 	.q /* OUT */ (srcwbaddr[5]),
 	.d /* IN */ (swbaddr[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (586) - srca : mx4
@@ -2140,7 +2240,8 @@ fd1q xldd_sel_inst
 (
 	.q /* OUT */ (xldd_sel),
 	.d /* IN */ (xldd_selt),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (598) - xldd_sel\ : iv
@@ -2154,7 +2255,8 @@ fd1q divd_sel_inst
 (
 	.q /* OUT */ (divd_sel),
 	.d /* IN */ (divd_selt),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (601) - mxdata : mx4
@@ -2490,13 +2592,15 @@ fd1q dwsel_from_0_to_1_inst_0
 (
 	.q /* OUT */ (dwsel_0),
 	.d /* IN */ (dwselt_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dwsel_from_0_to_1_inst_1
 (
 	.q /* OUT */ (dwsel_1),
 	.d /* IN */ (dwselt_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (612) - dwselb[0-1] : nivu
@@ -2836,13 +2940,15 @@ fd1q swselt_from_0_to_1_inst_0
 (
 	.q /* OUT */ (swselt_0),
 	.d /* IN */ (swselti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q swselt_from_0_to_1_inst_1
 (
 	.q /* OUT */ (swselt_1),
 	.d /* IN */ (swselti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // SBOARD.NET (625) - swsel[0-1] : mx2

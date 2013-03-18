@@ -2,10 +2,11 @@
 
 module fdsync6
 (
-	output [0:5] q;
-	input [0:5] d;
+	output [0:5] q,
+	input [0:5] d,
 	input ld,
-	input clk
+	input clk,
+	input sys_clk // Generated
 );
 wire [0:5] qb;
 
@@ -35,7 +36,8 @@ fd1e q_inst_0
 	.d /* IN */ (q_b0_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d[0]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e q_inst_1
 (
@@ -44,7 +46,8 @@ fd1e q_inst_1
 	.d /* IN */ (q_b1_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d[1]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e q_inst_2
 (
@@ -53,7 +56,8 @@ fd1e q_inst_2
 	.d /* IN */ (q_b2_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d[2]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e q_inst_3
 (
@@ -62,7 +66,8 @@ fd1e q_inst_3
 	.d /* IN */ (q_b3_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d[3]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e q_inst_4
 (
@@ -71,7 +76,8 @@ fd1e q_inst_4
 	.d /* IN */ (q_b4_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d[4]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 fd1e q_inst_5
 (
@@ -80,7 +86,8 @@ fd1e q_inst_5
 	.d /* IN */ (q_b5_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d[5]),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DUPLO.NET (261) - dummy : dummy

@@ -5,7 +5,8 @@ module fdsyncu
 	output q,
 	input d,
 	input ld,
-	input clk
+	input clk,
+	input sys_clk // Generated
 );
 wire qt;
 wire qb;
@@ -26,7 +27,8 @@ fd1e qt_inst
 	.d /* IN */ (q_obuf),
 	.cp /* IN */ (clk),
 	.ti /* IN */ (d),
-	.te /* IN */ (ld)
+	.te /* IN */ (ld),
+	.sys_clk(sys_clk) // Generated
 );
 
 // DUPLO.NET (302) - dummy : dummy

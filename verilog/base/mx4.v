@@ -15,7 +15,7 @@ reg z_obuf;
 
 assign z = z_obuf;
 
-always @(a0 or a1 or a2 or a3 or s0 or s1)
+always @(*)
 begin
 	case({s1, s0}) // ???
 		2'b00		: z_obuf <= a0;

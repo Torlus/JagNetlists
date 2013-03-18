@@ -2,12 +2,12 @@
 
 module fa32_int
 (
-	output [0:31] s;
+	output [0:31] s,
 	output co32,
 	output co31,
 	output co24,
 	input c,
-	input [0:31] a;
+	input [0:31] a,
 	input [0:31] b
 );
 wire s_0;

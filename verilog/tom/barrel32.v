@@ -1590,7 +1590,7 @@ d416gh dcd0_inst
 	.a1 /* IN */ (sft_1),
 	.a2 /* IN */ (sft_2),
 	.a3 /* IN */ (sft_3),
-	.g /* IN */ (sft_4)
+	.gn /* IN */ (sft_4)
 );
 
 // ARITH.NET (641) - dcd1 : d416gh
@@ -1616,7 +1616,7 @@ d416gh dcd1_inst
 	.a1 /* IN */ (sft_1),
 	.a2 /* IN */ (sft_2),
 	.a3 /* IN */ (sft_3),
-	.g /* IN */ (sft_n_4)
+	.gn /* IN */ (sft_n_4)
 );
 
 // ARITH.NET (654) - rmask[0] : join

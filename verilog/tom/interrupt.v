@@ -36,11 +36,11 @@ module interrupt
 	output gpu_dout_13_oe,
 	input gpu_dout_13_in,
 	output imaski,
-	output [0:15] intins;
+	output [0:15] intins,
 	output intser,
 	input atomic,
 	input clk,
-	input [0:31] gpu_din;
+	input [0:31] gpu_din,
 	input flagrd,
 	input flagwr,
 	input gpu_irq_0,
@@ -50,7 +50,8 @@ module interrupt
 	input gpu_irq_4,
 	input reset_n,
 	input romold,
-	input statrd
+	input statrd,
+	input sys_clk // Generated
 );
 wire [0:2] int;
 wire [0:15] ins_0;
@@ -173,7 +174,8 @@ fdsyncr int_ena_from_0_to_4_inst_0
 	.d /* IN */ (gpu_din[4]),
 	.ld /* IN */ (flagwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncr int_ena_from_0_to_4_inst_1
 (
@@ -181,7 +183,8 @@ fdsyncr int_ena_from_0_to_4_inst_1
 	.d /* IN */ (gpu_din[5]),
 	.ld /* IN */ (flagwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncr int_ena_from_0_to_4_inst_2
 (
@@ -189,7 +192,8 @@ fdsyncr int_ena_from_0_to_4_inst_2
 	.d /* IN */ (gpu_din[6]),
 	.ld /* IN */ (flagwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncr int_ena_from_0_to_4_inst_3
 (
@@ -197,7 +201,8 @@ fdsyncr int_ena_from_0_to_4_inst_3
 	.d /* IN */ (gpu_din[7]),
 	.ld /* IN */ (flagwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fdsyncr int_ena_from_0_to_4_inst_4
 (
@@ -205,7 +210,8 @@ fdsyncr int_ena_from_0_to_4_inst_4
 	.d /* IN */ (gpu_din[8]),
 	.ld /* IN */ (flagwr),
 	.clk /* IN */ (clk),
-	.rst_n /* IN */ (reset_n)
+	.rst_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (58) - ilclr\[0-4] : nd2
@@ -242,35 +248,40 @@ fd2q ilatch_from_0_to_4_inst_0
 	.q /* OUT */ (ilatch_0),
 	.d /* IN */ (ils_0),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ilatch_from_0_to_4_inst_1
 (
 	.q /* OUT */ (ilatch_1),
 	.d /* IN */ (ils_1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ilatch_from_0_to_4_inst_2
 (
 	.q /* OUT */ (ilatch_2),
 	.d /* IN */ (ils_2),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ilatch_from_0_to_4_inst_3
 (
 	.q /* OUT */ (ilatch_3),
 	.d /* IN */ (ils_3),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q ilatch_from_0_to_4_inst_4
 (
 	.q /* OUT */ (ilatch_4),
 	.d /* IN */ (ils_4),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (66) - flagrd[4-8] : ts
@@ -362,7 +373,8 @@ fd2 intsert_inst
 	.qn /* OUT */ (intser_n),
 	.d /* IN */ (isrt1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (102) - intser : nivh
@@ -389,7 +401,8 @@ fd2q imask_inst
 	.q /* OUT */ (imask),
 	.d /* IN */ (imaski_obuf),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (115) - imask\ : iv
@@ -410,7 +423,8 @@ cnte3 cnter_inst
 	.count_2 /* OUT */ (icount_2),
 	.cnten /* IN */ (cnten),
 	.clk /* IN */ (clk),
-	.reset_n /* IN */ (reset_n)
+	.reset_n /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INTER-UA.NET (125) - jumped : an4

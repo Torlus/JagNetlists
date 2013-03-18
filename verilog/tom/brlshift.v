@@ -2,11 +2,11 @@
 
 module brlshift
 (
-	output [0:31] brlq;
+	output [0:31] brlq,
 	output brl_carry,
 	input brlmux_0,
 	input brlmux_1,
-	input [0:31] srcdp;
+	input [0:31] srcdp,
 	input [0:31] brld
 );
 wire zero;

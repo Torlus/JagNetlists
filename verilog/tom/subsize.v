@@ -2,8 +2,8 @@
 
 module subsize
 (
-	output [0:22] sub;
-	input [0:22] a;
+	output [0:22] sub,
+	input [0:22] a,
 	input b_0,
 	input b_1,
 	input b_2

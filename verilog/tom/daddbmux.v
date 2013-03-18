@@ -2,14 +2,14 @@
 
 module daddbmux
 (
-	output [0:15] addb_0;
-	output [0:15] addb_1;
-	output [0:15] addb_2;
-	output [0:15] addb_3;
-	input [0:31] srcdlo;
-	input [0:31] srcdhi;
-	input [0:31] iinc;
-	input [0:31] zinc;
+	output [0:15] addb_0,
+	output [0:15] addb_1,
+	output [0:15] addb_2,
+	output [0:15] addb_3,
+	input [0:31] srcdlo,
+	input [0:31] srcdhi,
+	input [0:31] iinc,
+	input [0:31] zinc,
 	input daddbsel_0,
 	input daddbsel_1,
 	input daddbsel_2

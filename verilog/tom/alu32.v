@@ -2,18 +2,18 @@
 
 module alu32
 (
-	output [0:31] aluq;
+	output [0:31] aluq,
 	output alu_co,
-	input [0:31] alua;
-	input [0:31] alub;
+	input [0:31] alua,
+	input [0:31] alub,
 	input carry_flag,
-	input [0:2] alufunc;
+	input [0:2] alufunc,
 	input dstdp_31,
 	input rev_subp
 );
-wire [0:31] and;
-wire [0:31] or;
-wire [0:31] xor;
+wire [0:31] _and;
+wire [0:31] _or;
+wire [0:31] _xor;
 wire [0:31] compa32;
 wire [0:31] compb32;
 wire [0:31] adda;
@@ -228,106 +228,106 @@ fa32_int sum_inst
 );
 
 // ARITH.NET (364) - and : an2
-assign and[0] = alua[0] & alub[0];
-assign and[1] = alua[1] & alub[1];
-assign and[2] = alua[2] & alub[2];
-assign and[3] = alua[3] & alub[3];
-assign and[4] = alua[4] & alub[4];
-assign and[5] = alua[5] & alub[5];
-assign and[6] = alua[6] & alub[6];
-assign and[7] = alua[7] & alub[7];
-assign and[8] = alua[8] & alub[8];
-assign and[9] = alua[9] & alub[9];
-assign and[10] = alua[10] & alub[10];
-assign and[11] = alua[11] & alub[11];
-assign and[12] = alua[12] & alub[12];
-assign and[13] = alua[13] & alub[13];
-assign and[14] = alua[14] & alub[14];
-assign and[15] = alua[15] & alub[15];
-assign and[16] = alua[16] & alub[16];
-assign and[17] = alua[17] & alub[17];
-assign and[18] = alua[18] & alub[18];
-assign and[19] = alua[19] & alub[19];
-assign and[20] = alua[20] & alub[20];
-assign and[21] = alua[21] & alub[21];
-assign and[22] = alua[22] & alub[22];
-assign and[23] = alua[23] & alub[23];
-assign and[24] = alua[24] & alub[24];
-assign and[25] = alua[25] & alub[25];
-assign and[26] = alua[26] & alub[26];
-assign and[27] = alua[27] & alub[27];
-assign and[28] = alua[28] & alub[28];
-assign and[29] = alua[29] & alub[29];
-assign and[30] = alua[30] & alub[30];
-assign and[31] = alua[31] & alub[31];
+assign _and[0] = alua[0] & alub[0];
+assign _and[1] = alua[1] & alub[1];
+assign _and[2] = alua[2] & alub[2];
+assign _and[3] = alua[3] & alub[3];
+assign _and[4] = alua[4] & alub[4];
+assign _and[5] = alua[5] & alub[5];
+assign _and[6] = alua[6] & alub[6];
+assign _and[7] = alua[7] & alub[7];
+assign _and[8] = alua[8] & alub[8];
+assign _and[9] = alua[9] & alub[9];
+assign _and[10] = alua[10] & alub[10];
+assign _and[11] = alua[11] & alub[11];
+assign _and[12] = alua[12] & alub[12];
+assign _and[13] = alua[13] & alub[13];
+assign _and[14] = alua[14] & alub[14];
+assign _and[15] = alua[15] & alub[15];
+assign _and[16] = alua[16] & alub[16];
+assign _and[17] = alua[17] & alub[17];
+assign _and[18] = alua[18] & alub[18];
+assign _and[19] = alua[19] & alub[19];
+assign _and[20] = alua[20] & alub[20];
+assign _and[21] = alua[21] & alub[21];
+assign _and[22] = alua[22] & alub[22];
+assign _and[23] = alua[23] & alub[23];
+assign _and[24] = alua[24] & alub[24];
+assign _and[25] = alua[25] & alub[25];
+assign _and[26] = alua[26] & alub[26];
+assign _and[27] = alua[27] & alub[27];
+assign _and[28] = alua[28] & alub[28];
+assign _and[29] = alua[29] & alub[29];
+assign _and[30] = alua[30] & alub[30];
+assign _and[31] = alua[31] & alub[31];
 
 // ARITH.NET (365) - or : or2
-assign or[0] = alua[0] | alub[0];
-assign or[1] = alua[1] | alub[1];
-assign or[2] = alua[2] | alub[2];
-assign or[3] = alua[3] | alub[3];
-assign or[4] = alua[4] | alub[4];
-assign or[5] = alua[5] | alub[5];
-assign or[6] = alua[6] | alub[6];
-assign or[7] = alua[7] | alub[7];
-assign or[8] = alua[8] | alub[8];
-assign or[9] = alua[9] | alub[9];
-assign or[10] = alua[10] | alub[10];
-assign or[11] = alua[11] | alub[11];
-assign or[12] = alua[12] | alub[12];
-assign or[13] = alua[13] | alub[13];
-assign or[14] = alua[14] | alub[14];
-assign or[15] = alua[15] | alub[15];
-assign or[16] = alua[16] | alub[16];
-assign or[17] = alua[17] | alub[17];
-assign or[18] = alua[18] | alub[18];
-assign or[19] = alua[19] | alub[19];
-assign or[20] = alua[20] | alub[20];
-assign or[21] = alua[21] | alub[21];
-assign or[22] = alua[22] | alub[22];
-assign or[23] = alua[23] | alub[23];
-assign or[24] = alua[24] | alub[24];
-assign or[25] = alua[25] | alub[25];
-assign or[26] = alua[26] | alub[26];
-assign or[27] = alua[27] | alub[27];
-assign or[28] = alua[28] | alub[28];
-assign or[29] = alua[29] | alub[29];
-assign or[30] = alua[30] | alub[30];
-assign or[31] = alua[31] | alub[31];
+assign _or[0] = alua[0] | alub[0];
+assign _or[1] = alua[1] | alub[1];
+assign _or[2] = alua[2] | alub[2];
+assign _or[3] = alua[3] | alub[3];
+assign _or[4] = alua[4] | alub[4];
+assign _or[5] = alua[5] | alub[5];
+assign _or[6] = alua[6] | alub[6];
+assign _or[7] = alua[7] | alub[7];
+assign _or[8] = alua[8] | alub[8];
+assign _or[9] = alua[9] | alub[9];
+assign _or[10] = alua[10] | alub[10];
+assign _or[11] = alua[11] | alub[11];
+assign _or[12] = alua[12] | alub[12];
+assign _or[13] = alua[13] | alub[13];
+assign _or[14] = alua[14] | alub[14];
+assign _or[15] = alua[15] | alub[15];
+assign _or[16] = alua[16] | alub[16];
+assign _or[17] = alua[17] | alub[17];
+assign _or[18] = alua[18] | alub[18];
+assign _or[19] = alua[19] | alub[19];
+assign _or[20] = alua[20] | alub[20];
+assign _or[21] = alua[21] | alub[21];
+assign _or[22] = alua[22] | alub[22];
+assign _or[23] = alua[23] | alub[23];
+assign _or[24] = alua[24] | alub[24];
+assign _or[25] = alua[25] | alub[25];
+assign _or[26] = alua[26] | alub[26];
+assign _or[27] = alua[27] | alub[27];
+assign _or[28] = alua[28] | alub[28];
+assign _or[29] = alua[29] | alub[29];
+assign _or[30] = alua[30] | alub[30];
+assign _or[31] = alua[31] | alub[31];
 
 // ARITH.NET (366) - xor : eo
-assign xor[0] = alua[0] ^ alub[0];
-assign xor[1] = alua[1] ^ alub[1];
-assign xor[2] = alua[2] ^ alub[2];
-assign xor[3] = alua[3] ^ alub[3];
-assign xor[4] = alua[4] ^ alub[4];
-assign xor[5] = alua[5] ^ alub[5];
-assign xor[6] = alua[6] ^ alub[6];
-assign xor[7] = alua[7] ^ alub[7];
-assign xor[8] = alua[8] ^ alub[8];
-assign xor[9] = alua[9] ^ alub[9];
-assign xor[10] = alua[10] ^ alub[10];
-assign xor[11] = alua[11] ^ alub[11];
-assign xor[12] = alua[12] ^ alub[12];
-assign xor[13] = alua[13] ^ alub[13];
-assign xor[14] = alua[14] ^ alub[14];
-assign xor[15] = alua[15] ^ alub[15];
-assign xor[16] = alua[16] ^ alub[16];
-assign xor[17] = alua[17] ^ alub[17];
-assign xor[18] = alua[18] ^ alub[18];
-assign xor[19] = alua[19] ^ alub[19];
-assign xor[20] = alua[20] ^ alub[20];
-assign xor[21] = alua[21] ^ alub[21];
-assign xor[22] = alua[22] ^ alub[22];
-assign xor[23] = alua[23] ^ alub[23];
-assign xor[24] = alua[24] ^ alub[24];
-assign xor[25] = alua[25] ^ alub[25];
-assign xor[26] = alua[26] ^ alub[26];
-assign xor[27] = alua[27] ^ alub[27];
-assign xor[28] = alua[28] ^ alub[28];
-assign xor[29] = alua[29] ^ alub[29];
-assign xor[30] = alua[30] ^ alub[30];
-assign xor[31] = alua[31] ^ alub[31];
+assign _xor[0] = alua[0] ^ alub[0];
+assign _xor[1] = alua[1] ^ alub[1];
+assign _xor[2] = alua[2] ^ alub[2];
+assign _xor[3] = alua[3] ^ alub[3];
+assign _xor[4] = alua[4] ^ alub[4];
+assign _xor[5] = alua[5] ^ alub[5];
+assign _xor[6] = alua[6] ^ alub[6];
+assign _xor[7] = alua[7] ^ alub[7];
+assign _xor[8] = alua[8] ^ alub[8];
+assign _xor[9] = alua[9] ^ alub[9];
+assign _xor[10] = alua[10] ^ alub[10];
+assign _xor[11] = alua[11] ^ alub[11];
+assign _xor[12] = alua[12] ^ alub[12];
+assign _xor[13] = alua[13] ^ alub[13];
+assign _xor[14] = alua[14] ^ alub[14];
+assign _xor[15] = alua[15] ^ alub[15];
+assign _xor[16] = alua[16] ^ alub[16];
+assign _xor[17] = alua[17] ^ alub[17];
+assign _xor[18] = alua[18] ^ alub[18];
+assign _xor[19] = alua[19] ^ alub[19];
+assign _xor[20] = alua[20] ^ alub[20];
+assign _xor[21] = alua[21] ^ alub[21];
+assign _xor[22] = alua[22] ^ alub[22];
+assign _xor[23] = alua[23] ^ alub[23];
+assign _xor[24] = alua[24] ^ alub[24];
+assign _xor[25] = alua[25] ^ alub[25];
+assign _xor[26] = alua[26] ^ alub[26];
+assign _xor[27] = alua[27] ^ alub[27];
+assign _xor[28] = alua[28] ^ alub[28];
+assign _xor[29] = alua[29] ^ alub[29];
+assign _xor[30] = alua[30] ^ alub[30];
+assign _xor[31] = alua[31] ^ alub[31];
 
 // ARITH.NET (370) - selt0 : aor1
 assign selt_0 = (alufunc_0 & alufunc_2) | alufunc_n_2;
@@ -343,9 +343,9 @@ assign sel_1 = selt_1;
 mx4 aluq_inst_0
 (
 	.z /* OUT */ (aluq[0]),
-	.a0 /* IN */ (and[0]),
-	.a1 /* IN */ (or[0]),
-	.a2 /* IN */ (xor[0]),
+	.a0 /* IN */ (_and[0]),
+	.a1 /* IN */ (_or[0]),
+	.a2 /* IN */ (_xor[0]),
 	.a3 /* IN */ (sum[0]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -353,9 +353,9 @@ mx4 aluq_inst_0
 mx4 aluq_inst_1
 (
 	.z /* OUT */ (aluq[1]),
-	.a0 /* IN */ (and[1]),
-	.a1 /* IN */ (or[1]),
-	.a2 /* IN */ (xor[1]),
+	.a0 /* IN */ (_and[1]),
+	.a1 /* IN */ (_or[1]),
+	.a2 /* IN */ (_xor[1]),
 	.a3 /* IN */ (sum[1]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -363,9 +363,9 @@ mx4 aluq_inst_1
 mx4 aluq_inst_2
 (
 	.z /* OUT */ (aluq[2]),
-	.a0 /* IN */ (and[2]),
-	.a1 /* IN */ (or[2]),
-	.a2 /* IN */ (xor[2]),
+	.a0 /* IN */ (_and[2]),
+	.a1 /* IN */ (_or[2]),
+	.a2 /* IN */ (_xor[2]),
 	.a3 /* IN */ (sum[2]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -373,9 +373,9 @@ mx4 aluq_inst_2
 mx4 aluq_inst_3
 (
 	.z /* OUT */ (aluq[3]),
-	.a0 /* IN */ (and[3]),
-	.a1 /* IN */ (or[3]),
-	.a2 /* IN */ (xor[3]),
+	.a0 /* IN */ (_and[3]),
+	.a1 /* IN */ (_or[3]),
+	.a2 /* IN */ (_xor[3]),
 	.a3 /* IN */ (sum[3]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -383,9 +383,9 @@ mx4 aluq_inst_3
 mx4 aluq_inst_4
 (
 	.z /* OUT */ (aluq[4]),
-	.a0 /* IN */ (and[4]),
-	.a1 /* IN */ (or[4]),
-	.a2 /* IN */ (xor[4]),
+	.a0 /* IN */ (_and[4]),
+	.a1 /* IN */ (_or[4]),
+	.a2 /* IN */ (_xor[4]),
 	.a3 /* IN */ (sum[4]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -393,9 +393,9 @@ mx4 aluq_inst_4
 mx4 aluq_inst_5
 (
 	.z /* OUT */ (aluq[5]),
-	.a0 /* IN */ (and[5]),
-	.a1 /* IN */ (or[5]),
-	.a2 /* IN */ (xor[5]),
+	.a0 /* IN */ (_and[5]),
+	.a1 /* IN */ (_or[5]),
+	.a2 /* IN */ (_xor[5]),
 	.a3 /* IN */ (sum[5]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -403,9 +403,9 @@ mx4 aluq_inst_5
 mx4 aluq_inst_6
 (
 	.z /* OUT */ (aluq[6]),
-	.a0 /* IN */ (and[6]),
-	.a1 /* IN */ (or[6]),
-	.a2 /* IN */ (xor[6]),
+	.a0 /* IN */ (_and[6]),
+	.a1 /* IN */ (_or[6]),
+	.a2 /* IN */ (_xor[6]),
 	.a3 /* IN */ (sum[6]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -413,9 +413,9 @@ mx4 aluq_inst_6
 mx4 aluq_inst_7
 (
 	.z /* OUT */ (aluq[7]),
-	.a0 /* IN */ (and[7]),
-	.a1 /* IN */ (or[7]),
-	.a2 /* IN */ (xor[7]),
+	.a0 /* IN */ (_and[7]),
+	.a1 /* IN */ (_or[7]),
+	.a2 /* IN */ (_xor[7]),
 	.a3 /* IN */ (sum[7]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -423,9 +423,9 @@ mx4 aluq_inst_7
 mx4 aluq_inst_8
 (
 	.z /* OUT */ (aluq[8]),
-	.a0 /* IN */ (and[8]),
-	.a1 /* IN */ (or[8]),
-	.a2 /* IN */ (xor[8]),
+	.a0 /* IN */ (_and[8]),
+	.a1 /* IN */ (_or[8]),
+	.a2 /* IN */ (_xor[8]),
 	.a3 /* IN */ (sum[8]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -433,9 +433,9 @@ mx4 aluq_inst_8
 mx4 aluq_inst_9
 (
 	.z /* OUT */ (aluq[9]),
-	.a0 /* IN */ (and[9]),
-	.a1 /* IN */ (or[9]),
-	.a2 /* IN */ (xor[9]),
+	.a0 /* IN */ (_and[9]),
+	.a1 /* IN */ (_or[9]),
+	.a2 /* IN */ (_xor[9]),
 	.a3 /* IN */ (sum[9]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -443,9 +443,9 @@ mx4 aluq_inst_9
 mx4 aluq_inst_10
 (
 	.z /* OUT */ (aluq[10]),
-	.a0 /* IN */ (and[10]),
-	.a1 /* IN */ (or[10]),
-	.a2 /* IN */ (xor[10]),
+	.a0 /* IN */ (_and[10]),
+	.a1 /* IN */ (_or[10]),
+	.a2 /* IN */ (_xor[10]),
 	.a3 /* IN */ (sum[10]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -453,9 +453,9 @@ mx4 aluq_inst_10
 mx4 aluq_inst_11
 (
 	.z /* OUT */ (aluq[11]),
-	.a0 /* IN */ (and[11]),
-	.a1 /* IN */ (or[11]),
-	.a2 /* IN */ (xor[11]),
+	.a0 /* IN */ (_and[11]),
+	.a1 /* IN */ (_or[11]),
+	.a2 /* IN */ (_xor[11]),
 	.a3 /* IN */ (sum[11]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -463,9 +463,9 @@ mx4 aluq_inst_11
 mx4 aluq_inst_12
 (
 	.z /* OUT */ (aluq[12]),
-	.a0 /* IN */ (and[12]),
-	.a1 /* IN */ (or[12]),
-	.a2 /* IN */ (xor[12]),
+	.a0 /* IN */ (_and[12]),
+	.a1 /* IN */ (_or[12]),
+	.a2 /* IN */ (_xor[12]),
 	.a3 /* IN */ (sum[12]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -473,9 +473,9 @@ mx4 aluq_inst_12
 mx4 aluq_inst_13
 (
 	.z /* OUT */ (aluq[13]),
-	.a0 /* IN */ (and[13]),
-	.a1 /* IN */ (or[13]),
-	.a2 /* IN */ (xor[13]),
+	.a0 /* IN */ (_and[13]),
+	.a1 /* IN */ (_or[13]),
+	.a2 /* IN */ (_xor[13]),
 	.a3 /* IN */ (sum[13]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -483,9 +483,9 @@ mx4 aluq_inst_13
 mx4 aluq_inst_14
 (
 	.z /* OUT */ (aluq[14]),
-	.a0 /* IN */ (and[14]),
-	.a1 /* IN */ (or[14]),
-	.a2 /* IN */ (xor[14]),
+	.a0 /* IN */ (_and[14]),
+	.a1 /* IN */ (_or[14]),
+	.a2 /* IN */ (_xor[14]),
 	.a3 /* IN */ (sum[14]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -493,9 +493,9 @@ mx4 aluq_inst_14
 mx4 aluq_inst_15
 (
 	.z /* OUT */ (aluq[15]),
-	.a0 /* IN */ (and[15]),
-	.a1 /* IN */ (or[15]),
-	.a2 /* IN */ (xor[15]),
+	.a0 /* IN */ (_and[15]),
+	.a1 /* IN */ (_or[15]),
+	.a2 /* IN */ (_xor[15]),
 	.a3 /* IN */ (sum[15]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -503,9 +503,9 @@ mx4 aluq_inst_15
 mx4 aluq_inst_16
 (
 	.z /* OUT */ (aluq[16]),
-	.a0 /* IN */ (and[16]),
-	.a1 /* IN */ (or[16]),
-	.a2 /* IN */ (xor[16]),
+	.a0 /* IN */ (_and[16]),
+	.a1 /* IN */ (_or[16]),
+	.a2 /* IN */ (_xor[16]),
 	.a3 /* IN */ (sum[16]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -513,9 +513,9 @@ mx4 aluq_inst_16
 mx4 aluq_inst_17
 (
 	.z /* OUT */ (aluq[17]),
-	.a0 /* IN */ (and[17]),
-	.a1 /* IN */ (or[17]),
-	.a2 /* IN */ (xor[17]),
+	.a0 /* IN */ (_and[17]),
+	.a1 /* IN */ (_or[17]),
+	.a2 /* IN */ (_xor[17]),
 	.a3 /* IN */ (sum[17]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -523,9 +523,9 @@ mx4 aluq_inst_17
 mx4 aluq_inst_18
 (
 	.z /* OUT */ (aluq[18]),
-	.a0 /* IN */ (and[18]),
-	.a1 /* IN */ (or[18]),
-	.a2 /* IN */ (xor[18]),
+	.a0 /* IN */ (_and[18]),
+	.a1 /* IN */ (_or[18]),
+	.a2 /* IN */ (_xor[18]),
 	.a3 /* IN */ (sum[18]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -533,9 +533,9 @@ mx4 aluq_inst_18
 mx4 aluq_inst_19
 (
 	.z /* OUT */ (aluq[19]),
-	.a0 /* IN */ (and[19]),
-	.a1 /* IN */ (or[19]),
-	.a2 /* IN */ (xor[19]),
+	.a0 /* IN */ (_and[19]),
+	.a1 /* IN */ (_or[19]),
+	.a2 /* IN */ (_xor[19]),
 	.a3 /* IN */ (sum[19]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -543,9 +543,9 @@ mx4 aluq_inst_19
 mx4 aluq_inst_20
 (
 	.z /* OUT */ (aluq[20]),
-	.a0 /* IN */ (and[20]),
-	.a1 /* IN */ (or[20]),
-	.a2 /* IN */ (xor[20]),
+	.a0 /* IN */ (_and[20]),
+	.a1 /* IN */ (_or[20]),
+	.a2 /* IN */ (_xor[20]),
 	.a3 /* IN */ (sum[20]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -553,9 +553,9 @@ mx4 aluq_inst_20
 mx4 aluq_inst_21
 (
 	.z /* OUT */ (aluq[21]),
-	.a0 /* IN */ (and[21]),
-	.a1 /* IN */ (or[21]),
-	.a2 /* IN */ (xor[21]),
+	.a0 /* IN */ (_and[21]),
+	.a1 /* IN */ (_or[21]),
+	.a2 /* IN */ (_xor[21]),
 	.a3 /* IN */ (sum[21]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -563,9 +563,9 @@ mx4 aluq_inst_21
 mx4 aluq_inst_22
 (
 	.z /* OUT */ (aluq[22]),
-	.a0 /* IN */ (and[22]),
-	.a1 /* IN */ (or[22]),
-	.a2 /* IN */ (xor[22]),
+	.a0 /* IN */ (_and[22]),
+	.a1 /* IN */ (_or[22]),
+	.a2 /* IN */ (_xor[22]),
 	.a3 /* IN */ (sum[22]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -573,9 +573,9 @@ mx4 aluq_inst_22
 mx4 aluq_inst_23
 (
 	.z /* OUT */ (aluq[23]),
-	.a0 /* IN */ (and[23]),
-	.a1 /* IN */ (or[23]),
-	.a2 /* IN */ (xor[23]),
+	.a0 /* IN */ (_and[23]),
+	.a1 /* IN */ (_or[23]),
+	.a2 /* IN */ (_xor[23]),
 	.a3 /* IN */ (sum[23]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -583,9 +583,9 @@ mx4 aluq_inst_23
 mx4 aluq_inst_24
 (
 	.z /* OUT */ (aluq[24]),
-	.a0 /* IN */ (and[24]),
-	.a1 /* IN */ (or[24]),
-	.a2 /* IN */ (xor[24]),
+	.a0 /* IN */ (_and[24]),
+	.a1 /* IN */ (_or[24]),
+	.a2 /* IN */ (_xor[24]),
 	.a3 /* IN */ (sum[24]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -593,9 +593,9 @@ mx4 aluq_inst_24
 mx4 aluq_inst_25
 (
 	.z /* OUT */ (aluq[25]),
-	.a0 /* IN */ (and[25]),
-	.a1 /* IN */ (or[25]),
-	.a2 /* IN */ (xor[25]),
+	.a0 /* IN */ (_and[25]),
+	.a1 /* IN */ (_or[25]),
+	.a2 /* IN */ (_xor[25]),
 	.a3 /* IN */ (sum[25]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -603,9 +603,9 @@ mx4 aluq_inst_25
 mx4 aluq_inst_26
 (
 	.z /* OUT */ (aluq[26]),
-	.a0 /* IN */ (and[26]),
-	.a1 /* IN */ (or[26]),
-	.a2 /* IN */ (xor[26]),
+	.a0 /* IN */ (_and[26]),
+	.a1 /* IN */ (_or[26]),
+	.a2 /* IN */ (_xor[26]),
 	.a3 /* IN */ (sum[26]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -613,9 +613,9 @@ mx4 aluq_inst_26
 mx4 aluq_inst_27
 (
 	.z /* OUT */ (aluq[27]),
-	.a0 /* IN */ (and[27]),
-	.a1 /* IN */ (or[27]),
-	.a2 /* IN */ (xor[27]),
+	.a0 /* IN */ (_and[27]),
+	.a1 /* IN */ (_or[27]),
+	.a2 /* IN */ (_xor[27]),
 	.a3 /* IN */ (sum[27]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -623,9 +623,9 @@ mx4 aluq_inst_27
 mx4 aluq_inst_28
 (
 	.z /* OUT */ (aluq[28]),
-	.a0 /* IN */ (and[28]),
-	.a1 /* IN */ (or[28]),
-	.a2 /* IN */ (xor[28]),
+	.a0 /* IN */ (_and[28]),
+	.a1 /* IN */ (_or[28]),
+	.a2 /* IN */ (_xor[28]),
 	.a3 /* IN */ (sum[28]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -633,9 +633,9 @@ mx4 aluq_inst_28
 mx4 aluq_inst_29
 (
 	.z /* OUT */ (aluq[29]),
-	.a0 /* IN */ (and[29]),
-	.a1 /* IN */ (or[29]),
-	.a2 /* IN */ (xor[29]),
+	.a0 /* IN */ (_and[29]),
+	.a1 /* IN */ (_or[29]),
+	.a2 /* IN */ (_xor[29]),
 	.a3 /* IN */ (sum[29]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -643,9 +643,9 @@ mx4 aluq_inst_29
 mx4 aluq_inst_30
 (
 	.z /* OUT */ (aluq[30]),
-	.a0 /* IN */ (and[30]),
-	.a1 /* IN */ (or[30]),
-	.a2 /* IN */ (xor[30]),
+	.a0 /* IN */ (_and[30]),
+	.a1 /* IN */ (_or[30]),
+	.a2 /* IN */ (_xor[30]),
 	.a3 /* IN */ (sum[30]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)
@@ -653,9 +653,9 @@ mx4 aluq_inst_30
 mx4 aluq_inst_31
 (
 	.z /* OUT */ (aluq[31]),
-	.a0 /* IN */ (and[31]),
-	.a1 /* IN */ (or[31]),
-	.a2 /* IN */ (xor[31]),
+	.a0 /* IN */ (_and[31]),
+	.a1 /* IN */ (_or[31]),
+	.a2 /* IN */ (_xor[31]),
 	.a3 /* IN */ (sum[31]),
 	.s0 /* IN */ (sel_0),
 	.s1 /* IN */ (sel_1)

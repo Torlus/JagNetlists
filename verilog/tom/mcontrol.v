@@ -2,9 +2,9 @@
 
 module mcontrol
 (
-	output [0:23] blit_addr_out;
-	output [0:23] blit_addr_oe;
-	input [0:23] blit_addr_in;
+	output [0:23] blit_addr_out,
+	output [0:23] blit_addr_oe,
+	input [0:23] blit_addr_in,
 	output justify_out,
 	output justify_oe,
 	input justify_in,
@@ -33,7 +33,7 @@ module mcontrol
 	output read_ack,
 	output wactive,
 	input ack,
-	input [0:23] address;
+	input [0:23] address,
 	input bcompen,
 	input blit_back,
 	input clk,
@@ -51,7 +51,8 @@ module mcontrol
 	input sread_1,
 	input sreadx_1,
 	input step_inner,
-	input writereq
+	input writereq,
+	input sys_clk // Generated
 );
 wire [0:23] blita;
 wire ack_n;
@@ -138,7 +139,8 @@ fd2 ractive_inst
 	.qn /* OUT */ (ractive_n),
 	.d /* IN */ (ractvt_3),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MCONTROL.NET (66) - wactvt0 : nd2
@@ -160,7 +162,8 @@ fd2 wactive_inst
 	.qn /* OUT */ (wactive_n),
 	.d /* IN */ (wactvt_3),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MCONTROL.NET (73) - active\ : nr2
@@ -278,7 +281,8 @@ fdsync24 blita_inst
 	.q /* OUT */ ({blita[0],blita[1],blita[2],blita[3],blita[4],blita[5],blita[6],blita[7],blita[8],blita[9],blita[10],blita[11],blita[12],blita[13],blita[14],blita[15],blita[16],blita[17],blita[18],blita[19],blita[20],blita[21],blita[22],blita[23]}),
 	.d /* IN */ ({address[0],address[1],address[2],address[3],address[4],address[5],address[6],address[7],address[8],address[9],address[10],address[11],address[12],address[13],address[14],address[15],address[16],address[17],address[18],address[19],address[20],address[21],address[22],address[23]}),
 	.ld /* IN */ (step_innerb),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MCONTROL.NET (131) - blit_addr : tsm
@@ -346,7 +350,8 @@ fd2q waitack_inst
 	.q /* OUT */ (waitack),
 	.d /* IN */ (wat1),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // MCONTROL.NET (141) - read_ack : an2

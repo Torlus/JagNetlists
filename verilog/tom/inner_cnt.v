@@ -56,15 +56,16 @@ module inner_cnt
 	output inner0,
 	input clk,
 	input countld,
-	input [0:15] dstxp;
-	input [0:31] gpu_din;
+	input [0:15] dstxp,
+	input [0:31] gpu_din,
 	input icntena,
 	input ireload,
 	input phrase_mode,
 	input pixsize_0,
 	input pixsize_1,
 	input pixsize_2,
-	input statrd
+	input statrd,
+	input sys_clk // Generated
 );
 wire [0:15] cntval;
 wire [0:15] cntvall;
@@ -366,97 +367,113 @@ fd1q cntvall_inst_0
 (
 	.q /* OUT */ (cntvall[0]),
 	.d /* IN */ (cntval[0]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_1
 (
 	.q /* OUT */ (cntvall[1]),
 	.d /* IN */ (cntval[1]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_2
 (
 	.q /* OUT */ (cntvall[2]),
 	.d /* IN */ (cntval[2]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_3
 (
 	.q /* OUT */ (cntvall[3]),
 	.d /* IN */ (cntval[3]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_4
 (
 	.q /* OUT */ (cntvall[4]),
 	.d /* IN */ (cntval[4]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_5
 (
 	.q /* OUT */ (cntvall[5]),
 	.d /* IN */ (cntval[5]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_6
 (
 	.q /* OUT */ (cntvall[6]),
 	.d /* IN */ (cntval[6]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_7
 (
 	.q /* OUT */ (cntvall[7]),
 	.d /* IN */ (cntval[7]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_8
 (
 	.q /* OUT */ (cntvall[8]),
 	.d /* IN */ (cntval[8]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_9
 (
 	.q /* OUT */ (cntvall[9]),
 	.d /* IN */ (cntval[9]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_10
 (
 	.q /* OUT */ (cntvall[10]),
 	.d /* IN */ (cntval[10]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_11
 (
 	.q /* OUT */ (cntvall[11]),
 	.d /* IN */ (cntval[11]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_12
 (
 	.q /* OUT */ (cntvall[12]),
 	.d /* IN */ (cntval[12]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_13
 (
 	.q /* OUT */ (cntvall[13]),
 	.d /* IN */ (cntval[13]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_14
 (
 	.q /* OUT */ (cntvall[14]),
 	.d /* IN */ (cntval[14]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q cntvall_inst_15
 (
 	.q /* OUT */ (cntvall[15]),
 	.d /* IN */ (cntval[15]),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (601) - dstxp\[0-2] : iv
@@ -637,7 +654,8 @@ fd1q cntlden_inst
 (
 	.q /* OUT */ (cntlden),
 	.d /* IN */ (countld),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (648) - cntisel[1] : or2u
@@ -810,7 +828,8 @@ fd1q icountt_index_0_inst
 (
 	.q /* OUT */ (icountt_0),
 	.d /* IN */ (cnti_0),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (654) - icount[0] : nivm
@@ -821,91 +840,106 @@ fd1q icount_from_1_to_15_inst_0
 (
 	.q /* OUT */ (icount_1_obuf),
 	.d /* IN */ (cnti_1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_1
 (
 	.q /* OUT */ (icount_2_obuf),
 	.d /* IN */ (cnti_2),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_2
 (
 	.q /* OUT */ (icount_3),
 	.d /* IN */ (cnti_3),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_3
 (
 	.q /* OUT */ (icount_4),
 	.d /* IN */ (cnti_4),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_4
 (
 	.q /* OUT */ (icount_5),
 	.d /* IN */ (cnti_5),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_5
 (
 	.q /* OUT */ (icount_6),
 	.d /* IN */ (cnti_6),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_6
 (
 	.q /* OUT */ (icount_7),
 	.d /* IN */ (cnti_7),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_7
 (
 	.q /* OUT */ (icount_8),
 	.d /* IN */ (cnti_8),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_8
 (
 	.q /* OUT */ (icount_9),
 	.d /* IN */ (cnti_9),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_9
 (
 	.q /* OUT */ (icount_10),
 	.d /* IN */ (cnti_10),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_10
 (
 	.q /* OUT */ (icount_11),
 	.d /* IN */ (cnti_11),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_11
 (
 	.q /* OUT */ (icount_12),
 	.d /* IN */ (cnti_12),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_12
 (
 	.q /* OUT */ (icount_13),
 	.d /* IN */ (cnti_13),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_13
 (
 	.q /* OUT */ (icount_14),
 	.d /* IN */ (cnti_14),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q icount_from_1_to_15_inst_14
 (
 	.q /* OUT */ (icount_15),
 	.d /* IN */ (cnti_15),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (664) - icount\[15] : iv
@@ -920,7 +954,8 @@ fdsync uflow_inst
 	.q /* OUT */ (underflow),
 	.d /* IN */ (uflowt),
 	.ld /* IN */ (icntena),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // INNER.NET (668) - inner0t : nr16

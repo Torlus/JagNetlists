@@ -6,7 +6,8 @@ module ack_pipe
 	input latchd,
 	input ack,
 	input clk,
-	input resetl
+	input resetl,
+	input sys_clk // Generated
 );
 wire notack;
 wire d0;
@@ -32,7 +33,8 @@ fd2q q_inst
 	.q /* OUT */ (q),
 	.d /* IN */ (d),
 	.cp /* IN */ (clk),
-	.cd /* IN */ (resetl)
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
 );
 
 // OB.NET (688) - latch : an2

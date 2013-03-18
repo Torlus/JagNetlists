@@ -2,23 +2,24 @@
 
 module registers
 (
-	output [0:31] srcd;
-	output [0:31] srcdp;
-	output [0:31] srcdpa;
-	output [0:31] dstd;
-	output [0:31] dstdp;
+	output [0:31] srcd,
+	output [0:31] srcdp,
+	output [0:31] srcdpa,
+	output [0:31] dstd,
+	output [0:31] dstdp,
 	input clk,
-	input [0:5] dsta;
+	input [0:5] dsta,
 	input dstrwen_n,
-	input [0:31] dstwd;
+	input [0:31] dstwd,
 	input exe,
 	input locden,
-	input [0:31] locsrc;
-	input [0:31] mem_data;
+	input [0:31] locsrc,
+	input [0:31] mem_data,
 	input mtx_dover,
-	input [0:5] srca;
+	input [0:5] srca,
 	input srcrwen_n,
-	input [0:31] srcwd
+	input [0:31] srcwd,
+	input sys_clk // Generated
 );
 wire [0:31] dstdr;
 wire [0:31] srcdr;
@@ -403,150 +404,17 @@ assign stb = stbe;
 // REGIS-WA.NET (93) - reg_ram : rd64x32
 rd64x32 reg_ram_inst
 (
-	.qa0 /* OUT */ (srcdr_31),
-	.qa1 /* OUT */ (srcdr_30),
-	.qa2 /* OUT */ (srcdr_29),
-	.qa3 /* OUT */ (srcdr_28),
-	.qa4 /* OUT */ (srcdr_27),
-	.qa5 /* OUT */ (srcdr_26),
-	.qa6 /* OUT */ (srcdr_25),
-	.qa7 /* OUT */ (srcdr_24),
-	.qa8 /* OUT */ (srcdr_23),
-	.qa9 /* OUT */ (srcdr_22),
-	.qa10 /* OUT */ (srcdr_21),
-	.qa11 /* OUT */ (srcdr_20),
-	.qa12 /* OUT */ (srcdr_19),
-	.qa13 /* OUT */ (srcdr_18),
-	.qa14 /* OUT */ (srcdr_17),
-	.qa15 /* OUT */ (srcdr_16),
-	.qa16 /* OUT */ (srcdr_15),
-	.qa17 /* OUT */ (srcdr_14),
-	.qa18 /* OUT */ (srcdr_13),
-	.qa19 /* OUT */ (srcdr_12),
-	.qa20 /* OUT */ (srcdr_11),
-	.qa21 /* OUT */ (srcdr_10),
-	.qa22 /* OUT */ (srcdr_9),
-	.qa23 /* OUT */ (srcdr_8),
-	.qa24 /* OUT */ (srcdr_7),
-	.qa25 /* OUT */ (srcdr_6),
-	.qa26 /* OUT */ (srcdr_5),
-	.qa27 /* OUT */ (srcdr_4),
-	.qa28 /* OUT */ (srcdr_3),
-	.qa29 /* OUT */ (srcdr_2),
-	.qa30 /* OUT */ (srcdr_1),
-	.qa31 /* OUT */ (srcdr_0),
-	.qb0 /* OUT */ (dstdr_31),
-	.qb1 /* OUT */ (dstdr_30),
-	.qb2 /* OUT */ (dstdr_29),
-	.qb3 /* OUT */ (dstdr_28),
-	.qb4 /* OUT */ (dstdr_27),
-	.qb5 /* OUT */ (dstdr_26),
-	.qb6 /* OUT */ (dstdr_25),
-	.qb7 /* OUT */ (dstdr_24),
-	.qb8 /* OUT */ (dstdr_23),
-	.qb9 /* OUT */ (dstdr_22),
-	.qb10 /* OUT */ (dstdr_21),
-	.qb11 /* OUT */ (dstdr_20),
-	.qb12 /* OUT */ (dstdr_19),
-	.qb13 /* OUT */ (dstdr_18),
-	.qb14 /* OUT */ (dstdr_17),
-	.qb15 /* OUT */ (dstdr_16),
-	.qb16 /* OUT */ (dstdr_15),
-	.qb17 /* OUT */ (dstdr_14),
-	.qb18 /* OUT */ (dstdr_13),
-	.qb19 /* OUT */ (dstdr_12),
-	.qb20 /* OUT */ (dstdr_11),
-	.qb21 /* OUT */ (dstdr_10),
-	.qb22 /* OUT */ (dstdr_9),
-	.qb23 /* OUT */ (dstdr_8),
-	.qb24 /* OUT */ (dstdr_7),
-	.qb25 /* OUT */ (dstdr_6),
-	.qb26 /* OUT */ (dstdr_5),
-	.qb27 /* OUT */ (dstdr_4),
-	.qb28 /* OUT */ (dstdr_3),
-	.qb29 /* OUT */ (dstdr_2),
-	.qb30 /* OUT */ (dstdr_1),
-	.qb31 /* OUT */ (dstdr_0),
+	.qa /* OUT */ ({srcdr_31,srcdr_30,srcdr_29,srcdr_28,srcdr_27,srcdr_26,srcdr_25,srcdr_24,srcdr_23,srcdr_22,srcdr_21,srcdr_20,srcdr_19,srcdr_18,srcdr_17,srcdr_16,srcdr_15,srcdr_14,srcdr_13,srcdr_12,srcdr_11,srcdr_10,srcdr_9,srcdr_8,srcdr_7,srcdr_6,srcdr_5,srcdr_4,srcdr_3,srcdr_2,srcdr_1,srcdr_0}),
+	.qb /* OUT */ ({dstdr_31,dstdr_30,dstdr_29,dstdr_28,dstdr_27,dstdr_26,dstdr_25,dstdr_24,dstdr_23,dstdr_22,dstdr_21,dstdr_20,dstdr_19,dstdr_18,dstdr_17,dstdr_16,dstdr_15,dstdr_14,dstdr_13,dstdr_12,dstdr_11,dstdr_10,dstdr_9,dstdr_8,dstdr_7,dstdr_6,dstdr_5,dstdr_4,dstdr_3,dstdr_2,dstdr_1,dstdr_0}),
 	.nwea /* IN */ (srcrwen_n),
 	.clka /* IN */ (stb),
-	.aa0 /* IN */ (srca[5]),
-	.aa1 /* IN */ (srca[4]),
-	.aa2 /* IN */ (srca[3]),
-	.aa3 /* IN */ (srca[2]),
-	.aa4 /* IN */ (srca[1]),
-	.aa5 /* IN */ (srca[0]),
-	.da0 /* IN */ (srcwd[31]),
-	.da1 /* IN */ (srcwd[30]),
-	.da2 /* IN */ (srcwd[29]),
-	.da3 /* IN */ (srcwd[28]),
-	.da4 /* IN */ (srcwd[27]),
-	.da5 /* IN */ (srcwd[26]),
-	.da6 /* IN */ (srcwd[25]),
-	.da7 /* IN */ (srcwd[24]),
-	.da8 /* IN */ (srcwd[23]),
-	.da9 /* IN */ (srcwd[22]),
-	.da10 /* IN */ (srcwd[21]),
-	.da11 /* IN */ (srcwd[20]),
-	.da12 /* IN */ (srcwd[19]),
-	.da13 /* IN */ (srcwd[18]),
-	.da14 /* IN */ (srcwd[17]),
-	.da15 /* IN */ (srcwd[16]),
-	.da16 /* IN */ (srcwd[15]),
-	.da17 /* IN */ (srcwd[14]),
-	.da18 /* IN */ (srcwd[13]),
-	.da19 /* IN */ (srcwd[12]),
-	.da20 /* IN */ (srcwd[11]),
-	.da21 /* IN */ (srcwd[10]),
-	.da22 /* IN */ (srcwd[9]),
-	.da23 /* IN */ (srcwd[8]),
-	.da24 /* IN */ (srcwd[7]),
-	.da25 /* IN */ (srcwd[6]),
-	.da26 /* IN */ (srcwd[5]),
-	.da27 /* IN */ (srcwd[4]),
-	.da28 /* IN */ (srcwd[3]),
-	.da29 /* IN */ (srcwd[2]),
-	.da30 /* IN */ (srcwd[1]),
-	.da31 /* IN */ (srcwd[0]),
+	.aa /* IN */ ({srca[5],srca[4],srca[3],srca[2],srca[1],srca[0]}),
+	.da /* IN */ ({srcwd[31],srcwd[30],srcwd[29],srcwd[28],srcwd[27],srcwd[26],srcwd[25],srcwd[24],srcwd[23],srcwd[22],srcwd[21],srcwd[20],srcwd[19],srcwd[18],srcwd[17],srcwd[16],srcwd[15],srcwd[14],srcwd[13],srcwd[12],srcwd[11],srcwd[10],srcwd[9],srcwd[8],srcwd[7],srcwd[6],srcwd[5],srcwd[4],srcwd[3],srcwd[2],srcwd[1],srcwd[0]}),
 	.nweb /* IN */ (dstrwen_n),
 	.clkb /* IN */ (stb),
-	.ab0 /* IN */ (dsta[5]),
-	.ab1 /* IN */ (dsta[4]),
-	.ab2 /* IN */ (dsta[3]),
-	.ab3 /* IN */ (dsta[2]),
-	.ab4 /* IN */ (dsta[1]),
-	.ab5 /* IN */ (dsta[0]),
-	.db0 /* IN */ (dstwd[31]),
-	.db1 /* IN */ (dstwd[30]),
-	.db2 /* IN */ (dstwd[29]),
-	.db3 /* IN */ (dstwd[28]),
-	.db4 /* IN */ (dstwd[27]),
-	.db5 /* IN */ (dstwd[26]),
-	.db6 /* IN */ (dstwd[25]),
-	.db7 /* IN */ (dstwd[24]),
-	.db8 /* IN */ (dstwd[23]),
-	.db9 /* IN */ (dstwd[22]),
-	.db10 /* IN */ (dstwd[21]),
-	.db11 /* IN */ (dstwd[20]),
-	.db12 /* IN */ (dstwd[19]),
-	.db13 /* IN */ (dstwd[18]),
-	.db14 /* IN */ (dstwd[17]),
-	.db15 /* IN */ (dstwd[16]),
-	.db16 /* IN */ (dstwd[15]),
-	.db17 /* IN */ (dstwd[14]),
-	.db18 /* IN */ (dstwd[13]),
-	.db19 /* IN */ (dstwd[12]),
-	.db20 /* IN */ (dstwd[11]),
-	.db21 /* IN */ (dstwd[10]),
-	.db22 /* IN */ (dstwd[9]),
-	.db23 /* IN */ (dstwd[8]),
-	.db24 /* IN */ (dstwd[7]),
-	.db25 /* IN */ (dstwd[6]),
-	.db26 /* IN */ (dstwd[5]),
-	.db27 /* IN */ (dstwd[4]),
-	.db28 /* IN */ (dstwd[3]),
-	.db29 /* IN */ (dstwd[2]),
-	.db30 /* IN */ (dstwd[1]),
-	.db31 /* IN */ (dstwd[0])
+	.ab /* IN */ ({dsta[5],dsta[4],dsta[3],dsta[2],dsta[1],dsta[0]}),
+	.db /* IN */ ({dstwd[31],dstwd[30],dstwd[29],dstwd[28],dstwd[27],dstwd[26],dstwd[25],dstwd[24],dstwd[23],dstwd[22],dstwd[21],dstwd[20],dstwd[19],dstwd[18],dstwd[17],dstwd[16],dstwd[15],dstwd[14],dstwd[13],dstwd[12],dstwd[11],dstwd[10],dstwd[9],dstwd[8],dstwd[7],dstwd[6],dstwd[5],dstwd[4],dstwd[3],dstwd[2],dstwd[1],dstwd[0]}),
+	.sys_clk(sys_clk) // Generated
 );
 
 // REGIS-WA.NET (120) - srcdr : join
@@ -945,7 +813,8 @@ fdsync32 srcdpt_inst
 	.q /* OUT */ ({srcdpa_b0_obuf,srcdpa_b1_obuf,srcdpa_b2_obuf,srcdpa_b3_obuf,srcdpa_b4_obuf,srcdpa_b5_obuf,srcdpa_b6_obuf,srcdpa_b7_obuf,srcdpa_b8_obuf,srcdpa_b9_obuf,srcdpa_b10_obuf,srcdpa_b11_obuf,srcdpa_b12_obuf,srcdpa_b13_obuf,srcdpa_b14_obuf,srcdpa_b15_obuf,srcdpa_b16_obuf,srcdpa_b17_obuf,srcdpa_b18_obuf,srcdpa_b19_obuf,srcdpa_b20_obuf,srcdpa_b21_obuf,srcdpa_b22_obuf,srcdpa_b23_obuf,srcdpa_b24_obuf,srcdpa_b25_obuf,srcdpa_b26_obuf,srcdpa_b27_obuf,srcdpa_b28_obuf,srcdpa_b29_obuf,srcdpa_b30_obuf,srcdpa_b31_obuf}),
 	.d /* IN */ ({srcd_b0_obuf,srcd_b1_obuf,srcd_b2_obuf,srcd_b3_obuf,srcd_b4_obuf,srcd_b5_obuf,srcd_b6_obuf,srcd_b7_obuf,srcd_b8_obuf,srcd_b9_obuf,srcd_b10_obuf,srcd_b11_obuf,srcd_b12_obuf,srcd_b13_obuf,srcd_b14_obuf,srcd_b15_obuf,srcd_b16_obuf,srcd_b17_obuf,srcd_b18_obuf,srcd_b19_obuf,srcd_b20_obuf,srcd_b21_obuf,srcd_b22_obuf,srcd_b23_obuf,srcd_b24_obuf,srcd_b25_obuf,srcd_b26_obuf,srcd_b27_obuf,srcd_b28_obuf,srcd_b29_obuf,srcd_b30_obuf,srcd_b31_obuf}),
 	.ld /* IN */ (exeb),
-	.clk /* IN */ (clk)
+	.clk /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // REGIS-WA.NET (127) - srcdp : nivh
@@ -1309,193 +1178,225 @@ fd1q dstdpt_inst_0
 (
 	.q /* OUT */ (dstdpt0[0]),
 	.d /* IN */ (dstd_b0_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_1
 (
 	.q /* OUT */ (dstdpt0[1]),
 	.d /* IN */ (dstd_b1_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_2
 (
 	.q /* OUT */ (dstdpt0[2]),
 	.d /* IN */ (dstd_b2_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_3
 (
 	.q /* OUT */ (dstdpt0[3]),
 	.d /* IN */ (dstd_b3_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_4
 (
 	.q /* OUT */ (dstdpt0[4]),
 	.d /* IN */ (dstd_b4_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_5
 (
 	.q /* OUT */ (dstdpt0[5]),
 	.d /* IN */ (dstd_b5_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_6
 (
 	.q /* OUT */ (dstdpt0[6]),
 	.d /* IN */ (dstd_b6_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_7
 (
 	.q /* OUT */ (dstdpt0[7]),
 	.d /* IN */ (dstd_b7_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_8
 (
 	.q /* OUT */ (dstdpt0[8]),
 	.d /* IN */ (dstd_b8_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_9
 (
 	.q /* OUT */ (dstdpt0[9]),
 	.d /* IN */ (dstd_b9_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_10
 (
 	.q /* OUT */ (dstdpt0[10]),
 	.d /* IN */ (dstd_b10_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_11
 (
 	.q /* OUT */ (dstdpt0[11]),
 	.d /* IN */ (dstd_b11_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_12
 (
 	.q /* OUT */ (dstdpt0[12]),
 	.d /* IN */ (dstd_b12_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_13
 (
 	.q /* OUT */ (dstdpt0[13]),
 	.d /* IN */ (dstd_b13_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_14
 (
 	.q /* OUT */ (dstdpt0[14]),
 	.d /* IN */ (dstd_b14_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_15
 (
 	.q /* OUT */ (dstdpt0[15]),
 	.d /* IN */ (dstd_b15_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_16
 (
 	.q /* OUT */ (dstdpt0[16]),
 	.d /* IN */ (dstd_b16_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_17
 (
 	.q /* OUT */ (dstdpt0[17]),
 	.d /* IN */ (dstd_b17_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_18
 (
 	.q /* OUT */ (dstdpt0[18]),
 	.d /* IN */ (dstd_b18_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_19
 (
 	.q /* OUT */ (dstdpt0[19]),
 	.d /* IN */ (dstd_b19_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_20
 (
 	.q /* OUT */ (dstdpt0[20]),
 	.d /* IN */ (dstd_b20_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_21
 (
 	.q /* OUT */ (dstdpt0[21]),
 	.d /* IN */ (dstd_b21_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_22
 (
 	.q /* OUT */ (dstdpt0[22]),
 	.d /* IN */ (dstd_b22_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_23
 (
 	.q /* OUT */ (dstdpt0[23]),
 	.d /* IN */ (dstd_b23_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_24
 (
 	.q /* OUT */ (dstdpt0[24]),
 	.d /* IN */ (dstd_b24_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_25
 (
 	.q /* OUT */ (dstdpt0[25]),
 	.d /* IN */ (dstd_b25_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_26
 (
 	.q /* OUT */ (dstdpt0[26]),
 	.d /* IN */ (dstd_b26_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_27
 (
 	.q /* OUT */ (dstdpt0[27]),
 	.d /* IN */ (dstd_b27_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_28
 (
 	.q /* OUT */ (dstdpt0[28]),
 	.d /* IN */ (dstd_b28_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_29
 (
 	.q /* OUT */ (dstdpt0[29]),
 	.d /* IN */ (dstd_b29_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_30
 (
 	.q /* OUT */ (dstdpt0[30]),
 	.d /* IN */ (dstd_b30_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 fd1q dstdpt_inst_31
 (
 	.q /* OUT */ (dstdpt0[31]),
 	.d /* IN */ (dstd_b31_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // REGIS-WA.NET (132) - mtx_doverp : fd1qu
@@ -1503,7 +1404,8 @@ fd1q mtx_doverp_inst
 (
 	.q /* OUT */ (mtx_doverp),
 	.d /* IN */ (mtx_dover),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 
 // REGIS-WA.NET (133) - dstdpt1 : mx2p

@@ -6,7 +6,8 @@ module fdr
 	output ql,
 	input d,
 	input clk,
-	input resl
+	input resl,
+	input sys_clk // Generated
 );
 wire d1;
 
@@ -19,6 +20,7 @@ fd1 q_inst
 	.q /* OUT */ (q),
 	.qn /* OUT */ (ql),
 	.d /* IN */ (d1),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

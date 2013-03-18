@@ -2,23 +2,24 @@
 
 module addarray
 (
-	output [0:15] addq_0;
-	output [0:15] addq_1;
-	output [0:15] addq_2;
-	output [0:15] addq_3;
-	input [0:15] adda_0;
-	input [0:15] adda_1;
-	input [0:15] adda_2;
-	input [0:15] adda_3;
-	input [0:15] addb_0;
-	input [0:15] addb_1;
-	input [0:15] addb_2;
-	input [0:15] addb_3;
+	output [0:15] addq_0,
+	output [0:15] addq_1,
+	output [0:15] addq_2,
+	output [0:15] addq_3,
+	input [0:15] adda_0,
+	input [0:15] adda_1,
+	input [0:15] adda_2,
+	input [0:15] adda_3,
+	input [0:15] addb_0,
+	input [0:15] addb_1,
+	input [0:15] addb_2,
+	input [0:15] addb_3,
 	input daddmode_0,
 	input daddmode_1,
 	input daddmode_2,
 	input clk_0,
-	input reset_n
+	input reset_n,
+	input sys_clk // Generated
 );
 wire cinselt;
 wire cinsel;
@@ -50,28 +51,32 @@ fd2q carrylat_from_0_to_3_inst_0
 	.q /* OUT */ (carryq_0),
 	.d /* IN */ (co_0),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q carrylat_from_0_to_3_inst_1
 (
 	.q /* OUT */ (carryq_1),
 	.d /* IN */ (co_1),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q carrylat_from_0_to_3_inst_2
 (
 	.q /* OUT */ (carryq_2),
 	.d /* IN */ (co_2),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 fd2q carrylat_from_0_to_3_inst_3
 (
 	.q /* OUT */ (carryq_3),
 	.d /* IN */ (co_3),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // ADDARRAY.NET (68) - cin[0-3] : an2

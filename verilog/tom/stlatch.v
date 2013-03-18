@@ -5,7 +5,8 @@ module stlatch
 	output d1,
 	input d,
 	input clk,
-	input en
+	input en,
+	input sys_clk // Generated
 );
 wire q;
 
@@ -31,6 +32,7 @@ fd1q q_inst
 (
 	.q /* OUT */ (q),
 	.d /* IN */ (d1_obuf),
-	.cp /* IN */ (clk)
+	.cp /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
 );
 endmodule

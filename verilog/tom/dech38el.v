@@ -25,15 +25,15 @@ wire enb;
 
 // DUPLO.NET (153) - abuf : ivdm
 assign s_n_0 = ~a;
-assign s_0 = a
+assign s_0 = a;
 
 // DUPLO.NET (154) - bbuf : ivdm
 assign s_n_1 = ~b;
-assign s_1 = b
+assign s_1 = b;
 
 // DUPLO.NET (155) - cbuf : ivdm
 assign s_n_2 = ~c;
-assign s_2 = c
+assign s_2 = c;
 
 // DUPLO.NET (156) - ebuf : ivm
 assign enb = ~en;

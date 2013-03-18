@@ -465,7 +465,8 @@ module graphics
 	input dr_15_in,
 	output justify_out,
 	output justify_oe,
-	input justify_in
+	input justify_in,
+	input sys_clk // Generated
 );
 wire [0:3] width;
 wire [0:15] io_addr;
@@ -2243,7 +2244,8 @@ fd1 dintd_inst
 	.q /* OUT */ (dintd),
 	.qn /* OUT */ (dintd_n),
 	.d /* IN */ (dint),
-	.cp /* IN */ (clk_11)
+	.cp /* IN */ (clk_11),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (80) - dintdum : dummy
@@ -2476,7 +2478,8 @@ ins_exec ins_exec_inst
 	.srcdp /* IN */ ({srcdp[0],srcdp[1],srcdp[2],srcdp[3],srcdp[4],srcdp[5],srcdp[6],srcdp[7],srcdp[8],srcdp[9],srcdp[10],srcdp[11],srcdp[12],srcdp[13],srcdp[14],srcdp[15],srcdp[16],srcdp[17],srcdp[18],srcdp[19],srcdp[20],srcdp[21],srcdp[22],srcdp[23],srcdp[24],srcdp[25],srcdp[26],srcdp[27],srcdp[28],srcdp[29],srcdp[30],srcdp[31]}),
 	.srcdpa /* IN */ ({srcdpa[0],srcdpa[1],srcdpa[2],srcdpa[3],srcdpa[4],srcdpa[5],srcdpa[6],srcdpa[7],srcdpa[8],srcdpa[9],srcdpa[10],srcdpa[11],srcdpa[12],srcdpa[13],srcdpa[14],srcdpa[15],srcdpa[16],srcdpa[17],srcdpa[18],srcdpa[19],srcdpa[20],srcdpa[21],srcdpa[22],srcdpa[23],srcdpa[24],srcdpa[25],srcdpa[26],srcdpa[27],srcdpa[28],srcdpa[29],srcdpa[30],srcdpa[31]}),
 	.statrd /* IN */ (statrd),
-	.zero_flag /* IN */ (zero_flag)
+	.zero_flag /* IN */ (zero_flag),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (125) - sboard : sboard
@@ -2527,7 +2530,8 @@ sboard sboard_inst
 	.srcanwi /* IN */ ({srcanwi[0],srcanwi[1],srcanwi[2],srcanwi[3],srcanwi[4],srcanwi[5]}),
 	.srcdp /* IN */ ({srcdp[0],srcdp[1],srcdp[2],srcdp[3],srcdp[4],srcdp[5],srcdp[6],srcdp[7],srcdp[8],srcdp[9],srcdp[10],srcdp[11],srcdp[12],srcdp[13],srcdp[14],srcdp[15],srcdp[16],srcdp[17],srcdp[18],srcdp[19],srcdp[20],srcdp[21],srcdp[22],srcdp[23],srcdp[24],srcdp[25],srcdp[26],srcdp[27],srcdp[28],srcdp[29],srcdp[30],srcdp[31]}),
 	.srcrrd /* IN */ (srcrrd),
-	.xld_ready /* IN */ (xld_ready)
+	.xld_ready /* IN */ (xld_ready),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (140) - arith : arith
@@ -2567,7 +2571,8 @@ arith arith_inst
 	.ressel_2 /* IN */ (ressel_2),
 	.rev_sub /* IN */ (rev_sub),
 	.satsz_0 /* IN */ (satsz_0),
-	.satsz_1 /* IN */ (satsz_1)
+	.satsz_1 /* IN */ (satsz_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (149) - divide : divide
@@ -2585,7 +2590,8 @@ divide divide_inst
 	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
 	.remrd /* IN */ (remrd),
 	.reset_n /* IN */ (resetl_7),
-	.srcd /* IN */ ({srcd[0],srcd[1],srcd[2],srcd[3],srcd[4],srcd[5],srcd[6],srcd[7],srcd[8],srcd[9],srcd[10],srcd[11],srcd[12],srcd[13],srcd[14],srcd[15],srcd[16],srcd[17],srcd[18],srcd[19],srcd[20],srcd[21],srcd[22],srcd[23],srcd[24],srcd[25],srcd[26],srcd[27],srcd[28],srcd[29],srcd[30],srcd[31]})
+	.srcd /* IN */ ({srcd[0],srcd[1],srcd[2],srcd[3],srcd[4],srcd[5],srcd[6],srcd[7],srcd[8],srcd[9],srcd[10],srcd[11],srcd[12],srcd[13],srcd[14],srcd[15],srcd[16],srcd[17],srcd[18],srcd[19],srcd[20],srcd[21],srcd[22],srcd[23],srcd[24],srcd[25],srcd[26],srcd[27],srcd[28],srcd[29],srcd[30],srcd[31]}),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (155) - registers : registers
@@ -2607,7 +2613,8 @@ registers registers_inst
 	.mtx_dover /* IN */ (mtx_dover),
 	.srca /* IN */ ({srca[0],srca[1],srca[2],srca[3],srca[4],srca[5]}),
 	.srcrwen_n /* IN */ (srcrwen_n),
-	.srcwd /* IN */ ({srcwd[0],srcwd[1],srcwd[2],srcwd[3],srcwd[4],srcwd[5],srcwd[6],srcwd[7],srcwd[8],srcwd[9],srcwd[10],srcwd[11],srcwd[12],srcwd[13],srcwd[14],srcwd[15],srcwd[16],srcwd[17],srcwd[18],srcwd[19],srcwd[20],srcwd[21],srcwd[22],srcwd[23],srcwd[24],srcwd[25],srcwd[26],srcwd[27],srcwd[28],srcwd[29],srcwd[30],srcwd[31]})
+	.srcwd /* IN */ ({srcwd[0],srcwd[1],srcwd[2],srcwd[3],srcwd[4],srcwd[5],srcwd[6],srcwd[7],srcwd[8],srcwd[9],srcwd[10],srcwd[11],srcwd[12],srcwd[13],srcwd[14],srcwd[15],srcwd[16],srcwd[17],srcwd[18],srcwd[19],srcwd[20],srcwd[21],srcwd[22],srcwd[23],srcwd[24],srcwd[25],srcwd[26],srcwd[27],srcwd[28],srcwd[29],srcwd[30],srcwd[31]}),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (162) - gpu_mem : gpu_mem
@@ -2672,7 +2679,8 @@ gpu_mem gpu_mem_inst
 	.progaddr /* IN */ ({progaddr[0],progaddr[1],progaddr[2],progaddr[3],progaddr[4],progaddr[5],progaddr[6],progaddr[7],progaddr[8],progaddr[9],progaddr[10],progaddr[11],progaddr[12],progaddr[13],progaddr[14],progaddr[15],progaddr[16],progaddr[17],progaddr[18],progaddr[19],progaddr[20],progaddr[21]}),
 	.progreq /* IN */ (progreq),
 	.reset_n /* IN */ (resetl_8),
-	.reset_lock /* IN */ (reset_lock)
+	.reset_lock /* IN */ (reset_lock),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (176) - gpu_ctrl : gpu_ctrl
@@ -2723,7 +2731,8 @@ gpu_ctrl gpu_ctrl_inst
 	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
 	.reset_n /* IN */ (resetl_9),
 	.single_stop /* IN */ (single_stop),
-	.statrd /* IN */ (statrd)
+	.statrd /* IN */ (statrd),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (184) - gpu_ram : gpu_ram
@@ -2744,7 +2753,8 @@ gpu_ram gpu_ram_inst
 	.ram_addr_9 /* IN */ (ram_addr_9),
 	.ram_addr_10 /* IN */ (ram_addr_10),
 	.ram_addr_11 /* IN */ (ram_addr_11),
-	.ramen /* IN */ (ramen)
+	.ramen /* IN */ (ramen),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (189) - gpu_cpu : gpu_cpu
@@ -2797,7 +2807,9 @@ gpu_cpu gpu_cpu_inst
 	.io_addr /* IN */ ({io_addr[0],io_addr[1],io_addr[2],io_addr[3],io_addr[4],io_addr[5],io_addr[6],io_addr[7],io_addr[8],io_addr[9],io_addr[10],io_addr[11],io_addr[12],io_addr[13],io_addr[14],io_addr[15]}),
 	.iord /* IN */ (iord),
 	.iowr /* IN */ (iowr),
-	.mem_data /* IN */ ({mem_data[0],mem_data[1],mem_data[2],mem_data[3],mem_data[4],mem_data[5],mem_data[6],mem_data[7],mem_data[8],mem_data[9],mem_data[10],mem_data[11],mem_data[12],mem_data[13],mem_data[14],mem_data[15],mem_data[16],mem_data[17],mem_data[18],mem_data[19],mem_data[20],mem_data[21],mem_data[22],mem_data[23],mem_data[24],mem_data[25],mem_data[26],mem_data[27],mem_data[28],mem_data[29],mem_data[30],mem_data[31]})
+	.mem_data /* IN */ ({mem_data[0],mem_data[1],mem_data[2],mem_data[3],mem_data[4],mem_data[5],mem_data[6],mem_data[7],mem_data[8],mem_data[9],mem_data[10],mem_data[11],mem_data[12],mem_data[13],mem_data[14],mem_data[15],mem_data[16],mem_data[17],mem_data[18],mem_data[19],mem_data[20],mem_data[21],mem_data[22],mem_data[23],mem_data[24],mem_data[25],mem_data[26],mem_data[27],mem_data[28],mem_data[29],mem_data[30],mem_data[31]}),
+	.reset_n /* IN */ (resetl_10),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (195) - gateway : gateway
@@ -3112,7 +3124,8 @@ gateway gateway_inst
 	.msize_0 /* IN */ (msize_0),
 	.msize_1 /* IN */ (msize_1),
 	.progserv /* IN */ (progserv),
-	.reset_n /* IN */ (resetl_11)
+	.reset_n /* IN */ (resetl_11),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (205) - blit : blit
@@ -3506,7 +3519,8 @@ blit blit_inst
 	.gpu_addr /* IN */ ({gpu_addr[0],gpu_addr[1],gpu_addr[2],gpu_addr[3],gpu_addr[4],gpu_addr[5],gpu_addr[6],gpu_addr[7],gpu_addr[8],gpu_addr[9],gpu_addr[10],gpu_addr[11],gpu_addr[12],gpu_addr[13],gpu_addr[14],gpu_addr[15],gpu_addr[16],gpu_addr[17],gpu_addr[18],gpu_addr[19],gpu_addr[20],gpu_addr[21],gpu_addr[22],gpu_addr[23]}),
 	.gpu_din /* IN */ ({gpu_din[0],gpu_din[1],gpu_din[2],gpu_din[3],gpu_din[4],gpu_din[5],gpu_din[6],gpu_din[7],gpu_din[8],gpu_din[9],gpu_din[10],gpu_din[11],gpu_din[12],gpu_din[13],gpu_din[14],gpu_din[15],gpu_din[16],gpu_din[17],gpu_din[18],gpu_din[19],gpu_din[20],gpu_din[21],gpu_din[22],gpu_din[23],gpu_din[24],gpu_din[25],gpu_din[26],gpu_din[27],gpu_din[28],gpu_din[29],gpu_din[30],gpu_din[31]}),
 	.gpu_memw /* IN */ (gpu_memw),
-	.xreset_n /* IN */ (resetl_12)
+	.xreset_n /* IN */ (resetl_12),
+	.sys_clk(sys_clk) // Generated
 );
 
 // GRAPHICS.NET (214) - gpu_dout : join_bus

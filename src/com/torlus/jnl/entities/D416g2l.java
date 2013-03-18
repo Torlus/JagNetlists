@@ -13,6 +13,9 @@ public class D416g2l extends Entity {
 	public D416g2l() {
 		// 4-to-16 decoder with 2 low enable (?)
 
+		// from tosh_to_moto.v
+		// 4 to 16 decoder with 2 enables, active-low outputs
+
 		for (int i = 0; i < 16; i++) {
 			ios.add(new Signal("z" + i, SignalType.OUT));
 		}

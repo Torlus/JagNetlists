@@ -27,7 +27,8 @@ module execon
 	input reset_n,
 	input sbwait,
 	input single_go,
-	input single_step
+	input single_step,
+	input sys_clk // Generated
 );
 wire go_n;
 wire immld_n;
@@ -125,7 +126,8 @@ fd2 insrdy_inst
 	.qn /* OUT */ (insrdyp_n),
 	.d /* IN */ (insrdy),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (70) - vinsset\ : nd2
@@ -149,7 +151,8 @@ fd2q vins_inst
 	.q /* OUT */ (vins),
 	.d /* IN */ (vinsi),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (77) - wait\ : nr3p
@@ -179,7 +182,8 @@ fd2q insexe_inst
 	.q /* OUT */ (insexe),
 	.d /* IN */ (insexei_obuf),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (102) - idlet0 : nd2
@@ -200,7 +204,8 @@ fd4q idle_inst
 	.q /* OUT */ (idle),
 	.d /* IN */ (idlet_3),
 	.cp /* IN */ (clk_0),
-	.sd /* IN */ (reset_n)
+	.sd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (108) - exect0 : nd2
@@ -243,7 +248,8 @@ fd2q exect_inst
 	.q /* OUT */ (exect),
 	.d /* IN */ (execi),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (116) - exec : nivm
@@ -264,7 +270,8 @@ fd2q imm1_inst
 	.q /* OUT */ (imm1),
 	.d /* IN */ (imm1t_2),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (123) - imm2t0 : nd2
@@ -282,7 +289,8 @@ fd2q imm2_inst
 	.q /* OUT */ (imm2),
 	.d /* IN */ (imm2i),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (128) - stopt0 : nd5
@@ -311,7 +319,8 @@ fd2q stop_inst
 	.q /* OUT */ (stop_obuf),
 	.d /* IN */ (stopt_3),
 	.cp /* IN */ (clk_0),
-	.cd /* IN */ (reset_n)
+	.cd /* IN */ (reset_n),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (150) - romot0 : nd2p
@@ -389,7 +398,8 @@ fd1q compdld_inst
 (
 	.q /* OUT */ (compdld_n),
 	.d /* IN */ (compdldt_n),
-	.cp /* IN */ (clk_0)
+	.cp /* IN */ (clk_0),
+	.sys_clk(sys_clk) // Generated
 );
 
 // EXECON.NET (185) - dstdgt0 : nd4
