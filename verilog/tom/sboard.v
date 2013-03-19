@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module sboard
@@ -3314,3 +3315,4 @@ assign sbwaitt_3 = ~(mbusywait | ldwait);
 // SBOARD.NET (645) - sbwait : nd4p
 assign sbwait = ~(sbwaitt_0 & sbwaitt_1 & sbwaitt_2 & sbwaitt_3);
 endmodule
+/* verilator lint_on LITENDIAN */

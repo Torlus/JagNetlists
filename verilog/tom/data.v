@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module data
@@ -9113,3 +9114,4 @@ data_mux data_out_inst
 	.srczhi /* IN */ ({srczo_1[0],srczo_1[1],srczo_1[2],srczo_1[3],srczo_1[4],srczo_1[5],srczo_1[6],srczo_1[7],srczo_1[8],srczo_1[9],srczo_1[10],srczo_1[11],srczo_1[12],srczo_1[13],srczo_1[14],srczo_1[15],srczo_1[16],srczo_1[17],srczo_1[18],srczo_1[19],srczo_1[20],srczo_1[21],srczo_1[22],srczo_1[23],srczo_1[24],srczo_1[25],srczo_1[26],srczo_1[27],srczo_1[28],srczo_1[29],srczo_1[30],srczo_1[31]})
 );
 endmodule
+/* verilator lint_on LITENDIAN */

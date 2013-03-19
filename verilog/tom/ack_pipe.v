@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ack_pipe
@@ -40,3 +41,4 @@ fd2q q_inst
 // OB.NET (688) - latch : an2
 assign latch = q & ack;
 endmodule
+/* verilator lint_on LITENDIAN */

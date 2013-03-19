@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module comp_ctrl
@@ -373,3 +374,4 @@ assign di7t_2 = ~(di6t_0 & di6t_1 & di7t_0 & di7t_1);
 // INNER.NET (851) - dbinh[7] : nd2
 assign dbinh_n_7 = ~(di7t_2 & phrase_mode);
 endmodule
+/* verilator lint_on LITENDIAN */

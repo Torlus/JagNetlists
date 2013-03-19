@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module daddamux
@@ -1211,3 +1212,4 @@ assign adda_3[13] = addahi[29];
 assign adda_3[14] = addahi[30];
 assign adda_3[15] = addahi[31];
 endmodule
+/* verilator lint_on LITENDIAN */

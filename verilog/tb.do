@@ -48,6 +48,9 @@ vlog base/mp16.v
 vlog base/rd64x32.v
 vlog base/aba032a.v
 
+vlog base/stlatch.v
+# vlog tom/stlatch.v
+
 vlog tom/an5.v
 vlog tom/an5p.v
 vlog tom/an10.v
@@ -90,7 +93,6 @@ vlog tom/slatchr.v
 vlog tom/slatch.v
 vlog tom/slatchc.v
 vlog tom/slatchp.v
-vlog tom/stlatch.v
 vlog tom/up.v
 vlog tom/down.v
 vlog tom/dec38h.v
@@ -125,7 +127,7 @@ vlog tom/dech38el.v
 vlog tom/mx12b.v
 vlog tom/mx6.v
 
-vlog tom/_graphics.v
+vlog tom/graphics_void.v
 # vlog tom/pc.v
 # vlog tom/cp_latch.v
 # vlog tom/subsize.v
@@ -241,32 +243,32 @@ add wave -noupdate -format Literal -radix hexadecimal /tb/xd_r
 
 # add wave -noupdate -format Literal /tb/xma_out
 # add wave -noupdate -format Literal /tb/xma_oe
-#add wave -noupdate -format Literal -radix hexadecimal /tb/xma_in
+add wave -noupdate -format Literal -radix hexadecimal /tb/xma_in
 
-#add wave -noupdate -format Logic /tb/xrasl(0)
-#add wave -noupdate -format Logic /tb/xcasl(0)
-#add wave -noupdate -format Literal /tb/xoel
-#add wave -noupdate -format Literal /tb/xwel
+add wave -noupdate -format Logic /tb/xrasl(0)
+add wave -noupdate -format Logic /tb/xcasl(0)
+add wave -noupdate -format Literal /tb/xoel
+add wave -noupdate -format Literal /tb/xwel
 
 # add wave -noupdate -format Literal /tb/xromcsl
-#add wave -noupdate -format Logic /tb/xdreql_in
-#add wave -noupdate -format Logic /tb/xdtackl
-#add wave -noupdate -format Logic /tb/xbrl_in
-#add wave -noupdate -format Logic /tb/xba_in
-#add wave -noupdate -format Logic /tb/ba
-#add wave -noupdate -format Logic /tb/tom_inst/aen
+add wave -noupdate -format Logic /tb/xdreql_in
+add wave -noupdate -format Logic /tb/xdtackl
+add wave -noupdate -format Logic /tb/xbrl_in
+add wave -noupdate -format Logic /tb/xba_in
+add wave -noupdate -format Logic /tb/ba
+add wave -noupdate -format Logic /tb/tom_inst/aen
 
 
-#add wave -noupdate -format Logic /tb/j68_rst
-#add wave -noupdate -format Logic /tb/j68_clk
-#add wave -noupdate -format Logic /tb/xintl
-#add wave -noupdate -format Literal /tb/j68_fc
-#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address
-#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address_final
-#add wave -noupdate -format Logic /tb/j68_rd_ena
-#add wave -noupdate -format Logic /tb/j68_wr_ena
-#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_rd_data
-#add wave -noupdate -format Literal -radix hexadecimal /tb/j68_wr_data
+add wave -noupdate -format Logic /tb/j68_rst
+add wave -noupdate -format Logic /tb/j68_clk
+add wave -noupdate -format Logic /tb/xintl
+add wave -noupdate -format Literal /tb/j68_fc
+add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address
+add wave -noupdate -format Literal -radix hexadecimal /tb/j68_address_final
+add wave -noupdate -format Logic /tb/j68_rd_ena
+add wave -noupdate -format Logic /tb/j68_wr_ena
+add wave -noupdate -format Literal -radix hexadecimal /tb/j68_rd_data
+add wave -noupdate -format Literal -radix hexadecimal /tb/j68_wr_data
 # add wave -noupdate -format Literal /tb/j68_fc
 # add wave -noupdate -format Literal -radix hexadecimal /tb/j68_inst/dbg_pc_reg
 # add wave -noupdate -format Literal -radix hexadecimal /tb/j68_inst/r_pc_reg

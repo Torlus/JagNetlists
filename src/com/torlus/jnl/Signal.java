@@ -92,7 +92,7 @@ public class Signal implements Cloneable {
 		return res;
 	}
 
-	static String verilogKeywords[] = { "wait", "release", "and", "or", "xor" };
+	static String verilogKeywords[] = { "wait", "release", "and", "or", "xor", "this", "bit", "local", "int", "const" };
 	
 	public String verilogName() {
 		String res = name;

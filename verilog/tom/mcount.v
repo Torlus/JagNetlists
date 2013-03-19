@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mcount
@@ -124,3 +125,4 @@ assign count_n_0 = ~count_0;
 // SYSTOLIC.NET (205) - count2 : nr4
 assign count1 = ~(count_n_0 | count_1 | count_2 | count_3);
 endmodule
+/* verilator lint_on LITENDIAN */

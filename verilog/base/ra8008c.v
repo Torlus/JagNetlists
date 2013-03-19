@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ra8008c
@@ -29,3 +30,4 @@ begin
 end
 
 endmodule
+/* verilator lint_on LITENDIAN */

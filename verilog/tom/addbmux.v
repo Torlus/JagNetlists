@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module addbmux
@@ -344,3 +345,4 @@ mx4 addb_y_inst_15
 	.s1 /* IN */ (addbselb_1)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

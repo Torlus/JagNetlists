@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module fdsyncm
@@ -36,3 +37,4 @@ fd1e qt_inst
 // DUPLO.NET (287) - q : nivm
 assign q_obuf = qt;
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module srcdgen
@@ -12,7 +13,7 @@ module srcdgen
 	input [0:4] srcop
 );
 wire [0:4] botsrc;
-wire [0:4] const;
+wire [0:4] _const;
 wire [0:4] opshft;
 wire [0:31] gensrc;
 wire [0:31] mask;
@@ -189,11 +190,11 @@ assign type6 = srcdat_n_0 & srcdat_1 & srcdat_2 & srcdat_n_3;
 assign constsel = srcdat_n_0 & srcdat_2 & srcdat_n_3;
 
 // INS_EXEC.NET (705) - const : join
-assign const[0] = type6;
-assign const[1] = type6;
-assign const[2] = type6;
-assign const[3] = type6;
-assign const[4] = type6;
+assign _const[0] = type6;
+assign _const[1] = type6;
+assign _const[2] = type6;
+assign _const[3] = type6;
+assign _const[4] = type6;
 
 // INS_EXEC.NET (707) - opshft : join
 assign opshft[0] = zero;
@@ -207,7 +208,7 @@ mx4 botsrc_inst_0
 (
 	.z /* OUT */ (botsrc[0]),
 	.a0 /* IN */ (srcop[0]),
-	.a1 /* IN */ (const[0]),
+	.a1 /* IN */ (_const[0]),
 	.a2 /* IN */ (opshft[0]),
 	.a3 /* IN */ (opshft[0]),
 	.s0 /* IN */ (constsel),
@@ -217,7 +218,7 @@ mx4 botsrc_inst_1
 (
 	.z /* OUT */ (botsrc[1]),
 	.a0 /* IN */ (srcop[1]),
-	.a1 /* IN */ (const[1]),
+	.a1 /* IN */ (_const[1]),
 	.a2 /* IN */ (opshft[1]),
 	.a3 /* IN */ (opshft[1]),
 	.s0 /* IN */ (constsel),
@@ -227,7 +228,7 @@ mx4 botsrc_inst_2
 (
 	.z /* OUT */ (botsrc[2]),
 	.a0 /* IN */ (srcop[2]),
-	.a1 /* IN */ (const[2]),
+	.a1 /* IN */ (_const[2]),
 	.a2 /* IN */ (opshft[2]),
 	.a3 /* IN */ (opshft[2]),
 	.s0 /* IN */ (constsel),
@@ -237,7 +238,7 @@ mx4 botsrc_inst_3
 (
 	.z /* OUT */ (botsrc[3]),
 	.a0 /* IN */ (srcop[3]),
-	.a1 /* IN */ (const[3]),
+	.a1 /* IN */ (_const[3]),
 	.a2 /* IN */ (opshft[3]),
 	.a3 /* IN */ (opshft[3]),
 	.s0 /* IN */ (constsel),
@@ -247,7 +248,7 @@ mx4 botsrc_inst_4
 (
 	.z /* OUT */ (botsrc[4]),
 	.a0 /* IN */ (srcop[4]),
-	.a1 /* IN */ (const[4]),
+	.a1 /* IN */ (_const[4]),
 	.a2 /* IN */ (opshft[4]),
 	.a3 /* IN */ (opshft[4]),
 	.s0 /* IN */ (constsel),
@@ -747,3 +748,4 @@ mx4 locsrc_inst_31
 	.s1 /* IN */ (sdsel_1)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

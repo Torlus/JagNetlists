@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module blit
@@ -1935,3 +1936,4 @@ assign gpu_dout_31_oe = ts_pe_68_a0_oe | ts_pe_68_a1_oe;
 assign ts_pe_68_a0_in = gpu_dout_31_in;
 assign ts_pe_68_a1_in = gpu_dout_31_in;
 endmodule
+/* verilator lint_on LITENDIAN */

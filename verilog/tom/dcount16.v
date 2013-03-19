@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module dcount16
@@ -474,3 +475,4 @@ assign count[13] = count_13;
 assign count[14] = count_14;
 assign count[15] = count_15;
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mag_4
@@ -165,3 +166,4 @@ assign gtot_6 = gtot_0 & gtot_1 & gtot_2 & gtot_3;
 // DUPLO.NET (358) - gto : an3
 assign gto = gtot_4 & gtot_5 & gtot_6;
 endmodule
+/* verilator lint_on LITENDIAN */

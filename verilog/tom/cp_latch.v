@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module cp_latch
@@ -36,3 +37,4 @@ fd2q q_inst
 	.sys_clk(sys_clk) // Generated
 );
 endmodule
+/* verilator lint_on LITENDIAN */

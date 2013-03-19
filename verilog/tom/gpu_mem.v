@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module gpu_mem
@@ -176,7 +177,7 @@ wire localat;
 wire localaddr_n;
 wire localt_0;
 wire localt_1;
-wire local;
+wire _local;
 wire localf;
 wire extt;
 wire idle_n;
@@ -1768,7 +1769,7 @@ nd11 localt1_inst
 );
 
 // GPU_MEM.NET (318) - local : nd2p
-assign local = ~(ioserv_n & localt_1);
+assign _local = ~(ioserv_n & localt_1);
 
 // GPU_MEM.NET (319) - localf : nd2
 assign localf = ~(ioserv_n & localt_1);
@@ -1786,7 +1787,7 @@ assign externalb_obuf = external;
 assign idle_n = ioserv | datserv | progserv_obuf;
 
 // GPU_MEM.NET (337) - gpuen : an8
-assign gpuen = gpu_addr_n_9 & gpu_addr_n_10 & gpu_addr_n_11 & gpu_addr_n_12 & gpu_addr_13 & gpu_addr_n_14 & local & idle_n;
+assign gpuen = gpu_addr_n_9 & gpu_addr_n_10 & gpu_addr_n_11 & gpu_addr_n_12 & gpu_addr_13 & gpu_addr_n_14 & _local & idle_n;
 
 // GPU_MEM.NET (339) - bliten : an10
 an10 bliten_inst
@@ -1799,7 +1800,7 @@ an10 bliten_inst
 	.a_4 /* IN */ (gpu_addr_n_12),
 	.a_5 /* IN */ (gpu_addr_13),
 	.a_6 /* IN */ (gpu_addr_n_14),
-	.a_7 /* IN */ (local),
+	.a_7 /* IN */ (_local),
 	.a_8 /* IN */ (idle_n),
 	.a_9 /* IN */ (disable_n)
 );
@@ -1955,3 +1956,4 @@ fd1q lock_inst
 	.sys_clk(sys_clk) // Generated
 );
 endmodule
+/* verilator lint_on LITENDIAN */

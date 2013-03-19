@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module macount
@@ -353,3 +354,4 @@ fd1q maddr_from_0_to_9_inst_9
 	.sys_clk(sys_clk) // Generated
 );
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module r1count
@@ -201,3 +202,4 @@ fd1q count_from_0_to_5_inst_5
 	.sys_clk(sys_clk) // Generated
 );
 endmodule
+/* verilator lint_on LITENDIAN */

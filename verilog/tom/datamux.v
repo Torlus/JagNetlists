@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module datamux
@@ -280,3 +281,4 @@ mx2 data_y_inst_15
 	.s /* IN */ (addqselb)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

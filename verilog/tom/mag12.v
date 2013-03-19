@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mag12
@@ -102,3 +103,4 @@ mag4 m2_inst
 	.b0 /* IN */ (b_0)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module datacomp
@@ -705,3 +706,4 @@ cmp8_int dcmp_from_0_to_7_inst_7
 	.b /* IN */ ({tarb_7[0],tarb_7[1],tarb_7[2],tarb_7[3],tarb_7[4],tarb_7[5],tarb_7[6],tarb_7[7]})
 );
 endmodule
+/* verilator lint_on LITENDIAN */

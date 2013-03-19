@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module execon
@@ -417,3 +418,4 @@ assign compdwaiti_n = compdldt_n;
 // EXECON.NET (194) - immwri : an2
 assign immwri = insrdy & imm2i;
 endmodule
+/* verilator lint_on LITENDIAN */

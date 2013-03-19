@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module cmp6
@@ -24,3 +25,4 @@ assign eq_5 = ~(a[5] ^ b[5]);
 // DUPLO.NET (124) - equal : an6
 assign equal = eq_0 & eq_1 & eq_2 & eq_3 & eq_4 & eq_5;
 endmodule
+/* verilator lint_on LITENDIAN */

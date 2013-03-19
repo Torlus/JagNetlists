@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module addrcomp
@@ -98,3 +99,4 @@ assign a1_outside = a1_x[15] | a1xgr | a1xeq | a1_y[15] | a1ygr | a1yeq;
 
 // ADDRCOMP.NET (34) - unused1 : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module obdata
@@ -6429,3 +6430,4 @@ assign pdb_in[14] = pdb_out[14];
 // --- Compiler-generated local LB for BUS pdb<15>
 assign pdb_in[15] = pdb_out[15];
 endmodule
+/* verilator lint_on LITENDIAN */

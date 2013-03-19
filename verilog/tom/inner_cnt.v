@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module inner_cnt
@@ -1017,3 +1018,4 @@ assign gpu_dout_30_oe = statrd;
 assign gpu_dout_31_out = icount_15;
 assign gpu_dout_31_oe = statrd;
 endmodule
+/* verilator lint_on LITENDIAN */

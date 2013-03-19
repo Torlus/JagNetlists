@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module divide
@@ -2209,3 +2210,4 @@ assign div_activeb_2 = div_active;
 
 // DIVIDE.NET (263) - unused[0-4] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

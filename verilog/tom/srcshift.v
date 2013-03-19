@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module srcshift
@@ -3438,3 +3439,4 @@ assign srcd_1[29] = oneb_125;
 assign srcd_1[30] = oneb_126;
 assign srcd_1[31] = oneb_127;
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module blitgpu
@@ -289,3 +290,4 @@ assign a2posrd = brd & gpua_2 & gpua_3 & gpua_n_4 & gpua_5 & gpua_n_6;
 
 // BLITGPU.NET (137) - unused[0] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

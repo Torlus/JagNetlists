@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module sadd8
@@ -150,3 +151,4 @@ mx2 z_from_0_to_7_inst_7
 	.s /* IN */ (overflow)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

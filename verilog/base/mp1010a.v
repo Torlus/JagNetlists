@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mp1010a
@@ -20,3 +21,4 @@ assign q[0:19] = {qi[0], qi[1], qi[2], qi[3], qi[4], qi[5], qi[6], qi[7], qi[8],
 	qi[10], qi[11], qi[12], qi[13], qi[14], qi[15], qi[16], qi[17], qi[18], qi[19]};
 
 endmodule
+/* verilator lint_on LITENDIAN */

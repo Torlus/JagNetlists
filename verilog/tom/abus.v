@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module abus
@@ -3030,3 +3031,4 @@ assign dr_15_oe = ts_pe_287_a0_oe | ts_pe_287_a1_oe;
 assign ts_pe_287_a0_in = dr_15_in;
 assign ts_pe_287_a1_in = dr_15_in;
 endmodule
+/* verilator lint_on LITENDIAN */

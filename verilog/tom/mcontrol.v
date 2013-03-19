@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mcontrol
@@ -357,3 +358,4 @@ fd2q waitack_inst
 // MCONTROL.NET (141) - read_ack : an2
 assign read_ack = waitack & ack;
 endmodule
+/* verilator lint_on LITENDIAN */

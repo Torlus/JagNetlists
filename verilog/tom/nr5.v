@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module nr5
@@ -17,3 +18,4 @@ assign zero = 1'b0;
 // DUPLO.NET (675) - gate : nr6
 assign z = ~(a | b | c | d | e | zero);
 endmodule
+/* verilator lint_on LITENDIAN */

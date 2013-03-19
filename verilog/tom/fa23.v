@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module fa23
@@ -198,3 +199,4 @@ fa32 fa32_inst
 
 // PREFETCH.NET (370) - dummy[23-31] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

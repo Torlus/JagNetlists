@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module local_mux
@@ -1273,3 +1274,4 @@ mx2 local_data_index_1_inst_31
 	.s /* IN */ (daddq_selb_1)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

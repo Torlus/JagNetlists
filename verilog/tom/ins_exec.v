@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ins_exec
@@ -2999,3 +3000,4 @@ assign gpu_data_oe[30] = pcrd;
 assign gpu_data_out[31] = prog_count[31];
 assign gpu_data_oe[31] = pcrd;
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module cpu
@@ -269,3 +270,4 @@ assign uds = ~sizin_1;
 // CPU.NET (111) - not68k : iv
 assign not68k = ~m68k;
 endmodule
+/* verilator lint_on LITENDIAN */

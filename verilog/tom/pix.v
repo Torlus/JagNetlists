@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module pix
@@ -2117,3 +2118,4 @@ assign notincen = ~incen;
 // PIX.NET (169) - notvarmod : iv
 assign notvarmod = ~varmod;
 endmodule
+/* verilator lint_on LITENDIAN */

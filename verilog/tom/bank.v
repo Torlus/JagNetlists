@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module bank
@@ -158,3 +159,4 @@ assign m2 = ~(m_6 & m_7 & m_8 & m_9 & m_10 & valid);
 // ABUS.NET (496) - match : nr2
 assign match = ~(m1 | m2);
 endmodule
+/* verilator lint_on LITENDIAN */

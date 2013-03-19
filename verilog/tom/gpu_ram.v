@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module gpu_ram
@@ -113,3 +114,4 @@ gpuram program_inst
 	.sys_clk(sys_clk) // Generated
 );
 endmodule
+/* verilator lint_on LITENDIAN */

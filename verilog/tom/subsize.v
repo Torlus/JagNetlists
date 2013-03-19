@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module subsize
@@ -248,3 +249,4 @@ assign sub[20] = sub_20;
 assign sub[21] = sub_21;
 assign sub[22] = sub_22;
 endmodule
+/* verilator lint_on LITENDIAN */

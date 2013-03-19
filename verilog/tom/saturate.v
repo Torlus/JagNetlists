@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module saturate
@@ -190,3 +191,4 @@ assign q[21] = op_21;
 assign q[22] = op_22;
 assign q[23] = op_23;
 endmodule
+/* verilator lint_on LITENDIAN */

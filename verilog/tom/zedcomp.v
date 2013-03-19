@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module zedcomp
@@ -223,3 +224,4 @@ assign zcomp_1 = ~(zlt_1 & zet_1 & zgt_1);
 assign zcomp_2 = ~(zlt_2 & zet_2 & zgt_2);
 assign zcomp_3 = ~(zlt_3 & zet_3 & zgt_3);
 endmodule
+/* verilator lint_on LITENDIAN */

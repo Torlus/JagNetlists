@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mp16
@@ -44,3 +45,4 @@ assign q[0:31] = (sign0) ?
 		uqi[30], uqi[31]};
 
 endmodule
+/* verilator lint_on LITENDIAN */

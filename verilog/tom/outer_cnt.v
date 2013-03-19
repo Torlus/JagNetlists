@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module outer_cnt
@@ -52,3 +53,4 @@ assign out0t_1 = ~(ocount[8] | ocount[9] | ocount[10] | ocount[11] | ocount[12] 
 // OUTER.NET (195) - outer0 : an2
 assign outer0 = out0t_0 & out0t_1;
 endmodule
+/* verilator lint_on LITENDIAN */

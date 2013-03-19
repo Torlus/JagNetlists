@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module fdsyncr32
@@ -437,3 +438,4 @@ fd2e q_inst_31
 
 // DUPLO.NET (322) - dummy : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

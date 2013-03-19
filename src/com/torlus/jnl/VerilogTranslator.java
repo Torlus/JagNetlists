@@ -21,7 +21,10 @@ public class VerilogTranslator {
 			if (e instanceof CompositeEntity) {
 				System.out.println("#################### Processing CompositeEntity " + e.getBaseName());
 
-				String vlog = "`include \"defs.v\"\n\n";
+				String vlog = "";
+				vlog += "/* verilator lint_off LITENDIAN */\n";
+				
+				vlog += "`include \"defs.v\"\n\n";
 				vlog += "module " + e.getBaseName() + "\n" + "(\n";
 				vlog += e.verilogIoDecl();
 				vlog += ");\n";
@@ -37,7 +40,7 @@ public class VerilogTranslator {
 				}
 
 				vlog += "endmodule\n";
-
+				vlog += "/* verilator lint_on LITENDIAN */\n";
 				// System.out.println(vlog);
 
 				try {

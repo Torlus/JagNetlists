@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module creg11
@@ -221,3 +222,4 @@ assign dout_9_oe = zero;
 assign dout_10_out = cr_10;
 assign dout_10_oe = zero;
 endmodule
+/* verilator lint_on LITENDIAN */

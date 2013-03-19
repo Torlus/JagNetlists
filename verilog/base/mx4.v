@@ -18,10 +18,10 @@ assign z = z_obuf;
 always @(*)
 begin
 	case({s1, s0}) // ???
-		2'b00		: z_obuf <= a0;
-		2'b01		: z_obuf <= a1;
-		2'b10		: z_obuf <= a2;
-		default	: z_obuf <= a3;
+		2'b00		: z_obuf = a0;
+		2'b01		: z_obuf = a1;
+		2'b10		: z_obuf = a2;
+		default	: z_obuf = a3;
 	endcase
 end
 

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module add16sat
@@ -407,3 +408,4 @@ assign r[13] = r_13;
 assign r[14] = r_14;
 assign r[15] = r_15;
 endmodule
+/* verilator lint_on LITENDIAN */

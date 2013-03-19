@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module addamux
@@ -962,3 +963,4 @@ assign adda_y[13] = suba_y16[13] ^ addas_y[13];
 assign adda_y[14] = suba_y16[14] ^ addas_y[14];
 assign adda_y[15] = suba_y16[15] ^ addas_y[15];
 endmodule
+/* verilator lint_on LITENDIAN */

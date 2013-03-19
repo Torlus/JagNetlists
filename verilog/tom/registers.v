@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module registers
@@ -1668,3 +1669,4 @@ assign dstdp[29] = dstdpt1[29];
 assign dstdp[30] = dstdpt1[30];
 assign dstdp[31] = dstdpt1[31];
 endmodule
+/* verilator lint_on LITENDIAN */

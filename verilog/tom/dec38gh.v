@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module dec38gh
@@ -56,3 +57,4 @@ assign z_6 = c & b & al & gl;
 // LEGO.NET (255) - z[7] : an4p
 assign z_7 = c & b & a & gl;
 endmodule
+/* verilator lint_on LITENDIAN */

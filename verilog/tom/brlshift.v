@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module brlshift
@@ -373,3 +374,4 @@ mx2 brl_carry_inst
 	.s /* IN */ (mux_0)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

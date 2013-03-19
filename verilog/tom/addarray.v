@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module addarray
@@ -146,3 +147,4 @@ add16sat adder4_inst
 	.hicinh /* IN */ (hicinh)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

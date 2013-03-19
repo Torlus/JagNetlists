@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module outer
@@ -367,3 +368,4 @@ assign idled_n = ~idled;
 // OUTER.NET (159) - blit_int : an2
 assign blit_int = idled_n & idledt;
 endmodule
+/* verilator lint_on LITENDIAN */

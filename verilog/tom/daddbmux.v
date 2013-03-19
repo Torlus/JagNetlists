@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module daddbmux
@@ -800,3 +801,4 @@ mx2 addb_index_3_inst_15
 	.s /* IN */ (dsel2b_1)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

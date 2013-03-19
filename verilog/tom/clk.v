@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module clk
@@ -93,3 +94,4 @@ ldp1q external_inst
 // CLK.NET (88) - internal : iv
 assign internal = ~external;
 endmodule
+/* verilator lint_on LITENDIAN */

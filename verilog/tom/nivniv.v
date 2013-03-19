@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module nivniv
@@ -13,3 +14,4 @@ assign y = a;
 // DUPLO.NET (600) - z : niv
 assign z = y;
 endmodule
+/* verilator lint_on LITENDIAN */

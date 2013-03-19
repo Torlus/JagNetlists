@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mx6
@@ -46,3 +47,4 @@ mx2 q_inst
 	.s /* IN */ (sel_2)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

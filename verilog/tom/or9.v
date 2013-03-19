@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module or9
@@ -21,3 +22,4 @@ assign y = a | b | c | d;
 // DUPLO.NET (621) - gate2 : or6
 assign z = y | e | f | g | h | i;
 endmodule
+/* verilator lint_on LITENDIAN */

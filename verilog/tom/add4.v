@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module add4
@@ -37,3 +38,4 @@ fa4r add4_inst
 	.b3 /* IN */ (b_3)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

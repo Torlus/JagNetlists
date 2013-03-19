@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ab8016a
@@ -36,3 +37,4 @@ begin
 end
 
 endmodule
+/* verilator lint_on LITENDIAN */

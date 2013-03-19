@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module dcontrol
@@ -269,3 +270,4 @@ assign data_sel_0 = dzwrite1d | dsel0t;
 // DCONTROL.NET (190) - data_sel[1] : or2
 assign data_sel_1 = dzwrite1d | adddsel;
 endmodule
+/* verilator lint_on LITENDIAN */

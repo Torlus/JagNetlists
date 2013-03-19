@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module prefetch
@@ -1278,3 +1279,4 @@ assign progaddr[19] = pc[20];
 assign progaddr[20] = pc[21];
 assign progaddr[21] = pc[22];
 endmodule
+/* verilator lint_on LITENDIAN */

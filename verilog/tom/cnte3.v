@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module cnte3
@@ -108,3 +109,4 @@ assign count_0_obuf = countt_0;
 assign count_1_obuf = countt_1;
 assign count_2_obuf = countt_2;
 endmodule
+/* verilator lint_on LITENDIAN */

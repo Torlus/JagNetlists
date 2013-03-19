@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module twoniv
@@ -13,3 +14,4 @@ assign y = a;
 // LEGO.NET (286) - z : niv
 assign z = y;
 endmodule
+/* verilator lint_on LITENDIAN */

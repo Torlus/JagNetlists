@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module dec38h
@@ -36,3 +37,4 @@ dec38gh a_inst
 	.g /* IN */ (g)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

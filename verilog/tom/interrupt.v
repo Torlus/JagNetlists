@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module interrupt
@@ -53,7 +54,7 @@ module interrupt
 	input statrd,
 	input sys_clk // Generated
 );
-wire [0:2] int;
+wire [0:2] _int;
 wire [0:15] ins_0;
 wire [0:15] ins_1;
 wire [0:15] ins_2;
@@ -350,9 +351,9 @@ assign int1t = ~(ilatch_2 | ilatch_3);
 assign int_1 = ~(ilatch_4 | int1t);
 
 // INTER-UA.NET (88) - int : join
-assign int[0] = int_0;
-assign int[1] = int_1;
-assign int[2] = ilatch_4;
+assign _int[0] = int_0;
+assign _int[1] = int_1;
+assign _int[2] = ilatch_4;
 
 // INTER-UA.NET (97) - isrset : an4
 assign isrset = irq & intser_n & imask_n & atomic_n;
@@ -513,9 +514,9 @@ assign ins_4[0] = o;
 assign ins_4[1] = o;
 assign ins_4[2] = o;
 assign ins_4[3] = o;
-assign ins_4[4] = int[0];
-assign ins_4[5] = int[1];
-assign ins_4[6] = int[2];
+assign ins_4[4] = _int[0];
+assign ins_4[5] = _int[1];
+assign ins_4[6] = _int[2];
 assign ins_4[7] = o;
 assign ins_4[8] = o;
 assign ins_4[9] = o;
@@ -867,3 +868,4 @@ assign gpu_dout_10_oe = ts_pe_4_a0_oe | ts_pe_4_a1_oe;
 assign ts_pe_4_a0_in = gpu_dout_10_in;
 assign ts_pe_4_a1_in = gpu_dout_10_in;
 endmodule
+/* verilator lint_on LITENDIAN */

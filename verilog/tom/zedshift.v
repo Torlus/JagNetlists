@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module zedshift
@@ -877,3 +878,4 @@ assign srczhi[29] = srcz_3[13];
 assign srczhi[30] = srcz_3[14];
 assign srczhi[31] = srcz_3[15];
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mx12b
@@ -66,3 +67,4 @@ mx2g q_inst
 	.gn /* IN */ (ena_n)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module blitstop
@@ -123,3 +124,4 @@ assign drv_reset_n = ~drv_reset;
 // BLITSTOP.NET (74) - reset\ : an2u
 assign reset_n = xreset_n & drv_reset_n;
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module pc
@@ -971,3 +972,4 @@ assign pc_b20_obuf = pc_20;
 assign pc_b21_obuf = pc_21;
 assign pc_b22_obuf = pc_22;
 endmodule
+/* verilator lint_on LITENDIAN */

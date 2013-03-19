@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module acontrol
@@ -1946,3 +1947,4 @@ assign pwidth_3 = ~(dendp_3 | dendp_4 | dendp_5 | dstartp_3 | dstartp_4 | dstart
 
 // ACONTROL.NET (550) - dummy[0-1] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module nand14
@@ -38,3 +39,4 @@ assign z3 = m & n;
 // ABUS.NET (511) - z : nd4p
 assign z = ~(z0 & z1 & z2 & z3);
 endmodule
+/* verilator lint_on LITENDIAN */

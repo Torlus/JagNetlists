@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module wbk
@@ -1344,3 +1345,4 @@ assign vcc = 1'b1;
 
 // WBK.NET (142) - rcu : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

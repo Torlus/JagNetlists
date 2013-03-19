@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module nr32
@@ -80,3 +81,4 @@ assign qt_9 = ~(qt_4 & qt_5 & qt_6 & qt_7);
 // DUPLO.NET (757) - q : nr2
 assign q = ~(qt_8 | qt_9);
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module iodec
@@ -494,3 +495,4 @@ assign exiol = ~(dspcs & a_14 & al_15);
 // IODEC.NET (165) - expl : an3
 assign expl = exiol & romcsl_0 & romcsl_1;
 endmodule
+/* verilator lint_on LITENDIAN */

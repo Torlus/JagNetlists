@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module gpu_cpu
@@ -1252,3 +1253,4 @@ assign dread_oe[14] = dreaden;
 assign dread_out[15] = dreadt[15];
 assign dread_oe[15] = dreaden;
 endmodule
+/* verilator lint_on LITENDIAN */

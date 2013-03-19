@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module and11
@@ -27,3 +28,4 @@ assign z2 = ~(a_6 & a_7 & a_8 & a_9 & a_10 & a_10);
 // VID.NET (438) - z : nr2
 assign z = ~(z1 | z2);
 endmodule
+/* verilator lint_on LITENDIAN */

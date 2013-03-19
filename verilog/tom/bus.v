@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module bus
@@ -334,3 +335,4 @@ assign xdsrci = intbmw & xdsrc1 & ourackl;
 // BUS.NET (236) - xdsrc : nivu2
 assign xdsrc = xdsrci;
 endmodule
+/* verilator lint_on LITENDIAN */

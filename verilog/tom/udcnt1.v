@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module udcnt1
@@ -40,3 +41,4 @@ assign q1 = ~(q_obuf ^ up);
 // LEGO.NET (221) - co : an2
 assign co = ci & q1;
 endmodule
+/* verilator lint_on LITENDIAN */

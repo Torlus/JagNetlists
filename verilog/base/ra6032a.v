@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ra6032a
@@ -30,3 +31,4 @@ end
 
 
 endmodule
+/* verilator lint_on LITENDIAN */

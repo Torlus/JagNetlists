@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ob
@@ -5388,3 +5389,4 @@ assign ts_pe_367_a1_in = dr_15_in;
 assign ts_pe_367_a2_in = dr_15_in;
 assign ts_pe_367_a3_in = dr_15_in;
 endmodule
+/* verilator lint_on LITENDIAN */

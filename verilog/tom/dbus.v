@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module dbus
@@ -2100,3 +2101,4 @@ assign dp_13 = dout_13;
 assign dp_14 = dout_14;
 assign dp_15 = dout_15;
 endmodule
+/* verilator lint_on LITENDIAN */

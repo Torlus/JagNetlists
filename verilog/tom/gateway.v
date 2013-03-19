@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module gateway
@@ -3599,3 +3600,4 @@ assign gpu_data_oe[31] = ts_pe_36_a0_oe | ts_pe_36_a1_oe;
 assign ts_pe_36_a0_in = gpu_data_in[31];
 assign ts_pe_36_a1_in = gpu_data_in[31];
 endmodule
+/* verilator lint_on LITENDIAN */

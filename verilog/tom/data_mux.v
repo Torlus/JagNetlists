@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module data_mux
@@ -2249,3 +2250,4 @@ assign wdata_63_oe = data_enab_1;
 
 // DATAMUX.NET (304) - unused[0] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

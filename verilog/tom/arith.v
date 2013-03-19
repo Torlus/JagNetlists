@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module arith
@@ -1063,54 +1064,54 @@ assign topset_31 = srcdp_31;
 // ARITH.NET (135) - topset[30] : tben
 tben topset_index_30_inst
 (
-	.this /* OUT */ (topset_30),
+	._this /* OUT */ (topset_30),
 	.inho /* OUT */ (inh_30),
-	.bit /* IN */ (srcdp_30),
+	._bit /* IN */ (srcdp_30),
 	.inhi /* IN */ (topset_31)
 );
 
 // ARITH.NET (137) - topset[25-29] : tben
 tben topset_from_25_to_29_inst_0
 (
-	.this /* OUT */ (topset_25),
+	._this /* OUT */ (topset_25),
 	.inho /* OUT */ (inh_25),
-	.bit /* IN */ (srcdp_25),
+	._bit /* IN */ (srcdp_25),
 	.inhi /* IN */ (inh_26)
 );
 tben topset_from_25_to_29_inst_1
 (
-	.this /* OUT */ (topset_26),
+	._this /* OUT */ (topset_26),
 	.inho /* OUT */ (inh_26),
-	.bit /* IN */ (srcdp_26),
+	._bit /* IN */ (srcdp_26),
 	.inhi /* IN */ (inh_27)
 );
 tben topset_from_25_to_29_inst_2
 (
-	.this /* OUT */ (topset_27),
+	._this /* OUT */ (topset_27),
 	.inho /* OUT */ (inh_27),
-	.bit /* IN */ (srcdp_27),
+	._bit /* IN */ (srcdp_27),
 	.inhi /* IN */ (inh_28)
 );
 tben topset_from_25_to_29_inst_3
 (
-	.this /* OUT */ (topset_28),
+	._this /* OUT */ (topset_28),
 	.inho /* OUT */ (inh_28),
-	.bit /* IN */ (srcdp_28),
+	._bit /* IN */ (srcdp_28),
 	.inhi /* IN */ (inh_29)
 );
 tben topset_from_25_to_29_inst_4
 (
-	.this /* OUT */ (topset_29),
+	._this /* OUT */ (topset_29),
 	.inho /* OUT */ (inh_29),
-	.bit /* IN */ (srcdp_29),
+	._bit /* IN */ (srcdp_29),
 	.inhi /* IN */ (inh_30)
 );
 
 // ARITH.NET (139) - topset[24] : tbenw
 tbenw topset_index_24_inst
 (
-	.this /* OUT */ (topset_24),
-	.bit /* IN */ (srcdp_24),
+	._this /* OUT */ (topset_24),
+	._bit /* IN */ (srcdp_24),
 	.inhi /* IN */ (inh_25)
 );
 
@@ -1120,59 +1121,59 @@ assign inh_24 = srcdp_24 | srcdp_25 | srcdp_26 | srcdp_27 | srcdp_28 | srcdp_29 
 // ARITH.NET (142) - topset[17-23] : tben
 tben topset_from_17_to_23_inst_0
 (
-	.this /* OUT */ (topset_17),
+	._this /* OUT */ (topset_17),
 	.inho /* OUT */ (inh_17),
-	.bit /* IN */ (srcdp_17),
+	._bit /* IN */ (srcdp_17),
 	.inhi /* IN */ (inh_18)
 );
 tben topset_from_17_to_23_inst_1
 (
-	.this /* OUT */ (topset_18),
+	._this /* OUT */ (topset_18),
 	.inho /* OUT */ (inh_18),
-	.bit /* IN */ (srcdp_18),
+	._bit /* IN */ (srcdp_18),
 	.inhi /* IN */ (inh_19)
 );
 tben topset_from_17_to_23_inst_2
 (
-	.this /* OUT */ (topset_19),
+	._this /* OUT */ (topset_19),
 	.inho /* OUT */ (inh_19),
-	.bit /* IN */ (srcdp_19),
+	._bit /* IN */ (srcdp_19),
 	.inhi /* IN */ (inh_20)
 );
 tben topset_from_17_to_23_inst_3
 (
-	.this /* OUT */ (topset_20),
+	._this /* OUT */ (topset_20),
 	.inho /* OUT */ (inh_20),
-	.bit /* IN */ (srcdp_20),
+	._bit /* IN */ (srcdp_20),
 	.inhi /* IN */ (inh_21)
 );
 tben topset_from_17_to_23_inst_4
 (
-	.this /* OUT */ (topset_21),
+	._this /* OUT */ (topset_21),
 	.inho /* OUT */ (inh_21),
-	.bit /* IN */ (srcdp_21),
+	._bit /* IN */ (srcdp_21),
 	.inhi /* IN */ (inh_22)
 );
 tben topset_from_17_to_23_inst_5
 (
-	.this /* OUT */ (topset_22),
+	._this /* OUT */ (topset_22),
 	.inho /* OUT */ (inh_22),
-	.bit /* IN */ (srcdp_22),
+	._bit /* IN */ (srcdp_22),
 	.inhi /* IN */ (inh_23)
 );
 tben topset_from_17_to_23_inst_6
 (
-	.this /* OUT */ (topset_23),
+	._this /* OUT */ (topset_23),
 	.inho /* OUT */ (inh_23),
-	.bit /* IN */ (srcdp_23),
+	._bit /* IN */ (srcdp_23),
 	.inhi /* IN */ (inh_24)
 );
 
 // ARITH.NET (144) - topset[16] : tbenw
 tbenw topset_index_16_inst
 (
-	.this /* OUT */ (topset_16),
-	.bit /* IN */ (srcdp_16),
+	._this /* OUT */ (topset_16),
+	._bit /* IN */ (srcdp_16),
 	.inhi /* IN */ (inh_17)
 );
 
@@ -1194,59 +1195,59 @@ or9 inh_index_16_inst
 // ARITH.NET (147) - topset[9-15] : tben
 tben topset_from_9_to_15_inst_0
 (
-	.this /* OUT */ (topset_9),
+	._this /* OUT */ (topset_9),
 	.inho /* OUT */ (inh_9),
-	.bit /* IN */ (srcdp_9),
+	._bit /* IN */ (srcdp_9),
 	.inhi /* IN */ (inh_10)
 );
 tben topset_from_9_to_15_inst_1
 (
-	.this /* OUT */ (topset_10),
+	._this /* OUT */ (topset_10),
 	.inho /* OUT */ (inh_10),
-	.bit /* IN */ (srcdp_10),
+	._bit /* IN */ (srcdp_10),
 	.inhi /* IN */ (inh_11)
 );
 tben topset_from_9_to_15_inst_2
 (
-	.this /* OUT */ (topset_11),
+	._this /* OUT */ (topset_11),
 	.inho /* OUT */ (inh_11),
-	.bit /* IN */ (srcdp_11),
+	._bit /* IN */ (srcdp_11),
 	.inhi /* IN */ (inh_12)
 );
 tben topset_from_9_to_15_inst_3
 (
-	.this /* OUT */ (topset_12),
+	._this /* OUT */ (topset_12),
 	.inho /* OUT */ (inh_12),
-	.bit /* IN */ (srcdp_12),
+	._bit /* IN */ (srcdp_12),
 	.inhi /* IN */ (inh_13)
 );
 tben topset_from_9_to_15_inst_4
 (
-	.this /* OUT */ (topset_13),
+	._this /* OUT */ (topset_13),
 	.inho /* OUT */ (inh_13),
-	.bit /* IN */ (srcdp_13),
+	._bit /* IN */ (srcdp_13),
 	.inhi /* IN */ (inh_14)
 );
 tben topset_from_9_to_15_inst_5
 (
-	.this /* OUT */ (topset_14),
+	._this /* OUT */ (topset_14),
 	.inho /* OUT */ (inh_14),
-	.bit /* IN */ (srcdp_14),
+	._bit /* IN */ (srcdp_14),
 	.inhi /* IN */ (inh_15)
 );
 tben topset_from_9_to_15_inst_6
 (
-	.this /* OUT */ (topset_15),
+	._this /* OUT */ (topset_15),
 	.inho /* OUT */ (inh_15),
-	.bit /* IN */ (srcdp_15),
+	._bit /* IN */ (srcdp_15),
 	.inhi /* IN */ (inh_16)
 );
 
 // ARITH.NET (149) - topset[8] : tbenw
 tbenw topset_index_8_inst
 (
-	.this /* OUT */ (topset_8),
-	.bit /* IN */ (srcdp_8),
+	._this /* OUT */ (topset_8),
+	._bit /* IN */ (srcdp_8),
 	.inhi /* IN */ (inh_9)
 );
 
@@ -1268,59 +1269,59 @@ or9 inh_index_8_inst
 // ARITH.NET (152) - topset[1-7] : tben
 tben topset_from_1_to_7_inst_0
 (
-	.this /* OUT */ (topset_1),
+	._this /* OUT */ (topset_1),
 	.inho /* OUT */ (inh_1),
-	.bit /* IN */ (srcdp_1),
+	._bit /* IN */ (srcdp_1),
 	.inhi /* IN */ (inh_2)
 );
 tben topset_from_1_to_7_inst_1
 (
-	.this /* OUT */ (topset_2),
+	._this /* OUT */ (topset_2),
 	.inho /* OUT */ (inh_2),
-	.bit /* IN */ (srcdp_2),
+	._bit /* IN */ (srcdp_2),
 	.inhi /* IN */ (inh_3)
 );
 tben topset_from_1_to_7_inst_2
 (
-	.this /* OUT */ (topset_3),
+	._this /* OUT */ (topset_3),
 	.inho /* OUT */ (inh_3),
-	.bit /* IN */ (srcdp_3),
+	._bit /* IN */ (srcdp_3),
 	.inhi /* IN */ (inh_4)
 );
 tben topset_from_1_to_7_inst_3
 (
-	.this /* OUT */ (topset_4),
+	._this /* OUT */ (topset_4),
 	.inho /* OUT */ (inh_4),
-	.bit /* IN */ (srcdp_4),
+	._bit /* IN */ (srcdp_4),
 	.inhi /* IN */ (inh_5)
 );
 tben topset_from_1_to_7_inst_4
 (
-	.this /* OUT */ (topset_5),
+	._this /* OUT */ (topset_5),
 	.inho /* OUT */ (inh_5),
-	.bit /* IN */ (srcdp_5),
+	._bit /* IN */ (srcdp_5),
 	.inhi /* IN */ (inh_6)
 );
 tben topset_from_1_to_7_inst_5
 (
-	.this /* OUT */ (topset_6),
+	._this /* OUT */ (topset_6),
 	.inho /* OUT */ (inh_6),
-	.bit /* IN */ (srcdp_6),
+	._bit /* IN */ (srcdp_6),
 	.inhi /* IN */ (inh_7)
 );
 tben topset_from_1_to_7_inst_6
 (
-	.this /* OUT */ (topset_7),
+	._this /* OUT */ (topset_7),
 	.inho /* OUT */ (inh_7),
-	.bit /* IN */ (srcdp_7),
+	._bit /* IN */ (srcdp_7),
 	.inhi /* IN */ (inh_8)
 );
 
 // ARITH.NET (154) - topset[0] : tbenw
 tbenw topset_index_0_inst
 (
-	.this /* OUT */ (topset_0),
-	.bit /* IN */ (srcdp_0),
+	._this /* OUT */ (topset_0),
+	._bit /* IN */ (srcdp_0),
 	.inhi /* IN */ (inh_1)
 );
 
@@ -2833,3 +2834,4 @@ assign gpu_dout_1_oe = flagrd;
 assign gpu_dout_2_out = nega_flag_obuf;
 assign gpu_dout_2_oe = flagrd;
 endmodule
+/* verilator lint_on LITENDIAN */

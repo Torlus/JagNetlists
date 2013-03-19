@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module address
@@ -4022,3 +4023,4 @@ assign gpu_dout_31_oe = grden;
 
 // ADDRESS.NET (245) - unused[0-2] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

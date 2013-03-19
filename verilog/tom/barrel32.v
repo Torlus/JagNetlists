@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module barrel32
@@ -1888,3 +1889,4 @@ assign z_29 = (f_29 & opt0_29) | opt1_29;
 assign z_30 = (f_30 & opt0_30) | opt1_30;
 assign z_31 = (f_31 & opt0_31) | opt1_31;
 endmodule
+/* verilator lint_on LITENDIAN */

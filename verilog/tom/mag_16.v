@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module mag_16
@@ -138,3 +139,4 @@ mag_4 mag3_inst
 
 // DUPLO.NET (376) - dummy[1-2] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

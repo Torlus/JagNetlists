@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module alu32
@@ -666,3 +667,4 @@ assign alu_co = alu_cout ^ subtract;
 
 // ARITH.NET (381) - unused[0-1] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module up
@@ -607,3 +608,4 @@ mx2 dout_from_40_to_63_inst_23
 	.s /* IN */ (dmuxu_2)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

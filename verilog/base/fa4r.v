@@ -30,6 +30,6 @@ assign s1 = s[1];
 assign s2 = s[2];
 assign s3 = s[3];
 
-assign {co, s} = a + b + ci;
+assign {co, s} = a + b + {3'b000, ci};
 
 endmodule

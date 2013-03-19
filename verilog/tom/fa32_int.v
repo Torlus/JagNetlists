@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module fa32_int
@@ -182,3 +183,4 @@ assign s[29] = s_29;
 assign s[30] = s_30;
 assign s[31] = s_31;
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module tom
@@ -8658,3 +8659,4 @@ assign dr_15_in = dr_15_out;
 // --- Compiler-generated local LB for BUS justify
 assign justify_in = justify_out;
 endmodule
+/* verilator lint_on LITENDIAN */

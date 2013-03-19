@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module dech38el
@@ -62,3 +63,4 @@ assign q_6 = s_n_0 & s_1 & s_2 & enb;
 // DUPLO.NET (164) - q[7] : an4
 assign q_7 = s_0 & s_1 & s_2 & enb;
 endmodule
+/* verilator lint_on LITENDIAN */

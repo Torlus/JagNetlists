@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module addrgen
@@ -2929,3 +2930,4 @@ fd1q address_inst_23
 
 // ADDRGEN.NET (364) - unused[0-15] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

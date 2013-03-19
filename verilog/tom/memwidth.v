@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module memwidth
@@ -1241,3 +1242,4 @@ mx4 d_index_3_inst
 // MEMWIDTH.NET (344) - d216 : an2
 assign d216 = ba1l_0 & ba1l_1;
 endmodule
+/* verilator lint_on LITENDIAN */

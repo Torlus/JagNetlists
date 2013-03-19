@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module arb
@@ -512,3 +513,4 @@ fd2q dbg_inst
 // ARB.NET (160) - dbgl : iv
 assign dbgl = ~dbg;
 endmodule
+/* verilator lint_on LITENDIAN */

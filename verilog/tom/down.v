@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module down
@@ -485,3 +486,4 @@ mx8 dout_from_0_to_7_inst_7
 	.s2 /* IN */ (dmuxd_2)
 );
 endmodule
+/* verilator lint_on LITENDIAN */

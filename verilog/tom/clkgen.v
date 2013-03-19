@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module clkgen
@@ -14,3 +15,4 @@ assign ena_n = ~ena;
 // DUPLO.NET (116) - ramcs : or2x3
 assign ramcs = clk | ena_n;
 endmodule
+/* verilator lint_on LITENDIAN */

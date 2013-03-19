@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module gpu_ctrl
@@ -196,3 +197,4 @@ assign gpu_dout_14_oe = statrd;
 assign gpu_dout_15_out = zero;
 assign gpu_dout_15_oe = statrd;
 endmodule
+/* verilator lint_on LITENDIAN */

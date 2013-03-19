@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module slatch
@@ -32,3 +33,4 @@ fd1e q_inst
 
 // LEGO.NET (26) - dummy : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

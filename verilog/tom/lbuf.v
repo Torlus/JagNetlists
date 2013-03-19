@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module lbuf
@@ -4699,3 +4700,4 @@ assign lbbdh_in[14] = lbbdh_out[14];
 // --- Compiler-generated local LB for BUS lbbdh<15>
 assign lbbdh_in[15] = lbbdh_out[15];
 endmodule
+/* verilator lint_on LITENDIAN */

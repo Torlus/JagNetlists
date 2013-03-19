@@ -1,20 +1,30 @@
+/* verilator lint_off LITENDIAN */
+/* verilator tracing_on */
 `include "defs.v"
 
 module tb
 (
+`ifdef verilator3
+	input	xresetl,
+	input xpclk,
+	input xvclk,
+	input sys_clk
+`endif
 );
 
+`ifndef verilator3
+reg						xpclk;
+reg						xvclk;
+reg						xresetl;
 reg						sys_clk;
+`endif
 
 reg						xbgl 			= 1'b0;
 reg		[0:1]		xdbrl 		= 2'b11;
 reg						xlp				= 1'b0;
 reg						xdint			= 1'b0;
 reg						xtest			= 1'b0;
-reg						xpclk;
-reg						xvclk;
 reg						xwaitl		= 1'b1;
-reg						xresetl;
 
 wire	[0:63]	xd_out;
 wire	[0:63]	xd_oe;
@@ -142,6 +152,7 @@ assign xd_r = {
 	xd_in[7], xd_in[6], xd_in[5], xd_in[4], xd_in[3], xd_in[2], xd_in[1], xd_in[0]
 };
 
+`ifndef verilator3
 // Clocks
 initial
 begin
@@ -167,21 +178,22 @@ begin
 	xresetl 	= 1'b0;
 	#80 xresetl  = 1'b1;
 end
+`endif
 
 // Latching of memory configuration register on startup
 
 // From Jaguar schematics
-assign xma_in[0] = (xma_oe) ? xma_out[0] : 1'b1; // ROMHI
-assign xma_in[1] = (xma_oe) ? xma_out[1] : 1'b0; // ROMWID0
-assign xma_in[2] = (xma_oe) ? xma_out[2] : 1'b0; // ROMWID0
-assign xma_in[3] = (xma_oe) ? xma_out[3] : 1'b0;
-assign xma_in[4] = (xma_oe) ? xma_out[4] : 1'b0; // NOCPU (?)
-assign xma_in[5] = (xma_oe) ? xma_out[5] : 1'b0;
-assign xma_in[6] = (xma_oe) ? xma_out[6] : 1'b1; // BIGEND
-assign xma_in[7] = (xma_oe) ? xma_out[7] : 1'b0; // EXTCLK
-assign xma_in[8] = (xma_oe) ? xma_out[8] : 1'b1; // 68K (?)
-assign xma_in[9] = (xma_oe) ? xma_out[9] : 1'b0;
-assign xma_in[10] = (xma_oe) ? xma_out[10] : 1'b0;
+assign xma_in[0] = (xma_oe[0]) ? xma_out[0] : 1'b1; // ROMHI
+assign xma_in[1] = (xma_oe[1]) ? xma_out[1] : 1'b0; // ROMWID0
+assign xma_in[2] = (xma_oe[2]) ? xma_out[2] : 1'b0; // ROMWID0
+assign xma_in[3] = (xma_oe[3]) ? xma_out[3] : 1'b0;
+assign xma_in[4] = (xma_oe[4]) ? xma_out[4] : 1'b0; // NOCPU (?)
+assign xma_in[5] = (xma_oe[5]) ? xma_out[5] : 1'b0;
+assign xma_in[6] = (xma_oe[6]) ? xma_out[6] : 1'b1; // BIGEND
+assign xma_in[7] = (xma_oe[7]) ? xma_out[7] : 1'b0; // EXTCLK
+assign xma_in[8] = (xma_oe[8]) ? xma_out[8] : 1'b1; // 68K (?)
+assign xma_in[9] = (xma_oe[9]) ? xma_out[9] : 1'b0;
+assign xma_in[10] = (xma_oe[10]) ? xma_out[10] : 1'b0;
 
 // Wire-ORed with pullup (?)
 assign xbrl_in = xbrl_oe ? xbrl_out : 1'b1;
@@ -243,11 +255,17 @@ assign j68_rd_data[15:0] = {
 // assign xfc[0:2] = { j68_fc[0], j68_fc[1], j68_fc[2] };
 assign xfc_in = 3'b101;
 
-assign j68_address_final = 
+/*assign j68_address_final = 
 	( (j68_fc ==  3'b111) & ~xintl & (j68_address[23:2] == { 20'h00006, 2'b10 }) ) ?
 		{ 20'h00010, 2'b00, j68_address[1:0] }
 	:
+		j68_address[23:0];*/
+assign j68_address_final = 
+	( (j68_fc ==  3'b111) & (j68_address[23:2] == { 20'h00006, 2'b10 }) ) ?
+		{ 20'h00010, 2'b00, j68_address[1:0] }
+	:
 		j68_address[23:0];
+
 
 assign xrw_in = (~ba) ? ~j68_wr_ena : xrw_out;
 assign xsiz_in[0] = (~ba) ? ~j68_byte_ena[0] : xsiz_out[0];
@@ -763,7 +781,8 @@ dram dram_0
 	.oe_n(xoel[0]),
 	.d(xd_in[0:15]),
 	.q(dram_q[0:15]),
-	.oe(dram_oe[0])
+	.oe(dram_oe[0]),
+	.sys_clk(sys_clk)
 );
 dram dram_1
 (
@@ -776,7 +795,8 @@ dram dram_1
 	.oe_n(xoel[1]),
 	.d(xd_in[16:31]),
 	.q(dram_q[16:31]),
-	.oe(dram_oe[1])
+	.oe(dram_oe[1]),
+	.sys_clk(sys_clk)
 );
 dram dram_2
 (
@@ -789,7 +809,8 @@ dram dram_2
 	.oe_n(xoel[2]),
 	.d(xd_in[32:47]),
 	.q(dram_q[32:47]),
-	.oe(dram_oe[2])
+	.oe(dram_oe[2]),
+	.sys_clk(sys_clk)
 );
 dram dram_3
 (
@@ -802,7 +823,8 @@ dram dram_3
 	.oe_n(xoel[2]),
 	.d(xd_in[48:63]),
 	.q(dram_q[48:63]),
-	.oe(dram_oe[3])
+	.oe(dram_oe[3]),
+	.sys_clk(sys_clk)
 );
 
 endmodule
@@ -846,19 +868,23 @@ module dram
 	input						lw_n,
 	output	[0:15]	q,
 	input		[0:15]	d,
-	output					oe
+	output					oe,
+	input sys_clk
 );
 
 reg [0:15] ram_blk[0:(1<<18)-1];
 reg [0:17] ea;
 wire w_oe;
 
+reg ras_n_prev = 1'b0;
+reg cas_n_prev = 1'b0;
+
 initial
 begin
 	$readmemh("zero.mem", ram_blk);
 end
 
-always @(negedge ras_n)
+/*always @(negedge ras_n)
 begin
 	#1
 	ea[8:17] <= a[0:9];
@@ -874,6 +900,24 @@ begin
 	if (~lw_n) begin
 		ram_blk[ { a[0:7], ea[8:17] } ][0:7] <= d[0:7];
 	end
+end*/
+
+always @(posedge sys_clk)
+begin
+	ras_n_prev <= ras_n;
+	cas_n_prev <= cas_n;
+	if (ras_n_prev & ~ras_n) begin
+		ea[8:17] <= a[0:9];
+	end
+	if (cas_n_prev & ~cas_n) begin
+	ea[0:7] <= a[0:7];
+		if (~uw_n) begin
+			ram_blk[ { a[0:7], ea[8:17] } ][8:15] <= d[8:15];
+		end
+		if (~lw_n) begin
+			ram_blk[ { a[0:7], ea[8:17] } ][0:7] <= d[0:7];
+		end	
+	end
 end
 
 assign oe = w_oe;
@@ -882,3 +926,5 @@ assign w_oe = (~oe_n & ~cas_n & (uw_n | lw_n));
 assign q = ram_blk[ ea ][0:15];
 
 endmodule
+/* verilator tracing_off */
+/* verilator lint_on LITENDIAN */

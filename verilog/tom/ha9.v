@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module ha9
@@ -102,3 +103,4 @@ assign q_8 = ~(a_8 ^ q8t);
 // WBK.NET (233) - vcc : tie1
 assign vcc = 1'b1;
 endmodule
+/* verilator lint_on LITENDIAN */

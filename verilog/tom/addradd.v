@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module addradd
@@ -340,3 +341,4 @@ assign addq_y[15] = addq_y_15;
 
 // ADDRADD.NET (89) - unused[0-1] : dummy
 endmodule
+/* verilator lint_on LITENDIAN */

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module lfu
@@ -774,3 +775,4 @@ assign lfu_1[29] = ~(trma_1[29] & trmb_1[29] & trmc_1[29] & trmd_1[29]);
 assign lfu_1[30] = ~(trma_1[30] & trmb_1[30] & trmc_1[30] & trmd_1[30]);
 assign lfu_1[31] = ~(trma_1[31] & trmb_1[31] & trmc_1[31] & trmd_1[31]);
 endmodule
+/* verilator lint_on LITENDIAN */
