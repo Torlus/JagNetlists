@@ -1,5 +1,4 @@
 /* verilator lint_off LITENDIAN */
-/* verilator tracing_on */
 `include "defs.v"
 
 module tb
@@ -123,9 +122,9 @@ wire	[0:3]		dram_oe;
 `ifdef ICARUS
 initial
 begin
-  $dumpfile("tb.vcd");
+  $dumpfile("tb.lxt.tmp");
   $dumpvars(0, tb);
-	#16500000
+	#4000000
 	begin
 		$finish;
 	end
@@ -770,60 +769,17 @@ os_rom os_rom_inst
 	.oe(os_rom_oe)
 );
 
-dram dram_0
+dram dram_int
 (
-	.num(2'b00),
 	.a(xma_in[0:9]),
 	.ras_n(xrasl[0]),
 	.cas_n(xcasl[0]),
-	.uw_n(xwel[1]),
-	.lw_n(xwel[0]),
-	.oe_n(xoel[0]),
-	.d(xd_in[0:15]),
-	.q(dram_q[0:15]),
-	.oe(dram_oe[0]),
-	.sys_clk(sys_clk)
-);
-dram dram_1
-(
-	.num(2'b10),
-	.a(xma_in[0:9]),
-	.ras_n(xrasl[0]),
-	.cas_n(xcasl[0]),
-	.uw_n(xwel[3]),
-	.lw_n(xwel[2]),
-	.oe_n(xoel[1]),
-	.d(xd_in[16:31]),
-	.q(dram_q[16:31]),
-	.oe(dram_oe[1]),
-	.sys_clk(sys_clk)
-);
-dram dram_2
-(
-	.num(2'b01),
-	.a(xma_in[0:9]),
-	.ras_n(xrasl[0]),
-	.cas_n(xcasl[0]),
-	.uw_n(xwel[5]),
-	.lw_n(xwel[4]),
-	.oe_n(xoel[2]),
-	.d(xd_in[32:47]),
-	.q(dram_q[32:47]),
-	.oe(dram_oe[2]),
-	.sys_clk(sys_clk)
-);
-dram dram_3
-(
-	.num(2'b11),
-	.a(xma_in[0:9]),
-	.ras_n(xrasl[0]),
-	.cas_n(xcasl[0]),
-	.uw_n(xwel[7]),
-	.lw_n(xwel[6]),
-	.oe_n(xoel[2]),
-	.d(xd_in[48:63]),
-	.q(dram_q[48:63]),
-	.oe(dram_oe[3]),
+	.uw_n({xwel[1], xwel[3], xwel[5], xwel[7]}),
+	.lw_n({xwel[0], xwel[2], xwel[4], xwel[6]}),
+	.oe_n({xoel[0], xoel[1], xoel[2], xoel[2]}), // /!\
+	.d(xd_in),
+	.q(dram_q),
+	.oe(dram_oe),
 	.sys_clk(sys_clk)
 );
 
@@ -859,72 +815,78 @@ endmodule
 
 module dram
 (
-	input		[0:1]		num,
 	input		[0:9] 	a,
 	input						ras_n,
 	input						cas_n,
-	input						oe_n,
-	input						uw_n,
-	input						lw_n,
-	output	[0:15]	q,
-	input		[0:15]	d,
-	output					oe,
+	input		[0:3]		oe_n,
+	input		[0:3]		uw_n,
+	input		[0:3]		lw_n,
+	output	[0:63]	q,
+	input		[0:63]	d,
+	output	[0:3]		oe,
 	input sys_clk
 );
 
-reg [0:15] ram_blk[0:(1<<18)-1];
-reg [0:17] ea;
-wire w_oe;
+reg [0:63] ram_blk[0:(1<<18)-1];
+
+wire [9:0] a_r;
+reg [17:0] ea;
+
+wire [0:3] w_oe;
 
 reg ras_n_prev = 1'b0;
 reg cas_n_prev = 1'b0;
 
 initial
 begin
-	$readmemh("zero.mem", ram_blk);
+	$readmemb("dram.mem", ram_blk);
 end
 
-/*always @(negedge ras_n)
-begin
-	#1
-	ea[8:17] <= a[0:9];
-end
-
-always @(negedge cas_n)
-begin
-	#1
-	ea[0:7] <= a[0:7];
-	if (~uw_n) begin
-		ram_blk[ { a[0:7], ea[8:17] } ][8:15] <= d[8:15];
-	end
-	if (~lw_n) begin
-		ram_blk[ { a[0:7], ea[8:17] } ][0:7] <= d[0:7];
-	end
-end*/
+assign a_r = { a[9], a[8], a[7], a[6], a[5], a[4], a[3], a[2], a[1], a[0] };
 
 always @(posedge sys_clk)
 begin
 	ras_n_prev <= ras_n;
 	cas_n_prev <= cas_n;
 	if (ras_n_prev & ~ras_n) begin
-		ea[8:17] <= a[0:9];
+		ea[17:8] <= a_r[9:0];
 	end
 	if (cas_n_prev & ~cas_n) begin
-	ea[0:7] <= a[0:7];
-		if (~uw_n) begin
-			ram_blk[ { a[0:7], ea[8:17] } ][8:15] <= d[8:15];
+		ea[7:0] <= a_r[7:0];
+		if (~uw_n[0]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][8:15] <= d[8:15];
 		end
-		if (~lw_n) begin
-			ram_blk[ { a[0:7], ea[8:17] } ][0:7] <= d[0:7];
+		if (~lw_n[0]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][0:7] <= d[0:7];
 		end	
+		if (~uw_n[1]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][24:31] <= d[24:31];
+		end
+		if (~lw_n[1]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][16:23] <= d[16:23];
+		end	
+		if (~uw_n[2]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][40:47] <= d[40:47];
+		end
+		if (~lw_n[2]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][32:39] <= d[32:39];
+		end	
+		if (~uw_n[3]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][56:63] <= d[56:63];
+		end
+		if (~lw_n[3]) begin
+			ram_blk[ { ea[17:8], a_r[7:0] } ][48:55] <= d[48:55];
+		end
 	end
 end
 
 assign oe = w_oe;
-assign w_oe = (~oe_n & ~cas_n & (uw_n | lw_n));
+assign w_oe[0] = (~oe_n[0] & ~cas_n & (uw_n[0] | lw_n[0]));
+assign w_oe[1] = (~oe_n[1] & ~cas_n & (uw_n[1] | lw_n[1]));
+assign w_oe[2] = (~oe_n[2] & ~cas_n & (uw_n[2] | lw_n[2]));
+assign w_oe[3] = (~oe_n[3] & ~cas_n & (uw_n[3] | lw_n[3]));
 
-assign q = ram_blk[ ea ][0:15];
+assign q = ram_blk[ ea ][0:63];
 
 endmodule
-/* verilator tracing_off */
 /* verilator lint_on LITENDIAN */

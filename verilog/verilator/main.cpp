@@ -5,9 +5,10 @@
 #include "verilated_vcd_c.h"
 #endif
 
-// Number of simulation cycles
-#define NUM_CYCLES  ((vluint64_t)4000000)
 #define HALF_PER_PS 4500
+// Number of simulation cycles
+//                                 ns
+#define NUM_CYCLES  ((vluint64_t)4000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
 
 int main(int argc, char **argv, char **env)
 {

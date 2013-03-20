@@ -45,6 +45,7 @@ base/fa332.v
 base/mp16.v
 base/rd64x32.v
 base/aba032a.v
+base/stlatch.v
 
 tom/an5.v
 tom/an5p.v
@@ -88,7 +89,7 @@ tom/slatchr.v
 tom/slatch.v
 tom/slatchc.v
 tom/slatchp.v
-tom/stlatch.v
+# tom/stlatch.v
 tom/up.v
 tom/down.v
 tom/dec38h.v
@@ -123,7 +124,7 @@ tom/dech38el.v
 tom/mx12b.v
 tom/mx6.v
 
-tom/_graphics.v
+tom/graphics_void.v
 # tom/pc.v
 # tom/cp_latch.v
 # tom/subsize.v

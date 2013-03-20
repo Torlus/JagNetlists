@@ -1,3 +1,11 @@
+smac/sln compatibles mac/aln
+
+sln sans l'option "-n" : rajoute un header pour l'Alpine board
+(voir Jungle Jag)
+
+lancer virtualjaguar --alpine  puis "Configure"
+
+
 Romcst :=	OR3 (romcst,q5a,q5b,q5c);
 Romcsl[0-1] :=	ND2 (romcsl[0-1],bs[0-1],romcst);
 
@@ -8,3 +16,7 @@ Romcsl[0-1] :=	ND2 (romcsl[0-1],bs[0-1],romcst);
 <Zerosquare> http://pdf1.alldatasheet.com/datasheet-pdf/view/166805/HITACHI/HM514170C.html
 <Zerosquare> (pas exactement la même réf mais doit pas y avoir beaucoup de différences :))
 
+<frenchshark> Autrec chose pour les VCDs : tu peux les splitter avec tfp->openNext (true);
+<frenchshark> Dans mes simu, je cree un VCD apres chaque Vertical Synchro
+<frenchshark> Seul le premier VCD a un header donc le mieux c'est d'appeler tfp->openNext() juste apres tfp->open() pour creer un premier VCD avec seulement un header.
+<frenchshark> Apres ya plus qu'a concatener ce VCD avec une des morceaux pour qu'il soit visualisable.

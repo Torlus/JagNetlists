@@ -37,12 +37,13 @@ Init:
 	move.w	#618, VS
 *	move.w	#0x06C1, VMODE
 
-	lea.l		Prog_Start, %a0
-	lea.l		0x00004000, %a1
-	move.w	#0x200, %d7
+* DRAM contents is preloaded in simulation
+*	lea.l		Prog_Start, %a0
+*	lea.l		0x00004000, %a1
+*	move.w	#0x200, %d7
 Copy_Loop:
-	move.l	(%a0)+, (%a1)+
-	dbra		%d7, Copy_Loop
+*	move.l	(%a0)+, (%a1)+
+*	dbra		%d7, Copy_Loop
 	
 * Jump to "standard" entry point for homebrew games
 	lea.l	0x00004000, %a0
