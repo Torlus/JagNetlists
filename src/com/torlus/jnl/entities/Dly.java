@@ -6,17 +6,20 @@ import com.torlus.jnl.Signal;
 import com.torlus.jnl.SignalType;
 
 public class Dly extends Entity {
-	@Override
-	public String getBaseName() {
-		return null;
-	}
 
 	public Dly() {
 		// 260c_pri_e.pdf - CDLY1XL
 		ios.add(new Signal("z", SignalType.OUT));
 		ios.add(new Signal("a", SignalType.IN));
 	}
+
+	// Code for "without delay"
 	
+	/*@Override
+	public String getBaseName() {
+		return null;
+	}
+
 	@Override
 	public String vhdlInstance(Instance inst) {
 		String vhdl = "$z$ <= $a$;\n";
@@ -27,6 +30,18 @@ public class Dly extends Entity {
 	public String verilogInstance(Instance inst) {
 		String vlog = "assign $z$ = $a$;\n";
 		return verilogMap(inst, vlog);
+	}*/
+
+	// Code for "with delay"
+	
+	@Override
+	public boolean requireSysclk() {
+		return true;
+	}
+
+	@Override
+	public String getBaseName() {
+		return "dly";
 	}
 
 	

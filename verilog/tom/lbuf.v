@@ -1193,7 +1193,8 @@ assign nota_1 = ~aout_1;
 twoniv lbad_inst
 (
 	.z /* OUT */ (lbad),
-	.a /* IN */ (lbaw)
+	.a /* IN */ (lbaw),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (61) - lba : nivu
@@ -1203,33 +1204,124 @@ assign lba = lbad;
 twoniv lbbd_inst
 (
 	.z /* OUT */ (lbbd),
-	.a /* IN */ (lbbw)
+	.a /* IN */ (lbbw),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (63) - lbb : nivu
 assign lbb = lbbd;
 
 // LBUF.NET (67) - lbwad[0-8] : hdly1b
-assign lbwad_0 = lbwa_0;
-assign lbwad_1 = lbwa_1;
-assign lbwad_2 = lbwa_2;
-assign lbwad_3 = lbwa_3;
-assign lbwad_4 = lbwa_4;
-assign lbwad_5 = lbwa_5;
-assign lbwad_6 = lbwa_6;
-assign lbwad_7 = lbwa_7;
-assign lbwad_8 = lbwa_8;
+dly lbwad_from_0_to_8_inst_0
+(
+	.z /* OUT */ (lbwad_0),
+	.a /* IN */ (lbwa_0),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_1
+(
+	.z /* OUT */ (lbwad_1),
+	.a /* IN */ (lbwa_1),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_2
+(
+	.z /* OUT */ (lbwad_2),
+	.a /* IN */ (lbwa_2),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_3
+(
+	.z /* OUT */ (lbwad_3),
+	.a /* IN */ (lbwa_3),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_4
+(
+	.z /* OUT */ (lbwad_4),
+	.a /* IN */ (lbwa_4),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_5
+(
+	.z /* OUT */ (lbwad_5),
+	.a /* IN */ (lbwa_5),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_6
+(
+	.z /* OUT */ (lbwad_6),
+	.a /* IN */ (lbwa_6),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_7
+(
+	.z /* OUT */ (lbwad_7),
+	.a /* IN */ (lbwa_7),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbwad_from_0_to_8_inst_8
+(
+	.z /* OUT */ (lbwad_8),
+	.a /* IN */ (lbwa_8),
+	.sys_clk(sys_clk) // Generated
+);
 
 // LBUF.NET (68) - lbrad[0-8] : hdly1b
-assign lbrad_0 = lbra_0;
-assign lbrad_1 = lbra_1;
-assign lbrad_2 = lbra_2;
-assign lbrad_3 = lbra_3;
-assign lbrad_4 = lbra_4;
-assign lbrad_5 = lbra_5;
-assign lbrad_6 = lbra_6;
-assign lbrad_7 = lbra_7;
-assign lbrad_8 = lbra_8;
+dly lbrad_from_0_to_8_inst_0
+(
+	.z /* OUT */ (lbrad_0),
+	.a /* IN */ (lbra_0),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_1
+(
+	.z /* OUT */ (lbrad_1),
+	.a /* IN */ (lbra_1),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_2
+(
+	.z /* OUT */ (lbrad_2),
+	.a /* IN */ (lbra_2),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_3
+(
+	.z /* OUT */ (lbrad_3),
+	.a /* IN */ (lbra_3),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_4
+(
+	.z /* OUT */ (lbrad_4),
+	.a /* IN */ (lbra_4),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_5
+(
+	.z /* OUT */ (lbrad_5),
+	.a /* IN */ (lbra_5),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_6
+(
+	.z /* OUT */ (lbrad_6),
+	.a /* IN */ (lbra_6),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_7
+(
+	.z /* OUT */ (lbrad_7),
+	.a /* IN */ (lbra_7),
+	.sys_clk(sys_clk) // Generated
+);
+dly lbrad_from_0_to_8_inst_8
+(
+	.z /* OUT */ (lbrad_8),
+	.a /* IN */ (lbra_8),
+	.sys_clk(sys_clk) // Generated
+);
 
 // LBUF.NET (69) - lbaadi[0-8] : mx2p
 mx2 lbaadi_from_0_to_8_inst_0
@@ -3176,24 +3268,28 @@ assign webd_1 = web10 & web11 & web12 & web02;
 twoniv wea_from_0_to_1_inst_0
 (
 	.z /* OUT */ (wea_0),
-	.a /* IN */ (wead_0)
+	.a /* IN */ (wead_0),
+	.sys_clk(sys_clk) // Generated
 );
 twoniv wea_from_0_to_1_inst_1
 (
 	.z /* OUT */ (wea_1),
-	.a /* IN */ (wead_1)
+	.a /* IN */ (wead_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (206) - web[0-1] : twoniv
 twoniv web_from_0_to_1_inst_0
 (
 	.z /* OUT */ (web_0),
-	.a /* IN */ (webd_0)
+	.a /* IN */ (webd_0),
+	.sys_clk(sys_clk) // Generated
 );
 twoniv web_from_0_to_1_inst_1
 (
 	.z /* OUT */ (web_1),
-	.a /* IN */ (webd_1)
+	.a /* IN */ (webd_1),
+	.sys_clk(sys_clk) // Generated
 );
 
 // LBUF.NET (208) - notaactive : nd2

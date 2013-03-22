@@ -4,14 +4,21 @@
 module twoniv
 (
 	output z,
-	input a
+	input a,
+	input sys_clk
 );
-wire y;
 
-// LEGO.NET (285) - y : niv
-assign y = a;
+/*reg r_z = 1'b0;
 
-// LEGO.NET (286) - z : niv
-assign z = y;
+assign z = r_z;
+
+always @(posedge sys_clk)
+begin
+	r_z <= a;
+end*/
+
+assign z = a;
+
+
 endmodule
 /* verilator lint_on LITENDIAN */

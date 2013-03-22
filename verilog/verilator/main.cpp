@@ -5,7 +5,8 @@
 #include "verilated_vcd_c.h"
 #endif
 
-#define HALF_PER_PS 4500
+// #define HALF_PER_PS 4500
+#define HALF_PER_PS 9000
 // Number of simulation cycles
 //                                 ns
 #define NUM_CYCLES  ((vluint64_t)4000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
@@ -61,9 +62,11 @@ int main(int argc, char **argv, char **env)
 				
     top->xresetl = (hcycle < (vluint64_t)(80000 / HALF_PER_PS)) ? 0 : 1;
 		top->sys_clk = top->sys_clk ^ 1;
-		if (!(hcycle & 0x3))
+		// if (!(hcycle & 0x3))
+		if (!(hcycle & 0x1))
 			top->xvclk = top->xvclk ^ 1;
-		if (!(hcycle & 0x7))
+		// if (!(hcycle & 0x7))
+		if (!(hcycle & 0x3))
 			top->xpclk = top->xpclk ^ 1;
 		
     if (Verilated::gotFinish())  exit(0);

@@ -45,7 +45,10 @@ base/fa332.v
 base/mp16.v
 base/rd64x32.v
 base/aba032a.v
+
 base/stlatch.v
+base/twoniv.v
+base/dly.v
 
 tom/an5.v
 tom/an5p.v
@@ -105,7 +108,7 @@ tom/add4.v
 tom/sadd4.v
 tom/sadd8.v
 tom/ha9.v
-tom/twoniv.v
+# tom/twoniv.v
 tom/hs1.v
 tom/fa23.v
 tom/cnte3.v

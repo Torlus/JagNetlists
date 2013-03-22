@@ -156,7 +156,8 @@ assign xd_r = {
 initial
 begin
 	sys_clk   = 1'b0;
-	forever #5 sys_clk = ~sys_clk;
+	// sys_clk   = 1'b1;
+	forever #10 sys_clk = ~sys_clk;
 end
 
 initial

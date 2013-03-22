@@ -385,22 +385,52 @@ assign dstdsel_0 = dstrwen;
 assign dstdsel_1 = swtodr;
 
 // REGIS-WA.NET (86) - stba : dly8
-assign stba = clk;
+dly stba_inst
+(
+	.z /* OUT */ (stba),
+	.a /* IN */ (clk),
+	.sys_clk(sys_clk) // Generated
+);
 
 // REGIS-WA.NET (87) - stbb : dly8
-assign stbb = stba;
+dly stbb_inst
+(
+	.z /* OUT */ (stbb),
+	.a /* IN */ (stba),
+	.sys_clk(sys_clk) // Generated
+);
 
 // REGIS-WA.NET (88) - stbc : dly8
-assign stbc = stbb;
+dly stbc_inst
+(
+	.z /* OUT */ (stbc),
+	.a /* IN */ (stbb),
+	.sys_clk(sys_clk) // Generated
+);
 
 // REGIS-WA.NET (89) - stbd : dly8
-assign stbd = stbc;
+dly stbd_inst
+(
+	.z /* OUT */ (stbd),
+	.a /* IN */ (stbc),
+	.sys_clk(sys_clk) // Generated
+);
 
 // REGIS-WA.NET (90) - stbe : dly8
-assign stbe = stbd;
+dly stbe_inst
+(
+	.z /* OUT */ (stbe),
+	.a /* IN */ (stbd),
+	.sys_clk(sys_clk) // Generated
+);
 
 // REGIS-WA.NET (91) - stb : dly8
-assign stb = stbe;
+dly stb_inst
+(
+	.z /* OUT */ (stb),
+	.a /* IN */ (stbe),
+	.sys_clk(sys_clk) // Generated
+);
 
 // REGIS-WA.NET (93) - reg_ram : rd64x32
 rd64x32 reg_ram_inst
