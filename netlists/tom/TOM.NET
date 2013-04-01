@@ -100,7 +100,7 @@ bus ownership. This is when bg is active *)
 	xrasl[0..1],	(* ras for each bank of DRAM *)
 	xdtackl,	(* data transfer acknowledge *)
 	xintl, (* active low interrupt output *)
-	cfgen,brlout,ba,aen:IO); (* GE *)	
+	cfgen,brlout,ba,aen,hs_o,hhs_o,vs_o:IO); (* GE *)	
 
 	(* GE - commented out *)
 	(* INT8/xd0_7,xd8_15,xd16_23,xd24_31,xd32_39,xd40_47,xd48_55,xd56_63,
@@ -343,7 +343,7 @@ Vid := 	VID	(dout[0..11],vmodew,hcw,hcr,hpw,hbbw,
 		blank,nextpixa,nextpixd,
 		cry16,rgb24,rg16,rgb16,mptest,ndtest,varmod,vc[0..10],
 		tcount,incen,binc,bgw,word2,pp,lbaactive,lbbactive,
-		hcb[10],
+		hcb[10], hs_o, hhs_o, vs_o,
 
 		dr[0..15]);
 

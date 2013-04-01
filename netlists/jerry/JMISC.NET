@@ -217,74 +217,7 @@ Joyen :=	LDP2Q (joyen,din[15],joy1w,resetl);
 Joy1w :=	IV (joy1w,joy1wl);
 Joyenl :=	IV (joyenl,joyen);
 
-/************** UNUSED PADDLE LOGIC ***************
-
-(************************** PADDLES *************************)
-
-(*
- The paddles work by reseting a monostable with the (negative) carry out
- of an eight bit counter running at around 500kHz. The output of the timer
- is forced high by the reset and falls some time later. This time
- depends on the position of the paddle potentiometer. The falling
- edge latches the value of the counter into a register.
-*) 
-
-(* generate the 500kHz enable by dividing the clock by 64 *)
-
-
-Ps[0] :=	UPCNT1 (ps[0],psco[0],clk,vcc,resetl);
-Ps[1-5] :=	UPCNT1 (ps[1-5],psco[1-5],clk,psco[0-4],resetl);
-Pen :=		AN6 (pen,ps[0..5]);
-Psco[5] :=	DUMMY (psco[5]);
-Ps :=		JOIN (ps,ps[0..5]);
-Psu :=		DUMMY (ps);
-Vcc :=		TIE1 (vcc);
-
-(* prescaler is disabled in test mode *)
-
-Ppen :=		OR2 (ppen,pen,test);
-
-(* eight stage counter *)
-
-P[0] :=		UPCNT1 (p[0],pco[0],clk,ppen,resetl);
-P[1-7] :=	UPCNT1 (p[1-7],pco[1-7],clk,pco[0-6],resetl);
-P :=		JOIN (p,p[0..7]);
-Pu :=		DUMMY (p);
-
-(* generate a negative 2us pulse every 512us *)
-
-Pcol[7] :=	IV (pcol[7],pco[7]);
-Pj :=		AN2 (pj,ppen,pco[7]);
-Pk :=		AN2 (pk,ppen,pcol[7]);
-Padrst :=	FJK2 (padrst,padrstl,pj,pk,clk,resetl);
-Unused1 :=	DUMMY (padrst);
-
-(* sample the paddle inputs *)
-
-Pad1[0-3] :=	FD1Q (pad1[0-3],pad[0-3],clk);
-Pad2[0-3] :=	FD1Q (pad2[0-3],pad1[0-3],clk);
-Pad1L[0-3] :=	IV (pad1l[0-3],pad1[0-3]);
-
-(* generate an enable of the falling edge *)
-
-En[0-3] :=	AN2M (en[0-3],pad1l[0-3],pad2[0-3]);
-
-(* the paddle registers *)
-
-P0[0-7] :=	SLATCH (p0[0-7],p[0-7],clk,en[0]);
-P1[0-7] :=	SLATCH (p1[0-7],p[0-7],clk,en[1]);
-P2[0-7] :=	SLATCH (p2[0-7],p[0-7],clk,en[2]);
-P3[0-7] :=	SLATCH (p3[0-7],p[0-7],clk,en[3]);
-
-D0[0-7] :=	TS (dr[0-7],p0[0-7],pad1r);
-D1[0-7] :=	TS (dr[0-7],p1[0-7],pad2r);
-D2[0-7] :=	TS (dr[0-7],p2[0-7],pad3r);
-D3[0-7] :=	TS (dr[0-7],p3[0-7],pad4r);
-Di[8-15] :=	TS (dr[8-15],gnd,pulldown);
-Pulldowni :=	NR4 (pulldowni,pad4r,pad1r,pad2r,pad3r);
-Pulldown :=	IVM (pulldown,pulldowni);
-
-********************** END OF UNUSED LOGIC ******************/
+(* GE - removed unused paddle logic *)
 
 END;
 

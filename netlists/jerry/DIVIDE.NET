@@ -62,6 +62,8 @@ INT32/	srcd		/* source operand data */
 
 INT32/	divhit, dividend_hi thisneg32\
 INT32/	addq1, divein, dividend_lo, divisor
+(* GE - added missing declarations *)
+INT32/	dend1, divr1, dend2, divr2, addq2
 :LOCAL;
 BEGIN
 

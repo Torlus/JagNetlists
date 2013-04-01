@@ -24,6 +24,8 @@ public class PassOne {
 
 				if (ws.find(entityName) != null)
 					throw new Exception("Duplicate Entity [" + entityName + "]");
+				if (ws.find(ws.prefix + entityName) != null)
+					throw new Exception("Duplicate Entity [" + ws.prefix + entityName + "]");
 
 				// Try to load a hardcoded entity (overriding source file's definition)
 				Entity he = ws.load(entityName);
@@ -34,7 +36,7 @@ public class PassOne {
 					continue;
 				}
 
-				CompositeEntity e = new CompositeEntity(entityName);
+				CompositeEntity e = new CompositeEntity(ws.prefix + entityName);
 				// e.name = entityName;
 
 				int width = -1;

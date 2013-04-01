@@ -1,16 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.39 (w)1999-2012 BSI
-[*] Tue Mar 19 16:09:54 2013
+[*] Sun Mar 31 12:32:29 2013
 [*]
-[dumpfile] "D:\FPGA\JagNetlists\verilog\verilator_tb.vcd"
+[dumpfile] "D:\FPGA\JagNetlists\verilog\vtb.fst"
 [savefile] "D:\FPGA\JagNetlists\verilog\gtkw_verilator"
 [timestart] 0
 [size] 1920 1021
-[pos] -251 -251
-*-21.262295 41500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -9 -9
+*-32.718464 6210000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] TOP.
 [treeopen] TOP.v.
-[treeopen] TOP.v.tom_inst.
 [sst_width] 197
 [signals_width] 256
 [sst_expanded] 1
@@ -46,34 +45,27 @@ TOP.v.j68_wr_data[15:0]
 TOP.v.tom_inst.mem_inst.refreq
 TOP.v.tom_inst.mem_inst.obbreq
 @22
-TOP.v.tom_inst.lbuf_inst.lbai[0:8]
-TOP.v.tom_inst.lbuf_inst.lbadl_in[0:15]
-TOP.v.tom_inst.lbuf_inst.lbadl_out[0:15]
-TOP.v.tom_inst.lbuf_inst.lbadl_oe[0:15]
-@28
-TOP.v.tom_inst.lbuf_inst.cea_0
-TOP.v.tom_inst.lbuf_inst.wea_0
-@22
-TOP.v.tom_inst.lbuf_inst.lbbi[0:8]
-TOP.v.tom_inst.lbuf_inst.lbbdl_in[0:15]
-TOP.v.tom_inst.lbuf_inst.lbbdh_in[0:15]
-@28
-TOP.v.tom_inst.lbuf_inst.ceb_0
-TOP.v.tom_inst.lbuf_inst.web_0
-@22
-TOP.v.tom_inst.pix_inst.lbra[0:8]
-@28
-TOP.v.tom_inst.pix_inst.nextpixb
-@22
-TOP.v.tom_inst.pix_inst.lbrd_d[0:31]
-TOP.v.tom_inst.pix_inst.pd1_d[0:31]
-@28
-TOP.v.xhs_out
-TOP.v.xvs_out
-@22
 TOP.v.xr[0:7]
 TOP.v.xg[0:7]
-@23
 TOP.v.xb[0:7]
+@28
+TOP.v.hhs_o
+TOP.v.hs_o
+TOP.v.vs_o
+@22
+TOP.v.vgalb0.d[23:0]
+TOP.v.vgalb0.a[9:0]
+@28
+TOP.v.vgalb0.we
+@22
+TOP.v.vgalb0.q[23:0]
+TOP.v.vgalb1.a[9:0]
+@28
+TOP.v.vgalb1.we
+@22
+TOP.v.vgalb1.q[23:0]
+TOP.v.lb0_q[23:0]
+@23
+TOP.v.lb1_q[23:0]
 [pattern_trace] 1
 [pattern_trace] 0

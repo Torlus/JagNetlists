@@ -35,7 +35,8 @@ begin
 	if (~cen) begin
 		if (~rw) begin
 			ram_blk[a_r][0:15] <= z_in;
-		end
+			// $display("wr %x %x", a_r, z_in);
+			end
 		r_z_out <= ram_blk[a_r][0:15];
 	end
 	r_z_oe <= (~cen & rw) ? 16'hffff : 16'h0000;

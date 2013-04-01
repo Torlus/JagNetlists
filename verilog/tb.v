@@ -7,7 +7,13 @@ module tb
 	input	xresetl,
 	input xpclk,
 	input xvclk,
-	input sys_clk
+	input sys_clk,
+
+	output vga_vs_n,
+	output vga_hs_n,
+	output [7:0] vga_r,
+	output [7:0] vga_g,
+	output [7:0] vga_b
 `endif
 );
 
@@ -16,6 +22,12 @@ reg						xpclk;
 reg						xvclk;
 reg						xresetl;
 reg						sys_clk;
+
+wire 					vga_vs_n;
+wire					vga_hs_n;
+wire [7:0] 		vga_r;
+wire [7:0] 		vga_g;
+wire [7:0] 		vga_b;
 `endif
 
 reg						xbgl 			= 1'b0;
@@ -80,10 +92,13 @@ wire					brlout;
 wire					ba;
 wire					aen;
 
+wire					hs_o;
+wire					hhs_o;
+wire					vs_o;
+
 // Debug
 wire	[63:0]	xd_r;
 wire	[23:0]	xa_r;
-
 wire	rasl;
 wire	casl;
 
@@ -118,13 +133,105 @@ wire	[0:63]	dram_d;
 wire	[0:63]	dram_q;
 wire	[0:3]		dram_oe;
 
+// Scandoubler
+reg		[15:0]	vc				= 16'h0000;
+reg		[15:0]	hc				= 16'h0000;
+reg		[15:0]	vga_hc		= 16'h0000;
+reg		hs_o_prev					= 1'b0;
+reg		hhs_o_prev				= 1'b0;
+reg		vs_o_prev					= 1'b0;
+
+
+wire	[23:0]	lb_d;
+
+wire					lb0_we;
+wire	[9:0]		lb0_a;
+wire	[23:0]	lb0_q;
+
+wire					lb1_we;
+wire	[9:0]		lb1_a;
+wire	[23:0]	lb1_q;
+
+vgalb vgalb0
+(
+	.q(lb0_q),
+	.d(lb_d),
+	.we(lb0_we),
+	.a(lb0_a),
+	.sys_clk(sys_clk)
+);
+
+vgalb vgalb1
+(
+	.q(lb1_q),
+	.d(lb_d),
+	.we(lb1_we),
+	.a(lb1_a),
+	.sys_clk(sys_clk)
+);
+
+// vc even : vga read lb1, jag write lb0
+
+assign vga_r = (vc[0] == 1'b0) ? lb1_q[23:16] : lb0_q[23:16];
+assign vga_g = (vc[0] == 1'b0) ? lb1_q[15:8] : lb0_q[15:8];
+assign vga_b = (vc[0] == 1'b0) ? lb1_q[7:0] : lb0_q[7:0];
+
+assign lb_d = { 
+	xr[7], xr[6], xr[5], xr[4], xr[3], xr[2], xr[1], xr[0],
+	xg[7], xg[6], xg[5], xg[4], xg[3], xg[2], xg[1], xg[0],
+	xb[7], xb[6], xb[5], xb[4], xb[3], xb[2], xb[1], xb[0]
+};
+
+assign lb0_a = (vc[0] == 1'b0) ? hc[11:2] : vga_hc[10:1];
+// assign lb0_we = (vc[0] == 1'b0) ? 1'b1 : 1'b0;
+assign lb0_we = (vc[0] == 1'b0) ? hc[1] : 1'b0;
+
+assign lb1_a = (vc[0] == 1'b0) ? vga_hc[10:1] : hc[11:2];
+// assign lb1_we = (vc[0] == 1'b0) ? 1'b0 : 1'b1; 
+assign lb1_we = (vc[0] == 1'b0) ? 1'b0 : hc[1]; 
+
+always @(posedge sys_clk)
+begin
+	hs_o_prev <= hs_o;
+	hhs_o_prev <= hhs_o;
+	vs_o_prev <= vs_o;
+	
+	if (xresetl == 1'b0) begin
+		vc <= 16'h0000;
+		hc <= 16'h0000;
+		vga_hc <= 16'h0000;
+	end else begin
+		if (vs_o == 1'b1) begin
+			vc <= 16'h0000;
+		end else if ( (hs_o_prev == 1'b0) & (hs_o == 1'b1) ) begin
+			vc <= vc + 1;
+		end
+		
+		if (hs_o == 1'b1) begin
+			hc <= 16'h0000;
+		end else begin
+			hc <= hc + 1;
+		end
+
+		if (hhs_o == 1'b1) begin
+			vga_hc <= 16'h0000;
+		end else begin
+			vga_hc <= vga_hc + 1;
+		end
+
+	end
+end
+
+assign vga_hs_n = (vga_hc < 192) ? 1'b0 : 1'b1;
+assign vga_vs_n = (vc < 2) ? 1'b0 : 1'b1;
+
 // Simulation with Icarus Verilog
 `ifdef ICARUS
 initial
 begin
   $dumpfile("tb.lxt.tmp");
   $dumpvars(0, tb);
-	#4000000
+	#199000000
 	begin
 		$finish;
 	end
@@ -731,6 +838,9 @@ tom tom_inst
 	.brlout(brlout),
 	.ba(ba),
 	.aen(aen),
+	.hs_o(hs_o),
+	.hhs_o(hhs_o),
+	.vs_o(vs_o),
 	.sys_clk(sys_clk)
 );
 

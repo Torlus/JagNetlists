@@ -102,6 +102,12 @@ INT24/	mtx_addr
 INT27/	microword, romword27, mwordi
 INT32/	prog_count
 :LOCAL;
+(* GE - added missing declarations *)
+INT24/	program_count
+INT16/	sysins
+INT27/	romword
+INT5/	srcopb
+:LOCAL;
 BEGIN
 
 #if FLARE

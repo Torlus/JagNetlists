@@ -287,10 +287,12 @@ END;
 /* bidirectional output buffer with TTL input */
 DEF     BD2TH    (BIT/x:BUS; i,po:OUT; o,en,tn,pi:IN);
 BEGIN
+(* GE - commented out
 #GRIDCOUNT 0
 #GATECOUNT 0
 #MEGACOUNT 0
 #TYPEWIDE 0
+*)
 X       :=      TS (x,o,e);
 Enl     :=      IV (enl,en);
 E       :=      AN2 (e,enl,tn);

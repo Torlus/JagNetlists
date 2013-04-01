@@ -38,12 +38,27 @@ DEF DSP (
 	i2sr[0..2]	/* internal I2S read strobes */
 	:OUT;
 	dr[0..15]	/* I/O read data */
-	gpu_dout[0..15]	/* read data from internal peripherals */
+	gpu_dout_o[0..15]	/* read data from internal peripherals */ (* GE - renamed *)
 	:BUS);
 
-INT16/	dread,io_addr
+INT16/	io_addr
 INT32/	gpu_din
 :LOCAL;
+(* GE - added missing declarations *)
+INT24/	dataddr, gpu_addr
+INT32/	immdata, locsrc
+INT32/	result, srcd, srcdp, srcdpa, dstwd, srcwd, load_data, mem_data, quotient, dstdp, dstd
+INT32/	cpudata
+INT3/	alufunc
+INT6/	dstanwi, srcanwi, dstat
+INT6/	dsta, srca
+INT22/	progaddr
+INT13/	cpuaddr
+:LOCAL;
+INT24/	address:LOCAL;
+INT16/  dread:BUS; (* GE - declared as BUS *)
+INT32/	gpu_data:BUS;
+gpu_dout[0..31]:BUS;
 BEGIN
 
 /* Locally buffer reset */
@@ -85,7 +100,7 @@ Gpu_irq[1]	:= AN2 (gpu_irq[1], i2int, i2intd\);
 /* Instruction execution control logic */
 
 Ins_exec	:= DSP_EXEC (gpu_data gpu_dout[3..14] 
-			gpu_dout[16..31] alufunc brlmux[0..1] 
+			(* GE *) gpu_dout[16..31] alufunc brlmux[0..1] 
 			dataddr datreq datwe datwe_raw div_instr 
 			div_start dstanwi dstat dstdgate dstrrd 
 			dstrrdi dstrwr dstrwri dstwen exe 
@@ -143,7 +158,7 @@ Registers	:= REGISTERS (srcd, srcdp, srcdpa, dstd, dstdp,
 
 /* DSP local memory controller */
 
-Dsp_mem		:= DSP_MEM (gpu_data gpu_dout[0..31] accumrd 
+Dsp_mem		:= DSP_MEM (gpu_data gpu_dout[0..15] (* GE *) gpu_dout[16..31] accumrd 
 			big_instr big_io ctrlwr dacw[0..1] 
 			datack dbgrd del_xld divwr external flagrd 
 			flagwr gateack gpu_addr gpu_memw i2sr[0..2]
@@ -190,5 +205,9 @@ Gpu_dout	:= JOIN_BUS (gpu_data, gpu_dout[0..31]);
 /* provide a separate bus for inputs */
 
 Gpu_din		:= NIVH (gpu_din, gpu_data);
+
+(* GE *)
+GE := JOIN_BUS (gpu_dout_o[0-15], gpu_data{0-15});
+
 
 END;

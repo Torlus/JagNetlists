@@ -49,6 +49,13 @@ INT23/	mantissa
 INT32/	alua, aluat, alub, aluq, mant, mulq, mulqp, 
 INT32/	normi, resd, accum, modalu, mirror
 :LOCAL;
+(* GE - added missing declarations *)
+INT32/	brlq
+INT32/	satval
+:LOCAL;
+(* GE - weird construct, where accum[32..39] is local *)
+(* as it isn't supported by my commpiler, "acctop" is used here *) 
+acctop[32..39]:LOCAL; 
 BEGIN
 
 One		:= TIE1 (one);
@@ -217,19 +224,25 @@ multiplier product added to the result extsnion, including
 carry out of the ALU */
 
 Mulqpsgn	:= NIVM (mulqpsgn, mulqp{31});
-Alu_co\		:= IV (alu_co\, alu_co);
+
+(* GE - get rid of FA4CS stuff *)
+(* GE Alu_co\		:= IV (alu_co\, alu_co);
 Accuma0		:= FA4CS (accuma[32..35], aco\[0], aco0\[0], 
 			aco1\[0], g[0], p[0], alu_co\, one, zero, 
-			accum[32], mulqpsgn, accum[33], mulqpsgn, 
-			accum[34], mulqpsgn, accum[35], mulqpsgn);
+			acctop[32], mulqpsgn, acctop[33], mulqpsgn, 
+			acctop[34], mulqpsgn, acctop[35], mulqpsgn);
 Accuma1		:= FA4CS (accuma[36..39], aco\[1], aco0\[1], 
 			aco1\[1], g[1], p[1], aco\[0], aco0\[0], 
-			aco1\[0], accum[36], mulqpsgn, accum[37], 
-			mulqpsgn, accum[38], mulqpsgn, accum[39], 
+			aco1\[0], acctop[36], mulqpsgn, acctop[37], 
+			mulqpsgn, acctop[38], mulqpsgn, acctop[39], 
 			mulqpsgn);
 Aco\[1]		:= DUMMY (aco\[1]);
 Aco0\[1]	:= DUMMY (aco0\[1]);
-Aco1\[1]	:= DUMMY (aco1\[1]);
+Aco1\[1]	:= DUMMY (aco1\[1]); *)
+
+GE1 := ADD4(accuma[32..35], cot, acctop[32..35], mulqpsgn, mulqpsgn, mulqpsgn, mulqpsgn, alu_co);
+GE2 := ADD4(accuma[36..39], cot2, acctop[36..39], mulqpsgn, mulqpsgn, mulqpsgn, mulqpsgn, cot);
+GE3 := DUMMY(cot2);
 
 /* the accumulated value is loaded from the adder on macop_pp, and
 is initialised to the sign extension of mulq on resld and 
@@ -237,13 +250,13 @@ ressel = 011 */
 Accuminit	:= AN4P (accuminit, resldp, resselp[0..1], 
 			resselp\[2]);
 Mulqsgn		:= NIVM (mulqsgn, mulq{31});
-Accumb[32-39]	:= MX4 (accumb[32-39], accum[32-39], 
+Accumb[32-39]	:= MX4 (accumb[32-39], acctop[32-39], 
 			accuma[32-39], mulqsgn, zero, macop_pp, 
 			accuminit);
-Accum[32-39]	:= FD1Q (accum[32-39], accumb[32-39], clk);
+Accum[32-39]	:= FD1Q (acctop[32-39], accumb[32-39], clk);
 
-Accumsign	:= NIVU (accums, accum[39]);
-Accum		:= JOIN (accum, accum[32..39], accums, accums, 
+Accumsign	:= NIVU (accums, acctop[39]);
+Accum		:= JOIN (accum, acctop[32..39], accums, accums, 
 			accums, accums, accums, accums, accums, 
 			accums, accums, accums, accums, accums, 
 			accums, accums, accums, accums, accums, 
@@ -260,7 +273,7 @@ Brl		:= BRLSHIFT (brlq, brl_carry, brlmuxp[0..1],
 
 /* The fit to eight or sixteen bits unit */
 
-Saturate	:= SATURATE (satval, dstdp, satszp, accum[32..39]);
+Saturate	:= SATURATE (satval, dstdp, satszp, acctop[32..39]);
 
 /* Modulo N arithmetic
 */
@@ -381,6 +394,8 @@ INT3/	alufunc		/* ALU function code */
 	:IN);
 
 INT32/	and, or, xor compa32 compb32
+(* GE - added missing declarations *)
+INT32/	adda, addb, sum
 :LOCAL;
 BEGIN
 

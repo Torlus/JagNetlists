@@ -33,9 +33,9 @@ assign z[0:26] = {
 always@(posedge sys_clk)
 begin
 	clk_prev <= clk;
-	if (~clk_prev & clk) begin
+	// if (~clk_prev & clk) begin
 		r_z <= rom_blk[a_r][26:0];
-	end
+	// end
 end
 
 

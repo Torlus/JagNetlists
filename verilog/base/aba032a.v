@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module aba032a
@@ -31,13 +32,14 @@ begin
 	r_z_out_dly <= r_z_out;
 	r_z_oe_dly <= r_z_oe;	
 
-	if (cs) begin
-		if (we) begin
+	if (~cs) begin
+		if (~we) begin
 			ram_blk[a_r][0:31] <= z_in;
 		end
 		r_z_out <= ram_blk[a_r][0:31];
 	end
-	r_z_oe <= (cs & ~we) ? 32'hffffffff : 32'h00000000;
+	r_z_oe <= (~cs & we) ? 32'hffffffff : 32'h00000000;
 end
 
 endmodule
+/* verilator lint_on LITENDIAN */

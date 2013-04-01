@@ -397,6 +397,9 @@ module tom
 	output brlout,
 	output ba,
 	output aen,
+	output hs_o,
+	output hhs_o,
+	output vs_o,
 	input sys_clk // Generated
 );
 wire wd_0_out;
@@ -4950,6 +4953,9 @@ vid vid_inst
 	.lbaactive /* OUT */ (lbaactive),
 	.lbbactive /* OUT */ (lbbactive),
 	.hcb_10 /* OUT */ (hcb_10),
+	.hs_o /* OUT */ (hs_o),
+	.hhs_o /* OUT */ (hhs_o),
+	.vs_o /* OUT */ (vs_o),
 	.dr_0_out /* BUS */ (ts_local_pe_670_a1_out),
 	.dr_0_oe /* BUS */ (ts_local_pe_670_a1_oe),
 	.dr_0_in /* BUS */ (ts_local_pe_670_a1_in),

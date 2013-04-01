@@ -31,7 +31,7 @@ public class PassTwo {
 					continue;
 				}
 
-				CompositeEntity ce = (CompositeEntity) ws.find(entityName);
+				CompositeEntity ce = (CompositeEntity) ws.find(ws.prefix + entityName);
 
 				while (!tk.matchTokens(TokenType.BEGIN))
 					tk.consumeToken();
@@ -113,6 +113,18 @@ public class PassTwo {
 			}
 		}
 
+		if (child == null) {
+			child = ws.load(ws.prefix + childName);
+			if (child == null) {
+				child = ws.find(ws.prefix + childName);
+			} else {
+				if (child.resize(0)) {
+					special = true;
+				}
+			}
+		}
+		
+		
 		if (child == null)
 			throw new Exception("Unknown entity [" + childName + "]");
 

@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module blit
@@ -507,3 +508,4 @@ assign blit_breq_1 = 1'b0;
 assign blit_int = 1'b0;
 
 endmodule
+/* verilator lint_on LITENDIAN */

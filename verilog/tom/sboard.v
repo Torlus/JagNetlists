@@ -263,6 +263,7 @@ wire sbwaitt_0;
 wire sbwaitt_1;
 wire sbwaitt_2;
 wire sbwaitt_3;
+wire sbwait_tmp;
 
 // SBOARD.NET (91) - datack\ : iv
 assign datack_n = ~datack;
@@ -3312,7 +3313,15 @@ assign sbwaitt_2 = ~(flagwait | xlddwait);
 // SBOARD.NET (644) - sbwaitt3 : nr2
 assign sbwaitt_3 = ~(mbusywait | ldwait);
 
-// SBOARD.NET (645) - sbwait : nd4p
-assign sbwait = ~(sbwaitt_0 & sbwaitt_1 & sbwaitt_2 & sbwaitt_3);
+// SBOARD.NET (646) - sbwait_tmp : nd4p
+assign sbwait_tmp = ~(sbwaitt_0 & sbwaitt_1 & sbwaitt_2 & sbwaitt_3);
+
+// SBOARD.NET (647) - sbwait : sysclkdly
+sysclkdly sbwait_inst
+(
+	.z /* OUT */ (sbwait),
+	.a /* IN */ (sbwait_tmp),
+	.sys_clk(sys_clk) // Generated
+);
 endmodule
 /* verilator lint_on LITENDIAN */

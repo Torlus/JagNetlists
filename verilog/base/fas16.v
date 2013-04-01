@@ -83,6 +83,6 @@ assign s13 = s[13];
 assign s14 = s[14];
 assign s15 = s[15];
 
-assign {co, s} = a + b + ci;
+assign {co, s} = a + b + {15'b0000000_00000000, ci};
 
 endmodule

@@ -38,7 +38,7 @@ base/d416gh.v
 base/d24h.v
 base/d38h.v
 base/d38gh.v
-base/fa4cs.v
+# base/fa4cs.v
 base/cg4.v
 base/fas16.v
 base/fa332.v
@@ -49,6 +49,7 @@ base/aba032a.v
 base/stlatch.v
 base/twoniv.v
 base/dly.v
+base/sysclkdly.v
 
 tom/an5.v
 tom/an5p.v
@@ -127,71 +128,71 @@ tom/dech38el.v
 tom/mx12b.v
 tom/mx6.v
 
-tom/graphics_void.v
-# tom/pc.v
-# tom/cp_latch.v
-# tom/subsize.v
-# tom/prefetch.v
-# tom/interrupt.v
-# tom/macount.v
-# tom/mcount.v
-# tom/r1count.v
-# tom/systolic.v
-# tom/srcdgen.v
-# tom/execon.v
-# tom/ins_exec.v
-# tom/sboard.v
-# tom/alu32.v
-# tom/barrel32.v
-# tom/brlshift.v
-# tom/saturate.v
-# tom/arith.v
-# tom/divide.v
-# tom/registers.v
-# tom/gpu_mem.v
-# tom/gpu_ctrl.v
-# tom/gpuram.v
-# tom/clkgen.v
-# tom/gpu_ram.v
-# tom/gpu_cpu.v
-# tom/gateway.v
+# tom/graphics_void.v
+tom/pc.v
+tom/cp_latch.v
+tom/subsize.v
+tom/prefetch.v
+tom/interrupt.v
+tom/macount.v
+tom/mcount.v
+tom/r1count.v
+tom/systolic.v
+tom/srcdgen.v
+tom/execon.v
+tom/ins_exec.v
+tom/sboard.v
+tom/alu32.v
+tom/barrel32.v
+tom/brlshift.v
+tom/saturate.v
+tom/arith.v
+tom/divide.v
+tom/registers.v
+tom/gpu_mem.v
+tom/gpu_ctrl.v
+tom/gpuram.v
+tom/clkgen.v
+tom/gpu_ram.v
+tom/gpu_cpu.v
+tom/gateway.v
 
-# tom/_blit.v
-# tom/srcshift.v
-# tom/lfu.v
-# tom/datacomp.v
-# tom/zedshift.v
-# tom/zedcomp.v
-# tom/daddamux.v
-# tom/daddbmux.v
-# tom/add16sat.v
-# tom/addarray.v
-# tom/local_mux.v
-# tom/data_mux.v
-# tom/data.v
-# tom/addamux.v
-# tom/addbmux.v
-# tom/addradd.v
-# tom/datamux.v
-# tom/addrgen.v
-# tom/mag_15.v
-# tom/addrcomp.v
-# tom/address.v
-# tom/inner_cnt.v
-# tom/inner.v
-# tom/dcount16.v
-# tom/outer_cnt.v
-# tom/outer.v
-# tom/mcontrol.v
-# tom/acontrol.v
-# tom/dcontrol.v
-# tom/comp_ctrl.v
-# tom/blitstop.v
-# tom/blitgpu.v
-# tom/state.v
-# tom/blit.v
+# tom/blit_void.v
+tom/srcshift.v
+tom/lfu.v
+tom/datacomp.v
+tom/zedshift.v
+tom/zedcomp.v
+tom/daddamux.v
+tom/daddbmux.v
+tom/add16sat.v
+tom/addarray.v
+tom/local_mux.v
+tom/data_mux.v
+tom/data.v
+tom/addamux.v
+tom/addbmux.v
+tom/addradd.v
+tom/datamux.v
+tom/addrgen.v
+tom/mag_15.v
+tom/addrcomp.v
+tom/address.v
+tom/inner_cnt.v
+tom/inner.v
+tom/dcount16.v
+tom/outer_cnt.v
+tom/outer.v
+tom/mcontrol.v
+tom/acontrol.v
+tom/dcontrol.v
+tom/comp_ctrl.v
+tom/blitstop.v
+tom/blitgpu.v
+tom/state.v
+tom/blit.v
 
-# tom/graphics.v
+tom/graphics.v
 
 tom/iodec.v
 tom/vid.v

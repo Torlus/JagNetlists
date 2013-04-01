@@ -182,7 +182,7 @@ assign icount_1 = icount_1_obuf;
 assign icount_2 = icount_2_obuf;
 
 
-// INNER.NET (569) - icount : join
+// INNER.NET (573) - icount : join
 assign icount[0] = icount_0_obuf;
 assign icount[1] = icount_1_obuf;
 assign icount[2] = icount_2_obuf;
@@ -200,35 +200,35 @@ assign icount[13] = icount_13;
 assign icount[14] = icount_14;
 assign icount[15] = icount_15;
 
-// INNER.NET (570) - icountd : dummy
+// INNER.NET (574) - icountd : dummy
 
-// INNER.NET (572) - one : tie1
+// INNER.NET (576) - one : tie1
 assign one = 1'b1;
 
-// INNER.NET (573) - pixsize\[0-2] : iv
+// INNER.NET (577) - pixsize\[0-2] : iv
 assign pixsize_n_0 = ~pixsize_0;
 assign pixsize_n_1 = ~pixsize_1;
 assign pixsize_n_2 = ~pixsize_2;
 
-// INNER.NET (574) - pixel8\ : nd3
+// INNER.NET (578) - pixel8\ : nd3
 assign pixel8_n = ~(pixsize_0 & pixsize_1 & pixsize_n_2);
 
-// INNER.NET (575) - pixel8 : iv
+// INNER.NET (579) - pixel8 : iv
 assign pixel8 = ~pixel8_n;
 
-// INNER.NET (576) - pixel16\ : nd3
+// INNER.NET (580) - pixel16\ : nd3
 assign pixel16_n = ~(pixsize_n_0 & pixsize_n_1 & pixsize_2);
 
-// INNER.NET (577) - pixel16 : iv
+// INNER.NET (581) - pixel16 : iv
 assign pixel16 = ~pixel16_n;
 
-// INNER.NET (578) - pixel32\ : nd3
+// INNER.NET (582) - pixel32\ : nd3
 assign pixel32_n = ~(pixsize_0 & pixsize_n_1 & pixsize_2);
 
-// INNER.NET (580) - pixel32 : iv
+// INNER.NET (584) - pixel32 : iv
 assign pixel32 = ~pixel32_n;
 
-// INNER.NET (582) - gpu_d_lo16 : join
+// INNER.NET (586) - gpu_d_lo16 : join
 assign gpu_d_lo16[0] = gpu_din[0];
 assign gpu_d_lo16[1] = gpu_din[1];
 assign gpu_d_lo16[2] = gpu_din[2];
@@ -246,10 +246,10 @@ assign gpu_d_lo16[13] = gpu_din[13];
 assign gpu_d_lo16[14] = gpu_din[14];
 assign gpu_d_lo16[15] = gpu_din[15];
 
-// INNER.NET (586) - cntldb : nivh
+// INNER.NET (590) - cntldb : nivh
 assign countldb = countld;
 
-// INNER.NET (587) - cntval : mx2
+// INNER.NET (591) - cntval : mx2
 mx2 cntval_inst_0
 (
 	.z /* OUT */ (cntval[0]),
@@ -363,7 +363,7 @@ mx2 cntval_inst_15
 	.s /* IN */ (countldb)
 );
 
-// INNER.NET (588) - cntvall : fd1q
+// INNER.NET (592) - cntvall : fd1q
 fd1q cntvall_inst_0
 (
 	.q /* OUT */ (cntvall[0]),
@@ -477,15 +477,15 @@ fd1q cntvall_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (601) - dstxp\[0-2] : iv
+// INNER.NET (605) - dstxp\[0-2] : iv
 assign dstxp_n_0 = ~dstxp[0];
 assign dstxp_n_1 = ~dstxp[1];
 assign dstxp_n_2 = ~dstxp[2];
 
-// INNER.NET (602) - inct0 : iv
+// INNER.NET (606) - inct0 : iv
 assign inct_0 = ~dstxp_n_0;
 
-// INNER.NET (603) - inct1 : ha1
+// INNER.NET (607) - inct1 : ha1
 ha1 inct1_inst
 (
 	.s /* OUT */ (inct_1),
@@ -494,48 +494,48 @@ ha1 inct1_inst
 	.b /* IN */ (dstxp_n_0)
 );
 
-// INNER.NET (604) - inct2 : eo
+// INNER.NET (608) - inct2 : eo
 assign inct_2 = dstxp_n_2 ^ incc_1;
 
-// INNER.NET (605) - inct\[0-2] : iv
+// INNER.NET (609) - inct\[0-2] : iv
 assign inct_n_0 = ~inct_0;
 assign inct_n_1 = ~inct_1;
 assign inct_n_2 = ~inct_2;
 
-// INNER.NET (609) - inc0t : nd2
+// INNER.NET (613) - inc0t : nd2
 assign inc0t = ~(phrase_mode & inct_0);
 
-// INNER.NET (610) - inc\[0] : an2
+// INNER.NET (614) - inc\[0] : an2
 assign inc_n_0 = inc0t & phrase_mode;
 
-// INNER.NET (615) - inc1t1 : nd2
+// INNER.NET (619) - inc1t1 : nd2
 assign inc1t_1 = ~(pixel8_n & pixel16_n);
 
-// INNER.NET (616) - inc1t2 : nd2
+// INNER.NET (620) - inc1t2 : nd2
 assign inc1t_2 = ~(inc1t_1 & inct_1);
 
-// INNER.NET (617) - inc1t3 : nd2
+// INNER.NET (621) - inc1t3 : nd2
 assign inc1t_3 = ~(pixel32 & inct_n_0);
 
-// INNER.NET (618) - inc1t4 : nd2
+// INNER.NET (622) - inc1t4 : nd2
 assign inc1t_4 = ~(inc1t_2 & inc1t_3);
 
-// INNER.NET (619) - inc\[1] : nd2
+// INNER.NET (623) - inc\[1] : nd2
 assign inc_n_1 = ~(phrase_mode & inc1t_4);
 
-// INNER.NET (624) - inc2t0 : nd2
+// INNER.NET (628) - inc2t0 : nd2
 assign inc2t_0 = ~(pixel8 & inct_2);
 
-// INNER.NET (625) - inc2t1 : nd3
+// INNER.NET (629) - inc2t1 : nd3
 assign inc2t_1 = ~(pixel16 & inct_n_0 & inct_n_1);
 
-// INNER.NET (626) - inc2t2 : nd2
+// INNER.NET (630) - inc2t2 : nd2
 assign inc2t_2 = ~(inc2t_0 & inc2t_1);
 
-// INNER.NET (627) - inc\[2] : nd2
+// INNER.NET (631) - inc\[2] : nd2
 assign inc_n_2 = ~(phrase_mode & inc2t_2);
 
-// INNER.NET (631) - inc\[3] : nd5
+// INNER.NET (635) - inc\[3] : nd5
 nd5 inc_n_index_3_inst
 (
 	.q /* OUT */ (inc_n_3),
@@ -546,7 +546,7 @@ nd5 inc_n_index_3_inst
 	.a_4 /* IN */ (inct_n_2)
 );
 
-// INNER.NET (633) - count0t4 : add4
+// INNER.NET (637) - count0t4 : add4
 add4 count0t4_inst
 (
 	.q_0 /* OUT */ (count_0),
@@ -565,7 +565,7 @@ add4 count0t4_inst
 	.ci /* IN */ (one)
 );
 
-// INNER.NET (635) - count[4-9] : hs1
+// INNER.NET (639) - count[4-9] : hs1
 hs1 count_from_4_to_9_inst_0
 (
 	.q /* OUT */ (count_4),
@@ -609,13 +609,13 @@ hs1 count_from_4_to_9_inst_5
 	.ci /* IN */ (icount_9)
 );
 
-// INNER.NET (637) - count[10] : en
+// INNER.NET (641) - count[10] : en
 assign count_10 = ~(carry_9 ^ icount_10);
 
-// INNER.NET (638) - cla10 : or8
+// INNER.NET (642) - cla10 : or8
 assign cla10 = carry_3 | icount_4 | icount_5 | icount_6 | icount_7 | icount_8 | icount_9 | icount_10;
 
-// INNER.NET (639) - count[11] : hs1
+// INNER.NET (643) - count[11] : hs1
 hs1 count_index_11_inst
 (
 	.q /* OUT */ (count_11),
@@ -624,7 +624,7 @@ hs1 count_index_11_inst
 	.ci /* IN */ (icount_11)
 );
 
-// INNER.NET (640) - count[12-14] : hs1
+// INNER.NET (644) - count[12-14] : hs1
 hs1 count_from_12_to_14_inst_0
 (
 	.q /* OUT */ (count_12),
@@ -647,10 +647,10 @@ hs1 count_from_12_to_14_inst_2
 	.ci /* IN */ (icount_14)
 );
 
-// INNER.NET (642) - count[15] : en
+// INNER.NET (646) - count[15] : en
 assign count_15 = ~(carry_14 ^ icount_15);
 
-// INNER.NET (647) - cntlden : fd1q
+// INNER.NET (651) - cntlden : fd1q
 fd1q cntlden_inst
 (
 	.q /* OUT */ (cntlden),
@@ -659,10 +659,10 @@ fd1q cntlden_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (648) - cntisel[1] : or2u
+// INNER.NET (652) - cntisel[1] : or2u
 assign cntisel_1 = ireload | cntlden;
 
-// INNER.NET (649) - cnti[0-15] : mx4
+// INNER.NET (653) - cnti[0-15] : mx4
 mx4 cnti_from_0_to_15_inst_0
 (
 	.z /* OUT */ (cnti_0),
@@ -824,7 +824,7 @@ mx4 cnti_from_0_to_15_inst_15
 	.s1 /* IN */ (cntisel_1)
 );
 
-// INNER.NET (653) - icountt[0] : fd1q
+// INNER.NET (657) - icountt[0] : fd1q
 fd1q icountt_index_0_inst
 (
 	.q /* OUT */ (icountt_0),
@@ -833,10 +833,10 @@ fd1q icountt_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (654) - icount[0] : nivm
+// INNER.NET (658) - icount[0] : nivm
 assign icount_0_obuf = icountt_0;
 
-// INNER.NET (655) - icount[1-15] : fd1qp
+// INNER.NET (659) - icount[1-15] : fd1qp
 fd1q icount_from_1_to_15_inst_0
 (
 	.q /* OUT */ (icount_1_obuf),
@@ -943,13 +943,13 @@ fd1q icount_from_1_to_15_inst_14
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (664) - icount\[15] : iv
+// INNER.NET (668) - icount\[15] : iv
 assign icount_n_15 = ~icount_15;
 
-// INNER.NET (665) - uflowt : an2
+// INNER.NET (669) - uflowt : an2
 assign uflowt = count_15 & icount_n_15;
 
-// INNER.NET (666) - uflow : fdsync
+// INNER.NET (670) - uflow : fdsync
 fdsync uflow_inst
 (
 	.q /* OUT */ (underflow),
@@ -959,7 +959,7 @@ fdsync uflow_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (668) - inner0t : nr16
+// INNER.NET (672) - inner0t : nr16
 nr16 inner0t_inst
 (
 	.z /* OUT */ (inner0t),
@@ -981,10 +981,10 @@ nr16 inner0t_inst
 	.a_15 /* IN */ (icount_15)
 );
 
-// INNER.NET (669) - inner0 : or2p
+// INNER.NET (673) - inner0 : or2p
 assign inner0 = inner0t | underflow;
 
-// INNER.NET (673) - stat[16-31] : ts
+// INNER.NET (677) - stat[16-31] : ts
 assign gpu_dout_16_out = icount_0_obuf;
 assign gpu_dout_16_oe = statrd;
 assign gpu_dout_17_out = icount_1_obuf;

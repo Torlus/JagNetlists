@@ -18,13 +18,13 @@ module and10
 wire z1;
 wire z2;
 
-// VID.NET (425) - z1 : nd6
+// VID.NET (430) - z1 : nd6
 assign z1 = ~(a_0 & a_1 & a_2 & a_3 & a_4 & a_5);
 
-// VID.NET (426) - z2 : nd4
+// VID.NET (431) - z2 : nd4
 assign z2 = ~(a_6 & a_7 & a_8 & a_9);
 
-// VID.NET (427) - z : nr2
+// VID.NET (432) - z : nr2
 assign z = ~(z1 | z2);
 endmodule
 /* verilator lint_on LITENDIAN */

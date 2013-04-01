@@ -191,7 +191,7 @@ assign s29 = s[29];
 assign s30 = s[30];
 assign s31 = s[31];
 
-assign {co0, st} = a + b + ci0;
-assign {co1, s} = c + st + ci1;
+assign {co0, st} = a + b + {31'b0000000_00000000_00000000_00000000, ci0};
+assign {co1, s} = c + st + {31'b0000000_00000000_00000000_00000000, ci1};
 
 endmodule

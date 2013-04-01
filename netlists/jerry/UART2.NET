@@ -207,7 +207,8 @@ Shena:=		ND6(shena,resetl,rxen,tbegin,errorL,tfrL,shenL);
 Shenb:=		ND4(shenb,resetl,tcL,tfrL,shen);
 Shenc:=		ND4(shenc,resetl,rxenL,tfrL,shen);
 
-Begin:=		AN2(tbegin,go,rxbrkL);
+(* GE Begin:=		AN2(tbegin,go,rxbrkL); *)
+Beg:=		AN2(tbegin,go,rxbrkL);
 
 /****************************************************************/
 /* Break detection.						*/
@@ -403,7 +404,8 @@ IMPORT 	tosh;		(* Toshiba gate & pad definitions *)
 DEF 	TXER	(serout,tbe:IO;
 		din[0..15],u2dwr,paren,even,bx16,txpol,txbrk,resetl,clk:IN);
 
-	INT8/txr,INT8/sd,INT4/,bg,INT3/dc:LOCAL;
+	(* GE INT8/txr,INT8/sd,INT4/,bg,INT3/dc:LOCAL; *)
+	INT8/txr,INT8/sd,INT4/bg,INT3/dc:LOCAL;
 BEGIN
 Gnd :=		TIE0 (gnd);
 Vcc:=		TIE1(vcc);

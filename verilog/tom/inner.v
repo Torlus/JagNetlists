@@ -261,6 +261,7 @@ wire zpipe1t0;
 wire zpipe1t1;
 wire indot_0;
 wire indot_1;
+wire indone_tmp;
 wire icntena;
 wire oldoutld;
 wire srca_add;
@@ -320,7 +321,6 @@ wire dwrite_obuf;
 wire dwrite1_obuf;
 wire dzwrite_obuf;
 wire dzwrite1_obuf;
-wire indone_obuf;
 wire inner0_obuf;
 wire readreq_obuf;
 wire srca_addi_obuf;
@@ -340,7 +340,6 @@ assign dwrite = dwrite_obuf;
 assign dwrite1 = dwrite1_obuf;
 assign dzwrite = dzwrite_obuf;
 assign dzwrite1 = dzwrite1_obuf;
-assign indone = indone_obuf;
 assign inner0 = inner0_obuf;
 assign readreq = readreq_obuf;
 assign srca_addi = srca_addi_obuf;
@@ -1027,16 +1026,24 @@ assign indot_0 = ~(dzwrite_obuf & step_obuf & inner0_obuf);
 // INNER.NET (360) - indot1 : nd4
 assign indot_1 = ~(dwrite_obuf & step_obuf & dstwrz_n & inner0_obuf);
 
-// INNER.NET (361) - indone : nd2p
-assign indone_obuf = ~(indot_0 & indot_1);
+// INNER.NET (363) - indone_tmp : nd2p
+assign indone_tmp = ~(indot_0 & indot_1);
 
-// INNER.NET (362) - indone\ : iv
-assign indone_n = ~indone_obuf;
+// INNER.NET (364) - indone\ : iv
+assign indone_n = ~indone_tmp;
 
-// INNER.NET (367) - icntena : an2u
+// INNER.NET (365) - indone : sysclkdly
+sysclkdly indone_inst
+(
+	.z /* OUT */ (indone),
+	.a /* IN */ (indone_tmp),
+	.sys_clk(sys_clk) // Generated
+);
+
+// INNER.NET (371) - icntena : an2u
 assign icntena = atick_0_obuf & dwrite_obuf;
 
-// INNER.NET (369) - inner_count : inner_cnt
+// INNER.NET (373) - inner_count : inner_cnt
 inner_cnt inner_count_inst
 (
 	.gpu_dout_16_out /* BUS */ (gpu_dout_16_out),
@@ -1105,10 +1112,10 @@ inner_cnt inner_count_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (385) - oldoutld : an2
+// INNER.NET (389) - oldoutld : an2
 assign oldoutld = srca_add & atick_1_obuf;
 
-// INNER.NET (386) - oldoutside : mx2
+// INNER.NET (390) - oldoutside : mx2
 mx2 oldoutside_inst
 (
 	.z /* OUT */ (oldoutside),
@@ -1117,7 +1124,7 @@ mx2 oldoutside_inst
 	.s /* IN */ (oldoutld)
 );
 
-// INNER.NET (388) - oldoutsidel : fd1q
+// INNER.NET (392) - oldoutsidel : fd1q
 fd1q oldoutsidel_inst
 (
 	.q /* OUT */ (oldoutsidel),
@@ -1126,7 +1133,7 @@ fd1q oldoutsidel_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (389) - outside : mx2
+// INNER.NET (393) - outside : mx2
 mx2 outside_inst
 (
 	.z /* OUT */ (outside),
@@ -1135,31 +1142,31 @@ mx2 outside_inst
 	.s /* IN */ (dsta2)
 );
 
-// INNER.NET (390) - clip\ : nd2
+// INNER.NET (394) - clip\ : nd2
 assign clip_n = ~(diso_a1 & outside);
 
-// INNER.NET (397) - rreqt : or6
+// INNER.NET (401) - rreqt : or6
 assign rreqt = sreadx | szreadx | sread | szread | dread | dzread;
 
-// INNER.NET (399) - readreq : an2p
+// INNER.NET (403) - readreq : an2p
 assign readreq_obuf = rreqt & step_obuf;
 
-// INNER.NET (400) - wreqt : or2
+// INNER.NET (404) - wreqt : or2
 assign wreqt = dwrite_obuf | dzwrite_obuf;
 
-// INNER.NET (401) - writereq : an4
+// INNER.NET (405) - writereq : an4
 assign writereq_obuf = wreqt & step_obuf & nowrite_n & clip_n;
 
-// INNER.NET (406) - sraat0 : an2
+// INNER.NET (410) - sraat0 : an2
 assign sraat_0 = sreadxi & srcenz_n;
 
-// INNER.NET (407) - sraat1 : an2
+// INNER.NET (411) - sraat1 : an2
 assign sraat_1 = sreadi & srcenz_n;
 
-// INNER.NET (408) - srca_addi : or4
+// INNER.NET (412) - srca_addi : or4
 assign srca_addi_obuf = szreadxi | szreadi | sraat_0 | sraat_1;
 
-// INNER.NET (409) - srca_add : fd1q
+// INNER.NET (413) - srca_add : fd1q
 fd1q srca_add_inst
 (
 	.q /* OUT */ (srca_add),
@@ -1168,31 +1175,31 @@ fd1q srca_add_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (411) - dstaat : an2
+// INNER.NET (415) - dstaat : an2
 assign dstaat = dwritei & dstwrz_n;
 
-// INNER.NET (412) - dsta_addi : or2
+// INNER.NET (416) - dsta_addi : or2
 assign dsta_addi = dzwritei | dstaat;
 
-// INNER.NET (416) - gensrc : or4
+// INNER.NET (420) - gensrc : or4
 assign gensrc = sreadxi | szreadxi | sreadi | szreadi;
 
-// INNER.NET (418) - gendst : or4
+// INNER.NET (422) - gendst : or4
 assign gendst = dreadi | dzreadi | dwritei | dzwritei;
 
-// INNER.NET (420) - dsta2\ : iv
+// INNER.NET (424) - dsta2\ : iv
 assign dsta2_n = ~dsta2;
 
-// INNER.NET (421) - gena2t0 : nd2
+// INNER.NET (425) - gena2t0 : nd2
 assign gena2t_0 = ~(gensrc & dsta2_n);
 
-// INNER.NET (422) - gena2t1 : nd2
+// INNER.NET (426) - gena2t1 : nd2
 assign gena2t_1 = ~(gendst & dsta2);
 
-// INNER.NET (423) - gena2i : nd2
+// INNER.NET (427) - gena2i : nd2
 assign gena2i = ~(gena2t_0 & gena2t_1);
 
-// INNER.NET (424) - gena2 : fd1qu
+// INNER.NET (428) - gena2 : fd1qu
 fd1q gena2_inst
 (
 	.q /* OUT */ (gena2),
@@ -1201,10 +1208,10 @@ fd1q gena2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (426) - zaddr : or4
+// INNER.NET (430) - zaddr : or4
 assign zaddr = szreadx | szread | dzread | dzwrite_obuf;
 
-// INNER.NET (430) - sreadx1 : fdsyncr
+// INNER.NET (434) - sreadx1 : fdsyncr
 fdsyncr sreadx1_inst
 (
 	.q /* OUT */ (sreadx_1_obuf),
@@ -1215,7 +1222,7 @@ fdsyncr sreadx1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (432) - sread1 : fdsyncr
+// INNER.NET (436) - sread1 : fdsyncr
 fdsyncr sread1_inst
 (
 	.q /* OUT */ (sread_1_obuf),
@@ -1226,7 +1233,7 @@ fdsyncr sread1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (434) - szread1 : fdsyncr
+// INNER.NET (438) - szread1 : fdsyncr
 fdsyncr szread1_inst
 (
 	.q /* OUT */ (szread_1),
@@ -1237,7 +1244,7 @@ fdsyncr szread1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (436) - dread1 : fdsyncr
+// INNER.NET (440) - dread1 : fdsyncr
 fdsyncr dread1_inst
 (
 	.q /* OUT */ (dread_1),
@@ -1248,7 +1255,7 @@ fdsyncr dread1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (438) - dzread1 : fdsyncr
+// INNER.NET (442) - dzread1 : fdsyncr
 fdsyncr dzread1_inst
 (
 	.q /* OUT */ (dzread_1),
@@ -1259,7 +1266,7 @@ fdsyncr dzread1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (440) - dwrite1 : fdsync
+// INNER.NET (444) - dwrite1 : fdsync
 fdsync dwrite1_inst
 (
 	.q /* OUT */ (dwrite1_obuf),
@@ -1269,7 +1276,7 @@ fdsync dwrite1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (441) - dzwrite1 : fdsync
+// INNER.NET (445) - dzwrite1 : fdsync
 fdsync dzwrite1_inst
 (
 	.q /* OUT */ (dzwrite1_obuf),
@@ -1279,22 +1286,22 @@ fdsync dzwrite1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (445) - dest_cycle[1] : or4
+// INNER.NET (449) - dest_cycle[1] : or4
 assign dest_cycle_1 = dread_1 | dzread_1 | dwrite1_obuf | dzwrite1_obuf;
 
-// INNER.NET (453) - srcdxack : join
+// INNER.NET (457) - srcdxack : join
 assign srcdxack_n = read_ack_n;
 
-// INNER.NET (454) - srczxack : or2
+// INNER.NET (458) - srczxack : or2
 assign srczxack_n = read_ack_n | srcdxpend;
 
-// INNER.NET (455) - srcdack : or3
+// INNER.NET (459) - srcdack : or3
 assign srcdack_n = read_ack_n | srcdxpend | srczxpend;
 
-// INNER.NET (457) - srczack : or4
+// INNER.NET (461) - srczack : or4
 assign srczack_n = read_ack_n | srcdpend | srcdxpend | srczxpend;
 
-// INNER.NET (459) - dstdack : or5
+// INNER.NET (463) - dstdack : or5
 or5 dstdack_inst
 (
 	.z /* OUT */ (dstdack_n),
@@ -1305,19 +1312,19 @@ or5 dstdack_inst
 	.e /* IN */ (srczxpend)
 );
 
-// INNER.NET (461) - dstzack : or6
+// INNER.NET (465) - dstzack : or6
 assign dstzack_n = read_ack_n | dstdpend | srcdpend | srczpend | srcdxpend | srczxpend;
 
-// INNER.NET (466) - srcdpset\ : nd2
+// INNER.NET (470) - srcdpset\ : nd2
 assign srcdpset_n = ~(readreq_obuf & sread);
 
-// INNER.NET (467) - srcdpt1 : nd2
+// INNER.NET (471) - srcdpt1 : nd2
 assign srcdpt_1 = ~(srcdpend & srcdack_n);
 
-// INNER.NET (468) - srcdpt2 : nd2
+// INNER.NET (472) - srcdpt2 : nd2
 assign srcdpt_2 = ~(srcdpset_n & srcdpt_1);
 
-// INNER.NET (469) - srcdpend : fd2q
+// INNER.NET (473) - srcdpend : fd2q
 fd2q srcdpend_inst
 (
 	.q /* OUT */ (srcdpend),
@@ -1327,16 +1334,16 @@ fd2q srcdpend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (471) - srcdxpset\ : nd2
+// INNER.NET (475) - srcdxpset\ : nd2
 assign srcdxpset_n = ~(readreq_obuf & sreadx);
 
-// INNER.NET (472) - srcdxpt1 : nd2
+// INNER.NET (476) - srcdxpt1 : nd2
 assign srcdxpt_1 = ~(srcdxpend & srcdxack_n);
 
-// INNER.NET (473) - srcdxpt2 : nd2
+// INNER.NET (477) - srcdxpt2 : nd2
 assign srcdxpt_2 = ~(srcdxpset_n & srcdxpt_1);
 
-// INNER.NET (474) - srcdxpend : fd2q
+// INNER.NET (478) - srcdxpend : fd2q
 fd2q srcdxpend_inst
 (
 	.q /* OUT */ (srcdxpend),
@@ -1346,13 +1353,13 @@ fd2q srcdxpend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (476) - sdpend : or2
+// INNER.NET (480) - sdpend : or2
 assign sdpend = srcdxpend | srcdpend;
 
-// INNER.NET (477) - srcdreadt : an2
+// INNER.NET (481) - srcdreadt : an2
 assign srcdreadt = sdpend & read_ack;
 
-// INNER.NET (484) - srcdreadd : fd1q
+// INNER.NET (488) - srcdreadd : fd1q
 fd1q srcdreadd_inst
 (
 	.q /* OUT */ (srcdreadd_obuf),
@@ -1361,19 +1368,19 @@ fd1q srcdreadd_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (485) - srcdread : aor1
+// INNER.NET (489) - srcdread : aor1
 assign srcdread = (srcshade & srcdreadd_obuf) | srcdreadt;
 
-// INNER.NET (489) - srczpset\ : nd2
+// INNER.NET (493) - srczpset\ : nd2
 assign srczpset_n = ~(readreq_obuf & szread);
 
-// INNER.NET (490) - srczpt1 : nd2
+// INNER.NET (494) - srczpt1 : nd2
 assign srczpt_1 = ~(srczpend & srczack_n);
 
-// INNER.NET (491) - srczpt2 : nd2
+// INNER.NET (495) - srczpt2 : nd2
 assign srczpt_2 = ~(srczpset_n & srczpt_1);
 
-// INNER.NET (492) - srczpend : fd2q
+// INNER.NET (496) - srczpend : fd2q
 fd2q srczpend_inst
 (
 	.q /* OUT */ (srczpend),
@@ -1383,16 +1390,16 @@ fd2q srczpend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (494) - srczxpset\ : nd2
+// INNER.NET (498) - srczxpset\ : nd2
 assign srczxpset_n = ~(readreq_obuf & szreadx);
 
-// INNER.NET (495) - srczxpt1 : nd2
+// INNER.NET (499) - srczxpt1 : nd2
 assign srczxpt_1 = ~(srczxpend & srczxack_n);
 
-// INNER.NET (496) - srczxpt2 : nd2
+// INNER.NET (500) - srczxpt2 : nd2
 assign srczxpt_2 = ~(srczxpset_n & srczxpt_1);
 
-// INNER.NET (497) - srczxpend : fd2q
+// INNER.NET (501) - srczxpend : fd2q
 fd2q srczxpend_inst
 (
 	.q /* OUT */ (srczxpend),
@@ -1402,22 +1409,22 @@ fd2q srczxpend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (499) - szpend : or2
+// INNER.NET (503) - szpend : or2
 assign szpend = srczpend | srczxpend;
 
-// INNER.NET (500) - srczread : an2
+// INNER.NET (504) - srczread : an2
 assign srczread = szpend & read_ack;
 
-// INNER.NET (504) - dstdpset\ : nd2
+// INNER.NET (508) - dstdpset\ : nd2
 assign dstdpset_n = ~(readreq_obuf & dread);
 
-// INNER.NET (505) - dstdpt0 : nd2
+// INNER.NET (509) - dstdpt0 : nd2
 assign dstdpt_0 = ~(dstdpend & dstdack_n);
 
-// INNER.NET (506) - dstdpt1 : nd2
+// INNER.NET (510) - dstdpt1 : nd2
 assign dstdpt_1 = ~(dstdpset_n & dstdpt_0);
 
-// INNER.NET (507) - dstdpend : fd2q
+// INNER.NET (511) - dstdpend : fd2q
 fd2q dstdpend_inst
 (
 	.q /* OUT */ (dstdpend),
@@ -1427,19 +1434,19 @@ fd2q dstdpend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (508) - dstdread : an2
+// INNER.NET (512) - dstdread : an2
 assign dstdread = dstdpend & read_ack;
 
-// INNER.NET (512) - dstzpset\ : nd2
+// INNER.NET (516) - dstzpset\ : nd2
 assign dstzpset_n = ~(readreq_obuf & dzread);
 
-// INNER.NET (513) - dstzpt0 : nd2
+// INNER.NET (517) - dstzpt0 : nd2
 assign dstzpt_0 = ~(dstzpend & dstzack_n);
 
-// INNER.NET (514) - dstzpt1 : nd2
+// INNER.NET (518) - dstzpt1 : nd2
 assign dstzpt_1 = ~(dstzpset_n & dstzpt_0);
 
-// INNER.NET (515) - dstzpend : fd2q
+// INNER.NET (519) - dstzpend : fd2q
 fd2q dstzpend_inst
 (
 	.q /* OUT */ (dstzpend),
@@ -1449,16 +1456,16 @@ fd2q dstzpend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (516) - dstzread : an2
+// INNER.NET (520) - dstzread : an2
 assign dstzread = dstzpend & read_ack;
 
-// INNER.NET (523) - denat0 : or2
+// INNER.NET (527) - denat0 : or2
 assign denat_0 = dwrite_obuf | dzwrite_obuf;
 
-// INNER.NET (524) - denat1 : an3
+// INNER.NET (528) - denat1 : an3
 assign denat_1 = denat_0 & nowrite_n & clip_n;
 
-// INNER.NET (525) - denat2 : fdsyncr
+// INNER.NET (529) - denat2 : fdsyncr
 fdsyncr denat2_inst
 (
 	.q /* OUT */ (denat_2),
@@ -1469,10 +1476,10 @@ fdsyncr denat2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// INNER.NET (527) - dstdwt : an3
+// INNER.NET (531) - dstdwt : an3
 assign denat_3 = blitack & wactive & denat_2;
 
-// INNER.NET (528) - data_ena : fd1qp
+// INNER.NET (532) - data_ena : fd1qp
 fd1q data_ena_inst
 (
 	.q /* OUT */ (data_ena),

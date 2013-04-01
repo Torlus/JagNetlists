@@ -29,10 +29,12 @@
 //  - all 68000 instructions are implemented
 //  - all 68000 exceptions are implemented
 
+/* verilator tracing_off */
+
 //GE `include "arg_defs.vh"
 `include "defs.v"
 
-module j68 /* verilator tracing_on */
+module j68
 (
   // Clock and reset
   input         rst,          // CPU reset
@@ -2630,5 +2632,3 @@ module decode_rom
 endmodule
 
 `endif
-
-/* verilator tracing_off */

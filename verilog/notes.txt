@@ -3,11 +3,11 @@ smac/sln compatibles mac/aln
 sln sans l'option "-n" : rajoute un header pour l'Alpine board
 (voir Jungle Jag)
 
-lancer virtualjaguar --alpine  puis "Configure"
+lancer virtualjaguar --alpine  puis "Configure", mettre dans "ABS to load"
+
+avec la rmvlib / JagStation, prendre les fichier .cof 
 
 
-Romcst :=	OR3 (romcst,q5a,q5b,q5c);
-Romcsl[0-1] :=	ND2 (romcsl[0-1],bs[0-1],romcst);
 
 <SCPCD_> ca doit être des HM514260 si je me trompe pas
 <Zerosquare> y'a eu plusieurs modèles suivant les séries

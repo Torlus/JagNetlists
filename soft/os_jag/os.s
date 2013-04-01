@@ -24,6 +24,21 @@ Init:
 
 	move.w	#0x1861, MEMCON1
 	move.w	#0x35CC, MEMCON2
+
+* NTSC Jaguar
+*	move.w	#844, HP
+*	move.w	#1713, HBB
+*	move.w	#125, HBE
+*	move.w	#1665, HDE
+*	move.w	#203, HDB1
+*	move.w	#523, VP
+*	move.w	#24, VBE
+*	move.w	#38, VDB
+*	move.w	#518, VDE
+*	move.w	#500, VBB
+*	move.w	#517, VS
+	
+* PAL Jaguar	
 	move.w	#850, HP
 	move.w	#1711, HBB
 	move.w	#158, HBE
@@ -35,6 +50,7 @@ Init:
 	move.w	#518, VDE
 	move.w	#600, VBB
 	move.w	#618, VS
+
 *	move.w	#0x06C1, VMODE
 
 * DRAM contents is preloaded in simulation

@@ -432,6 +432,9 @@ I2sr[2]		:= AN7H (i2sr[2], gpu_addr\[2], gpu_addr\[3],
 I2shien		:= OR3_H (i2shien, i2sr[0..2]);
 I2shid[16-31]	:= TS (gpu_dout[16-31], gpu_dout[0-15], i2shien);
 
+(* GE - gpu_dout[0-15] has no driver (!!!) - wat do ? *)
+I2shid[0-15]	:= TS (gpu_dout[0-15], zero, zero);
+
 /**  Graphics sub-system Endian Control Register  ****************/
 
 Big_ioi		:= MX2 (big_ioi, big_iot, gpu_din{0}, bigwr);

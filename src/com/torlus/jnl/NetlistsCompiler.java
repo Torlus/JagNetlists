@@ -5,12 +5,51 @@ import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.TreeMap;
 
-public class Main {
+public class NetlistsCompiler {
 
 	public static void main(String[] args) {
+
+		String jerryInputDir = "netlists" + File.separator + "jerry" + File.separator;
+		// String outputDirVhdl = "vhdl" + File.separator + "jerry" + File.separator;
+		String jerryOutputDirVerilog = "verilog" + File.separator + "jerry" + File.separator;
+
+		String jerryFiles[] = {
+				// Basic blocks
+				"LEGO.NET",
+				"_DUPLO.NET",
+				//
+				"EXECON.NET",
+				"SYSTOLIC.NET",
+				"DSP_INT.NET",
+				"DSP_F-35.NET",
+				"DSP_EXEC.NET",
+				//
+				"SBOARD.NET",
+				"DSP_A-5Q.NET",
+				"DIVIDE.NET",
+				"REGIS-WA.NET",
+				"DSP_MEM.NET",
+				"DSP_CTRL.NET",
+				"DSP_RAM.NET",
+				"DSP_S-4E.NET",
+				"DSP_GATE.NET",
+				//
+				"DSP.NET",
+				//
+				"JIODEC.NET",
+				"JBUS.NET",
+				"JMEM.NET",
+				"JCLK.NET",
+				"JMISC.NET",
+				"UART2.NET",
+				"I2S.NET",
+				"DAC.NET",
+				//
+				"JERRY.NET"
+		};
 		
 		String inputDir = "netlists" + File.separator + "tom" + File.separator;
-		String outputDirVhdl = "vhdl" + File.separator + "tom" + File.separator;
+		// String outputDirVhdl = "vhdl" + File.separator + "tom" + File.separator;
 		String outputDirVerilog = "verilog" + File.separator + "tom" + File.separator;
 		
 		String files[] = {
@@ -108,18 +147,10 @@ public class Main {
 				"TOM.NET",				
 		};
 
-/*		String files[] = {
-				//
-				// Basic blocks
-				//
-				"LEGO.NET",
-				"DUPLO.NET",
-		};
-*/		
 		Tokenizer tks[] = new Tokenizer[files.length];
 
 		Workspace ws = new Workspace();
-
+		
 		// Tokenize source files
 		System.out.println("*** Tokenizer");
 		for (int f = 0; f < files.length; f++) {
@@ -191,9 +222,7 @@ public class Main {
 			ex.printStackTrace();
 			return;
 		}
-		
-		// System.exit(0);
-		
+				
 		// Translate to VHDL/Verilog		
 		TreeMap<String, Entity> deps = new TreeMap<String, Entity>();
 		// ws.find("daddamux").findDeps(deps);
@@ -204,7 +233,96 @@ public class Main {
 		// VhdlTranslator vt = new VhdlTranslator(ws, outputDirVhdl);
 		VerilogTranslator vt = new VerilogTranslator(ws, outputDirVerilog);
 		vt.generate(deps.values());		
+		
+		///////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////////////
+		
+		tks = new Tokenizer[jerryFiles.length];
+
+		ws = new Workspace();
+		ws.prefix = "j_";
 				
+		// Tokenize source files
+		System.out.println("*** Tokenizer");
+		for (int f = 0; f < jerryFiles.length; f++) {
+			System.out.println("  Processing file : " + jerryFiles[f]);
+
+			FileInputStream in = null;
+			tks[f] = new Tokenizer();
+			boolean ok = false;
+
+			try {
+				in = new FileInputStream(jerryInputDir + jerryFiles[f]);
+				tks[f].tokenize(in);
+				ok = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			if (in != null) {
+				try {
+					in.close();
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+			if (!ok)
+				return;
+		}
+		
+		// Run pass #1 - Fills the workspace library, and process local declared signals as well, while we're at it...
+		System.out.println("*** Compiler - Pass #1");
+		for (int f = 0; f < jerryFiles.length; f++) {
+			System.out.println("  Processing file : " + jerryFiles[f]);
+			PassOne p1 = new PassOne(ws);
+			boolean ok = false;
+			try {
+				p1.eval(tks[f]);
+				ok = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				tks[f].dumpRemainingTokens();
+			}
+			if (!ok)
+				return;
+		}
+		
+		// Run pass #2 - Create instances
+		System.out.println("*** Compiler - Pass #2");
+		for (int f = 0; f < jerryFiles.length; f++) {
+			System.out.println("  Processing file : " + jerryFiles[f]);
+			PassTwo p2 = new PassTwo(jerryFiles[f], ws);
+			boolean ok = false;
+			try {
+				p2.eval(tks[f]);
+				ok = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			if (!ok)
+				return;
+		}
+		
+		// Run pass #3 - Arrange tristate logic
+		p3 = new PassThreestate(ws);
+		try {
+			p3.rewire();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			return;
+		}
+				
+		// Translate to VHDL/Verilog		
+		deps = new TreeMap<String, Entity>();
+		root = ws.find("j_jerry");
+		root.findDeps(deps);
+		System.out.println(Arrays.toString(deps.keySet().toArray()));
+		
+		vt = new VerilogTranslator(ws, jerryOutputDirVerilog);
+		vt.generate(deps.values());		
+		
+		
 		System.out.println("*** Done.");
 
 	}

@@ -13,53 +13,28 @@ module add16sat
 	input hicinh
 );
 wire eightbit_n;
-wire cin_n;
-wire one;
-wire zero;
+wire hicinh_n;
 wire q_0;
 wire q_1;
 wire q_2;
 wire q_3;
-wire co_n_0;
-wire co0_n_0;
-wire co1_n_0;
-wire g_0;
-wire p_0;
+wire carryt;
 wire q_4;
 wire q_5;
 wire q_6;
 wire q_7;
-wire co_n_1;
-wire co0_n_1;
-wire co1_n_1;
-wire g_1;
-wire p_1;
-wire cin_n_1;
+wire carry_0;
+wire carry_1;
 wire q_8;
 wire q_9;
 wire q_10;
 wire q_11;
-wire co_n_2;
-wire co0_n_2;
-wire co1_n_2;
-wire g_2;
-wire p_2;
-wire cin_n_2;
+wire carry_2;
+wire carry_3;
 wire q_12;
 wire q_13;
 wire q_14;
 wire q_15;
-wire co_n_3;
-wire co0_n_3;
-wire co1_n_3;
-wire g_3;
-wire p_3;
-wire cin_n_3;
-wire cint_n_2;
-wire cint_n_3;
-wire g;
-wire p;
-wire carry_0;
 wire btop;
 wire ctop;
 wire ctopb;
@@ -95,153 +70,92 @@ assign co = co_obuf;
 // ADDARRAY.NET (125) - eightbit\ : iv
 assign eightbit_n = ~eightbit;
 
-// ADDARRAY.NET (174) - cin\ : iv
-assign cin_n = ~cin;
+// ADDARRAY.NET (130) - hicinh\ : iv
+assign hicinh_n = ~hicinh;
 
-// ADDARRAY.NET (175) - one : tie1
-assign one = 1'b1;
-
-// ADDARRAY.NET (176) - zero : tie0
-assign zero = 1'b0;
-
-// ADDARRAY.NET (177) - add0 : fa4cs
-fa4cs add0_inst
+// ADDARRAY.NET (132) - add0 : add4
+add4 add0_inst
 (
-	.s0 /* OUT */ (q_0),
-	.s1 /* OUT */ (q_1),
-	.s2 /* OUT */ (q_2),
-	.s3 /* OUT */ (q_3),
-	.con /* OUT */ (co_n_0),
-	.co0n /* OUT */ (co0_n_0),
-	.co1n /* OUT */ (co1_n_0),
-	.g /* OUT */ (g_0),
-	.p /* OUT */ (p_0),
-	.cin /* IN */ (cin_n),
-	.ci0n /* IN */ (one),
-	.ci1n /* IN */ (zero),
-	.a0 /* IN */ (a[0]),
-	.b0 /* IN */ (b[0]),
-	.a1 /* IN */ (a[1]),
-	.b1 /* IN */ (b[1]),
-	.a2 /* IN */ (a[2]),
-	.b2 /* IN */ (b[2]),
-	.a3 /* IN */ (a[3]),
-	.b3 /* IN */ (b[3])
+	.q_0 /* OUT */ (q_0),
+	.q_1 /* OUT */ (q_1),
+	.q_2 /* OUT */ (q_2),
+	.q_3 /* OUT */ (q_3),
+	.co /* OUT */ (carryt),
+	.a_0 /* IN */ (a[0]),
+	.a_1 /* IN */ (a[1]),
+	.a_2 /* IN */ (a[2]),
+	.a_3 /* IN */ (a[3]),
+	.b_0 /* IN */ (b[0]),
+	.b_1 /* IN */ (b[1]),
+	.b_2 /* IN */ (b[2]),
+	.b_3 /* IN */ (b[3]),
+	.ci /* IN */ (cin)
 );
 
-// ADDARRAY.NET (180) - add1 : fa4cs
-fa4cs add1_inst
+// ADDARRAY.NET (133) - add1 : add4
+add4 add1_inst
 (
-	.s0 /* OUT */ (q_4),
-	.s1 /* OUT */ (q_5),
-	.s2 /* OUT */ (q_6),
-	.s3 /* OUT */ (q_7),
-	.con /* OUT */ (co_n_1),
-	.co0n /* OUT */ (co0_n_1),
-	.co1n /* OUT */ (co1_n_1),
-	.g /* OUT */ (g_1),
-	.p /* OUT */ (p_1),
-	.cin /* IN */ (cin_n_1),
-	.ci0n /* IN */ (one),
-	.ci1n /* IN */ (zero),
-	.a0 /* IN */ (a[4]),
-	.b0 /* IN */ (b[4]),
-	.a1 /* IN */ (a[5]),
-	.b1 /* IN */ (b[5]),
-	.a2 /* IN */ (a[6]),
-	.b2 /* IN */ (b[6]),
-	.a3 /* IN */ (a[7]),
-	.b3 /* IN */ (b[7])
+	.q_0 /* OUT */ (q_4),
+	.q_1 /* OUT */ (q_5),
+	.q_2 /* OUT */ (q_6),
+	.q_3 /* OUT */ (q_7),
+	.co /* OUT */ (carry_0),
+	.a_0 /* IN */ (a[4]),
+	.a_1 /* IN */ (a[5]),
+	.a_2 /* IN */ (a[6]),
+	.a_3 /* IN */ (a[7]),
+	.b_0 /* IN */ (b[4]),
+	.b_1 /* IN */ (b[5]),
+	.b_2 /* IN */ (b[6]),
+	.b_3 /* IN */ (b[7]),
+	.ci /* IN */ (carryt)
 );
 
-// ADDARRAY.NET (183) - add2 : fa4cs
-fa4cs add2_inst
+// ADDARRAY.NET (136) - carry[1] : an2
+assign carry_1 = eightbit_n & carry_0;
+
+// ADDARRAY.NET (138) - add2 : add4
+add4 add2_inst
 (
-	.s0 /* OUT */ (q_8),
-	.s1 /* OUT */ (q_9),
-	.s2 /* OUT */ (q_10),
-	.s3 /* OUT */ (q_11),
-	.con /* OUT */ (co_n_2),
-	.co0n /* OUT */ (co0_n_2),
-	.co1n /* OUT */ (co1_n_2),
-	.g /* OUT */ (g_2),
-	.p /* OUT */ (p_2),
-	.cin /* IN */ (cin_n_2),
-	.ci0n /* IN */ (one),
-	.ci1n /* IN */ (zero),
-	.a0 /* IN */ (a[8]),
-	.b0 /* IN */ (b[8]),
-	.a1 /* IN */ (a[9]),
-	.b1 /* IN */ (b[9]),
-	.a2 /* IN */ (a[10]),
-	.b2 /* IN */ (b[10]),
-	.a3 /* IN */ (a[11]),
-	.b3 /* IN */ (b[11])
+	.q_0 /* OUT */ (q_8),
+	.q_1 /* OUT */ (q_9),
+	.q_2 /* OUT */ (q_10),
+	.q_3 /* OUT */ (q_11),
+	.co /* OUT */ (carry_2),
+	.a_0 /* IN */ (a[8]),
+	.a_1 /* IN */ (a[9]),
+	.a_2 /* IN */ (a[10]),
+	.a_3 /* IN */ (a[11]),
+	.b_0 /* IN */ (b[8]),
+	.b_1 /* IN */ (b[9]),
+	.b_2 /* IN */ (b[10]),
+	.b_3 /* IN */ (b[11]),
+	.ci /* IN */ (carry_1)
 );
 
-// ADDARRAY.NET (186) - add3 : fa4cs
-fa4cs add3_inst
+// ADDARRAY.NET (141) - carry[3] : an2
+assign carry_3 = hicinh_n & carry_2;
+
+// ADDARRAY.NET (143) - add3 : add4
+add4 add3_inst
 (
-	.s0 /* OUT */ (q_12),
-	.s1 /* OUT */ (q_13),
-	.s2 /* OUT */ (q_14),
-	.s3 /* OUT */ (q_15),
-	.con /* OUT */ (co_n_3),
-	.co0n /* OUT */ (co0_n_3),
-	.co1n /* OUT */ (co1_n_3),
-	.g /* OUT */ (g_3),
-	.p /* OUT */ (p_3),
-	.cin /* IN */ (cin_n_3),
-	.ci0n /* IN */ (one),
-	.ci1n /* IN */ (zero),
-	.a0 /* IN */ (a[12]),
-	.b0 /* IN */ (b[12]),
-	.a1 /* IN */ (a[13]),
-	.b1 /* IN */ (b[13]),
-	.a2 /* IN */ (a[14]),
-	.b2 /* IN */ (b[14]),
-	.a3 /* IN */ (a[15]),
-	.b3 /* IN */ (b[15])
+	.q_0 /* OUT */ (q_12),
+	.q_1 /* OUT */ (q_13),
+	.q_2 /* OUT */ (q_14),
+	.q_3 /* OUT */ (q_15),
+	.co /* OUT */ (co_obuf),
+	.a_0 /* IN */ (a[12]),
+	.a_1 /* IN */ (a[13]),
+	.a_2 /* IN */ (a[14]),
+	.a_3 /* IN */ (a[15]),
+	.b_0 /* IN */ (b[12]),
+	.b_1 /* IN */ (b[13]),
+	.b_2 /* IN */ (b[14]),
+	.b_3 /* IN */ (b[15]),
+	.ci /* IN */ (carry_3)
 );
 
-// ADDARRAY.NET (189) - addcg : cg4
-cg4 addcg_inst
-(
-	.co0l /* OUT */ (cin_n_1),
-	.co1l /* OUT */ (cint_n_2),
-	.co2l /* OUT */ (cint_n_3),
-	.g /* OUT */ (g),
-	.p /* OUT */ (p),
-	.cin /* IN */ (cin_n),
-	.g0 /* IN */ (g_0),
-	.g1 /* IN */ (g_1),
-	.g2 /* IN */ (g_2),
-	.g3 /* IN */ (g_3),
-	.p0 /* IN */ (p_0),
-	.p1 /* IN */ (p_1),
-	.p2 /* IN */ (p_2),
-	.p3 /* IN */ (p_3)
-);
-
-// ADDARRAY.NET (191) - cin\[2] : or2
-assign cin_n_2 = eightbit | cint_n_2;
-
-// ADDARRAY.NET (192) - cin\[3] : or2
-assign cin_n_3 = hicinh | cint_n_3;
-
-// ADDARRAY.NET (194) - carry[0] : iv
-assign carry_0 = ~cint_n_2;
-
-// ADDARRAY.NET (195) - co : aor1
-assign co_obuf = (p & cin) | g;
-
-// ADDARRAY.NET (197) - co\[0-3] : dummy
-
-// ADDARRAY.NET (198) - co0\[0-3] : dummy
-
-// ADDARRAY.NET (199) - co1\[0-3] : dummy
-
-// ADDARRAY.NET (204) - btop : mx2
+// ADDARRAY.NET (207) - btop : mx2
 mx2 btop_inst
 (
 	.z /* OUT */ (btop),
@@ -250,7 +164,7 @@ mx2 btop_inst
 	.s /* IN */ (eightbit)
 );
 
-// ADDARRAY.NET (205) - ctop : mx2p
+// ADDARRAY.NET (208) - ctop : mx2p
 mx2 ctop_inst
 (
 	.z /* OUT */ (ctop),
@@ -259,22 +173,22 @@ mx2 ctop_inst
 	.s /* IN */ (eightbit)
 );
 
-// ADDARRAY.NET (206) - ctopb : nivh
+// ADDARRAY.NET (209) - ctopb : nivh
 assign ctopb = ctop;
 
-// ADDARRAY.NET (210) - satt : eo
+// ADDARRAY.NET (213) - satt : eo
 assign satt = btop ^ ctop;
 
-// ADDARRAY.NET (211) - saturate : an2p
+// ADDARRAY.NET (214) - saturate : an2p
 assign saturate = sat & satt;
 
-// ADDARRAY.NET (212) - saturateb : nivh
+// ADDARRAY.NET (215) - saturateb : nivh
 assign saturateb = saturate;
 
-// ADDARRAY.NET (216) - hisaturate : an2m
+// ADDARRAY.NET (219) - hisaturate : an2m
 assign hisaturate = eightbit_n & saturate;
 
-// ADDARRAY.NET (220) - r[0-7] : mx2p
+// ADDARRAY.NET (223) - r[0-7] : mx2p
 mx2 r_from_0_to_7_inst_0
 (
 	.z /* OUT */ (r_0),
@@ -332,7 +246,7 @@ mx2 r_from_0_to_7_inst_7
 	.s /* IN */ (saturateb)
 );
 
-// ADDARRAY.NET (221) - r[8-15] : mx2p
+// ADDARRAY.NET (224) - r[8-15] : mx2p
 mx2 r_from_8_to_15_inst_0
 (
 	.z /* OUT */ (r_8),
@@ -390,7 +304,7 @@ mx2 r_from_8_to_15_inst_7
 	.s /* IN */ (hisaturate)
 );
 
-// ADDARRAY.NET (223) - r : join
+// ADDARRAY.NET (226) - r : join
 assign r[0] = r_0;
 assign r[1] = r_1;
 assign r[2] = r_2;

@@ -18,7 +18,8 @@ INT32/	gpu_data	/* GPU system data bus */
 	romen		/* ROM enable */
 
 	:IN);
-
+(* GE - added missing declarations *)
+INT10/	rama
 BEGIN
 
 /* WARNING - ensure write meets Trh requirement */
@@ -31,8 +32,10 @@ Rama		:= JOIN (rama, ramad[0..9]);
 
 Ramwe[0-1]	:= ND2P (ramwe[0-1], ramen[0-1], gpu_memw);
 
-Program[0-1]	:= GPURAM (gpu_data, clk, rama, ramen[0-1], 
-			ramwe[0-1]);
+(* GE Program[0-1]	:= GPURAM (gpu_data, clk, rama, ramen[0-1], 
+			ramwe[0-1]); *)
+Program[0]	:= GPURAM (gpu_data, clk, rama, ramen[0], ramwe[0]);
+Program[1]	:= GPURAM (gpu_data, clk, rama, ramen[1], ramwe[1]);
 
 Sinerom		:= SINEROM (gpu_data, clk, rama, romen);
 END;
@@ -49,7 +52,8 @@ INT10/	rama
 INT16/	gpudlo, gpudhi 
 :LOCAL;
 #endif
-#if VERILOG
+(* GE if VERILOG *)
+#if UNDEFINED (* GE *)
 INT32/	dbo
 :LOCAL;
 #endif
@@ -69,7 +73,8 @@ Ramhi		:= ABA016B (gpudhi, ramcs, ramwe, rama);
 
 
 #endif
-#if VERILOG
+(* GE if VERILOG *)
+#if UNDEFINED (* GE *)
 Ramen\		:= IV (ramen\, ramen);
 /* Produce a strobe from delayed clock 
 5 DLY8 = 14.66 ns
@@ -102,7 +107,8 @@ Datard		:= TSM (gpu_data, dbo, daten);
 D[0-31]		:= JOIN (d[0-31], gpu_data{0-31});
 A[0-9]		:= JOIN (a[0-9], rama{0-9});
 #endif
-#if FLARE
+(* GE if FLARE *)
+#if VERILOG (* GE *)
 Ramcs		:= CLKGEN (ramcs, clk, ramen);
 
 Ram		:= ABA032A (gpu_data, ramcs, ramwe, rama);
@@ -117,11 +123,12 @@ INT32/	gpu_data	/* GPU system data bus */
 INT10/	roma
 	romen		/* ROM enable */
 	:IN);
-INT16/	rom_data
-:IO;
+INT16/	rom_data:BUS; (* GE - was IO *)
+romhid[16..31]:BUS; (* GE *)
 BEGIN
 
-#if FLARE
+(* GE if FLARE *)
+#if VERILOG
 Romcs		:= CLKGEN (romcs, clk, romen);
 Sinerom		:= RAA016A (rom_data, romcs, roma);
 
@@ -139,7 +146,8 @@ Romenb		:= NIVH (romenb, romen);
 Romhid[16-31]	:= TS (romhid[16-31], romhidi, romenb);
 Gpu_data	:= JOIN_BUS (gpu_data, rom_data, romhid[16..31]);
 #endif
-#if VERILOG
+(* GE if VERILOG *)
+#if UNDEFINED
 Clkdela		:= DLY8 (clkdela, clk);
 Clkdelb		:= DLY8 (clkdelb, clkdela);
 Clkdelc		:= DLY8 (clkdelc, clkdelb);

@@ -358,8 +358,12 @@ to go active */
 
 Indot0		:= ND3 (indot[0], dzwrite, step, inner0);
 Indot1		:= ND4 (indot[1], dwrite, step, dstwrz\, inner0);
-Indone		:= ND2P (indone, indot[0..1]);
-Indone\		:= IV (indone\, indone);
+(* GE Indone		:= ND2P (indone, indot[0..1]);
+Indone\		:= IV (indone\, indone); *)
+Indone_tmp		:= ND2P (indone_tmp, indot[0..1]);
+Indone\		:= IV (indone\, indone_tmp);
+Indone		:= SYSCLKDLY (indone, indone_tmp);
+
 
 /* inner counter control
    the count is enabled in the first tick of dwrite */

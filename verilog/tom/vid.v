@@ -92,6 +92,9 @@ module vid
 	output lbaactive,
 	output lbbactive,
 	output hcb_10,
+	output hs_o,
+	output hhs_o,
+	output vs_o,
 	output dr_0_out,
 	output dr_0_oe,
 	input dr_0_in,
@@ -3993,6 +3996,15 @@ assign dr_14_out = gnd;
 assign dr_14_oe = e1215;
 assign dr_15_out = gnd;
 assign dr_15_oe = e1215;
+
+// VID.NET (402) - hso : join
+assign hs_o = hseq;
+
+// VID.NET (403) - hhso : join
+assign hhs_o = hvsb;
+
+// VID.NET (404) - vso : join
+assign vs_o = vvs;
 
 // --- Compiler-generated PE for BUS dr[0]
 assign dr_0_out =

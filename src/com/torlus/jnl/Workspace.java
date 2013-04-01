@@ -8,6 +8,8 @@ public class Workspace {
 
 	public Vector<Entity> entities = new Vector<Entity>();
 	
+	public String prefix = "";
+	
 	public Entity find(String name) {
 		for(Entity e : entities) {
 			if (name.equals(e.getBaseName()))

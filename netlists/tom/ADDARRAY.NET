@@ -124,7 +124,9 @@ BEGIN
 
 Eightbit\	:= IV (eightbit\, eightbit);
 
-#if FLARE
+(* GE - to get rid of this FA4CS stuff *)
+(* GE #if FLARE *)
+#if VERILOG
 Hicinh\		:= IV (hicinh\, hicinh);
 
 Add0		:= ADD4 (q[0..3], carryt, a{0..3}, b{0..3}, cin);
@@ -170,7 +172,8 @@ Co0\[0-3]	:= DUMMY (co0\[0-3]);
 Co1\[0-3]	:= DUMMY (co1\[0-3]);
 
 #endif
-#if VERILOG
+(* GE if VERILOG *)
+#if NOTDEFINED (* GE *)
 Cin\		:= IV (cin\, cin);
 One		:= TIE1 (one);
 Zero		:= TIE0 (zero);

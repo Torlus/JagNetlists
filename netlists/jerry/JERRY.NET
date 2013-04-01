@@ -36,9 +36,7 @@ DEF JERRY	(
 	xdtackl,	(* data transfer acknowledge *)
 	xi2srxd,	(* I2S input data *)
 	xeint[0..1],	(* DSP interrupt inputs (DMA requests) *)
-/*
-	xpadin[0..3],	(* paddle inputs *)
-*/
+	/* xpadin[0..3],	*/ (* paddle inputs *)
 	xtest,
 	xchrin,		(* chroma oscilator input *)
 	xresetil:IN;	(* clean reset input *)
@@ -72,9 +70,7 @@ DEF JERRY	(
 	xint,		(* interrupt out *)
 	xserout,	(* comlynx/midi transmit data *)
 	xgpiol[4..5],	(* general purpose IO decodes *)
-/*
-	xpadout,	(* paddle output *)
-*/
+	/* xpadout,	*/ (* paddle output *)
 	xvclkdiv,	(* vclk/N for PLL *)
 	xchrdiv,	(* chroma/64 *)
 	xpclkout,	(* pclk/2 out *)
@@ -88,24 +84,27 @@ DEF JERRY	(
 	xcpuclk
 	:IO);	
 
-	INT8/xd0_7,xd8_15,xd16_23,xd24_31,
-	INT24/xa:IO;
-
+	(* GE INT8/xd0_7,xd8_15,xd16_23,xd24_31,
+	INT24/xa:IO; *)
+(* GE - added missing declarations *)
+	dsprd[0..15]:BUS;
+	dr[0..15]:BUS;
+	
 BEGIN
 
 (* Byte lanes for display purposes *)
 
-D0 :=	JOIN_BUS (xd0_7,xd[0..7]);
+(* GE D0 :=	JOIN_BUS (xd0_7,xd[0..7]);
 D1 :=	JOIN_BUS (xd8_15,xd[8..15]);
 D2 :=	JOIN_BUS (xd16_23,xd[16..23]);
 D3 :=	JOIN_BUS (xd24_31,xd[24..31]);
 D0u :=	DUMMY (xd0_7);
 D1u :=	DUMMY (xd8_15);
 D2u :=	DUMMY (xd16_23);
-D3u :=	DUMMY (xd24_31);
+D3u :=	DUMMY (xd24_31); *)
 
-Xa :=	JOIN_BUS (xa,gnd,xa[1..23]);
-Xau :=	DUMMY (xa);
+(* GE Xa :=	JOIN_BUS (xa,gnd,xa[1..23]);
+Xau :=	DUMMY (xa); *)
 
 (* Pads (assumes Toshiba 24SC cell library) *)
 
@@ -185,6 +184,7 @@ Reseti :=	IBUF (resetli,nt[8],xresetil,nt[7]);
 Resetl :=	B8 (xresetl,resetl);
 
 Siz[0-1] :=	BT8 (xsiz[0-1],siz[0-1],gnd,aen);
+
 Rw :=		BT8 (xrw,rws,gnd,aen);
 Dreq :=		BT8 (xdreql,dreql,gnd,aen);
 

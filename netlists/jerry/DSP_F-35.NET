@@ -56,6 +56,9 @@ INT32/	srcdp		/* pipe-lined source data */
 INT16/	inshi, inslo
 INT32/	insin, insdata, pfdata
 :LOCAL;
+(* GE - added missing declarations *)
+INT23/	pc
+:LOCAL;
 BEGIN
 
 Single_go\	:= IV (single_go\, single_go);

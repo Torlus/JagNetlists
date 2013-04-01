@@ -24,6 +24,8 @@ public class VerilogTranslator {
 				String vlog = "";
 				vlog += "/* verilator lint_off LITENDIAN */\n";
 				
+				// vlog += "/* verilator tracing_off */\n";
+				
 				vlog += "`include \"defs.v\"\n\n";
 				vlog += "module " + e.getBaseName() + "\n" + "(\n";
 				vlog += e.verilogIoDecl();

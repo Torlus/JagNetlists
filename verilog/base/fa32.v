@@ -153,7 +153,7 @@ assign s29 = s[29];
 assign s30 = s[30];
 assign s31 = s[31];
 
-assign {co32, s} = a + b + ci;
+assign {co32, s} = a + b + {31'b0000000_00000000_00000000_00000000, ci};
 
 assign co31 = 1'b0; // Unused
 assign co24 = 1'b0; // Unused

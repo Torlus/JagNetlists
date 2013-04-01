@@ -22,7 +22,7 @@ DEF 	VID	(din[0..11],vmwr,hcwr,hcrd,hpwr,hbbwr,
 		start,dd,lbufa,lbufb,noths,notvs,syncen,vint,vactive,blank,
 		nextpixa,nextpixd,cry16,rgb24,rg16,rgb16,mptest,ndtest,
 		varmod,vcl[0..10],tcount,
-		incen,binc,bgw,word2,pp,lbaactive,lbbactive,hcb[10]:IO;
+		incen,binc,bgw,word2,pp,lbaactive,lbbactive,hcb[10],hs_o,hhs_o,vs_o:IO; (* GE added _o outputs *)
 
 		dr[0..15]:BUS);
 	INT11/hc,INT12/vc:IO;
@@ -397,6 +397,11 @@ E1215 :=	OR4 (e1215,e11,vcrd,lpvrd,lphrd);
 Gnd :=		TIE0 (gnd);
 Dr[11] :=	TS (dr[11],gnd,e11);
 Dr[12-15] :=	TS (dr[12-15],gnd,e1215);
+
+(* GE *)
+Hso		:= JOIN(hs_o, hseq);
+Hhso	:= JOIN(hhs_o, hvsb);
+Vso		:= JOIN(vs_o, vvs);
 
 END;
 
