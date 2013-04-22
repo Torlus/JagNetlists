@@ -100,7 +100,7 @@ bus ownership. This is when bg is active *)
 	xrasl[0..1],	(* ras for each bank of DRAM *)
 	xdtackl,	(* data transfer acknowledge *)
 	xintl, (* active low interrupt output *)
-	cfgen,brlout,ba,aen,hs_o,hhs_o,vs_o:IO); (* GE *)	
+	hs_o,hhs_o,vs_o, refreq, obbreq, bbreq[0..1], gbreq[0..1]:IO); (* GE *)	
 
 	(* GE - commented out *)
 	(* INT8/xd0_7,xd8_15,xd16_23,xd24_31,xd32_39,xd40_47,xd48_55,xd56_63,
@@ -390,7 +390,7 @@ Mem :=	MEM	(bbreq[0..1],gbreq[0..1],obbreq,sizin[0..1],dbrl[0..1],
                 resetl,clk[3],vcc,gnd,
                 bglin,brlin,ihandler,bigend,bgain,abs[2..3],
 		testen,waitl,fastrom,m68k,pclk,
-
+	
                 ack,bback,gback,obback,
                 romcsl[0..1],rasl[0..1],casl[0..1],oel[0..2],
                 wel[0..7],sizout[0..2],

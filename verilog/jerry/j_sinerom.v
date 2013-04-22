@@ -81,16 +81,7 @@ raa016a sinerom_inst
 	.z_oe /* BUS */ ({rom_data_oe[0],rom_data_oe[1],rom_data_oe[2],rom_data_oe[3],rom_data_oe[4],rom_data_oe[5],rom_data_oe[6],rom_data_oe[7],rom_data_oe[8],rom_data_oe[9],rom_data_oe[10],rom_data_oe[11],rom_data_oe[12],rom_data_oe[13],rom_data_oe[14],rom_data_oe[15]}),
 	.z_in /* BUS */ ({rom_data_in[0],rom_data_in[1],rom_data_in[2],rom_data_in[3],rom_data_in[4],rom_data_in[5],rom_data_in[6],rom_data_in[7],rom_data_in[8],rom_data_in[9],rom_data_in[10],rom_data_in[11],rom_data_in[12],rom_data_in[13],rom_data_in[14],rom_data_in[15]}),
 	.cs /* IN */ (romcs),
-	.a0 /* IN */ (roma[0]),
-	.a1 /* IN */ (roma[1]),
-	.a2 /* IN */ (roma[2]),
-	.a3 /* IN */ (roma[3]),
-	.a4 /* IN */ (roma[4]),
-	.a5 /* IN */ (roma[5]),
-	.a6 /* IN */ (roma[6]),
-	.a7 /* IN */ (roma[7]),
-	.a8 /* IN */ (roma[8]),
-	.a9 /* IN */ (roma[9]),
+	.a /* IN */ ({roma[0],roma[1],roma[2],roma[3],roma[4],roma[5],roma[6],roma[7],roma[8],roma[9]}),
 	.sys_clk(sys_clk) // Generated
 );
 

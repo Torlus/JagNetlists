@@ -432,8 +432,8 @@ dly stb_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// REGIS-WA.NET (93) - reg_ram : rd64x32
-rd64x32 reg_ram_inst
+// REGIS-WA.NET (94) - reg_ram : rd64x32d
+rd64x32d reg_ram_inst
 (
 	.qa /* OUT */ ({srcdr_31,srcdr_30,srcdr_29,srcdr_28,srcdr_27,srcdr_26,srcdr_25,srcdr_24,srcdr_23,srcdr_22,srcdr_21,srcdr_20,srcdr_19,srcdr_18,srcdr_17,srcdr_16,srcdr_15,srcdr_14,srcdr_13,srcdr_12,srcdr_11,srcdr_10,srcdr_9,srcdr_8,srcdr_7,srcdr_6,srcdr_5,srcdr_4,srcdr_3,srcdr_2,srcdr_1,srcdr_0}),
 	.qb /* OUT */ ({dstdr_31,dstdr_30,dstdr_29,dstdr_28,dstdr_27,dstdr_26,dstdr_25,dstdr_24,dstdr_23,dstdr_22,dstdr_21,dstdr_20,dstdr_19,dstdr_18,dstdr_17,dstdr_16,dstdr_15,dstdr_14,dstdr_13,dstdr_12,dstdr_11,dstdr_10,dstdr_9,dstdr_8,dstdr_7,dstdr_6,dstdr_5,dstdr_4,dstdr_3,dstdr_2,dstdr_1,dstdr_0}),
@@ -448,7 +448,7 @@ rd64x32 reg_ram_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// REGIS-WA.NET (120) - srcdr : join
+// REGIS-WA.NET (121) - srcdr : join
 assign srcdr[0] = srcdr_0;
 assign srcdr[1] = srcdr_1;
 assign srcdr[2] = srcdr_2;
@@ -482,7 +482,7 @@ assign srcdr[29] = srcdr_29;
 assign srcdr[30] = srcdr_30;
 assign srcdr[31] = srcdr_31;
 
-// REGIS-WA.NET (121) - dstdr : join
+// REGIS-WA.NET (122) - dstdr : join
 assign dstdr[0] = dstdr_0;
 assign dstdr[1] = dstdr_1;
 assign dstdr[2] = dstdr_2;
@@ -516,7 +516,7 @@ assign dstdr[29] = dstdr_29;
 assign dstdr[30] = dstdr_30;
 assign dstdr[31] = dstdr_31;
 
-// REGIS-WA.NET (123) - srcd : mx4p
+// REGIS-WA.NET (124) - srcd : mx4p
 mx4 srcd_inst_0
 (
 	.z /* OUT */ (srcd_b0_obuf),
@@ -838,7 +838,7 @@ mx4 srcd_inst_31
 	.s1 /* IN */ (srcdsel_1)
 );
 
-// REGIS-WA.NET (125) - srcdpt : fdsync32
+// REGIS-WA.NET (126) - srcdpt : fdsync32
 j_fdsync32 srcdpt_inst
 (
 	.q /* OUT */ ({srcdpa_b0_obuf,srcdpa_b1_obuf,srcdpa_b2_obuf,srcdpa_b3_obuf,srcdpa_b4_obuf,srcdpa_b5_obuf,srcdpa_b6_obuf,srcdpa_b7_obuf,srcdpa_b8_obuf,srcdpa_b9_obuf,srcdpa_b10_obuf,srcdpa_b11_obuf,srcdpa_b12_obuf,srcdpa_b13_obuf,srcdpa_b14_obuf,srcdpa_b15_obuf,srcdpa_b16_obuf,srcdpa_b17_obuf,srcdpa_b18_obuf,srcdpa_b19_obuf,srcdpa_b20_obuf,srcdpa_b21_obuf,srcdpa_b22_obuf,srcdpa_b23_obuf,srcdpa_b24_obuf,srcdpa_b25_obuf,srcdpa_b26_obuf,srcdpa_b27_obuf,srcdpa_b28_obuf,srcdpa_b29_obuf,srcdpa_b30_obuf,srcdpa_b31_obuf}),
@@ -848,7 +848,7 @@ j_fdsync32 srcdpt_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// REGIS-WA.NET (126) - srcdp : nivh
+// REGIS-WA.NET (127) - srcdp : nivh
 assign srcdp[0] = srcdpa_b0_obuf;
 assign srcdp[1] = srcdpa_b1_obuf;
 assign srcdp[2] = srcdpa_b2_obuf;
@@ -882,7 +882,7 @@ assign srcdp[29] = srcdpa_b29_obuf;
 assign srcdp[30] = srcdpa_b30_obuf;
 assign srcdp[31] = srcdpa_b31_obuf;
 
-// REGIS-WA.NET (128) - dstd : mx4p
+// REGIS-WA.NET (129) - dstd : mx4p
 mx4 dstd_inst_0
 (
 	.z /* OUT */ (dstd_b0_obuf),
@@ -1204,7 +1204,7 @@ mx4 dstd_inst_31
 	.s1 /* IN */ (dstdsel_1)
 );
 
-// REGIS-WA.NET (130) - dstdpt : fd1q
+// REGIS-WA.NET (131) - dstdpt : fd1q
 fd1q dstdpt_inst_0
 (
 	.q /* OUT */ (dstdpt0[0]),
@@ -1430,7 +1430,7 @@ fd1q dstdpt_inst_31
 	.sys_clk(sys_clk) // Generated
 );
 
-// REGIS-WA.NET (131) - mtx_doverp : fd1qu
+// REGIS-WA.NET (132) - mtx_doverp : fd1qu
 fd1q mtx_doverp_inst
 (
 	.q /* OUT */ (mtx_doverp),
@@ -1439,7 +1439,7 @@ fd1q mtx_doverp_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// REGIS-WA.NET (132) - dstdpt1 : mx2p
+// REGIS-WA.NET (133) - dstdpt1 : mx2p
 mx2 dstdpt1_inst_0
 (
 	.z /* OUT */ (dstdpt1[0]),
@@ -1665,7 +1665,7 @@ mx2 dstdpt1_inst_31
 	.s /* IN */ (mtx_doverp)
 );
 
-// REGIS-WA.NET (133) - dstdp : nivh
+// REGIS-WA.NET (134) - dstdp : nivh
 assign dstdp[0] = dstdpt1[0];
 assign dstdp[1] = dstdpt1[1];
 assign dstdp[2] = dstdpt1[2];

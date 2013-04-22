@@ -39,7 +39,8 @@ obld[1] also loads the dma register from d[43..62]
 dmaen	enables the dma register onto the address bus
 
 *)
-
+(* GE *)
+INT24/ oba:LOCAL;
 BEGIN
 
 
@@ -597,11 +598,11 @@ W[3] :=		TS (w[3],vcc,oben);
 because memory cycles are pipelined read data is latched on the 
 memory acknowledge after the request is acknowledged, write data is enabled
 during the cycle after the request is acknowledged
-		    ____
+							____
 obdlatchd	___/    \_____________________
-		    ____              ____
+					____              ____
 ack		___/    \____________/    \___
-		                      ____
+																____
 obdlatch	_____________________/    \___
 *)
 
@@ -673,6 +674,9 @@ Oa[23] :=	MX2 (oa[23],olpd[23],data[20],datasel);
 Oa1[0-2] :=	TSM (a[0-2],gnd,oben);
 Oa1[3-23] :=	TSM (a[3-23],oa[3-23],oben);
 
+(* GE *)
+GE1 := JOIN(oba, a[0..23]);
+GE2 := DUMMY(oba);
 
 END;
 

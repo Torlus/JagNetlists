@@ -90,7 +90,8 @@ Stbd		:= DLY8 (stbd, stbc);
 Stbe		:= DLY8 (stbe, stbd);
 Stb		:= DLY8 (stb, stbe);
 
-Reg_ram		:= RD64X32 (srcdr[31],srcdr[30],srcdr[29],srcdr[28],
+(* GE RD64X32 -> RD64X32D for debugging purposes *)
+Reg_ram		:= RD64X32D (srcdr[31],srcdr[30],srcdr[29],srcdr[28],
 	srcdr[27],srcdr[26],srcdr[25],srcdr[24],srcdr[23],srcdr[22],
 	srcdr[21],srcdr[20],srcdr[19],srcdr[18],srcdr[17],srcdr[16],
 	srcdr[15],srcdr[14],srcdr[13],srcdr[12],srcdr[11],srcdr[10],

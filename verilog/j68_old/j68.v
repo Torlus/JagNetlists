@@ -32,7 +32,7 @@
 //GE `include "arg_defs.vh"
 `include "defs.v"
 
-module j68 /* verilator tracing_off */
+module j68
 (
   // Clock and reset
   input         rst,          // CPU reset
@@ -57,7 +57,7 @@ module j68 /* verilator tracing_off */
   output [31:0] dbg_usp_reg,  // User stack pointer
   output [31:0] dbg_ssp_reg,  // Supervisor stack pointer
   output [31:0] dbg_vbr_reg,  // Vector base register
-  output [7:0]  dbg_cycles,   // Cycles used
+  output [31:0]  dbg_cycles,   // Cycles used
   output        dbg_ifetch    // Instruction fetch
 );
 
@@ -175,7 +175,7 @@ module j68 /* verilator tracing_off */
   // Debug
   reg  [31:0] r_usp_reg;
   reg  [31:0] r_ssp_reg;
-  reg   [7:0] r_cycles;
+  reg   [31:0] r_cycles;
 
   // Delayed reset
   always@(posedge clk)
@@ -209,7 +209,7 @@ module j68 /* verilator tracing_off */
     if (rst) begin
       r_usp_reg <= 32'd0;
       r_ssp_reg <= 32'd0;
-      r_cycles  <= 8'd0;
+      r_cycles  <= 32'd0;
     end else begin
       if (w_reg_wr) begin
         // USP low word
@@ -229,10 +229,7 @@ module j68 /* verilator tracing_off */
             ((w_reg_addr[5:0] == 6'b111111) && (w_sr[8])))
           r_ssp_reg[31:16] <= r_ds_T;
       end
-      if (dbg_ifetch)
-        r_cycles <= 8'd0;
-      else
-        r_cycles <= r_cycles + 8'd1;
+      r_cycles <= r_cycles + 32'd1;
     end
   end
 
@@ -1976,8 +1973,8 @@ module decode
   // +----------+----------+-------+----------------+------------------+
   
   // Trap routines addresses
-  `define OP_PRIVILEDGED 12'h036
-  `define OP_ILLEGAL     12'h038
+  `define OP_PRIVILEDGED 12'h039
+  `define OP_ILLEGAL     12'h03B
 
   // Instructions groups
   wire [15:0] w_grp_p0;
@@ -2388,7 +2385,7 @@ module addsub_32
   assign w_result = (add_sub) ? { 1'b0, dataa } + { 1'b0, datab }
                               : { 1'b0, dataa } - { 1'b0, datab };
                        
-  assign cout   = w_result[32];
+  assign cout   = ~w_result[32];
   assign result = w_result[31:0];
 
   `else
@@ -2419,7 +2416,6 @@ module addsub_32
   `endif
 
 endmodule
-
 
 `ifdef SIMULATION
 
@@ -2553,7 +2549,7 @@ endmodule
 
 
 `ifdef SIMULATION
-
+  
 module decode_rom
 (
   input         clock,
@@ -2579,7 +2575,7 @@ module decode_rom
 
 endmodule
 
-`else
+  `else
 
 module decode_rom
 (
@@ -2631,5 +2627,3 @@ module decode_rom
 endmodule
 
 `endif
-
-/* verilator tracing_off */

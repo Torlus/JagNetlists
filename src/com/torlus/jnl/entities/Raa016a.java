@@ -24,7 +24,9 @@ public class Raa016a extends Entity {
 		ios.add(new Signal("cs", SignalType.IN));
 		// ios.add(new Signal("clk", SignalType.IN));
 		for (int i = 0; i < 10; i++) {
-			ios.add(new Signal("a" + i, SignalType.IN));
+			Signal s = new Signal("a", SignalType.IN);
+			s.bit = i;
+			ios.add(s);
 		}
 	}
 }

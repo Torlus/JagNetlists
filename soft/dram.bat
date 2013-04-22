@@ -1,3 +1,3 @@
-gcc.exe -o draminit.exe draminit.c
-draminit.exe hello\jag.bin > ..\verilog\dram.mem
-@rem draminit.exe example1.bin > ..\verilog\dram.mem
+@rem gcc.exe -o draminit.exe draminit.c
+draminit.exe %1 > ..\verilog\dram.mem
+copy %1 ..\verilog\dram.bin

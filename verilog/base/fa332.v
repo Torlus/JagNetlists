@@ -142,8 +142,9 @@ module fa332
 wire [31:0] a;
 wire [31:0] b;
 wire [31:0] c;
-wire [31:0] st;
 wire [31:0] s;
+
+wire [31:0] st;
 
 assign a = {a31, a30, 
 						a29, a28, a27, a26, a25, a24, a23, a22, a21, a20,
@@ -191,7 +192,10 @@ assign s29 = s[29];
 assign s30 = s[30];
 assign s31 = s[31];
 
-assign {co0, st} = a + b + {31'b0000000_00000000_00000000_00000000, ci0};
-assign {co1, s} = c + st + {31'b0000000_00000000_00000000_00000000, ci1};
+// assign {co1, co0, s[31:0]} = {2'b00, c[31:0]} + {2'b00, b[31:0]} + {2'b00, a[31:0]} + {32'd0, ci1, ci0};
+
+// Seems wrong, but is defined that way in DUPLO.NET
+assign { co0, st[31:0] } = a + b + { 31'd0, ci0 };
+assign { co1, s[31:0] } = c + st + { 31'd0, ci1 };
 
 endmodule

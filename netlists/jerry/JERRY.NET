@@ -64,8 +64,10 @@ DEF JERRY	(
 			3 -> long *)
 
 	xrw,		(* indicates direction of current memory cycle *)
-	xdreql,		(* data transfer request *)
+	xdreql		(* data transfer request *)
 
+	:TRI; (* GE - set as tristates *)
+	
 	xdbrl[0..1],	(* dsp bus request *)
 	xint,		(* interrupt out *)
 	xserout,	(* comlynx/midi transmit data *)

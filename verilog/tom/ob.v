@@ -548,6 +548,7 @@ module ob
 	input dr_15_in,
 	input sys_clk // Generated
 );
+wire [0:23] oba;
 wire type_0;
 wire type_1;
 wire type_2;
@@ -1585,7 +1586,7 @@ assign vey = vey_obuf;
 assign vly = vly_obuf;
 
 
-// OB.NET (48) - type[0-2] : slatch
+// OB.NET (49) - type[0-2] : slatch
 slatch type_from_0_to_2_inst_0
 (
 	.q /* OUT */ (type_0),
@@ -1611,7 +1612,7 @@ slatch type_from_0_to_2_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (49) - ypos[0-10] : slatch
+// OB.NET (50) - ypos[0-10] : slatch
 slatch ypos_from_0_to_10_inst_0
 (
 	.q /* OUT */ (ypos_0),
@@ -1701,7 +1702,7 @@ slatch ypos_from_0_to_10_inst_10
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (51) - link[0-18] : slatch
+// OB.NET (52) - link[0-18] : slatch
 slatch link_from_0_to_18_inst_0
 (
 	.q /* OUT */ (link_0),
@@ -1855,7 +1856,7 @@ slatch link_from_0_to_18_inst_18
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (56) - ob0rd[0-2] : ts
+// OB.NET (57) - ob0rd[0-2] : ts
 assign ts_pe_352_a0_out = type_0;
 assign ts_pe_352_a0_oe = ob0r;
 assign ts_pe_353_a0_out = type_1;
@@ -1863,7 +1864,7 @@ assign ts_pe_353_a0_oe = ob0r;
 assign ts_pe_354_a0_out = type_2;
 assign ts_pe_354_a0_oe = ob0r;
 
-// OB.NET (57) - ob0rd[3-13] : ts
+// OB.NET (58) - ob0rd[3-13] : ts
 assign ts_pe_355_a0_out = ypos_0;
 assign ts_pe_355_a0_oe = ob0r;
 assign ts_pe_356_a0_out = ypos_1;
@@ -1887,13 +1888,13 @@ assign ts_pe_364_a0_oe = ob0r;
 assign ts_pe_365_a0_out = ypos_10;
 assign ts_pe_365_a0_oe = ob0r;
 
-// OB.NET (58) - ob0rd[14-15] : ts
+// OB.NET (59) - ob0rd[14-15] : ts
 assign ts_pe_366_a0_out = newheight_0;
 assign ts_pe_366_a0_oe = ob0r;
 assign ts_pe_367_a0_out = newheight_1;
 assign ts_pe_367_a0_oe = ob0r;
 
-// OB.NET (60) - ob1rd[0-7] : ts
+// OB.NET (61) - ob1rd[0-7] : ts
 assign ts_pe_352_a1_out = newheight_2;
 assign ts_pe_352_a1_oe = ob1r;
 assign ts_pe_353_a1_out = newheight_3;
@@ -1911,7 +1912,7 @@ assign ts_pe_358_a1_oe = ob1r;
 assign ts_pe_359_a1_out = newheight_9;
 assign ts_pe_359_a1_oe = ob1r;
 
-// OB.NET (61) - ob1rd[8-15] : ts
+// OB.NET (62) - ob1rd[8-15] : ts
 assign ts_pe_360_a1_out = link_0;
 assign ts_pe_360_a1_oe = ob1r;
 assign ts_pe_361_a1_out = link_1;
@@ -1929,7 +1930,7 @@ assign ts_pe_366_a1_oe = ob1r;
 assign ts_pe_367_a1_out = link_7;
 assign ts_pe_367_a1_oe = ob1r;
 
-// OB.NET (63) - ob2rd[0-10] : ts
+// OB.NET (64) - ob2rd[0-10] : ts
 assign ts_pe_352_a2_out = link_8;
 assign ts_pe_352_a2_oe = ob2r;
 assign ts_pe_353_a2_out = link_9;
@@ -1953,7 +1954,7 @@ assign ts_pe_361_a2_oe = ob2r;
 assign ts_pe_362_a2_out = link_18;
 assign ts_pe_362_a2_oe = ob2r;
 
-// OB.NET (64) - ob2rd[11-15] : ts
+// OB.NET (65) - ob2rd[11-15] : ts
 assign ts_pe_363_a2_out = data_0;
 assign ts_pe_363_a2_oe = ob2r;
 assign ts_pe_364_a2_out = data_1;
@@ -1965,7 +1966,7 @@ assign ts_pe_366_a2_oe = ob2r;
 assign ts_pe_367_a2_out = data_4;
 assign ts_pe_367_a2_oe = ob2r;
 
-// OB.NET (66) - ob3rd[0-15] : ts
+// OB.NET (67) - ob3rd[0-15] : ts
 assign ts_pe_352_a3_out = data_5;
 assign ts_pe_352_a3_oe = ob3r;
 assign ts_pe_353_a3_out = data_6;
@@ -1999,7 +2000,7 @@ assign ts_pe_366_a3_oe = ob3r;
 assign ts_pe_367_a3_out = data_20;
 assign ts_pe_367_a3_oe = ob3r;
 
-// OB.NET (70) - obwbk0[0-2] : ts
+// OB.NET (71) - obwbk0[0-2] : ts
 assign ts_pe_288_a0_out = type_0;
 assign ts_pe_288_a0_oe = wbken_0;
 assign ts_pe_289_a0_out = type_1;
@@ -2007,7 +2008,7 @@ assign ts_pe_289_a0_oe = wbken_0;
 assign ts_pe_290_a0_out = type_2;
 assign ts_pe_290_a0_oe = wbken_0;
 
-// OB.NET (71) - obwbk0[3-13] : ts
+// OB.NET (72) - obwbk0[3-13] : ts
 assign ts_pe_291_a0_out = ypos_0;
 assign ts_pe_291_a0_oe = wbken_0;
 assign ts_pe_292_a0_out = ypos_1;
@@ -2031,7 +2032,7 @@ assign ts_pe_300_a0_oe = wbken_0;
 assign ts_pe_301_a0_out = ypos_10;
 assign ts_pe_301_a0_oe = wbken_0;
 
-// OB.NET (72) - obwbk0[14-23] : ts
+// OB.NET (73) - obwbk0[14-23] : ts
 assign ts_pe_302_a0_out = newheight_0;
 assign ts_pe_302_a0_oe = wbken_0;
 assign ts_pe_303_a0_out = newheight_1;
@@ -2053,7 +2054,7 @@ assign ts_pe_310_a0_oe = wbken_0;
 assign ts_pe_311_a0_out = newheight_9;
 assign ts_pe_311_a0_oe = wbken_0;
 
-// OB.NET (73) - obwbk0[24-42] : ts
+// OB.NET (74) - obwbk0[24-42] : ts
 assign ts_pe_312_a0_out = link_0;
 assign ts_pe_312_a0_oe = wbken_0;
 assign ts_pe_313_a0_out = link_1;
@@ -2093,7 +2094,7 @@ assign ts_pe_329_a0_oe = wbken_0;
 assign ts_pe_330_a0_out = link_18;
 assign ts_pe_330_a0_oe = wbken_0;
 
-// OB.NET (74) - obwbk0[43-63] : ts
+// OB.NET (75) - obwbk0[43-63] : ts
 assign ts_pe_331_a0_out = newdata_0;
 assign ts_pe_331_a0_oe = wbken_0;
 assign ts_pe_332_a0_out = newdata_1;
@@ -2137,7 +2138,7 @@ assign ts_pe_350_a0_oe = wbken_0;
 assign ts_pe_351_a0_out = newdata_20;
 assign ts_pe_351_a0_oe = wbken_0;
 
-// OB.NET (77) - depth[0-2] : slatch
+// OB.NET (78) - depth[0-2] : slatch
 slatch depth_from_0_to_2_inst_0
 (
 	.q /* OUT */ (depth_0),
@@ -2163,7 +2164,7 @@ slatch depth_from_0_to_2_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (78) - skip[0-2] : slatch
+// OB.NET (79) - skip[0-2] : slatch
 slatch skip_from_0_to_2_inst_0
 (
 	.q /* OUT */ (skip_0),
@@ -2189,7 +2190,7 @@ slatch skip_from_0_to_2_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (79) - dwidth[0-9] : slatch
+// OB.NET (80) - dwidth[0-9] : slatch
 slatch dwidth_from_0_to_9_inst_0
 (
 	.q /* OUT */ (dwidth_0),
@@ -2271,7 +2272,7 @@ slatch dwidth_from_0_to_9_inst_9
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (81) - index[1-7] : slatch
+// OB.NET (82) - index[1-7] : slatch
 slatch index_from_1_to_7_inst_0
 (
 	.q /* OUT */ (index_1),
@@ -2329,7 +2330,7 @@ slatch index_from_1_to_7_inst_6
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (82) - reflected : slatch
+// OB.NET (83) - reflected : slatch
 slatch reflected_inst
 (
 	.q /* OUT */ (reflected),
@@ -2339,7 +2340,7 @@ slatch reflected_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (83) - rmw : slatch
+// OB.NET (84) - rmw : slatch
 slatch rmw_inst
 (
 	.q /* OUT */ (rmw),
@@ -2349,7 +2350,7 @@ slatch rmw_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (84) - transen : slatch
+// OB.NET (85) - transen : slatch
 slatch transen_inst
 (
 	.q /* OUT */ (transen),
@@ -2359,7 +2360,7 @@ slatch transen_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (85) - release : slatch
+// OB.NET (86) - release : slatch
 slatch release_inst
 (
 	.q /* OUT */ (_release),
@@ -2369,7 +2370,7 @@ slatch release_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (87) - hscale[0-7] : slatch
+// OB.NET (88) - hscale[0-7] : slatch
 slatch hscale_from_0_to_7_inst_0
 (
 	.q /* OUT */ (hscale_0_obuf),
@@ -2435,7 +2436,7 @@ slatch hscale_from_0_to_7_inst_7
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (88) - vscale[0-7] : slatch
+// OB.NET (89) - vscale[0-7] : slatch
 slatch vscale_from_0_to_7_inst_0
 (
 	.q /* OUT */ (vscale_0_obuf),
@@ -2501,7 +2502,7 @@ slatch vscale_from_0_to_7_inst_7
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (89) - rem[5-7] : slatch
+// OB.NET (90) - rem[5-7] : slatch
 slatch rem_from_5_to_7_inst_0
 (
 	.q /* OUT */ (rem_5),
@@ -2527,7 +2528,7 @@ slatch rem_from_5_to_7_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (93) - obwbk2[0-7] : ts
+// OB.NET (94) - obwbk2[0-7] : ts
 assign ts_pe_288_a1_out = hscale_0_obuf;
 assign ts_pe_288_a1_oe = wbken_2;
 assign ts_pe_289_a1_out = hscale_1_obuf;
@@ -2545,7 +2546,7 @@ assign ts_pe_294_a1_oe = wbken_2;
 assign ts_pe_295_a1_out = hscale_7_obuf;
 assign ts_pe_295_a1_oe = wbken_2;
 
-// OB.NET (94) - obwbk2[8-15] : ts
+// OB.NET (95) - obwbk2[8-15] : ts
 assign ts_pe_296_a1_out = vscale_0_obuf;
 assign ts_pe_296_a1_oe = wbken_2;
 assign ts_pe_297_a1_out = vscale_1_obuf;
@@ -2563,7 +2564,7 @@ assign ts_pe_302_a1_oe = wbken_2;
 assign ts_pe_303_a1_out = vscale_7_obuf;
 assign ts_pe_303_a1_oe = wbken_2;
 
-// OB.NET (95) - obwbk2[16-23] : ts
+// OB.NET (96) - obwbk2[16-23] : ts
 assign ts_pe_304_a1_out = newrem_0;
 assign ts_pe_304_a1_oe = wbken_2;
 assign ts_pe_305_a1_out = newrem_1;
@@ -2581,7 +2582,7 @@ assign ts_pe_310_a1_oe = wbken_2;
 assign ts_pe_311_a1_out = newrem_7;
 assign ts_pe_311_a1_oe = wbken_2;
 
-// OB.NET (96) - obwbk2[24-63] : ts
+// OB.NET (97) - obwbk2[24-63] : ts
 assign ts_pe_312_a1_out = gnd;
 assign ts_pe_312_a1_oe = wbken_2;
 assign ts_pe_313_a1_out = gnd;
@@ -2663,7 +2664,7 @@ assign ts_pe_350_a1_oe = wbken_2;
 assign ts_pe_351_a1_out = gnd;
 assign ts_pe_351_a1_oe = wbken_2;
 
-// OB.NET (100) - olpd[3-15] : ldp1q
+// OB.NET (101) - olpd[3-15] : ldp1q
 ldp1q olpd_from_3_to_15_inst_0
 (
 	.q /* OUT */ (olpd_3),
@@ -2756,7 +2757,7 @@ ldp1q olpd_from_3_to_15_inst_12
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (101) - olpd[16-23] : ldp1q
+// OB.NET (102) - olpd[16-23] : ldp1q
 ldp1q olpd_from_16_to_23_inst_0
 (
 	.q /* OUT */ (olpd_16),
@@ -2814,7 +2815,7 @@ ldp1q olpd_from_16_to_23_inst_7
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (105) - olpd1[3-21] : mx2
+// OB.NET (106) - olpd1[3-21] : mx2
 mx2 olpd1_from_3_to_21_inst_0
 (
 	.z /* OUT */ (olpd1_3),
@@ -2949,7 +2950,7 @@ mx2 olpd1_from_3_to_21_inst_18
 	.s /* IN */ (pclink)
 );
 
-// OB.NET (109) - olp[3] : upcnt
+// OB.NET (110) - olp[3] : upcnt
 upcnt olp_index_3_inst
 (
 	.q /* OUT */ (olp_3),
@@ -2962,7 +2963,7 @@ upcnt olp_index_3_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (110) - olp[4-9] : upcnt
+// OB.NET (111) - olp[4-9] : upcnt
 upcnt olp_from_4_to_9_inst_0
 (
 	.q /* OUT */ (olp_4),
@@ -3030,7 +3031,7 @@ upcnt olp_from_4_to_9_inst_5
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (111) - olp[10] : upcnt
+// OB.NET (112) - olp[10] : upcnt
 upcnt olp_index_10_inst
 (
 	.q /* OUT */ (olp_10),
@@ -3043,7 +3044,7 @@ upcnt olp_index_10_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (112) - olp[11-16] : upcnt
+// OB.NET (113) - olp[11-16] : upcnt
 upcnt olp_from_11_to_16_inst_0
 (
 	.q /* OUT */ (olp_11),
@@ -3111,7 +3112,7 @@ upcnt olp_from_11_to_16_inst_5
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (113) - olp[17] : upcnt
+// OB.NET (114) - olp[17] : upcnt
 upcnt olp_index_17_inst
 (
 	.q /* OUT */ (olp_17),
@@ -3124,7 +3125,7 @@ upcnt olp_index_17_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (114) - olp[18-21] : upcnt
+// OB.NET (115) - olp[18-21] : upcnt
 upcnt olp_from_18_to_21_inst_0
 (
 	.q /* OUT */ (olp_18),
@@ -3170,23 +3171,23 @@ upcnt olp_from_18_to_21_inst_3
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (116) - plac9 : an8
+// OB.NET (117) - plac9 : an8
 assign plac9 = pcinc & olp_3 & olp_4 & olp_5 & olp_6 & olp_7 & olp_8 & olp_9;
 
-// OB.NET (117) - plac16 : an8
+// OB.NET (118) - plac16 : an8
 assign plac16 = plac9 & olp_10 & olp_11 & olp_12 & olp_13 & olp_14 & olp_15 & olp_16;
 
-// OB.NET (118) - olpcu[9] : dummy
+// OB.NET (119) - olpcu[9] : dummy
 
-// OB.NET (119) - olpcu[16] : dummy
+// OB.NET (120) - olpcu[16] : dummy
 
-// OB.NET (121) - olpldi : nr2
+// OB.NET (122) - olpldi : nr2
 assign olpldi = ~(pcld | pclink);
 
-// OB.NET (122) - olpld : ivh
+// OB.NET (123) - olpld : ivh
 assign olpld = ~olpldi;
 
-// OB.NET (129) - sum[0] : ha1
+// OB.NET (130) - sum[0] : ha1
 ha1 sum_index_0_inst
 (
 	.s /* OUT */ (sum_0),
@@ -3195,7 +3196,7 @@ ha1 sum_index_0_inst
 	.b /* IN */ (data_0)
 );
 
-// OB.NET (130) - sum[1-2] : fa1
+// OB.NET (131) - sum[1-2] : fa1
 fa1 sum_from_1_to_2_inst_0
 (
 	.s /* OUT */ (sum_1),
@@ -3213,7 +3214,7 @@ fa1 sum_from_1_to_2_inst_1
 	.b /* IN */ (dco_1)
 );
 
-// OB.NET (134) - dmainc : fd1q
+// OB.NET (135) - dmainc : fd1q
 fd1q dmainc_inst
 (
 	.q /* OUT */ (dmainc),
@@ -3222,10 +3223,10 @@ fd1q dmainc_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (135) - ldinc : or2
+// OB.NET (136) - ldinc : or2
 assign ldinc = obld_0_obuf | dmainc;
 
-// OB.NET (137) - d1[0-2] : mx2
+// OB.NET (138) - d1[0-2] : mx2
 mx2 d1_from_0_to_2_inst_0
 (
 	.z /* OUT */ (d1_0),
@@ -3248,7 +3249,7 @@ mx2 d1_from_0_to_2_inst_2
 	.s /* IN */ (obld_0_obuf)
 );
 
-// OB.NET (138) - data[0-2] : slatch
+// OB.NET (139) - data[0-2] : slatch
 slatch data_from_0_to_2_inst_0
 (
 	.q /* OUT */ (data_0),
@@ -3274,10 +3275,10 @@ slatch data_from_0_to_2_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (142) - dci : an2
+// OB.NET (143) - dci : an2
 assign dci = dco_2 & dmainc;
 
-// OB.NET (143) - data[3] : upcnt
+// OB.NET (144) - data[3] : upcnt
 upcnt data_index_3_inst
 (
 	.q /* OUT */ (data_3),
@@ -3290,7 +3291,7 @@ upcnt data_index_3_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (144) - data[4-9] : upcnt
+// OB.NET (145) - data[4-9] : upcnt
 upcnt data_from_4_to_9_inst_0
 (
 	.q /* OUT */ (data_4),
@@ -3358,7 +3359,7 @@ upcnt data_from_4_to_9_inst_5
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (145) - data[10] : upcnt
+// OB.NET (146) - data[10] : upcnt
 upcnt data_index_10_inst
 (
 	.q /* OUT */ (data_10),
@@ -3371,7 +3372,7 @@ upcnt data_index_10_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (146) - data[11-16] : upcnt
+// OB.NET (147) - data[11-16] : upcnt
 upcnt data_from_11_to_16_inst_0
 (
 	.q /* OUT */ (data_11),
@@ -3439,7 +3440,7 @@ upcnt data_from_11_to_16_inst_5
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (147) - data[17] : upcnt
+// OB.NET (148) - data[17] : upcnt
 upcnt data_index_17_inst
 (
 	.q /* OUT */ (data_17),
@@ -3452,7 +3453,7 @@ upcnt data_index_17_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (148) - data[18-20] : upcnt
+// OB.NET (149) - data[18-20] : upcnt
 upcnt data_from_18_to_20_inst_0
 (
 	.q /* OUT */ (data_18),
@@ -3487,20 +3488,20 @@ upcnt data_from_18_to_20_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (149) - dlac9 : an8
+// OB.NET (150) - dlac9 : an8
 assign dlac9 = dci & data_3 & data_4 & data_5 & data_6 & data_7 & data_8 & data_9;
 
-// OB.NET (150) - dlac16 : an8
+// OB.NET (151) - dlac16 : an8
 assign dlac16 = dlac9 & data_10 & data_11 & data_12 & data_13 & data_14 & data_15 & data_16;
 
-// OB.NET (151) - dcou[9] : dummy
+// OB.NET (152) - dcou[9] : dummy
 
-// OB.NET (152) - dcou[16] : dummy
+// OB.NET (153) - dcou[16] : dummy
 
-// OB.NET (156) - obfws : an2
+// OB.NET (157) - obfws : an2
 assign obfws = obfw & wet;
 
-// OB.NET (157) - obf : ldp1q
+// OB.NET (158) - obf : ldp1q
 ldp1q obf_inst
 (
 	.q /* OUT */ (obf),
@@ -3509,7 +3510,7 @@ ldp1q obf_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (161) - iwidth[0] : dncnt
+// OB.NET (162) - iwidth[0] : dncnt
 dncnt iwidth_index_0_inst
 (
 	.q /* OUT */ (iwidth_0),
@@ -3522,7 +3523,7 @@ dncnt iwidth_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (162) - iwidth[1-9] : dncnt
+// OB.NET (163) - iwidth[1-9] : dncnt
 dncnt iwidth_from_1_to_9_inst_0
 (
 	.q /* OUT */ (iwidth_1),
@@ -3623,22 +3624,22 @@ dncnt iwidth_from_1_to_9_inst_8
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (170) - bit0 : an2
+// OB.NET (171) - bit0 : an2
 assign bit0 = iwidth_0 & scaled_obuf;
 
-// OB.NET (171) - iwidthz0 : nr6
+// OB.NET (172) - iwidthz0 : nr6
 assign iwidthz0 = ~(bit0 | iwidth_1 | iwidth_2 | iwidth_3 | iwidth_4 | iwidth_5);
 
-// OB.NET (172) - iwidthz1 : nr4
+// OB.NET (173) - iwidthz1 : nr4
 assign iwidthz1 = ~(iwidth_6 | iwidth_7 | iwidth_8 | iwidth_9);
 
-// OB.NET (173) - iwidthnz : nd2
+// OB.NET (174) - iwidthnz : nd2
 assign iwidthnz = ~(iwidthz0 & iwidthz1);
 
-// OB.NET (174) - iwidthz : iv
+// OB.NET (175) - iwidthz : iv
 assign iwidthz = ~iwidthnz;
 
-// OB.NET (376) - q0 : fd4q
+// OB.NET (377) - q0 : fd4q
 fd4q q0_inst
 (
 	.q /* OUT */ (q0),
@@ -3648,7 +3649,7 @@ fd4q q0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (377) - q1 : fd2q
+// OB.NET (378) - q1 : fd2q
 fd2q q1_inst
 (
 	.q /* OUT */ (q1),
@@ -3658,7 +3659,7 @@ fd2q q1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (378) - q2 : fd2q
+// OB.NET (379) - q2 : fd2q
 fd2q q2_inst
 (
 	.q /* OUT */ (q2),
@@ -3668,7 +3669,7 @@ fd2q q2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (379) - q3i : fd2q
+// OB.NET (380) - q3i : fd2q
 fd2q q3i_inst
 (
 	.q /* OUT */ (q3i),
@@ -3678,10 +3679,10 @@ fd2q q3i_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (380) - q3 : nivm
+// OB.NET (381) - q3 : nivm
 assign q3 = q3i;
 
-// OB.NET (381) - q4i : fd2q
+// OB.NET (382) - q4i : fd2q
 fd2q q4i_inst
 (
 	.q /* OUT */ (q4i),
@@ -3691,10 +3692,10 @@ fd2q q4i_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (382) - q4 : nivh
+// OB.NET (383) - q4 : nivh
 assign q4 = q4i;
 
-// OB.NET (383) - q5 : fd2q
+// OB.NET (384) - q5 : fd2q
 fd2q q5_inst
 (
 	.q /* OUT */ (q5),
@@ -3704,7 +3705,7 @@ fd2q q5_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (384) - q7 : fd2q
+// OB.NET (385) - q7 : fd2q
 fd2q q7_inst
 (
 	.q /* OUT */ (q7),
@@ -3714,7 +3715,7 @@ fd2q q7_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (385) - q8 : fd2q
+// OB.NET (386) - q8 : fd2q
 fd2q q8_inst
 (
 	.q /* OUT */ (q8),
@@ -3724,7 +3725,7 @@ fd2q q8_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (386) - q9 : fd2q
+// OB.NET (387) - q9 : fd2q
 fd2q q9_inst
 (
 	.q /* OUT */ (q9),
@@ -3734,382 +3735,382 @@ fd2q q9_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (388) - d00 : nd2
+// OB.NET (389) - d00 : nd2
 assign d00 = ~(q0 & notstartover);
 
-// OB.NET (389) - d01 : nd6
+// OB.NET (390) - d01 : nd6
 assign d01 = ~(q3 & notbitob & notscaled & notgrpob & notbranchob & vcc);
 
-// OB.NET (390) - d0 : nd2
+// OB.NET (391) - d0 : nd2
 assign d0 = ~(d00 & d01);
 
-// OB.NET (392) - d10 : nd2
+// OB.NET (393) - d10 : nd2
 assign d10 = ~(q0 & startover);
 
-// OB.NET (393) - d11 : nd2
+// OB.NET (394) - d11 : nd2
 assign d11 = ~(q1 & notobmack);
 
-// OB.NET (394) - d12 : nd3
+// OB.NET (395) - d12 : nd3
 assign d12 = ~(q3 & bitob & bitnotinrange);
 
-// OB.NET (395) - d13 : nd3
+// OB.NET (396) - d13 : nd3
 assign d13 = ~(q3 & branchob & cctrue);
 
-// OB.NET (396) - d14 : nd2
+// OB.NET (397) - d14 : nd2
 assign d14 = ~(q7 & obfw);
 
-// OB.NET (397) - d15 : nd2
+// OB.NET (398) - d15 : nd2
 assign d15 = ~(q9 & scalednotinrange);
 
-// OB.NET (398) - d16 : nd6
+// OB.NET (399) - d16 : nd6
 assign d16 = ~(q4 & iwidthz & wbkdone & obmack & bitob & vcc);
 
-// OB.NET (399) - d17 : nd6
+// OB.NET (400) - d17 : nd6
 assign d17 = ~(q4 & offscreen & wbkdone & obmack & bitob & vcc);
 
-// OB.NET (400) - d18 : nd2
+// OB.NET (401) - d18 : nd2
 assign d18 = ~(q5 & obmack);
 
-// OB.NET (401) - d19 : nd3
+// OB.NET (402) - d19 : nd3
 assign d19 = ~(q3 & branchob & ccfalse);
 
-// OB.NET (402) - d1a : nd6
+// OB.NET (403) - d1a : nd6
 assign d1a = ~(d10 & d11 & d12 & d13 & d14 & d15);
 
-// OB.NET (403) - d1b : nd4
+// OB.NET (404) - d1b : nd4
 assign d1b = ~(d16 & d17 & d18 & d19);
 
-// OB.NET (404) - d1 : or2
+// OB.NET (405) - d1 : or2
 assign d1 = d1a | d1b;
 
-// OB.NET (406) - d20 : nd2
+// OB.NET (407) - d20 : nd2
 assign d20 = ~(q1 & obmack);
 
-// OB.NET (407) - d21 : nd2
+// OB.NET (408) - d21 : nd2
 assign d21 = ~(q2 & notobmack);
 
-// OB.NET (408) - d23 : nd2
+// OB.NET (409) - d23 : nd2
 assign d23 = ~(q2 & notobdone);
 
-// OB.NET (409) - d2 : nd3
+// OB.NET (410) - d2 : nd3
 assign d2 = ~(d20 & d21 & d23);
 
-// OB.NET (411) - d30 : nd3
+// OB.NET (412) - d30 : nd3
 assign d30 = ~(q2 & obdone & obmack);
 
-// OB.NET (412) - d31 : nd6
+// OB.NET (413) - d31 : nd6
 assign d31 = ~(q3 & bitob & geq & heightnz & notobmack & vcc);
 
-// OB.NET (413) - d32 : nd3
+// OB.NET (414) - d32 : nd3
 assign d32 = ~(q3 & scaled_obuf & notobmack);
 
-// OB.NET (414) - d3 : nd3
+// OB.NET (415) - d3 : nd3
 assign d3 = ~(d30 & d31 & d32);
 
-// OB.NET (416) - d40 : nd6
+// OB.NET (417) - d40 : nd6
 assign d40 = ~(q3 & bitob & geq & heightnz & obmack & vcc);
 
-// OB.NET (417) - d41 : nd3
+// OB.NET (418) - d41 : nd3
 assign d41 = ~(q4 & onscreen & iwidthnz);
 
-// OB.NET (418) - d42 : nd4
+// OB.NET (419) - d42 : nd4
 assign d42 = ~(q4 & iwidthz & wbkdone & notobmack);
 
-// OB.NET (419) - d43 : nd3
+// OB.NET (420) - d43 : nd3
 assign d43 = ~(q4 & iwidthz & notwbkdone);
 
-// OB.NET (420) - d44 : nd3
+// OB.NET (421) - d44 : nd3
 assign d44 = ~(q9 & scaledinrange & obmack);
 
-// OB.NET (421) - d45 : nd4
+// OB.NET (422) - d45 : nd4
 assign d45 = ~(q4 & offscreen & wbkdone & notobmack);
 
-// OB.NET (422) - d46 : nd3
+// OB.NET (423) - d46 : nd3
 assign d46 = ~(q4 & offscreen & notwbkdone);
 
-// OB.NET (423) - d4 : nd8
+// OB.NET (424) - d4 : nd8
 assign d4 = ~(d40 & d41 & d42 & d43 & d44 & d45 & d46 & vcc);
 
-// OB.NET (425) - d51 : nd6
+// OB.NET (426) - d51 : nd6
 assign d51 = ~(q4 & iwidthz & wbkdone & obmack & scaled_obuf & vcc);
 
-// OB.NET (426) - d52 : nd2
+// OB.NET (427) - d52 : nd2
 assign d52 = ~(q5 & notobmack);
 
-// OB.NET (427) - d53 : nd6
+// OB.NET (428) - d53 : nd6
 assign d53 = ~(q4 & offscreen & wbkdone & obmack & scaled_obuf & vcc);
 
-// OB.NET (428) - d5 : nd3
+// OB.NET (429) - d5 : nd3
 assign d5 = ~(d51 & d52 & d53);
 
-// OB.NET (430) - d70 : nd2
+// OB.NET (431) - d70 : nd2
 assign d70 = ~(q3 & grpob);
 
-// OB.NET (431) - d71 : nd2
+// OB.NET (432) - d71 : nd2
 assign d71 = ~(q7 & notobfw);
 
-// OB.NET (432) - d7 : nd2
+// OB.NET (433) - d7 : nd2
 assign d7 = ~(d70 & d71);
 
-// OB.NET (434) - d80 : nd3
+// OB.NET (435) - d80 : nd3
 assign d80 = ~(q3 & scaled_obuf & obmack);
 
-// OB.NET (435) - d81 : nd2
+// OB.NET (436) - d81 : nd2
 assign d81 = ~(q8 & notobmack);
 
-// OB.NET (436) - d8 : nd2
+// OB.NET (437) - d8 : nd2
 assign d8 = ~(d80 & d81);
 
-// OB.NET (438) - d90 : nd2
+// OB.NET (439) - d90 : nd2
 assign d90 = ~(q8 & obmack);
 
-// OB.NET (439) - d91 : nd3
+// OB.NET (440) - d91 : nd3
 assign d91 = ~(q9 & scaledinrange & notobmack);
 
-// OB.NET (440) - d9 : nd2
+// OB.NET (441) - d9 : nd2
 assign d9 = ~(d90 & d91);
 
-// OB.NET (442) - pcld : iv
+// OB.NET (443) - pcld : iv
 assign pcld = ~d10;
 
-// OB.NET (447) - obr0 : nr4
+// OB.NET (448) - obr0 : nr4
 assign obr0 = ~(q1 | q5 | q8 | q9);
 
-// OB.NET (448) - obr1 : nd2
+// OB.NET (449) - obr1 : nd2
 assign obr1 = ~(q3 & bitob);
 
-// OB.NET (449) - obr2 : nd2
+// OB.NET (450) - obr2 : nd2
 assign obr2 = ~(q3 & branchob);
 
-// OB.NET (450) - obr3 : nd2
+// OB.NET (451) - obr3 : nd2
 assign obr3 = ~(q3 & scaled_obuf);
 
-// OB.NET (451) - obr4 : nd2
+// OB.NET (452) - obr4 : nd2
 assign obr4 = ~(q2 & obbr0);
 
-// OB.NET (452) - obr5 : nd4
+// OB.NET (453) - obr5 : nd4
 assign obr5 = ~(q4 & onscreen & iwidthnz & obbr1);
 
-// OB.NET (453) - obr6 : nd2
+// OB.NET (454) - obr6 : nd2
 assign obr6 = ~(q4 & offscreen);
 
-// OB.NET (454) - obr7 : nd2
+// OB.NET (455) - obr7 : nd2
 assign obr7 = ~(q4 & iwidthz);
 
-// OB.NET (455) - obbreq : nd8
+// OB.NET (456) - obbreq : nd8
 assign obbreq = ~(obr0 & obr1 & obr2 & obr3 & obr4 & obr5 & obr6 & obr7);
 
-// OB.NET (456) - obbr0 : or2
+// OB.NET (457) - obbr0 : or2
 assign obbr0 = obdone | hold;
 
-// OB.NET (457) - obbr1 : or2
+// OB.NET (458) - obbr1 : or2
 assign obbr1 = obdready | hold;
 
-// OB.NET (459) - omrq0 : nr2
+// OB.NET (460) - omrq0 : nr2
 assign omrq0 = ~(q1 | q5);
 
-// OB.NET (460) - omrq1 : nd4
+// OB.NET (461) - omrq1 : nd4
 assign omrq1 = ~(q3 & bitob & geq & heightnz);
 
-// OB.NET (461) - omrq2 : nd4
+// OB.NET (462) - omrq2 : nd4
 assign omrq2 = ~(q4 & onscreen & iwidthnz & obdready);
 
-// OB.NET (462) - omrq3 : nd3
+// OB.NET (463) - omrq3 : nd3
 assign omrq3 = ~(q4 & iwidthz & wbkdone);
 
-// OB.NET (463) - omrq4 : nd2
+// OB.NET (464) - omrq4 : nd2
 assign omrq4 = ~(q9 & scaledinrange);
 
-// OB.NET (464) - omrq5 : nd2
+// OB.NET (465) - omrq5 : nd2
 assign omrq5 = ~(q2 & obdone);
 
-// OB.NET (465) - omrq6 : nd3
+// OB.NET (466) - omrq6 : nd3
 assign omrq6 = ~(q4 & offscreen & wbkdone);
 
-// OB.NET (466) - obmreq : nd8
+// OB.NET (467) - obmreq : nd8
 assign obmreq = ~(omrq0 & omrq1 & omrq2 & omrq3 & omrq4 & omrq5 & omrq6 & obr3);
 
-// OB.NET (468) - obldd[0] : iv
+// OB.NET (469) - obldd[0] : iv
 assign obldd_0 = ~d20;
 
-// OB.NET (469) - obldd[1] : iv
+// OB.NET (470) - obldd[1] : iv
 assign obldd_1 = ~d30;
 
-// OB.NET (470) - obldd[2] : iv
+// OB.NET (471) - obldd[2] : iv
 assign obldd_2 = ~d80;
 
-// OB.NET (476) - pc1en : iv
+// OB.NET (477) - pc1en : iv
 assign pc1en = ~d30;
 
-// OB.NET (477) - pc2en0 : nd2
+// OB.NET (478) - pc2en0 : nd2
 assign pc2en0 = ~(q5 & obmack);
 
-// OB.NET (478) - pc2en : nd2
+// OB.NET (479) - pc2en : nd2
 assign pc2en = ~(d80 & pc2en0);
 
-// OB.NET (480) - dmaen0 : nd6
+// OB.NET (481) - dmaen0 : nd6
 assign dmaen0 = ~(q4 & onscreen & iwidthnz & obdready & obmack & vcc);
 
-// OB.NET (481) - dmaen : nd3
+// OB.NET (482) - dmaen : nd3
 assign dmaen = ~(d40 & dmaen0 & d44);
 
-// OB.NET (482) - obdlatchd : niv
+// OB.NET (483) - obdlatchd : niv
 assign obdlatchd = dmaen;
 
-// OB.NET (484) - dsel0 : nd2
+// OB.NET (485) - dsel0 : nd2
 assign dsel0 = ~(q3 & bitob);
 
-// OB.NET (485) - dsel1 : iv
+// OB.NET (486) - dsel1 : iv
 assign dsel1 = ~q9;
 
-// OB.NET (486) - dsel2 : nd3
+// OB.NET (487) - dsel2 : nd3
 assign dsel2 = ~(q4 & onscreen & iwidthnz);
 
-// OB.NET (487) - dataseli : nd3
+// OB.NET (488) - dataseli : nd3
 assign dataseli = ~(dsel0 & dsel1 & dsel2);
 
-// OB.NET (488) - datasel : nivu
+// OB.NET (489) - datasel : nivu
 assign datasel = dataseli;
 
-// OB.NET (490) - pclinki : nd6
+// OB.NET (491) - pclinki : nd6
 assign pclinki = ~(d12 & d13 & d15 & d16 & d17 & d18);
 
-// OB.NET (491) - pclink : nivh
+// OB.NET (492) - pclink : nivh
 assign pclink = pclinki;
 
-// OB.NET (492) - pcinc : nd2
+// OB.NET (493) - pcinc : nd2
 assign pcinc = ~(d70 & d19);
 
-// OB.NET (494) - grpintreq : iv
+// OB.NET (495) - grpintreq : iv
 assign grpintreq = ~d70;
 
-// OB.NET (495) - obint : an3
+// OB.NET (496) - obint : an3
 assign obint = q3 & stopob & ypos_0;
 
-// OB.NET (496) - startref : an2
+// OB.NET (497) - startref : an2
 assign startref = q3 & stopob;
 
-// OB.NET (498) - obrw1 : iv
+// OB.NET (499) - obrw1 : iv
 assign obrw1 = ~q5;
 
-// OB.NET (499) - obrw : an3
+// OB.NET (500) - obrw : an3
 assign obrw = obrw1 & omrq3 & omrq6;
 
-// OB.NET (504) - wbkstart : nd2
+// OB.NET (505) - wbkstart : nd2
 assign wbkstart = ~(d40 & omrq4);
 
-// OB.NET (506) - wbken2d : iv
+// OB.NET (507) - wbken2d : iv
 assign wbken2d = ~pc2en0;
 
-// OB.NET (514) - wr : iv
+// OB.NET (515) - wr : iv
 assign wr = ~rw_in;
 
-// OB.NET (515) - eback : or2
+// OB.NET (516) - eback : or2
 assign eback = blback | grpback;
 
-// OB.NET (516) - ewr : an4
+// OB.NET (517) - ewr : an4
 assign ewr = eback & wr & mack & mreq_in;
 
-// OB.NET (517) - wbken0d : nr2
+// OB.NET (518) - wbken0d : nr2
 assign wbken0d = ~(wbken2d | ewr);
 
-// OB.NET (519) - xldi : nd2
+// OB.NET (520) - xldi : nd2
 assign xldi = ~(d40 & d80);
 
-// OB.NET (520) - xld : nivm
+// OB.NET (521) - xld : nivm
 assign xld = xldi;
 
-// OB.NET (526) - typel[0-2] : iv
+// OB.NET (527) - typel[0-2] : iv
 assign typel_0 = ~type_0;
 assign typel_1 = ~type_1;
 assign typel_2 = ~type_2;
 
-// OB.NET (528) - notbitob : nd3
+// OB.NET (529) - notbitob : nd3
 assign notbitob = ~(typel_2 & typel_1 & typel_0);
 
-// OB.NET (529) - notscaled : nd3
+// OB.NET (530) - notscaled : nd3
 assign notscaled = ~(typel_2 & typel_1 & type_0);
 
-// OB.NET (530) - notgrpob : nd3
+// OB.NET (531) - notgrpob : nd3
 assign notgrpob = ~(typel_2 & type_1 & typel_0);
 
-// OB.NET (531) - notbranchob : nd3
+// OB.NET (532) - notbranchob : nd3
 assign notbranchob = ~(typel_2 & type_1 & type_0);
 
-// OB.NET (532) - notstopob : nd3
+// OB.NET (533) - notstopob : nd3
 assign notstopob = ~(type_2 & typel_1 & typel_0);
 
-// OB.NET (534) - bitob : ivm
+// OB.NET (535) - bitob : ivm
 assign bitob = ~notbitob;
 
-// OB.NET (535) - scaled : ivm
+// OB.NET (536) - scaled : ivm
 assign scaled_obuf = ~notscaled;
 
-// OB.NET (536) - grpob : iv
+// OB.NET (537) - grpob : iv
 assign grpob = ~notgrpob;
 
-// OB.NET (537) - branchob : iv
+// OB.NET (538) - branchob : iv
 assign branchob = ~notbranchob;
 
-// OB.NET (538) - stopob : iv
+// OB.NET (539) - stopob : iv
 assign stopob = ~notstopob;
 
-// OB.NET (543) - heightl[0-2] : iv
+// OB.NET (544) - heightl[0-2] : iv
 assign heightl_0 = ~newheight_0;
 assign heightl_1 = ~newheight_1;
 assign heightl_2 = ~newheight_2;
 
-// OB.NET (545) - cctrue0 : nd4
+// OB.NET (546) - cctrue0 : nd4
 assign cctrue0 = ~(heightl_2 & heightl_1 & heightl_0 & vey_obuf);
 
-// OB.NET (546) - cctrue1 : nd4
+// OB.NET (547) - cctrue1 : nd4
 assign cctrue1 = ~(heightl_2 & heightl_1 & heightl_0 & y7ff);
 
-// OB.NET (547) - cctrue2 : nd4
+// OB.NET (548) - cctrue2 : nd4
 assign cctrue2 = ~(heightl_2 & heightl_1 & newheight_0 & vly_obuf);
 
-// OB.NET (548) - cctrue3 : nd4
+// OB.NET (549) - cctrue3 : nd4
 assign cctrue3 = ~(heightl_2 & newheight_1 & heightl_0 & vgy_obuf);
 
-// OB.NET (549) - cctrue4 : nd4
+// OB.NET (550) - cctrue4 : nd4
 assign cctrue4 = ~(heightl_2 & newheight_1 & newheight_0 & obf);
 
-// OB.NET (550) - cctrue5 : nd4
+// OB.NET (551) - cctrue5 : nd4
 assign cctrue5 = ~(newheight_2 & heightl_1 & heightl_0 & hcb_10);
 
-// OB.NET (551) - cctrue : nd6
+// OB.NET (552) - cctrue : nd6
 assign cctrue = ~(cctrue0 & cctrue1 & cctrue2 & cctrue3 & cctrue4 & cctrue5);
 
-// OB.NET (552) - ccfalse : iv
+// OB.NET (553) - ccfalse : iv
 assign ccfalse = ~cctrue;
 
-// OB.NET (554) - depthl[0-2] : iv
+// OB.NET (555) - depthl[0-2] : iv
 assign depthl_0 = ~depth_0;
 assign depthl_1 = ~depth_1;
 assign depthl_2 = ~depth_2;
 
-// OB.NET (556) - mode1 : an3h
+// OB.NET (557) - mode1 : an3h
 assign mode1 = depthl_2 & depthl_1 & depthl_0;
 
-// OB.NET (557) - mode2 : an3h
+// OB.NET (558) - mode2 : an3h
 assign mode2 = depthl_2 & depthl_1 & depth_0;
 
-// OB.NET (558) - mode4 : an3h
+// OB.NET (559) - mode4 : an3h
 assign mode4 = depthl_2 & depth_1 & depthl_0;
 
-// OB.NET (559) - mode8i : nd3
+// OB.NET (560) - mode8i : nd3
 assign mode8i = ~(depthl_2 & depth_1 & depth_0);
 
-// OB.NET (560) - mode8 : ivh
+// OB.NET (561) - mode8 : ivh
 assign mode8 = ~mode8i;
 
-// OB.NET (561) - mode16 : an3
+// OB.NET (562) - mode16 : an3
 assign mode16 = depth_2 & depthl_1 & depthl_0;
 
-// OB.NET (562) - mode24 : an3
+// OB.NET (563) - mode24 : an3
 assign mode24 = depth_2 & depthl_1 & depth_0;
 
-// OB.NET (566) - start1 : fd2q
+// OB.NET (567) - start1 : fd2q
 fd2q start1_inst
 (
 	.q /* OUT */ (start1),
@@ -4119,7 +4120,7 @@ fd2q start1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (567) - start2 : fd2q
+// OB.NET (568) - start2 : fd2q
 fd2q start2_inst
 (
 	.q /* OUT */ (start2),
@@ -4129,22 +4130,22 @@ fd2q start2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (568) - start2l : iv
+// OB.NET (569) - start2l : iv
 assign start2l = ~start2;
 
-// OB.NET (569) - sstart : an2
+// OB.NET (570) - sstart : an2
 assign sstart = start1 & start2l;
 
-// OB.NET (575) - ov1 : nd2
+// OB.NET (576) - ov1 : nd2
 assign ov1 = ~(sstart & q0l);
 
-// OB.NET (576) - ov2 : nd2
+// OB.NET (577) - ov2 : nd2
 assign ov2 = ~(overrun & q0l);
 
-// OB.NET (577) - overrund : nd2
+// OB.NET (578) - overrund : nd2
 assign overrund = ~(ov1 & ov2);
 
-// OB.NET (578) - overrun : fd1q
+// OB.NET (579) - overrun : fd1q
 fd1q overrun_inst
 (
 	.q /* OUT */ (overrun),
@@ -4153,40 +4154,40 @@ fd1q overrun_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (579) - notstartover : nr2
+// OB.NET (580) - notstartover : nr2
 assign notstartover = ~(overrun | sstart);
 
-// OB.NET (580) - startover : iv
+// OB.NET (581) - startover : iv
 assign startover = ~notstartover;
 
-// OB.NET (581) - q0l : iv
+// OB.NET (582) - q0l : iv
 assign q0l = ~q0;
 
-// OB.NET (583) - notobmack : nd2x3
+// OB.NET (584) - notobmack : nd2x3
 assign notobmack = ~(obback & mack);
 
-// OB.NET (584) - obmack : ivh
+// OB.NET (585) - obmack : ivh
 assign obmack = ~notobmack;
 
-// OB.NET (588) - obeni : or2
+// OB.NET (589) - obeni : or2
 assign obeni = obback | refack;
 
-// OB.NET (589) - oben : nivu2
+// OB.NET (590) - oben : nivu2
 assign oben = obeni;
 
-// OB.NET (590) - rw : ts
+// OB.NET (591) - rw : ts
 assign rw_out = obrw;
 assign rw_oe = oben;
 
-// OB.NET (591) - mreq : tsm
+// OB.NET (592) - mreq : tsm
 assign mreq_out = obmreq;
 assign mreq_oe = obback;
 
-// OB.NET (592) - justify : ts
+// OB.NET (593) - justify : ts
 assign justify_out = gnd;
 assign justify_oe = oben;
 
-// OB.NET (593) - w[0-2] : ts
+// OB.NET (594) - w[0-2] : ts
 assign w_0_out = gnd;
 assign w_0_oe = oben;
 assign w_1_out = gnd;
@@ -4194,11 +4195,11 @@ assign w_1_oe = oben;
 assign w_2_out = gnd;
 assign w_2_oe = oben;
 
-// OB.NET (594) - w[3] : ts
+// OB.NET (595) - w[3] : ts
 assign w_3_out = vcc;
 assign w_3_oe = oben;
 
-// OB.NET (609) - obdlatch : ack_pipe
+// OB.NET (610) - obdlatch : ack_pipe
 ack_pipe obdlatch_inst
 (
 	.latch /* OUT */ (obdlatch),
@@ -4209,7 +4210,7 @@ ack_pipe obdlatch_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (610) - obldi[0] : ack_pipe
+// OB.NET (611) - obldi[0] : ack_pipe
 ack_pipe obldi_index_0_inst
 (
 	.latch /* OUT */ (obldi_0),
@@ -4220,7 +4221,7 @@ ack_pipe obldi_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (611) - obldi[1] : ack_pipe
+// OB.NET (612) - obldi[1] : ack_pipe
 ack_pipe obldi_index_1_inst
 (
 	.latch /* OUT */ (obldi_1),
@@ -4231,7 +4232,7 @@ ack_pipe obldi_index_1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (612) - obldi[2] : ack_pipe
+// OB.NET (613) - obldi[2] : ack_pipe
 ack_pipe obldi_index_2_inst
 (
 	.latch /* OUT */ (obldi_2),
@@ -4242,21 +4243,21 @@ ack_pipe obldi_index_2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (613) - obld[0] : nivu2
+// OB.NET (614) - obld[0] : nivu2
 assign obld_0_obuf = obldi_0;
 
-// OB.NET (614) - obld[1] : nivh
+// OB.NET (615) - obld[1] : nivh
 assign obld_1_obuf = obldi_1;
 
-// OB.NET (615) - obld[2] : nivh
+// OB.NET (616) - obld[2] : nivh
 assign obld_2_obuf = obldi_2;
 
-// OB.NET (617) - oblatch[0-2] : nivu
+// OB.NET (618) - oblatch[0-2] : nivu
 assign oblatch_0 = obld_0_obuf;
 assign oblatch_1 = obld_1_obuf;
 assign oblatch_2 = obld_2_obuf;
 
-// OB.NET (619) - wbkeni[0] : fd4q
+// OB.NET (620) - wbkeni[0] : fd4q
 fd4q wbkeni_index_0_inst
 (
 	.q /* OUT */ (wbkeni_0),
@@ -4266,10 +4267,10 @@ fd4q wbkeni_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (620) - wbken[0] : nivu2
+// OB.NET (621) - wbken[0] : nivu2
 assign wbken_0 = wbkeni_0;
 
-// OB.NET (621) - wbkeni[2] : fd2q
+// OB.NET (622) - wbkeni[2] : fd2q
 fd2q wbkeni_index_2_inst
 (
 	.q /* OUT */ (wbkeni_2),
@@ -4279,10 +4280,10 @@ fd2q wbkeni_index_2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (622) - wbken[2] : nivu2
+// OB.NET (623) - wbken[2] : nivu2
 assign wbken_2 = wbkeni_2;
 
-// OB.NET (626) - comp : mag11
+// OB.NET (627) - comp : mag11
 mag11 comp_inst
 (
 	.agb /* OUT */ (vgy_obuf),
@@ -4312,12 +4313,12 @@ mag11 comp_inst
 	.b_10 /* IN */ (ypos_10)
 );
 
-// OB.NET (627) - geq : iv
+// OB.NET (628) - geq : iv
 assign geq = ~vly_obuf;
 
-// OB.NET (628) - equ : dummy
+// OB.NET (629) - equ : dummy
 
-// OB.NET (632) - ve[0-10] : en
+// OB.NET (633) - ve[0-10] : en
 assign ve_0 = ~(vc_0 ^ ypos_0);
 assign ve_1 = ~(vc_1 ^ ypos_1);
 assign ve_2 = ~(vc_2 ^ ypos_2);
@@ -4330,7 +4331,7 @@ assign ve_8 = ~(vc_8 ^ ypos_8);
 assign ve_9 = ~(vc_9 ^ ypos_9);
 assign ve_10 = ~(vc_10 ^ ypos_10);
 
-// OB.NET (633) - veyl : nd11
+// OB.NET (634) - veyl : nd11
 nd11 veyl_inst
 (
 	.q /* OUT */ (veyl),
@@ -4347,58 +4348,58 @@ nd11 veyl_inst
 	.a_10 /* IN */ (ve_10)
 );
 
-// OB.NET (634) - vey : iv
+// OB.NET (635) - vey : iv
 assign vey_obuf = ~veyl;
 
-// OB.NET (636) - y7ff0 : nd6
+// OB.NET (637) - y7ff0 : nd6
 assign y7ff0 = ~(ypos_0 & ypos_1 & ypos_2 & ypos_3 & ypos_4 & ypos_5);
 
-// OB.NET (637) - y7ff1 : nd6
+// OB.NET (638) - y7ff1 : nd6
 assign y7ff1 = ~(ypos_6 & ypos_7 & ypos_8 & ypos_9 & ypos_10 & vcc);
 
-// OB.NET (638) - y7ff : nr2
+// OB.NET (639) - y7ff : nr2
 assign y7ff = ~(y7ff0 | y7ff1);
 
-// OB.NET (643) - remnz : or3
+// OB.NET (644) - remnz : or3
 assign remnz = rem_5 | rem_6 | rem_7;
 
-// OB.NET (645) - bitnotinrange : nd2
+// OB.NET (646) - bitnotinrange : nd2
 assign bitnotinrange = ~(geq & heightnz);
 
-// OB.NET (647) - remheightnz : or2
+// OB.NET (648) - remheightnz : or2
 assign remheightnz = heightnz | remnz;
 
-// OB.NET (648) - scalednotinrange : nd2
+// OB.NET (649) - scalednotinrange : nd2
 assign scalednotinrange = ~(geq & remheightnz);
 
-// OB.NET (649) - scaledinrange : iv
+// OB.NET (650) - scaledinrange : iv
 assign scaledinrange = ~scalednotinrange;
 
-// OB.NET (651) - onscreen : iv
+// OB.NET (652) - onscreen : iv
 assign onscreen = ~offscreen;
 
-// OB.NET (652) - notwbkdone : iv
+// OB.NET (653) - notwbkdone : iv
 assign notwbkdone = ~wbkdone;
 
-// OB.NET (653) - notobfw : iv
+// OB.NET (654) - notobfw : iv
 assign notobfw = ~obfw;
 
-// OB.NET (654) - notobdone : iv
+// OB.NET (655) - notobdone : iv
 assign notobdone = ~obdone;
 
-// OB.NET (655) - hold : iv
+// OB.NET (656) - hold : iv
 assign hold = ~_release;
 
-// OB.NET (659) - unused : nd6
+// OB.NET (660) - unused : nd6
 assign unused = ~(unused & gnd & olpco_21 & wco_9 & dco_20 & gnd);
 
-// OB.NET (663) - olp1[3] : or2
+// OB.NET (664) - olp1[3] : or2
 assign olp1_3 = olp_3 | pc1en;
 
-// OB.NET (664) - olp1[4] : or2
+// OB.NET (665) - olp1[4] : or2
 assign olp1_4 = olp_4 | pc2en;
 
-// OB.NET (666) - oa[3-4] : mx2
+// OB.NET (667) - oa[3-4] : mx2
 mx2 oa_from_3_to_4_inst_0
 (
 	.z /* OUT */ (oa_3),
@@ -4414,7 +4415,7 @@ mx2 oa_from_3_to_4_inst_1
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (667) - oa[5-21] : mx2
+// OB.NET (668) - oa[5-21] : mx2
 mx2 oa_from_5_to_21_inst_0
 (
 	.z /* OUT */ (oa_5),
@@ -4535,7 +4536,7 @@ mx2 oa_from_5_to_21_inst_16
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (668) - oa[22] : mx2
+// OB.NET (669) - oa[22] : mx2
 mx2 oa_index_22_inst
 (
 	.z /* OUT */ (oa_22),
@@ -4544,7 +4545,7 @@ mx2 oa_index_22_inst
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (669) - oa[23] : mx2
+// OB.NET (670) - oa[23] : mx2
 mx2 oa_index_23_inst
 (
 	.z /* OUT */ (oa_23),
@@ -4553,7 +4554,7 @@ mx2 oa_index_23_inst
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (673) - oa1[0-2] : tsm
+// OB.NET (674) - oa1[0-2] : tsm
 assign a_0_out = gnd;
 assign a_0_oe = oben;
 assign a_1_out = gnd;
@@ -4561,7 +4562,7 @@ assign a_1_oe = oben;
 assign a_2_out = gnd;
 assign a_2_oe = oben;
 
-// OB.NET (674) - oa1[3-23] : tsm
+// OB.NET (675) - oa1[3-23] : tsm
 assign a_3_out = oa_3;
 assign a_3_oe = oben;
 assign a_4_out = oa_4;
@@ -4604,6 +4605,34 @@ assign a_22_out = oa_22;
 assign a_22_oe = oben;
 assign a_23_out = oa_23;
 assign a_23_oe = oben;
+
+// OB.NET (678) - ge1 : join
+assign oba[0] = a_0_in;
+assign oba[1] = a_1_in;
+assign oba[2] = a_2_in;
+assign oba[3] = a_3_in;
+assign oba[4] = a_4_in;
+assign oba[5] = a_5_in;
+assign oba[6] = a_6_in;
+assign oba[7] = a_7_in;
+assign oba[8] = a_8_in;
+assign oba[9] = a_9_in;
+assign oba[10] = a_10_in;
+assign oba[11] = a_11_in;
+assign oba[12] = a_12_in;
+assign oba[13] = a_13_in;
+assign oba[14] = a_14_in;
+assign oba[15] = a_15_in;
+assign oba[16] = a_16_in;
+assign oba[17] = a_17_in;
+assign oba[18] = a_18_in;
+assign oba[19] = a_19_in;
+assign oba[20] = a_20_in;
+assign oba[21] = a_21_in;
+assign oba[22] = a_22_in;
+assign oba[23] = a_23_in;
+
+// OB.NET (679) - ge2 : dummy
 
 // --- Compiler-generated PE for BUS wd[0]
 assign wd_0_out =

@@ -393,13 +393,15 @@ module tom
 	output xrasl_1,
 	output xdtackl,
 	output xintl,
-	output cfgen,
-	output brlout,
-	output ba,
-	output aen,
 	output hs_o,
 	output hhs_o,
 	output vs_o,
+	output refreq,
+	output obbreq,
+	output bbreq_0,
+	output bbreq_1,
+	output gbreq_0,
+	output gbreq_1,
 	input sys_clk // Generated
 );
 wire wd_0_out;
@@ -936,6 +938,7 @@ wire dout_63;
 wire ain_0;
 wire nt_23;
 wire maska_0;
+wire aen;
 wire nt_22;
 wire ain_1;
 wire nt_24;
@@ -1007,6 +1010,7 @@ wire aout_22;
 wire aout_23;
 wire cfg_0;
 wire ma_0;
+wire cfgen;
 wire nt_88;
 wire cfg_1;
 wire ma_1;
@@ -1137,10 +1141,12 @@ wire fc_2;
 wire m68k;
 wire brlin;
 wire nt_13;
+wire brlout;
 wire testen;
 wire bglin;
 wire nt_14;
 wire bgain;
+wire ba;
 wire test;
 wire nottest;
 wire dout_0;
@@ -1234,10 +1240,6 @@ wire d_61;
 wire d_62;
 wire d_63;
 wire at_1;
-wire bbreq_0;
-wire bbreq_1;
-wire gbreq_0;
-wire gbreq_1;
 wire gpuint;
 wire lock;
 wire intdev;
@@ -1445,8 +1447,6 @@ wire at_7;
 wire at_8;
 wire at_9;
 wire at_10;
-wire obbreq;
-wire refreq;
 wire clk_3;
 wire ihandler;
 wire obback;
@@ -2628,17 +2628,21 @@ wire ts_local_pe_686_a2_oe;
 wire ts_local_pe_686_a2_in;
 
 // Output buffers
-wire cfgen_obuf;
-wire brlout_obuf;
-wire ba_obuf;
-wire aen_obuf;
+wire refreq_obuf;
+wire obbreq_obuf;
+wire bbreq_0_obuf;
+wire bbreq_1_obuf;
+wire gbreq_0_obuf;
+wire gbreq_1_obuf;
 
 
 // Output buffers
-assign cfgen = cfgen_obuf;
-assign brlout = brlout_obuf;
-assign ba = ba_obuf;
-assign aen = aen_obuf;
+assign refreq = refreq_obuf;
+assign obbreq = obbreq_obuf;
+assign bbreq_0 = bbreq_0_obuf;
+assign bbreq_1 = bbreq_1_obuf;
+assign gbreq_0 = gbreq_0_obuf;
+assign gbreq_1 = gbreq_1_obuf;
 
 
 // TOM.NET (139) - dpad[0] : bd8t
@@ -3547,7 +3551,7 @@ bd apad_index_0_inst
 	.po /* OUT */ (nt_23),
 	.a /* IN */ (maska_0),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_22)
 );
 
@@ -3561,7 +3565,7 @@ bd apad_index_1_inst
 	.po /* OUT */ (nt_24),
 	.a /* IN */ (maska_1),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_23)
 );
 
@@ -3575,7 +3579,7 @@ bd apad_index_2_inst
 	.po /* OUT */ (nt_25),
 	.a /* IN */ (maska_2),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_24)
 );
 
@@ -3589,7 +3593,7 @@ bd apad_from_3_to_23_inst_0
 	.po /* OUT */ (nt_26),
 	.a /* IN */ (aout_3),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_25)
 );
 bd apad_from_3_to_23_inst_1
@@ -3601,7 +3605,7 @@ bd apad_from_3_to_23_inst_1
 	.po /* OUT */ (nt_27),
 	.a /* IN */ (aout_4),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_26)
 );
 bd apad_from_3_to_23_inst_2
@@ -3613,7 +3617,7 @@ bd apad_from_3_to_23_inst_2
 	.po /* OUT */ (nt_28),
 	.a /* IN */ (aout_5),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_27)
 );
 bd apad_from_3_to_23_inst_3
@@ -3625,7 +3629,7 @@ bd apad_from_3_to_23_inst_3
 	.po /* OUT */ (nt_29),
 	.a /* IN */ (aout_6),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_28)
 );
 bd apad_from_3_to_23_inst_4
@@ -3637,7 +3641,7 @@ bd apad_from_3_to_23_inst_4
 	.po /* OUT */ (nt_30),
 	.a /* IN */ (aout_7),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_29)
 );
 bd apad_from_3_to_23_inst_5
@@ -3649,7 +3653,7 @@ bd apad_from_3_to_23_inst_5
 	.po /* OUT */ (nt_31),
 	.a /* IN */ (aout_8),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_30)
 );
 bd apad_from_3_to_23_inst_6
@@ -3661,7 +3665,7 @@ bd apad_from_3_to_23_inst_6
 	.po /* OUT */ (nt_32),
 	.a /* IN */ (aout_9),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_31)
 );
 bd apad_from_3_to_23_inst_7
@@ -3673,7 +3677,7 @@ bd apad_from_3_to_23_inst_7
 	.po /* OUT */ (nt_33),
 	.a /* IN */ (aout_10),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_32)
 );
 bd apad_from_3_to_23_inst_8
@@ -3685,7 +3689,7 @@ bd apad_from_3_to_23_inst_8
 	.po /* OUT */ (nt_34),
 	.a /* IN */ (aout_11),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_33)
 );
 bd apad_from_3_to_23_inst_9
@@ -3697,7 +3701,7 @@ bd apad_from_3_to_23_inst_9
 	.po /* OUT */ (nt_35),
 	.a /* IN */ (aout_12),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_34)
 );
 bd apad_from_3_to_23_inst_10
@@ -3709,7 +3713,7 @@ bd apad_from_3_to_23_inst_10
 	.po /* OUT */ (nt_36),
 	.a /* IN */ (aout_13),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_35)
 );
 bd apad_from_3_to_23_inst_11
@@ -3721,7 +3725,7 @@ bd apad_from_3_to_23_inst_11
 	.po /* OUT */ (nt_37),
 	.a /* IN */ (aout_14),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_36)
 );
 bd apad_from_3_to_23_inst_12
@@ -3733,7 +3737,7 @@ bd apad_from_3_to_23_inst_12
 	.po /* OUT */ (nt_38),
 	.a /* IN */ (aout_15),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_37)
 );
 bd apad_from_3_to_23_inst_13
@@ -3745,7 +3749,7 @@ bd apad_from_3_to_23_inst_13
 	.po /* OUT */ (nt_39),
 	.a /* IN */ (aout_16),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_38)
 );
 bd apad_from_3_to_23_inst_14
@@ -3757,7 +3761,7 @@ bd apad_from_3_to_23_inst_14
 	.po /* OUT */ (nt_40),
 	.a /* IN */ (aout_17),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_39)
 );
 bd apad_from_3_to_23_inst_15
@@ -3769,7 +3773,7 @@ bd apad_from_3_to_23_inst_15
 	.po /* OUT */ (nt_41),
 	.a /* IN */ (aout_18),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_40)
 );
 bd apad_from_3_to_23_inst_16
@@ -3781,7 +3785,7 @@ bd apad_from_3_to_23_inst_16
 	.po /* OUT */ (nt_42),
 	.a /* IN */ (aout_19),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_41)
 );
 bd apad_from_3_to_23_inst_17
@@ -3793,7 +3797,7 @@ bd apad_from_3_to_23_inst_17
 	.po /* OUT */ (nt_43),
 	.a /* IN */ (aout_20),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_42)
 );
 bd apad_from_3_to_23_inst_18
@@ -3805,7 +3809,7 @@ bd apad_from_3_to_23_inst_18
 	.po /* OUT */ (nt_44),
 	.a /* IN */ (aout_21),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_43)
 );
 bd apad_from_3_to_23_inst_19
@@ -3817,7 +3821,7 @@ bd apad_from_3_to_23_inst_19
 	.po /* OUT */ (nt_45),
 	.a /* IN */ (aout_22),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_44)
 );
 bd apad_from_3_to_23_inst_20
@@ -3829,7 +3833,7 @@ bd apad_from_3_to_23_inst_20
 	.po /* OUT */ (nt_46),
 	.a /* IN */ (aout_23),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_45)
 );
 
@@ -3843,7 +3847,7 @@ bd mapad_index_0_inst
 	.po /* OUT */ (nt_89),
 	.a /* IN */ (ma_0),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_88)
 );
 
@@ -3857,7 +3861,7 @@ bd mapad_index_1_inst
 	.po /* OUT */ (nt_88),
 	.a /* IN */ (ma_1),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_87)
 );
 
@@ -3871,7 +3875,7 @@ bd mapad_index_2_inst
 	.po /* OUT */ (nt_87),
 	.a /* IN */ (ma_2),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_86)
 );
 
@@ -3885,7 +3889,7 @@ bd mapad_index_3_inst
 	.po /* OUT */ (nt_86),
 	.a /* IN */ (ma_3),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_85)
 );
 
@@ -3899,7 +3903,7 @@ bd mapad_index_4_inst
 	.po /* OUT */ (nt_85),
 	.a /* IN */ (ma_4),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_84)
 );
 
@@ -3913,7 +3917,7 @@ bd mapad_index_5_inst
 	.po /* OUT */ (nt_84),
 	.a /* IN */ (ma_5),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_83)
 );
 
@@ -3927,7 +3931,7 @@ bd mapad_index_6_inst
 	.po /* OUT */ (nt_83),
 	.a /* IN */ (ma_6),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_82)
 );
 
@@ -3941,7 +3945,7 @@ bd mapad_index_7_inst
 	.po /* OUT */ (nt_82),
 	.a /* IN */ (ma_7),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_81)
 );
 
@@ -3955,7 +3959,7 @@ bd mapad_index_8_inst
 	.po /* OUT */ (nt_81),
 	.a /* IN */ (ma_8),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_80)
 );
 
@@ -3969,7 +3973,7 @@ bd mapad_index_9_inst
 	.po /* OUT */ (nt_80),
 	.a /* IN */ (ma_9),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_79)
 );
 
@@ -3985,7 +3989,7 @@ bd mapad_index_10_inst
 	.po /* OUT */ (nt_79),
 	.a /* IN */ (ma_10),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (cfgen_obuf),
+	.tn /* IN */ (cfgen),
 	.pi /* IN */ (nt_78)
 );
 
@@ -4059,7 +4063,7 @@ bd dreq_inst
 	.po /* OUT */ (nt_7),
 	.a /* IN */ (dreqlout),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_6)
 );
 
@@ -4076,7 +4080,7 @@ bd rw_inst
 	.po /* OUT */ (nt_9),
 	.a /* IN */ (reads),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_7)
 );
 
@@ -4090,7 +4094,7 @@ bd siz_index_0_inst
 	.po /* OUT */ (nt_10),
 	.a /* IN */ (sizout_0),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_9)
 );
 
@@ -4104,7 +4108,7 @@ bd siz_index_1_inst
 	.po /* OUT */ (nt_11),
 	.a /* IN */ (sizout_1),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_10)
 );
 
@@ -4236,7 +4240,7 @@ bd fc_index_1_inst
 	.po /* OUT */ (nt_5),
 	.a /* IN */ (gnd),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_4)
 );
 
@@ -4250,12 +4254,12 @@ bd fc_index_2_inst
 	.po /* OUT */ (nt_6),
 	.a /* IN */ (vcc),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (aen_obuf),
+	.tn /* IN */ (aen),
 	.pi /* IN */ (nt_5)
 );
 
 // TOM.NET (291) - fcen : an2
-assign fcen = aen_obuf & m68k;
+assign fcen = aen & m68k;
 
 // TOM.NET (293) - brl : bd2t
 bd brl_inst
@@ -4266,7 +4270,7 @@ bd brl_inst
 	.zi /* OUT */ (brlin),
 	.po /* OUT */ (nt_13),
 	.a /* IN */ (gnd),
-	.en /* IN */ (brlout_obuf),
+	.en /* IN */ (brlout),
 	.tn /* IN */ (testen),
 	.pi /* IN */ (nt_12)
 );
@@ -4285,7 +4289,7 @@ bd ba_inst
 	.po /* OUT */ (nt_15),
 	.a /* IN */ (gnd),
 	.en /* IN */ (gnd),
-	.tn /* IN */ (ba_obuf),
+	.tn /* IN */ (ba),
 	.pi /* IN */ (nt_14)
 );
 
@@ -4433,10 +4437,10 @@ graphics gpu_inst
 	.data_62 /* IN */ (d_62),
 	.data_63 /* IN */ (d_63),
 	.at_1 /* IN */ (at_1),
-	.blit_breq_0 /* OUT */ (bbreq_0),
-	.blit_breq_1 /* OUT */ (bbreq_1),
-	.gpu_breq /* OUT */ (gbreq_0),
-	.dma_breq /* OUT */ (gbreq_1),
+	.blit_breq_0 /* OUT */ (bbreq_0_obuf),
+	.blit_breq_1 /* OUT */ (bbreq_1_obuf),
+	.gpu_breq /* OUT */ (gbreq_0_obuf),
+	.dma_breq /* OUT */ (gbreq_1_obuf),
 	.cpu_int /* OUT */ (gpuint),
 	.lock /* OUT */ (lock),
 	.wdata_0_out /* BUS */ (ts_local_pe_576_a0_out),
@@ -5520,10 +5524,10 @@ abus abus_inst
 	.cfg_6 /* IN */ (cfg_6),
 	.cfg_8 /* IN */ (cfg_8),
 	.cfgw /* IN */ (cfgw),
-	.cfgen /* IN */ (cfgen_obuf),
+	.cfgen /* IN */ (cfgen),
 	.ack /* IN */ (ack),
 	.clk /* IN */ (clk_2),
-	.ba /* IN */ (ba_obuf),
+	.ba /* IN */ (ba),
 	.fc_0 /* IN */ (fc_0),
 	.fc_1 /* IN */ (fc_1),
 	.fc_2 /* IN */ (fc_2),
@@ -5739,11 +5743,11 @@ abus abus_inst
 // TOM.NET (385) - mem : mem
 mem mem_inst
 (
-	.bbreq_0 /* IN */ (bbreq_0),
-	.bbreq_1 /* IN */ (bbreq_1),
-	.gbreq_0 /* IN */ (gbreq_0),
-	.gbreq_1 /* IN */ (gbreq_1),
-	.obbreq /* IN */ (obbreq),
+	.bbreq_0 /* IN */ (bbreq_0_obuf),
+	.bbreq_1 /* IN */ (bbreq_1_obuf),
+	.gbreq_0 /* IN */ (gbreq_0_obuf),
+	.gbreq_1 /* IN */ (gbreq_1_obuf),
+	.obbreq /* IN */ (obbreq_obuf),
 	.sizin_0 /* IN */ (sizin_0),
 	.sizin_1 /* IN */ (sizin_1),
 	.dbrl_0 /* IN */ (dbrl_0),
@@ -5762,7 +5766,7 @@ mem mem_inst
 	.fdram /* IN */ (fdram),
 	.from /* IN */ (from),
 	.cpu32 /* IN */ (cpu32),
-	.refreq /* IN */ (refreq),
+	.refreq /* IN */ (refreq_obuf),
 	.dspd_0 /* IN */ (dspd_0),
 	.dspd_1 /* IN */ (dspd_1),
 	.romspd_0 /* IN */ (romspd_0),
@@ -5818,9 +5822,9 @@ mem mem_inst
 	.den_0 /* OUT */ (den_0),
 	.den_1 /* OUT */ (den_1),
 	.den_2 /* OUT */ (den_2),
-	.aen /* OUT */ (aen_obuf),
+	.aen /* OUT */ (aen),
 	.dtackl /* OUT */ (dtackl),
-	.brlout /* OUT */ (brlout_obuf),
+	.brlout /* OUT */ (brlout),
 	.dbgl /* OUT */ (dbgl),
 	.dreqlout /* OUT */ (dreqlout),
 	.d7a /* OUT */ (d7a),
@@ -5855,7 +5859,7 @@ mem mem_inst
 	.reads /* OUT */ (reads),
 	.wet /* OUT */ (wet),
 	.oet /* OUT */ (oet),
-	.ba /* OUT */ (ba_obuf),
+	.ba /* OUT */ (ba),
 	.intswe /* OUT */ (intswe),
 	.intwe /* OUT */ (intwe),
 	.dspcsl /* OUT */ (dspcsl),
@@ -6077,7 +6081,7 @@ ob ob_inst
 	.dwidth_7 /* OUT */ (dwidth_7),
 	.dwidth_8 /* OUT */ (dwidth_8),
 	.dwidth_9 /* OUT */ (dwidth_9),
-	.obbreq /* OUT */ (obbreq),
+	.obbreq /* OUT */ (obbreq_obuf),
 	.vscale_0 /* OUT */ (vscale_0),
 	.vscale_1 /* OUT */ (vscale_1),
 	.vscale_2 /* OUT */ (vscale_2),
@@ -6960,7 +6964,7 @@ clk clk_inst
 	.ndtest /* IN */ (ndtest),
 	.cfg_7 /* IN */ (cfg_7),
 	.cfgw /* OUT */ (cfgw),
-	.cfgen /* OUT */ (cfgen_obuf),
+	.cfgen /* OUT */ (cfgen),
 	.clk /* OUT */ (clk),
 	.vclk /* OUT */ (vclk),
 	.tlw /* OUT */ (tlw),
@@ -7035,7 +7039,7 @@ misc misc__inst
 	.test3r /* IN */ (test3r),
 	.ihandler /* OUT */ (ihandler),
 	.tint /* OUT */ (tint),
-	.refreq /* OUT */ (refreq),
+	.refreq /* OUT */ (refreq_obuf),
 	.intl /* OUT */ (intl),
 	.dr_0_out /* BUS */ (ts_local_pe_670_a7_out),
 	.dr_0_oe /* BUS */ (ts_local_pe_670_a7_oe),

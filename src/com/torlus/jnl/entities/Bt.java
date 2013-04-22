@@ -12,7 +12,7 @@ public class Bt extends Entity {
 
 	public Bt() {
 		// 260c_pri_e.pdf - BT8
-		Signal s = new Signal("z", SignalType.OUT); // /!\
+		Signal s = new Signal("z", SignalType.BUS);
 		ios.add(s);
 
 		ios.add(new Signal("a", SignalType.IN));

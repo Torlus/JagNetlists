@@ -20,21 +20,20 @@
 // Simple re-implementation of the MC68000 CPU
 // The core has the following characteristics:
 //  - Tested on a Cyclone III (90 MHz) and a Stratix II (180 MHz)
-//  - from 1500 (~70 MHz) to 1900 LEs (~90 MHz)
+//  - from 1500 (~70 MHz) to 1900 LEs (~90 MHz) on Cyclone III
 //  - 2048 x 20-bit microcode ROM
 //  - 256 x 28-bit decode ROM
 //  - 2 x block RAM for the data and instruction stacks
 //  - stack based CPU with forth-like microcode
 //  - not cycle-exact : needs a frequency ~3 x higher
 //  - all 68000 instructions are implemented
-//  - all 68000 exceptions are implemented
-
-/* verilator tracing_off */
+//  - almost all 68000 exceptions are implemented (only bus error missing)
+//  - only auto-vector interrupts supported
 
 //GE `include "arg_defs.vh"
-`include "defs.v"
+`include "defs.v" //GE
 
-module j68
+module j68 /* verilator tracing_on */
 (
   // Clock and reset
   input         rst,          // CPU reset
@@ -59,8 +58,9 @@ module j68
   output [31:0] dbg_usp_reg,  // User stack pointer
   output [31:0] dbg_ssp_reg,  // Supervisor stack pointer
   output [31:0] dbg_vbr_reg,  // Vector base register
-  output [7:0]  dbg_cycles,   // Cycles used
-  output        dbg_ifetch    // Instruction fetch
+  output [31:0] dbg_cycles,   // Cycles counter
+  output        dbg_ifetch,   // Instruction fetch
+  output  [2:0] dbg_irq_lvl   // Interrupt level
 );
 
   // ALU operations
@@ -177,7 +177,10 @@ module j68
   // Debug
   reg  [31:0] r_usp_reg;
   reg  [31:0] r_ssp_reg;
-  reg   [7:0] r_cycles;
+  reg  [31:0] r_cycles;
+  reg         r_go_super;
+  reg   [2:0] r_irq_lvl;
+  wire        w_super_st;
 
   // Delayed reset
   always@(posedge clk)
@@ -205,36 +208,53 @@ module j68
   assign dbg_ssp_reg     = r_ssp_reg;
   assign dbg_vbr_reg     = 32'h00000000;
   assign dbg_cycles      = r_cycles;
+  assign dbg_irq_lvl     = r_irq_lvl;
+  assign w_super_st      = w_sr[8] | r_go_super;
   
   always @(posedge rst or posedge clk)
   begin
     if (rst) begin
-      r_usp_reg <= 32'd0;
-      r_ssp_reg <= 32'd0;
-      r_cycles  <= 8'd0;
+      r_usp_reg  <= 32'd0;
+      r_ssp_reg  <= 32'd0;
+      r_cycles   <= 32'd0;
+      r_go_super <= 1'b0;
+      r_irq_lvl  <= 3'd0;
     end else begin
+      // Stack pointers access
       if (w_reg_wr) begin
         // USP low word
         if ((w_reg_addr[5:0] == 6'b011100) ||
-            ((w_reg_addr[5:0] == 6'b111110) && (!w_sr[8])))
+            ((w_reg_addr[5:0] == 6'b111110) && (!w_super_st)))
           r_usp_reg[15:0] <= r_ds_T;
         // USP high word
         if ((w_reg_addr[5:0] == 6'b011101) ||
-            ((w_reg_addr[5:0] == 6'b111111) && (!w_sr[8])))
+            ((w_reg_addr[5:0] == 6'b111111) && (!w_super_st)))
           r_usp_reg[31:16] <= r_ds_T;
         // SSP low word
         if ((w_reg_addr[5:0] == 6'b011110) ||
-            ((w_reg_addr[5:0] == 6'b111110) && (w_sr[8])))
+            ((w_reg_addr[5:0] == 6'b111110) && (w_super_st)))
           r_ssp_reg[15:0] <= r_ds_T;
         // SSP high word
         if ((w_reg_addr[5:0] == 6'b011111) ||
-            ((w_reg_addr[5:0] == 6'b111111) && (w_sr[8])))
+            ((w_reg_addr[5:0] == 6'b111111) && (w_super_st)))
           r_ssp_reg[31:16] <= r_ds_T;
       end
-      if (dbg_ifetch)
-        r_cycles <= 8'd0;
-      else
-        r_cycles <= r_cycles + 8'd1;
+      
+      // Number of cycles
+      r_cycles <= r_cycles + 32'd1;
+      
+      // We will enter supervisor state
+      if (w_sr[8])
+        r_go_super <= 1'b0;
+      else if ((r_pc_reg >= 11'h015) && (r_pc_reg <= 11'h045))
+        r_go_super <= 1'b1;
+        
+      // Interrupt acknowledge
+      if (r_pc_reg == 11'h017)
+        r_irq_lvl <= ~ipl_n;
+      // Interrupt clear
+      else if (ipl_n == 3'b111)
+        r_irq_lvl <= 3'd0;
     end
   end
 
@@ -2390,7 +2410,7 @@ module addsub_32
   assign w_result = (add_sub) ? { 1'b0, dataa } + { 1'b0, datab }
                               : { 1'b0, dataa } - { 1'b0, datab };
                        
-  assign cout   = w_result[32];
+  assign cout   = ~w_result[32];
   assign result = w_result[31:0];
 
   `else
@@ -2421,6 +2441,7 @@ module addsub_32
   `endif
 
 endmodule
+
 
 `ifdef SIMULATION
 
@@ -2554,7 +2575,7 @@ endmodule
 
 
 `ifdef SIMULATION
-  
+
 module decode_rom
 (
   input         clock,
@@ -2580,7 +2601,7 @@ module decode_rom
 
 endmodule
 
-  `else
+`else
 
 module decode_rom
 (
@@ -2632,3 +2653,5 @@ module decode_rom
 endmodule
 
 `endif
+
+/* verilator tracing_off */

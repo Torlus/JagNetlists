@@ -17,7 +17,7 @@ while(<SOURCE>) {
 			$port =~ s/($vec)_([0-9]+)_(.+)$/$1_$3\[$2\]/;
 			$port =~ s/($vec)_([0-9]+)/$1\[$2\]/;
 		}
-		print "$port)$comma\n";
+		print "j_$port)$comma\n";
 	}
 	
 	if ($line =~ m/;/) {

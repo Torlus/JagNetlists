@@ -27,9 +27,9 @@ assign z[0:7] = {r_z[0], r_z[1], r_z[2], r_z[3], r_z[4], r_z[5], r_z[6], r_z[7]}
 always@(posedge sys_clk)
 begin
 	clk_prev <= clk;
-	if (~clk_prev & clk) begin
+	//if (~clk_prev & clk) begin
 		r_z <= rom_blk[a_r][7:0];
-	end
+	//end
 end
 
 endmodule

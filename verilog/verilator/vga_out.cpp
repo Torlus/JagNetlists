@@ -71,8 +71,6 @@ void VgaOut::eval
     // Rising edge on clock
     if (clk && !prev_clk)
     {
-			if (red != 0) printf("pix %d %d\n", hcount, vcount);
-
 				// Grab active area
         if ((vcount >= ver_offs) && (vcount < (ver_offs + ver_size)))
         {

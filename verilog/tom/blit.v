@@ -1935,5 +1935,39 @@ assign gpu_dout_31_out =
 assign gpu_dout_31_oe = ts_pe_68_a0_oe | ts_pe_68_a1_oe;
 assign ts_pe_68_a0_in = gpu_dout_31_in;
 assign ts_pe_68_a1_in = gpu_dout_31_in;
+
+
+wire [23:0] gpu_addr_r;
+wire [31:0] gpu_din_r;
+
+assign gpu_addr_r = { 
+	gpu_addr[23], gpu_addr[22], gpu_addr[21], gpu_addr[20], gpu_addr[19], gpu_addr[18], gpu_addr[17], gpu_addr[16], 
+	gpu_addr[15], gpu_addr[14], gpu_addr[13], gpu_addr[12], gpu_addr[11], gpu_addr[10], gpu_addr[9], gpu_addr[8], 
+	gpu_addr[7], gpu_addr[6], gpu_addr[5], gpu_addr[4], gpu_addr[3], gpu_addr[2], gpu_addr[1], gpu_addr[0]
+};
+assign gpu_din_r = { 
+	gpu_din[31], gpu_din[30], gpu_din[29], gpu_din[28], gpu_din[27], gpu_din[26], gpu_din[25], gpu_din[24], 
+	gpu_din[23], gpu_din[22], gpu_din[21], gpu_din[20], gpu_din[19], gpu_din[18], gpu_din[17], gpu_din[16], 
+	gpu_din[15], gpu_din[14], gpu_din[13], gpu_din[12], gpu_din[11], gpu_din[10], gpu_din[9], gpu_din[8], 
+	gpu_din[7], gpu_din[6], gpu_din[5], gpu_din[4], gpu_din[3], gpu_din[2], gpu_din[1], gpu_din[0]
+};
+
+always @(posedge sys_clk)
+begin
+	if (bliten & gpu_memw) begin
+		$display("BLIT WR $%x #%x", gpu_addr_r, gpu_din_r);
+		case (gpu_addr_r[15:0])
+			16'h2200:	$display("  A1_BASE");
+			16'h2204: $display("  A1_FLAGS PITCH=%x PIXEL=%x ZOFFS=%x WIDTH=%x XADD=%x YADD=%x XSIGNSUB=%x YSIGNSUB=%x", 
+				gpu_din_r[1:0], gpu_din_r[5:3], gpu_din_r[8:6], gpu_din_r[14:9], 
+				gpu_din_r[17:16], gpu_din_r[18], gpu_din_r[19], gpu_din_r[20] );
+			
+			default: $display("  ???");
+		endcase
+	end
+end
+
+
+
 endmodule
 /* verilator lint_on LITENDIAN */

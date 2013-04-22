@@ -32,13 +32,13 @@ module mag11
 wire gnd1;
 wire gnd2;
 
-// OB.NET (699) - gnd1 : tie0
+// OB.NET (703) - gnd1 : tie0
 assign gnd1 = 1'b0;
 
-// OB.NET (700) - gnd2 : tie0
+// OB.NET (704) - gnd2 : tie0
 assign gnd2 = 1'b0;
 
-// OB.NET (711) - m : mag12
+// OB.NET (715) - m : mag12
 mag12 m_inst
 (
 	.agb /* OUT */ (agb),

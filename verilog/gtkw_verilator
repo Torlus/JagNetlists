@@ -1,19 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.39 (w)1999-2012 BSI
-[*] Sun Mar 31 12:32:29 2013
+[*] Fri Apr 19 15:21:30 2013
 [*]
 [dumpfile] "D:\FPGA\JagNetlists\verilog\vtb.fst"
 [savefile] "D:\FPGA\JagNetlists\verilog\gtkw_verilator"
-[timestart] 0
-[size] 1920 1021
+[timestart] 4518241000
+[size] 1280 965
 [pos] -9 -9
-*-32.718464 6210000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-19.133915 4519228600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] TOP.
 [treeopen] TOP.v.
+[treeopen] TOP.v.tom_inst.
 [sst_width] 197
-[signals_width] 256
+[signals_width] 352
 [sst_expanded] 1
-[sst_vpaned_height] 301
+[sst_vpaned_height] 292
 @28
 TOP.sys_clk
 TOP.xpclk
@@ -21,7 +22,9 @@ TOP.xvclk
 @22
 TOP.v.xa_r[23:0]
 TOP.v.xd_r[63:0]
+TOP.v.j_xd_oe[0:31]
 @28
+TOP.v.dram_oe[0:3]
 TOP.v.rasl
 TOP.v.casl
 TOP.v.xoel[0:2]
@@ -30,42 +33,35 @@ TOP.v.xdreql_in
 TOP.v.xdtackl
 TOP.v.xbrl_in
 TOP.v.xba_in
-TOP.v.ba
-TOP.v.aen
 TOP.v.xintl
 @22
 TOP.v.j68_address_final[23:0]
 @28
 TOP.v.j68_rd_ena
 TOP.v.j68_wr_ena
+TOP.v.j68_data_ack
 @22
 TOP.v.j68_rd_data[15:0]
 TOP.v.j68_wr_data[15:0]
 @28
-TOP.v.tom_inst.mem_inst.refreq
-TOP.v.tom_inst.mem_inst.obbreq
-@22
-TOP.v.xr[0:7]
-TOP.v.xg[0:7]
-TOP.v.xb[0:7]
+TOP.v.j68_fc[2:0]
+TOP.v.obbreq
+TOP.v.tom_inst.ob_inst.obback
+TOP.v.tom_inst.ob_inst.obdone
+@a2
+TOP.v.tom_inst.ob_inst.oba[0:23]
 @28
-TOP.v.hhs_o
-TOP.v.hs_o
-TOP.v.vs_o
-@22
-TOP.v.vgalb0.d[23:0]
-TOP.v.vgalb0.a[9:0]
-@28
-TOP.v.vgalb0.we
-@22
-TOP.v.vgalb0.q[23:0]
-TOP.v.vgalb1.a[9:0]
-@28
-TOP.v.vgalb1.we
-@22
-TOP.v.vgalb1.q[23:0]
-TOP.v.lb0_q[23:0]
-@23
-TOP.v.lb1_q[23:0]
+TOP.v.tom_inst.ob_inst.obmreq
+TOP.v.tom_inst.ob_inst.mack
+TOP.v.tom_inst.ob_inst.obmack
+TOP.v.tom_inst.ob_inst.pc1en
+TOP.v.tom_inst.ob_inst.datasel
+TOP.v.tom_inst.ob_inst.olp_3
+TOP.v.tom_inst.ob_inst.olp_4
+TOP.v.tom_inst.ob_inst.olp1_3
+TOP.v.tom_inst.ob_inst.olp1_4
+TOP.v.tom_inst.ob_inst.obldd_0
+@29
+TOP.v.tom_inst.ob_inst.obldi_0
 [pattern_trace] 1
 [pattern_trace] 0
