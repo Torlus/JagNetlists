@@ -1754,24 +1754,7 @@ assign mw0d = ~(vcc & mset & romlo & ab_23 & ab_22 & dwid0_0);
 assign mw0e = ~(vcc & mset & romhi & alb_23 & alb_22 & dwid0_0);
 
 // ABUS.NET (312) - mw[0] : nand14
-nand14 mw_index_0_inst
-(
-	.z /* OUT */ (mw_0),
-	.a /* IN */ (mw01),
-	.b /* IN */ (mw02),
-	.c /* IN */ (mw03),
-	.d /* IN */ (mw04),
-	.e /* IN */ (mw05),
-	.f /* IN */ (mw06),
-	.g /* IN */ (mw07),
-	.h /* IN */ (mw08),
-	.i /* IN */ (mw09),
-	.j /* IN */ (mw0a),
-	.k /* IN */ (mw0b),
-	.l /* IN */ (mw0c),
-	.m /* IN */ (mw0d),
-	.n /* IN */ (mw0e)
-);
+assign mw_0 = ~(mw01 & mw02 & mw03 & mw04 & mw05 & mw06 & mw07 & mw08 & mw09 & mw0a & mw0b & mw0c & mw0d & mw0e);
 
 // ABUS.NET (315) - mw11 : nd3
 assign mw11 = ~(notmset & notdev & romwid_1);
@@ -1816,24 +1799,7 @@ assign mw1d = ~(vcc & mset & romlo & ab_23 & ab_22 & dwid0_1);
 assign mw1e = ~(vcc & mset & romhi & alb_23 & alb_22 & dwid0_1);
 
 // ABUS.NET (330) - mw[1] : nand14
-nand14 mw_index_1_inst
-(
-	.z /* OUT */ (mw_1),
-	.a /* IN */ (mw11),
-	.b /* IN */ (mw12),
-	.c /* IN */ (mw13),
-	.d /* IN */ (mw14),
-	.e /* IN */ (mw15),
-	.f /* IN */ (mw16),
-	.g /* IN */ (mw17),
-	.h /* IN */ (mw18),
-	.i /* IN */ (mw19),
-	.j /* IN */ (mw1a),
-	.k /* IN */ (mw1b),
-	.l /* IN */ (mw1c),
-	.m /* IN */ (mw1d),
-	.n /* IN */ (mw1e)
-);
+assign mw_1 = ~(mw11 & mw12 & mw13 & mw14 & mw15 & mw16 & mw17 & mw18 & mw19 & mw1a & mw1b & mw1c & mw1d & mw1e);
 
 // ABUS.NET (333) - notdev : nd4p
 assign notdev = ~(ab_20 & alb_19 & alb_18 & alb_17);

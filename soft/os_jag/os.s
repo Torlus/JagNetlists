@@ -23,21 +23,29 @@ dc.l	0x001ffffc
 	dc.l	Init
 Init:
 
-*	move.l	#0x00003E80, %d0
-*	move.l	#0x04F3F52B, %d1
-*	divu.w	%d0, %d1
-
-	move.w	#0x1861, MEMCON1
+*	move.w	#0x1861, MEMCON1
 * 0x1861
 * 0001 1000 0110 0001
 * 0 0     0 11      000 0       11        00       00       1
 * u CPU32 u IOSPEED u   FASTROM DRAMSPEED ROMSPEED ROMWIDTH ROMHI
 * 0 0     0 11      000 0       11        11       01       1
 * 0001 1000 0111 1011
-* 0x187B
-	
+* = 0x187B
+* 0 0     0 11      000 0       11        11       00       1
+* 0001 1000 0111 1001
+* = 0x1879
+* Speed up the ROM a little bit
+	move.w	#0x1879, MEMCON1
 	move.w	#0x35CC, MEMCON2
 
+* RAM Test
+	lea.l		0x00003804, %a0
+	lea.l		0x00003810, %a1
+	move.l	#0x12345678, (%a0)
+	move.b	(%a0)+, (%a1)+
+	move.b	(%a0)+, (%a1)+
+	move.w	(%a0)+, (%a1)+
+	
 * NTSC Jaguar
 	move.w	#844, HP
 	move.w	#1713, HBB
@@ -66,15 +74,18 @@ Init:
 
 *	move.w	#0x06C1, VMODE
 
-* DRAM contents is preloaded in simulation
-*	lea.l		Prog_Start, %a0
-*	lea.l		0x00004000, %a1
-*	move.w	#0x200, %d7
+	lea.l		Prog_Start-4, %a0
+	lea.l		0x00004000-4, %a1
+* uncomment this when DRAM contents is preloaded (in simulation)
+	move.w	#0x0, %d7
+* uncomment this otherwise - and set a corresponding value (0x1000 = 16k)
+*	move.w	#0x1000, %d7
+	
 Copy_Loop:
-*	move.l	(%a0)+, (%a1)+
-*	move.b	(%a0)+, (%a1)+
-*	dbra		%d7, Copy_Loop
+	move.l	(%a0)+, (%a1)+
+	dbra		%d7, Copy_Loop
 
+* Loads the "second-stage bootloader" the dirty way
 	lea.l		Boot_Start, %a0
 	lea.l		0x00003800, %a1
 	move.l	(%a0)+, (%a1)+
@@ -87,14 +98,15 @@ Copy_Loop:
 
 
 Boot_Start:
-* See above
-	move.w	#0x187B, MEMCON1
+* See above - For cartridge mode only
+*	move.w	#0x187B, MEMCON1
+
 * Jump to "standard" entry point for homebrew games
-*	lea.l	0x00004000, %a0
+	lea.l	0x00004000, %a0
 * Entry point for most cartridges (should be fetched instead from $800404)
-	lea.l	0x00802000, %a0
+*	lea.l	0x00802000, %a0
 	jmp		(%a0)
 	
 Prog_Start:
-*  .incbin "../../hello/jag.bin"
+  .incbin "../jr.bin"
 Prog_End:

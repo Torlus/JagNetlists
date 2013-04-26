@@ -109,17 +109,7 @@ assign zero = 1'b0;
 assign mmultt = ~(instruction[10] | instruction[13]);
 
 // SYSTOLIC.NET (55) - mmult\ : nd7
-j_nd7 mmult_n_inst
-(
-	.q /* OUT */ (mmult_n),
-	.a_0 /* IN */ (mmultt),
-	.a_1 /* IN */ (movei_data_n),
-	.a_2 /* IN */ (romold),
-	.a_3 /* IN */ (instruction[11]),
-	.a_4 /* IN */ (instruction[12]),
-	.a_5 /* IN */ (instruction[14]),
-	.a_6 /* IN */ (instruction[15])
-);
+assign mmult_n = ~(mmultt & movei_data_n & romold & instruction[11] & instruction[12] & instruction[14] & instruction[15]);
 
 // SYSTOLIC.NET (57) - mmult : ivh
 assign mmult = ~mmult_n;

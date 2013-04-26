@@ -289,15 +289,7 @@ assign gatereqa = gatereq & ioreq_n;
 assign datreqa = datreq & gatereq_n & ioreq_n;
 
 // GPU_MEM.NET (125) - progreqa : an5p
-an5p progreqa_inst
-(
-	.q /* OUT */ (progreqa),
-	.a_0 /* IN */ (progreq),
-	.a_1 /* IN */ (datreq_n),
-	.a_2 /* IN */ (gatereq_n),
-	.a_3 /* IN */ (ioreq_n),
-	.a_4 /* IN */ (xprogi_n)
-);
+assign progreqa = progreq & datreq_n & gatereq_n & ioreq_n & xprogi_n;
 
 // GPU_MEM.NET (131) - ioservt : fd2q
 fd2q ioservt_inst
@@ -1733,40 +1725,13 @@ mx2 locala_from_22_to_23_inst_1
 assign localat = locala_13 | locala_14;
 
 // GPU_MEM.NET (312) - localaddr\ : nd10
-nd10 localaddr_n_inst
-(
-	.q /* OUT */ (localaddr_n),
-	.a_0 /* IN */ (locala_n_15),
-	.a_1 /* IN */ (locala_n_16),
-	.a_2 /* IN */ (locala_n_17),
-	.a_3 /* IN */ (locala_n_18),
-	.a_4 /* IN */ (locala_n_19),
-	.a_5 /* IN */ (locala_20),
-	.a_6 /* IN */ (locala_21),
-	.a_7 /* IN */ (locala_22),
-	.a_8 /* IN */ (locala_23),
-	.a_9 /* IN */ (localat)
-);
+assign localaddr_n = ~(locala_n_15 & locala_n_16 & locala_n_17 & locala_n_18 & locala_n_19 & locala_20 & locala_21 & locala_22 & locala_23 & localat);
 
 // GPU_MEM.NET (315) - localt0 : nd2
 assign localt_0 = ~(progserv_n & datserv_n);
 
 // GPU_MEM.NET (316) - localt1 : nd11
-nd11 localt1_inst
-(
-	.q /* OUT */ (localt_1),
-	.a_0 /* IN */ (locala_20),
-	.a_1 /* IN */ (locala_21),
-	.a_2 /* IN */ (locala_22),
-	.a_3 /* IN */ (locala_23),
-	.a_4 /* IN */ (locala_n_15),
-	.a_5 /* IN */ (locala_n_16),
-	.a_6 /* IN */ (locala_n_17),
-	.a_7 /* IN */ (locala_n_18),
-	.a_8 /* IN */ (locala_n_19),
-	.a_9 /* IN */ (localt_0),
-	.a_10 /* IN */ (localat)
-);
+assign localt_1 = ~(locala_20 & locala_21 & locala_22 & locala_23 & locala_n_15 & locala_n_16 & locala_n_17 & locala_n_18 & locala_n_19 & localt_0 & localat);
 
 // GPU_MEM.NET (318) - local : nd2p
 assign _local = ~(ioserv_n & localt_1);
@@ -1790,20 +1755,7 @@ assign idle_n = ioserv | datserv | progserv_obuf;
 assign gpuen = gpu_addr_n_9 & gpu_addr_n_10 & gpu_addr_n_11 & gpu_addr_n_12 & gpu_addr_13 & gpu_addr_n_14 & _local & idle_n;
 
 // GPU_MEM.NET (339) - bliten : an10
-an10 bliten_inst
-(
-	.q /* OUT */ (bliten),
-	.a_0 /* IN */ (gpu_addr_n_8),
-	.a_1 /* IN */ (gpu_addr_9),
-	.a_2 /* IN */ (gpu_addr_n_10),
-	.a_3 /* IN */ (gpu_addr_n_11),
-	.a_4 /* IN */ (gpu_addr_n_12),
-	.a_5 /* IN */ (gpu_addr_13),
-	.a_6 /* IN */ (gpu_addr_n_14),
-	.a_7 /* IN */ (_local),
-	.a_8 /* IN */ (idle_n),
-	.a_9 /* IN */ (disable_n)
-);
+assign bliten = gpu_addr_n_8 & gpu_addr_9 & gpu_addr_n_10 & gpu_addr_n_11 & gpu_addr_n_12 & gpu_addr_13 & gpu_addr_n_14 & _local & idle_n & disable_n;
 
 // GPU_MEM.NET (342) - rament : an3
 assign rament = ram_addr_12 & ram_addr_13 & ram_addr_n_14;

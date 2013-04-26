@@ -1633,19 +1633,7 @@ assign rmask_6 = rmask_5 | dcd_6;
 assign rmask_7 = rmask_6 | dcd_7;
 
 // ARITH.NET (656) - rmask[8] : or9
-or9 rmask_index_8_inst
-(
-	.z /* OUT */ (rmask_8),
-	.a /* IN */ (dcd_0),
-	.b /* IN */ (dcd_1),
-	.c /* IN */ (dcd_2),
-	.d /* IN */ (dcd_3),
-	.e /* IN */ (dcd_4),
-	.f /* IN */ (dcd_5),
-	.g /* IN */ (dcd_6),
-	.h /* IN */ (dcd_7),
-	.i /* IN */ (dcd_8)
-);
+assign rmask_8 = dcd_0 | dcd_1 | dcd_2 | dcd_3 | dcd_4 | dcd_5 | dcd_6 | dcd_7 | dcd_8;
 
 // ARITH.NET (657) - rmask[9-15] : or2
 assign rmask_9 = rmask_8 | dcd_9;
@@ -1657,19 +1645,7 @@ assign rmask_14 = rmask_13 | dcd_14;
 assign rmask_15 = rmask_14 | dcd_15;
 
 // ARITH.NET (658) - rmask[16] : or9
-or9 rmask_index_16_inst
-(
-	.z /* OUT */ (rmask_16),
-	.a /* IN */ (rmask_8),
-	.b /* IN */ (dcd_9),
-	.c /* IN */ (dcd_10),
-	.d /* IN */ (dcd_11),
-	.e /* IN */ (dcd_12),
-	.f /* IN */ (dcd_13),
-	.g /* IN */ (dcd_14),
-	.h /* IN */ (dcd_15),
-	.i /* IN */ (dcd_16)
-);
+assign rmask_16 = rmask_8 | dcd_9 | dcd_10 | dcd_11 | dcd_12 | dcd_13 | dcd_14 | dcd_15 | dcd_16;
 
 // ARITH.NET (659) - rmask[17-23] : or2
 assign rmask_17 = rmask_16 | dcd_17;
@@ -1681,19 +1657,7 @@ assign rmask_22 = rmask_21 | dcd_22;
 assign rmask_23 = rmask_22 | dcd_23;
 
 // ARITH.NET (660) - rmask[24] : or9
-or9 rmask_index_24_inst
-(
-	.z /* OUT */ (rmask_24),
-	.a /* IN */ (rmask_16),
-	.b /* IN */ (dcd_17),
-	.c /* IN */ (dcd_18),
-	.d /* IN */ (dcd_19),
-	.e /* IN */ (dcd_20),
-	.f /* IN */ (dcd_21),
-	.g /* IN */ (dcd_22),
-	.h /* IN */ (dcd_23),
-	.i /* IN */ (dcd_24)
-);
+assign rmask_24 = rmask_16 | dcd_17 | dcd_18 | dcd_19 | dcd_20 | dcd_21 | dcd_22 | dcd_23 | dcd_24;
 
 // ARITH.NET (661) - rmask[25-31] : or2
 assign rmask_25 = rmask_24 | dcd_25;
@@ -1731,19 +1695,7 @@ assign lmask_21 = lmask_22 | dcd_22;
 assign lmask_22 = lmask_23 | dcd_23;
 
 // ARITH.NET (679) - lmask[15] : or9
-or9 lmask_index_15_inst
-(
-	.z /* OUT */ (lmask_15),
-	.a /* IN */ (lmask_23),
-	.b /* IN */ (dcd_16),
-	.c /* IN */ (dcd_17),
-	.d /* IN */ (dcd_18),
-	.e /* IN */ (dcd_19),
-	.f /* IN */ (dcd_20),
-	.g /* IN */ (dcd_21),
-	.h /* IN */ (dcd_22),
-	.i /* IN */ (dcd_23)
-);
+assign lmask_15 = lmask_23 | dcd_16 | dcd_17 | dcd_18 | dcd_19 | dcd_20 | dcd_21 | dcd_22 | dcd_23;
 
 // ARITH.NET (680) - lmask[8-14] : or2
 assign lmask_8 = lmask_9 | dcd_9;
@@ -1755,19 +1707,7 @@ assign lmask_13 = lmask_14 | dcd_14;
 assign lmask_14 = lmask_15 | dcd_15;
 
 // ARITH.NET (681) - lmask[7] : or9
-or9 lmask_index_7_inst
-(
-	.z /* OUT */ (lmask_7),
-	.a /* IN */ (lmask_15),
-	.b /* IN */ (dcd_8),
-	.c /* IN */ (dcd_9),
-	.d /* IN */ (dcd_10),
-	.e /* IN */ (dcd_11),
-	.f /* IN */ (dcd_12),
-	.g /* IN */ (dcd_13),
-	.h /* IN */ (dcd_14),
-	.i /* IN */ (dcd_15)
-);
+assign lmask_7 = lmask_15 | dcd_8 | dcd_9 | dcd_10 | dcd_11 | dcd_12 | dcd_13 | dcd_14 | dcd_15;
 
 // ARITH.NET (682) - lmask[0-6] : or2
 assign lmask_0 = lmask_1 | dcd_1;

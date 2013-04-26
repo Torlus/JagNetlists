@@ -215,15 +215,7 @@ assign innert_0 = ~(idle & go);
 assign innert_1 = ~(inner & indone_n);
 
 // OUTER.NET (90) - inner2t : an5
-an5 inner2t_inst
-(
-	.q /* OUT */ (innert2t),
-	.a_0 /* IN */ (inner),
-	.a_1 /* IN */ (outer0_n),
-	.a_2 /* IN */ (upda1f_n),
-	.a_3 /* IN */ (upda1_n),
-	.a_4 /* IN */ (upda2_n)
-);
+assign innert2t = inner & outer0_n & upda1f_n & upda1_n & upda2_n;
 
 // OUTER.NET (92) - inner2 : nd2
 assign innert_2 = ~(indone & innert2t);
@@ -235,15 +227,7 @@ assign innert_3 = ~(a1update & upda2_n);
 assign innert_4 = ~a2update;
 
 // OUTER.NET (95) - inner5 : nd5
-nd5 inner5_inst
-(
-	.q /* OUT */ (innert_5),
-	.a_0 /* IN */ (innert_0),
-	.a_1 /* IN */ (innert_1),
-	.a_2 /* IN */ (innert_2),
-	.a_3 /* IN */ (innert_3),
-	.a_4 /* IN */ (innert_4)
-);
+assign innert_5 = ~(innert_0 & innert_1 & innert_2 & innert_3 & innert_4);
 
 // OUTER.NET (96) - inner : fd2q
 fd2q inner_inst
@@ -272,15 +256,7 @@ fd2q a1fupdate_inst
 assign a1updt_0 = ~a1fupdate;
 
 // OUTER.NET (107) - a1upd1 : nd5
-nd5 a1upd1_inst
-(
-	.q /* OUT */ (a1updt_1),
-	.a_0 /* IN */ (inner),
-	.a_1 /* IN */ (indone),
-	.a_2 /* IN */ (outer0_n),
-	.a_3 /* IN */ (upda1f_n),
-	.a_4 /* IN */ (upda1)
-);
+assign a1updt_1 = ~(inner & indone & outer0_n & upda1f_n & upda1);
 
 // OUTER.NET (109) - a1upd2 : nd2
 assign a1updatei_obuf = ~(a1updt_0 & a1updt_1);

@@ -146,7 +146,7 @@ Arith		:= ARITH (gpu_dout[0..2], carry_flag, nega_flag,
 
 /* the serial divide unit */
 
-Divide		:= DIVIDE (gpu_data div_activei quotient clk[8] 
+Divide		:= DIVIDER (gpu_data div_activei quotient clk[8] 
 			div_start divwr dstd gpu_din remrd resetl[7] 
 			srcd);
 

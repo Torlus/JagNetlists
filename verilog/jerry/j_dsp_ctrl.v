@@ -96,10 +96,10 @@ fd2q got_inst
 // DSP_CTRL.NET (40) - go : nivh
 assign go_obuf = got;
 
-// DSP_CTRL.NET (42) - cpu_intt : an2
+// DSP_CTRL.NET (43) - cpu_intt : an2
 assign cpu_intt = ctrlwr & gpu_din[1];
 
-// DSP_CTRL.NET (43) - cpu_int : fd1q
+// DSP_CTRL.NET (44) - cpu_int : fd1q
 fd1q cpu_int_inst
 (
 	.q /* OUT */ (cpu_int),
@@ -108,10 +108,10 @@ fd1q cpu_int_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// DSP_CTRL.NET (45) - gpu_intt : an2
+// DSP_CTRL.NET (46) - gpu_intt : an2
 assign gpu_intt = ctrlwr & gpu_din[2];
 
-// DSP_CTRL.NET (46) - gpu_int : fd1q
+// DSP_CTRL.NET (47) - gpu_int : fd1q
 fd1q gpu_int_inst
 (
 	.q /* OUT */ (gpu_irq_0),
@@ -120,7 +120,7 @@ fd1q gpu_int_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// DSP_CTRL.NET (48) - single_step : fdsyncr
+// DSP_CTRL.NET (49) - single_step : fdsyncr
 j_fdsyncr single_step_inst
 (
 	.q /* OUT */ (single_step),
@@ -131,10 +131,10 @@ j_fdsyncr single_step_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// DSP_CTRL.NET (51) - single_got : an2
+// DSP_CTRL.NET (52) - single_got : an2
 assign single_got = ctrlwr & gpu_din[4];
 
-// DSP_CTRL.NET (52) - single_go : fd1q
+// DSP_CTRL.NET (53) - single_go : fd1q
 fd1q single_go_inst
 (
 	.q /* OUT */ (single_go),
@@ -143,7 +143,7 @@ fd1q single_go_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// DSP_CTRL.NET (54) - bus_hog : fdsyncr
+// DSP_CTRL.NET (56) - bus_hog : fdsyncr
 j_fdsyncr bus_hog_inst
 (
 	.q /* OUT */ (bus_hog_obuf),
@@ -154,45 +154,45 @@ j_fdsyncr bus_hog_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// DSP_CTRL.NET (59) - stat[0] : ts
+// DSP_CTRL.NET (61) - stat[0] : ts
 assign gpu_dout_0_out = go_obuf;
 assign gpu_dout_0_oe = statrd;
 
-// DSP_CTRL.NET (60) - stat[1-2] : ts
+// DSP_CTRL.NET (62) - stat[1-2] : ts
 assign gpu_dout_1_out = zero;
 assign gpu_dout_1_oe = statrd;
 assign gpu_dout_2_out = zero;
 assign gpu_dout_2_oe = statrd;
 
-// DSP_CTRL.NET (61) - stat[3] : ts
+// DSP_CTRL.NET (63) - stat[3] : ts
 assign gpu_dout_3_out = single_stop;
 assign gpu_dout_3_oe = statrd;
 
-// DSP_CTRL.NET (62) - stat[4] : ts
+// DSP_CTRL.NET (64) - stat[4] : ts
 assign gpu_dout_4_out = zero;
 assign gpu_dout_4_oe = statrd;
 
-// DSP_CTRL.NET (63) - stat[5] : ts
+// DSP_CTRL.NET (65) - stat[5] : ts
 assign gpu_dout_5_out = zero;
 assign gpu_dout_5_oe = statrd;
 
-// DSP_CTRL.NET (64) - stat[11] : ts
+// DSP_CTRL.NET (66) - stat[11] : ts
 assign gpu_dout_11_out = bus_hog_obuf;
 assign gpu_dout_11_oe = statrd;
 
-// DSP_CTRL.NET (71) - stat[12] : ts
+// DSP_CTRL.NET (73) - stat[12] : ts
 assign gpu_dout_12_out = zero;
 assign gpu_dout_12_oe = statrd;
 
-// DSP_CTRL.NET (72) - stat[13] : ts
+// DSP_CTRL.NET (74) - stat[13] : ts
 assign gpu_dout_13_out = one;
 assign gpu_dout_13_oe = statrd;
 
-// DSP_CTRL.NET (73) - stat[14] : ts
+// DSP_CTRL.NET (75) - stat[14] : ts
 assign gpu_dout_14_out = zero;
 assign gpu_dout_14_oe = statrd;
 
-// DSP_CTRL.NET (74) - stat[15] : ts
+// DSP_CTRL.NET (76) - stat[15] : ts
 assign gpu_dout_15_out = zero;
 assign gpu_dout_15_oe = statrd;
 endmodule

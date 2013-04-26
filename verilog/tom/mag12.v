@@ -40,13 +40,13 @@ wire agb_1;
 wire aeb_1;
 wire alb_1;
 
-// OB.NET (740) - vcc : tie1
+// OB.NET (742) - vcc : tie1
 assign vcc = 1'b1;
 
-// OB.NET (741) - gnd : tie0
+// OB.NET (743) - gnd : tie0
 assign gnd = 1'b0;
 
-// OB.NET (743) - m0 : mag4
+// OB.NET (745) - m0 : mag4
 mag4 m0_inst
 (
 	.agb /* OUT */ (agb_0),
@@ -65,7 +65,7 @@ mag4 m0_inst
 	.b0 /* IN */ (b_8)
 );
 
-// OB.NET (745) - m1 : mag4
+// OB.NET (747) - m1 : mag4
 mag4 m1_inst
 (
 	.agb /* OUT */ (agb_1),
@@ -84,7 +84,7 @@ mag4 m1_inst
 	.b0 /* IN */ (b_4)
 );
 
-// OB.NET (747) - m2 : mag4
+// OB.NET (749) - m2 : mag4
 mag4 m2_inst
 (
 	.agb /* OUT */ (agb),

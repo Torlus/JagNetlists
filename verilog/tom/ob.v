@@ -4332,21 +4332,7 @@ assign ve_9 = ~(vc_9 ^ ypos_9);
 assign ve_10 = ~(vc_10 ^ ypos_10);
 
 // OB.NET (634) - veyl : nd11
-nd11 veyl_inst
-(
-	.q /* OUT */ (veyl),
-	.a_0 /* IN */ (ve_0),
-	.a_1 /* IN */ (ve_1),
-	.a_2 /* IN */ (ve_2),
-	.a_3 /* IN */ (ve_3),
-	.a_4 /* IN */ (ve_4),
-	.a_5 /* IN */ (ve_5),
-	.a_6 /* IN */ (ve_6),
-	.a_7 /* IN */ (ve_7),
-	.a_8 /* IN */ (ve_8),
-	.a_9 /* IN */ (ve_9),
-	.a_10 /* IN */ (ve_10)
-);
+assign veyl = ~(ve_0 & ve_1 & ve_2 & ve_3 & ve_4 & ve_5 & ve_6 & ve_7 & ve_8 & ve_9 & ve_10);
 
 // OB.NET (635) - vey : iv
 assign vey_obuf = ~veyl;
@@ -4390,16 +4376,18 @@ assign notobdone = ~obdone;
 // OB.NET (656) - hold : iv
 assign hold = ~_release;
 
-// OB.NET (660) - unused : nd6
-assign unused = ~(unused & gnd & olpco_21 & wco_9 & dco_20 & gnd);
+// OB.NET (661) - unused : nd6
+assign unused = ~(gnd & gnd & olpco_21 & wco_9 & dco_20 & gnd);
 
-// OB.NET (664) - olp1[3] : or2
+// OB.NET (662) - unused2 : dummy
+
+// OB.NET (666) - olp1[3] : or2
 assign olp1_3 = olp_3 | pc1en;
 
-// OB.NET (665) - olp1[4] : or2
+// OB.NET (667) - olp1[4] : or2
 assign olp1_4 = olp_4 | pc2en;
 
-// OB.NET (667) - oa[3-4] : mx2
+// OB.NET (669) - oa[3-4] : mx2
 mx2 oa_from_3_to_4_inst_0
 (
 	.z /* OUT */ (oa_3),
@@ -4415,7 +4403,7 @@ mx2 oa_from_3_to_4_inst_1
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (668) - oa[5-21] : mx2
+// OB.NET (670) - oa[5-21] : mx2
 mx2 oa_from_5_to_21_inst_0
 (
 	.z /* OUT */ (oa_5),
@@ -4536,7 +4524,7 @@ mx2 oa_from_5_to_21_inst_16
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (669) - oa[22] : mx2
+// OB.NET (671) - oa[22] : mx2
 mx2 oa_index_22_inst
 (
 	.z /* OUT */ (oa_22),
@@ -4545,7 +4533,7 @@ mx2 oa_index_22_inst
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (670) - oa[23] : mx2
+// OB.NET (672) - oa[23] : mx2
 mx2 oa_index_23_inst
 (
 	.z /* OUT */ (oa_23),
@@ -4554,7 +4542,7 @@ mx2 oa_index_23_inst
 	.s /* IN */ (datasel)
 );
 
-// OB.NET (674) - oa1[0-2] : tsm
+// OB.NET (676) - oa1[0-2] : tsm
 assign a_0_out = gnd;
 assign a_0_oe = oben;
 assign a_1_out = gnd;
@@ -4562,7 +4550,7 @@ assign a_1_oe = oben;
 assign a_2_out = gnd;
 assign a_2_oe = oben;
 
-// OB.NET (675) - oa1[3-23] : tsm
+// OB.NET (677) - oa1[3-23] : tsm
 assign a_3_out = oa_3;
 assign a_3_oe = oben;
 assign a_4_out = oa_4;
@@ -4606,7 +4594,7 @@ assign a_22_oe = oben;
 assign a_23_out = oa_23;
 assign a_23_oe = oben;
 
-// OB.NET (678) - ge1 : join
+// OB.NET (680) - ge1 : join
 assign oba[0] = a_0_in;
 assign oba[1] = a_1_in;
 assign oba[2] = a_2_in;
@@ -4632,7 +4620,7 @@ assign oba[21] = a_21_in;
 assign oba[22] = a_22_in;
 assign oba[23] = a_23_in;
 
-// OB.NET (679) - ge2 : dummy
+// OB.NET (681) - ge2 : dummy
 
 // --- Compiler-generated PE for BUS wd[0]
 assign wd_0_out =

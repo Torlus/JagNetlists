@@ -44,7 +44,8 @@ correct result.
 
 IMPORT duplo, tosh;
 
-DEF DIVIDE (
+(* GE divide -> divider to avoid name clash *)
+DEF DIVIDER (
 INT32/	gpu_data	/* graphics processor data bus */
 	:BUS;
 	div_activei	/* divide in operation (look-ahead) */

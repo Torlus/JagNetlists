@@ -74,37 +74,13 @@ assign ltot_1 = ~(a_2 & aab_n_2 & aoia_3);
 assign ltot_2 = ~(a_1 & aab_n_1 & aoia_2 & aoia_3);
 
 // DUPLO.NET (344) - ltot3 : nd5
-nd5 ltot3_inst
-(
-	.q /* OUT */ (ltot_3),
-	.a_0 /* IN */ (a_0),
-	.a_1 /* IN */ (aab_n_0),
-	.a_2 /* IN */ (aoia_1),
-	.a_3 /* IN */ (aoia_2),
-	.a_4 /* IN */ (aoia_3)
-);
+assign ltot_3 = ~(a_0 & aab_n_0 & aoia_1 & aoia_2 & aoia_3);
 
 // DUPLO.NET (345) - ltot4 : nd5
-nd5 ltot4_inst
-(
-	.q /* OUT */ (ltot_4),
-	.a_0 /* IN */ (aoia_0),
-	.a_1 /* IN */ (aoia_1),
-	.a_2 /* IN */ (aoia_2),
-	.a_3 /* IN */ (aoia_3),
-	.a_4 /* IN */ (gti)
-);
+assign ltot_4 = ~(aoia_0 & aoia_1 & aoia_2 & aoia_3 & gti);
 
 // DUPLO.NET (346) - ltot5 : nd5
-nd5 ltot5_inst
-(
-	.q /* OUT */ (ltot_5),
-	.a_0 /* IN */ (aoia_0),
-	.a_1 /* IN */ (aoia_1),
-	.a_2 /* IN */ (aoia_2),
-	.a_3 /* IN */ (aoia_3),
-	.a_4 /* IN */ (eqi)
-);
+assign ltot_5 = ~(aoia_0 & aoia_1 & aoia_2 & aoia_3 & eqi);
 
 // DUPLO.NET (347) - ltot6 : an4
 assign ltot_6 = ltot_0 & ltot_1 & ltot_2 & ltot_3;
@@ -128,37 +104,13 @@ assign gtot_1 = ~(b_2 & aab_n_2 & aoib_3);
 assign gtot_2 = ~(b_1 & aab_n_1 & aoib_2 & aoib_3);
 
 // DUPLO.NET (354) - gtot3 : nd5
-nd5 gtot3_inst
-(
-	.q /* OUT */ (gtot_3),
-	.a_0 /* IN */ (b_0),
-	.a_1 /* IN */ (aab_n_0),
-	.a_2 /* IN */ (aoib_1),
-	.a_3 /* IN */ (aoib_2),
-	.a_4 /* IN */ (aoib_3)
-);
+assign gtot_3 = ~(b_0 & aab_n_0 & aoib_1 & aoib_2 & aoib_3);
 
 // DUPLO.NET (355) - gtot4 : nd5
-nd5 gtot4_inst
-(
-	.q /* OUT */ (gtot_4),
-	.a_0 /* IN */ (aoib_0),
-	.a_1 /* IN */ (aoib_1),
-	.a_2 /* IN */ (aoib_2),
-	.a_3 /* IN */ (aoib_3),
-	.a_4 /* IN */ (lti)
-);
+assign gtot_4 = ~(aoib_0 & aoib_1 & aoib_2 & aoib_3 & lti);
 
 // DUPLO.NET (356) - gtot5 : nd5
-nd5 gtot5_inst
-(
-	.q /* OUT */ (gtot_5),
-	.a_0 /* IN */ (aoib_0),
-	.a_1 /* IN */ (aoib_1),
-	.a_2 /* IN */ (aoib_2),
-	.a_3 /* IN */ (aoib_3),
-	.a_4 /* IN */ (eqi)
-);
+assign gtot_5 = ~(aoib_0 & aoib_1 & aoib_2 & aoib_3 & eqi);
 
 // DUPLO.NET (357) - gtot6 : an4
 assign gtot_6 = gtot_0 & gtot_1 & gtot_2 & gtot_3;

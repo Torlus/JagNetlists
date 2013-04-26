@@ -242,15 +242,7 @@ assign srcz2add_obuf = dzwrite & gourz_obuf & atick_0;
 assign srcshadd = srcdreadd & srcshade;
 
 // DCONTROL.NET (165) - daddq_sel : or5
-or5 daddq_sel_inst
-(
-	.z /* OUT */ (daddq_sel),
-	.a /* IN */ (patfadd_obuf),
-	.b /* IN */ (patdadd_obuf),
-	.c /* IN */ (srcz1add_obuf),
-	.d /* IN */ (srcz2add_obuf),
-	.e /* IN */ (srcshadd)
-);
+assign daddq_sel = patfadd_obuf | patdadd_obuf | srcz1add_obuf | srcz2add_obuf | srcshadd;
 
 // DCONTROL.NET (185) - dzwrite1d : fd1q
 fd1q dzwrite1d_inst

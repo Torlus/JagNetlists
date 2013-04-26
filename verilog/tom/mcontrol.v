@@ -194,26 +194,10 @@ assign wt0t = ~(pixsize_n_2 | fontread);
 assign wt_0 = ~(wt0t | phrase_cycle);
 
 // MCONTROL.NET (103) - wt1 : nr5
-nr5 wt1_inst
-(
-	.z /* OUT */ (wt_1),
-	.a /* IN */ (pixsize_n_2),
-	.b /* IN */ (pixsize_1),
-	.c /* IN */ (pixsize_0),
-	.d /* IN */ (phrase_cycle),
-	.e /* IN */ (fontread)
-);
+assign wt_1 = ~(pixsize_n_2 | pixsize_1 | pixsize_0 | phrase_cycle | fontread);
 
 // MCONTROL.NET (105) - wt2 : nr5
-nr5 wt2_inst
-(
-	.z /* OUT */ (wt_2),
-	.a /* IN */ (pixsize_n_2),
-	.b /* IN */ (pixsize_1),
-	.c /* IN */ (pixsize_n_0),
-	.d /* IN */ (phrase_cycle),
-	.e /* IN */ (fontread)
-);
+assign wt_2 = ~(pixsize_n_2 | pixsize_1 | pixsize_n_0 | phrase_cycle | fontread);
 
 // MCONTROL.NET (107) - pwrite : an2
 assign pwrite = phrase_cycle & wactive_obuf;

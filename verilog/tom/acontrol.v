@@ -639,15 +639,7 @@ assign addaregt_0 = a1_addi & a1addx_0 & a1addx_1;
 assign addaregt_1 = a2_addi & a2addx_0 & a2addx_1;
 
 // ACONTROL.NET (182) - addaregi : or5
-or5 addaregi_inst
-(
-	.z /* OUT */ (addaregi),
-	.a /* IN */ (addaregt_0),
-	.b /* IN */ (addaregt_1),
-	.c /* IN */ (a1updatei),
-	.d /* IN */ (a1fupdatei),
-	.e /* IN */ (a2updatei)
-);
+assign addaregi = addaregt_0 | addaregt_1 | a1updatei | a1fupdatei | a2updatei;
 
 // ACONTROL.NET (184) - addareg : fd1qu
 fd1q addareg_inst
@@ -723,15 +715,7 @@ mx2 modx_from_0_to_2_inst_2
 );
 
 // ACONTROL.NET (224) - addqsel : or5
-or5 addqsel_inst
-(
-	.z /* OUT */ (addqsel),
-	.a /* IN */ (a1_add),
-	.b /* IN */ (a2_add),
-	.c /* IN */ (a1update),
-	.d /* IN */ (a1fupdate),
-	.e /* IN */ (a2update)
-);
+assign addqsel = a1_add | a2_add | a1update | a1fupdate | a2update;
 
 // ACONTROL.NET (230) - suba_xt0 : nd4
 assign suba_xt_0 = ~(a1_add & a1addx_0 & a1addx_n_1 & a1xsign);
@@ -1180,24 +1164,7 @@ assign rmpt_0 = pseq_1 & pixsize_0_obuf & pixsize_n_1 & pixsize_2_obuf;
 assign rmpt_1 = pseq_2 & pixsize_n_1 & pixsize_2_obuf;
 
 // ACONTROL.NET (368) - ewmt5 : nr14
-nr14 ewmt5_inst
-(
-	.z /* OUT */ (penden),
-	.a_0 /* IN */ (rmpt_0),
-	.a_1 /* IN */ (rmpt_1),
-	.a_2 /* IN */ (pseq_3),
-	.a_3 /* IN */ (pseq_4),
-	.a_4 /* IN */ (pseq_5),
-	.a_5 /* IN */ (pseq_6),
-	.a_6 /* IN */ (pseq_7),
-	.a_7 /* IN */ (pseq_8),
-	.a_8 /* IN */ (pseq_9),
-	.a_9 /* IN */ (pseq_10),
-	.a_10 /* IN */ (pseq_11),
-	.a_11 /* IN */ (pseq_12),
-	.a_12 /* IN */ (pseq_13),
-	.a_13 /* IN */ (pseq_14)
-);
+assign penden = ~(rmpt_0 | rmpt_1 | pseq_3 | pseq_4 | pseq_5 | pseq_6 | pseq_7 | pseq_8 | pseq_9 | pseq_10 | pseq_11 | pseq_12 | pseq_13 | pseq_14);
 
 // ACONTROL.NET (374) - pixel8 : an3p
 assign pixel8 = pixsize_0_obuf & pixsize_1_obuf & pixsize_n_2;

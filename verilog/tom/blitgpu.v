@@ -120,26 +120,10 @@ assign gpua_n_6 = ~gpua_6;
 assign gpua_n_7 = ~gpua_7;
 
 // BLITGPU.NET (77) - wren0 : nd5
-nd5 wren0_inst
-(
-	.q /* OUT */ (wren_n_0),
-	.a_0 /* IN */ (gpua_n_5),
-	.a_1 /* IN */ (gpua_n_6),
-	.a_2 /* IN */ (gpua_n_7),
-	.a_3 /* IN */ (bliten),
-	.a_4 /* IN */ (gpu_memw)
-);
+assign wren_n_0 = ~(gpua_n_5 & gpua_n_6 & gpua_n_7 & bliten & gpu_memw);
 
 // BLITGPU.NET (79) - wren1 : nd5
-nd5 wren1_inst
-(
-	.q /* OUT */ (wren_n_1),
-	.a_0 /* IN */ (gpua_5),
-	.a_1 /* IN */ (gpua_n_6),
-	.a_2 /* IN */ (gpua_n_7),
-	.a_3 /* IN */ (bliten),
-	.a_4 /* IN */ (gpu_memw)
-);
+assign wren_n_1 = ~(gpua_5 & gpua_n_6 & gpua_n_7 & bliten & gpu_memw);
 
 // BLITGPU.NET (81) - wren2 : nd6
 assign wren_n_2 = ~(gpua_n_5 & gpua_6 & gpua_n_7 & bliten & gpu_memw & blit_back_n);

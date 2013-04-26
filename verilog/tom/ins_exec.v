@@ -564,15 +564,7 @@ assign prog_count[31] = zero;
 assign jump_ins = microword[23] | microword[24];
 
 // INS_EXEC.NET (173) - jumpinsp : an5
-an5 jumpinsp_inst
-(
-	.q /* OUT */ (jump_insp),
-	.a_0 /* IN */ (preinstr_n_11),
-	.a_1 /* IN */ (preinstr[12]),
-	.a_2 /* IN */ (preinstr_n_13),
-	.a_3 /* IN */ (preinstr[14]),
-	.a_4 /* IN */ (preinstr[15])
-);
+assign jump_insp = preinstr_n_11 & preinstr[12] & preinstr_n_13 & preinstr[14] & preinstr[15];
 
 // INS_EXEC.NET (178) - preinstr\[10-11] : iv
 assign preinstr_n_10 = ~preinstr[10];
@@ -671,15 +663,7 @@ assign atomic = movei_atomic | mtx_atomic | mult_atomic | jump_atomic | jump_ins
 assign multnt = preinstr[11] ^ preinstr[12];
 
 // INS_EXEC.NET (215) - multn : an5
-an5 multn_inst
-(
-	.q /* OUT */ (multn),
-	.a_0 /* IN */ (preinstr_n_10),
-	.a_1 /* IN */ (multnt),
-	.a_2 /* IN */ (preinstr_n_13),
-	.a_3 /* IN */ (preinstr[14]),
-	.a_4 /* IN */ (preinstr_n_15)
-);
+assign multn = preinstr_n_10 & multnt & preinstr_n_13 & preinstr[14] & preinstr_n_15;
 
 // INS_EXEC.NET (218) - multn\ : iv
 assign multn_n = ~multn;
@@ -2044,15 +2028,7 @@ assign div_instr_obuf = opcode[0] & opcode_n_1 & opcode[2] & opcode_n_3 & opcode
 assign div_start = exe_obuf & div_instr_obuf;
 
 // INS_EXEC.NET (452) - conditional : or5
-or5 conditional_inst
-(
-	.z /* OUT */ (conditional),
-	.a /* IN */ (dstopb[0]),
-	.b /* IN */ (dstopb[1]),
-	.c /* IN */ (dstopb[2]),
-	.d /* IN */ (dstopb[3]),
-	.e /* IN */ (dstopb[4])
-);
+assign conditional = dstopb[0] | dstopb[1] | dstopb[2] | dstopb[3] | dstopb[4];
 
 // INS_EXEC.NET (453) - jump : or2
 assign jump = microword[23] | microword[24];

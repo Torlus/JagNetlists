@@ -397,15 +397,7 @@ assign gatereqa = gatereq & ioreq_n;
 assign datreqa = datreq & gatereq_n & ioreq_n;
 
 // DSP_MEM.NET (126) - progreqa : an5p
-j_an5p progreqa_inst
-(
-	.q /* OUT */ (progreqa),
-	.a_0 /* IN */ (progreq),
-	.a_1 /* IN */ (datreq_n),
-	.a_2 /* IN */ (gatereq_n),
-	.a_3 /* IN */ (ioreq_n),
-	.a_4 /* IN */ (xprogi_n)
-);
+assign progreqa = progreq & datreq_n & gatereq_n & ioreq_n & xprogi_n;
 
 // DSP_MEM.NET (132) - ioservt : fd2q
 fd2q ioservt_inst
@@ -1826,38 +1818,13 @@ mx2 locala_from_22_to_23_inst_1
 );
 
 // DSP_MEM.NET (312) - localaddr\ : nd9
-j_nd9 localaddr_n_inst
-(
-	.q /* OUT */ (localaddr_n),
-	.a_0 /* IN */ (locala_15),
-	.a_1 /* IN */ (locala_16),
-	.a_2 /* IN */ (locala_n_17),
-	.a_3 /* IN */ (locala_n_18),
-	.a_4 /* IN */ (locala_n_19),
-	.a_5 /* IN */ (locala_20),
-	.a_6 /* IN */ (locala_21),
-	.a_7 /* IN */ (locala_22),
-	.a_8 /* IN */ (locala_23)
-);
+assign localaddr_n = ~(locala_15 & locala_16 & locala_n_17 & locala_n_18 & locala_n_19 & locala_20 & locala_21 & locala_22 & locala_23);
 
 // DSP_MEM.NET (315) - localt0 : nd2
 assign localt_0 = ~(progserv_n & datserv_n);
 
 // DSP_MEM.NET (316) - localt1 : nd10
-j_nd10 localt1_inst
-(
-	.q /* OUT */ (localt_1),
-	.a_0 /* IN */ (locala_15),
-	.a_1 /* IN */ (locala_16),
-	.a_2 /* IN */ (locala_n_17),
-	.a_3 /* IN */ (locala_n_18),
-	.a_4 /* IN */ (locala_n_19),
-	.a_5 /* IN */ (locala_20),
-	.a_6 /* IN */ (locala_21),
-	.a_7 /* IN */ (locala_22),
-	.a_8 /* IN */ (locala_23),
-	.a_9 /* IN */ (localt_0)
-);
+assign localt_1 = ~(locala_15 & locala_16 & locala_n_17 & locala_n_18 & locala_n_19 & locala_20 & locala_21 & locala_22 & locala_23 & localt_0);
 
 // DSP_MEM.NET (319) - local : nd2p
 assign _local = ~(ioserv_n & localt_1);

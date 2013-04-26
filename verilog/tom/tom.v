@@ -402,6 +402,8 @@ module tom
 	output bbreq_1,
 	output gbreq_0,
 	output gbreq_1,
+	output dram,
+	output blank,
 	input sys_clk // Generated
 );
 wire wd_0_out;
@@ -1312,7 +1314,6 @@ wire lbufa;
 wire lbufb;
 wire vint;
 wire vactive;
-wire blank;
 wire nextpixa;
 wire nextpixd;
 wire cry16;
@@ -1420,7 +1421,6 @@ wire romspd_0;
 wire romspd_1;
 wire iospd_0;
 wire iospd_1;
-wire dram;
 wire mw_0;
 wire mw_1;
 wire bs_0;
@@ -2634,6 +2634,8 @@ wire bbreq_0_obuf;
 wire bbreq_1_obuf;
 wire gbreq_0_obuf;
 wire gbreq_1_obuf;
+wire dram_obuf;
+wire blank_obuf;
 
 
 // Output buffers
@@ -2643,6 +2645,8 @@ assign bbreq_0 = bbreq_0_obuf;
 assign bbreq_1 = bbreq_1_obuf;
 assign gbreq_0 = gbreq_0_obuf;
 assign gbreq_1 = gbreq_1_obuf;
+assign dram = dram_obuf;
+assign blank = blank_obuf;
 
 
 // TOM.NET (139) - dpad[0] : bd8t
@@ -4927,7 +4931,7 @@ vid vid_inst
 	.syncen /* OUT */ (syncen),
 	.vint /* OUT */ (vint),
 	.vactive /* OUT */ (vactive),
-	.blank /* OUT */ (blank),
+	.blank /* OUT */ (blank_obuf),
 	.nextpixa /* OUT */ (nextpixa),
 	.nextpixd /* OUT */ (nextpixd),
 	.cry16 /* OUT */ (cry16),
@@ -5032,7 +5036,7 @@ pix pix_inst
 	.din_15 /* IN */ (dout_15),
 	.dd /* IN */ (dd),
 	.vactive /* IN */ (vactive),
-	.blank /* IN */ (blank),
+	.blank /* IN */ (blank_obuf),
 	.nextpixa /* IN */ (nextpixa),
 	.nextpixd /* IN */ (nextpixd),
 	.cry16 /* IN */ (cry16),
@@ -5582,7 +5586,7 @@ abus abus_inst
 	.romspd_1 /* OUT */ (romspd_1),
 	.iospd_0 /* OUT */ (iospd_0),
 	.iospd_1 /* OUT */ (iospd_1),
-	.dram /* OUT */ (dram),
+	.dram /* OUT */ (dram_obuf),
 	.mw_0 /* OUT */ (mw_0),
 	.mw_1 /* OUT */ (mw_1),
 	.bs_0 /* OUT */ (bs_0),
@@ -5760,7 +5764,7 @@ mem mem_inst
 	.bs_3 /* IN */ (bs_3),
 	.match /* IN */ (match),
 	.intdev /* IN */ (intdev),
-	.dram /* IN */ (dram),
+	.dram /* IN */ (dram_obuf),
 	.fextdev /* IN */ (fextdev),
 	.fintdev /* IN */ (fintdev),
 	.fdram /* IN */ (fdram),

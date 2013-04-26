@@ -161,15 +161,7 @@ mx2 srcb6_inst
 assign type8 = srcdat_n_0 & srcdat_n_1 & srcdat_n_2 & srcdat_3;
 
 // DSP_EXEC.NET (698) - opzero : nr5
-j_nr5 opzero_inst
-(
-	.z /* OUT */ (opzero),
-	.a /* IN */ (srcop[0]),
-	.b /* IN */ (srcop[1]),
-	.c /* IN */ (srcop[2]),
-	.d /* IN */ (srcop[3]),
-	.e /* IN */ (srcop[4])
-);
+assign opzero = ~(srcop[0] | srcop[1] | srcop[2] | srcop[3] | srcop[4]);
 
 // DSP_EXEC.NET (699) - srcb5 : mx4
 mx4 srcb5_inst

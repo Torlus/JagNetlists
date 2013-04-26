@@ -38,6 +38,7 @@ Zero		:= TIE0 (zero);
 Goi		:= MX2 (goi, go, gpu_din{0}, ctrlwr);
 Got		:= FD2Q (got, goi, clk, reset\);
 Go		:= NIVH (go, got);
+(* GE Go := AN2(go, got, zero); *) (* GE *)
 
 Cpu_intt	:= AN2 (cpu_intt, ctrlwr, gpu_din{1});
 Cpu_int		:= FD1Q (cpu_int, cpu_intt, clk);
@@ -50,6 +51,7 @@ Single_step	:= FDSYNCR (single_step, gpu_din{3}, ctrlwr,
 
 Single_got	:= AN2 (single_got, ctrlwr, gpu_din{4});
 Single_go	:= FD1Q (single_go, single_got, clk);
+(* GE Single_go	:= AN2(single_go, single_got, zero); *) (* GE *)
 
 Bus_hog		:= FDSYNCR (bus_hog, gpu_din{11}, ctrlwr, clk,
 			reset\);

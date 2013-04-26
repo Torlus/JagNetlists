@@ -179,21 +179,7 @@ assign cre_9 = ~(cr_9 ^ count_9);
 assign cre_10 = ~(cr_10 ^ count_10);
 
 // VID.NET (418) - creq : and11
-and11 creq_inst
-(
-	.z /* OUT */ (creq),
-	.a_0 /* IN */ (cre_0),
-	.a_1 /* IN */ (cre_1),
-	.a_2 /* IN */ (cre_2),
-	.a_3 /* IN */ (cre_3),
-	.a_4 /* IN */ (cre_4),
-	.a_5 /* IN */ (cre_5),
-	.a_6 /* IN */ (cre_6),
-	.a_7 /* IN */ (cre_7),
-	.a_8 /* IN */ (cre_8),
-	.a_9 /* IN */ (cre_9),
-	.a_10 /* IN */ (cre_10)
-);
+assign creq = cre_0 & cre_1 & cre_2 & cre_3 & cre_4 & cre_5 & cre_6 & cre_7 & cre_8 & cre_9 & cre_10;
 
 // VID.NET (420) - zero : tie0
 assign zero = 1'b0;

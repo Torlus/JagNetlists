@@ -1652,15 +1652,7 @@ assign imm_wbackh_n = ~(imm_wback & mov_wback_n & alu_wback_n);
 assign ild_wbackh_n = ~(ild_wback & imm_wback_n & mov_wback_n & alu_wback_n);
 
 // SBOARD.NET (459) - xld_wbackh : nd5
-nd5 xld_wbackh_inst
-(
-	.q /* OUT */ (xld_wbackh_n),
-	.a_0 /* IN */ (xld_wback),
-	.a_1 /* IN */ (ild_wback_n),
-	.a_2 /* IN */ (imm_wback_n),
-	.a_3 /* IN */ (mov_wback_n),
-	.a_4 /* IN */ (alu_wback_n)
-);
+assign xld_wbackh_n = ~(xld_wback & ild_wback_n & imm_wback_n & mov_wback_n & alu_wback_n);
 
 // SBOARD.NET (461) - div_wbackh : nd6
 assign div_wbackh_n = ~(div_wback & xld_wback_n & ild_wback_n & imm_wback_n & mov_wback_n & alu_wback_n);
@@ -1684,40 +1676,16 @@ assign ild_wbacks_n = ~(ild_wback & ild_wbackst & imm_wbacks_n & mov_wbacks_n);
 assign xld_wbackst = ~(ild_wbackh_n & imm_wbackh_n & mov_wbackh_n & alu_wbackh_n);
 
 // SBOARD.NET (488) - xld_wbacks : nd5
-nd5 xld_wbacks_inst
-(
-	.q /* OUT */ (xld_wbacks_n),
-	.a_0 /* IN */ (xld_wback),
-	.a_1 /* IN */ (xld_wbackst),
-	.a_2 /* IN */ (imm_wback_n),
-	.a_3 /* IN */ (ild_wbacks_n),
-	.a_4 /* IN */ (mov_wbacks_n)
-);
+assign xld_wbacks_n = ~(xld_wback & xld_wbackst & imm_wback_n & ild_wbacks_n & mov_wbacks_n);
 
 // SBOARD.NET (490) - div_wbackst : nd5
-nd5 div_wbackst_inst
-(
-	.q /* OUT */ (div_wbackst),
-	.a_0 /* IN */ (xld_wbackh_n),
-	.a_1 /* IN */ (ild_wbackh_n),
-	.a_2 /* IN */ (imm_wbackh_n),
-	.a_3 /* IN */ (mov_wbackh_n),
-	.a_4 /* IN */ (alu_wbackh_n)
-);
+assign div_wbackst = ~(xld_wbackh_n & ild_wbackh_n & imm_wbackh_n & mov_wbackh_n & alu_wbackh_n);
 
 // SBOARD.NET (492) - div_wbacks : nd6
 assign div_wbacks_n = ~(div_wback & div_wbackst & xld_wback_n & imm_wback_n & ild_wbacks_n & mov_wbacks_n);
 
 // SBOARD.NET (498) - mult_wbacki : nd5
-nd5 mult_wbacki_inst
-(
-	.q /* OUT */ (mult_wbacki),
-	.a_0 /* IN */ (mov_wbacks_n),
-	.a_1 /* IN */ (imm_wbacks_n),
-	.a_2 /* IN */ (ild_wbacks_n),
-	.a_3 /* IN */ (xld_wbacks_n),
-	.a_4 /* IN */ (div_wbacks_n)
-);
+assign mult_wbacki = ~(mov_wbacks_n & imm_wbacks_n & ild_wbacks_n & xld_wbacks_n & div_wbacks_n);
 
 // SBOARD.NET (500) - mult_wback : fd1q
 fd1q mult_wback_inst

@@ -216,15 +216,7 @@ assign exect_0 = ~(idle & go);
 assign exect_1 = ~(exec & go & exe_n);
 
 // EXECON.NET (110) - exect2 : nd5
-nd5 exect2_inst
-(
-	.q /* OUT */ (exect_2),
-	.a_0 /* IN */ (exec),
-	.a_1 /* IN */ (go),
-	.a_2 /* IN */ (exe_obuf),
-	.a_3 /* IN */ (single_step_n),
-	.a_4 /* IN */ (immld_n)
-);
+assign exect_2 = ~(exec & go & exe_obuf & single_step_n & immld_n);
 
 // EXECON.NET (112) - exect3 : nd3
 assign exect_3 = ~(imm2 & insrdyp & single_step_n);
@@ -233,15 +225,7 @@ assign exect_3 = ~(imm2 & insrdyp & single_step_n);
 assign exect_4 = ~(stop_obuf & single_go & go);
 
 // EXECON.NET (114) - exect5 : nd5
-nd5 exect5_inst
-(
-	.q /* OUT */ (execi),
-	.a_0 /* IN */ (exect_0),
-	.a_1 /* IN */ (exect_1),
-	.a_2 /* IN */ (exect_2),
-	.a_3 /* IN */ (exect_3),
-	.a_4 /* IN */ (exect_4)
-);
+assign execi = ~(exect_0 & exect_1 & exect_2 & exect_3 & exect_4);
 
 // EXECON.NET (115) - exect : fd2q
 fd2q exect_inst
@@ -295,15 +279,7 @@ fd2q imm2_inst
 );
 
 // EXECON.NET (128) - stopt0 : nd5
-nd5 stopt0_inst
-(
-	.q /* OUT */ (stopt_0),
-	.a_0 /* IN */ (exec),
-	.a_1 /* IN */ (go),
-	.a_2 /* IN */ (exe_obuf),
-	.a_3 /* IN */ (immld_n),
-	.a_4 /* IN */ (single_step)
-);
+assign stopt_0 = ~(exec & go & exe_obuf & immld_n & single_step);
 
 // EXECON.NET (130) - stopt1 : nd3
 assign stopt_1 = ~(imm2 & insrdyp & single_step);
@@ -334,29 +310,13 @@ assign romot_1 = ~(imm2 & single_step_n & insrdy);
 assign romot2t = ~(memrw & datwe & precomp);
 
 // EXECON.NET (153) - romot2 : nd5p
-nd5p romot2_inst
-(
-	.q /* OUT */ (romot_2),
-	.a_0 /* IN */ (exec),
-	.a_1 /* IN */ (exeb_0),
-	.a_2 /* IN */ (single_step_n),
-	.a_3 /* IN */ (insrdy),
-	.a_4 /* IN */ (romot2t)
-);
+assign romot_2 = ~(exec & exeb_0 & single_step_n & insrdy & romot2t);
 
 // EXECON.NET (155) - romot3 : nd3
 assign romot_3 = ~(exec & exe_n & compdwait);
 
 // EXECON.NET (156) - romot4 : nd5
-nd5 romot4_inst
-(
-	.q /* OUT */ (romot_4),
-	.a_0 /* IN */ (exec),
-	.a_1 /* IN */ (exeb_0),
-	.a_2 /* IN */ (immld),
-	.a_3 /* IN */ (single_step),
-	.a_4 /* IN */ (insrdy)
-);
+assign romot_4 = ~(exec & exeb_0 & immld & single_step & insrdy);
 
 // EXECON.NET (158) - romot5 : nd4
 assign romot_5 = ~(exec & exe_n & wait_n & insrdy);

@@ -1512,15 +1512,7 @@ mx4g yaddr_index_22_inst
 );
 
 // ADDRGEN.NET (220) - yaddr[23] : an5
-an5 yaddr_index_23_inst
-(
-	.q /* OUT */ (ya_23),
-	.a_0 /* IN */ (ytm_14),
-	.a_1 /* IN */ (width_2),
-	.a_2 /* IN */ (width_3),
-	.a_3 /* IN */ (width_n_4),
-	.a_4 /* IN */ (width_5)
-);
+assign ya_23 = ytm_14 & width_2 & width_3 & width_n_4 & width_5;
 
 // ADDRGEN.NET (227) - pa_a : join
 assign pa_a[0] = ya_0;

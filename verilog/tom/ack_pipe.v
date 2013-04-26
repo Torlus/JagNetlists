@@ -16,19 +16,19 @@ wire q;
 wire d1;
 wire d;
 
-// OB.NET (687) - notack : iv
+// OB.NET (689) - notack : iv
 assign notack = ~ack;
 
-// OB.NET (688) - d0 : nd2
+// OB.NET (690) - d0 : nd2
 assign d0 = ~(q & notack);
 
-// OB.NET (689) - d1 : iv
+// OB.NET (691) - d1 : iv
 assign d1 = ~latchd;
 
-// OB.NET (690) - d : nd2
+// OB.NET (692) - d : nd2
 assign d = ~(d0 & d1);
 
-// OB.NET (691) - q : fd2q
+// OB.NET (693) - q : fd2q
 fd2q q_inst
 (
 	.q /* OUT */ (q),
@@ -38,7 +38,7 @@ fd2q q_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// OB.NET (692) - latch : an2
+// OB.NET (694) - latch : an2
 assign latch = q & ack;
 endmodule
 /* verilator lint_on LITENDIAN */

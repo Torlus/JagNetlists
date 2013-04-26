@@ -1695,37 +1695,10 @@ assign hpe_8 = ~(hp_8 ^ hcb_8);
 assign hpe_9 = ~(hp_9 ^ hcb_9);
 
 // VID.NET (157) - hpeqt : and10
-and10 hpeqt_inst
-(
-	.z /* OUT */ (hpeqt),
-	.a_0 /* IN */ (hpe_0),
-	.a_1 /* IN */ (hpe_1),
-	.a_2 /* IN */ (hpe_2),
-	.a_3 /* IN */ (hpe_3),
-	.a_4 /* IN */ (hpe_4),
-	.a_5 /* IN */ (hpe_5),
-	.a_6 /* IN */ (hpe_6),
-	.a_7 /* IN */ (hpe_7),
-	.a_8 /* IN */ (hpe_8),
-	.a_9 /* IN */ (hpe_9)
-);
+assign hpeqt = hpe_0 & hpe_1 & hpe_2 & hpe_3 & hpe_4 & hpe_5 & hpe_6 & hpe_7 & hpe_8 & hpe_9;
 
 // VID.NET (158) - hpeqi : and11
-and11 hpeqi_inst
-(
-	.z /* OUT */ (hpeqi),
-	.a_0 /* IN */ (hpe_0),
-	.a_1 /* IN */ (hpe_1),
-	.a_2 /* IN */ (hpe_2),
-	.a_3 /* IN */ (hpe_3),
-	.a_4 /* IN */ (hpe_4),
-	.a_5 /* IN */ (hpe_5),
-	.a_6 /* IN */ (hpe_6),
-	.a_7 /* IN */ (hpe_7),
-	.a_8 /* IN */ (hpe_8),
-	.a_9 /* IN */ (hpe_9),
-	.a_10 /* IN */ (viden)
-);
+assign hpeqi = hpe_0 & hpe_1 & hpe_2 & hpe_3 & hpe_4 & hpe_5 & hpe_6 & hpe_7 & hpe_8 & hpe_9 & viden;
 
 // VID.NET (159) - hpeq : niv
 assign hpeq = hpeqi;
@@ -2141,37 +2114,10 @@ assign hse_9 = ~(hs_9 ^ hcb_9);
 assign hse_10 = ~(hs_10 ^ hcb_10_obuf);
 
 // VID.NET (177) - hseq : and11
-and11 hseq_inst
-(
-	.z /* OUT */ (hseq),
-	.a_0 /* IN */ (hse_0),
-	.a_1 /* IN */ (hse_1),
-	.a_2 /* IN */ (hse_2),
-	.a_3 /* IN */ (hse_3),
-	.a_4 /* IN */ (hse_4),
-	.a_5 /* IN */ (hse_5),
-	.a_6 /* IN */ (hse_6),
-	.a_7 /* IN */ (hse_7),
-	.a_8 /* IN */ (hse_8),
-	.a_9 /* IN */ (hse_9),
-	.a_10 /* IN */ (hse_10)
-);
+assign hseq = hse_0 & hse_1 & hse_2 & hse_3 & hse_4 & hse_5 & hse_6 & hse_7 & hse_8 & hse_9 & hse_10;
 
 // VID.NET (178) - hvsb : and10
-and10 hvsb_inst
-(
-	.z /* OUT */ (hvsb),
-	.a_0 /* IN */ (hse_0),
-	.a_1 /* IN */ (hse_1),
-	.a_2 /* IN */ (hse_2),
-	.a_3 /* IN */ (hse_3),
-	.a_4 /* IN */ (hse_4),
-	.a_5 /* IN */ (hse_5),
-	.a_6 /* IN */ (hse_6),
-	.a_7 /* IN */ (hse_7),
-	.a_8 /* IN */ (hse_8),
-	.a_9 /* IN */ (hse_9)
-);
+assign hvsb = hse_0 & hse_1 & hse_2 & hse_3 & hse_4 & hse_5 & hse_6 & hse_7 & hse_8 & hse_9;
 
 // VID.NET (184) - hvs[0-9] : ldp1q
 ldp1q hvs_from_0_to_9_inst_0
@@ -2258,20 +2204,7 @@ assign hvse_8 = ~(hvs_8 ^ hcb_8);
 assign hvse_9 = ~(hvs_9 ^ hcb_9);
 
 // VID.NET (186) - hvse : and10
-and10 hvse_inst
-(
-	.z /* OUT */ (hvse),
-	.a_0 /* IN */ (hvse_0),
-	.a_1 /* IN */ (hvse_1),
-	.a_2 /* IN */ (hvse_2),
-	.a_3 /* IN */ (hvse_3),
-	.a_4 /* IN */ (hvse_4),
-	.a_5 /* IN */ (hvse_5),
-	.a_6 /* IN */ (hvse_6),
-	.a_7 /* IN */ (hvse_7),
-	.a_8 /* IN */ (hvse_8),
-	.a_9 /* IN */ (hvse_9)
-);
+assign hvse = hvse_0 & hvse_1 & hvse_2 & hvse_3 & hvse_4 & hvse_5 & hvse_6 & hvse_7 & hvse_8 & hvse_9;
 
 // VID.NET (191) - heq[0-9] : ldp1q
 ldp1q heq_from_0_to_9_inst_0
@@ -2358,20 +2291,7 @@ assign heqe_8 = ~(heq_8 ^ hcb_8);
 assign heqe_9 = ~(heq_9 ^ hcb_9);
 
 // VID.NET (193) - heqe : and10
-and10 heqe_inst
-(
-	.z /* OUT */ (heqe),
-	.a_0 /* IN */ (heqe_0),
-	.a_1 /* IN */ (heqe_1),
-	.a_2 /* IN */ (heqe_2),
-	.a_3 /* IN */ (heqe_3),
-	.a_4 /* IN */ (heqe_4),
-	.a_5 /* IN */ (heqe_5),
-	.a_6 /* IN */ (heqe_6),
-	.a_7 /* IN */ (heqe_7),
-	.a_8 /* IN */ (heqe_8),
-	.a_9 /* IN */ (heqe_9)
-);
+assign heqe = heqe_0 & heqe_1 & heqe_2 & heqe_3 & heqe_4 & heqe_5 & heqe_6 & heqe_7 & heqe_8 & heqe_9;
 
 // VID.NET (202) - nextfieldl : nd2
 assign nextfieldl = ~(vpeq & hpeq);
@@ -2668,39 +2588,10 @@ assign vpe_9 = ~(vp_9 ^ vcb_9);
 assign vpe_10 = ~(vp_10 ^ vcb_10);
 
 // VID.NET (224) - vpeqt : and11
-and11 vpeqt_inst
-(
-	.z /* OUT */ (vpeqt),
-	.a_0 /* IN */ (vpe_0),
-	.a_1 /* IN */ (vpe_1),
-	.a_2 /* IN */ (vpe_2),
-	.a_3 /* IN */ (vpe_3),
-	.a_4 /* IN */ (vpe_4),
-	.a_5 /* IN */ (vpe_5),
-	.a_6 /* IN */ (vpe_6),
-	.a_7 /* IN */ (vpe_7),
-	.a_8 /* IN */ (vpe_8),
-	.a_9 /* IN */ (vpe_9),
-	.a_10 /* IN */ (vpe_10)
-);
+assign vpeqt = vpe_0 & vpe_1 & vpe_2 & vpe_3 & vpe_4 & vpe_5 & vpe_6 & vpe_7 & vpe_8 & vpe_9 & vpe_10;
 
 // VID.NET (225) - vpeq : and12
-and12 vpeq_inst
-(
-	.z /* OUT */ (vpeq),
-	.a_0 /* IN */ (vpe_0),
-	.a_1 /* IN */ (vpe_1),
-	.a_2 /* IN */ (vpe_2),
-	.a_3 /* IN */ (vpe_3),
-	.a_4 /* IN */ (vpe_4),
-	.a_5 /* IN */ (vpe_5),
-	.a_6 /* IN */ (vpe_6),
-	.a_7 /* IN */ (vpe_7),
-	.a_8 /* IN */ (vpe_8),
-	.a_9 /* IN */ (vpe_9),
-	.a_10 /* IN */ (vpe_10),
-	.a_11 /* IN */ (viden)
-);
+assign vpeq = vpe_0 & vpe_1 & vpe_2 & vpe_3 & vpe_4 & vpe_5 & vpe_6 & vpe_7 & vpe_8 & vpe_9 & vpe_10 & viden;
 
 // VID.NET (227) - vbb : creg11
 creg11 vbb_inst

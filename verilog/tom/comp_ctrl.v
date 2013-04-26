@@ -209,28 +209,10 @@ assign nowt_0 = ~(bcompen & bcompbit_n & phrase_mode_n);
 assign nowt_1 = ~(dcompen & dcomp_0 & phrase_mode_n & pixsize_n_2 & pixsize_0 & pixsize_1);
 
 // INNER.NET (776) - nowt2 : nd7
-nd7 nowt2_inst
-(
-	.q /* OUT */ (nowt_2),
-	.a_0 /* IN */ (dcompen),
-	.a_1 /* IN */ (dcomp_0),
-	.a_2 /* IN */ (dcomp_1),
-	.a_3 /* IN */ (phrase_mode_n),
-	.a_4 /* IN */ (pixsize_2),
-	.a_5 /* IN */ (pixsize_n_0),
-	.a_6 /* IN */ (pixsize_n_1)
-);
+assign nowt_2 = ~(dcompen & dcomp_0 & dcomp_1 & phrase_mode_n & pixsize_2 & pixsize_n_0 & pixsize_n_1);
 
 // INNER.NET (778) - nowt3 : nd5
-nd5 nowt3_inst
-(
-	.q /* OUT */ (nowt_3),
-	.a_0 /* IN */ (zcomp_0),
-	.a_1 /* IN */ (phrase_mode_n),
-	.a_2 /* IN */ (pixsize_2),
-	.a_3 /* IN */ (pixsize_n_0),
-	.a_4 /* IN */ (pixsize_n_1)
-);
+assign nowt_3 = ~(zcomp_0 & phrase_mode_n & pixsize_2 & pixsize_n_0 & pixsize_n_1);
 
 // INNER.NET (780) - nowt4 : nd4
 assign nowt_4 = ~(nowt_0 & nowt_1 & nowt_2 & nowt_3);

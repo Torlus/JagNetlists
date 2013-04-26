@@ -216,48 +216,16 @@ assign force0_n = jump_n & go;
 assign q0b_0 = ~(qs_n_0 & qs_n_1 & qs_n_2 & progack & oddjump & go);
 
 // DSP_F-35.NET (140) - q0b1 : nd5
-j_nd5 q0b1_inst
-(
-	.q /* OUT */ (q0b_1),
-	.a_0 /* IN */ (qs_0),
-	.a_1 /* IN */ (qs_n_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack_n),
-	.a_4 /* IN */ (promold_n)
-);
+assign q0b_1 = ~(qs_0 & qs_n_1 & qs_n_2 & progack_n & promold_n);
 
 // DSP_F-35.NET (141) - q0b2 : nd5
-j_nd5 q0b2_inst
-(
-	.q /* OUT */ (q0b_2),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack_n),
-	.a_4 /* IN */ (promold)
-);
+assign q0b_2 = ~(qs_n_0 & qs_1 & qs_n_2 & progack_n & promold);
 
 // DSP_F-35.NET (143) - q0b3 : nd5
-j_nd5 q0b3_inst
-(
-	.q /* OUT */ (q0b_3),
-	.a_0 /* IN */ (qs_0),
-	.a_1 /* IN */ (qs_n_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack),
-	.a_4 /* IN */ (promold_n)
-);
+assign q0b_3 = ~(qs_0 & qs_n_1 & qs_n_2 & progack & promold_n);
 
 // DSP_F-35.NET (144) - q0b4 : nd5
-j_nd5 q0b4_inst
-(
-	.q /* OUT */ (q0b_4),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack),
-	.a_4 /* IN */ (promold)
-);
+assign q0b_4 = ~(qs_n_0 & qs_1 & qs_n_2 & progack & promold);
 
 // DSP_F-35.NET (145) - q0b5 : nd4
 assign q0b_5 = ~(qs_0 & qs_1 & qs_n_2 & promold_n);
@@ -266,17 +234,7 @@ assign q0b_5 = ~(qs_0 & qs_1 & qs_n_2 & promold_n);
 assign q0b_6 = ~(qs_n_0 & qs_n_1 & qs_2 & promold);
 
 // DSP_F-35.NET (147) - q0b7 : nd7
-j_nd7 q0b7_inst
-(
-	.q /* OUT */ (q0b_7),
-	.a_0 /* IN */ (q0b_0),
-	.a_1 /* IN */ (q0b_1),
-	.a_2 /* IN */ (q0b_2),
-	.a_3 /* IN */ (q0b_3),
-	.a_4 /* IN */ (q0b_4),
-	.a_5 /* IN */ (q0b_5),
-	.a_6 /* IN */ (q0b_6)
-);
+assign q0b_7 = ~(q0b_0 & q0b_1 & q0b_2 & q0b_3 & q0b_4 & q0b_5 & q0b_6);
 
 // DSP_F-35.NET (148) - qi0 : an2
 assign qsi_0 = q0b_7 & force0_n;
@@ -285,51 +243,19 @@ assign qsi_0 = q0b_7 & force0_n;
 assign q1b_0 = ~(qs_n_0 & qs_n_1 & qs_n_2 & progack & oddjump_n & go);
 
 // DSP_F-35.NET (153) - q1b1 : nd5
-j_nd5 q1b1_inst
-(
-	.q /* OUT */ (q1b_1),
-	.a_0 /* IN */ (qs_0),
-	.a_1 /* IN */ (qs_n_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack),
-	.a_4 /* IN */ (promold)
-);
+assign q1b_1 = ~(qs_0 & qs_n_1 & qs_n_2 & progack & promold);
 
 // DSP_F-35.NET (154) - q1b2 : nd5
-j_nd5 q1b2_inst
-(
-	.q /* OUT */ (q1b_2),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack_n),
-	.a_4 /* IN */ (promold_n)
-);
+assign q1b_2 = ~(qs_n_0 & qs_1 & qs_n_2 & progack_n & promold_n);
 
 // DSP_F-35.NET (155) - q1b3 : nd4
 assign q1b_3 = ~(qs_0 & qs_1 & qs_n_2 & promold);
 
 // DSP_F-35.NET (157) - q1b4 : nd5
-j_nd5 q1b4_inst
-(
-	.q /* OUT */ (q1b_4),
-	.a_0 /* IN */ (qs_0),
-	.a_1 /* IN */ (qs_n_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack),
-	.a_4 /* IN */ (promold_n)
-);
+assign q1b_4 = ~(qs_0 & qs_n_1 & qs_n_2 & progack & promold_n);
 
 // DSP_F-35.NET (158) - q1b5 : nd5
-j_nd5 q1b5_inst
-(
-	.q /* OUT */ (q1b_5),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack),
-	.a_4 /* IN */ (promold)
-);
+assign q1b_5 = ~(qs_n_0 & qs_1 & qs_n_2 & progack & promold);
 
 // DSP_F-35.NET (159) - q1b6 : nd4
 assign q1b_6 = ~(qs_0 & qs_1 & qs_n_2 & promold_n);
@@ -344,15 +270,7 @@ assign q1b_8 = ~(q1b_0 & q1b_1 & q1b_2 & q1b_3 & q1b_4 & q1b_5 & q1b_6 & q1b_7);
 assign qsi_1 = q1b_8 & force0_n;
 
 // DSP_F-35.NET (165) - q2b0 : nd5
-j_nd5 q2b0_inst
-(
-	.q /* OUT */ (q2b_0),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack),
-	.a_4 /* IN */ (promold_n)
-);
+assign q2b_0 = ~(qs_n_0 & qs_1 & qs_n_2 & progack & promold_n);
 
 // DSP_F-35.NET (166) - q2b1 : nd4
 assign q2b_1 = ~(qs_n_0 & qs_n_1 & qs_2 & promold_n);
@@ -1179,51 +1097,19 @@ mx2 instr_inst_15
 );
 
 // DSP_F-35.NET (237) - prst0 : nd5
-j_nd5 prst0_inst
-(
-	.q /* OUT */ (prst_0),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_n_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (go),
-	.a_4 /* IN */ (jump_n)
-);
+assign prst_0 = ~(qs_n_0 & qs_n_1 & qs_n_2 & go & jump_n);
 
 // DSP_F-35.NET (238) - prst1t : nd2
 assign prst1t = ~(progack & promold_n);
 
 // DSP_F-35.NET (239) - prst1 : nd5
-j_nd5 prst1_inst
-(
-	.q /* OUT */ (prst_1),
-	.a_0 /* IN */ (qs_0),
-	.a_1 /* IN */ (qs_n_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (prst1t),
-	.a_4 /* IN */ (jump_n)
-);
+assign prst_1 = ~(qs_0 & qs_n_1 & qs_n_2 & prst1t & jump_n);
 
 // DSP_F-35.NET (240) - prst2 : nd5
-j_nd5 prst2_inst
-(
-	.q /* OUT */ (prst_2),
-	.a_0 /* IN */ (qs_n_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (progack_n),
-	.a_4 /* IN */ (jump_n)
-);
+assign prst_2 = ~(qs_n_0 & qs_1 & qs_n_2 & progack_n & jump_n);
 
 // DSP_F-35.NET (241) - prst3 : nd5
-j_nd5 prst3_inst
-(
-	.q /* OUT */ (prst_3),
-	.a_0 /* IN */ (qs_0),
-	.a_1 /* IN */ (qs_1),
-	.a_2 /* IN */ (qs_n_2),
-	.a_3 /* IN */ (promold),
-	.a_4 /* IN */ (jump_n)
-);
+assign prst_3 = ~(qs_0 & qs_1 & qs_n_2 & promold & jump_n);
 
 // DSP_F-35.NET (242) - progreq : nd4p
 assign progreq = ~(prst_0 & prst_1 & prst_2 & prst_3);

@@ -322,15 +322,7 @@ assign ts_pe_4_a1_out = ilatch_4;
 assign ts_pe_4_a1_oe = statrd;
 
 // INTER-UA.NET (72) - irq : or5
-or5 irq_inst
-(
-	.z /* OUT */ (irq),
-	.a /* IN */ (ilatch_0),
-	.b /* IN */ (ilatch_1),
-	.c /* IN */ (ilatch_2),
-	.d /* IN */ (ilatch_3),
-	.e /* IN */ (ilatch_4)
-);
+assign irq = ilatch_0 | ilatch_1 | ilatch_2 | ilatch_3 | ilatch_4;
 
 // INTER-UA.NET (82) - ilatch\[1] : iv
 assign ilatch_n_1 = ~ilatch_1;

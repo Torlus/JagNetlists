@@ -536,15 +536,7 @@ assign inc2t_2 = ~(inc2t_0 & inc2t_1);
 assign inc_n_2 = ~(phrase_mode & inc2t_2);
 
 // INNER.NET (635) - inc\[3] : nd5
-nd5 inc_n_index_3_inst
-(
-	.q /* OUT */ (inc_n_3),
-	.a_0 /* IN */ (phrase_mode),
-	.a_1 /* IN */ (pixel8),
-	.a_2 /* IN */ (inct_n_0),
-	.a_3 /* IN */ (inct_n_1),
-	.a_4 /* IN */ (inct_n_2)
-);
+assign inc_n_3 = ~(phrase_mode & pixel8 & inct_n_0 & inct_n_1 & inct_n_2);
 
 // INNER.NET (637) - count0t4 : add4
 add4 count0t4_inst
@@ -960,26 +952,7 @@ fdsync uflow_inst
 );
 
 // INNER.NET (672) - inner0t : nr16
-nr16 inner0t_inst
-(
-	.z /* OUT */ (inner0t),
-	.a_0 /* IN */ (icount_0_obuf),
-	.a_1 /* IN */ (icount_1_obuf),
-	.a_2 /* IN */ (icount_2_obuf),
-	.a_3 /* IN */ (icount_3),
-	.a_4 /* IN */ (icount_4),
-	.a_5 /* IN */ (icount_5),
-	.a_6 /* IN */ (icount_6),
-	.a_7 /* IN */ (icount_7),
-	.a_8 /* IN */ (icount_8),
-	.a_9 /* IN */ (icount_9),
-	.a_10 /* IN */ (icount_10),
-	.a_11 /* IN */ (icount_11),
-	.a_12 /* IN */ (icount_12),
-	.a_13 /* IN */ (icount_13),
-	.a_14 /* IN */ (icount_14),
-	.a_15 /* IN */ (icount_15)
-);
+assign inner0t = ~(icount_0_obuf | icount_1_obuf | icount_2_obuf | icount_3 | icount_4 | icount_5 | icount_6 | icount_7 | icount_8 | icount_9 | icount_10 | icount_11 | icount_12 | icount_13 | icount_14 | icount_15);
 
 // INNER.NET (673) - inner0 : or2p
 assign inner0 = inner0t | underflow;

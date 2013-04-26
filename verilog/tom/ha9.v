@@ -83,19 +83,7 @@ assign q7t = ~(a_6 & a_5 & a_4 & a_3 & a_2 & a_1 & a_0 & c);
 assign q_7 = ~(a_7 ^ q7t);
 
 // WBK.NET (230) - q8t : nd9
-nd9 q8t_inst
-(
-	.q /* OUT */ (q8t),
-	.a_0 /* IN */ (a_7),
-	.a_1 /* IN */ (a_6),
-	.a_2 /* IN */ (a_5),
-	.a_3 /* IN */ (a_4),
-	.a_4 /* IN */ (a_3),
-	.a_5 /* IN */ (a_2),
-	.a_6 /* IN */ (a_1),
-	.a_7 /* IN */ (a_0),
-	.a_8 /* IN */ (c)
-);
+assign q8t = ~(a_7 & a_6 & a_5 & a_4 & a_3 & a_2 & a_1 & a_0 & c);
 
 // WBK.NET (231) - q8 : en
 assign q_8 = ~(a_8 ^ q8t);

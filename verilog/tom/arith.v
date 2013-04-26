@@ -1178,19 +1178,7 @@ tbenw topset_index_16_inst
 );
 
 // ARITH.NET (145) - inh[16] : or9
-or9 inh_index_16_inst
-(
-	.z /* OUT */ (inh_16),
-	.a /* IN */ (srcdp_16),
-	.b /* IN */ (srcdp_17),
-	.c /* IN */ (srcdp_18),
-	.d /* IN */ (srcdp_19),
-	.e /* IN */ (srcdp_20),
-	.f /* IN */ (srcdp_21),
-	.g /* IN */ (srcdp_22),
-	.h /* IN */ (srcdp_23),
-	.i /* IN */ (inh_24)
-);
+assign inh_16 = srcdp_16 | srcdp_17 | srcdp_18 | srcdp_19 | srcdp_20 | srcdp_21 | srcdp_22 | srcdp_23 | inh_24;
 
 // ARITH.NET (147) - topset[9-15] : tben
 tben topset_from_9_to_15_inst_0
@@ -1252,19 +1240,7 @@ tbenw topset_index_8_inst
 );
 
 // ARITH.NET (150) - inh[8] : or9
-or9 inh_index_8_inst
-(
-	.z /* OUT */ (inh_8),
-	.a /* IN */ (srcdp_8),
-	.b /* IN */ (srcdp_9),
-	.c /* IN */ (srcdp_10),
-	.d /* IN */ (srcdp_11),
-	.e /* IN */ (srcdp_12),
-	.f /* IN */ (srcdp_13),
-	.g /* IN */ (srcdp_14),
-	.h /* IN */ (srcdp_15),
-	.i /* IN */ (inh_16)
-);
+assign inh_8 = srcdp_8 | srcdp_9 | srcdp_10 | srcdp_11 | srcdp_12 | srcdp_13 | srcdp_14 | srcdp_15 | inh_16;
 
 // ARITH.NET (152) - topset[1-7] : tben
 tben topset_from_1_to_7_inst_0
@@ -1326,92 +1302,16 @@ tbenw topset_index_0_inst
 );
 
 // ARITH.NET (158) - normi[0] : or16
-or16 normi_index_0_inst
-(
-	.q /* OUT */ (normi_0),
-	.a_0 /* IN */ (topset_30),
-	.a_1 /* IN */ (topset_28),
-	.a_2 /* IN */ (topset_26),
-	.a_3 /* IN */ (topset_24),
-	.a_4 /* IN */ (topset_22),
-	.a_5 /* IN */ (topset_20),
-	.a_6 /* IN */ (topset_18),
-	.a_7 /* IN */ (topset_16),
-	.a_8 /* IN */ (topset_14),
-	.a_9 /* IN */ (topset_12),
-	.a_10 /* IN */ (topset_10),
-	.a_11 /* IN */ (topset_8),
-	.a_12 /* IN */ (topset_6),
-	.a_13 /* IN */ (topset_4),
-	.a_14 /* IN */ (topset_2),
-	.a_15 /* IN */ (topset_0)
-);
+assign normi_0 = topset_30 | topset_28 | topset_26 | topset_24 | topset_22 | topset_20 | topset_18 | topset_16 | topset_14 | topset_12 | topset_10 | topset_8 | topset_6 | topset_4 | topset_2 | topset_0;
 
 // ARITH.NET (164) - normi[1] : or16
-or16 normi_index_1_inst
-(
-	.q /* OUT */ (normi_1),
-	.a_0 /* IN */ (topset_29),
-	.a_1 /* IN */ (topset_30),
-	.a_2 /* IN */ (topset_25),
-	.a_3 /* IN */ (topset_26),
-	.a_4 /* IN */ (topset_21),
-	.a_5 /* IN */ (topset_22),
-	.a_6 /* IN */ (topset_17),
-	.a_7 /* IN */ (topset_18),
-	.a_8 /* IN */ (topset_13),
-	.a_9 /* IN */ (topset_14),
-	.a_10 /* IN */ (topset_9),
-	.a_11 /* IN */ (topset_10),
-	.a_12 /* IN */ (topset_5),
-	.a_13 /* IN */ (topset_6),
-	.a_14 /* IN */ (topset_1),
-	.a_15 /* IN */ (topset_2)
-);
+assign normi_1 = topset_29 | topset_30 | topset_25 | topset_26 | topset_21 | topset_22 | topset_17 | topset_18 | topset_13 | topset_14 | topset_9 | topset_10 | topset_5 | topset_6 | topset_1 | topset_2;
 
 // ARITH.NET (168) - normi[2] : or16
-or16 normi_index_2_inst
-(
-	.q /* OUT */ (normi_2),
-	.a_0 /* IN */ (topset_27),
-	.a_1 /* IN */ (topset_28),
-	.a_2 /* IN */ (topset_29),
-	.a_3 /* IN */ (topset_30),
-	.a_4 /* IN */ (topset_19),
-	.a_5 /* IN */ (topset_20),
-	.a_6 /* IN */ (topset_21),
-	.a_7 /* IN */ (topset_22),
-	.a_8 /* IN */ (topset_11),
-	.a_9 /* IN */ (topset_12),
-	.a_10 /* IN */ (topset_13),
-	.a_11 /* IN */ (topset_14),
-	.a_12 /* IN */ (topset_3),
-	.a_13 /* IN */ (topset_4),
-	.a_14 /* IN */ (topset_5),
-	.a_15 /* IN */ (topset_6)
-);
+assign normi_2 = topset_27 | topset_28 | topset_29 | topset_30 | topset_19 | topset_20 | topset_21 | topset_22 | topset_11 | topset_12 | topset_13 | topset_14 | topset_3 | topset_4 | topset_5 | topset_6;
 
 // ARITH.NET (170) - normi[3] : or16
-or16 normi_index_3_inst
-(
-	.q /* OUT */ (normi_3),
-	.a_0 /* IN */ (topset_31),
-	.a_1 /* IN */ (topset_15),
-	.a_2 /* IN */ (topset_16),
-	.a_3 /* IN */ (topset_17),
-	.a_4 /* IN */ (topset_18),
-	.a_5 /* IN */ (topset_19),
-	.a_6 /* IN */ (topset_20),
-	.a_7 /* IN */ (topset_21),
-	.a_8 /* IN */ (topset_22),
-	.a_9 /* IN */ (topset_0),
-	.a_10 /* IN */ (topset_1),
-	.a_11 /* IN */ (topset_2),
-	.a_12 /* IN */ (topset_3),
-	.a_13 /* IN */ (topset_4),
-	.a_14 /* IN */ (topset_5),
-	.a_15 /* IN */ (topset_6)
-);
+assign normi_3 = topset_31 | topset_15 | topset_16 | topset_17 | topset_18 | topset_19 | topset_20 | topset_21 | topset_22 | topset_0 | topset_1 | topset_2 | topset_3 | topset_4 | topset_5 | topset_6;
 
 // ARITH.NET (172) - normi[4] : an2
 assign normi_4 = normi_5 & inh_7;
@@ -2713,42 +2613,7 @@ fdsync32 resreg_inst
 );
 
 // ARITH.NET (249) - zerodet : nr32
-nr32 zerodet_inst
-(
-	.q /* OUT */ (zerodet),
-	.a_0 /* IN */ (resd[0]),
-	.a_1 /* IN */ (resd[1]),
-	.a_2 /* IN */ (resd[2]),
-	.a_3 /* IN */ (resd[3]),
-	.a_4 /* IN */ (resd[4]),
-	.a_5 /* IN */ (resd[5]),
-	.a_6 /* IN */ (resd[6]),
-	.a_7 /* IN */ (resd[7]),
-	.a_8 /* IN */ (resd[8]),
-	.a_9 /* IN */ (resd[9]),
-	.a_10 /* IN */ (resd[10]),
-	.a_11 /* IN */ (resd[11]),
-	.a_12 /* IN */ (resd[12]),
-	.a_13 /* IN */ (resd[13]),
-	.a_14 /* IN */ (resd[14]),
-	.a_15 /* IN */ (resd[15]),
-	.a_16 /* IN */ (resd[16]),
-	.a_17 /* IN */ (resd[17]),
-	.a_18 /* IN */ (resd[18]),
-	.a_19 /* IN */ (resd[19]),
-	.a_20 /* IN */ (resd[20]),
-	.a_21 /* IN */ (resd[21]),
-	.a_22 /* IN */ (resd[22]),
-	.a_23 /* IN */ (resd[23]),
-	.a_24 /* IN */ (resd[24]),
-	.a_25 /* IN */ (resd[25]),
-	.a_26 /* IN */ (resd[26]),
-	.a_27 /* IN */ (resd[27]),
-	.a_28 /* IN */ (resd[28]),
-	.a_29 /* IN */ (resd[29]),
-	.a_30 /* IN */ (resd[30]),
-	.a_31 /* IN */ (resd[31])
-);
+assign zerodet = ~(resd[0] | resd[1] | resd[2] | resd[3] | resd[4] | resd[5] | resd[6] | resd[7] | resd[8] | resd[9] | resd[10] | resd[11] | resd[12] | resd[13] | resd[14] | resd[15] | resd[16] | resd[17] | resd[18] | resd[19] | resd[20] | resd[21] | resd[22] | resd[23] | resd[24] | resd[25] | resd[26] | resd[27] | resd[28] | resd[29] | resd[30] | resd[31]);
 
 // ARITH.NET (250) - zfi : mx4
 mx4 zfi_inst

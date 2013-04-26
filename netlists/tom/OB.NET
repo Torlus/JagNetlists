@@ -656,8 +656,10 @@ Notobdone :=	IV (notobdone,obdone);
 Hold :=		IV (hold,release);
 
 (* tie off unused signals *)
-
-Unused :=	ND6	(unused,unused,gnd,olpco[21],wco[9],dco[20],gnd);
+(* GE *)
+(* Unused :=	ND6	(unused,unused,gnd,olpco[21],wco[9],dco[20],gnd); *)
+Unused := ND6	(unused,gnd,gnd,olpco[21],wco[9],dco[20],gnd);
+Unused2 := DUMMY(unused);
 
 /* select either the PC or data address */
 

@@ -3,7 +3,6 @@
 
 module tb
 (
-`ifdef verilator3
 	input	xresetl,
 	input xpclk,
 	input xvclk,
@@ -53,21 +52,20 @@ module tb
 	output [7:0] vga_r,
 	output [7:0] vga_g,
 	output [7:0] vga_b
-`endif
 );
 
-`ifndef verilator3
-reg						xpclk;
-reg						xvclk;
-reg						xresetl;
-reg						sys_clk;
+// `ifndef verilator3
+// reg						xpclk;
+// reg						xvclk;
+// reg						xresetl;
+// reg						sys_clk;
 
-wire 					vga_vs_n;
-wire					vga_hs_n;
-wire [7:0] 		vga_r;
-wire [7:0] 		vga_g;
-wire [7:0] 		vga_b;
-`endif
+// wire 					vga_vs_n;
+// wire					vga_hs_n;
+// wire [7:0] 		vga_r;
+// wire [7:0] 		vga_g;
+// wire [7:0] 		vga_b;
+// `endif
 
 // TOM
 
@@ -135,6 +133,9 @@ wire					xintl;
 wire					hs_o;
 wire					hhs_o;
 wire					vs_o;
+
+wire					fdram;
+wire					blank;
 
 // JERRY
 
@@ -257,27 +258,27 @@ wire [23:0]	j68_address_final;
 
 
 
-// OS ROM
-`ifndef verilator3
-wire	[16:0]	os_rom_a;
-wire					os_rom_ce_n;
-wire					os_rom_oe_n;
-wire	[7:0]		os_rom_q;
-wire					os_rom_oe;
-`endif
+// // OS ROM
+// `ifndef verilator3
+// wire	[16:0]	os_rom_a;
+// wire					os_rom_ce_n;
+// wire					os_rom_oe_n;
+// wire	[7:0]		os_rom_q;
+// wire					os_rom_oe;
+// `endif
 
-// DRAM
-`ifndef verilator3
-wire  [0:9] 	dram_a;
-wire  				dram_ras_n;
-wire					dram_cas_n;
-wire	[0:3]		dram_oe_n;
-wire 	[0:3]		dram_uw_n;
-wire 	[0:3]		dram_lw_n;
-wire	[0:63]	dram_d;
-wire	[0:63]	dram_q;
-wire	[0:3]		dram_oe;
-`endif
+// // DRAM
+// `ifndef verilator3
+// wire  [0:9] 	dram_a;
+// wire  				dram_ras_n;
+// wire					dram_cas_n;
+// wire	[0:3]		dram_oe_n;
+// wire 	[0:3]		dram_uw_n;
+// wire 	[0:3]		dram_lw_n;
+// wire	[0:63]	dram_d;
+// wire	[0:63]	dram_q;
+// wire	[0:3]		dram_oe;
+// `endif
 
 // EEPROM
 wire	ee_cs;
@@ -301,18 +302,18 @@ wire	[9:0]		lb1_a;
 wire	[23:0]	lb1_q;
 
 
-// Simulation with Icarus Verilog
-`ifdef ICARUS
-initial
-begin
-  $dumpfile("tb.lxt");
-  $dumpvars(0, tb);
-	#1900000
-	begin
-		$finish;
-	end
-end
-`endif
+// // Simulation with Icarus Verilog
+// `ifdef ICARUS
+// initial
+// begin
+  // $dumpfile("tb.lxt");
+  // $dumpvars(0, tb);
+	// #1900000
+	// begin
+		// $finish;
+	// end
+// end
+// `endif
 
 // Debug
 assign rasl = xrasl[0];
@@ -348,34 +349,34 @@ assign j_xd_r = {
 };
 
 
-`ifndef verilator3
-// Clocks
-initial
-begin
-	sys_clk   = 1'b0;
-	// sys_clk   = 1'b1;
-	forever #10 sys_clk = ~sys_clk;
-end
+// `ifndef verilator3
+// // Clocks
+// initial
+// begin
+	// sys_clk   = 1'b0;
+	// // sys_clk   = 1'b1;
+	// forever #10 sys_clk = ~sys_clk;
+// end
 
-initial
-begin
-	xvclk     = 1'b1;
-	forever #20 xvclk = ~xvclk;
-end
+// initial
+// begin
+	// xvclk     = 1'b1;
+	// forever #20 xvclk = ~xvclk;
+// end
 
-initial
-begin
-	xpclk     = 1'b1;
-	forever #40 xpclk = ~xpclk;
-end
+// initial
+// begin
+	// xpclk     = 1'b1;
+	// forever #40 xpclk = ~xpclk;
+// end
 
-// Reset
-initial
-begin
-	xresetl 	= 1'b0;
-	#80 xresetl  = 1'b1;
-end
-`endif
+// // Reset
+// initial
+// begin
+	// xresetl 	= 1'b0;
+	// #80 xresetl  = 1'b1;
+// end
+// `endif
 
 
 wire refreq;
@@ -1203,6 +1204,8 @@ tom tom_inst
 	.bbreq_1(bbreq[1]),
 	.gbreq_0(gbreq[0]),
 	.gbreq_1(gbreq[1]),
+	.dram(fdram), // /!\
+	.blank(blank),
 	.sys_clk(sys_clk)
 );
 
@@ -1468,7 +1471,7 @@ j_jerry jerry_inst
   wire [31:0] w_dbg_cycles;
   wire        w_dbg_ifetch;
 
-`ifdef verilator3
+// `ifdef verilator3
   assign DBG_CPU_RDEN  = j68_rd_ena;
   assign DBG_CPU_WREN  = j68_wr_ena;
   assign DBG_CPU_DTACK = j68_data_ack;
@@ -1485,7 +1488,7 @@ j_jerry jerry_inst
   assign DBG_SSP_REG   = w_dbg_ssp_reg; 
   assign DBG_CYCLES    = w_dbg_cycles; 
   assign DBG_IFETCH    = w_dbg_ifetch; 
-`endif
+// `endif
 
 
 j68 j68_inst
@@ -1515,16 +1518,16 @@ j68 j68_inst
 	.dbg_irq_lvl()
 );
 
-`ifndef verilator3
-os_rom os_rom_inst
-(
-	.a(os_rom_a),
-	.ce_n(os_rom_ce_n),
-	.oe_n(os_rom_oe_n),
-	.q(os_rom_q),
-	.oe(os_rom_oe)
-);
-`endif
+// `ifndef verilator3
+// os_rom os_rom_inst
+// (
+	// .a(os_rom_a),
+	// .ce_n(os_rom_ce_n),
+	// .oe_n(os_rom_oe_n),
+	// .q(os_rom_q),
+	// .oe(os_rom_oe)
+// );
+// `endif
 
 assign dram_a = xma_in[0:9];
 assign dram_ras_n = xrasl[0];
@@ -1534,21 +1537,21 @@ assign dram_lw_n = {xwel[0], xwel[2], xwel[4], xwel[6]};
 assign dram_oe_n = {xoel[0], xoel[1], xoel[2], xoel[2]}; // /!\
 assign dram_d = dbus; // xd_in;
 
-`ifndef verilator3
-dram dram_inst
-(
-	.a(dram_a),
-	.ras_n(dram_ras_n),
-	.cas_n(dram_cas_n),
-	.uw_n(dram_uw_n),
-	.lw_n(dram_lw_n),
-	.oe_n(dram_oe_n),
-	.d(dram_d),
-	.q(dram_q),
-	.oe(dram_oe),
-	.sys_clk(sys_clk)
-);
-`endif
+// `ifndef verilator3
+// dram dram_inst
+// (
+	// .a(dram_a),
+	// .ras_n(dram_ras_n),
+	// .cas_n(dram_cas_n),
+	// .uw_n(dram_uw_n),
+	// .lw_n(dram_lw_n),
+	// .oe_n(dram_oe_n),
+	// .d(dram_d),
+	// .q(dram_q),
+	// .oe(dram_oe),
+	// .sys_clk(sys_clk)
+// );
+// `endif
 
 vgalb vgalb0
 (
@@ -1574,11 +1577,11 @@ assign vga_r = (vc[0] == 1'b0) ? lb1_q[23:16] : lb0_q[23:16];
 assign vga_g = (vc[0] == 1'b0) ? lb1_q[15:8] : lb0_q[15:8];
 assign vga_b = (vc[0] == 1'b0) ? lb1_q[7:0] : lb0_q[7:0];
 
-assign lb_d = { 
+assign lb_d = (~blank) ? { 
 	xr[7], xr[6], xr[5], xr[4], xr[3], xr[2], xr[1], xr[0],
 	xg[7], xg[6], xg[5], xg[4], xg[3], xg[2], xg[1], xg[0],
 	xb[7], xb[6], xb[5], xb[4], xb[3], xb[2], xb[1], xb[0]
-};
+} : 24'hFF0000;
 
 assign lb0_a = (vc[0] == 1'b0) ? hc[11:2] : vga_hc[10:1];
 // assign lb0_we = (vc[0] == 1'b0) ? 1'b1 : 1'b0;
@@ -1627,7 +1630,7 @@ assign vga_vs_n = (vc < 2) ? 1'b0 : 1'b1;
 endmodule
 
 ///////////////////////////////////////////////////////////////////////
-
+`ifdef SIMULATION
 module os_rom
 (
 	input 	[16:0]	a,
@@ -1651,9 +1654,11 @@ assign oe = (~ce_n & ~oe_n);
 assign q = rom_blk[a][7:0];
 
 endmodule
-
+`endif
 ///////////////////////////////////////////////////////////////////////
 
+
+`ifdef SIMULATION
 module dram
 (
 	input		[0:9] 	a,
@@ -1752,6 +1757,7 @@ assign w_oe[3] = (~oe_n[3] & ~cas_n & (uw_n[3] | lw_n[3]));
 assign q = ram_blk[ ea ][0:63];
 
 endmodule
+`endif
 
 module eeprom
 (

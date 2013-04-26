@@ -504,29 +504,13 @@ assign dnrt_1 = ~(dread_1 & dstenz_n & dstdack_n);
 assign dnrt_2 = ~(szread_1 & dsten_n & dstenz_n & srczack_n);
 
 // INNER.NET (162) - dnrt3 : nd5
-nd5 dnrt3_inst
-(
-	.q /* OUT */ (dnrt_3),
-	.a_0 /* IN */ (sread_1_obuf),
-	.a_1 /* IN */ (srcenz_n),
-	.a_2 /* IN */ (dsten_n),
-	.a_3 /* IN */ (dstenz_n),
-	.a_4 /* IN */ (srcdack_n)
-);
+assign dnrt_3 = ~(sread_1_obuf & srcenz_n & dsten_n & dstenz_n & srcdack_n);
 
 // INNER.NET (164) - dnrt4 : nd6
 assign dnrt_4 = ~(sreadx_1_obuf & srcenz_n & srcen_n & dsten_n & dstenz_n & srcdxack_n);
 
 // INNER.NET (166) - dnrt5 : nd5
-nd5 dnrt5_inst
-(
-	.q /* OUT */ (dnrt_5),
-	.a_0 /* IN */ (dnrt_0),
-	.a_1 /* IN */ (dnrt_1),
-	.a_2 /* IN */ (dnrt_2),
-	.a_3 /* IN */ (dnrt_3),
-	.a_4 /* IN */ (dnrt_4)
-);
+assign dnrt_5 = ~(dnrt_0 & dnrt_1 & dnrt_2 & dnrt_3 & dnrt_4);
 
 // INNER.NET (167) - dnrt6 : fd1q
 fd1q dnrt6_inst
@@ -679,15 +663,7 @@ assign sreadt_2 = ~(idle & step_obuf & srcenx_n & srcen_obuf);
 assign sreadt_3 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_obuf);
 
 // INNER.NET (231) - sreadt4 : nd5
-nd5 sreadt4_inst
-(
-	.q /* OUT */ (sreadt_4),
-	.a_0 /* IN */ (dwrite_obuf),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (dstwrz_n),
-	.a_3 /* IN */ (inner0_n),
-	.a_4 /* IN */ (srcen_obuf)
-);
+assign sreadt_4 = ~(dwrite_obuf & step_obuf & dstwrz_n & inner0_n & srcen_obuf);
 
 // INNER.NET (233) - sreadt5 : nd2
 assign sreadt_5 = ~(sread & step_n);
@@ -731,37 +707,13 @@ assign dreadt_0 = ~(szread & step_obuf & dsten);
 assign dreadt_1 = ~(sread & step_obuf & srcenz_n & dsten);
 
 // INNER.NET (248) - dreadt2 : nd5
-nd5 dreadt2_inst
-(
-	.q /* OUT */ (dreadt_2),
-	.a_0 /* IN */ (sreadx),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (srcenz_n),
-	.a_3 /* IN */ (srcen_n),
-	.a_4 /* IN */ (dsten)
-);
+assign dreadt_2 = ~(sreadx & step_obuf & srcenz_n & srcen_n & dsten);
 
 // INNER.NET (250) - dreadt3 : nd5
-nd5 dreadt3_inst
-(
-	.q /* OUT */ (dreadt_3),
-	.a_0 /* IN */ (idle),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (srcenx_n),
-	.a_3 /* IN */ (srcen_n),
-	.a_4 /* IN */ (dsten)
-);
+assign dreadt_3 = ~(idle & step_obuf & srcenx_n & srcen_n & dsten);
 
 // INNER.NET (252) - dreadt4 : nd5
-nd5 dreadt4_inst
-(
-	.q /* OUT */ (dreadt_4),
-	.a_0 /* IN */ (dzwrite_obuf),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (inner0_n),
-	.a_3 /* IN */ (srcen_n),
-	.a_4 /* IN */ (dsten)
-);
+assign dreadt_4 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_n & dsten);
 
 // INNER.NET (254) - dreadt5 : nd6
 assign dreadt_5 = ~(dwrite_obuf & step_obuf & dstwrz_n & inner0_n & srcen_n & dsten);
@@ -770,17 +722,7 @@ assign dreadt_5 = ~(dwrite_obuf & step_obuf & dstwrz_n & inner0_n & srcen_n & ds
 assign dreadt_6 = ~(dread & step_n);
 
 // INNER.NET (257) - dreadt7 : nd7
-nd7 dreadt7_inst
-(
-	.q /* OUT */ (dreadi),
-	.a_0 /* IN */ (dreadt_0),
-	.a_1 /* IN */ (dreadt_1),
-	.a_2 /* IN */ (dreadt_2),
-	.a_3 /* IN */ (dreadt_3),
-	.a_4 /* IN */ (dreadt_4),
-	.a_5 /* IN */ (dreadt_5),
-	.a_6 /* IN */ (dreadt_6)
-);
+assign dreadi = ~(dreadt_0 & dreadt_1 & dreadt_2 & dreadt_3 & dreadt_4 & dreadt_5 & dreadt_6);
 
 // INNER.NET (258) - dread : fd2q
 fd2q dread_inst
@@ -799,15 +741,7 @@ assign dzreadt_0 = ~(dread & step_obuf & dstenz);
 assign dzreadt_1 = ~(szread & step_obuf & dsten_n & dstenz);
 
 // INNER.NET (264) - dzreadt2 : nd5
-nd5 dzreadt2_inst
-(
-	.q /* OUT */ (dzreadt_2),
-	.a_0 /* IN */ (sread),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (srcenz_n),
-	.a_3 /* IN */ (dsten_n),
-	.a_4 /* IN */ (dstenz)
-);
+assign dzreadt_2 = ~(sread & step_obuf & srcenz_n & dsten_n & dstenz);
 
 // INNER.NET (266) - dzreadt3 : nd6
 assign dzreadt_3 = ~(sreadx & step_obuf & srcenz_n & srcen_n & dsten_n & dstenz);
@@ -819,17 +753,7 @@ assign dzreadt_4 = ~(idle & step_obuf & srcenx_n & srcen_n & dsten_n & dstenz);
 assign dzreadt_5 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_n & dsten_n & dstenz);
 
 // INNER.NET (272) - dzreadt6 : nd7
-nd7 dzreadt6_inst
-(
-	.q /* OUT */ (dzreadt_6),
-	.a_0 /* IN */ (dwrite_obuf),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (dstwrz_n),
-	.a_3 /* IN */ (inner0_n),
-	.a_4 /* IN */ (srcen_n),
-	.a_5 /* IN */ (dsten_n),
-	.a_6 /* IN */ (dstenz)
-);
+assign dzreadt_6 = ~(dwrite_obuf & step_obuf & dstwrz_n & inner0_n & srcen_n & dsten_n & dstenz);
 
 // INNER.NET (274) - dzreadt7 : nd2
 assign dzreadt_7 = ~(dzread & step_n);
@@ -857,15 +781,7 @@ assign dwritet_1 = ~(dread & step_obuf & dstenz_n);
 assign dwritet_2 = ~(szread & step_obuf & dsten_n & dstenz_n);
 
 // INNER.NET (283) - dwritet3 : nd5
-nd5 dwritet3_inst
-(
-	.q /* OUT */ (dwritet_3),
-	.a_0 /* IN */ (sread),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (srcenz_n),
-	.a_3 /* IN */ (dsten_n),
-	.a_4 /* IN */ (dstenz_n)
-);
+assign dwritet_3 = ~(sread & step_obuf & srcenz_n & dsten_n & dstenz_n);
 
 // INNER.NET (285) - dwritet4 : nd6
 assign dwritet_4 = ~(sreadx & step_obuf & srcenz_n & srcen_n & dsten_n & dstenz_n);
@@ -877,35 +793,13 @@ assign dwritet_5 = ~(idle & step_obuf & srcenx_n & srcen_n & dsten_n & dstenz_n)
 assign dwritet_6 = ~(dzwrite_obuf & step_obuf & inner0_n & srcen_n & dsten_n & dstenz_n);
 
 // INNER.NET (291) - dwritet7 : nd7
-nd7 dwritet7_inst
-(
-	.q /* OUT */ (dwritet_7),
-	.a_0 /* IN */ (dwrite_obuf),
-	.a_1 /* IN */ (step_obuf),
-	.a_2 /* IN */ (dstwrz_n),
-	.a_3 /* IN */ (inner0_n),
-	.a_4 /* IN */ (srcen_n),
-	.a_5 /* IN */ (dsten_n),
-	.a_6 /* IN */ (dstenz_n)
-);
+assign dwritet_7 = ~(dwrite_obuf & step_obuf & dstwrz_n & inner0_n & srcen_n & dsten_n & dstenz_n);
 
 // INNER.NET (293) - dwritet8 : nd2
 assign dwritet_8 = ~(dwrite_obuf & step_n);
 
 // INNER.NET (294) - dwritet9 : nd9
-nd9 dwritet9_inst
-(
-	.q /* OUT */ (dwritei),
-	.a_0 /* IN */ (dwritet_0),
-	.a_1 /* IN */ (dwritet_1),
-	.a_2 /* IN */ (dwritet_2),
-	.a_3 /* IN */ (dwritet_3),
-	.a_4 /* IN */ (dwritet_4),
-	.a_5 /* IN */ (dwritet_5),
-	.a_6 /* IN */ (dwritet_6),
-	.a_7 /* IN */ (dwritet_7),
-	.a_8 /* IN */ (dwritet_8)
-);
+assign dwritei = ~(dwritet_0 & dwritet_1 & dwritet_2 & dwritet_3 & dwritet_4 & dwritet_5 & dwritet_6 & dwritet_7 & dwritet_8);
 
 // INNER.NET (295) - dwrite : fd2qh
 fd2q dwrite_inst
@@ -1302,15 +1196,7 @@ assign srcdack_n = read_ack_n | srcdxpend | srczxpend;
 assign srczack_n = read_ack_n | srcdpend | srcdxpend | srczxpend;
 
 // INNER.NET (463) - dstdack : or5
-or5 dstdack_inst
-(
-	.z /* OUT */ (dstdack_n),
-	.a /* IN */ (read_ack_n),
-	.b /* IN */ (srcdpend),
-	.c /* IN */ (srczpend),
-	.d /* IN */ (srcdxpend),
-	.e /* IN */ (srczxpend)
-);
+assign dstdack_n = read_ack_n | srcdpend | srczpend | srcdxpend | srczxpend;
 
 // INNER.NET (465) - dstzack : or6
 assign dstzack_n = read_ack_n | dstdpend | srcdpend | srczpend | srcdxpend | srczxpend;

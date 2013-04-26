@@ -137,85 +137,19 @@ assign rotate_n = ~(brlmux_n_0 & brlmux_1);
 assign rotate = ~rotate_n;
 
 // ARITH.NET (436) - uflowt : nr26
-nr26 uflowt_inst
-(
-	.q /* OUT */ (uflowt),
-	.a_0 /* IN */ (srcdp[5]),
-	.a_1 /* IN */ (srcdp[6]),
-	.a_2 /* IN */ (srcdp[7]),
-	.a_3 /* IN */ (srcdp[8]),
-	.a_4 /* IN */ (srcdp[9]),
-	.a_5 /* IN */ (srcdp[10]),
-	.a_6 /* IN */ (srcdp[11]),
-	.a_7 /* IN */ (srcdp[12]),
-	.a_8 /* IN */ (srcdp[13]),
-	.a_9 /* IN */ (srcdp[14]),
-	.a_10 /* IN */ (srcdp[15]),
-	.a_11 /* IN */ (srcdp[16]),
-	.a_12 /* IN */ (srcdp[17]),
-	.a_13 /* IN */ (srcdp[18]),
-	.a_14 /* IN */ (srcdp[19]),
-	.a_15 /* IN */ (srcdp[20]),
-	.a_16 /* IN */ (srcdp[21]),
-	.a_17 /* IN */ (srcdp[22]),
-	.a_18 /* IN */ (srcdp[23]),
-	.a_19 /* IN */ (srcdp[24]),
-	.a_20 /* IN */ (srcdp[25]),
-	.a_21 /* IN */ (srcdp[26]),
-	.a_22 /* IN */ (srcdp[27]),
-	.a_23 /* IN */ (srcdp[28]),
-	.a_24 /* IN */ (srcdp[29]),
-	.a_25 /* IN */ (srcdp[30])
-);
+assign uflowt = ~(srcdp[5] | srcdp[6] | srcdp[7] | srcdp[8] | srcdp[9] | srcdp[10] | srcdp[11] | srcdp[12] | srcdp[13] | srcdp[14] | srcdp[15] | srcdp[16] | srcdp[17] | srcdp[18] | srcdp[19] | srcdp[20] | srcdp[21] | srcdp[22] | srcdp[23] | srcdp[24] | srcdp[25] | srcdp[26] | srcdp[27] | srcdp[28] | srcdp[29] | srcdp[30]);
 
 // ARITH.NET (437) - uflow : nr2
 assign uflow = ~(srcdp[31] | uflowt);
 
 // ARITH.NET (443) - b5t30h\ : nd26
-nd26 b5t30h_n_inst
-(
-	.q /* OUT */ (b5t30h_n),
-	.a_0 /* IN */ (srcdp[5]),
-	.a_1 /* IN */ (srcdp[6]),
-	.a_2 /* IN */ (srcdp[7]),
-	.a_3 /* IN */ (srcdp[8]),
-	.a_4 /* IN */ (srcdp[9]),
-	.a_5 /* IN */ (srcdp[10]),
-	.a_6 /* IN */ (srcdp[11]),
-	.a_7 /* IN */ (srcdp[12]),
-	.a_8 /* IN */ (srcdp[13]),
-	.a_9 /* IN */ (srcdp[14]),
-	.a_10 /* IN */ (srcdp[15]),
-	.a_11 /* IN */ (srcdp[16]),
-	.a_12 /* IN */ (srcdp[17]),
-	.a_13 /* IN */ (srcdp[18]),
-	.a_14 /* IN */ (srcdp[19]),
-	.a_15 /* IN */ (srcdp[20]),
-	.a_16 /* IN */ (srcdp[21]),
-	.a_17 /* IN */ (srcdp[22]),
-	.a_18 /* IN */ (srcdp[23]),
-	.a_19 /* IN */ (srcdp[24]),
-	.a_20 /* IN */ (srcdp[25]),
-	.a_21 /* IN */ (srcdp[26]),
-	.a_22 /* IN */ (srcdp[27]),
-	.a_23 /* IN */ (srcdp[28]),
-	.a_24 /* IN */ (srcdp[29]),
-	.a_25 /* IN */ (srcdp[30])
-);
+assign b5t30h_n = ~(srcdp[5] & srcdp[6] & srcdp[7] & srcdp[8] & srcdp[9] & srcdp[10] & srcdp[11] & srcdp[12] & srcdp[13] & srcdp[14] & srcdp[15] & srcdp[16] & srcdp[17] & srcdp[18] & srcdp[19] & srcdp[20] & srcdp[21] & srcdp[22] & srcdp[23] & srcdp[24] & srcdp[25] & srcdp[26] & srcdp[27] & srcdp[28] & srcdp[29] & srcdp[30]);
 
 // ARITH.NET (444) - b5t30h : iv
 assign b5t30h = ~b5t30h_n;
 
 // ARITH.NET (445) - shzero : nr5
-nr5 shzero_inst
-(
-	.z /* OUT */ (shzero),
-	.a /* IN */ (srcdp[0]),
-	.b /* IN */ (srcdp[1]),
-	.c /* IN */ (srcdp[2]),
-	.d /* IN */ (srcdp[3]),
-	.e /* IN */ (srcdp[4])
-);
+assign shzero = ~(srcdp[0] | srcdp[1] | srcdp[2] | srcdp[3] | srcdp[4]);
 
 // ARITH.NET (446) - shzero\ : iv
 assign shzero_n = ~shzero;

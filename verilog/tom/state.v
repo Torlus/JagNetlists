@@ -466,15 +466,7 @@ assign gpu_dout_0_out = blit_idle;
 assign gpu_dout_0_oe = statrd;
 
 // STATE.NET (122) - inhibent : nr5
-nr5 inhibent_inst
-(
-	.z /* OUT */ (inhibent),
-	.a /* IN */ (zmode_0_obuf),
-	.b /* IN */ (zmode_1_obuf),
-	.c /* IN */ (zmode_2_obuf),
-	.d /* IN */ (bcompen),
-	.e /* IN */ (dcompen)
-);
+assign inhibent = ~(zmode_0_obuf | zmode_1_obuf | zmode_2_obuf | bcompen | dcompen);
 
 // STATE.NET (123) - inhiben : nr3
 assign inhiben = ~(inhibent | phrase_mode_obuf | bkgwren);
