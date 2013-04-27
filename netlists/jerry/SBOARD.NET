@@ -642,6 +642,8 @@ Sbwaitt0	:= NR2 (sbwaitt[0], wbwait, divdwait);
 Sbwaitt1	:= NR2 (sbwaitt[1], diviwait, aludwait);
 Sbwaitt2	:= NR2 (sbwaitt[2], flagwait, xlddwait);
 Sbwaitt3	:= NR2 (sbwaitt[3], mbusywait, ldwait);
-Sbwait		:= ND4P (sbwait, sbwaitt[0..3]);
+(* GE Sbwait		:= ND4P (sbwait, sbwaitt[0..3]); *)
+Sbwait_tmp		:= ND4P (sbwait_tmp, sbwaitt[0..3]);
+Sbwait		:= SYSCLKDLY(sbwait, sbwait_tmp);
 
 END;

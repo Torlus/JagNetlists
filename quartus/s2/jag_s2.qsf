@@ -51,9 +51,9 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING OFF
 
 ##########################################################
 #### Clocks and Resets
@@ -360,6 +360,53 @@ set_instance_assignment -name CUT ON -from DDR_DQS[1] -to *
 ##########################################################
 #### Parallel Flash Memory / Fast Ethernet
 ##########################################################
+
+
+
+
+##########################################################
+#### Debug : Push Buttons
+##########################################################
+set_location_assignment PIN_P4 -to SW[0]
+set_location_assignment PIN_P5 -to SW[1]
+set_location_assignment PIN_N6 -to SW[2]
+set_location_assignment PIN_N7 -to SW[3]
+
+##########################################################
+#### Debug : LEDs
+##########################################################
+set_location_assignment PIN_W15 -to LED_n[0]
+set_location_assignment PIN_V14 -to LED_n[1]
+set_location_assignment PIN_AD17 -to LED_n[2]
+set_location_assignment PIN_AA17 -to LED_n[3]
+set_location_assignment PIN_V16 -to LED_n[4]
+set_location_assignment PIN_AB17 -to LED_n[5]
+set_location_assignment PIN_AD18 -to LED_n[6]
+set_location_assignment PIN_V17 -to LED_n[7]
+
+##########################################################
+#### Debug : 7-Segment Display
+##########################################################
+set_location_assignment PIN_L8 -to HEX_0[0]
+set_location_assignment PIN_L9 -to HEX_0[1]
+set_location_assignment PIN_M7 -to HEX_0[2]
+set_location_assignment PIN_M8 -to HEX_0[3]
+set_location_assignment PIN_M5 -to HEX_0[4]
+set_location_assignment PIN_M6 -to HEX_0[5]
+set_location_assignment PIN_N4 -to HEX_0[6]
+set_location_assignment PIN_N5 -to HEX_0[7]
+set_location_assignment PIN_K8 -to HEX_1[0]
+set_location_assignment PIN_K9 -to HEX_1[1]
+set_location_assignment PIN_L4 -to HEX_1[2]
+set_location_assignment PIN_L5 -to HEX_1[3]
+set_location_assignment PIN_M3 -to HEX_1[4]
+set_location_assignment PIN_M4 -to HEX_1[5]
+set_location_assignment PIN_L6 -to HEX_1[6]
+set_location_assignment PIN_L7 -to HEX_1[7]
+
+##########################################################
+#### Parallel Flash Memory / Fast Ethernet
+##########################################################
 set_location_assignment PIN_H19 -to FLS_CS_n
 set_location_assignment PIN_H20 -to FLS_OE_n
 set_location_assignment PIN_V26 -to FLS_RW_n
@@ -443,48 +490,6 @@ set_location_assignment PIN_J20 -to FE_DQ[28]
 set_location_assignment PIN_J19 -to FE_DQ[29]
 set_location_assignment PIN_J22 -to FE_DQ[30]
 set_location_assignment PIN_J21 -to FE_DQ[31]
-
-
-##########################################################
-#### Debug : Push Buttons
-##########################################################
-set_location_assignment PIN_P4 -to SW[0]
-set_location_assignment PIN_P5 -to SW[1]
-set_location_assignment PIN_N6 -to SW[2]
-set_location_assignment PIN_N7 -to SW[3]
-
-##########################################################
-#### Debug : LEDs
-##########################################################
-set_location_assignment PIN_W15 -to LED_n[0]
-set_location_assignment PIN_V14 -to LED_n[1]
-set_location_assignment PIN_AD17 -to LED_n[2]
-set_location_assignment PIN_AA17 -to LED_n[3]
-set_location_assignment PIN_V16 -to LED_n[4]
-set_location_assignment PIN_AB17 -to LED_n[5]
-set_location_assignment PIN_AD18 -to LED_n[6]
-set_location_assignment PIN_V17 -to LED_n[7]
-
-##########################################################
-#### Debug : 7-Segment Display
-##########################################################
-set_location_assignment PIN_L8 -to HEX_0[0]
-set_location_assignment PIN_L9 -to HEX_0[1]
-set_location_assignment PIN_M7 -to HEX_0[2]
-set_location_assignment PIN_M8 -to HEX_0[3]
-set_location_assignment PIN_M5 -to HEX_0[4]
-set_location_assignment PIN_M6 -to HEX_0[5]
-set_location_assignment PIN_N4 -to HEX_0[6]
-set_location_assignment PIN_N5 -to HEX_0[7]
-set_location_assignment PIN_K8 -to HEX_1[0]
-set_location_assignment PIN_K9 -to HEX_1[1]
-set_location_assignment PIN_L4 -to HEX_1[2]
-set_location_assignment PIN_L5 -to HEX_1[3]
-set_location_assignment PIN_M3 -to HEX_1[4]
-set_location_assignment PIN_M4 -to HEX_1[5]
-set_location_assignment PIN_L6 -to HEX_1[6]
-set_location_assignment PIN_L7 -to HEX_1[7]
-
 
 ##########################################################
 #### J16 Connector 

@@ -1573,15 +1573,17 @@ vgalb vgalb1
 
 // vc even : vga read lb1, jag write lb0
 
+wire vga_blank;
+
 assign lb_d = (~blank) ? { 
 	xr[7], xr[6], xr[5], xr[4], xr[3], xr[2], xr[1], xr[0],
 	xg[7], xg[6], xg[5], xg[4], xg[3], xg[2], xg[1], xg[0],
 	xb[7], xb[6], xb[5], xb[4], xb[3], xb[2], xb[1], xb[0]
 } : 24'd0;
 
-assign vga_r = (vc[0] == 1'b0) ? lb1_q[23:16] : lb0_q[23:16];
-assign vga_g = (vc[0] == 1'b0) ? lb1_q[15:8] : lb0_q[15:8];
-assign vga_b = (vc[0] == 1'b0) ? lb1_q[7:0] : lb0_q[7:0];
+assign vga_r = (vga_blank) ? 8'd0 : (vc[0] == 1'b0) ? lb1_q[23:16] : lb0_q[23:16];
+assign vga_g = (vga_blank) ? 8'd0 : (vc[0] == 1'b0) ? lb1_q[15:8] : lb0_q[15:8];
+assign vga_b = (vga_blank) ? 8'd0 : (vc[0] == 1'b0) ? lb1_q[7:0] : lb0_q[7:0];
 
 
 assign lb0_a = (vc[0] == 1'b0) ? hc[11:2] : vga_hc[10:1];
@@ -1624,8 +1626,11 @@ begin
 	end
 end
 
-assign vga_hs_n = (vga_hc < 192) ? 1'b0 : 1'b1;
+// VGA_HC : 0..1688 = 800 x 2.11
+
+assign vga_hs_n = (vga_hc < 202) ? 1'b0 : 1'b1;
 assign vga_vs_n = (vc < 2) ? 1'b0 : 1'b1;
+assign vga_blank = ( (vc > 2+17) && (vc < 240+2+17) && (vga_hc > 202+101) && (vga_hc < 202+101+1350) ) ? 1'b0 : 1'b1;
 
 
 endmodule

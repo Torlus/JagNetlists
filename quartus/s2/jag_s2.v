@@ -41,6 +41,15 @@ module jag_s2
 	//input		[31:0]		cart_q,
 	//input		[1:0]			cart_oe,
 
+	output				FLS_CS_n,
+	output				FLS_OE_n,
+	output				FLS_RW_n,
+	output				FLS_WP_n,
+	output				FLS_BYTE_n,
+	
+	output	[23:0]	FE_ADDR,
+	inout		[31:0]	FE_DQ,
+	
 	output	[28:0]	PROTO2_IO,
 
 	output	[7:0] HEX_0,
@@ -163,9 +172,21 @@ wire	[1:0]		cart_oe_n;
 wire	[31:0]	cart_q;
 wire	[1:0]		cart_oe;
 
-assign cart_q = 32'h00000000;
-assign cart_oe = 2'b00;
+// assign cart_q = 32'h00000000;
+// assign cart_oe = 2'b00;
 
+assign	FLS_RW_n = 1'b1;
+assign	FLS_WP_n = 1'b0;
+assign	FLS_BYTE_n = 1'b0;
+
+assign	FE_ADDR = cart_a;
+assign	FE_DQ = 32'bzzzzzzzz_zzzzzzzz_zzzzzzzz_zzzzzzzz;
+
+assign	FLS_CS_n = cart_ce_n;
+assign	FLS_OE_n = cart_oe_n[0];
+
+assign	cart_q = FE_DQ;
+assign	cart_oe = ~cart_oe_n;
 
 
 

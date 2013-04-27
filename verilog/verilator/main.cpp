@@ -17,7 +17,7 @@
 // #define NUM_CYCLES  ((vluint64_t)1599000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
 #define NUM_MS 15000
 #define LOG_START_MS 99994
-#define LOG_EVERY_MS 99991
+#define LOG_EVERY_MS 99992
 
 // #define CYCLES_PER_VCD ((vluint64_t)10000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
 #define HCYCLES_PER_MS ((vluint64_t)1000000 * (vluint64_t)1000 / (vluint64_t)HALF_PER_PS)
@@ -76,7 +76,8 @@ int main(int argc, char **argv, char **env)
 	dram->load("dram.bin", 0x4000, 0x200000);
 	BIOS *bios = new BIOS(0, 0x100000);
 	bios->load("os.bin", 0x0, 0x100000);
-	CART *cart = new CART(1 /* 16 bits */, 0, 0x800000);
+	//CART *cart = new CART(1 /* 16 bits */, 0, 0x800000);
+	CART *cart = new CART(0, 0, 0x800000);
 	cart->load("cart.bin", 0x0, 0x800000);
   // Init 68000 trace
 	Trace68k* trc = new Trace68k(cart->mem_array, bios->mem_array, dram->mem_array);

@@ -1,5 +1,6 @@
 classes
 verilog/work
+verilog/verilator/obj_dir
 *.exe
 *.o
 .settings
@@ -8,3 +9,7 @@ verilog/work
 *.bin
 *.lst
 *.wlf
+quartus/s2/db
+quartus/s2/incremental_db
+quartus/de1/db
+quartus/de1/incremental_db

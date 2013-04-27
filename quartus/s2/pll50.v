@@ -117,7 +117,7 @@ module pll50 (
 		altpll_component.clk3_divide_by = 15,
 		altpll_component.clk3_duty_cycle = 50,
 		altpll_component.clk3_multiply_by = 16,
-		altpll_component.clk3_phase_shift = "7813",
+		altpll_component.clk3_phase_shift = "6250",
 		altpll_component.compensate_clock = "CLK0",
 		altpll_component.inclk0_input_frequency = 20000,
 		altpll_component.intended_device_family = "Stratix II",
@@ -253,7 +253,7 @@ endmodule
 // Retrieval info: PRIVATE: PHASE_SHIFT0 STRING "0.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT1 STRING "0.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT2 STRING "180.00000000"
-// Retrieval info: PRIVATE: PHASE_SHIFT3 STRING "150.00000000"
+// Retrieval info: PRIVATE: PHASE_SHIFT3 STRING "120.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT_STEP_ENABLED_CHECK STRING "0"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT0 STRING "deg"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT1 STRING "deg"
@@ -311,7 +311,7 @@ endmodule
 // Retrieval info: CONSTANT: CLK3_DIVIDE_BY NUMERIC "15"
 // Retrieval info: CONSTANT: CLK3_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK3_MULTIPLY_BY NUMERIC "16"
-// Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "7813"
+// Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "6250"
 // Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
 // Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Stratix II"

@@ -34,8 +34,13 @@ Init:
 * 0 0     0 11      000 0       11        11       00       1
 * 0001 1000 0111 1001
 * = 0x1879
+* 0 0     0 11      000 1       11        11       00       1
+* 0001 1000 1111 1001
+* = 0x18F9
 * Speed up the ROM a little bit
 	move.w	#0x1879, MEMCON1
+* Use FASTROM
+*	move.w	#0x18F9, MEMCON1
 	move.w	#0x35CC, MEMCON2
 
 * RAM Test
@@ -76,7 +81,7 @@ Init:
 
 	lea.l		Prog_Start-4, %a0
 	lea.l		0x00004000-4, %a1
-* uncomment this when DRAM contents is preloaded (in simulation)
+* uncomment this when DRAM contents is preloaded (in simulation), or when using a cartridge
 	move.w	#0x0, %d7
 * uncomment this otherwise - and set a corresponding value (0x1000 = 16k)
 *	move.w	#0x1000, %d7
@@ -98,13 +103,13 @@ Copy_Loop:
 
 
 Boot_Start:
-* See above - For cartridge mode only
+* See above - For 16-bit cartridge mode only
 *	move.w	#0x187B, MEMCON1
 
 * Jump to "standard" entry point for homebrew games
-	lea.l	0x00004000, %a0
+*	lea.l	0x00004000, %a0
 * Entry point for most cartridges (should be fetched instead from $800404)
-*	lea.l	0x00802000, %a0
+	lea.l	0x00802000, %a0
 	jmp		(%a0)
 	
 Prog_Start:
