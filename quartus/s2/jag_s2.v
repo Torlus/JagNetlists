@@ -185,9 +185,30 @@ assign	FE_DQ = 32'bzzzzzzzz_zzzzzzzz_zzzzzzzz_zzzzzzzz;
 assign	FLS_CS_n = cart_ce_n;
 assign	FLS_OE_n = cart_oe_n[0];
 
-assign	cart_q = FE_DQ;
-assign	cart_oe = ~cart_oe_n;
+/*reg [23:0] cart_a_p1 = 24'd0;
+reg [23:0] cart_a_p2 = 24'd0;
+reg c_ce_n = 1'b1;
+reg c_oe_n = 1'b1;
+assign	FLS_CS_n = c_ce_n;
+assign	FLS_OE_n = c_oe_n;
 
+always @(posedge sys_clk)
+begin
+	cart_a_p2 <= cart_a_p1;
+	cart_a_p1 <= cart_a;
+	if (cart_a_p2 == cart_a) begin
+		c_ce_n <= cart_ce_n;
+		c_oe_n <= cart_oe_n;
+	end else begin
+		c_ce_n <= 1'b1;
+		c_oe_n <= 1'b1;
+	end
+end*/
+
+
+assign	cart_q = FE_DQ;
+assign	cart_oe[0] = ~cart_oe_n[0] & ~cart_ce_n;
+assign	cart_oe[1] = ~cart_oe_n[1] & ~cart_ce_n;
 
 
 wire  [0:9] 	dram_a;
@@ -205,8 +226,8 @@ wire			fdram;
 jaguar jag
 (
 	.xresetl(xresetl),
-	.xpclk(xpclk),
-	.xvclk(xvclk),
+	// .xpclk(xpclk),
+	// .xvclk(xvclk),
 	.sys_clk(sys_clk),
 	
 	.dram_a(dram_a),
@@ -308,8 +329,8 @@ reg		[7:0]		r_ssram_be_n = 8'b11111111;
 reg		[3:0]		mem_cyc = `SS_IDLE;
 
 // Fixed outputs
-// assign SSRAM_CLK = mem_clk;
-assign SSRAM_CLK = sys_clk;
+assign SSRAM_CLK = mem_clk;
+// assign SSRAM_CLK = sys_clk;
 assign SSRAM_CE2 = 1'b1;
 assign SSRAM_CE3_n = 1'b0;
 assign SSRAM_GW_n = 1'b1;

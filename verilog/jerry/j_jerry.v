@@ -250,6 +250,7 @@ module j_jerry
 	output xiowrl,
 	output xi2stxd,
 	output xcpuclk,
+	input tlw,
 	input sys_clk // Generated
 );
 wire dsprd_0_out;
@@ -617,7 +618,6 @@ wire tint_1;
 wire i2int;
 wire dspread;
 wire dspwrite;
-wire tlw;
 wire dbrl_0;
 wire dbrl_1;
 wire dint;
@@ -745,6 +745,7 @@ wire masterdata;
 wire dsp16;
 wire bigend;
 wire resetl_2;
+wire tlw_unused;
 wire resetl_1;
 wire resetl_3;
 wire resetl_4;
@@ -1043,7 +1044,7 @@ wire ts_local_pe_198_a3_out;
 wire ts_local_pe_198_a3_oe;
 wire ts_local_pe_198_a3_in;
 
-// JERRY.NET (113) - d[0] : bd8t
+// JERRY.NET (114) - d[0] : bd8t
 bd d_index_0_inst
 (
 	.io_out /* BUS */ (xd_0_out),
@@ -1057,7 +1058,7 @@ bd d_index_0_inst
 	.pi /* IN */ (nt_54)
 );
 
-// JERRY.NET (114) - d[1] : bd8t
+// JERRY.NET (115) - d[1] : bd8t
 bd d_index_1_inst
 (
 	.io_out /* BUS */ (xd_1_out),
@@ -1071,7 +1072,7 @@ bd d_index_1_inst
 	.pi /* IN */ (nt_53)
 );
 
-// JERRY.NET (115) - d[2] : bd8t
+// JERRY.NET (116) - d[2] : bd8t
 bd d_index_2_inst
 (
 	.io_out /* BUS */ (xd_2_out),
@@ -1085,7 +1086,7 @@ bd d_index_2_inst
 	.pi /* IN */ (nt_52)
 );
 
-// JERRY.NET (116) - d[3] : bd8t
+// JERRY.NET (117) - d[3] : bd8t
 bd d_index_3_inst
 (
 	.io_out /* BUS */ (xd_3_out),
@@ -1099,7 +1100,7 @@ bd d_index_3_inst
 	.pi /* IN */ (nt_51)
 );
 
-// JERRY.NET (117) - d[4] : bd8t
+// JERRY.NET (118) - d[4] : bd8t
 bd d_index_4_inst
 (
 	.io_out /* BUS */ (xd_4_out),
@@ -1113,7 +1114,7 @@ bd d_index_4_inst
 	.pi /* IN */ (nt_50)
 );
 
-// JERRY.NET (118) - d[5] : bd8t
+// JERRY.NET (119) - d[5] : bd8t
 bd d_index_5_inst
 (
 	.io_out /* BUS */ (xd_5_out),
@@ -1127,7 +1128,7 @@ bd d_index_5_inst
 	.pi /* IN */ (nt_49)
 );
 
-// JERRY.NET (119) - d[6] : bd8t
+// JERRY.NET (120) - d[6] : bd8t
 bd d_index_6_inst
 (
 	.io_out /* BUS */ (xd_6_out),
@@ -1141,7 +1142,7 @@ bd d_index_6_inst
 	.pi /* IN */ (nt_48)
 );
 
-// JERRY.NET (120) - d[7] : bd8t
+// JERRY.NET (121) - d[7] : bd8t
 bd d_index_7_inst
 (
 	.io_out /* BUS */ (xd_7_out),
@@ -1155,7 +1156,7 @@ bd d_index_7_inst
 	.pi /* IN */ (nt_47)
 );
 
-// JERRY.NET (122) - d[8] : bd8t
+// JERRY.NET (123) - d[8] : bd8t
 bd d_index_8_inst
 (
 	.io_out /* BUS */ (xd_8_out),
@@ -1169,7 +1170,7 @@ bd d_index_8_inst
 	.pi /* IN */ (nt_46)
 );
 
-// JERRY.NET (123) - d[9] : bd8t
+// JERRY.NET (124) - d[9] : bd8t
 bd d_index_9_inst
 (
 	.io_out /* BUS */ (xd_9_out),
@@ -1183,7 +1184,7 @@ bd d_index_9_inst
 	.pi /* IN */ (nt_45)
 );
 
-// JERRY.NET (124) - d[10] : bd8t
+// JERRY.NET (125) - d[10] : bd8t
 bd d_index_10_inst
 (
 	.io_out /* BUS */ (xd_10_out),
@@ -1197,7 +1198,7 @@ bd d_index_10_inst
 	.pi /* IN */ (nt_44)
 );
 
-// JERRY.NET (125) - d[11] : bd8t
+// JERRY.NET (126) - d[11] : bd8t
 bd d_index_11_inst
 (
 	.io_out /* BUS */ (xd_11_out),
@@ -1211,7 +1212,7 @@ bd d_index_11_inst
 	.pi /* IN */ (nt_43)
 );
 
-// JERRY.NET (126) - d[12] : bd8t
+// JERRY.NET (127) - d[12] : bd8t
 bd d_index_12_inst
 (
 	.io_out /* BUS */ (xd_12_out),
@@ -1225,7 +1226,7 @@ bd d_index_12_inst
 	.pi /* IN */ (nt_42)
 );
 
-// JERRY.NET (127) - d[13] : bd8t
+// JERRY.NET (128) - d[13] : bd8t
 bd d_index_13_inst
 (
 	.io_out /* BUS */ (xd_13_out),
@@ -1239,7 +1240,7 @@ bd d_index_13_inst
 	.pi /* IN */ (nt_41)
 );
 
-// JERRY.NET (128) - d[14] : bd8t
+// JERRY.NET (129) - d[14] : bd8t
 bd d_index_14_inst
 (
 	.io_out /* BUS */ (xd_14_out),
@@ -1253,7 +1254,7 @@ bd d_index_14_inst
 	.pi /* IN */ (nt_40)
 );
 
-// JERRY.NET (129) - d[15] : bd8t
+// JERRY.NET (130) - d[15] : bd8t
 bd d_index_15_inst
 (
 	.io_out /* BUS */ (xd_15_out),
@@ -1267,7 +1268,7 @@ bd d_index_15_inst
 	.pi /* IN */ (nt_39)
 );
 
-// JERRY.NET (131) - d[16] : bd8t
+// JERRY.NET (132) - d[16] : bd8t
 bd d_index_16_inst
 (
 	.io_out /* BUS */ (xd_16_out),
@@ -1281,7 +1282,7 @@ bd d_index_16_inst
 	.pi /* IN */ (nt_38)
 );
 
-// JERRY.NET (132) - d[17] : bd8t
+// JERRY.NET (133) - d[17] : bd8t
 bd d_index_17_inst
 (
 	.io_out /* BUS */ (xd_17_out),
@@ -1295,7 +1296,7 @@ bd d_index_17_inst
 	.pi /* IN */ (nt_37)
 );
 
-// JERRY.NET (133) - d[18] : bd8t
+// JERRY.NET (134) - d[18] : bd8t
 bd d_index_18_inst
 (
 	.io_out /* BUS */ (xd_18_out),
@@ -1309,7 +1310,7 @@ bd d_index_18_inst
 	.pi /* IN */ (nt_36)
 );
 
-// JERRY.NET (134) - d[19] : bd8t
+// JERRY.NET (135) - d[19] : bd8t
 bd d_index_19_inst
 (
 	.io_out /* BUS */ (xd_19_out),
@@ -1323,7 +1324,7 @@ bd d_index_19_inst
 	.pi /* IN */ (nt_35)
 );
 
-// JERRY.NET (135) - d[20] : bd8t
+// JERRY.NET (136) - d[20] : bd8t
 bd d_index_20_inst
 (
 	.io_out /* BUS */ (xd_20_out),
@@ -1337,7 +1338,7 @@ bd d_index_20_inst
 	.pi /* IN */ (nt_34)
 );
 
-// JERRY.NET (136) - d[21] : bd8t
+// JERRY.NET (137) - d[21] : bd8t
 bd d_index_21_inst
 (
 	.io_out /* BUS */ (xd_21_out),
@@ -1351,7 +1352,7 @@ bd d_index_21_inst
 	.pi /* IN */ (nt_33)
 );
 
-// JERRY.NET (137) - d[22] : bd8t
+// JERRY.NET (138) - d[22] : bd8t
 bd d_index_22_inst
 (
 	.io_out /* BUS */ (xd_22_out),
@@ -1365,7 +1366,7 @@ bd d_index_22_inst
 	.pi /* IN */ (nt_32)
 );
 
-// JERRY.NET (138) - d[23] : bd8t
+// JERRY.NET (139) - d[23] : bd8t
 bd d_index_23_inst
 (
 	.io_out /* BUS */ (xd_23_out),
@@ -1379,7 +1380,7 @@ bd d_index_23_inst
 	.pi /* IN */ (nt_31)
 );
 
-// JERRY.NET (139) - d[24] : bd8t
+// JERRY.NET (140) - d[24] : bd8t
 bd d_index_24_inst
 (
 	.io_out /* BUS */ (xd_24_out),
@@ -1393,7 +1394,7 @@ bd d_index_24_inst
 	.pi /* IN */ (nt_30)
 );
 
-// JERRY.NET (140) - d[25] : bd8t
+// JERRY.NET (141) - d[25] : bd8t
 bd d_index_25_inst
 (
 	.io_out /* BUS */ (xd_25_out),
@@ -1407,7 +1408,7 @@ bd d_index_25_inst
 	.pi /* IN */ (nt_29)
 );
 
-// JERRY.NET (141) - d[26] : bd8t
+// JERRY.NET (142) - d[26] : bd8t
 bd d_index_26_inst
 (
 	.io_out /* BUS */ (xd_26_out),
@@ -1421,7 +1422,7 @@ bd d_index_26_inst
 	.pi /* IN */ (nt_28)
 );
 
-// JERRY.NET (142) - d[27] : bd8t
+// JERRY.NET (143) - d[27] : bd8t
 bd d_index_27_inst
 (
 	.io_out /* BUS */ (xd_27_out),
@@ -1435,7 +1436,7 @@ bd d_index_27_inst
 	.pi /* IN */ (nt_27)
 );
 
-// JERRY.NET (143) - d[28] : bd8t
+// JERRY.NET (144) - d[28] : bd8t
 bd d_index_28_inst
 (
 	.io_out /* BUS */ (xd_28_out),
@@ -1449,7 +1450,7 @@ bd d_index_28_inst
 	.pi /* IN */ (nt_26)
 );
 
-// JERRY.NET (144) - d[29] : bd8t
+// JERRY.NET (145) - d[29] : bd8t
 bd d_index_29_inst
 (
 	.io_out /* BUS */ (xd_29_out),
@@ -1463,7 +1464,7 @@ bd d_index_29_inst
 	.pi /* IN */ (nt_25)
 );
 
-// JERRY.NET (145) - d[30] : bd8t
+// JERRY.NET (146) - d[30] : bd8t
 bd d_index_30_inst
 (
 	.io_out /* BUS */ (xd_30_out),
@@ -1477,7 +1478,7 @@ bd d_index_30_inst
 	.pi /* IN */ (nt_24)
 );
 
-// JERRY.NET (146) - d[31] : bd8t
+// JERRY.NET (147) - d[31] : bd8t
 bd d_index_31_inst
 (
 	.io_out /* BUS */ (xd_31_out),
@@ -1491,7 +1492,7 @@ bd d_index_31_inst
 	.pi /* IN */ (nt_23)
 );
 
-// JERRY.NET (148) - a[0] : bd8t
+// JERRY.NET (149) - a[0] : bd8t
 bd a_index_0_inst
 (
 	.io_out /* BUS */ (xa_0_out),
@@ -1505,7 +1506,7 @@ bd a_index_0_inst
 	.pi /* IN */ (nt_78)
 );
 
-// JERRY.NET (149) - a[1] : bd8t
+// JERRY.NET (150) - a[1] : bd8t
 bd a_index_1_inst
 (
 	.io_out /* BUS */ (xa_1_out),
@@ -1519,7 +1520,7 @@ bd a_index_1_inst
 	.pi /* IN */ (nt_77)
 );
 
-// JERRY.NET (150) - a[2] : bd8t
+// JERRY.NET (151) - a[2] : bd8t
 bd a_index_2_inst
 (
 	.io_out /* BUS */ (xa_2_out),
@@ -1533,7 +1534,7 @@ bd a_index_2_inst
 	.pi /* IN */ (nt_76)
 );
 
-// JERRY.NET (151) - a[3] : bd8t
+// JERRY.NET (152) - a[3] : bd8t
 bd a_index_3_inst
 (
 	.io_out /* BUS */ (xa_3_out),
@@ -1547,7 +1548,7 @@ bd a_index_3_inst
 	.pi /* IN */ (nt_75)
 );
 
-// JERRY.NET (152) - a[4] : bd8t
+// JERRY.NET (153) - a[4] : bd8t
 bd a_index_4_inst
 (
 	.io_out /* BUS */ (xa_4_out),
@@ -1561,7 +1562,7 @@ bd a_index_4_inst
 	.pi /* IN */ (nt_74)
 );
 
-// JERRY.NET (153) - a[5] : bd8t
+// JERRY.NET (154) - a[5] : bd8t
 bd a_index_5_inst
 (
 	.io_out /* BUS */ (xa_5_out),
@@ -1575,7 +1576,7 @@ bd a_index_5_inst
 	.pi /* IN */ (nt_73)
 );
 
-// JERRY.NET (154) - a[6] : bd8t
+// JERRY.NET (155) - a[6] : bd8t
 bd a_index_6_inst
 (
 	.io_out /* BUS */ (xa_6_out),
@@ -1589,7 +1590,7 @@ bd a_index_6_inst
 	.pi /* IN */ (nt_72)
 );
 
-// JERRY.NET (155) - a[7] : bd8t
+// JERRY.NET (156) - a[7] : bd8t
 bd a_index_7_inst
 (
 	.io_out /* BUS */ (xa_7_out),
@@ -1603,7 +1604,7 @@ bd a_index_7_inst
 	.pi /* IN */ (nt_71)
 );
 
-// JERRY.NET (156) - a[8] : bd8t
+// JERRY.NET (157) - a[8] : bd8t
 bd a_index_8_inst
 (
 	.io_out /* BUS */ (xa_8_out),
@@ -1617,7 +1618,7 @@ bd a_index_8_inst
 	.pi /* IN */ (nt_70)
 );
 
-// JERRY.NET (157) - a[9] : bd8t
+// JERRY.NET (158) - a[9] : bd8t
 bd a_index_9_inst
 (
 	.io_out /* BUS */ (xa_9_out),
@@ -1631,7 +1632,7 @@ bd a_index_9_inst
 	.pi /* IN */ (nt_69)
 );
 
-// JERRY.NET (158) - a[10] : bd8t
+// JERRY.NET (159) - a[10] : bd8t
 bd a_index_10_inst
 (
 	.io_out /* BUS */ (xa_10_out),
@@ -1645,7 +1646,7 @@ bd a_index_10_inst
 	.pi /* IN */ (nt_68)
 );
 
-// JERRY.NET (159) - a[11] : bd8t
+// JERRY.NET (160) - a[11] : bd8t
 bd a_index_11_inst
 (
 	.io_out /* BUS */ (xa_11_out),
@@ -1659,7 +1660,7 @@ bd a_index_11_inst
 	.pi /* IN */ (nt_67)
 );
 
-// JERRY.NET (160) - a[12] : bd8t
+// JERRY.NET (161) - a[12] : bd8t
 bd a_index_12_inst
 (
 	.io_out /* BUS */ (xa_12_out),
@@ -1673,7 +1674,7 @@ bd a_index_12_inst
 	.pi /* IN */ (nt_66)
 );
 
-// JERRY.NET (161) - a[13] : bd8t
+// JERRY.NET (162) - a[13] : bd8t
 bd a_index_13_inst
 (
 	.io_out /* BUS */ (xa_13_out),
@@ -1687,7 +1688,7 @@ bd a_index_13_inst
 	.pi /* IN */ (nt_65)
 );
 
-// JERRY.NET (162) - a[14] : bd8t
+// JERRY.NET (163) - a[14] : bd8t
 bd a_index_14_inst
 (
 	.io_out /* BUS */ (xa_14_out),
@@ -1701,7 +1702,7 @@ bd a_index_14_inst
 	.pi /* IN */ (nt_64)
 );
 
-// JERRY.NET (163) - a[15] : bd8t
+// JERRY.NET (164) - a[15] : bd8t
 bd a_index_15_inst
 (
 	.io_out /* BUS */ (xa_15_out),
@@ -1715,7 +1716,7 @@ bd a_index_15_inst
 	.pi /* IN */ (nt_63)
 );
 
-// JERRY.NET (164) - a[16] : bd8t
+// JERRY.NET (165) - a[16] : bd8t
 bd a_index_16_inst
 (
 	.io_out /* BUS */ (xa_16_out),
@@ -1729,7 +1730,7 @@ bd a_index_16_inst
 	.pi /* IN */ (nt_62)
 );
 
-// JERRY.NET (165) - a[17] : bd8t
+// JERRY.NET (166) - a[17] : bd8t
 bd a_index_17_inst
 (
 	.io_out /* BUS */ (xa_17_out),
@@ -1743,7 +1744,7 @@ bd a_index_17_inst
 	.pi /* IN */ (nt_61)
 );
 
-// JERRY.NET (166) - a[18] : bd8t
+// JERRY.NET (167) - a[18] : bd8t
 bd a_index_18_inst
 (
 	.io_out /* BUS */ (xa_18_out),
@@ -1757,7 +1758,7 @@ bd a_index_18_inst
 	.pi /* IN */ (nt_60)
 );
 
-// JERRY.NET (167) - a[19] : bd8t
+// JERRY.NET (168) - a[19] : bd8t
 bd a_index_19_inst
 (
 	.io_out /* BUS */ (xa_19_out),
@@ -1771,7 +1772,7 @@ bd a_index_19_inst
 	.pi /* IN */ (nt_59)
 );
 
-// JERRY.NET (168) - a[20] : bd8t
+// JERRY.NET (169) - a[20] : bd8t
 bd a_index_20_inst
 (
 	.io_out /* BUS */ (xa_20_out),
@@ -1785,7 +1786,7 @@ bd a_index_20_inst
 	.pi /* IN */ (nt_58)
 );
 
-// JERRY.NET (169) - a[21] : bd8t
+// JERRY.NET (170) - a[21] : bd8t
 bd a_index_21_inst
 (
 	.io_out /* BUS */ (xa_21_out),
@@ -1799,7 +1800,7 @@ bd a_index_21_inst
 	.pi /* IN */ (nt_57)
 );
 
-// JERRY.NET (170) - a[22] : bd8t
+// JERRY.NET (171) - a[22] : bd8t
 bd a_index_22_inst
 (
 	.io_out /* BUS */ (xa_22_out),
@@ -1813,7 +1814,7 @@ bd a_index_22_inst
 	.pi /* IN */ (nt_56)
 );
 
-// JERRY.NET (171) - a[23] : bd8t
+// JERRY.NET (172) - a[23] : bd8t
 bd a_index_23_inst
 (
 	.io_out /* BUS */ (xa_23_out),
@@ -1827,29 +1828,29 @@ bd a_index_23_inst
 	.pi /* IN */ (nt_55)
 );
 
-// JERRY.NET (173) - oe[0] : ibuf
+// JERRY.NET (174) - oe[0] : ibuf
 assign oel_0 = xoel_0;
 assign nt_5 = ~(xoel_0 & nt_4);
 
-// JERRY.NET (174) - we[0] : ibuf
+// JERRY.NET (175) - we[0] : ibuf
 assign wel_0 = xwel_0;
 assign nt_6 = ~(xwel_0 & nt_5);
 
-// JERRY.NET (176) - pclkosc : ibuf
+// JERRY.NET (177) - pclkosc : ibuf
 assign pclkosc = xpclkosc;
 assign nt_1 = ~(xpclkosc & nt_0);
 
-// JERRY.NET (177) - pclkin : ibuf
+// JERRY.NET (178) - pclkin : ibuf
 assign pclkin = xpclkin;
 assign nt_2 = ~(xpclkin & nt_1);
 
-// JERRY.NET (178) - pclkout : b8h
+// JERRY.NET (179) - pclkout : b8h
 assign xpclkout = pclkout;
 
-// JERRY.NET (179) - cpuclk : b8h
+// JERRY.NET (180) - cpuclk : b8h
 assign xcpuclk = cpuclk;
 
-// JERRY.NET (180) - vclk : bd8t
+// JERRY.NET (181) - vclk : bd8t
 bd vclk_inst
 (
 	.io_out /* BUS */ (xvclk_out),
@@ -1863,23 +1864,23 @@ bd vclk_inst
 	.pi /* IN */ (vcc)
 );
 
-// JERRY.NET (181) - pclkdiv : b8
+// JERRY.NET (182) - pclkdiv : b8
 assign xpclkdiv = pclkdiv;
 
-// JERRY.NET (182) - vclkdiv : b8
+// JERRY.NET (183) - vclkdiv : b8
 assign xvclkdiv = vclkdiv;
 
-// JERRY.NET (183) - chrdiv : b8
+// JERRY.NET (184) - chrdiv : b8
 assign xchrdiv = chrdiv;
 
-// JERRY.NET (185) - reseti : ibuf
+// JERRY.NET (186) - reseti : ibuf
 assign resetli = xresetil;
 assign nt_8 = ~(xresetil & nt_7);
 
-// JERRY.NET (186) - resetl : b8
+// JERRY.NET (187) - resetl : b8
 assign xresetl = resetl;
 
-// JERRY.NET (188) - siz[0-1] : bt8
+// JERRY.NET (189) - siz[0-1] : bt8
 bt siz_from_0_to_1_inst_0
 (
 	.z_out /* BUS */ (xsiz_0_out),
@@ -1899,7 +1900,7 @@ bt siz_from_0_to_1_inst_1
 	.tn /* IN */ (aen)
 );
 
-// JERRY.NET (190) - rw : bt8
+// JERRY.NET (191) - rw : bt8
 bt rw_inst
 (
 	.z_out /* BUS */ (xrw_out),
@@ -1910,7 +1911,7 @@ bt rw_inst
 	.tn /* IN */ (aen)
 );
 
-// JERRY.NET (191) - dreq : bt8
+// JERRY.NET (192) - dreq : bt8
 bt dreq_inst
 (
 	.z_out /* BUS */ (xdreql_out),
@@ -1921,23 +1922,23 @@ bt dreq_inst
 	.tn /* IN */ (aen)
 );
 
-// JERRY.NET (193) - dtack : ibuf
+// JERRY.NET (194) - dtack : ibuf
 assign dtackl = xdtackl;
 assign nt_4 = ~(xdtackl & nt_3);
 
-// JERRY.NET (195) - dbrl[0-1] : b8
+// JERRY.NET (196) - dbrl[0-1] : b8
 assign xdbrl_0 = dbrls_0;
 assign xdbrl_1 = dbrls_1;
 
-// JERRY.NET (196) - dbgl : ibuf
+// JERRY.NET (197) - dbgl : ibuf
 assign dbgl = xdbgl;
 assign nt_7 = ~(xdbgl & nt_6);
 
-// JERRY.NET (197) - dspcsl : ibuf
+// JERRY.NET (198) - dspcsl : ibuf
 assign dspcsl = xdspcsl;
 assign nt_3 = ~(xdspcsl & nt_2);
 
-// JERRY.NET (201) - intlt : mx2p
+// JERRY.NET (202) - intlt : mx2p
 mx2 intlt_inst
 (
 	.z /* OUT */ (intt),
@@ -1946,21 +1947,21 @@ mx2 intlt_inst
 	.s /* IN */ (ndtest)
 );
 
-// JERRY.NET (202) - xint : b8
+// JERRY.NET (203) - xint : b8
 assign xint = intt;
 
-// JERRY.NET (204) - test : ibuf
+// JERRY.NET (205) - test : ibuf
 assign test = xtest;
 assign nt_9 = ~(xtest & nt_8);
 
-// JERRY.NET (206) - serin : ibuf
+// JERRY.NET (207) - serin : ibuf
 assign serin = xserin;
 assign nt_20 = ~(xserin & nt_19);
 
-// JERRY.NET (207) - serout : b8
+// JERRY.NET (208) - serout : b8
 assign xserout = serout;
 
-// JERRY.NET (209) - sck : bd8t
+// JERRY.NET (210) - sck : bd8t
 bd sck_inst
 (
 	.io_out /* BUS */ (xsck_out),
@@ -1974,7 +1975,7 @@ bd sck_inst
 	.pi /* IN */ (nt_20)
 );
 
-// JERRY.NET (210) - ws : bd8t
+// JERRY.NET (211) - ws : bd8t
 bd ws_inst
 (
 	.io_out /* BUS */ (xws_out),
@@ -1988,20 +1989,20 @@ bd ws_inst
 	.pi /* IN */ (nt_21)
 );
 
-// JERRY.NET (211) - i2srxd : ibuf
+// JERRY.NET (212) - i2srxd : ibuf
 assign i2srxd = xi2srxd;
 assign nt_23 = ~(xi2srxd & nt_22);
 
-// JERRY.NET (212) - i2stxd : b8
+// JERRY.NET (213) - i2stxd : b8
 assign xi2stxd = i2stxd;
 
-// JERRY.NET (214) - eint[0-1] : ibuf
+// JERRY.NET (215) - eint[0-1] : ibuf
 assign eint_0 = xeint_0;
 assign nt_10 = ~(xeint_0 & nt_9);
 assign eint_1 = xeint_1;
 assign nt_11 = ~(xeint_1 & nt_10);
 
-// JERRY.NET (221) - joy[0] : bd8t
+// JERRY.NET (222) - joy[0] : bd8t
 bd joy_index_0_inst
 (
 	.io_out /* BUS */ (xjoy_0_out),
@@ -2015,7 +2016,7 @@ bd joy_index_0_inst
 	.pi /* IN */ (nt_15)
 );
 
-// JERRY.NET (222) - joy[1] : bd8t
+// JERRY.NET (223) - joy[1] : bd8t
 bd joy_index_1_inst
 (
 	.io_out /* BUS */ (xjoy_1_out),
@@ -2029,7 +2030,7 @@ bd joy_index_1_inst
 	.pi /* IN */ (nt_16)
 );
 
-// JERRY.NET (223) - joy[2] : bd8t
+// JERRY.NET (224) - joy[2] : bd8t
 bd joy_index_2_inst
 (
 	.io_out /* BUS */ (xjoy_2_out),
@@ -2043,7 +2044,7 @@ bd joy_index_2_inst
 	.pi /* IN */ (nt_17)
 );
 
-// JERRY.NET (224) - joy[3] : bd8t
+// JERRY.NET (225) - joy[3] : bd8t
 bd joy_index_3_inst
 (
 	.io_out /* BUS */ (xjoy_3_out),
@@ -2057,7 +2058,7 @@ bd joy_index_3_inst
 	.pi /* IN */ (nt_18)
 );
 
-// JERRY.NET (225) - gpiol[0-3] : bd8t
+// JERRY.NET (226) - gpiol[0-3] : bd8t
 bd gpiol_from_0_to_3_inst_0
 (
 	.io_out /* BUS */ (xgpiol_0_out),
@@ -2107,27 +2108,27 @@ bd gpiol_from_0_to_3_inst_3
 	.pi /* IN */ (nt_14)
 );
 
-// JERRY.NET (226) - gpiol[4-5] : b8
+// JERRY.NET (227) - gpiol[4-5] : b8
 assign xgpiol_4 = gpiol_4;
 assign xgpiol_5 = gpiol_5;
 
-// JERRY.NET (227) - cfgu[0-7] : dummy
+// JERRY.NET (228) - cfgu[0-7] : dummy
 
-// JERRY.NET (229) - iordl : b8
+// JERRY.NET (230) - iordl : b8
 assign xiordl = iordl;
 
-// JERRY.NET (230) - iowrl : b8
+// JERRY.NET (231) - iowrl : b8
 assign xiowrl = iowrl;
 
-// JERRY.NET (232) - rdac[0-1] : b8
+// JERRY.NET (233) - rdac[0-1] : b8
 assign xrdac_0 = rdac_0;
 assign xrdac_1 = rdac_1;
 
-// JERRY.NET (233) - ldac[0-1] : b8
+// JERRY.NET (234) - ldac[0-1] : b8
 assign xldac_0 = ldac_0;
 assign xldac_1 = ldac_1;
 
-// JERRY.NET (235) - chrclk : osc4c
+// JERRY.NET (236) - chrclk : osc4c
 osc4c chrclk_inst
 (
 	.z0 /* OUT */ (xchrout),
@@ -2135,19 +2136,19 @@ osc4c chrclk_inst
 	.a /* IN */ (xchrin)
 );
 
-// JERRY.NET (237) - gnd : tie0
+// JERRY.NET (238) - gnd : tie0
 assign gnd = 1'b0;
 
-// JERRY.NET (238) - vcc : tie1
+// JERRY.NET (239) - vcc : tie1
 assign vcc = 1'b1;
 
-// JERRY.NET (246) - nottest : iv
+// JERRY.NET (247) - nottest : iv
 assign nottest = ~test;
 
-// JERRY.NET (247) - testen : or2
+// JERRY.NET (248) - testen : or2
 assign testen = nottest | eint_0;
 
-// JERRY.NET (250) - dsp : dsp
+// JERRY.NET (251) - dsp : dsp
 j_dsp dsp_inst
 (
 	.ima_0 /* IN */ (aout_0),
@@ -2398,7 +2399,7 @@ j_dsp dsp_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (261) - jiodec : jiodec
+// JERRY.NET (262) - jiodec : jiodec
 j_jiodec jiodec_inst
 (
 	.a_0 /* IN */ (aout_0),
@@ -2501,7 +2502,7 @@ j_jiodec jiodec_inst
 	.dr_15_in /* BUS */ (ts_local_pe_198_a1_in)
 );
 
-// JERRY.NET (286) - jbus : jbus
+// JERRY.NET (287) - jbus : jbus
 j_jbus jbus_inst
 (
 	.ain_0 /* IN */ (ain_0),
@@ -2709,7 +2710,7 @@ j_jbus jbus_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (293) - jmem : jmem
+// JERRY.NET (294) - jmem : jmem
 j_jmem jmem_inst
 (
 	.resetl /* IN */ (resetl_2),
@@ -2762,7 +2763,7 @@ j_jmem jmem_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (301) - jclk : jclk
+// JERRY.NET (302) - jclk : jclk
 j_jclk jclk_inst
 (
 	.resetli /* IN */ (resetli),
@@ -2798,11 +2799,11 @@ j_jclk jclk_inst
 	.chrdiv /* OUT */ (chrdiv),
 	.vclken /* OUT */ (vclken),
 	.resetl /* OUT */ (resetl),
-	.tlw /* OUT */ (tlw),
+	.tlw /* OUT */ (tlw_unused),
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (308) - resetl[0-5] : nivu
+// JERRY.NET (309) - resetl[0-5] : nivu
 assign resetl_0 = resetl;
 assign resetl_1 = resetl;
 assign resetl_2 = resetl;
@@ -2810,19 +2811,19 @@ assign resetl_3 = resetl;
 assign resetl_4 = resetl;
 assign resetl_5 = resetl;
 
-// JERRY.NET (311) - clk[0] : bu36b531
+// JERRY.NET (312) - clk[0] : bu36b531
 assign clk_0 = clk;
 
-// JERRY.NET (312) - clk[1] : bu33ip7c
+// JERRY.NET (313) - clk[1] : bu33ip7c
 assign clk_1 = clk;
 
-// JERRY.NET (313) - clk[2] : bu36b52e
+// JERRY.NET (314) - clk[2] : bu36b52e
 assign clk_2 = clk;
 
-// JERRY.NET (314) - clk[3] : bu36b52e
+// JERRY.NET (315) - clk[3] : bu36b52e
 assign clk_3 = clk;
 
-// JERRY.NET (316) - jmisc : jmisc
+// JERRY.NET (317) - jmisc : jmisc
 j_jmisc jmisc_inst
 (
 	.din_0 /* IN */ (dout_0),
@@ -2916,7 +2917,7 @@ j_jmisc jmisc_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (339) - uart2 : uart2
+// JERRY.NET (340) - uart2 : uart2
 j_uart2 uart2_inst
 (
 	.resetl /* IN */ (resetl_3),
@@ -2997,7 +2998,7 @@ j_uart2 uart2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (345) - i2s : i2s
+// JERRY.NET (346) - i2s : i2s
 j_i2s i2s_inst
 (
 	.resetl /* IN */ (resetl_4),
@@ -3084,7 +3085,7 @@ j_i2s i2s_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JERRY.NET (352) - dac : dac
+// JERRY.NET (353) - dac : dac
 j_dac dac_inst
 (
 	.resetl /* IN */ (resetl_5),
@@ -3115,6 +3116,8 @@ j_dac dac_inst
 	.ldac_1 /* OUT */ (ldac_1),
 	.sys_clk(sys_clk) // Generated
 );
+
+// JERRY.NET (358) - ge : dummy
 
 // --- Compiler-generated local PE for BUS dsprd[0]
 assign dsprd_0_out =

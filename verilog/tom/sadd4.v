@@ -25,10 +25,10 @@ wire co_3;
 wire overflowi;
 wire overflow;
 
-// LBUF.NET (258) - gnd : tie0
+// LBUF.NET (260) - gnd : tie0
 assign gnd = 1'b0;
 
-// LBUF.NET (259) - s0 : add4
+// LBUF.NET (261) - s0 : add4
 add4 s0_inst
 (
 	.q_0 /* OUT */ (s_0),
@@ -47,13 +47,13 @@ add4 s0_inst
 	.ci /* IN */ (gnd)
 );
 
-// LBUF.NET (260) - overflowi : en
+// LBUF.NET (262) - overflowi : en
 assign overflowi = ~(co_3 ^ b_3);
 
-// LBUF.NET (261) - overflow : ivm
+// LBUF.NET (263) - overflow : ivm
 assign overflow = ~overflowi;
 
-// LBUF.NET (262) - z[0-3] : mx2
+// LBUF.NET (264) - z[0-3] : mx2
 mx2 z_from_0_to_3_inst_0
 (
 	.z /* OUT */ (z_0),

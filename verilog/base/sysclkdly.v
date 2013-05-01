@@ -8,16 +8,16 @@ module sysclkdly
 	input sys_clk
 );
 
-/*reg r_z = 1'b0;
+reg r_z = 1'b0;
 
 assign z = r_z;
 
 always @(posedge sys_clk)
 begin
 	r_z <= a;
-end*/
+end
 
-assign z = a;
+// assign z = a;
 
 endmodule
 /* verilator lint_on LITENDIAN */

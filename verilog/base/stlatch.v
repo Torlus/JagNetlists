@@ -10,7 +10,6 @@ module stlatch
 );
 
 reg	data = 1'b0;
-reg clk_prev = 1'b1;
 
 // assign d1 = (en) ? d : data;
 reg r_d1 = 1'b0;
@@ -24,8 +23,7 @@ begin
 		r_d1 <= data;
 	end
 
-	clk_prev <= clk;
-	if (~clk_prev & clk) begin
+	if (clk) begin
 		if (en) begin
 			data <= d;
 		end

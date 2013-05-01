@@ -14,15 +14,15 @@ wire [7:0] 		vga_r;
 wire [7:0] 		vga_g;
 wire [7:0] 		vga_b;
 
-// initial
-// begin
-  // $dumpfile("tb_s2.vcd");
-  // $dumpvars(0, tb);
-	// #1900000
+initial
+begin
+  $dumpfile("tb_s2.vcd");
+  $dumpvars(0, tb);
+	// #5001001001
 	// begin
 		// $finish;
 	// end
-// end
+end
 
 initial
 begin

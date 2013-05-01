@@ -1,20 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.39 (w)1999-2012 BSI
-[*] Fri Apr 19 15:21:30 2013
+[*] Wed May 01 04:36:45 2013
 [*]
 [dumpfile] "D:\FPGA\JagNetlists\verilog\vtb.fst"
 [savefile] "D:\FPGA\JagNetlists\verilog\gtkw_verilator"
-[timestart] 4518241000
-[size] 1280 965
-[pos] -9 -9
-*-19.133915 4519228600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 0
+[size] 1920 1021
+[pos] -1 -1
+*-29.497892 4075000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] TOP.
 [treeopen] TOP.v.
 [treeopen] TOP.v.tom_inst.
+[treeopen] TOP.v.tom_inst.gpu_inst.
 [sst_width] 197
 [signals_width] 352
 [sst_expanded] 1
-[sst_vpaned_height] 292
+[sst_vpaned_height] 313
 @28
 TOP.sys_clk
 TOP.xpclk
@@ -48,20 +49,7 @@ TOP.v.j68_fc[2:0]
 TOP.v.obbreq
 TOP.v.tom_inst.ob_inst.obback
 TOP.v.tom_inst.ob_inst.obdone
-@a2
-TOP.v.tom_inst.ob_inst.oba[0:23]
-@28
-TOP.v.tom_inst.ob_inst.obmreq
-TOP.v.tom_inst.ob_inst.mack
-TOP.v.tom_inst.ob_inst.obmack
-TOP.v.tom_inst.ob_inst.pc1en
-TOP.v.tom_inst.ob_inst.datasel
-TOP.v.tom_inst.ob_inst.olp_3
-TOP.v.tom_inst.ob_inst.olp_4
-TOP.v.tom_inst.ob_inst.olp1_3
-TOP.v.tom_inst.ob_inst.olp1_4
-TOP.v.tom_inst.ob_inst.obldd_0
-@29
-TOP.v.tom_inst.ob_inst.obldi_0
+@22
+TOP.v.xb[0:7]
 [pattern_trace] 1
 [pattern_trace] 0

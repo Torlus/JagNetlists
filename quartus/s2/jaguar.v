@@ -4,8 +4,8 @@
 module jaguar
 (
 	input	xresetl,
-	input xpclk,
-	input xvclk,
+	// input xpclk,
+	// input xvclk,
 	input sys_clk,
 
 	output  [0:9] 	dram_a,
@@ -55,6 +55,37 @@ module jaguar
 	output [7:0] vga_g,
 	output [7:0] vga_b
 );
+
+reg [1:0] clkdiv = 2'b00;
+reg xpclk = 1'b0;
+reg xvclk = 1'b0;
+reg tlw = 1'b0;
+
+always @(posedge sys_clk)
+begin
+	clkdiv <= clkdiv + 2'b01;
+	xvclk <= ~xvclk;
+	
+	if (clkdiv[1:0] == 2'b10) begin
+		xpclk <= 1'b1;
+	end else begin
+		xpclk <= 1'b0;
+	end	
+	
+	
+	if (clkdiv[1:0] == 2'b10) begin
+		xpclk <= 1'b1;
+	end else begin
+		xpclk <= 1'b0;
+	end	
+	
+	if (clkdiv[1:0] == 2'b00) begin
+		tlw <= 1'b1;
+	end else begin
+		tlw <= 1'b0;
+	end		
+end
+
 
 // `ifndef verilator3
 // reg						xpclk;
@@ -243,9 +274,17 @@ reg [63:0]	cycle = 64'h0000000000000000;
 wire        j68_rst;          // CPU reset
 wire        j68_clk;          // CPU clock
 // Bus interface
-wire        j68_rd_ena;       // Read strobe
-wire        j68_wr_ena;       // Write strobe
+
+//wire        j68_rd_ena;       // Read strobe
+//wire        j68_wr_ena;       // Write strobe
+//wire        j68_data_ack;     // Data acknowledge
+reg	        j68_rd_ena = 1'b0;       // Read strobe
+reg	        j68_wr_ena = 1'b0;       // Write strobe
 wire        j68_data_ack;     // Data acknowledge
+wire        j68_rd_ena_int;       // Read strobe
+wire        j68_wr_ena_int;       // Write strobe
+reg	        j68_data_ack_int = 1'b0;     // Data acknowledge
+
 wire [1:0]  j68_byte_ena;     // Byte enable
 wire [31:0] j68_address;      // Address bus
 wire [15:0] j68_rd_data;      // Data bus in
@@ -733,12 +772,41 @@ eeprom eeprom_inst
 
 // J68 interface
 assign j68_rst = ~xresetl;
-assign j68_clk = xpclk;
+// assign j68_clk = xpclk;
+assign j68_clk = sys_clk;
 
 // assign j68_ipl_n = 3'b111;
 assign j68_ipl_n = { 1'b1, xintl, 1'b1 };
 
 assign j68_data_ack = ~xdtackl & xba_in;
+
+// Bus sync (pclk)
+reg dtackack = 1'b1;
+wire j68rq;
+
+assign j68rq = j68_rd_ena_int | j68_wr_ena_int;
+
+always @(posedge sys_clk)
+begin
+	// Sync requests on pclk
+	if (clkdiv[1:0] == 2'b10) begin
+		// xpclk <= 1'b1;
+		j68_rd_ena <= j68_rd_ena_int & dtackack;
+		j68_wr_ena <= j68_wr_ena_int & dtackack;
+	end	
+
+	if (j68rq & j68_data_ack & dtackack) begin
+		// Previous dtack deasserted by the Jag, new one is asserted
+		j68_data_ack_int <= 1'b1;
+		dtackack <= 1'b0;
+	end else if (~j68rq & j68_data_ack & ~dtackack) begin
+		// J68 acknoweledged the dtack, waiting for the Jag to deassert dtack
+		j68_data_ack_int <= 1'b0;
+	end else if (~dtackack & ~j68_data_ack) begin
+		// Jag deasserted dtack
+		dtackack <= 1'b1;
+	end
+end
 
 // --- assign xdreql_in = xdreql_oe ? xdreql_out : ~(j68_rd_ena | j68_wr_ena);
 
@@ -1206,6 +1274,7 @@ tom tom_inst
 	.gbreq_1(gbreq[1]),
 	.dram(fdram),	// /!\
 	.blank(blank),
+	.tlw(tlw),
 	.sys_clk(sys_clk)
 );
 
@@ -1458,6 +1527,7 @@ j_jerry jerry_inst
 	.xiowrl(j_xiowrl),
 	.xi2stxd(j_xi2stxd),
 	.xcpuclk(j_xcpuclk),
+	.tlw(tlw),
 	.sys_clk(sys_clk)
 );
 
@@ -1495,9 +1565,12 @@ j68 j68_inst
 (
 	.rst(j68_rst),
 	.clk(j68_clk),
-	.rd_ena(j68_rd_ena),
-	.wr_ena(j68_wr_ena),
-	.data_ack(j68_data_ack),
+	//.rd_ena(j68_rd_ena),
+	//.wr_ena(j68_wr_ena),
+	//.data_ack(j68_data_ack),
+	.rd_ena(j68_rd_ena_int),
+	.wr_ena(j68_wr_ena_int),
+	.data_ack(j68_data_ack_int),
 	.byte_ena(j68_byte_ena),
 	.address(j68_address),
 	.rd_data(j68_rd_data),

@@ -281,22 +281,27 @@ vlog base/vgalb.v
 
 vlog ../quartus/s2/j68.v
 
-vlog ../quartus/s2/pll50.v
+# vlog ../quartus/s2/pll50.v
+vlog pll50.v
+
 vlog ../quartus/s2/jaguar.v
 vlog ../quartus/s2/jag_s2.v
 
 
 vlog ../quartus/s2/tb.v
 
-vsim -t 1ps -L altera_mf_ver -L lpm_ver -lib work tb
+vsim -l vsim.log -t 1ps -L altera_mf_ver -L lpm_ver -lib work tb
 
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -format Logic /tb/top/xresetl
-add wave -noupdate -format Logic /tb/OSC_CLK0
+# add wave -noupdate -format Logic /tb/OSC_CLK0
 add wave -noupdate -format Logic /tb/top/sys_clk
-add wave -noupdate -format Logic /tb/top/xpclk
-add wave -noupdate -format Logic /tb/top/xvclk
+# add wave -noupdate -format Logic /tb/top/xpclk
+# add wave -noupdate -format Logic /tb/top/xvclk
+add wave -noupdate -format Logic /tb/top/jag/xpclk
+add wave -noupdate -format Logic /tb/top/jag/tlw
+add wave -noupdate -format Logic /tb/top/jag/xvclk
 
 add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/xa_r
 add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/xd_r
@@ -309,19 +314,19 @@ add wave -noupdate -format Literal /tb/top/jag/xoel
 add wave -noupdate -format Literal /tb/top/jag/xwel
 add wave -noupdate -format Literal /tb/top/dram_oe_n
 
-add wave -noupdate -format Logic /tb/SSRAM_CLK
-add wave -noupdate -format Logic /tb/SSRAM_ADSC_n
-add wave -noupdate -format Literal -radix hexadecimal /tb/SSRAM_ADDR
-add wave -noupdate -format Logic /tb/SSRAM_BWE_n
-add wave -noupdate -format Literal /tb/SSRAM_BE_n
-add wave -noupdate -format Logic /tb/SSRAM_CE1_n
-add wave -noupdate -format Logic /tb/SSRAM_ADV_n
-add wave -noupdate -format Logic /tb/SSRAM_OE_n
-add wave -noupdate -format Literal -radix hexadecimal /tb/SSRAM_DQ
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/ssram_q1
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/ssram_q0
-add wave -noupdate -format Literal /tb/top/mem_cyc
-add wave -noupdate -format Literal /tb/top/dram_oe
+#add wave -noupdate -format Logic /tb/SSRAM_CLK
+#add wave -noupdate -format Logic /tb/SSRAM_ADSC_n
+#add wave -noupdate -format Literal -radix hexadecimal /tb/SSRAM_ADDR
+#add wave -noupdate -format Logic /tb/SSRAM_BWE_n
+#add wave -noupdate -format Literal /tb/SSRAM_BE_n
+#add wave -noupdate -format Logic /tb/SSRAM_CE1_n
+#add wave -noupdate -format Logic /tb/SSRAM_ADV_n
+#add wave -noupdate -format Logic /tb/SSRAM_OE_n
+#add wave -noupdate -format Literal -radix hexadecimal /tb/SSRAM_DQ
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/ssram_q1
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/ssram_q0
+#add wave -noupdate -format Literal /tb/top/mem_cyc
+#add wave -noupdate -format Literal /tb/top/dram_oe
 
 add wave -noupdate -format Logic /tb/top/jag/xdreql_in
 add wave -noupdate -format Logic /tb/top/jag/xdtackl
@@ -330,8 +335,12 @@ add wave -noupdate -format Logic /tb/top/jag/j68_clk
 add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/j68_address_final
 add wave -noupdate -format Logic /tb/top/jag/j68_rd_ena
 add wave -noupdate -format Logic /tb/top/jag/j68_wr_ena
+add wave -noupdate -format Logic /tb/top/jag/j68_data_ack
 add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/j68_rd_data
 add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/j68_wr_data
+add wave -noupdate -format Logic /tb/top/jag/j68_rd_ena_int
+add wave -noupdate -format Logic /tb/top/jag/j68_wr_ena_int
+add wave -noupdate -format Logic /tb/top/jag/j68_data_ack_int
 
 add wave -noupdate -format Logic /tb/top/jag/refreq
 add wave -noupdate -format Logic /tb/top/jag/obbreq
@@ -343,18 +352,18 @@ add wave -noupdate -format Logic /tb/top/jag/obbreq
 # add wave -noupdate -format Logic /tb/tom_inst/obd_inst/prw
 # add wave -noupdate -format Logic /tb/tom_inst/obd_inst/csl
 
-add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/lbufa
-add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/wral
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/wdil
-add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/lbrd_d
+#add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/lbufa
+#add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/wral
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/wdil
+#add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/lbrd_d
 
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbai
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadl_in
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadh_in
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadl_out
-add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadl_oe
-add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/cea_0
-add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/wea_0
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbai
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadl_in
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadh_in
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadl_out
+#add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbadl_oe
+#add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/cea_0
+#add wave -noupdate -format Logic /tb/top/jag/tom_inst/lbuf_inst/wea_0
 #add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbbi
 #add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbbdl_in
 #add wave -noupdate -format Literal -radix hexadecimal /tb/top/jag/tom_inst/lbuf_inst/lbbdh_in

@@ -107,9 +107,9 @@ Boot_Start:
 *	move.w	#0x187B, MEMCON1
 
 * Jump to "standard" entry point for homebrew games
-*	lea.l	0x00004000, %a0
+	lea.l	0x00004000, %a0
 * Entry point for most cartridges (should be fetched instead from $800404)
-	lea.l	0x00802000, %a0
+*	lea.l	0x00802000, %a0
 	jmp		(%a0)
 	
 Prog_Start:

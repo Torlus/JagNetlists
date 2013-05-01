@@ -7,7 +7,8 @@ module tb
 	input xpclk,
 	input xvclk,
 	input sys_clk,
-
+	input tlw,
+	
 	output  [0:9] 	dram_a,
 	output					dram_ras_n,
 	output					dram_cas_n,
@@ -738,7 +739,31 @@ assign j68_clk = xpclk;
 // assign j68_ipl_n = 3'b111;
 assign j68_ipl_n = { 1'b1, xintl, 1'b1 };
 
+// assign j68_ipl_n = 3'b111;
+assign j68_ipl_n = { 1'b1, xintl, 1'b1 };
+
 assign j68_data_ack = ~xdtackl & xba_in;
+/*reg dtack = 1'b0;
+reg dtackack = 1'b1;
+wire j68rq;
+
+assign j68rq = j68_rd_ena | j68_wr_ena;
+assign j68_data_ack = dtack;
+
+always @(posedge sys_clk)
+begin
+	if (j68rq & (~xdtackl & xba_in) & dtackack) begin
+		// Previous dtack deasserted by the Jag, new one is asserted
+		dtack <= 1'b1;
+		dtackack <= 1'b0;
+	end else if (~j68rq & dtack & ~dtackack) begin
+		// J68 acknoweledged the dtack, waiting for the Jag to deassert dtack
+		dtack <= 1'b0;
+	end else if (~dtackack & ~(~xdtackl & xba_in)) begin
+		// Jag deasserted dtack
+		dtackack <= 1'b1;
+	end
+end*/
 
 // --- assign xdreql_in = xdreql_oe ? xdreql_out : ~(j68_rd_ena | j68_wr_ena);
 
@@ -1206,6 +1231,7 @@ tom tom_inst
 	.gbreq_1(gbreq[1]),
 	.dram(fdram), // /!\
 	.blank(blank),
+	.tlw(tlw),
 	.sys_clk(sys_clk)
 );
 
@@ -1458,6 +1484,7 @@ j_jerry jerry_inst
 	.xiowrl(j_xiowrl),
 	.xi2stxd(j_xi2stxd),
 	.xcpuclk(j_xcpuclk),
+	.tlw(tlw),
 	.sys_clk(sys_clk)
 );
 

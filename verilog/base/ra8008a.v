@@ -23,7 +23,6 @@ assign z[0:7] = {r_z[0], r_z[1], r_z[2], r_z[3], r_z[4], r_z[5], r_z[6], r_z[7]}
 
 `ifdef SIMULATION
 	reg	[7:0]	rom_blk [0:(1<<8)-1];
-	reg clk_prev = 1'b1;
 
 	initial
 	begin

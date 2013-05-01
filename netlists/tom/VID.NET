@@ -255,7 +255,12 @@ vactive	_________/
 Startd1 :=	ND2 (startd1,hdb1eq,vvactive);
 Startd2 :=	ND2 (startd2,hdb2eq,vvactive);
 Startd :=	ND3 (startd,startd1,startd2,startd3);
-Start :=	FD2Q (start,startd,vclk,resetl);
+(* GE Start :=	FD2Q (start,startd,vclk,resetl); *)
+(* GE the "start" signal is generated on vclk, but sampled on pclk *)
+(* GE so it falls short... *)
+Start_c1 :=	FD2Q (start_c1,startd,vclk,resetl);
+Start_c2 :=	FD2Q (start_c2,start_c1,vclk,resetl);
+Start := OR2 (start, start_c1, start_c2);
 
 (* latch the vertical count so it doesn't change before the next start *)
 

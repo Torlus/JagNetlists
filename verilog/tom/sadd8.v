@@ -43,10 +43,10 @@ wire overflowi;
 wire overflow;
 wire cob_7;
 
-// LBUF.NET (275) - gnd : tie0
+// LBUF.NET (277) - gnd : tie0
 assign gnd = 1'b0;
 
-// LBUF.NET (276) - s0 : add4
+// LBUF.NET (278) - s0 : add4
 add4 s0_inst
 (
 	.q_0 /* OUT */ (s_0),
@@ -65,7 +65,7 @@ add4 s0_inst
 	.ci /* IN */ (gnd)
 );
 
-// LBUF.NET (277) - s1 : add4
+// LBUF.NET (279) - s1 : add4
 add4 s1_inst
 (
 	.q_0 /* OUT */ (s_4),
@@ -84,16 +84,16 @@ add4 s1_inst
 	.ci /* IN */ (co_3)
 );
 
-// LBUF.NET (278) - overflowi : en
+// LBUF.NET (280) - overflowi : en
 assign overflowi = ~(co_7 ^ b_7);
 
-// LBUF.NET (279) - overflow : ivm
+// LBUF.NET (281) - overflow : ivm
 assign overflow = ~overflowi;
 
-// LBUF.NET (280) - cob[7] : nivm
+// LBUF.NET (282) - cob[7] : nivm
 assign cob_7 = co_7;
 
-// LBUF.NET (281) - z[0-7] : mx2
+// LBUF.NET (283) - z[0-7] : mx2
 mx2 z_from_0_to_7_inst_0
 (
 	.z /* OUT */ (z_0),

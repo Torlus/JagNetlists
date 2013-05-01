@@ -24,22 +24,23 @@ assign z_out[0:15] = {z_out_r[0], z_out_r[1], z_out_r[2], z_out_r[3], z_out_r[4]
 assign z_in_r[15:0] = {z_in[15], z_in[14], z_in[13], z_in[12], z_in[11], z_in[10], z_in[9], z_in[8],
 		z_in[7], z_in[6], z_in[5], z_in[4], z_in[3], z_in[2], z_in[1], z_in[0]};
 
+		
 `ifdef SIMULATION
 	reg [15:0]	r_z_out_r;
-	// reg	[15:0]	r_z_out_r_dly;
 	reg	[0:15]	r_z_oe = 16'h0000;
-	// reg	[0:15]	r_z_oe_dly = 16'h0000;
+	// reg	[0:15]	r_z_oe_dly = 16'h0000; //GE
 
 	reg	[15:0]	ram_blk [0:(1<<9)-1];
 
-	// assign z_oe = r_z_oe_dly;
-	assign z_out_r = r_z_out_r;
 	assign z_oe = r_z_oe;
-
+	// assign z_oe = r_z_oe_dly; //GE
+	
+	assign z_out_r = r_z_out_r;
+	
 	always @(posedge sys_clk)
 	begin
-		// r_z_out_r_dly <= r_z_out_r;
-		// r_z_oe_dly <= r_z_oe;	
+		// r_z_oe_dly <= r_z_oe;	//GE
+		r_z_oe <= (~cen & rw) ? 16'hffff : 16'h0000;
 
 		if (~cen) begin
 			if (~rw) begin
@@ -47,17 +48,18 @@ assign z_in_r[15:0] = {z_in[15], z_in[14], z_in[13], z_in[12], z_in[11], z_in[10
 			end
 			r_z_out_r <= ram_blk[a_r][15:0];
 		end
-		r_z_oe <= (~cen & rw) ? 16'hffff : 16'h0000;
 	end
 `else
 	wire	wren;
 	reg	[0:15]	r_z_oe = 16'h0000;
-	// reg	[0:15]	r_z_oe_dly = 16'h0000;
+	// reg	[0:15]	r_z_oe_dly = 16'h0000; //GE
 	
 	assign z_oe = r_z_oe;
+	// assign z_oe = r_z_oe_dly; //GE
 
 	always @(posedge sys_clk)
 	begin
+		// r_z_oe_dly <= r_z_oe;	//GE
 		r_z_oe <= (~cen & rw) ? 16'hffff : 16'h0000;
 	end
 

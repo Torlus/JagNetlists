@@ -86,7 +86,7 @@ wire cre_9;
 wire cre_10;
 wire zero;
 
-// VID.NET (416) - cr[0-10] : ldp1q
+// VID.NET (421) - cr[0-10] : ldp1q
 ldp1q cr_from_0_to_10_inst_0
 (
 	.q /* OUT */ (cr_0),
@@ -165,7 +165,7 @@ ldp1q cr_from_0_to_10_inst_10
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (417) - cre[0-10] : en
+// VID.NET (422) - cre[0-10] : en
 assign cre_0 = ~(cr_0 ^ count_0);
 assign cre_1 = ~(cr_1 ^ count_1);
 assign cre_2 = ~(cr_2 ^ count_2);
@@ -178,13 +178,13 @@ assign cre_8 = ~(cr_8 ^ count_8);
 assign cre_9 = ~(cr_9 ^ count_9);
 assign cre_10 = ~(cr_10 ^ count_10);
 
-// VID.NET (418) - creq : and11
+// VID.NET (423) - creq : and11
 assign creq = cre_0 & cre_1 & cre_2 & cre_3 & cre_4 & cre_5 & cre_6 & cre_7 & cre_8 & cre_9 & cre_10;
 
-// VID.NET (420) - zero : tie0
+// VID.NET (425) - zero : tie0
 assign zero = 1'b0;
 
-// VID.NET (421) - dout[0-10] : ts
+// VID.NET (426) - dout[0-10] : ts
 assign dout_0_out = cr_0;
 assign dout_0_oe = zero;
 assign dout_1_out = cr_1;

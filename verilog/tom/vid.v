@@ -394,6 +394,8 @@ wire notvvactive;
 wire startd1;
 wire startd2;
 wire startd;
+wire start_c1;
+wire start_c2;
 wire vcli;
 wire vclb;
 wire startd3p;
@@ -3120,23 +3122,36 @@ assign startd2 = ~(hdb2eq & vvactive);
 // VID.NET (257) - startd : nd3
 assign startd = ~(startd1 & startd2 & startd3);
 
-// VID.NET (258) - start : fd2q
-fd2q start_inst
+// VID.NET (261) - start_c1 : fd2q
+fd2q start_c1_inst
 (
-	.q /* OUT */ (start_obuf),
+	.q /* OUT */ (start_c1),
 	.d /* IN */ (startd),
 	.cp /* IN */ (vclk),
 	.cd /* IN */ (resetl),
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (262) - vcli : nr2
+// VID.NET (262) - start_c2 : fd2q
+fd2q start_c2_inst
+(
+	.q /* OUT */ (start_c2),
+	.d /* IN */ (start_c1),
+	.cp /* IN */ (vclk),
+	.cd /* IN */ (resetl),
+	.sys_clk(sys_clk) // Generated
+);
+
+// VID.NET (263) - start : or2
+assign start_obuf = start_c1 | start_c2;
+
+// VID.NET (267) - vcli : nr2
 assign vcli = ~(vcl | start_obuf);
 
-// VID.NET (263) - vclb : ivh
+// VID.NET (268) - vclb : ivh
 assign vclb = ~vcli;
 
-// VID.NET (264) - vcl[0-10] : slatch
+// VID.NET (269) - vcl[0-10] : slatch
 slatch vcl_from_0_to_10_inst_0
 (
 	.q /* OUT */ (vcl_0),
@@ -3226,13 +3241,13 @@ slatch vcl_from_0_to_10_inst_10
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (271) - startd3p : iv
+// VID.NET (276) - startd3p : iv
 assign startd3p = ~startd3;
 
-// VID.NET (272) - hdb : or3
+// VID.NET (277) - hdb : or3
 assign hdb = hdb1eq | hdb2eq | startd3p;
 
-// VID.NET (273) - vdactive : slatchr
+// VID.NET (278) - vdactive : slatchr
 slatchr vdactive_inst
 (
 	.q /* OUT */ (vdactive),
@@ -3243,10 +3258,10 @@ slatchr vdactive_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (274) - dd : an2
+// VID.NET (279) - dd : an2
 assign dd_obuf = vdactive & hdb;
 
-// VID.NET (275) - vactive : fjkr
+// VID.NET (280) - vactive : fjkr
 fjkr vactive_inst
 (
 	.q /* OUT */ (vactive_obuf),
@@ -3258,9 +3273,9 @@ fjkr vactive_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (276) - nvu : dummy
+// VID.NET (281) - nvu : dummy
 
-// VID.NET (278) - lbufai : fdr
+// VID.NET (283) - lbufai : fdr
 fdr lbufai_inst
 (
 	.q /* OUT */ (lbufai),
@@ -3271,7 +3286,7 @@ fdr lbufai_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (279) - lbufd : mx2
+// VID.NET (284) - lbufd : mx2
 mx2 lbufd_inst
 (
 	.z /* OUT */ (lbufad),
@@ -3280,25 +3295,25 @@ mx2 lbufd_inst
 	.s /* IN */ (dd_obuf)
 );
 
-// VID.NET (280) - lbufa : nivu2
+// VID.NET (285) - lbufa : nivu2
 assign lbufa_obuf = lbufai;
 
-// VID.NET (281) - lbufb : nivu2
+// VID.NET (286) - lbufb : nivu2
 assign lbufb_obuf = lbufbi;
 
-// VID.NET (283) - lbaai : nd2
+// VID.NET (288) - lbaai : nd2
 assign lbaai = ~(lbufai & vactive_obuf);
 
-// VID.NET (284) - lbbai : nd2
+// VID.NET (289) - lbbai : nd2
 assign lbbai = ~(lbufbi & vactive_obuf);
 
-// VID.NET (285) - lbaactive : ivu
+// VID.NET (290) - lbaactive : ivu
 assign lbaactive = ~lbaai;
 
-// VID.NET (286) - lbbactive : ivu
+// VID.NET (291) - lbbactive : ivu
 assign lbbactive = ~lbbai;
 
-// VID.NET (288) - vblank : fjkr
+// VID.NET (293) - vblank : fjkr
 fjkr vblank_inst
 (
 	.q /* OUT */ (vblank),
@@ -3310,7 +3325,7 @@ fjkr vblank_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (289) - hblank : fjkr
+// VID.NET (294) - hblank : fjkr
 fjkr hblank_inst
 (
 	.q /* OUT */ (hblank),
@@ -3322,14 +3337,14 @@ fjkr hblank_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (290) - blank : nd2
+// VID.NET (295) - blank : nd2
 assign blank = ~(notvblank & nothblank);
 
-// VID.NET (292) - unused1 : dummy
+// VID.NET (297) - unused1 : dummy
 
-// VID.NET (293) - unused2 : dummy
+// VID.NET (298) - unused2 : dummy
 
-// VID.NET (295) - hs : fjkr
+// VID.NET (300) - hs : fjkr
 fjkr hs_inst
 (
 	.q /* OUT */ (hs),
@@ -3341,9 +3356,9 @@ fjkr hs_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (296) - hsu : dummy
+// VID.NET (301) - hsu : dummy
 
-// VID.NET (303) - vvsync : fjkr
+// VID.NET (308) - vvsync : fjkr
 fjkr vvsync_inst
 (
 	.q /* OUT */ (vvs),
@@ -3355,12 +3370,12 @@ fjkr vvsync_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (304) - nvsu : dummy
+// VID.NET (309) - nvsu : dummy
 
-// VID.NET (305) - hvstart : an2
+// VID.NET (310) - hvstart : an2
 assign hvstart = hvsb & vvs;
 
-// VID.NET (306) - hvsync : fjkr
+// VID.NET (311) - hvsync : fjkr
 fjkr hvsync_inst
 (
 	.q /* OUT */ (hvs),
@@ -3372,7 +3387,7 @@ fjkr hvsync_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (307) - vesync : fjkr
+// VID.NET (312) - vesync : fjkr
 fjkr vesync_inst
 (
 	.q /* OUT */ (ves),
@@ -3384,12 +3399,12 @@ fjkr vesync_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (308) - nvesu : dummy
+// VID.NET (313) - nvesu : dummy
 
-// VID.NET (309) - hestart : an2
+// VID.NET (314) - hestart : an2
 assign hestart = hvsb & ves;
 
-// VID.NET (310) - hesync : fjkr
+// VID.NET (315) - hesync : fjkr
 fjkr hesync_inst
 (
 	.q /* OUT */ (hes),
@@ -3401,10 +3416,10 @@ fjkr hesync_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (311) - vsync : an2
+// VID.NET (316) - vsync : an2
 assign vsl = nothvs & nothes;
 
-// VID.NET (312) - csync : mx2
+// VID.NET (317) - csync : mx2
 mx2 csync_inst
 (
 	.z /* OUT */ (csync),
@@ -3413,7 +3428,7 @@ mx2 csync_inst
 	.s /* IN */ (ves)
 );
 
-// VID.NET (313) - notvs : mx2
+// VID.NET (318) - notvs : mx2
 mx2 notvs_inst
 (
 	.z /* OUT */ (notvs),
@@ -3422,14 +3437,14 @@ mx2 notvs_inst
 	.s /* IN */ (csyncen)
 );
 
-// VID.NET (314) - hvs : dummy
+// VID.NET (319) - hvs : dummy
 
-// VID.NET (315) - hes : dummy
+// VID.NET (320) - hes : dummy
 
-// VID.NET (319) - vintd : an2
+// VID.NET (324) - vintd : an2
 assign vintd = vieq & hdeeq;
 
-// VID.NET (320) - vint : fdr
+// VID.NET (325) - vint : fdr
 fdr vint_inst
 (
 	.q /* OUT */ (vint),
@@ -3440,36 +3455,36 @@ fdr vint_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (321) - vintl : dummy
+// VID.NET (326) - vintl : dummy
 
-// VID.NET (327) - ppnz : or3
+// VID.NET (332) - ppnz : or3
 assign ppnz = ppn_0 | ppn_1 | ppn_2;
 
-// VID.NET (328) - longpix : nr2
+// VID.NET (333) - longpix : nr2
 assign longpix = ~(cry16_obuf | rgb16_obuf);
 
-// VID.NET (329) - wordpix : iv
+// VID.NET (334) - wordpix : iv
 assign wordpix = ~longpix;
 
-// VID.NET (330) - sxp : or2
+// VID.NET (335) - sxp : or2
 assign sxp = wordpix | ppnz;
 
-// VID.NET (331) - notstartd : iv
+// VID.NET (336) - notstartd : iv
 assign notstartd = ~startd;
 
-// VID.NET (332) - nextpixd0 : nd2
+// VID.NET (337) - nextpixd0 : nd2
 assign nextpixd0 = ~(word2_obuf & pp_obuf);
 
-// VID.NET (333) - nextpixd1 : nd2
+// VID.NET (338) - nextpixd1 : nd2
 assign nextpixd1 = ~(longpix & pp_obuf);
 
-// VID.NET (334) - nextpixd : nd2
+// VID.NET (339) - nextpixd : nd2
 assign nextpixd_obuf = ~(nextpixd0 & nextpixd1);
 
-// VID.NET (341) - nextpixad : an2
+// VID.NET (346) - nextpixad : an2
 assign nextpixad = nextpixd_obuf & notstartd;
 
-// VID.NET (342) - nextpixaq : fd1q
+// VID.NET (347) - nextpixaq : fd1q
 fd1q nextpixaq_inst
 (
 	.q /* OUT */ (nextpixaq),
@@ -3478,7 +3493,7 @@ fd1q nextpixaq_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (343) - nextpixa : mx2
+// VID.NET (348) - nextpixa : mx2
 mx2 nextpixa_inst
 (
 	.z /* OUT */ (nextpixa_obuf),
@@ -3487,10 +3502,10 @@ mx2 nextpixa_inst
 	.s /* IN */ (sxp)
 );
 
-// VID.NET (344) - bgw : an3
+// VID.NET (349) - bgw : an3
 assign bgw = bgwen & nextpixa_obuf & sxp;
 
-// VID.NET (348) - lp1 : fd1q
+// VID.NET (353) - lp1 : fd1q
 fd1q lp1_inst
 (
 	.q /* OUT */ (lp1),
@@ -3499,7 +3514,7 @@ fd1q lp1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (349) - lp2 : fd1
+// VID.NET (354) - lp2 : fd1
 fd1 lp2_inst
 (
 	.q /* OUT */ (lp2),
@@ -3509,15 +3524,15 @@ fd1 lp2_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (350) - lpldi : nd2
+// VID.NET (355) - lpldi : nd2
 assign lpldi = ~(lp1 & lp2l);
 
-// VID.NET (351) - lpld : ivh
+// VID.NET (356) - lpld : ivh
 assign lpld = ~lpldi;
 
-// VID.NET (352) - unused4 : dummy
+// VID.NET (357) - unused4 : dummy
 
-// VID.NET (354) - lph[0-10] : slatch
+// VID.NET (359) - lph[0-10] : slatch
 slatch lph_from_0_to_10_inst_0
 (
 	.q /* OUT */ (lph_0),
@@ -3607,7 +3622,7 @@ slatch lph_from_0_to_10_inst_10
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (355) - lpv[0-11] : slatch
+// VID.NET (360) - lpv[0-11] : slatch
 slatch lpv_from_0_to_11_inst_0
 (
 	.q /* OUT */ (lpv_0),
@@ -3705,7 +3720,7 @@ slatch lpv_from_0_to_11_inst_11
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (356) - lphd[0-10] : ts
+// VID.NET (361) - lphd[0-10] : ts
 assign ts_pe_260_a15_out = lph_0;
 assign ts_pe_260_a15_oe = lphrd;
 assign ts_pe_261_a15_out = lph_1;
@@ -3729,11 +3744,11 @@ assign ts_pe_269_a15_oe = lphrd;
 assign ts_pe_270_a15_out = lph_10;
 assign ts_pe_270_a15_oe = lphrd;
 
-// VID.NET (357) - lphd[11] : ts
+// VID.NET (362) - lphd[11] : ts
 assign ts_pe_271_a1_out = lpe;
 assign ts_pe_271_a1_oe = lphrd;
 
-// VID.NET (358) - lpvd[0-11] : ts
+// VID.NET (363) - lpvd[0-11] : ts
 assign ts_pe_260_a16_out = lpv_0;
 assign ts_pe_260_a16_oe = lpvrd;
 assign ts_pe_261_a16_out = lpv_1;
@@ -3759,7 +3774,7 @@ assign ts_pe_270_a16_oe = lpvrd;
 assign ts_pe_271_a2_out = lpv_11;
 assign ts_pe_271_a2_oe = lpvrd;
 
-// VID.NET (360) - lp_event : fjk2
+// VID.NET (365) - lp_event : fjk2
 fjk2 lp_event_inst
 (
 	.q /* OUT */ (lpe),
@@ -3771,114 +3786,114 @@ fjk2 lp_event_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// VID.NET (361) - lpeu : dummy
+// VID.NET (366) - lpeu : dummy
 
-// VID.NET (365) - td2[0] : ts
+// VID.NET (370) - td2[0] : ts
 assign ts_pe_260_a17_out = hpeqt;
 assign ts_pe_260_a17_oe = test2r;
 
-// VID.NET (366) - td2[1] : ts
+// VID.NET (371) - td2[1] : ts
 assign ts_pe_261_a17_out = hbbeq;
 assign ts_pe_261_a17_oe = test2r;
 
-// VID.NET (367) - td2[2] : ts
+// VID.NET (372) - td2[2] : ts
 assign ts_pe_262_a17_out = hbeeq;
 assign ts_pe_262_a17_oe = test2r;
 
-// VID.NET (368) - td2[3] : ts
+// VID.NET (373) - td2[3] : ts
 assign ts_pe_263_a17_out = hdb1eq;
 assign ts_pe_263_a17_oe = test2r;
 
-// VID.NET (369) - td2[4] : ts
+// VID.NET (374) - td2[4] : ts
 assign ts_pe_264_a17_out = hdb2eq;
 assign ts_pe_264_a17_oe = test2r;
 
-// VID.NET (370) - td2[5] : ts
+// VID.NET (375) - td2[5] : ts
 assign ts_pe_265_a17_out = hdeeq;
 assign ts_pe_265_a17_oe = test2r;
 
-// VID.NET (371) - td2[6] : ts
+// VID.NET (376) - td2[6] : ts
 assign ts_pe_266_a17_out = hseq;
 assign ts_pe_266_a17_oe = test2r;
 
-// VID.NET (372) - td2[7] : ts
+// VID.NET (377) - td2[7] : ts
 assign ts_pe_267_a17_out = hvsb;
 assign ts_pe_267_a17_oe = test2r;
 
-// VID.NET (373) - td2[8] : ts
+// VID.NET (378) - td2[8] : ts
 assign ts_pe_268_a17_out = hvse;
 assign ts_pe_268_a17_oe = test2r;
 
-// VID.NET (374) - td2[9] : ts
+// VID.NET (379) - td2[9] : ts
 assign ts_pe_269_a17_out = heqe;
 assign ts_pe_269_a17_oe = test2r;
 
-// VID.NET (375) - td2[10] : ts
+// VID.NET (380) - td2[10] : ts
 assign ts_pe_270_a17_out = gnd;
 assign ts_pe_270_a17_oe = test2r;
 
-// VID.NET (377) - td3[0] : ts
+// VID.NET (382) - td3[0] : ts
 assign ts_pe_260_a18_out = vpeqt;
 assign ts_pe_260_a18_oe = test3r;
 
-// VID.NET (378) - td3[1] : ts
+// VID.NET (383) - td3[1] : ts
 assign ts_pe_261_a18_out = vbbeq;
 assign ts_pe_261_a18_oe = test3r;
 
-// VID.NET (379) - td3[2] : ts
+// VID.NET (384) - td3[2] : ts
 assign ts_pe_262_a18_out = vbeeq;
 assign ts_pe_262_a18_oe = test3r;
 
-// VID.NET (380) - td3[3] : ts
+// VID.NET (385) - td3[3] : ts
 assign ts_pe_263_a18_out = vdbeq;
 assign ts_pe_263_a18_oe = test3r;
 
-// VID.NET (381) - td3[4] : ts
+// VID.NET (386) - td3[4] : ts
 assign ts_pe_264_a18_out = vdeeq;
 assign ts_pe_264_a18_oe = test3r;
 
-// VID.NET (382) - td3[5] : ts
+// VID.NET (387) - td3[5] : ts
 assign ts_pe_265_a18_out = vebeq;
 assign ts_pe_265_a18_oe = test3r;
 
-// VID.NET (383) - td3[6] : ts
+// VID.NET (388) - td3[6] : ts
 assign ts_pe_266_a18_out = veeeq;
 assign ts_pe_266_a18_oe = test3r;
 
-// VID.NET (384) - td3[7] : ts
+// VID.NET (389) - td3[7] : ts
 assign ts_pe_267_a18_out = vseq;
 assign ts_pe_267_a18_oe = test3r;
 
-// VID.NET (385) - td3[8] : ts
+// VID.NET (390) - td3[8] : ts
 assign ts_pe_268_a18_out = vieq;
 assign ts_pe_268_a18_oe = test3r;
 
-// VID.NET (386) - td3[9] : ts
+// VID.NET (391) - td3[9] : ts
 assign ts_pe_269_a18_out = vgy;
 assign ts_pe_269_a18_oe = test3r;
 
-// VID.NET (387) - td3[10] : ts
+// VID.NET (392) - td3[10] : ts
 assign ts_pe_270_a18_out = vey;
 assign ts_pe_270_a18_oe = test3r;
 
-// VID.NET (388) - td3[11] : ts
+// VID.NET (393) - td3[11] : ts
 assign ts_pe_271_a3_out = vly;
 assign ts_pe_271_a3_oe = test3r;
 
-// VID.NET (395) - e11 : or2
+// VID.NET (400) - e11 : or2
 assign e11 = hcrd | test2r;
 
-// VID.NET (396) - e1215 : or4
+// VID.NET (401) - e1215 : or4
 assign e1215 = e11 | vcrd | lpvrd | lphrd;
 
-// VID.NET (397) - gnd : tie0
+// VID.NET (402) - gnd : tie0
 assign gnd = 1'b0;
 
-// VID.NET (398) - dr[11] : ts
+// VID.NET (403) - dr[11] : ts
 assign ts_pe_271_a4_out = gnd;
 assign ts_pe_271_a4_oe = e11;
 
-// VID.NET (399) - dr[12-15] : ts
+// VID.NET (404) - dr[12-15] : ts
 assign dr_12_out = gnd;
 assign dr_12_oe = e1215;
 assign dr_13_out = gnd;
@@ -3888,13 +3903,13 @@ assign dr_14_oe = e1215;
 assign dr_15_out = gnd;
 assign dr_15_oe = e1215;
 
-// VID.NET (402) - hso : join
+// VID.NET (407) - hso : join
 assign hs_o = hseq;
 
-// VID.NET (403) - hhso : join
+// VID.NET (408) - hhso : join
 assign hhs_o = hvsb;
 
-// VID.NET (404) - vso : join
+// VID.NET (409) - vso : join
 assign vs_o = vvs;
 
 // --- Compiler-generated PE for BUS dr[0]

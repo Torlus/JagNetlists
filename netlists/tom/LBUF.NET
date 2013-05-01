@@ -170,7 +170,9 @@ Lbufbl :=	AB8616A (lbbdl, ceb[0],web[0],lbbi);
 Lbufbh :=	AB8616A (lbbdh, ceb[1],web[1],lbbi);
 
 Ncst :=		IVH (ncst,clk[0]);
-Nvcst :=	IVH (nvcst,vclk);
+(* GE Nvcst :=	IVH (nvcst,vclk); **)
+GE1 := TIE1 (nvcst);
+GE2 := DUMMY (vclk);
 
 Cea0 :=		ND2 (cea0,lbufb,lben);
 Cea1 :=		IV (cea1,lba);

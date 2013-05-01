@@ -9,15 +9,13 @@ module fd1q
 );
 
 reg	data = 1'b0;
-reg cp_prev = 1'b1;
 
 assign q = data;
 
 // always @(posedge cp)
 always @(posedge sys_clk)
 begin
-	cp_prev <= cp;
-	if (~cp_prev & cp) begin
+	if (cp) begin
 		data <= d;
 	end
 end

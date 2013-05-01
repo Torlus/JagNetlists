@@ -15,9 +15,9 @@
 // Number of simulation cycles
 //                                 ns
 // #define NUM_CYCLES  ((vluint64_t)1599000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
-#define NUM_MS 15000
-#define LOG_START_MS 99994
-#define LOG_EVERY_MS 99992
+#define NUM_MS 5
+#define LOG_START_MS 0
+#define LOG_EVERY_MS 1
 
 // #define CYCLES_PER_VCD ((vluint64_t)10000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
 #define HCYCLES_PER_MS ((vluint64_t)1000000 * (vluint64_t)1000 / (vluint64_t)HALF_PER_PS)
@@ -93,10 +93,12 @@ int main(int argc, char **argv, char **env)
 #endif
   
   // Initialize simulation inputs
-	top->sys_clk = 0;
+	//TEST top->sys_clk = 0;
+	top->sys_clk = 1;
 	top->xvclk = 1;
 	top->xpclk = 1;
 	top->xresetl = 0;
+	top->tlw = 1;
 	
 for(ms = 0; ms < NUM_MS; ms++) {
 #if VM_TRACE
@@ -181,12 +183,28 @@ for(ms = 0; ms < NUM_MS; ms++) {
 		
     top->xresetl = (hcycle < (vluint64_t)(80000 / HALF_PER_PS)) ? 0 : 1;
 		top->sys_clk = top->sys_clk ^ 1;
-		// if (!(hcycle & 0x3))
-		if (!(hcycle & 0x1))
+
+		//TEST
+		/*if (!(hcycle & 0x1))
 			top->xvclk = top->xvclk ^ 1;
-		// if (!(hcycle & 0x7))
 		if (!(hcycle & 0x3))
-			top->xpclk = top->xpclk ^ 1;
+			top->xpclk = top->xpclk ^ 1;*/
+		
+		if ((hcycle & 0x3) >= 0x02) {
+			top->xvclk = 1;
+		} else {
+			top->xvclk = 0;
+		}
+		if ((hcycle & 0x7) >= 0x06) {
+			top->xpclk = 1;
+		} else {
+			top->xpclk = 0;
+		}
+		if ( ((hcycle & 0x7) >= 0x02) && ((hcycle & 0x7) <= 0x03)) {
+			top->tlw = 1;
+		} else {
+			top->tlw = 0;
+		}
 		
     if (Verilated::gotFinish())  exit(0);
   }

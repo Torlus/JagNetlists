@@ -84,7 +84,8 @@ DEF JERRY	(
 	xiordl,xiowrl,	(* I/O read/write strobes *)
 	xi2stxd,	(* I2S TX data *)
 	xcpuclk
-	:IO);	
+	:IO;
+	tlw:IN); (* GE *)	
 
 	(* GE INT8/xd0_7,xd8_15,xd16_23,xd24_31,
 	INT24/xa:IO; *)
@@ -302,7 +303,7 @@ JClk := JCLK	(resetli,pclkosc,pclkin,vclkin,chrclk,clk1w,clk2w,clk3w,
 		test,cfg[2..3],dout[0..9],dout[15],ndtest,
 
 		cfgw,cfgen,clk,pclkout,pclkdiv,vclkdiv,cpuclk,
-		chrdiv,vclken,resetl,tlw);
+		chrdiv,vclken,resetl,tlw_unused);
 
 /* Buffer reset */
 Resetl[0-5]	:= NIVU (resetl[0-5], resetl);
@@ -354,6 +355,7 @@ Dac :=	DAC	(resetl[5],clk[1],dac1w,dac2w,tint[0],ts,
 
                 rdac[0..1],ldac[0..1]);
 
+GE := DUMMY(tlw_unused);
 
 END;
 

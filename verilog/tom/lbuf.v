@@ -3187,84 +3187,86 @@ ab8616a lbufbh_inst
 // LBUF.NET (172) - ncst : ivh
 assign ncst = ~clk_0;
 
-// LBUF.NET (173) - nvcst : ivh
-assign nvcst = ~vclk;
+// LBUF.NET (174) - ge1 : tie1
+assign nvcst = 1'b1;
 
-// LBUF.NET (175) - cea0 : nd2
+// LBUF.NET (175) - ge2 : dummy
+
+// LBUF.NET (177) - cea0 : nd2
 assign cea0 = ~(lbufb & lben);
 
-// LBUF.NET (176) - cea1 : iv
+// LBUF.NET (178) - cea1 : iv
 assign cea1 = ~lba;
 
-// LBUF.NET (177) - cea2 : nd2
+// LBUF.NET (179) - cea2 : nd2
 assign cea2 = ~(cea0 & cea1);
 
-// LBUF.NET (178) - cea[0-1] : anr23
+// LBUF.NET (180) - cea[0-1] : anr23
 assign cea_0 = ~( (cea2 & ncst) | (aactive & nvcst) );
 assign cea_1 = ~( (cea2 & ncst) | (aactive & nvcst) );
 
-// LBUF.NET (180) - ceb0 : nd2
+// LBUF.NET (182) - ceb0 : nd2
 assign ceb0 = ~(lbufa & lben);
 
-// LBUF.NET (181) - ceb1 : iv
+// LBUF.NET (183) - ceb1 : iv
 assign ceb1 = ~lbb;
 
-// LBUF.NET (182) - ceb2 : nd2
+// LBUF.NET (184) - ceb2 : nd2
 assign ceb2 = ~(ceb0 & ceb1);
 
-// LBUF.NET (183) - ceb[0-1] : anr23
+// LBUF.NET (185) - ceb[0-1] : anr23
 assign ceb_0 = ~( (ceb2 & ncst) | (bactive & nvcst) );
 assign ceb_1 = ~( (ceb2 & ncst) | (bactive & nvcst) );
 
-// LBUF.NET (185) - wea00 : nd2
+// LBUF.NET (187) - wea00 : nd2
 assign wea00 = ~(lbwe_0 & lbufb);
 
-// LBUF.NET (186) - wea01 : nd3
+// LBUF.NET (188) - wea01 : nd3
 assign wea01 = ~(nota_1 & lba & writes);
 
-// LBUF.NET (187) - wea02 : nd2
+// LBUF.NET (189) - wea02 : nd2
 assign wea02 = ~(lbufa & bgw);
 
-// LBUF.NET (188) - wead[0] : an3
+// LBUF.NET (190) - wead[0] : an3
 assign wead_0 = wea00 & wea01 & wea02;
 
-// LBUF.NET (190) - wea10 : nd2
+// LBUF.NET (192) - wea10 : nd2
 assign wea10 = ~(lbwe_1 & lbufb);
 
-// LBUF.NET (191) - wea11 : nd3
+// LBUF.NET (193) - wea11 : nd3
 assign wea11 = ~(aout_1 & lba & writes);
 
-// LBUF.NET (192) - wea12 : nd6
+// LBUF.NET (194) - wea12 : nd6
 assign wea12 = ~(aout_15 & nota_1 & siz_2 & lba & writes & vcc);
 
-// LBUF.NET (193) - wead[1] : an4
+// LBUF.NET (195) - wead[1] : an4
 assign wead_1 = wea10 & wea11 & wea12 & wea02;
 
-// LBUF.NET (195) - web00 : nd2
+// LBUF.NET (197) - web00 : nd2
 assign web00 = ~(lbwe_0 & lbufa);
 
-// LBUF.NET (196) - web01 : nd3
+// LBUF.NET (198) - web01 : nd3
 assign web01 = ~(nota_1 & lbb & writes);
 
-// LBUF.NET (197) - web02 : nd2
+// LBUF.NET (199) - web02 : nd2
 assign web02 = ~(lbufb & bgw);
 
-// LBUF.NET (198) - webd[0] : an3
+// LBUF.NET (200) - webd[0] : an3
 assign webd_0 = web00 & web01 & web02;
 
-// LBUF.NET (200) - web10 : nd2
+// LBUF.NET (202) - web10 : nd2
 assign web10 = ~(lbwe_1 & lbufa);
 
-// LBUF.NET (201) - web11 : nd3
+// LBUF.NET (203) - web11 : nd3
 assign web11 = ~(aout_1 & lbb & writes);
 
-// LBUF.NET (202) - web12 : nd6
+// LBUF.NET (204) - web12 : nd6
 assign web12 = ~(aout_15 & nota_1 & siz_2 & lbb & writes & vcc);
 
-// LBUF.NET (203) - webd[1] : an4
+// LBUF.NET (205) - webd[1] : an4
 assign webd_1 = web10 & web11 & web12 & web02;
 
-// LBUF.NET (205) - wea[0-1] : twoniv
+// LBUF.NET (207) - wea[0-1] : twoniv
 twoniv wea_from_0_to_1_inst_0
 (
 	.z /* OUT */ (wea_0),
@@ -3278,7 +3280,7 @@ twoniv wea_from_0_to_1_inst_1
 	.sys_clk(sys_clk) // Generated
 );
 
-// LBUF.NET (206) - web[0-1] : twoniv
+// LBUF.NET (208) - web[0-1] : twoniv
 twoniv web_from_0_to_1_inst_0
 (
 	.z /* OUT */ (web_0),
@@ -3292,25 +3294,25 @@ twoniv web_from_0_to_1_inst_1
 	.sys_clk(sys_clk) // Generated
 );
 
-// LBUF.NET (208) - notaactive : nd2
+// LBUF.NET (210) - notaactive : nd2
 assign notaactive = ~(lbufa & vactive);
 
-// LBUF.NET (209) - notbactive : nd2
+// LBUF.NET (211) - notbactive : nd2
 assign notbactive = ~(lbufb & vactive);
 
-// LBUF.NET (210) - aactive : iv
+// LBUF.NET (212) - aactive : iv
 assign aactive = ~notaactive;
 
-// LBUF.NET (211) - bactive : iv
+// LBUF.NET (213) - bactive : iv
 assign bactive = ~notbactive;
 
-// LBUF.NET (213) - vcc : tie1
+// LBUF.NET (215) - vcc : tie1
 assign vcc = 1'b1;
 
-// LBUF.NET (214) - notsiz[2] : iv
+// LBUF.NET (216) - notsiz[2] : iv
 assign notsiz_2 = ~siz_2;
 
-// LBUF.NET (218) - lbdi[0-15] : mx4
+// LBUF.NET (220) - lbdi[0-15] : mx4
 mx4 lbdi_from_0_to_15_inst_0
 (
 	.z /* OUT */ (lbdi_0),
@@ -3472,7 +3474,7 @@ mx4 lbdi_from_0_to_15_inst_15
 	.s1 /* IN */ (lbb)
 );
 
-// LBUF.NET (223) - lbd[0-15] : fd1q
+// LBUF.NET (225) - lbd[0-15] : fd1q
 fd1q lbd_from_0_to_15_inst_0
 (
 	.q /* OUT */ (lbd_0),
@@ -3586,13 +3588,13 @@ fd1q lbd_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// LBUF.NET (225) - lbdeni : nd2
+// LBUF.NET (227) - lbdeni : nd2
 assign lbdeni = ~(wra0 & wrb0);
 
-// LBUF.NET (226) - lbden : nivh
+// LBUF.NET (228) - lbden : nivh
 assign lbden = lbdeni;
 
-// LBUF.NET (227) - dr[0-15] : ts
+// LBUF.NET (229) - dr[0-15] : ts
 assign dr_0_out = lbd_0;
 assign dr_0_oe = lbden;
 assign dr_1_out = lbd_1;
@@ -3626,7 +3628,7 @@ assign dr_14_oe = lbden;
 assign dr_15_out = lbd_15;
 assign dr_15_oe = lbden;
 
-// LBUF.NET (231) - bgc[0-15] : ldp1q
+// LBUF.NET (233) - bgc[0-15] : ldp1q
 ldp1q bgc_from_0_to_15_inst_0
 (
 	.q /* OUT */ (bgc_0),
@@ -3740,7 +3742,7 @@ ldp1q bgc_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// LBUF.NET (232) - bgc : join
+// LBUF.NET (234) - bgc : join
 assign bgc[0] = bgc_0;
 assign bgc[1] = bgc_1;
 assign bgc[2] = bgc_2;
@@ -3758,7 +3760,7 @@ assign bgc[13] = bgc_13;
 assign bgc[14] = bgc_14;
 assign bgc[15] = bgc_15;
 
-// LBUF.NET (236) - bwadl : ts
+// LBUF.NET (238) - bwadl : ts
 assign ts_local_pe_432_a2_out = bgc[0];
 assign ts_local_pe_432_a2_oe = bgwa;
 assign ts_local_pe_433_a2_out = bgc[1];
@@ -3792,7 +3794,7 @@ assign ts_local_pe_446_a2_oe = bgwa;
 assign ts_local_pe_447_a2_out = bgc[15];
 assign ts_local_pe_447_a2_oe = bgwa;
 
-// LBUF.NET (237) - bwadh : ts
+// LBUF.NET (239) - bwadh : ts
 assign ts_local_pe_448_a2_out = bgc[0];
 assign ts_local_pe_448_a2_oe = bgwa;
 assign ts_local_pe_449_a2_out = bgc[1];
@@ -3826,7 +3828,7 @@ assign ts_local_pe_462_a2_oe = bgwa;
 assign ts_local_pe_463_a2_out = bgc[15];
 assign ts_local_pe_463_a2_oe = bgwa;
 
-// LBUF.NET (238) - bwbdl : ts
+// LBUF.NET (240) - bwbdl : ts
 assign ts_local_pe_464_a2_out = bgc[0];
 assign ts_local_pe_464_a2_oe = bgwb;
 assign ts_local_pe_465_a2_out = bgc[1];
@@ -3860,7 +3862,7 @@ assign ts_local_pe_478_a2_oe = bgwb;
 assign ts_local_pe_479_a2_out = bgc[15];
 assign ts_local_pe_479_a2_oe = bgwb;
 
-// LBUF.NET (239) - bwbdh : ts
+// LBUF.NET (241) - bwbdh : ts
 assign ts_local_pe_480_a2_out = bgc[0];
 assign ts_local_pe_480_a2_oe = bgwb;
 assign ts_local_pe_481_a2_out = bgc[1];
@@ -3894,10 +3896,10 @@ assign ts_local_pe_494_a2_oe = bgwb;
 assign ts_local_pe_495_a2_out = bgc[15];
 assign ts_local_pe_495_a2_oe = bgwb;
 
-// LBUF.NET (241) - bgwa : an2u
+// LBUF.NET (243) - bgwa : an2u
 assign bgwa = bgw & aactive;
 
-// LBUF.NET (242) - bgwb : an2u
+// LBUF.NET (244) - bgwb : an2u
 assign bgwb = bgw & bactive;
 
 // --- Compiler-generated local PE for BUS lbadl<0>

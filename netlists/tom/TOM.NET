@@ -100,7 +100,8 @@ bus ownership. This is when bg is active *)
 	xrasl[0..1],	(* ras for each bank of DRAM *)
 	xdtackl,	(* data transfer acknowledge *)
 	xintl, (* active low interrupt output *)
-	hs_o,hhs_o,vs_o, refreq, obbreq, bbreq[0..1], gbreq[0..1], dram, blank:IO); (* GE *)	
+	hs_o,hhs_o,vs_o, refreq, obbreq, bbreq[0..1], gbreq[0..1], dram, blank:IO;
+	tlw:IN); (* GE *)	
 
 	(* GE - commented out *)
 	(* INT8/xd0_7,xd8_15,xd16_23,xd24_31,xd32_39,xd40_47,xd48_55,xd56_63,
@@ -451,7 +452,7 @@ Lbuf := LBUF	(maska[1],aout[15],dout[0..15],dout[16..31],
 
 Clk := CLK	(resetl,pclk,vxclk,ndtest,cfg[7],
 
-		cfgw,cfgen,clk,vclk,tlw);
+		cfgw,cfgen,clk,vclk,tlw_unused);
 Clk[0] :=	BUF24 (clk[0],clk);
 Clk[1] :=	BUF24 (clk[1],clk);
 Clk[2] :=	BUF16 (clk[2],clk);
@@ -470,6 +471,7 @@ Misc_ := MISC	(dout[0..15],clk[0],resetl,
 
 		dr[0..15], mreq);
 
+GE := DUMMY(tlw_unused);
 
 END;
 

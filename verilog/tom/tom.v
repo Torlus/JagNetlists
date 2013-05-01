@@ -404,6 +404,7 @@ module tom
 	output gbreq_1,
 	output dram,
 	output blank,
+	input tlw,
 	input sys_clk // Generated
 );
 wire wd_0_out;
@@ -1171,7 +1172,6 @@ wire ack;
 wire bback;
 wire gback;
 wire clk;
-wire tlw;
 wire grpintreq;
 wire tint;
 wire gpuread;
@@ -1596,6 +1596,7 @@ wire lbwd_31;
 wire rmw1;
 wire lben;
 wire clk_14;
+wire tlw_unused;
 wire clk_0;
 wire ts_local_pe_576_a0_out;
 wire ts_local_pe_576_a0_oe;
@@ -2649,7 +2650,7 @@ assign dram = dram_obuf;
 assign blank = blank_obuf;
 
 
-// TOM.NET (139) - dpad[0] : bd8t
+// TOM.NET (140) - dpad[0] : bd8t
 bd dpad_index_0_inst
 (
 	.io_out /* BUS */ (xd_0_out),
@@ -2663,7 +2664,7 @@ bd dpad_index_0_inst
 	.pi /* IN */ (nt_77)
 );
 
-// TOM.NET (140) - dpad[1] : bd8t
+// TOM.NET (141) - dpad[1] : bd8t
 bd dpad_index_1_inst
 (
 	.io_out /* BUS */ (xd_1_out),
@@ -2677,7 +2678,7 @@ bd dpad_index_1_inst
 	.pi /* IN */ (nt_73)
 );
 
-// TOM.NET (141) - dpad[2] : bd8t
+// TOM.NET (142) - dpad[2] : bd8t
 bd dpad_index_2_inst
 (
 	.io_out /* BUS */ (xd_2_out),
@@ -2691,7 +2692,7 @@ bd dpad_index_2_inst
 	.pi /* IN */ (nt_69)
 );
 
-// TOM.NET (142) - dpad[3] : bd8t
+// TOM.NET (143) - dpad[3] : bd8t
 bd dpad_index_3_inst
 (
 	.io_out /* BUS */ (xd_3_out),
@@ -2705,7 +2706,7 @@ bd dpad_index_3_inst
 	.pi /* IN */ (nt_65)
 );
 
-// TOM.NET (143) - dpad[4] : bd8t
+// TOM.NET (144) - dpad[4] : bd8t
 bd dpad_index_4_inst
 (
 	.io_out /* BUS */ (xd_4_out),
@@ -2719,7 +2720,7 @@ bd dpad_index_4_inst
 	.pi /* IN */ (nt_61)
 );
 
-// TOM.NET (144) - dpad[5] : bd8t
+// TOM.NET (145) - dpad[5] : bd8t
 bd dpad_index_5_inst
 (
 	.io_out /* BUS */ (xd_5_out),
@@ -2733,7 +2734,7 @@ bd dpad_index_5_inst
 	.pi /* IN */ (nt_57)
 );
 
-// TOM.NET (145) - dpad[6] : bd8t
+// TOM.NET (146) - dpad[6] : bd8t
 bd dpad_index_6_inst
 (
 	.io_out /* BUS */ (xd_6_out),
@@ -2747,7 +2748,7 @@ bd dpad_index_6_inst
 	.pi /* IN */ (nt_53)
 );
 
-// TOM.NET (146) - dpad[7] : bd8t
+// TOM.NET (147) - dpad[7] : bd8t
 bd dpad_index_7_inst
 (
 	.io_out /* BUS */ (xd_7_out),
@@ -2761,7 +2762,7 @@ bd dpad_index_7_inst
 	.pi /* IN */ (nt_49)
 );
 
-// TOM.NET (148) - dpad[8] : bd8t
+// TOM.NET (149) - dpad[8] : bd8t
 bd dpad_index_8_inst
 (
 	.io_out /* BUS */ (xd_8_out),
@@ -2775,7 +2776,7 @@ bd dpad_index_8_inst
 	.pi /* IN */ (nt_48)
 );
 
-// TOM.NET (149) - dpad[9] : bd8t
+// TOM.NET (150) - dpad[9] : bd8t
 bd dpad_index_9_inst
 (
 	.io_out /* BUS */ (xd_9_out),
@@ -2789,7 +2790,7 @@ bd dpad_index_9_inst
 	.pi /* IN */ (nt_52)
 );
 
-// TOM.NET (150) - dpad[10] : bd8t
+// TOM.NET (151) - dpad[10] : bd8t
 bd dpad_index_10_inst
 (
 	.io_out /* BUS */ (xd_10_out),
@@ -2803,7 +2804,7 @@ bd dpad_index_10_inst
 	.pi /* IN */ (nt_56)
 );
 
-// TOM.NET (151) - dpad[11] : bd8t
+// TOM.NET (152) - dpad[11] : bd8t
 bd dpad_index_11_inst
 (
 	.io_out /* BUS */ (xd_11_out),
@@ -2817,7 +2818,7 @@ bd dpad_index_11_inst
 	.pi /* IN */ (nt_60)
 );
 
-// TOM.NET (152) - dpad[12] : bd8t
+// TOM.NET (153) - dpad[12] : bd8t
 bd dpad_index_12_inst
 (
 	.io_out /* BUS */ (xd_12_out),
@@ -2831,7 +2832,7 @@ bd dpad_index_12_inst
 	.pi /* IN */ (nt_64)
 );
 
-// TOM.NET (153) - dpad[13] : bd8t
+// TOM.NET (154) - dpad[13] : bd8t
 bd dpad_index_13_inst
 (
 	.io_out /* BUS */ (xd_13_out),
@@ -2845,7 +2846,7 @@ bd dpad_index_13_inst
 	.pi /* IN */ (nt_68)
 );
 
-// TOM.NET (154) - dpad[14] : bd8t
+// TOM.NET (155) - dpad[14] : bd8t
 bd dpad_index_14_inst
 (
 	.io_out /* BUS */ (xd_14_out),
@@ -2859,7 +2860,7 @@ bd dpad_index_14_inst
 	.pi /* IN */ (nt_72)
 );
 
-// TOM.NET (155) - dpad[15] : bd8t
+// TOM.NET (156) - dpad[15] : bd8t
 bd dpad_index_15_inst
 (
 	.io_out /* BUS */ (xd_15_out),
@@ -2873,7 +2874,7 @@ bd dpad_index_15_inst
 	.pi /* IN */ (nt_76)
 );
 
-// TOM.NET (157) - dpad[16] : bd4t
+// TOM.NET (158) - dpad[16] : bd4t
 bd dpad_index_16_inst
 (
 	.io_out /* BUS */ (xd_16_out),
@@ -2887,7 +2888,7 @@ bd dpad_index_16_inst
 	.pi /* IN */ (nt_75)
 );
 
-// TOM.NET (158) - dpad[17] : bd4t
+// TOM.NET (159) - dpad[17] : bd4t
 bd dpad_index_17_inst
 (
 	.io_out /* BUS */ (xd_17_out),
@@ -2901,7 +2902,7 @@ bd dpad_index_17_inst
 	.pi /* IN */ (nt_71)
 );
 
-// TOM.NET (159) - dpad[18] : bd4t
+// TOM.NET (160) - dpad[18] : bd4t
 bd dpad_index_18_inst
 (
 	.io_out /* BUS */ (xd_18_out),
@@ -2915,7 +2916,7 @@ bd dpad_index_18_inst
 	.pi /* IN */ (nt_67)
 );
 
-// TOM.NET (160) - dpad[19] : bd4t
+// TOM.NET (161) - dpad[19] : bd4t
 bd dpad_index_19_inst
 (
 	.io_out /* BUS */ (xd_19_out),
@@ -2929,7 +2930,7 @@ bd dpad_index_19_inst
 	.pi /* IN */ (nt_63)
 );
 
-// TOM.NET (161) - dpad[20] : bd4t
+// TOM.NET (162) - dpad[20] : bd4t
 bd dpad_index_20_inst
 (
 	.io_out /* BUS */ (xd_20_out),
@@ -2943,7 +2944,7 @@ bd dpad_index_20_inst
 	.pi /* IN */ (nt_59)
 );
 
-// TOM.NET (162) - dpad[21] : bd4t
+// TOM.NET (163) - dpad[21] : bd4t
 bd dpad_index_21_inst
 (
 	.io_out /* BUS */ (xd_21_out),
@@ -2957,7 +2958,7 @@ bd dpad_index_21_inst
 	.pi /* IN */ (nt_55)
 );
 
-// TOM.NET (163) - dpad[22] : bd4t
+// TOM.NET (164) - dpad[22] : bd4t
 bd dpad_index_22_inst
 (
 	.io_out /* BUS */ (xd_22_out),
@@ -2971,7 +2972,7 @@ bd dpad_index_22_inst
 	.pi /* IN */ (nt_51)
 );
 
-// TOM.NET (164) - dpad[23] : bd4t
+// TOM.NET (165) - dpad[23] : bd4t
 bd dpad_index_23_inst
 (
 	.io_out /* BUS */ (xd_23_out),
@@ -2985,7 +2986,7 @@ bd dpad_index_23_inst
 	.pi /* IN */ (nt_47)
 );
 
-// TOM.NET (166) - dpad[24] : bd4t
+// TOM.NET (167) - dpad[24] : bd4t
 bd dpad_index_24_inst
 (
 	.io_out /* BUS */ (xd_24_out),
@@ -2999,7 +3000,7 @@ bd dpad_index_24_inst
 	.pi /* IN */ (nt_46)
 );
 
-// TOM.NET (167) - dpad[25] : bd4t
+// TOM.NET (168) - dpad[25] : bd4t
 bd dpad_index_25_inst
 (
 	.io_out /* BUS */ (xd_25_out),
@@ -3013,7 +3014,7 @@ bd dpad_index_25_inst
 	.pi /* IN */ (nt_50)
 );
 
-// TOM.NET (168) - dpad[26] : bd4t
+// TOM.NET (169) - dpad[26] : bd4t
 bd dpad_index_26_inst
 (
 	.io_out /* BUS */ (xd_26_out),
@@ -3027,7 +3028,7 @@ bd dpad_index_26_inst
 	.pi /* IN */ (nt_54)
 );
 
-// TOM.NET (169) - dpad[27] : bd4t
+// TOM.NET (170) - dpad[27] : bd4t
 bd dpad_index_27_inst
 (
 	.io_out /* BUS */ (xd_27_out),
@@ -3041,7 +3042,7 @@ bd dpad_index_27_inst
 	.pi /* IN */ (nt_58)
 );
 
-// TOM.NET (170) - dpad[28] : bd4t
+// TOM.NET (171) - dpad[28] : bd4t
 bd dpad_index_28_inst
 (
 	.io_out /* BUS */ (xd_28_out),
@@ -3055,7 +3056,7 @@ bd dpad_index_28_inst
 	.pi /* IN */ (nt_62)
 );
 
-// TOM.NET (171) - dpad[29] : bd4t
+// TOM.NET (172) - dpad[29] : bd4t
 bd dpad_index_29_inst
 (
 	.io_out /* BUS */ (xd_29_out),
@@ -3069,7 +3070,7 @@ bd dpad_index_29_inst
 	.pi /* IN */ (nt_66)
 );
 
-// TOM.NET (172) - dpad[30] : bd4t
+// TOM.NET (173) - dpad[30] : bd4t
 bd dpad_index_30_inst
 (
 	.io_out /* BUS */ (xd_30_out),
@@ -3083,7 +3084,7 @@ bd dpad_index_30_inst
 	.pi /* IN */ (nt_70)
 );
 
-// TOM.NET (173) - dpad[31] : bd4t
+// TOM.NET (174) - dpad[31] : bd4t
 bd dpad_index_31_inst
 (
 	.io_out /* BUS */ (xd_31_out),
@@ -3097,7 +3098,7 @@ bd dpad_index_31_inst
 	.pi /* IN */ (nt_74)
 );
 
-// TOM.NET (175) - dpad[32] : bd4t
+// TOM.NET (176) - dpad[32] : bd4t
 bd dpad_index_32_inst
 (
 	.io_out /* BUS */ (xd_32_out),
@@ -3111,7 +3112,7 @@ bd dpad_index_32_inst
 	.pi /* IN */ (nt_118)
 );
 
-// TOM.NET (176) - dpad[33] : bd4t
+// TOM.NET (177) - dpad[33] : bd4t
 bd dpad_index_33_inst
 (
 	.io_out /* BUS */ (xd_33_out),
@@ -3125,7 +3126,7 @@ bd dpad_index_33_inst
 	.pi /* IN */ (nt_114)
 );
 
-// TOM.NET (177) - dpad[34] : bd4t
+// TOM.NET (178) - dpad[34] : bd4t
 bd dpad_index_34_inst
 (
 	.io_out /* BUS */ (xd_34_out),
@@ -3139,7 +3140,7 @@ bd dpad_index_34_inst
 	.pi /* IN */ (nt_110)
 );
 
-// TOM.NET (178) - dpad[35] : bd4t
+// TOM.NET (179) - dpad[35] : bd4t
 bd dpad_index_35_inst
 (
 	.io_out /* BUS */ (xd_35_out),
@@ -3153,7 +3154,7 @@ bd dpad_index_35_inst
 	.pi /* IN */ (nt_106)
 );
 
-// TOM.NET (179) - dpad[36] : bd4t
+// TOM.NET (180) - dpad[36] : bd4t
 bd dpad_index_36_inst
 (
 	.io_out /* BUS */ (xd_36_out),
@@ -3167,7 +3168,7 @@ bd dpad_index_36_inst
 	.pi /* IN */ (nt_102)
 );
 
-// TOM.NET (180) - dpad[37] : bd4t
+// TOM.NET (181) - dpad[37] : bd4t
 bd dpad_index_37_inst
 (
 	.io_out /* BUS */ (xd_37_out),
@@ -3181,7 +3182,7 @@ bd dpad_index_37_inst
 	.pi /* IN */ (nt_98)
 );
 
-// TOM.NET (181) - dpad[38] : bd4t
+// TOM.NET (182) - dpad[38] : bd4t
 bd dpad_index_38_inst
 (
 	.io_out /* BUS */ (xd_38_out),
@@ -3195,7 +3196,7 @@ bd dpad_index_38_inst
 	.pi /* IN */ (nt_94)
 );
 
-// TOM.NET (182) - dpad[39] : bd4t
+// TOM.NET (183) - dpad[39] : bd4t
 bd dpad_index_39_inst
 (
 	.io_out /* BUS */ (xd_39_out),
@@ -3209,7 +3210,7 @@ bd dpad_index_39_inst
 	.pi /* IN */ (nt_90)
 );
 
-// TOM.NET (184) - dpad[40] : bd4t
+// TOM.NET (185) - dpad[40] : bd4t
 bd dpad_index_40_inst
 (
 	.io_out /* BUS */ (xd_40_out),
@@ -3223,7 +3224,7 @@ bd dpad_index_40_inst
 	.pi /* IN */ (nt_89)
 );
 
-// TOM.NET (185) - dpad[41] : bd4t
+// TOM.NET (186) - dpad[41] : bd4t
 bd dpad_index_41_inst
 (
 	.io_out /* BUS */ (xd_41_out),
@@ -3237,7 +3238,7 @@ bd dpad_index_41_inst
 	.pi /* IN */ (nt_93)
 );
 
-// TOM.NET (186) - dpad[42] : bd4t
+// TOM.NET (187) - dpad[42] : bd4t
 bd dpad_index_42_inst
 (
 	.io_out /* BUS */ (xd_42_out),
@@ -3251,7 +3252,7 @@ bd dpad_index_42_inst
 	.pi /* IN */ (nt_97)
 );
 
-// TOM.NET (187) - dpad[43] : bd4t
+// TOM.NET (188) - dpad[43] : bd4t
 bd dpad_index_43_inst
 (
 	.io_out /* BUS */ (xd_43_out),
@@ -3265,7 +3266,7 @@ bd dpad_index_43_inst
 	.pi /* IN */ (nt_101)
 );
 
-// TOM.NET (188) - dpad[44] : bd4t
+// TOM.NET (189) - dpad[44] : bd4t
 bd dpad_index_44_inst
 (
 	.io_out /* BUS */ (xd_44_out),
@@ -3279,7 +3280,7 @@ bd dpad_index_44_inst
 	.pi /* IN */ (nt_105)
 );
 
-// TOM.NET (189) - dpad[45] : bd4t
+// TOM.NET (190) - dpad[45] : bd4t
 bd dpad_index_45_inst
 (
 	.io_out /* BUS */ (xd_45_out),
@@ -3293,7 +3294,7 @@ bd dpad_index_45_inst
 	.pi /* IN */ (nt_109)
 );
 
-// TOM.NET (190) - dpad[46] : bd4t
+// TOM.NET (191) - dpad[46] : bd4t
 bd dpad_index_46_inst
 (
 	.io_out /* BUS */ (xd_46_out),
@@ -3307,7 +3308,7 @@ bd dpad_index_46_inst
 	.pi /* IN */ (nt_113)
 );
 
-// TOM.NET (191) - dpad[47] : bd4t
+// TOM.NET (192) - dpad[47] : bd4t
 bd dpad_index_47_inst
 (
 	.io_out /* BUS */ (xd_47_out),
@@ -3321,7 +3322,7 @@ bd dpad_index_47_inst
 	.pi /* IN */ (nt_117)
 );
 
-// TOM.NET (193) - dpad[48] : bd4t
+// TOM.NET (194) - dpad[48] : bd4t
 bd dpad_index_48_inst
 (
 	.io_out /* BUS */ (xd_48_out),
@@ -3335,7 +3336,7 @@ bd dpad_index_48_inst
 	.pi /* IN */ (nt_120)
 );
 
-// TOM.NET (194) - dpad[49] : bd4t
+// TOM.NET (195) - dpad[49] : bd4t
 bd dpad_index_49_inst
 (
 	.io_out /* BUS */ (xd_49_out),
@@ -3349,7 +3350,7 @@ bd dpad_index_49_inst
 	.pi /* IN */ (nt_116)
 );
 
-// TOM.NET (195) - dpad[50] : bd4t
+// TOM.NET (196) - dpad[50] : bd4t
 bd dpad_index_50_inst
 (
 	.io_out /* BUS */ (xd_50_out),
@@ -3363,7 +3364,7 @@ bd dpad_index_50_inst
 	.pi /* IN */ (nt_112)
 );
 
-// TOM.NET (196) - dpad[51] : bd4t
+// TOM.NET (197) - dpad[51] : bd4t
 bd dpad_index_51_inst
 (
 	.io_out /* BUS */ (xd_51_out),
@@ -3377,7 +3378,7 @@ bd dpad_index_51_inst
 	.pi /* IN */ (nt_108)
 );
 
-// TOM.NET (197) - dpad[52] : bd4t
+// TOM.NET (198) - dpad[52] : bd4t
 bd dpad_index_52_inst
 (
 	.io_out /* BUS */ (xd_52_out),
@@ -3391,7 +3392,7 @@ bd dpad_index_52_inst
 	.pi /* IN */ (nt_104)
 );
 
-// TOM.NET (198) - dpad[53] : bd4t
+// TOM.NET (199) - dpad[53] : bd4t
 bd dpad_index_53_inst
 (
 	.io_out /* BUS */ (xd_53_out),
@@ -3405,7 +3406,7 @@ bd dpad_index_53_inst
 	.pi /* IN */ (nt_100)
 );
 
-// TOM.NET (199) - dpad[54] : bd4t
+// TOM.NET (200) - dpad[54] : bd4t
 bd dpad_index_54_inst
 (
 	.io_out /* BUS */ (xd_54_out),
@@ -3419,7 +3420,7 @@ bd dpad_index_54_inst
 	.pi /* IN */ (nt_96)
 );
 
-// TOM.NET (200) - dpad[55] : bd4t
+// TOM.NET (201) - dpad[55] : bd4t
 bd dpad_index_55_inst
 (
 	.io_out /* BUS */ (xd_55_out),
@@ -3433,7 +3434,7 @@ bd dpad_index_55_inst
 	.pi /* IN */ (nt_92)
 );
 
-// TOM.NET (202) - dpad[56] : bd4t
+// TOM.NET (203) - dpad[56] : bd4t
 bd dpad_index_56_inst
 (
 	.io_out /* BUS */ (xd_56_out),
@@ -3447,7 +3448,7 @@ bd dpad_index_56_inst
 	.pi /* IN */ (nt_91)
 );
 
-// TOM.NET (203) - dpad[57] : bd4t
+// TOM.NET (204) - dpad[57] : bd4t
 bd dpad_index_57_inst
 (
 	.io_out /* BUS */ (xd_57_out),
@@ -3461,7 +3462,7 @@ bd dpad_index_57_inst
 	.pi /* IN */ (nt_95)
 );
 
-// TOM.NET (204) - dpad[58] : bd4t
+// TOM.NET (205) - dpad[58] : bd4t
 bd dpad_index_58_inst
 (
 	.io_out /* BUS */ (xd_58_out),
@@ -3475,7 +3476,7 @@ bd dpad_index_58_inst
 	.pi /* IN */ (nt_99)
 );
 
-// TOM.NET (205) - dpad[59] : bd4t
+// TOM.NET (206) - dpad[59] : bd4t
 bd dpad_index_59_inst
 (
 	.io_out /* BUS */ (xd_59_out),
@@ -3489,7 +3490,7 @@ bd dpad_index_59_inst
 	.pi /* IN */ (nt_103)
 );
 
-// TOM.NET (206) - dpad[60] : bd4t
+// TOM.NET (207) - dpad[60] : bd4t
 bd dpad_index_60_inst
 (
 	.io_out /* BUS */ (xd_60_out),
@@ -3503,7 +3504,7 @@ bd dpad_index_60_inst
 	.pi /* IN */ (nt_107)
 );
 
-// TOM.NET (207) - dpad[61] : bd4t
+// TOM.NET (208) - dpad[61] : bd4t
 bd dpad_index_61_inst
 (
 	.io_out /* BUS */ (xd_61_out),
@@ -3517,7 +3518,7 @@ bd dpad_index_61_inst
 	.pi /* IN */ (nt_111)
 );
 
-// TOM.NET (208) - dpad[62] : bd4t
+// TOM.NET (209) - dpad[62] : bd4t
 bd dpad_index_62_inst
 (
 	.io_out /* BUS */ (xd_62_out),
@@ -3531,7 +3532,7 @@ bd dpad_index_62_inst
 	.pi /* IN */ (nt_115)
 );
 
-// TOM.NET (209) - dpad[63] : bd4t
+// TOM.NET (210) - dpad[63] : bd4t
 bd dpad_index_63_inst
 (
 	.io_out /* BUS */ (xd_63_out),
@@ -3545,7 +3546,7 @@ bd dpad_index_63_inst
 	.pi /* IN */ (nt_119)
 );
 
-// TOM.NET (211) - apad[0] : bd4t
+// TOM.NET (212) - apad[0] : bd4t
 bd apad_index_0_inst
 (
 	.io_out /* BUS */ (xa_0_out),
@@ -3559,7 +3560,7 @@ bd apad_index_0_inst
 	.pi /* IN */ (nt_22)
 );
 
-// TOM.NET (212) - apad[1] : bd4t
+// TOM.NET (213) - apad[1] : bd4t
 bd apad_index_1_inst
 (
 	.io_out /* BUS */ (xa_1_out),
@@ -3573,7 +3574,7 @@ bd apad_index_1_inst
 	.pi /* IN */ (nt_23)
 );
 
-// TOM.NET (213) - apad[2] : bd4t
+// TOM.NET (214) - apad[2] : bd4t
 bd apad_index_2_inst
 (
 	.io_out /* BUS */ (xa_2_out),
@@ -3587,7 +3588,7 @@ bd apad_index_2_inst
 	.pi /* IN */ (nt_24)
 );
 
-// TOM.NET (214) - apad[3-23] : bd4t
+// TOM.NET (215) - apad[3-23] : bd4t
 bd apad_from_3_to_23_inst_0
 (
 	.io_out /* BUS */ (xa_3_out),
@@ -3841,7 +3842,7 @@ bd apad_from_3_to_23_inst_20
 	.pi /* IN */ (nt_45)
 );
 
-// TOM.NET (216) - mapad[0] : bd16t
+// TOM.NET (217) - mapad[0] : bd16t
 bd mapad_index_0_inst
 (
 	.io_out /* BUS */ (xma_0_out),
@@ -3855,7 +3856,7 @@ bd mapad_index_0_inst
 	.pi /* IN */ (nt_88)
 );
 
-// TOM.NET (217) - mapad[1] : bd16t
+// TOM.NET (218) - mapad[1] : bd16t
 bd mapad_index_1_inst
 (
 	.io_out /* BUS */ (xma_1_out),
@@ -3869,7 +3870,7 @@ bd mapad_index_1_inst
 	.pi /* IN */ (nt_87)
 );
 
-// TOM.NET (218) - mapad[2] : bd16t
+// TOM.NET (219) - mapad[2] : bd16t
 bd mapad_index_2_inst
 (
 	.io_out /* BUS */ (xma_2_out),
@@ -3883,7 +3884,7 @@ bd mapad_index_2_inst
 	.pi /* IN */ (nt_86)
 );
 
-// TOM.NET (219) - mapad[3] : bd16t
+// TOM.NET (220) - mapad[3] : bd16t
 bd mapad_index_3_inst
 (
 	.io_out /* BUS */ (xma_3_out),
@@ -3897,7 +3898,7 @@ bd mapad_index_3_inst
 	.pi /* IN */ (nt_85)
 );
 
-// TOM.NET (220) - mapad[4] : bd16t
+// TOM.NET (221) - mapad[4] : bd16t
 bd mapad_index_4_inst
 (
 	.io_out /* BUS */ (xma_4_out),
@@ -3911,7 +3912,7 @@ bd mapad_index_4_inst
 	.pi /* IN */ (nt_84)
 );
 
-// TOM.NET (221) - mapad[5] : bd16t
+// TOM.NET (222) - mapad[5] : bd16t
 bd mapad_index_5_inst
 (
 	.io_out /* BUS */ (xma_5_out),
@@ -3925,7 +3926,7 @@ bd mapad_index_5_inst
 	.pi /* IN */ (nt_83)
 );
 
-// TOM.NET (222) - mapad[6] : bd16t
+// TOM.NET (223) - mapad[6] : bd16t
 bd mapad_index_6_inst
 (
 	.io_out /* BUS */ (xma_6_out),
@@ -3939,7 +3940,7 @@ bd mapad_index_6_inst
 	.pi /* IN */ (nt_82)
 );
 
-// TOM.NET (223) - mapad[7] : bd16t
+// TOM.NET (224) - mapad[7] : bd16t
 bd mapad_index_7_inst
 (
 	.io_out /* BUS */ (xma_7_out),
@@ -3953,7 +3954,7 @@ bd mapad_index_7_inst
 	.pi /* IN */ (nt_81)
 );
 
-// TOM.NET (224) - mapad[8] : bd16t
+// TOM.NET (225) - mapad[8] : bd16t
 bd mapad_index_8_inst
 (
 	.io_out /* BUS */ (xma_8_out),
@@ -3967,7 +3968,7 @@ bd mapad_index_8_inst
 	.pi /* IN */ (nt_80)
 );
 
-// TOM.NET (225) - mapad[9] : bd16t
+// TOM.NET (226) - mapad[9] : bd16t
 bd mapad_index_9_inst
 (
 	.io_out /* BUS */ (xma_9_out),
@@ -3981,9 +3982,9 @@ bd mapad_index_9_inst
 	.pi /* IN */ (nt_79)
 );
 
-// TOM.NET (226) - cfgu[9-10] : dummy
+// TOM.NET (227) - cfgu[9-10] : dummy
 
-// TOM.NET (228) - mapad[10] : bd16t
+// TOM.NET (229) - mapad[10] : bd16t
 bd mapad_index_10_inst
 (
 	.io_out /* BUS */ (xma_10_out),
@@ -3997,40 +3998,40 @@ bd mapad_index_10_inst
 	.pi /* IN */ (nt_78)
 );
 
-// TOM.NET (230) - maska[0-2] : b2
+// TOM.NET (231) - maska[0-2] : b2
 assign xmaska_0 = maska_0;
 assign xmaska_1 = maska_1;
 assign xmaska_2 = maska_2;
 
-// TOM.NET (233) - romcs[0-1] : b2
+// TOM.NET (234) - romcs[0-1] : b2
 assign xromcsl_0 = romcsl_0;
 assign xromcsl_1 = romcsl_1;
 
-// TOM.NET (235) - ras[0-1] : b16
+// TOM.NET (236) - ras[0-1] : b16
 assign xrasl_0 = rasl_0;
 assign xrasl_1 = rasl_1;
 
-// TOM.NET (236) - notndtest : iv
+// TOM.NET (237) - notndtest : iv
 assign notndtest = ~ndtest;
 
-// TOM.NET (238) - cas[0-1] : b16
+// TOM.NET (239) - cas[0-1] : b16
 assign xcasl_0 = casl_0;
 assign xcasl_1 = casl_1;
 
-// TOM.NET (240) - oe[0] : b16
+// TOM.NET (241) - oe[0] : b16
 assign xoel_0 = oel_0;
 
-// TOM.NET (241) - oe[1] : b8
+// TOM.NET (242) - oe[1] : b8
 assign xoel_1 = oel_1;
 
-// TOM.NET (242) - oe[2] : b8
+// TOM.NET (243) - oe[2] : b8
 assign xoel_2 = oel_2;
 
-// TOM.NET (244) - we[0-1] : b16
+// TOM.NET (245) - we[0-1] : b16
 assign xwel_0 = wel_0;
 assign xwel_1 = wel_1;
 
-// TOM.NET (245) - we[2-7] : b4
+// TOM.NET (246) - we[2-7] : b4
 assign xwel_2 = wel_2;
 assign xwel_3 = wel_3;
 assign xwel_4 = wel_4;
@@ -4038,26 +4039,26 @@ assign xwel_5 = wel_5;
 assign xwel_6 = wel_6;
 assign xwel_7 = wel_7;
 
-// TOM.NET (247) - pclk : ibuf
+// TOM.NET (248) - pclk : ibuf
 assign pclk = xpclk;
 assign nt_21 = ~(xpclk & nt_20);
 
-// TOM.NET (248) - vclk : ibuf
+// TOM.NET (249) - vclk : ibuf
 assign vxclk = xvclk;
 assign nt_22 = ~(xvclk & nt_21);
 
-// TOM.NET (249) - reseti : ibuf
+// TOM.NET (250) - reseti : ibuf
 assign resetli = xresetl;
 assign nt_16 = ~(xresetl & nt_15);
 
-// TOM.NET (250) - reset : bniv34
+// TOM.NET (251) - reset : bniv34
 assign resetl = resetli;
 
-// TOM.NET (252) - wait : ibuf
+// TOM.NET (253) - wait : ibuf
 assign waitl = xwaitl;
 assign nt_18 = ~(xwaitl & nt_17);
 
-// TOM.NET (255) - dreq : bd2t
+// TOM.NET (256) - dreq : bd2t
 bd dreq_inst
 (
 	.io_out /* BUS */ (xdreql_out),
@@ -4071,10 +4072,10 @@ bd dreq_inst
 	.pi /* IN */ (nt_6)
 );
 
-// TOM.NET (256) - dtack : b2
+// TOM.NET (257) - dtack : b2
 assign xdtackl = dtackl;
 
-// TOM.NET (257) - rw : bd2t
+// TOM.NET (258) - rw : bd2t
 bd rw_inst
 (
 	.io_out /* BUS */ (xrw_out),
@@ -4088,7 +4089,7 @@ bd rw_inst
 	.pi /* IN */ (nt_7)
 );
 
-// TOM.NET (258) - siz[0] : bd2t
+// TOM.NET (259) - siz[0] : bd2t
 bd siz_index_0_inst
 (
 	.io_out /* BUS */ (xsiz_0_out),
@@ -4102,7 +4103,7 @@ bd siz_index_0_inst
 	.pi /* IN */ (nt_9)
 );
 
-// TOM.NET (259) - siz[1] : bd2t
+// TOM.NET (260) - siz[1] : bd2t
 bd siz_index_1_inst
 (
 	.io_out /* BUS */ (xsiz_1_out),
@@ -4116,27 +4117,27 @@ bd siz_index_1_inst
 	.pi /* IN */ (nt_10)
 );
 
-// TOM.NET (260) - dreqin : ivu
+// TOM.NET (261) - dreqin : ivu
 assign dreqin = ~notdreqin;
 
-// TOM.NET (262) - dbrli[0] : ibuf
+// TOM.NET (263) - dbrli[0] : ibuf
 assign dbrl_0 = xdbrl_0;
 assign nt_20 = ~(xdbrl_0 & nt_19);
 
-// TOM.NET (263) - dbrli[1] : ibuf
+// TOM.NET (264) - dbrli[1] : ibuf
 assign dbrl_1 = xdbrl_1;
 assign nt_19 = ~(xdbrl_1 & nt_18);
 
-// TOM.NET (264) - dbgl : b2
+// TOM.NET (265) - dbgl : b2
 assign xdbgl = dbgl;
 
-// TOM.NET (265) - expl : b4
+// TOM.NET (266) - expl : b4
 assign xexpl = expl;
 
-// TOM.NET (266) - dspcsl : b2
+// TOM.NET (267) - dspcsl : b2
 assign xdspcsl = dspcsl;
 
-// TOM.NET (270) - intlt : mx2p
+// TOM.NET (271) - intlt : mx2p
 mx2 intlt_inst
 (
 	.z /* OUT */ (intlt),
@@ -4145,10 +4146,10 @@ mx2 intlt_inst
 	.s /* IN */ (ndtest)
 );
 
-// TOM.NET (271) - xintl : b2
+// TOM.NET (272) - xintl : b2
 assign xintl = intlt;
 
-// TOM.NET (273) - hs : bd2t
+// TOM.NET (274) - hs : bd2t
 bd hs_inst
 (
 	.io_out /* BUS */ (xhs_out),
@@ -4162,7 +4163,7 @@ bd hs_inst
 	.pi /* IN */ (vcc)
 );
 
-// TOM.NET (274) - vs : bd2t
+// TOM.NET (275) - vs : bd2t
 bd vs_inst
 (
 	.io_out /* BUS */ (xvs_out),
@@ -4176,14 +4177,14 @@ bd vs_inst
 	.pi /* IN */ (nt_1)
 );
 
-// TOM.NET (276) - snden : an2
+// TOM.NET (277) - snden : an2
 assign snden = syncen & notndtest;
 
-// TOM.NET (278) - lp : ibuf
+// TOM.NET (279) - lp : ibuf
 assign lp = xlp;
 assign nt_3 = ~(xlp & nt_2);
 
-// TOM.NET (280) - r[0-7] : b2
+// TOM.NET (281) - r[0-7] : b2
 assign xr_0 = r_0;
 assign xr_1 = r_1;
 assign xr_2 = r_2;
@@ -4193,7 +4194,7 @@ assign xr_5 = r_5;
 assign xr_6 = r_6;
 assign xr_7 = r_7;
 
-// TOM.NET (281) - g[0-7] : b2
+// TOM.NET (282) - g[0-7] : b2
 assign xg_0 = g_0;
 assign xg_1 = g_1;
 assign xg_2 = g_2;
@@ -4203,7 +4204,7 @@ assign xg_5 = g_5;
 assign xg_6 = g_6;
 assign xg_7 = g_7;
 
-// TOM.NET (282) - b[0-7] : b2
+// TOM.NET (283) - b[0-7] : b2
 assign xb_0 = b_0;
 assign xb_1 = b_1;
 assign xb_2 = b_2;
@@ -4213,14 +4214,14 @@ assign xb_5 = b_5;
 assign xb_6 = b_6;
 assign xb_7 = b_7;
 
-// TOM.NET (284) - inc : b2
+// TOM.NET (285) - inc : b2
 assign xinc = inc;
 
-// TOM.NET (286) - dint : ibuf
+// TOM.NET (287) - dint : ibuf
 assign dint = xdint;
 assign nt_12 = ~(xdint & nt_11);
 
-// TOM.NET (288) - fc[0] : bd2t
+// TOM.NET (289) - fc[0] : bd2t
 bd fc_index_0_inst
 (
 	.io_out /* BUS */ (xfc_0_out),
@@ -4234,7 +4235,7 @@ bd fc_index_0_inst
 	.pi /* IN */ (nt_3)
 );
 
-// TOM.NET (289) - fc[1] : bd2t
+// TOM.NET (290) - fc[1] : bd2t
 bd fc_index_1_inst
 (
 	.io_out /* BUS */ (xfc_1_out),
@@ -4248,7 +4249,7 @@ bd fc_index_1_inst
 	.pi /* IN */ (nt_4)
 );
 
-// TOM.NET (290) - fc[2] : bd2t
+// TOM.NET (291) - fc[2] : bd2t
 bd fc_index_2_inst
 (
 	.io_out /* BUS */ (xfc_2_out),
@@ -4262,10 +4263,10 @@ bd fc_index_2_inst
 	.pi /* IN */ (nt_5)
 );
 
-// TOM.NET (291) - fcen : an2
+// TOM.NET (292) - fcen : an2
 assign fcen = aen & m68k;
 
-// TOM.NET (293) - brl : bd2t
+// TOM.NET (294) - brl : bd2t
 bd brl_inst
 (
 	.io_out /* BUS */ (xbrl_out),
@@ -4279,11 +4280,11 @@ bd brl_inst
 	.pi /* IN */ (nt_12)
 );
 
-// TOM.NET (294) - bgl : ibuf
+// TOM.NET (295) - bgl : ibuf
 assign bglin = xbgl;
 assign nt_14 = ~(xbgl & nt_13);
 
-// TOM.NET (295) - ba : bd2t
+// TOM.NET (296) - ba : bd2t
 bd ba_inst
 (
 	.io_out /* BUS */ (xba_out),
@@ -4297,23 +4298,23 @@ bd ba_inst
 	.pi /* IN */ (nt_14)
 );
 
-// TOM.NET (297) - test : ibuf
+// TOM.NET (298) - test : ibuf
 assign test = xtest;
 assign nt_17 = ~(xtest & nt_16);
 
-// TOM.NET (299) - gnd : tie0
+// TOM.NET (300) - gnd : tie0
 assign gnd = 1'b0;
 
-// TOM.NET (300) - vcc : tie1
+// TOM.NET (301) - vcc : tie1
 assign vcc = 1'b1;
 
-// TOM.NET (308) - nottest : iv
+// TOM.NET (309) - nottest : iv
 assign nottest = ~test;
 
-// TOM.NET (309) - testen : or2
+// TOM.NET (310) - testen : or2
 assign testen = nottest | dint;
 
-// TOM.NET (312) - gpu : graphics
+// TOM.NET (313) - gpu : graphics
 graphics gpu_inst
 (
 	.ima_0 /* IN */ (maska_0),
@@ -4783,7 +4784,7 @@ graphics gpu_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (320) - iodec : iodec
+// TOM.NET (321) - iodec : iodec
 iodec iodec_inst
 (
 	.a_0 /* IN */ (maska_0),
@@ -4869,7 +4870,7 @@ iodec iodec_inst
 	.expl /* OUT */ (expl)
 );
 
-// TOM.NET (334) - vid : vid
+// TOM.NET (335) - vid : vid
 vid vid_inst
 (
 	.din_0 /* IN */ (dout_0),
@@ -5015,7 +5016,7 @@ vid vid_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (351) - pix : pix
+// TOM.NET (352) - pix : pix
 pix pix_inst
 (
 	.din_0 /* IN */ (dout_0),
@@ -5153,7 +5154,7 @@ pix pix_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (362) - dbus : dbus
+// TOM.NET (363) - dbus : dbus
 dbus dbus_inst
 (
 	.din_0 /* IN */ (din_0),
@@ -5465,7 +5466,7 @@ dbus dbus_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (368) - abus : abus
+// TOM.NET (369) - abus : abus
 abus abus_inst
 (
 	.ain_0 /* IN */ (ain_0),
@@ -5744,7 +5745,7 @@ abus abus_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (385) - mem : mem
+// TOM.NET (386) - mem : mem
 mem mem_inst
 (
 	.bbreq_0 /* IN */ (bbreq_0_obuf),
@@ -5891,7 +5892,7 @@ mem mem_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (411) - ob : ob
+// TOM.NET (412) - ob : ob
 ob ob_inst
 (
 	.din_0 /* IN */ (dout_0),
@@ -6440,7 +6441,7 @@ ob ob_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (426) - wbk : wbk
+// TOM.NET (427) - wbk : wbk
 wbk wbk_inst
 (
 	.d_14 /* IN */ (d_14),
@@ -6542,7 +6543,7 @@ wbk wbk_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (434) - obd : obdata
+// TOM.NET (435) - obd : obdata
 obdata obd_inst
 (
 	.aout_9 /* IN */ (aout_9),
@@ -6771,7 +6772,7 @@ obdata obd_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (443) - lbuf : lbuf
+// TOM.NET (444) - lbuf : lbuf
 lbuf lbuf_inst
 (
 	.aout_1 /* IN */ (maska_1),
@@ -6959,7 +6960,7 @@ lbuf lbuf_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (452) - clk : clk
+// TOM.NET (453) - clk : clk
 clk clk_inst
 (
 	.resetl /* IN */ (resetl),
@@ -6971,35 +6972,35 @@ clk clk_inst
 	.cfgen /* OUT */ (cfgen),
 	.clk /* OUT */ (clk),
 	.vclk /* OUT */ (vclk),
-	.tlw /* OUT */ (tlw),
+	.tlw /* OUT */ (tlw_unused),
 	.sys_clk(sys_clk) // Generated
 );
 
-// TOM.NET (455) - clk[0] : buf24
+// TOM.NET (456) - clk[0] : buf24
 assign clk_0 = clk;
 
-// TOM.NET (456) - clk[1] : buf24
+// TOM.NET (457) - clk[1] : buf24
 assign clk_1 = clk;
 
-// TOM.NET (457) - clk[2] : buf16
+// TOM.NET (458) - clk[2] : buf16
 assign clk_2 = clk;
 
-// TOM.NET (458) - clk[3] : buf24
+// TOM.NET (459) - clk[3] : buf24
 assign clk_3 = clk;
 
-// TOM.NET (459) - clk[4] : buf48
+// TOM.NET (460) - clk[4] : buf48
 assign clk_4 = clk;
 
-// TOM.NET (460) - clk[12] : buf16
+// TOM.NET (461) - clk[12] : buf16
 assign clk_12 = clk;
 
-// TOM.NET (461) - clk[13] : buf96
+// TOM.NET (462) - clk[13] : buf96
 assign clk_13 = clk;
 
-// TOM.NET (462) - clk[14] : buf16
+// TOM.NET (463) - clk[14] : buf16
 assign clk_14 = clk;
 
-// TOM.NET (464) - misc_ : misc
+// TOM.NET (465) - misc_ : misc
 misc misc__inst
 (
 	.din_0 /* IN */ (dout_0),
@@ -7098,6 +7099,8 @@ misc misc__inst
 	.mreq_in /* BUS */ (ts_local_pe_669_a3_in),
 	.sys_clk(sys_clk) // Generated
 );
+
+// TOM.NET (474) - ge : dummy
 
 // --- Compiler-generated local PE for BUS wd[0]
 assign wd_0_out =

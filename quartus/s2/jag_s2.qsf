@@ -51,7 +51,7 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
 set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING OFF
 
@@ -540,6 +540,12 @@ set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[14]
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[15]
 
 set_global_assignment -name MISC_FILE "D:/FPGA/JagNetlists/quartus/s2/jag_s2.dpf"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name VERILOG_FILE ../../verilog/base/stlatch.v
 set_global_assignment -name VERILOG_FILE pll50.v
 set_global_assignment -name VERILOG_FILE ../../verilog/tom/divider.v
 set_global_assignment -name VERILOG_FILE j68.v
@@ -796,11 +802,8 @@ set_global_assignment -name VERILOG_FILE ../../verilog/base/ra8008c.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/raa016a.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/rd64x32.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/rd64x32d.v
-set_global_assignment -name VERILOG_FILE ../../verilog/base/stlatch.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/sysclkdly.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/twoniv.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/vgalb.v
 set_global_assignment -name VERILOG_FILE jag_s2.v
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
