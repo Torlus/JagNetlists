@@ -3,7 +3,7 @@ $ARGC >= 1 or die("usage : bin2mif source.bin");
 
 $size = -s $ARGV[0];
 
-$depth = 16384;
+$depth = $ARGV[1];
 
 open(SOURCE,"<".$ARGV[0]) or die;
 binmode(SOURCE);

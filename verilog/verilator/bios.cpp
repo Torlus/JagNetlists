@@ -10,6 +10,7 @@ BIOS::BIOS(bool debug, int size)
 		int n;
 		
 		dbg = debug;
+		mask = size - 1;
 		mem_array = new vluint8_t[size];
     
     // fill the arrays with random numbers
@@ -26,23 +27,18 @@ BIOS::~BIOS()
 		delete mem_array;
 }
 
+#define BUFLEN 1024
+
 // Binary file loading
 void BIOS::load(const char *name, vluint32_t begin, vluint32_t end)
 {
     FILE *fh;
-    vluint8_t b[1];
-		
-		vluint32_t addr = begin;
-		
-    fh = fopen(name, "rb");
+		vluint32_t size;
+		fh = fopen(name, "rb");
     if (fh)
     {
-			while(addr < end) {
-				b[0] = 0xFF;
-				fread(b, 1, 1, fh);
-				mem_array[addr] = b[0];
-				addr += 1;
-			}
+			size = fread(mem_array + begin, 1, end - begin, fh);
+			printf("Loaded %ld bytes from \"%s\"\n", size, name);
 			fclose(fh);
     }
     else
@@ -67,6 +63,8 @@ void BIOS::eval
 		vluint8_t &oe )
 {	
 	if (!clk) return;
+	
+	a &= mask;
 	
 	oe = (!ce_n && !oe_n) ? 1 : 0;
 	q = mem_array[a];	

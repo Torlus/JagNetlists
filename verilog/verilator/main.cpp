@@ -1,9 +1,8 @@
-#include "Vtb.h"
+#include "Vjag_s2.h"
 #include "verilated.h"
 #include "vga_out.h"
-#include "dram.h"
 #include "bios.h"
-#include "cart.h"
+#include "ssram.h"
 #include "trace_68k.h"
 
 #if VM_TRACE
@@ -11,11 +10,12 @@
 #endif
 
 // #define HALF_PER_PS 4500
-#define HALF_PER_PS 9400
+// #define HALF_PER_PS 9400
+#define HALF_PER_PS 10000
 // Number of simulation cycles
 //                                 ns
 // #define NUM_CYCLES  ((vluint64_t)1599000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
-#define NUM_MS 5
+#define NUM_MS 1
 #define LOG_START_MS 0
 #define LOG_EVERY_MS 1
 
@@ -36,21 +36,8 @@ int main(int argc, char **argv, char **env)
   int vga_r;
   int vga_g;
   int vga_b;
-
 	
-	vluint8_t dram_clk;
-  vluint8_t dram_ras_n;
-  vluint8_t dram_cas_n;
-
-  vluint8_t dram_oe_n;
-  vluint8_t dram_uw_n;
-	vluint8_t dram_lw_n;
-
-  vluint16_t dram_a;
-
-  vluint64_t dram_d;
-  vluint64_t dram_q;
-	vluint8_t dram_oe;
+	int sys_clk;
 	
 	vluint8_t bios_clk;
 	vluint8_t bios_ce_n;
@@ -58,29 +45,49 @@ int main(int argc, char **argv, char **env)
 	vluint32_t bios_a;
 	vluint8_t bios_q;
 	vluint8_t bios_oe;
+	
+	vluint8_t ssram_clk;
+	vluint8_t ssram_ce_n;
+	vluint8_t ssram_oe_n;
 
-	vluint8_t cart_clk;
-	vluint8_t cart_ce_n;
-	vluint8_t cart_oe_n;
-	vluint32_t cart_a;
-	vluint32_t cart_q;
-	vluint8_t cart_oe;
+	vluint8_t ssram_bwe_n;
+	vluint8_t ssram_adsc_n;
+	vluint8_t ssram_adsp_n;
+	vluint8_t ssram_adv_n;
+
+	vluint32_t ssram_a;
+	vluint8_t ssram_be_n;
+
+	vluint32_t ssram_d;
+	vluint32_t ssram_q;
+	
+	
+	vluint8_t flash_clk;
+	vluint8_t flash_ce_n;
+	vluint8_t flash_oe_n;
+	vluint32_t flash_a;
+	vluint8_t flash_q;
+	vluint8_t flash_oe;
 	
   Verilated::commandArgs(argc, argv);
   // Init top verilog instance
-  Vtb* top = new Vtb;
+  Vjag_s2* top = new Vjag_s2;
   // Init VGA output C++ model
   // VgaOut* vga = new VgaOut(1, 24, HS_POS_POL|VS_POS_POL, 0, 2000, 0, 1000, "snapshot");
 	VgaOut* vga = new VgaOut(1, 24, 0, 0, 900, 0, 700, "snapshot");
-  DRAM *dram = new DRAM(1, 0x200000);
-	dram->load("dram.bin", 0x4000, 0x200000);
+  //DRAM *dram = new DRAM(1, 0x200000);
+	//dram->load("dram.bin", 0x4000, 0x200000);
+	SSRAM *ssram = new SSRAM(1, 0x200000);
+	ssram->load("dram.bin", 0x4000, 0x200000);
 	BIOS *bios = new BIOS(0, 0x100000);
 	bios->load("os.bin", 0x0, 0x100000);
 	//CART *cart = new CART(1 /* 16 bits */, 0, 0x800000);
-	CART *cart = new CART(0, 0, 0x800000);
+	//CART *cart = new CART(0, 0, 0x800000);
+	//cart->load("cart.bin", 0x0, 0x800000);
+	BIOS *cart = new BIOS(0, 0x800000);
 	cart->load("cart.bin", 0x0, 0x800000);
   // Init 68000 trace
-	Trace68k* trc = new Trace68k(cart->mem_array, bios->mem_array, dram->mem_array);
+	Trace68k* trc = new Trace68k(cart->mem_array, bios->mem_array, ssram->mem_array);
 
 #if VM_TRACE
   // Init VCD trace dump
@@ -93,12 +100,11 @@ int main(int argc, char **argv, char **env)
 #endif
   
   // Initialize simulation inputs
-	//TEST top->sys_clk = 0;
-	top->sys_clk = 1;
-	top->xvclk = 1;
-	top->xpclk = 1;
-	top->xresetl = 0;
-	top->tlw = 1;
+	top->OSC_CLK0 = 1;
+	top->SW = 0;
+
+	sys_clk = 0;
+	vga_clk = 0;
 	
 for(ms = 0; ms < NUM_MS; ms++) {
 #if VM_TRACE
@@ -112,10 +118,11 @@ for(ms = 0; ms < NUM_MS; ms++) {
   {
     // Evaluate verilated model		
 		top->eval ();
-    
+   
     // Dump VGA output
-    // vga_clk   = top->sys_clk;
-		vga_clk   = top->xvclk;
+		// vga_clk   = top->OSC_CLK0;
+		if (top->OSC_CLK0)
+			vga_clk = vga_clk ^ 1;
     vga_vs    = top->vga_vs_n;
     vga_hs    = top->vga_hs_n;
     vga_r     = top->vga_r;
@@ -125,24 +132,8 @@ for(ms = 0; ms < NUM_MS; ms++) {
                vga_clk, vga_vs, vga_hs,
                vga_r, vga_g, vga_b);
 
-		dram_clk		= top->sys_clk;
-		dram_ras_n 	= top->dram_ras_n;
-		dram_cas_n 	= top->dram_cas_n;
-		dram_oe_n		= top->dram_oe_n;
-		dram_uw_n		= top->dram_uw_n;
-		dram_lw_n		= top->dram_lw_n;
-		dram_a			= top->dram_a;
-		dram_d			= top->dram_d;
-		
-		dram->eval( hcycle / 2,
-								dram_clk, dram_ras_n, dram_cas_n,
-								dram_oe_n, dram_uw_n, dram_lw_n, 
-								dram_a, dram_d, dram_q, dram_oe );
-		
-		top->dram_q = dram_q;
-		top->dram_oe = dram_oe;
-
-		bios_clk = top->sys_clk;
+		// OS ROM
+		bios_clk = top->OSC_CLK0;
 		bios_ce_n = top->os_rom_ce_n;
 		bios_oe_n = top->os_rom_oe_n;
 		bios_a = top->os_rom_a;
@@ -153,20 +144,42 @@ for(ms = 0; ms < NUM_MS; ms++) {
 								
 		top->os_rom_q = bios_q;
 		top->os_rom_oe = bios_oe;
+		
+		// SSRAM
+		ssram_clk = top->SSRAM_CLK;
+		ssram_ce_n = top->SSRAM_CE1_n;
+		ssram_oe_n = top->SSRAM_OE_n;
 
-		cart_clk = top->sys_clk;
-		cart_ce_n = top->cart_ce_n;
-		cart_oe_n = top->cart_oe_n;
-		cart_a = top->cart_a;
+		ssram_bwe_n = top->SSRAM_BWE_n;
+		ssram_adsc_n = top->SSRAM_ADSC_n;
+		ssram_adsp_n = top->SSRAM_ADSP_n;
+		ssram_adv_n = top->SSRAM_ADV_n;
+
+		ssram_a = top->SSRAM_ADDR;
+		ssram_be_n = top->SSRAM_BE_n;
+
+		ssram_d = top->SSRAM_D;
+	
+		ssram->eval( hcycle / 2, ssram_clk, ssram_ce_n, ssram_oe_n,
+			ssram_bwe_n, ssram_adsc_n, ssram_adsp_n, ssram_adv_n,
+			ssram_a, ssram_be_n, ssram_d, ssram_q );
 		
-		cart->eval( hcycle / 2, cart_clk,
-								cart_ce_n, cart_oe_n, cart_a,
-								cart_q, cart_oe);
+		top->SSRAM_Q = ssram_q;
+
+		// FLASH (Cartridge)
+		flash_clk = top->OSC_CLK0;
+		flash_ce_n = top->FLS_CS_n;
+		flash_oe_n = top->FLS_OE_n;
+		flash_a = top->FE_ADDR;
+		
+		cart->eval( hcycle / 2, flash_clk,
+								flash_ce_n, flash_oe_n, flash_a,
+								flash_q, flash_oe);
 								
-		top->cart_q = cart_q;
-		top->cart_oe = cart_oe;
+		top->FE_DQ = 0xffffff00 | flash_q;
 		
-    trc->dump (hcycle / 2,        top->xpclk,     top->DBG_IFETCH,
+		// 68000 dissasembly
+    trc->dump (hcycle / 2,        top->OSC_CLK0,     top->DBG_IFETCH,
                top->DBG_REG_WREN, top->DBG_REG_ADDR, top->DBG_REG_DATA,
                top->DBG_SR_REG,   top->DBG_PC_REG,   top->DBG_USP_REG,  top->DBG_SSP_REG);
 		
@@ -181,30 +194,8 @@ for(ms = 0; ms < NUM_MS; ms++) {
     // Next half cycle
     hcycle++;
 		
-    top->xresetl = (hcycle < (vluint64_t)(80000 / HALF_PER_PS)) ? 0 : 1;
-		top->sys_clk = top->sys_clk ^ 1;
-
-		//TEST
-		/*if (!(hcycle & 0x1))
-			top->xvclk = top->xvclk ^ 1;
-		if (!(hcycle & 0x3))
-			top->xpclk = top->xpclk ^ 1;*/
-		
-		if ((hcycle & 0x3) >= 0x02) {
-			top->xvclk = 1;
-		} else {
-			top->xvclk = 0;
-		}
-		if ((hcycle & 0x7) >= 0x06) {
-			top->xpclk = 1;
-		} else {
-			top->xpclk = 0;
-		}
-		if ( ((hcycle & 0x7) >= 0x02) && ((hcycle & 0x7) <= 0x03)) {
-			top->tlw = 1;
-		} else {
-			top->tlw = 0;
-		}
+    top->SW = (hcycle < (vluint64_t)(120000 / HALF_PER_PS)) ? 0 : 1;
+		top->OSC_CLK0 = top->OSC_CLK0 ^ 1;
 		
     if (Verilated::gotFinish())  exit(0);
   }

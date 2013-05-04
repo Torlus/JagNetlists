@@ -1,3 +1,4 @@
+/* verilator lint_off LITENDIAN */
 `include "defs.v"
 
 module jag_s2
@@ -17,30 +18,13 @@ module jag_s2
   output        SSRAM_ADV_n,  
   output [20:0] SSRAM_ADDR,
   output  [3:0] SSRAM_BE_n,
+`ifdef verilator3
+  input  [31:0] SSRAM_Q,
+  output [31:0] SSRAM_D,
+`else
   inout  [31:0] SSRAM_DQ,
+`endif
 	
-	// output  [0:9] 	dram_a,
-	// output					dram_ras_n,
-	// output					dram_cas_n,
-	// output	[0:3]		dram_oe_n,
-	// output 	[0:3]		dram_uw_n,
-	// output 	[0:3]		dram_lw_n,
-	// output	[0:63]	dram_d,
-	// input		[0:63]	dram_q,
-	// input		[0:3]		dram_oe,
-	
-	//output	[16:0]	os_rom_a,
-	//output					os_rom_ce_n,
-	//output					os_rom_oe_n,
-	//input		[7:0]		os_rom_q,
-	//input						os_rom_oe,
-
-	//output	[23:0]	cart_a,
-	//output					cart_ce_n,
-	//output	[1:0]			cart_oe_n,
-	//input		[31:0]		cart_q,
-	//input		[1:0]			cart_oe,
-
 	output				FLS_CS_n,
 	output				FLS_OE_n,
 	output				FLS_RW_n,
@@ -48,10 +32,46 @@ module jag_s2
 	output				FLS_BYTE_n,
 	
 	output	[23:0]	FE_ADDR,
+`ifdef verilator3
+	input		[31:0]	FE_DQ,
+`else
 	inout		[31:0]	FE_DQ,
-	
+`endif
+
 	output	[28:0]	PROTO2_IO,
 
+`ifdef verilator3
+
+  output        DBG_CPU_RDEN,
+  output        DBG_CPU_WREN,
+  output        DBG_CPU_DTACK,
+  output  [1:0] DBG_CPU_BENA,
+  output [31:0] DBG_CPU_ADDR,
+  output [15:0] DBG_CPU_RDATA,
+  output [15:0] DBG_CPU_WDATA,
+  output  [3:0] DBG_REG_ADDR,
+  output  [3:0] DBG_REG_WREN,
+  output [15:0] DBG_REG_DATA,
+  output [15:0] DBG_SR_REG,
+  output [31:0] DBG_PC_REG,
+  output [31:0] DBG_USP_REG,
+  output [31:0] DBG_SSP_REG,
+  output [31:0] DBG_CYCLES,
+  output        DBG_IFETCH,
+
+	output vga_vs_n,
+	output vga_hs_n,
+	output [7:0] vga_r,
+	output [7:0] vga_g,
+	output [7:0] vga_b,
+	
+	output	[16:0]	os_rom_a,
+	output					os_rom_ce_n,
+	output					os_rom_oe_n,
+	input		[7:0]		os_rom_q,
+	input						os_rom_oe,
+`endif
+	
 	output	[7:0] HEX_0,
 	output	[7:0] HEX_1,
 	output	[7:0]	LED_n
@@ -60,17 +80,18 @@ module jag_s2
 
 wire xresetl;
 
-wire xpclk;
-wire xvclk;
+//wire xpclk;
+//wire xvclk;
 wire sys_clk;
 wire mem_clk;
 
-
+`ifndef verilator3
 wire vga_vs_n;
 wire vga_hs_n;
 wire [7:0] vga_r;
 wire [7:0] vga_g;
 wire [7:0] vga_b;
+`endif
 
 reg vga_vs_prev = 1'b1;
 reg [15:0] vs_cnt = 16'd0;
@@ -112,12 +133,14 @@ assign xresetl = SW[0];
 pll50 pll
 (
 	.inclk0(OSC_CLK0),
-	.c0(xvclk),
-	.c1(xpclk),
+	.c0(),
+	.c1(),
 	.c2(sys_clk),
-	.c3(mem_clk)
+	.c3()
 );
+assign mem_clk = sys_clk;
 
+`ifndef verilator3
 wire	[16:0]	os_rom_a;
 wire					os_rom_ce_n;
 wire					os_rom_oe_n;
@@ -164,7 +187,7 @@ wire					os_rom_oe;
 		os_rom.width_byteena_a = 1;
 
 assign os_rom_oe = (~os_rom_ce_n & ~os_rom_oe_n);
-
+`endif
 
 wire	[23:0]	cart_a;
 wire					cart_ce_n;
@@ -180,31 +203,11 @@ assign	FLS_WP_n = 1'b0;
 assign	FLS_BYTE_n = 1'b0;
 
 assign	FE_ADDR = cart_a;
+`ifndef verilator3
 assign	FE_DQ = 32'bzzzzzzzz_zzzzzzzz_zzzzzzzz_zzzzzzzz;
-
+`endif
 assign	FLS_CS_n = cart_ce_n;
 assign	FLS_OE_n = cart_oe_n[0];
-
-/*reg [23:0] cart_a_p1 = 24'd0;
-reg [23:0] cart_a_p2 = 24'd0;
-reg c_ce_n = 1'b1;
-reg c_oe_n = 1'b1;
-assign	FLS_CS_n = c_ce_n;
-assign	FLS_OE_n = c_oe_n;
-
-always @(posedge sys_clk)
-begin
-	cart_a_p2 <= cart_a_p1;
-	cart_a_p1 <= cart_a;
-	if (cart_a_p2 == cart_a) begin
-		c_ce_n <= cart_ce_n;
-		c_oe_n <= cart_oe_n;
-	end else begin
-		c_ce_n <= 1'b1;
-		c_oe_n <= 1'b1;
-	end
-end*/
-
 
 assign	cart_q = FE_DQ;
 assign	cart_oe[0] = ~cart_oe_n[0] & ~cart_ce_n;
@@ -239,7 +242,8 @@ jaguar jag
 	.dram_d(dram_d),
 	.dram_q(dram_q),
 	.dram_oe(dram_oe),
-	
+
+`ifndef verilator3	
 	.DBG_CPU_RDEN(),
 	.DBG_CPU_WREN(),
 	.DBG_CPU_DTACK(),
@@ -256,6 +260,24 @@ jaguar jag
 	.DBG_SSP_REG(),
 	.DBG_CYCLES(),
 	.DBG_IFETCH(),
+`else
+	.DBG_CPU_RDEN(DBG_CPU_RDEN),
+	.DBG_CPU_WREN(DBG_CPU_WREN),
+	.DBG_CPU_DTACK(DBG_CPU_DTACK),
+	.DBG_CPU_BENA(DBG_CPU_BENA),
+	.DBG_CPU_ADDR(DBG_CPU_ADDR),
+	.DBG_CPU_RDATA(DBG_CPU_RDATA),
+	.DBG_CPU_WDATA(DBG_CPU_WDATA),
+	.DBG_REG_ADDR(DBG_REG_ADDR),
+	.DBG_REG_WREN(DBG_REG_WREN),
+	.DBG_REG_DATA(DBG_REG_DATA),
+	.DBG_SR_REG(DBG_SR_REG),
+	.DBG_PC_REG(DBG_PC_REG),
+	.DBG_USP_REG(DBG_USP_REG),
+	.DBG_SSP_REG(DBG_SSP_REG),
+	.DBG_CYCLES(DBG_CYCLES),
+	.DBG_IFETCH(DBG_IFETCH),
+`endif
 	
 	.os_rom_a(os_rom_a),
 	.os_rom_ce_n(os_rom_ce_n),
@@ -336,19 +358,18 @@ assign SSRAM_CE3_n = 1'b0;
 assign SSRAM_GW_n = 1'b1;
 
 // FSM
-always @(posedge sys_clk)
+always @(posedge mem_clk)
 begin
 	// if (~fdram) begin
 		// mem_cyc <= `SS_IDLE;
 	// end else begin
 		case (mem_cyc)
 			`SS_IDLE:
-				if (fdram) begin
-					if (dram_oe_n != 4'b1111) begin
-						mem_cyc <= `SS_RD_1;
-					end else if ({dram_uw_n, dram_lw_n} != 8'b11111111) begin
-						mem_cyc <= `SS_WR_1;
-					end
+				// if (fdram && (dram_oe_n != 4'b1111)) begin
+				if (fdram && (dram_oe_n != 4'b1111) && ~dram_cas_n) begin // as we have plenty of time now...
+					mem_cyc <= `SS_RD_1;
+				end else if (fdram && ({dram_uw_n, dram_lw_n} != 8'b11111111)) begin
+					mem_cyc <= `SS_WR_1;
 				end
 			`SS_RD_1: mem_cyc <= `SS_RD_2;
 			`SS_RD_2: mem_cyc <= `SS_RD_3;
@@ -372,36 +393,54 @@ begin
 	// end
 end
 
+reg	[0:63]	r_dram_d;
+
 // Latch dram_uw_n and dram_lw_n in case of write
-always @(posedge sys_clk)
+// Latch data as well
+always @(posedge mem_clk)
 begin
 	if (mem_cyc == `SS_WR_1) begin
 		r_ssram_be_n <= { dram_uw_n[3], dram_lw_n[3], 
 											dram_uw_n[2], dram_lw_n[2], 
 											dram_uw_n[1], dram_lw_n[1], 
 											dram_uw_n[0], dram_lw_n[0] };
+		r_dram_d <= dram_d;
 	end
 end
 
 // Address
 assign SSRAM_ADDR = ssram_a;
 
-// reg dram_ras_n_prev = 1'b0;
-// reg dram_cas_n_prev = 1'b0;
+/*reg [20:0] dram_ea = 21'd0;
+reg dram_check = 1'b0;
 
-// always @(posedge sys_clk)
-// begin
-	// dram_ras_n_prev <= dram_ras_n;
-	// dram_cas_n_prev <= dram_cas_n;
-	// if (dram_ras_n_prev & ~dram_ras_n) begin
-		// ssram_a[20:11] <= { dram_a[9], dram_a[8], dram_a[7], dram_a[6], dram_a[5], 
-			// dram_a[4], dram_a[3], dram_a[2], dram_a[1], dram_a[0] };
-	// end
-	// if (dram_cas_n_prev & ~dram_cas_n) begin
-		// ssram_a[10:3] <= { dram_a[7], dram_a[6], dram_a[5], 
-			// dram_a[4], dram_a[3], dram_a[2], dram_a[1], dram_a[0] };
-	// end
-// end	
+reg dram_ras_n_prev = 1'b0;
+reg dram_cas_n_prev = 1'b0;
+
+always @(posedge sys_clk)
+begin
+	dram_ras_n_prev <= dram_ras_n;
+	dram_cas_n_prev <= dram_cas_n;
+	if (dram_ras_n_prev & ~dram_ras_n) begin
+		dram_ea[20:11] <= { dram_a[9], dram_a[8], dram_a[7], dram_a[6], dram_a[5], 
+			dram_a[4], dram_a[3], dram_a[2], dram_a[1], dram_a[0] };
+	end
+	if (dram_cas_n_prev & ~dram_cas_n) begin
+		dram_ea[10:3] <= { dram_a[7], dram_a[6], dram_a[5], 
+			dram_a[4], dram_a[3], dram_a[2], dram_a[1], dram_a[0] };
+		dram_check <= 1'b1;
+	end
+	if (dram_cas_n) begin
+		dram_check <= 1'b0;
+	end
+	
+	if (dram_check && ( (dram_oe_n != 4'b1111) || ({dram_uw_n, dram_lw_n} != 8'b11111111) )) begin
+		if (dram_ea != ssram_a) begin
+			$display("========= MISMATCH DRAM=%06X CART=%06X", dram_ea, ssram_a);
+		end
+		dram_check <= 1'b0;
+	end
+end*/
 
 assign ssram_a[20:3] = cart_a[20:3];
 assign ssram_a[2:0] = 3'b000;
@@ -419,30 +458,52 @@ assign SSRAM_BWE_n = ( (mem_cyc == `SS_WR_2) || (mem_cyc == `SS_WR_4)  ) ? 1'b0 
 assign SSRAM_OE_n = ( (mem_cyc == `SS_RD_2) || (mem_cyc == `SS_RD_3) || (mem_cyc == `SS_RD_4) || (mem_cyc == `SS_RD_5) ) ? 1'b0 : 1'b1;
 
 // Data bus
+`ifndef verilator3
 assign SSRAM_DQ = ( (mem_cyc == `SS_WR_2) || (mem_cyc == `SS_WR_3) ) ? {
-		dram_d[63], dram_d[62], dram_d[61], dram_d[60], dram_d[59], dram_d[58], dram_d[57], dram_d[56], 
-		dram_d[55], dram_d[54], dram_d[53], dram_d[52], dram_d[51], dram_d[50], dram_d[49], dram_d[48], 
-		dram_d[47], dram_d[46], dram_d[45], dram_d[44], dram_d[43], dram_d[42], dram_d[41], dram_d[40], 
-		dram_d[39], dram_d[38], dram_d[37], dram_d[36], dram_d[35], dram_d[34], dram_d[33], dram_d[32]
+		r_dram_d[63], r_dram_d[62], r_dram_d[61], r_dram_d[60], r_dram_d[59], r_dram_d[58], r_dram_d[57], r_dram_d[56], 
+		r_dram_d[55], r_dram_d[54], r_dram_d[53], r_dram_d[52], r_dram_d[51], r_dram_d[50], r_dram_d[49], r_dram_d[48], 
+		r_dram_d[47], r_dram_d[46], r_dram_d[45], r_dram_d[44], r_dram_d[43], r_dram_d[42], r_dram_d[41], r_dram_d[40], 
+		r_dram_d[39], r_dram_d[38], r_dram_d[37], r_dram_d[36], r_dram_d[35], r_dram_d[34], r_dram_d[33], r_dram_d[32]
 	} : ( (mem_cyc == `SS_WR_4) || (mem_cyc == `SS_WR_5) ) ? {
-		dram_d[31], dram_d[30], dram_d[29], dram_d[28], dram_d[27], dram_d[26], dram_d[25], dram_d[24], 
-		dram_d[23], dram_d[22], dram_d[21], dram_d[20], dram_d[19], dram_d[18], dram_d[17], dram_d[16], 
-		dram_d[15], dram_d[14], dram_d[13], dram_d[12], dram_d[11], dram_d[10], dram_d[9], dram_d[8], 
-		dram_d[7], dram_d[6], dram_d[5], dram_d[4], dram_d[3], dram_d[2], dram_d[1], dram_d[0]
+		r_dram_d[31], r_dram_d[30], r_dram_d[29], r_dram_d[28], r_dram_d[27], r_dram_d[26], r_dram_d[25], r_dram_d[24], 
+		r_dram_d[23], r_dram_d[22], r_dram_d[21], r_dram_d[20], r_dram_d[19], r_dram_d[18], r_dram_d[17], r_dram_d[16], 
+		r_dram_d[15], r_dram_d[14], r_dram_d[13], r_dram_d[12], r_dram_d[11], r_dram_d[10], r_dram_d[9], r_dram_d[8], 
+		r_dram_d[7], r_dram_d[6], r_dram_d[5], r_dram_d[4], r_dram_d[3], r_dram_d[2], r_dram_d[1], r_dram_d[0]
 	} : 32'bzzzzzzzz_zzzzzzzz_zzzzzzzz_zzzzzzzz;
+`else
+assign SSRAM_D = ( (mem_cyc == `SS_WR_2) || (mem_cyc == `SS_WR_3) ) ? {
+		r_dram_d[63], r_dram_d[62], r_dram_d[61], r_dram_d[60], r_dram_d[59], r_dram_d[58], r_dram_d[57], r_dram_d[56], 
+		r_dram_d[55], r_dram_d[54], r_dram_d[53], r_dram_d[52], r_dram_d[51], r_dram_d[50], r_dram_d[49], r_dram_d[48], 
+		r_dram_d[47], r_dram_d[46], r_dram_d[45], r_dram_d[44], r_dram_d[43], r_dram_d[42], r_dram_d[41], r_dram_d[40], 
+		r_dram_d[39], r_dram_d[38], r_dram_d[37], r_dram_d[36], r_dram_d[35], r_dram_d[34], r_dram_d[33], r_dram_d[32]
+	} : ( (mem_cyc == `SS_WR_4) || (mem_cyc == `SS_WR_5) ) ? {
+		r_dram_d[31], r_dram_d[30], r_dram_d[29], r_dram_d[28], r_dram_d[27], r_dram_d[26], r_dram_d[25], r_dram_d[24], 
+		r_dram_d[23], r_dram_d[22], r_dram_d[21], r_dram_d[20], r_dram_d[19], r_dram_d[18], r_dram_d[17], r_dram_d[16], 
+		r_dram_d[15], r_dram_d[14], r_dram_d[13], r_dram_d[12], r_dram_d[11], r_dram_d[10], r_dram_d[9], r_dram_d[8], 
+		r_dram_d[7], r_dram_d[6], r_dram_d[5], r_dram_d[4], r_dram_d[3], r_dram_d[2], r_dram_d[1], r_dram_d[0]
+	} : 32'd0;
+`endif
 
 // Latches
-always @(posedge sys_clk)
+always @(posedge mem_clk)
 begin
 	if (mem_cyc == `SS_RD_3) begin
+`ifndef verilator3
 		ssram_q1 <= SSRAM_DQ;
+`else
+		ssram_q1 <= SSRAM_Q;
+`endif
 	end
 end
 
-always @(posedge sys_clk)
+always @(posedge mem_clk)
 begin
 	if (mem_cyc == `SS_RD_4) begin
+`ifndef verilator3
 		ssram_q0 <= SSRAM_DQ;
+`else
+		ssram_q0 <= SSRAM_Q;
+`endif
 	end
 end
 
@@ -460,3 +521,4 @@ assign dram_q[0:63] = {
 assign dram_oe = (~dram_cas_n) ? ~dram_oe_n : 4'b0000;
 
 endmodule
+/* verilator lint_on LITENDIAN */

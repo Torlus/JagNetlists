@@ -21,9 +21,6 @@ reg	[31:0]	r_qa;
 reg	[31:0]	r_qb;
 reg	[31:0]	ram_blk [0:(1<<6)-1];
 
-assign qa = r_qa;
-assign qb = r_qb;
-
 always @(posedge sys_clk)
 begin
 	if (clka) begin
@@ -46,6 +43,9 @@ end
 
 `else
 
+wire	[31:0]	r_qa;
+wire	[31:0]	r_qb;
+
 wire wren_a;
 wire wren_b;
 
@@ -60,8 +60,8 @@ assign wren_b = ~nweb;
 				.address_b (ab),
 				.data_a (da),
 				.data_b (db),
-				.q_a (qa),
-				.q_b (qb),
+				.q_a (r_qa),
+				.q_b (r_qb),
 				.aclr0 (1'b0),
 				.aclr1 (1'b0),
 				.addressstall_a (1'b0),
@@ -93,9 +93,8 @@ assign wren_b = ~nweb;
 		altsyncram_component.outdata_reg_a = "CLOCK0",
 		altsyncram_component.outdata_reg_b = "CLOCK0",
 		altsyncram_component.power_up_uninitialized = "FALSE",
-		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
-		//GE altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_WITH_NBE_READ",
-		//GE altsyncram_component.read_during_write_mode_port_b = "NEW_DATA_WITH_NBE_READ",
+		//GE altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
+		altsyncram_component.read_during_write_mode_mixed_ports = "OLD_DATA", //GE
 		altsyncram_component.widthad_a = 6,
 		altsyncram_component.widthad_b = 6,
 		altsyncram_component.width_a = 32,
@@ -105,5 +104,8 @@ assign wren_b = ~nweb;
 		altsyncram_component.wrcontrol_wraddress_reg_b = "CLOCK0";
 
 `endif
+
+	assign qa = r_qa;
+	assign qb = r_qb;
 
 endmodule

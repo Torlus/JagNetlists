@@ -102,10 +102,10 @@ module pll50 (
 				.vcounderrange ());
 	defparam
 		altpll_component.bandwidth_type = "AUTO",
-		altpll_component.clk0_divide_by = 15,
+		altpll_component.clk0_divide_by = 5,
 		altpll_component.clk0_duty_cycle = 50,
 		altpll_component.clk0_multiply_by = 8,
-		altpll_component.clk0_phase_shift = "0",
+		altpll_component.clk0_phase_shift = "6250",
 		altpll_component.clk1_divide_by = 15,
 		altpll_component.clk1_duty_cycle = 50,
 		altpll_component.clk1_multiply_by = 4,
@@ -113,11 +113,11 @@ module pll50 (
 		altpll_component.clk2_divide_by = 15,
 		altpll_component.clk2_duty_cycle = 50,
 		altpll_component.clk2_multiply_by = 16,
-		altpll_component.clk2_phase_shift = "9375",
+		altpll_component.clk2_phase_shift = "0",
 		altpll_component.clk3_divide_by = 15,
 		altpll_component.clk3_duty_cycle = 50,
 		altpll_component.clk3_multiply_by = 16,
-		altpll_component.clk3_phase_shift = "6250",
+		altpll_component.clk3_phase_shift = "0",
 		altpll_component.compensate_clock = "CLK0",
 		altpll_component.inclk0_input_frequency = 20000,
 		altpll_component.intended_device_family = "Stratix II",
@@ -203,7 +203,7 @@ endmodule
 // Retrieval info: PRIVATE: DUTY_CYCLE1 STRING "50.00000000"
 // Retrieval info: PRIVATE: DUTY_CYCLE2 STRING "50.00000000"
 // Retrieval info: PRIVATE: DUTY_CYCLE3 STRING "50.00000000"
-// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE0 STRING "26.666666"
+// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE0 STRING "80.000000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE1 STRING "13.333333"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE2 STRING "53.333332"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE3 STRING "53.333332"
@@ -231,7 +231,7 @@ endmodule
 // Retrieval info: PRIVATE: LVDS_PHASE_SHIFT_UNIT2 STRING "deg"
 // Retrieval info: PRIVATE: LVDS_PHASE_SHIFT_UNIT3 STRING "deg"
 // Retrieval info: PRIVATE: MIG_DEVICE_SPEED_GRADE STRING "Any"
-// Retrieval info: PRIVATE: MULT_FACTOR0 NUMERIC "8"
+// Retrieval info: PRIVATE: MULT_FACTOR0 NUMERIC "24"
 // Retrieval info: PRIVATE: MULT_FACTOR1 NUMERIC "4"
 // Retrieval info: PRIVATE: MULT_FACTOR2 NUMERIC "16"
 // Retrieval info: PRIVATE: MULT_FACTOR3 NUMERIC "16"
@@ -250,10 +250,10 @@ endmodule
 // Retrieval info: PRIVATE: OUTPUT_FREQ_UNIT3 STRING "MHz"
 // Retrieval info: PRIVATE: PHASE_RECONFIG_FEATURE_ENABLED STRING "0"
 // Retrieval info: PRIVATE: PHASE_RECONFIG_INPUTS_CHECK STRING "0"
-// Retrieval info: PRIVATE: PHASE_SHIFT0 STRING "0.00000000"
+// Retrieval info: PRIVATE: PHASE_SHIFT0 STRING "180.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT1 STRING "0.00000000"
-// Retrieval info: PRIVATE: PHASE_SHIFT2 STRING "180.00000000"
-// Retrieval info: PRIVATE: PHASE_SHIFT3 STRING "120.00000000"
+// Retrieval info: PRIVATE: PHASE_SHIFT2 STRING "0.00000000"
+// Retrieval info: PRIVATE: PHASE_SHIFT3 STRING "0.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT_STEP_ENABLED_CHECK STRING "0"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT0 STRING "deg"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT1 STRING "deg"
@@ -296,10 +296,10 @@ endmodule
 // Retrieval info: PRIVATE: ZERO_DELAY_RADIO STRING "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: BANDWIDTH_TYPE STRING "AUTO"
-// Retrieval info: CONSTANT: CLK0_DIVIDE_BY NUMERIC "15"
+// Retrieval info: CONSTANT: CLK0_DIVIDE_BY NUMERIC "5"
 // Retrieval info: CONSTANT: CLK0_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK0_MULTIPLY_BY NUMERIC "8"
-// Retrieval info: CONSTANT: CLK0_PHASE_SHIFT STRING "0"
+// Retrieval info: CONSTANT: CLK0_PHASE_SHIFT STRING "6250"
 // Retrieval info: CONSTANT: CLK1_DIVIDE_BY NUMERIC "15"
 // Retrieval info: CONSTANT: CLK1_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK1_MULTIPLY_BY NUMERIC "4"
@@ -307,11 +307,11 @@ endmodule
 // Retrieval info: CONSTANT: CLK2_DIVIDE_BY NUMERIC "15"
 // Retrieval info: CONSTANT: CLK2_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK2_MULTIPLY_BY NUMERIC "16"
-// Retrieval info: CONSTANT: CLK2_PHASE_SHIFT STRING "9375"
+// Retrieval info: CONSTANT: CLK2_PHASE_SHIFT STRING "0"
 // Retrieval info: CONSTANT: CLK3_DIVIDE_BY NUMERIC "15"
 // Retrieval info: CONSTANT: CLK3_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK3_MULTIPLY_BY NUMERIC "16"
-// Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "6250"
+// Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "0"
 // Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
 // Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Stratix II"

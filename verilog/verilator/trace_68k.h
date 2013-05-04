@@ -35,7 +35,7 @@ class Trace68k
 {
     public:
         // Constructor and destructor
-        Trace68k(vluint8_t *cart, vluint8_t *bios, vluint8_t *bl[8]);
+        Trace68k(vluint8_t *cart, vluint8_t *bios, vluint8_t *ram);
         ~Trace68k();
         // Methods
         int open(const char *name);
@@ -85,7 +85,7 @@ class Trace68k
         // vluint8_t *hi_mem;               // SDRAM MSB
 				vluint8_t *cart;			// Cartridge
 				vluint8_t *bios;			// BIOS
-				vluint8_t *bl[8];		// DRAM Byte lanes
+				vluint8_t *ram;		// SSRAM
         // vluint32_t mem_size;             // SDRAM size
         // Disassembly PC
         vluint32_t dasm_pc;

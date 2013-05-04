@@ -18,6 +18,7 @@ class BIOS
         vluint8_t *mem_array;
     private:
         // Internal variables
+				vluint32_t	mask;
 				bool				dbg;
 };
 

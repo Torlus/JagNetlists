@@ -59,14 +59,18 @@ module jaguar
 reg [1:0] clkdiv = 2'b00;
 reg xpclk = 1'b0;
 reg xvclk = 1'b0;
-reg tlw = 1'b0;
+reg tlw = 1'b1;
 
 always @(posedge sys_clk)
 begin
 	clkdiv <= clkdiv + 2'b01;
 	xvclk <= ~xvclk;
 	
-	if (clkdiv[1:0] == 2'b10) begin
+	
+	xpclk <= ~xpclk;
+	tlw <= ~tlw;
+	
+	/*if (clkdiv[1:0] == 2'b10) begin
 		xpclk <= 1'b1;
 	end else begin
 		xpclk <= 1'b0;
@@ -83,7 +87,7 @@ begin
 		tlw <= 1'b1;
 	end else begin
 		tlw <= 1'b0;
-	end		
+	end*/		
 end
 
 
@@ -521,6 +525,8 @@ assign dreql =
 assign xdreql_in = dreql;
 assign j_xdreql_in = dreql;
 
+
+
 // Busses between TOM/JERRY/68000
 
 // Address bus
@@ -540,7 +546,6 @@ assign abus[0:23] =
 		};
 assign xa_in = abus;
 assign j_xa_in = abus;
-
 
 // Data bus
 
@@ -789,7 +794,8 @@ assign j68rq = j68_rd_ena_int | j68_wr_ena_int;
 always @(posedge sys_clk)
 begin
 	// Sync requests on pclk
-	if (clkdiv[1:0] == 2'b10) begin
+	// if (clkdiv[1:0] == 2'b10) begin
+	if (tlw) begin
 		// xpclk <= 1'b1;
 		j68_rd_ena <= j68_rd_ena_int & dtackack;
 		j68_wr_ena <= j68_wr_ena_int & dtackack;
@@ -1950,7 +1956,7 @@ begin
 			status <= `EE_WR_WRITE;
 			if (ir[7:6] == 2'b11) begin
 				// ERASE
-				wraddr <= ir[5:0];
+					wraddr <= ir[5:0];
 				wrloop <= 1'b0;
 				wrdata <= 16'hFFFF;
 			end else if (ir[7:6] == 2'b01) begin

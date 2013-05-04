@@ -330,55 +330,12 @@ static const char quick_tab_3[8] =
   '8', '1', '2', '3', '4', '5', '6', '7'
 };
 
-// Address translation table (512 KB blocks)
-static const vluint32_t mem_map[32] =
-{
-  0x00000000 >> 1, // 0x00000000 - 0x0007FFFF
-  0x00080000 >> 1, // 0x00080000 - 0x000FFFFF
-  0x00100000 >> 1, // 0x00100000 - 0x0017FFFF
-  0x00180000 >> 1, // 0x00180000 - 0x001FFFFF
-  0x00200000 >> 1, // 0x00200000 - 0x0027FFFF
-  0x00280000 >> 1, // 0x00280000 - 0x002FFFFF
-  0x00300000 >> 1, // 0x00300000 - 0x0037FFFF
-  0x00380000 >> 1, // 0x00380000 - 0x003FFFFF
-  0x00400000 >> 1, // 0x00400000 - 0x0047FFFF
-  0x00480000 >> 1, // 0x00480000 - 0x004FFFFF
-  0x00500000 >> 1, // 0x00500000 - 0x0057FFFF
-  0x00580000 >> 1, // 0x00580000 - 0x005FFFFF
-  0x00600000 >> 1, // 0x00600000 - 0x0067FFFF
-  0x00680000 >> 1, // 0x00680000 - 0x006FFFFF
-  0x00700000 >> 1, // 0x00700000 - 0x0077FFFF
-  0x00780000 >> 1, // 0x00780000 - 0x007FFFFF
-  0x00800000 >> 1, // 0x00800000 - 0x0087FFFF
-  0x00880000 >> 1, // 0x00880000 - 0x008FFFFF
-  0x00900000 >> 1, // 0x00900000 - 0x0097FFFF
-  0x00980000 >> 1, // 0x00980000 - 0x009FFFFF
-  0xFFFFFFFF     , // Empty
-  0xFFFFFFFF     , // Empty
-  0xFFFFFFFF     , // Empty
-  0xFFFFFFFF     , // Empty
-  0x00A00000 >> 1, // 0x00C00000 - 0x00C7FFFF
-  0x00A80000 >> 1, // 0x00C80000 - 0x00CFFFFF
-  0x00B00000 >> 1, // 0x00D00000 - 0x00D7FFFF
-  0xFFFFFFFF     , // Empty
-  0xFFFFFFFF     , // Empty
-  0xFFFFFFFF     , // Empty
-  0xFFFFFFFF     , // Empty
-  0x00B80000 >> 1  // 0x00F80000 - 0x00FFFFFF
-};
-
 // Constructor
-Trace68k::Trace68k(vluint8_t *cart_mem, vluint8_t *bios_mem, vluint8_t *bytelanes[8])
+Trace68k::Trace68k(vluint8_t *cart_mem, vluint8_t *bios_mem, vluint8_t *ram_mem)
 {
-		int k;
-    // SDRAM access
-    // lo_mem      = lo;
-    // hi_mem      = hi;
-		
-		for(k = 0; k < 8; k++)
-			bl[k] = bytelanes[k];
 		bios = bios_mem;
 		cart = cart_mem;
+		ram = ram_mem;
     // mem_size    = size;
     // Clear registers
     for (int i = 0; i < 16; i++)
@@ -588,26 +545,14 @@ void Trace68k::dump
 
 vluint32_t Trace68k::translate_addr(vluint32_t addr, int &region)
 {
-  /*vluint32_t offs = mem_map[(addr >> 19) & 31];
-
-  if (offs != 0xFFFFFFFF)
-  {
-    // Valid address
-    return offs + ((addr >> 1) & 0x0003FFFF);
-  }
-  else
-  {
-    // Invalid address
-    return offs;
-  }*/
 	addr &= 0x00FFFFFF;
 	region = MEM_NONE;
-	if (addr < 0x200000) {
+	if ((addr < 0x200000) && (ram != NULL)) { //FIXME
 		region = MEM_DRAM;
 	} else if (addr >= 0xE00000) {
 		addr -= 0xE00000;
 		region = MEM_BIOS;
-	} else if (addr >= 0x800000) {
+	} else if ((addr >= 0x800000) && (cart != NULL)) { //FIXME
 		addr -= 0x800000;
 		region = MEM_CART;
 	}
@@ -626,7 +571,7 @@ vluint8_t Trace68k::read_mem_8(vluint32_t addr)
   vluint32_t paddr = translate_addr(addr, region);
   
 	if (region == MEM_DRAM)
-		return bl[paddr & 7][paddr >> 3];
+		return ram[paddr];
 	if (region == MEM_BIOS)
 		return bios[paddr];
 	if (region == MEM_CART)
@@ -647,8 +592,8 @@ vluint16_t Trace68k::read_mem_16(vluint32_t addr)
   vluint32_t paddr1 = translate_addr(addr + 1, region);
 	
   if (region == MEM_DRAM)
-		return ((vluint16_t)bl[paddr & 7][paddr >> 3] << 8) 
-			| ((vluint16_t)bl[paddr1 & 7][paddr1 >> 3] << 0);
+		return ((vluint16_t)ram[paddr] << 8)
+			| ((vluint16_t)ram[paddr1] << 0);
 	if (region == MEM_BIOS)
 		return ((vluint16_t)bios[paddr] << 8)
 			| ((vluint16_t)bios[paddr1] << 0);
@@ -673,10 +618,10 @@ vluint32_t Trace68k::read_mem_32(vluint32_t addr)
 	vluint32_t paddr3 = translate_addr(addr + 3, region);
 
   if (region == MEM_DRAM)	
-		return ((vluint32_t)bl[paddr & 7][paddr >> 3] << 24) 
-			| ((vluint32_t)bl[paddr1 & 7][paddr1 >> 3] << 16)
-			| ((vluint32_t)bl[paddr2 & 7][paddr2 >> 3] << 8)
-			| ((vluint32_t)bl[paddr3 & 7][paddr3 >> 3] << 0);
+		return ((vluint32_t)ram[paddr] << 24)	
+			| ((vluint32_t)ram[paddr1] << 16)
+			| ((vluint32_t)ram[paddr2] << 8)
+			| ((vluint32_t)ram[paddr3] << 0);
 	if (region == MEM_BIOS)
 		return ((vluint32_t)bios[paddr] << 24)	
 			| ((vluint32_t)bios[paddr1] << 16)
