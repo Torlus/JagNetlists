@@ -39,7 +39,8 @@ DEF	MEM	(bbreq[0..1],gbreq[0..1],obbreq,sizin[0..1],dbrl[0..1],
 		mux,refack,reads,wet,oet,
 		ba,intswe,intwe,dspcsl:IO;
 
-        	w[0..3],rw,mreq,justify:BUS);
+        	w[0..3],rw,mreq,justify:BUS;
+					tlw, ram_rdy:IN); (* GE *)
 
 
 BEGIN
@@ -281,7 +282,11 @@ Q2a :=		FD2Q (q2a,q1d,clk,resetl);
 Q2b :=		FD2Q (q2b,d2b,clk,resetl);
 Q2c :=		FD2Q (q2c,d2c,clk,resetl);
 Q3a :=		FD2Q (q3a,d3a,clk,resetl);
-Q3b :=		FD2Q (q3b,q3a,clk,resetl);
+
+(* GE - synchronize DRAM access on ram_rdy signal *)
+(* GE Q3b :=		FD2Q (q3b,q3a,clk,resetl); *)
+Q3b :=		FD2Q (q3b,d3b,clk,resetl);
+
 Q4a :=		FD2Q (q4a,d4a,clk,resetl);
 Q4b :=		FD2Q (q4b,d4b,clk,resetl);
 Q4c :=		FD2Q (q4c,d4c,clk,resetl);
@@ -311,7 +316,9 @@ Q10u :=		DUMMY (q10);
 (* this signal is pipelined to improve the timing of ack *)
 
 Mtb0 :=		IV (mtb0,d0);
-Mtb1 :=		ND2 (mtb1,q3a,lastcycle);
+(* GE Mtb1 :=		ND2 (mtb1,q3a,lastcycle); *)
+Mtb1 :=		ND2 (mtb1,d3b,lastcycle);
+
 Mtb2 :=		IV (mtb2,q4h);
 Mtb3 :=		ND2 (mtb3,d5c,lastcycle);
 Mtb5 :=		ND3 (mtb5,d7a,lastc,notreadt);
@@ -353,7 +360,13 @@ Mt3a0 :=	ND6 (mt3a0,ack,mreqb,fdram,match,notrefack,notourack);
 Mt3a1 :=	ND2 (mt3a1,q2a,dramspeed3);
 Mt3a2 :=	IV (mt3a2,q2c);
 Mt3a3 :=	ND2 (mt3a3,q3b,notlastcycle);
-D3a :=		ND4 (d3a,mt3a0,mt3a1,mt3a2,mt3a3);
+(* GE D3a :=		ND4 (d3a,mt3a0,mt3a1,mt3a2,mt3a3); *)
+Rambsy := IV( ram_bsy, ram_rdy ); (* GE *)
+Mt3a4 :=	ND2 (mt3a4,q3a,ram_bsy); (* GE *)
+D3a :=		ND5 (d3a,mt3a0,mt3a1,mt3a2,mt3a3,mt3a4); (* GE *)
+
+(* GE *)
+D3b :=	AN2 (d3b,q3a,ram_rdy);
 
 D4a :=		AN3 (d4a,ack,mreqb,refack);
 
@@ -479,8 +492,13 @@ Startwe :=	FD1Q (startwe,swd,clk);
 
 Notrw :=	IV (notrw,rw);
 Dol :=		ND3 (doll,ack,notrw,mreqb);
-Lwdli :=	FD1Q (lwdli,doll,clk);
-Lwdl :=		NIVH (lwdl,lwdli);
+(* GE - made the signal longer, so the stlatch stuff works. *)
+(* GE - it seems to work for both internal and external access schemes *)
+(* GE Lwdli :=	FD1Q (lwdli,doll,clk); *)
+(* GE Lwdl :=		NIVH (lwdl,lwdli); *)
+Lwdli1 :=	FD1Q (lwdli1,doll,clk);
+Lwdli2 :=	FD1Q (lwdli2,doll,tlw);
+Lwdl :=		AN2 (lwdl,lwdli1,lwdli2);
 
 Allrasoffl :=	NR2 (allrasoffl,d4a,q4i);
 Allrasonl :=	IV (allrasonl,q4d);
@@ -536,8 +554,13 @@ Rasl[0] :=	RASGEN	(rasl[0],
 Rasl[1] :=	RASGEN	(rasl[1],
 		rason,rasoffl[1],bs[2],allrasonl,allrasoffl,clk,resetl);
 
-Clkl :=		IV (clkl,clk);
-Pclkl :=	IVH (pclkl,pclk);
+(* GE - avoid the use of inverted clocks *)
+(* GE Clkl :=		IV (clkl,clk);
+Pclkl :=	IVH (pclkl,pclk); *)
+Clkl :=		NIV (clkl,tlw);
+Pclkl :=	NIVH (pclkl,tlw);
+
+
 Casd[0] :=	ND2 (casd[0],startcas,bs[3]);
 Casd[1] :=	ND2 (casd[1],startcas,bs[2]);
 Cas00 :=	FD4Q (cas00,casd[0],pclkl,resetl);
@@ -553,7 +576,10 @@ Romcsl[0-1] :=	ND2 (romcsl[0-1],bs[0-1],romcst);
 Dspcsli :=	NR3 (dspcsli,q8a,q8b,q8c);
 Dspcsl :=	NIV (dspcsl,dspcsli);
 
-Int_we :=	ND3 (int_wel,q7a,notreads,clkl);
+(* GE - and with clk = bad *)
+(* GE Int_we :=	ND3 (int_wel,q7a,notreads,clkl); *)
+Int_we :=	ND2 (int_wel,q7a,notreads);
+
 Intwe :=	IVM (intwe,int_wel);
 Intswe :=	AN2 (intswe,q7a,notreads);
 
@@ -571,10 +597,15 @@ wet & memory width = 64 & bm[0]
 *)
 
 Mwsl[0-1] :=	IV (mwsl[0-1],mws[0-1]);
-Wet0 :=		FD2 (wet0,wet0l,startwe,pclkl,resetl);
+(* GE Wet0 :=		FD2 (wet0,wet0l,startwe,pclkl,resetl); *)
+Wet0 :=		FD2 (wet0,wet0l,startwe,tlw,resetl);
+
 Wetu :=		DUMMY (wet0);
+
 Weti :=		ND2 (weti,wet0l,int_wel);
 Wet :=		NIVU (wet,weti);
+
+
 Mws8 :=		AN2 (mws8,mwsl[1],mwsl[0]);
 Mws16 :=	AN2M (mws16,mwsl[1],mws[0]);
 Mws32 :=	AN2M (mws32,mws[1],mwsl[0]);

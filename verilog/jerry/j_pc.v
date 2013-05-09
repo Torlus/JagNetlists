@@ -250,160 +250,28 @@ assign program_count[23] = subq[22];
 assign adda_0 = subq[0] & jrel;
 
 // DSP_F-35.NET (320) - adda[1-22] : mx2
-mx2 adda_from_1_to_22_inst_0
-(
-	.z /* OUT */ (adda_1),
-	.a0 /* IN */ (pc_b1_obuf),
-	.a1 /* IN */ (subq[1]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_1
-(
-	.z /* OUT */ (adda_2),
-	.a0 /* IN */ (pc_b2_obuf),
-	.a1 /* IN */ (subq[2]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_2
-(
-	.z /* OUT */ (adda_3),
-	.a0 /* IN */ (pc_b3_obuf),
-	.a1 /* IN */ (subq[3]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_3
-(
-	.z /* OUT */ (adda_4),
-	.a0 /* IN */ (pc_b4_obuf),
-	.a1 /* IN */ (subq[4]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_4
-(
-	.z /* OUT */ (adda_5),
-	.a0 /* IN */ (pc_b5_obuf),
-	.a1 /* IN */ (subq[5]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_5
-(
-	.z /* OUT */ (adda_6),
-	.a0 /* IN */ (pc_b6_obuf),
-	.a1 /* IN */ (subq[6]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_6
-(
-	.z /* OUT */ (adda_7),
-	.a0 /* IN */ (pc_b7_obuf),
-	.a1 /* IN */ (subq[7]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_7
-(
-	.z /* OUT */ (adda_8),
-	.a0 /* IN */ (pc_b8_obuf),
-	.a1 /* IN */ (subq[8]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_8
-(
-	.z /* OUT */ (adda_9),
-	.a0 /* IN */ (pc_b9_obuf),
-	.a1 /* IN */ (subq[9]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_9
-(
-	.z /* OUT */ (adda_10),
-	.a0 /* IN */ (pc_b10_obuf),
-	.a1 /* IN */ (subq[10]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_10
-(
-	.z /* OUT */ (adda_11),
-	.a0 /* IN */ (pc_b11_obuf),
-	.a1 /* IN */ (subq[11]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_11
-(
-	.z /* OUT */ (adda_12),
-	.a0 /* IN */ (pc_b12_obuf),
-	.a1 /* IN */ (subq[12]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_12
-(
-	.z /* OUT */ (adda_13),
-	.a0 /* IN */ (pc_b13_obuf),
-	.a1 /* IN */ (subq[13]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_13
-(
-	.z /* OUT */ (adda_14),
-	.a0 /* IN */ (pc_b14_obuf),
-	.a1 /* IN */ (subq[14]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_14
-(
-	.z /* OUT */ (adda_15),
-	.a0 /* IN */ (pc_b15_obuf),
-	.a1 /* IN */ (subq[15]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_15
-(
-	.z /* OUT */ (adda_16),
-	.a0 /* IN */ (pc_b16_obuf),
-	.a1 /* IN */ (subq[16]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_16
-(
-	.z /* OUT */ (adda_17),
-	.a0 /* IN */ (pc_b17_obuf),
-	.a1 /* IN */ (subq[17]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_17
-(
-	.z /* OUT */ (adda_18),
-	.a0 /* IN */ (pc_b18_obuf),
-	.a1 /* IN */ (subq[18]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_18
-(
-	.z /* OUT */ (adda_19),
-	.a0 /* IN */ (pc_b19_obuf),
-	.a1 /* IN */ (subq[19]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_19
-(
-	.z /* OUT */ (adda_20),
-	.a0 /* IN */ (pc_b20_obuf),
-	.a1 /* IN */ (subq[20]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_20
-(
-	.z /* OUT */ (adda_21),
-	.a0 /* IN */ (pc_b21_obuf),
-	.a1 /* IN */ (subq[21]),
-	.s /* IN */ (jrel)
-);
-mx2 adda_from_1_to_22_inst_21
-(
-	.z /* OUT */ (adda_22),
-	.a0 /* IN */ (pc_b22_obuf),
-	.a1 /* IN */ (subq[22]),
-	.s /* IN */ (jrel)
-);
+assign adda_1 = (jrel) ? subq[1] : pc_b1_obuf;
+assign adda_2 = (jrel) ? subq[2] : pc_b2_obuf;
+assign adda_3 = (jrel) ? subq[3] : pc_b3_obuf;
+assign adda_4 = (jrel) ? subq[4] : pc_b4_obuf;
+assign adda_5 = (jrel) ? subq[5] : pc_b5_obuf;
+assign adda_6 = (jrel) ? subq[6] : pc_b6_obuf;
+assign adda_7 = (jrel) ? subq[7] : pc_b7_obuf;
+assign adda_8 = (jrel) ? subq[8] : pc_b8_obuf;
+assign adda_9 = (jrel) ? subq[9] : pc_b9_obuf;
+assign adda_10 = (jrel) ? subq[10] : pc_b10_obuf;
+assign adda_11 = (jrel) ? subq[11] : pc_b11_obuf;
+assign adda_12 = (jrel) ? subq[12] : pc_b12_obuf;
+assign adda_13 = (jrel) ? subq[13] : pc_b13_obuf;
+assign adda_14 = (jrel) ? subq[14] : pc_b14_obuf;
+assign adda_15 = (jrel) ? subq[15] : pc_b15_obuf;
+assign adda_16 = (jrel) ? subq[16] : pc_b16_obuf;
+assign adda_17 = (jrel) ? subq[17] : pc_b17_obuf;
+assign adda_18 = (jrel) ? subq[18] : pc_b18_obuf;
+assign adda_19 = (jrel) ? subq[19] : pc_b19_obuf;
+assign adda_20 = (jrel) ? subq[20] : pc_b20_obuf;
+assign adda_21 = (jrel) ? subq[21] : pc_b21_obuf;
+assign adda_22 = (jrel) ? subq[22] : pc_b22_obuf;
 
 // DSP_F-35.NET (322) - addb[0] : an2
 assign addb_0 = srcdp[0] & jrel;

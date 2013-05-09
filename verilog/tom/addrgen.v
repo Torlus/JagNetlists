@@ -430,462 +430,90 @@ assign gena2b_0 = gena2;
 assign gena2b_1 = gena2;
 
 // ADDRGEN.NET (75) - x[0-15] : mx2
-mx2 x_from_0_to_15_inst_0
-(
-	.z /* OUT */ (x_0),
-	.a0 /* IN */ (a1_x[0]),
-	.a1 /* IN */ (a2_x[0]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_1
-(
-	.z /* OUT */ (x_1),
-	.a0 /* IN */ (a1_x[1]),
-	.a1 /* IN */ (a2_x[1]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_2
-(
-	.z /* OUT */ (x_2),
-	.a0 /* IN */ (a1_x[2]),
-	.a1 /* IN */ (a2_x[2]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_3
-(
-	.z /* OUT */ (x_3),
-	.a0 /* IN */ (a1_x[3]),
-	.a1 /* IN */ (a2_x[3]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_4
-(
-	.z /* OUT */ (x_4),
-	.a0 /* IN */ (a1_x[4]),
-	.a1 /* IN */ (a2_x[4]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_5
-(
-	.z /* OUT */ (x_5),
-	.a0 /* IN */ (a1_x[5]),
-	.a1 /* IN */ (a2_x[5]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_6
-(
-	.z /* OUT */ (x_6),
-	.a0 /* IN */ (a1_x[6]),
-	.a1 /* IN */ (a2_x[6]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_7
-(
-	.z /* OUT */ (x_7),
-	.a0 /* IN */ (a1_x[7]),
-	.a1 /* IN */ (a2_x[7]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_8
-(
-	.z /* OUT */ (x_8),
-	.a0 /* IN */ (a1_x[8]),
-	.a1 /* IN */ (a2_x[8]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_9
-(
-	.z /* OUT */ (x_9),
-	.a0 /* IN */ (a1_x[9]),
-	.a1 /* IN */ (a2_x[9]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_10
-(
-	.z /* OUT */ (x_10),
-	.a0 /* IN */ (a1_x[10]),
-	.a1 /* IN */ (a2_x[10]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_11
-(
-	.z /* OUT */ (x_11),
-	.a0 /* IN */ (a1_x[11]),
-	.a1 /* IN */ (a2_x[11]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_12
-(
-	.z /* OUT */ (x_12),
-	.a0 /* IN */ (a1_x[12]),
-	.a1 /* IN */ (a2_x[12]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_13
-(
-	.z /* OUT */ (x_13),
-	.a0 /* IN */ (a1_x[13]),
-	.a1 /* IN */ (a2_x[13]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_14
-(
-	.z /* OUT */ (x_14),
-	.a0 /* IN */ (a1_x[14]),
-	.a1 /* IN */ (a2_x[14]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 x_from_0_to_15_inst_15
-(
-	.z /* OUT */ (x_15),
-	.a0 /* IN */ (a1_x[15]),
-	.a1 /* IN */ (a2_x[15]),
-	.s /* IN */ (gena2b_0)
-);
+assign x_0 = (gena2b_0) ? a2_x[0] : a1_x[0];
+assign x_1 = (gena2b_0) ? a2_x[1] : a1_x[1];
+assign x_2 = (gena2b_0) ? a2_x[2] : a1_x[2];
+assign x_3 = (gena2b_0) ? a2_x[3] : a1_x[3];
+assign x_4 = (gena2b_0) ? a2_x[4] : a1_x[4];
+assign x_5 = (gena2b_0) ? a2_x[5] : a1_x[5];
+assign x_6 = (gena2b_0) ? a2_x[6] : a1_x[6];
+assign x_7 = (gena2b_0) ? a2_x[7] : a1_x[7];
+assign x_8 = (gena2b_0) ? a2_x[8] : a1_x[8];
+assign x_9 = (gena2b_0) ? a2_x[9] : a1_x[9];
+assign x_10 = (gena2b_0) ? a2_x[10] : a1_x[10];
+assign x_11 = (gena2b_0) ? a2_x[11] : a1_x[11];
+assign x_12 = (gena2b_0) ? a2_x[12] : a1_x[12];
+assign x_13 = (gena2b_0) ? a2_x[13] : a1_x[13];
+assign x_14 = (gena2b_0) ? a2_x[14] : a1_x[14];
+assign x_15 = (gena2b_0) ? a2_x[15] : a1_x[15];
 
 // ADDRGEN.NET (78) - y[0-11] : mx2
-mx2 y_from_0_to_11_inst_0
-(
-	.z /* OUT */ (y_0),
-	.a0 /* IN */ (a1_y[0]),
-	.a1 /* IN */ (a2_y[0]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_1
-(
-	.z /* OUT */ (y_1),
-	.a0 /* IN */ (a1_y[1]),
-	.a1 /* IN */ (a2_y[1]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_2
-(
-	.z /* OUT */ (y_2),
-	.a0 /* IN */ (a1_y[2]),
-	.a1 /* IN */ (a2_y[2]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_3
-(
-	.z /* OUT */ (y_3),
-	.a0 /* IN */ (a1_y[3]),
-	.a1 /* IN */ (a2_y[3]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_4
-(
-	.z /* OUT */ (y_4),
-	.a0 /* IN */ (a1_y[4]),
-	.a1 /* IN */ (a2_y[4]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_5
-(
-	.z /* OUT */ (y_5),
-	.a0 /* IN */ (a1_y[5]),
-	.a1 /* IN */ (a2_y[5]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_6
-(
-	.z /* OUT */ (y_6),
-	.a0 /* IN */ (a1_y[6]),
-	.a1 /* IN */ (a2_y[6]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_7
-(
-	.z /* OUT */ (y_7),
-	.a0 /* IN */ (a1_y[7]),
-	.a1 /* IN */ (a2_y[7]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_8
-(
-	.z /* OUT */ (y_8),
-	.a0 /* IN */ (a1_y[8]),
-	.a1 /* IN */ (a2_y[8]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_9
-(
-	.z /* OUT */ (y_9),
-	.a0 /* IN */ (a1_y[9]),
-	.a1 /* IN */ (a2_y[9]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_10
-(
-	.z /* OUT */ (y_10),
-	.a0 /* IN */ (a1_y[10]),
-	.a1 /* IN */ (a2_y[10]),
-	.s /* IN */ (gena2b_0)
-);
-mx2 y_from_0_to_11_inst_11
-(
-	.z /* OUT */ (y_11),
-	.a0 /* IN */ (a1_y[11]),
-	.a1 /* IN */ (a2_y[11]),
-	.s /* IN */ (gena2b_0)
-);
+assign y_0 = (gena2b_0) ? a2_y[0] : a1_y[0];
+assign y_1 = (gena2b_0) ? a2_y[1] : a1_y[1];
+assign y_2 = (gena2b_0) ? a2_y[2] : a1_y[2];
+assign y_3 = (gena2b_0) ? a2_y[3] : a1_y[3];
+assign y_4 = (gena2b_0) ? a2_y[4] : a1_y[4];
+assign y_5 = (gena2b_0) ? a2_y[5] : a1_y[5];
+assign y_6 = (gena2b_0) ? a2_y[6] : a1_y[6];
+assign y_7 = (gena2b_0) ? a2_y[7] : a1_y[7];
+assign y_8 = (gena2b_0) ? a2_y[8] : a1_y[8];
+assign y_9 = (gena2b_0) ? a2_y[9] : a1_y[9];
+assign y_10 = (gena2b_0) ? a2_y[10] : a1_y[10];
+assign y_11 = (gena2b_0) ? a2_y[11] : a1_y[11];
 
 // ADDRGEN.NET (81) - width[0-5] : mx2u
-mx2 width_from_0_to_5_inst_0
-(
-	.z /* OUT */ (width_0),
-	.a0 /* IN */ (a1_width_0),
-	.a1 /* IN */ (a2_width_0),
-	.s /* IN */ (gena2b_1)
-);
-mx2 width_from_0_to_5_inst_1
-(
-	.z /* OUT */ (width_1),
-	.a0 /* IN */ (a1_width_1),
-	.a1 /* IN */ (a2_width_1),
-	.s /* IN */ (gena2b_1)
-);
-mx2 width_from_0_to_5_inst_2
-(
-	.z /* OUT */ (width_2),
-	.a0 /* IN */ (a1_width_2),
-	.a1 /* IN */ (a2_width_2),
-	.s /* IN */ (gena2b_1)
-);
-mx2 width_from_0_to_5_inst_3
-(
-	.z /* OUT */ (width_3),
-	.a0 /* IN */ (a1_width_3),
-	.a1 /* IN */ (a2_width_3),
-	.s /* IN */ (gena2b_1)
-);
-mx2 width_from_0_to_5_inst_4
-(
-	.z /* OUT */ (width_4),
-	.a0 /* IN */ (a1_width_4),
-	.a1 /* IN */ (a2_width_4),
-	.s /* IN */ (gena2b_1)
-);
-mx2 width_from_0_to_5_inst_5
-(
-	.z /* OUT */ (width_5),
-	.a0 /* IN */ (a1_width_5),
-	.a1 /* IN */ (a2_width_5),
-	.s /* IN */ (gena2b_1)
-);
+assign width_0 = (gena2b_1) ? a2_width_0 : a1_width_0;
+assign width_1 = (gena2b_1) ? a2_width_1 : a1_width_1;
+assign width_2 = (gena2b_1) ? a2_width_2 : a1_width_2;
+assign width_3 = (gena2b_1) ? a2_width_3 : a1_width_3;
+assign width_4 = (gena2b_1) ? a2_width_4 : a1_width_4;
+assign width_5 = (gena2b_1) ? a2_width_5 : a1_width_5;
 
 // ADDRGEN.NET (83) - width\[4] : iv
 assign width_n_4 = ~width_4;
 
 // ADDRGEN.NET (85) - pixsize[0-2] : mx2u
-mx2 pixsize_from_0_to_2_inst_0
-(
-	.z /* OUT */ (pixsize_0),
-	.a0 /* IN */ (a1_pixsize_0),
-	.a1 /* IN */ (a2_pixsize_0),
-	.s /* IN */ (gena2b_1)
-);
-mx2 pixsize_from_0_to_2_inst_1
-(
-	.z /* OUT */ (pixsize_1),
-	.a0 /* IN */ (a1_pixsize_1),
-	.a1 /* IN */ (a2_pixsize_1),
-	.s /* IN */ (gena2b_1)
-);
-mx2 pixsize_from_0_to_2_inst_2
-(
-	.z /* OUT */ (pixsize_2),
-	.a0 /* IN */ (a1_pixsize_2),
-	.a1 /* IN */ (a2_pixsize_2),
-	.s /* IN */ (gena2b_1)
-);
+assign pixsize_0 = (gena2b_1) ? a2_pixsize_0 : a1_pixsize_0;
+assign pixsize_1 = (gena2b_1) ? a2_pixsize_1 : a1_pixsize_1;
+assign pixsize_2 = (gena2b_1) ? a2_pixsize_2 : a1_pixsize_2;
 
 // ADDRGEN.NET (87) - pissizeb[0] : nivu
 assign pixsizeb_0 = pixsize_0;
 
 // ADDRGEN.NET (89) - pitch[0-1] : mx2p
-mx2 pitch_from_0_to_1_inst_0
-(
-	.z /* OUT */ (pitch_0),
-	.a0 /* IN */ (a1_pitch_0),
-	.a1 /* IN */ (a2_pitch_0),
-	.s /* IN */ (gena2b_1)
-);
-mx2 pitch_from_0_to_1_inst_1
-(
-	.z /* OUT */ (pitch_1),
-	.a0 /* IN */ (a1_pitch_1),
-	.a1 /* IN */ (a2_pitch_1),
-	.s /* IN */ (gena2b_1)
-);
+assign pitch_0 = (gena2b_1) ? a2_pitch_0 : a1_pitch_0;
+assign pitch_1 = (gena2b_1) ? a2_pitch_1 : a1_pitch_1;
 
 // ADDRGEN.NET (91) - pitch\[0-1] : iv
 assign pitch_n_0 = ~pitch_0;
 assign pitch_n_1 = ~pitch_1;
 
 // ADDRGEN.NET (93) - base : mx2p
-mx2 base_inst_0
-(
-	.z /* OUT */ (base[0]),
-	.a0 /* IN */ (a1_base[0]),
-	.a1 /* IN */ (a2_base[0]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_1
-(
-	.z /* OUT */ (base[1]),
-	.a0 /* IN */ (a1_base[1]),
-	.a1 /* IN */ (a2_base[1]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_2
-(
-	.z /* OUT */ (base[2]),
-	.a0 /* IN */ (a1_base[2]),
-	.a1 /* IN */ (a2_base[2]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_3
-(
-	.z /* OUT */ (base[3]),
-	.a0 /* IN */ (a1_base[3]),
-	.a1 /* IN */ (a2_base[3]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_4
-(
-	.z /* OUT */ (base[4]),
-	.a0 /* IN */ (a1_base[4]),
-	.a1 /* IN */ (a2_base[4]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_5
-(
-	.z /* OUT */ (base[5]),
-	.a0 /* IN */ (a1_base[5]),
-	.a1 /* IN */ (a2_base[5]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_6
-(
-	.z /* OUT */ (base[6]),
-	.a0 /* IN */ (a1_base[6]),
-	.a1 /* IN */ (a2_base[6]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_7
-(
-	.z /* OUT */ (base[7]),
-	.a0 /* IN */ (a1_base[7]),
-	.a1 /* IN */ (a2_base[7]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_8
-(
-	.z /* OUT */ (base[8]),
-	.a0 /* IN */ (a1_base[8]),
-	.a1 /* IN */ (a2_base[8]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_9
-(
-	.z /* OUT */ (base[9]),
-	.a0 /* IN */ (a1_base[9]),
-	.a1 /* IN */ (a2_base[9]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_10
-(
-	.z /* OUT */ (base[10]),
-	.a0 /* IN */ (a1_base[10]),
-	.a1 /* IN */ (a2_base[10]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_11
-(
-	.z /* OUT */ (base[11]),
-	.a0 /* IN */ (a1_base[11]),
-	.a1 /* IN */ (a2_base[11]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_12
-(
-	.z /* OUT */ (base[12]),
-	.a0 /* IN */ (a1_base[12]),
-	.a1 /* IN */ (a2_base[12]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_13
-(
-	.z /* OUT */ (base[13]),
-	.a0 /* IN */ (a1_base[13]),
-	.a1 /* IN */ (a2_base[13]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_14
-(
-	.z /* OUT */ (base[14]),
-	.a0 /* IN */ (a1_base[14]),
-	.a1 /* IN */ (a2_base[14]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_15
-(
-	.z /* OUT */ (base[15]),
-	.a0 /* IN */ (a1_base[15]),
-	.a1 /* IN */ (a2_base[15]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_16
-(
-	.z /* OUT */ (base[16]),
-	.a0 /* IN */ (a1_base[16]),
-	.a1 /* IN */ (a2_base[16]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_17
-(
-	.z /* OUT */ (base[17]),
-	.a0 /* IN */ (a1_base[17]),
-	.a1 /* IN */ (a2_base[17]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_18
-(
-	.z /* OUT */ (base[18]),
-	.a0 /* IN */ (a1_base[18]),
-	.a1 /* IN */ (a2_base[18]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_19
-(
-	.z /* OUT */ (base[19]),
-	.a0 /* IN */ (a1_base[19]),
-	.a1 /* IN */ (a2_base[19]),
-	.s /* IN */ (gena2)
-);
-mx2 base_inst_20
-(
-	.z /* OUT */ (base[20]),
-	.a0 /* IN */ (a1_base[20]),
-	.a1 /* IN */ (a2_base[20]),
-	.s /* IN */ (gena2)
-);
+assign base[0] = (gena2) ? a2_base[0] : a1_base[0];
+assign base[1] = (gena2) ? a2_base[1] : a1_base[1];
+assign base[2] = (gena2) ? a2_base[2] : a1_base[2];
+assign base[3] = (gena2) ? a2_base[3] : a1_base[3];
+assign base[4] = (gena2) ? a2_base[4] : a1_base[4];
+assign base[5] = (gena2) ? a2_base[5] : a1_base[5];
+assign base[6] = (gena2) ? a2_base[6] : a1_base[6];
+assign base[7] = (gena2) ? a2_base[7] : a1_base[7];
+assign base[8] = (gena2) ? a2_base[8] : a1_base[8];
+assign base[9] = (gena2) ? a2_base[9] : a1_base[9];
+assign base[10] = (gena2) ? a2_base[10] : a1_base[10];
+assign base[11] = (gena2) ? a2_base[11] : a1_base[11];
+assign base[12] = (gena2) ? a2_base[12] : a1_base[12];
+assign base[13] = (gena2) ? a2_base[13] : a1_base[13];
+assign base[14] = (gena2) ? a2_base[14] : a1_base[14];
+assign base[15] = (gena2) ? a2_base[15] : a1_base[15];
+assign base[16] = (gena2) ? a2_base[16] : a1_base[16];
+assign base[17] = (gena2) ? a2_base[17] : a1_base[17];
+assign base[18] = (gena2) ? a2_base[18] : a1_base[18];
+assign base[19] = (gena2) ? a2_base[19] : a1_base[19];
+assign base[20] = (gena2) ? a2_base[20] : a1_base[20];
 
 // ADDRGEN.NET (95) - zoffset[0-1] : mx2
-mx2 zoffset_from_0_to_1_inst_0
-(
-	.z /* OUT */ (zoffset_0),
-	.a0 /* IN */ (a1_zoffset_0),
-	.a1 /* IN */ (a2_zoffset_0),
-	.s /* IN */ (gena2b_1)
-);
-mx2 zoffset_from_0_to_1_inst_1
-(
-	.z /* OUT */ (zoffset_1),
-	.a0 /* IN */ (a1_zoffset_1),
-	.a1 /* IN */ (a2_zoffset_1),
-	.s /* IN */ (gena2b_1)
-);
+assign zoffset_0 = (gena2b_1) ? a2_zoffset_0 : a1_zoffset_0;
+assign zoffset_1 = (gena2b_1) ? a2_zoffset_1 : a1_zoffset_1;
 
 // ADDRGEN.NET (107) - ym1[0-11] : an2p
 assign ym1_0 = width_1 & y_0;
@@ -2581,174 +2209,30 @@ assign addrgen[23] = addr_20;
 assign apipeb = apipe;
 
 // ADDRGEN.NET (361) - addressi : mx2p
-mx2 addressi_inst_0
-(
-	.z /* OUT */ (address_b0_obuf),
-	.a0 /* IN */ (addressi[0]),
-	.a1 /* IN */ (addrgen[0]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_1
-(
-	.z /* OUT */ (address_b1_obuf),
-	.a0 /* IN */ (addressi[1]),
-	.a1 /* IN */ (addrgen[1]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_2
-(
-	.z /* OUT */ (address_b2_obuf),
-	.a0 /* IN */ (addressi[2]),
-	.a1 /* IN */ (addrgen[2]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_3
-(
-	.z /* OUT */ (address_b3_obuf),
-	.a0 /* IN */ (addressi[3]),
-	.a1 /* IN */ (addrgen[3]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_4
-(
-	.z /* OUT */ (address_b4_obuf),
-	.a0 /* IN */ (addressi[4]),
-	.a1 /* IN */ (addrgen[4]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_5
-(
-	.z /* OUT */ (address_b5_obuf),
-	.a0 /* IN */ (addressi[5]),
-	.a1 /* IN */ (addrgen[5]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_6
-(
-	.z /* OUT */ (address_b6_obuf),
-	.a0 /* IN */ (addressi[6]),
-	.a1 /* IN */ (addrgen[6]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_7
-(
-	.z /* OUT */ (address_b7_obuf),
-	.a0 /* IN */ (addressi[7]),
-	.a1 /* IN */ (addrgen[7]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_8
-(
-	.z /* OUT */ (address_b8_obuf),
-	.a0 /* IN */ (addressi[8]),
-	.a1 /* IN */ (addrgen[8]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_9
-(
-	.z /* OUT */ (address_b9_obuf),
-	.a0 /* IN */ (addressi[9]),
-	.a1 /* IN */ (addrgen[9]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_10
-(
-	.z /* OUT */ (address_b10_obuf),
-	.a0 /* IN */ (addressi[10]),
-	.a1 /* IN */ (addrgen[10]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_11
-(
-	.z /* OUT */ (address_b11_obuf),
-	.a0 /* IN */ (addressi[11]),
-	.a1 /* IN */ (addrgen[11]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_12
-(
-	.z /* OUT */ (address_b12_obuf),
-	.a0 /* IN */ (addressi[12]),
-	.a1 /* IN */ (addrgen[12]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_13
-(
-	.z /* OUT */ (address_b13_obuf),
-	.a0 /* IN */ (addressi[13]),
-	.a1 /* IN */ (addrgen[13]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_14
-(
-	.z /* OUT */ (address_b14_obuf),
-	.a0 /* IN */ (addressi[14]),
-	.a1 /* IN */ (addrgen[14]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_15
-(
-	.z /* OUT */ (address_b15_obuf),
-	.a0 /* IN */ (addressi[15]),
-	.a1 /* IN */ (addrgen[15]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_16
-(
-	.z /* OUT */ (address_b16_obuf),
-	.a0 /* IN */ (addressi[16]),
-	.a1 /* IN */ (addrgen[16]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_17
-(
-	.z /* OUT */ (address_b17_obuf),
-	.a0 /* IN */ (addressi[17]),
-	.a1 /* IN */ (addrgen[17]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_18
-(
-	.z /* OUT */ (address_b18_obuf),
-	.a0 /* IN */ (addressi[18]),
-	.a1 /* IN */ (addrgen[18]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_19
-(
-	.z /* OUT */ (address_b19_obuf),
-	.a0 /* IN */ (addressi[19]),
-	.a1 /* IN */ (addrgen[19]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_20
-(
-	.z /* OUT */ (address_b20_obuf),
-	.a0 /* IN */ (addressi[20]),
-	.a1 /* IN */ (addrgen[20]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_21
-(
-	.z /* OUT */ (address_b21_obuf),
-	.a0 /* IN */ (addressi[21]),
-	.a1 /* IN */ (addrgen[21]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_22
-(
-	.z /* OUT */ (address_b22_obuf),
-	.a0 /* IN */ (addressi[22]),
-	.a1 /* IN */ (addrgen[22]),
-	.s /* IN */ (apipeb)
-);
-mx2 addressi_inst_23
-(
-	.z /* OUT */ (address_b23_obuf),
-	.a0 /* IN */ (addressi[23]),
-	.a1 /* IN */ (addrgen[23]),
-	.s /* IN */ (apipeb)
-);
+assign address_b0_obuf = (apipeb) ? addrgen[0] : addressi[0];
+assign address_b1_obuf = (apipeb) ? addrgen[1] : addressi[1];
+assign address_b2_obuf = (apipeb) ? addrgen[2] : addressi[2];
+assign address_b3_obuf = (apipeb) ? addrgen[3] : addressi[3];
+assign address_b4_obuf = (apipeb) ? addrgen[4] : addressi[4];
+assign address_b5_obuf = (apipeb) ? addrgen[5] : addressi[5];
+assign address_b6_obuf = (apipeb) ? addrgen[6] : addressi[6];
+assign address_b7_obuf = (apipeb) ? addrgen[7] : addressi[7];
+assign address_b8_obuf = (apipeb) ? addrgen[8] : addressi[8];
+assign address_b9_obuf = (apipeb) ? addrgen[9] : addressi[9];
+assign address_b10_obuf = (apipeb) ? addrgen[10] : addressi[10];
+assign address_b11_obuf = (apipeb) ? addrgen[11] : addressi[11];
+assign address_b12_obuf = (apipeb) ? addrgen[12] : addressi[12];
+assign address_b13_obuf = (apipeb) ? addrgen[13] : addressi[13];
+assign address_b14_obuf = (apipeb) ? addrgen[14] : addressi[14];
+assign address_b15_obuf = (apipeb) ? addrgen[15] : addressi[15];
+assign address_b16_obuf = (apipeb) ? addrgen[16] : addressi[16];
+assign address_b17_obuf = (apipeb) ? addrgen[17] : addressi[17];
+assign address_b18_obuf = (apipeb) ? addrgen[18] : addressi[18];
+assign address_b19_obuf = (apipeb) ? addrgen[19] : addressi[19];
+assign address_b20_obuf = (apipeb) ? addrgen[20] : addressi[20];
+assign address_b21_obuf = (apipeb) ? addrgen[21] : addressi[21];
+assign address_b22_obuf = (apipeb) ? addrgen[22] : addressi[22];
+assign address_b23_obuf = (apipeb) ? addrgen[23] : addressi[23];
 
 // ADDRGEN.NET (362) - address : fd1q
 fd1q address_inst_0

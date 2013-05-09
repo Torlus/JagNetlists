@@ -250,118 +250,22 @@ assign gpu_d_lo16[15] = gpu_din[15];
 assign countldb = countld;
 
 // INNER.NET (591) - cntval : mx2
-mx2 cntval_inst_0
-(
-	.z /* OUT */ (cntval[0]),
-	.a0 /* IN */ (cntvall[0]),
-	.a1 /* IN */ (gpu_d_lo16[0]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_1
-(
-	.z /* OUT */ (cntval[1]),
-	.a0 /* IN */ (cntvall[1]),
-	.a1 /* IN */ (gpu_d_lo16[1]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_2
-(
-	.z /* OUT */ (cntval[2]),
-	.a0 /* IN */ (cntvall[2]),
-	.a1 /* IN */ (gpu_d_lo16[2]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_3
-(
-	.z /* OUT */ (cntval[3]),
-	.a0 /* IN */ (cntvall[3]),
-	.a1 /* IN */ (gpu_d_lo16[3]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_4
-(
-	.z /* OUT */ (cntval[4]),
-	.a0 /* IN */ (cntvall[4]),
-	.a1 /* IN */ (gpu_d_lo16[4]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_5
-(
-	.z /* OUT */ (cntval[5]),
-	.a0 /* IN */ (cntvall[5]),
-	.a1 /* IN */ (gpu_d_lo16[5]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_6
-(
-	.z /* OUT */ (cntval[6]),
-	.a0 /* IN */ (cntvall[6]),
-	.a1 /* IN */ (gpu_d_lo16[6]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_7
-(
-	.z /* OUT */ (cntval[7]),
-	.a0 /* IN */ (cntvall[7]),
-	.a1 /* IN */ (gpu_d_lo16[7]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_8
-(
-	.z /* OUT */ (cntval[8]),
-	.a0 /* IN */ (cntvall[8]),
-	.a1 /* IN */ (gpu_d_lo16[8]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_9
-(
-	.z /* OUT */ (cntval[9]),
-	.a0 /* IN */ (cntvall[9]),
-	.a1 /* IN */ (gpu_d_lo16[9]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_10
-(
-	.z /* OUT */ (cntval[10]),
-	.a0 /* IN */ (cntvall[10]),
-	.a1 /* IN */ (gpu_d_lo16[10]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_11
-(
-	.z /* OUT */ (cntval[11]),
-	.a0 /* IN */ (cntvall[11]),
-	.a1 /* IN */ (gpu_d_lo16[11]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_12
-(
-	.z /* OUT */ (cntval[12]),
-	.a0 /* IN */ (cntvall[12]),
-	.a1 /* IN */ (gpu_d_lo16[12]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_13
-(
-	.z /* OUT */ (cntval[13]),
-	.a0 /* IN */ (cntvall[13]),
-	.a1 /* IN */ (gpu_d_lo16[13]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_14
-(
-	.z /* OUT */ (cntval[14]),
-	.a0 /* IN */ (cntvall[14]),
-	.a1 /* IN */ (gpu_d_lo16[14]),
-	.s /* IN */ (countldb)
-);
-mx2 cntval_inst_15
-(
-	.z /* OUT */ (cntval[15]),
-	.a0 /* IN */ (cntvall[15]),
-	.a1 /* IN */ (gpu_d_lo16[15]),
-	.s /* IN */ (countldb)
-);
+assign cntval[0] = (countldb) ? gpu_d_lo16[0] : cntvall[0];
+assign cntval[1] = (countldb) ? gpu_d_lo16[1] : cntvall[1];
+assign cntval[2] = (countldb) ? gpu_d_lo16[2] : cntvall[2];
+assign cntval[3] = (countldb) ? gpu_d_lo16[3] : cntvall[3];
+assign cntval[4] = (countldb) ? gpu_d_lo16[4] : cntvall[4];
+assign cntval[5] = (countldb) ? gpu_d_lo16[5] : cntvall[5];
+assign cntval[6] = (countldb) ? gpu_d_lo16[6] : cntvall[6];
+assign cntval[7] = (countldb) ? gpu_d_lo16[7] : cntvall[7];
+assign cntval[8] = (countldb) ? gpu_d_lo16[8] : cntvall[8];
+assign cntval[9] = (countldb) ? gpu_d_lo16[9] : cntvall[9];
+assign cntval[10] = (countldb) ? gpu_d_lo16[10] : cntvall[10];
+assign cntval[11] = (countldb) ? gpu_d_lo16[11] : cntvall[11];
+assign cntval[12] = (countldb) ? gpu_d_lo16[12] : cntvall[12];
+assign cntval[13] = (countldb) ? gpu_d_lo16[13] : cntvall[13];
+assign cntval[14] = (countldb) ? gpu_d_lo16[14] : cntvall[14];
+assign cntval[15] = (countldb) ? gpu_d_lo16[15] : cntvall[15];
 
 // INNER.NET (592) - cntvall : fd1q
 fd1q cntvall_inst_0

@@ -96,31 +96,13 @@ assign bm68k = m68k & bmcpu;
 assign sizin_2 = ~(sizin_0 | sizin_1);
 
 // CPU.NET (38) - xw[0] : mx2
-mx2 xw_index_0_inst
-(
-	.z /* OUT */ (xw_0),
-	.a0 /* IN */ (sizin_0),
-	.a1 /* IN */ (w68k_0),
-	.s /* IN */ (bm68k)
-);
+assign xw_0 = (bm68k) ? w68k_0 : sizin_0;
 
 // CPU.NET (39) - xw[1] : mx2
-mx2 xw_index_1_inst
-(
-	.z /* OUT */ (xw_1),
-	.a0 /* IN */ (sizin_1),
-	.a1 /* IN */ (w68k_1),
-	.s /* IN */ (bm68k)
-);
+assign xw_1 = (bm68k) ? w68k_1 : sizin_1;
 
 // CPU.NET (40) - xw[2] : mx2
-mx2 xw_index_2_inst
-(
-	.z /* OUT */ (xw_2),
-	.a0 /* IN */ (sizin_2),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (bm68k)
-);
+assign xw_2 = (bm68k) ? gnd : sizin_2;
 
 // CPU.NET (42) - xp : ivm
 assign xp = ~intbm;

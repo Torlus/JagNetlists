@@ -1385,174 +1385,30 @@ ldp1q dat_addr_inst_23
 );
 
 // GATEWAY.NET (192) - out_addr : mx2
-mx2 out_addr_inst_0
-(
-	.z /* OUT */ (out_addr[0]),
-	.a0 /* IN */ (dat_addr[0]),
-	.a1 /* IN */ (cpu_addr[0]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_1
-(
-	.z /* OUT */ (out_addr[1]),
-	.a0 /* IN */ (dat_addr[1]),
-	.a1 /* IN */ (cpu_addr[1]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_2
-(
-	.z /* OUT */ (out_addr[2]),
-	.a0 /* IN */ (dat_addr[2]),
-	.a1 /* IN */ (cpu_addr[2]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_3
-(
-	.z /* OUT */ (out_addr[3]),
-	.a0 /* IN */ (dat_addr[3]),
-	.a1 /* IN */ (cpu_addr[3]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_4
-(
-	.z /* OUT */ (out_addr[4]),
-	.a0 /* IN */ (dat_addr[4]),
-	.a1 /* IN */ (cpu_addr[4]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_5
-(
-	.z /* OUT */ (out_addr[5]),
-	.a0 /* IN */ (dat_addr[5]),
-	.a1 /* IN */ (cpu_addr[5]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_6
-(
-	.z /* OUT */ (out_addr[6]),
-	.a0 /* IN */ (dat_addr[6]),
-	.a1 /* IN */ (cpu_addr[6]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_7
-(
-	.z /* OUT */ (out_addr[7]),
-	.a0 /* IN */ (dat_addr[7]),
-	.a1 /* IN */ (cpu_addr[7]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_8
-(
-	.z /* OUT */ (out_addr[8]),
-	.a0 /* IN */ (dat_addr[8]),
-	.a1 /* IN */ (cpu_addr[8]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_9
-(
-	.z /* OUT */ (out_addr[9]),
-	.a0 /* IN */ (dat_addr[9]),
-	.a1 /* IN */ (cpu_addr[9]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_10
-(
-	.z /* OUT */ (out_addr[10]),
-	.a0 /* IN */ (dat_addr[10]),
-	.a1 /* IN */ (cpu_addr[10]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_11
-(
-	.z /* OUT */ (out_addr[11]),
-	.a0 /* IN */ (dat_addr[11]),
-	.a1 /* IN */ (cpu_addr[11]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_12
-(
-	.z /* OUT */ (out_addr[12]),
-	.a0 /* IN */ (dat_addr[12]),
-	.a1 /* IN */ (cpu_addr[12]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_13
-(
-	.z /* OUT */ (out_addr[13]),
-	.a0 /* IN */ (dat_addr[13]),
-	.a1 /* IN */ (cpu_addr[13]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_14
-(
-	.z /* OUT */ (out_addr[14]),
-	.a0 /* IN */ (dat_addr[14]),
-	.a1 /* IN */ (cpu_addr[14]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_15
-(
-	.z /* OUT */ (out_addr[15]),
-	.a0 /* IN */ (dat_addr[15]),
-	.a1 /* IN */ (cpu_addr[15]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_16
-(
-	.z /* OUT */ (out_addr[16]),
-	.a0 /* IN */ (dat_addr[16]),
-	.a1 /* IN */ (cpu_addr[16]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_17
-(
-	.z /* OUT */ (out_addr[17]),
-	.a0 /* IN */ (dat_addr[17]),
-	.a1 /* IN */ (cpu_addr[17]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_18
-(
-	.z /* OUT */ (out_addr[18]),
-	.a0 /* IN */ (dat_addr[18]),
-	.a1 /* IN */ (cpu_addr[18]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_19
-(
-	.z /* OUT */ (out_addr[19]),
-	.a0 /* IN */ (dat_addr[19]),
-	.a1 /* IN */ (cpu_addr[19]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_20
-(
-	.z /* OUT */ (out_addr[20]),
-	.a0 /* IN */ (dat_addr[20]),
-	.a1 /* IN */ (cpu_addr[20]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_21
-(
-	.z /* OUT */ (out_addr[21]),
-	.a0 /* IN */ (dat_addr[21]),
-	.a1 /* IN */ (cpu_addr[21]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_22
-(
-	.z /* OUT */ (out_addr[22]),
-	.a0 /* IN */ (dat_addr[22]),
-	.a1 /* IN */ (cpu_addr[22]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_23
-(
-	.z /* OUT */ (out_addr[23]),
-	.a0 /* IN */ (dat_addr[23]),
-	.a1 /* IN */ (cpu_addr[23]),
-	.s /* IN */ (progown)
-);
+assign out_addr[0] = (progown) ? cpu_addr[0] : dat_addr[0];
+assign out_addr[1] = (progown) ? cpu_addr[1] : dat_addr[1];
+assign out_addr[2] = (progown) ? cpu_addr[2] : dat_addr[2];
+assign out_addr[3] = (progown) ? cpu_addr[3] : dat_addr[3];
+assign out_addr[4] = (progown) ? cpu_addr[4] : dat_addr[4];
+assign out_addr[5] = (progown) ? cpu_addr[5] : dat_addr[5];
+assign out_addr[6] = (progown) ? cpu_addr[6] : dat_addr[6];
+assign out_addr[7] = (progown) ? cpu_addr[7] : dat_addr[7];
+assign out_addr[8] = (progown) ? cpu_addr[8] : dat_addr[8];
+assign out_addr[9] = (progown) ? cpu_addr[9] : dat_addr[9];
+assign out_addr[10] = (progown) ? cpu_addr[10] : dat_addr[10];
+assign out_addr[11] = (progown) ? cpu_addr[11] : dat_addr[11];
+assign out_addr[12] = (progown) ? cpu_addr[12] : dat_addr[12];
+assign out_addr[13] = (progown) ? cpu_addr[13] : dat_addr[13];
+assign out_addr[14] = (progown) ? cpu_addr[14] : dat_addr[14];
+assign out_addr[15] = (progown) ? cpu_addr[15] : dat_addr[15];
+assign out_addr[16] = (progown) ? cpu_addr[16] : dat_addr[16];
+assign out_addr[17] = (progown) ? cpu_addr[17] : dat_addr[17];
+assign out_addr[18] = (progown) ? cpu_addr[18] : dat_addr[18];
+assign out_addr[19] = (progown) ? cpu_addr[19] : dat_addr[19];
+assign out_addr[20] = (progown) ? cpu_addr[20] : dat_addr[20];
+assign out_addr[21] = (progown) ? cpu_addr[21] : dat_addr[21];
+assign out_addr[22] = (progown) ? cpu_addr[22] : dat_addr[22];
+assign out_addr[23] = (progown) ? cpu_addr[23] : dat_addr[23];
 
 // GATEWAY.NET (193) - address : tsm
 assign address_out[0] = out_addr[0];
@@ -2039,230 +1895,38 @@ assign lddatai[30] = lodm_30;
 assign lddatai[31] = lodm_31;
 
 // GATEWAY.NET (241) - lodin : mx2
-mx2 lodin_inst_0
-(
-	.z /* OUT */ (lodin[0]),
-	.a0 /* IN */ (lddatai[0]),
-	.a1 /* IN */ (gpu_din[0]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_1
-(
-	.z /* OUT */ (lodin[1]),
-	.a0 /* IN */ (lddatai[1]),
-	.a1 /* IN */ (gpu_din[1]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_2
-(
-	.z /* OUT */ (lodin[2]),
-	.a0 /* IN */ (lddatai[2]),
-	.a1 /* IN */ (gpu_din[2]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_3
-(
-	.z /* OUT */ (lodin[3]),
-	.a0 /* IN */ (lddatai[3]),
-	.a1 /* IN */ (gpu_din[3]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_4
-(
-	.z /* OUT */ (lodin[4]),
-	.a0 /* IN */ (lddatai[4]),
-	.a1 /* IN */ (gpu_din[4]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_5
-(
-	.z /* OUT */ (lodin[5]),
-	.a0 /* IN */ (lddatai[5]),
-	.a1 /* IN */ (gpu_din[5]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_6
-(
-	.z /* OUT */ (lodin[6]),
-	.a0 /* IN */ (lddatai[6]),
-	.a1 /* IN */ (gpu_din[6]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_7
-(
-	.z /* OUT */ (lodin[7]),
-	.a0 /* IN */ (lddatai[7]),
-	.a1 /* IN */ (gpu_din[7]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_8
-(
-	.z /* OUT */ (lodin[8]),
-	.a0 /* IN */ (lddatai[8]),
-	.a1 /* IN */ (gpu_din[8]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_9
-(
-	.z /* OUT */ (lodin[9]),
-	.a0 /* IN */ (lddatai[9]),
-	.a1 /* IN */ (gpu_din[9]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_10
-(
-	.z /* OUT */ (lodin[10]),
-	.a0 /* IN */ (lddatai[10]),
-	.a1 /* IN */ (gpu_din[10]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_11
-(
-	.z /* OUT */ (lodin[11]),
-	.a0 /* IN */ (lddatai[11]),
-	.a1 /* IN */ (gpu_din[11]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_12
-(
-	.z /* OUT */ (lodin[12]),
-	.a0 /* IN */ (lddatai[12]),
-	.a1 /* IN */ (gpu_din[12]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_13
-(
-	.z /* OUT */ (lodin[13]),
-	.a0 /* IN */ (lddatai[13]),
-	.a1 /* IN */ (gpu_din[13]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_14
-(
-	.z /* OUT */ (lodin[14]),
-	.a0 /* IN */ (lddatai[14]),
-	.a1 /* IN */ (gpu_din[14]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_15
-(
-	.z /* OUT */ (lodin[15]),
-	.a0 /* IN */ (lddatai[15]),
-	.a1 /* IN */ (gpu_din[15]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_16
-(
-	.z /* OUT */ (lodin[16]),
-	.a0 /* IN */ (lddatai[16]),
-	.a1 /* IN */ (gpu_din[16]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_17
-(
-	.z /* OUT */ (lodin[17]),
-	.a0 /* IN */ (lddatai[17]),
-	.a1 /* IN */ (gpu_din[17]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_18
-(
-	.z /* OUT */ (lodin[18]),
-	.a0 /* IN */ (lddatai[18]),
-	.a1 /* IN */ (gpu_din[18]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_19
-(
-	.z /* OUT */ (lodin[19]),
-	.a0 /* IN */ (lddatai[19]),
-	.a1 /* IN */ (gpu_din[19]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_20
-(
-	.z /* OUT */ (lodin[20]),
-	.a0 /* IN */ (lddatai[20]),
-	.a1 /* IN */ (gpu_din[20]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_21
-(
-	.z /* OUT */ (lodin[21]),
-	.a0 /* IN */ (lddatai[21]),
-	.a1 /* IN */ (gpu_din[21]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_22
-(
-	.z /* OUT */ (lodin[22]),
-	.a0 /* IN */ (lddatai[22]),
-	.a1 /* IN */ (gpu_din[22]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_23
-(
-	.z /* OUT */ (lodin[23]),
-	.a0 /* IN */ (lddatai[23]),
-	.a1 /* IN */ (gpu_din[23]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_24
-(
-	.z /* OUT */ (lodin[24]),
-	.a0 /* IN */ (lddatai[24]),
-	.a1 /* IN */ (gpu_din[24]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_25
-(
-	.z /* OUT */ (lodin[25]),
-	.a0 /* IN */ (lddatai[25]),
-	.a1 /* IN */ (gpu_din[25]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_26
-(
-	.z /* OUT */ (lodin[26]),
-	.a0 /* IN */ (lddatai[26]),
-	.a1 /* IN */ (gpu_din[26]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_27
-(
-	.z /* OUT */ (lodin[27]),
-	.a0 /* IN */ (lddatai[27]),
-	.a1 /* IN */ (gpu_din[27]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_28
-(
-	.z /* OUT */ (lodin[28]),
-	.a0 /* IN */ (lddatai[28]),
-	.a1 /* IN */ (gpu_din[28]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_29
-(
-	.z /* OUT */ (lodin[29]),
-	.a0 /* IN */ (lddatai[29]),
-	.a1 /* IN */ (gpu_din[29]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_30
-(
-	.z /* OUT */ (lodin[30]),
-	.a0 /* IN */ (lddatai[30]),
-	.a1 /* IN */ (gpu_din[30]),
-	.s /* IN */ (lodwr)
-);
-mx2 lodin_inst_31
-(
-	.z /* OUT */ (lodin[31]),
-	.a0 /* IN */ (lddatai[31]),
-	.a1 /* IN */ (gpu_din[31]),
-	.s /* IN */ (lodwr)
-);
+assign lodin[0] = (lodwr) ? gpu_din[0] : lddatai[0];
+assign lodin[1] = (lodwr) ? gpu_din[1] : lddatai[1];
+assign lodin[2] = (lodwr) ? gpu_din[2] : lddatai[2];
+assign lodin[3] = (lodwr) ? gpu_din[3] : lddatai[3];
+assign lodin[4] = (lodwr) ? gpu_din[4] : lddatai[4];
+assign lodin[5] = (lodwr) ? gpu_din[5] : lddatai[5];
+assign lodin[6] = (lodwr) ? gpu_din[6] : lddatai[6];
+assign lodin[7] = (lodwr) ? gpu_din[7] : lddatai[7];
+assign lodin[8] = (lodwr) ? gpu_din[8] : lddatai[8];
+assign lodin[9] = (lodwr) ? gpu_din[9] : lddatai[9];
+assign lodin[10] = (lodwr) ? gpu_din[10] : lddatai[10];
+assign lodin[11] = (lodwr) ? gpu_din[11] : lddatai[11];
+assign lodin[12] = (lodwr) ? gpu_din[12] : lddatai[12];
+assign lodin[13] = (lodwr) ? gpu_din[13] : lddatai[13];
+assign lodin[14] = (lodwr) ? gpu_din[14] : lddatai[14];
+assign lodin[15] = (lodwr) ? gpu_din[15] : lddatai[15];
+assign lodin[16] = (lodwr) ? gpu_din[16] : lddatai[16];
+assign lodin[17] = (lodwr) ? gpu_din[17] : lddatai[17];
+assign lodin[18] = (lodwr) ? gpu_din[18] : lddatai[18];
+assign lodin[19] = (lodwr) ? gpu_din[19] : lddatai[19];
+assign lodin[20] = (lodwr) ? gpu_din[20] : lddatai[20];
+assign lodin[21] = (lodwr) ? gpu_din[21] : lddatai[21];
+assign lodin[22] = (lodwr) ? gpu_din[22] : lddatai[22];
+assign lodin[23] = (lodwr) ? gpu_din[23] : lddatai[23];
+assign lodin[24] = (lodwr) ? gpu_din[24] : lddatai[24];
+assign lodin[25] = (lodwr) ? gpu_din[25] : lddatai[25];
+assign lodin[26] = (lodwr) ? gpu_din[26] : lddatai[26];
+assign lodin[27] = (lodwr) ? gpu_din[27] : lddatai[27];
+assign lodin[28] = (lodwr) ? gpu_din[28] : lddatai[28];
+assign lodin[29] = (lodwr) ? gpu_din[29] : lddatai[29];
+assign lodin[30] = (lodwr) ? gpu_din[30] : lddatai[30];
+assign lodin[31] = (lodwr) ? gpu_din[31] : lddatai[31];
 
 // GATEWAY.NET (242) - loaddata : ldp1q
 ldp1q loaddata_inst_0
@@ -3313,289 +2977,193 @@ assign gpu_breq_obuf = ~(gpu_bt_2 & ext_req_n);
 assign dma_breq_obuf = active & progown_n & dmaen;
 
 // --- Compiler-generated PE for BUS gpu_data<0>
-assign gpu_data_out[0] =
-	(ts_pe_5_a0_oe) ? ts_pe_5_a0_out :
-	(ts_pe_5_a1_oe) ? ts_pe_5_a1_out :
-	1'bz;
+assign gpu_data_out[0] = (ts_pe_5_a0_oe & ts_pe_5_a0_out ) | (ts_pe_5_a1_oe & ts_pe_5_a1_out ) | 1'b0;
 assign gpu_data_oe[0] = ts_pe_5_a0_oe | ts_pe_5_a1_oe;
 assign ts_pe_5_a0_in = gpu_data_in[0];
 assign ts_pe_5_a1_in = gpu_data_in[0];
 
 // --- Compiler-generated PE for BUS gpu_data<1>
-assign gpu_data_out[1] =
-	(ts_pe_6_a0_oe) ? ts_pe_6_a0_out :
-	(ts_pe_6_a1_oe) ? ts_pe_6_a1_out :
-	1'bz;
+assign gpu_data_out[1] = (ts_pe_6_a0_oe & ts_pe_6_a0_out ) | (ts_pe_6_a1_oe & ts_pe_6_a1_out ) | 1'b0;
 assign gpu_data_oe[1] = ts_pe_6_a0_oe | ts_pe_6_a1_oe;
 assign ts_pe_6_a0_in = gpu_data_in[1];
 assign ts_pe_6_a1_in = gpu_data_in[1];
 
 // --- Compiler-generated PE for BUS gpu_data<2>
-assign gpu_data_out[2] =
-	(ts_pe_7_a0_oe) ? ts_pe_7_a0_out :
-	(ts_pe_7_a1_oe) ? ts_pe_7_a1_out :
-	1'bz;
+assign gpu_data_out[2] = (ts_pe_7_a0_oe & ts_pe_7_a0_out ) | (ts_pe_7_a1_oe & ts_pe_7_a1_out ) | 1'b0;
 assign gpu_data_oe[2] = ts_pe_7_a0_oe | ts_pe_7_a1_oe;
 assign ts_pe_7_a0_in = gpu_data_in[2];
 assign ts_pe_7_a1_in = gpu_data_in[2];
 
 // --- Compiler-generated PE for BUS gpu_data<3>
-assign gpu_data_out[3] =
-	(ts_pe_8_a0_oe) ? ts_pe_8_a0_out :
-	(ts_pe_8_a1_oe) ? ts_pe_8_a1_out :
-	1'bz;
+assign gpu_data_out[3] = (ts_pe_8_a0_oe & ts_pe_8_a0_out ) | (ts_pe_8_a1_oe & ts_pe_8_a1_out ) | 1'b0;
 assign gpu_data_oe[3] = ts_pe_8_a0_oe | ts_pe_8_a1_oe;
 assign ts_pe_8_a0_in = gpu_data_in[3];
 assign ts_pe_8_a1_in = gpu_data_in[3];
 
 // --- Compiler-generated PE for BUS gpu_data<4>
-assign gpu_data_out[4] =
-	(ts_pe_9_a0_oe) ? ts_pe_9_a0_out :
-	(ts_pe_9_a1_oe) ? ts_pe_9_a1_out :
-	1'bz;
+assign gpu_data_out[4] = (ts_pe_9_a0_oe & ts_pe_9_a0_out ) | (ts_pe_9_a1_oe & ts_pe_9_a1_out ) | 1'b0;
 assign gpu_data_oe[4] = ts_pe_9_a0_oe | ts_pe_9_a1_oe;
 assign ts_pe_9_a0_in = gpu_data_in[4];
 assign ts_pe_9_a1_in = gpu_data_in[4];
 
 // --- Compiler-generated PE for BUS gpu_data<5>
-assign gpu_data_out[5] =
-	(ts_pe_10_a0_oe) ? ts_pe_10_a0_out :
-	(ts_pe_10_a1_oe) ? ts_pe_10_a1_out :
-	1'bz;
+assign gpu_data_out[5] = (ts_pe_10_a0_oe & ts_pe_10_a0_out ) | (ts_pe_10_a1_oe & ts_pe_10_a1_out ) | 1'b0;
 assign gpu_data_oe[5] = ts_pe_10_a0_oe | ts_pe_10_a1_oe;
 assign ts_pe_10_a0_in = gpu_data_in[5];
 assign ts_pe_10_a1_in = gpu_data_in[5];
 
 // --- Compiler-generated PE for BUS gpu_data<6>
-assign gpu_data_out[6] =
-	(ts_pe_11_a0_oe) ? ts_pe_11_a0_out :
-	(ts_pe_11_a1_oe) ? ts_pe_11_a1_out :
-	1'bz;
+assign gpu_data_out[6] = (ts_pe_11_a0_oe & ts_pe_11_a0_out ) | (ts_pe_11_a1_oe & ts_pe_11_a1_out ) | 1'b0;
 assign gpu_data_oe[6] = ts_pe_11_a0_oe | ts_pe_11_a1_oe;
 assign ts_pe_11_a0_in = gpu_data_in[6];
 assign ts_pe_11_a1_in = gpu_data_in[6];
 
 // --- Compiler-generated PE for BUS gpu_data<7>
-assign gpu_data_out[7] =
-	(ts_pe_12_a0_oe) ? ts_pe_12_a0_out :
-	(ts_pe_12_a1_oe) ? ts_pe_12_a1_out :
-	1'bz;
+assign gpu_data_out[7] = (ts_pe_12_a0_oe & ts_pe_12_a0_out ) | (ts_pe_12_a1_oe & ts_pe_12_a1_out ) | 1'b0;
 assign gpu_data_oe[7] = ts_pe_12_a0_oe | ts_pe_12_a1_oe;
 assign ts_pe_12_a0_in = gpu_data_in[7];
 assign ts_pe_12_a1_in = gpu_data_in[7];
 
 // --- Compiler-generated PE for BUS gpu_data<8>
-assign gpu_data_out[8] =
-	(ts_pe_13_a0_oe) ? ts_pe_13_a0_out :
-	(ts_pe_13_a1_oe) ? ts_pe_13_a1_out :
-	1'bz;
+assign gpu_data_out[8] = (ts_pe_13_a0_oe & ts_pe_13_a0_out ) | (ts_pe_13_a1_oe & ts_pe_13_a1_out ) | 1'b0;
 assign gpu_data_oe[8] = ts_pe_13_a0_oe | ts_pe_13_a1_oe;
 assign ts_pe_13_a0_in = gpu_data_in[8];
 assign ts_pe_13_a1_in = gpu_data_in[8];
 
 // --- Compiler-generated PE for BUS gpu_data<9>
-assign gpu_data_out[9] =
-	(ts_pe_14_a0_oe) ? ts_pe_14_a0_out :
-	(ts_pe_14_a1_oe) ? ts_pe_14_a1_out :
-	1'bz;
+assign gpu_data_out[9] = (ts_pe_14_a0_oe & ts_pe_14_a0_out ) | (ts_pe_14_a1_oe & ts_pe_14_a1_out ) | 1'b0;
 assign gpu_data_oe[9] = ts_pe_14_a0_oe | ts_pe_14_a1_oe;
 assign ts_pe_14_a0_in = gpu_data_in[9];
 assign ts_pe_14_a1_in = gpu_data_in[9];
 
 // --- Compiler-generated PE for BUS gpu_data<10>
-assign gpu_data_out[10] =
-	(ts_pe_15_a0_oe) ? ts_pe_15_a0_out :
-	(ts_pe_15_a1_oe) ? ts_pe_15_a1_out :
-	1'bz;
+assign gpu_data_out[10] = (ts_pe_15_a0_oe & ts_pe_15_a0_out ) | (ts_pe_15_a1_oe & ts_pe_15_a1_out ) | 1'b0;
 assign gpu_data_oe[10] = ts_pe_15_a0_oe | ts_pe_15_a1_oe;
 assign ts_pe_15_a0_in = gpu_data_in[10];
 assign ts_pe_15_a1_in = gpu_data_in[10];
 
 // --- Compiler-generated PE for BUS gpu_data<11>
-assign gpu_data_out[11] =
-	(ts_pe_16_a0_oe) ? ts_pe_16_a0_out :
-	(ts_pe_16_a1_oe) ? ts_pe_16_a1_out :
-	1'bz;
+assign gpu_data_out[11] = (ts_pe_16_a0_oe & ts_pe_16_a0_out ) | (ts_pe_16_a1_oe & ts_pe_16_a1_out ) | 1'b0;
 assign gpu_data_oe[11] = ts_pe_16_a0_oe | ts_pe_16_a1_oe;
 assign ts_pe_16_a0_in = gpu_data_in[11];
 assign ts_pe_16_a1_in = gpu_data_in[11];
 
 // --- Compiler-generated PE for BUS gpu_data<12>
-assign gpu_data_out[12] =
-	(ts_pe_17_a0_oe) ? ts_pe_17_a0_out :
-	(ts_pe_17_a1_oe) ? ts_pe_17_a1_out :
-	1'bz;
+assign gpu_data_out[12] = (ts_pe_17_a0_oe & ts_pe_17_a0_out ) | (ts_pe_17_a1_oe & ts_pe_17_a1_out ) | 1'b0;
 assign gpu_data_oe[12] = ts_pe_17_a0_oe | ts_pe_17_a1_oe;
 assign ts_pe_17_a0_in = gpu_data_in[12];
 assign ts_pe_17_a1_in = gpu_data_in[12];
 
 // --- Compiler-generated PE for BUS gpu_data<13>
-assign gpu_data_out[13] =
-	(ts_pe_18_a0_oe) ? ts_pe_18_a0_out :
-	(ts_pe_18_a1_oe) ? ts_pe_18_a1_out :
-	1'bz;
+assign gpu_data_out[13] = (ts_pe_18_a0_oe & ts_pe_18_a0_out ) | (ts_pe_18_a1_oe & ts_pe_18_a1_out ) | 1'b0;
 assign gpu_data_oe[13] = ts_pe_18_a0_oe | ts_pe_18_a1_oe;
 assign ts_pe_18_a0_in = gpu_data_in[13];
 assign ts_pe_18_a1_in = gpu_data_in[13];
 
 // --- Compiler-generated PE for BUS gpu_data<14>
-assign gpu_data_out[14] =
-	(ts_pe_19_a0_oe) ? ts_pe_19_a0_out :
-	(ts_pe_19_a1_oe) ? ts_pe_19_a1_out :
-	1'bz;
+assign gpu_data_out[14] = (ts_pe_19_a0_oe & ts_pe_19_a0_out ) | (ts_pe_19_a1_oe & ts_pe_19_a1_out ) | 1'b0;
 assign gpu_data_oe[14] = ts_pe_19_a0_oe | ts_pe_19_a1_oe;
 assign ts_pe_19_a0_in = gpu_data_in[14];
 assign ts_pe_19_a1_in = gpu_data_in[14];
 
 // --- Compiler-generated PE for BUS gpu_data<15>
-assign gpu_data_out[15] =
-	(ts_pe_20_a0_oe) ? ts_pe_20_a0_out :
-	(ts_pe_20_a1_oe) ? ts_pe_20_a1_out :
-	1'bz;
+assign gpu_data_out[15] = (ts_pe_20_a0_oe & ts_pe_20_a0_out ) | (ts_pe_20_a1_oe & ts_pe_20_a1_out ) | 1'b0;
 assign gpu_data_oe[15] = ts_pe_20_a0_oe | ts_pe_20_a1_oe;
 assign ts_pe_20_a0_in = gpu_data_in[15];
 assign ts_pe_20_a1_in = gpu_data_in[15];
 
 // --- Compiler-generated PE for BUS gpu_data<16>
-assign gpu_data_out[16] =
-	(ts_pe_21_a0_oe) ? ts_pe_21_a0_out :
-	(ts_pe_21_a1_oe) ? ts_pe_21_a1_out :
-	1'bz;
+assign gpu_data_out[16] = (ts_pe_21_a0_oe & ts_pe_21_a0_out ) | (ts_pe_21_a1_oe & ts_pe_21_a1_out ) | 1'b0;
 assign gpu_data_oe[16] = ts_pe_21_a0_oe | ts_pe_21_a1_oe;
 assign ts_pe_21_a0_in = gpu_data_in[16];
 assign ts_pe_21_a1_in = gpu_data_in[16];
 
 // --- Compiler-generated PE for BUS gpu_data<17>
-assign gpu_data_out[17] =
-	(ts_pe_22_a0_oe) ? ts_pe_22_a0_out :
-	(ts_pe_22_a1_oe) ? ts_pe_22_a1_out :
-	1'bz;
+assign gpu_data_out[17] = (ts_pe_22_a0_oe & ts_pe_22_a0_out ) | (ts_pe_22_a1_oe & ts_pe_22_a1_out ) | 1'b0;
 assign gpu_data_oe[17] = ts_pe_22_a0_oe | ts_pe_22_a1_oe;
 assign ts_pe_22_a0_in = gpu_data_in[17];
 assign ts_pe_22_a1_in = gpu_data_in[17];
 
 // --- Compiler-generated PE for BUS gpu_data<18>
-assign gpu_data_out[18] =
-	(ts_pe_23_a0_oe) ? ts_pe_23_a0_out :
-	(ts_pe_23_a1_oe) ? ts_pe_23_a1_out :
-	1'bz;
+assign gpu_data_out[18] = (ts_pe_23_a0_oe & ts_pe_23_a0_out ) | (ts_pe_23_a1_oe & ts_pe_23_a1_out ) | 1'b0;
 assign gpu_data_oe[18] = ts_pe_23_a0_oe | ts_pe_23_a1_oe;
 assign ts_pe_23_a0_in = gpu_data_in[18];
 assign ts_pe_23_a1_in = gpu_data_in[18];
 
 // --- Compiler-generated PE for BUS gpu_data<19>
-assign gpu_data_out[19] =
-	(ts_pe_24_a0_oe) ? ts_pe_24_a0_out :
-	(ts_pe_24_a1_oe) ? ts_pe_24_a1_out :
-	1'bz;
+assign gpu_data_out[19] = (ts_pe_24_a0_oe & ts_pe_24_a0_out ) | (ts_pe_24_a1_oe & ts_pe_24_a1_out ) | 1'b0;
 assign gpu_data_oe[19] = ts_pe_24_a0_oe | ts_pe_24_a1_oe;
 assign ts_pe_24_a0_in = gpu_data_in[19];
 assign ts_pe_24_a1_in = gpu_data_in[19];
 
 // --- Compiler-generated PE for BUS gpu_data<20>
-assign gpu_data_out[20] =
-	(ts_pe_25_a0_oe) ? ts_pe_25_a0_out :
-	(ts_pe_25_a1_oe) ? ts_pe_25_a1_out :
-	1'bz;
+assign gpu_data_out[20] = (ts_pe_25_a0_oe & ts_pe_25_a0_out ) | (ts_pe_25_a1_oe & ts_pe_25_a1_out ) | 1'b0;
 assign gpu_data_oe[20] = ts_pe_25_a0_oe | ts_pe_25_a1_oe;
 assign ts_pe_25_a0_in = gpu_data_in[20];
 assign ts_pe_25_a1_in = gpu_data_in[20];
 
 // --- Compiler-generated PE for BUS gpu_data<21>
-assign gpu_data_out[21] =
-	(ts_pe_26_a0_oe) ? ts_pe_26_a0_out :
-	(ts_pe_26_a1_oe) ? ts_pe_26_a1_out :
-	1'bz;
+assign gpu_data_out[21] = (ts_pe_26_a0_oe & ts_pe_26_a0_out ) | (ts_pe_26_a1_oe & ts_pe_26_a1_out ) | 1'b0;
 assign gpu_data_oe[21] = ts_pe_26_a0_oe | ts_pe_26_a1_oe;
 assign ts_pe_26_a0_in = gpu_data_in[21];
 assign ts_pe_26_a1_in = gpu_data_in[21];
 
 // --- Compiler-generated PE for BUS gpu_data<22>
-assign gpu_data_out[22] =
-	(ts_pe_27_a0_oe) ? ts_pe_27_a0_out :
-	(ts_pe_27_a1_oe) ? ts_pe_27_a1_out :
-	1'bz;
+assign gpu_data_out[22] = (ts_pe_27_a0_oe & ts_pe_27_a0_out ) | (ts_pe_27_a1_oe & ts_pe_27_a1_out ) | 1'b0;
 assign gpu_data_oe[22] = ts_pe_27_a0_oe | ts_pe_27_a1_oe;
 assign ts_pe_27_a0_in = gpu_data_in[22];
 assign ts_pe_27_a1_in = gpu_data_in[22];
 
 // --- Compiler-generated PE for BUS gpu_data<23>
-assign gpu_data_out[23] =
-	(ts_pe_28_a0_oe) ? ts_pe_28_a0_out :
-	(ts_pe_28_a1_oe) ? ts_pe_28_a1_out :
-	1'bz;
+assign gpu_data_out[23] = (ts_pe_28_a0_oe & ts_pe_28_a0_out ) | (ts_pe_28_a1_oe & ts_pe_28_a1_out ) | 1'b0;
 assign gpu_data_oe[23] = ts_pe_28_a0_oe | ts_pe_28_a1_oe;
 assign ts_pe_28_a0_in = gpu_data_in[23];
 assign ts_pe_28_a1_in = gpu_data_in[23];
 
 // --- Compiler-generated PE for BUS gpu_data<24>
-assign gpu_data_out[24] =
-	(ts_pe_29_a0_oe) ? ts_pe_29_a0_out :
-	(ts_pe_29_a1_oe) ? ts_pe_29_a1_out :
-	1'bz;
+assign gpu_data_out[24] = (ts_pe_29_a0_oe & ts_pe_29_a0_out ) | (ts_pe_29_a1_oe & ts_pe_29_a1_out ) | 1'b0;
 assign gpu_data_oe[24] = ts_pe_29_a0_oe | ts_pe_29_a1_oe;
 assign ts_pe_29_a0_in = gpu_data_in[24];
 assign ts_pe_29_a1_in = gpu_data_in[24];
 
 // --- Compiler-generated PE for BUS gpu_data<25>
-assign gpu_data_out[25] =
-	(ts_pe_30_a0_oe) ? ts_pe_30_a0_out :
-	(ts_pe_30_a1_oe) ? ts_pe_30_a1_out :
-	1'bz;
+assign gpu_data_out[25] = (ts_pe_30_a0_oe & ts_pe_30_a0_out ) | (ts_pe_30_a1_oe & ts_pe_30_a1_out ) | 1'b0;
 assign gpu_data_oe[25] = ts_pe_30_a0_oe | ts_pe_30_a1_oe;
 assign ts_pe_30_a0_in = gpu_data_in[25];
 assign ts_pe_30_a1_in = gpu_data_in[25];
 
 // --- Compiler-generated PE for BUS gpu_data<26>
-assign gpu_data_out[26] =
-	(ts_pe_31_a0_oe) ? ts_pe_31_a0_out :
-	(ts_pe_31_a1_oe) ? ts_pe_31_a1_out :
-	1'bz;
+assign gpu_data_out[26] = (ts_pe_31_a0_oe & ts_pe_31_a0_out ) | (ts_pe_31_a1_oe & ts_pe_31_a1_out ) | 1'b0;
 assign gpu_data_oe[26] = ts_pe_31_a0_oe | ts_pe_31_a1_oe;
 assign ts_pe_31_a0_in = gpu_data_in[26];
 assign ts_pe_31_a1_in = gpu_data_in[26];
 
 // --- Compiler-generated PE for BUS gpu_data<27>
-assign gpu_data_out[27] =
-	(ts_pe_32_a0_oe) ? ts_pe_32_a0_out :
-	(ts_pe_32_a1_oe) ? ts_pe_32_a1_out :
-	1'bz;
+assign gpu_data_out[27] = (ts_pe_32_a0_oe & ts_pe_32_a0_out ) | (ts_pe_32_a1_oe & ts_pe_32_a1_out ) | 1'b0;
 assign gpu_data_oe[27] = ts_pe_32_a0_oe | ts_pe_32_a1_oe;
 assign ts_pe_32_a0_in = gpu_data_in[27];
 assign ts_pe_32_a1_in = gpu_data_in[27];
 
 // --- Compiler-generated PE for BUS gpu_data<28>
-assign gpu_data_out[28] =
-	(ts_pe_33_a0_oe) ? ts_pe_33_a0_out :
-	(ts_pe_33_a1_oe) ? ts_pe_33_a1_out :
-	1'bz;
+assign gpu_data_out[28] = (ts_pe_33_a0_oe & ts_pe_33_a0_out ) | (ts_pe_33_a1_oe & ts_pe_33_a1_out ) | 1'b0;
 assign gpu_data_oe[28] = ts_pe_33_a0_oe | ts_pe_33_a1_oe;
 assign ts_pe_33_a0_in = gpu_data_in[28];
 assign ts_pe_33_a1_in = gpu_data_in[28];
 
 // --- Compiler-generated PE for BUS gpu_data<29>
-assign gpu_data_out[29] =
-	(ts_pe_34_a0_oe) ? ts_pe_34_a0_out :
-	(ts_pe_34_a1_oe) ? ts_pe_34_a1_out :
-	1'bz;
+assign gpu_data_out[29] = (ts_pe_34_a0_oe & ts_pe_34_a0_out ) | (ts_pe_34_a1_oe & ts_pe_34_a1_out ) | 1'b0;
 assign gpu_data_oe[29] = ts_pe_34_a0_oe | ts_pe_34_a1_oe;
 assign ts_pe_34_a0_in = gpu_data_in[29];
 assign ts_pe_34_a1_in = gpu_data_in[29];
 
 // --- Compiler-generated PE for BUS gpu_data<30>
-assign gpu_data_out[30] =
-	(ts_pe_35_a0_oe) ? ts_pe_35_a0_out :
-	(ts_pe_35_a1_oe) ? ts_pe_35_a1_out :
-	1'bz;
+assign gpu_data_out[30] = (ts_pe_35_a0_oe & ts_pe_35_a0_out ) | (ts_pe_35_a1_oe & ts_pe_35_a1_out ) | 1'b0;
 assign gpu_data_oe[30] = ts_pe_35_a0_oe | ts_pe_35_a1_oe;
 assign ts_pe_35_a0_in = gpu_data_in[30];
 assign ts_pe_35_a1_in = gpu_data_in[30];
 
 // --- Compiler-generated PE for BUS gpu_data<31>
-assign gpu_data_out[31] =
-	(ts_pe_36_a0_oe) ? ts_pe_36_a0_out :
-	(ts_pe_36_a1_oe) ? ts_pe_36_a1_out :
-	1'bz;
+assign gpu_data_out[31] = (ts_pe_36_a0_oe & ts_pe_36_a0_out ) | (ts_pe_36_a1_oe & ts_pe_36_a1_out ) | 1'b0;
 assign gpu_data_oe[31] = ts_pe_36_a0_oe | ts_pe_36_a1_oe;
 assign ts_pe_36_a0_in = gpu_data_in[31];
 assign ts_pe_36_a1_in = gpu_data_in[31];

@@ -260,48 +260,12 @@ assign maskbit_3 = masksel_3 | maskbit_4;
 assign maskbit_4 = masksel_4 | maskbit_5;
 
 // ADDRADD.NET (83) - mask[0-5] : mx2
-mx2 mask_from_0_to_5_inst_0
-(
-	.z /* OUT */ (addq_x_0),
-	.a0 /* IN */ (addqt_x_0),
-	.a1 /* IN */ (zero),
-	.s /* IN */ (maskbit_0)
-);
-mx2 mask_from_0_to_5_inst_1
-(
-	.z /* OUT */ (addq_x_1),
-	.a0 /* IN */ (addqt_x_1),
-	.a1 /* IN */ (zero),
-	.s /* IN */ (maskbit_1)
-);
-mx2 mask_from_0_to_5_inst_2
-(
-	.z /* OUT */ (addq_x_2),
-	.a0 /* IN */ (addqt_x_2),
-	.a1 /* IN */ (zero),
-	.s /* IN */ (maskbit_2)
-);
-mx2 mask_from_0_to_5_inst_3
-(
-	.z /* OUT */ (addq_x_3),
-	.a0 /* IN */ (addqt_x_3),
-	.a1 /* IN */ (zero),
-	.s /* IN */ (maskbit_3)
-);
-mx2 mask_from_0_to_5_inst_4
-(
-	.z /* OUT */ (addq_x_4),
-	.a0 /* IN */ (addqt_x_4),
-	.a1 /* IN */ (zero),
-	.s /* IN */ (maskbit_4)
-);
-mx2 mask_from_0_to_5_inst_5
-(
-	.z /* OUT */ (addq_x_5),
-	.a0 /* IN */ (addqt_x_5),
-	.a1 /* IN */ (zero),
-	.s /* IN */ (maskbit_5)
-);
+assign addq_x_0 = (maskbit_0) ? zero : addqt_x_0;
+assign addq_x_1 = (maskbit_1) ? zero : addqt_x_1;
+assign addq_x_2 = (maskbit_2) ? zero : addqt_x_2;
+assign addq_x_3 = (maskbit_3) ? zero : addqt_x_3;
+assign addq_x_4 = (maskbit_4) ? zero : addqt_x_4;
+assign addq_x_5 = (maskbit_5) ? zero : addqt_x_5;
 
 // ADDRADD.NET (86) - addq_x : join
 assign addq_x[0] = addq_x_0;

@@ -85,7 +85,7 @@ DEF JERRY	(
 	xi2stxd,	(* I2S TX data *)
 	xcpuclk
 	:IO;
-	tlw:IN); (* GE *)	
+	tlw:IN; aen, den:OUT); (* GE *)	
 
 	(* GE INT8/xd0_7,xd8_15,xd16_23,xd24_31,
 	INT24/xa:IO; *)

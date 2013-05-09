@@ -137,234 +137,42 @@ assign bit15to30 = pos32 | neg16;
 assign bit31 = neg16 | neg32;
 
 // DSP_A-5Q.NET (687) - sato[0-14] : mx2
-mx2 sato_from_0_to_14_inst_0
-(
-	.z /* OUT */ (sato_0),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[0]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_1
-(
-	.z /* OUT */ (sato_1),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[1]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_2
-(
-	.z /* OUT */ (sato_2),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[2]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_3
-(
-	.z /* OUT */ (sato_3),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[3]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_4
-(
-	.z /* OUT */ (sato_4),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[4]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_5
-(
-	.z /* OUT */ (sato_5),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[5]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_6
-(
-	.z /* OUT */ (sato_6),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[6]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_7
-(
-	.z /* OUT */ (sato_7),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[7]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_8
-(
-	.z /* OUT */ (sato_8),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[8]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_9
-(
-	.z /* OUT */ (sato_9),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[9]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_10
-(
-	.z /* OUT */ (sato_10),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[10]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_11
-(
-	.z /* OUT */ (sato_11),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[11]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_12
-(
-	.z /* OUT */ (sato_12),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[12]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_13
-(
-	.z /* OUT */ (sato_13),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[13]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_0_to_14_inst_14
-(
-	.z /* OUT */ (sato_14),
-	.a0 /* IN */ (bit0to14),
-	.a1 /* IN */ (d[14]),
-	.s /* IN */ (unch)
-);
+assign sato_0 = (unch) ? d[0] : bit0to14;
+assign sato_1 = (unch) ? d[1] : bit0to14;
+assign sato_2 = (unch) ? d[2] : bit0to14;
+assign sato_3 = (unch) ? d[3] : bit0to14;
+assign sato_4 = (unch) ? d[4] : bit0to14;
+assign sato_5 = (unch) ? d[5] : bit0to14;
+assign sato_6 = (unch) ? d[6] : bit0to14;
+assign sato_7 = (unch) ? d[7] : bit0to14;
+assign sato_8 = (unch) ? d[8] : bit0to14;
+assign sato_9 = (unch) ? d[9] : bit0to14;
+assign sato_10 = (unch) ? d[10] : bit0to14;
+assign sato_11 = (unch) ? d[11] : bit0to14;
+assign sato_12 = (unch) ? d[12] : bit0to14;
+assign sato_13 = (unch) ? d[13] : bit0to14;
+assign sato_14 = (unch) ? d[14] : bit0to14;
 
 // DSP_A-5Q.NET (688) - sato[15-30] : mx2
-mx2 sato_from_15_to_30_inst_0
-(
-	.z /* OUT */ (sato_15),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[15]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_1
-(
-	.z /* OUT */ (sato_16),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[16]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_2
-(
-	.z /* OUT */ (sato_17),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[17]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_3
-(
-	.z /* OUT */ (sato_18),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[18]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_4
-(
-	.z /* OUT */ (sato_19),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[19]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_5
-(
-	.z /* OUT */ (sato_20),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[20]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_6
-(
-	.z /* OUT */ (sato_21),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[21]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_7
-(
-	.z /* OUT */ (sato_22),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[22]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_8
-(
-	.z /* OUT */ (sato_23),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[23]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_9
-(
-	.z /* OUT */ (sato_24),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[24]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_10
-(
-	.z /* OUT */ (sato_25),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[25]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_11
-(
-	.z /* OUT */ (sato_26),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[26]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_12
-(
-	.z /* OUT */ (sato_27),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[27]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_13
-(
-	.z /* OUT */ (sato_28),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[28]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_14
-(
-	.z /* OUT */ (sato_29),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[29]),
-	.s /* IN */ (unch)
-);
-mx2 sato_from_15_to_30_inst_15
-(
-	.z /* OUT */ (sato_30),
-	.a0 /* IN */ (bit15to30),
-	.a1 /* IN */ (d[30]),
-	.s /* IN */ (unch)
-);
+assign sato_15 = (unch) ? d[15] : bit15to30;
+assign sato_16 = (unch) ? d[16] : bit15to30;
+assign sato_17 = (unch) ? d[17] : bit15to30;
+assign sato_18 = (unch) ? d[18] : bit15to30;
+assign sato_19 = (unch) ? d[19] : bit15to30;
+assign sato_20 = (unch) ? d[20] : bit15to30;
+assign sato_21 = (unch) ? d[21] : bit15to30;
+assign sato_22 = (unch) ? d[22] : bit15to30;
+assign sato_23 = (unch) ? d[23] : bit15to30;
+assign sato_24 = (unch) ? d[24] : bit15to30;
+assign sato_25 = (unch) ? d[25] : bit15to30;
+assign sato_26 = (unch) ? d[26] : bit15to30;
+assign sato_27 = (unch) ? d[27] : bit15to30;
+assign sato_28 = (unch) ? d[28] : bit15to30;
+assign sato_29 = (unch) ? d[29] : bit15to30;
+assign sato_30 = (unch) ? d[30] : bit15to30;
 
 // DSP_A-5Q.NET (689) - sato[31] : mx2
-mx2 sato_index_31_inst
-(
-	.z /* OUT */ (sato_31),
-	.a0 /* IN */ (bit31),
-	.a1 /* IN */ (d[31]),
-	.s /* IN */ (unch)
-);
+assign sato_31 = (unch) ? d[31] : bit31;
 
 // DSP_A-5Q.NET (690) - q : join
 assign q[0] = sato_0;

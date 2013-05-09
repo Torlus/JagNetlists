@@ -13,6 +13,7 @@ reg r_z = 1'b0;
 assign z = r_z;
 
 always @(posedge sys_clk)
+//always @(negedge sys_clk) // /!\
 begin
 	r_z <= a;
 end

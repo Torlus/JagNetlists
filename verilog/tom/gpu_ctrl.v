@@ -76,13 +76,7 @@ assign one = 1'b1;
 assign zero = 1'b0;
 
 // GPU_CTRL.NET (39) - goi : mx2
-mx2 goi_inst
-(
-	.z /* OUT */ (goi),
-	.a0 /* IN */ (go_obuf),
-	.a1 /* IN */ (gpu_din[0]),
-	.s /* IN */ (ctrlwrgo)
-);
+assign goi = (ctrlwrgo) ? gpu_din[0] : go_obuf;
 
 // GPU_CTRL.NET (40) - got : fd2q
 fd2q got_inst

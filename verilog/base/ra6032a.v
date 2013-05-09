@@ -76,7 +76,7 @@ assign z[0:26] = {
 		altsyncram_component.widthad_a = 6,
 		altsyncram_component.width_a = 32,
 		altsyncram_component.width_byteena_a = 1;
-
+	
 `endif
 
 endmodule

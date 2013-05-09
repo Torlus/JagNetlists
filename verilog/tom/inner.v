@@ -1010,13 +1010,7 @@ inner_cnt inner_count_inst
 assign oldoutld = srca_add & atick_1_obuf;
 
 // INNER.NET (390) - oldoutside : mx2
-mx2 oldoutside_inst
-(
-	.z /* OUT */ (oldoutside),
-	.a0 /* IN */ (oldoutsidel),
-	.a1 /* IN */ (a1_outside),
-	.s /* IN */ (oldoutld)
-);
+assign oldoutside = (oldoutld) ? a1_outside : oldoutsidel;
 
 // INNER.NET (392) - oldoutsidel : fd1q
 fd1q oldoutsidel_inst
@@ -1028,13 +1022,7 @@ fd1q oldoutsidel_inst
 );
 
 // INNER.NET (393) - outside : mx2
-mx2 outside_inst
-(
-	.z /* OUT */ (outside),
-	.a0 /* IN */ (a1_outside),
-	.a1 /* IN */ (oldoutside),
-	.s /* IN */ (dsta2)
-);
+assign outside = (dsta2) ? oldoutside : a1_outside;
 
 // INNER.NET (394) - clip\ : nd2
 assign clip_n = ~(diso_a1 & outside);

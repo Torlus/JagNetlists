@@ -648,67 +648,25 @@ mx4 masku_index_7_inst
 );
 
 // DATAMUX.NET (248) - masku[8] : mx2
-mx2 masku_index_8_inst
-(
-	.z /* OUT */ (masku_8),
-	.a0 /* IN */ (maskt_8),
-	.a1 /* IN */ (maskt_13),
-	.s /* IN */ (mir_byte)
-);
+assign masku_8 = (mir_byte) ? maskt_13 : maskt_8;
 
 // DATAMUX.NET (249) - masku[9] : mx2
-mx2 masku_index_9_inst
-(
-	.z /* OUT */ (masku_9),
-	.a0 /* IN */ (maskt_9),
-	.a1 /* IN */ (maskt_12),
-	.s /* IN */ (mir_byte)
-);
+assign masku_9 = (mir_byte) ? maskt_12 : maskt_9;
 
 // DATAMUX.NET (250) - masku[10] : mx2
-mx2 masku_index_10_inst
-(
-	.z /* OUT */ (masku_10),
-	.a0 /* IN */ (maskt_10),
-	.a1 /* IN */ (maskt_11),
-	.s /* IN */ (mir_byte)
-);
+assign masku_10 = (mir_byte) ? maskt_11 : maskt_10;
 
 // DATAMUX.NET (251) - masku[11] : mx2
-mx2 masku_index_11_inst
-(
-	.z /* OUT */ (masku_11),
-	.a0 /* IN */ (maskt_11),
-	.a1 /* IN */ (maskt_10),
-	.s /* IN */ (mir_byte)
-);
+assign masku_11 = (mir_byte) ? maskt_10 : maskt_11;
 
 // DATAMUX.NET (252) - masku[12] : mx2
-mx2 masku_index_12_inst
-(
-	.z /* OUT */ (masku_12),
-	.a0 /* IN */ (maskt_12),
-	.a1 /* IN */ (maskt_9),
-	.s /* IN */ (mir_byte)
-);
+assign masku_12 = (mir_byte) ? maskt_9 : maskt_12;
 
 // DATAMUX.NET (253) - masku[13] : mx2
-mx2 masku_index_13_inst
-(
-	.z /* OUT */ (masku_13),
-	.a0 /* IN */ (maskt_13),
-	.a1 /* IN */ (maskt_8),
-	.s /* IN */ (mir_byte)
-);
+assign masku_13 = (mir_byte) ? maskt_8 : maskt_13;
 
 // DATAMUX.NET (254) - masku[14] : mx2
-mx2 masku_index_14_inst
-(
-	.z /* OUT */ (masku_14),
-	.a0 /* IN */ (maskt_14),
-	.a1 /* IN */ (maskt_0),
-	.s /* IN */ (mir_byte)
-);
+assign masku_14 = (mir_byte) ? maskt_0 : maskt_14;
 
 // DATAMUX.NET (259) - mask[0-7] : an2
 assign mask_0 = masku_0 & dbinh_n_0;

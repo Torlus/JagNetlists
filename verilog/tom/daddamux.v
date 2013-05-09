@@ -689,456 +689,72 @@ mx4 selhi_inst_31
 );
 
 // DATAMUX.NET (44) - addalo : mx2p
-mx2 addalo_inst_0
-(
-	.z /* OUT */ (addalo[0]),
-	.a0 /* IN */ (dstd_0[0]),
-	.a1 /* IN */ (sello[0]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_1
-(
-	.z /* OUT */ (addalo[1]),
-	.a0 /* IN */ (dstd_0[1]),
-	.a1 /* IN */ (sello[1]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_2
-(
-	.z /* OUT */ (addalo[2]),
-	.a0 /* IN */ (dstd_0[2]),
-	.a1 /* IN */ (sello[2]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_3
-(
-	.z /* OUT */ (addalo[3]),
-	.a0 /* IN */ (dstd_0[3]),
-	.a1 /* IN */ (sello[3]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_4
-(
-	.z /* OUT */ (addalo[4]),
-	.a0 /* IN */ (dstd_0[4]),
-	.a1 /* IN */ (sello[4]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_5
-(
-	.z /* OUT */ (addalo[5]),
-	.a0 /* IN */ (dstd_0[5]),
-	.a1 /* IN */ (sello[5]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_6
-(
-	.z /* OUT */ (addalo[6]),
-	.a0 /* IN */ (dstd_0[6]),
-	.a1 /* IN */ (sello[6]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_7
-(
-	.z /* OUT */ (addalo[7]),
-	.a0 /* IN */ (dstd_0[7]),
-	.a1 /* IN */ (sello[7]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_8
-(
-	.z /* OUT */ (addalo[8]),
-	.a0 /* IN */ (dstd_0[8]),
-	.a1 /* IN */ (sello[8]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_9
-(
-	.z /* OUT */ (addalo[9]),
-	.a0 /* IN */ (dstd_0[9]),
-	.a1 /* IN */ (sello[9]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_10
-(
-	.z /* OUT */ (addalo[10]),
-	.a0 /* IN */ (dstd_0[10]),
-	.a1 /* IN */ (sello[10]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_11
-(
-	.z /* OUT */ (addalo[11]),
-	.a0 /* IN */ (dstd_0[11]),
-	.a1 /* IN */ (sello[11]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_12
-(
-	.z /* OUT */ (addalo[12]),
-	.a0 /* IN */ (dstd_0[12]),
-	.a1 /* IN */ (sello[12]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_13
-(
-	.z /* OUT */ (addalo[13]),
-	.a0 /* IN */ (dstd_0[13]),
-	.a1 /* IN */ (sello[13]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_14
-(
-	.z /* OUT */ (addalo[14]),
-	.a0 /* IN */ (dstd_0[14]),
-	.a1 /* IN */ (sello[14]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_15
-(
-	.z /* OUT */ (addalo[15]),
-	.a0 /* IN */ (dstd_0[15]),
-	.a1 /* IN */ (sello[15]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_16
-(
-	.z /* OUT */ (addalo[16]),
-	.a0 /* IN */ (dstd_0[16]),
-	.a1 /* IN */ (sello[16]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_17
-(
-	.z /* OUT */ (addalo[17]),
-	.a0 /* IN */ (dstd_0[17]),
-	.a1 /* IN */ (sello[17]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_18
-(
-	.z /* OUT */ (addalo[18]),
-	.a0 /* IN */ (dstd_0[18]),
-	.a1 /* IN */ (sello[18]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_19
-(
-	.z /* OUT */ (addalo[19]),
-	.a0 /* IN */ (dstd_0[19]),
-	.a1 /* IN */ (sello[19]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_20
-(
-	.z /* OUT */ (addalo[20]),
-	.a0 /* IN */ (dstd_0[20]),
-	.a1 /* IN */ (sello[20]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_21
-(
-	.z /* OUT */ (addalo[21]),
-	.a0 /* IN */ (dstd_0[21]),
-	.a1 /* IN */ (sello[21]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_22
-(
-	.z /* OUT */ (addalo[22]),
-	.a0 /* IN */ (dstd_0[22]),
-	.a1 /* IN */ (sello[22]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_23
-(
-	.z /* OUT */ (addalo[23]),
-	.a0 /* IN */ (dstd_0[23]),
-	.a1 /* IN */ (sello[23]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_24
-(
-	.z /* OUT */ (addalo[24]),
-	.a0 /* IN */ (dstd_0[24]),
-	.a1 /* IN */ (sello[24]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_25
-(
-	.z /* OUT */ (addalo[25]),
-	.a0 /* IN */ (dstd_0[25]),
-	.a1 /* IN */ (sello[25]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_26
-(
-	.z /* OUT */ (addalo[26]),
-	.a0 /* IN */ (dstd_0[26]),
-	.a1 /* IN */ (sello[26]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_27
-(
-	.z /* OUT */ (addalo[27]),
-	.a0 /* IN */ (dstd_0[27]),
-	.a1 /* IN */ (sello[27]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_28
-(
-	.z /* OUT */ (addalo[28]),
-	.a0 /* IN */ (dstd_0[28]),
-	.a1 /* IN */ (sello[28]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_29
-(
-	.z /* OUT */ (addalo[29]),
-	.a0 /* IN */ (dstd_0[29]),
-	.a1 /* IN */ (sello[29]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_30
-(
-	.z /* OUT */ (addalo[30]),
-	.a0 /* IN */ (dstd_0[30]),
-	.a1 /* IN */ (sello[30]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addalo_inst_31
-(
-	.z /* OUT */ (addalo[31]),
-	.a0 /* IN */ (dstd_0[31]),
-	.a1 /* IN */ (sello[31]),
-	.s /* IN */ (dsel2b_0)
-);
+assign addalo[0] = (dsel2b_0) ? sello[0] : dstd_0[0];
+assign addalo[1] = (dsel2b_0) ? sello[1] : dstd_0[1];
+assign addalo[2] = (dsel2b_0) ? sello[2] : dstd_0[2];
+assign addalo[3] = (dsel2b_0) ? sello[3] : dstd_0[3];
+assign addalo[4] = (dsel2b_0) ? sello[4] : dstd_0[4];
+assign addalo[5] = (dsel2b_0) ? sello[5] : dstd_0[5];
+assign addalo[6] = (dsel2b_0) ? sello[6] : dstd_0[6];
+assign addalo[7] = (dsel2b_0) ? sello[7] : dstd_0[7];
+assign addalo[8] = (dsel2b_0) ? sello[8] : dstd_0[8];
+assign addalo[9] = (dsel2b_0) ? sello[9] : dstd_0[9];
+assign addalo[10] = (dsel2b_0) ? sello[10] : dstd_0[10];
+assign addalo[11] = (dsel2b_0) ? sello[11] : dstd_0[11];
+assign addalo[12] = (dsel2b_0) ? sello[12] : dstd_0[12];
+assign addalo[13] = (dsel2b_0) ? sello[13] : dstd_0[13];
+assign addalo[14] = (dsel2b_0) ? sello[14] : dstd_0[14];
+assign addalo[15] = (dsel2b_0) ? sello[15] : dstd_0[15];
+assign addalo[16] = (dsel2b_0) ? sello[16] : dstd_0[16];
+assign addalo[17] = (dsel2b_0) ? sello[17] : dstd_0[17];
+assign addalo[18] = (dsel2b_0) ? sello[18] : dstd_0[18];
+assign addalo[19] = (dsel2b_0) ? sello[19] : dstd_0[19];
+assign addalo[20] = (dsel2b_0) ? sello[20] : dstd_0[20];
+assign addalo[21] = (dsel2b_0) ? sello[21] : dstd_0[21];
+assign addalo[22] = (dsel2b_0) ? sello[22] : dstd_0[22];
+assign addalo[23] = (dsel2b_0) ? sello[23] : dstd_0[23];
+assign addalo[24] = (dsel2b_0) ? sello[24] : dstd_0[24];
+assign addalo[25] = (dsel2b_0) ? sello[25] : dstd_0[25];
+assign addalo[26] = (dsel2b_0) ? sello[26] : dstd_0[26];
+assign addalo[27] = (dsel2b_0) ? sello[27] : dstd_0[27];
+assign addalo[28] = (dsel2b_0) ? sello[28] : dstd_0[28];
+assign addalo[29] = (dsel2b_0) ? sello[29] : dstd_0[29];
+assign addalo[30] = (dsel2b_0) ? sello[30] : dstd_0[30];
+assign addalo[31] = (dsel2b_0) ? sello[31] : dstd_0[31];
 
 // DATAMUX.NET (45) - addahi : mx2p
-mx2 addahi_inst_0
-(
-	.z /* OUT */ (addahi[0]),
-	.a0 /* IN */ (dstd_1[0]),
-	.a1 /* IN */ (selhi[0]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_1
-(
-	.z /* OUT */ (addahi[1]),
-	.a0 /* IN */ (dstd_1[1]),
-	.a1 /* IN */ (selhi[1]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_2
-(
-	.z /* OUT */ (addahi[2]),
-	.a0 /* IN */ (dstd_1[2]),
-	.a1 /* IN */ (selhi[2]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_3
-(
-	.z /* OUT */ (addahi[3]),
-	.a0 /* IN */ (dstd_1[3]),
-	.a1 /* IN */ (selhi[3]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_4
-(
-	.z /* OUT */ (addahi[4]),
-	.a0 /* IN */ (dstd_1[4]),
-	.a1 /* IN */ (selhi[4]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_5
-(
-	.z /* OUT */ (addahi[5]),
-	.a0 /* IN */ (dstd_1[5]),
-	.a1 /* IN */ (selhi[5]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_6
-(
-	.z /* OUT */ (addahi[6]),
-	.a0 /* IN */ (dstd_1[6]),
-	.a1 /* IN */ (selhi[6]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_7
-(
-	.z /* OUT */ (addahi[7]),
-	.a0 /* IN */ (dstd_1[7]),
-	.a1 /* IN */ (selhi[7]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_8
-(
-	.z /* OUT */ (addahi[8]),
-	.a0 /* IN */ (dstd_1[8]),
-	.a1 /* IN */ (selhi[8]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_9
-(
-	.z /* OUT */ (addahi[9]),
-	.a0 /* IN */ (dstd_1[9]),
-	.a1 /* IN */ (selhi[9]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_10
-(
-	.z /* OUT */ (addahi[10]),
-	.a0 /* IN */ (dstd_1[10]),
-	.a1 /* IN */ (selhi[10]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_11
-(
-	.z /* OUT */ (addahi[11]),
-	.a0 /* IN */ (dstd_1[11]),
-	.a1 /* IN */ (selhi[11]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_12
-(
-	.z /* OUT */ (addahi[12]),
-	.a0 /* IN */ (dstd_1[12]),
-	.a1 /* IN */ (selhi[12]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_13
-(
-	.z /* OUT */ (addahi[13]),
-	.a0 /* IN */ (dstd_1[13]),
-	.a1 /* IN */ (selhi[13]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_14
-(
-	.z /* OUT */ (addahi[14]),
-	.a0 /* IN */ (dstd_1[14]),
-	.a1 /* IN */ (selhi[14]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_15
-(
-	.z /* OUT */ (addahi[15]),
-	.a0 /* IN */ (dstd_1[15]),
-	.a1 /* IN */ (selhi[15]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_16
-(
-	.z /* OUT */ (addahi[16]),
-	.a0 /* IN */ (dstd_1[16]),
-	.a1 /* IN */ (selhi[16]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_17
-(
-	.z /* OUT */ (addahi[17]),
-	.a0 /* IN */ (dstd_1[17]),
-	.a1 /* IN */ (selhi[17]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_18
-(
-	.z /* OUT */ (addahi[18]),
-	.a0 /* IN */ (dstd_1[18]),
-	.a1 /* IN */ (selhi[18]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_19
-(
-	.z /* OUT */ (addahi[19]),
-	.a0 /* IN */ (dstd_1[19]),
-	.a1 /* IN */ (selhi[19]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_20
-(
-	.z /* OUT */ (addahi[20]),
-	.a0 /* IN */ (dstd_1[20]),
-	.a1 /* IN */ (selhi[20]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_21
-(
-	.z /* OUT */ (addahi[21]),
-	.a0 /* IN */ (dstd_1[21]),
-	.a1 /* IN */ (selhi[21]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_22
-(
-	.z /* OUT */ (addahi[22]),
-	.a0 /* IN */ (dstd_1[22]),
-	.a1 /* IN */ (selhi[22]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_23
-(
-	.z /* OUT */ (addahi[23]),
-	.a0 /* IN */ (dstd_1[23]),
-	.a1 /* IN */ (selhi[23]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_24
-(
-	.z /* OUT */ (addahi[24]),
-	.a0 /* IN */ (dstd_1[24]),
-	.a1 /* IN */ (selhi[24]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_25
-(
-	.z /* OUT */ (addahi[25]),
-	.a0 /* IN */ (dstd_1[25]),
-	.a1 /* IN */ (selhi[25]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_26
-(
-	.z /* OUT */ (addahi[26]),
-	.a0 /* IN */ (dstd_1[26]),
-	.a1 /* IN */ (selhi[26]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_27
-(
-	.z /* OUT */ (addahi[27]),
-	.a0 /* IN */ (dstd_1[27]),
-	.a1 /* IN */ (selhi[27]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_28
-(
-	.z /* OUT */ (addahi[28]),
-	.a0 /* IN */ (dstd_1[28]),
-	.a1 /* IN */ (selhi[28]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_29
-(
-	.z /* OUT */ (addahi[29]),
-	.a0 /* IN */ (dstd_1[29]),
-	.a1 /* IN */ (selhi[29]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_30
-(
-	.z /* OUT */ (addahi[30]),
-	.a0 /* IN */ (dstd_1[30]),
-	.a1 /* IN */ (selhi[30]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addahi_inst_31
-(
-	.z /* OUT */ (addahi[31]),
-	.a0 /* IN */ (dstd_1[31]),
-	.a1 /* IN */ (selhi[31]),
-	.s /* IN */ (dsel2b_1)
-);
+assign addahi[0] = (dsel2b_1) ? selhi[0] : dstd_1[0];
+assign addahi[1] = (dsel2b_1) ? selhi[1] : dstd_1[1];
+assign addahi[2] = (dsel2b_1) ? selhi[2] : dstd_1[2];
+assign addahi[3] = (dsel2b_1) ? selhi[3] : dstd_1[3];
+assign addahi[4] = (dsel2b_1) ? selhi[4] : dstd_1[4];
+assign addahi[5] = (dsel2b_1) ? selhi[5] : dstd_1[5];
+assign addahi[6] = (dsel2b_1) ? selhi[6] : dstd_1[6];
+assign addahi[7] = (dsel2b_1) ? selhi[7] : dstd_1[7];
+assign addahi[8] = (dsel2b_1) ? selhi[8] : dstd_1[8];
+assign addahi[9] = (dsel2b_1) ? selhi[9] : dstd_1[9];
+assign addahi[10] = (dsel2b_1) ? selhi[10] : dstd_1[10];
+assign addahi[11] = (dsel2b_1) ? selhi[11] : dstd_1[11];
+assign addahi[12] = (dsel2b_1) ? selhi[12] : dstd_1[12];
+assign addahi[13] = (dsel2b_1) ? selhi[13] : dstd_1[13];
+assign addahi[14] = (dsel2b_1) ? selhi[14] : dstd_1[14];
+assign addahi[15] = (dsel2b_1) ? selhi[15] : dstd_1[15];
+assign addahi[16] = (dsel2b_1) ? selhi[16] : dstd_1[16];
+assign addahi[17] = (dsel2b_1) ? selhi[17] : dstd_1[17];
+assign addahi[18] = (dsel2b_1) ? selhi[18] : dstd_1[18];
+assign addahi[19] = (dsel2b_1) ? selhi[19] : dstd_1[19];
+assign addahi[20] = (dsel2b_1) ? selhi[20] : dstd_1[20];
+assign addahi[21] = (dsel2b_1) ? selhi[21] : dstd_1[21];
+assign addahi[22] = (dsel2b_1) ? selhi[22] : dstd_1[22];
+assign addahi[23] = (dsel2b_1) ? selhi[23] : dstd_1[23];
+assign addahi[24] = (dsel2b_1) ? selhi[24] : dstd_1[24];
+assign addahi[25] = (dsel2b_1) ? selhi[25] : dstd_1[25];
+assign addahi[26] = (dsel2b_1) ? selhi[26] : dstd_1[26];
+assign addahi[27] = (dsel2b_1) ? selhi[27] : dstd_1[27];
+assign addahi[28] = (dsel2b_1) ? selhi[28] : dstd_1[28];
+assign addahi[29] = (dsel2b_1) ? selhi[29] : dstd_1[29];
+assign addahi[30] = (dsel2b_1) ? selhi[30] : dstd_1[30];
+assign addahi[31] = (dsel2b_1) ? selhi[31] : dstd_1[31];
 
 // DATAMUX.NET (47) - adda[0] : join
 assign adda_0[0] = addalo[0];

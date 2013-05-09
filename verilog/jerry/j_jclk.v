@@ -188,13 +188,7 @@ fd2 pclk2_inst
 );
 
 // JCLK.NET (33) - pclkout : mx2
-mx2 pclkout_inst
-(
-	.z /* OUT */ (pclkout_obuf),
-	.a0 /* IN */ (pclkosc),
-	.a1 /* IN */ (pclk2),
-	.s /* IN */ (divide)
-);
+assign pclkout_obuf = (divide) ? pclk2 : pclkosc;
 
 // JCLK.NET (37) - cclk : fd2
 fd2 cclk_inst

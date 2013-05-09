@@ -346,459 +346,75 @@ assign dsel2b_0 = daddbsel_2;
 assign dsel2b_1 = daddbsel_2;
 
 // DATAMUX.NET (95) - addb[0] : mx2p
-mx2 addb_index_0_inst_0
-(
-	.z /* OUT */ (addb_0[0]),
-	.a0 /* IN */ (srcdw_0[0]),
-	.a1 /* IN */ (word[0]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_1
-(
-	.z /* OUT */ (addb_0[1]),
-	.a0 /* IN */ (srcdw_0[1]),
-	.a1 /* IN */ (word[1]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_2
-(
-	.z /* OUT */ (addb_0[2]),
-	.a0 /* IN */ (srcdw_0[2]),
-	.a1 /* IN */ (word[2]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_3
-(
-	.z /* OUT */ (addb_0[3]),
-	.a0 /* IN */ (srcdw_0[3]),
-	.a1 /* IN */ (word[3]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_4
-(
-	.z /* OUT */ (addb_0[4]),
-	.a0 /* IN */ (srcdw_0[4]),
-	.a1 /* IN */ (word[4]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_5
-(
-	.z /* OUT */ (addb_0[5]),
-	.a0 /* IN */ (srcdw_0[5]),
-	.a1 /* IN */ (word[5]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_6
-(
-	.z /* OUT */ (addb_0[6]),
-	.a0 /* IN */ (srcdw_0[6]),
-	.a1 /* IN */ (word[6]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_7
-(
-	.z /* OUT */ (addb_0[7]),
-	.a0 /* IN */ (srcdw_0[7]),
-	.a1 /* IN */ (word[7]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_8
-(
-	.z /* OUT */ (addb_0[8]),
-	.a0 /* IN */ (srcdw_0[8]),
-	.a1 /* IN */ (word[8]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_9
-(
-	.z /* OUT */ (addb_0[9]),
-	.a0 /* IN */ (srcdw_0[9]),
-	.a1 /* IN */ (word[9]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_10
-(
-	.z /* OUT */ (addb_0[10]),
-	.a0 /* IN */ (srcdw_0[10]),
-	.a1 /* IN */ (word[10]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_11
-(
-	.z /* OUT */ (addb_0[11]),
-	.a0 /* IN */ (srcdw_0[11]),
-	.a1 /* IN */ (word[11]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_12
-(
-	.z /* OUT */ (addb_0[12]),
-	.a0 /* IN */ (srcdw_0[12]),
-	.a1 /* IN */ (word[12]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_13
-(
-	.z /* OUT */ (addb_0[13]),
-	.a0 /* IN */ (srcdw_0[13]),
-	.a1 /* IN */ (word[13]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_14
-(
-	.z /* OUT */ (addb_0[14]),
-	.a0 /* IN */ (srcdw_0[14]),
-	.a1 /* IN */ (word[14]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_0_inst_15
-(
-	.z /* OUT */ (addb_0[15]),
-	.a0 /* IN */ (srcdw_0[15]),
-	.a1 /* IN */ (word[15]),
-	.s /* IN */ (dsel2b_0)
-);
+assign addb_0[0] = (dsel2b_0) ? word[0] : srcdw_0[0];
+assign addb_0[1] = (dsel2b_0) ? word[1] : srcdw_0[1];
+assign addb_0[2] = (dsel2b_0) ? word[2] : srcdw_0[2];
+assign addb_0[3] = (dsel2b_0) ? word[3] : srcdw_0[3];
+assign addb_0[4] = (dsel2b_0) ? word[4] : srcdw_0[4];
+assign addb_0[5] = (dsel2b_0) ? word[5] : srcdw_0[5];
+assign addb_0[6] = (dsel2b_0) ? word[6] : srcdw_0[6];
+assign addb_0[7] = (dsel2b_0) ? word[7] : srcdw_0[7];
+assign addb_0[8] = (dsel2b_0) ? word[8] : srcdw_0[8];
+assign addb_0[9] = (dsel2b_0) ? word[9] : srcdw_0[9];
+assign addb_0[10] = (dsel2b_0) ? word[10] : srcdw_0[10];
+assign addb_0[11] = (dsel2b_0) ? word[11] : srcdw_0[11];
+assign addb_0[12] = (dsel2b_0) ? word[12] : srcdw_0[12];
+assign addb_0[13] = (dsel2b_0) ? word[13] : srcdw_0[13];
+assign addb_0[14] = (dsel2b_0) ? word[14] : srcdw_0[14];
+assign addb_0[15] = (dsel2b_0) ? word[15] : srcdw_0[15];
 
 // DATAMUX.NET (96) - addb[1] : mx2p
-mx2 addb_index_1_inst_0
-(
-	.z /* OUT */ (addb_1[0]),
-	.a0 /* IN */ (srcdw_1[0]),
-	.a1 /* IN */ (word[0]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_1
-(
-	.z /* OUT */ (addb_1[1]),
-	.a0 /* IN */ (srcdw_1[1]),
-	.a1 /* IN */ (word[1]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_2
-(
-	.z /* OUT */ (addb_1[2]),
-	.a0 /* IN */ (srcdw_1[2]),
-	.a1 /* IN */ (word[2]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_3
-(
-	.z /* OUT */ (addb_1[3]),
-	.a0 /* IN */ (srcdw_1[3]),
-	.a1 /* IN */ (word[3]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_4
-(
-	.z /* OUT */ (addb_1[4]),
-	.a0 /* IN */ (srcdw_1[4]),
-	.a1 /* IN */ (word[4]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_5
-(
-	.z /* OUT */ (addb_1[5]),
-	.a0 /* IN */ (srcdw_1[5]),
-	.a1 /* IN */ (word[5]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_6
-(
-	.z /* OUT */ (addb_1[6]),
-	.a0 /* IN */ (srcdw_1[6]),
-	.a1 /* IN */ (word[6]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_7
-(
-	.z /* OUT */ (addb_1[7]),
-	.a0 /* IN */ (srcdw_1[7]),
-	.a1 /* IN */ (word[7]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_8
-(
-	.z /* OUT */ (addb_1[8]),
-	.a0 /* IN */ (srcdw_1[8]),
-	.a1 /* IN */ (word[8]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_9
-(
-	.z /* OUT */ (addb_1[9]),
-	.a0 /* IN */ (srcdw_1[9]),
-	.a1 /* IN */ (word[9]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_10
-(
-	.z /* OUT */ (addb_1[10]),
-	.a0 /* IN */ (srcdw_1[10]),
-	.a1 /* IN */ (word[10]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_11
-(
-	.z /* OUT */ (addb_1[11]),
-	.a0 /* IN */ (srcdw_1[11]),
-	.a1 /* IN */ (word[11]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_12
-(
-	.z /* OUT */ (addb_1[12]),
-	.a0 /* IN */ (srcdw_1[12]),
-	.a1 /* IN */ (word[12]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_13
-(
-	.z /* OUT */ (addb_1[13]),
-	.a0 /* IN */ (srcdw_1[13]),
-	.a1 /* IN */ (word[13]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_14
-(
-	.z /* OUT */ (addb_1[14]),
-	.a0 /* IN */ (srcdw_1[14]),
-	.a1 /* IN */ (word[14]),
-	.s /* IN */ (dsel2b_0)
-);
-mx2 addb_index_1_inst_15
-(
-	.z /* OUT */ (addb_1[15]),
-	.a0 /* IN */ (srcdw_1[15]),
-	.a1 /* IN */ (word[15]),
-	.s /* IN */ (dsel2b_0)
-);
+assign addb_1[0] = (dsel2b_0) ? word[0] : srcdw_1[0];
+assign addb_1[1] = (dsel2b_0) ? word[1] : srcdw_1[1];
+assign addb_1[2] = (dsel2b_0) ? word[2] : srcdw_1[2];
+assign addb_1[3] = (dsel2b_0) ? word[3] : srcdw_1[3];
+assign addb_1[4] = (dsel2b_0) ? word[4] : srcdw_1[4];
+assign addb_1[5] = (dsel2b_0) ? word[5] : srcdw_1[5];
+assign addb_1[6] = (dsel2b_0) ? word[6] : srcdw_1[6];
+assign addb_1[7] = (dsel2b_0) ? word[7] : srcdw_1[7];
+assign addb_1[8] = (dsel2b_0) ? word[8] : srcdw_1[8];
+assign addb_1[9] = (dsel2b_0) ? word[9] : srcdw_1[9];
+assign addb_1[10] = (dsel2b_0) ? word[10] : srcdw_1[10];
+assign addb_1[11] = (dsel2b_0) ? word[11] : srcdw_1[11];
+assign addb_1[12] = (dsel2b_0) ? word[12] : srcdw_1[12];
+assign addb_1[13] = (dsel2b_0) ? word[13] : srcdw_1[13];
+assign addb_1[14] = (dsel2b_0) ? word[14] : srcdw_1[14];
+assign addb_1[15] = (dsel2b_0) ? word[15] : srcdw_1[15];
 
 // DATAMUX.NET (97) - addb[2] : mx2p
-mx2 addb_index_2_inst_0
-(
-	.z /* OUT */ (addb_2[0]),
-	.a0 /* IN */ (srcdw_2[0]),
-	.a1 /* IN */ (word[0]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_1
-(
-	.z /* OUT */ (addb_2[1]),
-	.a0 /* IN */ (srcdw_2[1]),
-	.a1 /* IN */ (word[1]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_2
-(
-	.z /* OUT */ (addb_2[2]),
-	.a0 /* IN */ (srcdw_2[2]),
-	.a1 /* IN */ (word[2]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_3
-(
-	.z /* OUT */ (addb_2[3]),
-	.a0 /* IN */ (srcdw_2[3]),
-	.a1 /* IN */ (word[3]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_4
-(
-	.z /* OUT */ (addb_2[4]),
-	.a0 /* IN */ (srcdw_2[4]),
-	.a1 /* IN */ (word[4]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_5
-(
-	.z /* OUT */ (addb_2[5]),
-	.a0 /* IN */ (srcdw_2[5]),
-	.a1 /* IN */ (word[5]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_6
-(
-	.z /* OUT */ (addb_2[6]),
-	.a0 /* IN */ (srcdw_2[6]),
-	.a1 /* IN */ (word[6]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_7
-(
-	.z /* OUT */ (addb_2[7]),
-	.a0 /* IN */ (srcdw_2[7]),
-	.a1 /* IN */ (word[7]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_8
-(
-	.z /* OUT */ (addb_2[8]),
-	.a0 /* IN */ (srcdw_2[8]),
-	.a1 /* IN */ (word[8]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_9
-(
-	.z /* OUT */ (addb_2[9]),
-	.a0 /* IN */ (srcdw_2[9]),
-	.a1 /* IN */ (word[9]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_10
-(
-	.z /* OUT */ (addb_2[10]),
-	.a0 /* IN */ (srcdw_2[10]),
-	.a1 /* IN */ (word[10]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_11
-(
-	.z /* OUT */ (addb_2[11]),
-	.a0 /* IN */ (srcdw_2[11]),
-	.a1 /* IN */ (word[11]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_12
-(
-	.z /* OUT */ (addb_2[12]),
-	.a0 /* IN */ (srcdw_2[12]),
-	.a1 /* IN */ (word[12]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_13
-(
-	.z /* OUT */ (addb_2[13]),
-	.a0 /* IN */ (srcdw_2[13]),
-	.a1 /* IN */ (word[13]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_14
-(
-	.z /* OUT */ (addb_2[14]),
-	.a0 /* IN */ (srcdw_2[14]),
-	.a1 /* IN */ (word[14]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_2_inst_15
-(
-	.z /* OUT */ (addb_2[15]),
-	.a0 /* IN */ (srcdw_2[15]),
-	.a1 /* IN */ (word[15]),
-	.s /* IN */ (dsel2b_1)
-);
+assign addb_2[0] = (dsel2b_1) ? word[0] : srcdw_2[0];
+assign addb_2[1] = (dsel2b_1) ? word[1] : srcdw_2[1];
+assign addb_2[2] = (dsel2b_1) ? word[2] : srcdw_2[2];
+assign addb_2[3] = (dsel2b_1) ? word[3] : srcdw_2[3];
+assign addb_2[4] = (dsel2b_1) ? word[4] : srcdw_2[4];
+assign addb_2[5] = (dsel2b_1) ? word[5] : srcdw_2[5];
+assign addb_2[6] = (dsel2b_1) ? word[6] : srcdw_2[6];
+assign addb_2[7] = (dsel2b_1) ? word[7] : srcdw_2[7];
+assign addb_2[8] = (dsel2b_1) ? word[8] : srcdw_2[8];
+assign addb_2[9] = (dsel2b_1) ? word[9] : srcdw_2[9];
+assign addb_2[10] = (dsel2b_1) ? word[10] : srcdw_2[10];
+assign addb_2[11] = (dsel2b_1) ? word[11] : srcdw_2[11];
+assign addb_2[12] = (dsel2b_1) ? word[12] : srcdw_2[12];
+assign addb_2[13] = (dsel2b_1) ? word[13] : srcdw_2[13];
+assign addb_2[14] = (dsel2b_1) ? word[14] : srcdw_2[14];
+assign addb_2[15] = (dsel2b_1) ? word[15] : srcdw_2[15];
 
 // DATAMUX.NET (98) - addb[3] : mx2p
-mx2 addb_index_3_inst_0
-(
-	.z /* OUT */ (addb_3[0]),
-	.a0 /* IN */ (srcdw_3[0]),
-	.a1 /* IN */ (word[0]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_1
-(
-	.z /* OUT */ (addb_3[1]),
-	.a0 /* IN */ (srcdw_3[1]),
-	.a1 /* IN */ (word[1]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_2
-(
-	.z /* OUT */ (addb_3[2]),
-	.a0 /* IN */ (srcdw_3[2]),
-	.a1 /* IN */ (word[2]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_3
-(
-	.z /* OUT */ (addb_3[3]),
-	.a0 /* IN */ (srcdw_3[3]),
-	.a1 /* IN */ (word[3]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_4
-(
-	.z /* OUT */ (addb_3[4]),
-	.a0 /* IN */ (srcdw_3[4]),
-	.a1 /* IN */ (word[4]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_5
-(
-	.z /* OUT */ (addb_3[5]),
-	.a0 /* IN */ (srcdw_3[5]),
-	.a1 /* IN */ (word[5]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_6
-(
-	.z /* OUT */ (addb_3[6]),
-	.a0 /* IN */ (srcdw_3[6]),
-	.a1 /* IN */ (word[6]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_7
-(
-	.z /* OUT */ (addb_3[7]),
-	.a0 /* IN */ (srcdw_3[7]),
-	.a1 /* IN */ (word[7]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_8
-(
-	.z /* OUT */ (addb_3[8]),
-	.a0 /* IN */ (srcdw_3[8]),
-	.a1 /* IN */ (word[8]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_9
-(
-	.z /* OUT */ (addb_3[9]),
-	.a0 /* IN */ (srcdw_3[9]),
-	.a1 /* IN */ (word[9]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_10
-(
-	.z /* OUT */ (addb_3[10]),
-	.a0 /* IN */ (srcdw_3[10]),
-	.a1 /* IN */ (word[10]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_11
-(
-	.z /* OUT */ (addb_3[11]),
-	.a0 /* IN */ (srcdw_3[11]),
-	.a1 /* IN */ (word[11]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_12
-(
-	.z /* OUT */ (addb_3[12]),
-	.a0 /* IN */ (srcdw_3[12]),
-	.a1 /* IN */ (word[12]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_13
-(
-	.z /* OUT */ (addb_3[13]),
-	.a0 /* IN */ (srcdw_3[13]),
-	.a1 /* IN */ (word[13]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_14
-(
-	.z /* OUT */ (addb_3[14]),
-	.a0 /* IN */ (srcdw_3[14]),
-	.a1 /* IN */ (word[14]),
-	.s /* IN */ (dsel2b_1)
-);
-mx2 addb_index_3_inst_15
-(
-	.z /* OUT */ (addb_3[15]),
-	.a0 /* IN */ (srcdw_3[15]),
-	.a1 /* IN */ (word[15]),
-	.s /* IN */ (dsel2b_1)
-);
+assign addb_3[0] = (dsel2b_1) ? word[0] : srcdw_3[0];
+assign addb_3[1] = (dsel2b_1) ? word[1] : srcdw_3[1];
+assign addb_3[2] = (dsel2b_1) ? word[2] : srcdw_3[2];
+assign addb_3[3] = (dsel2b_1) ? word[3] : srcdw_3[3];
+assign addb_3[4] = (dsel2b_1) ? word[4] : srcdw_3[4];
+assign addb_3[5] = (dsel2b_1) ? word[5] : srcdw_3[5];
+assign addb_3[6] = (dsel2b_1) ? word[6] : srcdw_3[6];
+assign addb_3[7] = (dsel2b_1) ? word[7] : srcdw_3[7];
+assign addb_3[8] = (dsel2b_1) ? word[8] : srcdw_3[8];
+assign addb_3[9] = (dsel2b_1) ? word[9] : srcdw_3[9];
+assign addb_3[10] = (dsel2b_1) ? word[10] : srcdw_3[10];
+assign addb_3[11] = (dsel2b_1) ? word[11] : srcdw_3[11];
+assign addb_3[12] = (dsel2b_1) ? word[12] : srcdw_3[12];
+assign addb_3[13] = (dsel2b_1) ? word[13] : srcdw_3[13];
+assign addb_3[14] = (dsel2b_1) ? word[14] : srcdw_3[14];
+assign addb_3[15] = (dsel2b_1) ? word[15] : srcdw_3[15];
 endmodule
 /* verilator lint_on LITENDIAN */

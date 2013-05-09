@@ -542,1144 +542,184 @@ assign sft_n_4 = ~sft_4;
 assign zero = 1'b0;
 
 // DSP_A-5Q.NET (726) - b[0-15] : mx2
-mx2 b_from_0_to_15_inst_0
-(
-	.z /* OUT */ (b_0),
-	.a0 /* IN */ (a_0),
-	.a1 /* IN */ (a_16),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_1
-(
-	.z /* OUT */ (b_1),
-	.a0 /* IN */ (a_1),
-	.a1 /* IN */ (a_17),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_2
-(
-	.z /* OUT */ (b_2),
-	.a0 /* IN */ (a_2),
-	.a1 /* IN */ (a_18),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_3
-(
-	.z /* OUT */ (b_3),
-	.a0 /* IN */ (a_3),
-	.a1 /* IN */ (a_19),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_4
-(
-	.z /* OUT */ (b_4),
-	.a0 /* IN */ (a_4),
-	.a1 /* IN */ (a_20),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_5
-(
-	.z /* OUT */ (b_5),
-	.a0 /* IN */ (a_5),
-	.a1 /* IN */ (a_21),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_6
-(
-	.z /* OUT */ (b_6),
-	.a0 /* IN */ (a_6),
-	.a1 /* IN */ (a_22),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_7
-(
-	.z /* OUT */ (b_7),
-	.a0 /* IN */ (a_7),
-	.a1 /* IN */ (a_23),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_8
-(
-	.z /* OUT */ (b_8),
-	.a0 /* IN */ (a_8),
-	.a1 /* IN */ (a_24),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_9
-(
-	.z /* OUT */ (b_9),
-	.a0 /* IN */ (a_9),
-	.a1 /* IN */ (a_25),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_10
-(
-	.z /* OUT */ (b_10),
-	.a0 /* IN */ (a_10),
-	.a1 /* IN */ (a_26),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_11
-(
-	.z /* OUT */ (b_11),
-	.a0 /* IN */ (a_11),
-	.a1 /* IN */ (a_27),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_12
-(
-	.z /* OUT */ (b_12),
-	.a0 /* IN */ (a_12),
-	.a1 /* IN */ (a_28),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_13
-(
-	.z /* OUT */ (b_13),
-	.a0 /* IN */ (a_13),
-	.a1 /* IN */ (a_29),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_14
-(
-	.z /* OUT */ (b_14),
-	.a0 /* IN */ (a_14),
-	.a1 /* IN */ (a_30),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_0_to_15_inst_15
-(
-	.z /* OUT */ (b_15),
-	.a0 /* IN */ (a_15),
-	.a1 /* IN */ (a_31),
-	.s /* IN */ (sftb_4)
-);
+assign b_0 = (sftb_4) ? a_16 : a_0;
+assign b_1 = (sftb_4) ? a_17 : a_1;
+assign b_2 = (sftb_4) ? a_18 : a_2;
+assign b_3 = (sftb_4) ? a_19 : a_3;
+assign b_4 = (sftb_4) ? a_20 : a_4;
+assign b_5 = (sftb_4) ? a_21 : a_5;
+assign b_6 = (sftb_4) ? a_22 : a_6;
+assign b_7 = (sftb_4) ? a_23 : a_7;
+assign b_8 = (sftb_4) ? a_24 : a_8;
+assign b_9 = (sftb_4) ? a_25 : a_9;
+assign b_10 = (sftb_4) ? a_26 : a_10;
+assign b_11 = (sftb_4) ? a_27 : a_11;
+assign b_12 = (sftb_4) ? a_28 : a_12;
+assign b_13 = (sftb_4) ? a_29 : a_13;
+assign b_14 = (sftb_4) ? a_30 : a_14;
+assign b_15 = (sftb_4) ? a_31 : a_15;
 
 // DSP_A-5Q.NET (727) - b[16-31] : mx2
-mx2 b_from_16_to_31_inst_0
-(
-	.z /* OUT */ (b_16),
-	.a0 /* IN */ (a_16),
-	.a1 /* IN */ (a_0),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_1
-(
-	.z /* OUT */ (b_17),
-	.a0 /* IN */ (a_17),
-	.a1 /* IN */ (a_1),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_2
-(
-	.z /* OUT */ (b_18),
-	.a0 /* IN */ (a_18),
-	.a1 /* IN */ (a_2),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_3
-(
-	.z /* OUT */ (b_19),
-	.a0 /* IN */ (a_19),
-	.a1 /* IN */ (a_3),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_4
-(
-	.z /* OUT */ (b_20),
-	.a0 /* IN */ (a_20),
-	.a1 /* IN */ (a_4),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_5
-(
-	.z /* OUT */ (b_21),
-	.a0 /* IN */ (a_21),
-	.a1 /* IN */ (a_5),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_6
-(
-	.z /* OUT */ (b_22),
-	.a0 /* IN */ (a_22),
-	.a1 /* IN */ (a_6),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_7
-(
-	.z /* OUT */ (b_23),
-	.a0 /* IN */ (a_23),
-	.a1 /* IN */ (a_7),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_8
-(
-	.z /* OUT */ (b_24),
-	.a0 /* IN */ (a_24),
-	.a1 /* IN */ (a_8),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_9
-(
-	.z /* OUT */ (b_25),
-	.a0 /* IN */ (a_25),
-	.a1 /* IN */ (a_9),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_10
-(
-	.z /* OUT */ (b_26),
-	.a0 /* IN */ (a_26),
-	.a1 /* IN */ (a_10),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_11
-(
-	.z /* OUT */ (b_27),
-	.a0 /* IN */ (a_27),
-	.a1 /* IN */ (a_11),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_12
-(
-	.z /* OUT */ (b_28),
-	.a0 /* IN */ (a_28),
-	.a1 /* IN */ (a_12),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_13
-(
-	.z /* OUT */ (b_29),
-	.a0 /* IN */ (a_29),
-	.a1 /* IN */ (a_13),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_14
-(
-	.z /* OUT */ (b_30),
-	.a0 /* IN */ (a_30),
-	.a1 /* IN */ (a_14),
-	.s /* IN */ (sftb_4)
-);
-mx2 b_from_16_to_31_inst_15
-(
-	.z /* OUT */ (b_31),
-	.a0 /* IN */ (a_31),
-	.a1 /* IN */ (a_15),
-	.s /* IN */ (sftb_4)
-);
+assign b_16 = (sftb_4) ? a_0 : a_16;
+assign b_17 = (sftb_4) ? a_1 : a_17;
+assign b_18 = (sftb_4) ? a_2 : a_18;
+assign b_19 = (sftb_4) ? a_3 : a_19;
+assign b_20 = (sftb_4) ? a_4 : a_20;
+assign b_21 = (sftb_4) ? a_5 : a_21;
+assign b_22 = (sftb_4) ? a_6 : a_22;
+assign b_23 = (sftb_4) ? a_7 : a_23;
+assign b_24 = (sftb_4) ? a_8 : a_24;
+assign b_25 = (sftb_4) ? a_9 : a_25;
+assign b_26 = (sftb_4) ? a_10 : a_26;
+assign b_27 = (sftb_4) ? a_11 : a_27;
+assign b_28 = (sftb_4) ? a_12 : a_28;
+assign b_29 = (sftb_4) ? a_13 : a_29;
+assign b_30 = (sftb_4) ? a_14 : a_30;
+assign b_31 = (sftb_4) ? a_15 : a_31;
 
 // DSP_A-5Q.NET (729) - c[0-7] : mx2
-mx2 c_from_0_to_7_inst_0
-(
-	.z /* OUT */ (c_0),
-	.a0 /* IN */ (b_0),
-	.a1 /* IN */ (b_24),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_1
-(
-	.z /* OUT */ (c_1),
-	.a0 /* IN */ (b_1),
-	.a1 /* IN */ (b_25),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_2
-(
-	.z /* OUT */ (c_2),
-	.a0 /* IN */ (b_2),
-	.a1 /* IN */ (b_26),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_3
-(
-	.z /* OUT */ (c_3),
-	.a0 /* IN */ (b_3),
-	.a1 /* IN */ (b_27),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_4
-(
-	.z /* OUT */ (c_4),
-	.a0 /* IN */ (b_4),
-	.a1 /* IN */ (b_28),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_5
-(
-	.z /* OUT */ (c_5),
-	.a0 /* IN */ (b_5),
-	.a1 /* IN */ (b_29),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_6
-(
-	.z /* OUT */ (c_6),
-	.a0 /* IN */ (b_6),
-	.a1 /* IN */ (b_30),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_0_to_7_inst_7
-(
-	.z /* OUT */ (c_7),
-	.a0 /* IN */ (b_7),
-	.a1 /* IN */ (b_31),
-	.s /* IN */ (sftb_3)
-);
+assign c_0 = (sftb_3) ? b_24 : b_0;
+assign c_1 = (sftb_3) ? b_25 : b_1;
+assign c_2 = (sftb_3) ? b_26 : b_2;
+assign c_3 = (sftb_3) ? b_27 : b_3;
+assign c_4 = (sftb_3) ? b_28 : b_4;
+assign c_5 = (sftb_3) ? b_29 : b_5;
+assign c_6 = (sftb_3) ? b_30 : b_6;
+assign c_7 = (sftb_3) ? b_31 : b_7;
 
 // DSP_A-5Q.NET (730) - c[8-31] : mx2
-mx2 c_from_8_to_31_inst_0
-(
-	.z /* OUT */ (c_8),
-	.a0 /* IN */ (b_8),
-	.a1 /* IN */ (b_0),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_1
-(
-	.z /* OUT */ (c_9),
-	.a0 /* IN */ (b_9),
-	.a1 /* IN */ (b_1),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_2
-(
-	.z /* OUT */ (c_10),
-	.a0 /* IN */ (b_10),
-	.a1 /* IN */ (b_2),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_3
-(
-	.z /* OUT */ (c_11),
-	.a0 /* IN */ (b_11),
-	.a1 /* IN */ (b_3),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_4
-(
-	.z /* OUT */ (c_12),
-	.a0 /* IN */ (b_12),
-	.a1 /* IN */ (b_4),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_5
-(
-	.z /* OUT */ (c_13),
-	.a0 /* IN */ (b_13),
-	.a1 /* IN */ (b_5),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_6
-(
-	.z /* OUT */ (c_14),
-	.a0 /* IN */ (b_14),
-	.a1 /* IN */ (b_6),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_7
-(
-	.z /* OUT */ (c_15),
-	.a0 /* IN */ (b_15),
-	.a1 /* IN */ (b_7),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_8
-(
-	.z /* OUT */ (c_16),
-	.a0 /* IN */ (b_16),
-	.a1 /* IN */ (b_8),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_9
-(
-	.z /* OUT */ (c_17),
-	.a0 /* IN */ (b_17),
-	.a1 /* IN */ (b_9),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_10
-(
-	.z /* OUT */ (c_18),
-	.a0 /* IN */ (b_18),
-	.a1 /* IN */ (b_10),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_11
-(
-	.z /* OUT */ (c_19),
-	.a0 /* IN */ (b_19),
-	.a1 /* IN */ (b_11),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_12
-(
-	.z /* OUT */ (c_20),
-	.a0 /* IN */ (b_20),
-	.a1 /* IN */ (b_12),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_13
-(
-	.z /* OUT */ (c_21),
-	.a0 /* IN */ (b_21),
-	.a1 /* IN */ (b_13),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_14
-(
-	.z /* OUT */ (c_22),
-	.a0 /* IN */ (b_22),
-	.a1 /* IN */ (b_14),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_15
-(
-	.z /* OUT */ (c_23),
-	.a0 /* IN */ (b_23),
-	.a1 /* IN */ (b_15),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_16
-(
-	.z /* OUT */ (c_24),
-	.a0 /* IN */ (b_24),
-	.a1 /* IN */ (b_16),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_17
-(
-	.z /* OUT */ (c_25),
-	.a0 /* IN */ (b_25),
-	.a1 /* IN */ (b_17),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_18
-(
-	.z /* OUT */ (c_26),
-	.a0 /* IN */ (b_26),
-	.a1 /* IN */ (b_18),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_19
-(
-	.z /* OUT */ (c_27),
-	.a0 /* IN */ (b_27),
-	.a1 /* IN */ (b_19),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_20
-(
-	.z /* OUT */ (c_28),
-	.a0 /* IN */ (b_28),
-	.a1 /* IN */ (b_20),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_21
-(
-	.z /* OUT */ (c_29),
-	.a0 /* IN */ (b_29),
-	.a1 /* IN */ (b_21),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_22
-(
-	.z /* OUT */ (c_30),
-	.a0 /* IN */ (b_30),
-	.a1 /* IN */ (b_22),
-	.s /* IN */ (sftb_3)
-);
-mx2 c_from_8_to_31_inst_23
-(
-	.z /* OUT */ (c_31),
-	.a0 /* IN */ (b_31),
-	.a1 /* IN */ (b_23),
-	.s /* IN */ (sftb_3)
-);
+assign c_8 = (sftb_3) ? b_0 : b_8;
+assign c_9 = (sftb_3) ? b_1 : b_9;
+assign c_10 = (sftb_3) ? b_2 : b_10;
+assign c_11 = (sftb_3) ? b_3 : b_11;
+assign c_12 = (sftb_3) ? b_4 : b_12;
+assign c_13 = (sftb_3) ? b_5 : b_13;
+assign c_14 = (sftb_3) ? b_6 : b_14;
+assign c_15 = (sftb_3) ? b_7 : b_15;
+assign c_16 = (sftb_3) ? b_8 : b_16;
+assign c_17 = (sftb_3) ? b_9 : b_17;
+assign c_18 = (sftb_3) ? b_10 : b_18;
+assign c_19 = (sftb_3) ? b_11 : b_19;
+assign c_20 = (sftb_3) ? b_12 : b_20;
+assign c_21 = (sftb_3) ? b_13 : b_21;
+assign c_22 = (sftb_3) ? b_14 : b_22;
+assign c_23 = (sftb_3) ? b_15 : b_23;
+assign c_24 = (sftb_3) ? b_16 : b_24;
+assign c_25 = (sftb_3) ? b_17 : b_25;
+assign c_26 = (sftb_3) ? b_18 : b_26;
+assign c_27 = (sftb_3) ? b_19 : b_27;
+assign c_28 = (sftb_3) ? b_20 : b_28;
+assign c_29 = (sftb_3) ? b_21 : b_29;
+assign c_30 = (sftb_3) ? b_22 : b_30;
+assign c_31 = (sftb_3) ? b_23 : b_31;
 
 // DSP_A-5Q.NET (732) - d[0-3] : mx2
-mx2 d_from_0_to_3_inst_0
-(
-	.z /* OUT */ (d_0),
-	.a0 /* IN */ (c_0),
-	.a1 /* IN */ (c_28),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_0_to_3_inst_1
-(
-	.z /* OUT */ (d_1),
-	.a0 /* IN */ (c_1),
-	.a1 /* IN */ (c_29),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_0_to_3_inst_2
-(
-	.z /* OUT */ (d_2),
-	.a0 /* IN */ (c_2),
-	.a1 /* IN */ (c_30),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_0_to_3_inst_3
-(
-	.z /* OUT */ (d_3),
-	.a0 /* IN */ (c_3),
-	.a1 /* IN */ (c_31),
-	.s /* IN */ (sftb_2)
-);
+assign d_0 = (sftb_2) ? c_28 : c_0;
+assign d_1 = (sftb_2) ? c_29 : c_1;
+assign d_2 = (sftb_2) ? c_30 : c_2;
+assign d_3 = (sftb_2) ? c_31 : c_3;
 
 // DSP_A-5Q.NET (733) - d[4-31] : mx2
-mx2 d_from_4_to_31_inst_0
-(
-	.z /* OUT */ (d_4),
-	.a0 /* IN */ (c_4),
-	.a1 /* IN */ (c_0),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_1
-(
-	.z /* OUT */ (d_5),
-	.a0 /* IN */ (c_5),
-	.a1 /* IN */ (c_1),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_2
-(
-	.z /* OUT */ (d_6),
-	.a0 /* IN */ (c_6),
-	.a1 /* IN */ (c_2),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_3
-(
-	.z /* OUT */ (d_7),
-	.a0 /* IN */ (c_7),
-	.a1 /* IN */ (c_3),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_4
-(
-	.z /* OUT */ (d_8),
-	.a0 /* IN */ (c_8),
-	.a1 /* IN */ (c_4),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_5
-(
-	.z /* OUT */ (d_9),
-	.a0 /* IN */ (c_9),
-	.a1 /* IN */ (c_5),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_6
-(
-	.z /* OUT */ (d_10),
-	.a0 /* IN */ (c_10),
-	.a1 /* IN */ (c_6),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_7
-(
-	.z /* OUT */ (d_11),
-	.a0 /* IN */ (c_11),
-	.a1 /* IN */ (c_7),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_8
-(
-	.z /* OUT */ (d_12),
-	.a0 /* IN */ (c_12),
-	.a1 /* IN */ (c_8),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_9
-(
-	.z /* OUT */ (d_13),
-	.a0 /* IN */ (c_13),
-	.a1 /* IN */ (c_9),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_10
-(
-	.z /* OUT */ (d_14),
-	.a0 /* IN */ (c_14),
-	.a1 /* IN */ (c_10),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_11
-(
-	.z /* OUT */ (d_15),
-	.a0 /* IN */ (c_15),
-	.a1 /* IN */ (c_11),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_12
-(
-	.z /* OUT */ (d_16),
-	.a0 /* IN */ (c_16),
-	.a1 /* IN */ (c_12),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_13
-(
-	.z /* OUT */ (d_17),
-	.a0 /* IN */ (c_17),
-	.a1 /* IN */ (c_13),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_14
-(
-	.z /* OUT */ (d_18),
-	.a0 /* IN */ (c_18),
-	.a1 /* IN */ (c_14),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_15
-(
-	.z /* OUT */ (d_19),
-	.a0 /* IN */ (c_19),
-	.a1 /* IN */ (c_15),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_16
-(
-	.z /* OUT */ (d_20),
-	.a0 /* IN */ (c_20),
-	.a1 /* IN */ (c_16),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_17
-(
-	.z /* OUT */ (d_21),
-	.a0 /* IN */ (c_21),
-	.a1 /* IN */ (c_17),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_18
-(
-	.z /* OUT */ (d_22),
-	.a0 /* IN */ (c_22),
-	.a1 /* IN */ (c_18),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_19
-(
-	.z /* OUT */ (d_23),
-	.a0 /* IN */ (c_23),
-	.a1 /* IN */ (c_19),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_20
-(
-	.z /* OUT */ (d_24),
-	.a0 /* IN */ (c_24),
-	.a1 /* IN */ (c_20),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_21
-(
-	.z /* OUT */ (d_25),
-	.a0 /* IN */ (c_25),
-	.a1 /* IN */ (c_21),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_22
-(
-	.z /* OUT */ (d_26),
-	.a0 /* IN */ (c_26),
-	.a1 /* IN */ (c_22),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_23
-(
-	.z /* OUT */ (d_27),
-	.a0 /* IN */ (c_27),
-	.a1 /* IN */ (c_23),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_24
-(
-	.z /* OUT */ (d_28),
-	.a0 /* IN */ (c_28),
-	.a1 /* IN */ (c_24),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_25
-(
-	.z /* OUT */ (d_29),
-	.a0 /* IN */ (c_29),
-	.a1 /* IN */ (c_25),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_26
-(
-	.z /* OUT */ (d_30),
-	.a0 /* IN */ (c_30),
-	.a1 /* IN */ (c_26),
-	.s /* IN */ (sftb_2)
-);
-mx2 d_from_4_to_31_inst_27
-(
-	.z /* OUT */ (d_31),
-	.a0 /* IN */ (c_31),
-	.a1 /* IN */ (c_27),
-	.s /* IN */ (sftb_2)
-);
+assign d_4 = (sftb_2) ? c_0 : c_4;
+assign d_5 = (sftb_2) ? c_1 : c_5;
+assign d_6 = (sftb_2) ? c_2 : c_6;
+assign d_7 = (sftb_2) ? c_3 : c_7;
+assign d_8 = (sftb_2) ? c_4 : c_8;
+assign d_9 = (sftb_2) ? c_5 : c_9;
+assign d_10 = (sftb_2) ? c_6 : c_10;
+assign d_11 = (sftb_2) ? c_7 : c_11;
+assign d_12 = (sftb_2) ? c_8 : c_12;
+assign d_13 = (sftb_2) ? c_9 : c_13;
+assign d_14 = (sftb_2) ? c_10 : c_14;
+assign d_15 = (sftb_2) ? c_11 : c_15;
+assign d_16 = (sftb_2) ? c_12 : c_16;
+assign d_17 = (sftb_2) ? c_13 : c_17;
+assign d_18 = (sftb_2) ? c_14 : c_18;
+assign d_19 = (sftb_2) ? c_15 : c_19;
+assign d_20 = (sftb_2) ? c_16 : c_20;
+assign d_21 = (sftb_2) ? c_17 : c_21;
+assign d_22 = (sftb_2) ? c_18 : c_22;
+assign d_23 = (sftb_2) ? c_19 : c_23;
+assign d_24 = (sftb_2) ? c_20 : c_24;
+assign d_25 = (sftb_2) ? c_21 : c_25;
+assign d_26 = (sftb_2) ? c_22 : c_26;
+assign d_27 = (sftb_2) ? c_23 : c_27;
+assign d_28 = (sftb_2) ? c_24 : c_28;
+assign d_29 = (sftb_2) ? c_25 : c_29;
+assign d_30 = (sftb_2) ? c_26 : c_30;
+assign d_31 = (sftb_2) ? c_27 : c_31;
 
 // DSP_A-5Q.NET (735) - e[0-1] : mx2
-mx2 e_from_0_to_1_inst_0
-(
-	.z /* OUT */ (e_0),
-	.a0 /* IN */ (d_0),
-	.a1 /* IN */ (d_30),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_0_to_1_inst_1
-(
-	.z /* OUT */ (e_1),
-	.a0 /* IN */ (d_1),
-	.a1 /* IN */ (d_31),
-	.s /* IN */ (sftb_1)
-);
+assign e_0 = (sftb_1) ? d_30 : d_0;
+assign e_1 = (sftb_1) ? d_31 : d_1;
 
 // DSP_A-5Q.NET (736) - e[2-31] : mx2
-mx2 e_from_2_to_31_inst_0
-(
-	.z /* OUT */ (e_2),
-	.a0 /* IN */ (d_2),
-	.a1 /* IN */ (d_0),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_1
-(
-	.z /* OUT */ (e_3),
-	.a0 /* IN */ (d_3),
-	.a1 /* IN */ (d_1),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_2
-(
-	.z /* OUT */ (e_4),
-	.a0 /* IN */ (d_4),
-	.a1 /* IN */ (d_2),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_3
-(
-	.z /* OUT */ (e_5),
-	.a0 /* IN */ (d_5),
-	.a1 /* IN */ (d_3),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_4
-(
-	.z /* OUT */ (e_6),
-	.a0 /* IN */ (d_6),
-	.a1 /* IN */ (d_4),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_5
-(
-	.z /* OUT */ (e_7),
-	.a0 /* IN */ (d_7),
-	.a1 /* IN */ (d_5),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_6
-(
-	.z /* OUT */ (e_8),
-	.a0 /* IN */ (d_8),
-	.a1 /* IN */ (d_6),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_7
-(
-	.z /* OUT */ (e_9),
-	.a0 /* IN */ (d_9),
-	.a1 /* IN */ (d_7),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_8
-(
-	.z /* OUT */ (e_10),
-	.a0 /* IN */ (d_10),
-	.a1 /* IN */ (d_8),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_9
-(
-	.z /* OUT */ (e_11),
-	.a0 /* IN */ (d_11),
-	.a1 /* IN */ (d_9),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_10
-(
-	.z /* OUT */ (e_12),
-	.a0 /* IN */ (d_12),
-	.a1 /* IN */ (d_10),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_11
-(
-	.z /* OUT */ (e_13),
-	.a0 /* IN */ (d_13),
-	.a1 /* IN */ (d_11),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_12
-(
-	.z /* OUT */ (e_14),
-	.a0 /* IN */ (d_14),
-	.a1 /* IN */ (d_12),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_13
-(
-	.z /* OUT */ (e_15),
-	.a0 /* IN */ (d_15),
-	.a1 /* IN */ (d_13),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_14
-(
-	.z /* OUT */ (e_16),
-	.a0 /* IN */ (d_16),
-	.a1 /* IN */ (d_14),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_15
-(
-	.z /* OUT */ (e_17),
-	.a0 /* IN */ (d_17),
-	.a1 /* IN */ (d_15),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_16
-(
-	.z /* OUT */ (e_18),
-	.a0 /* IN */ (d_18),
-	.a1 /* IN */ (d_16),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_17
-(
-	.z /* OUT */ (e_19),
-	.a0 /* IN */ (d_19),
-	.a1 /* IN */ (d_17),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_18
-(
-	.z /* OUT */ (e_20),
-	.a0 /* IN */ (d_20),
-	.a1 /* IN */ (d_18),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_19
-(
-	.z /* OUT */ (e_21),
-	.a0 /* IN */ (d_21),
-	.a1 /* IN */ (d_19),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_20
-(
-	.z /* OUT */ (e_22),
-	.a0 /* IN */ (d_22),
-	.a1 /* IN */ (d_20),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_21
-(
-	.z /* OUT */ (e_23),
-	.a0 /* IN */ (d_23),
-	.a1 /* IN */ (d_21),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_22
-(
-	.z /* OUT */ (e_24),
-	.a0 /* IN */ (d_24),
-	.a1 /* IN */ (d_22),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_23
-(
-	.z /* OUT */ (e_25),
-	.a0 /* IN */ (d_25),
-	.a1 /* IN */ (d_23),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_24
-(
-	.z /* OUT */ (e_26),
-	.a0 /* IN */ (d_26),
-	.a1 /* IN */ (d_24),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_25
-(
-	.z /* OUT */ (e_27),
-	.a0 /* IN */ (d_27),
-	.a1 /* IN */ (d_25),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_26
-(
-	.z /* OUT */ (e_28),
-	.a0 /* IN */ (d_28),
-	.a1 /* IN */ (d_26),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_27
-(
-	.z /* OUT */ (e_29),
-	.a0 /* IN */ (d_29),
-	.a1 /* IN */ (d_27),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_28
-(
-	.z /* OUT */ (e_30),
-	.a0 /* IN */ (d_30),
-	.a1 /* IN */ (d_28),
-	.s /* IN */ (sftb_1)
-);
-mx2 e_from_2_to_31_inst_29
-(
-	.z /* OUT */ (e_31),
-	.a0 /* IN */ (d_31),
-	.a1 /* IN */ (d_29),
-	.s /* IN */ (sftb_1)
-);
+assign e_2 = (sftb_1) ? d_0 : d_2;
+assign e_3 = (sftb_1) ? d_1 : d_3;
+assign e_4 = (sftb_1) ? d_2 : d_4;
+assign e_5 = (sftb_1) ? d_3 : d_5;
+assign e_6 = (sftb_1) ? d_4 : d_6;
+assign e_7 = (sftb_1) ? d_5 : d_7;
+assign e_8 = (sftb_1) ? d_6 : d_8;
+assign e_9 = (sftb_1) ? d_7 : d_9;
+assign e_10 = (sftb_1) ? d_8 : d_10;
+assign e_11 = (sftb_1) ? d_9 : d_11;
+assign e_12 = (sftb_1) ? d_10 : d_12;
+assign e_13 = (sftb_1) ? d_11 : d_13;
+assign e_14 = (sftb_1) ? d_12 : d_14;
+assign e_15 = (sftb_1) ? d_13 : d_15;
+assign e_16 = (sftb_1) ? d_14 : d_16;
+assign e_17 = (sftb_1) ? d_15 : d_17;
+assign e_18 = (sftb_1) ? d_16 : d_18;
+assign e_19 = (sftb_1) ? d_17 : d_19;
+assign e_20 = (sftb_1) ? d_18 : d_20;
+assign e_21 = (sftb_1) ? d_19 : d_21;
+assign e_22 = (sftb_1) ? d_20 : d_22;
+assign e_23 = (sftb_1) ? d_21 : d_23;
+assign e_24 = (sftb_1) ? d_22 : d_24;
+assign e_25 = (sftb_1) ? d_23 : d_25;
+assign e_26 = (sftb_1) ? d_24 : d_26;
+assign e_27 = (sftb_1) ? d_25 : d_27;
+assign e_28 = (sftb_1) ? d_26 : d_28;
+assign e_29 = (sftb_1) ? d_27 : d_29;
+assign e_30 = (sftb_1) ? d_28 : d_30;
+assign e_31 = (sftb_1) ? d_29 : d_31;
 
 // DSP_A-5Q.NET (738) - f[0] : mx2
-mx2 f_index_0_inst
-(
-	.z /* OUT */ (f_0),
-	.a0 /* IN */ (e_0),
-	.a1 /* IN */ (e_31),
-	.s /* IN */ (sftb_0)
-);
+assign f_0 = (sftb_0) ? e_31 : e_0;
 
 // DSP_A-5Q.NET (739) - f[1-31] : mx2
-mx2 f_from_1_to_31_inst_0
-(
-	.z /* OUT */ (f_1),
-	.a0 /* IN */ (e_1),
-	.a1 /* IN */ (e_0),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_1
-(
-	.z /* OUT */ (f_2),
-	.a0 /* IN */ (e_2),
-	.a1 /* IN */ (e_1),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_2
-(
-	.z /* OUT */ (f_3),
-	.a0 /* IN */ (e_3),
-	.a1 /* IN */ (e_2),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_3
-(
-	.z /* OUT */ (f_4),
-	.a0 /* IN */ (e_4),
-	.a1 /* IN */ (e_3),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_4
-(
-	.z /* OUT */ (f_5),
-	.a0 /* IN */ (e_5),
-	.a1 /* IN */ (e_4),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_5
-(
-	.z /* OUT */ (f_6),
-	.a0 /* IN */ (e_6),
-	.a1 /* IN */ (e_5),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_6
-(
-	.z /* OUT */ (f_7),
-	.a0 /* IN */ (e_7),
-	.a1 /* IN */ (e_6),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_7
-(
-	.z /* OUT */ (f_8),
-	.a0 /* IN */ (e_8),
-	.a1 /* IN */ (e_7),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_8
-(
-	.z /* OUT */ (f_9),
-	.a0 /* IN */ (e_9),
-	.a1 /* IN */ (e_8),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_9
-(
-	.z /* OUT */ (f_10),
-	.a0 /* IN */ (e_10),
-	.a1 /* IN */ (e_9),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_10
-(
-	.z /* OUT */ (f_11),
-	.a0 /* IN */ (e_11),
-	.a1 /* IN */ (e_10),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_11
-(
-	.z /* OUT */ (f_12),
-	.a0 /* IN */ (e_12),
-	.a1 /* IN */ (e_11),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_12
-(
-	.z /* OUT */ (f_13),
-	.a0 /* IN */ (e_13),
-	.a1 /* IN */ (e_12),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_13
-(
-	.z /* OUT */ (f_14),
-	.a0 /* IN */ (e_14),
-	.a1 /* IN */ (e_13),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_14
-(
-	.z /* OUT */ (f_15),
-	.a0 /* IN */ (e_15),
-	.a1 /* IN */ (e_14),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_15
-(
-	.z /* OUT */ (f_16),
-	.a0 /* IN */ (e_16),
-	.a1 /* IN */ (e_15),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_16
-(
-	.z /* OUT */ (f_17),
-	.a0 /* IN */ (e_17),
-	.a1 /* IN */ (e_16),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_17
-(
-	.z /* OUT */ (f_18),
-	.a0 /* IN */ (e_18),
-	.a1 /* IN */ (e_17),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_18
-(
-	.z /* OUT */ (f_19),
-	.a0 /* IN */ (e_19),
-	.a1 /* IN */ (e_18),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_19
-(
-	.z /* OUT */ (f_20),
-	.a0 /* IN */ (e_20),
-	.a1 /* IN */ (e_19),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_20
-(
-	.z /* OUT */ (f_21),
-	.a0 /* IN */ (e_21),
-	.a1 /* IN */ (e_20),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_21
-(
-	.z /* OUT */ (f_22),
-	.a0 /* IN */ (e_22),
-	.a1 /* IN */ (e_21),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_22
-(
-	.z /* OUT */ (f_23),
-	.a0 /* IN */ (e_23),
-	.a1 /* IN */ (e_22),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_23
-(
-	.z /* OUT */ (f_24),
-	.a0 /* IN */ (e_24),
-	.a1 /* IN */ (e_23),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_24
-(
-	.z /* OUT */ (f_25),
-	.a0 /* IN */ (e_25),
-	.a1 /* IN */ (e_24),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_25
-(
-	.z /* OUT */ (f_26),
-	.a0 /* IN */ (e_26),
-	.a1 /* IN */ (e_25),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_26
-(
-	.z /* OUT */ (f_27),
-	.a0 /* IN */ (e_27),
-	.a1 /* IN */ (e_26),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_27
-(
-	.z /* OUT */ (f_28),
-	.a0 /* IN */ (e_28),
-	.a1 /* IN */ (e_27),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_28
-(
-	.z /* OUT */ (f_29),
-	.a0 /* IN */ (e_29),
-	.a1 /* IN */ (e_28),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_29
-(
-	.z /* OUT */ (f_30),
-	.a0 /* IN */ (e_30),
-	.a1 /* IN */ (e_29),
-	.s /* IN */ (sftb_0)
-);
-mx2 f_from_1_to_31_inst_30
-(
-	.z /* OUT */ (f_31),
-	.a0 /* IN */ (e_31),
-	.a1 /* IN */ (e_30),
-	.s /* IN */ (sftb_0)
-);
+assign f_1 = (sftb_0) ? e_0 : e_1;
+assign f_2 = (sftb_0) ? e_1 : e_2;
+assign f_3 = (sftb_0) ? e_2 : e_3;
+assign f_4 = (sftb_0) ? e_3 : e_4;
+assign f_5 = (sftb_0) ? e_4 : e_5;
+assign f_6 = (sftb_0) ? e_5 : e_6;
+assign f_7 = (sftb_0) ? e_6 : e_7;
+assign f_8 = (sftb_0) ? e_7 : e_8;
+assign f_9 = (sftb_0) ? e_8 : e_9;
+assign f_10 = (sftb_0) ? e_9 : e_10;
+assign f_11 = (sftb_0) ? e_10 : e_11;
+assign f_12 = (sftb_0) ? e_11 : e_12;
+assign f_13 = (sftb_0) ? e_12 : e_13;
+assign f_14 = (sftb_0) ? e_13 : e_14;
+assign f_15 = (sftb_0) ? e_14 : e_15;
+assign f_16 = (sftb_0) ? e_15 : e_16;
+assign f_17 = (sftb_0) ? e_16 : e_17;
+assign f_18 = (sftb_0) ? e_17 : e_18;
+assign f_19 = (sftb_0) ? e_18 : e_19;
+assign f_20 = (sftb_0) ? e_19 : e_20;
+assign f_21 = (sftb_0) ? e_20 : e_21;
+assign f_22 = (sftb_0) ? e_21 : e_22;
+assign f_23 = (sftb_0) ? e_22 : e_23;
+assign f_24 = (sftb_0) ? e_23 : e_24;
+assign f_25 = (sftb_0) ? e_24 : e_25;
+assign f_26 = (sftb_0) ? e_25 : e_26;
+assign f_27 = (sftb_0) ? e_26 : e_27;
+assign f_28 = (sftb_0) ? e_27 : e_28;
+assign f_29 = (sftb_0) ? e_28 : e_29;
+assign f_30 = (sftb_0) ? e_29 : e_30;
+assign f_31 = (sftb_0) ? e_30 : e_31;
 
 // DSP_A-5Q.NET (743) - dcd0 : d416gh
 d416gh dcd0_inst

@@ -21,13 +21,7 @@ assign q = q_obuf;
 
 
 // LEGO.NET (34) - d : mx2
-mx2 d_inst
-(
-	.z /* OUT */ (d1),
-	.a0 /* IN */ (q_obuf),
-	.a1 /* IN */ (d),
-	.s /* IN */ (en)
-);
+assign d1 = (en) ? d : q_obuf;
 
 // LEGO.NET (35) - q : fd2q
 fd2q q_inst

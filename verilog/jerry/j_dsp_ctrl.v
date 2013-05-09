@@ -75,13 +75,7 @@ assign one = 1'b1;
 assign zero = 1'b0;
 
 // DSP_CTRL.NET (38) - goi : mx2
-mx2 goi_inst
-(
-	.z /* OUT */ (goi),
-	.a0 /* IN */ (go_obuf),
-	.a1 /* IN */ (gpu_din[0]),
-	.s /* IN */ (ctrlwr)
-);
+assign goi = (ctrlwr) ? gpu_din[0] : go_obuf;
 
 // DSP_CTRL.NET (39) - got : fd2q
 fd2q got_inst

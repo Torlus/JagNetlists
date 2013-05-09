@@ -30,21 +30,9 @@ mx4 lo4_inst
 );
 
 // DUPLO.NET (437) - hi2 : mx2
-mx2 hi2_inst
-(
-	.z /* OUT */ (hi2),
-	.a0 /* IN */ (a_4),
-	.a1 /* IN */ (a_5),
-	.s /* IN */ (sel_0)
-);
+assign hi2 = (sel_0) ? a_5 : a_4;
 
 // DUPLO.NET (438) - q : mx2
-mx2 q_inst
-(
-	.z /* OUT */ (q),
-	.a0 /* IN */ (lo4),
-	.a1 /* IN */ (hi2),
-	.s /* IN */ (sel_2)
-);
+assign q = (sel_2) ? hi2 : lo4;
 endmodule
 /* verilator lint_on LITENDIAN */

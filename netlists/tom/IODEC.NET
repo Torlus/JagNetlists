@@ -140,7 +140,10 @@ Viw_	:=	AN4H	(viw,i00xx,axx4x,axxxe,wet);
 Pit0w_	:=	AN4	(pit0w,i00xx,axx5x,axxx0,intswe);
 Pit1w_	:=	AN4	(pit1w,i00xx,axx5x,axxx2,intswe);
 Heqw_	:=	AN4H	(heqw,i00xx,axx5x,axxx4,wet);
-Test1w_	:=	AN6	(test1w,a00xx,axx5x,axxx6,writes,intdev,vcc);
+
+(* GE Test1w_	:=	AN6	(test1w,a00xx,axx5x,axxx6,writes,intdev,vcc); *)
+Test1w_	:= TIE0(test1w);
+
 Bgw_	:=	AN4H	(bgwr,i00xx,axx5x,axxx8,wet);
 
 Intw	:=	AN4	(int1w,i00xx,axxex,axxx0,writes);

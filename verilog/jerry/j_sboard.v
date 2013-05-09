@@ -544,48 +544,12 @@ assign imm_wback_n = ~imm_wback;
 assign ildwal = memrw & exe;
 
 // SBOARD.NET (189) - ild_wbaddr : mx2
-mx2 ild_wbaddr_inst_0
-(
-	.z /* OUT */ (ild_wbaddr[0]),
-	.a0 /* IN */ (ild_wbaddrl[0]),
-	.a1 /* IN */ (dstat[0]),
-	.s /* IN */ (ildwal)
-);
-mx2 ild_wbaddr_inst_1
-(
-	.z /* OUT */ (ild_wbaddr[1]),
-	.a0 /* IN */ (ild_wbaddrl[1]),
-	.a1 /* IN */ (dstat[1]),
-	.s /* IN */ (ildwal)
-);
-mx2 ild_wbaddr_inst_2
-(
-	.z /* OUT */ (ild_wbaddr[2]),
-	.a0 /* IN */ (ild_wbaddrl[2]),
-	.a1 /* IN */ (dstat[2]),
-	.s /* IN */ (ildwal)
-);
-mx2 ild_wbaddr_inst_3
-(
-	.z /* OUT */ (ild_wbaddr[3]),
-	.a0 /* IN */ (ild_wbaddrl[3]),
-	.a1 /* IN */ (dstat[3]),
-	.s /* IN */ (ildwal)
-);
-mx2 ild_wbaddr_inst_4
-(
-	.z /* OUT */ (ild_wbaddr[4]),
-	.a0 /* IN */ (ild_wbaddrl[4]),
-	.a1 /* IN */ (dstat[4]),
-	.s /* IN */ (ildwal)
-);
-mx2 ild_wbaddr_inst_5
-(
-	.z /* OUT */ (ild_wbaddr[5]),
-	.a0 /* IN */ (ild_wbaddrl[5]),
-	.a1 /* IN */ (dstat[5]),
-	.s /* IN */ (ildwal)
-);
+assign ild_wbaddr[0] = (ildwal) ? dstat[0] : ild_wbaddrl[0];
+assign ild_wbaddr[1] = (ildwal) ? dstat[1] : ild_wbaddrl[1];
+assign ild_wbaddr[2] = (ildwal) ? dstat[2] : ild_wbaddrl[2];
+assign ild_wbaddr[3] = (ildwal) ? dstat[3] : ild_wbaddrl[3];
+assign ild_wbaddr[4] = (ildwal) ? dstat[4] : ild_wbaddrl[4];
+assign ild_wbaddr[5] = (ildwal) ? dstat[5] : ild_wbaddrl[5];
 
 // SBOARD.NET (190) - ild_wbaddrl : fd2q
 fd2q ild_wbaddrl_inst_0
@@ -682,230 +646,38 @@ fd1q ilddselt_n_inst
 assign ilddsel_n = ilddselt_n;
 
 // SBOARD.NET (211) - ild_data : mx2
-mx2 ild_data_inst_0
-(
-	.z /* OUT */ (ild_data[0]),
-	.a0 /* IN */ (mem_data[0]),
-	.a1 /* IN */ (ild_datad[0]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_1
-(
-	.z /* OUT */ (ild_data[1]),
-	.a0 /* IN */ (mem_data[1]),
-	.a1 /* IN */ (ild_datad[1]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_2
-(
-	.z /* OUT */ (ild_data[2]),
-	.a0 /* IN */ (mem_data[2]),
-	.a1 /* IN */ (ild_datad[2]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_3
-(
-	.z /* OUT */ (ild_data[3]),
-	.a0 /* IN */ (mem_data[3]),
-	.a1 /* IN */ (ild_datad[3]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_4
-(
-	.z /* OUT */ (ild_data[4]),
-	.a0 /* IN */ (mem_data[4]),
-	.a1 /* IN */ (ild_datad[4]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_5
-(
-	.z /* OUT */ (ild_data[5]),
-	.a0 /* IN */ (mem_data[5]),
-	.a1 /* IN */ (ild_datad[5]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_6
-(
-	.z /* OUT */ (ild_data[6]),
-	.a0 /* IN */ (mem_data[6]),
-	.a1 /* IN */ (ild_datad[6]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_7
-(
-	.z /* OUT */ (ild_data[7]),
-	.a0 /* IN */ (mem_data[7]),
-	.a1 /* IN */ (ild_datad[7]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_8
-(
-	.z /* OUT */ (ild_data[8]),
-	.a0 /* IN */ (mem_data[8]),
-	.a1 /* IN */ (ild_datad[8]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_9
-(
-	.z /* OUT */ (ild_data[9]),
-	.a0 /* IN */ (mem_data[9]),
-	.a1 /* IN */ (ild_datad[9]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_10
-(
-	.z /* OUT */ (ild_data[10]),
-	.a0 /* IN */ (mem_data[10]),
-	.a1 /* IN */ (ild_datad[10]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_11
-(
-	.z /* OUT */ (ild_data[11]),
-	.a0 /* IN */ (mem_data[11]),
-	.a1 /* IN */ (ild_datad[11]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_12
-(
-	.z /* OUT */ (ild_data[12]),
-	.a0 /* IN */ (mem_data[12]),
-	.a1 /* IN */ (ild_datad[12]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_13
-(
-	.z /* OUT */ (ild_data[13]),
-	.a0 /* IN */ (mem_data[13]),
-	.a1 /* IN */ (ild_datad[13]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_14
-(
-	.z /* OUT */ (ild_data[14]),
-	.a0 /* IN */ (mem_data[14]),
-	.a1 /* IN */ (ild_datad[14]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_15
-(
-	.z /* OUT */ (ild_data[15]),
-	.a0 /* IN */ (mem_data[15]),
-	.a1 /* IN */ (ild_datad[15]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_16
-(
-	.z /* OUT */ (ild_data[16]),
-	.a0 /* IN */ (mem_data[16]),
-	.a1 /* IN */ (ild_datad[16]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_17
-(
-	.z /* OUT */ (ild_data[17]),
-	.a0 /* IN */ (mem_data[17]),
-	.a1 /* IN */ (ild_datad[17]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_18
-(
-	.z /* OUT */ (ild_data[18]),
-	.a0 /* IN */ (mem_data[18]),
-	.a1 /* IN */ (ild_datad[18]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_19
-(
-	.z /* OUT */ (ild_data[19]),
-	.a0 /* IN */ (mem_data[19]),
-	.a1 /* IN */ (ild_datad[19]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_20
-(
-	.z /* OUT */ (ild_data[20]),
-	.a0 /* IN */ (mem_data[20]),
-	.a1 /* IN */ (ild_datad[20]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_21
-(
-	.z /* OUT */ (ild_data[21]),
-	.a0 /* IN */ (mem_data[21]),
-	.a1 /* IN */ (ild_datad[21]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_22
-(
-	.z /* OUT */ (ild_data[22]),
-	.a0 /* IN */ (mem_data[22]),
-	.a1 /* IN */ (ild_datad[22]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_23
-(
-	.z /* OUT */ (ild_data[23]),
-	.a0 /* IN */ (mem_data[23]),
-	.a1 /* IN */ (ild_datad[23]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_24
-(
-	.z /* OUT */ (ild_data[24]),
-	.a0 /* IN */ (mem_data[24]),
-	.a1 /* IN */ (ild_datad[24]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_25
-(
-	.z /* OUT */ (ild_data[25]),
-	.a0 /* IN */ (mem_data[25]),
-	.a1 /* IN */ (ild_datad[25]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_26
-(
-	.z /* OUT */ (ild_data[26]),
-	.a0 /* IN */ (mem_data[26]),
-	.a1 /* IN */ (ild_datad[26]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_27
-(
-	.z /* OUT */ (ild_data[27]),
-	.a0 /* IN */ (mem_data[27]),
-	.a1 /* IN */ (ild_datad[27]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_28
-(
-	.z /* OUT */ (ild_data[28]),
-	.a0 /* IN */ (mem_data[28]),
-	.a1 /* IN */ (ild_datad[28]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_29
-(
-	.z /* OUT */ (ild_data[29]),
-	.a0 /* IN */ (mem_data[29]),
-	.a1 /* IN */ (ild_datad[29]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_30
-(
-	.z /* OUT */ (ild_data[30]),
-	.a0 /* IN */ (mem_data[30]),
-	.a1 /* IN */ (ild_datad[30]),
-	.s /* IN */ (ilddsel_n)
-);
-mx2 ild_data_inst_31
-(
-	.z /* OUT */ (ild_data[31]),
-	.a0 /* IN */ (mem_data[31]),
-	.a1 /* IN */ (ild_datad[31]),
-	.s /* IN */ (ilddsel_n)
-);
+assign ild_data[0] = (ilddsel_n) ? ild_datad[0] : mem_data[0];
+assign ild_data[1] = (ilddsel_n) ? ild_datad[1] : mem_data[1];
+assign ild_data[2] = (ilddsel_n) ? ild_datad[2] : mem_data[2];
+assign ild_data[3] = (ilddsel_n) ? ild_datad[3] : mem_data[3];
+assign ild_data[4] = (ilddsel_n) ? ild_datad[4] : mem_data[4];
+assign ild_data[5] = (ilddsel_n) ? ild_datad[5] : mem_data[5];
+assign ild_data[6] = (ilddsel_n) ? ild_datad[6] : mem_data[6];
+assign ild_data[7] = (ilddsel_n) ? ild_datad[7] : mem_data[7];
+assign ild_data[8] = (ilddsel_n) ? ild_datad[8] : mem_data[8];
+assign ild_data[9] = (ilddsel_n) ? ild_datad[9] : mem_data[9];
+assign ild_data[10] = (ilddsel_n) ? ild_datad[10] : mem_data[10];
+assign ild_data[11] = (ilddsel_n) ? ild_datad[11] : mem_data[11];
+assign ild_data[12] = (ilddsel_n) ? ild_datad[12] : mem_data[12];
+assign ild_data[13] = (ilddsel_n) ? ild_datad[13] : mem_data[13];
+assign ild_data[14] = (ilddsel_n) ? ild_datad[14] : mem_data[14];
+assign ild_data[15] = (ilddsel_n) ? ild_datad[15] : mem_data[15];
+assign ild_data[16] = (ilddsel_n) ? ild_datad[16] : mem_data[16];
+assign ild_data[17] = (ilddsel_n) ? ild_datad[17] : mem_data[17];
+assign ild_data[18] = (ilddsel_n) ? ild_datad[18] : mem_data[18];
+assign ild_data[19] = (ilddsel_n) ? ild_datad[19] : mem_data[19];
+assign ild_data[20] = (ilddsel_n) ? ild_datad[20] : mem_data[20];
+assign ild_data[21] = (ilddsel_n) ? ild_datad[21] : mem_data[21];
+assign ild_data[22] = (ilddsel_n) ? ild_datad[22] : mem_data[22];
+assign ild_data[23] = (ilddsel_n) ? ild_datad[23] : mem_data[23];
+assign ild_data[24] = (ilddsel_n) ? ild_datad[24] : mem_data[24];
+assign ild_data[25] = (ilddsel_n) ? ild_datad[25] : mem_data[25];
+assign ild_data[26] = (ilddsel_n) ? ild_datad[26] : mem_data[26];
+assign ild_data[27] = (ilddsel_n) ? ild_datad[27] : mem_data[27];
+assign ild_data[28] = (ilddsel_n) ? ild_datad[28] : mem_data[28];
+assign ild_data[29] = (ilddsel_n) ? ild_datad[29] : mem_data[29];
+assign ild_data[30] = (ilddsel_n) ? ild_datad[30] : mem_data[30];
+assign ild_data[31] = (ilddsel_n) ? ild_datad[31] : mem_data[31];
 
 // SBOARD.NET (212) - ild_datad : fd1q
 fd1q ild_datad_inst_0
@@ -2053,48 +1825,12 @@ fd1q dstwbaddr_inst_5
 );
 
 // SBOARD.NET (581) - dsta : mx2
-mx2 dsta_inst_0
-(
-	.z /* OUT */ (dsta[0]),
-	.a0 /* IN */ (dstanw[0]),
-	.a1 /* IN */ (dstwbaddr[0]),
-	.s /* IN */ (dstwbwe)
-);
-mx2 dsta_inst_1
-(
-	.z /* OUT */ (dsta[1]),
-	.a0 /* IN */ (dstanw[1]),
-	.a1 /* IN */ (dstwbaddr[1]),
-	.s /* IN */ (dstwbwe)
-);
-mx2 dsta_inst_2
-(
-	.z /* OUT */ (dsta[2]),
-	.a0 /* IN */ (dstanw[2]),
-	.a1 /* IN */ (dstwbaddr[2]),
-	.s /* IN */ (dstwbwe)
-);
-mx2 dsta_inst_3
-(
-	.z /* OUT */ (dsta[3]),
-	.a0 /* IN */ (dstanw[3]),
-	.a1 /* IN */ (dstwbaddr[3]),
-	.s /* IN */ (dstwbwe)
-);
-mx2 dsta_inst_4
-(
-	.z /* OUT */ (dsta[4]),
-	.a0 /* IN */ (dstanw[4]),
-	.a1 /* IN */ (dstwbaddr[4]),
-	.s /* IN */ (dstwbwe)
-);
-mx2 dsta_inst_5
-(
-	.z /* OUT */ (dsta[5]),
-	.a0 /* IN */ (dstanw[5]),
-	.a1 /* IN */ (dstwbaddr[5]),
-	.s /* IN */ (dstwbwe)
-);
+assign dsta[0] = (dstwbwe) ? dstwbaddr[0] : dstanw[0];
+assign dsta[1] = (dstwbwe) ? dstwbaddr[1] : dstanw[1];
+assign dsta[2] = (dstwbwe) ? dstwbaddr[2] : dstanw[2];
+assign dsta[3] = (dstwbwe) ? dstwbaddr[3] : dstanw[3];
+assign dsta[4] = (dstwbwe) ? dstwbaddr[4] : dstanw[4];
+assign dsta[5] = (dstwbwe) ? dstwbaddr[5] : dstanw[5];
 
 // SBOARD.NET (585) - srcwbaddr : fd1q
 fd1q srcwbaddr_inst_0
@@ -2922,20 +2658,8 @@ fd1q swselt_from_0_to_1_inst_1
 );
 
 // SBOARD.NET (625) - swsel[0-1] : mx2
-mx2 swsel_from_0_to_1_inst_0
-(
-	.z /* OUT */ (swsel_0),
-	.a0 /* IN */ (dwsel_0),
-	.a1 /* IN */ (swselt_0),
-	.s /* IN */ (dstwbwe)
-);
-mx2 swsel_from_0_to_1_inst_1
-(
-	.z /* OUT */ (swsel_1),
-	.a0 /* IN */ (dwsel_1),
-	.a1 /* IN */ (swselt_1),
-	.s /* IN */ (dstwbwe)
-);
+assign swsel_0 = (dstwbwe) ? swselt_0 : dwsel_0;
+assign swsel_1 = (dstwbwe) ? swselt_1 : dwsel_1;
 
 // SBOARD.NET (627) - swselb[0-1] : nivu
 assign swselb_0 = swsel_0;

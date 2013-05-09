@@ -220,118 +220,22 @@ mx4 addart_x_inst_15
 );
 
 // ADDRMUX.NET (73) - addar_x : mx2
-mx2 addar_x_inst_0
-(
-	.z /* OUT */ (addar_x[0]),
-	.a0 /* IN */ (addart_x[0]),
-	.a1 /* IN */ (a2_step_x[0]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_1
-(
-	.z /* OUT */ (addar_x[1]),
-	.a0 /* IN */ (addart_x[1]),
-	.a1 /* IN */ (a2_step_x[1]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_2
-(
-	.z /* OUT */ (addar_x[2]),
-	.a0 /* IN */ (addart_x[2]),
-	.a1 /* IN */ (a2_step_x[2]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_3
-(
-	.z /* OUT */ (addar_x[3]),
-	.a0 /* IN */ (addart_x[3]),
-	.a1 /* IN */ (a2_step_x[3]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_4
-(
-	.z /* OUT */ (addar_x[4]),
-	.a0 /* IN */ (addart_x[4]),
-	.a1 /* IN */ (a2_step_x[4]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_5
-(
-	.z /* OUT */ (addar_x[5]),
-	.a0 /* IN */ (addart_x[5]),
-	.a1 /* IN */ (a2_step_x[5]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_6
-(
-	.z /* OUT */ (addar_x[6]),
-	.a0 /* IN */ (addart_x[6]),
-	.a1 /* IN */ (a2_step_x[6]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_7
-(
-	.z /* OUT */ (addar_x[7]),
-	.a0 /* IN */ (addart_x[7]),
-	.a1 /* IN */ (a2_step_x[7]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_8
-(
-	.z /* OUT */ (addar_x[8]),
-	.a0 /* IN */ (addart_x[8]),
-	.a1 /* IN */ (a2_step_x[8]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_9
-(
-	.z /* OUT */ (addar_x[9]),
-	.a0 /* IN */ (addart_x[9]),
-	.a1 /* IN */ (a2_step_x[9]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_10
-(
-	.z /* OUT */ (addar_x[10]),
-	.a0 /* IN */ (addart_x[10]),
-	.a1 /* IN */ (a2_step_x[10]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_11
-(
-	.z /* OUT */ (addar_x[11]),
-	.a0 /* IN */ (addart_x[11]),
-	.a1 /* IN */ (a2_step_x[11]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_12
-(
-	.z /* OUT */ (addar_x[12]),
-	.a0 /* IN */ (addart_x[12]),
-	.a1 /* IN */ (a2_step_x[12]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_13
-(
-	.z /* OUT */ (addar_x[13]),
-	.a0 /* IN */ (addart_x[13]),
-	.a1 /* IN */ (a2_step_x[13]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_14
-(
-	.z /* OUT */ (addar_x[14]),
-	.a0 /* IN */ (addart_x[14]),
-	.a1 /* IN */ (a2_step_x[14]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_x_inst_15
-(
-	.z /* OUT */ (addar_x[15]),
-	.a0 /* IN */ (addart_x[15]),
-	.a1 /* IN */ (a2_step_x[15]),
-	.s /* IN */ (addaselb_2)
-);
+assign addar_x[0] = (addaselb_2) ? a2_step_x[0] : addart_x[0];
+assign addar_x[1] = (addaselb_2) ? a2_step_x[1] : addart_x[1];
+assign addar_x[2] = (addaselb_2) ? a2_step_x[2] : addart_x[2];
+assign addar_x[3] = (addaselb_2) ? a2_step_x[3] : addart_x[3];
+assign addar_x[4] = (addaselb_2) ? a2_step_x[4] : addart_x[4];
+assign addar_x[5] = (addaselb_2) ? a2_step_x[5] : addart_x[5];
+assign addar_x[6] = (addaselb_2) ? a2_step_x[6] : addart_x[6];
+assign addar_x[7] = (addaselb_2) ? a2_step_x[7] : addart_x[7];
+assign addar_x[8] = (addaselb_2) ? a2_step_x[8] : addart_x[8];
+assign addar_x[9] = (addaselb_2) ? a2_step_x[9] : addart_x[9];
+assign addar_x[10] = (addaselb_2) ? a2_step_x[10] : addart_x[10];
+assign addar_x[11] = (addaselb_2) ? a2_step_x[11] : addart_x[11];
+assign addar_x[12] = (addaselb_2) ? a2_step_x[12] : addart_x[12];
+assign addar_x[13] = (addaselb_2) ? a2_step_x[13] : addart_x[13];
+assign addar_x[14] = (addaselb_2) ? a2_step_x[14] : addart_x[14];
+assign addar_x[15] = (addaselb_2) ? a2_step_x[15] : addart_x[15];
 
 // ADDRMUX.NET (74) - addart_y : mx4
 mx4 addart_y_inst_0
@@ -496,118 +400,22 @@ mx4 addart_y_inst_15
 );
 
 // ADDRMUX.NET (76) - addar_y : mx2
-mx2 addar_y_inst_0
-(
-	.z /* OUT */ (addar_y[0]),
-	.a0 /* IN */ (addart_y[0]),
-	.a1 /* IN */ (a2_step_y[0]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_1
-(
-	.z /* OUT */ (addar_y[1]),
-	.a0 /* IN */ (addart_y[1]),
-	.a1 /* IN */ (a2_step_y[1]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_2
-(
-	.z /* OUT */ (addar_y[2]),
-	.a0 /* IN */ (addart_y[2]),
-	.a1 /* IN */ (a2_step_y[2]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_3
-(
-	.z /* OUT */ (addar_y[3]),
-	.a0 /* IN */ (addart_y[3]),
-	.a1 /* IN */ (a2_step_y[3]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_4
-(
-	.z /* OUT */ (addar_y[4]),
-	.a0 /* IN */ (addart_y[4]),
-	.a1 /* IN */ (a2_step_y[4]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_5
-(
-	.z /* OUT */ (addar_y[5]),
-	.a0 /* IN */ (addart_y[5]),
-	.a1 /* IN */ (a2_step_y[5]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_6
-(
-	.z /* OUT */ (addar_y[6]),
-	.a0 /* IN */ (addart_y[6]),
-	.a1 /* IN */ (a2_step_y[6]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_7
-(
-	.z /* OUT */ (addar_y[7]),
-	.a0 /* IN */ (addart_y[7]),
-	.a1 /* IN */ (a2_step_y[7]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_8
-(
-	.z /* OUT */ (addar_y[8]),
-	.a0 /* IN */ (addart_y[8]),
-	.a1 /* IN */ (a2_step_y[8]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_9
-(
-	.z /* OUT */ (addar_y[9]),
-	.a0 /* IN */ (addart_y[9]),
-	.a1 /* IN */ (a2_step_y[9]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_10
-(
-	.z /* OUT */ (addar_y[10]),
-	.a0 /* IN */ (addart_y[10]),
-	.a1 /* IN */ (a2_step_y[10]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_11
-(
-	.z /* OUT */ (addar_y[11]),
-	.a0 /* IN */ (addart_y[11]),
-	.a1 /* IN */ (a2_step_y[11]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_12
-(
-	.z /* OUT */ (addar_y[12]),
-	.a0 /* IN */ (addart_y[12]),
-	.a1 /* IN */ (a2_step_y[12]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_13
-(
-	.z /* OUT */ (addar_y[13]),
-	.a0 /* IN */ (addart_y[13]),
-	.a1 /* IN */ (a2_step_y[13]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_14
-(
-	.z /* OUT */ (addar_y[14]),
-	.a0 /* IN */ (addart_y[14]),
-	.a1 /* IN */ (a2_step_y[14]),
-	.s /* IN */ (addaselb_2)
-);
-mx2 addar_y_inst_15
-(
-	.z /* OUT */ (addar_y[15]),
-	.a0 /* IN */ (addart_y[15]),
-	.a1 /* IN */ (a2_step_y[15]),
-	.s /* IN */ (addaselb_2)
-);
+assign addar_y[0] = (addaselb_2) ? a2_step_y[0] : addart_y[0];
+assign addar_y[1] = (addaselb_2) ? a2_step_y[1] : addart_y[1];
+assign addar_y[2] = (addaselb_2) ? a2_step_y[2] : addart_y[2];
+assign addar_y[3] = (addaselb_2) ? a2_step_y[3] : addart_y[3];
+assign addar_y[4] = (addaselb_2) ? a2_step_y[4] : addart_y[4];
+assign addar_y[5] = (addaselb_2) ? a2_step_y[5] : addart_y[5];
+assign addar_y[6] = (addaselb_2) ? a2_step_y[6] : addart_y[6];
+assign addar_y[7] = (addaselb_2) ? a2_step_y[7] : addart_y[7];
+assign addar_y[8] = (addaselb_2) ? a2_step_y[8] : addart_y[8];
+assign addar_y[9] = (addaselb_2) ? a2_step_y[9] : addart_y[9];
+assign addar_y[10] = (addaselb_2) ? a2_step_y[10] : addart_y[10];
+assign addar_y[11] = (addaselb_2) ? a2_step_y[11] : addart_y[11];
+assign addar_y[12] = (addaselb_2) ? a2_step_y[12] : addart_y[12];
+assign addar_y[13] = (addaselb_2) ? a2_step_y[13] : addart_y[13];
+assign addar_y[14] = (addaselb_2) ? a2_step_y[14] : addart_y[14];
+assign addar_y[15] = (addaselb_2) ? a2_step_y[15] : addart_y[15];
 
 // ADDRMUX.NET (83) - addac_xlo : d38h
 d38h addac_xlo_inst
@@ -664,232 +472,40 @@ assign addac_y[14] = zero;
 assign addac_y[15] = zero;
 
 // ADDRMUX.NET (95) - addas_x : mx2
-mx2 addas_x_inst_0
-(
-	.z /* OUT */ (addas_x[0]),
-	.a0 /* IN */ (addac_x[0]),
-	.a1 /* IN */ (addar_x[0]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_1
-(
-	.z /* OUT */ (addas_x[1]),
-	.a0 /* IN */ (addac_x[1]),
-	.a1 /* IN */ (addar_x[1]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_2
-(
-	.z /* OUT */ (addas_x[2]),
-	.a0 /* IN */ (addac_x[2]),
-	.a1 /* IN */ (addar_x[2]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_3
-(
-	.z /* OUT */ (addas_x[3]),
-	.a0 /* IN */ (addac_x[3]),
-	.a1 /* IN */ (addar_x[3]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_4
-(
-	.z /* OUT */ (addas_x[4]),
-	.a0 /* IN */ (addac_x[4]),
-	.a1 /* IN */ (addar_x[4]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_5
-(
-	.z /* OUT */ (addas_x[5]),
-	.a0 /* IN */ (addac_x[5]),
-	.a1 /* IN */ (addar_x[5]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_6
-(
-	.z /* OUT */ (addas_x[6]),
-	.a0 /* IN */ (addac_x[6]),
-	.a1 /* IN */ (addar_x[6]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_7
-(
-	.z /* OUT */ (addas_x[7]),
-	.a0 /* IN */ (addac_x[7]),
-	.a1 /* IN */ (addar_x[7]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_8
-(
-	.z /* OUT */ (addas_x[8]),
-	.a0 /* IN */ (addac_x[8]),
-	.a1 /* IN */ (addar_x[8]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_9
-(
-	.z /* OUT */ (addas_x[9]),
-	.a0 /* IN */ (addac_x[9]),
-	.a1 /* IN */ (addar_x[9]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_10
-(
-	.z /* OUT */ (addas_x[10]),
-	.a0 /* IN */ (addac_x[10]),
-	.a1 /* IN */ (addar_x[10]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_11
-(
-	.z /* OUT */ (addas_x[11]),
-	.a0 /* IN */ (addac_x[11]),
-	.a1 /* IN */ (addar_x[11]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_12
-(
-	.z /* OUT */ (addas_x[12]),
-	.a0 /* IN */ (addac_x[12]),
-	.a1 /* IN */ (addar_x[12]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_13
-(
-	.z /* OUT */ (addas_x[13]),
-	.a0 /* IN */ (addac_x[13]),
-	.a1 /* IN */ (addar_x[13]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_14
-(
-	.z /* OUT */ (addas_x[14]),
-	.a0 /* IN */ (addac_x[14]),
-	.a1 /* IN */ (addar_x[14]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_x_inst_15
-(
-	.z /* OUT */ (addas_x[15]),
-	.a0 /* IN */ (addac_x[15]),
-	.a1 /* IN */ (addar_x[15]),
-	.s /* IN */ (addareg)
-);
+assign addas_x[0] = (addareg) ? addar_x[0] : addac_x[0];
+assign addas_x[1] = (addareg) ? addar_x[1] : addac_x[1];
+assign addas_x[2] = (addareg) ? addar_x[2] : addac_x[2];
+assign addas_x[3] = (addareg) ? addar_x[3] : addac_x[3];
+assign addas_x[4] = (addareg) ? addar_x[4] : addac_x[4];
+assign addas_x[5] = (addareg) ? addar_x[5] : addac_x[5];
+assign addas_x[6] = (addareg) ? addar_x[6] : addac_x[6];
+assign addas_x[7] = (addareg) ? addar_x[7] : addac_x[7];
+assign addas_x[8] = (addareg) ? addar_x[8] : addac_x[8];
+assign addas_x[9] = (addareg) ? addar_x[9] : addac_x[9];
+assign addas_x[10] = (addareg) ? addar_x[10] : addac_x[10];
+assign addas_x[11] = (addareg) ? addar_x[11] : addac_x[11];
+assign addas_x[12] = (addareg) ? addar_x[12] : addac_x[12];
+assign addas_x[13] = (addareg) ? addar_x[13] : addac_x[13];
+assign addas_x[14] = (addareg) ? addar_x[14] : addac_x[14];
+assign addas_x[15] = (addareg) ? addar_x[15] : addac_x[15];
 
 // ADDRMUX.NET (96) - addas_y : mx2
-mx2 addas_y_inst_0
-(
-	.z /* OUT */ (addas_y[0]),
-	.a0 /* IN */ (addac_y[0]),
-	.a1 /* IN */ (addar_y[0]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_1
-(
-	.z /* OUT */ (addas_y[1]),
-	.a0 /* IN */ (addac_y[1]),
-	.a1 /* IN */ (addar_y[1]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_2
-(
-	.z /* OUT */ (addas_y[2]),
-	.a0 /* IN */ (addac_y[2]),
-	.a1 /* IN */ (addar_y[2]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_3
-(
-	.z /* OUT */ (addas_y[3]),
-	.a0 /* IN */ (addac_y[3]),
-	.a1 /* IN */ (addar_y[3]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_4
-(
-	.z /* OUT */ (addas_y[4]),
-	.a0 /* IN */ (addac_y[4]),
-	.a1 /* IN */ (addar_y[4]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_5
-(
-	.z /* OUT */ (addas_y[5]),
-	.a0 /* IN */ (addac_y[5]),
-	.a1 /* IN */ (addar_y[5]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_6
-(
-	.z /* OUT */ (addas_y[6]),
-	.a0 /* IN */ (addac_y[6]),
-	.a1 /* IN */ (addar_y[6]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_7
-(
-	.z /* OUT */ (addas_y[7]),
-	.a0 /* IN */ (addac_y[7]),
-	.a1 /* IN */ (addar_y[7]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_8
-(
-	.z /* OUT */ (addas_y[8]),
-	.a0 /* IN */ (addac_y[8]),
-	.a1 /* IN */ (addar_y[8]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_9
-(
-	.z /* OUT */ (addas_y[9]),
-	.a0 /* IN */ (addac_y[9]),
-	.a1 /* IN */ (addar_y[9]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_10
-(
-	.z /* OUT */ (addas_y[10]),
-	.a0 /* IN */ (addac_y[10]),
-	.a1 /* IN */ (addar_y[10]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_11
-(
-	.z /* OUT */ (addas_y[11]),
-	.a0 /* IN */ (addac_y[11]),
-	.a1 /* IN */ (addar_y[11]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_12
-(
-	.z /* OUT */ (addas_y[12]),
-	.a0 /* IN */ (addac_y[12]),
-	.a1 /* IN */ (addar_y[12]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_13
-(
-	.z /* OUT */ (addas_y[13]),
-	.a0 /* IN */ (addac_y[13]),
-	.a1 /* IN */ (addar_y[13]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_14
-(
-	.z /* OUT */ (addas_y[14]),
-	.a0 /* IN */ (addac_y[14]),
-	.a1 /* IN */ (addar_y[14]),
-	.s /* IN */ (addareg)
-);
-mx2 addas_y_inst_15
-(
-	.z /* OUT */ (addas_y[15]),
-	.a0 /* IN */ (addac_y[15]),
-	.a1 /* IN */ (addar_y[15]),
-	.s /* IN */ (addareg)
-);
+assign addas_y[0] = (addareg) ? addar_y[0] : addac_y[0];
+assign addas_y[1] = (addareg) ? addar_y[1] : addac_y[1];
+assign addas_y[2] = (addareg) ? addar_y[2] : addac_y[2];
+assign addas_y[3] = (addareg) ? addar_y[3] : addac_y[3];
+assign addas_y[4] = (addareg) ? addar_y[4] : addac_y[4];
+assign addas_y[5] = (addareg) ? addar_y[5] : addac_y[5];
+assign addas_y[6] = (addareg) ? addar_y[6] : addac_y[6];
+assign addas_y[7] = (addareg) ? addar_y[7] : addac_y[7];
+assign addas_y[8] = (addareg) ? addar_y[8] : addac_y[8];
+assign addas_y[9] = (addareg) ? addar_y[9] : addac_y[9];
+assign addas_y[10] = (addareg) ? addar_y[10] : addac_y[10];
+assign addas_y[11] = (addareg) ? addar_y[11] : addac_y[11];
+assign addas_y[12] = (addareg) ? addar_y[12] : addac_y[12];
+assign addas_y[13] = (addareg) ? addar_y[13] : addac_y[13];
+assign addas_y[14] = (addareg) ? addar_y[14] : addac_y[14];
+assign addas_y[15] = (addareg) ? addar_y[15] : addac_y[15];
 
 // ADDRMUX.NET (100) - suba_x16 : join
 assign suba_x16[0] = suba_x;

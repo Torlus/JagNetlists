@@ -94,61 +94,13 @@ assign overflow = ~overflowi;
 assign cob_7 = co_7;
 
 // LBUF.NET (283) - z[0-7] : mx2
-mx2 z_from_0_to_7_inst_0
-(
-	.z /* OUT */ (z_0),
-	.a0 /* IN */ (s_0),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_1
-(
-	.z /* OUT */ (z_1),
-	.a0 /* IN */ (s_1),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_2
-(
-	.z /* OUT */ (z_2),
-	.a0 /* IN */ (s_2),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_3
-(
-	.z /* OUT */ (z_3),
-	.a0 /* IN */ (s_3),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_4
-(
-	.z /* OUT */ (z_4),
-	.a0 /* IN */ (s_4),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_5
-(
-	.z /* OUT */ (z_5),
-	.a0 /* IN */ (s_5),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_6
-(
-	.z /* OUT */ (z_6),
-	.a0 /* IN */ (s_6),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_7_inst_7
-(
-	.z /* OUT */ (z_7),
-	.a0 /* IN */ (s_7),
-	.a1 /* IN */ (cob_7),
-	.s /* IN */ (overflow)
-);
+assign z_0 = (overflow) ? cob_7 : s_0;
+assign z_1 = (overflow) ? cob_7 : s_1;
+assign z_2 = (overflow) ? cob_7 : s_2;
+assign z_3 = (overflow) ? cob_7 : s_3;
+assign z_4 = (overflow) ? cob_7 : s_4;
+assign z_5 = (overflow) ? cob_7 : s_5;
+assign z_6 = (overflow) ? cob_7 : s_6;
+assign z_7 = (overflow) ? cob_7 : s_7;
 endmodule
 /* verilator lint_on LITENDIAN */

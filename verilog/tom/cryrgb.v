@@ -152,178 +152,34 @@ assign rgbtsti = rgb | mptest;
 assign rgbtst = rgbtsti;
 
 // PIX.NET (210) - rt : mx2
-mx2 rt_inst_0
-(
-	.z /* OUT */ (rt[0]),
-	.a0 /* IN */ (r1[0]),
-	.a1 /* IN */ (c[0]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_1
-(
-	.z /* OUT */ (rt[1]),
-	.a0 /* IN */ (r1[1]),
-	.a1 /* IN */ (c[1]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_2
-(
-	.z /* OUT */ (rt[2]),
-	.a0 /* IN */ (r1[2]),
-	.a1 /* IN */ (c[2]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_3
-(
-	.z /* OUT */ (rt[3]),
-	.a0 /* IN */ (r1[3]),
-	.a1 /* IN */ (c[3]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_4
-(
-	.z /* OUT */ (rt[4]),
-	.a0 /* IN */ (r1[4]),
-	.a1 /* IN */ (c[4]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_5
-(
-	.z /* OUT */ (rt[5]),
-	.a0 /* IN */ (r1[5]),
-	.a1 /* IN */ (c[5]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_6
-(
-	.z /* OUT */ (rt[6]),
-	.a0 /* IN */ (r1[6]),
-	.a1 /* IN */ (c[6]),
-	.s /* IN */ (rgbtst)
-);
-mx2 rt_inst_7
-(
-	.z /* OUT */ (rt[7]),
-	.a0 /* IN */ (r1[7]),
-	.a1 /* IN */ (c[7]),
-	.s /* IN */ (rgbtst)
-);
+assign rt[0] = (rgbtst) ? c[0] : r1[0];
+assign rt[1] = (rgbtst) ? c[1] : r1[1];
+assign rt[2] = (rgbtst) ? c[2] : r1[2];
+assign rt[3] = (rgbtst) ? c[3] : r1[3];
+assign rt[4] = (rgbtst) ? c[4] : r1[4];
+assign rt[5] = (rgbtst) ? c[5] : r1[5];
+assign rt[6] = (rgbtst) ? c[6] : r1[6];
+assign rt[7] = (rgbtst) ? c[7] : r1[7];
 
 // PIX.NET (211) - gt : mx2
-mx2 gt_inst_0
-(
-	.z /* OUT */ (gt[0]),
-	.a0 /* IN */ (g1[0]),
-	.a1 /* IN */ (c[0]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_1
-(
-	.z /* OUT */ (gt[1]),
-	.a0 /* IN */ (g1[1]),
-	.a1 /* IN */ (c[1]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_2
-(
-	.z /* OUT */ (gt[2]),
-	.a0 /* IN */ (g1[2]),
-	.a1 /* IN */ (c[2]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_3
-(
-	.z /* OUT */ (gt[3]),
-	.a0 /* IN */ (g1[3]),
-	.a1 /* IN */ (c[3]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_4
-(
-	.z /* OUT */ (gt[4]),
-	.a0 /* IN */ (g1[4]),
-	.a1 /* IN */ (c[4]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_5
-(
-	.z /* OUT */ (gt[5]),
-	.a0 /* IN */ (g1[5]),
-	.a1 /* IN */ (c[5]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_6
-(
-	.z /* OUT */ (gt[6]),
-	.a0 /* IN */ (g1[6]),
-	.a1 /* IN */ (c[6]),
-	.s /* IN */ (rgbtst)
-);
-mx2 gt_inst_7
-(
-	.z /* OUT */ (gt[7]),
-	.a0 /* IN */ (g1[7]),
-	.a1 /* IN */ (c[7]),
-	.s /* IN */ (rgbtst)
-);
+assign gt[0] = (rgbtst) ? c[0] : g1[0];
+assign gt[1] = (rgbtst) ? c[1] : g1[1];
+assign gt[2] = (rgbtst) ? c[2] : g1[2];
+assign gt[3] = (rgbtst) ? c[3] : g1[3];
+assign gt[4] = (rgbtst) ? c[4] : g1[4];
+assign gt[5] = (rgbtst) ? c[5] : g1[5];
+assign gt[6] = (rgbtst) ? c[6] : g1[6];
+assign gt[7] = (rgbtst) ? c[7] : g1[7];
 
 // PIX.NET (212) - bt : mx2
-mx2 bt_inst_0
-(
-	.z /* OUT */ (bt[0]),
-	.a0 /* IN */ (b1[0]),
-	.a1 /* IN */ (c[0]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_1
-(
-	.z /* OUT */ (bt[1]),
-	.a0 /* IN */ (b1[1]),
-	.a1 /* IN */ (c[1]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_2
-(
-	.z /* OUT */ (bt[2]),
-	.a0 /* IN */ (b1[2]),
-	.a1 /* IN */ (c[2]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_3
-(
-	.z /* OUT */ (bt[3]),
-	.a0 /* IN */ (b1[3]),
-	.a1 /* IN */ (c[3]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_4
-(
-	.z /* OUT */ (bt[4]),
-	.a0 /* IN */ (b1[4]),
-	.a1 /* IN */ (c[4]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_5
-(
-	.z /* OUT */ (bt[5]),
-	.a0 /* IN */ (b1[5]),
-	.a1 /* IN */ (c[5]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_6
-(
-	.z /* OUT */ (bt[6]),
-	.a0 /* IN */ (b1[6]),
-	.a1 /* IN */ (c[6]),
-	.s /* IN */ (rgbtst)
-);
-mx2 bt_inst_7
-(
-	.z /* OUT */ (bt[7]),
-	.a0 /* IN */ (b1[7]),
-	.a1 /* IN */ (c[7]),
-	.s /* IN */ (rgbtst)
-);
+assign bt[0] = (rgbtst) ? c[0] : b1[0];
+assign bt[1] = (rgbtst) ? c[1] : b1[1];
+assign bt[2] = (rgbtst) ? c[2] : b1[2];
+assign bt[3] = (rgbtst) ? c[3] : b1[3];
+assign bt[4] = (rgbtst) ? c[4] : b1[4];
+assign bt[5] = (rgbtst) ? c[5] : b1[5];
+assign bt[6] = (rgbtst) ? c[6] : b1[6];
+assign bt[7] = (rgbtst) ? c[7] : b1[7];
 
 // PIX.NET (216) - r2 : fd1q
 fd1q r2_inst_0
@@ -645,186 +501,42 @@ mp1010a b3_inst
 );
 
 // PIX.NET (256) - r3b[0-2] : mx2
-mx2 r3b_from_0_to_2_inst_0
-(
-	.z /* OUT */ (r3b_0),
-	.a0 /* IN */ (r3[8]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
-mx2 r3b_from_0_to_2_inst_1
-(
-	.z /* OUT */ (r3b_1),
-	.a0 /* IN */ (r3[9]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
-mx2 r3b_from_0_to_2_inst_2
-(
-	.z /* OUT */ (r3b_2),
-	.a0 /* IN */ (r3[10]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
+assign r3b_0 = (rgbd) ? gnd : r3[8];
+assign r3b_1 = (rgbd) ? gnd : r3[9];
+assign r3b_2 = (rgbd) ? gnd : r3[10];
 
 // PIX.NET (257) - r3b[3-7] : mx2
-mx2 r3b_from_3_to_7_inst_0
-(
-	.z /* OUT */ (r3b_3),
-	.a0 /* IN */ (r3[11]),
-	.a1 /* IN */ (r2[3]),
-	.s /* IN */ (rgbd)
-);
-mx2 r3b_from_3_to_7_inst_1
-(
-	.z /* OUT */ (r3b_4),
-	.a0 /* IN */ (r3[12]),
-	.a1 /* IN */ (r2[4]),
-	.s /* IN */ (rgbd)
-);
-mx2 r3b_from_3_to_7_inst_2
-(
-	.z /* OUT */ (r3b_5),
-	.a0 /* IN */ (r3[13]),
-	.a1 /* IN */ (r2[5]),
-	.s /* IN */ (rgbd)
-);
-mx2 r3b_from_3_to_7_inst_3
-(
-	.z /* OUT */ (r3b_6),
-	.a0 /* IN */ (r3[14]),
-	.a1 /* IN */ (r2[6]),
-	.s /* IN */ (rgbd)
-);
-mx2 r3b_from_3_to_7_inst_4
-(
-	.z /* OUT */ (r3b_7),
-	.a0 /* IN */ (r3[15]),
-	.a1 /* IN */ (r2[7]),
-	.s /* IN */ (rgbd)
-);
+assign r3b_3 = (rgbd) ? r2[3] : r3[11];
+assign r3b_4 = (rgbd) ? r2[4] : r3[12];
+assign r3b_5 = (rgbd) ? r2[5] : r3[13];
+assign r3b_6 = (rgbd) ? r2[6] : r3[14];
+assign r3b_7 = (rgbd) ? r2[7] : r3[15];
 
 // PIX.NET (259) - b3b[0-2] : mx2
-mx2 b3b_from_0_to_2_inst_0
-(
-	.z /* OUT */ (b3b_0),
-	.a0 /* IN */ (b3[8]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
-mx2 b3b_from_0_to_2_inst_1
-(
-	.z /* OUT */ (b3b_1),
-	.a0 /* IN */ (b3[9]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
-mx2 b3b_from_0_to_2_inst_2
-(
-	.z /* OUT */ (b3b_2),
-	.a0 /* IN */ (b3[10]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
+assign b3b_0 = (rgbd) ? gnd : b3[8];
+assign b3b_1 = (rgbd) ? gnd : b3[9];
+assign b3b_2 = (rgbd) ? gnd : b3[10];
 
 // PIX.NET (260) - b3b[3-4] : mx2
-mx2 b3b_from_3_to_4_inst_0
-(
-	.z /* OUT */ (b3b_3),
-	.a0 /* IN */ (b3[11]),
-	.a1 /* IN */ (i2[6]),
-	.s /* IN */ (rgbd)
-);
-mx2 b3b_from_3_to_4_inst_1
-(
-	.z /* OUT */ (b3b_4),
-	.a0 /* IN */ (b3[12]),
-	.a1 /* IN */ (i2[7]),
-	.s /* IN */ (rgbd)
-);
+assign b3b_3 = (rgbd) ? i2[6] : b3[11];
+assign b3b_4 = (rgbd) ? i2[7] : b3[12];
 
 // PIX.NET (261) - b3b[5-7] : mx2
-mx2 b3b_from_5_to_7_inst_0
-(
-	.z /* OUT */ (b3b_5),
-	.a0 /* IN */ (b3[13]),
-	.a1 /* IN */ (r2[0]),
-	.s /* IN */ (rgbd)
-);
-mx2 b3b_from_5_to_7_inst_1
-(
-	.z /* OUT */ (b3b_6),
-	.a0 /* IN */ (b3[14]),
-	.a1 /* IN */ (r2[1]),
-	.s /* IN */ (rgbd)
-);
-mx2 b3b_from_5_to_7_inst_2
-(
-	.z /* OUT */ (b3b_7),
-	.a0 /* IN */ (b3[15]),
-	.a1 /* IN */ (r2[2]),
-	.s /* IN */ (rgbd)
-);
+assign b3b_5 = (rgbd) ? r2[0] : b3[13];
+assign b3b_6 = (rgbd) ? r2[1] : b3[14];
+assign b3b_7 = (rgbd) ? r2[2] : b3[15];
 
 // PIX.NET (263) - g3b[0-1] : mx2
-mx2 g3b_from_0_to_1_inst_0
-(
-	.z /* OUT */ (g3b_0),
-	.a0 /* IN */ (g3[8]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
-mx2 g3b_from_0_to_1_inst_1
-(
-	.z /* OUT */ (g3b_1),
-	.a0 /* IN */ (g3[9]),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rgbd)
-);
+assign g3b_0 = (rgbd) ? gnd : g3[8];
+assign g3b_1 = (rgbd) ? gnd : g3[9];
 
 // PIX.NET (264) - g3b[2-7] : mx2
-mx2 g3b_from_2_to_7_inst_0
-(
-	.z /* OUT */ (g3b_2),
-	.a0 /* IN */ (g3[10]),
-	.a1 /* IN */ (i2[0]),
-	.s /* IN */ (rgbd)
-);
-mx2 g3b_from_2_to_7_inst_1
-(
-	.z /* OUT */ (g3b_3),
-	.a0 /* IN */ (g3[11]),
-	.a1 /* IN */ (i2[1]),
-	.s /* IN */ (rgbd)
-);
-mx2 g3b_from_2_to_7_inst_2
-(
-	.z /* OUT */ (g3b_4),
-	.a0 /* IN */ (g3[12]),
-	.a1 /* IN */ (i2[2]),
-	.s /* IN */ (rgbd)
-);
-mx2 g3b_from_2_to_7_inst_3
-(
-	.z /* OUT */ (g3b_5),
-	.a0 /* IN */ (g3[13]),
-	.a1 /* IN */ (i2[3]),
-	.s /* IN */ (rgbd)
-);
-mx2 g3b_from_2_to_7_inst_4
-(
-	.z /* OUT */ (g3b_6),
-	.a0 /* IN */ (g3[14]),
-	.a1 /* IN */ (i2[4]),
-	.s /* IN */ (rgbd)
-);
-mx2 g3b_from_2_to_7_inst_5
-(
-	.z /* OUT */ (g3b_7),
-	.a0 /* IN */ (g3[15]),
-	.a1 /* IN */ (i2[5]),
-	.s /* IN */ (rgbd)
-);
+assign g3b_2 = (rgbd) ? i2[0] : g3[10];
+assign g3b_3 = (rgbd) ? i2[1] : g3[11];
+assign g3b_4 = (rgbd) ? i2[2] : g3[12];
+assign g3b_5 = (rgbd) ? i2[3] : g3[13];
+assign g3b_6 = (rgbd) ? i2[4] : g3[14];
+assign g3b_7 = (rgbd) ? i2[5] : g3[15];
 
 // PIX.NET (268) - r[0-7] : slatch
 slatch r_from_0_to_7_inst_0

@@ -300,12 +300,6 @@ assign brlq[30] = z_30;
 assign brlq[31] = z_31;
 
 // DSP_A-5Q.NET (582) - brl_carry : mx2
-mx2 brl_carry_inst
-(
-	.z /* OUT */ (brl_carry),
-	.a0 /* IN */ (brld[31]),
-	.a1 /* IN */ (brld[0]),
-	.s /* IN */ (mux_0)
-);
+assign brl_carry = (mux_0) ? brld[0] : brld[31];
 endmodule
 /* verilator lint_on LITENDIAN */

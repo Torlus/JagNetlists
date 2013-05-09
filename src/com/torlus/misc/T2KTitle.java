@@ -104,7 +104,8 @@ public class T2KTitle {
 		BufferedImage imgOp = new BufferedImage(WIDTH, LIMIT , BufferedImage.TYPE_USHORT_555_RGB);
 		int yOp = 0;
 		
-		br = new BufferedReader(new FileReader("verilog\\out.log"));
+		//br = new BufferedReader(new FileReader("verilog\\out.log"));
+		br = new BufferedReader(new FileReader("..\\JagNetlists-master-old\\verilog\\out_t2k_old.log"));
 				
 		p = Pattern.compile(".+ JAG WR xwel=([^ ]+) .+\\$(......) #(....)(....)(....)(....).*");
 		Pattern pOp = Pattern.compile(".+JAG RD REF=. OB=1 BLT=. GPU=. \\$(......).*");
@@ -148,10 +149,13 @@ public class T2KTitle {
 
 				int y = (addr >> 1) / WIDTH;
 				int x = (addr >> 1) % WIDTH;
+				// System.out.format("(%d,%d)\n", x, y);
 				if ((y >= 0) && (y < HEIGHT)) {
 					// System.out.format("(%d,%d) %2x\n", x, y, xwel);
 					if ((xwel & 0x03) == 0) {
+						if ((img == img3) && (v0 != 0)) System.out.format("$%06X (%d,%d) %2x\n", addr + SCREEN3,x, y, v0);
 						img.setRGB(x, y, v0);
+						
 						scr[y * WIDTH + x + 0] = v0;
 					}
 					if ((xwel & 0x0C) == 0) {
@@ -170,7 +174,7 @@ public class T2KTitle {
 				
 			}
 
-			Matcher mOp = pOp.matcher(line);
+			/*Matcher mOp = pOp.matcher(line);
 			if (mOp.matches() && yOp < LIMIT) {
 				int addr = Integer.parseInt(mOp.group(1), 16);
 				if (addr == 0xeb40 && opLogStart) {
@@ -211,7 +215,7 @@ public class T2KTitle {
 			}				
 
 			if (yOp >= LIMIT)
-				break;
+				break;*/
 		}
 		br.close();
 		

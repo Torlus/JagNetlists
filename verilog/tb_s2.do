@@ -279,13 +279,13 @@ vlog jerry/j_jerry.v
 
 vlog base/vgalb.v
 
-vlog ../quartus/s2/j68.v
+vlog j68.v
 
-# vlog ../quartus/s2/pll50.v
-vlog pll50.v
+vlog ../quartus/s2/pll50.v
+# vlog pll50.v
 
-vlog ../quartus/s2/jaguar.v
-vlog ../quartus/s2/jag_s2.v
+vlog jaguar.v
+vlog jag_s2.v
 
 
 vlog ../quartus/s2/tb.v

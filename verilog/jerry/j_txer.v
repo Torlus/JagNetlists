@@ -404,13 +404,7 @@ fd1 f1_inst
 assign nf1 = ~(nnf1 & resetl);
 
 // UART2.NET (445) - nnf1 : mx2
-mx2 nnf1_inst
-(
-	.z /* OUT */ (nnf1),
-	.a0 /* IN */ (f1f),
-	.a1 /* IN */ (f1t),
-	.s /* IN */ (f1)
-);
+assign nnf1 = (f1) ? f1t : f1f;
 
 // UART2.NET (446) - f1f : nd2
 assign f1f = ~(selpar & txen);
@@ -432,13 +426,7 @@ fd2 f0_inst
 // UART2.NET (450) - fou : dummy
 
 // UART2.NET (451) - nf0 : mx2
-mx2 nf0_inst
-(
-	.z /* OUT */ (nf0),
-	.a0 /* IN */ (f0f),
-	.a1 /* IN */ (txenl),
-	.s /* IN */ (f0)
-);
+assign nf0 = (f0) ? txenl : f0f;
 
 // UART2.NET (452) - f0f : an3
 assign f0f = f1 & tbel & txen;
@@ -455,13 +443,7 @@ fd2 seldat_inst
 );
 
 // UART2.NET (455) - nseldat : mx2
-mx2 nseldat_inst
-(
-	.z /* OUT */ (nseldat),
-	.a0 /* IN */ (seldatf),
-	.a1 /* IN */ (tcl),
-	.s /* IN */ (seldat)
-);
+assign nseldat = (seldat) ? tcl : seldatf;
 
 // UART2.NET (456) - seldatf : an2
 assign seldatf = f0 & txen;
@@ -480,13 +462,7 @@ fd2 selpar_inst
 // UART2.NET (459) - selparu : dummy
 
 // UART2.NET (460) - nselpar : mx2
-mx2 nselpar_inst
-(
-	.z /* OUT */ (nselpar),
-	.a0 /* IN */ (selparf),
-	.a1 /* IN */ (txenl),
-	.s /* IN */ (selpar)
-);
+assign nselpar = (selpar) ? txenl : selparf;
 
 // UART2.NET (461) - selparf : an2
 assign selparf = seldat & tc;
@@ -738,40 +714,16 @@ assign bg[3] = bg_3;
 // UART2.NET (547) - bgu : dummy
 
 // UART2.NET (549) - nbg[3] : mx2
-mx2 nbg_index_3_inst
-(
-	.z /* OUT */ (nbg_3),
-	.a0 /* IN */ (bg_3),
-	.a1 /* IN */ (bgl_3),
-	.s /* IN */ (bco_2)
-);
+assign nbg_3 = (bco_2) ? bgl_3 : bg_3;
 
 // UART2.NET (550) - nbg[2] : mx2
-mx2 nbg_index_2_inst
-(
-	.z /* OUT */ (nbg_2),
-	.a0 /* IN */ (bg_2),
-	.a1 /* IN */ (bgl_2),
-	.s /* IN */ (bco_1)
-);
+assign nbg_2 = (bco_1) ? bgl_2 : bg_2;
 
 // UART2.NET (551) - nbg[1] : mx2
-mx2 nbg_index_1_inst
-(
-	.z /* OUT */ (nbg_1),
-	.a0 /* IN */ (bg_1),
-	.a1 /* IN */ (bgl_1),
-	.s /* IN */ (bco_0)
-);
+assign nbg_1 = (bco_0) ? bgl_1 : bg_1;
 
 // UART2.NET (552) - nbg[0] : mx2
-mx2 nbg_index_0_inst
-(
-	.z /* OUT */ (nbg_0),
-	.a0 /* IN */ (bg_0),
-	.a1 /* IN */ (bgl_0),
-	.s /* IN */ (bx16)
-);
+assign nbg_0 = (bx16) ? bgl_0 : bg_0;
 
 // UART2.NET (554) - co3d : fd1
 fd1 co3d_inst

@@ -137,25 +137,13 @@ assign topsrct = (srcop[4] & type5) | onesel;
 assign topsrc = topsrct;
 
 // DSP_EXEC.NET (685) - srcb7 : mx2
-mx2 srcb7_inst
-(
-	.z /* OUT */ (srcb7),
-	.a0 /* IN */ (topsrc),
-	.a1 /* IN */ (opzero),
-	.s /* IN */ (type2)
-);
+assign srcb7 = (type2) ? opzero : topsrc;
 
 // DSP_EXEC.NET (690) - type2 : an4m
 assign type2 = srcdat_n_0 & srcdat_1 & srcdat_n_2 & srcdat_n_3;
 
 // DSP_EXEC.NET (692) - srcb6 : mx2
-mx2 srcb6_inst
-(
-	.z /* OUT */ (srcb6),
-	.a0 /* IN */ (topsrc),
-	.a1 /* IN */ (srcop[4]),
-	.s /* IN */ (type2)
-);
+assign srcb6 = (type2) ? srcop[4] : topsrc;
 
 // DSP_EXEC.NET (697) - type8 : an4
 assign type8 = srcdat_n_0 & srcdat_n_1 & srcdat_n_2 & srcdat_3;

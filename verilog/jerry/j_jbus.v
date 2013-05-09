@@ -380,518 +380,86 @@ wire aouti_1;
 wire aouti_14;
 
 // JBUS.NET (44) - d5[0-15] : mx2
-mx2 d5_from_0_to_15_inst_0
-(
-	.z /* OUT */ (d5_0),
-	.a0 /* IN */ (din_0),
-	.a1 /* IN */ (dr_0),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_1
-(
-	.z /* OUT */ (d5_1),
-	.a0 /* IN */ (din_1),
-	.a1 /* IN */ (dr_1),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_2
-(
-	.z /* OUT */ (d5_2),
-	.a0 /* IN */ (din_2),
-	.a1 /* IN */ (dr_2),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_3
-(
-	.z /* OUT */ (d5_3),
-	.a0 /* IN */ (din_3),
-	.a1 /* IN */ (dr_3),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_4
-(
-	.z /* OUT */ (d5_4),
-	.a0 /* IN */ (din_4),
-	.a1 /* IN */ (dr_4),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_5
-(
-	.z /* OUT */ (d5_5),
-	.a0 /* IN */ (din_5),
-	.a1 /* IN */ (dr_5),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_6
-(
-	.z /* OUT */ (d5_6),
-	.a0 /* IN */ (din_6),
-	.a1 /* IN */ (dr_6),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_7
-(
-	.z /* OUT */ (d5_7),
-	.a0 /* IN */ (din_7),
-	.a1 /* IN */ (dr_7),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_8
-(
-	.z /* OUT */ (d5_8),
-	.a0 /* IN */ (din_8),
-	.a1 /* IN */ (dr_8),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_9
-(
-	.z /* OUT */ (d5_9),
-	.a0 /* IN */ (din_9),
-	.a1 /* IN */ (dr_9),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_10
-(
-	.z /* OUT */ (d5_10),
-	.a0 /* IN */ (din_10),
-	.a1 /* IN */ (dr_10),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_11
-(
-	.z /* OUT */ (d5_11),
-	.a0 /* IN */ (din_11),
-	.a1 /* IN */ (dr_11),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_12
-(
-	.z /* OUT */ (d5_12),
-	.a0 /* IN */ (din_12),
-	.a1 /* IN */ (dr_12),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_13
-(
-	.z /* OUT */ (d5_13),
-	.a0 /* IN */ (din_13),
-	.a1 /* IN */ (dr_13),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_14
-(
-	.z /* OUT */ (d5_14),
-	.a0 /* IN */ (din_14),
-	.a1 /* IN */ (dr_14),
-	.s /* IN */ (dren)
-);
-mx2 d5_from_0_to_15_inst_15
-(
-	.z /* OUT */ (d5_15),
-	.a0 /* IN */ (din_15),
-	.a1 /* IN */ (dr_15),
-	.s /* IN */ (dren)
-);
+assign d5_0 = (dren) ? dr_0 : din_0;
+assign d5_1 = (dren) ? dr_1 : din_1;
+assign d5_2 = (dren) ? dr_2 : din_2;
+assign d5_3 = (dren) ? dr_3 : din_3;
+assign d5_4 = (dren) ? dr_4 : din_4;
+assign d5_5 = (dren) ? dr_5 : din_5;
+assign d5_6 = (dren) ? dr_6 : din_6;
+assign d5_7 = (dren) ? dr_7 : din_7;
+assign d5_8 = (dren) ? dr_8 : din_8;
+assign d5_9 = (dren) ? dr_9 : din_9;
+assign d5_10 = (dren) ? dr_10 : din_10;
+assign d5_11 = (dren) ? dr_11 : din_11;
+assign d5_12 = (dren) ? dr_12 : din_12;
+assign d5_13 = (dren) ? dr_13 : din_13;
+assign d5_14 = (dren) ? dr_14 : din_14;
+assign d5_15 = (dren) ? dr_15 : din_15;
 
 // JBUS.NET (48) - d1[0-31] : mx2
-mx2 d1_from_0_to_31_inst_0
-(
-	.z /* OUT */ (d1_0),
-	.a0 /* IN */ (wd_0),
-	.a1 /* IN */ (din_0),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_1
-(
-	.z /* OUT */ (d1_1),
-	.a0 /* IN */ (wd_1),
-	.a1 /* IN */ (din_1),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_2
-(
-	.z /* OUT */ (d1_2),
-	.a0 /* IN */ (wd_2),
-	.a1 /* IN */ (din_2),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_3
-(
-	.z /* OUT */ (d1_3),
-	.a0 /* IN */ (wd_3),
-	.a1 /* IN */ (din_3),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_4
-(
-	.z /* OUT */ (d1_4),
-	.a0 /* IN */ (wd_4),
-	.a1 /* IN */ (din_4),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_5
-(
-	.z /* OUT */ (d1_5),
-	.a0 /* IN */ (wd_5),
-	.a1 /* IN */ (din_5),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_6
-(
-	.z /* OUT */ (d1_6),
-	.a0 /* IN */ (wd_6),
-	.a1 /* IN */ (din_6),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_7
-(
-	.z /* OUT */ (d1_7),
-	.a0 /* IN */ (wd_7),
-	.a1 /* IN */ (din_7),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_8
-(
-	.z /* OUT */ (d1_8),
-	.a0 /* IN */ (wd_8),
-	.a1 /* IN */ (din_8),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_9
-(
-	.z /* OUT */ (d1_9),
-	.a0 /* IN */ (wd_9),
-	.a1 /* IN */ (din_9),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_10
-(
-	.z /* OUT */ (d1_10),
-	.a0 /* IN */ (wd_10),
-	.a1 /* IN */ (din_10),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_11
-(
-	.z /* OUT */ (d1_11),
-	.a0 /* IN */ (wd_11),
-	.a1 /* IN */ (din_11),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_12
-(
-	.z /* OUT */ (d1_12),
-	.a0 /* IN */ (wd_12),
-	.a1 /* IN */ (din_12),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_13
-(
-	.z /* OUT */ (d1_13),
-	.a0 /* IN */ (wd_13),
-	.a1 /* IN */ (din_13),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_14
-(
-	.z /* OUT */ (d1_14),
-	.a0 /* IN */ (wd_14),
-	.a1 /* IN */ (din_14),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_15
-(
-	.z /* OUT */ (d1_15),
-	.a0 /* IN */ (wd_15),
-	.a1 /* IN */ (din_15),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_16
-(
-	.z /* OUT */ (d1_16),
-	.a0 /* IN */ (wd_16),
-	.a1 /* IN */ (din_16),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_17
-(
-	.z /* OUT */ (d1_17),
-	.a0 /* IN */ (wd_17),
-	.a1 /* IN */ (din_17),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_18
-(
-	.z /* OUT */ (d1_18),
-	.a0 /* IN */ (wd_18),
-	.a1 /* IN */ (din_18),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_19
-(
-	.z /* OUT */ (d1_19),
-	.a0 /* IN */ (wd_19),
-	.a1 /* IN */ (din_19),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_20
-(
-	.z /* OUT */ (d1_20),
-	.a0 /* IN */ (wd_20),
-	.a1 /* IN */ (din_20),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_21
-(
-	.z /* OUT */ (d1_21),
-	.a0 /* IN */ (wd_21),
-	.a1 /* IN */ (din_21),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_22
-(
-	.z /* OUT */ (d1_22),
-	.a0 /* IN */ (wd_22),
-	.a1 /* IN */ (din_22),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_23
-(
-	.z /* OUT */ (d1_23),
-	.a0 /* IN */ (wd_23),
-	.a1 /* IN */ (din_23),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_24
-(
-	.z /* OUT */ (d1_24),
-	.a0 /* IN */ (wd_24),
-	.a1 /* IN */ (din_24),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_25
-(
-	.z /* OUT */ (d1_25),
-	.a0 /* IN */ (wd_25),
-	.a1 /* IN */ (din_25),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_26
-(
-	.z /* OUT */ (d1_26),
-	.a0 /* IN */ (wd_26),
-	.a1 /* IN */ (din_26),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_27
-(
-	.z /* OUT */ (d1_27),
-	.a0 /* IN */ (wd_27),
-	.a1 /* IN */ (din_27),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_28
-(
-	.z /* OUT */ (d1_28),
-	.a0 /* IN */ (wd_28),
-	.a1 /* IN */ (din_28),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_29
-(
-	.z /* OUT */ (d1_29),
-	.a0 /* IN */ (wd_29),
-	.a1 /* IN */ (din_29),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_30
-(
-	.z /* OUT */ (d1_30),
-	.a0 /* IN */ (wd_30),
-	.a1 /* IN */ (din_30),
-	.s /* IN */ (xdsrc)
-);
-mx2 d1_from_0_to_31_inst_31
-(
-	.z /* OUT */ (d1_31),
-	.a0 /* IN */ (wd_31),
-	.a1 /* IN */ (din_31),
-	.s /* IN */ (xdsrc)
-);
+assign d1_0 = (xdsrc) ? din_0 : wd_0;
+assign d1_1 = (xdsrc) ? din_1 : wd_1;
+assign d1_2 = (xdsrc) ? din_2 : wd_2;
+assign d1_3 = (xdsrc) ? din_3 : wd_3;
+assign d1_4 = (xdsrc) ? din_4 : wd_4;
+assign d1_5 = (xdsrc) ? din_5 : wd_5;
+assign d1_6 = (xdsrc) ? din_6 : wd_6;
+assign d1_7 = (xdsrc) ? din_7 : wd_7;
+assign d1_8 = (xdsrc) ? din_8 : wd_8;
+assign d1_9 = (xdsrc) ? din_9 : wd_9;
+assign d1_10 = (xdsrc) ? din_10 : wd_10;
+assign d1_11 = (xdsrc) ? din_11 : wd_11;
+assign d1_12 = (xdsrc) ? din_12 : wd_12;
+assign d1_13 = (xdsrc) ? din_13 : wd_13;
+assign d1_14 = (xdsrc) ? din_14 : wd_14;
+assign d1_15 = (xdsrc) ? din_15 : wd_15;
+assign d1_16 = (xdsrc) ? din_16 : wd_16;
+assign d1_17 = (xdsrc) ? din_17 : wd_17;
+assign d1_18 = (xdsrc) ? din_18 : wd_18;
+assign d1_19 = (xdsrc) ? din_19 : wd_19;
+assign d1_20 = (xdsrc) ? din_20 : wd_20;
+assign d1_21 = (xdsrc) ? din_21 : wd_21;
+assign d1_22 = (xdsrc) ? din_22 : wd_22;
+assign d1_23 = (xdsrc) ? din_23 : wd_23;
+assign d1_24 = (xdsrc) ? din_24 : wd_24;
+assign d1_25 = (xdsrc) ? din_25 : wd_25;
+assign d1_26 = (xdsrc) ? din_26 : wd_26;
+assign d1_27 = (xdsrc) ? din_27 : wd_27;
+assign d1_28 = (xdsrc) ? din_28 : wd_28;
+assign d1_29 = (xdsrc) ? din_29 : wd_29;
+assign d1_30 = (xdsrc) ? din_30 : wd_30;
+assign d1_31 = (xdsrc) ? din_31 : wd_31;
 
 // JBUS.NET (52) - d1a[8-15] : mx2
-mx2 d1a_from_8_to_15_inst_0
-(
-	.z /* OUT */ (d1a_8),
-	.a0 /* IN */ (d1_8),
-	.a1 /* IN */ (d1_0),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_1
-(
-	.z /* OUT */ (d1a_9),
-	.a0 /* IN */ (d1_9),
-	.a1 /* IN */ (d1_1),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_2
-(
-	.z /* OUT */ (d1a_10),
-	.a0 /* IN */ (d1_10),
-	.a1 /* IN */ (d1_2),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_3
-(
-	.z /* OUT */ (d1a_11),
-	.a0 /* IN */ (d1_11),
-	.a1 /* IN */ (d1_3),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_4
-(
-	.z /* OUT */ (d1a_12),
-	.a0 /* IN */ (d1_12),
-	.a1 /* IN */ (d1_4),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_5
-(
-	.z /* OUT */ (d1a_13),
-	.a0 /* IN */ (d1_13),
-	.a1 /* IN */ (d1_5),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_6
-(
-	.z /* OUT */ (d1a_14),
-	.a0 /* IN */ (d1_14),
-	.a1 /* IN */ (d1_6),
-	.s /* IN */ (dmuxu_0)
-);
-mx2 d1a_from_8_to_15_inst_7
-(
-	.z /* OUT */ (d1a_15),
-	.a0 /* IN */ (d1_15),
-	.a1 /* IN */ (d1_7),
-	.s /* IN */ (dmuxu_0)
-);
+assign d1a_8 = (dmuxu_0) ? d1_0 : d1_8;
+assign d1a_9 = (dmuxu_0) ? d1_1 : d1_9;
+assign d1a_10 = (dmuxu_0) ? d1_2 : d1_10;
+assign d1a_11 = (dmuxu_0) ? d1_3 : d1_11;
+assign d1a_12 = (dmuxu_0) ? d1_4 : d1_12;
+assign d1a_13 = (dmuxu_0) ? d1_5 : d1_13;
+assign d1a_14 = (dmuxu_0) ? d1_6 : d1_14;
+assign d1a_15 = (dmuxu_0) ? d1_7 : d1_15;
 
 // JBUS.NET (53) - d2[16-23] : mx2
-mx2 d2_from_16_to_23_inst_0
-(
-	.z /* OUT */ (d2_16),
-	.a0 /* IN */ (d1_16),
-	.a1 /* IN */ (d1_0),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_1
-(
-	.z /* OUT */ (d2_17),
-	.a0 /* IN */ (d1_17),
-	.a1 /* IN */ (d1_1),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_2
-(
-	.z /* OUT */ (d2_18),
-	.a0 /* IN */ (d1_18),
-	.a1 /* IN */ (d1_2),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_3
-(
-	.z /* OUT */ (d2_19),
-	.a0 /* IN */ (d1_19),
-	.a1 /* IN */ (d1_3),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_4
-(
-	.z /* OUT */ (d2_20),
-	.a0 /* IN */ (d1_20),
-	.a1 /* IN */ (d1_4),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_5
-(
-	.z /* OUT */ (d2_21),
-	.a0 /* IN */ (d1_21),
-	.a1 /* IN */ (d1_5),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_6
-(
-	.z /* OUT */ (d2_22),
-	.a0 /* IN */ (d1_22),
-	.a1 /* IN */ (d1_6),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_16_to_23_inst_7
-(
-	.z /* OUT */ (d2_23),
-	.a0 /* IN */ (d1_23),
-	.a1 /* IN */ (d1_7),
-	.s /* IN */ (dmuxu_1)
-);
+assign d2_16 = (dmuxu_1) ? d1_0 : d1_16;
+assign d2_17 = (dmuxu_1) ? d1_1 : d1_17;
+assign d2_18 = (dmuxu_1) ? d1_2 : d1_18;
+assign d2_19 = (dmuxu_1) ? d1_3 : d1_19;
+assign d2_20 = (dmuxu_1) ? d1_4 : d1_20;
+assign d2_21 = (dmuxu_1) ? d1_5 : d1_21;
+assign d2_22 = (dmuxu_1) ? d1_6 : d1_22;
+assign d2_23 = (dmuxu_1) ? d1_7 : d1_23;
 
 // JBUS.NET (54) - d2[24-31] : mx2
-mx2 d2_from_24_to_31_inst_0
-(
-	.z /* OUT */ (d2_24),
-	.a0 /* IN */ (d1_24),
-	.a1 /* IN */ (d1a_8),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_1
-(
-	.z /* OUT */ (d2_25),
-	.a0 /* IN */ (d1_25),
-	.a1 /* IN */ (d1a_9),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_2
-(
-	.z /* OUT */ (d2_26),
-	.a0 /* IN */ (d1_26),
-	.a1 /* IN */ (d1a_10),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_3
-(
-	.z /* OUT */ (d2_27),
-	.a0 /* IN */ (d1_27),
-	.a1 /* IN */ (d1a_11),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_4
-(
-	.z /* OUT */ (d2_28),
-	.a0 /* IN */ (d1_28),
-	.a1 /* IN */ (d1a_12),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_5
-(
-	.z /* OUT */ (d2_29),
-	.a0 /* IN */ (d1_29),
-	.a1 /* IN */ (d1a_13),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_6
-(
-	.z /* OUT */ (d2_30),
-	.a0 /* IN */ (d1_30),
-	.a1 /* IN */ (d1a_14),
-	.s /* IN */ (dmuxu_1)
-);
-mx2 d2_from_24_to_31_inst_7
-(
-	.z /* OUT */ (d2_31),
-	.a0 /* IN */ (d1_31),
-	.a1 /* IN */ (d1a_15),
-	.s /* IN */ (dmuxu_1)
-);
+assign d2_24 = (dmuxu_1) ? d1a_8 : d1_24;
+assign d2_25 = (dmuxu_1) ? d1a_9 : d1_25;
+assign d2_26 = (dmuxu_1) ? d1a_10 : d1_26;
+assign d2_27 = (dmuxu_1) ? d1a_11 : d1_27;
+assign d2_28 = (dmuxu_1) ? d1a_12 : d1_28;
+assign d2_29 = (dmuxu_1) ? d1a_13 : d1_29;
+assign d2_30 = (dmuxu_1) ? d1a_14 : d1_30;
+assign d2_31 = (dmuxu_1) ? d1a_15 : d1_31;
 
 // JBUS.NET (58) - d3[0-7] : stlatch
 stlatch d3_from_0_to_7_inst_0
@@ -1155,295 +723,55 @@ stlatch d3_from_16_to_31_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// JBUS.NET (64) - d4[0-15] : mx2
-mx2 d4_from_0_to_15_inst_0
-(
-	.z /* OUT */ (d4_0),
-	.a0 /* IN */ (d3_0),
-	.a1 /* IN */ (d3_16),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_1
-(
-	.z /* OUT */ (d4_1),
-	.a0 /* IN */ (d3_1),
-	.a1 /* IN */ (d3_17),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_2
-(
-	.z /* OUT */ (d4_2),
-	.a0 /* IN */ (d3_2),
-	.a1 /* IN */ (d3_18),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_3
-(
-	.z /* OUT */ (d4_3),
-	.a0 /* IN */ (d3_3),
-	.a1 /* IN */ (d3_19),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_4
-(
-	.z /* OUT */ (d4_4),
-	.a0 /* IN */ (d3_4),
-	.a1 /* IN */ (d3_20),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_5
-(
-	.z /* OUT */ (d4_5),
-	.a0 /* IN */ (d3_5),
-	.a1 /* IN */ (d3_21),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_6
-(
-	.z /* OUT */ (d4_6),
-	.a0 /* IN */ (d3_6),
-	.a1 /* IN */ (d3_22),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_7
-(
-	.z /* OUT */ (d4_7),
-	.a0 /* IN */ (d3_7),
-	.a1 /* IN */ (d3_23),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_8
-(
-	.z /* OUT */ (d4_8),
-	.a0 /* IN */ (d3_8),
-	.a1 /* IN */ (d3_24),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_9
-(
-	.z /* OUT */ (d4_9),
-	.a0 /* IN */ (d3_9),
-	.a1 /* IN */ (d3_25),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_10
-(
-	.z /* OUT */ (d4_10),
-	.a0 /* IN */ (d3_10),
-	.a1 /* IN */ (d3_26),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_11
-(
-	.z /* OUT */ (d4_11),
-	.a0 /* IN */ (d3_11),
-	.a1 /* IN */ (d3_27),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_12
-(
-	.z /* OUT */ (d4_12),
-	.a0 /* IN */ (d3_12),
-	.a1 /* IN */ (d3_28),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_13
-(
-	.z /* OUT */ (d4_13),
-	.a0 /* IN */ (d3_13),
-	.a1 /* IN */ (d3_29),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_14
-(
-	.z /* OUT */ (d4_14),
-	.a0 /* IN */ (d3_14),
-	.a1 /* IN */ (d3_30),
-	.s /* IN */ (dmuxd_1)
-);
-mx2 d4_from_0_to_15_inst_15
-(
-	.z /* OUT */ (d4_15),
-	.a0 /* IN */ (d3_15),
-	.a1 /* IN */ (d3_31),
-	.s /* IN */ (dmuxd_1)
-);
+// JBUS.NET (72) - d4[0-15] : mx2
+assign d4_0 = (dmuxd_1) ? d3_16 : d3_0;
+assign d4_1 = (dmuxd_1) ? d3_17 : d3_1;
+assign d4_2 = (dmuxd_1) ? d3_18 : d3_2;
+assign d4_3 = (dmuxd_1) ? d3_19 : d3_3;
+assign d4_4 = (dmuxd_1) ? d3_20 : d3_4;
+assign d4_5 = (dmuxd_1) ? d3_21 : d3_5;
+assign d4_6 = (dmuxd_1) ? d3_22 : d3_6;
+assign d4_7 = (dmuxd_1) ? d3_23 : d3_7;
+assign d4_8 = (dmuxd_1) ? d3_24 : d3_8;
+assign d4_9 = (dmuxd_1) ? d3_25 : d3_9;
+assign d4_10 = (dmuxd_1) ? d3_26 : d3_10;
+assign d4_11 = (dmuxd_1) ? d3_27 : d3_11;
+assign d4_12 = (dmuxd_1) ? d3_28 : d3_12;
+assign d4_13 = (dmuxd_1) ? d3_29 : d3_13;
+assign d4_14 = (dmuxd_1) ? d3_30 : d3_14;
+assign d4_15 = (dmuxd_1) ? d3_31 : d3_15;
 
-// JBUS.NET (65) - d4a[0-7] : mx2
-mx2 d4a_from_0_to_7_inst_0
-(
-	.z /* OUT */ (d4a_0),
-	.a0 /* IN */ (d4_0),
-	.a1 /* IN */ (d4_8),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_1
-(
-	.z /* OUT */ (d4a_1),
-	.a0 /* IN */ (d4_1),
-	.a1 /* IN */ (d4_9),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_2
-(
-	.z /* OUT */ (d4a_2),
-	.a0 /* IN */ (d4_2),
-	.a1 /* IN */ (d4_10),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_3
-(
-	.z /* OUT */ (d4a_3),
-	.a0 /* IN */ (d4_3),
-	.a1 /* IN */ (d4_11),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_4
-(
-	.z /* OUT */ (d4a_4),
-	.a0 /* IN */ (d4_4),
-	.a1 /* IN */ (d4_12),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_5
-(
-	.z /* OUT */ (d4a_5),
-	.a0 /* IN */ (d4_5),
-	.a1 /* IN */ (d4_13),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_6
-(
-	.z /* OUT */ (d4a_6),
-	.a0 /* IN */ (d4_6),
-	.a1 /* IN */ (d4_14),
-	.s /* IN */ (dmuxd_0)
-);
-mx2 d4a_from_0_to_7_inst_7
-(
-	.z /* OUT */ (d4a_7),
-	.a0 /* IN */ (d4_7),
-	.a1 /* IN */ (d4_15),
-	.s /* IN */ (dmuxd_0)
-);
+// JBUS.NET (73) - d4a[0-7] : mx2
+assign d4a_0 = (dmuxd_0) ? d4_8 : d4_0;
+assign d4a_1 = (dmuxd_0) ? d4_9 : d4_1;
+assign d4a_2 = (dmuxd_0) ? d4_10 : d4_2;
+assign d4a_3 = (dmuxd_0) ? d4_11 : d4_3;
+assign d4a_4 = (dmuxd_0) ? d4_12 : d4_4;
+assign d4a_5 = (dmuxd_0) ? d4_13 : d4_5;
+assign d4a_6 = (dmuxd_0) ? d4_14 : d4_6;
+assign d4a_7 = (dmuxd_0) ? d4_15 : d4_7;
 
-// JBUS.NET (69) - d6[0-7] : mx2
-mx2 d6_from_0_to_7_inst_0
-(
-	.z /* OUT */ (d6_0),
-	.a0 /* IN */ (d5_0),
-	.a1 /* IN */ (d4a_0),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_1
-(
-	.z /* OUT */ (d6_1),
-	.a0 /* IN */ (d5_1),
-	.a1 /* IN */ (d4a_1),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_2
-(
-	.z /* OUT */ (d6_2),
-	.a0 /* IN */ (d5_2),
-	.a1 /* IN */ (d4a_2),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_3
-(
-	.z /* OUT */ (d6_3),
-	.a0 /* IN */ (d5_3),
-	.a1 /* IN */ (d4a_3),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_4
-(
-	.z /* OUT */ (d6_4),
-	.a0 /* IN */ (d5_4),
-	.a1 /* IN */ (d4a_4),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_5
-(
-	.z /* OUT */ (d6_5),
-	.a0 /* IN */ (d5_5),
-	.a1 /* IN */ (d4a_5),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_6
-(
-	.z /* OUT */ (d6_6),
-	.a0 /* IN */ (d5_6),
-	.a1 /* IN */ (d4a_6),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_0_to_7_inst_7
-(
-	.z /* OUT */ (d6_7),
-	.a0 /* IN */ (d5_7),
-	.a1 /* IN */ (d4a_7),
-	.s /* IN */ (masterdata)
-);
+// JBUS.NET (77) - d6[0-7] : mx2
+assign d6_0 = (masterdata) ? d4a_0 : d5_0;
+assign d6_1 = (masterdata) ? d4a_1 : d5_1;
+assign d6_2 = (masterdata) ? d4a_2 : d5_2;
+assign d6_3 = (masterdata) ? d4a_3 : d5_3;
+assign d6_4 = (masterdata) ? d4a_4 : d5_4;
+assign d6_5 = (masterdata) ? d4a_5 : d5_5;
+assign d6_6 = (masterdata) ? d4a_6 : d5_6;
+assign d6_7 = (masterdata) ? d4a_7 : d5_7;
 
-// JBUS.NET (70) - d6[8-15] : mx2
-mx2 d6_from_8_to_15_inst_0
-(
-	.z /* OUT */ (d6_8),
-	.a0 /* IN */ (d5_8),
-	.a1 /* IN */ (d4_8),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_1
-(
-	.z /* OUT */ (d6_9),
-	.a0 /* IN */ (d5_9),
-	.a1 /* IN */ (d4_9),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_2
-(
-	.z /* OUT */ (d6_10),
-	.a0 /* IN */ (d5_10),
-	.a1 /* IN */ (d4_10),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_3
-(
-	.z /* OUT */ (d6_11),
-	.a0 /* IN */ (d5_11),
-	.a1 /* IN */ (d4_11),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_4
-(
-	.z /* OUT */ (d6_12),
-	.a0 /* IN */ (d5_12),
-	.a1 /* IN */ (d4_12),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_5
-(
-	.z /* OUT */ (d6_13),
-	.a0 /* IN */ (d5_13),
-	.a1 /* IN */ (d4_13),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_6
-(
-	.z /* OUT */ (d6_14),
-	.a0 /* IN */ (d5_14),
-	.a1 /* IN */ (d4_14),
-	.s /* IN */ (masterdata)
-);
-mx2 d6_from_8_to_15_inst_7
-(
-	.z /* OUT */ (d6_15),
-	.a0 /* IN */ (d5_15),
-	.a1 /* IN */ (d4_15),
-	.s /* IN */ (masterdata)
-);
+// JBUS.NET (78) - d6[8-15] : mx2
+assign d6_8 = (masterdata) ? d4_8 : d5_8;
+assign d6_9 = (masterdata) ? d4_9 : d5_9;
+assign d6_10 = (masterdata) ? d4_10 : d5_10;
+assign d6_11 = (masterdata) ? d4_11 : d5_11;
+assign d6_12 = (masterdata) ? d4_12 : d5_12;
+assign d6_13 = (masterdata) ? d4_13 : d5_13;
+assign d6_14 = (masterdata) ? d4_14 : d5_14;
+assign d6_15 = (masterdata) ? d4_15 : d5_15;
 
-// JBUS.NET (74) - dout[0-15] : nivh
+// JBUS.NET (82) - dout[0-15] : nivh
 assign dout_0 = d6_0;
 assign dout_1 = d6_1;
 assign dout_2 = d6_2;
@@ -1461,7 +789,7 @@ assign dout_13 = d6_13;
 assign dout_14 = d6_14;
 assign dout_15 = d6_15;
 
-// JBUS.NET (75) - dout[16-31] : nivm
+// JBUS.NET (83) - dout[16-31] : nivm
 assign dout_16 = d3_16;
 assign dout_17 = d3_17;
 assign dout_18 = d3_18;
@@ -1479,7 +807,7 @@ assign dout_29 = d3_29;
 assign dout_30 = d3_30;
 assign dout_31 = d3_31;
 
-// JBUS.NET (79) - dsp16 : ldp1q
+// JBUS.NET (87) - dsp16 : ldp1q
 ldp1q dsp16_inst
 (
 	.q /* OUT */ (dsp16),
@@ -1488,7 +816,7 @@ ldp1q dsp16_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JBUS.NET (80) - bigend : ldp1q
+// JBUS.NET (88) - bigend : ldp1q
 ldp1q bigend_inst
 (
 	.q /* OUT */ (bigend),
@@ -1497,7 +825,7 @@ ldp1q bigend_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// JBUS.NET (86) - ad[0-23] : slatch
+// JBUS.NET (94) - ad[0-23] : slatch
 j_slatch ad_from_0_to_23_inst_0
 (
 	.q /* OUT */ (ad_0),
@@ -1691,191 +1019,47 @@ j_slatch ad_from_0_to_23_inst_23
 	.sys_clk(sys_clk) // Generated
 );
 
-// JBUS.NET (88) - as[1] : or2
+// JBUS.NET (96) - as[1] : or2
 assign as_1 = ad_1 | seta1;
 
-// JBUS.NET (90) - aout[0] : mx2
-mx2 aout_index_0_inst
-(
-	.z /* OUT */ (aout_0),
-	.a0 /* IN */ (ad_0),
-	.a1 /* IN */ (ain_0),
-	.s /* IN */ (ainen)
-);
+// JBUS.NET (98) - aout[0] : mx2
+assign aout_0 = (ainen) ? ain_0 : ad_0;
 
-// JBUS.NET (91) - aouti[1] : mx2
-mx2 aouti_index_1_inst
-(
-	.z /* OUT */ (aouti_1),
-	.a0 /* IN */ (as_1),
-	.a1 /* IN */ (ain_1),
-	.s /* IN */ (ainen)
-);
+// JBUS.NET (99) - aouti[1] : mx2
+assign aouti_1 = (ainen) ? ain_1 : as_1;
 
-// JBUS.NET (92) - aout[1] : nivu
+// JBUS.NET (100) - aout[1] : nivu
 assign aout_1 = aouti_1;
 
-// JBUS.NET (93) - aout[2-13] : mx2
-mx2 aout_from_2_to_13_inst_0
-(
-	.z /* OUT */ (aout_2),
-	.a0 /* IN */ (ad_2),
-	.a1 /* IN */ (ain_2),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_1
-(
-	.z /* OUT */ (aout_3),
-	.a0 /* IN */ (ad_3),
-	.a1 /* IN */ (ain_3),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_2
-(
-	.z /* OUT */ (aout_4),
-	.a0 /* IN */ (ad_4),
-	.a1 /* IN */ (ain_4),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_3
-(
-	.z /* OUT */ (aout_5),
-	.a0 /* IN */ (ad_5),
-	.a1 /* IN */ (ain_5),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_4
-(
-	.z /* OUT */ (aout_6),
-	.a0 /* IN */ (ad_6),
-	.a1 /* IN */ (ain_6),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_5
-(
-	.z /* OUT */ (aout_7),
-	.a0 /* IN */ (ad_7),
-	.a1 /* IN */ (ain_7),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_6
-(
-	.z /* OUT */ (aout_8),
-	.a0 /* IN */ (ad_8),
-	.a1 /* IN */ (ain_8),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_7
-(
-	.z /* OUT */ (aout_9),
-	.a0 /* IN */ (ad_9),
-	.a1 /* IN */ (ain_9),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_8
-(
-	.z /* OUT */ (aout_10),
-	.a0 /* IN */ (ad_10),
-	.a1 /* IN */ (ain_10),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_9
-(
-	.z /* OUT */ (aout_11),
-	.a0 /* IN */ (ad_11),
-	.a1 /* IN */ (ain_11),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_10
-(
-	.z /* OUT */ (aout_12),
-	.a0 /* IN */ (ad_12),
-	.a1 /* IN */ (ain_12),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_2_to_13_inst_11
-(
-	.z /* OUT */ (aout_13),
-	.a0 /* IN */ (ad_13),
-	.a1 /* IN */ (ain_13),
-	.s /* IN */ (ainen)
-);
+// JBUS.NET (101) - aout[2-13] : mx2
+assign aout_2 = (ainen) ? ain_2 : ad_2;
+assign aout_3 = (ainen) ? ain_3 : ad_3;
+assign aout_4 = (ainen) ? ain_4 : ad_4;
+assign aout_5 = (ainen) ? ain_5 : ad_5;
+assign aout_6 = (ainen) ? ain_6 : ad_6;
+assign aout_7 = (ainen) ? ain_7 : ad_7;
+assign aout_8 = (ainen) ? ain_8 : ad_8;
+assign aout_9 = (ainen) ? ain_9 : ad_9;
+assign aout_10 = (ainen) ? ain_10 : ad_10;
+assign aout_11 = (ainen) ? ain_11 : ad_11;
+assign aout_12 = (ainen) ? ain_12 : ad_12;
+assign aout_13 = (ainen) ? ain_13 : ad_13;
 
-// JBUS.NET (94) - aouti[14] : mx2
-mx2 aouti_index_14_inst
-(
-	.z /* OUT */ (aouti_14),
-	.a0 /* IN */ (ad_14),
-	.a1 /* IN */ (ain_14),
-	.s /* IN */ (ainen)
-);
+// JBUS.NET (102) - aouti[14] : mx2
+assign aouti_14 = (ainen) ? ain_14 : ad_14;
 
-// JBUS.NET (95) - aout[14] : nivh
+// JBUS.NET (103) - aout[14] : nivh
 assign aout_14 = aouti_14;
 
-// JBUS.NET (96) - aout[15-23] : mx2
-mx2 aout_from_15_to_23_inst_0
-(
-	.z /* OUT */ (aout_15),
-	.a0 /* IN */ (ad_15),
-	.a1 /* IN */ (ain_15),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_1
-(
-	.z /* OUT */ (aout_16),
-	.a0 /* IN */ (ad_16),
-	.a1 /* IN */ (ain_16),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_2
-(
-	.z /* OUT */ (aout_17),
-	.a0 /* IN */ (ad_17),
-	.a1 /* IN */ (ain_17),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_3
-(
-	.z /* OUT */ (aout_18),
-	.a0 /* IN */ (ad_18),
-	.a1 /* IN */ (ain_18),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_4
-(
-	.z /* OUT */ (aout_19),
-	.a0 /* IN */ (ad_19),
-	.a1 /* IN */ (ain_19),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_5
-(
-	.z /* OUT */ (aout_20),
-	.a0 /* IN */ (ad_20),
-	.a1 /* IN */ (ain_20),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_6
-(
-	.z /* OUT */ (aout_21),
-	.a0 /* IN */ (ad_21),
-	.a1 /* IN */ (ain_21),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_7
-(
-	.z /* OUT */ (aout_22),
-	.a0 /* IN */ (ad_22),
-	.a1 /* IN */ (ain_22),
-	.s /* IN */ (ainen)
-);
-mx2 aout_from_15_to_23_inst_8
-(
-	.z /* OUT */ (aout_23),
-	.a0 /* IN */ (ad_23),
-	.a1 /* IN */ (ain_23),
-	.s /* IN */ (ainen)
-);
+// JBUS.NET (104) - aout[15-23] : mx2
+assign aout_15 = (ainen) ? ain_15 : ad_15;
+assign aout_16 = (ainen) ? ain_16 : ad_16;
+assign aout_17 = (ainen) ? ain_17 : ad_17;
+assign aout_18 = (ainen) ? ain_18 : ad_18;
+assign aout_19 = (ainen) ? ain_19 : ad_19;
+assign aout_20 = (ainen) ? ain_20 : ad_20;
+assign aout_21 = (ainen) ? ain_21 : ad_21;
+assign aout_22 = (ainen) ? ain_22 : ad_22;
+assign aout_23 = (ainen) ? ain_23 : ad_23;
 endmodule
 /* verilator lint_on LITENDIAN */

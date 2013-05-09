@@ -942,174 +942,30 @@ ldp1q dat_addr_inst_23
 );
 
 // DSP_GATE.NET (190) - out_addr : mx2
-mx2 out_addr_inst_0
-(
-	.z /* OUT */ (address[0]),
-	.a0 /* IN */ (dat_addr[0]),
-	.a1 /* IN */ (cpu_addr[0]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_1
-(
-	.z /* OUT */ (address[1]),
-	.a0 /* IN */ (dat_addr[1]),
-	.a1 /* IN */ (cpu_addr[1]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_2
-(
-	.z /* OUT */ (address[2]),
-	.a0 /* IN */ (dat_addr[2]),
-	.a1 /* IN */ (cpu_addr[2]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_3
-(
-	.z /* OUT */ (address[3]),
-	.a0 /* IN */ (dat_addr[3]),
-	.a1 /* IN */ (cpu_addr[3]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_4
-(
-	.z /* OUT */ (address[4]),
-	.a0 /* IN */ (dat_addr[4]),
-	.a1 /* IN */ (cpu_addr[4]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_5
-(
-	.z /* OUT */ (address[5]),
-	.a0 /* IN */ (dat_addr[5]),
-	.a1 /* IN */ (cpu_addr[5]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_6
-(
-	.z /* OUT */ (address[6]),
-	.a0 /* IN */ (dat_addr[6]),
-	.a1 /* IN */ (cpu_addr[6]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_7
-(
-	.z /* OUT */ (address[7]),
-	.a0 /* IN */ (dat_addr[7]),
-	.a1 /* IN */ (cpu_addr[7]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_8
-(
-	.z /* OUT */ (address[8]),
-	.a0 /* IN */ (dat_addr[8]),
-	.a1 /* IN */ (cpu_addr[8]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_9
-(
-	.z /* OUT */ (address[9]),
-	.a0 /* IN */ (dat_addr[9]),
-	.a1 /* IN */ (cpu_addr[9]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_10
-(
-	.z /* OUT */ (address[10]),
-	.a0 /* IN */ (dat_addr[10]),
-	.a1 /* IN */ (cpu_addr[10]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_11
-(
-	.z /* OUT */ (address[11]),
-	.a0 /* IN */ (dat_addr[11]),
-	.a1 /* IN */ (cpu_addr[11]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_12
-(
-	.z /* OUT */ (address[12]),
-	.a0 /* IN */ (dat_addr[12]),
-	.a1 /* IN */ (cpu_addr[12]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_13
-(
-	.z /* OUT */ (address[13]),
-	.a0 /* IN */ (dat_addr[13]),
-	.a1 /* IN */ (cpu_addr[13]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_14
-(
-	.z /* OUT */ (address[14]),
-	.a0 /* IN */ (dat_addr[14]),
-	.a1 /* IN */ (cpu_addr[14]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_15
-(
-	.z /* OUT */ (address[15]),
-	.a0 /* IN */ (dat_addr[15]),
-	.a1 /* IN */ (cpu_addr[15]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_16
-(
-	.z /* OUT */ (address[16]),
-	.a0 /* IN */ (dat_addr[16]),
-	.a1 /* IN */ (cpu_addr[16]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_17
-(
-	.z /* OUT */ (address[17]),
-	.a0 /* IN */ (dat_addr[17]),
-	.a1 /* IN */ (cpu_addr[17]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_18
-(
-	.z /* OUT */ (address[18]),
-	.a0 /* IN */ (dat_addr[18]),
-	.a1 /* IN */ (cpu_addr[18]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_19
-(
-	.z /* OUT */ (address[19]),
-	.a0 /* IN */ (dat_addr[19]),
-	.a1 /* IN */ (cpu_addr[19]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_20
-(
-	.z /* OUT */ (address[20]),
-	.a0 /* IN */ (dat_addr[20]),
-	.a1 /* IN */ (cpu_addr[20]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_21
-(
-	.z /* OUT */ (address[21]),
-	.a0 /* IN */ (dat_addr[21]),
-	.a1 /* IN */ (cpu_addr[21]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_22
-(
-	.z /* OUT */ (address[22]),
-	.a0 /* IN */ (dat_addr[22]),
-	.a1 /* IN */ (cpu_addr[22]),
-	.s /* IN */ (progown)
-);
-mx2 out_addr_inst_23
-(
-	.z /* OUT */ (address[23]),
-	.a0 /* IN */ (dat_addr[23]),
-	.a1 /* IN */ (cpu_addr[23]),
-	.s /* IN */ (progown)
-);
+assign address[0] = (progown) ? cpu_addr[0] : dat_addr[0];
+assign address[1] = (progown) ? cpu_addr[1] : dat_addr[1];
+assign address[2] = (progown) ? cpu_addr[2] : dat_addr[2];
+assign address[3] = (progown) ? cpu_addr[3] : dat_addr[3];
+assign address[4] = (progown) ? cpu_addr[4] : dat_addr[4];
+assign address[5] = (progown) ? cpu_addr[5] : dat_addr[5];
+assign address[6] = (progown) ? cpu_addr[6] : dat_addr[6];
+assign address[7] = (progown) ? cpu_addr[7] : dat_addr[7];
+assign address[8] = (progown) ? cpu_addr[8] : dat_addr[8];
+assign address[9] = (progown) ? cpu_addr[9] : dat_addr[9];
+assign address[10] = (progown) ? cpu_addr[10] : dat_addr[10];
+assign address[11] = (progown) ? cpu_addr[11] : dat_addr[11];
+assign address[12] = (progown) ? cpu_addr[12] : dat_addr[12];
+assign address[13] = (progown) ? cpu_addr[13] : dat_addr[13];
+assign address[14] = (progown) ? cpu_addr[14] : dat_addr[14];
+assign address[15] = (progown) ? cpu_addr[15] : dat_addr[15];
+assign address[16] = (progown) ? cpu_addr[16] : dat_addr[16];
+assign address[17] = (progown) ? cpu_addr[17] : dat_addr[17];
+assign address[18] = (progown) ? cpu_addr[18] : dat_addr[18];
+assign address[19] = (progown) ? cpu_addr[19] : dat_addr[19];
+assign address[20] = (progown) ? cpu_addr[20] : dat_addr[20];
+assign address[21] = (progown) ? cpu_addr[21] : dat_addr[21];
+assign address[22] = (progown) ? cpu_addr[22] : dat_addr[22];
+assign address[23] = (progown) ? cpu_addr[23] : dat_addr[23];
 
 // DSP_GATE.NET (194) - mreq : niv
 assign mreq = active;

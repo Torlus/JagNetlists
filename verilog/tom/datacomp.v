@@ -45,456 +45,72 @@ assign cmpdstb_0 = cmpdst;
 assign cmpdstb_1 = cmpdst;
 
 // DATACOMP.NET (42) - tardlo : mx2
-mx2 tardlo_inst_0
-(
-	.z /* OUT */ (tardlo[0]),
-	.a0 /* IN */ (srcdlo[0]),
-	.a1 /* IN */ (dstdlo[0]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_1
-(
-	.z /* OUT */ (tardlo[1]),
-	.a0 /* IN */ (srcdlo[1]),
-	.a1 /* IN */ (dstdlo[1]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_2
-(
-	.z /* OUT */ (tardlo[2]),
-	.a0 /* IN */ (srcdlo[2]),
-	.a1 /* IN */ (dstdlo[2]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_3
-(
-	.z /* OUT */ (tardlo[3]),
-	.a0 /* IN */ (srcdlo[3]),
-	.a1 /* IN */ (dstdlo[3]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_4
-(
-	.z /* OUT */ (tardlo[4]),
-	.a0 /* IN */ (srcdlo[4]),
-	.a1 /* IN */ (dstdlo[4]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_5
-(
-	.z /* OUT */ (tardlo[5]),
-	.a0 /* IN */ (srcdlo[5]),
-	.a1 /* IN */ (dstdlo[5]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_6
-(
-	.z /* OUT */ (tardlo[6]),
-	.a0 /* IN */ (srcdlo[6]),
-	.a1 /* IN */ (dstdlo[6]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_7
-(
-	.z /* OUT */ (tardlo[7]),
-	.a0 /* IN */ (srcdlo[7]),
-	.a1 /* IN */ (dstdlo[7]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_8
-(
-	.z /* OUT */ (tardlo[8]),
-	.a0 /* IN */ (srcdlo[8]),
-	.a1 /* IN */ (dstdlo[8]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_9
-(
-	.z /* OUT */ (tardlo[9]),
-	.a0 /* IN */ (srcdlo[9]),
-	.a1 /* IN */ (dstdlo[9]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_10
-(
-	.z /* OUT */ (tardlo[10]),
-	.a0 /* IN */ (srcdlo[10]),
-	.a1 /* IN */ (dstdlo[10]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_11
-(
-	.z /* OUT */ (tardlo[11]),
-	.a0 /* IN */ (srcdlo[11]),
-	.a1 /* IN */ (dstdlo[11]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_12
-(
-	.z /* OUT */ (tardlo[12]),
-	.a0 /* IN */ (srcdlo[12]),
-	.a1 /* IN */ (dstdlo[12]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_13
-(
-	.z /* OUT */ (tardlo[13]),
-	.a0 /* IN */ (srcdlo[13]),
-	.a1 /* IN */ (dstdlo[13]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_14
-(
-	.z /* OUT */ (tardlo[14]),
-	.a0 /* IN */ (srcdlo[14]),
-	.a1 /* IN */ (dstdlo[14]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_15
-(
-	.z /* OUT */ (tardlo[15]),
-	.a0 /* IN */ (srcdlo[15]),
-	.a1 /* IN */ (dstdlo[15]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_16
-(
-	.z /* OUT */ (tardlo[16]),
-	.a0 /* IN */ (srcdlo[16]),
-	.a1 /* IN */ (dstdlo[16]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_17
-(
-	.z /* OUT */ (tardlo[17]),
-	.a0 /* IN */ (srcdlo[17]),
-	.a1 /* IN */ (dstdlo[17]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_18
-(
-	.z /* OUT */ (tardlo[18]),
-	.a0 /* IN */ (srcdlo[18]),
-	.a1 /* IN */ (dstdlo[18]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_19
-(
-	.z /* OUT */ (tardlo[19]),
-	.a0 /* IN */ (srcdlo[19]),
-	.a1 /* IN */ (dstdlo[19]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_20
-(
-	.z /* OUT */ (tardlo[20]),
-	.a0 /* IN */ (srcdlo[20]),
-	.a1 /* IN */ (dstdlo[20]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_21
-(
-	.z /* OUT */ (tardlo[21]),
-	.a0 /* IN */ (srcdlo[21]),
-	.a1 /* IN */ (dstdlo[21]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_22
-(
-	.z /* OUT */ (tardlo[22]),
-	.a0 /* IN */ (srcdlo[22]),
-	.a1 /* IN */ (dstdlo[22]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_23
-(
-	.z /* OUT */ (tardlo[23]),
-	.a0 /* IN */ (srcdlo[23]),
-	.a1 /* IN */ (dstdlo[23]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_24
-(
-	.z /* OUT */ (tardlo[24]),
-	.a0 /* IN */ (srcdlo[24]),
-	.a1 /* IN */ (dstdlo[24]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_25
-(
-	.z /* OUT */ (tardlo[25]),
-	.a0 /* IN */ (srcdlo[25]),
-	.a1 /* IN */ (dstdlo[25]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_26
-(
-	.z /* OUT */ (tardlo[26]),
-	.a0 /* IN */ (srcdlo[26]),
-	.a1 /* IN */ (dstdlo[26]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_27
-(
-	.z /* OUT */ (tardlo[27]),
-	.a0 /* IN */ (srcdlo[27]),
-	.a1 /* IN */ (dstdlo[27]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_28
-(
-	.z /* OUT */ (tardlo[28]),
-	.a0 /* IN */ (srcdlo[28]),
-	.a1 /* IN */ (dstdlo[28]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_29
-(
-	.z /* OUT */ (tardlo[29]),
-	.a0 /* IN */ (srcdlo[29]),
-	.a1 /* IN */ (dstdlo[29]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_30
-(
-	.z /* OUT */ (tardlo[30]),
-	.a0 /* IN */ (srcdlo[30]),
-	.a1 /* IN */ (dstdlo[30]),
-	.s /* IN */ (cmpdstb_0)
-);
-mx2 tardlo_inst_31
-(
-	.z /* OUT */ (tardlo[31]),
-	.a0 /* IN */ (srcdlo[31]),
-	.a1 /* IN */ (dstdlo[31]),
-	.s /* IN */ (cmpdstb_0)
-);
+assign tardlo[0] = (cmpdstb_0) ? dstdlo[0] : srcdlo[0];
+assign tardlo[1] = (cmpdstb_0) ? dstdlo[1] : srcdlo[1];
+assign tardlo[2] = (cmpdstb_0) ? dstdlo[2] : srcdlo[2];
+assign tardlo[3] = (cmpdstb_0) ? dstdlo[3] : srcdlo[3];
+assign tardlo[4] = (cmpdstb_0) ? dstdlo[4] : srcdlo[4];
+assign tardlo[5] = (cmpdstb_0) ? dstdlo[5] : srcdlo[5];
+assign tardlo[6] = (cmpdstb_0) ? dstdlo[6] : srcdlo[6];
+assign tardlo[7] = (cmpdstb_0) ? dstdlo[7] : srcdlo[7];
+assign tardlo[8] = (cmpdstb_0) ? dstdlo[8] : srcdlo[8];
+assign tardlo[9] = (cmpdstb_0) ? dstdlo[9] : srcdlo[9];
+assign tardlo[10] = (cmpdstb_0) ? dstdlo[10] : srcdlo[10];
+assign tardlo[11] = (cmpdstb_0) ? dstdlo[11] : srcdlo[11];
+assign tardlo[12] = (cmpdstb_0) ? dstdlo[12] : srcdlo[12];
+assign tardlo[13] = (cmpdstb_0) ? dstdlo[13] : srcdlo[13];
+assign tardlo[14] = (cmpdstb_0) ? dstdlo[14] : srcdlo[14];
+assign tardlo[15] = (cmpdstb_0) ? dstdlo[15] : srcdlo[15];
+assign tardlo[16] = (cmpdstb_0) ? dstdlo[16] : srcdlo[16];
+assign tardlo[17] = (cmpdstb_0) ? dstdlo[17] : srcdlo[17];
+assign tardlo[18] = (cmpdstb_0) ? dstdlo[18] : srcdlo[18];
+assign tardlo[19] = (cmpdstb_0) ? dstdlo[19] : srcdlo[19];
+assign tardlo[20] = (cmpdstb_0) ? dstdlo[20] : srcdlo[20];
+assign tardlo[21] = (cmpdstb_0) ? dstdlo[21] : srcdlo[21];
+assign tardlo[22] = (cmpdstb_0) ? dstdlo[22] : srcdlo[22];
+assign tardlo[23] = (cmpdstb_0) ? dstdlo[23] : srcdlo[23];
+assign tardlo[24] = (cmpdstb_0) ? dstdlo[24] : srcdlo[24];
+assign tardlo[25] = (cmpdstb_0) ? dstdlo[25] : srcdlo[25];
+assign tardlo[26] = (cmpdstb_0) ? dstdlo[26] : srcdlo[26];
+assign tardlo[27] = (cmpdstb_0) ? dstdlo[27] : srcdlo[27];
+assign tardlo[28] = (cmpdstb_0) ? dstdlo[28] : srcdlo[28];
+assign tardlo[29] = (cmpdstb_0) ? dstdlo[29] : srcdlo[29];
+assign tardlo[30] = (cmpdstb_0) ? dstdlo[30] : srcdlo[30];
+assign tardlo[31] = (cmpdstb_0) ? dstdlo[31] : srcdlo[31];
 
 // DATACOMP.NET (43) - tardhi : mx2
-mx2 tardhi_inst_0
-(
-	.z /* OUT */ (tardhi[0]),
-	.a0 /* IN */ (srcdhi[0]),
-	.a1 /* IN */ (dstdhi[0]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_1
-(
-	.z /* OUT */ (tardhi[1]),
-	.a0 /* IN */ (srcdhi[1]),
-	.a1 /* IN */ (dstdhi[1]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_2
-(
-	.z /* OUT */ (tardhi[2]),
-	.a0 /* IN */ (srcdhi[2]),
-	.a1 /* IN */ (dstdhi[2]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_3
-(
-	.z /* OUT */ (tardhi[3]),
-	.a0 /* IN */ (srcdhi[3]),
-	.a1 /* IN */ (dstdhi[3]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_4
-(
-	.z /* OUT */ (tardhi[4]),
-	.a0 /* IN */ (srcdhi[4]),
-	.a1 /* IN */ (dstdhi[4]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_5
-(
-	.z /* OUT */ (tardhi[5]),
-	.a0 /* IN */ (srcdhi[5]),
-	.a1 /* IN */ (dstdhi[5]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_6
-(
-	.z /* OUT */ (tardhi[6]),
-	.a0 /* IN */ (srcdhi[6]),
-	.a1 /* IN */ (dstdhi[6]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_7
-(
-	.z /* OUT */ (tardhi[7]),
-	.a0 /* IN */ (srcdhi[7]),
-	.a1 /* IN */ (dstdhi[7]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_8
-(
-	.z /* OUT */ (tardhi[8]),
-	.a0 /* IN */ (srcdhi[8]),
-	.a1 /* IN */ (dstdhi[8]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_9
-(
-	.z /* OUT */ (tardhi[9]),
-	.a0 /* IN */ (srcdhi[9]),
-	.a1 /* IN */ (dstdhi[9]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_10
-(
-	.z /* OUT */ (tardhi[10]),
-	.a0 /* IN */ (srcdhi[10]),
-	.a1 /* IN */ (dstdhi[10]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_11
-(
-	.z /* OUT */ (tardhi[11]),
-	.a0 /* IN */ (srcdhi[11]),
-	.a1 /* IN */ (dstdhi[11]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_12
-(
-	.z /* OUT */ (tardhi[12]),
-	.a0 /* IN */ (srcdhi[12]),
-	.a1 /* IN */ (dstdhi[12]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_13
-(
-	.z /* OUT */ (tardhi[13]),
-	.a0 /* IN */ (srcdhi[13]),
-	.a1 /* IN */ (dstdhi[13]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_14
-(
-	.z /* OUT */ (tardhi[14]),
-	.a0 /* IN */ (srcdhi[14]),
-	.a1 /* IN */ (dstdhi[14]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_15
-(
-	.z /* OUT */ (tardhi[15]),
-	.a0 /* IN */ (srcdhi[15]),
-	.a1 /* IN */ (dstdhi[15]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_16
-(
-	.z /* OUT */ (tardhi[16]),
-	.a0 /* IN */ (srcdhi[16]),
-	.a1 /* IN */ (dstdhi[16]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_17
-(
-	.z /* OUT */ (tardhi[17]),
-	.a0 /* IN */ (srcdhi[17]),
-	.a1 /* IN */ (dstdhi[17]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_18
-(
-	.z /* OUT */ (tardhi[18]),
-	.a0 /* IN */ (srcdhi[18]),
-	.a1 /* IN */ (dstdhi[18]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_19
-(
-	.z /* OUT */ (tardhi[19]),
-	.a0 /* IN */ (srcdhi[19]),
-	.a1 /* IN */ (dstdhi[19]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_20
-(
-	.z /* OUT */ (tardhi[20]),
-	.a0 /* IN */ (srcdhi[20]),
-	.a1 /* IN */ (dstdhi[20]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_21
-(
-	.z /* OUT */ (tardhi[21]),
-	.a0 /* IN */ (srcdhi[21]),
-	.a1 /* IN */ (dstdhi[21]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_22
-(
-	.z /* OUT */ (tardhi[22]),
-	.a0 /* IN */ (srcdhi[22]),
-	.a1 /* IN */ (dstdhi[22]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_23
-(
-	.z /* OUT */ (tardhi[23]),
-	.a0 /* IN */ (srcdhi[23]),
-	.a1 /* IN */ (dstdhi[23]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_24
-(
-	.z /* OUT */ (tardhi[24]),
-	.a0 /* IN */ (srcdhi[24]),
-	.a1 /* IN */ (dstdhi[24]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_25
-(
-	.z /* OUT */ (tardhi[25]),
-	.a0 /* IN */ (srcdhi[25]),
-	.a1 /* IN */ (dstdhi[25]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_26
-(
-	.z /* OUT */ (tardhi[26]),
-	.a0 /* IN */ (srcdhi[26]),
-	.a1 /* IN */ (dstdhi[26]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_27
-(
-	.z /* OUT */ (tardhi[27]),
-	.a0 /* IN */ (srcdhi[27]),
-	.a1 /* IN */ (dstdhi[27]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_28
-(
-	.z /* OUT */ (tardhi[28]),
-	.a0 /* IN */ (srcdhi[28]),
-	.a1 /* IN */ (dstdhi[28]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_29
-(
-	.z /* OUT */ (tardhi[29]),
-	.a0 /* IN */ (srcdhi[29]),
-	.a1 /* IN */ (dstdhi[29]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_30
-(
-	.z /* OUT */ (tardhi[30]),
-	.a0 /* IN */ (srcdhi[30]),
-	.a1 /* IN */ (dstdhi[30]),
-	.s /* IN */ (cmpdstb_1)
-);
-mx2 tardhi_inst_31
-(
-	.z /* OUT */ (tardhi[31]),
-	.a0 /* IN */ (srcdhi[31]),
-	.a1 /* IN */ (dstdhi[31]),
-	.s /* IN */ (cmpdstb_1)
-);
+assign tardhi[0] = (cmpdstb_1) ? dstdhi[0] : srcdhi[0];
+assign tardhi[1] = (cmpdstb_1) ? dstdhi[1] : srcdhi[1];
+assign tardhi[2] = (cmpdstb_1) ? dstdhi[2] : srcdhi[2];
+assign tardhi[3] = (cmpdstb_1) ? dstdhi[3] : srcdhi[3];
+assign tardhi[4] = (cmpdstb_1) ? dstdhi[4] : srcdhi[4];
+assign tardhi[5] = (cmpdstb_1) ? dstdhi[5] : srcdhi[5];
+assign tardhi[6] = (cmpdstb_1) ? dstdhi[6] : srcdhi[6];
+assign tardhi[7] = (cmpdstb_1) ? dstdhi[7] : srcdhi[7];
+assign tardhi[8] = (cmpdstb_1) ? dstdhi[8] : srcdhi[8];
+assign tardhi[9] = (cmpdstb_1) ? dstdhi[9] : srcdhi[9];
+assign tardhi[10] = (cmpdstb_1) ? dstdhi[10] : srcdhi[10];
+assign tardhi[11] = (cmpdstb_1) ? dstdhi[11] : srcdhi[11];
+assign tardhi[12] = (cmpdstb_1) ? dstdhi[12] : srcdhi[12];
+assign tardhi[13] = (cmpdstb_1) ? dstdhi[13] : srcdhi[13];
+assign tardhi[14] = (cmpdstb_1) ? dstdhi[14] : srcdhi[14];
+assign tardhi[15] = (cmpdstb_1) ? dstdhi[15] : srcdhi[15];
+assign tardhi[16] = (cmpdstb_1) ? dstdhi[16] : srcdhi[16];
+assign tardhi[17] = (cmpdstb_1) ? dstdhi[17] : srcdhi[17];
+assign tardhi[18] = (cmpdstb_1) ? dstdhi[18] : srcdhi[18];
+assign tardhi[19] = (cmpdstb_1) ? dstdhi[19] : srcdhi[19];
+assign tardhi[20] = (cmpdstb_1) ? dstdhi[20] : srcdhi[20];
+assign tardhi[21] = (cmpdstb_1) ? dstdhi[21] : srcdhi[21];
+assign tardhi[22] = (cmpdstb_1) ? dstdhi[22] : srcdhi[22];
+assign tardhi[23] = (cmpdstb_1) ? dstdhi[23] : srcdhi[23];
+assign tardhi[24] = (cmpdstb_1) ? dstdhi[24] : srcdhi[24];
+assign tardhi[25] = (cmpdstb_1) ? dstdhi[25] : srcdhi[25];
+assign tardhi[26] = (cmpdstb_1) ? dstdhi[26] : srcdhi[26];
+assign tardhi[27] = (cmpdstb_1) ? dstdhi[27] : srcdhi[27];
+assign tardhi[28] = (cmpdstb_1) ? dstdhi[28] : srcdhi[28];
+assign tardhi[29] = (cmpdstb_1) ? dstdhi[29] : srcdhi[29];
+assign tardhi[30] = (cmpdstb_1) ? dstdhi[30] : srcdhi[30];
+assign tardhi[31] = (cmpdstb_1) ? dstdhi[31] : srcdhi[31];
 
 // DATACOMP.NET (45) - patb[0] : join
 assign patb_0[0] = patdlo[0];

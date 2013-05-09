@@ -580,118 +580,22 @@ assign mulb[14] = dstdp[14];
 assign mulb[15] = dstdp[15];
 
 // ARITH.NET (101) - mula : mx2
-mx2 mula_inst_0
-(
-	.z /* OUT */ (mula[0]),
-	.a0 /* IN */ (losrcdp[0]),
-	.a1 /* IN */ (hisrcdp[0]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_1
-(
-	.z /* OUT */ (mula[1]),
-	.a0 /* IN */ (losrcdp[1]),
-	.a1 /* IN */ (hisrcdp[1]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_2
-(
-	.z /* OUT */ (mula[2]),
-	.a0 /* IN */ (losrcdp[2]),
-	.a1 /* IN */ (hisrcdp[2]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_3
-(
-	.z /* OUT */ (mula[3]),
-	.a0 /* IN */ (losrcdp[3]),
-	.a1 /* IN */ (hisrcdp[3]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_4
-(
-	.z /* OUT */ (mula[4]),
-	.a0 /* IN */ (losrcdp[4]),
-	.a1 /* IN */ (hisrcdp[4]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_5
-(
-	.z /* OUT */ (mula[5]),
-	.a0 /* IN */ (losrcdp[5]),
-	.a1 /* IN */ (hisrcdp[5]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_6
-(
-	.z /* OUT */ (mula[6]),
-	.a0 /* IN */ (losrcdp[6]),
-	.a1 /* IN */ (hisrcdp[6]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_7
-(
-	.z /* OUT */ (mula[7]),
-	.a0 /* IN */ (losrcdp[7]),
-	.a1 /* IN */ (hisrcdp[7]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_8
-(
-	.z /* OUT */ (mula[8]),
-	.a0 /* IN */ (losrcdp[8]),
-	.a1 /* IN */ (hisrcdp[8]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_9
-(
-	.z /* OUT */ (mula[9]),
-	.a0 /* IN */ (losrcdp[9]),
-	.a1 /* IN */ (hisrcdp[9]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_10
-(
-	.z /* OUT */ (mula[10]),
-	.a0 /* IN */ (losrcdp[10]),
-	.a1 /* IN */ (hisrcdp[10]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_11
-(
-	.z /* OUT */ (mula[11]),
-	.a0 /* IN */ (losrcdp[11]),
-	.a1 /* IN */ (hisrcdp[11]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_12
-(
-	.z /* OUT */ (mula[12]),
-	.a0 /* IN */ (losrcdp[12]),
-	.a1 /* IN */ (hisrcdp[12]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_13
-(
-	.z /* OUT */ (mula[13]),
-	.a0 /* IN */ (losrcdp[13]),
-	.a1 /* IN */ (hisrcdp[13]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_14
-(
-	.z /* OUT */ (mula[14]),
-	.a0 /* IN */ (losrcdp[14]),
-	.a1 /* IN */ (hisrcdp[14]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_15
-(
-	.z /* OUT */ (mula[15]),
-	.a0 /* IN */ (losrcdp[15]),
-	.a1 /* IN */ (hisrcdp[15]),
-	.s /* IN */ (multselp)
-);
+assign mula[0] = (multselp) ? hisrcdp[0] : losrcdp[0];
+assign mula[1] = (multselp) ? hisrcdp[1] : losrcdp[1];
+assign mula[2] = (multselp) ? hisrcdp[2] : losrcdp[2];
+assign mula[3] = (multselp) ? hisrcdp[3] : losrcdp[3];
+assign mula[4] = (multselp) ? hisrcdp[4] : losrcdp[4];
+assign mula[5] = (multselp) ? hisrcdp[5] : losrcdp[5];
+assign mula[6] = (multselp) ? hisrcdp[6] : losrcdp[6];
+assign mula[7] = (multselp) ? hisrcdp[7] : losrcdp[7];
+assign mula[8] = (multselp) ? hisrcdp[8] : losrcdp[8];
+assign mula[9] = (multselp) ? hisrcdp[9] : losrcdp[9];
+assign mula[10] = (multselp) ? hisrcdp[10] : losrcdp[10];
+assign mula[11] = (multselp) ? hisrcdp[11] : losrcdp[11];
+assign mula[12] = (multselp) ? hisrcdp[12] : losrcdp[12];
+assign mula[13] = (multselp) ? hisrcdp[13] : losrcdp[13];
+assign mula[14] = (multselp) ? hisrcdp[14] : losrcdp[14];
+assign mula[15] = (multselp) ? hisrcdp[15] : losrcdp[15];
 
 // ARITH.NET (105) - mult : mp16
 mp16 mult_inst
@@ -1361,230 +1265,38 @@ assign normi[31] = normib_5;
 // ARITH.NET (185) - dummyb : dummy
 
 // ARITH.NET (192) - aluamux : mx2
-mx2 aluamux_inst_0
-(
-	.z /* OUT */ (aluat[0]),
-	.a0 /* IN */ (dstdp[0]),
-	.a1 /* IN */ (result_b0_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_1
-(
-	.z /* OUT */ (aluat[1]),
-	.a0 /* IN */ (dstdp[1]),
-	.a1 /* IN */ (result_b1_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_2
-(
-	.z /* OUT */ (aluat[2]),
-	.a0 /* IN */ (dstdp[2]),
-	.a1 /* IN */ (result_b2_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_3
-(
-	.z /* OUT */ (aluat[3]),
-	.a0 /* IN */ (dstdp[3]),
-	.a1 /* IN */ (result_b3_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_4
-(
-	.z /* OUT */ (aluat[4]),
-	.a0 /* IN */ (dstdp[4]),
-	.a1 /* IN */ (result_b4_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_5
-(
-	.z /* OUT */ (aluat[5]),
-	.a0 /* IN */ (dstdp[5]),
-	.a1 /* IN */ (result_b5_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_6
-(
-	.z /* OUT */ (aluat[6]),
-	.a0 /* IN */ (dstdp[6]),
-	.a1 /* IN */ (result_b6_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_7
-(
-	.z /* OUT */ (aluat[7]),
-	.a0 /* IN */ (dstdp[7]),
-	.a1 /* IN */ (result_b7_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_8
-(
-	.z /* OUT */ (aluat[8]),
-	.a0 /* IN */ (dstdp[8]),
-	.a1 /* IN */ (result_b8_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_9
-(
-	.z /* OUT */ (aluat[9]),
-	.a0 /* IN */ (dstdp[9]),
-	.a1 /* IN */ (result_b9_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_10
-(
-	.z /* OUT */ (aluat[10]),
-	.a0 /* IN */ (dstdp[10]),
-	.a1 /* IN */ (result_b10_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_11
-(
-	.z /* OUT */ (aluat[11]),
-	.a0 /* IN */ (dstdp[11]),
-	.a1 /* IN */ (result_b11_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_12
-(
-	.z /* OUT */ (aluat[12]),
-	.a0 /* IN */ (dstdp[12]),
-	.a1 /* IN */ (result_b12_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_13
-(
-	.z /* OUT */ (aluat[13]),
-	.a0 /* IN */ (dstdp[13]),
-	.a1 /* IN */ (result_b13_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_14
-(
-	.z /* OUT */ (aluat[14]),
-	.a0 /* IN */ (dstdp[14]),
-	.a1 /* IN */ (result_b14_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_15
-(
-	.z /* OUT */ (aluat[15]),
-	.a0 /* IN */ (dstdp[15]),
-	.a1 /* IN */ (result_b15_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_16
-(
-	.z /* OUT */ (aluat[16]),
-	.a0 /* IN */ (dstdp[16]),
-	.a1 /* IN */ (result_b16_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_17
-(
-	.z /* OUT */ (aluat[17]),
-	.a0 /* IN */ (dstdp[17]),
-	.a1 /* IN */ (result_b17_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_18
-(
-	.z /* OUT */ (aluat[18]),
-	.a0 /* IN */ (dstdp[18]),
-	.a1 /* IN */ (result_b18_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_19
-(
-	.z /* OUT */ (aluat[19]),
-	.a0 /* IN */ (dstdp[19]),
-	.a1 /* IN */ (result_b19_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_20
-(
-	.z /* OUT */ (aluat[20]),
-	.a0 /* IN */ (dstdp[20]),
-	.a1 /* IN */ (result_b20_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_21
-(
-	.z /* OUT */ (aluat[21]),
-	.a0 /* IN */ (dstdp[21]),
-	.a1 /* IN */ (result_b21_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_22
-(
-	.z /* OUT */ (aluat[22]),
-	.a0 /* IN */ (dstdp[22]),
-	.a1 /* IN */ (result_b22_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_23
-(
-	.z /* OUT */ (aluat[23]),
-	.a0 /* IN */ (dstdp[23]),
-	.a1 /* IN */ (result_b23_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_24
-(
-	.z /* OUT */ (aluat[24]),
-	.a0 /* IN */ (dstdp[24]),
-	.a1 /* IN */ (result_b24_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_25
-(
-	.z /* OUT */ (aluat[25]),
-	.a0 /* IN */ (dstdp[25]),
-	.a1 /* IN */ (result_b25_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_26
-(
-	.z /* OUT */ (aluat[26]),
-	.a0 /* IN */ (dstdp[26]),
-	.a1 /* IN */ (result_b26_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_27
-(
-	.z /* OUT */ (aluat[27]),
-	.a0 /* IN */ (dstdp[27]),
-	.a1 /* IN */ (result_b27_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_28
-(
-	.z /* OUT */ (aluat[28]),
-	.a0 /* IN */ (dstdp[28]),
-	.a1 /* IN */ (result_b28_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_29
-(
-	.z /* OUT */ (aluat[29]),
-	.a0 /* IN */ (dstdp[29]),
-	.a1 /* IN */ (result_b29_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_30
-(
-	.z /* OUT */ (aluat[30]),
-	.a0 /* IN */ (dstdp[30]),
-	.a1 /* IN */ (result_b30_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_31
-(
-	.z /* OUT */ (aluat[31]),
-	.a0 /* IN */ (dstdp[31]),
-	.a1 /* IN */ (result_b31_obuf),
-	.s /* IN */ (macop_pp)
-);
+assign aluat[0] = (macop_pp) ? result_b0_obuf : dstdp[0];
+assign aluat[1] = (macop_pp) ? result_b1_obuf : dstdp[1];
+assign aluat[2] = (macop_pp) ? result_b2_obuf : dstdp[2];
+assign aluat[3] = (macop_pp) ? result_b3_obuf : dstdp[3];
+assign aluat[4] = (macop_pp) ? result_b4_obuf : dstdp[4];
+assign aluat[5] = (macop_pp) ? result_b5_obuf : dstdp[5];
+assign aluat[6] = (macop_pp) ? result_b6_obuf : dstdp[6];
+assign aluat[7] = (macop_pp) ? result_b7_obuf : dstdp[7];
+assign aluat[8] = (macop_pp) ? result_b8_obuf : dstdp[8];
+assign aluat[9] = (macop_pp) ? result_b9_obuf : dstdp[9];
+assign aluat[10] = (macop_pp) ? result_b10_obuf : dstdp[10];
+assign aluat[11] = (macop_pp) ? result_b11_obuf : dstdp[11];
+assign aluat[12] = (macop_pp) ? result_b12_obuf : dstdp[12];
+assign aluat[13] = (macop_pp) ? result_b13_obuf : dstdp[13];
+assign aluat[14] = (macop_pp) ? result_b14_obuf : dstdp[14];
+assign aluat[15] = (macop_pp) ? result_b15_obuf : dstdp[15];
+assign aluat[16] = (macop_pp) ? result_b16_obuf : dstdp[16];
+assign aluat[17] = (macop_pp) ? result_b17_obuf : dstdp[17];
+assign aluat[18] = (macop_pp) ? result_b18_obuf : dstdp[18];
+assign aluat[19] = (macop_pp) ? result_b19_obuf : dstdp[19];
+assign aluat[20] = (macop_pp) ? result_b20_obuf : dstdp[20];
+assign aluat[21] = (macop_pp) ? result_b21_obuf : dstdp[21];
+assign aluat[22] = (macop_pp) ? result_b22_obuf : dstdp[22];
+assign aluat[23] = (macop_pp) ? result_b23_obuf : dstdp[23];
+assign aluat[24] = (macop_pp) ? result_b24_obuf : dstdp[24];
+assign aluat[25] = (macop_pp) ? result_b25_obuf : dstdp[25];
+assign aluat[26] = (macop_pp) ? result_b26_obuf : dstdp[26];
+assign aluat[27] = (macop_pp) ? result_b27_obuf : dstdp[27];
+assign aluat[28] = (macop_pp) ? result_b28_obuf : dstdp[28];
+assign aluat[29] = (macop_pp) ? result_b29_obuf : dstdp[29];
+assign aluat[30] = (macop_pp) ? result_b30_obuf : dstdp[30];
+assign aluat[31] = (macop_pp) ? result_b31_obuf : dstdp[31];
 
 // ARITH.NET (193) - aluazero\ : ivu
 assign aluazero_n = ~mantmode;

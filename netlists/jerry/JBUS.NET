@@ -59,6 +59,14 @@ D3[0-7] :=	STLATCH (d3[0-7],d1[0-7],clk,dinlatch[0]);
 D3[8-15] :=	STLATCH (d3[8-15],d1a[8-15],clk,dinlatch[0]);
 D3[16-31] :=	STLATCH (d3[16-31],d2[16-31],clk,dinlatch[1]);
 
+(* GE D3a[0-7] :=	SLATCH (d3a[0-7],d1[0-7],clk,dinlatch[0]);
+D3a[8-15] :=	SLATCH (d3a[8-15],d1a[8-15],clk,dinlatch[0]);
+D3a[16-31] :=	SLATCH (d3a[16-31],d2[16-31],clk,dinlatch[1]);
+
+D3[0-7] := MX2(d3[0-7],d3a[0-7],d1[0-7],dinlatch[0]);
+D3[8-15] := MX2(d3[8-15],d3a[8-15],d1a[8-15],dinlatch[0]);
+D3[16-31] := MX2(d3[16-31],d3a[16-31],d2[16-31],dinlatch[1]); *)
+
 (* feed this data into the "down" network *)
 
 D4[0-15] :=	MX2 (d4[0-15],d3[0-15],d3[16-31],dmuxd[1]);

@@ -460,64 +460,16 @@ assign intremz = intremz0 | newrem_8;
 assign intremnz = ~intremz;
 
 // WBK.NET (83) - rd[0-4] : mx2
-mx2 rd_from_0_to_4_inst_0
-(
-	.z /* OUT */ (rd_0),
-	.a0 /* IN */ (vscale_0),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (decrem)
-);
-mx2 rd_from_0_to_4_inst_1
-(
-	.z /* OUT */ (rd_1),
-	.a0 /* IN */ (vscale_1),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (decrem)
-);
-mx2 rd_from_0_to_4_inst_2
-(
-	.z /* OUT */ (rd_2),
-	.a0 /* IN */ (vscale_2),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (decrem)
-);
-mx2 rd_from_0_to_4_inst_3
-(
-	.z /* OUT */ (rd_3),
-	.a0 /* IN */ (vscale_3),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (decrem)
-);
-mx2 rd_from_0_to_4_inst_4
-(
-	.z /* OUT */ (rd_4),
-	.a0 /* IN */ (vscale_4),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (decrem)
-);
+assign rd_0 = (decrem) ? gnd : vscale_0;
+assign rd_1 = (decrem) ? gnd : vscale_1;
+assign rd_2 = (decrem) ? gnd : vscale_2;
+assign rd_3 = (decrem) ? gnd : vscale_3;
+assign rd_4 = (decrem) ? gnd : vscale_4;
 
 // WBK.NET (84) - rd[5-7] : mx2
-mx2 rd_from_5_to_7_inst_0
-(
-	.z /* OUT */ (rd_5),
-	.a0 /* IN */ (vscale_5),
-	.a1 /* IN */ (vcc),
-	.s /* IN */ (decrem)
-);
-mx2 rd_from_5_to_7_inst_1
-(
-	.z /* OUT */ (rd_6),
-	.a0 /* IN */ (vscale_6),
-	.a1 /* IN */ (vcc),
-	.s /* IN */ (decrem)
-);
-mx2 rd_from_5_to_7_inst_2
-(
-	.z /* OUT */ (rd_7),
-	.a0 /* IN */ (vscale_7),
-	.a1 /* IN */ (vcc),
-	.s /* IN */ (decrem)
-);
+assign rd_5 = (decrem) ? vcc : vscale_5;
+assign rd_6 = (decrem) ? vcc : vscale_6;
+assign rd_7 = (decrem) ? vcc : vscale_7;
 
 // WBK.NET (85) - rd[8] : niv
 assign rd_8 = decrem;
@@ -598,71 +550,17 @@ fa1 rs_from_1_to_8_inst_7
 );
 
 // WBK.NET (92) - rem[0-7] : mx2
-mx2 rem_from_0_to_7_inst_0
-(
-	.z /* OUT */ (rem_0),
-	.a0 /* IN */ (rs_0),
-	.a1 /* IN */ (d_16),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_1
-(
-	.z /* OUT */ (rem_1),
-	.a0 /* IN */ (rs_1),
-	.a1 /* IN */ (d_17),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_2
-(
-	.z /* OUT */ (rem_2),
-	.a0 /* IN */ (rs_2),
-	.a1 /* IN */ (d_18),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_3
-(
-	.z /* OUT */ (rem_3),
-	.a0 /* IN */ (rs_3),
-	.a1 /* IN */ (d_19),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_4
-(
-	.z /* OUT */ (rem_4),
-	.a0 /* IN */ (rs_4),
-	.a1 /* IN */ (d_20),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_5
-(
-	.z /* OUT */ (rem_5),
-	.a0 /* IN */ (rs_5),
-	.a1 /* IN */ (d_21),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_6
-(
-	.z /* OUT */ (rem_6),
-	.a0 /* IN */ (rs_6),
-	.a1 /* IN */ (d_22),
-	.s /* IN */ (obld_2)
-);
-mx2 rem_from_0_to_7_inst_7
-(
-	.z /* OUT */ (rem_7),
-	.a0 /* IN */ (rs_7),
-	.a1 /* IN */ (d_23),
-	.s /* IN */ (obld_2)
-);
+assign rem_0 = (obld_2) ? d_16 : rs_0;
+assign rem_1 = (obld_2) ? d_17 : rs_1;
+assign rem_2 = (obld_2) ? d_18 : rs_2;
+assign rem_3 = (obld_2) ? d_19 : rs_3;
+assign rem_4 = (obld_2) ? d_20 : rs_4;
+assign rem_5 = (obld_2) ? d_21 : rs_5;
+assign rem_6 = (obld_2) ? d_22 : rs_6;
+assign rem_7 = (obld_2) ? d_23 : rs_7;
 
 // WBK.NET (93) - rem[8] : mx2
-mx2 rem_index_8_inst
-(
-	.z /* OUT */ (rem_8),
-	.a0 /* IN */ (rs_8),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (obld_2)
-);
+assign rem_8 = (obld_2) ? gnd : rs_8;
 
 // WBK.NET (95) - newrem[0-8] : slatch
 slatch newrem_from_0_to_8_inst_0

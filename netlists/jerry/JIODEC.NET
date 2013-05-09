@@ -128,7 +128,8 @@ Int1w	:=	AN4H	(int1w,i00xx,axx2x,axxx0,wet);
 U2dwr	:=	AN4H	(u2dwr,i00xx,axx3x,axxx0,wet);
 U2ctwr	:=	AN4H	(u2ctwr,i00xx,axx3x,axxx2,wet);
 U2psclw	:=	AN4H	(u2psclw,i00xx,axx3x,axxx4,wet);
-Test1w	:=	AN4H	(test1w,i00xx,axx6x,axxx0,wet);
+(* GE Test1w	:=	AN4H	(test1w,i00xx,axx6x,axxx0,wet); *)
+Test1w	:= TIE0(test1w);
 
 Vcc :=		TIE1 (vcc);
 

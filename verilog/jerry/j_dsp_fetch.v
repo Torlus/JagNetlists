@@ -983,118 +983,22 @@ assign ins_swap_n = ~(qst_0 ^ big_instr);
 assign ins_swapb = ~ins_swap_n;
 
 // DSP_F-35.NET (222) - instr : mx2
-mx2 instr_inst_0
-(
-	.z /* OUT */ (instruction[0]),
-	.a0 /* IN */ (inslo[0]),
-	.a1 /* IN */ (inshi[0]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_1
-(
-	.z /* OUT */ (instruction[1]),
-	.a0 /* IN */ (inslo[1]),
-	.a1 /* IN */ (inshi[1]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_2
-(
-	.z /* OUT */ (instruction[2]),
-	.a0 /* IN */ (inslo[2]),
-	.a1 /* IN */ (inshi[2]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_3
-(
-	.z /* OUT */ (instruction[3]),
-	.a0 /* IN */ (inslo[3]),
-	.a1 /* IN */ (inshi[3]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_4
-(
-	.z /* OUT */ (instruction[4]),
-	.a0 /* IN */ (inslo[4]),
-	.a1 /* IN */ (inshi[4]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_5
-(
-	.z /* OUT */ (instruction[5]),
-	.a0 /* IN */ (inslo[5]),
-	.a1 /* IN */ (inshi[5]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_6
-(
-	.z /* OUT */ (instruction[6]),
-	.a0 /* IN */ (inslo[6]),
-	.a1 /* IN */ (inshi[6]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_7
-(
-	.z /* OUT */ (instruction[7]),
-	.a0 /* IN */ (inslo[7]),
-	.a1 /* IN */ (inshi[7]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_8
-(
-	.z /* OUT */ (instruction[8]),
-	.a0 /* IN */ (inslo[8]),
-	.a1 /* IN */ (inshi[8]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_9
-(
-	.z /* OUT */ (instruction[9]),
-	.a0 /* IN */ (inslo[9]),
-	.a1 /* IN */ (inshi[9]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_10
-(
-	.z /* OUT */ (instruction[10]),
-	.a0 /* IN */ (inslo[10]),
-	.a1 /* IN */ (inshi[10]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_11
-(
-	.z /* OUT */ (instruction[11]),
-	.a0 /* IN */ (inslo[11]),
-	.a1 /* IN */ (inshi[11]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_12
-(
-	.z /* OUT */ (instruction[12]),
-	.a0 /* IN */ (inslo[12]),
-	.a1 /* IN */ (inshi[12]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_13
-(
-	.z /* OUT */ (instruction[13]),
-	.a0 /* IN */ (inslo[13]),
-	.a1 /* IN */ (inshi[13]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_14
-(
-	.z /* OUT */ (instruction[14]),
-	.a0 /* IN */ (inslo[14]),
-	.a1 /* IN */ (inshi[14]),
-	.s /* IN */ (ins_swapb)
-);
-mx2 instr_inst_15
-(
-	.z /* OUT */ (instruction[15]),
-	.a0 /* IN */ (inslo[15]),
-	.a1 /* IN */ (inshi[15]),
-	.s /* IN */ (ins_swapb)
-);
+assign instruction[0] = (ins_swapb) ? inshi[0] : inslo[0];
+assign instruction[1] = (ins_swapb) ? inshi[1] : inslo[1];
+assign instruction[2] = (ins_swapb) ? inshi[2] : inslo[2];
+assign instruction[3] = (ins_swapb) ? inshi[3] : inslo[3];
+assign instruction[4] = (ins_swapb) ? inshi[4] : inslo[4];
+assign instruction[5] = (ins_swapb) ? inshi[5] : inslo[5];
+assign instruction[6] = (ins_swapb) ? inshi[6] : inslo[6];
+assign instruction[7] = (ins_swapb) ? inshi[7] : inslo[7];
+assign instruction[8] = (ins_swapb) ? inshi[8] : inslo[8];
+assign instruction[9] = (ins_swapb) ? inshi[9] : inslo[9];
+assign instruction[10] = (ins_swapb) ? inshi[10] : inslo[10];
+assign instruction[11] = (ins_swapb) ? inshi[11] : inslo[11];
+assign instruction[12] = (ins_swapb) ? inshi[12] : inslo[12];
+assign instruction[13] = (ins_swapb) ? inshi[13] : inslo[13];
+assign instruction[14] = (ins_swapb) ? inshi[14] : inslo[14];
+assign instruction[15] = (ins_swapb) ? inshi[15] : inslo[15];
 
 // DSP_F-35.NET (237) - prst0 : nd5
 assign prst_0 = ~(qs_n_0 & qs_n_1 & qs_n_2 & go & jump_n);

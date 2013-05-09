@@ -467,22 +467,10 @@ assign a2addx_n_1 = ~a2addx_1;
 assign dsta2_n = ~dsta2_obuf;
 
 // ACONTROL.NET (93) - a1_addi : mx2
-mx2 a1_addi_inst
-(
-	.z /* OUT */ (a1_addi),
-	.a0 /* IN */ (dsta_addi),
-	.a1 /* IN */ (srca_addi),
-	.s /* IN */ (dsta2_obuf)
-);
+assign a1_addi = (dsta2_obuf) ? srca_addi : dsta_addi;
 
 // ACONTROL.NET (94) - a2_addi : mx2
-mx2 a2_addi_inst
-(
-	.z /* OUT */ (a2_addi),
-	.a0 /* IN */ (srca_addi),
-	.a1 /* IN */ (dsta_addi),
-	.s /* IN */ (dsta2_obuf)
-);
+assign a2_addi = (dsta2_obuf) ? dsta_addi : srca_addi;
 
 // ACONTROL.NET (95) - a1_add : fd1
 fd1 a1_add_inst
@@ -607,27 +595,9 @@ assign a2_xconst_1 = (a2xp_1 & a2addx_n_0) | a2addx_1;
 assign a2_xconst_2 = (a2xp_2 & a2addx_n_0) | a2addx_1;
 
 // ACONTROL.NET (165) - adda_xconst[0-2] : mx2
-mx2 adda_xconst_from_0_to_2_inst_0
-(
-	.z /* OUT */ (adda_xconst_0),
-	.a0 /* IN */ (a1_xconst_0),
-	.a1 /* IN */ (a2_xconst_0),
-	.s /* IN */ (a2_addb)
-);
-mx2 adda_xconst_from_0_to_2_inst_1
-(
-	.z /* OUT */ (adda_xconst_1),
-	.a0 /* IN */ (a1_xconst_1),
-	.a1 /* IN */ (a2_xconst_1),
-	.s /* IN */ (a2_addb)
-);
-mx2 adda_xconst_from_0_to_2_inst_2
-(
-	.z /* OUT */ (adda_xconst_2),
-	.a0 /* IN */ (a1_xconst_2),
-	.a1 /* IN */ (a2_xconst_2),
-	.s /* IN */ (a2_addb)
-);
+assign adda_xconst_0 = (a2_addb) ? a2_xconst_0 : a1_xconst_0;
+assign adda_xconst_1 = (a2_addb) ? a2_xconst_1 : a1_xconst_1;
+assign adda_xconst_2 = (a2_addb) ? a2_xconst_2 : a1_xconst_2;
 
 // ACONTROL.NET (170) - adda_yconst : niv
 assign adda_yconst = a1addy;
@@ -692,27 +662,9 @@ assign maska2b_1 = maska2 & a2xp_1;
 assign maska2b_2 = maska2 & a2xp_2;
 
 // ACONTROL.NET (218) - modx[0-2] : mx2
-mx2 modx_from_0_to_2_inst_0
-(
-	.z /* OUT */ (modx_0),
-	.a0 /* IN */ (maska1b_0),
-	.a1 /* IN */ (maska2b_0),
-	.s /* IN */ (a2_addb)
-);
-mx2 modx_from_0_to_2_inst_1
-(
-	.z /* OUT */ (modx_1),
-	.a0 /* IN */ (maska1b_1),
-	.a1 /* IN */ (maska2b_1),
-	.s /* IN */ (a2_addb)
-);
-mx2 modx_from_0_to_2_inst_2
-(
-	.z /* OUT */ (modx_2),
-	.a0 /* IN */ (maska1b_2),
-	.a1 /* IN */ (maska2b_2),
-	.s /* IN */ (a2_addb)
-);
+assign modx_0 = (a2_addb) ? maska2b_0 : maska1b_0;
+assign modx_1 = (a2_addb) ? maska2b_1 : maska1b_1;
+assign modx_2 = (a2_addb) ? maska2b_2 : maska1b_2;
 
 // ACONTROL.NET (224) - addqsel : or5
 assign addqsel = a1_add | a2_add | a1update | a1fupdate | a2update;
@@ -781,27 +733,9 @@ assign phct_1 = ~(pcsela2_n & a1addx_n_0 & a1addx_n_1);
 assign phrase_cycle = ~(phct_0 & phct_1);
 
 // ACONTROL.NET (286) - pixsize[0-2] : mx2u
-mx2 pixsize_from_0_to_2_inst_0
-(
-	.z /* OUT */ (pixsize_0_obuf),
-	.a0 /* IN */ (a1_pixsize_0),
-	.a1 /* IN */ (a2_pixsize_0),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 pixsize_from_0_to_2_inst_1
-(
-	.z /* OUT */ (pixsize_1_obuf),
-	.a0 /* IN */ (a1_pixsize_1),
-	.a1 /* IN */ (a2_pixsize_1),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 pixsize_from_0_to_2_inst_2
-(
-	.z /* OUT */ (pixsize_2_obuf),
-	.a0 /* IN */ (a1_pixsize_2),
-	.a1 /* IN */ (a2_pixsize_2),
-	.s /* IN */ (dsta2_obuf)
-);
+assign pixsize_0_obuf = (dsta2_obuf) ? a2_pixsize_0 : a1_pixsize_0;
+assign pixsize_1_obuf = (dsta2_obuf) ? a2_pixsize_1 : a1_pixsize_1;
+assign pixsize_2_obuf = (dsta2_obuf) ? a2_pixsize_2 : a1_pixsize_2;
 
 // ACONTROL.NET (288) - pixsize\[0-2] : ivm
 assign pixsize_n_0 = ~pixsize_0_obuf;
@@ -846,48 +780,12 @@ assign dstarta_5 = smask_5 & phrase_mode_obuf;
 assign mpipe_0 = atick_1;
 
 // ACONTROL.NET (312) - dstartb[0-5] : mx2
-mx2 dstartb_from_0_to_5_inst_0
-(
-	.z /* OUT */ (dstartb_0),
-	.a0 /* IN */ (dstartbl_0),
-	.a1 /* IN */ (dstarta_0),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dstartb_from_0_to_5_inst_1
-(
-	.z /* OUT */ (dstartb_1),
-	.a0 /* IN */ (dstartbl_1),
-	.a1 /* IN */ (dstarta_1),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dstartb_from_0_to_5_inst_2
-(
-	.z /* OUT */ (dstartb_2),
-	.a0 /* IN */ (dstartbl_2),
-	.a1 /* IN */ (dstarta_2),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dstartb_from_0_to_5_inst_3
-(
-	.z /* OUT */ (dstartb_3),
-	.a0 /* IN */ (dstartbl_3),
-	.a1 /* IN */ (dstarta_3),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dstartb_from_0_to_5_inst_4
-(
-	.z /* OUT */ (dstartb_4),
-	.a0 /* IN */ (dstartbl_4),
-	.a1 /* IN */ (dstarta_4),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dstartb_from_0_to_5_inst_5
-(
-	.z /* OUT */ (dstartb_5),
-	.a0 /* IN */ (dstartbl_5),
-	.a1 /* IN */ (dstarta_5),
-	.s /* IN */ (mpipe_0)
-);
+assign dstartb_0 = (mpipe_0) ? dstarta_0 : dstartbl_0;
+assign dstartb_1 = (mpipe_0) ? dstarta_1 : dstartbl_1;
+assign dstartb_2 = (mpipe_0) ? dstarta_2 : dstartbl_2;
+assign dstartb_3 = (mpipe_0) ? dstarta_3 : dstartbl_3;
+assign dstartb_4 = (mpipe_0) ? dstarta_4 : dstartbl_4;
+assign dstartb_5 = (mpipe_0) ? dstarta_5 : dstartbl_5;
 
 // ACONTROL.NET (313) - dstartbl[0-5] : fd1q
 fd1q dstartbl_from_0_to_5_inst_0
@@ -1028,118 +926,22 @@ fd1q dstart_from_0_to_5_inst_5
 );
 
 // ACONTROL.NET (347) - dstxp : mx2
-mx2 dstxp_inst_0
-(
-	.z /* OUT */ (dstxp_b0_obuf),
-	.a0 /* IN */ (a1_x[0]),
-	.a1 /* IN */ (a2_x[0]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_1
-(
-	.z /* OUT */ (dstxp_b1_obuf),
-	.a0 /* IN */ (a1_x[1]),
-	.a1 /* IN */ (a2_x[1]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_2
-(
-	.z /* OUT */ (dstxp_b2_obuf),
-	.a0 /* IN */ (a1_x[2]),
-	.a1 /* IN */ (a2_x[2]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_3
-(
-	.z /* OUT */ (dstxp_b3_obuf),
-	.a0 /* IN */ (a1_x[3]),
-	.a1 /* IN */ (a2_x[3]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_4
-(
-	.z /* OUT */ (dstxp_b4_obuf),
-	.a0 /* IN */ (a1_x[4]),
-	.a1 /* IN */ (a2_x[4]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_5
-(
-	.z /* OUT */ (dstxp_b5_obuf),
-	.a0 /* IN */ (a1_x[5]),
-	.a1 /* IN */ (a2_x[5]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_6
-(
-	.z /* OUT */ (dstxp_b6_obuf),
-	.a0 /* IN */ (a1_x[6]),
-	.a1 /* IN */ (a2_x[6]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_7
-(
-	.z /* OUT */ (dstxp_b7_obuf),
-	.a0 /* IN */ (a1_x[7]),
-	.a1 /* IN */ (a2_x[7]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_8
-(
-	.z /* OUT */ (dstxp_b8_obuf),
-	.a0 /* IN */ (a1_x[8]),
-	.a1 /* IN */ (a2_x[8]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_9
-(
-	.z /* OUT */ (dstxp_b9_obuf),
-	.a0 /* IN */ (a1_x[9]),
-	.a1 /* IN */ (a2_x[9]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_10
-(
-	.z /* OUT */ (dstxp_b10_obuf),
-	.a0 /* IN */ (a1_x[10]),
-	.a1 /* IN */ (a2_x[10]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_11
-(
-	.z /* OUT */ (dstxp_b11_obuf),
-	.a0 /* IN */ (a1_x[11]),
-	.a1 /* IN */ (a2_x[11]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_12
-(
-	.z /* OUT */ (dstxp_b12_obuf),
-	.a0 /* IN */ (a1_x[12]),
-	.a1 /* IN */ (a2_x[12]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_13
-(
-	.z /* OUT */ (dstxp_b13_obuf),
-	.a0 /* IN */ (a1_x[13]),
-	.a1 /* IN */ (a2_x[13]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_14
-(
-	.z /* OUT */ (dstxp_b14_obuf),
-	.a0 /* IN */ (a1_x[14]),
-	.a1 /* IN */ (a2_x[14]),
-	.s /* IN */ (dsta2_obuf)
-);
-mx2 dstxp_inst_15
-(
-	.z /* OUT */ (dstxp[15]),
-	.a0 /* IN */ (a1_x[15]),
-	.a1 /* IN */ (a2_x[15]),
-	.s /* IN */ (dsta2_obuf)
-);
+assign dstxp_b0_obuf = (dsta2_obuf) ? a2_x[0] : a1_x[0];
+assign dstxp_b1_obuf = (dsta2_obuf) ? a2_x[1] : a1_x[1];
+assign dstxp_b2_obuf = (dsta2_obuf) ? a2_x[2] : a1_x[2];
+assign dstxp_b3_obuf = (dsta2_obuf) ? a2_x[3] : a1_x[3];
+assign dstxp_b4_obuf = (dsta2_obuf) ? a2_x[4] : a1_x[4];
+assign dstxp_b5_obuf = (dsta2_obuf) ? a2_x[5] : a1_x[5];
+assign dstxp_b6_obuf = (dsta2_obuf) ? a2_x[6] : a1_x[6];
+assign dstxp_b7_obuf = (dsta2_obuf) ? a2_x[7] : a1_x[7];
+assign dstxp_b8_obuf = (dsta2_obuf) ? a2_x[8] : a1_x[8];
+assign dstxp_b9_obuf = (dsta2_obuf) ? a2_x[9] : a1_x[9];
+assign dstxp_b10_obuf = (dsta2_obuf) ? a2_x[10] : a1_x[10];
+assign dstxp_b11_obuf = (dsta2_obuf) ? a2_x[11] : a1_x[11];
+assign dstxp_b12_obuf = (dsta2_obuf) ? a2_x[12] : a1_x[12];
+assign dstxp_b13_obuf = (dsta2_obuf) ? a2_x[13] : a1_x[13];
+assign dstxp_b14_obuf = (dsta2_obuf) ? a2_x[14] : a1_x[14];
+assign dstxp[15] = (dsta2_obuf) ? a2_x[15] : a1_x[15];
 
 // ACONTROL.NET (349) - pseq[1-14] : eo
 assign pseq_1 = dstxp_b1_obuf ^ a1_win_x[1];
@@ -1259,27 +1061,9 @@ mag4 mcomp_inst
 );
 
 // ACONTROL.NET (419) - emask[3-5] : mx2
-mx2 emask_from_3_to_5_inst_0
-(
-	.z /* OUT */ (emask_3),
-	.a0 /* IN */ (window_mask_3),
-	.a1 /* IN */ (inner_mask_3),
-	.s /* IN */ (wgt)
-);
-mx2 emask_from_3_to_5_inst_1
-(
-	.z /* OUT */ (emask_4),
-	.a0 /* IN */ (window_mask_4),
-	.a1 /* IN */ (inner_mask_4),
-	.s /* IN */ (wgt)
-);
-mx2 emask_from_3_to_5_inst_2
-(
-	.z /* OUT */ (emask_5),
-	.a0 /* IN */ (window_mask_5),
-	.a1 /* IN */ (inner_mask_5),
-	.s /* IN */ (wgt)
-);
+assign emask_3 = (wgt) ? inner_mask_3 : window_mask_3;
+assign emask_4 = (wgt) ? inner_mask_4 : window_mask_4;
+assign emask_5 = (wgt) ? inner_mask_5 : window_mask_5;
 
 // ACONTROL.NET (425) - pm0 : an3
 assign pm_0 = pixsize_n_0 & pixsize_n_1 & pixsize_n_2;
@@ -1355,71 +1139,17 @@ assign denda_1 = pma_1 & phrase_mode_n;
 assign denda_2 = pma_2 & phrase_mode_n;
 
 // ACONTROL.NET (442) - denda[3-5] : mx2
-mx2 denda_from_3_to_5_inst_0
-(
-	.z /* OUT */ (denda_3),
-	.a0 /* IN */ (emask_3),
-	.a1 /* IN */ (pma_3),
-	.s /* IN */ (phrase_mode_n)
-);
-mx2 denda_from_3_to_5_inst_1
-(
-	.z /* OUT */ (denda_4),
-	.a0 /* IN */ (emask_4),
-	.a1 /* IN */ (pma_4),
-	.s /* IN */ (phrase_mode_n)
-);
-mx2 denda_from_3_to_5_inst_2
-(
-	.z /* OUT */ (denda_5),
-	.a0 /* IN */ (emask_5),
-	.a1 /* IN */ (pma_5),
-	.s /* IN */ (phrase_mode_n)
-);
+assign denda_3 = (phrase_mode_n) ? pma_3 : emask_3;
+assign denda_4 = (phrase_mode_n) ? pma_4 : emask_4;
+assign denda_5 = (phrase_mode_n) ? pma_5 : emask_5;
 
 // ACONTROL.NET (445) - dendb[0-5] : mx2
-mx2 dendb_from_0_to_5_inst_0
-(
-	.z /* OUT */ (dendb_0),
-	.a0 /* IN */ (dendbl_0),
-	.a1 /* IN */ (denda_0),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dendb_from_0_to_5_inst_1
-(
-	.z /* OUT */ (dendb_1),
-	.a0 /* IN */ (dendbl_1),
-	.a1 /* IN */ (denda_1),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dendb_from_0_to_5_inst_2
-(
-	.z /* OUT */ (dendb_2),
-	.a0 /* IN */ (dendbl_2),
-	.a1 /* IN */ (denda_2),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dendb_from_0_to_5_inst_3
-(
-	.z /* OUT */ (dendb_3),
-	.a0 /* IN */ (dendbl_3),
-	.a1 /* IN */ (denda_3),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dendb_from_0_to_5_inst_4
-(
-	.z /* OUT */ (dendb_4),
-	.a0 /* IN */ (dendbl_4),
-	.a1 /* IN */ (denda_4),
-	.s /* IN */ (mpipe_0)
-);
-mx2 dendb_from_0_to_5_inst_5
-(
-	.z /* OUT */ (dendb_5),
-	.a0 /* IN */ (dendbl_5),
-	.a1 /* IN */ (denda_5),
-	.s /* IN */ (mpipe_0)
-);
+assign dendb_0 = (mpipe_0) ? denda_0 : dendbl_0;
+assign dendb_1 = (mpipe_0) ? denda_1 : dendbl_1;
+assign dendb_2 = (mpipe_0) ? denda_2 : dendbl_2;
+assign dendb_3 = (mpipe_0) ? denda_3 : dendbl_3;
+assign dendb_4 = (mpipe_0) ? denda_4 : dendbl_4;
+assign dendb_5 = (mpipe_0) ? denda_5 : dendbl_5;
 
 // ACONTROL.NET (447) - dendbl[0-5] : fd1q
 fd1q dendbl_from_0_to_5_inst_0
@@ -1751,27 +1481,9 @@ assign pobbsel = phrase_mode_obuf & bcompen;
 assign loshen_n = ~(srcen | pobbsel);
 
 // ACONTROL.NET (516) - loshd[0-2] : mx2
-mx2 loshd_from_0_to_2_inst_0
-(
-	.z /* OUT */ (loshd_0),
-	.a0 /* IN */ (shftv_0),
-	.a1 /* IN */ (pobb_0),
-	.s /* IN */ (pobbsel)
-);
-mx2 loshd_from_0_to_2_inst_1
-(
-	.z /* OUT */ (loshd_1),
-	.a0 /* IN */ (shftv_1),
-	.a1 /* IN */ (pobb_1),
-	.s /* IN */ (pobbsel)
-);
-mx2 loshd_from_0_to_2_inst_2
-(
-	.z /* OUT */ (loshd_2),
-	.a0 /* IN */ (shftv_2),
-	.a1 /* IN */ (pobb_2),
-	.s /* IN */ (pobbsel)
-);
+assign loshd_0 = (pobbsel) ? pobb_0 : shftv_0;
+assign loshd_1 = (pobbsel) ? pobb_1 : shftv_1;
+assign loshd_2 = (pobbsel) ? pobb_2 : shftv_2;
 
 // ACONTROL.NET (518) - shfti[0-2] : mx2g
 mx2g shfti_from_0_to_2_inst_0

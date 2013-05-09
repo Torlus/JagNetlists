@@ -455,13 +455,7 @@ assign refack = ack_9;
 assign intbm_obuf = ack_1 | ack_2 | ack_5 | ack_6 | ack_7 | ack_9;
 
 // ARB.NET (144) - intbmt : mx2
-mx2 intbmt_inst
-(
-	.z /* OUT */ (intbmt),
-	.a0 /* IN */ (intbms_obuf),
-	.a1 /* IN */ (intbm_obuf),
-	.s /* IN */ (ack)
-);
+assign intbmt = (ack) ? intbm_obuf : intbms_obuf;
 
 // ARB.NET (145) - intbms : fd2q
 fd2q intbms_inst

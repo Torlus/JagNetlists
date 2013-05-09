@@ -18,16 +18,16 @@ wire ron;
 wire roff;
 wire cs;
 
-// MEM.NET (729) - ronl : nd2
+// MEM.NET (760) - ronl : nd2
 assign ronl = ~(bs & on1);
 
-// MEM.NET (730) - ron : nd2
+// MEM.NET (761) - ron : nd2
 assign ron = ~(ronl & allonl);
 
-// MEM.NET (731) - roff : nd2
+// MEM.NET (762) - roff : nd2
 assign roff = ~(roffl & alloffl);
 
-// MEM.NET (732) - cs : fjk2
+// MEM.NET (763) - cs : fjk2
 fjk2 cs_inst
 (
 	.q /* OUT */ (cs),
@@ -39,6 +39,6 @@ fjk2 cs_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// MEM.NET (733) - csl : dummy
+// MEM.NET (764) - csl : dummy
 endmodule
 /* verilator lint_on LITENDIAN */

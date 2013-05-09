@@ -1076,195 +1076,33 @@ assign romword27[25] = romword[25];
 assign romword27[26] = romword[26];
 
 // DSP_EXEC.NET (290) - mwordi : mx2p
-mx2 mwordi_inst_0
-(
-	.z /* OUT */ (mwordi[0]),
-	.a0 /* IN */ (microword[0]),
-	.a1 /* IN */ (romword27[0]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_1
-(
-	.z /* OUT */ (mwordi[1]),
-	.a0 /* IN */ (microword[1]),
-	.a1 /* IN */ (romword27[1]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_2
-(
-	.z /* OUT */ (mwordi[2]),
-	.a0 /* IN */ (microword[2]),
-	.a1 /* IN */ (romword27[2]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_3
-(
-	.z /* OUT */ (mwordi[3]),
-	.a0 /* IN */ (microword[3]),
-	.a1 /* IN */ (romword27[3]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_4
-(
-	.z /* OUT */ (mwordi[4]),
-	.a0 /* IN */ (microword[4]),
-	.a1 /* IN */ (romword27[4]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_5
-(
-	.z /* OUT */ (mwordi[5]),
-	.a0 /* IN */ (microword[5]),
-	.a1 /* IN */ (romword27[5]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_6
-(
-	.z /* OUT */ (mwordi[6]),
-	.a0 /* IN */ (microword[6]),
-	.a1 /* IN */ (romword27[6]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_7
-(
-	.z /* OUT */ (mwordi[7]),
-	.a0 /* IN */ (microword[7]),
-	.a1 /* IN */ (romword27[7]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_8
-(
-	.z /* OUT */ (mwordi[8]),
-	.a0 /* IN */ (microword[8]),
-	.a1 /* IN */ (romword27[8]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_9
-(
-	.z /* OUT */ (mwordi[9]),
-	.a0 /* IN */ (microword[9]),
-	.a1 /* IN */ (romword27[9]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_10
-(
-	.z /* OUT */ (mwordi[10]),
-	.a0 /* IN */ (microword[10]),
-	.a1 /* IN */ (romword27[10]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_11
-(
-	.z /* OUT */ (mwordi[11]),
-	.a0 /* IN */ (microword[11]),
-	.a1 /* IN */ (romword27[11]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_12
-(
-	.z /* OUT */ (mwordi[12]),
-	.a0 /* IN */ (microword[12]),
-	.a1 /* IN */ (romword27[12]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_13
-(
-	.z /* OUT */ (mwordi[13]),
-	.a0 /* IN */ (microword[13]),
-	.a1 /* IN */ (romword27[13]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_14
-(
-	.z /* OUT */ (mwordi[14]),
-	.a0 /* IN */ (microword[14]),
-	.a1 /* IN */ (romword27[14]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_15
-(
-	.z /* OUT */ (mwordi[15]),
-	.a0 /* IN */ (microword[15]),
-	.a1 /* IN */ (romword27[15]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_16
-(
-	.z /* OUT */ (mwordi[16]),
-	.a0 /* IN */ (microword[16]),
-	.a1 /* IN */ (romword27[16]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_17
-(
-	.z /* OUT */ (mwordi[17]),
-	.a0 /* IN */ (microword[17]),
-	.a1 /* IN */ (romword27[17]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_18
-(
-	.z /* OUT */ (mwordi[18]),
-	.a0 /* IN */ (microword[18]),
-	.a1 /* IN */ (romword27[18]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_19
-(
-	.z /* OUT */ (mwordi[19]),
-	.a0 /* IN */ (microword[19]),
-	.a1 /* IN */ (romword27[19]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_20
-(
-	.z /* OUT */ (mwordi[20]),
-	.a0 /* IN */ (microword[20]),
-	.a1 /* IN */ (romword27[20]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_21
-(
-	.z /* OUT */ (mwordi[21]),
-	.a0 /* IN */ (microword[21]),
-	.a1 /* IN */ (romword27[21]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_22
-(
-	.z /* OUT */ (mwordi[22]),
-	.a0 /* IN */ (microword[22]),
-	.a1 /* IN */ (romword27[22]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_23
-(
-	.z /* OUT */ (mwordi[23]),
-	.a0 /* IN */ (microword[23]),
-	.a1 /* IN */ (romword27[23]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_24
-(
-	.z /* OUT */ (mwordi[24]),
-	.a0 /* IN */ (microword[24]),
-	.a1 /* IN */ (romword27[24]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_25
-(
-	.z /* OUT */ (mwordi[25]),
-	.a0 /* IN */ (microword[25]),
-	.a1 /* IN */ (romword27[25]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 mwordi_inst_26
-(
-	.z /* OUT */ (mwordi[26]),
-	.a0 /* IN */ (microword[26]),
-	.a1 /* IN */ (romword27[26]),
-	.s /* IN */ (romoldb_0)
-);
+assign mwordi[0] = (romoldb_0) ? romword27[0] : microword[0];
+assign mwordi[1] = (romoldb_0) ? romword27[1] : microword[1];
+assign mwordi[2] = (romoldb_0) ? romword27[2] : microword[2];
+assign mwordi[3] = (romoldb_0) ? romword27[3] : microword[3];
+assign mwordi[4] = (romoldb_0) ? romword27[4] : microword[4];
+assign mwordi[5] = (romoldb_0) ? romword27[5] : microword[5];
+assign mwordi[6] = (romoldb_0) ? romword27[6] : microword[6];
+assign mwordi[7] = (romoldb_0) ? romword27[7] : microword[7];
+assign mwordi[8] = (romoldb_0) ? romword27[8] : microword[8];
+assign mwordi[9] = (romoldb_0) ? romword27[9] : microword[9];
+assign mwordi[10] = (romoldb_0) ? romword27[10] : microword[10];
+assign mwordi[11] = (romoldb_0) ? romword27[11] : microword[11];
+assign mwordi[12] = (romoldb_0) ? romword27[12] : microword[12];
+assign mwordi[13] = (romoldb_0) ? romword27[13] : microword[13];
+assign mwordi[14] = (romoldb_0) ? romword27[14] : microword[14];
+assign mwordi[15] = (romoldb_0) ? romword27[15] : microword[15];
+assign mwordi[16] = (romoldb_0) ? romword27[16] : microword[16];
+assign mwordi[17] = (romoldb_0) ? romword27[17] : microword[17];
+assign mwordi[18] = (romoldb_0) ? romword27[18] : microword[18];
+assign mwordi[19] = (romoldb_0) ? romword27[19] : microword[19];
+assign mwordi[20] = (romoldb_0) ? romword27[20] : microword[20];
+assign mwordi[21] = (romoldb_0) ? romword27[21] : microword[21];
+assign mwordi[22] = (romoldb_0) ? romword27[22] : microword[22];
+assign mwordi[23] = (romoldb_0) ? romword27[23] : microword[23];
+assign mwordi[24] = (romoldb_0) ? romword27[24] : microword[24];
+assign mwordi[25] = (romoldb_0) ? romword27[25] : microword[25];
+assign mwordi[26] = (romoldb_0) ? romword27[26] : microword[26];
 
 // DSP_EXEC.NET (291) - mcodepipe : fd2qp
 fd2q mcodepipe_inst_0
@@ -1485,41 +1323,11 @@ fd2q mcodepipe_inst_26
 );
 
 // DSP_EXEC.NET (292) - srcopin : mx2
-mx2 srcopin_inst_0
-(
-	.z /* OUT */ (srcopin[0]),
-	.a0 /* IN */ (srcopb[0]),
-	.a1 /* IN */ (srcopi[0]),
-	.s /* IN */ (romoldb_4)
-);
-mx2 srcopin_inst_1
-(
-	.z /* OUT */ (srcopin[1]),
-	.a0 /* IN */ (srcopb[1]),
-	.a1 /* IN */ (srcopi[1]),
-	.s /* IN */ (romoldb_4)
-);
-mx2 srcopin_inst_2
-(
-	.z /* OUT */ (srcopin[2]),
-	.a0 /* IN */ (srcopb[2]),
-	.a1 /* IN */ (srcopi[2]),
-	.s /* IN */ (romoldb_4)
-);
-mx2 srcopin_inst_3
-(
-	.z /* OUT */ (srcopin[3]),
-	.a0 /* IN */ (srcopb[3]),
-	.a1 /* IN */ (srcopi[3]),
-	.s /* IN */ (romoldb_4)
-);
-mx2 srcopin_inst_4
-(
-	.z /* OUT */ (srcopin[4]),
-	.a0 /* IN */ (srcopb[4]),
-	.a1 /* IN */ (srcopi[4]),
-	.s /* IN */ (romoldb_4)
-);
+assign srcopin[0] = (romoldb_4) ? srcopi[0] : srcopb[0];
+assign srcopin[1] = (romoldb_4) ? srcopi[1] : srcopb[1];
+assign srcopin[2] = (romoldb_4) ? srcopi[2] : srcopb[2];
+assign srcopin[3] = (romoldb_4) ? srcopi[3] : srcopb[3];
+assign srcopin[4] = (romoldb_4) ? srcopi[4] : srcopb[4];
 
 // DSP_EXEC.NET (293) - srcop : fd2qp
 fd2q srcop_inst_0
@@ -1571,41 +1379,11 @@ assign srcopb[3] = srcop[3];
 assign srcopb[4] = srcop[4];
 
 // DSP_EXEC.NET (295) - dstopin : mx2p
-mx2 dstopin_inst_0
-(
-	.z /* OUT */ (dstopin[0]),
-	.a0 /* IN */ (dstopb[0]),
-	.a1 /* IN */ (dstopi[0]),
-	.s /* IN */ (romoldb_3)
-);
-mx2 dstopin_inst_1
-(
-	.z /* OUT */ (dstopin[1]),
-	.a0 /* IN */ (dstopb[1]),
-	.a1 /* IN */ (dstopi[1]),
-	.s /* IN */ (romoldb_3)
-);
-mx2 dstopin_inst_2
-(
-	.z /* OUT */ (dstopin[2]),
-	.a0 /* IN */ (dstopb[2]),
-	.a1 /* IN */ (dstopi[2]),
-	.s /* IN */ (romoldb_3)
-);
-mx2 dstopin_inst_3
-(
-	.z /* OUT */ (dstopin[3]),
-	.a0 /* IN */ (dstopb[3]),
-	.a1 /* IN */ (dstopi[3]),
-	.s /* IN */ (romoldb_3)
-);
-mx2 dstopin_inst_4
-(
-	.z /* OUT */ (dstopin[4]),
-	.a0 /* IN */ (dstopb[4]),
-	.a1 /* IN */ (dstopi[4]),
-	.s /* IN */ (romoldb_3)
-);
+assign dstopin[0] = (romoldb_3) ? dstopi[0] : dstopb[0];
+assign dstopin[1] = (romoldb_3) ? dstopi[1] : dstopb[1];
+assign dstopin[2] = (romoldb_3) ? dstopi[2] : dstopb[2];
+assign dstopin[3] = (romoldb_3) ? dstopi[3] : dstopb[3];
+assign dstopin[4] = (romoldb_3) ? dstopi[4] : dstopb[4];
 
 // DSP_EXEC.NET (296) - dstop : fd2qp
 fd2q dstop_inst_0
@@ -1657,48 +1435,12 @@ assign dstopb[3] = dstop[3];
 assign dstopb[4] = dstop[4];
 
 // DSP_EXEC.NET (298) - opcodein : mx2
-mx2 opcodein_inst_0
-(
-	.z /* OUT */ (opcodein[0]),
-	.a0 /* IN */ (opcode[0]),
-	.a1 /* IN */ (opcodei[0]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 opcodein_inst_1
-(
-	.z /* OUT */ (opcodein[1]),
-	.a0 /* IN */ (opcode[1]),
-	.a1 /* IN */ (opcodei[1]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 opcodein_inst_2
-(
-	.z /* OUT */ (opcodein[2]),
-	.a0 /* IN */ (opcode[2]),
-	.a1 /* IN */ (opcodei[2]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 opcodein_inst_3
-(
-	.z /* OUT */ (opcodein[3]),
-	.a0 /* IN */ (opcode[3]),
-	.a1 /* IN */ (opcodei[3]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 opcodein_inst_4
-(
-	.z /* OUT */ (opcodein[4]),
-	.a0 /* IN */ (opcode[4]),
-	.a1 /* IN */ (opcodei[4]),
-	.s /* IN */ (romoldb_0)
-);
-mx2 opcodein_inst_5
-(
-	.z /* OUT */ (opcodein[5]),
-	.a0 /* IN */ (opcode[5]),
-	.a1 /* IN */ (opcodei[5]),
-	.s /* IN */ (romoldb_0)
-);
+assign opcodein[0] = (romoldb_0) ? opcodei[0] : opcode[0];
+assign opcodein[1] = (romoldb_0) ? opcodei[1] : opcode[1];
+assign opcodein[2] = (romoldb_0) ? opcodei[2] : opcode[2];
+assign opcodein[3] = (romoldb_0) ? opcodei[3] : opcode[3];
+assign opcodein[4] = (romoldb_0) ? opcodei[4] : opcode[4];
+assign opcodein[5] = (romoldb_0) ? opcodei[5] : opcode[5];
 
 // DSP_EXEC.NET (299) - opcode : fd2q
 fd2q opcode_inst_0
@@ -1916,13 +1658,7 @@ assign precompit_1 = idc_n_58 & idc_n_59 & idc_n_60 & idc_n_61;
 assign precompit = ~(precompit_0 & precompit_1);
 
 // DSP_EXEC.NET (378) - precompi : mx2
-mx2 precompi_inst
-(
-	.z /* OUT */ (precompi),
-	.a0 /* IN */ (precompil),
-	.a1 /* IN */ (precompit),
-	.s /* IN */ (romoldb_1)
-);
+assign precompi = (romoldb_1) ? precompit : precompil;
 
 // DSP_EXEC.NET (380) - precompil : fd2q
 fd2q precompil_inst
@@ -1938,13 +1674,7 @@ fd2q precompil_inst
 assign dsttinvit = ~idc_n_36;
 
 // DSP_EXEC.NET (391) - dsttinvi : mx2
-mx2 dsttinvi_inst
-(
-	.z /* OUT */ (dsttinvi),
-	.a0 /* IN */ (dsttinvil),
-	.a1 /* IN */ (dsttinvit),
-	.s /* IN */ (romoldb_1)
-);
+assign dsttinvi = (romoldb_1) ? dsttinvit : dsttinvil;
 
 // DSP_EXEC.NET (393) - dsttinvil : fd2q
 fd2q dsttinvil_inst
@@ -1960,13 +1690,7 @@ fd2q dsttinvil_inst
 assign srctinvit = ~idc_n_37;
 
 // DSP_EXEC.NET (398) - srctinvi : mx2
-mx2 srctinvi_inst
-(
-	.z /* OUT */ (srctinvi),
-	.a0 /* IN */ (srctinvil),
-	.a1 /* IN */ (srctinvit),
-	.s /* IN */ (romoldb_1)
-);
+assign srctinvi = (romoldb_1) ? srctinvit : srctinvil;
 
 // DSP_EXEC.NET (400) - srctinvil : fd2q
 fd2q srctinvil_inst
@@ -1982,13 +1706,7 @@ fd2q srctinvil_inst
 assign indselit = ~(idc_n_44 & idc_n_50 & idc_n_59 & idc_n_61);
 
 // DSP_EXEC.NET (406) - indseli : mx2
-mx2 indseli_inst
-(
-	.z /* OUT */ (indseli),
-	.a0 /* IN */ (indselil),
-	.a1 /* IN */ (indselit),
-	.s /* IN */ (romoldb_1)
-);
+assign indseli = (romoldb_1) ? indselit : indselil;
 
 // DSP_EXEC.NET (408) - indselil : fd2q
 fd2q indselil_inst
@@ -2172,13 +1890,7 @@ j_srcdgen srcdgen_inst
 assign locden = locdent & exe_obuf;
 
 // DSP_EXEC.NET (490) - regpagei : mx2
-mx2 regpagei_inst
-(
-	.z /* OUT */ (regpagei),
-	.a0 /* IN */ (regpage),
-	.a1 /* IN */ (gpu_din[14]),
-	.s /* IN */ (flagwr)
-);
+assign regpagei = (flagwr) ? gpu_din[14] : regpage;
 
 // DSP_EXEC.NET (491) - regpage : fd2q
 fd2q regpage_inst
@@ -2254,48 +1966,12 @@ assign dstat[5] = dstatun[5];
 assign danwsel = insexei_obuf & precompi;
 
 // DSP_EXEC.NET (525) - dstanwi : mx2p
-mx2 dstanwi_inst_0
-(
-	.z /* OUT */ (dstanwi[0]),
-	.a0 /* IN */ (dstati[0]),
-	.a1 /* IN */ (impdai[0]),
-	.s /* IN */ (danwsel)
-);
-mx2 dstanwi_inst_1
-(
-	.z /* OUT */ (dstanwi[1]),
-	.a0 /* IN */ (dstati[1]),
-	.a1 /* IN */ (impdai[1]),
-	.s /* IN */ (danwsel)
-);
-mx2 dstanwi_inst_2
-(
-	.z /* OUT */ (dstanwi[2]),
-	.a0 /* IN */ (dstati[2]),
-	.a1 /* IN */ (impdai[2]),
-	.s /* IN */ (danwsel)
-);
-mx2 dstanwi_inst_3
-(
-	.z /* OUT */ (dstanwi[3]),
-	.a0 /* IN */ (dstati[3]),
-	.a1 /* IN */ (impdai[3]),
-	.s /* IN */ (danwsel)
-);
-mx2 dstanwi_inst_4
-(
-	.z /* OUT */ (dstanwi[4]),
-	.a0 /* IN */ (dstati[4]),
-	.a1 /* IN */ (impdai[4]),
-	.s /* IN */ (danwsel)
-);
-mx2 dstanwi_inst_5
-(
-	.z /* OUT */ (dstanwi[5]),
-	.a0 /* IN */ (dstati[5]),
-	.a1 /* IN */ (impdai[5]),
-	.s /* IN */ (danwsel)
-);
+assign dstanwi[0] = (danwsel) ? impdai[0] : dstati[0];
+assign dstanwi[1] = (danwsel) ? impdai[1] : dstati[1];
+assign dstanwi[2] = (danwsel) ? impdai[2] : dstati[2];
+assign dstanwi[3] = (danwsel) ? impdai[3] : dstati[3];
+assign dstanwi[4] = (danwsel) ? impdai[4] : dstati[4];
+assign dstanwi[5] = (danwsel) ? impdai[5] : dstati[5];
 
 // DSP_EXEC.NET (531) - srctopti : eo
 assign srctopti = srctinvi ^ reghighi;
@@ -2347,13 +2023,7 @@ j_execon execon_inst
 assign zero_flag_n = ~zero_flag;
 
 // DSP_EXEC.NET (554) - other_flag : mx2
-mx2 other_flag_inst
-(
-	.z /* OUT */ (other_flag),
-	.a0 /* IN */ (carry_flag),
-	.a1 /* IN */ (nega_flag),
-	.s /* IN */ (dstopb[4])
-);
+assign other_flag = (dstopb[4]) ? nega_flag : carry_flag;
 
 // DSP_EXEC.NET (556) - other_flag\ : iv
 assign other_flag_n = ~other_flag;

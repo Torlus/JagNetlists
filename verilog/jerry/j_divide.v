@@ -620,13 +620,7 @@ fd1 last_neg_n_index_5_inst
 );
 
 // DIVIDE.NET (187) - dhlsel[0] : mx2h
-mx2 dhlsel_index_0_inst
-(
-	.z /* OUT */ (dhlsel_0),
-	.a0 /* IN */ (div_activeb_2),
-	.a1 /* IN */ (div_offset),
-	.s /* IN */ (div_startb_0)
-);
+assign dhlsel_0 = (div_startb_0) ? div_offset : div_activeb_2;
 
 // DIVIDE.NET (189) - divhit[0-15] : mx4
 mx4 divhit_from_0_to_15_inst_0

@@ -156,22 +156,10 @@ add4 add3_inst
 );
 
 // ADDARRAY.NET (207) - btop : mx2
-mx2 btop_inst
-(
-	.z /* OUT */ (btop),
-	.a0 /* IN */ (b[15]),
-	.a1 /* IN */ (b[7]),
-	.s /* IN */ (eightbit)
-);
+assign btop = (eightbit) ? b[7] : b[15];
 
 // ADDARRAY.NET (208) - ctop : mx2p
-mx2 ctop_inst
-(
-	.z /* OUT */ (ctop),
-	.a0 /* IN */ (co_obuf),
-	.a1 /* IN */ (carry_0),
-	.s /* IN */ (eightbit)
-);
+assign ctop = (eightbit) ? carry_0 : co_obuf;
 
 // ADDARRAY.NET (209) - ctopb : nivh
 assign ctopb = ctop;
@@ -189,120 +177,24 @@ assign saturateb = saturate;
 assign hisaturate = eightbit_n & saturate;
 
 // ADDARRAY.NET (223) - r[0-7] : mx2p
-mx2 r_from_0_to_7_inst_0
-(
-	.z /* OUT */ (r_0),
-	.a0 /* IN */ (q_0),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_1
-(
-	.z /* OUT */ (r_1),
-	.a0 /* IN */ (q_1),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_2
-(
-	.z /* OUT */ (r_2),
-	.a0 /* IN */ (q_2),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_3
-(
-	.z /* OUT */ (r_3),
-	.a0 /* IN */ (q_3),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_4
-(
-	.z /* OUT */ (r_4),
-	.a0 /* IN */ (q_4),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_5
-(
-	.z /* OUT */ (r_5),
-	.a0 /* IN */ (q_5),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_6
-(
-	.z /* OUT */ (r_6),
-	.a0 /* IN */ (q_6),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
-mx2 r_from_0_to_7_inst_7
-(
-	.z /* OUT */ (r_7),
-	.a0 /* IN */ (q_7),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (saturateb)
-);
+assign r_0 = (saturateb) ? ctopb : q_0;
+assign r_1 = (saturateb) ? ctopb : q_1;
+assign r_2 = (saturateb) ? ctopb : q_2;
+assign r_3 = (saturateb) ? ctopb : q_3;
+assign r_4 = (saturateb) ? ctopb : q_4;
+assign r_5 = (saturateb) ? ctopb : q_5;
+assign r_6 = (saturateb) ? ctopb : q_6;
+assign r_7 = (saturateb) ? ctopb : q_7;
 
 // ADDARRAY.NET (224) - r[8-15] : mx2p
-mx2 r_from_8_to_15_inst_0
-(
-	.z /* OUT */ (r_8),
-	.a0 /* IN */ (q_8),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_1
-(
-	.z /* OUT */ (r_9),
-	.a0 /* IN */ (q_9),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_2
-(
-	.z /* OUT */ (r_10),
-	.a0 /* IN */ (q_10),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_3
-(
-	.z /* OUT */ (r_11),
-	.a0 /* IN */ (q_11),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_4
-(
-	.z /* OUT */ (r_12),
-	.a0 /* IN */ (q_12),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_5
-(
-	.z /* OUT */ (r_13),
-	.a0 /* IN */ (q_13),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_6
-(
-	.z /* OUT */ (r_14),
-	.a0 /* IN */ (q_14),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
-mx2 r_from_8_to_15_inst_7
-(
-	.z /* OUT */ (r_15),
-	.a0 /* IN */ (q_15),
-	.a1 /* IN */ (ctopb),
-	.s /* IN */ (hisaturate)
-);
+assign r_8 = (hisaturate) ? ctopb : q_8;
+assign r_9 = (hisaturate) ? ctopb : q_9;
+assign r_10 = (hisaturate) ? ctopb : q_10;
+assign r_11 = (hisaturate) ? ctopb : q_11;
+assign r_12 = (hisaturate) ? ctopb : q_12;
+assign r_13 = (hisaturate) ? ctopb : q_13;
+assign r_14 = (hisaturate) ? ctopb : q_14;
+assign r_15 = (hisaturate) ? ctopb : q_15;
 
 // ADDARRAY.NET (226) - r : join
 assign r[0] = r_0;

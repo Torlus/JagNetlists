@@ -54,231 +54,39 @@ assign gpu_hi[15] = gpu_din[31];
 assign addqselb = addqsel;
 
 // ADDRMUX.NET (166) - data_x : mx2
-mx2 data_x_inst_0
-(
-	.z /* OUT */ (data_x[0]),
-	.a0 /* IN */ (gpu_lo[0]),
-	.a1 /* IN */ (addq_x[0]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_1
-(
-	.z /* OUT */ (data_x[1]),
-	.a0 /* IN */ (gpu_lo[1]),
-	.a1 /* IN */ (addq_x[1]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_2
-(
-	.z /* OUT */ (data_x[2]),
-	.a0 /* IN */ (gpu_lo[2]),
-	.a1 /* IN */ (addq_x[2]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_3
-(
-	.z /* OUT */ (data_x[3]),
-	.a0 /* IN */ (gpu_lo[3]),
-	.a1 /* IN */ (addq_x[3]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_4
-(
-	.z /* OUT */ (data_x[4]),
-	.a0 /* IN */ (gpu_lo[4]),
-	.a1 /* IN */ (addq_x[4]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_5
-(
-	.z /* OUT */ (data_x[5]),
-	.a0 /* IN */ (gpu_lo[5]),
-	.a1 /* IN */ (addq_x[5]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_6
-(
-	.z /* OUT */ (data_x[6]),
-	.a0 /* IN */ (gpu_lo[6]),
-	.a1 /* IN */ (addq_x[6]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_7
-(
-	.z /* OUT */ (data_x[7]),
-	.a0 /* IN */ (gpu_lo[7]),
-	.a1 /* IN */ (addq_x[7]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_8
-(
-	.z /* OUT */ (data_x[8]),
-	.a0 /* IN */ (gpu_lo[8]),
-	.a1 /* IN */ (addq_x[8]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_9
-(
-	.z /* OUT */ (data_x[9]),
-	.a0 /* IN */ (gpu_lo[9]),
-	.a1 /* IN */ (addq_x[9]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_10
-(
-	.z /* OUT */ (data_x[10]),
-	.a0 /* IN */ (gpu_lo[10]),
-	.a1 /* IN */ (addq_x[10]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_11
-(
-	.z /* OUT */ (data_x[11]),
-	.a0 /* IN */ (gpu_lo[11]),
-	.a1 /* IN */ (addq_x[11]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_12
-(
-	.z /* OUT */ (data_x[12]),
-	.a0 /* IN */ (gpu_lo[12]),
-	.a1 /* IN */ (addq_x[12]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_13
-(
-	.z /* OUT */ (data_x[13]),
-	.a0 /* IN */ (gpu_lo[13]),
-	.a1 /* IN */ (addq_x[13]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_14
-(
-	.z /* OUT */ (data_x[14]),
-	.a0 /* IN */ (gpu_lo[14]),
-	.a1 /* IN */ (addq_x[14]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_x_inst_15
-(
-	.z /* OUT */ (data_x[15]),
-	.a0 /* IN */ (gpu_lo[15]),
-	.a1 /* IN */ (addq_x[15]),
-	.s /* IN */ (addqselb)
-);
+assign data_x[0] = (addqselb) ? addq_x[0] : gpu_lo[0];
+assign data_x[1] = (addqselb) ? addq_x[1] : gpu_lo[1];
+assign data_x[2] = (addqselb) ? addq_x[2] : gpu_lo[2];
+assign data_x[3] = (addqselb) ? addq_x[3] : gpu_lo[3];
+assign data_x[4] = (addqselb) ? addq_x[4] : gpu_lo[4];
+assign data_x[5] = (addqselb) ? addq_x[5] : gpu_lo[5];
+assign data_x[6] = (addqselb) ? addq_x[6] : gpu_lo[6];
+assign data_x[7] = (addqselb) ? addq_x[7] : gpu_lo[7];
+assign data_x[8] = (addqselb) ? addq_x[8] : gpu_lo[8];
+assign data_x[9] = (addqselb) ? addq_x[9] : gpu_lo[9];
+assign data_x[10] = (addqselb) ? addq_x[10] : gpu_lo[10];
+assign data_x[11] = (addqselb) ? addq_x[11] : gpu_lo[11];
+assign data_x[12] = (addqselb) ? addq_x[12] : gpu_lo[12];
+assign data_x[13] = (addqselb) ? addq_x[13] : gpu_lo[13];
+assign data_x[14] = (addqselb) ? addq_x[14] : gpu_lo[14];
+assign data_x[15] = (addqselb) ? addq_x[15] : gpu_lo[15];
 
 // ADDRMUX.NET (167) - data_y : mx2
-mx2 data_y_inst_0
-(
-	.z /* OUT */ (data_y[0]),
-	.a0 /* IN */ (gpu_hi[0]),
-	.a1 /* IN */ (addq_y[0]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_1
-(
-	.z /* OUT */ (data_y[1]),
-	.a0 /* IN */ (gpu_hi[1]),
-	.a1 /* IN */ (addq_y[1]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_2
-(
-	.z /* OUT */ (data_y[2]),
-	.a0 /* IN */ (gpu_hi[2]),
-	.a1 /* IN */ (addq_y[2]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_3
-(
-	.z /* OUT */ (data_y[3]),
-	.a0 /* IN */ (gpu_hi[3]),
-	.a1 /* IN */ (addq_y[3]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_4
-(
-	.z /* OUT */ (data_y[4]),
-	.a0 /* IN */ (gpu_hi[4]),
-	.a1 /* IN */ (addq_y[4]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_5
-(
-	.z /* OUT */ (data_y[5]),
-	.a0 /* IN */ (gpu_hi[5]),
-	.a1 /* IN */ (addq_y[5]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_6
-(
-	.z /* OUT */ (data_y[6]),
-	.a0 /* IN */ (gpu_hi[6]),
-	.a1 /* IN */ (addq_y[6]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_7
-(
-	.z /* OUT */ (data_y[7]),
-	.a0 /* IN */ (gpu_hi[7]),
-	.a1 /* IN */ (addq_y[7]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_8
-(
-	.z /* OUT */ (data_y[8]),
-	.a0 /* IN */ (gpu_hi[8]),
-	.a1 /* IN */ (addq_y[8]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_9
-(
-	.z /* OUT */ (data_y[9]),
-	.a0 /* IN */ (gpu_hi[9]),
-	.a1 /* IN */ (addq_y[9]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_10
-(
-	.z /* OUT */ (data_y[10]),
-	.a0 /* IN */ (gpu_hi[10]),
-	.a1 /* IN */ (addq_y[10]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_11
-(
-	.z /* OUT */ (data_y[11]),
-	.a0 /* IN */ (gpu_hi[11]),
-	.a1 /* IN */ (addq_y[11]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_12
-(
-	.z /* OUT */ (data_y[12]),
-	.a0 /* IN */ (gpu_hi[12]),
-	.a1 /* IN */ (addq_y[12]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_13
-(
-	.z /* OUT */ (data_y[13]),
-	.a0 /* IN */ (gpu_hi[13]),
-	.a1 /* IN */ (addq_y[13]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_14
-(
-	.z /* OUT */ (data_y[14]),
-	.a0 /* IN */ (gpu_hi[14]),
-	.a1 /* IN */ (addq_y[14]),
-	.s /* IN */ (addqselb)
-);
-mx2 data_y_inst_15
-(
-	.z /* OUT */ (data_y[15]),
-	.a0 /* IN */ (gpu_hi[15]),
-	.a1 /* IN */ (addq_y[15]),
-	.s /* IN */ (addqselb)
-);
+assign data_y[0] = (addqselb) ? addq_y[0] : gpu_hi[0];
+assign data_y[1] = (addqselb) ? addq_y[1] : gpu_hi[1];
+assign data_y[2] = (addqselb) ? addq_y[2] : gpu_hi[2];
+assign data_y[3] = (addqselb) ? addq_y[3] : gpu_hi[3];
+assign data_y[4] = (addqselb) ? addq_y[4] : gpu_hi[4];
+assign data_y[5] = (addqselb) ? addq_y[5] : gpu_hi[5];
+assign data_y[6] = (addqselb) ? addq_y[6] : gpu_hi[6];
+assign data_y[7] = (addqselb) ? addq_y[7] : gpu_hi[7];
+assign data_y[8] = (addqselb) ? addq_y[8] : gpu_hi[8];
+assign data_y[9] = (addqselb) ? addq_y[9] : gpu_hi[9];
+assign data_y[10] = (addqselb) ? addq_y[10] : gpu_hi[10];
+assign data_y[11] = (addqselb) ? addq_y[11] : gpu_hi[11];
+assign data_y[12] = (addqselb) ? addq_y[12] : gpu_hi[12];
+assign data_y[13] = (addqselb) ? addq_y[13] : gpu_hi[13];
+assign data_y[14] = (addqselb) ? addq_y[14] : gpu_hi[14];
+assign data_y[15] = (addqselb) ? addq_y[15] : gpu_hi[15];
 endmodule
 /* verilator lint_on LITENDIAN */

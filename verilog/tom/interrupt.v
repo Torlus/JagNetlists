@@ -816,46 +816,31 @@ mx8 inssel_inst_15
 );
 
 // --- Compiler-generated PE for BUS gpu_dout[6]
-assign gpu_dout_6_out =
-	(ts_pe_0_a0_oe) ? ts_pe_0_a0_out :
-	(ts_pe_0_a1_oe) ? ts_pe_0_a1_out :
-	1'bz;
+assign gpu_dout_6_out = (ts_pe_0_a0_oe & ts_pe_0_a0_out ) | (ts_pe_0_a1_oe & ts_pe_0_a1_out ) | 1'b0;
 assign gpu_dout_6_oe = ts_pe_0_a0_oe | ts_pe_0_a1_oe;
 assign ts_pe_0_a0_in = gpu_dout_6_in;
 assign ts_pe_0_a1_in = gpu_dout_6_in;
 
 // --- Compiler-generated PE for BUS gpu_dout[7]
-assign gpu_dout_7_out =
-	(ts_pe_1_a0_oe) ? ts_pe_1_a0_out :
-	(ts_pe_1_a1_oe) ? ts_pe_1_a1_out :
-	1'bz;
+assign gpu_dout_7_out = (ts_pe_1_a0_oe & ts_pe_1_a0_out ) | (ts_pe_1_a1_oe & ts_pe_1_a1_out ) | 1'b0;
 assign gpu_dout_7_oe = ts_pe_1_a0_oe | ts_pe_1_a1_oe;
 assign ts_pe_1_a0_in = gpu_dout_7_in;
 assign ts_pe_1_a1_in = gpu_dout_7_in;
 
 // --- Compiler-generated PE for BUS gpu_dout[8]
-assign gpu_dout_8_out =
-	(ts_pe_2_a0_oe) ? ts_pe_2_a0_out :
-	(ts_pe_2_a1_oe) ? ts_pe_2_a1_out :
-	1'bz;
+assign gpu_dout_8_out = (ts_pe_2_a0_oe & ts_pe_2_a0_out ) | (ts_pe_2_a1_oe & ts_pe_2_a1_out ) | 1'b0;
 assign gpu_dout_8_oe = ts_pe_2_a0_oe | ts_pe_2_a1_oe;
 assign ts_pe_2_a0_in = gpu_dout_8_in;
 assign ts_pe_2_a1_in = gpu_dout_8_in;
 
 // --- Compiler-generated PE for BUS gpu_dout[9]
-assign gpu_dout_9_out =
-	(ts_pe_3_a0_oe) ? ts_pe_3_a0_out :
-	(ts_pe_3_a1_oe) ? ts_pe_3_a1_out :
-	1'bz;
+assign gpu_dout_9_out = (ts_pe_3_a0_oe & ts_pe_3_a0_out ) | (ts_pe_3_a1_oe & ts_pe_3_a1_out ) | 1'b0;
 assign gpu_dout_9_oe = ts_pe_3_a0_oe | ts_pe_3_a1_oe;
 assign ts_pe_3_a0_in = gpu_dout_9_in;
 assign ts_pe_3_a1_in = gpu_dout_9_in;
 
 // --- Compiler-generated PE for BUS gpu_dout[10]
-assign gpu_dout_10_out =
-	(ts_pe_4_a0_oe) ? ts_pe_4_a0_out :
-	(ts_pe_4_a1_oe) ? ts_pe_4_a1_out :
-	1'bz;
+assign gpu_dout_10_out = (ts_pe_4_a0_oe & ts_pe_4_a0_out ) | (ts_pe_4_a1_oe & ts_pe_4_a1_out ) | 1'b0;
 assign gpu_dout_10_oe = ts_pe_4_a0_oe | ts_pe_4_a1_oe;
 assign ts_pe_4_a0_in = gpu_dout_10_in;
 assign ts_pe_4_a1_in = gpu_dout_10_in;

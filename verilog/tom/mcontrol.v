@@ -203,36 +203,12 @@ assign wt_2 = ~(pixsize_n_2 | pixsize_1 | pixsize_n_0 | phrase_cycle | fontread)
 assign pwrite = phrase_cycle & wactive_obuf;
 
 // MCONTROL.NET (108) - wout[0-2] : mx2
-mx2 wout_from_0_to_2_inst_0
-(
-	.z /* OUT */ (wout_0),
-	.a0 /* IN */ (wt_0),
-	.a1 /* IN */ (pwidth_0),
-	.s /* IN */ (pwrite)
-);
-mx2 wout_from_0_to_2_inst_1
-(
-	.z /* OUT */ (wout_1),
-	.a0 /* IN */ (wt_1),
-	.a1 /* IN */ (pwidth_1),
-	.s /* IN */ (pwrite)
-);
-mx2 wout_from_0_to_2_inst_2
-(
-	.z /* OUT */ (wout_2),
-	.a0 /* IN */ (wt_2),
-	.a1 /* IN */ (pwidth_2),
-	.s /* IN */ (pwrite)
-);
+assign wout_0 = (pwrite) ? pwidth_0 : wt_0;
+assign wout_1 = (pwrite) ? pwidth_1 : wt_1;
+assign wout_2 = (pwrite) ? pwidth_2 : wt_2;
 
 // MCONTROL.NET (109) - wout[3] : mx2
-mx2 wout_index_3_inst
-(
-	.z /* OUT */ (wout_3),
-	.a0 /* IN */ (phrase_cycle),
-	.a1 /* IN */ (pwidth_3),
-	.s /* IN */ (pwrite)
-);
+assign wout_3 = (pwrite) ? pwidth_3 : phrase_cycle;
 
 // MCONTROL.NET (111) - width[0-3] : ts
 assign width_0_out = wout_0;

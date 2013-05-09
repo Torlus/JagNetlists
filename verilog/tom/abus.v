@@ -756,54 +756,18 @@ assign ma[10] = ma_10_obuf;
 // ABUS.NET (77) - mau : dummy
 
 // ABUS.NET (83) - m1d[0-2] : mx2
-mx2 m1d_from_0_to_2_inst_0
-(
-	.z /* OUT */ (m1d_0),
-	.a0 /* IN */ (cfg_0),
-	.a1 /* IN */ (din_0),
-	.s /* IN */ (cfgen)
-);
-mx2 m1d_from_0_to_2_inst_1
-(
-	.z /* OUT */ (m1d_1),
-	.a0 /* IN */ (cfg_1),
-	.a1 /* IN */ (din_1),
-	.s /* IN */ (cfgen)
-);
-mx2 m1d_from_0_to_2_inst_2
-(
-	.z /* OUT */ (m1d_2),
-	.a0 /* IN */ (cfg_2),
-	.a1 /* IN */ (din_2),
-	.s /* IN */ (cfgen)
-);
+assign m1d_0 = (cfgen) ? din_0 : cfg_0;
+assign m1d_1 = (cfgen) ? din_1 : cfg_1;
+assign m1d_2 = (cfgen) ? din_2 : cfg_2;
 
 // ABUS.NET (84) - m1d[13] : mx2
-mx2 m1d_index_13_inst
-(
-	.z /* OUT */ (m1d_13),
-	.a0 /* IN */ (cfg_4),
-	.a1 /* IN */ (din_13),
-	.s /* IN */ (cfgen)
-);
+assign m1d_13 = (cfgen) ? din_13 : cfg_4;
 
 // ABUS.NET (85) - m1d[14] : mx2
-mx2 m1d_index_14_inst
-(
-	.z /* OUT */ (m1d_14),
-	.a0 /* IN */ (cfg_5),
-	.a1 /* IN */ (din_14),
-	.s /* IN */ (cfgen)
-);
+assign m1d_14 = (cfgen) ? din_14 : cfg_5;
 
 // ABUS.NET (86) - m2d[12] : mx2
-mx2 m2d_index_12_inst
-(
-	.z /* OUT */ (m2d_12),
-	.a0 /* IN */ (cfg_6),
-	.a1 /* IN */ (din_12),
-	.s /* IN */ (cfgen)
-);
+assign m2d_12 = (cfgen) ? din_12 : cfg_6;
 
 // ABUS.NET (90) - m1ld : or2
 assign m1ld = memc1w | cfgw;
@@ -1261,97 +1225,19 @@ fd1q aouti_from_3_to_15_inst_12
 );
 
 // ABUS.NET (155) - at[3-15] : mx2h
-mx2 at_from_3_to_15_inst_0
-(
-	.z /* OUT */ (at_3_obuf),
-	.a0 /* IN */ (aouti_3),
-	.a1 /* IN */ (a_3_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_1
-(
-	.z /* OUT */ (at_4_obuf),
-	.a0 /* IN */ (aouti_4),
-	.a1 /* IN */ (a_4_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_2
-(
-	.z /* OUT */ (at_5_obuf),
-	.a0 /* IN */ (aouti_5),
-	.a1 /* IN */ (a_5_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_3
-(
-	.z /* OUT */ (at_6_obuf),
-	.a0 /* IN */ (aouti_6),
-	.a1 /* IN */ (a_6_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_4
-(
-	.z /* OUT */ (at_7_obuf),
-	.a0 /* IN */ (aouti_7),
-	.a1 /* IN */ (a_7_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_5
-(
-	.z /* OUT */ (at_8_obuf),
-	.a0 /* IN */ (aouti_8),
-	.a1 /* IN */ (a_8_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_6
-(
-	.z /* OUT */ (at_9_obuf),
-	.a0 /* IN */ (aouti_9),
-	.a1 /* IN */ (a_9_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_7
-(
-	.z /* OUT */ (at_10_obuf),
-	.a0 /* IN */ (aouti_10),
-	.a1 /* IN */ (a_10_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_8
-(
-	.z /* OUT */ (at_11),
-	.a0 /* IN */ (aouti_11),
-	.a1 /* IN */ (a_11_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_9
-(
-	.z /* OUT */ (at_12),
-	.a0 /* IN */ (aouti_12),
-	.a1 /* IN */ (a_12_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_10
-(
-	.z /* OUT */ (at_13),
-	.a0 /* IN */ (aouti_13),
-	.a1 /* IN */ (a_13_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_11
-(
-	.z /* OUT */ (at_14),
-	.a0 /* IN */ (aouti_14),
-	.a1 /* IN */ (a_14_in),
-	.s /* IN */ (ack)
-);
-mx2 at_from_3_to_15_inst_12
-(
-	.z /* OUT */ (at_15),
-	.a0 /* IN */ (aouti_15),
-	.a1 /* IN */ (a_15_in),
-	.s /* IN */ (ack)
-);
+assign at_3_obuf = (ack) ? a_3_in : aouti_3;
+assign at_4_obuf = (ack) ? a_4_in : aouti_4;
+assign at_5_obuf = (ack) ? a_5_in : aouti_5;
+assign at_6_obuf = (ack) ? a_6_in : aouti_6;
+assign at_7_obuf = (ack) ? a_7_in : aouti_7;
+assign at_8_obuf = (ack) ? a_8_in : aouti_8;
+assign at_9_obuf = (ack) ? a_9_in : aouti_9;
+assign at_10_obuf = (ack) ? a_10_in : aouti_10;
+assign at_11 = (ack) ? a_11_in : aouti_11;
+assign at_12 = (ack) ? a_12_in : aouti_12;
+assign at_13 = (ack) ? a_13_in : aouti_13;
+assign at_14 = (ack) ? a_14_in : aouti_14;
+assign at_15 = (ack) ? a_15_in : aouti_15;
 
 // ABUS.NET (156) - aout[3-8] : nivh
 assign aout_3 = aouti_3;
@@ -1433,62 +1319,14 @@ fd1q aout_from_16_to_23_inst_7
 );
 
 // ABUS.NET (161) - at[16-23] : mx2m
-mx2 at_from_16_to_23_inst_0
-(
-	.z /* OUT */ (at_16),
-	.a0 /* IN */ (aout_16_obuf),
-	.a1 /* IN */ (ab_16),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_1
-(
-	.z /* OUT */ (at_17),
-	.a0 /* IN */ (aout_17_obuf),
-	.a1 /* IN */ (ab_17),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_2
-(
-	.z /* OUT */ (at_18),
-	.a0 /* IN */ (aout_18_obuf),
-	.a1 /* IN */ (ab_18),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_3
-(
-	.z /* OUT */ (at_19),
-	.a0 /* IN */ (aout_19_obuf),
-	.a1 /* IN */ (ab_19),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_4
-(
-	.z /* OUT */ (at_20),
-	.a0 /* IN */ (aout_20_obuf),
-	.a1 /* IN */ (ab_20),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_5
-(
-	.z /* OUT */ (at_21),
-	.a0 /* IN */ (aout_21_obuf),
-	.a1 /* IN */ (ab_21),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_6
-(
-	.z /* OUT */ (at_22),
-	.a0 /* IN */ (aout_22_obuf),
-	.a1 /* IN */ (ab_22),
-	.s /* IN */ (ack)
-);
-mx2 at_from_16_to_23_inst_7
-(
-	.z /* OUT */ (at_23),
-	.a0 /* IN */ (aout_23_obuf),
-	.a1 /* IN */ (ab_23),
-	.s /* IN */ (ack)
-);
+assign at_16 = (ack) ? ab_16 : aout_16_obuf;
+assign at_17 = (ack) ? ab_17 : aout_17_obuf;
+assign at_18 = (ack) ? ab_18 : aout_18_obuf;
+assign at_19 = (ack) ? ab_19 : aout_19_obuf;
+assign at_20 = (ack) ? ab_20 : aout_20_obuf;
+assign at_21 = (ack) ? ab_21 : aout_21_obuf;
+assign at_22 = (ack) ? ab_22 : aout_22_obuf;
+assign at_23 = (ack) ? ab_23 : aout_23_obuf;
 
 // ABUS.NET (168) - mseti : fd2q
 fd2q mseti_inst
@@ -1687,13 +1525,7 @@ fd1q bsi_index_2_inst
 );
 
 // ABUS.NET (272) - abti[2] : mx2
-mx2 abti_index_2_inst
-(
-	.z /* OUT */ (abti_2),
-	.a0 /* IN */ (bsi_2),
-	.a1 /* IN */ (abs_2_obuf),
-	.s /* IN */ (ack)
-);
+assign abti_2 = (ack) ? abs_2_obuf : bsi_2;
 
 // ABUS.NET (273) - abt[2] : nivh
 assign abt_2 = abti_2;
@@ -1826,13 +1658,7 @@ assign notba = ~ba;
 assign bm68k = notba & m68k_obuf;
 
 // ABUS.NET (348) - ai[0] : mx2
-mx2 ai_index_0_inst
-(
-	.z /* OUT */ (ai_0),
-	.a0 /* IN */ (ain_0),
-	.a1 /* IN */ (siz_1),
-	.s /* IN */ (bm68k)
-);
+assign ai_0 = (bm68k) ? siz_1 : ain_0;
 
 // ABUS.NET (350) - a[0] : tsm
 assign a_0_out = ai_0;
@@ -1887,20 +1713,8 @@ assign a_23_out = ain_23;
 assign a_23_oe = ainen;
 
 // ABUS.NET (375) - dwidi[0-1] : mx2
-mx2 dwidi_from_0_to_1_inst_0
-(
-	.z /* OUT */ (dwidi_0),
-	.a0 /* IN */ (dwid0_0),
-	.a1 /* IN */ (dwid1_0),
-	.s /* IN */ (abt_2)
-);
-mx2 dwidi_from_0_to_1_inst_1
-(
-	.z /* OUT */ (dwidi_1),
-	.a0 /* IN */ (dwid0_1),
-	.a1 /* IN */ (dwid1_1),
-	.s /* IN */ (abt_2)
-);
+assign dwidi_0 = (abt_2) ? dwid1_0 : dwid0_0;
+assign dwidi_1 = (abt_2) ? dwid1_1 : dwid0_1;
 
 // ABUS.NET (376) - dwid[0-1] : nivh
 assign dwid_0 = dwidi_0;
@@ -2408,162 +2222,30 @@ mx8 ahd1_index_10_inst
 assign gnd = 1'b0;
 
 // ABUS.NET (403) - ahd[0-10] : mx2
-mx2 ahd_from_0_to_10_inst_0
-(
-	.z /* OUT */ (ahd_0),
-	.a0 /* IN */ (ahd0_0),
-	.a1 /* IN */ (ahd1_0),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_1
-(
-	.z /* OUT */ (ahd_1),
-	.a0 /* IN */ (ahd0_1),
-	.a1 /* IN */ (ahd1_1),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_2
-(
-	.z /* OUT */ (ahd_2),
-	.a0 /* IN */ (ahd0_2),
-	.a1 /* IN */ (ahd1_2),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_3
-(
-	.z /* OUT */ (ahd_3),
-	.a0 /* IN */ (ahd0_3),
-	.a1 /* IN */ (ahd1_3),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_4
-(
-	.z /* OUT */ (ahd_4),
-	.a0 /* IN */ (ahd0_4),
-	.a1 /* IN */ (ahd1_4),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_5
-(
-	.z /* OUT */ (ahd_5),
-	.a0 /* IN */ (ahd0_5),
-	.a1 /* IN */ (ahd1_5),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_6
-(
-	.z /* OUT */ (ahd_6),
-	.a0 /* IN */ (ahd0_6),
-	.a1 /* IN */ (ahd1_6),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_7
-(
-	.z /* OUT */ (ahd_7),
-	.a0 /* IN */ (ahd0_7),
-	.a1 /* IN */ (ahd1_7),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_8
-(
-	.z /* OUT */ (ahd_8),
-	.a0 /* IN */ (ahd0_8),
-	.a1 /* IN */ (ahd1_8),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_9
-(
-	.z /* OUT */ (ahd_9),
-	.a0 /* IN */ (ahd0_9),
-	.a1 /* IN */ (ahd1_9),
-	.s /* IN */ (abt_2)
-);
-mx2 ahd_from_0_to_10_inst_10
-(
-	.z /* OUT */ (ahd_10),
-	.a0 /* IN */ (ahd0_10),
-	.a1 /* IN */ (ahd1_10),
-	.s /* IN */ (abt_2)
-);
+assign ahd_0 = (abt_2) ? ahd1_0 : ahd0_0;
+assign ahd_1 = (abt_2) ? ahd1_1 : ahd0_1;
+assign ahd_2 = (abt_2) ? ahd1_2 : ahd0_2;
+assign ahd_3 = (abt_2) ? ahd1_3 : ahd0_3;
+assign ahd_4 = (abt_2) ? ahd1_4 : ahd0_4;
+assign ahd_5 = (abt_2) ? ahd1_5 : ahd0_5;
+assign ahd_6 = (abt_2) ? ahd1_6 : ahd0_6;
+assign ahd_7 = (abt_2) ? ahd1_7 : ahd0_7;
+assign ahd_8 = (abt_2) ? ahd1_8 : ahd0_8;
+assign ahd_9 = (abt_2) ? ahd1_9 : ahd0_9;
+assign ahd_10 = (abt_2) ? ahd1_10 : ahd0_10;
 
 // ABUS.NET (404) - mad[0-10] : mx2
-mx2 mad_from_0_to_10_inst_0
-(
-	.z /* OUT */ (mad_0),
-	.a0 /* IN */ (ald_0),
-	.a1 /* IN */ (ahd_0),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_1
-(
-	.z /* OUT */ (mad_1),
-	.a0 /* IN */ (ald_1),
-	.a1 /* IN */ (ahd_1),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_2
-(
-	.z /* OUT */ (mad_2),
-	.a0 /* IN */ (ald_2),
-	.a1 /* IN */ (ahd_2),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_3
-(
-	.z /* OUT */ (mad_3),
-	.a0 /* IN */ (ald_3),
-	.a1 /* IN */ (ahd_3),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_4
-(
-	.z /* OUT */ (mad_4),
-	.a0 /* IN */ (ald_4),
-	.a1 /* IN */ (ahd_4),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_5
-(
-	.z /* OUT */ (mad_5),
-	.a0 /* IN */ (ald_5),
-	.a1 /* IN */ (ahd_5),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_6
-(
-	.z /* OUT */ (mad_6),
-	.a0 /* IN */ (ald_6),
-	.a1 /* IN */ (ahd_6),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_7
-(
-	.z /* OUT */ (mad_7),
-	.a0 /* IN */ (ald_7),
-	.a1 /* IN */ (ahd_7),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_8
-(
-	.z /* OUT */ (mad_8),
-	.a0 /* IN */ (ald_8),
-	.a1 /* IN */ (ahd_8),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_9
-(
-	.z /* OUT */ (mad_9),
-	.a0 /* IN */ (ald_9),
-	.a1 /* IN */ (ahd_9),
-	.s /* IN */ (mux)
-);
-mx2 mad_from_0_to_10_inst_10
-(
-	.z /* OUT */ (mad_10),
-	.a0 /* IN */ (ald_10),
-	.a1 /* IN */ (ahd_10),
-	.s /* IN */ (mux)
-);
+assign mad_0 = (mux) ? ahd_0 : ald_0;
+assign mad_1 = (mux) ? ahd_1 : ald_1;
+assign mad_2 = (mux) ? ahd_2 : ald_2;
+assign mad_3 = (mux) ? ahd_3 : ald_3;
+assign mad_4 = (mux) ? ahd_4 : ald_4;
+assign mad_5 = (mux) ? ahd_5 : ald_5;
+assign mad_6 = (mux) ? ahd_6 : ald_6;
+assign mad_7 = (mux) ? ahd_7 : ald_7;
+assign mad_8 = (mux) ? ahd_8 : ald_8;
+assign mad_9 = (mux) ? ahd_9 : ald_9;
+assign mad_10 = (mux) ? ahd_10 : ald_10;
 
 // ABUS.NET (405) - ma[0-10] : fd1q
 fd1q ma_from_0_to_10_inst_0
@@ -2778,13 +2460,7 @@ assign lb1 = ~(fintdev_obuf & ab_12 & alb_13 & alb_14 & notourack & vcc);
 assign lbd = ~(lb0 & lb1);
 
 // ABUS.NET (459) - lbat : mx2
-mx2 lbat_inst
-(
-	.z /* OUT */ (lbat),
-	.a0 /* IN */ (lba_obuf),
-	.a1 /* IN */ (lbad),
-	.s /* IN */ (ack)
-);
+assign lbat = (ack) ? lbad : lba_obuf;
 
 // ABUS.NET (460) - lbai : fd2qp
 fd2q lbai_inst
@@ -2797,13 +2473,7 @@ fd2q lbai_inst
 );
 
 // ABUS.NET (462) - lbbt : mx2
-mx2 lbbt_inst
-(
-	.z /* OUT */ (lbbt),
-	.a0 /* IN */ (lbb_obuf),
-	.a1 /* IN */ (lbbd),
-	.s /* IN */ (ack)
-);
+assign lbbt = (ack) ? lbbd : lbb_obuf;
 
 // ABUS.NET (463) - lbbi : fd2qp
 fd2q lbbi_inst
@@ -2816,13 +2486,7 @@ fd2q lbbi_inst
 );
 
 // ABUS.NET (465) - lbt : mx2h
-mx2 lbt_inst
-(
-	.z /* OUT */ (lbt_obuf),
-	.a0 /* IN */ (lb),
-	.a1 /* IN */ (lbd),
-	.s /* IN */ (ack)
-);
+assign lbt_obuf = (ack) ? lbd : lb;
 
 // ABUS.NET (466) - lbi : fd2qp
 fd2q lbi_inst
@@ -2835,13 +2499,7 @@ fd2q lbi_inst
 );
 
 // ABUS.NET (468) - clutt : mx2h
-mx2 clutt_inst
-(
-	.z /* OUT */ (clutt_obuf),
-	.a0 /* IN */ (clut_obuf),
-	.a1 /* IN */ (clutd),
-	.s /* IN */ (ack)
-);
+assign clutt_obuf = (ack) ? clutd : clut_obuf;
 
 // ABUS.NET (469) - cluti : fd2qp
 fd2q cluti_inst
@@ -2854,145 +2512,97 @@ fd2q cluti_inst
 );
 
 // --- Compiler-generated PE for BUS dr[0]
-assign dr_0_out =
-	(ts_pe_272_a0_oe) ? ts_pe_272_a0_out :
-	(ts_pe_272_a1_oe) ? ts_pe_272_a1_out :
-	1'bz;
+assign dr_0_out = (ts_pe_272_a0_oe & ts_pe_272_a0_out ) | (ts_pe_272_a1_oe & ts_pe_272_a1_out ) | 1'b0;
 assign dr_0_oe = ts_pe_272_a0_oe | ts_pe_272_a1_oe;
 assign ts_pe_272_a0_in = dr_0_in;
 assign ts_pe_272_a1_in = dr_0_in;
 
 // --- Compiler-generated PE for BUS dr[1]
-assign dr_1_out =
-	(ts_pe_273_a0_oe) ? ts_pe_273_a0_out :
-	(ts_pe_273_a1_oe) ? ts_pe_273_a1_out :
-	1'bz;
+assign dr_1_out = (ts_pe_273_a0_oe & ts_pe_273_a0_out ) | (ts_pe_273_a1_oe & ts_pe_273_a1_out ) | 1'b0;
 assign dr_1_oe = ts_pe_273_a0_oe | ts_pe_273_a1_oe;
 assign ts_pe_273_a0_in = dr_1_in;
 assign ts_pe_273_a1_in = dr_1_in;
 
 // --- Compiler-generated PE for BUS dr[2]
-assign dr_2_out =
-	(ts_pe_274_a0_oe) ? ts_pe_274_a0_out :
-	(ts_pe_274_a1_oe) ? ts_pe_274_a1_out :
-	1'bz;
+assign dr_2_out = (ts_pe_274_a0_oe & ts_pe_274_a0_out ) | (ts_pe_274_a1_oe & ts_pe_274_a1_out ) | 1'b0;
 assign dr_2_oe = ts_pe_274_a0_oe | ts_pe_274_a1_oe;
 assign ts_pe_274_a0_in = dr_2_in;
 assign ts_pe_274_a1_in = dr_2_in;
 
 // --- Compiler-generated PE for BUS dr[3]
-assign dr_3_out =
-	(ts_pe_275_a0_oe) ? ts_pe_275_a0_out :
-	(ts_pe_275_a1_oe) ? ts_pe_275_a1_out :
-	1'bz;
+assign dr_3_out = (ts_pe_275_a0_oe & ts_pe_275_a0_out ) | (ts_pe_275_a1_oe & ts_pe_275_a1_out ) | 1'b0;
 assign dr_3_oe = ts_pe_275_a0_oe | ts_pe_275_a1_oe;
 assign ts_pe_275_a0_in = dr_3_in;
 assign ts_pe_275_a1_in = dr_3_in;
 
 // --- Compiler-generated PE for BUS dr[4]
-assign dr_4_out =
-	(ts_pe_276_a0_oe) ? ts_pe_276_a0_out :
-	(ts_pe_276_a1_oe) ? ts_pe_276_a1_out :
-	1'bz;
+assign dr_4_out = (ts_pe_276_a0_oe & ts_pe_276_a0_out ) | (ts_pe_276_a1_oe & ts_pe_276_a1_out ) | 1'b0;
 assign dr_4_oe = ts_pe_276_a0_oe | ts_pe_276_a1_oe;
 assign ts_pe_276_a0_in = dr_4_in;
 assign ts_pe_276_a1_in = dr_4_in;
 
 // --- Compiler-generated PE for BUS dr[5]
-assign dr_5_out =
-	(ts_pe_277_a0_oe) ? ts_pe_277_a0_out :
-	(ts_pe_277_a1_oe) ? ts_pe_277_a1_out :
-	1'bz;
+assign dr_5_out = (ts_pe_277_a0_oe & ts_pe_277_a0_out ) | (ts_pe_277_a1_oe & ts_pe_277_a1_out ) | 1'b0;
 assign dr_5_oe = ts_pe_277_a0_oe | ts_pe_277_a1_oe;
 assign ts_pe_277_a0_in = dr_5_in;
 assign ts_pe_277_a1_in = dr_5_in;
 
 // --- Compiler-generated PE for BUS dr[6]
-assign dr_6_out =
-	(ts_pe_278_a0_oe) ? ts_pe_278_a0_out :
-	(ts_pe_278_a1_oe) ? ts_pe_278_a1_out :
-	1'bz;
+assign dr_6_out = (ts_pe_278_a0_oe & ts_pe_278_a0_out ) | (ts_pe_278_a1_oe & ts_pe_278_a1_out ) | 1'b0;
 assign dr_6_oe = ts_pe_278_a0_oe | ts_pe_278_a1_oe;
 assign ts_pe_278_a0_in = dr_6_in;
 assign ts_pe_278_a1_in = dr_6_in;
 
 // --- Compiler-generated PE for BUS dr[7]
-assign dr_7_out =
-	(ts_pe_279_a0_oe) ? ts_pe_279_a0_out :
-	(ts_pe_279_a1_oe) ? ts_pe_279_a1_out :
-	1'bz;
+assign dr_7_out = (ts_pe_279_a0_oe & ts_pe_279_a0_out ) | (ts_pe_279_a1_oe & ts_pe_279_a1_out ) | 1'b0;
 assign dr_7_oe = ts_pe_279_a0_oe | ts_pe_279_a1_oe;
 assign ts_pe_279_a0_in = dr_7_in;
 assign ts_pe_279_a1_in = dr_7_in;
 
 // --- Compiler-generated PE for BUS dr[8]
-assign dr_8_out =
-	(ts_pe_280_a0_oe) ? ts_pe_280_a0_out :
-	(ts_pe_280_a1_oe) ? ts_pe_280_a1_out :
-	1'bz;
+assign dr_8_out = (ts_pe_280_a0_oe & ts_pe_280_a0_out ) | (ts_pe_280_a1_oe & ts_pe_280_a1_out ) | 1'b0;
 assign dr_8_oe = ts_pe_280_a0_oe | ts_pe_280_a1_oe;
 assign ts_pe_280_a0_in = dr_8_in;
 assign ts_pe_280_a1_in = dr_8_in;
 
 // --- Compiler-generated PE for BUS dr[9]
-assign dr_9_out =
-	(ts_pe_281_a0_oe) ? ts_pe_281_a0_out :
-	(ts_pe_281_a1_oe) ? ts_pe_281_a1_out :
-	1'bz;
+assign dr_9_out = (ts_pe_281_a0_oe & ts_pe_281_a0_out ) | (ts_pe_281_a1_oe & ts_pe_281_a1_out ) | 1'b0;
 assign dr_9_oe = ts_pe_281_a0_oe | ts_pe_281_a1_oe;
 assign ts_pe_281_a0_in = dr_9_in;
 assign ts_pe_281_a1_in = dr_9_in;
 
 // --- Compiler-generated PE for BUS dr[10]
-assign dr_10_out =
-	(ts_pe_282_a0_oe) ? ts_pe_282_a0_out :
-	(ts_pe_282_a1_oe) ? ts_pe_282_a1_out :
-	1'bz;
+assign dr_10_out = (ts_pe_282_a0_oe & ts_pe_282_a0_out ) | (ts_pe_282_a1_oe & ts_pe_282_a1_out ) | 1'b0;
 assign dr_10_oe = ts_pe_282_a0_oe | ts_pe_282_a1_oe;
 assign ts_pe_282_a0_in = dr_10_in;
 assign ts_pe_282_a1_in = dr_10_in;
 
 // --- Compiler-generated PE for BUS dr[11]
-assign dr_11_out =
-	(ts_pe_283_a0_oe) ? ts_pe_283_a0_out :
-	(ts_pe_283_a1_oe) ? ts_pe_283_a1_out :
-	1'bz;
+assign dr_11_out = (ts_pe_283_a0_oe & ts_pe_283_a0_out ) | (ts_pe_283_a1_oe & ts_pe_283_a1_out ) | 1'b0;
 assign dr_11_oe = ts_pe_283_a0_oe | ts_pe_283_a1_oe;
 assign ts_pe_283_a0_in = dr_11_in;
 assign ts_pe_283_a1_in = dr_11_in;
 
 // --- Compiler-generated PE for BUS dr[12]
-assign dr_12_out =
-	(ts_pe_284_a0_oe) ? ts_pe_284_a0_out :
-	(ts_pe_284_a1_oe) ? ts_pe_284_a1_out :
-	1'bz;
+assign dr_12_out = (ts_pe_284_a0_oe & ts_pe_284_a0_out ) | (ts_pe_284_a1_oe & ts_pe_284_a1_out ) | 1'b0;
 assign dr_12_oe = ts_pe_284_a0_oe | ts_pe_284_a1_oe;
 assign ts_pe_284_a0_in = dr_12_in;
 assign ts_pe_284_a1_in = dr_12_in;
 
 // --- Compiler-generated PE for BUS dr[13]
-assign dr_13_out =
-	(ts_pe_285_a0_oe) ? ts_pe_285_a0_out :
-	(ts_pe_285_a1_oe) ? ts_pe_285_a1_out :
-	1'bz;
+assign dr_13_out = (ts_pe_285_a0_oe & ts_pe_285_a0_out ) | (ts_pe_285_a1_oe & ts_pe_285_a1_out ) | 1'b0;
 assign dr_13_oe = ts_pe_285_a0_oe | ts_pe_285_a1_oe;
 assign ts_pe_285_a0_in = dr_13_in;
 assign ts_pe_285_a1_in = dr_13_in;
 
 // --- Compiler-generated PE for BUS dr[14]
-assign dr_14_out =
-	(ts_pe_286_a0_oe) ? ts_pe_286_a0_out :
-	(ts_pe_286_a1_oe) ? ts_pe_286_a1_out :
-	1'bz;
+assign dr_14_out = (ts_pe_286_a0_oe & ts_pe_286_a0_out ) | (ts_pe_286_a1_oe & ts_pe_286_a1_out ) | 1'b0;
 assign dr_14_oe = ts_pe_286_a0_oe | ts_pe_286_a1_oe;
 assign ts_pe_286_a0_in = dr_14_in;
 assign ts_pe_286_a1_in = dr_14_in;
 
 // --- Compiler-generated PE for BUS dr[15]
-assign dr_15_out =
-	(ts_pe_287_a0_oe) ? ts_pe_287_a0_out :
-	(ts_pe_287_a1_oe) ? ts_pe_287_a1_out :
-	1'bz;
+assign dr_15_out = (ts_pe_287_a0_oe & ts_pe_287_a0_out ) | (ts_pe_287_a1_oe & ts_pe_287_a1_out ) | 1'b0;
 assign dr_15_oe = ts_pe_287_a0_oe | ts_pe_287_a1_oe;
 assign ts_pe_287_a0_in = dr_15_in;
 assign ts_pe_287_a1_in = dr_15_in;

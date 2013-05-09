@@ -11,13 +11,14 @@
 
 // #define HALF_PER_PS 4500
 // #define HALF_PER_PS 9400
-#define HALF_PER_PS 10000
+// #define HALF_PER_PS 4700
+#define HALF_PER_PS 6250
 // Number of simulation cycles
 //                                 ns
 // #define NUM_CYCLES  ((vluint64_t)1599000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
-#define NUM_MS 1
-#define LOG_START_MS 0
-#define LOG_EVERY_MS 1
+#define NUM_MS 15005
+#define LOG_START_MS 99990
+#define LOG_EVERY_MS 99991
 
 // #define CYCLES_PER_VCD ((vluint64_t)10000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
 #define HCYCLES_PER_MS ((vluint64_t)1000000 * (vluint64_t)1000 / (vluint64_t)HALF_PER_PS)
@@ -106,6 +107,8 @@ int main(int argc, char **argv, char **env)
 	sys_clk = 0;
 	vga_clk = 0;
 	
+	vluint8_t hclkcnt = 0;
+	
 for(ms = 0; ms < NUM_MS; ms++) {
 #if VM_TRACE
 	if ((ms % LOG_EVERY_MS) == 0)
@@ -121,8 +124,8 @@ for(ms = 0; ms < NUM_MS; ms++) {
    
     // Dump VGA output
 		// vga_clk   = top->OSC_CLK0;
-		if (top->OSC_CLK0)
-			vga_clk = vga_clk ^ 1;
+		/*if (top->OSC_CLK0)
+			vga_clk = vga_clk ^ 1;*/
     vga_vs    = top->vga_vs_n;
     vga_hs    = top->vga_hs_n;
     vga_r     = top->vga_r;
@@ -133,7 +136,7 @@ for(ms = 0; ms < NUM_MS; ms++) {
                vga_r, vga_g, vga_b);
 
 		// OS ROM
-		bios_clk = top->OSC_CLK0;
+		bios_clk = /*top->OSC_CLK0;*/ sys_clk;
 		bios_ce_n = top->os_rom_ce_n;
 		bios_oe_n = top->os_rom_oe_n;
 		bios_a = top->os_rom_a;
@@ -167,7 +170,7 @@ for(ms = 0; ms < NUM_MS; ms++) {
 		top->SSRAM_Q = ssram_q;
 
 		// FLASH (Cartridge)
-		flash_clk = top->OSC_CLK0;
+		flash_clk = /*top->OSC_CLK0;*/ sys_clk;
 		flash_ce_n = top->FLS_CS_n;
 		flash_oe_n = top->FLS_OE_n;
 		flash_a = top->FE_ADDR;
@@ -179,7 +182,7 @@ for(ms = 0; ms < NUM_MS; ms++) {
 		top->FE_DQ = 0xffffff00 | flash_q;
 		
 		// 68000 dissasembly
-    trc->dump (hcycle / 2,        top->OSC_CLK0,     top->DBG_IFETCH,
+    trc->dump (hcycle / 2,        /*top->OSC_CLK0*/ sys_clk,     top->DBG_IFETCH,
                top->DBG_REG_WREN, top->DBG_REG_ADDR, top->DBG_REG_DATA,
                top->DBG_SR_REG,   top->DBG_PC_REG,   top->DBG_USP_REG,  top->DBG_SSP_REG);
 		
@@ -195,7 +198,15 @@ for(ms = 0; ms < NUM_MS; ms++) {
     hcycle++;
 		
     top->SW = (hcycle < (vluint64_t)(120000 / HALF_PER_PS)) ? 0 : 1;
-		top->OSC_CLK0 = top->OSC_CLK0 ^ 1;
+
+		hclkcnt++;
+		// top->OSC_CLK0 = top->OSC_CLK0 ^ 1;
+		top->OSC_CLK0 = hclkcnt & 1;
+		sys_clk = (hclkcnt & 1) == 1;
+		vga_clk = (hclkcnt % 3) == 2;
+		
+		//sys_clk = (hclkcnt & 3) == 3;
+		//vga_clk = (hclkcnt & 7) == 7;
 		
     if (Verilated::gotFinish())  exit(0);
   }

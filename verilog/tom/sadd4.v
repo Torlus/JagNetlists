@@ -54,33 +54,9 @@ assign overflowi = ~(co_3 ^ b_3);
 assign overflow = ~overflowi;
 
 // LBUF.NET (264) - z[0-3] : mx2
-mx2 z_from_0_to_3_inst_0
-(
-	.z /* OUT */ (z_0),
-	.a0 /* IN */ (s_0),
-	.a1 /* IN */ (co_3),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_3_inst_1
-(
-	.z /* OUT */ (z_1),
-	.a0 /* IN */ (s_1),
-	.a1 /* IN */ (co_3),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_3_inst_2
-(
-	.z /* OUT */ (z_2),
-	.a0 /* IN */ (s_2),
-	.a1 /* IN */ (co_3),
-	.s /* IN */ (overflow)
-);
-mx2 z_from_0_to_3_inst_3
-(
-	.z /* OUT */ (z_3),
-	.a0 /* IN */ (s_3),
-	.a1 /* IN */ (co_3),
-	.s /* IN */ (overflow)
-);
+assign z_0 = (overflow) ? co_3 : s_0;
+assign z_1 = (overflow) ? co_3 : s_1;
+assign z_2 = (overflow) ? co_3 : s_2;
+assign z_3 = (overflow) ? co_3 : s_3;
 endmodule
 /* verilator lint_on LITENDIAN */

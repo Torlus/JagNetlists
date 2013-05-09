@@ -453,46 +453,46 @@ assign pit1w = i00xx & axx5x & axxx2 & intswe;
 // IODEC.NET (142) - heqw_ : an4h
 assign heqw = i00xx & axx5x & axxx4 & wet;
 
-// IODEC.NET (143) - test1w_ : an6
-assign test1w = a00xx & axx5x & axxx6 & writes & intdev & vcc;
+// IODEC.NET (145) - test1w_ : tie0
+assign test1w = 1'b0;
 
-// IODEC.NET (144) - bgw_ : an4h
+// IODEC.NET (147) - bgw_ : an4h
 assign bgwr = i00xx & axx5x & axxx8 & wet;
 
-// IODEC.NET (146) - intw : an4
+// IODEC.NET (149) - intw : an4
 assign int1w = i00xx & axxex & axxx0 & writes;
 
-// IODEC.NET (147) - int2w : an4
+// IODEC.NET (150) - int2w : an4
 assign int2w = i00xx & axxex & axxx2 & writes;
 
-// IODEC.NET (149) - lbraw : an4h
+// IODEC.NET (152) - lbraw : an4h
 assign lbraw = i02xx & axx0x & axxx0 & writes;
 
-// IODEC.NET (153) - lbar : an2
+// IODEC.NET (156) - lbar : an2
 assign lbar = lba & reads;
 
-// IODEC.NET (154) - lbbr : an2
+// IODEC.NET (157) - lbbr : an2
 assign lbbr = lbb & reads;
 
-// IODEC.NET (155) - clutr : an2
+// IODEC.NET (158) - clutr : an2
 assign clutr = clut & reads;
 
-// IODEC.NET (156) - gb1r : an4
+// IODEC.NET (159) - gb1r : an4
 assign gb1r = a_13 & intdev & reads & notourack;
 
-// IODEC.NET (157) - gb2r : an4
+// IODEC.NET (160) - gb2r : an4
 assign gb2r = a_14 & intdev & reads & notourack;
 
-// IODEC.NET (158) - notourack : iv
+// IODEC.NET (161) - notourack : iv
 assign notourack = ~ourack;
 
-// IODEC.NET (163) - dspcs : iv
+// IODEC.NET (166) - dspcs : iv
 assign dspcs = ~dspcsl;
 
-// IODEC.NET (164) - exiol : nd3
+// IODEC.NET (167) - exiol : nd3
 assign exiol = ~(dspcs & a_14 & al_15);
 
-// IODEC.NET (165) - expl : an3
+// IODEC.NET (168) - expl : an3
 assign expl = exiol & romcsl_0 & romcsl_1;
 endmodule
 /* verilator lint_on LITENDIAN */

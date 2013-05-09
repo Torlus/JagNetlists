@@ -5,7 +5,7 @@ module jag_s2
 (
 	input		[3:0]	SW,
 	input 				OSC_CLK0,
-	
+ 	
   output        SSRAM_CLK,
   output        SSRAM_CE1_n,
   output        SSRAM_CE2,
@@ -38,7 +38,7 @@ module jag_s2
 	inout		[31:0]	FE_DQ,
 `endif
 
-	output	[28:0]	PROTO2_IO,
+	//output	[28:0]	PROTO2_IO,
 
 `ifdef verilator3
 
@@ -71,6 +71,17 @@ module jag_s2
 	input		[7:0]		os_rom_q,
 	input						os_rom_oe,
 `endif
+
+`ifndef verilator3
+	output	[7:0]		VGA_R,
+	output	[7:0]		VGA_G,
+	output	[7:0]		VGA_B,
+	output					VGA_HS,
+	output					VGA_VS,
+	output					VGA_BLANK_n,
+	output					VGA_CLK,
+`endif
+
 	
 	output	[7:0] HEX_0,
 	output	[7:0] HEX_1,
@@ -92,6 +103,7 @@ wire [7:0] vga_r;
 wire [7:0] vga_g;
 wire [7:0] vga_b;
 `endif
+wire vga_bl;
 
 reg vga_vs_prev = 1'b1;
 reg [15:0] vs_cnt = 16'd0;
@@ -109,7 +121,7 @@ end
 assign LED_n = ~vs_cnt[12:5];
 
 
-assign PROTO2_IO[0] = vga_vs_n;
+/*assign PROTO2_IO[0] = vga_vs_n;
 assign PROTO2_IO[1] = vga_hs_n;
 
 assign PROTO2_IO[2] = vga_r[7];
@@ -125,7 +137,17 @@ assign PROTO2_IO[11] = vga_g[4];
 assign PROTO2_IO[12] = vga_b[7];
 assign PROTO2_IO[13] = vga_b[6];
 assign PROTO2_IO[14] = vga_b[5];
-assign PROTO2_IO[15] = vga_b[4];
+assign PROTO2_IO[15] = vga_b[4];*/
+
+`ifndef verilator3
+assign VGA_R = vga_r;
+assign VGA_G = vga_g;
+assign VGA_B = vga_b;
+assign VGA_BLANK_n = ~vga_bl;
+assign VGA_VS = vga_vs_n;
+assign VGA_HS = vga_hs_n;
+assign VGA_CLK = sys_clk;
+`endif
 
 
 assign xresetl = SW[0];
@@ -136,7 +158,7 @@ pll50 pll
 	.c0(),
 	.c1(),
 	.c2(sys_clk),
-	.c3()
+	.c3(SSRAM_CLK)
 );
 assign mem_clk = sys_clk;
 
@@ -225,6 +247,7 @@ wire		[0:63]	dram_q;
 wire		[0:3]		dram_oe;
 
 wire			fdram;
+wire			ram_rdy;
 
 jaguar jag
 (
@@ -243,6 +266,8 @@ jaguar jag
 	.dram_q(dram_q),
 	.dram_oe(dram_oe),
 
+	.ram_rdy(ram_rdy),
+	
 `ifndef verilator3	
 	.DBG_CPU_RDEN(),
 	.DBG_CPU_WREN(),
@@ -293,6 +318,7 @@ jaguar jag
 	
 	.fdram(fdram),
 	
+	.vga_bl(vga_bl),
 	.vga_vs_n(vga_vs_n),
 	.vga_hs_n(vga_hs_n),
 	.vga_r(vga_r),
@@ -351,7 +377,7 @@ reg		[7:0]		r_ssram_be_n = 8'b11111111;
 reg		[3:0]		mem_cyc = `SS_IDLE;
 
 // Fixed outputs
-assign SSRAM_CLK = mem_clk;
+// assign SSRAM_CLK = mem_clk;
 // assign SSRAM_CLK = sys_clk;
 assign SSRAM_CE2 = 1'b1;
 assign SSRAM_CE3_n = 1'b0;
@@ -365,8 +391,7 @@ begin
 	// end else begin
 		case (mem_cyc)
 			`SS_IDLE:
-				// if (fdram && (dram_oe_n != 4'b1111)) begin
-				if (fdram && (dram_oe_n != 4'b1111) && ~dram_cas_n) begin // as we have plenty of time now...
+				if (fdram && (dram_oe_n != 4'b1111)) begin
 					mem_cyc <= `SS_RD_1;
 				end else if (fdram && ({dram_uw_n, dram_lw_n} != 8'b11111111)) begin
 					mem_cyc <= `SS_WR_1;
@@ -519,6 +544,10 @@ assign dram_q[0:63] = {
 	ssram_q1[24], ssram_q1[25], ssram_q1[26], ssram_q1[27], ssram_q1[28], ssram_q1[29], ssram_q1[30], ssram_q1[31]
 };
 assign dram_oe = (~dram_cas_n) ? ~dram_oe_n : 4'b0000;
+
+/*assign ram_rdy = (mem_cyc == `SS_RD_4) || (mem_cyc == `SS_RD_5)
+	|| (mem_cyc == `SS_WR_4) || (mem_cyc == `SS_WR_5);*/
+assign ram_rdy = (mem_cyc == `SS_END);
 
 endmodule
 /* verilator lint_on LITENDIAN */

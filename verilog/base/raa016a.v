@@ -12,52 +12,48 @@ module raa016a
 );
 
 wire [9:0]	a_r;
-`ifdef SIMULATION
-reg	[15:0]	r_z;
-`else
-wire [15:0]	r_z;
-`endif
-
-wire [0:15]	r_z_out;
+wire [15:0]	z_out_r;
 
 assign a_r[9:0] = {a[9], a[8], a[7], a[6], a[5], a[4], a[3], a[2], a[1], a[0]};
-assign r_z_out[0:15] = {r_z[0], r_z[1], r_z[2], r_z[3], r_z[4], r_z[5], r_z[6], r_z[7],
-		r_z[8], r_z[9], r_z[10], r_z[11], r_z[12], r_z[13], r_z[14], r_z[15]};
 
-reg	[0:15]	r_z_oe = 16'h0000;
-reg	[0:15]	r_z_oe_dly = 16'h0000;
+assign z_out[0:15] = {z_out_r[0], z_out_r[1], z_out_r[2], z_out_r[3], z_out_r[4], z_out_r[5], z_out_r[6], z_out_r[7],
+		z_out_r[8], z_out_r[9], z_out_r[10], z_out_r[11], z_out_r[12], z_out_r[13], z_out_r[14], z_out_r[15]};
 
 // Values are in 32 bits, but only 16 are used
 
 `ifdef SIMULATION
-	reg	[0:15]	r_z_out_dly;
+	reg [15:0]	r_z_out_r;
+	// reg	[15:0]	r_z_out_r_dly;
+	reg	[0:15]	r_z_oe = 16'h0000;
+	// reg	[0:15]	r_z_oe_dly = 16'h0000;
+
 	reg	[15:0]	rom_blk [0:(1<<10)-1];
+
+	// assign z_oe = r_z_oe_dly;
+	assign z_out_r = r_z_out_r;
+	assign z_oe = r_z_oe;
 
 	initial
 	begin
 		$readmemh("sinerom.mem", rom_blk);
 	end
-
-
-	assign z_out = r_z_out_dly;
-	// assign z_oe = r_z_oe_dly;
-	assign z_oe = r_z_oe;
-
+	
 	always @(posedge sys_clk)
 	begin
-		r_z_out_dly <= r_z_out;
-		r_z_oe_dly <= r_z_oe;	
+		// r_z_out_r_dly <= r_z_out_r;
+		// r_z_oe_dly <= r_z_oe;	
 
 		if (~cs) begin
-			r_z[15:0] <= rom_blk[a_r][15:0];
-			$display("SINEROM $%03x #%04x", a_r, r_z);
+			$display("SINEROM $%03x #%04x", a_r, r_z_out_r);
 		end
+		r_z_out_r <= rom_blk[a_r][15:0];
 		r_z_oe <= (~cs) ? 16'hffff : 16'h0000;
 	end
 `else
 
-	assign z_out = r_z_out;
-	// assign z_oe = r_z_oe_dly;
+	reg	[0:15]	r_z_oe = 16'h0000;
+	// reg	[0:15]	r_z_oe_dly = 16'h0000;
+	
 	assign z_oe = r_z_oe;
 	
 	always @(posedge sys_clk)
@@ -69,7 +65,7 @@ reg	[0:15]	r_z_oe_dly = 16'h0000;
 		altsyncram	altsyncram_component (
 				.clock0 (sys_clk),
 				.address_a (a_r),
-				.q_a (r_z),
+				.q_a (z_out_r),
 				.aclr0 (1'b0),
 				.aclr1 (1'b0),
 				.address_b (1'b1),

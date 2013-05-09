@@ -346,78 +346,18 @@ assign rsr[9] = rsr_9;
 // UART2.NET (171) - rsru : dummy
 
 // UART2.NET (173) - nrsr[9] : mx2
-mx2 nrsr_index_9_inst
-(
-	.z /* OUT */ (nrsr_9),
-	.a0 /* IN */ (rsr_9),
-	.a1 /* IN */ (rxins),
-	.s /* IN */ (shiften)
-);
+assign nrsr_9 = (shiften) ? rxins : rsr_9;
 
 // UART2.NET (174) - nrsr[0-8] : mx2
-mx2 nrsr_from_0_to_8_inst_0
-(
-	.z /* OUT */ (nrsr_0),
-	.a0 /* IN */ (rsr_0),
-	.a1 /* IN */ (rsr_1),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_1
-(
-	.z /* OUT */ (nrsr_1),
-	.a0 /* IN */ (rsr_1),
-	.a1 /* IN */ (rsr_2),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_2
-(
-	.z /* OUT */ (nrsr_2),
-	.a0 /* IN */ (rsr_2),
-	.a1 /* IN */ (rsr_3),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_3
-(
-	.z /* OUT */ (nrsr_3),
-	.a0 /* IN */ (rsr_3),
-	.a1 /* IN */ (rsr_4),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_4
-(
-	.z /* OUT */ (nrsr_4),
-	.a0 /* IN */ (rsr_4),
-	.a1 /* IN */ (rsr_5),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_5
-(
-	.z /* OUT */ (nrsr_5),
-	.a0 /* IN */ (rsr_5),
-	.a1 /* IN */ (rsr_6),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_6
-(
-	.z /* OUT */ (nrsr_6),
-	.a0 /* IN */ (rsr_6),
-	.a1 /* IN */ (rsr_7),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_7
-(
-	.z /* OUT */ (nrsr_7),
-	.a0 /* IN */ (rsr_7),
-	.a1 /* IN */ (rsr_8),
-	.s /* IN */ (shiften)
-);
-mx2 nrsr_from_0_to_8_inst_8
-(
-	.z /* OUT */ (nrsr_8),
-	.a0 /* IN */ (rsr_8),
-	.a1 /* IN */ (rsr_9),
-	.s /* IN */ (shiften)
-);
+assign nrsr_0 = (shiften) ? rsr_1 : rsr_0;
+assign nrsr_1 = (shiften) ? rsr_2 : rsr_1;
+assign nrsr_2 = (shiften) ? rsr_3 : rsr_2;
+assign nrsr_3 = (shiften) ? rsr_4 : rsr_3;
+assign nrsr_4 = (shiften) ? rsr_5 : rsr_4;
+assign nrsr_5 = (shiften) ? rsr_6 : rsr_5;
+assign nrsr_6 = (shiften) ? rsr_7 : rsr_6;
+assign nrsr_7 = (shiften) ? rsr_8 : rsr_7;
+assign nrsr_8 = (shiften) ? rsr_9 : rsr_8;
 
 // UART2.NET (176) - shiften : an2h
 assign shiften = shen & rxen;

@@ -846,230 +846,38 @@ assign cpudsel = ioserv & gpuprd_n;
 assign gpuden = gpu_memw_obuf | gpuprd | busactive_n | externalb_obuf;
 
 // GPU_MEM.NET (246) - wseld : mx2
-mx2 wseld_inst_0
-(
-	.z /* OUT */ (wdata[0]),
-	.a0 /* IN */ (datdata[0]),
-	.a1 /* IN */ (cpudata[0]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_1
-(
-	.z /* OUT */ (wdata[1]),
-	.a0 /* IN */ (datdata[1]),
-	.a1 /* IN */ (cpudata[1]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_2
-(
-	.z /* OUT */ (wdata[2]),
-	.a0 /* IN */ (datdata[2]),
-	.a1 /* IN */ (cpudata[2]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_3
-(
-	.z /* OUT */ (wdata[3]),
-	.a0 /* IN */ (datdata[3]),
-	.a1 /* IN */ (cpudata[3]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_4
-(
-	.z /* OUT */ (wdata[4]),
-	.a0 /* IN */ (datdata[4]),
-	.a1 /* IN */ (cpudata[4]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_5
-(
-	.z /* OUT */ (wdata[5]),
-	.a0 /* IN */ (datdata[5]),
-	.a1 /* IN */ (cpudata[5]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_6
-(
-	.z /* OUT */ (wdata[6]),
-	.a0 /* IN */ (datdata[6]),
-	.a1 /* IN */ (cpudata[6]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_7
-(
-	.z /* OUT */ (wdata[7]),
-	.a0 /* IN */ (datdata[7]),
-	.a1 /* IN */ (cpudata[7]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_8
-(
-	.z /* OUT */ (wdata[8]),
-	.a0 /* IN */ (datdata[8]),
-	.a1 /* IN */ (cpudata[8]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_9
-(
-	.z /* OUT */ (wdata[9]),
-	.a0 /* IN */ (datdata[9]),
-	.a1 /* IN */ (cpudata[9]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_10
-(
-	.z /* OUT */ (wdata[10]),
-	.a0 /* IN */ (datdata[10]),
-	.a1 /* IN */ (cpudata[10]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_11
-(
-	.z /* OUT */ (wdata[11]),
-	.a0 /* IN */ (datdata[11]),
-	.a1 /* IN */ (cpudata[11]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_12
-(
-	.z /* OUT */ (wdata[12]),
-	.a0 /* IN */ (datdata[12]),
-	.a1 /* IN */ (cpudata[12]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_13
-(
-	.z /* OUT */ (wdata[13]),
-	.a0 /* IN */ (datdata[13]),
-	.a1 /* IN */ (cpudata[13]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_14
-(
-	.z /* OUT */ (wdata[14]),
-	.a0 /* IN */ (datdata[14]),
-	.a1 /* IN */ (cpudata[14]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_15
-(
-	.z /* OUT */ (wdata[15]),
-	.a0 /* IN */ (datdata[15]),
-	.a1 /* IN */ (cpudata[15]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_16
-(
-	.z /* OUT */ (wdata[16]),
-	.a0 /* IN */ (datdata[16]),
-	.a1 /* IN */ (cpudata[16]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_17
-(
-	.z /* OUT */ (wdata[17]),
-	.a0 /* IN */ (datdata[17]),
-	.a1 /* IN */ (cpudata[17]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_18
-(
-	.z /* OUT */ (wdata[18]),
-	.a0 /* IN */ (datdata[18]),
-	.a1 /* IN */ (cpudata[18]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_19
-(
-	.z /* OUT */ (wdata[19]),
-	.a0 /* IN */ (datdata[19]),
-	.a1 /* IN */ (cpudata[19]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_20
-(
-	.z /* OUT */ (wdata[20]),
-	.a0 /* IN */ (datdata[20]),
-	.a1 /* IN */ (cpudata[20]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_21
-(
-	.z /* OUT */ (wdata[21]),
-	.a0 /* IN */ (datdata[21]),
-	.a1 /* IN */ (cpudata[21]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_22
-(
-	.z /* OUT */ (wdata[22]),
-	.a0 /* IN */ (datdata[22]),
-	.a1 /* IN */ (cpudata[22]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_23
-(
-	.z /* OUT */ (wdata[23]),
-	.a0 /* IN */ (datdata[23]),
-	.a1 /* IN */ (cpudata[23]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_24
-(
-	.z /* OUT */ (wdata[24]),
-	.a0 /* IN */ (datdata[24]),
-	.a1 /* IN */ (cpudata[24]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_25
-(
-	.z /* OUT */ (wdata[25]),
-	.a0 /* IN */ (datdata[25]),
-	.a1 /* IN */ (cpudata[25]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_26
-(
-	.z /* OUT */ (wdata[26]),
-	.a0 /* IN */ (datdata[26]),
-	.a1 /* IN */ (cpudata[26]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_27
-(
-	.z /* OUT */ (wdata[27]),
-	.a0 /* IN */ (datdata[27]),
-	.a1 /* IN */ (cpudata[27]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_28
-(
-	.z /* OUT */ (wdata[28]),
-	.a0 /* IN */ (datdata[28]),
-	.a1 /* IN */ (cpudata[28]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_29
-(
-	.z /* OUT */ (wdata[29]),
-	.a0 /* IN */ (datdata[29]),
-	.a1 /* IN */ (cpudata[29]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_30
-(
-	.z /* OUT */ (wdata[30]),
-	.a0 /* IN */ (datdata[30]),
-	.a1 /* IN */ (cpudata[30]),
-	.s /* IN */ (cpudsel)
-);
-mx2 wseld_inst_31
-(
-	.z /* OUT */ (wdata[31]),
-	.a0 /* IN */ (datdata[31]),
-	.a1 /* IN */ (cpudata[31]),
-	.s /* IN */ (cpudsel)
-);
+assign wdata[0] = (cpudsel) ? cpudata[0] : datdata[0];
+assign wdata[1] = (cpudsel) ? cpudata[1] : datdata[1];
+assign wdata[2] = (cpudsel) ? cpudata[2] : datdata[2];
+assign wdata[3] = (cpudsel) ? cpudata[3] : datdata[3];
+assign wdata[4] = (cpudsel) ? cpudata[4] : datdata[4];
+assign wdata[5] = (cpudsel) ? cpudata[5] : datdata[5];
+assign wdata[6] = (cpudsel) ? cpudata[6] : datdata[6];
+assign wdata[7] = (cpudsel) ? cpudata[7] : datdata[7];
+assign wdata[8] = (cpudsel) ? cpudata[8] : datdata[8];
+assign wdata[9] = (cpudsel) ? cpudata[9] : datdata[9];
+assign wdata[10] = (cpudsel) ? cpudata[10] : datdata[10];
+assign wdata[11] = (cpudsel) ? cpudata[11] : datdata[11];
+assign wdata[12] = (cpudsel) ? cpudata[12] : datdata[12];
+assign wdata[13] = (cpudsel) ? cpudata[13] : datdata[13];
+assign wdata[14] = (cpudsel) ? cpudata[14] : datdata[14];
+assign wdata[15] = (cpudsel) ? cpudata[15] : datdata[15];
+assign wdata[16] = (cpudsel) ? cpudata[16] : datdata[16];
+assign wdata[17] = (cpudsel) ? cpudata[17] : datdata[17];
+assign wdata[18] = (cpudsel) ? cpudata[18] : datdata[18];
+assign wdata[19] = (cpudsel) ? cpudata[19] : datdata[19];
+assign wdata[20] = (cpudsel) ? cpudata[20] : datdata[20];
+assign wdata[21] = (cpudsel) ? cpudata[21] : datdata[21];
+assign wdata[22] = (cpudsel) ? cpudata[22] : datdata[22];
+assign wdata[23] = (cpudsel) ? cpudata[23] : datdata[23];
+assign wdata[24] = (cpudsel) ? cpudata[24] : datdata[24];
+assign wdata[25] = (cpudsel) ? cpudata[25] : datdata[25];
+assign wdata[26] = (cpudsel) ? cpudata[26] : datdata[26];
+assign wdata[27] = (cpudsel) ? cpudata[27] : datdata[27];
+assign wdata[28] = (cpudsel) ? cpudata[28] : datdata[28];
+assign wdata[29] = (cpudsel) ? cpudata[29] : datdata[29];
+assign wdata[30] = (cpudsel) ? cpudata[30] : datdata[30];
+assign wdata[31] = (cpudsel) ? cpudata[31] : datdata[31];
 
 // GPU_MEM.NET (247) - gpu_data : ts
 assign gpu_data_out[0] = wdata[0];
@@ -1522,69 +1330,15 @@ assign gpu_addr_13 = ram_addr_13;
 assign gpu_addr_14 = ram_addr_14;
 
 // GPU_MEM.NET (277) - amux[15-23] : mx2
-mx2 amux_from_15_to_23_inst_0
-(
-	.z /* OUT */ (gpu_addr_15),
-	.a0 /* IN */ (progaddr[13]),
-	.a1 /* IN */ (dataddr[15]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_1
-(
-	.z /* OUT */ (gpu_addr_16),
-	.a0 /* IN */ (progaddr[14]),
-	.a1 /* IN */ (dataddr[16]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_2
-(
-	.z /* OUT */ (gpu_addr_17),
-	.a0 /* IN */ (progaddr[15]),
-	.a1 /* IN */ (dataddr[17]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_3
-(
-	.z /* OUT */ (gpu_addr_18),
-	.a0 /* IN */ (progaddr[16]),
-	.a1 /* IN */ (dataddr[18]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_4
-(
-	.z /* OUT */ (gpu_addr_19),
-	.a0 /* IN */ (progaddr[17]),
-	.a1 /* IN */ (dataddr[19]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_5
-(
-	.z /* OUT */ (gpu_addr_20),
-	.a0 /* IN */ (progaddr[18]),
-	.a1 /* IN */ (dataddr[20]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_6
-(
-	.z /* OUT */ (gpu_addr_21),
-	.a0 /* IN */ (progaddr[19]),
-	.a1 /* IN */ (dataddr[21]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_7
-(
-	.z /* OUT */ (gpu_addr_22),
-	.a0 /* IN */ (progaddr[20]),
-	.a1 /* IN */ (dataddr[22]),
-	.s /* IN */ (datserv)
-);
-mx2 amux_from_15_to_23_inst_8
-(
-	.z /* OUT */ (gpu_addr_23),
-	.a0 /* IN */ (progaddr[21]),
-	.a1 /* IN */ (dataddr[23]),
-	.s /* IN */ (datserv)
-);
+assign gpu_addr_15 = (datserv) ? dataddr[15] : progaddr[13];
+assign gpu_addr_16 = (datserv) ? dataddr[16] : progaddr[14];
+assign gpu_addr_17 = (datserv) ? dataddr[17] : progaddr[15];
+assign gpu_addr_18 = (datserv) ? dataddr[18] : progaddr[16];
+assign gpu_addr_19 = (datserv) ? dataddr[19] : progaddr[17];
+assign gpu_addr_20 = (datserv) ? dataddr[20] : progaddr[18];
+assign gpu_addr_21 = (datserv) ? dataddr[21] : progaddr[19];
+assign gpu_addr_22 = (datserv) ? dataddr[22] : progaddr[20];
+assign gpu_addr_23 = (datserv) ? dataddr[23] : progaddr[21];
 
 // GPU_MEM.NET (279) - gpu_addr : join
 assign gpu_addr[0] = gpu_addr_0;
@@ -1637,20 +1391,8 @@ assign gpu_addr_n_12 = ~gpu_addr_b12_obuf;
 assign gpu_addr_n_14 = ~gpu_addr_b14_obuf;
 
 // GPU_MEM.NET (303) - locala[13-14] : mx2
-mx2 locala_from_13_to_14_inst_0
-(
-	.z /* OUT */ (locala_13),
-	.a0 /* IN */ (progaddr[11]),
-	.a1 /* IN */ (dataddr[13]),
-	.s /* IN */ (datservb_3)
-);
-mx2 locala_from_13_to_14_inst_1
-(
-	.z /* OUT */ (locala_14),
-	.a0 /* IN */ (progaddr[12]),
-	.a1 /* IN */ (dataddr[14]),
-	.s /* IN */ (datservb_3)
-);
+assign locala_13 = (datservb_3) ? dataddr[13] : progaddr[11];
+assign locala_14 = (datservb_3) ? dataddr[14] : progaddr[12];
 
 // GPU_MEM.NET (305) - locala[15-19] : mxi2p
 mxi2 locala_from_15_to_19_inst_0
@@ -1690,36 +1432,12 @@ mxi2 locala_from_15_to_19_inst_4
 );
 
 // GPU_MEM.NET (307) - locala[20-21] : mx2p
-mx2 locala_from_20_to_21_inst_0
-(
-	.z /* OUT */ (locala_20),
-	.a0 /* IN */ (progaddr[18]),
-	.a1 /* IN */ (dataddr[20]),
-	.s /* IN */ (datservb_3)
-);
-mx2 locala_from_20_to_21_inst_1
-(
-	.z /* OUT */ (locala_21),
-	.a0 /* IN */ (progaddr[19]),
-	.a1 /* IN */ (dataddr[21]),
-	.s /* IN */ (datservb_3)
-);
+assign locala_20 = (datservb_3) ? dataddr[20] : progaddr[18];
+assign locala_21 = (datservb_3) ? dataddr[21] : progaddr[19];
 
 // GPU_MEM.NET (309) - locala[22-23] : mx2p
-mx2 locala_from_22_to_23_inst_0
-(
-	.z /* OUT */ (locala_22),
-	.a0 /* IN */ (progaddr[20]),
-	.a1 /* IN */ (dataddr[22]),
-	.s /* IN */ (datservb_4)
-);
-mx2 locala_from_22_to_23_inst_1
-(
-	.z /* OUT */ (locala_23),
-	.a0 /* IN */ (progaddr[21]),
-	.a1 /* IN */ (dataddr[23]),
-	.s /* IN */ (datservb_4)
-);
+assign locala_22 = (datservb_4) ? dataddr[22] : progaddr[20];
+assign locala_23 = (datservb_4) ? dataddr[23] : progaddr[21];
 
 // GPU_MEM.NET (311) - localat : or2p
 assign localat = locala_13 | locala_14;
@@ -1833,13 +1551,7 @@ assign remrd = gpu_addrb_2 & gpu_addrb_3 & gpu_addrb_4 & gpu_addr_n_5 & gpu_addr
 assign dbgrd = flagrd_obuf | statrd_obuf;
 
 // GPU_MEM.NET (415) - big_ioi : mx2
-mx2 big_ioi_inst
-(
-	.z /* OUT */ (big_ioi),
-	.a0 /* IN */ (big_iot),
-	.a1 /* IN */ (gpu_din[0]),
-	.s /* IN */ (bigwr)
-);
+assign big_ioi = (bigwr) ? gpu_din[0] : big_iot;
 
 // GPU_MEM.NET (416) - big_iot : fd4q
 fd4q big_iot_inst
@@ -1855,13 +1567,7 @@ fd4q big_iot_inst
 assign big_io = big_iot;
 
 // GPU_MEM.NET (419) - big_pixi : mx2
-mx2 big_pixi_inst
-(
-	.z /* OUT */ (big_pixi),
-	.a0 /* IN */ (big_pixt),
-	.a1 /* IN */ (gpu_din[1]),
-	.s /* IN */ (bigwr)
-);
+assign big_pixi = (bigwr) ? gpu_din[1] : big_pixt;
 
 // GPU_MEM.NET (420) - big_pixt : fd4q
 fd4q big_pixt_inst

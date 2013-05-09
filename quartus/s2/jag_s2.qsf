@@ -50,8 +50,8 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING OFF
 
@@ -492,59 +492,75 @@ set_location_assignment PIN_J22 -to FE_DQ[30]
 set_location_assignment PIN_J21 -to FE_DQ[31]
 
 ##########################################################
-#### J16 Connector 
+#### 24-bit VGA output
 ##########################################################
-set_location_assignment PIN_T2 -to PROTO2_IO[0]
-set_location_assignment PIN_T3 -to PROTO2_IO[1]
-set_location_assignment PIN_U1 -to PROTO2_IO[2]
-set_location_assignment PIN_U2 -to PROTO2_IO[3]
-set_location_assignment PIN_V1 -to PROTO2_IO[4]
-set_location_assignment PIN_V2 -to PROTO2_IO[5]
-set_location_assignment PIN_W1 -to PROTO2_IO[6]
-set_location_assignment PIN_W2 -to PROTO2_IO[7]
-set_location_assignment PIN_Y1 -to PROTO2_IO[8]
-set_location_assignment PIN_Y2 -to PROTO2_IO[9]
-set_location_assignment PIN_AA1 -to PROTO2_IO[10]
-set_location_assignment PIN_AA2 -to PROTO2_IO[11]
-set_location_assignment PIN_AB1 -to PROTO2_IO[12]
-set_location_assignment PIN_AB2 -to PROTO2_IO[13]
-set_location_assignment PIN_W3 -to PROTO2_IO[14]
-set_location_assignment PIN_W4 -to PROTO2_IO[15]
-set_location_assignment PIN_Y3 -to PROTO2_IO[16]
-set_location_assignment PIN_Y4 -to PROTO2_IO[17]
-set_location_assignment PIN_AA3 -to PROTO2_IO[18]
-set_location_assignment PIN_AA4 -to PROTO2_IO[19]
-set_location_assignment PIN_AB3 -to PROTO2_IO[20]
-set_location_assignment PIN_AB4 -to PROTO2_IO[21]
-set_location_assignment PIN_AC2 -to PROTO2_IO[22]
-set_location_assignment PIN_AC3 -to PROTO2_IO[23]
-set_location_assignment PIN_AD1 -to PROTO2_IO[24]
-set_location_assignment PIN_AD2 -to PROTO2_IO[25]
-set_location_assignment PIN_Y7 -to PROTO2_IO[26]
-set_location_assignment PIN_W9 -to PROTO2_IO[27]
-set_location_assignment PIN_W10 -to PROTO2_IO[28]
+set_location_assignment PIN_K7 -to VGA_CLK
+set_location_assignment PIN_AB2 -to VGA_BLANK_n
+set_location_assignment PIN_V2 -to VGA_HS
+set_location_assignment PIN_U2 -to VGA_VS
+set_location_assignment PIN_AB1 -to VGA_R[0]
+set_location_assignment PIN_AA2 -to VGA_R[1]
+set_location_assignment PIN_AA1 -to VGA_R[2]
+set_location_assignment PIN_Y2 -to VGA_R[3]
+set_location_assignment PIN_Y1 -to VGA_R[4]
+set_location_assignment PIN_W2 -to VGA_R[5]
+set_location_assignment PIN_W1 -to VGA_R[6]
+set_location_assignment PIN_V1 -to VGA_R[7]
+set_location_assignment PIN_W10 -to VGA_G[0]
+set_location_assignment PIN_W9 -to VGA_G[1]
+set_location_assignment PIN_Y10 -to VGA_G[2]
+set_location_assignment PIN_AD2 -to VGA_G[3]
+set_location_assignment PIN_Y7 -to VGA_G[4]
+set_location_assignment PIN_AD1 -to VGA_G[5]
+set_location_assignment PIN_AC3 -to VGA_G[6]
+set_location_assignment PIN_AC2 -to VGA_G[7]
+set_location_assignment PIN_AB4 -to VGA_B[0]
+set_location_assignment PIN_AA4 -to VGA_B[1]
+set_location_assignment PIN_AB3 -to VGA_B[2]
+set_location_assignment PIN_AA3 -to VGA_B[3]
+set_location_assignment PIN_Y4 -to VGA_B[4]
+set_location_assignment PIN_Y3 -to VGA_B[5]
+set_location_assignment PIN_W4 -to VGA_B[6]
+set_location_assignment PIN_W3 -to VGA_B[7]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_BLANK_n
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_HS
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_VS
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[0]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[1]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[2]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[3]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[4]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[5]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[6]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_R[7]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[0]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[1]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[2]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[3]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[4]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[5]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[6]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_G[7]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[0]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[1]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[2]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[3]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[4]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[5]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[6]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to VGA_B[7]
 
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[0]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[1]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[2]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[3]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[4]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[5]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[6]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[7]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[10]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[11]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[12]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[13]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[14]
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PROTO2_IO[15]
 
 set_global_assignment -name MISC_FILE "D:/FPGA/JagNetlists/quartus/s2/jag_s2.dpf"
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
-set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT NORMAL
 set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name ENABLE_ADVANCED_IO_TIMING OFF
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_global_assignment -name USE_TIMEQUEST_TIMING_ANALYZER ON
+set_global_assignment -name SDC_FILE jag_s2.sdc
 set_global_assignment -name VERILOG_FILE ../../verilog/j68.v
 set_global_assignment -name VERILOG_FILE ../../verilog/jag_s2.v
 set_global_assignment -name VERILOG_FILE ../../verilog/jaguar.v
@@ -806,4 +822,5 @@ set_global_assignment -name VERILOG_FILE ../../verilog/base/rd64x32d.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/sysclkdly.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/twoniv.v
 set_global_assignment -name VERILOG_FILE ../../verilog/base/vgalb.v
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

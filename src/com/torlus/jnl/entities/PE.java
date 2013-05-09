@@ -26,20 +26,34 @@ public class PE extends Entity {
 		}
 	}
 
+	private static final boolean wireOr = true;
+	
 	@Override
 	public String verilogInstance(Instance inst) {
 		String vlog = "";
 
 		// Output
-		vlog += "assign " + inst.wires.get(0).verilogWireName() + " =\n";
-		vlog = vlog.replaceAll("##SIG##", "out");
-		for (int i = 0; i < size; i++) {
-			vlog += "\t(" + inst.wires.get(i + 1).verilogWireName() + ") ? ";
-			vlog = vlog.replaceAll("##SIG##", "oe");
-			vlog += inst.wires.get(i + 1).verilogWireName() + " :\n";
+		if (wireOr) {
+			vlog += "assign " + inst.wires.get(0).verilogWireName() + " = ";
 			vlog = vlog.replaceAll("##SIG##", "out");
+			for (int i = 0; i < size; i++) {
+				vlog += "(" + inst.wires.get(i + 1).verilogWireName() + " & ";
+				vlog = vlog.replaceAll("##SIG##", "oe");
+				vlog += inst.wires.get(i + 1).verilogWireName() + " ) | ";
+				vlog = vlog.replaceAll("##SIG##", "out");
+			}
+			vlog += "1'b0;\n";
+		} else {
+			vlog += "assign " + inst.wires.get(0).verilogWireName() + " =\n";
+			vlog = vlog.replaceAll("##SIG##", "out");
+			for (int i = 0; i < size; i++) {
+				vlog += "\t(" + inst.wires.get(i + 1).verilogWireName() + ") ? ";
+				vlog = vlog.replaceAll("##SIG##", "oe");
+				vlog += inst.wires.get(i + 1).verilogWireName() + " :\n";
+				vlog = vlog.replaceAll("##SIG##", "out");
+			}
+			vlog += "\t1'bz;\n";
 		}
-		vlog += "\t1'bz;\n";
 
 		// Output enable
 		vlog += "assign " + inst.wires.get(0).verilogWireName() + " = ";

@@ -826,342 +826,54 @@ assign d3_14 = d3i_14;
 assign d3_15 = d3i_15;
 
 // DBUS.NET (55) - d3[16-63] : mx2
-mx2 d3_from_16_to_63_inst_0
-(
-	.z /* OUT */ (d3_16),
-	.a0 /* IN */ (wd_16),
-	.a1 /* IN */ (din_16),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_1
-(
-	.z /* OUT */ (d3_17),
-	.a0 /* IN */ (wd_17),
-	.a1 /* IN */ (din_17),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_2
-(
-	.z /* OUT */ (d3_18),
-	.a0 /* IN */ (wd_18),
-	.a1 /* IN */ (din_18),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_3
-(
-	.z /* OUT */ (d3_19),
-	.a0 /* IN */ (wd_19),
-	.a1 /* IN */ (din_19),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_4
-(
-	.z /* OUT */ (d3_20),
-	.a0 /* IN */ (wd_20),
-	.a1 /* IN */ (din_20),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_5
-(
-	.z /* OUT */ (d3_21),
-	.a0 /* IN */ (wd_21),
-	.a1 /* IN */ (din_21),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_6
-(
-	.z /* OUT */ (d3_22),
-	.a0 /* IN */ (wd_22),
-	.a1 /* IN */ (din_22),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_7
-(
-	.z /* OUT */ (d3_23),
-	.a0 /* IN */ (wd_23),
-	.a1 /* IN */ (din_23),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_8
-(
-	.z /* OUT */ (d3_24),
-	.a0 /* IN */ (wd_24),
-	.a1 /* IN */ (din_24),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_9
-(
-	.z /* OUT */ (d3_25),
-	.a0 /* IN */ (wd_25),
-	.a1 /* IN */ (din_25),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_10
-(
-	.z /* OUT */ (d3_26),
-	.a0 /* IN */ (wd_26),
-	.a1 /* IN */ (din_26),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_11
-(
-	.z /* OUT */ (d3_27),
-	.a0 /* IN */ (wd_27),
-	.a1 /* IN */ (din_27),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_12
-(
-	.z /* OUT */ (d3_28),
-	.a0 /* IN */ (wd_28),
-	.a1 /* IN */ (din_28),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_13
-(
-	.z /* OUT */ (d3_29),
-	.a0 /* IN */ (wd_29),
-	.a1 /* IN */ (din_29),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_14
-(
-	.z /* OUT */ (d3_30),
-	.a0 /* IN */ (wd_30),
-	.a1 /* IN */ (din_30),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_15
-(
-	.z /* OUT */ (d3_31),
-	.a0 /* IN */ (wd_31),
-	.a1 /* IN */ (din_31),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_16
-(
-	.z /* OUT */ (d3_32),
-	.a0 /* IN */ (wd_32),
-	.a1 /* IN */ (din_32),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_17
-(
-	.z /* OUT */ (d3_33),
-	.a0 /* IN */ (wd_33),
-	.a1 /* IN */ (din_33),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_18
-(
-	.z /* OUT */ (d3_34),
-	.a0 /* IN */ (wd_34),
-	.a1 /* IN */ (din_34),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_19
-(
-	.z /* OUT */ (d3_35),
-	.a0 /* IN */ (wd_35),
-	.a1 /* IN */ (din_35),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_20
-(
-	.z /* OUT */ (d3_36),
-	.a0 /* IN */ (wd_36),
-	.a1 /* IN */ (din_36),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_21
-(
-	.z /* OUT */ (d3_37),
-	.a0 /* IN */ (wd_37),
-	.a1 /* IN */ (din_37),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_22
-(
-	.z /* OUT */ (d3_38),
-	.a0 /* IN */ (wd_38),
-	.a1 /* IN */ (din_38),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_23
-(
-	.z /* OUT */ (d3_39),
-	.a0 /* IN */ (wd_39),
-	.a1 /* IN */ (din_39),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_24
-(
-	.z /* OUT */ (d3_40),
-	.a0 /* IN */ (wd_40),
-	.a1 /* IN */ (din_40),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_25
-(
-	.z /* OUT */ (d3_41),
-	.a0 /* IN */ (wd_41),
-	.a1 /* IN */ (din_41),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_26
-(
-	.z /* OUT */ (d3_42),
-	.a0 /* IN */ (wd_42),
-	.a1 /* IN */ (din_42),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_27
-(
-	.z /* OUT */ (d3_43),
-	.a0 /* IN */ (wd_43),
-	.a1 /* IN */ (din_43),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_28
-(
-	.z /* OUT */ (d3_44),
-	.a0 /* IN */ (wd_44),
-	.a1 /* IN */ (din_44),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_29
-(
-	.z /* OUT */ (d3_45),
-	.a0 /* IN */ (wd_45),
-	.a1 /* IN */ (din_45),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_30
-(
-	.z /* OUT */ (d3_46),
-	.a0 /* IN */ (wd_46),
-	.a1 /* IN */ (din_46),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_31
-(
-	.z /* OUT */ (d3_47),
-	.a0 /* IN */ (wd_47),
-	.a1 /* IN */ (din_47),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_32
-(
-	.z /* OUT */ (d3_48),
-	.a0 /* IN */ (wd_48),
-	.a1 /* IN */ (din_48),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_33
-(
-	.z /* OUT */ (d3_49),
-	.a0 /* IN */ (wd_49),
-	.a1 /* IN */ (din_49),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_34
-(
-	.z /* OUT */ (d3_50),
-	.a0 /* IN */ (wd_50),
-	.a1 /* IN */ (din_50),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_35
-(
-	.z /* OUT */ (d3_51),
-	.a0 /* IN */ (wd_51),
-	.a1 /* IN */ (din_51),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_36
-(
-	.z /* OUT */ (d3_52),
-	.a0 /* IN */ (wd_52),
-	.a1 /* IN */ (din_52),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_37
-(
-	.z /* OUT */ (d3_53),
-	.a0 /* IN */ (wd_53),
-	.a1 /* IN */ (din_53),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_38
-(
-	.z /* OUT */ (d3_54),
-	.a0 /* IN */ (wd_54),
-	.a1 /* IN */ (din_54),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_39
-(
-	.z /* OUT */ (d3_55),
-	.a0 /* IN */ (wd_55),
-	.a1 /* IN */ (din_55),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_40
-(
-	.z /* OUT */ (d3_56),
-	.a0 /* IN */ (wd_56),
-	.a1 /* IN */ (din_56),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_41
-(
-	.z /* OUT */ (d3_57),
-	.a0 /* IN */ (wd_57),
-	.a1 /* IN */ (din_57),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_42
-(
-	.z /* OUT */ (d3_58),
-	.a0 /* IN */ (wd_58),
-	.a1 /* IN */ (din_58),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_43
-(
-	.z /* OUT */ (d3_59),
-	.a0 /* IN */ (wd_59),
-	.a1 /* IN */ (din_59),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_44
-(
-	.z /* OUT */ (d3_60),
-	.a0 /* IN */ (wd_60),
-	.a1 /* IN */ (din_60),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_45
-(
-	.z /* OUT */ (d3_61),
-	.a0 /* IN */ (wd_61),
-	.a1 /* IN */ (din_61),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_46
-(
-	.z /* OUT */ (d3_62),
-	.a0 /* IN */ (wd_62),
-	.a1 /* IN */ (din_62),
-	.s /* IN */ (xdsrc)
-);
-mx2 d3_from_16_to_63_inst_47
-(
-	.z /* OUT */ (d3_63),
-	.a0 /* IN */ (wd_63),
-	.a1 /* IN */ (din_63),
-	.s /* IN */ (xdsrc)
-);
+assign d3_16 = (xdsrc) ? din_16 : wd_16;
+assign d3_17 = (xdsrc) ? din_17 : wd_17;
+assign d3_18 = (xdsrc) ? din_18 : wd_18;
+assign d3_19 = (xdsrc) ? din_19 : wd_19;
+assign d3_20 = (xdsrc) ? din_20 : wd_20;
+assign d3_21 = (xdsrc) ? din_21 : wd_21;
+assign d3_22 = (xdsrc) ? din_22 : wd_22;
+assign d3_23 = (xdsrc) ? din_23 : wd_23;
+assign d3_24 = (xdsrc) ? din_24 : wd_24;
+assign d3_25 = (xdsrc) ? din_25 : wd_25;
+assign d3_26 = (xdsrc) ? din_26 : wd_26;
+assign d3_27 = (xdsrc) ? din_27 : wd_27;
+assign d3_28 = (xdsrc) ? din_28 : wd_28;
+assign d3_29 = (xdsrc) ? din_29 : wd_29;
+assign d3_30 = (xdsrc) ? din_30 : wd_30;
+assign d3_31 = (xdsrc) ? din_31 : wd_31;
+assign d3_32 = (xdsrc) ? din_32 : wd_32;
+assign d3_33 = (xdsrc) ? din_33 : wd_33;
+assign d3_34 = (xdsrc) ? din_34 : wd_34;
+assign d3_35 = (xdsrc) ? din_35 : wd_35;
+assign d3_36 = (xdsrc) ? din_36 : wd_36;
+assign d3_37 = (xdsrc) ? din_37 : wd_37;
+assign d3_38 = (xdsrc) ? din_38 : wd_38;
+assign d3_39 = (xdsrc) ? din_39 : wd_39;
+assign d3_40 = (xdsrc) ? din_40 : wd_40;
+assign d3_41 = (xdsrc) ? din_41 : wd_41;
+assign d3_42 = (xdsrc) ? din_42 : wd_42;
+assign d3_43 = (xdsrc) ? din_43 : wd_43;
+assign d3_44 = (xdsrc) ? din_44 : wd_44;
+assign d3_45 = (xdsrc) ? din_45 : wd_45;
+assign d3_46 = (xdsrc) ? din_46 : wd_46;
+assign d3_47 = (xdsrc) ? din_47 : wd_47;
+assign d3_48 = (xdsrc) ? din_48 : wd_48;
+assign d3_49 = (xdsrc) ? din_49 : wd_49;
+assign d3_50 = (xdsrc) ? din_50 : wd_50;
+assign d3_51 = (xdsrc) ? din_51 : wd_51;
+assign d3_52 = (xdsrc) ? din_52 : wd_52;
+assign d3_53 = (xdsrc) ? din_53 : wd_53;
+assign d3_54 = (xdsrc) ? din_54 : wd_54;
+assign d3_55 = (xdsrc) ? din_55 : wd_55;
+assign d3_56 = (xdsrc) ? din_56 : wd_56;
+assign d3_57 = (xdsrc) ? din_57 : wd_57;
+assign d3_58 = (xdsrc) ? din_58 : wd_58;
+assign d3_59 = (xdsrc) ? din_59 : wd_59;
+assign d3_60 = (xdsrc) ? din_60 : wd_60;
+assign d3_61 = (xdsrc) ? din_61 : wd_61;
+assign d3_62 = (xdsrc) ? din_62 : wd_62;
+assign d3_63 = (xdsrc) ? din_63 : wd_63;
 
 // DBUS.NET (59) - d4 : up
 up d4_inst
@@ -1819,7 +1531,7 @@ stlatch d5_from_56_to_63_inst_7
 	.sys_clk(sys_clk) // Generated
 );
 
-// DBUS.NET (74) - dout : down
+// DBUS.NET (92) - dout : down
 down dout_inst
 (
 	.din_0 /* IN */ (d5_0),
@@ -1923,7 +1635,7 @@ down dout_inst
 	.dout_31 /* OUT */ (dout_31_obuf)
 );
 
-// DBUS.NET (78) - d[0-31] : nivm
+// DBUS.NET (96) - d[0-31] : nivm
 assign d_0 = dout_0;
 assign d_1 = dout_1;
 assign d_2 = dout_2;
@@ -1957,7 +1669,7 @@ assign d_29 = dout_29_obuf;
 assign d_30 = dout_30_obuf;
 assign d_31 = dout_31_obuf;
 
-// DBUS.NET (79) - d[32-63] : nivm
+// DBUS.NET (97) - d[32-63] : nivm
 assign d_32 = d5_32_obuf;
 assign d_33 = d5_33_obuf;
 assign d_34 = d5_34_obuf;
@@ -1991,75 +1703,27 @@ assign d_61 = d5_61_obuf;
 assign d_62 = d5_62_obuf;
 assign d_63 = d5_63_obuf;
 
-// DBUS.NET (83) - vd[0-5] : mx2
-mx2 vd_from_0_to_5_inst_0
-(
-	.z /* OUT */ (vd_0),
-	.a0 /* IN */ (dout_0),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
-mx2 vd_from_0_to_5_inst_1
-(
-	.z /* OUT */ (vd_1),
-	.a0 /* IN */ (dout_1),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
-mx2 vd_from_0_to_5_inst_2
-(
-	.z /* OUT */ (vd_2),
-	.a0 /* IN */ (dout_2),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
-mx2 vd_from_0_to_5_inst_3
-(
-	.z /* OUT */ (vd_3),
-	.a0 /* IN */ (dout_3),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
-mx2 vd_from_0_to_5_inst_4
-(
-	.z /* OUT */ (vd_4),
-	.a0 /* IN */ (dout_4),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
-mx2 vd_from_0_to_5_inst_5
-(
-	.z /* OUT */ (vd_5),
-	.a0 /* IN */ (dout_5),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
+// DBUS.NET (101) - vd[0-5] : mx2
+assign vd_0 = (ourack) ? gnd : dout_0;
+assign vd_1 = (ourack) ? gnd : dout_1;
+assign vd_2 = (ourack) ? gnd : dout_2;
+assign vd_3 = (ourack) ? gnd : dout_3;
+assign vd_4 = (ourack) ? gnd : dout_4;
+assign vd_5 = (ourack) ? gnd : dout_5;
 
-// DBUS.NET (84) - vd[6] : mx2
-mx2 vd_index_6_inst
-(
-	.z /* OUT */ (vd_6),
-	.a0 /* IN */ (dout_6),
-	.a1 /* IN */ (vcc),
-	.s /* IN */ (ourack)
-);
+// DBUS.NET (102) - vd[6] : mx2
+assign vd_6 = (ourack) ? vcc : dout_6;
 
-// DBUS.NET (85) - vd[7] : mx2
-mx2 vd_index_7_inst
-(
-	.z /* OUT */ (vd_7),
-	.a0 /* IN */ (dout_7),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (ourack)
-);
+// DBUS.NET (103) - vd[7] : mx2
+assign vd_7 = (ourack) ? gnd : dout_7;
 
-// DBUS.NET (87) - gnd : tie0
+// DBUS.NET (105) - gnd : tie0
 assign gnd = 1'b0;
 
-// DBUS.NET (88) - tie : tie1
+// DBUS.NET (106) - tie : tie1
 assign vcc = 1'b1;
 
-// DBUS.NET (92) - dob[0-7] : nivu2
+// DBUS.NET (110) - dob[0-7] : nivu2
 assign dob_0 = vd_0;
 assign dob_1 = vd_1;
 assign dob_2 = vd_2;
@@ -2069,11 +1733,11 @@ assign dob_5 = vd_5;
 assign dob_6 = vd_6;
 assign dob_7 = vd_7;
 
-// DBUS.NET (93) - dob[8-9] : nivu2
+// DBUS.NET (111) - dob[8-9] : nivu2
 assign dob_8 = dout_8;
 assign dob_9 = dout_9;
 
-// DBUS.NET (94) - dob[10-15] : nivu
+// DBUS.NET (112) - dob[10-15] : nivu
 assign dob_10 = dout_10;
 assign dob_11 = dout_11;
 assign dob_12 = dout_12;
@@ -2081,7 +1745,7 @@ assign dob_13 = dout_13;
 assign dob_14 = dout_14;
 assign dob_15 = dout_15;
 
-// DBUS.NET (95) - dp[0-7] : niv
+// DBUS.NET (113) - dp[0-7] : niv
 assign dp_0 = vd_0;
 assign dp_1 = vd_1;
 assign dp_2 = vd_2;
@@ -2091,7 +1755,7 @@ assign dp_5 = vd_5;
 assign dp_6 = vd_6;
 assign dp_7 = vd_7;
 
-// DBUS.NET (96) - dp[8-15] : niv
+// DBUS.NET (114) - dp[8-15] : niv
 assign dp_8 = dout_8;
 assign dp_9 = dout_9;
 assign dp_10 = dout_10;

@@ -48,9 +48,23 @@ wire	[31:0]	r_qb;
 
 wire wren_a;
 wire wren_b;
+//reg wren_a = 1'b0;
+//reg wren_b = 1'b0;
 
-assign wren_a = ~nwea;
-assign wren_b = ~nweb;
+assign wren_a = ~nwea & clka;
+assign wren_b = ~nweb & clkb;
+
+always @(posedge sys_clk)
+begin
+	//wren_a <= ~nwea & clka;
+	//wren_b <= ~nweb & clkb;
+	if (~nwea & clka) begin
+		$display("GPU REG WR-A $%x #%x", aa, da);
+	end
+	if (~nweb & clkb) begin
+		$display("GPU REG WR-B $%x #%x", ab, db);
+	end
+end
 
 	altsyncram	altsyncram_component (
 				.wren_a (wren_a),
@@ -84,6 +98,7 @@ assign wren_b = ~nweb;
 		altsyncram_component.clock_enable_output_b = "BYPASS",
 		altsyncram_component.indata_reg_b = "CLOCK0",
 		altsyncram_component.intended_device_family = "Cyclone III",
+		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",
 		altsyncram_component.numwords_a = 64,
 		altsyncram_component.numwords_b = 64,
@@ -105,7 +120,7 @@ assign wren_b = ~nweb;
 
 `endif
 
-	assign qa = r_qa;
-	assign qb = r_qb;
+assign qa = r_qa;
+assign qb = r_qb;
 
 endmodule

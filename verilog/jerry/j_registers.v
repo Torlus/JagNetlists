@@ -1440,230 +1440,38 @@ fd1q mtx_doverp_inst
 );
 
 // REGIS-WA.NET (133) - dstdpt1 : mx2p
-mx2 dstdpt1_inst_0
-(
-	.z /* OUT */ (dstdpt1[0]),
-	.a0 /* IN */ (dstdpt0[0]),
-	.a1 /* IN */ (mem_data[0]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_1
-(
-	.z /* OUT */ (dstdpt1[1]),
-	.a0 /* IN */ (dstdpt0[1]),
-	.a1 /* IN */ (mem_data[1]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_2
-(
-	.z /* OUT */ (dstdpt1[2]),
-	.a0 /* IN */ (dstdpt0[2]),
-	.a1 /* IN */ (mem_data[2]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_3
-(
-	.z /* OUT */ (dstdpt1[3]),
-	.a0 /* IN */ (dstdpt0[3]),
-	.a1 /* IN */ (mem_data[3]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_4
-(
-	.z /* OUT */ (dstdpt1[4]),
-	.a0 /* IN */ (dstdpt0[4]),
-	.a1 /* IN */ (mem_data[4]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_5
-(
-	.z /* OUT */ (dstdpt1[5]),
-	.a0 /* IN */ (dstdpt0[5]),
-	.a1 /* IN */ (mem_data[5]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_6
-(
-	.z /* OUT */ (dstdpt1[6]),
-	.a0 /* IN */ (dstdpt0[6]),
-	.a1 /* IN */ (mem_data[6]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_7
-(
-	.z /* OUT */ (dstdpt1[7]),
-	.a0 /* IN */ (dstdpt0[7]),
-	.a1 /* IN */ (mem_data[7]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_8
-(
-	.z /* OUT */ (dstdpt1[8]),
-	.a0 /* IN */ (dstdpt0[8]),
-	.a1 /* IN */ (mem_data[8]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_9
-(
-	.z /* OUT */ (dstdpt1[9]),
-	.a0 /* IN */ (dstdpt0[9]),
-	.a1 /* IN */ (mem_data[9]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_10
-(
-	.z /* OUT */ (dstdpt1[10]),
-	.a0 /* IN */ (dstdpt0[10]),
-	.a1 /* IN */ (mem_data[10]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_11
-(
-	.z /* OUT */ (dstdpt1[11]),
-	.a0 /* IN */ (dstdpt0[11]),
-	.a1 /* IN */ (mem_data[11]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_12
-(
-	.z /* OUT */ (dstdpt1[12]),
-	.a0 /* IN */ (dstdpt0[12]),
-	.a1 /* IN */ (mem_data[12]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_13
-(
-	.z /* OUT */ (dstdpt1[13]),
-	.a0 /* IN */ (dstdpt0[13]),
-	.a1 /* IN */ (mem_data[13]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_14
-(
-	.z /* OUT */ (dstdpt1[14]),
-	.a0 /* IN */ (dstdpt0[14]),
-	.a1 /* IN */ (mem_data[14]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_15
-(
-	.z /* OUT */ (dstdpt1[15]),
-	.a0 /* IN */ (dstdpt0[15]),
-	.a1 /* IN */ (mem_data[15]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_16
-(
-	.z /* OUT */ (dstdpt1[16]),
-	.a0 /* IN */ (dstdpt0[16]),
-	.a1 /* IN */ (mem_data[16]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_17
-(
-	.z /* OUT */ (dstdpt1[17]),
-	.a0 /* IN */ (dstdpt0[17]),
-	.a1 /* IN */ (mem_data[17]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_18
-(
-	.z /* OUT */ (dstdpt1[18]),
-	.a0 /* IN */ (dstdpt0[18]),
-	.a1 /* IN */ (mem_data[18]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_19
-(
-	.z /* OUT */ (dstdpt1[19]),
-	.a0 /* IN */ (dstdpt0[19]),
-	.a1 /* IN */ (mem_data[19]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_20
-(
-	.z /* OUT */ (dstdpt1[20]),
-	.a0 /* IN */ (dstdpt0[20]),
-	.a1 /* IN */ (mem_data[20]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_21
-(
-	.z /* OUT */ (dstdpt1[21]),
-	.a0 /* IN */ (dstdpt0[21]),
-	.a1 /* IN */ (mem_data[21]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_22
-(
-	.z /* OUT */ (dstdpt1[22]),
-	.a0 /* IN */ (dstdpt0[22]),
-	.a1 /* IN */ (mem_data[22]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_23
-(
-	.z /* OUT */ (dstdpt1[23]),
-	.a0 /* IN */ (dstdpt0[23]),
-	.a1 /* IN */ (mem_data[23]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_24
-(
-	.z /* OUT */ (dstdpt1[24]),
-	.a0 /* IN */ (dstdpt0[24]),
-	.a1 /* IN */ (mem_data[24]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_25
-(
-	.z /* OUT */ (dstdpt1[25]),
-	.a0 /* IN */ (dstdpt0[25]),
-	.a1 /* IN */ (mem_data[25]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_26
-(
-	.z /* OUT */ (dstdpt1[26]),
-	.a0 /* IN */ (dstdpt0[26]),
-	.a1 /* IN */ (mem_data[26]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_27
-(
-	.z /* OUT */ (dstdpt1[27]),
-	.a0 /* IN */ (dstdpt0[27]),
-	.a1 /* IN */ (mem_data[27]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_28
-(
-	.z /* OUT */ (dstdpt1[28]),
-	.a0 /* IN */ (dstdpt0[28]),
-	.a1 /* IN */ (mem_data[28]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_29
-(
-	.z /* OUT */ (dstdpt1[29]),
-	.a0 /* IN */ (dstdpt0[29]),
-	.a1 /* IN */ (mem_data[29]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_30
-(
-	.z /* OUT */ (dstdpt1[30]),
-	.a0 /* IN */ (dstdpt0[30]),
-	.a1 /* IN */ (mem_data[30]),
-	.s /* IN */ (mtx_doverp)
-);
-mx2 dstdpt1_inst_31
-(
-	.z /* OUT */ (dstdpt1[31]),
-	.a0 /* IN */ (dstdpt0[31]),
-	.a1 /* IN */ (mem_data[31]),
-	.s /* IN */ (mtx_doverp)
-);
+assign dstdpt1[0] = (mtx_doverp) ? mem_data[0] : dstdpt0[0];
+assign dstdpt1[1] = (mtx_doverp) ? mem_data[1] : dstdpt0[1];
+assign dstdpt1[2] = (mtx_doverp) ? mem_data[2] : dstdpt0[2];
+assign dstdpt1[3] = (mtx_doverp) ? mem_data[3] : dstdpt0[3];
+assign dstdpt1[4] = (mtx_doverp) ? mem_data[4] : dstdpt0[4];
+assign dstdpt1[5] = (mtx_doverp) ? mem_data[5] : dstdpt0[5];
+assign dstdpt1[6] = (mtx_doverp) ? mem_data[6] : dstdpt0[6];
+assign dstdpt1[7] = (mtx_doverp) ? mem_data[7] : dstdpt0[7];
+assign dstdpt1[8] = (mtx_doverp) ? mem_data[8] : dstdpt0[8];
+assign dstdpt1[9] = (mtx_doverp) ? mem_data[9] : dstdpt0[9];
+assign dstdpt1[10] = (mtx_doverp) ? mem_data[10] : dstdpt0[10];
+assign dstdpt1[11] = (mtx_doverp) ? mem_data[11] : dstdpt0[11];
+assign dstdpt1[12] = (mtx_doverp) ? mem_data[12] : dstdpt0[12];
+assign dstdpt1[13] = (mtx_doverp) ? mem_data[13] : dstdpt0[13];
+assign dstdpt1[14] = (mtx_doverp) ? mem_data[14] : dstdpt0[14];
+assign dstdpt1[15] = (mtx_doverp) ? mem_data[15] : dstdpt0[15];
+assign dstdpt1[16] = (mtx_doverp) ? mem_data[16] : dstdpt0[16];
+assign dstdpt1[17] = (mtx_doverp) ? mem_data[17] : dstdpt0[17];
+assign dstdpt1[18] = (mtx_doverp) ? mem_data[18] : dstdpt0[18];
+assign dstdpt1[19] = (mtx_doverp) ? mem_data[19] : dstdpt0[19];
+assign dstdpt1[20] = (mtx_doverp) ? mem_data[20] : dstdpt0[20];
+assign dstdpt1[21] = (mtx_doverp) ? mem_data[21] : dstdpt0[21];
+assign dstdpt1[22] = (mtx_doverp) ? mem_data[22] : dstdpt0[22];
+assign dstdpt1[23] = (mtx_doverp) ? mem_data[23] : dstdpt0[23];
+assign dstdpt1[24] = (mtx_doverp) ? mem_data[24] : dstdpt0[24];
+assign dstdpt1[25] = (mtx_doverp) ? mem_data[25] : dstdpt0[25];
+assign dstdpt1[26] = (mtx_doverp) ? mem_data[26] : dstdpt0[26];
+assign dstdpt1[27] = (mtx_doverp) ? mem_data[27] : dstdpt0[27];
+assign dstdpt1[28] = (mtx_doverp) ? mem_data[28] : dstdpt0[28];
+assign dstdpt1[29] = (mtx_doverp) ? mem_data[29] : dstdpt0[29];
+assign dstdpt1[30] = (mtx_doverp) ? mem_data[30] : dstdpt0[30];
+assign dstdpt1[31] = (mtx_doverp) ? mem_data[31] : dstdpt0[31];
 
 // REGIS-WA.NET (134) - dstdp : nivh
 assign dstdp[0] = dstdpt1[0];

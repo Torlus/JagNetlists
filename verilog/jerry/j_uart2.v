@@ -700,176 +700,112 @@ fd1 tbeqd_inst
 // UART2.NET (133) - tbeqdu : dummy
 
 // --- Compiler-generated PE for BUS dr[0]
-assign dr_0_out =
-	(ts_pe_135_a0_oe) ? ts_pe_135_a0_out :
-	(ts_pe_135_a1_oe) ? ts_pe_135_a1_out :
-	(ts_pe_135_a2_oe) ? ts_pe_135_a2_out :
-	1'bz;
+assign dr_0_out = (ts_pe_135_a0_oe & ts_pe_135_a0_out ) | (ts_pe_135_a1_oe & ts_pe_135_a1_out ) | (ts_pe_135_a2_oe & ts_pe_135_a2_out ) | 1'b0;
 assign dr_0_oe = ts_pe_135_a0_oe | ts_pe_135_a1_oe | ts_pe_135_a2_oe;
 assign ts_pe_135_a0_in = dr_0_in;
 assign ts_pe_135_a1_in = dr_0_in;
 assign ts_pe_135_a2_in = dr_0_in;
 
 // --- Compiler-generated PE for BUS dr[1]
-assign dr_1_out =
-	(ts_pe_136_a0_oe) ? ts_pe_136_a0_out :
-	(ts_pe_136_a1_oe) ? ts_pe_136_a1_out :
-	(ts_pe_136_a2_oe) ? ts_pe_136_a2_out :
-	1'bz;
+assign dr_1_out = (ts_pe_136_a0_oe & ts_pe_136_a0_out ) | (ts_pe_136_a1_oe & ts_pe_136_a1_out ) | (ts_pe_136_a2_oe & ts_pe_136_a2_out ) | 1'b0;
 assign dr_1_oe = ts_pe_136_a0_oe | ts_pe_136_a1_oe | ts_pe_136_a2_oe;
 assign ts_pe_136_a0_in = dr_1_in;
 assign ts_pe_136_a1_in = dr_1_in;
 assign ts_pe_136_a2_in = dr_1_in;
 
 // --- Compiler-generated PE for BUS dr[2]
-assign dr_2_out =
-	(ts_pe_137_a0_oe) ? ts_pe_137_a0_out :
-	(ts_pe_137_a1_oe) ? ts_pe_137_a1_out :
-	(ts_pe_137_a2_oe) ? ts_pe_137_a2_out :
-	1'bz;
+assign dr_2_out = (ts_pe_137_a0_oe & ts_pe_137_a0_out ) | (ts_pe_137_a1_oe & ts_pe_137_a1_out ) | (ts_pe_137_a2_oe & ts_pe_137_a2_out ) | 1'b0;
 assign dr_2_oe = ts_pe_137_a0_oe | ts_pe_137_a1_oe | ts_pe_137_a2_oe;
 assign ts_pe_137_a0_in = dr_2_in;
 assign ts_pe_137_a1_in = dr_2_in;
 assign ts_pe_137_a2_in = dr_2_in;
 
 // --- Compiler-generated PE for BUS dr[3]
-assign dr_3_out =
-	(ts_pe_138_a0_oe) ? ts_pe_138_a0_out :
-	(ts_pe_138_a1_oe) ? ts_pe_138_a1_out :
-	(ts_pe_138_a2_oe) ? ts_pe_138_a2_out :
-	1'bz;
+assign dr_3_out = (ts_pe_138_a0_oe & ts_pe_138_a0_out ) | (ts_pe_138_a1_oe & ts_pe_138_a1_out ) | (ts_pe_138_a2_oe & ts_pe_138_a2_out ) | 1'b0;
 assign dr_3_oe = ts_pe_138_a0_oe | ts_pe_138_a1_oe | ts_pe_138_a2_oe;
 assign ts_pe_138_a0_in = dr_3_in;
 assign ts_pe_138_a1_in = dr_3_in;
 assign ts_pe_138_a2_in = dr_3_in;
 
 // --- Compiler-generated PE for BUS dr[4]
-assign dr_4_out =
-	(ts_pe_139_a0_oe) ? ts_pe_139_a0_out :
-	(ts_pe_139_a1_oe) ? ts_pe_139_a1_out :
-	(ts_pe_139_a2_oe) ? ts_pe_139_a2_out :
-	1'bz;
+assign dr_4_out = (ts_pe_139_a0_oe & ts_pe_139_a0_out ) | (ts_pe_139_a1_oe & ts_pe_139_a1_out ) | (ts_pe_139_a2_oe & ts_pe_139_a2_out ) | 1'b0;
 assign dr_4_oe = ts_pe_139_a0_oe | ts_pe_139_a1_oe | ts_pe_139_a2_oe;
 assign ts_pe_139_a0_in = dr_4_in;
 assign ts_pe_139_a1_in = dr_4_in;
 assign ts_pe_139_a2_in = dr_4_in;
 
 // --- Compiler-generated PE for BUS dr[5]
-assign dr_5_out =
-	(ts_pe_140_a0_oe) ? ts_pe_140_a0_out :
-	(ts_pe_140_a1_oe) ? ts_pe_140_a1_out :
-	(ts_pe_140_a2_oe) ? ts_pe_140_a2_out :
-	1'bz;
+assign dr_5_out = (ts_pe_140_a0_oe & ts_pe_140_a0_out ) | (ts_pe_140_a1_oe & ts_pe_140_a1_out ) | (ts_pe_140_a2_oe & ts_pe_140_a2_out ) | 1'b0;
 assign dr_5_oe = ts_pe_140_a0_oe | ts_pe_140_a1_oe | ts_pe_140_a2_oe;
 assign ts_pe_140_a0_in = dr_5_in;
 assign ts_pe_140_a1_in = dr_5_in;
 assign ts_pe_140_a2_in = dr_5_in;
 
 // --- Compiler-generated PE for BUS dr[6]
-assign dr_6_out =
-	(ts_pe_141_a0_oe) ? ts_pe_141_a0_out :
-	(ts_pe_141_a1_oe) ? ts_pe_141_a1_out :
-	(ts_pe_141_a2_oe) ? ts_pe_141_a2_out :
-	1'bz;
+assign dr_6_out = (ts_pe_141_a0_oe & ts_pe_141_a0_out ) | (ts_pe_141_a1_oe & ts_pe_141_a1_out ) | (ts_pe_141_a2_oe & ts_pe_141_a2_out ) | 1'b0;
 assign dr_6_oe = ts_pe_141_a0_oe | ts_pe_141_a1_oe | ts_pe_141_a2_oe;
 assign ts_pe_141_a0_in = dr_6_in;
 assign ts_pe_141_a1_in = dr_6_in;
 assign ts_pe_141_a2_in = dr_6_in;
 
 // --- Compiler-generated PE for BUS dr[7]
-assign dr_7_out =
-	(ts_pe_142_a0_oe) ? ts_pe_142_a0_out :
-	(ts_pe_142_a1_oe) ? ts_pe_142_a1_out :
-	(ts_pe_142_a2_oe) ? ts_pe_142_a2_out :
-	1'bz;
+assign dr_7_out = (ts_pe_142_a0_oe & ts_pe_142_a0_out ) | (ts_pe_142_a1_oe & ts_pe_142_a1_out ) | (ts_pe_142_a2_oe & ts_pe_142_a2_out ) | 1'b0;
 assign dr_7_oe = ts_pe_142_a0_oe | ts_pe_142_a1_oe | ts_pe_142_a2_oe;
 assign ts_pe_142_a0_in = dr_7_in;
 assign ts_pe_142_a1_in = dr_7_in;
 assign ts_pe_142_a2_in = dr_7_in;
 
 // --- Compiler-generated PE for BUS dr[8]
-assign dr_8_out =
-	(ts_pe_143_a0_oe) ? ts_pe_143_a0_out :
-	(ts_pe_143_a1_oe) ? ts_pe_143_a1_out :
-	(ts_pe_143_a2_oe) ? ts_pe_143_a2_out :
-	1'bz;
+assign dr_8_out = (ts_pe_143_a0_oe & ts_pe_143_a0_out ) | (ts_pe_143_a1_oe & ts_pe_143_a1_out ) | (ts_pe_143_a2_oe & ts_pe_143_a2_out ) | 1'b0;
 assign dr_8_oe = ts_pe_143_a0_oe | ts_pe_143_a1_oe | ts_pe_143_a2_oe;
 assign ts_pe_143_a0_in = dr_8_in;
 assign ts_pe_143_a1_in = dr_8_in;
 assign ts_pe_143_a2_in = dr_8_in;
 
 // --- Compiler-generated PE for BUS dr[9]
-assign dr_9_out =
-	(ts_pe_144_a0_oe) ? ts_pe_144_a0_out :
-	(ts_pe_144_a1_oe) ? ts_pe_144_a1_out :
-	(ts_pe_144_a2_oe) ? ts_pe_144_a2_out :
-	1'bz;
+assign dr_9_out = (ts_pe_144_a0_oe & ts_pe_144_a0_out ) | (ts_pe_144_a1_oe & ts_pe_144_a1_out ) | (ts_pe_144_a2_oe & ts_pe_144_a2_out ) | 1'b0;
 assign dr_9_oe = ts_pe_144_a0_oe | ts_pe_144_a1_oe | ts_pe_144_a2_oe;
 assign ts_pe_144_a0_in = dr_9_in;
 assign ts_pe_144_a1_in = dr_9_in;
 assign ts_pe_144_a2_in = dr_9_in;
 
 // --- Compiler-generated PE for BUS dr[10]
-assign dr_10_out =
-	(ts_pe_145_a0_oe) ? ts_pe_145_a0_out :
-	(ts_pe_145_a1_oe) ? ts_pe_145_a1_out :
-	(ts_pe_145_a2_oe) ? ts_pe_145_a2_out :
-	1'bz;
+assign dr_10_out = (ts_pe_145_a0_oe & ts_pe_145_a0_out ) | (ts_pe_145_a1_oe & ts_pe_145_a1_out ) | (ts_pe_145_a2_oe & ts_pe_145_a2_out ) | 1'b0;
 assign dr_10_oe = ts_pe_145_a0_oe | ts_pe_145_a1_oe | ts_pe_145_a2_oe;
 assign ts_pe_145_a0_in = dr_10_in;
 assign ts_pe_145_a1_in = dr_10_in;
 assign ts_pe_145_a2_in = dr_10_in;
 
 // --- Compiler-generated PE for BUS dr[11]
-assign dr_11_out =
-	(ts_pe_146_a0_oe) ? ts_pe_146_a0_out :
-	(ts_pe_146_a1_oe) ? ts_pe_146_a1_out :
-	(ts_pe_146_a2_oe) ? ts_pe_146_a2_out :
-	1'bz;
+assign dr_11_out = (ts_pe_146_a0_oe & ts_pe_146_a0_out ) | (ts_pe_146_a1_oe & ts_pe_146_a1_out ) | (ts_pe_146_a2_oe & ts_pe_146_a2_out ) | 1'b0;
 assign dr_11_oe = ts_pe_146_a0_oe | ts_pe_146_a1_oe | ts_pe_146_a2_oe;
 assign ts_pe_146_a0_in = dr_11_in;
 assign ts_pe_146_a1_in = dr_11_in;
 assign ts_pe_146_a2_in = dr_11_in;
 
 // --- Compiler-generated PE for BUS dr[12]
-assign dr_12_out =
-	(ts_pe_147_a0_oe) ? ts_pe_147_a0_out :
-	(ts_pe_147_a1_oe) ? ts_pe_147_a1_out :
-	(ts_pe_147_a2_oe) ? ts_pe_147_a2_out :
-	1'bz;
+assign dr_12_out = (ts_pe_147_a0_oe & ts_pe_147_a0_out ) | (ts_pe_147_a1_oe & ts_pe_147_a1_out ) | (ts_pe_147_a2_oe & ts_pe_147_a2_out ) | 1'b0;
 assign dr_12_oe = ts_pe_147_a0_oe | ts_pe_147_a1_oe | ts_pe_147_a2_oe;
 assign ts_pe_147_a0_in = dr_12_in;
 assign ts_pe_147_a1_in = dr_12_in;
 assign ts_pe_147_a2_in = dr_12_in;
 
 // --- Compiler-generated PE for BUS dr[13]
-assign dr_13_out =
-	(ts_pe_148_a0_oe) ? ts_pe_148_a0_out :
-	(ts_pe_148_a1_oe) ? ts_pe_148_a1_out :
-	(ts_pe_148_a2_oe) ? ts_pe_148_a2_out :
-	1'bz;
+assign dr_13_out = (ts_pe_148_a0_oe & ts_pe_148_a0_out ) | (ts_pe_148_a1_oe & ts_pe_148_a1_out ) | (ts_pe_148_a2_oe & ts_pe_148_a2_out ) | 1'b0;
 assign dr_13_oe = ts_pe_148_a0_oe | ts_pe_148_a1_oe | ts_pe_148_a2_oe;
 assign ts_pe_148_a0_in = dr_13_in;
 assign ts_pe_148_a1_in = dr_13_in;
 assign ts_pe_148_a2_in = dr_13_in;
 
 // --- Compiler-generated PE for BUS dr[14]
-assign dr_14_out =
-	(ts_pe_149_a0_oe) ? ts_pe_149_a0_out :
-	(ts_pe_149_a1_oe) ? ts_pe_149_a1_out :
-	(ts_pe_149_a2_oe) ? ts_pe_149_a2_out :
-	1'bz;
+assign dr_14_out = (ts_pe_149_a0_oe & ts_pe_149_a0_out ) | (ts_pe_149_a1_oe & ts_pe_149_a1_out ) | (ts_pe_149_a2_oe & ts_pe_149_a2_out ) | 1'b0;
 assign dr_14_oe = ts_pe_149_a0_oe | ts_pe_149_a1_oe | ts_pe_149_a2_oe;
 assign ts_pe_149_a0_in = dr_14_in;
 assign ts_pe_149_a1_in = dr_14_in;
 assign ts_pe_149_a2_in = dr_14_in;
 
 // --- Compiler-generated PE for BUS dr[15]
-assign dr_15_out =
-	(ts_pe_150_a0_oe) ? ts_pe_150_a0_out :
-	(ts_pe_150_a1_oe) ? ts_pe_150_a1_out :
-	(ts_pe_150_a2_oe) ? ts_pe_150_a2_out :
-	1'bz;
+assign dr_15_out = (ts_pe_150_a0_oe & ts_pe_150_a0_out ) | (ts_pe_150_a1_oe & ts_pe_150_a1_out ) | (ts_pe_150_a2_oe & ts_pe_150_a2_out ) | 1'b0;
 assign dr_15_oe = ts_pe_150_a0_oe | ts_pe_150_a1_oe | ts_pe_150_a2_oe;
 assign ts_pe_150_a0_in = dr_15_in;
 assign ts_pe_150_a1_in = dr_15_in;

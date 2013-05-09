@@ -47,31 +47,13 @@ ha1 add1_inst
 assign sum_2 = count_2_obuf ^ carry_1;
 
 // INTER-UA.NET (163) - cnti0 : mx2
-mx2 cnti0_inst
-(
-	.z /* OUT */ (cnti_0),
-	.a0 /* IN */ (count_0_obuf),
-	.a1 /* IN */ (count_n_0),
-	.s /* IN */ (cnten)
-);
+assign cnti_0 = (cnten) ? count_n_0 : count_0_obuf;
 
 // INTER-UA.NET (164) - cnti1 : mx2
-mx2 cnti1_inst
-(
-	.z /* OUT */ (cnti_1),
-	.a0 /* IN */ (count_1_obuf),
-	.a1 /* IN */ (sum_1),
-	.s /* IN */ (cnten)
-);
+assign cnti_1 = (cnten) ? sum_1 : count_1_obuf;
 
 // INTER-UA.NET (165) - cnti2 : mx2
-mx2 cnti2_inst
-(
-	.z /* OUT */ (cnti_2),
-	.a0 /* IN */ (count_2_obuf),
-	.a1 /* IN */ (sum_2),
-	.s /* IN */ (cnten)
-);
+assign cnti_2 = (cnten) ? sum_2 : count_2_obuf;
 
 // INTER-UA.NET (166) - count0 : fd2p
 fd2 count0_inst

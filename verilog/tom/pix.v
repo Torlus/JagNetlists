@@ -933,118 +933,22 @@ assign lbrd_d[31] = lbrd_31;
 assign word2b = word2;
 
 // PIX.NET (62) - pd2[0-15] : mx2m
-mx2 pd2_from_0_to_15_inst_0
-(
-	.z /* OUT */ (pd2_0),
-	.a0 /* IN */ (pd1_0),
-	.a1 /* IN */ (pd1_16),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_1
-(
-	.z /* OUT */ (pd2_1),
-	.a0 /* IN */ (pd1_1),
-	.a1 /* IN */ (pd1_17),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_2
-(
-	.z /* OUT */ (pd2_2),
-	.a0 /* IN */ (pd1_2),
-	.a1 /* IN */ (pd1_18),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_3
-(
-	.z /* OUT */ (pd2_3),
-	.a0 /* IN */ (pd1_3),
-	.a1 /* IN */ (pd1_19),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_4
-(
-	.z /* OUT */ (pd2_4),
-	.a0 /* IN */ (pd1_4),
-	.a1 /* IN */ (pd1_20),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_5
-(
-	.z /* OUT */ (pd2_5),
-	.a0 /* IN */ (pd1_5),
-	.a1 /* IN */ (pd1_21),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_6
-(
-	.z /* OUT */ (pd2_6),
-	.a0 /* IN */ (pd1_6),
-	.a1 /* IN */ (pd1_22),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_7
-(
-	.z /* OUT */ (pd2_7),
-	.a0 /* IN */ (pd1_7),
-	.a1 /* IN */ (pd1_23),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_8
-(
-	.z /* OUT */ (pd2_8),
-	.a0 /* IN */ (pd1_8),
-	.a1 /* IN */ (pd1_24),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_9
-(
-	.z /* OUT */ (pd2_9),
-	.a0 /* IN */ (pd1_9),
-	.a1 /* IN */ (pd1_25),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_10
-(
-	.z /* OUT */ (pd2_10),
-	.a0 /* IN */ (pd1_10),
-	.a1 /* IN */ (pd1_26),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_11
-(
-	.z /* OUT */ (pd2_11),
-	.a0 /* IN */ (pd1_11),
-	.a1 /* IN */ (pd1_27),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_12
-(
-	.z /* OUT */ (pd2_12),
-	.a0 /* IN */ (pd1_12),
-	.a1 /* IN */ (pd1_28),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_13
-(
-	.z /* OUT */ (pd2_13),
-	.a0 /* IN */ (pd1_13),
-	.a1 /* IN */ (pd1_29),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_14
-(
-	.z /* OUT */ (pd2_14),
-	.a0 /* IN */ (pd1_14),
-	.a1 /* IN */ (pd1_30),
-	.s /* IN */ (word2b)
-);
-mx2 pd2_from_0_to_15_inst_15
-(
-	.z /* OUT */ (pd2_15),
-	.a0 /* IN */ (pd1_15),
-	.a1 /* IN */ (pd1_31),
-	.s /* IN */ (word2b)
-);
+assign pd2_0 = (word2b) ? pd1_16 : pd1_0;
+assign pd2_1 = (word2b) ? pd1_17 : pd1_1;
+assign pd2_2 = (word2b) ? pd1_18 : pd1_2;
+assign pd2_3 = (word2b) ? pd1_19 : pd1_3;
+assign pd2_4 = (word2b) ? pd1_20 : pd1_4;
+assign pd2_5 = (word2b) ? pd1_21 : pd1_5;
+assign pd2_6 = (word2b) ? pd1_22 : pd1_6;
+assign pd2_7 = (word2b) ? pd1_23 : pd1_7;
+assign pd2_8 = (word2b) ? pd1_24 : pd1_8;
+assign pd2_9 = (word2b) ? pd1_25 : pd1_9;
+assign pd2_10 = (word2b) ? pd1_26 : pd1_10;
+assign pd2_11 = (word2b) ? pd1_27 : pd1_11;
+assign pd2_12 = (word2b) ? pd1_28 : pd1_12;
+assign pd2_13 = (word2b) ? pd1_29 : pd1_13;
+assign pd2_14 = (word2b) ? pd1_30 : pd1_14;
+assign pd2_15 = (word2b) ? pd1_31 : pd1_15;
 
 // PIX.NET (70) - rgb0 : iv
 assign rgb0 = ~rgb16;
@@ -1121,118 +1025,22 @@ cryrgb pd3_inst
 assign lpb = lp;
 
 // PIX.NET (88) - pd4[0-15] : mx2
-mx2 pd4_from_0_to_15_inst_0
-(
-	.z /* OUT */ (pd4_0),
-	.a0 /* IN */ (pd1_16),
-	.a1 /* IN */ (pd1_0),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_1
-(
-	.z /* OUT */ (pd4_1),
-	.a0 /* IN */ (pd1_17),
-	.a1 /* IN */ (pd1_1),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_2
-(
-	.z /* OUT */ (pd4_2),
-	.a0 /* IN */ (pd1_18),
-	.a1 /* IN */ (pd1_2),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_3
-(
-	.z /* OUT */ (pd4_3),
-	.a0 /* IN */ (pd1_19),
-	.a1 /* IN */ (pd1_3),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_4
-(
-	.z /* OUT */ (pd4_4),
-	.a0 /* IN */ (pd1_20),
-	.a1 /* IN */ (pd1_4),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_5
-(
-	.z /* OUT */ (pd4_5),
-	.a0 /* IN */ (pd1_21),
-	.a1 /* IN */ (pd1_5),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_6
-(
-	.z /* OUT */ (pd4_6),
-	.a0 /* IN */ (pd1_22),
-	.a1 /* IN */ (pd1_6),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_7
-(
-	.z /* OUT */ (pd4_7),
-	.a0 /* IN */ (pd1_23),
-	.a1 /* IN */ (pd1_7),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_8
-(
-	.z /* OUT */ (pd4_8),
-	.a0 /* IN */ (pd1_24),
-	.a1 /* IN */ (pd1_8),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_9
-(
-	.z /* OUT */ (pd4_9),
-	.a0 /* IN */ (pd1_25),
-	.a1 /* IN */ (pd1_9),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_10
-(
-	.z /* OUT */ (pd4_10),
-	.a0 /* IN */ (pd1_26),
-	.a1 /* IN */ (pd1_10),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_11
-(
-	.z /* OUT */ (pd4_11),
-	.a0 /* IN */ (pd1_27),
-	.a1 /* IN */ (pd1_11),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_12
-(
-	.z /* OUT */ (pd4_12),
-	.a0 /* IN */ (pd1_28),
-	.a1 /* IN */ (pd1_12),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_13
-(
-	.z /* OUT */ (pd4_13),
-	.a0 /* IN */ (pd1_29),
-	.a1 /* IN */ (pd1_13),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_14
-(
-	.z /* OUT */ (pd4_14),
-	.a0 /* IN */ (pd1_30),
-	.a1 /* IN */ (pd1_14),
-	.s /* IN */ (lpb)
-);
-mx2 pd4_from_0_to_15_inst_15
-(
-	.z /* OUT */ (pd4_15),
-	.a0 /* IN */ (pd1_31),
-	.a1 /* IN */ (pd1_15),
-	.s /* IN */ (lpb)
-);
+assign pd4_0 = (lpb) ? pd1_0 : pd1_16;
+assign pd4_1 = (lpb) ? pd1_1 : pd1_17;
+assign pd4_2 = (lpb) ? pd1_2 : pd1_18;
+assign pd4_3 = (lpb) ? pd1_3 : pd1_19;
+assign pd4_4 = (lpb) ? pd1_4 : pd1_20;
+assign pd4_5 = (lpb) ? pd1_5 : pd1_21;
+assign pd4_6 = (lpb) ? pd1_6 : pd1_22;
+assign pd4_7 = (lpb) ? pd1_7 : pd1_23;
+assign pd4_8 = (lpb) ? pd1_8 : pd1_24;
+assign pd4_9 = (lpb) ? pd1_9 : pd1_25;
+assign pd4_10 = (lpb) ? pd1_10 : pd1_26;
+assign pd4_11 = (lpb) ? pd1_11 : pd1_27;
+assign pd4_12 = (lpb) ? pd1_12 : pd1_28;
+assign pd4_13 = (lpb) ? pd1_13 : pd1_29;
+assign pd4_14 = (lpb) ? pd1_14 : pd1_30;
+assign pd4_15 = (lpb) ? pd1_15 : pd1_31;
 
 // PIX.NET (92) - bc[0-15] : ldp1q
 ldp1q bc_from_0_to_15_inst_0
@@ -1441,13 +1249,7 @@ slatch bord3_inst
 );
 
 // PIX.NET (106) - border : mx2
-mx2 border_inst
-(
-	.z /* OUT */ (border),
-	.a0 /* IN */ (bord1),
-	.a1 /* IN */ (bord3),
-	.s /* IN */ (sxp)
-);
+assign border = (sxp) ? bord3 : bord1;
 
 // PIX.NET (127) - blankl : iv
 assign blankl = ~blank;
@@ -1883,182 +1685,38 @@ fd1q pd6_from_0_to_23_inst_23
 );
 
 // PIX.NET (145) - r[0-7] : mx2
-mx2 r_from_0_to_7_inst_0
-(
-	.z /* OUT */ (r_0_obuf),
-	.a0 /* IN */ (pd6_0),
-	.a1 /* IN */ (pd4_0),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_1
-(
-	.z /* OUT */ (r_1_obuf),
-	.a0 /* IN */ (pd6_1),
-	.a1 /* IN */ (pd4_1),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_2
-(
-	.z /* OUT */ (r_2_obuf),
-	.a0 /* IN */ (pd6_2),
-	.a1 /* IN */ (pd4_2),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_3
-(
-	.z /* OUT */ (r_3_obuf),
-	.a0 /* IN */ (pd6_3),
-	.a1 /* IN */ (pd4_3),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_4
-(
-	.z /* OUT */ (r_4_obuf),
-	.a0 /* IN */ (pd6_4),
-	.a1 /* IN */ (pd4_4),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_5
-(
-	.z /* OUT */ (r_5_obuf),
-	.a0 /* IN */ (pd6_5),
-	.a1 /* IN */ (pd4_5),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_6
-(
-	.z /* OUT */ (r_6_obuf),
-	.a0 /* IN */ (pd6_6),
-	.a1 /* IN */ (pd4_6),
-	.s /* IN */ (rg16)
-);
-mx2 r_from_0_to_7_inst_7
-(
-	.z /* OUT */ (r_7_obuf),
-	.a0 /* IN */ (pd6_7),
-	.a1 /* IN */ (pd4_7),
-	.s /* IN */ (rg16)
-);
+assign r_0_obuf = (rg16) ? pd4_0 : pd6_0;
+assign r_1_obuf = (rg16) ? pd4_1 : pd6_1;
+assign r_2_obuf = (rg16) ? pd4_2 : pd6_2;
+assign r_3_obuf = (rg16) ? pd4_3 : pd6_3;
+assign r_4_obuf = (rg16) ? pd4_4 : pd6_4;
+assign r_5_obuf = (rg16) ? pd4_5 : pd6_5;
+assign r_6_obuf = (rg16) ? pd4_6 : pd6_6;
+assign r_7_obuf = (rg16) ? pd4_7 : pd6_7;
 
 // PIX.NET (146) - g[0-7] : mx2
-mx2 g_from_0_to_7_inst_0
-(
-	.z /* OUT */ (g_0_obuf),
-	.a0 /* IN */ (pd6_8),
-	.a1 /* IN */ (pd4_8),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_1
-(
-	.z /* OUT */ (g_1_obuf),
-	.a0 /* IN */ (pd6_9),
-	.a1 /* IN */ (pd4_9),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_2
-(
-	.z /* OUT */ (g_2_obuf),
-	.a0 /* IN */ (pd6_10),
-	.a1 /* IN */ (pd4_10),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_3
-(
-	.z /* OUT */ (g_3_obuf),
-	.a0 /* IN */ (pd6_11),
-	.a1 /* IN */ (pd4_11),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_4
-(
-	.z /* OUT */ (g_4_obuf),
-	.a0 /* IN */ (pd6_12),
-	.a1 /* IN */ (pd4_12),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_5
-(
-	.z /* OUT */ (g_5_obuf),
-	.a0 /* IN */ (pd6_13),
-	.a1 /* IN */ (pd4_13),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_6
-(
-	.z /* OUT */ (g_6_obuf),
-	.a0 /* IN */ (pd6_14),
-	.a1 /* IN */ (pd4_14),
-	.s /* IN */ (rg16)
-);
-mx2 g_from_0_to_7_inst_7
-(
-	.z /* OUT */ (g_7_obuf),
-	.a0 /* IN */ (pd6_15),
-	.a1 /* IN */ (pd4_15),
-	.s /* IN */ (rg16)
-);
+assign g_0_obuf = (rg16) ? pd4_8 : pd6_8;
+assign g_1_obuf = (rg16) ? pd4_9 : pd6_9;
+assign g_2_obuf = (rg16) ? pd4_10 : pd6_10;
+assign g_3_obuf = (rg16) ? pd4_11 : pd6_11;
+assign g_4_obuf = (rg16) ? pd4_12 : pd6_12;
+assign g_5_obuf = (rg16) ? pd4_13 : pd6_13;
+assign g_6_obuf = (rg16) ? pd4_14 : pd6_14;
+assign g_7_obuf = (rg16) ? pd4_15 : pd6_15;
 
 // PIX.NET (147) - b[0] : mx2
-mx2 b_index_0_inst
-(
-	.z /* OUT */ (b_0_obuf),
-	.a0 /* IN */ (pd6_16),
-	.a1 /* IN */ (blank),
-	.s /* IN */ (rg16)
-);
+assign b_0_obuf = (rg16) ? blank : pd6_16;
 
 // PIX.NET (148) - b[1] : mx2
-mx2 b_index_1_inst
-(
-	.z /* OUT */ (b_1_obuf),
-	.a0 /* IN */ (pd6_17),
-	.a1 /* IN */ (vactive),
-	.s /* IN */ (rg16)
-);
+assign b_1_obuf = (rg16) ? vactive : pd6_17;
 
 // PIX.NET (149) - b[2-7] : mx2
-mx2 b_from_2_to_7_inst_0
-(
-	.z /* OUT */ (b_2_obuf),
-	.a0 /* IN */ (pd6_18),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rg16)
-);
-mx2 b_from_2_to_7_inst_1
-(
-	.z /* OUT */ (b_3_obuf),
-	.a0 /* IN */ (pd6_19),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rg16)
-);
-mx2 b_from_2_to_7_inst_2
-(
-	.z /* OUT */ (b_4_obuf),
-	.a0 /* IN */ (pd6_20),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rg16)
-);
-mx2 b_from_2_to_7_inst_3
-(
-	.z /* OUT */ (b_5_obuf),
-	.a0 /* IN */ (pd6_21),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rg16)
-);
-mx2 b_from_2_to_7_inst_4
-(
-	.z /* OUT */ (b_6_obuf),
-	.a0 /* IN */ (pd6_22),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rg16)
-);
-mx2 b_from_2_to_7_inst_5
-(
-	.z /* OUT */ (b_7_obuf),
-	.a0 /* IN */ (pd6_23),
-	.a1 /* IN */ (gnd),
-	.s /* IN */ (rg16)
-);
+assign b_2_obuf = (rg16) ? gnd : pd6_18;
+assign b_3_obuf = (rg16) ? gnd : pd6_19;
+assign b_4_obuf = (rg16) ? gnd : pd6_20;
+assign b_5_obuf = (rg16) ? gnd : pd6_21;
+assign b_6_obuf = (rg16) ? gnd : pd6_22;
+assign b_7_obuf = (rg16) ? gnd : pd6_23;
 
 // PIX.NET (157) - inc1 : fd1q
 fd1q inc1_inst
@@ -2080,22 +1738,10 @@ slatch inc2_inst
 );
 
 // PIX.NET (159) - inc3 : mx2
-mx2 inc3_inst
-(
-	.z /* OUT */ (inc3),
-	.a0 /* IN */ (inc2),
-	.a1 /* IN */ (pd1_24),
-	.s /* IN */ (rgb24)
-);
+assign inc3 = (rgb24) ? pd1_24 : inc2;
 
 // PIX.NET (160) - inc4 : mx2
-mx2 inc4_inst
-(
-	.z /* OUT */ (inc4),
-	.a0 /* IN */ (inc3),
-	.a1 /* IN */ (binc),
-	.s /* IN */ (border)
-);
+assign inc4 = (border) ? binc : inc3;
 
 // PIX.NET (161) - inc5 : fd1q
 fd1q inc5_inst

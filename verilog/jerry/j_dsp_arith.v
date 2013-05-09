@@ -714,118 +714,22 @@ assign mulb[14] = dstdp[14];
 assign mulb[15] = dstdp[15];
 
 // DSP_A-5Q.NET (110) - mula : mx2
-mx2 mula_inst_0
-(
-	.z /* OUT */ (mula[0]),
-	.a0 /* IN */ (losrcdp[0]),
-	.a1 /* IN */ (hisrcdp[0]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_1
-(
-	.z /* OUT */ (mula[1]),
-	.a0 /* IN */ (losrcdp[1]),
-	.a1 /* IN */ (hisrcdp[1]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_2
-(
-	.z /* OUT */ (mula[2]),
-	.a0 /* IN */ (losrcdp[2]),
-	.a1 /* IN */ (hisrcdp[2]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_3
-(
-	.z /* OUT */ (mula[3]),
-	.a0 /* IN */ (losrcdp[3]),
-	.a1 /* IN */ (hisrcdp[3]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_4
-(
-	.z /* OUT */ (mula[4]),
-	.a0 /* IN */ (losrcdp[4]),
-	.a1 /* IN */ (hisrcdp[4]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_5
-(
-	.z /* OUT */ (mula[5]),
-	.a0 /* IN */ (losrcdp[5]),
-	.a1 /* IN */ (hisrcdp[5]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_6
-(
-	.z /* OUT */ (mula[6]),
-	.a0 /* IN */ (losrcdp[6]),
-	.a1 /* IN */ (hisrcdp[6]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_7
-(
-	.z /* OUT */ (mula[7]),
-	.a0 /* IN */ (losrcdp[7]),
-	.a1 /* IN */ (hisrcdp[7]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_8
-(
-	.z /* OUT */ (mula[8]),
-	.a0 /* IN */ (losrcdp[8]),
-	.a1 /* IN */ (hisrcdp[8]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_9
-(
-	.z /* OUT */ (mula[9]),
-	.a0 /* IN */ (losrcdp[9]),
-	.a1 /* IN */ (hisrcdp[9]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_10
-(
-	.z /* OUT */ (mula[10]),
-	.a0 /* IN */ (losrcdp[10]),
-	.a1 /* IN */ (hisrcdp[10]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_11
-(
-	.z /* OUT */ (mula[11]),
-	.a0 /* IN */ (losrcdp[11]),
-	.a1 /* IN */ (hisrcdp[11]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_12
-(
-	.z /* OUT */ (mula[12]),
-	.a0 /* IN */ (losrcdp[12]),
-	.a1 /* IN */ (hisrcdp[12]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_13
-(
-	.z /* OUT */ (mula[13]),
-	.a0 /* IN */ (losrcdp[13]),
-	.a1 /* IN */ (hisrcdp[13]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_14
-(
-	.z /* OUT */ (mula[14]),
-	.a0 /* IN */ (losrcdp[14]),
-	.a1 /* IN */ (hisrcdp[14]),
-	.s /* IN */ (multselp)
-);
-mx2 mula_inst_15
-(
-	.z /* OUT */ (mula[15]),
-	.a0 /* IN */ (losrcdp[15]),
-	.a1 /* IN */ (hisrcdp[15]),
-	.s /* IN */ (multselp)
-);
+assign mula[0] = (multselp) ? hisrcdp[0] : losrcdp[0];
+assign mula[1] = (multselp) ? hisrcdp[1] : losrcdp[1];
+assign mula[2] = (multselp) ? hisrcdp[2] : losrcdp[2];
+assign mula[3] = (multselp) ? hisrcdp[3] : losrcdp[3];
+assign mula[4] = (multselp) ? hisrcdp[4] : losrcdp[4];
+assign mula[5] = (multselp) ? hisrcdp[5] : losrcdp[5];
+assign mula[6] = (multselp) ? hisrcdp[6] : losrcdp[6];
+assign mula[7] = (multselp) ? hisrcdp[7] : losrcdp[7];
+assign mula[8] = (multselp) ? hisrcdp[8] : losrcdp[8];
+assign mula[9] = (multselp) ? hisrcdp[9] : losrcdp[9];
+assign mula[10] = (multselp) ? hisrcdp[10] : losrcdp[10];
+assign mula[11] = (multselp) ? hisrcdp[11] : losrcdp[11];
+assign mula[12] = (multselp) ? hisrcdp[12] : losrcdp[12];
+assign mula[13] = (multselp) ? hisrcdp[13] : losrcdp[13];
+assign mula[14] = (multselp) ? hisrcdp[14] : losrcdp[14];
+assign mula[15] = (multselp) ? hisrcdp[15] : losrcdp[15];
 
 // DSP_A-5Q.NET (114) - mult : mp16
 mp16 mult_inst
@@ -1495,230 +1399,38 @@ assign normi[31] = normib_5;
 // DSP_A-5Q.NET (194) - dummyb : dummy
 
 // DSP_A-5Q.NET (201) - aluamux : mx2
-mx2 aluamux_inst_0
-(
-	.z /* OUT */ (aluat[0]),
-	.a0 /* IN */ (dstdp[0]),
-	.a1 /* IN */ (result_b0_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_1
-(
-	.z /* OUT */ (aluat[1]),
-	.a0 /* IN */ (dstdp[1]),
-	.a1 /* IN */ (result_b1_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_2
-(
-	.z /* OUT */ (aluat[2]),
-	.a0 /* IN */ (dstdp[2]),
-	.a1 /* IN */ (result_b2_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_3
-(
-	.z /* OUT */ (aluat[3]),
-	.a0 /* IN */ (dstdp[3]),
-	.a1 /* IN */ (result_b3_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_4
-(
-	.z /* OUT */ (aluat[4]),
-	.a0 /* IN */ (dstdp[4]),
-	.a1 /* IN */ (result_b4_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_5
-(
-	.z /* OUT */ (aluat[5]),
-	.a0 /* IN */ (dstdp[5]),
-	.a1 /* IN */ (result_b5_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_6
-(
-	.z /* OUT */ (aluat[6]),
-	.a0 /* IN */ (dstdp[6]),
-	.a1 /* IN */ (result_b6_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_7
-(
-	.z /* OUT */ (aluat[7]),
-	.a0 /* IN */ (dstdp[7]),
-	.a1 /* IN */ (result_b7_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_8
-(
-	.z /* OUT */ (aluat[8]),
-	.a0 /* IN */ (dstdp[8]),
-	.a1 /* IN */ (result_b8_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_9
-(
-	.z /* OUT */ (aluat[9]),
-	.a0 /* IN */ (dstdp[9]),
-	.a1 /* IN */ (result_b9_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_10
-(
-	.z /* OUT */ (aluat[10]),
-	.a0 /* IN */ (dstdp[10]),
-	.a1 /* IN */ (result_b10_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_11
-(
-	.z /* OUT */ (aluat[11]),
-	.a0 /* IN */ (dstdp[11]),
-	.a1 /* IN */ (result_b11_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_12
-(
-	.z /* OUT */ (aluat[12]),
-	.a0 /* IN */ (dstdp[12]),
-	.a1 /* IN */ (result_b12_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_13
-(
-	.z /* OUT */ (aluat[13]),
-	.a0 /* IN */ (dstdp[13]),
-	.a1 /* IN */ (result_b13_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_14
-(
-	.z /* OUT */ (aluat[14]),
-	.a0 /* IN */ (dstdp[14]),
-	.a1 /* IN */ (result_b14_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_15
-(
-	.z /* OUT */ (aluat[15]),
-	.a0 /* IN */ (dstdp[15]),
-	.a1 /* IN */ (result_b15_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_16
-(
-	.z /* OUT */ (aluat[16]),
-	.a0 /* IN */ (dstdp[16]),
-	.a1 /* IN */ (result_b16_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_17
-(
-	.z /* OUT */ (aluat[17]),
-	.a0 /* IN */ (dstdp[17]),
-	.a1 /* IN */ (result_b17_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_18
-(
-	.z /* OUT */ (aluat[18]),
-	.a0 /* IN */ (dstdp[18]),
-	.a1 /* IN */ (result_b18_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_19
-(
-	.z /* OUT */ (aluat[19]),
-	.a0 /* IN */ (dstdp[19]),
-	.a1 /* IN */ (result_b19_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_20
-(
-	.z /* OUT */ (aluat[20]),
-	.a0 /* IN */ (dstdp[20]),
-	.a1 /* IN */ (result_b20_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_21
-(
-	.z /* OUT */ (aluat[21]),
-	.a0 /* IN */ (dstdp[21]),
-	.a1 /* IN */ (result_b21_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_22
-(
-	.z /* OUT */ (aluat[22]),
-	.a0 /* IN */ (dstdp[22]),
-	.a1 /* IN */ (result_b22_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_23
-(
-	.z /* OUT */ (aluat[23]),
-	.a0 /* IN */ (dstdp[23]),
-	.a1 /* IN */ (result_b23_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_24
-(
-	.z /* OUT */ (aluat[24]),
-	.a0 /* IN */ (dstdp[24]),
-	.a1 /* IN */ (result_b24_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_25
-(
-	.z /* OUT */ (aluat[25]),
-	.a0 /* IN */ (dstdp[25]),
-	.a1 /* IN */ (result_b25_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_26
-(
-	.z /* OUT */ (aluat[26]),
-	.a0 /* IN */ (dstdp[26]),
-	.a1 /* IN */ (result_b26_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_27
-(
-	.z /* OUT */ (aluat[27]),
-	.a0 /* IN */ (dstdp[27]),
-	.a1 /* IN */ (result_b27_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_28
-(
-	.z /* OUT */ (aluat[28]),
-	.a0 /* IN */ (dstdp[28]),
-	.a1 /* IN */ (result_b28_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_29
-(
-	.z /* OUT */ (aluat[29]),
-	.a0 /* IN */ (dstdp[29]),
-	.a1 /* IN */ (result_b29_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_30
-(
-	.z /* OUT */ (aluat[30]),
-	.a0 /* IN */ (dstdp[30]),
-	.a1 /* IN */ (result_b30_obuf),
-	.s /* IN */ (macop_pp)
-);
-mx2 aluamux_inst_31
-(
-	.z /* OUT */ (aluat[31]),
-	.a0 /* IN */ (dstdp[31]),
-	.a1 /* IN */ (result_b31_obuf),
-	.s /* IN */ (macop_pp)
-);
+assign aluat[0] = (macop_pp) ? result_b0_obuf : dstdp[0];
+assign aluat[1] = (macop_pp) ? result_b1_obuf : dstdp[1];
+assign aluat[2] = (macop_pp) ? result_b2_obuf : dstdp[2];
+assign aluat[3] = (macop_pp) ? result_b3_obuf : dstdp[3];
+assign aluat[4] = (macop_pp) ? result_b4_obuf : dstdp[4];
+assign aluat[5] = (macop_pp) ? result_b5_obuf : dstdp[5];
+assign aluat[6] = (macop_pp) ? result_b6_obuf : dstdp[6];
+assign aluat[7] = (macop_pp) ? result_b7_obuf : dstdp[7];
+assign aluat[8] = (macop_pp) ? result_b8_obuf : dstdp[8];
+assign aluat[9] = (macop_pp) ? result_b9_obuf : dstdp[9];
+assign aluat[10] = (macop_pp) ? result_b10_obuf : dstdp[10];
+assign aluat[11] = (macop_pp) ? result_b11_obuf : dstdp[11];
+assign aluat[12] = (macop_pp) ? result_b12_obuf : dstdp[12];
+assign aluat[13] = (macop_pp) ? result_b13_obuf : dstdp[13];
+assign aluat[14] = (macop_pp) ? result_b14_obuf : dstdp[14];
+assign aluat[15] = (macop_pp) ? result_b15_obuf : dstdp[15];
+assign aluat[16] = (macop_pp) ? result_b16_obuf : dstdp[16];
+assign aluat[17] = (macop_pp) ? result_b17_obuf : dstdp[17];
+assign aluat[18] = (macop_pp) ? result_b18_obuf : dstdp[18];
+assign aluat[19] = (macop_pp) ? result_b19_obuf : dstdp[19];
+assign aluat[20] = (macop_pp) ? result_b20_obuf : dstdp[20];
+assign aluat[21] = (macop_pp) ? result_b21_obuf : dstdp[21];
+assign aluat[22] = (macop_pp) ? result_b22_obuf : dstdp[22];
+assign aluat[23] = (macop_pp) ? result_b23_obuf : dstdp[23];
+assign aluat[24] = (macop_pp) ? result_b24_obuf : dstdp[24];
+assign aluat[25] = (macop_pp) ? result_b25_obuf : dstdp[25];
+assign aluat[26] = (macop_pp) ? result_b26_obuf : dstdp[26];
+assign aluat[27] = (macop_pp) ? result_b27_obuf : dstdp[27];
+assign aluat[28] = (macop_pp) ? result_b28_obuf : dstdp[28];
+assign aluat[29] = (macop_pp) ? result_b29_obuf : dstdp[29];
+assign aluat[30] = (macop_pp) ? result_b30_obuf : dstdp[30];
+assign aluat[31] = (macop_pp) ? result_b31_obuf : dstdp[31];
 
 // DSP_A-5Q.NET (202) - aluazero\ : ivu
 assign aluazero_n = ~mantmode;
@@ -2707,230 +2419,38 @@ j_fdsync modulo_from_0_to_31_inst_31
 );
 
 // DSP_A-5Q.NET (283) - modalu[0-31] : mx2
-mx2 modalu_from_0_to_31_inst_0
-(
-	.z /* OUT */ (modalu_0),
-	.a0 /* IN */ (aluq[0]),
-	.a1 /* IN */ (dstdp[0]),
-	.s /* IN */ (modulo_0)
-);
-mx2 modalu_from_0_to_31_inst_1
-(
-	.z /* OUT */ (modalu_1),
-	.a0 /* IN */ (aluq[1]),
-	.a1 /* IN */ (dstdp[1]),
-	.s /* IN */ (modulo_1)
-);
-mx2 modalu_from_0_to_31_inst_2
-(
-	.z /* OUT */ (modalu_2),
-	.a0 /* IN */ (aluq[2]),
-	.a1 /* IN */ (dstdp[2]),
-	.s /* IN */ (modulo_2)
-);
-mx2 modalu_from_0_to_31_inst_3
-(
-	.z /* OUT */ (modalu_3),
-	.a0 /* IN */ (aluq[3]),
-	.a1 /* IN */ (dstdp[3]),
-	.s /* IN */ (modulo_3)
-);
-mx2 modalu_from_0_to_31_inst_4
-(
-	.z /* OUT */ (modalu_4),
-	.a0 /* IN */ (aluq[4]),
-	.a1 /* IN */ (dstdp[4]),
-	.s /* IN */ (modulo_4)
-);
-mx2 modalu_from_0_to_31_inst_5
-(
-	.z /* OUT */ (modalu_5),
-	.a0 /* IN */ (aluq[5]),
-	.a1 /* IN */ (dstdp[5]),
-	.s /* IN */ (modulo_5)
-);
-mx2 modalu_from_0_to_31_inst_6
-(
-	.z /* OUT */ (modalu_6),
-	.a0 /* IN */ (aluq[6]),
-	.a1 /* IN */ (dstdp[6]),
-	.s /* IN */ (modulo_6)
-);
-mx2 modalu_from_0_to_31_inst_7
-(
-	.z /* OUT */ (modalu_7),
-	.a0 /* IN */ (aluq[7]),
-	.a1 /* IN */ (dstdp[7]),
-	.s /* IN */ (modulo_7)
-);
-mx2 modalu_from_0_to_31_inst_8
-(
-	.z /* OUT */ (modalu_8),
-	.a0 /* IN */ (aluq[8]),
-	.a1 /* IN */ (dstdp[8]),
-	.s /* IN */ (modulo_8)
-);
-mx2 modalu_from_0_to_31_inst_9
-(
-	.z /* OUT */ (modalu_9),
-	.a0 /* IN */ (aluq[9]),
-	.a1 /* IN */ (dstdp[9]),
-	.s /* IN */ (modulo_9)
-);
-mx2 modalu_from_0_to_31_inst_10
-(
-	.z /* OUT */ (modalu_10),
-	.a0 /* IN */ (aluq[10]),
-	.a1 /* IN */ (dstdp[10]),
-	.s /* IN */ (modulo_10)
-);
-mx2 modalu_from_0_to_31_inst_11
-(
-	.z /* OUT */ (modalu_11),
-	.a0 /* IN */ (aluq[11]),
-	.a1 /* IN */ (dstdp[11]),
-	.s /* IN */ (modulo_11)
-);
-mx2 modalu_from_0_to_31_inst_12
-(
-	.z /* OUT */ (modalu_12),
-	.a0 /* IN */ (aluq[12]),
-	.a1 /* IN */ (dstdp[12]),
-	.s /* IN */ (modulo_12)
-);
-mx2 modalu_from_0_to_31_inst_13
-(
-	.z /* OUT */ (modalu_13),
-	.a0 /* IN */ (aluq[13]),
-	.a1 /* IN */ (dstdp[13]),
-	.s /* IN */ (modulo_13)
-);
-mx2 modalu_from_0_to_31_inst_14
-(
-	.z /* OUT */ (modalu_14),
-	.a0 /* IN */ (aluq[14]),
-	.a1 /* IN */ (dstdp[14]),
-	.s /* IN */ (modulo_14)
-);
-mx2 modalu_from_0_to_31_inst_15
-(
-	.z /* OUT */ (modalu_15),
-	.a0 /* IN */ (aluq[15]),
-	.a1 /* IN */ (dstdp[15]),
-	.s /* IN */ (modulo_15)
-);
-mx2 modalu_from_0_to_31_inst_16
-(
-	.z /* OUT */ (modalu_16),
-	.a0 /* IN */ (aluq[16]),
-	.a1 /* IN */ (dstdp[16]),
-	.s /* IN */ (modulo_16)
-);
-mx2 modalu_from_0_to_31_inst_17
-(
-	.z /* OUT */ (modalu_17),
-	.a0 /* IN */ (aluq[17]),
-	.a1 /* IN */ (dstdp[17]),
-	.s /* IN */ (modulo_17)
-);
-mx2 modalu_from_0_to_31_inst_18
-(
-	.z /* OUT */ (modalu_18),
-	.a0 /* IN */ (aluq[18]),
-	.a1 /* IN */ (dstdp[18]),
-	.s /* IN */ (modulo_18)
-);
-mx2 modalu_from_0_to_31_inst_19
-(
-	.z /* OUT */ (modalu_19),
-	.a0 /* IN */ (aluq[19]),
-	.a1 /* IN */ (dstdp[19]),
-	.s /* IN */ (modulo_19)
-);
-mx2 modalu_from_0_to_31_inst_20
-(
-	.z /* OUT */ (modalu_20),
-	.a0 /* IN */ (aluq[20]),
-	.a1 /* IN */ (dstdp[20]),
-	.s /* IN */ (modulo_20)
-);
-mx2 modalu_from_0_to_31_inst_21
-(
-	.z /* OUT */ (modalu_21),
-	.a0 /* IN */ (aluq[21]),
-	.a1 /* IN */ (dstdp[21]),
-	.s /* IN */ (modulo_21)
-);
-mx2 modalu_from_0_to_31_inst_22
-(
-	.z /* OUT */ (modalu_22),
-	.a0 /* IN */ (aluq[22]),
-	.a1 /* IN */ (dstdp[22]),
-	.s /* IN */ (modulo_22)
-);
-mx2 modalu_from_0_to_31_inst_23
-(
-	.z /* OUT */ (modalu_23),
-	.a0 /* IN */ (aluq[23]),
-	.a1 /* IN */ (dstdp[23]),
-	.s /* IN */ (modulo_23)
-);
-mx2 modalu_from_0_to_31_inst_24
-(
-	.z /* OUT */ (modalu_24),
-	.a0 /* IN */ (aluq[24]),
-	.a1 /* IN */ (dstdp[24]),
-	.s /* IN */ (modulo_24)
-);
-mx2 modalu_from_0_to_31_inst_25
-(
-	.z /* OUT */ (modalu_25),
-	.a0 /* IN */ (aluq[25]),
-	.a1 /* IN */ (dstdp[25]),
-	.s /* IN */ (modulo_25)
-);
-mx2 modalu_from_0_to_31_inst_26
-(
-	.z /* OUT */ (modalu_26),
-	.a0 /* IN */ (aluq[26]),
-	.a1 /* IN */ (dstdp[26]),
-	.s /* IN */ (modulo_26)
-);
-mx2 modalu_from_0_to_31_inst_27
-(
-	.z /* OUT */ (modalu_27),
-	.a0 /* IN */ (aluq[27]),
-	.a1 /* IN */ (dstdp[27]),
-	.s /* IN */ (modulo_27)
-);
-mx2 modalu_from_0_to_31_inst_28
-(
-	.z /* OUT */ (modalu_28),
-	.a0 /* IN */ (aluq[28]),
-	.a1 /* IN */ (dstdp[28]),
-	.s /* IN */ (modulo_28)
-);
-mx2 modalu_from_0_to_31_inst_29
-(
-	.z /* OUT */ (modalu_29),
-	.a0 /* IN */ (aluq[29]),
-	.a1 /* IN */ (dstdp[29]),
-	.s /* IN */ (modulo_29)
-);
-mx2 modalu_from_0_to_31_inst_30
-(
-	.z /* OUT */ (modalu_30),
-	.a0 /* IN */ (aluq[30]),
-	.a1 /* IN */ (dstdp[30]),
-	.s /* IN */ (modulo_30)
-);
-mx2 modalu_from_0_to_31_inst_31
-(
-	.z /* OUT */ (modalu_31),
-	.a0 /* IN */ (aluq[31]),
-	.a1 /* IN */ (dstdp[31]),
-	.s /* IN */ (modulo_31)
-);
+assign modalu_0 = (modulo_0) ? dstdp[0] : aluq[0];
+assign modalu_1 = (modulo_1) ? dstdp[1] : aluq[1];
+assign modalu_2 = (modulo_2) ? dstdp[2] : aluq[2];
+assign modalu_3 = (modulo_3) ? dstdp[3] : aluq[3];
+assign modalu_4 = (modulo_4) ? dstdp[4] : aluq[4];
+assign modalu_5 = (modulo_5) ? dstdp[5] : aluq[5];
+assign modalu_6 = (modulo_6) ? dstdp[6] : aluq[6];
+assign modalu_7 = (modulo_7) ? dstdp[7] : aluq[7];
+assign modalu_8 = (modulo_8) ? dstdp[8] : aluq[8];
+assign modalu_9 = (modulo_9) ? dstdp[9] : aluq[9];
+assign modalu_10 = (modulo_10) ? dstdp[10] : aluq[10];
+assign modalu_11 = (modulo_11) ? dstdp[11] : aluq[11];
+assign modalu_12 = (modulo_12) ? dstdp[12] : aluq[12];
+assign modalu_13 = (modulo_13) ? dstdp[13] : aluq[13];
+assign modalu_14 = (modulo_14) ? dstdp[14] : aluq[14];
+assign modalu_15 = (modulo_15) ? dstdp[15] : aluq[15];
+assign modalu_16 = (modulo_16) ? dstdp[16] : aluq[16];
+assign modalu_17 = (modulo_17) ? dstdp[17] : aluq[17];
+assign modalu_18 = (modulo_18) ? dstdp[18] : aluq[18];
+assign modalu_19 = (modulo_19) ? dstdp[19] : aluq[19];
+assign modalu_20 = (modulo_20) ? dstdp[20] : aluq[20];
+assign modalu_21 = (modulo_21) ? dstdp[21] : aluq[21];
+assign modalu_22 = (modulo_22) ? dstdp[22] : aluq[22];
+assign modalu_23 = (modulo_23) ? dstdp[23] : aluq[23];
+assign modalu_24 = (modulo_24) ? dstdp[24] : aluq[24];
+assign modalu_25 = (modulo_25) ? dstdp[25] : aluq[25];
+assign modalu_26 = (modulo_26) ? dstdp[26] : aluq[26];
+assign modalu_27 = (modulo_27) ? dstdp[27] : aluq[27];
+assign modalu_28 = (modulo_28) ? dstdp[28] : aluq[28];
+assign modalu_29 = (modulo_29) ? dstdp[29] : aluq[29];
+assign modalu_30 = (modulo_30) ? dstdp[30] : aluq[30];
+assign modalu_31 = (modulo_31) ? dstdp[31] : aluq[31];
 
 // DSP_A-5Q.NET (285) - modalu : join
 assign modalu[0] = modalu_0;

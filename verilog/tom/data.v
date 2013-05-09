@@ -5674,62 +5674,14 @@ mx4 patdi_from_0_to_7_inst_7
 );
 
 // DATA.NET (191) - patdi[8-15] : mx2
-mx2 patdi_from_8_to_15_inst_0
-(
-	.z /* OUT */ (patdi_8),
-	.a0 /* IN */ (pdu_8),
-	.a1 /* IN */ (local_data0[8]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_1
-(
-	.z /* OUT */ (patdi_9),
-	.a0 /* IN */ (pdu_9),
-	.a1 /* IN */ (local_data0[9]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_2
-(
-	.z /* OUT */ (patdi_10),
-	.a0 /* IN */ (pdu_10),
-	.a1 /* IN */ (local_data0[10]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_3
-(
-	.z /* OUT */ (patdi_11),
-	.a0 /* IN */ (pdu_11),
-	.a1 /* IN */ (local_data0[11]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_4
-(
-	.z /* OUT */ (patdi_12),
-	.a0 /* IN */ (pdu_12),
-	.a1 /* IN */ (local_data0[12]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_5
-(
-	.z /* OUT */ (patdi_13),
-	.a0 /* IN */ (pdu_13),
-	.a1 /* IN */ (local_data0[13]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_6
-(
-	.z /* OUT */ (patdi_14),
-	.a0 /* IN */ (pdu_14),
-	.a1 /* IN */ (local_data0[14]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_8_to_15_inst_7
-(
-	.z /* OUT */ (patdi_15),
-	.a0 /* IN */ (pdu_15),
-	.a1 /* IN */ (local_data0[15]),
-	.s /* IN */ (patdld_0)
-);
+assign patdi_8 = (patdld_0) ? local_data0[8] : pdu_8;
+assign patdi_9 = (patdld_0) ? local_data0[9] : pdu_9;
+assign patdi_10 = (patdld_0) ? local_data0[10] : pdu_10;
+assign patdi_11 = (patdld_0) ? local_data0[11] : pdu_11;
+assign patdi_12 = (patdld_0) ? local_data0[12] : pdu_12;
+assign patdi_13 = (patdld_0) ? local_data0[13] : pdu_13;
+assign patdi_14 = (patdld_0) ? local_data0[14] : pdu_14;
+assign patdi_15 = (patdld_0) ? local_data0[15] : pdu_15;
 
 // DATA.NET (193) - patdi[16-23] : mx4
 mx4 patdi_from_16_to_23_inst_0
@@ -5814,62 +5766,14 @@ mx4 patdi_from_16_to_23_inst_7
 );
 
 // DATA.NET (196) - patdi[24-31] : mx2
-mx2 patdi_from_24_to_31_inst_0
-(
-	.z /* OUT */ (patdi_24),
-	.a0 /* IN */ (pdu_24),
-	.a1 /* IN */ (local_data0[24]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_1
-(
-	.z /* OUT */ (patdi_25),
-	.a0 /* IN */ (pdu_25),
-	.a1 /* IN */ (local_data0[25]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_2
-(
-	.z /* OUT */ (patdi_26),
-	.a0 /* IN */ (pdu_26),
-	.a1 /* IN */ (local_data0[26]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_3
-(
-	.z /* OUT */ (patdi_27),
-	.a0 /* IN */ (pdu_27),
-	.a1 /* IN */ (local_data0[27]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_4
-(
-	.z /* OUT */ (patdi_28),
-	.a0 /* IN */ (pdu_28),
-	.a1 /* IN */ (local_data0[28]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_5
-(
-	.z /* OUT */ (patdi_29),
-	.a0 /* IN */ (pdu_29),
-	.a1 /* IN */ (local_data0[29]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_6
-(
-	.z /* OUT */ (patdi_30),
-	.a0 /* IN */ (pdu_30),
-	.a1 /* IN */ (local_data0[30]),
-	.s /* IN */ (patdld_0)
-);
-mx2 patdi_from_24_to_31_inst_7
-(
-	.z /* OUT */ (patdi_31),
-	.a0 /* IN */ (pdu_31),
-	.a1 /* IN */ (local_data0[31]),
-	.s /* IN */ (patdld_0)
-);
+assign patdi_24 = (patdld_0) ? local_data0[24] : pdu_24;
+assign patdi_25 = (patdld_0) ? local_data0[25] : pdu_25;
+assign patdi_26 = (patdld_0) ? local_data0[26] : pdu_26;
+assign patdi_27 = (patdld_0) ? local_data0[27] : pdu_27;
+assign patdi_28 = (patdld_0) ? local_data0[28] : pdu_28;
+assign patdi_29 = (patdld_0) ? local_data0[29] : pdu_29;
+assign patdi_30 = (patdld_0) ? local_data0[30] : pdu_30;
+assign patdi_31 = (patdld_0) ? local_data0[31] : pdu_31;
 
 // DATA.NET (198) - patdi[32-39] : mx4
 mx4 patdi_from_32_to_39_inst_0
@@ -5954,62 +5858,14 @@ mx4 patdi_from_32_to_39_inst_7
 );
 
 // DATA.NET (201) - patdi[40-47] : mx2
-mx2 patdi_from_40_to_47_inst_0
-(
-	.z /* OUT */ (patdi_40),
-	.a0 /* IN */ (pdu_40),
-	.a1 /* IN */ (local_data1[8]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_1
-(
-	.z /* OUT */ (patdi_41),
-	.a0 /* IN */ (pdu_41),
-	.a1 /* IN */ (local_data1[9]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_2
-(
-	.z /* OUT */ (patdi_42),
-	.a0 /* IN */ (pdu_42),
-	.a1 /* IN */ (local_data1[10]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_3
-(
-	.z /* OUT */ (patdi_43),
-	.a0 /* IN */ (pdu_43),
-	.a1 /* IN */ (local_data1[11]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_4
-(
-	.z /* OUT */ (patdi_44),
-	.a0 /* IN */ (pdu_44),
-	.a1 /* IN */ (local_data1[12]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_5
-(
-	.z /* OUT */ (patdi_45),
-	.a0 /* IN */ (pdu_45),
-	.a1 /* IN */ (local_data1[13]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_6
-(
-	.z /* OUT */ (patdi_46),
-	.a0 /* IN */ (pdu_46),
-	.a1 /* IN */ (local_data1[14]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_40_to_47_inst_7
-(
-	.z /* OUT */ (patdi_47),
-	.a0 /* IN */ (pdu_47),
-	.a1 /* IN */ (local_data1[15]),
-	.s /* IN */ (patdld_1)
-);
+assign patdi_40 = (patdld_1) ? local_data1[8] : pdu_40;
+assign patdi_41 = (patdld_1) ? local_data1[9] : pdu_41;
+assign patdi_42 = (patdld_1) ? local_data1[10] : pdu_42;
+assign patdi_43 = (patdld_1) ? local_data1[11] : pdu_43;
+assign patdi_44 = (patdld_1) ? local_data1[12] : pdu_44;
+assign patdi_45 = (patdld_1) ? local_data1[13] : pdu_45;
+assign patdi_46 = (patdld_1) ? local_data1[14] : pdu_46;
+assign patdi_47 = (patdld_1) ? local_data1[15] : pdu_47;
 
 // DATA.NET (203) - patdi[48-55] : mx4
 mx4 patdi_from_48_to_55_inst_0
@@ -6094,62 +5950,14 @@ mx4 patdi_from_48_to_55_inst_7
 );
 
 // DATA.NET (206) - patdi[56-63] : mx2
-mx2 patdi_from_56_to_63_inst_0
-(
-	.z /* OUT */ (patdi_56),
-	.a0 /* IN */ (pdu_56),
-	.a1 /* IN */ (local_data1[24]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_1
-(
-	.z /* OUT */ (patdi_57),
-	.a0 /* IN */ (pdu_57),
-	.a1 /* IN */ (local_data1[25]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_2
-(
-	.z /* OUT */ (patdi_58),
-	.a0 /* IN */ (pdu_58),
-	.a1 /* IN */ (local_data1[26]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_3
-(
-	.z /* OUT */ (patdi_59),
-	.a0 /* IN */ (pdu_59),
-	.a1 /* IN */ (local_data1[27]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_4
-(
-	.z /* OUT */ (patdi_60),
-	.a0 /* IN */ (pdu_60),
-	.a1 /* IN */ (local_data1[28]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_5
-(
-	.z /* OUT */ (patdi_61),
-	.a0 /* IN */ (pdu_61),
-	.a1 /* IN */ (local_data1[29]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_6
-(
-	.z /* OUT */ (patdi_62),
-	.a0 /* IN */ (pdu_62),
-	.a1 /* IN */ (local_data1[30]),
-	.s /* IN */ (patdld_1)
-);
-mx2 patdi_from_56_to_63_inst_7
-(
-	.z /* OUT */ (patdi_63),
-	.a0 /* IN */ (pdu_63),
-	.a1 /* IN */ (local_data1[31]),
-	.s /* IN */ (patdld_1)
-);
+assign patdi_56 = (patdld_1) ? local_data1[24] : pdu_56;
+assign patdi_57 = (patdld_1) ? local_data1[25] : pdu_57;
+assign patdi_58 = (patdld_1) ? local_data1[26] : pdu_58;
+assign patdi_59 = (patdld_1) ? local_data1[27] : pdu_59;
+assign patdi_60 = (patdld_1) ? local_data1[28] : pdu_60;
+assign patdi_61 = (patdld_1) ? local_data1[29] : pdu_61;
+assign patdi_62 = (patdld_1) ? local_data1[30] : pdu_62;
+assign patdi_63 = (patdld_1) ? local_data1[31] : pdu_63;
 
 // DATA.NET (208) - pdu[0-63] : fd1q
 fd1q pdu_from_0_to_63_inst_0
@@ -7656,456 +7464,72 @@ assign zpipe0b_0 = zpipe_0;
 assign zpipe0b_1 = zpipe_0;
 
 // DATA.NET (253) - srczp[0] : mx2p
-mx2 srczp_index_0_inst_0
-(
-	.z /* OUT */ (srczp_0[0]),
-	.a0 /* IN */ (srczpt_0[0]),
-	.a1 /* IN */ (srcz_0[0]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_1
-(
-	.z /* OUT */ (srczp_0[1]),
-	.a0 /* IN */ (srczpt_0[1]),
-	.a1 /* IN */ (srcz_0[1]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_2
-(
-	.z /* OUT */ (srczp_0[2]),
-	.a0 /* IN */ (srczpt_0[2]),
-	.a1 /* IN */ (srcz_0[2]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_3
-(
-	.z /* OUT */ (srczp_0[3]),
-	.a0 /* IN */ (srczpt_0[3]),
-	.a1 /* IN */ (srcz_0[3]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_4
-(
-	.z /* OUT */ (srczp_0[4]),
-	.a0 /* IN */ (srczpt_0[4]),
-	.a1 /* IN */ (srcz_0[4]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_5
-(
-	.z /* OUT */ (srczp_0[5]),
-	.a0 /* IN */ (srczpt_0[5]),
-	.a1 /* IN */ (srcz_0[5]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_6
-(
-	.z /* OUT */ (srczp_0[6]),
-	.a0 /* IN */ (srczpt_0[6]),
-	.a1 /* IN */ (srcz_0[6]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_7
-(
-	.z /* OUT */ (srczp_0[7]),
-	.a0 /* IN */ (srczpt_0[7]),
-	.a1 /* IN */ (srcz_0[7]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_8
-(
-	.z /* OUT */ (srczp_0[8]),
-	.a0 /* IN */ (srczpt_0[8]),
-	.a1 /* IN */ (srcz_0[8]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_9
-(
-	.z /* OUT */ (srczp_0[9]),
-	.a0 /* IN */ (srczpt_0[9]),
-	.a1 /* IN */ (srcz_0[9]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_10
-(
-	.z /* OUT */ (srczp_0[10]),
-	.a0 /* IN */ (srczpt_0[10]),
-	.a1 /* IN */ (srcz_0[10]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_11
-(
-	.z /* OUT */ (srczp_0[11]),
-	.a0 /* IN */ (srczpt_0[11]),
-	.a1 /* IN */ (srcz_0[11]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_12
-(
-	.z /* OUT */ (srczp_0[12]),
-	.a0 /* IN */ (srczpt_0[12]),
-	.a1 /* IN */ (srcz_0[12]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_13
-(
-	.z /* OUT */ (srczp_0[13]),
-	.a0 /* IN */ (srczpt_0[13]),
-	.a1 /* IN */ (srcz_0[13]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_14
-(
-	.z /* OUT */ (srczp_0[14]),
-	.a0 /* IN */ (srczpt_0[14]),
-	.a1 /* IN */ (srcz_0[14]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_15
-(
-	.z /* OUT */ (srczp_0[15]),
-	.a0 /* IN */ (srczpt_0[15]),
-	.a1 /* IN */ (srcz_0[15]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_16
-(
-	.z /* OUT */ (srczp_0[16]),
-	.a0 /* IN */ (srczpt_0[16]),
-	.a1 /* IN */ (srcz_0[16]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_17
-(
-	.z /* OUT */ (srczp_0[17]),
-	.a0 /* IN */ (srczpt_0[17]),
-	.a1 /* IN */ (srcz_0[17]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_18
-(
-	.z /* OUT */ (srczp_0[18]),
-	.a0 /* IN */ (srczpt_0[18]),
-	.a1 /* IN */ (srcz_0[18]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_19
-(
-	.z /* OUT */ (srczp_0[19]),
-	.a0 /* IN */ (srczpt_0[19]),
-	.a1 /* IN */ (srcz_0[19]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_20
-(
-	.z /* OUT */ (srczp_0[20]),
-	.a0 /* IN */ (srczpt_0[20]),
-	.a1 /* IN */ (srcz_0[20]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_21
-(
-	.z /* OUT */ (srczp_0[21]),
-	.a0 /* IN */ (srczpt_0[21]),
-	.a1 /* IN */ (srcz_0[21]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_22
-(
-	.z /* OUT */ (srczp_0[22]),
-	.a0 /* IN */ (srczpt_0[22]),
-	.a1 /* IN */ (srcz_0[22]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_23
-(
-	.z /* OUT */ (srczp_0[23]),
-	.a0 /* IN */ (srczpt_0[23]),
-	.a1 /* IN */ (srcz_0[23]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_24
-(
-	.z /* OUT */ (srczp_0[24]),
-	.a0 /* IN */ (srczpt_0[24]),
-	.a1 /* IN */ (srcz_0[24]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_25
-(
-	.z /* OUT */ (srczp_0[25]),
-	.a0 /* IN */ (srczpt_0[25]),
-	.a1 /* IN */ (srcz_0[25]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_26
-(
-	.z /* OUT */ (srczp_0[26]),
-	.a0 /* IN */ (srczpt_0[26]),
-	.a1 /* IN */ (srcz_0[26]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_27
-(
-	.z /* OUT */ (srczp_0[27]),
-	.a0 /* IN */ (srczpt_0[27]),
-	.a1 /* IN */ (srcz_0[27]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_28
-(
-	.z /* OUT */ (srczp_0[28]),
-	.a0 /* IN */ (srczpt_0[28]),
-	.a1 /* IN */ (srcz_0[28]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_29
-(
-	.z /* OUT */ (srczp_0[29]),
-	.a0 /* IN */ (srczpt_0[29]),
-	.a1 /* IN */ (srcz_0[29]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_30
-(
-	.z /* OUT */ (srczp_0[30]),
-	.a0 /* IN */ (srczpt_0[30]),
-	.a1 /* IN */ (srcz_0[30]),
-	.s /* IN */ (zpipe0b_0)
-);
-mx2 srczp_index_0_inst_31
-(
-	.z /* OUT */ (srczp_0[31]),
-	.a0 /* IN */ (srczpt_0[31]),
-	.a1 /* IN */ (srcz_0[31]),
-	.s /* IN */ (zpipe0b_0)
-);
+assign srczp_0[0] = (zpipe0b_0) ? srcz_0[0] : srczpt_0[0];
+assign srczp_0[1] = (zpipe0b_0) ? srcz_0[1] : srczpt_0[1];
+assign srczp_0[2] = (zpipe0b_0) ? srcz_0[2] : srczpt_0[2];
+assign srczp_0[3] = (zpipe0b_0) ? srcz_0[3] : srczpt_0[3];
+assign srczp_0[4] = (zpipe0b_0) ? srcz_0[4] : srczpt_0[4];
+assign srczp_0[5] = (zpipe0b_0) ? srcz_0[5] : srczpt_0[5];
+assign srczp_0[6] = (zpipe0b_0) ? srcz_0[6] : srczpt_0[6];
+assign srczp_0[7] = (zpipe0b_0) ? srcz_0[7] : srczpt_0[7];
+assign srczp_0[8] = (zpipe0b_0) ? srcz_0[8] : srczpt_0[8];
+assign srczp_0[9] = (zpipe0b_0) ? srcz_0[9] : srczpt_0[9];
+assign srczp_0[10] = (zpipe0b_0) ? srcz_0[10] : srczpt_0[10];
+assign srczp_0[11] = (zpipe0b_0) ? srcz_0[11] : srczpt_0[11];
+assign srczp_0[12] = (zpipe0b_0) ? srcz_0[12] : srczpt_0[12];
+assign srczp_0[13] = (zpipe0b_0) ? srcz_0[13] : srczpt_0[13];
+assign srczp_0[14] = (zpipe0b_0) ? srcz_0[14] : srczpt_0[14];
+assign srczp_0[15] = (zpipe0b_0) ? srcz_0[15] : srczpt_0[15];
+assign srczp_0[16] = (zpipe0b_0) ? srcz_0[16] : srczpt_0[16];
+assign srczp_0[17] = (zpipe0b_0) ? srcz_0[17] : srczpt_0[17];
+assign srczp_0[18] = (zpipe0b_0) ? srcz_0[18] : srczpt_0[18];
+assign srczp_0[19] = (zpipe0b_0) ? srcz_0[19] : srczpt_0[19];
+assign srczp_0[20] = (zpipe0b_0) ? srcz_0[20] : srczpt_0[20];
+assign srczp_0[21] = (zpipe0b_0) ? srcz_0[21] : srczpt_0[21];
+assign srczp_0[22] = (zpipe0b_0) ? srcz_0[22] : srczpt_0[22];
+assign srczp_0[23] = (zpipe0b_0) ? srcz_0[23] : srczpt_0[23];
+assign srczp_0[24] = (zpipe0b_0) ? srcz_0[24] : srczpt_0[24];
+assign srczp_0[25] = (zpipe0b_0) ? srcz_0[25] : srczpt_0[25];
+assign srczp_0[26] = (zpipe0b_0) ? srcz_0[26] : srczpt_0[26];
+assign srczp_0[27] = (zpipe0b_0) ? srcz_0[27] : srczpt_0[27];
+assign srczp_0[28] = (zpipe0b_0) ? srcz_0[28] : srczpt_0[28];
+assign srczp_0[29] = (zpipe0b_0) ? srcz_0[29] : srczpt_0[29];
+assign srczp_0[30] = (zpipe0b_0) ? srcz_0[30] : srczpt_0[30];
+assign srczp_0[31] = (zpipe0b_0) ? srcz_0[31] : srczpt_0[31];
 
 // DATA.NET (254) - srczp[1] : mx2p
-mx2 srczp_index_1_inst_0
-(
-	.z /* OUT */ (srczp_1[0]),
-	.a0 /* IN */ (srczpt_1[0]),
-	.a1 /* IN */ (srcz_1[0]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_1
-(
-	.z /* OUT */ (srczp_1[1]),
-	.a0 /* IN */ (srczpt_1[1]),
-	.a1 /* IN */ (srcz_1[1]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_2
-(
-	.z /* OUT */ (srczp_1[2]),
-	.a0 /* IN */ (srczpt_1[2]),
-	.a1 /* IN */ (srcz_1[2]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_3
-(
-	.z /* OUT */ (srczp_1[3]),
-	.a0 /* IN */ (srczpt_1[3]),
-	.a1 /* IN */ (srcz_1[3]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_4
-(
-	.z /* OUT */ (srczp_1[4]),
-	.a0 /* IN */ (srczpt_1[4]),
-	.a1 /* IN */ (srcz_1[4]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_5
-(
-	.z /* OUT */ (srczp_1[5]),
-	.a0 /* IN */ (srczpt_1[5]),
-	.a1 /* IN */ (srcz_1[5]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_6
-(
-	.z /* OUT */ (srczp_1[6]),
-	.a0 /* IN */ (srczpt_1[6]),
-	.a1 /* IN */ (srcz_1[6]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_7
-(
-	.z /* OUT */ (srczp_1[7]),
-	.a0 /* IN */ (srczpt_1[7]),
-	.a1 /* IN */ (srcz_1[7]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_8
-(
-	.z /* OUT */ (srczp_1[8]),
-	.a0 /* IN */ (srczpt_1[8]),
-	.a1 /* IN */ (srcz_1[8]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_9
-(
-	.z /* OUT */ (srczp_1[9]),
-	.a0 /* IN */ (srczpt_1[9]),
-	.a1 /* IN */ (srcz_1[9]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_10
-(
-	.z /* OUT */ (srczp_1[10]),
-	.a0 /* IN */ (srczpt_1[10]),
-	.a1 /* IN */ (srcz_1[10]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_11
-(
-	.z /* OUT */ (srczp_1[11]),
-	.a0 /* IN */ (srczpt_1[11]),
-	.a1 /* IN */ (srcz_1[11]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_12
-(
-	.z /* OUT */ (srczp_1[12]),
-	.a0 /* IN */ (srczpt_1[12]),
-	.a1 /* IN */ (srcz_1[12]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_13
-(
-	.z /* OUT */ (srczp_1[13]),
-	.a0 /* IN */ (srczpt_1[13]),
-	.a1 /* IN */ (srcz_1[13]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_14
-(
-	.z /* OUT */ (srczp_1[14]),
-	.a0 /* IN */ (srczpt_1[14]),
-	.a1 /* IN */ (srcz_1[14]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_15
-(
-	.z /* OUT */ (srczp_1[15]),
-	.a0 /* IN */ (srczpt_1[15]),
-	.a1 /* IN */ (srcz_1[15]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_16
-(
-	.z /* OUT */ (srczp_1[16]),
-	.a0 /* IN */ (srczpt_1[16]),
-	.a1 /* IN */ (srcz_1[16]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_17
-(
-	.z /* OUT */ (srczp_1[17]),
-	.a0 /* IN */ (srczpt_1[17]),
-	.a1 /* IN */ (srcz_1[17]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_18
-(
-	.z /* OUT */ (srczp_1[18]),
-	.a0 /* IN */ (srczpt_1[18]),
-	.a1 /* IN */ (srcz_1[18]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_19
-(
-	.z /* OUT */ (srczp_1[19]),
-	.a0 /* IN */ (srczpt_1[19]),
-	.a1 /* IN */ (srcz_1[19]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_20
-(
-	.z /* OUT */ (srczp_1[20]),
-	.a0 /* IN */ (srczpt_1[20]),
-	.a1 /* IN */ (srcz_1[20]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_21
-(
-	.z /* OUT */ (srczp_1[21]),
-	.a0 /* IN */ (srczpt_1[21]),
-	.a1 /* IN */ (srcz_1[21]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_22
-(
-	.z /* OUT */ (srczp_1[22]),
-	.a0 /* IN */ (srczpt_1[22]),
-	.a1 /* IN */ (srcz_1[22]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_23
-(
-	.z /* OUT */ (srczp_1[23]),
-	.a0 /* IN */ (srczpt_1[23]),
-	.a1 /* IN */ (srcz_1[23]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_24
-(
-	.z /* OUT */ (srczp_1[24]),
-	.a0 /* IN */ (srczpt_1[24]),
-	.a1 /* IN */ (srcz_1[24]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_25
-(
-	.z /* OUT */ (srczp_1[25]),
-	.a0 /* IN */ (srczpt_1[25]),
-	.a1 /* IN */ (srcz_1[25]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_26
-(
-	.z /* OUT */ (srczp_1[26]),
-	.a0 /* IN */ (srczpt_1[26]),
-	.a1 /* IN */ (srcz_1[26]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_27
-(
-	.z /* OUT */ (srczp_1[27]),
-	.a0 /* IN */ (srczpt_1[27]),
-	.a1 /* IN */ (srcz_1[27]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_28
-(
-	.z /* OUT */ (srczp_1[28]),
-	.a0 /* IN */ (srczpt_1[28]),
-	.a1 /* IN */ (srcz_1[28]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_29
-(
-	.z /* OUT */ (srczp_1[29]),
-	.a0 /* IN */ (srczpt_1[29]),
-	.a1 /* IN */ (srcz_1[29]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_30
-(
-	.z /* OUT */ (srczp_1[30]),
-	.a0 /* IN */ (srczpt_1[30]),
-	.a1 /* IN */ (srcz_1[30]),
-	.s /* IN */ (zpipe0b_1)
-);
-mx2 srczp_index_1_inst_31
-(
-	.z /* OUT */ (srczp_1[31]),
-	.a0 /* IN */ (srczpt_1[31]),
-	.a1 /* IN */ (srcz_1[31]),
-	.s /* IN */ (zpipe0b_1)
-);
+assign srczp_1[0] = (zpipe0b_1) ? srcz_1[0] : srczpt_1[0];
+assign srczp_1[1] = (zpipe0b_1) ? srcz_1[1] : srczpt_1[1];
+assign srczp_1[2] = (zpipe0b_1) ? srcz_1[2] : srczpt_1[2];
+assign srczp_1[3] = (zpipe0b_1) ? srcz_1[3] : srczpt_1[3];
+assign srczp_1[4] = (zpipe0b_1) ? srcz_1[4] : srczpt_1[4];
+assign srczp_1[5] = (zpipe0b_1) ? srcz_1[5] : srczpt_1[5];
+assign srczp_1[6] = (zpipe0b_1) ? srcz_1[6] : srczpt_1[6];
+assign srczp_1[7] = (zpipe0b_1) ? srcz_1[7] : srczpt_1[7];
+assign srczp_1[8] = (zpipe0b_1) ? srcz_1[8] : srczpt_1[8];
+assign srczp_1[9] = (zpipe0b_1) ? srcz_1[9] : srczpt_1[9];
+assign srczp_1[10] = (zpipe0b_1) ? srcz_1[10] : srczpt_1[10];
+assign srczp_1[11] = (zpipe0b_1) ? srcz_1[11] : srczpt_1[11];
+assign srczp_1[12] = (zpipe0b_1) ? srcz_1[12] : srczpt_1[12];
+assign srczp_1[13] = (zpipe0b_1) ? srcz_1[13] : srczpt_1[13];
+assign srczp_1[14] = (zpipe0b_1) ? srcz_1[14] : srczpt_1[14];
+assign srczp_1[15] = (zpipe0b_1) ? srcz_1[15] : srczpt_1[15];
+assign srczp_1[16] = (zpipe0b_1) ? srcz_1[16] : srczpt_1[16];
+assign srczp_1[17] = (zpipe0b_1) ? srcz_1[17] : srczpt_1[17];
+assign srczp_1[18] = (zpipe0b_1) ? srcz_1[18] : srczpt_1[18];
+assign srczp_1[19] = (zpipe0b_1) ? srcz_1[19] : srczpt_1[19];
+assign srczp_1[20] = (zpipe0b_1) ? srcz_1[20] : srczpt_1[20];
+assign srczp_1[21] = (zpipe0b_1) ? srcz_1[21] : srczpt_1[21];
+assign srczp_1[22] = (zpipe0b_1) ? srcz_1[22] : srczpt_1[22];
+assign srczp_1[23] = (zpipe0b_1) ? srcz_1[23] : srczpt_1[23];
+assign srczp_1[24] = (zpipe0b_1) ? srcz_1[24] : srczpt_1[24];
+assign srczp_1[25] = (zpipe0b_1) ? srcz_1[25] : srczpt_1[25];
+assign srczp_1[26] = (zpipe0b_1) ? srcz_1[26] : srczpt_1[26];
+assign srczp_1[27] = (zpipe0b_1) ? srcz_1[27] : srczpt_1[27];
+assign srczp_1[28] = (zpipe0b_1) ? srcz_1[28] : srczpt_1[28];
+assign srczp_1[29] = (zpipe0b_1) ? srcz_1[29] : srczpt_1[29];
+assign srczp_1[30] = (zpipe0b_1) ? srcz_1[30] : srczpt_1[30];
+assign srczp_1[31] = (zpipe0b_1) ? srcz_1[31] : srczpt_1[31];
 
 // DATA.NET (255) - srczpt[0-1] : fd1q
 fd1q srczpt_from_0_to_1_inst_0

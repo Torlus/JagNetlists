@@ -2492,15 +2492,7 @@ assign gpu_dout_o_15_oe = gpu_data_oe[15];
 assign gpu_data_in[15] = gpu_dout_o_15_in;
 
 // --- Compiler-generated local PE for BUS gpu_data<0>
-assign gpu_data_out[0] =
-	(ts_local_pe_39_a0_oe) ? ts_local_pe_39_a0_out :
-	(ts_local_pe_39_a1_oe) ? ts_local_pe_39_a1_out :
-	(ts_local_pe_39_a2_oe) ? ts_local_pe_39_a2_out :
-	(ts_local_pe_39_a3_oe) ? ts_local_pe_39_a3_out :
-	(ts_local_pe_39_a4_oe) ? ts_local_pe_39_a4_out :
-	(ts_local_pe_39_a5_oe) ? ts_local_pe_39_a5_out :
-	(ts_local_pe_39_a6_oe) ? ts_local_pe_39_a6_out :
-	1'bz;
+assign gpu_data_out[0] = (ts_local_pe_39_a0_oe & ts_local_pe_39_a0_out ) | (ts_local_pe_39_a1_oe & ts_local_pe_39_a1_out ) | (ts_local_pe_39_a2_oe & ts_local_pe_39_a2_out ) | (ts_local_pe_39_a3_oe & ts_local_pe_39_a3_out ) | (ts_local_pe_39_a4_oe & ts_local_pe_39_a4_out ) | (ts_local_pe_39_a5_oe & ts_local_pe_39_a5_out ) | (ts_local_pe_39_a6_oe & ts_local_pe_39_a6_out ) | 1'b0;
 assign gpu_data_oe[0] = ts_local_pe_39_a0_oe | ts_local_pe_39_a1_oe | ts_local_pe_39_a2_oe | ts_local_pe_39_a3_oe | ts_local_pe_39_a4_oe | ts_local_pe_39_a5_oe | ts_local_pe_39_a6_oe;
 assign ts_local_pe_39_a0_in = gpu_data_in[0];
 assign ts_local_pe_39_a1_in = gpu_data_in[0];
@@ -2511,15 +2503,7 @@ assign ts_local_pe_39_a5_in = gpu_data_in[0];
 assign ts_local_pe_39_a6_in = gpu_data_in[0];
 
 // --- Compiler-generated local PE for BUS gpu_data<1>
-assign gpu_data_out[1] =
-	(ts_local_pe_40_a0_oe) ? ts_local_pe_40_a0_out :
-	(ts_local_pe_40_a1_oe) ? ts_local_pe_40_a1_out :
-	(ts_local_pe_40_a2_oe) ? ts_local_pe_40_a2_out :
-	(ts_local_pe_40_a3_oe) ? ts_local_pe_40_a3_out :
-	(ts_local_pe_40_a4_oe) ? ts_local_pe_40_a4_out :
-	(ts_local_pe_40_a5_oe) ? ts_local_pe_40_a5_out :
-	(ts_local_pe_40_a6_oe) ? ts_local_pe_40_a6_out :
-	1'bz;
+assign gpu_data_out[1] = (ts_local_pe_40_a0_oe & ts_local_pe_40_a0_out ) | (ts_local_pe_40_a1_oe & ts_local_pe_40_a1_out ) | (ts_local_pe_40_a2_oe & ts_local_pe_40_a2_out ) | (ts_local_pe_40_a3_oe & ts_local_pe_40_a3_out ) | (ts_local_pe_40_a4_oe & ts_local_pe_40_a4_out ) | (ts_local_pe_40_a5_oe & ts_local_pe_40_a5_out ) | (ts_local_pe_40_a6_oe & ts_local_pe_40_a6_out ) | 1'b0;
 assign gpu_data_oe[1] = ts_local_pe_40_a0_oe | ts_local_pe_40_a1_oe | ts_local_pe_40_a2_oe | ts_local_pe_40_a3_oe | ts_local_pe_40_a4_oe | ts_local_pe_40_a5_oe | ts_local_pe_40_a6_oe;
 assign ts_local_pe_40_a0_in = gpu_data_in[1];
 assign ts_local_pe_40_a1_in = gpu_data_in[1];
@@ -2530,15 +2514,7 @@ assign ts_local_pe_40_a5_in = gpu_data_in[1];
 assign ts_local_pe_40_a6_in = gpu_data_in[1];
 
 // --- Compiler-generated local PE for BUS gpu_data<2>
-assign gpu_data_out[2] =
-	(ts_local_pe_41_a0_oe) ? ts_local_pe_41_a0_out :
-	(ts_local_pe_41_a1_oe) ? ts_local_pe_41_a1_out :
-	(ts_local_pe_41_a2_oe) ? ts_local_pe_41_a2_out :
-	(ts_local_pe_41_a3_oe) ? ts_local_pe_41_a3_out :
-	(ts_local_pe_41_a4_oe) ? ts_local_pe_41_a4_out :
-	(ts_local_pe_41_a5_oe) ? ts_local_pe_41_a5_out :
-	(ts_local_pe_41_a6_oe) ? ts_local_pe_41_a6_out :
-	1'bz;
+assign gpu_data_out[2] = (ts_local_pe_41_a0_oe & ts_local_pe_41_a0_out ) | (ts_local_pe_41_a1_oe & ts_local_pe_41_a1_out ) | (ts_local_pe_41_a2_oe & ts_local_pe_41_a2_out ) | (ts_local_pe_41_a3_oe & ts_local_pe_41_a3_out ) | (ts_local_pe_41_a4_oe & ts_local_pe_41_a4_out ) | (ts_local_pe_41_a5_oe & ts_local_pe_41_a5_out ) | (ts_local_pe_41_a6_oe & ts_local_pe_41_a6_out ) | 1'b0;
 assign gpu_data_oe[2] = ts_local_pe_41_a0_oe | ts_local_pe_41_a1_oe | ts_local_pe_41_a2_oe | ts_local_pe_41_a3_oe | ts_local_pe_41_a4_oe | ts_local_pe_41_a5_oe | ts_local_pe_41_a6_oe;
 assign ts_local_pe_41_a0_in = gpu_data_in[2];
 assign ts_local_pe_41_a1_in = gpu_data_in[2];
@@ -2549,15 +2525,7 @@ assign ts_local_pe_41_a5_in = gpu_data_in[2];
 assign ts_local_pe_41_a6_in = gpu_data_in[2];
 
 // --- Compiler-generated local PE for BUS gpu_data<3>
-assign gpu_data_out[3] =
-	(ts_local_pe_42_a0_oe) ? ts_local_pe_42_a0_out :
-	(ts_local_pe_42_a1_oe) ? ts_local_pe_42_a1_out :
-	(ts_local_pe_42_a2_oe) ? ts_local_pe_42_a2_out :
-	(ts_local_pe_42_a3_oe) ? ts_local_pe_42_a3_out :
-	(ts_local_pe_42_a4_oe) ? ts_local_pe_42_a4_out :
-	(ts_local_pe_42_a5_oe) ? ts_local_pe_42_a5_out :
-	(ts_local_pe_42_a6_oe) ? ts_local_pe_42_a6_out :
-	1'bz;
+assign gpu_data_out[3] = (ts_local_pe_42_a0_oe & ts_local_pe_42_a0_out ) | (ts_local_pe_42_a1_oe & ts_local_pe_42_a1_out ) | (ts_local_pe_42_a2_oe & ts_local_pe_42_a2_out ) | (ts_local_pe_42_a3_oe & ts_local_pe_42_a3_out ) | (ts_local_pe_42_a4_oe & ts_local_pe_42_a4_out ) | (ts_local_pe_42_a5_oe & ts_local_pe_42_a5_out ) | (ts_local_pe_42_a6_oe & ts_local_pe_42_a6_out ) | 1'b0;
 assign gpu_data_oe[3] = ts_local_pe_42_a0_oe | ts_local_pe_42_a1_oe | ts_local_pe_42_a2_oe | ts_local_pe_42_a3_oe | ts_local_pe_42_a4_oe | ts_local_pe_42_a5_oe | ts_local_pe_42_a6_oe;
 assign ts_local_pe_42_a0_in = gpu_data_in[3];
 assign ts_local_pe_42_a1_in = gpu_data_in[3];
@@ -2568,15 +2536,7 @@ assign ts_local_pe_42_a5_in = gpu_data_in[3];
 assign ts_local_pe_42_a6_in = gpu_data_in[3];
 
 // --- Compiler-generated local PE for BUS gpu_data<4>
-assign gpu_data_out[4] =
-	(ts_local_pe_43_a0_oe) ? ts_local_pe_43_a0_out :
-	(ts_local_pe_43_a1_oe) ? ts_local_pe_43_a1_out :
-	(ts_local_pe_43_a2_oe) ? ts_local_pe_43_a2_out :
-	(ts_local_pe_43_a3_oe) ? ts_local_pe_43_a3_out :
-	(ts_local_pe_43_a4_oe) ? ts_local_pe_43_a4_out :
-	(ts_local_pe_43_a5_oe) ? ts_local_pe_43_a5_out :
-	(ts_local_pe_43_a6_oe) ? ts_local_pe_43_a6_out :
-	1'bz;
+assign gpu_data_out[4] = (ts_local_pe_43_a0_oe & ts_local_pe_43_a0_out ) | (ts_local_pe_43_a1_oe & ts_local_pe_43_a1_out ) | (ts_local_pe_43_a2_oe & ts_local_pe_43_a2_out ) | (ts_local_pe_43_a3_oe & ts_local_pe_43_a3_out ) | (ts_local_pe_43_a4_oe & ts_local_pe_43_a4_out ) | (ts_local_pe_43_a5_oe & ts_local_pe_43_a5_out ) | (ts_local_pe_43_a6_oe & ts_local_pe_43_a6_out ) | 1'b0;
 assign gpu_data_oe[4] = ts_local_pe_43_a0_oe | ts_local_pe_43_a1_oe | ts_local_pe_43_a2_oe | ts_local_pe_43_a3_oe | ts_local_pe_43_a4_oe | ts_local_pe_43_a5_oe | ts_local_pe_43_a6_oe;
 assign ts_local_pe_43_a0_in = gpu_data_in[4];
 assign ts_local_pe_43_a1_in = gpu_data_in[4];
@@ -2587,15 +2547,7 @@ assign ts_local_pe_43_a5_in = gpu_data_in[4];
 assign ts_local_pe_43_a6_in = gpu_data_in[4];
 
 // --- Compiler-generated local PE for BUS gpu_data<5>
-assign gpu_data_out[5] =
-	(ts_local_pe_44_a0_oe) ? ts_local_pe_44_a0_out :
-	(ts_local_pe_44_a1_oe) ? ts_local_pe_44_a1_out :
-	(ts_local_pe_44_a2_oe) ? ts_local_pe_44_a2_out :
-	(ts_local_pe_44_a3_oe) ? ts_local_pe_44_a3_out :
-	(ts_local_pe_44_a4_oe) ? ts_local_pe_44_a4_out :
-	(ts_local_pe_44_a5_oe) ? ts_local_pe_44_a5_out :
-	(ts_local_pe_44_a6_oe) ? ts_local_pe_44_a6_out :
-	1'bz;
+assign gpu_data_out[5] = (ts_local_pe_44_a0_oe & ts_local_pe_44_a0_out ) | (ts_local_pe_44_a1_oe & ts_local_pe_44_a1_out ) | (ts_local_pe_44_a2_oe & ts_local_pe_44_a2_out ) | (ts_local_pe_44_a3_oe & ts_local_pe_44_a3_out ) | (ts_local_pe_44_a4_oe & ts_local_pe_44_a4_out ) | (ts_local_pe_44_a5_oe & ts_local_pe_44_a5_out ) | (ts_local_pe_44_a6_oe & ts_local_pe_44_a6_out ) | 1'b0;
 assign gpu_data_oe[5] = ts_local_pe_44_a0_oe | ts_local_pe_44_a1_oe | ts_local_pe_44_a2_oe | ts_local_pe_44_a3_oe | ts_local_pe_44_a4_oe | ts_local_pe_44_a5_oe | ts_local_pe_44_a6_oe;
 assign ts_local_pe_44_a0_in = gpu_data_in[5];
 assign ts_local_pe_44_a1_in = gpu_data_in[5];
@@ -2606,15 +2558,7 @@ assign ts_local_pe_44_a5_in = gpu_data_in[5];
 assign ts_local_pe_44_a6_in = gpu_data_in[5];
 
 // --- Compiler-generated local PE for BUS gpu_data<6>
-assign gpu_data_out[6] =
-	(ts_local_pe_45_a0_oe) ? ts_local_pe_45_a0_out :
-	(ts_local_pe_45_a1_oe) ? ts_local_pe_45_a1_out :
-	(ts_local_pe_45_a2_oe) ? ts_local_pe_45_a2_out :
-	(ts_local_pe_45_a3_oe) ? ts_local_pe_45_a3_out :
-	(ts_local_pe_45_a4_oe) ? ts_local_pe_45_a4_out :
-	(ts_local_pe_45_a5_oe) ? ts_local_pe_45_a5_out :
-	(ts_local_pe_45_a6_oe) ? ts_local_pe_45_a6_out :
-	1'bz;
+assign gpu_data_out[6] = (ts_local_pe_45_a0_oe & ts_local_pe_45_a0_out ) | (ts_local_pe_45_a1_oe & ts_local_pe_45_a1_out ) | (ts_local_pe_45_a2_oe & ts_local_pe_45_a2_out ) | (ts_local_pe_45_a3_oe & ts_local_pe_45_a3_out ) | (ts_local_pe_45_a4_oe & ts_local_pe_45_a4_out ) | (ts_local_pe_45_a5_oe & ts_local_pe_45_a5_out ) | (ts_local_pe_45_a6_oe & ts_local_pe_45_a6_out ) | 1'b0;
 assign gpu_data_oe[6] = ts_local_pe_45_a0_oe | ts_local_pe_45_a1_oe | ts_local_pe_45_a2_oe | ts_local_pe_45_a3_oe | ts_local_pe_45_a4_oe | ts_local_pe_45_a5_oe | ts_local_pe_45_a6_oe;
 assign ts_local_pe_45_a0_in = gpu_data_in[6];
 assign ts_local_pe_45_a1_in = gpu_data_in[6];
@@ -2625,15 +2569,7 @@ assign ts_local_pe_45_a5_in = gpu_data_in[6];
 assign ts_local_pe_45_a6_in = gpu_data_in[6];
 
 // --- Compiler-generated local PE for BUS gpu_data<7>
-assign gpu_data_out[7] =
-	(ts_local_pe_46_a0_oe) ? ts_local_pe_46_a0_out :
-	(ts_local_pe_46_a1_oe) ? ts_local_pe_46_a1_out :
-	(ts_local_pe_46_a2_oe) ? ts_local_pe_46_a2_out :
-	(ts_local_pe_46_a3_oe) ? ts_local_pe_46_a3_out :
-	(ts_local_pe_46_a4_oe) ? ts_local_pe_46_a4_out :
-	(ts_local_pe_46_a5_oe) ? ts_local_pe_46_a5_out :
-	(ts_local_pe_46_a6_oe) ? ts_local_pe_46_a6_out :
-	1'bz;
+assign gpu_data_out[7] = (ts_local_pe_46_a0_oe & ts_local_pe_46_a0_out ) | (ts_local_pe_46_a1_oe & ts_local_pe_46_a1_out ) | (ts_local_pe_46_a2_oe & ts_local_pe_46_a2_out ) | (ts_local_pe_46_a3_oe & ts_local_pe_46_a3_out ) | (ts_local_pe_46_a4_oe & ts_local_pe_46_a4_out ) | (ts_local_pe_46_a5_oe & ts_local_pe_46_a5_out ) | (ts_local_pe_46_a6_oe & ts_local_pe_46_a6_out ) | 1'b0;
 assign gpu_data_oe[7] = ts_local_pe_46_a0_oe | ts_local_pe_46_a1_oe | ts_local_pe_46_a2_oe | ts_local_pe_46_a3_oe | ts_local_pe_46_a4_oe | ts_local_pe_46_a5_oe | ts_local_pe_46_a6_oe;
 assign ts_local_pe_46_a0_in = gpu_data_in[7];
 assign ts_local_pe_46_a1_in = gpu_data_in[7];
@@ -2644,15 +2580,7 @@ assign ts_local_pe_46_a5_in = gpu_data_in[7];
 assign ts_local_pe_46_a6_in = gpu_data_in[7];
 
 // --- Compiler-generated local PE for BUS gpu_data<8>
-assign gpu_data_out[8] =
-	(ts_local_pe_47_a0_oe) ? ts_local_pe_47_a0_out :
-	(ts_local_pe_47_a1_oe) ? ts_local_pe_47_a1_out :
-	(ts_local_pe_47_a2_oe) ? ts_local_pe_47_a2_out :
-	(ts_local_pe_47_a3_oe) ? ts_local_pe_47_a3_out :
-	(ts_local_pe_47_a4_oe) ? ts_local_pe_47_a4_out :
-	(ts_local_pe_47_a5_oe) ? ts_local_pe_47_a5_out :
-	(ts_local_pe_47_a6_oe) ? ts_local_pe_47_a6_out :
-	1'bz;
+assign gpu_data_out[8] = (ts_local_pe_47_a0_oe & ts_local_pe_47_a0_out ) | (ts_local_pe_47_a1_oe & ts_local_pe_47_a1_out ) | (ts_local_pe_47_a2_oe & ts_local_pe_47_a2_out ) | (ts_local_pe_47_a3_oe & ts_local_pe_47_a3_out ) | (ts_local_pe_47_a4_oe & ts_local_pe_47_a4_out ) | (ts_local_pe_47_a5_oe & ts_local_pe_47_a5_out ) | (ts_local_pe_47_a6_oe & ts_local_pe_47_a6_out ) | 1'b0;
 assign gpu_data_oe[8] = ts_local_pe_47_a0_oe | ts_local_pe_47_a1_oe | ts_local_pe_47_a2_oe | ts_local_pe_47_a3_oe | ts_local_pe_47_a4_oe | ts_local_pe_47_a5_oe | ts_local_pe_47_a6_oe;
 assign ts_local_pe_47_a0_in = gpu_data_in[8];
 assign ts_local_pe_47_a1_in = gpu_data_in[8];
@@ -2663,15 +2591,7 @@ assign ts_local_pe_47_a5_in = gpu_data_in[8];
 assign ts_local_pe_47_a6_in = gpu_data_in[8];
 
 // --- Compiler-generated local PE for BUS gpu_data<9>
-assign gpu_data_out[9] =
-	(ts_local_pe_48_a0_oe) ? ts_local_pe_48_a0_out :
-	(ts_local_pe_48_a1_oe) ? ts_local_pe_48_a1_out :
-	(ts_local_pe_48_a2_oe) ? ts_local_pe_48_a2_out :
-	(ts_local_pe_48_a3_oe) ? ts_local_pe_48_a3_out :
-	(ts_local_pe_48_a4_oe) ? ts_local_pe_48_a4_out :
-	(ts_local_pe_48_a5_oe) ? ts_local_pe_48_a5_out :
-	(ts_local_pe_48_a6_oe) ? ts_local_pe_48_a6_out :
-	1'bz;
+assign gpu_data_out[9] = (ts_local_pe_48_a0_oe & ts_local_pe_48_a0_out ) | (ts_local_pe_48_a1_oe & ts_local_pe_48_a1_out ) | (ts_local_pe_48_a2_oe & ts_local_pe_48_a2_out ) | (ts_local_pe_48_a3_oe & ts_local_pe_48_a3_out ) | (ts_local_pe_48_a4_oe & ts_local_pe_48_a4_out ) | (ts_local_pe_48_a5_oe & ts_local_pe_48_a5_out ) | (ts_local_pe_48_a6_oe & ts_local_pe_48_a6_out ) | 1'b0;
 assign gpu_data_oe[9] = ts_local_pe_48_a0_oe | ts_local_pe_48_a1_oe | ts_local_pe_48_a2_oe | ts_local_pe_48_a3_oe | ts_local_pe_48_a4_oe | ts_local_pe_48_a5_oe | ts_local_pe_48_a6_oe;
 assign ts_local_pe_48_a0_in = gpu_data_in[9];
 assign ts_local_pe_48_a1_in = gpu_data_in[9];
@@ -2682,15 +2602,7 @@ assign ts_local_pe_48_a5_in = gpu_data_in[9];
 assign ts_local_pe_48_a6_in = gpu_data_in[9];
 
 // --- Compiler-generated local PE for BUS gpu_data<10>
-assign gpu_data_out[10] =
-	(ts_local_pe_49_a0_oe) ? ts_local_pe_49_a0_out :
-	(ts_local_pe_49_a1_oe) ? ts_local_pe_49_a1_out :
-	(ts_local_pe_49_a2_oe) ? ts_local_pe_49_a2_out :
-	(ts_local_pe_49_a3_oe) ? ts_local_pe_49_a3_out :
-	(ts_local_pe_49_a4_oe) ? ts_local_pe_49_a4_out :
-	(ts_local_pe_49_a5_oe) ? ts_local_pe_49_a5_out :
-	(ts_local_pe_49_a6_oe) ? ts_local_pe_49_a6_out :
-	1'bz;
+assign gpu_data_out[10] = (ts_local_pe_49_a0_oe & ts_local_pe_49_a0_out ) | (ts_local_pe_49_a1_oe & ts_local_pe_49_a1_out ) | (ts_local_pe_49_a2_oe & ts_local_pe_49_a2_out ) | (ts_local_pe_49_a3_oe & ts_local_pe_49_a3_out ) | (ts_local_pe_49_a4_oe & ts_local_pe_49_a4_out ) | (ts_local_pe_49_a5_oe & ts_local_pe_49_a5_out ) | (ts_local_pe_49_a6_oe & ts_local_pe_49_a6_out ) | 1'b0;
 assign gpu_data_oe[10] = ts_local_pe_49_a0_oe | ts_local_pe_49_a1_oe | ts_local_pe_49_a2_oe | ts_local_pe_49_a3_oe | ts_local_pe_49_a4_oe | ts_local_pe_49_a5_oe | ts_local_pe_49_a6_oe;
 assign ts_local_pe_49_a0_in = gpu_data_in[10];
 assign ts_local_pe_49_a1_in = gpu_data_in[10];
@@ -2701,15 +2613,7 @@ assign ts_local_pe_49_a5_in = gpu_data_in[10];
 assign ts_local_pe_49_a6_in = gpu_data_in[10];
 
 // --- Compiler-generated local PE for BUS gpu_data<11>
-assign gpu_data_out[11] =
-	(ts_local_pe_50_a0_oe) ? ts_local_pe_50_a0_out :
-	(ts_local_pe_50_a1_oe) ? ts_local_pe_50_a1_out :
-	(ts_local_pe_50_a2_oe) ? ts_local_pe_50_a2_out :
-	(ts_local_pe_50_a3_oe) ? ts_local_pe_50_a3_out :
-	(ts_local_pe_50_a4_oe) ? ts_local_pe_50_a4_out :
-	(ts_local_pe_50_a5_oe) ? ts_local_pe_50_a5_out :
-	(ts_local_pe_50_a6_oe) ? ts_local_pe_50_a6_out :
-	1'bz;
+assign gpu_data_out[11] = (ts_local_pe_50_a0_oe & ts_local_pe_50_a0_out ) | (ts_local_pe_50_a1_oe & ts_local_pe_50_a1_out ) | (ts_local_pe_50_a2_oe & ts_local_pe_50_a2_out ) | (ts_local_pe_50_a3_oe & ts_local_pe_50_a3_out ) | (ts_local_pe_50_a4_oe & ts_local_pe_50_a4_out ) | (ts_local_pe_50_a5_oe & ts_local_pe_50_a5_out ) | (ts_local_pe_50_a6_oe & ts_local_pe_50_a6_out ) | 1'b0;
 assign gpu_data_oe[11] = ts_local_pe_50_a0_oe | ts_local_pe_50_a1_oe | ts_local_pe_50_a2_oe | ts_local_pe_50_a3_oe | ts_local_pe_50_a4_oe | ts_local_pe_50_a5_oe | ts_local_pe_50_a6_oe;
 assign ts_local_pe_50_a0_in = gpu_data_in[11];
 assign ts_local_pe_50_a1_in = gpu_data_in[11];
@@ -2720,15 +2624,7 @@ assign ts_local_pe_50_a5_in = gpu_data_in[11];
 assign ts_local_pe_50_a6_in = gpu_data_in[11];
 
 // --- Compiler-generated local PE for BUS gpu_data<12>
-assign gpu_data_out[12] =
-	(ts_local_pe_51_a0_oe) ? ts_local_pe_51_a0_out :
-	(ts_local_pe_51_a1_oe) ? ts_local_pe_51_a1_out :
-	(ts_local_pe_51_a2_oe) ? ts_local_pe_51_a2_out :
-	(ts_local_pe_51_a3_oe) ? ts_local_pe_51_a3_out :
-	(ts_local_pe_51_a4_oe) ? ts_local_pe_51_a4_out :
-	(ts_local_pe_51_a5_oe) ? ts_local_pe_51_a5_out :
-	(ts_local_pe_51_a6_oe) ? ts_local_pe_51_a6_out :
-	1'bz;
+assign gpu_data_out[12] = (ts_local_pe_51_a0_oe & ts_local_pe_51_a0_out ) | (ts_local_pe_51_a1_oe & ts_local_pe_51_a1_out ) | (ts_local_pe_51_a2_oe & ts_local_pe_51_a2_out ) | (ts_local_pe_51_a3_oe & ts_local_pe_51_a3_out ) | (ts_local_pe_51_a4_oe & ts_local_pe_51_a4_out ) | (ts_local_pe_51_a5_oe & ts_local_pe_51_a5_out ) | (ts_local_pe_51_a6_oe & ts_local_pe_51_a6_out ) | 1'b0;
 assign gpu_data_oe[12] = ts_local_pe_51_a0_oe | ts_local_pe_51_a1_oe | ts_local_pe_51_a2_oe | ts_local_pe_51_a3_oe | ts_local_pe_51_a4_oe | ts_local_pe_51_a5_oe | ts_local_pe_51_a6_oe;
 assign ts_local_pe_51_a0_in = gpu_data_in[12];
 assign ts_local_pe_51_a1_in = gpu_data_in[12];
@@ -2739,15 +2635,7 @@ assign ts_local_pe_51_a5_in = gpu_data_in[12];
 assign ts_local_pe_51_a6_in = gpu_data_in[12];
 
 // --- Compiler-generated local PE for BUS gpu_data<13>
-assign gpu_data_out[13] =
-	(ts_local_pe_52_a0_oe) ? ts_local_pe_52_a0_out :
-	(ts_local_pe_52_a1_oe) ? ts_local_pe_52_a1_out :
-	(ts_local_pe_52_a2_oe) ? ts_local_pe_52_a2_out :
-	(ts_local_pe_52_a3_oe) ? ts_local_pe_52_a3_out :
-	(ts_local_pe_52_a4_oe) ? ts_local_pe_52_a4_out :
-	(ts_local_pe_52_a5_oe) ? ts_local_pe_52_a5_out :
-	(ts_local_pe_52_a6_oe) ? ts_local_pe_52_a6_out :
-	1'bz;
+assign gpu_data_out[13] = (ts_local_pe_52_a0_oe & ts_local_pe_52_a0_out ) | (ts_local_pe_52_a1_oe & ts_local_pe_52_a1_out ) | (ts_local_pe_52_a2_oe & ts_local_pe_52_a2_out ) | (ts_local_pe_52_a3_oe & ts_local_pe_52_a3_out ) | (ts_local_pe_52_a4_oe & ts_local_pe_52_a4_out ) | (ts_local_pe_52_a5_oe & ts_local_pe_52_a5_out ) | (ts_local_pe_52_a6_oe & ts_local_pe_52_a6_out ) | 1'b0;
 assign gpu_data_oe[13] = ts_local_pe_52_a0_oe | ts_local_pe_52_a1_oe | ts_local_pe_52_a2_oe | ts_local_pe_52_a3_oe | ts_local_pe_52_a4_oe | ts_local_pe_52_a5_oe | ts_local_pe_52_a6_oe;
 assign ts_local_pe_52_a0_in = gpu_data_in[13];
 assign ts_local_pe_52_a1_in = gpu_data_in[13];
@@ -2758,15 +2646,7 @@ assign ts_local_pe_52_a5_in = gpu_data_in[13];
 assign ts_local_pe_52_a6_in = gpu_data_in[13];
 
 // --- Compiler-generated local PE for BUS gpu_data<14>
-assign gpu_data_out[14] =
-	(ts_local_pe_53_a0_oe) ? ts_local_pe_53_a0_out :
-	(ts_local_pe_53_a1_oe) ? ts_local_pe_53_a1_out :
-	(ts_local_pe_53_a2_oe) ? ts_local_pe_53_a2_out :
-	(ts_local_pe_53_a3_oe) ? ts_local_pe_53_a3_out :
-	(ts_local_pe_53_a4_oe) ? ts_local_pe_53_a4_out :
-	(ts_local_pe_53_a5_oe) ? ts_local_pe_53_a5_out :
-	(ts_local_pe_53_a6_oe) ? ts_local_pe_53_a6_out :
-	1'bz;
+assign gpu_data_out[14] = (ts_local_pe_53_a0_oe & ts_local_pe_53_a0_out ) | (ts_local_pe_53_a1_oe & ts_local_pe_53_a1_out ) | (ts_local_pe_53_a2_oe & ts_local_pe_53_a2_out ) | (ts_local_pe_53_a3_oe & ts_local_pe_53_a3_out ) | (ts_local_pe_53_a4_oe & ts_local_pe_53_a4_out ) | (ts_local_pe_53_a5_oe & ts_local_pe_53_a5_out ) | (ts_local_pe_53_a6_oe & ts_local_pe_53_a6_out ) | 1'b0;
 assign gpu_data_oe[14] = ts_local_pe_53_a0_oe | ts_local_pe_53_a1_oe | ts_local_pe_53_a2_oe | ts_local_pe_53_a3_oe | ts_local_pe_53_a4_oe | ts_local_pe_53_a5_oe | ts_local_pe_53_a6_oe;
 assign ts_local_pe_53_a0_in = gpu_data_in[14];
 assign ts_local_pe_53_a1_in = gpu_data_in[14];
@@ -2777,15 +2657,7 @@ assign ts_local_pe_53_a5_in = gpu_data_in[14];
 assign ts_local_pe_53_a6_in = gpu_data_in[14];
 
 // --- Compiler-generated local PE for BUS gpu_data<15>
-assign gpu_data_out[15] =
-	(ts_local_pe_54_a0_oe) ? ts_local_pe_54_a0_out :
-	(ts_local_pe_54_a1_oe) ? ts_local_pe_54_a1_out :
-	(ts_local_pe_54_a2_oe) ? ts_local_pe_54_a2_out :
-	(ts_local_pe_54_a3_oe) ? ts_local_pe_54_a3_out :
-	(ts_local_pe_54_a4_oe) ? ts_local_pe_54_a4_out :
-	(ts_local_pe_54_a5_oe) ? ts_local_pe_54_a5_out :
-	(ts_local_pe_54_a6_oe) ? ts_local_pe_54_a6_out :
-	1'bz;
+assign gpu_data_out[15] = (ts_local_pe_54_a0_oe & ts_local_pe_54_a0_out ) | (ts_local_pe_54_a1_oe & ts_local_pe_54_a1_out ) | (ts_local_pe_54_a2_oe & ts_local_pe_54_a2_out ) | (ts_local_pe_54_a3_oe & ts_local_pe_54_a3_out ) | (ts_local_pe_54_a4_oe & ts_local_pe_54_a4_out ) | (ts_local_pe_54_a5_oe & ts_local_pe_54_a5_out ) | (ts_local_pe_54_a6_oe & ts_local_pe_54_a6_out ) | 1'b0;
 assign gpu_data_oe[15] = ts_local_pe_54_a0_oe | ts_local_pe_54_a1_oe | ts_local_pe_54_a2_oe | ts_local_pe_54_a3_oe | ts_local_pe_54_a4_oe | ts_local_pe_54_a5_oe | ts_local_pe_54_a6_oe;
 assign ts_local_pe_54_a0_in = gpu_data_in[15];
 assign ts_local_pe_54_a1_in = gpu_data_in[15];
@@ -2796,15 +2668,7 @@ assign ts_local_pe_54_a5_in = gpu_data_in[15];
 assign ts_local_pe_54_a6_in = gpu_data_in[15];
 
 // --- Compiler-generated local PE for BUS gpu_data<16>
-assign gpu_data_out[16] =
-	(ts_local_pe_55_a0_oe) ? ts_local_pe_55_a0_out :
-	(ts_local_pe_55_a1_oe) ? ts_local_pe_55_a1_out :
-	(ts_local_pe_55_a2_oe) ? ts_local_pe_55_a2_out :
-	(ts_local_pe_55_a3_oe) ? ts_local_pe_55_a3_out :
-	(ts_local_pe_55_a4_oe) ? ts_local_pe_55_a4_out :
-	(ts_local_pe_55_a5_oe) ? ts_local_pe_55_a5_out :
-	(ts_local_pe_55_a6_oe) ? ts_local_pe_55_a6_out :
-	1'bz;
+assign gpu_data_out[16] = (ts_local_pe_55_a0_oe & ts_local_pe_55_a0_out ) | (ts_local_pe_55_a1_oe & ts_local_pe_55_a1_out ) | (ts_local_pe_55_a2_oe & ts_local_pe_55_a2_out ) | (ts_local_pe_55_a3_oe & ts_local_pe_55_a3_out ) | (ts_local_pe_55_a4_oe & ts_local_pe_55_a4_out ) | (ts_local_pe_55_a5_oe & ts_local_pe_55_a5_out ) | (ts_local_pe_55_a6_oe & ts_local_pe_55_a6_out ) | 1'b0;
 assign gpu_data_oe[16] = ts_local_pe_55_a0_oe | ts_local_pe_55_a1_oe | ts_local_pe_55_a2_oe | ts_local_pe_55_a3_oe | ts_local_pe_55_a4_oe | ts_local_pe_55_a5_oe | ts_local_pe_55_a6_oe;
 assign ts_local_pe_55_a0_in = gpu_data_in[16];
 assign ts_local_pe_55_a1_in = gpu_data_in[16];
@@ -2815,15 +2679,7 @@ assign ts_local_pe_55_a5_in = gpu_data_in[16];
 assign ts_local_pe_55_a6_in = gpu_data_in[16];
 
 // --- Compiler-generated local PE for BUS gpu_data<17>
-assign gpu_data_out[17] =
-	(ts_local_pe_56_a0_oe) ? ts_local_pe_56_a0_out :
-	(ts_local_pe_56_a1_oe) ? ts_local_pe_56_a1_out :
-	(ts_local_pe_56_a2_oe) ? ts_local_pe_56_a2_out :
-	(ts_local_pe_56_a3_oe) ? ts_local_pe_56_a3_out :
-	(ts_local_pe_56_a4_oe) ? ts_local_pe_56_a4_out :
-	(ts_local_pe_56_a5_oe) ? ts_local_pe_56_a5_out :
-	(ts_local_pe_56_a6_oe) ? ts_local_pe_56_a6_out :
-	1'bz;
+assign gpu_data_out[17] = (ts_local_pe_56_a0_oe & ts_local_pe_56_a0_out ) | (ts_local_pe_56_a1_oe & ts_local_pe_56_a1_out ) | (ts_local_pe_56_a2_oe & ts_local_pe_56_a2_out ) | (ts_local_pe_56_a3_oe & ts_local_pe_56_a3_out ) | (ts_local_pe_56_a4_oe & ts_local_pe_56_a4_out ) | (ts_local_pe_56_a5_oe & ts_local_pe_56_a5_out ) | (ts_local_pe_56_a6_oe & ts_local_pe_56_a6_out ) | 1'b0;
 assign gpu_data_oe[17] = ts_local_pe_56_a0_oe | ts_local_pe_56_a1_oe | ts_local_pe_56_a2_oe | ts_local_pe_56_a3_oe | ts_local_pe_56_a4_oe | ts_local_pe_56_a5_oe | ts_local_pe_56_a6_oe;
 assign ts_local_pe_56_a0_in = gpu_data_in[17];
 assign ts_local_pe_56_a1_in = gpu_data_in[17];
@@ -2834,15 +2690,7 @@ assign ts_local_pe_56_a5_in = gpu_data_in[17];
 assign ts_local_pe_56_a6_in = gpu_data_in[17];
 
 // --- Compiler-generated local PE for BUS gpu_data<18>
-assign gpu_data_out[18] =
-	(ts_local_pe_57_a0_oe) ? ts_local_pe_57_a0_out :
-	(ts_local_pe_57_a1_oe) ? ts_local_pe_57_a1_out :
-	(ts_local_pe_57_a2_oe) ? ts_local_pe_57_a2_out :
-	(ts_local_pe_57_a3_oe) ? ts_local_pe_57_a3_out :
-	(ts_local_pe_57_a4_oe) ? ts_local_pe_57_a4_out :
-	(ts_local_pe_57_a5_oe) ? ts_local_pe_57_a5_out :
-	(ts_local_pe_57_a6_oe) ? ts_local_pe_57_a6_out :
-	1'bz;
+assign gpu_data_out[18] = (ts_local_pe_57_a0_oe & ts_local_pe_57_a0_out ) | (ts_local_pe_57_a1_oe & ts_local_pe_57_a1_out ) | (ts_local_pe_57_a2_oe & ts_local_pe_57_a2_out ) | (ts_local_pe_57_a3_oe & ts_local_pe_57_a3_out ) | (ts_local_pe_57_a4_oe & ts_local_pe_57_a4_out ) | (ts_local_pe_57_a5_oe & ts_local_pe_57_a5_out ) | (ts_local_pe_57_a6_oe & ts_local_pe_57_a6_out ) | 1'b0;
 assign gpu_data_oe[18] = ts_local_pe_57_a0_oe | ts_local_pe_57_a1_oe | ts_local_pe_57_a2_oe | ts_local_pe_57_a3_oe | ts_local_pe_57_a4_oe | ts_local_pe_57_a5_oe | ts_local_pe_57_a6_oe;
 assign ts_local_pe_57_a0_in = gpu_data_in[18];
 assign ts_local_pe_57_a1_in = gpu_data_in[18];
@@ -2853,15 +2701,7 @@ assign ts_local_pe_57_a5_in = gpu_data_in[18];
 assign ts_local_pe_57_a6_in = gpu_data_in[18];
 
 // --- Compiler-generated local PE for BUS gpu_data<19>
-assign gpu_data_out[19] =
-	(ts_local_pe_58_a0_oe) ? ts_local_pe_58_a0_out :
-	(ts_local_pe_58_a1_oe) ? ts_local_pe_58_a1_out :
-	(ts_local_pe_58_a2_oe) ? ts_local_pe_58_a2_out :
-	(ts_local_pe_58_a3_oe) ? ts_local_pe_58_a3_out :
-	(ts_local_pe_58_a4_oe) ? ts_local_pe_58_a4_out :
-	(ts_local_pe_58_a5_oe) ? ts_local_pe_58_a5_out :
-	(ts_local_pe_58_a6_oe) ? ts_local_pe_58_a6_out :
-	1'bz;
+assign gpu_data_out[19] = (ts_local_pe_58_a0_oe & ts_local_pe_58_a0_out ) | (ts_local_pe_58_a1_oe & ts_local_pe_58_a1_out ) | (ts_local_pe_58_a2_oe & ts_local_pe_58_a2_out ) | (ts_local_pe_58_a3_oe & ts_local_pe_58_a3_out ) | (ts_local_pe_58_a4_oe & ts_local_pe_58_a4_out ) | (ts_local_pe_58_a5_oe & ts_local_pe_58_a5_out ) | (ts_local_pe_58_a6_oe & ts_local_pe_58_a6_out ) | 1'b0;
 assign gpu_data_oe[19] = ts_local_pe_58_a0_oe | ts_local_pe_58_a1_oe | ts_local_pe_58_a2_oe | ts_local_pe_58_a3_oe | ts_local_pe_58_a4_oe | ts_local_pe_58_a5_oe | ts_local_pe_58_a6_oe;
 assign ts_local_pe_58_a0_in = gpu_data_in[19];
 assign ts_local_pe_58_a1_in = gpu_data_in[19];
@@ -2872,15 +2712,7 @@ assign ts_local_pe_58_a5_in = gpu_data_in[19];
 assign ts_local_pe_58_a6_in = gpu_data_in[19];
 
 // --- Compiler-generated local PE for BUS gpu_data<20>
-assign gpu_data_out[20] =
-	(ts_local_pe_59_a0_oe) ? ts_local_pe_59_a0_out :
-	(ts_local_pe_59_a1_oe) ? ts_local_pe_59_a1_out :
-	(ts_local_pe_59_a2_oe) ? ts_local_pe_59_a2_out :
-	(ts_local_pe_59_a3_oe) ? ts_local_pe_59_a3_out :
-	(ts_local_pe_59_a4_oe) ? ts_local_pe_59_a4_out :
-	(ts_local_pe_59_a5_oe) ? ts_local_pe_59_a5_out :
-	(ts_local_pe_59_a6_oe) ? ts_local_pe_59_a6_out :
-	1'bz;
+assign gpu_data_out[20] = (ts_local_pe_59_a0_oe & ts_local_pe_59_a0_out ) | (ts_local_pe_59_a1_oe & ts_local_pe_59_a1_out ) | (ts_local_pe_59_a2_oe & ts_local_pe_59_a2_out ) | (ts_local_pe_59_a3_oe & ts_local_pe_59_a3_out ) | (ts_local_pe_59_a4_oe & ts_local_pe_59_a4_out ) | (ts_local_pe_59_a5_oe & ts_local_pe_59_a5_out ) | (ts_local_pe_59_a6_oe & ts_local_pe_59_a6_out ) | 1'b0;
 assign gpu_data_oe[20] = ts_local_pe_59_a0_oe | ts_local_pe_59_a1_oe | ts_local_pe_59_a2_oe | ts_local_pe_59_a3_oe | ts_local_pe_59_a4_oe | ts_local_pe_59_a5_oe | ts_local_pe_59_a6_oe;
 assign ts_local_pe_59_a0_in = gpu_data_in[20];
 assign ts_local_pe_59_a1_in = gpu_data_in[20];
@@ -2891,15 +2723,7 @@ assign ts_local_pe_59_a5_in = gpu_data_in[20];
 assign ts_local_pe_59_a6_in = gpu_data_in[20];
 
 // --- Compiler-generated local PE for BUS gpu_data<21>
-assign gpu_data_out[21] =
-	(ts_local_pe_60_a0_oe) ? ts_local_pe_60_a0_out :
-	(ts_local_pe_60_a1_oe) ? ts_local_pe_60_a1_out :
-	(ts_local_pe_60_a2_oe) ? ts_local_pe_60_a2_out :
-	(ts_local_pe_60_a3_oe) ? ts_local_pe_60_a3_out :
-	(ts_local_pe_60_a4_oe) ? ts_local_pe_60_a4_out :
-	(ts_local_pe_60_a5_oe) ? ts_local_pe_60_a5_out :
-	(ts_local_pe_60_a6_oe) ? ts_local_pe_60_a6_out :
-	1'bz;
+assign gpu_data_out[21] = (ts_local_pe_60_a0_oe & ts_local_pe_60_a0_out ) | (ts_local_pe_60_a1_oe & ts_local_pe_60_a1_out ) | (ts_local_pe_60_a2_oe & ts_local_pe_60_a2_out ) | (ts_local_pe_60_a3_oe & ts_local_pe_60_a3_out ) | (ts_local_pe_60_a4_oe & ts_local_pe_60_a4_out ) | (ts_local_pe_60_a5_oe & ts_local_pe_60_a5_out ) | (ts_local_pe_60_a6_oe & ts_local_pe_60_a6_out ) | 1'b0;
 assign gpu_data_oe[21] = ts_local_pe_60_a0_oe | ts_local_pe_60_a1_oe | ts_local_pe_60_a2_oe | ts_local_pe_60_a3_oe | ts_local_pe_60_a4_oe | ts_local_pe_60_a5_oe | ts_local_pe_60_a6_oe;
 assign ts_local_pe_60_a0_in = gpu_data_in[21];
 assign ts_local_pe_60_a1_in = gpu_data_in[21];
@@ -2910,15 +2734,7 @@ assign ts_local_pe_60_a5_in = gpu_data_in[21];
 assign ts_local_pe_60_a6_in = gpu_data_in[21];
 
 // --- Compiler-generated local PE for BUS gpu_data<22>
-assign gpu_data_out[22] =
-	(ts_local_pe_61_a0_oe) ? ts_local_pe_61_a0_out :
-	(ts_local_pe_61_a1_oe) ? ts_local_pe_61_a1_out :
-	(ts_local_pe_61_a2_oe) ? ts_local_pe_61_a2_out :
-	(ts_local_pe_61_a3_oe) ? ts_local_pe_61_a3_out :
-	(ts_local_pe_61_a4_oe) ? ts_local_pe_61_a4_out :
-	(ts_local_pe_61_a5_oe) ? ts_local_pe_61_a5_out :
-	(ts_local_pe_61_a6_oe) ? ts_local_pe_61_a6_out :
-	1'bz;
+assign gpu_data_out[22] = (ts_local_pe_61_a0_oe & ts_local_pe_61_a0_out ) | (ts_local_pe_61_a1_oe & ts_local_pe_61_a1_out ) | (ts_local_pe_61_a2_oe & ts_local_pe_61_a2_out ) | (ts_local_pe_61_a3_oe & ts_local_pe_61_a3_out ) | (ts_local_pe_61_a4_oe & ts_local_pe_61_a4_out ) | (ts_local_pe_61_a5_oe & ts_local_pe_61_a5_out ) | (ts_local_pe_61_a6_oe & ts_local_pe_61_a6_out ) | 1'b0;
 assign gpu_data_oe[22] = ts_local_pe_61_a0_oe | ts_local_pe_61_a1_oe | ts_local_pe_61_a2_oe | ts_local_pe_61_a3_oe | ts_local_pe_61_a4_oe | ts_local_pe_61_a5_oe | ts_local_pe_61_a6_oe;
 assign ts_local_pe_61_a0_in = gpu_data_in[22];
 assign ts_local_pe_61_a1_in = gpu_data_in[22];
@@ -2929,15 +2745,7 @@ assign ts_local_pe_61_a5_in = gpu_data_in[22];
 assign ts_local_pe_61_a6_in = gpu_data_in[22];
 
 // --- Compiler-generated local PE for BUS gpu_data<23>
-assign gpu_data_out[23] =
-	(ts_local_pe_62_a0_oe) ? ts_local_pe_62_a0_out :
-	(ts_local_pe_62_a1_oe) ? ts_local_pe_62_a1_out :
-	(ts_local_pe_62_a2_oe) ? ts_local_pe_62_a2_out :
-	(ts_local_pe_62_a3_oe) ? ts_local_pe_62_a3_out :
-	(ts_local_pe_62_a4_oe) ? ts_local_pe_62_a4_out :
-	(ts_local_pe_62_a5_oe) ? ts_local_pe_62_a5_out :
-	(ts_local_pe_62_a6_oe) ? ts_local_pe_62_a6_out :
-	1'bz;
+assign gpu_data_out[23] = (ts_local_pe_62_a0_oe & ts_local_pe_62_a0_out ) | (ts_local_pe_62_a1_oe & ts_local_pe_62_a1_out ) | (ts_local_pe_62_a2_oe & ts_local_pe_62_a2_out ) | (ts_local_pe_62_a3_oe & ts_local_pe_62_a3_out ) | (ts_local_pe_62_a4_oe & ts_local_pe_62_a4_out ) | (ts_local_pe_62_a5_oe & ts_local_pe_62_a5_out ) | (ts_local_pe_62_a6_oe & ts_local_pe_62_a6_out ) | 1'b0;
 assign gpu_data_oe[23] = ts_local_pe_62_a0_oe | ts_local_pe_62_a1_oe | ts_local_pe_62_a2_oe | ts_local_pe_62_a3_oe | ts_local_pe_62_a4_oe | ts_local_pe_62_a5_oe | ts_local_pe_62_a6_oe;
 assign ts_local_pe_62_a0_in = gpu_data_in[23];
 assign ts_local_pe_62_a1_in = gpu_data_in[23];
@@ -2948,15 +2756,7 @@ assign ts_local_pe_62_a5_in = gpu_data_in[23];
 assign ts_local_pe_62_a6_in = gpu_data_in[23];
 
 // --- Compiler-generated local PE for BUS gpu_data<24>
-assign gpu_data_out[24] =
-	(ts_local_pe_63_a0_oe) ? ts_local_pe_63_a0_out :
-	(ts_local_pe_63_a1_oe) ? ts_local_pe_63_a1_out :
-	(ts_local_pe_63_a2_oe) ? ts_local_pe_63_a2_out :
-	(ts_local_pe_63_a3_oe) ? ts_local_pe_63_a3_out :
-	(ts_local_pe_63_a4_oe) ? ts_local_pe_63_a4_out :
-	(ts_local_pe_63_a5_oe) ? ts_local_pe_63_a5_out :
-	(ts_local_pe_63_a6_oe) ? ts_local_pe_63_a6_out :
-	1'bz;
+assign gpu_data_out[24] = (ts_local_pe_63_a0_oe & ts_local_pe_63_a0_out ) | (ts_local_pe_63_a1_oe & ts_local_pe_63_a1_out ) | (ts_local_pe_63_a2_oe & ts_local_pe_63_a2_out ) | (ts_local_pe_63_a3_oe & ts_local_pe_63_a3_out ) | (ts_local_pe_63_a4_oe & ts_local_pe_63_a4_out ) | (ts_local_pe_63_a5_oe & ts_local_pe_63_a5_out ) | (ts_local_pe_63_a6_oe & ts_local_pe_63_a6_out ) | 1'b0;
 assign gpu_data_oe[24] = ts_local_pe_63_a0_oe | ts_local_pe_63_a1_oe | ts_local_pe_63_a2_oe | ts_local_pe_63_a3_oe | ts_local_pe_63_a4_oe | ts_local_pe_63_a5_oe | ts_local_pe_63_a6_oe;
 assign ts_local_pe_63_a0_in = gpu_data_in[24];
 assign ts_local_pe_63_a1_in = gpu_data_in[24];
@@ -2967,15 +2767,7 @@ assign ts_local_pe_63_a5_in = gpu_data_in[24];
 assign ts_local_pe_63_a6_in = gpu_data_in[24];
 
 // --- Compiler-generated local PE for BUS gpu_data<25>
-assign gpu_data_out[25] =
-	(ts_local_pe_64_a0_oe) ? ts_local_pe_64_a0_out :
-	(ts_local_pe_64_a1_oe) ? ts_local_pe_64_a1_out :
-	(ts_local_pe_64_a2_oe) ? ts_local_pe_64_a2_out :
-	(ts_local_pe_64_a3_oe) ? ts_local_pe_64_a3_out :
-	(ts_local_pe_64_a4_oe) ? ts_local_pe_64_a4_out :
-	(ts_local_pe_64_a5_oe) ? ts_local_pe_64_a5_out :
-	(ts_local_pe_64_a6_oe) ? ts_local_pe_64_a6_out :
-	1'bz;
+assign gpu_data_out[25] = (ts_local_pe_64_a0_oe & ts_local_pe_64_a0_out ) | (ts_local_pe_64_a1_oe & ts_local_pe_64_a1_out ) | (ts_local_pe_64_a2_oe & ts_local_pe_64_a2_out ) | (ts_local_pe_64_a3_oe & ts_local_pe_64_a3_out ) | (ts_local_pe_64_a4_oe & ts_local_pe_64_a4_out ) | (ts_local_pe_64_a5_oe & ts_local_pe_64_a5_out ) | (ts_local_pe_64_a6_oe & ts_local_pe_64_a6_out ) | 1'b0;
 assign gpu_data_oe[25] = ts_local_pe_64_a0_oe | ts_local_pe_64_a1_oe | ts_local_pe_64_a2_oe | ts_local_pe_64_a3_oe | ts_local_pe_64_a4_oe | ts_local_pe_64_a5_oe | ts_local_pe_64_a6_oe;
 assign ts_local_pe_64_a0_in = gpu_data_in[25];
 assign ts_local_pe_64_a1_in = gpu_data_in[25];
@@ -2986,15 +2778,7 @@ assign ts_local_pe_64_a5_in = gpu_data_in[25];
 assign ts_local_pe_64_a6_in = gpu_data_in[25];
 
 // --- Compiler-generated local PE for BUS gpu_data<26>
-assign gpu_data_out[26] =
-	(ts_local_pe_65_a0_oe) ? ts_local_pe_65_a0_out :
-	(ts_local_pe_65_a1_oe) ? ts_local_pe_65_a1_out :
-	(ts_local_pe_65_a2_oe) ? ts_local_pe_65_a2_out :
-	(ts_local_pe_65_a3_oe) ? ts_local_pe_65_a3_out :
-	(ts_local_pe_65_a4_oe) ? ts_local_pe_65_a4_out :
-	(ts_local_pe_65_a5_oe) ? ts_local_pe_65_a5_out :
-	(ts_local_pe_65_a6_oe) ? ts_local_pe_65_a6_out :
-	1'bz;
+assign gpu_data_out[26] = (ts_local_pe_65_a0_oe & ts_local_pe_65_a0_out ) | (ts_local_pe_65_a1_oe & ts_local_pe_65_a1_out ) | (ts_local_pe_65_a2_oe & ts_local_pe_65_a2_out ) | (ts_local_pe_65_a3_oe & ts_local_pe_65_a3_out ) | (ts_local_pe_65_a4_oe & ts_local_pe_65_a4_out ) | (ts_local_pe_65_a5_oe & ts_local_pe_65_a5_out ) | (ts_local_pe_65_a6_oe & ts_local_pe_65_a6_out ) | 1'b0;
 assign gpu_data_oe[26] = ts_local_pe_65_a0_oe | ts_local_pe_65_a1_oe | ts_local_pe_65_a2_oe | ts_local_pe_65_a3_oe | ts_local_pe_65_a4_oe | ts_local_pe_65_a5_oe | ts_local_pe_65_a6_oe;
 assign ts_local_pe_65_a0_in = gpu_data_in[26];
 assign ts_local_pe_65_a1_in = gpu_data_in[26];
@@ -3005,15 +2789,7 @@ assign ts_local_pe_65_a5_in = gpu_data_in[26];
 assign ts_local_pe_65_a6_in = gpu_data_in[26];
 
 // --- Compiler-generated local PE for BUS gpu_data<27>
-assign gpu_data_out[27] =
-	(ts_local_pe_66_a0_oe) ? ts_local_pe_66_a0_out :
-	(ts_local_pe_66_a1_oe) ? ts_local_pe_66_a1_out :
-	(ts_local_pe_66_a2_oe) ? ts_local_pe_66_a2_out :
-	(ts_local_pe_66_a3_oe) ? ts_local_pe_66_a3_out :
-	(ts_local_pe_66_a4_oe) ? ts_local_pe_66_a4_out :
-	(ts_local_pe_66_a5_oe) ? ts_local_pe_66_a5_out :
-	(ts_local_pe_66_a6_oe) ? ts_local_pe_66_a6_out :
-	1'bz;
+assign gpu_data_out[27] = (ts_local_pe_66_a0_oe & ts_local_pe_66_a0_out ) | (ts_local_pe_66_a1_oe & ts_local_pe_66_a1_out ) | (ts_local_pe_66_a2_oe & ts_local_pe_66_a2_out ) | (ts_local_pe_66_a3_oe & ts_local_pe_66_a3_out ) | (ts_local_pe_66_a4_oe & ts_local_pe_66_a4_out ) | (ts_local_pe_66_a5_oe & ts_local_pe_66_a5_out ) | (ts_local_pe_66_a6_oe & ts_local_pe_66_a6_out ) | 1'b0;
 assign gpu_data_oe[27] = ts_local_pe_66_a0_oe | ts_local_pe_66_a1_oe | ts_local_pe_66_a2_oe | ts_local_pe_66_a3_oe | ts_local_pe_66_a4_oe | ts_local_pe_66_a5_oe | ts_local_pe_66_a6_oe;
 assign ts_local_pe_66_a0_in = gpu_data_in[27];
 assign ts_local_pe_66_a1_in = gpu_data_in[27];
@@ -3024,15 +2800,7 @@ assign ts_local_pe_66_a5_in = gpu_data_in[27];
 assign ts_local_pe_66_a6_in = gpu_data_in[27];
 
 // --- Compiler-generated local PE for BUS gpu_data<28>
-assign gpu_data_out[28] =
-	(ts_local_pe_67_a0_oe) ? ts_local_pe_67_a0_out :
-	(ts_local_pe_67_a1_oe) ? ts_local_pe_67_a1_out :
-	(ts_local_pe_67_a2_oe) ? ts_local_pe_67_a2_out :
-	(ts_local_pe_67_a3_oe) ? ts_local_pe_67_a3_out :
-	(ts_local_pe_67_a4_oe) ? ts_local_pe_67_a4_out :
-	(ts_local_pe_67_a5_oe) ? ts_local_pe_67_a5_out :
-	(ts_local_pe_67_a6_oe) ? ts_local_pe_67_a6_out :
-	1'bz;
+assign gpu_data_out[28] = (ts_local_pe_67_a0_oe & ts_local_pe_67_a0_out ) | (ts_local_pe_67_a1_oe & ts_local_pe_67_a1_out ) | (ts_local_pe_67_a2_oe & ts_local_pe_67_a2_out ) | (ts_local_pe_67_a3_oe & ts_local_pe_67_a3_out ) | (ts_local_pe_67_a4_oe & ts_local_pe_67_a4_out ) | (ts_local_pe_67_a5_oe & ts_local_pe_67_a5_out ) | (ts_local_pe_67_a6_oe & ts_local_pe_67_a6_out ) | 1'b0;
 assign gpu_data_oe[28] = ts_local_pe_67_a0_oe | ts_local_pe_67_a1_oe | ts_local_pe_67_a2_oe | ts_local_pe_67_a3_oe | ts_local_pe_67_a4_oe | ts_local_pe_67_a5_oe | ts_local_pe_67_a6_oe;
 assign ts_local_pe_67_a0_in = gpu_data_in[28];
 assign ts_local_pe_67_a1_in = gpu_data_in[28];
@@ -3043,15 +2811,7 @@ assign ts_local_pe_67_a5_in = gpu_data_in[28];
 assign ts_local_pe_67_a6_in = gpu_data_in[28];
 
 // --- Compiler-generated local PE for BUS gpu_data<29>
-assign gpu_data_out[29] =
-	(ts_local_pe_68_a0_oe) ? ts_local_pe_68_a0_out :
-	(ts_local_pe_68_a1_oe) ? ts_local_pe_68_a1_out :
-	(ts_local_pe_68_a2_oe) ? ts_local_pe_68_a2_out :
-	(ts_local_pe_68_a3_oe) ? ts_local_pe_68_a3_out :
-	(ts_local_pe_68_a4_oe) ? ts_local_pe_68_a4_out :
-	(ts_local_pe_68_a5_oe) ? ts_local_pe_68_a5_out :
-	(ts_local_pe_68_a6_oe) ? ts_local_pe_68_a6_out :
-	1'bz;
+assign gpu_data_out[29] = (ts_local_pe_68_a0_oe & ts_local_pe_68_a0_out ) | (ts_local_pe_68_a1_oe & ts_local_pe_68_a1_out ) | (ts_local_pe_68_a2_oe & ts_local_pe_68_a2_out ) | (ts_local_pe_68_a3_oe & ts_local_pe_68_a3_out ) | (ts_local_pe_68_a4_oe & ts_local_pe_68_a4_out ) | (ts_local_pe_68_a5_oe & ts_local_pe_68_a5_out ) | (ts_local_pe_68_a6_oe & ts_local_pe_68_a6_out ) | 1'b0;
 assign gpu_data_oe[29] = ts_local_pe_68_a0_oe | ts_local_pe_68_a1_oe | ts_local_pe_68_a2_oe | ts_local_pe_68_a3_oe | ts_local_pe_68_a4_oe | ts_local_pe_68_a5_oe | ts_local_pe_68_a6_oe;
 assign ts_local_pe_68_a0_in = gpu_data_in[29];
 assign ts_local_pe_68_a1_in = gpu_data_in[29];
@@ -3062,15 +2822,7 @@ assign ts_local_pe_68_a5_in = gpu_data_in[29];
 assign ts_local_pe_68_a6_in = gpu_data_in[29];
 
 // --- Compiler-generated local PE for BUS gpu_data<30>
-assign gpu_data_out[30] =
-	(ts_local_pe_69_a0_oe) ? ts_local_pe_69_a0_out :
-	(ts_local_pe_69_a1_oe) ? ts_local_pe_69_a1_out :
-	(ts_local_pe_69_a2_oe) ? ts_local_pe_69_a2_out :
-	(ts_local_pe_69_a3_oe) ? ts_local_pe_69_a3_out :
-	(ts_local_pe_69_a4_oe) ? ts_local_pe_69_a4_out :
-	(ts_local_pe_69_a5_oe) ? ts_local_pe_69_a5_out :
-	(ts_local_pe_69_a6_oe) ? ts_local_pe_69_a6_out :
-	1'bz;
+assign gpu_data_out[30] = (ts_local_pe_69_a0_oe & ts_local_pe_69_a0_out ) | (ts_local_pe_69_a1_oe & ts_local_pe_69_a1_out ) | (ts_local_pe_69_a2_oe & ts_local_pe_69_a2_out ) | (ts_local_pe_69_a3_oe & ts_local_pe_69_a3_out ) | (ts_local_pe_69_a4_oe & ts_local_pe_69_a4_out ) | (ts_local_pe_69_a5_oe & ts_local_pe_69_a5_out ) | (ts_local_pe_69_a6_oe & ts_local_pe_69_a6_out ) | 1'b0;
 assign gpu_data_oe[30] = ts_local_pe_69_a0_oe | ts_local_pe_69_a1_oe | ts_local_pe_69_a2_oe | ts_local_pe_69_a3_oe | ts_local_pe_69_a4_oe | ts_local_pe_69_a5_oe | ts_local_pe_69_a6_oe;
 assign ts_local_pe_69_a0_in = gpu_data_in[30];
 assign ts_local_pe_69_a1_in = gpu_data_in[30];
@@ -3081,15 +2833,7 @@ assign ts_local_pe_69_a5_in = gpu_data_in[30];
 assign ts_local_pe_69_a6_in = gpu_data_in[30];
 
 // --- Compiler-generated local PE for BUS gpu_data<31>
-assign gpu_data_out[31] =
-	(ts_local_pe_70_a0_oe) ? ts_local_pe_70_a0_out :
-	(ts_local_pe_70_a1_oe) ? ts_local_pe_70_a1_out :
-	(ts_local_pe_70_a2_oe) ? ts_local_pe_70_a2_out :
-	(ts_local_pe_70_a3_oe) ? ts_local_pe_70_a3_out :
-	(ts_local_pe_70_a4_oe) ? ts_local_pe_70_a4_out :
-	(ts_local_pe_70_a5_oe) ? ts_local_pe_70_a5_out :
-	(ts_local_pe_70_a6_oe) ? ts_local_pe_70_a6_out :
-	1'bz;
+assign gpu_data_out[31] = (ts_local_pe_70_a0_oe & ts_local_pe_70_a0_out ) | (ts_local_pe_70_a1_oe & ts_local_pe_70_a1_out ) | (ts_local_pe_70_a2_oe & ts_local_pe_70_a2_out ) | (ts_local_pe_70_a3_oe & ts_local_pe_70_a3_out ) | (ts_local_pe_70_a4_oe & ts_local_pe_70_a4_out ) | (ts_local_pe_70_a5_oe & ts_local_pe_70_a5_out ) | (ts_local_pe_70_a6_oe & ts_local_pe_70_a6_out ) | 1'b0;
 assign gpu_data_oe[31] = ts_local_pe_70_a0_oe | ts_local_pe_70_a1_oe | ts_local_pe_70_a2_oe | ts_local_pe_70_a3_oe | ts_local_pe_70_a4_oe | ts_local_pe_70_a5_oe | ts_local_pe_70_a6_oe;
 assign ts_local_pe_70_a0_in = gpu_data_in[31];
 assign ts_local_pe_70_a1_in = gpu_data_in[31];
@@ -3100,311 +2844,204 @@ assign ts_local_pe_70_a5_in = gpu_data_in[31];
 assign ts_local_pe_70_a6_in = gpu_data_in[31];
 
 // --- Compiler-generated local PE for BUS gpu_dout[0]
-assign gpu_dout_0_out =
-	(ts_local_pe_71_a0_oe) ? ts_local_pe_71_a0_out :
-	(ts_local_pe_71_a1_oe) ? ts_local_pe_71_a1_out :
-	(ts_local_pe_71_a2_oe) ? ts_local_pe_71_a2_out :
-	1'bz;
+assign gpu_dout_0_out = (ts_local_pe_71_a0_oe & ts_local_pe_71_a0_out ) | (ts_local_pe_71_a1_oe & ts_local_pe_71_a1_out ) | (ts_local_pe_71_a2_oe & ts_local_pe_71_a2_out ) | 1'b0;
 assign gpu_dout_0_oe = ts_local_pe_71_a0_oe | ts_local_pe_71_a1_oe | ts_local_pe_71_a2_oe;
 assign ts_local_pe_71_a0_in = gpu_dout_0_in;
 assign ts_local_pe_71_a1_in = gpu_dout_0_in;
 assign ts_local_pe_71_a2_in = gpu_dout_0_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[1]
-assign gpu_dout_1_out =
-	(ts_local_pe_72_a0_oe) ? ts_local_pe_72_a0_out :
-	(ts_local_pe_72_a1_oe) ? ts_local_pe_72_a1_out :
-	(ts_local_pe_72_a2_oe) ? ts_local_pe_72_a2_out :
-	1'bz;
+assign gpu_dout_1_out = (ts_local_pe_72_a0_oe & ts_local_pe_72_a0_out ) | (ts_local_pe_72_a1_oe & ts_local_pe_72_a1_out ) | (ts_local_pe_72_a2_oe & ts_local_pe_72_a2_out ) | 1'b0;
 assign gpu_dout_1_oe = ts_local_pe_72_a0_oe | ts_local_pe_72_a1_oe | ts_local_pe_72_a2_oe;
 assign ts_local_pe_72_a0_in = gpu_dout_1_in;
 assign ts_local_pe_72_a1_in = gpu_dout_1_in;
 assign ts_local_pe_72_a2_in = gpu_dout_1_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[2]
-assign gpu_dout_2_out =
-	(ts_local_pe_73_a0_oe) ? ts_local_pe_73_a0_out :
-	(ts_local_pe_73_a1_oe) ? ts_local_pe_73_a1_out :
-	(ts_local_pe_73_a2_oe) ? ts_local_pe_73_a2_out :
-	1'bz;
+assign gpu_dout_2_out = (ts_local_pe_73_a0_oe & ts_local_pe_73_a0_out ) | (ts_local_pe_73_a1_oe & ts_local_pe_73_a1_out ) | (ts_local_pe_73_a2_oe & ts_local_pe_73_a2_out ) | 1'b0;
 assign gpu_dout_2_oe = ts_local_pe_73_a0_oe | ts_local_pe_73_a1_oe | ts_local_pe_73_a2_oe;
 assign ts_local_pe_73_a0_in = gpu_dout_2_in;
 assign ts_local_pe_73_a1_in = gpu_dout_2_in;
 assign ts_local_pe_73_a2_in = gpu_dout_2_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[3]
-assign gpu_dout_3_out =
-	(ts_local_pe_74_a0_oe) ? ts_local_pe_74_a0_out :
-	(ts_local_pe_74_a1_oe) ? ts_local_pe_74_a1_out :
-	(ts_local_pe_74_a2_oe) ? ts_local_pe_74_a2_out :
-	1'bz;
+assign gpu_dout_3_out = (ts_local_pe_74_a0_oe & ts_local_pe_74_a0_out ) | (ts_local_pe_74_a1_oe & ts_local_pe_74_a1_out ) | (ts_local_pe_74_a2_oe & ts_local_pe_74_a2_out ) | 1'b0;
 assign gpu_dout_3_oe = ts_local_pe_74_a0_oe | ts_local_pe_74_a1_oe | ts_local_pe_74_a2_oe;
 assign ts_local_pe_74_a0_in = gpu_dout_3_in;
 assign ts_local_pe_74_a1_in = gpu_dout_3_in;
 assign ts_local_pe_74_a2_in = gpu_dout_3_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[4]
-assign gpu_dout_4_out =
-	(ts_local_pe_75_a0_oe) ? ts_local_pe_75_a0_out :
-	(ts_local_pe_75_a1_oe) ? ts_local_pe_75_a1_out :
-	(ts_local_pe_75_a2_oe) ? ts_local_pe_75_a2_out :
-	1'bz;
+assign gpu_dout_4_out = (ts_local_pe_75_a0_oe & ts_local_pe_75_a0_out ) | (ts_local_pe_75_a1_oe & ts_local_pe_75_a1_out ) | (ts_local_pe_75_a2_oe & ts_local_pe_75_a2_out ) | 1'b0;
 assign gpu_dout_4_oe = ts_local_pe_75_a0_oe | ts_local_pe_75_a1_oe | ts_local_pe_75_a2_oe;
 assign ts_local_pe_75_a0_in = gpu_dout_4_in;
 assign ts_local_pe_75_a1_in = gpu_dout_4_in;
 assign ts_local_pe_75_a2_in = gpu_dout_4_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[5]
-assign gpu_dout_5_out =
-	(ts_local_pe_76_a0_oe) ? ts_local_pe_76_a0_out :
-	(ts_local_pe_76_a1_oe) ? ts_local_pe_76_a1_out :
-	(ts_local_pe_76_a2_oe) ? ts_local_pe_76_a2_out :
-	1'bz;
+assign gpu_dout_5_out = (ts_local_pe_76_a0_oe & ts_local_pe_76_a0_out ) | (ts_local_pe_76_a1_oe & ts_local_pe_76_a1_out ) | (ts_local_pe_76_a2_oe & ts_local_pe_76_a2_out ) | 1'b0;
 assign gpu_dout_5_oe = ts_local_pe_76_a0_oe | ts_local_pe_76_a1_oe | ts_local_pe_76_a2_oe;
 assign ts_local_pe_76_a0_in = gpu_dout_5_in;
 assign ts_local_pe_76_a1_in = gpu_dout_5_in;
 assign ts_local_pe_76_a2_in = gpu_dout_5_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[6]
-assign gpu_dout_6_out =
-	(ts_local_pe_77_a0_oe) ? ts_local_pe_77_a0_out :
-	(ts_local_pe_77_a1_oe) ? ts_local_pe_77_a1_out :
-	1'bz;
+assign gpu_dout_6_out = (ts_local_pe_77_a0_oe & ts_local_pe_77_a0_out ) | (ts_local_pe_77_a1_oe & ts_local_pe_77_a1_out ) | 1'b0;
 assign gpu_dout_6_oe = ts_local_pe_77_a0_oe | ts_local_pe_77_a1_oe;
 assign ts_local_pe_77_a0_in = gpu_dout_6_in;
 assign ts_local_pe_77_a1_in = gpu_dout_6_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[7]
-assign gpu_dout_7_out =
-	(ts_local_pe_78_a0_oe) ? ts_local_pe_78_a0_out :
-	(ts_local_pe_78_a1_oe) ? ts_local_pe_78_a1_out :
-	1'bz;
+assign gpu_dout_7_out = (ts_local_pe_78_a0_oe & ts_local_pe_78_a0_out ) | (ts_local_pe_78_a1_oe & ts_local_pe_78_a1_out ) | 1'b0;
 assign gpu_dout_7_oe = ts_local_pe_78_a0_oe | ts_local_pe_78_a1_oe;
 assign ts_local_pe_78_a0_in = gpu_dout_7_in;
 assign ts_local_pe_78_a1_in = gpu_dout_7_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[8]
-assign gpu_dout_8_out =
-	(ts_local_pe_79_a0_oe) ? ts_local_pe_79_a0_out :
-	(ts_local_pe_79_a1_oe) ? ts_local_pe_79_a1_out :
-	1'bz;
+assign gpu_dout_8_out = (ts_local_pe_79_a0_oe & ts_local_pe_79_a0_out ) | (ts_local_pe_79_a1_oe & ts_local_pe_79_a1_out ) | 1'b0;
 assign gpu_dout_8_oe = ts_local_pe_79_a0_oe | ts_local_pe_79_a1_oe;
 assign ts_local_pe_79_a0_in = gpu_dout_8_in;
 assign ts_local_pe_79_a1_in = gpu_dout_8_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[9]
-assign gpu_dout_9_out =
-	(ts_local_pe_80_a0_oe) ? ts_local_pe_80_a0_out :
-	(ts_local_pe_80_a1_oe) ? ts_local_pe_80_a1_out :
-	1'bz;
+assign gpu_dout_9_out = (ts_local_pe_80_a0_oe & ts_local_pe_80_a0_out ) | (ts_local_pe_80_a1_oe & ts_local_pe_80_a1_out ) | 1'b0;
 assign gpu_dout_9_oe = ts_local_pe_80_a0_oe | ts_local_pe_80_a1_oe;
 assign ts_local_pe_80_a0_in = gpu_dout_9_in;
 assign ts_local_pe_80_a1_in = gpu_dout_9_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[10]
-assign gpu_dout_10_out =
-	(ts_local_pe_81_a0_oe) ? ts_local_pe_81_a0_out :
-	(ts_local_pe_81_a1_oe) ? ts_local_pe_81_a1_out :
-	1'bz;
+assign gpu_dout_10_out = (ts_local_pe_81_a0_oe & ts_local_pe_81_a0_out ) | (ts_local_pe_81_a1_oe & ts_local_pe_81_a1_out ) | 1'b0;
 assign gpu_dout_10_oe = ts_local_pe_81_a0_oe | ts_local_pe_81_a1_oe;
 assign ts_local_pe_81_a0_in = gpu_dout_10_in;
 assign ts_local_pe_81_a1_in = gpu_dout_10_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[11]
-assign gpu_dout_11_out =
-	(ts_local_pe_82_a0_oe) ? ts_local_pe_82_a0_out :
-	(ts_local_pe_82_a1_oe) ? ts_local_pe_82_a1_out :
-	(ts_local_pe_82_a2_oe) ? ts_local_pe_82_a2_out :
-	1'bz;
+assign gpu_dout_11_out = (ts_local_pe_82_a0_oe & ts_local_pe_82_a0_out ) | (ts_local_pe_82_a1_oe & ts_local_pe_82_a1_out ) | (ts_local_pe_82_a2_oe & ts_local_pe_82_a2_out ) | 1'b0;
 assign gpu_dout_11_oe = ts_local_pe_82_a0_oe | ts_local_pe_82_a1_oe | ts_local_pe_82_a2_oe;
 assign ts_local_pe_82_a0_in = gpu_dout_11_in;
 assign ts_local_pe_82_a1_in = gpu_dout_11_in;
 assign ts_local_pe_82_a2_in = gpu_dout_11_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[12]
-assign gpu_dout_12_out =
-	(ts_local_pe_83_a0_oe) ? ts_local_pe_83_a0_out :
-	(ts_local_pe_83_a1_oe) ? ts_local_pe_83_a1_out :
-	(ts_local_pe_83_a2_oe) ? ts_local_pe_83_a2_out :
-	1'bz;
+assign gpu_dout_12_out = (ts_local_pe_83_a0_oe & ts_local_pe_83_a0_out ) | (ts_local_pe_83_a1_oe & ts_local_pe_83_a1_out ) | (ts_local_pe_83_a2_oe & ts_local_pe_83_a2_out ) | 1'b0;
 assign gpu_dout_12_oe = ts_local_pe_83_a0_oe | ts_local_pe_83_a1_oe | ts_local_pe_83_a2_oe;
 assign ts_local_pe_83_a0_in = gpu_dout_12_in;
 assign ts_local_pe_83_a1_in = gpu_dout_12_in;
 assign ts_local_pe_83_a2_in = gpu_dout_12_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[13]
-assign gpu_dout_13_out =
-	(ts_local_pe_84_a0_oe) ? ts_local_pe_84_a0_out :
-	(ts_local_pe_84_a1_oe) ? ts_local_pe_84_a1_out :
-	(ts_local_pe_84_a2_oe) ? ts_local_pe_84_a2_out :
-	1'bz;
+assign gpu_dout_13_out = (ts_local_pe_84_a0_oe & ts_local_pe_84_a0_out ) | (ts_local_pe_84_a1_oe & ts_local_pe_84_a1_out ) | (ts_local_pe_84_a2_oe & ts_local_pe_84_a2_out ) | 1'b0;
 assign gpu_dout_13_oe = ts_local_pe_84_a0_oe | ts_local_pe_84_a1_oe | ts_local_pe_84_a2_oe;
 assign ts_local_pe_84_a0_in = gpu_dout_13_in;
 assign ts_local_pe_84_a1_in = gpu_dout_13_in;
 assign ts_local_pe_84_a2_in = gpu_dout_13_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[14]
-assign gpu_dout_14_out =
-	(ts_local_pe_85_a0_oe) ? ts_local_pe_85_a0_out :
-	(ts_local_pe_85_a1_oe) ? ts_local_pe_85_a1_out :
-	(ts_local_pe_85_a2_oe) ? ts_local_pe_85_a2_out :
-	1'bz;
+assign gpu_dout_14_out = (ts_local_pe_85_a0_oe & ts_local_pe_85_a0_out ) | (ts_local_pe_85_a1_oe & ts_local_pe_85_a1_out ) | (ts_local_pe_85_a2_oe & ts_local_pe_85_a2_out ) | 1'b0;
 assign gpu_dout_14_oe = ts_local_pe_85_a0_oe | ts_local_pe_85_a1_oe | ts_local_pe_85_a2_oe;
 assign ts_local_pe_85_a0_in = gpu_dout_14_in;
 assign ts_local_pe_85_a1_in = gpu_dout_14_in;
 assign ts_local_pe_85_a2_in = gpu_dout_14_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[15]
-assign gpu_dout_15_out =
-	(ts_local_pe_86_a0_oe) ? ts_local_pe_86_a0_out :
-	(ts_local_pe_86_a1_oe) ? ts_local_pe_86_a1_out :
-	(ts_local_pe_86_a2_oe) ? ts_local_pe_86_a2_out :
-	1'bz;
+assign gpu_dout_15_out = (ts_local_pe_86_a0_oe & ts_local_pe_86_a0_out ) | (ts_local_pe_86_a1_oe & ts_local_pe_86_a1_out ) | (ts_local_pe_86_a2_oe & ts_local_pe_86_a2_out ) | 1'b0;
 assign gpu_dout_15_oe = ts_local_pe_86_a0_oe | ts_local_pe_86_a1_oe | ts_local_pe_86_a2_oe;
 assign ts_local_pe_86_a0_in = gpu_dout_15_in;
 assign ts_local_pe_86_a1_in = gpu_dout_15_in;
 assign ts_local_pe_86_a2_in = gpu_dout_15_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[16]
-assign gpu_dout_16_out =
-	(ts_local_pe_87_a0_oe) ? ts_local_pe_87_a0_out :
-	(ts_local_pe_87_a1_oe) ? ts_local_pe_87_a1_out :
-	1'bz;
+assign gpu_dout_16_out = (ts_local_pe_87_a0_oe & ts_local_pe_87_a0_out ) | (ts_local_pe_87_a1_oe & ts_local_pe_87_a1_out ) | 1'b0;
 assign gpu_dout_16_oe = ts_local_pe_87_a0_oe | ts_local_pe_87_a1_oe;
 assign ts_local_pe_87_a0_in = gpu_dout_16_in;
 assign ts_local_pe_87_a1_in = gpu_dout_16_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[17]
-assign gpu_dout_17_out =
-	(ts_local_pe_88_a0_oe) ? ts_local_pe_88_a0_out :
-	(ts_local_pe_88_a1_oe) ? ts_local_pe_88_a1_out :
-	1'bz;
+assign gpu_dout_17_out = (ts_local_pe_88_a0_oe & ts_local_pe_88_a0_out ) | (ts_local_pe_88_a1_oe & ts_local_pe_88_a1_out ) | 1'b0;
 assign gpu_dout_17_oe = ts_local_pe_88_a0_oe | ts_local_pe_88_a1_oe;
 assign ts_local_pe_88_a0_in = gpu_dout_17_in;
 assign ts_local_pe_88_a1_in = gpu_dout_17_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[18]
-assign gpu_dout_18_out =
-	(ts_local_pe_89_a0_oe) ? ts_local_pe_89_a0_out :
-	(ts_local_pe_89_a1_oe) ? ts_local_pe_89_a1_out :
-	1'bz;
+assign gpu_dout_18_out = (ts_local_pe_89_a0_oe & ts_local_pe_89_a0_out ) | (ts_local_pe_89_a1_oe & ts_local_pe_89_a1_out ) | 1'b0;
 assign gpu_dout_18_oe = ts_local_pe_89_a0_oe | ts_local_pe_89_a1_oe;
 assign ts_local_pe_89_a0_in = gpu_dout_18_in;
 assign ts_local_pe_89_a1_in = gpu_dout_18_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[19]
-assign gpu_dout_19_out =
-	(ts_local_pe_90_a0_oe) ? ts_local_pe_90_a0_out :
-	(ts_local_pe_90_a1_oe) ? ts_local_pe_90_a1_out :
-	1'bz;
+assign gpu_dout_19_out = (ts_local_pe_90_a0_oe & ts_local_pe_90_a0_out ) | (ts_local_pe_90_a1_oe & ts_local_pe_90_a1_out ) | 1'b0;
 assign gpu_dout_19_oe = ts_local_pe_90_a0_oe | ts_local_pe_90_a1_oe;
 assign ts_local_pe_90_a0_in = gpu_dout_19_in;
 assign ts_local_pe_90_a1_in = gpu_dout_19_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[20]
-assign gpu_dout_20_out =
-	(ts_local_pe_91_a0_oe) ? ts_local_pe_91_a0_out :
-	(ts_local_pe_91_a1_oe) ? ts_local_pe_91_a1_out :
-	1'bz;
+assign gpu_dout_20_out = (ts_local_pe_91_a0_oe & ts_local_pe_91_a0_out ) | (ts_local_pe_91_a1_oe & ts_local_pe_91_a1_out ) | 1'b0;
 assign gpu_dout_20_oe = ts_local_pe_91_a0_oe | ts_local_pe_91_a1_oe;
 assign ts_local_pe_91_a0_in = gpu_dout_20_in;
 assign ts_local_pe_91_a1_in = gpu_dout_20_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[21]
-assign gpu_dout_21_out =
-	(ts_local_pe_92_a0_oe) ? ts_local_pe_92_a0_out :
-	(ts_local_pe_92_a1_oe) ? ts_local_pe_92_a1_out :
-	1'bz;
+assign gpu_dout_21_out = (ts_local_pe_92_a0_oe & ts_local_pe_92_a0_out ) | (ts_local_pe_92_a1_oe & ts_local_pe_92_a1_out ) | 1'b0;
 assign gpu_dout_21_oe = ts_local_pe_92_a0_oe | ts_local_pe_92_a1_oe;
 assign ts_local_pe_92_a0_in = gpu_dout_21_in;
 assign ts_local_pe_92_a1_in = gpu_dout_21_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[22]
-assign gpu_dout_22_out =
-	(ts_local_pe_93_a0_oe) ? ts_local_pe_93_a0_out :
-	(ts_local_pe_93_a1_oe) ? ts_local_pe_93_a1_out :
-	1'bz;
+assign gpu_dout_22_out = (ts_local_pe_93_a0_oe & ts_local_pe_93_a0_out ) | (ts_local_pe_93_a1_oe & ts_local_pe_93_a1_out ) | 1'b0;
 assign gpu_dout_22_oe = ts_local_pe_93_a0_oe | ts_local_pe_93_a1_oe;
 assign ts_local_pe_93_a0_in = gpu_dout_22_in;
 assign ts_local_pe_93_a1_in = gpu_dout_22_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[23]
-assign gpu_dout_23_out =
-	(ts_local_pe_94_a0_oe) ? ts_local_pe_94_a0_out :
-	(ts_local_pe_94_a1_oe) ? ts_local_pe_94_a1_out :
-	1'bz;
+assign gpu_dout_23_out = (ts_local_pe_94_a0_oe & ts_local_pe_94_a0_out ) | (ts_local_pe_94_a1_oe & ts_local_pe_94_a1_out ) | 1'b0;
 assign gpu_dout_23_oe = ts_local_pe_94_a0_oe | ts_local_pe_94_a1_oe;
 assign ts_local_pe_94_a0_in = gpu_dout_23_in;
 assign ts_local_pe_94_a1_in = gpu_dout_23_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[24]
-assign gpu_dout_24_out =
-	(ts_local_pe_95_a0_oe) ? ts_local_pe_95_a0_out :
-	(ts_local_pe_95_a1_oe) ? ts_local_pe_95_a1_out :
-	1'bz;
+assign gpu_dout_24_out = (ts_local_pe_95_a0_oe & ts_local_pe_95_a0_out ) | (ts_local_pe_95_a1_oe & ts_local_pe_95_a1_out ) | 1'b0;
 assign gpu_dout_24_oe = ts_local_pe_95_a0_oe | ts_local_pe_95_a1_oe;
 assign ts_local_pe_95_a0_in = gpu_dout_24_in;
 assign ts_local_pe_95_a1_in = gpu_dout_24_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[25]
-assign gpu_dout_25_out =
-	(ts_local_pe_96_a0_oe) ? ts_local_pe_96_a0_out :
-	(ts_local_pe_96_a1_oe) ? ts_local_pe_96_a1_out :
-	1'bz;
+assign gpu_dout_25_out = (ts_local_pe_96_a0_oe & ts_local_pe_96_a0_out ) | (ts_local_pe_96_a1_oe & ts_local_pe_96_a1_out ) | 1'b0;
 assign gpu_dout_25_oe = ts_local_pe_96_a0_oe | ts_local_pe_96_a1_oe;
 assign ts_local_pe_96_a0_in = gpu_dout_25_in;
 assign ts_local_pe_96_a1_in = gpu_dout_25_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[26]
-assign gpu_dout_26_out =
-	(ts_local_pe_97_a0_oe) ? ts_local_pe_97_a0_out :
-	(ts_local_pe_97_a1_oe) ? ts_local_pe_97_a1_out :
-	1'bz;
+assign gpu_dout_26_out = (ts_local_pe_97_a0_oe & ts_local_pe_97_a0_out ) | (ts_local_pe_97_a1_oe & ts_local_pe_97_a1_out ) | 1'b0;
 assign gpu_dout_26_oe = ts_local_pe_97_a0_oe | ts_local_pe_97_a1_oe;
 assign ts_local_pe_97_a0_in = gpu_dout_26_in;
 assign ts_local_pe_97_a1_in = gpu_dout_26_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[27]
-assign gpu_dout_27_out =
-	(ts_local_pe_98_a0_oe) ? ts_local_pe_98_a0_out :
-	(ts_local_pe_98_a1_oe) ? ts_local_pe_98_a1_out :
-	1'bz;
+assign gpu_dout_27_out = (ts_local_pe_98_a0_oe & ts_local_pe_98_a0_out ) | (ts_local_pe_98_a1_oe & ts_local_pe_98_a1_out ) | 1'b0;
 assign gpu_dout_27_oe = ts_local_pe_98_a0_oe | ts_local_pe_98_a1_oe;
 assign ts_local_pe_98_a0_in = gpu_dout_27_in;
 assign ts_local_pe_98_a1_in = gpu_dout_27_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[28]
-assign gpu_dout_28_out =
-	(ts_local_pe_99_a0_oe) ? ts_local_pe_99_a0_out :
-	(ts_local_pe_99_a1_oe) ? ts_local_pe_99_a1_out :
-	1'bz;
+assign gpu_dout_28_out = (ts_local_pe_99_a0_oe & ts_local_pe_99_a0_out ) | (ts_local_pe_99_a1_oe & ts_local_pe_99_a1_out ) | 1'b0;
 assign gpu_dout_28_oe = ts_local_pe_99_a0_oe | ts_local_pe_99_a1_oe;
 assign ts_local_pe_99_a0_in = gpu_dout_28_in;
 assign ts_local_pe_99_a1_in = gpu_dout_28_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[29]
-assign gpu_dout_29_out =
-	(ts_local_pe_100_a0_oe) ? ts_local_pe_100_a0_out :
-	(ts_local_pe_100_a1_oe) ? ts_local_pe_100_a1_out :
-	1'bz;
+assign gpu_dout_29_out = (ts_local_pe_100_a0_oe & ts_local_pe_100_a0_out ) | (ts_local_pe_100_a1_oe & ts_local_pe_100_a1_out ) | 1'b0;
 assign gpu_dout_29_oe = ts_local_pe_100_a0_oe | ts_local_pe_100_a1_oe;
 assign ts_local_pe_100_a0_in = gpu_dout_29_in;
 assign ts_local_pe_100_a1_in = gpu_dout_29_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[30]
-assign gpu_dout_30_out =
-	(ts_local_pe_101_a0_oe) ? ts_local_pe_101_a0_out :
-	(ts_local_pe_101_a1_oe) ? ts_local_pe_101_a1_out :
-	1'bz;
+assign gpu_dout_30_out = (ts_local_pe_101_a0_oe & ts_local_pe_101_a0_out ) | (ts_local_pe_101_a1_oe & ts_local_pe_101_a1_out ) | 1'b0;
 assign gpu_dout_30_oe = ts_local_pe_101_a0_oe | ts_local_pe_101_a1_oe;
 assign ts_local_pe_101_a0_in = gpu_dout_30_in;
 assign ts_local_pe_101_a1_in = gpu_dout_30_in;
 
 // --- Compiler-generated local PE for BUS gpu_dout[31]
-assign gpu_dout_31_out =
-	(ts_local_pe_102_a0_oe) ? ts_local_pe_102_a0_out :
-	(ts_local_pe_102_a1_oe) ? ts_local_pe_102_a1_out :
-	1'bz;
+assign gpu_dout_31_out = (ts_local_pe_102_a0_oe & ts_local_pe_102_a0_out ) | (ts_local_pe_102_a1_oe & ts_local_pe_102_a1_out ) | 1'b0;
 assign gpu_dout_31_oe = ts_local_pe_102_a0_oe | ts_local_pe_102_a1_oe;
 assign ts_local_pe_102_a0_in = gpu_dout_31_in;
 assign ts_local_pe_102_a1_in = gpu_dout_31_in;

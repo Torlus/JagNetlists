@@ -2788,118 +2788,22 @@ assign a2_xm[14] = a2_xr[14] & a2_mask_x[14];
 assign a2_xm[15] = a2_xr[15] & a2_mask_x[15];
 
 // ADDRESS.NET (183) - a2_x : mx2
-mx2 a2_x_inst_0
-(
-	.z /* OUT */ (a2_x_b0_obuf),
-	.a0 /* IN */ (a2_xr[0]),
-	.a1 /* IN */ (a2_xm[0]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_1
-(
-	.z /* OUT */ (a2_x_b1_obuf),
-	.a0 /* IN */ (a2_xr[1]),
-	.a1 /* IN */ (a2_xm[1]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_2
-(
-	.z /* OUT */ (a2_x_b2_obuf),
-	.a0 /* IN */ (a2_xr[2]),
-	.a1 /* IN */ (a2_xm[2]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_3
-(
-	.z /* OUT */ (a2_x_b3_obuf),
-	.a0 /* IN */ (a2_xr[3]),
-	.a1 /* IN */ (a2_xm[3]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_4
-(
-	.z /* OUT */ (a2_x_b4_obuf),
-	.a0 /* IN */ (a2_xr[4]),
-	.a1 /* IN */ (a2_xm[4]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_5
-(
-	.z /* OUT */ (a2_x_b5_obuf),
-	.a0 /* IN */ (a2_xr[5]),
-	.a1 /* IN */ (a2_xm[5]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_6
-(
-	.z /* OUT */ (a2_x_b6_obuf),
-	.a0 /* IN */ (a2_xr[6]),
-	.a1 /* IN */ (a2_xm[6]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_7
-(
-	.z /* OUT */ (a2_x_b7_obuf),
-	.a0 /* IN */ (a2_xr[7]),
-	.a1 /* IN */ (a2_xm[7]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_8
-(
-	.z /* OUT */ (a2_x_b8_obuf),
-	.a0 /* IN */ (a2_xr[8]),
-	.a1 /* IN */ (a2_xm[8]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_9
-(
-	.z /* OUT */ (a2_x_b9_obuf),
-	.a0 /* IN */ (a2_xr[9]),
-	.a1 /* IN */ (a2_xm[9]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_10
-(
-	.z /* OUT */ (a2_x_b10_obuf),
-	.a0 /* IN */ (a2_xr[10]),
-	.a1 /* IN */ (a2_xm[10]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_11
-(
-	.z /* OUT */ (a2_x_b11_obuf),
-	.a0 /* IN */ (a2_xr[11]),
-	.a1 /* IN */ (a2_xm[11]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_12
-(
-	.z /* OUT */ (a2_x_b12_obuf),
-	.a0 /* IN */ (a2_xr[12]),
-	.a1 /* IN */ (a2_xm[12]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_13
-(
-	.z /* OUT */ (a2_x_b13_obuf),
-	.a0 /* IN */ (a2_xr[13]),
-	.a1 /* IN */ (a2_xm[13]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_14
-(
-	.z /* OUT */ (a2_x_b14_obuf),
-	.a0 /* IN */ (a2_xr[14]),
-	.a1 /* IN */ (a2_xm[14]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_x_inst_15
-(
-	.z /* OUT */ (a2_x_b15_obuf),
-	.a0 /* IN */ (a2_xr[15]),
-	.a1 /* IN */ (a2_xm[15]),
-	.s /* IN */ (a2_mask)
-);
+assign a2_x_b0_obuf = (a2_mask) ? a2_xm[0] : a2_xr[0];
+assign a2_x_b1_obuf = (a2_mask) ? a2_xm[1] : a2_xr[1];
+assign a2_x_b2_obuf = (a2_mask) ? a2_xm[2] : a2_xr[2];
+assign a2_x_b3_obuf = (a2_mask) ? a2_xm[3] : a2_xr[3];
+assign a2_x_b4_obuf = (a2_mask) ? a2_xm[4] : a2_xr[4];
+assign a2_x_b5_obuf = (a2_mask) ? a2_xm[5] : a2_xr[5];
+assign a2_x_b6_obuf = (a2_mask) ? a2_xm[6] : a2_xr[6];
+assign a2_x_b7_obuf = (a2_mask) ? a2_xm[7] : a2_xr[7];
+assign a2_x_b8_obuf = (a2_mask) ? a2_xm[8] : a2_xr[8];
+assign a2_x_b9_obuf = (a2_mask) ? a2_xm[9] : a2_xr[9];
+assign a2_x_b10_obuf = (a2_mask) ? a2_xm[10] : a2_xr[10];
+assign a2_x_b11_obuf = (a2_mask) ? a2_xm[11] : a2_xr[11];
+assign a2_x_b12_obuf = (a2_mask) ? a2_xm[12] : a2_xr[12];
+assign a2_x_b13_obuf = (a2_mask) ? a2_xm[13] : a2_xr[13];
+assign a2_x_b14_obuf = (a2_mask) ? a2_xm[14] : a2_xr[14];
+assign a2_x_b15_obuf = (a2_mask) ? a2_xm[15] : a2_xr[15];
 
 // ADDRESS.NET (184) - a2_ym : an2
 assign a2_ym[0] = a2_yr[0] & a2_mask_y[0];
@@ -2920,118 +2824,22 @@ assign a2_ym[14] = a2_yr[14] & a2_mask_y[14];
 assign a2_ym[15] = a2_yr[15] & a2_mask_y[15];
 
 // ADDRESS.NET (185) - a2_y : mx2
-mx2 a2_y_inst_0
-(
-	.z /* OUT */ (a2_y[0]),
-	.a0 /* IN */ (a2_yr[0]),
-	.a1 /* IN */ (a2_ym[0]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_1
-(
-	.z /* OUT */ (a2_y[1]),
-	.a0 /* IN */ (a2_yr[1]),
-	.a1 /* IN */ (a2_ym[1]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_2
-(
-	.z /* OUT */ (a2_y[2]),
-	.a0 /* IN */ (a2_yr[2]),
-	.a1 /* IN */ (a2_ym[2]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_3
-(
-	.z /* OUT */ (a2_y[3]),
-	.a0 /* IN */ (a2_yr[3]),
-	.a1 /* IN */ (a2_ym[3]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_4
-(
-	.z /* OUT */ (a2_y[4]),
-	.a0 /* IN */ (a2_yr[4]),
-	.a1 /* IN */ (a2_ym[4]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_5
-(
-	.z /* OUT */ (a2_y[5]),
-	.a0 /* IN */ (a2_yr[5]),
-	.a1 /* IN */ (a2_ym[5]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_6
-(
-	.z /* OUT */ (a2_y[6]),
-	.a0 /* IN */ (a2_yr[6]),
-	.a1 /* IN */ (a2_ym[6]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_7
-(
-	.z /* OUT */ (a2_y[7]),
-	.a0 /* IN */ (a2_yr[7]),
-	.a1 /* IN */ (a2_ym[7]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_8
-(
-	.z /* OUT */ (a2_y[8]),
-	.a0 /* IN */ (a2_yr[8]),
-	.a1 /* IN */ (a2_ym[8]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_9
-(
-	.z /* OUT */ (a2_y[9]),
-	.a0 /* IN */ (a2_yr[9]),
-	.a1 /* IN */ (a2_ym[9]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_10
-(
-	.z /* OUT */ (a2_y[10]),
-	.a0 /* IN */ (a2_yr[10]),
-	.a1 /* IN */ (a2_ym[10]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_11
-(
-	.z /* OUT */ (a2_y[11]),
-	.a0 /* IN */ (a2_yr[11]),
-	.a1 /* IN */ (a2_ym[11]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_12
-(
-	.z /* OUT */ (a2_y[12]),
-	.a0 /* IN */ (a2_yr[12]),
-	.a1 /* IN */ (a2_ym[12]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_13
-(
-	.z /* OUT */ (a2_y[13]),
-	.a0 /* IN */ (a2_yr[13]),
-	.a1 /* IN */ (a2_ym[13]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_14
-(
-	.z /* OUT */ (a2_y[14]),
-	.a0 /* IN */ (a2_yr[14]),
-	.a1 /* IN */ (a2_ym[14]),
-	.s /* IN */ (a2_mask)
-);
-mx2 a2_y_inst_15
-(
-	.z /* OUT */ (a2_y[15]),
-	.a0 /* IN */ (a2_yr[15]),
-	.a1 /* IN */ (a2_ym[15]),
-	.s /* IN */ (a2_mask)
-);
+assign a2_y[0] = (a2_mask) ? a2_ym[0] : a2_yr[0];
+assign a2_y[1] = (a2_mask) ? a2_ym[1] : a2_yr[1];
+assign a2_y[2] = (a2_mask) ? a2_ym[2] : a2_yr[2];
+assign a2_y[3] = (a2_mask) ? a2_ym[3] : a2_yr[3];
+assign a2_y[4] = (a2_mask) ? a2_ym[4] : a2_yr[4];
+assign a2_y[5] = (a2_mask) ? a2_ym[5] : a2_yr[5];
+assign a2_y[6] = (a2_mask) ? a2_ym[6] : a2_yr[6];
+assign a2_y[7] = (a2_mask) ? a2_ym[7] : a2_yr[7];
+assign a2_y[8] = (a2_mask) ? a2_ym[8] : a2_yr[8];
+assign a2_y[9] = (a2_mask) ? a2_ym[9] : a2_yr[9];
+assign a2_y[10] = (a2_mask) ? a2_ym[10] : a2_yr[10];
+assign a2_y[11] = (a2_mask) ? a2_ym[11] : a2_yr[11];
+assign a2_y[12] = (a2_mask) ? a2_ym[12] : a2_yr[12];
+assign a2_y[13] = (a2_mask) ? a2_ym[13] : a2_yr[13];
+assign a2_y[14] = (a2_mask) ? a2_ym[14] : a2_yr[14];
+assign a2_y[15] = (a2_mask) ? a2_ym[15] : a2_yr[15];
 
 // ADDRESS.NET (189) - a2stepldg : an2u
 assign a2stepldg = a2stepld & load_strobe;
@@ -3501,456 +3309,72 @@ assign a2_pos_30 = a2_y[14];
 assign a2_pos_31 = a2_y[15];
 
 // ADDRESS.NET (238) - grdt0[0-31] : mx2
-mx2 grdt0_from_0_to_31_inst_0
-(
-	.z /* OUT */ (grdt0_0),
-	.a0 /* IN */ (a1_pos_0),
-	.a1 /* IN */ (a1_posf_0),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_1
-(
-	.z /* OUT */ (grdt0_1),
-	.a0 /* IN */ (a1_pos_1),
-	.a1 /* IN */ (a1_posf_1),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_2
-(
-	.z /* OUT */ (grdt0_2),
-	.a0 /* IN */ (a1_pos_2),
-	.a1 /* IN */ (a1_posf_2),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_3
-(
-	.z /* OUT */ (grdt0_3),
-	.a0 /* IN */ (a1_pos_3),
-	.a1 /* IN */ (a1_posf_3),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_4
-(
-	.z /* OUT */ (grdt0_4),
-	.a0 /* IN */ (a1_pos_4),
-	.a1 /* IN */ (a1_posf_4),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_5
-(
-	.z /* OUT */ (grdt0_5),
-	.a0 /* IN */ (a1_pos_5),
-	.a1 /* IN */ (a1_posf_5),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_6
-(
-	.z /* OUT */ (grdt0_6),
-	.a0 /* IN */ (a1_pos_6),
-	.a1 /* IN */ (a1_posf_6),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_7
-(
-	.z /* OUT */ (grdt0_7),
-	.a0 /* IN */ (a1_pos_7),
-	.a1 /* IN */ (a1_posf_7),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_8
-(
-	.z /* OUT */ (grdt0_8),
-	.a0 /* IN */ (a1_pos_8),
-	.a1 /* IN */ (a1_posf_8),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_9
-(
-	.z /* OUT */ (grdt0_9),
-	.a0 /* IN */ (a1_pos_9),
-	.a1 /* IN */ (a1_posf_9),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_10
-(
-	.z /* OUT */ (grdt0_10),
-	.a0 /* IN */ (a1_pos_10),
-	.a1 /* IN */ (a1_posf_10),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_11
-(
-	.z /* OUT */ (grdt0_11),
-	.a0 /* IN */ (a1_pos_11),
-	.a1 /* IN */ (a1_posf_11),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_12
-(
-	.z /* OUT */ (grdt0_12),
-	.a0 /* IN */ (a1_pos_12),
-	.a1 /* IN */ (a1_posf_12),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_13
-(
-	.z /* OUT */ (grdt0_13),
-	.a0 /* IN */ (a1_pos_13),
-	.a1 /* IN */ (a1_posf_13),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_14
-(
-	.z /* OUT */ (grdt0_14),
-	.a0 /* IN */ (a1_pos_14),
-	.a1 /* IN */ (a1_posf_14),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_15
-(
-	.z /* OUT */ (grdt0_15),
-	.a0 /* IN */ (a1_pos_15),
-	.a1 /* IN */ (a1_posf_15),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_16
-(
-	.z /* OUT */ (grdt0_16),
-	.a0 /* IN */ (a1_pos_16),
-	.a1 /* IN */ (a1_posf_16),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_17
-(
-	.z /* OUT */ (grdt0_17),
-	.a0 /* IN */ (a1_pos_17),
-	.a1 /* IN */ (a1_posf_17),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_18
-(
-	.z /* OUT */ (grdt0_18),
-	.a0 /* IN */ (a1_pos_18),
-	.a1 /* IN */ (a1_posf_18),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_19
-(
-	.z /* OUT */ (grdt0_19),
-	.a0 /* IN */ (a1_pos_19),
-	.a1 /* IN */ (a1_posf_19),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_20
-(
-	.z /* OUT */ (grdt0_20),
-	.a0 /* IN */ (a1_pos_20),
-	.a1 /* IN */ (a1_posf_20),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_21
-(
-	.z /* OUT */ (grdt0_21),
-	.a0 /* IN */ (a1_pos_21),
-	.a1 /* IN */ (a1_posf_21),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_22
-(
-	.z /* OUT */ (grdt0_22),
-	.a0 /* IN */ (a1_pos_22),
-	.a1 /* IN */ (a1_posf_22),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_23
-(
-	.z /* OUT */ (grdt0_23),
-	.a0 /* IN */ (a1_pos_23),
-	.a1 /* IN */ (a1_posf_23),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_24
-(
-	.z /* OUT */ (grdt0_24),
-	.a0 /* IN */ (a1_pos_24),
-	.a1 /* IN */ (a1_posf_24),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_25
-(
-	.z /* OUT */ (grdt0_25),
-	.a0 /* IN */ (a1_pos_25),
-	.a1 /* IN */ (a1_posf_25),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_26
-(
-	.z /* OUT */ (grdt0_26),
-	.a0 /* IN */ (a1_pos_26),
-	.a1 /* IN */ (a1_posf_26),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_27
-(
-	.z /* OUT */ (grdt0_27),
-	.a0 /* IN */ (a1_pos_27),
-	.a1 /* IN */ (a1_posf_27),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_28
-(
-	.z /* OUT */ (grdt0_28),
-	.a0 /* IN */ (a1_pos_28),
-	.a1 /* IN */ (a1_posf_28),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_29
-(
-	.z /* OUT */ (grdt0_29),
-	.a0 /* IN */ (a1_pos_29),
-	.a1 /* IN */ (a1_posf_29),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_30
-(
-	.z /* OUT */ (grdt0_30),
-	.a0 /* IN */ (a1_pos_30),
-	.a1 /* IN */ (a1_posf_30),
-	.s /* IN */ (a1posfrd)
-);
-mx2 grdt0_from_0_to_31_inst_31
-(
-	.z /* OUT */ (grdt0_31),
-	.a0 /* IN */ (a1_pos_31),
-	.a1 /* IN */ (a1_posf_31),
-	.s /* IN */ (a1posfrd)
-);
+assign grdt0_0 = (a1posfrd) ? a1_posf_0 : a1_pos_0;
+assign grdt0_1 = (a1posfrd) ? a1_posf_1 : a1_pos_1;
+assign grdt0_2 = (a1posfrd) ? a1_posf_2 : a1_pos_2;
+assign grdt0_3 = (a1posfrd) ? a1_posf_3 : a1_pos_3;
+assign grdt0_4 = (a1posfrd) ? a1_posf_4 : a1_pos_4;
+assign grdt0_5 = (a1posfrd) ? a1_posf_5 : a1_pos_5;
+assign grdt0_6 = (a1posfrd) ? a1_posf_6 : a1_pos_6;
+assign grdt0_7 = (a1posfrd) ? a1_posf_7 : a1_pos_7;
+assign grdt0_8 = (a1posfrd) ? a1_posf_8 : a1_pos_8;
+assign grdt0_9 = (a1posfrd) ? a1_posf_9 : a1_pos_9;
+assign grdt0_10 = (a1posfrd) ? a1_posf_10 : a1_pos_10;
+assign grdt0_11 = (a1posfrd) ? a1_posf_11 : a1_pos_11;
+assign grdt0_12 = (a1posfrd) ? a1_posf_12 : a1_pos_12;
+assign grdt0_13 = (a1posfrd) ? a1_posf_13 : a1_pos_13;
+assign grdt0_14 = (a1posfrd) ? a1_posf_14 : a1_pos_14;
+assign grdt0_15 = (a1posfrd) ? a1_posf_15 : a1_pos_15;
+assign grdt0_16 = (a1posfrd) ? a1_posf_16 : a1_pos_16;
+assign grdt0_17 = (a1posfrd) ? a1_posf_17 : a1_pos_17;
+assign grdt0_18 = (a1posfrd) ? a1_posf_18 : a1_pos_18;
+assign grdt0_19 = (a1posfrd) ? a1_posf_19 : a1_pos_19;
+assign grdt0_20 = (a1posfrd) ? a1_posf_20 : a1_pos_20;
+assign grdt0_21 = (a1posfrd) ? a1_posf_21 : a1_pos_21;
+assign grdt0_22 = (a1posfrd) ? a1_posf_22 : a1_pos_22;
+assign grdt0_23 = (a1posfrd) ? a1_posf_23 : a1_pos_23;
+assign grdt0_24 = (a1posfrd) ? a1_posf_24 : a1_pos_24;
+assign grdt0_25 = (a1posfrd) ? a1_posf_25 : a1_pos_25;
+assign grdt0_26 = (a1posfrd) ? a1_posf_26 : a1_pos_26;
+assign grdt0_27 = (a1posfrd) ? a1_posf_27 : a1_pos_27;
+assign grdt0_28 = (a1posfrd) ? a1_posf_28 : a1_pos_28;
+assign grdt0_29 = (a1posfrd) ? a1_posf_29 : a1_pos_29;
+assign grdt0_30 = (a1posfrd) ? a1_posf_30 : a1_pos_30;
+assign grdt0_31 = (a1posfrd) ? a1_posf_31 : a1_pos_31;
 
 // ADDRESS.NET (240) - grdt1[0-31] : mx2
-mx2 grdt1_from_0_to_31_inst_0
-(
-	.z /* OUT */ (grdt1_0),
-	.a0 /* IN */ (grdt0_0),
-	.a1 /* IN */ (a2_pos_0),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_1
-(
-	.z /* OUT */ (grdt1_1),
-	.a0 /* IN */ (grdt0_1),
-	.a1 /* IN */ (a2_pos_1),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_2
-(
-	.z /* OUT */ (grdt1_2),
-	.a0 /* IN */ (grdt0_2),
-	.a1 /* IN */ (a2_pos_2),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_3
-(
-	.z /* OUT */ (grdt1_3),
-	.a0 /* IN */ (grdt0_3),
-	.a1 /* IN */ (a2_pos_3),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_4
-(
-	.z /* OUT */ (grdt1_4),
-	.a0 /* IN */ (grdt0_4),
-	.a1 /* IN */ (a2_pos_4),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_5
-(
-	.z /* OUT */ (grdt1_5),
-	.a0 /* IN */ (grdt0_5),
-	.a1 /* IN */ (a2_pos_5),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_6
-(
-	.z /* OUT */ (grdt1_6),
-	.a0 /* IN */ (grdt0_6),
-	.a1 /* IN */ (a2_pos_6),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_7
-(
-	.z /* OUT */ (grdt1_7),
-	.a0 /* IN */ (grdt0_7),
-	.a1 /* IN */ (a2_pos_7),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_8
-(
-	.z /* OUT */ (grdt1_8),
-	.a0 /* IN */ (grdt0_8),
-	.a1 /* IN */ (a2_pos_8),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_9
-(
-	.z /* OUT */ (grdt1_9),
-	.a0 /* IN */ (grdt0_9),
-	.a1 /* IN */ (a2_pos_9),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_10
-(
-	.z /* OUT */ (grdt1_10),
-	.a0 /* IN */ (grdt0_10),
-	.a1 /* IN */ (a2_pos_10),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_11
-(
-	.z /* OUT */ (grdt1_11),
-	.a0 /* IN */ (grdt0_11),
-	.a1 /* IN */ (a2_pos_11),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_12
-(
-	.z /* OUT */ (grdt1_12),
-	.a0 /* IN */ (grdt0_12),
-	.a1 /* IN */ (a2_pos_12),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_13
-(
-	.z /* OUT */ (grdt1_13),
-	.a0 /* IN */ (grdt0_13),
-	.a1 /* IN */ (a2_pos_13),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_14
-(
-	.z /* OUT */ (grdt1_14),
-	.a0 /* IN */ (grdt0_14),
-	.a1 /* IN */ (a2_pos_14),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_15
-(
-	.z /* OUT */ (grdt1_15),
-	.a0 /* IN */ (grdt0_15),
-	.a1 /* IN */ (a2_pos_15),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_16
-(
-	.z /* OUT */ (grdt1_16),
-	.a0 /* IN */ (grdt0_16),
-	.a1 /* IN */ (a2_pos_16),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_17
-(
-	.z /* OUT */ (grdt1_17),
-	.a0 /* IN */ (grdt0_17),
-	.a1 /* IN */ (a2_pos_17),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_18
-(
-	.z /* OUT */ (grdt1_18),
-	.a0 /* IN */ (grdt0_18),
-	.a1 /* IN */ (a2_pos_18),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_19
-(
-	.z /* OUT */ (grdt1_19),
-	.a0 /* IN */ (grdt0_19),
-	.a1 /* IN */ (a2_pos_19),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_20
-(
-	.z /* OUT */ (grdt1_20),
-	.a0 /* IN */ (grdt0_20),
-	.a1 /* IN */ (a2_pos_20),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_21
-(
-	.z /* OUT */ (grdt1_21),
-	.a0 /* IN */ (grdt0_21),
-	.a1 /* IN */ (a2_pos_21),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_22
-(
-	.z /* OUT */ (grdt1_22),
-	.a0 /* IN */ (grdt0_22),
-	.a1 /* IN */ (a2_pos_22),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_23
-(
-	.z /* OUT */ (grdt1_23),
-	.a0 /* IN */ (grdt0_23),
-	.a1 /* IN */ (a2_pos_23),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_24
-(
-	.z /* OUT */ (grdt1_24),
-	.a0 /* IN */ (grdt0_24),
-	.a1 /* IN */ (a2_pos_24),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_25
-(
-	.z /* OUT */ (grdt1_25),
-	.a0 /* IN */ (grdt0_25),
-	.a1 /* IN */ (a2_pos_25),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_26
-(
-	.z /* OUT */ (grdt1_26),
-	.a0 /* IN */ (grdt0_26),
-	.a1 /* IN */ (a2_pos_26),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_27
-(
-	.z /* OUT */ (grdt1_27),
-	.a0 /* IN */ (grdt0_27),
-	.a1 /* IN */ (a2_pos_27),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_28
-(
-	.z /* OUT */ (grdt1_28),
-	.a0 /* IN */ (grdt0_28),
-	.a1 /* IN */ (a2_pos_28),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_29
-(
-	.z /* OUT */ (grdt1_29),
-	.a0 /* IN */ (grdt0_29),
-	.a1 /* IN */ (a2_pos_29),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_30
-(
-	.z /* OUT */ (grdt1_30),
-	.a0 /* IN */ (grdt0_30),
-	.a1 /* IN */ (a2_pos_30),
-	.s /* IN */ (a2posrd)
-);
-mx2 grdt1_from_0_to_31_inst_31
-(
-	.z /* OUT */ (grdt1_31),
-	.a0 /* IN */ (grdt0_31),
-	.a1 /* IN */ (a2_pos_31),
-	.s /* IN */ (a2posrd)
-);
+assign grdt1_0 = (a2posrd) ? a2_pos_0 : grdt0_0;
+assign grdt1_1 = (a2posrd) ? a2_pos_1 : grdt0_1;
+assign grdt1_2 = (a2posrd) ? a2_pos_2 : grdt0_2;
+assign grdt1_3 = (a2posrd) ? a2_pos_3 : grdt0_3;
+assign grdt1_4 = (a2posrd) ? a2_pos_4 : grdt0_4;
+assign grdt1_5 = (a2posrd) ? a2_pos_5 : grdt0_5;
+assign grdt1_6 = (a2posrd) ? a2_pos_6 : grdt0_6;
+assign grdt1_7 = (a2posrd) ? a2_pos_7 : grdt0_7;
+assign grdt1_8 = (a2posrd) ? a2_pos_8 : grdt0_8;
+assign grdt1_9 = (a2posrd) ? a2_pos_9 : grdt0_9;
+assign grdt1_10 = (a2posrd) ? a2_pos_10 : grdt0_10;
+assign grdt1_11 = (a2posrd) ? a2_pos_11 : grdt0_11;
+assign grdt1_12 = (a2posrd) ? a2_pos_12 : grdt0_12;
+assign grdt1_13 = (a2posrd) ? a2_pos_13 : grdt0_13;
+assign grdt1_14 = (a2posrd) ? a2_pos_14 : grdt0_14;
+assign grdt1_15 = (a2posrd) ? a2_pos_15 : grdt0_15;
+assign grdt1_16 = (a2posrd) ? a2_pos_16 : grdt0_16;
+assign grdt1_17 = (a2posrd) ? a2_pos_17 : grdt0_17;
+assign grdt1_18 = (a2posrd) ? a2_pos_18 : grdt0_18;
+assign grdt1_19 = (a2posrd) ? a2_pos_19 : grdt0_19;
+assign grdt1_20 = (a2posrd) ? a2_pos_20 : grdt0_20;
+assign grdt1_21 = (a2posrd) ? a2_pos_21 : grdt0_21;
+assign grdt1_22 = (a2posrd) ? a2_pos_22 : grdt0_22;
+assign grdt1_23 = (a2posrd) ? a2_pos_23 : grdt0_23;
+assign grdt1_24 = (a2posrd) ? a2_pos_24 : grdt0_24;
+assign grdt1_25 = (a2posrd) ? a2_pos_25 : grdt0_25;
+assign grdt1_26 = (a2posrd) ? a2_pos_26 : grdt0_26;
+assign grdt1_27 = (a2posrd) ? a2_pos_27 : grdt0_27;
+assign grdt1_28 = (a2posrd) ? a2_pos_28 : grdt0_28;
+assign grdt1_29 = (a2posrd) ? a2_pos_29 : grdt0_29;
+assign grdt1_30 = (a2posrd) ? a2_pos_30 : grdt0_30;
+assign grdt1_31 = (a2posrd) ? a2_pos_31 : grdt0_31;
 
 // ADDRESS.NET (242) - grden : or3u
 assign grden = a1posrd | a1posfrd | a2posrd;

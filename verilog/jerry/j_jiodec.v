@@ -398,10 +398,10 @@ assign u2ctwr = i00xx & axx3x & axxx2 & wet;
 // JIODEC.NET (130) - u2psclw : an4h
 assign u2psclw = i00xx & axx3x & axxx4 & wet;
 
-// JIODEC.NET (131) - test1w : an4h
-assign test1w = i00xx & axx6x & axxx0 & wet;
+// JIODEC.NET (132) - test1w : tie0
+assign test1w = 1'b0;
 
-// JIODEC.NET (133) - vcc : tie1
+// JIODEC.NET (134) - vcc : tie1
 assign vcc = 1'b1;
 endmodule
 /* verilator lint_on LITENDIAN */

@@ -18,6 +18,8 @@ module jaguar
 	input		[0:63]	dram_q,
 	input		[0:3]		dram_oe,
 
+	input						ram_rdy,
+	
   output        DBG_CPU_RDEN,
   output        DBG_CPU_WREN,
   output        DBG_CPU_DTACK,
@@ -49,6 +51,7 @@ module jaguar
 
 	output	fdram,
 	
+	output vga_bl,
 	output vga_vs_n,
 	output vga_hs_n,
 	output [7:0] vga_r,
@@ -56,40 +59,27 @@ module jaguar
 	output [7:0] vga_b
 );
 
-reg [1:0] clkdiv = 2'b00;
-reg xpclk = 1'b0;
+reg [2:0] clkdiv = 3'b000;
+/*reg xpclk = 1'b0;
 reg xvclk = 1'b0;
-reg tlw = 1'b1;
+reg tlw = 1'b1;*/
+wire xpclk;
+wire xvclk;
+wire tlw;
 
 always @(posedge sys_clk)
 begin
-	clkdiv <= clkdiv + 2'b01;
-	xvclk <= ~xvclk;
-	
-	
+	clkdiv <= clkdiv + 3'b001;
+	if (clkdiv == 3'b101) begin
+		clkdiv <= 3'b000;
+	end
+	/*xvclk <= ~xvclk;
 	xpclk <= ~xpclk;
-	tlw <= ~tlw;
-	
-	/*if (clkdiv[1:0] == 2'b10) begin
-		xpclk <= 1'b1;
-	end else begin
-		xpclk <= 1'b0;
-	end	
-	
-	
-	if (clkdiv[1:0] == 2'b10) begin
-		xpclk <= 1'b1;
-	end else begin
-		xpclk <= 1'b0;
-	end	
-	
-	if (clkdiv[1:0] == 2'b00) begin
-		tlw <= 1'b1;
-	end else begin
-		tlw <= 1'b0;
-	end*/		
+	tlw <= ~tlw;*/	
 end
-
+assign xpclk = (clkdiv == 3'd0) || (clkdiv == 3'd3);
+assign tlw = (clkdiv == 3'd2) || (clkdiv == 3'd5);
+assign xvclk = xpclk;
 
 // `ifndef verilator3
 // reg						xpclk;
@@ -172,6 +162,9 @@ wire					hhs_o;
 wire					vs_o;
 wire					blank;
 
+wire	[0:2]		den;
+wire					aen;
+
 // JERRY
 
 // JERRY - Inputs
@@ -240,6 +233,10 @@ wire					j_xiordl;
 wire					j_xiowrl;
 wire					j_xi2stxd;
 wire					j_xcpuclk;
+
+// JERRY - Extra signals
+wire					j_den;
+wire					j_aen;
 
 // Tristates / Busses
 wire					rw;
@@ -469,6 +466,7 @@ assign xwaitl = 1'b1;
 assign j_xdspcsl = xdspcsl;
 assign j_xpclkosc = xvclk;
 assign j_xpclkin = xpclk;
+//assign j_xpclkin = tlw; // /!\
 assign j_xdbgl = xdbgl; 
 assign j_xoel_0 = xoel[0];
 assign j_xwel_0 = xwel[0];
@@ -489,51 +487,72 @@ assign j_xresetil = xresetl;
 // --- assign xsiz_in[1] = (xba_in) ? ~j68_byte_ena[1] : xsiz_out[1];
 
 assign rw = 
-	(xrw_oe) ? 
+	(aen) ? 
 		xrw_out 
-	: (j_xrw_oe) ? 
+	: (j_aen) ? 
 		j_xrw_out
 	: 
 		~j68_wr_ena;
 assign xrw_in = rw;
 assign j_xrw_in = rw;
+reg rw_dly;
+always @(posedge sys_clk)
+begin
+	rw_dly <= rw;
+end
+//assign xrw_in = (aen) ? xrw_out : rw_dly;
+//assign j_xrw_in = (j_aen) ? j_xrw_out : rw_dly;
+
 		
 assign siz[0] =
-	(xsiz_oe[0]) ?
+	(aen) ?
 		xsiz_out[0]
-	: (j_xsiz_oe[0]) ?
+	: (j_aen) ?
 		j_xsiz_out[0]
 	: 
 		~j68_byte_ena[0];
 assign siz[1] =
-	(xsiz_oe[1]) ?
+	(aen) ?
 		xsiz_out[1]
-	: (j_xsiz_oe[1]) ?
+	: (j_aen) ?
 		j_xsiz_out[1]
 	: 
 		~j68_byte_ena[1];
 assign xsiz_in = siz;
 assign j_xsiz_in = siz;
+reg [0:1] siz_dly;
+always @(posedge sys_clk)
+begin
+	siz_dly <= siz;
+end
+//assign xsiz_in = (aen) ? xsiz_out : siz_dly;
+//assign j_xsiz_in = (j_aen) ? j_xsiz_out : siz_dly;
 		
 assign dreql = 
-	(xdreql_oe) ? 
+	(aen) ? 
 		xdreql_out 
-	: (j_xdreql_oe) ? 
+	: (j_aen) ? 
 		j_xdreql_out
 	: 
 		~(j68_rd_ena | j68_wr_ena);
 assign xdreql_in = dreql;
 assign j_xdreql_in = dreql;
-
+reg dreql_dly;
+always @(posedge sys_clk)
+begin
+	dreql_dly <= dreql;
+end
+//assign xdreql_in = (aen) ? xdreql_out : dreql_dly;
+//assign j_xdreql_in = (j_aen) ? j_xdreql_out : dreql_dly;
 
 
 // Busses between TOM/JERRY/68000
 
 // Address bus
 assign abus[0:23] =
-	(xa_oe[0]) ?
+	(aen) ?
 		xa_out[0:23]
-	: (j_xa_oe[0]) ?
+	: (j_aen) ?
 		j_xa_out[0:23]
 	:
 		{ 
@@ -546,152 +565,122 @@ assign abus[0:23] =
 		};
 assign xa_in = abus;
 assign j_xa_in = abus;
+reg	[0:23]	abus_dly;
+always @(posedge sys_clk)
+begin
+	abus_dly <= abus;
+end
+//assign xa_in = (aen) ? xa_out[0:23] : abus_dly;
+//assign j_xa_in = (j_aen) ? j_xa_out[0:23] : abus_dly;
+
 
 // Data bus
 
-/*assign xd_in[0:7] = 
-		(j68_wr_ena & j68_byte_ena[0] & xba_in) ?
-			{
-				j68_wr_data[0], j68_wr_data[1], j68_wr_data[2], j68_wr_data[3], 
-				j68_wr_data[4], j68_wr_data[5], j68_wr_data[6], j68_wr_data[7]
-			}
-		: (os_rom_oe) ?
-			{
-				os_rom_q[0], os_rom_q[1], os_rom_q[2], os_rom_q[3], 
-				os_rom_q[4], os_rom_q[5], os_rom_q[6], os_rom_q[7]
-			}	
-		: (dram_oe[0]) ?
-			dram_q[0:7]
-		:
-			xd_out[0:7];
-*/
-assign dbus[0] = (xd_oe[0]) ? xd_out[0] : (j_xd_oe[0]) ? j_xd_out[0] :
+assign dbus[0] = (den[0]) ? xd_out[0] : (j_den) ? j_xd_out[0] :
 	(dram_oe[0]) ? dram_q[0] : (os_rom_oe) ? os_rom_q[0] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[0] : (cart_oe[0]) ? cart_q[0] : (joy_bus_oe) ? joy_bus[0] : 1'bz;
-assign dbus[1] = (xd_oe[1]) ? xd_out[1] : (j_xd_oe[1]) ? j_xd_out[1] :
+assign dbus[1] = (den[0]) ? xd_out[1] : (j_den) ? j_xd_out[1] :
 	(dram_oe[0]) ? dram_q[1] : (os_rom_oe) ? os_rom_q[1] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[1] : (cart_oe[0]) ? cart_q[1] : (joy_bus_oe) ? joy_bus[1] : 1'bz;
-assign dbus[2] = (xd_oe[2]) ? xd_out[2] : (j_xd_oe[2]) ? j_xd_out[2] :
+assign dbus[2] = (den[0]) ? xd_out[2] : (j_den) ? j_xd_out[2] :
 	(dram_oe[0]) ? dram_q[2] : (os_rom_oe) ? os_rom_q[2] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[2] : (cart_oe[0]) ? cart_q[2] : (joy_bus_oe) ? joy_bus[2] : 1'bz;
-assign dbus[3] = (xd_oe[3]) ? xd_out[3] : (j_xd_oe[3]) ? j_xd_out[3] :
+assign dbus[3] = (den[0]) ? xd_out[3] : (j_den) ? j_xd_out[3] :
 	(dram_oe[0]) ? dram_q[3] : (os_rom_oe) ? os_rom_q[3] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[3] : (cart_oe[0]) ? cart_q[3] : (joy_bus_oe) ? joy_bus[3] : 1'bz;
-assign dbus[4] = (xd_oe[4]) ? xd_out[4] : (j_xd_oe[4]) ? j_xd_out[4] :
+assign dbus[4] = (den[0]) ? xd_out[4] : (j_den) ? j_xd_out[4] :
 	(dram_oe[0]) ? dram_q[4] : (os_rom_oe) ? os_rom_q[4] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[4] : (cart_oe[0]) ? cart_q[4] : (joy_bus_oe) ? joy_bus[4] : 1'bz;
-assign dbus[5] = (xd_oe[5]) ? xd_out[5] : (j_xd_oe[5]) ? j_xd_out[5] :
+assign dbus[5] = (den[0]) ? xd_out[5] : (j_den) ? j_xd_out[5] :
 	(dram_oe[0]) ? dram_q[5] : (os_rom_oe) ? os_rom_q[5] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[5] : (cart_oe[0]) ? cart_q[5] : (joy_bus_oe) ? joy_bus[5] : 1'bz;
-assign dbus[6] = (xd_oe[6]) ? xd_out[6] : (j_xd_oe[6]) ? j_xd_out[6] :
+assign dbus[6] = (den[0]) ? xd_out[6] : (j_den) ? j_xd_out[6] :
 	(dram_oe[0]) ? dram_q[6] : (os_rom_oe) ? os_rom_q[6] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[6] : (cart_oe[0]) ? cart_q[6] : (joy_bus_oe) ? joy_bus[6] : 1'bz;
-assign dbus[7] = (xd_oe[7]) ? xd_out[7] : (j_xd_oe[7]) ? j_xd_out[7] :
+assign dbus[7] = (den[0]) ? xd_out[7] : (j_den) ? j_xd_out[7] :
 	(dram_oe[0]) ? dram_q[7] : (os_rom_oe) ? os_rom_q[7] : 
 	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[7] : (cart_oe[0]) ? cart_q[7] : (joy_bus_oe) ? joy_bus[7] : 1'bz;
 
-/*assign xd_in[8:15] = 
-	(j68_wr_ena & j68_byte_ena[1] & xba_in) ?
-		{
-			j68_wr_data[8], j68_wr_data[9], j68_wr_data[10], j68_wr_data[11], 
-			j68_wr_data[12], j68_wr_data[13], j68_wr_data[14], j68_wr_data[15]
-		}
-	: (dram_oe[0]) ?
-		dram_q[8:15]
-	:
-		xd_out[8:15];
-*/
-assign dbus[8] = (xd_oe[8]) ? xd_out[8] : (j_xd_oe[8]) ? j_xd_out[8] :
+assign dbus[8] = (den[0]) ? xd_out[8] : (j_den) ? j_xd_out[8] :
 	(dram_oe[0]) ? dram_q[8] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[8] : (cart_oe[0]) ? cart_q[8] : (joy_bus_oe) ? joy_bus[8] : 1'bz;
-assign dbus[9] = (xd_oe[9]) ? xd_out[9] : (j_xd_oe[9]) ? j_xd_out[9] :
+assign dbus[9] = (den[0]) ? xd_out[9] : (j_den) ? j_xd_out[9] :
 	(dram_oe[0]) ? dram_q[9] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[9] : (cart_oe[0]) ? cart_q[9] : (joy_bus_oe) ? joy_bus[9] : 1'bz;
-assign dbus[10] = (xd_oe[10]) ? xd_out[10] : (j_xd_oe[10]) ? j_xd_out[10] :
+assign dbus[10] = (den[0]) ? xd_out[10] : (j_den) ? j_xd_out[10] :
 	(dram_oe[0]) ? dram_q[10] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[10] : (cart_oe[0]) ? cart_q[10] : (joy_bus_oe) ? joy_bus[10] : 1'bz;
-assign dbus[11] = (xd_oe[11]) ? xd_out[11] : (j_xd_oe[11]) ? j_xd_out[11] :
+assign dbus[11] = (den[0]) ? xd_out[11] : (j_den) ? j_xd_out[11] :
 	(dram_oe[0]) ? dram_q[11] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[11] : (cart_oe[0]) ? cart_q[11] : (joy_bus_oe) ? joy_bus[11] : 1'bz;
-assign dbus[12] = (xd_oe[12]) ? xd_out[12] : (j_xd_oe[12]) ? j_xd_out[12] :
+assign dbus[12] = (den[0]) ? xd_out[12] : (j_den) ? j_xd_out[12] :
 	(dram_oe[0]) ? dram_q[12] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[12] : (cart_oe[0]) ? cart_q[12] : (joy_bus_oe) ? joy_bus[12] : 1'bz;
-assign dbus[13] = (xd_oe[13]) ? xd_out[13] : (j_xd_oe[13]) ? j_xd_out[13] :
+assign dbus[13] = (den[0]) ? xd_out[13] : (j_den) ? j_xd_out[13] :
 	(dram_oe[0]) ? dram_q[13] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[13] : (cart_oe[0]) ? cart_q[13] : (joy_bus_oe) ? joy_bus[13] : 1'bz;
-assign dbus[14] = (xd_oe[14]) ? xd_out[14] : (j_xd_oe[14]) ? j_xd_out[14] :
+assign dbus[14] = (den[0]) ? xd_out[14] : (j_den) ? j_xd_out[14] :
 	(dram_oe[0]) ? dram_q[14] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[14] : (cart_oe[0]) ? cart_q[14] : (joy_bus_oe) ? joy_bus[14] : 1'bz;
-assign dbus[15] = (xd_oe[15]) ? xd_out[15] : (j_xd_oe[15]) ? j_xd_out[15] :
+assign dbus[15] = (den[0]) ? xd_out[15] : (j_den) ? j_xd_out[15] :
 	(dram_oe[0]) ? dram_q[15] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[15] : (cart_oe[0]) ? cart_q[15] : (joy_bus_oe) ? joy_bus[15] : 1'bz;
 
-/*assign xd_in[16:31] = 
-	(dram_oe[1]) ?
-		dram_q[16:31]
-	:
-		xd_out[16:31];
-*/
-assign dbus[16] = (xd_oe[16]) ? xd_out[16] : (dram_oe[1]) ? dram_q[16] : (cart_oe[1]) ? cart_q[16] : 1'bz;
-assign dbus[17] = (xd_oe[17]) ? xd_out[17] : (dram_oe[1]) ? dram_q[17] : (cart_oe[1]) ? cart_q[17] : 1'bz;
-assign dbus[18] = (xd_oe[18]) ? xd_out[18] : (dram_oe[1]) ? dram_q[18] : (cart_oe[1]) ? cart_q[18] : 1'bz;
-assign dbus[19] = (xd_oe[19]) ? xd_out[19] : (dram_oe[1]) ? dram_q[19] : (cart_oe[1]) ? cart_q[19] : 1'bz;
-assign dbus[20] = (xd_oe[20]) ? xd_out[20] : (dram_oe[1]) ? dram_q[20] : (cart_oe[1]) ? cart_q[20] : 1'bz;
-assign dbus[21] = (xd_oe[21]) ? xd_out[21] : (dram_oe[1]) ? dram_q[21] : (cart_oe[1]) ? cart_q[21] : 1'bz;
-assign dbus[22] = (xd_oe[22]) ? xd_out[22] : (dram_oe[1]) ? dram_q[22] : (cart_oe[1]) ? cart_q[22] : 1'bz;
-assign dbus[23] = (xd_oe[23]) ? xd_out[23] : (dram_oe[1]) ? dram_q[23] : (cart_oe[1]) ? cart_q[23] : 1'bz;
-assign dbus[24] = (xd_oe[24]) ? xd_out[24] : (dram_oe[1]) ? dram_q[24] : (cart_oe[1]) ? cart_q[24] : 1'bz;
-assign dbus[25] = (xd_oe[25]) ? xd_out[25] : (dram_oe[1]) ? dram_q[25] : (cart_oe[1]) ? cart_q[25] : 1'bz;
-assign dbus[26] = (xd_oe[26]) ? xd_out[26] : (dram_oe[1]) ? dram_q[26] : (cart_oe[1]) ? cart_q[26] : 1'bz;
-assign dbus[27] = (xd_oe[27]) ? xd_out[27] : (dram_oe[1]) ? dram_q[27] : (cart_oe[1]) ? cart_q[27] : 1'bz;
-assign dbus[28] = (xd_oe[28]) ? xd_out[28] : (dram_oe[1]) ? dram_q[28] : (cart_oe[1]) ? cart_q[28] : 1'bz;
-assign dbus[29] = (xd_oe[29]) ? xd_out[29] : (dram_oe[1]) ? dram_q[29] : (cart_oe[1]) ? cart_q[29] : 1'bz;
-assign dbus[30] = (xd_oe[30]) ? xd_out[30] : (dram_oe[1]) ? dram_q[30] : (cart_oe[1]) ? cart_q[30] : 1'bz;
-assign dbus[31] = (xd_oe[31]) ? xd_out[31] : (dram_oe[1]) ? dram_q[31] : (cart_oe[1]) ? cart_q[31] : 1'bz;
+assign dbus[16] = (den[1]) ? xd_out[16] : (dram_oe[1]) ? dram_q[16] : (cart_oe[1]) ? cart_q[16] : 1'bz;
+assign dbus[17] = (den[1]) ? xd_out[17] : (dram_oe[1]) ? dram_q[17] : (cart_oe[1]) ? cart_q[17] : 1'bz;
+assign dbus[18] = (den[1]) ? xd_out[18] : (dram_oe[1]) ? dram_q[18] : (cart_oe[1]) ? cart_q[18] : 1'bz;
+assign dbus[19] = (den[1]) ? xd_out[19] : (dram_oe[1]) ? dram_q[19] : (cart_oe[1]) ? cart_q[19] : 1'bz;
+assign dbus[20] = (den[1]) ? xd_out[20] : (dram_oe[1]) ? dram_q[20] : (cart_oe[1]) ? cart_q[20] : 1'bz;
+assign dbus[21] = (den[1]) ? xd_out[21] : (dram_oe[1]) ? dram_q[21] : (cart_oe[1]) ? cart_q[21] : 1'bz;
+assign dbus[22] = (den[1]) ? xd_out[22] : (dram_oe[1]) ? dram_q[22] : (cart_oe[1]) ? cart_q[22] : 1'bz;
+assign dbus[23] = (den[1]) ? xd_out[23] : (dram_oe[1]) ? dram_q[23] : (cart_oe[1]) ? cart_q[23] : 1'bz;
+assign dbus[24] = (den[1]) ? xd_out[24] : (dram_oe[1]) ? dram_q[24] : (cart_oe[1]) ? cart_q[24] : 1'bz;
+assign dbus[25] = (den[1]) ? xd_out[25] : (dram_oe[1]) ? dram_q[25] : (cart_oe[1]) ? cart_q[25] : 1'bz;
+assign dbus[26] = (den[1]) ? xd_out[26] : (dram_oe[1]) ? dram_q[26] : (cart_oe[1]) ? cart_q[26] : 1'bz;
+assign dbus[27] = (den[1]) ? xd_out[27] : (dram_oe[1]) ? dram_q[27] : (cart_oe[1]) ? cart_q[27] : 1'bz;
+assign dbus[28] = (den[1]) ? xd_out[28] : (dram_oe[1]) ? dram_q[28] : (cart_oe[1]) ? cart_q[28] : 1'bz;
+assign dbus[29] = (den[1]) ? xd_out[29] : (dram_oe[1]) ? dram_q[29] : (cart_oe[1]) ? cart_q[29] : 1'bz;
+assign dbus[30] = (den[1]) ? xd_out[30] : (dram_oe[1]) ? dram_q[30] : (cart_oe[1]) ? cart_q[30] : 1'bz;
+assign dbus[31] = (den[1]) ? xd_out[31] : (dram_oe[1]) ? dram_q[31] : (cart_oe[1]) ? cart_q[31] : 1'bz;
 
+assign dbus[32] = (den[2]) ? xd_out[32] : (dram_oe[2]) ? dram_q[32] : 1'bz;
+assign dbus[33] = (den[2]) ? xd_out[33] : (dram_oe[2]) ? dram_q[33] : 1'bz;
+assign dbus[34] = (den[2]) ? xd_out[34] : (dram_oe[2]) ? dram_q[34] : 1'bz;
+assign dbus[35] = (den[2]) ? xd_out[35] : (dram_oe[2]) ? dram_q[35] : 1'bz;
+assign dbus[36] = (den[2]) ? xd_out[36] : (dram_oe[2]) ? dram_q[36] : 1'bz;
+assign dbus[37] = (den[2]) ? xd_out[37] : (dram_oe[2]) ? dram_q[37] : 1'bz;
+assign dbus[38] = (den[2]) ? xd_out[38] : (dram_oe[2]) ? dram_q[38] : 1'bz;
+assign dbus[39] = (den[2]) ? xd_out[39] : (dram_oe[2]) ? dram_q[39] : 1'bz;
+assign dbus[40] = (den[2]) ? xd_out[40] : (dram_oe[2]) ? dram_q[40] : 1'bz;
+assign dbus[41] = (den[2]) ? xd_out[41] : (dram_oe[2]) ? dram_q[41] : 1'bz;
+assign dbus[42] = (den[2]) ? xd_out[42] : (dram_oe[2]) ? dram_q[42] : 1'bz;
+assign dbus[43] = (den[2]) ? xd_out[43] : (dram_oe[2]) ? dram_q[43] : 1'bz;
+assign dbus[44] = (den[2]) ? xd_out[44] : (dram_oe[2]) ? dram_q[44] : 1'bz;
+assign dbus[45] = (den[2]) ? xd_out[45] : (dram_oe[2]) ? dram_q[45] : 1'bz;
+assign dbus[46] = (den[2]) ? xd_out[46] : (dram_oe[2]) ? dram_q[46] : 1'bz;
+assign dbus[47] = (den[2]) ? xd_out[47] : (dram_oe[2]) ? dram_q[47] : 1'bz;
 
-/*assign xd_in[32:47] = 
-	(dram_oe[2]) ?
-		dram_q[32:47]
-	:
-		xd_out[32:47];
-*/
-assign dbus[32] = (xd_oe[32]) ? xd_out[32] : (dram_oe[2]) ? dram_q[32] : 1'bz;
-assign dbus[33] = (xd_oe[33]) ? xd_out[33] : (dram_oe[2]) ? dram_q[33] : 1'bz;
-assign dbus[34] = (xd_oe[34]) ? xd_out[34] : (dram_oe[2]) ? dram_q[34] : 1'bz;
-assign dbus[35] = (xd_oe[35]) ? xd_out[35] : (dram_oe[2]) ? dram_q[35] : 1'bz;
-assign dbus[36] = (xd_oe[36]) ? xd_out[36] : (dram_oe[2]) ? dram_q[36] : 1'bz;
-assign dbus[37] = (xd_oe[37]) ? xd_out[37] : (dram_oe[2]) ? dram_q[37] : 1'bz;
-assign dbus[38] = (xd_oe[38]) ? xd_out[38] : (dram_oe[2]) ? dram_q[38] : 1'bz;
-assign dbus[39] = (xd_oe[39]) ? xd_out[39] : (dram_oe[2]) ? dram_q[39] : 1'bz;
-assign dbus[40] = (xd_oe[40]) ? xd_out[40] : (dram_oe[2]) ? dram_q[40] : 1'bz;
-assign dbus[41] = (xd_oe[41]) ? xd_out[41] : (dram_oe[2]) ? dram_q[41] : 1'bz;
-assign dbus[42] = (xd_oe[42]) ? xd_out[42] : (dram_oe[2]) ? dram_q[42] : 1'bz;
-assign dbus[43] = (xd_oe[43]) ? xd_out[43] : (dram_oe[2]) ? dram_q[43] : 1'bz;
-assign dbus[44] = (xd_oe[44]) ? xd_out[44] : (dram_oe[2]) ? dram_q[44] : 1'bz;
-assign dbus[45] = (xd_oe[45]) ? xd_out[45] : (dram_oe[2]) ? dram_q[45] : 1'bz;
-assign dbus[46] = (xd_oe[46]) ? xd_out[46] : (dram_oe[2]) ? dram_q[46] : 1'bz;
-assign dbus[47] = (xd_oe[47]) ? xd_out[47] : (dram_oe[2]) ? dram_q[47] : 1'bz;
-
-
-/*assign xd_in[48:63] = 
-	(dram_oe[3]) ?
-		dram_q[48:63]
-	:
-		xd_out[48:63];
-*/
-assign dbus[48] = (xd_oe[48]) ? xd_out[48] : (dram_oe[3]) ? dram_q[48] : 1'bz;
-assign dbus[49] = (xd_oe[49]) ? xd_out[49] : (dram_oe[3]) ? dram_q[49] : 1'bz;
-assign dbus[50] = (xd_oe[50]) ? xd_out[50] : (dram_oe[3]) ? dram_q[50] : 1'bz;
-assign dbus[51] = (xd_oe[51]) ? xd_out[51] : (dram_oe[3]) ? dram_q[51] : 1'bz;
-assign dbus[52] = (xd_oe[52]) ? xd_out[52] : (dram_oe[3]) ? dram_q[52] : 1'bz;
-assign dbus[53] = (xd_oe[53]) ? xd_out[53] : (dram_oe[3]) ? dram_q[53] : 1'bz;
-assign dbus[54] = (xd_oe[54]) ? xd_out[54] : (dram_oe[3]) ? dram_q[54] : 1'bz;
-assign dbus[55] = (xd_oe[55]) ? xd_out[55] : (dram_oe[3]) ? dram_q[55] : 1'bz;
-assign dbus[56] = (xd_oe[56]) ? xd_out[56] : (dram_oe[3]) ? dram_q[56] : 1'bz;
-assign dbus[57] = (xd_oe[57]) ? xd_out[57] : (dram_oe[3]) ? dram_q[57] : 1'bz;
-assign dbus[58] = (xd_oe[58]) ? xd_out[58] : (dram_oe[3]) ? dram_q[58] : 1'bz;
-assign dbus[59] = (xd_oe[59]) ? xd_out[59] : (dram_oe[3]) ? dram_q[59] : 1'bz;
-assign dbus[60] = (xd_oe[60]) ? xd_out[60] : (dram_oe[3]) ? dram_q[60] : 1'bz;
-assign dbus[61] = (xd_oe[61]) ? xd_out[61] : (dram_oe[3]) ? dram_q[61] : 1'bz;
-assign dbus[62] = (xd_oe[62]) ? xd_out[62] : (dram_oe[3]) ? dram_q[62] : 1'bz;
-assign dbus[63] = (xd_oe[63]) ? xd_out[63] : (dram_oe[3]) ? dram_q[63] : 1'bz;
-
+assign dbus[48] = (den[2]) ? xd_out[48] : (dram_oe[3]) ? dram_q[48] : 1'bz;
+assign dbus[49] = (den[2]) ? xd_out[49] : (dram_oe[3]) ? dram_q[49] : 1'bz;
+assign dbus[50] = (den[2]) ? xd_out[50] : (dram_oe[3]) ? dram_q[50] : 1'bz;
+assign dbus[51] = (den[2]) ? xd_out[51] : (dram_oe[3]) ? dram_q[51] : 1'bz;
+assign dbus[52] = (den[2]) ? xd_out[52] : (dram_oe[3]) ? dram_q[52] : 1'bz;
+assign dbus[53] = (den[2]) ? xd_out[53] : (dram_oe[3]) ? dram_q[53] : 1'bz;
+assign dbus[54] = (den[2]) ? xd_out[54] : (dram_oe[3]) ? dram_q[54] : 1'bz;
+assign dbus[55] = (den[2]) ? xd_out[55] : (dram_oe[3]) ? dram_q[55] : 1'bz;
+assign dbus[56] = (den[2]) ? xd_out[56] : (dram_oe[3]) ? dram_q[56] : 1'bz;
+assign dbus[57] = (den[2]) ? xd_out[57] : (dram_oe[3]) ? dram_q[57] : 1'bz;
+assign dbus[58] = (den[2]) ? xd_out[58] : (dram_oe[3]) ? dram_q[58] : 1'bz;
+assign dbus[59] = (den[2]) ? xd_out[59] : (dram_oe[3]) ? dram_q[59] : 1'bz;
+assign dbus[60] = (den[2]) ? xd_out[60] : (dram_oe[3]) ? dram_q[60] : 1'bz;
+assign dbus[61] = (den[2]) ? xd_out[61] : (dram_oe[3]) ? dram_q[61] : 1'bz;
+assign dbus[62] = (den[2]) ? xd_out[62] : (dram_oe[3]) ? dram_q[62] : 1'bz;
+assign dbus[63] = (den[2]) ? xd_out[63] : (dram_oe[3]) ? dram_q[63] : 1'bz;
 
 assign xd_in[0:63] = dbus[0:63];
-assign j_xd_in[0:31] = { dbus[0:15], j_xd_out[16:31] };
+assign j_xd_in[0:31] = { dbus[0:15], (j_den) ? j_xd_out[16:31] : 16'b11111111_11111111 };
+reg	[0:63]	dbus_dly;
+always @(posedge sys_clk)
+begin
+	dbus_dly <= dbus;
+end
+/*assign xd_in[0:15] = (den[0]) ? xd_out[0:15] : dbus_dly[0:15];
+assign xd_in[16:31] = (den[1]) ? xd_out[16:31] : dbus_dly[16:31];
+assign xd_in[32:63] = (den[2]) ? xd_out[32:63] : dbus_dly[32:63];
+assign j_xd_in = (j_den) ? j_xd_out[0:31] : { dbus_dly[0:15], 16'b11111111_11111111 };*/
+
 
 // TOM-specific tristates
 
@@ -849,7 +838,7 @@ assign j68_address_final =
 		{ 20'h00010, 2'b00, j68_address[1:0] }
 	:
 		j68_address[23:0];
-
+//assign j68_address_final = j68_address[23:0];
 
 
 // OS ROM
@@ -871,7 +860,7 @@ assign cart_a[23:0] = {
 	abus[11], abus[10], abus[9], abus[8],
 	abus[7], abus[6], abus[5], abus[4],
 	abus[3], xmaska[2], xmaska[1], xmaska[0]
-}; 
+};
 assign cart_ce_n = xromcsl[1];
 assign cart_oe_n[0] = xoel[0];
 assign cart_oe_n[1] = xoel[1];
@@ -1281,6 +1270,11 @@ tom tom_inst
 	.dram(fdram),	// /!\
 	.blank(blank),
 	.tlw(tlw),
+	.ram_rdy(ram_rdy),
+	.aen(aen),
+	.den_0(den[0]),
+	.den_1(den[1]),
+	.den_2(den[2]),
 	.sys_clk(sys_clk)
 );
 
@@ -1534,6 +1528,9 @@ j_jerry jerry_inst
 	.xi2stxd(j_xi2stxd),
 	.xcpuclk(j_xcpuclk),
 	.tlw(tlw),
+	//.tlw(xpclk), // /!\
+	.aen(j_aen),
+	.den(j_den),
 	.sys_clk(sys_clk)
 );
 
@@ -1654,6 +1651,8 @@ vgalb vgalb1
 
 wire vga_blank;
 
+assign vga_bl = vga_blank;
+
 assign lb_d = (~blank) ? { 
 	xr[7], xr[6], xr[5], xr[4], xr[3], xr[2], xr[1], xr[0],
 	xg[7], xg[6], xg[5], xg[4], xg[3], xg[2], xg[1], xg[0],
@@ -1705,11 +1704,15 @@ begin
 	end
 end
 
-// VGA_HC : 0..1688 = 800 x 2.11
-
-assign vga_hs_n = (vga_hc < 202) ? 1'b0 : 1'b1;
+// old - VGA_HC : 0..1688 = 800 x 2.11
+// VGA_HC : 0..2532 = 800 x 3.165
+// HS = 96px
+// BP = 48px
+// VA = 640px
+// FP = 16px 
+assign vga_hs_n = (vga_hc < 304) ? 1'b0 : 1'b1;
 assign vga_vs_n = (vc < 2) ? 1'b0 : 1'b1;
-assign vga_blank = ( (vc > 2+17) && (vc < 240+2+17) && (vga_hc > 202+101) && (vga_hc < 202+101+1350) ) ? 1'b0 : 1'b1;
+assign vga_blank = ( (vc > 2+17) && (vc < 240+2+17) && (vga_hc > 304+152) && (vga_hc < 304+152+2026) ) ? 1'b0 : 1'b1;
 
 
 endmodule

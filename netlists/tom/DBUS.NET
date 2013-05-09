@@ -69,6 +69,24 @@ D5[40-47] :=	STLATCH (d5[40-47],d4[40-47],clk,dinlatch[5]);
 D5[48-55] :=	STLATCH (d5[48-55],d4[48-55],clk,dinlatch[6]);
 D5[56-63] :=	STLATCH (d5[56-63],d4[56-63],clk,dinlatch[7]);
 
+(* GE D5a[0-7] :=	SLATCH (d5a[0-7],d3[0-7],clk,dinlatch[0]);
+D5a[8-15] :=	SLATCH (d5a[8-15],d4[8-15],clk,dinlatch[1]);
+D5a[16-23] :=	SLATCH (d5a[16-23],d4[16-23],clk,dinlatch[2]);
+D5a[24-31] :=	SLATCH (d5a[24-31],d4[24-31],clk,dinlatch[3]);
+D5a[32-39] :=	SLATCH (d5a[32-39],d4[32-39],clk,dinlatch[4]);
+D5a[40-47] :=	SLATCH (d5a[40-47],d4[40-47],clk,dinlatch[5]);
+D5a[48-55] :=	SLATCH (d5a[48-55],d4[48-55],clk,dinlatch[6]);
+D5a[56-63] :=	SLATCH (d5a[56-63],d4[56-63],clk,dinlatch[7]);
+
+D5[0-7] := MX2(d5[0-7],d5a[0-7],d3[0-7],dinlatch[0]);
+D5[8-15] := MX2(d5[8-15],d5a[8-15],d4[8-15],dinlatch[1]);
+D5[16-23] := MX2(d5[16-23],d5a[16-23],d4[16-23],dinlatch[2]);
+D5[24-31] := MX2(d5[24-31],d5a[24-31],d4[24-31],dinlatch[3]);
+D5[32-39] := MX2(d5[32-39],d5a[32-39],d4[32-39],dinlatch[4]);
+D5[40-47] := MX2(d5[40-47],d5a[40-47],d4[40-47],dinlatch[5]);
+D5[48-55] := MX2(d5[48-55],d5a[48-55],d4[48-55],dinlatch[6]);
+D5[56-63] := MX2(d5[56-63],d5a[56-63],d4[56-63],dinlatch[7]); *)
+
 (* feed this data into the "down" network *)
 
 Dout :=		DOWN (d5[0..63],dmuxd[0..2],dout[0..31]);
