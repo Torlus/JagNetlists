@@ -16,9 +16,9 @@
 // Number of simulation cycles
 //                                 ns
 // #define NUM_CYCLES  ((vluint64_t)1599000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
-#define NUM_MS 15005
-#define LOG_START_MS 99990
-#define LOG_EVERY_MS 99991
+#define NUM_MS 5
+#define LOG_START_MS 0
+#define LOG_EVERY_MS 1
 
 // #define CYCLES_PER_VCD ((vluint64_t)10000000 * (vluint64_t)500 / (vluint64_t)HALF_PER_PS)
 #define HCYCLES_PER_MS ((vluint64_t)1000000 * (vluint64_t)1000 / (vluint64_t)HALF_PER_PS)

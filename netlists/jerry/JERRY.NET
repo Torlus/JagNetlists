@@ -85,7 +85,8 @@ DEF JERRY	(
 	xi2stxd,	(* I2S TX data *)
 	xcpuclk
 	:IO;
-	tlw:IN; aen, den:OUT); (* GE *)	
+	tlw:IN; aen, den, ainen:OUT;
+	INT16/ snd_l:OUT; INT16/ snd_r:OUT; snd_l_en,snd_r_en:OUT); (* GE *)	
 
 	(* GE INT8/xd0_7,xd8_15,xd16_23,xd24_31,
 	INT24/xa:IO; *)
@@ -348,7 +349,7 @@ I2s :=	I2S     (resetl[4],clk[1],dspwd[0..15],i2s1w,i2s2w,i2s3w,i2s4w,
  
                 i2stxd,sckout,wsout,i2int,i2sen,
  
-                dsprd[0..15]);
+                dsprd[0..15], snd_l, snd_r, snd_l_en, snd_r_en);
 
 Dac :=	DAC	(resetl[5],clk[1],dac1w,dac2w,tint[0],ts,
 		dspwd[0..15],

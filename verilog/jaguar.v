@@ -56,16 +56,26 @@ module jaguar
 	output vga_hs_n,
 	output [7:0] vga_r,
 	output [7:0] vga_g,
-	output [7:0] vga_b
+	output [7:0] vga_b,
+	
+	output	aud_l,
+	output	aud_r
 );
 
+wire		rst;
+assign rst = ~xresetl;
+
+
 reg [2:0] clkdiv = 3'b000;
-/*reg xpclk = 1'b0;
+reg xpclk = 1'b0;
 reg xvclk = 1'b0;
-reg tlw = 1'b1;*/
-wire xpclk;
-wire xvclk;
-wire tlw;
+reg tlw = 1'b1;
+// wire xpclk;
+// wire xvclk;
+// wire tlw;
+// assign xpclk = (clkdiv == 3'd0) || (clkdiv == 3'd3);
+// assign tlw = (clkdiv == 3'd2) || (clkdiv == 3'd5);
+// assign xvclk = xpclk;
 
 always @(posedge sys_clk)
 begin
@@ -73,13 +83,20 @@ begin
 	if (clkdiv == 3'b101) begin
 		clkdiv <= 3'b000;
 	end
-	/*xvclk <= ~xvclk;
-	xpclk <= ~xpclk;
-	tlw <= ~tlw;*/	
+
+	if ((clkdiv == 3'd0) || (clkdiv == 3'd3)) begin
+		xpclk <= 1'b1;
+		xvclk <= 1'b1;
+	end else begin
+		xpclk <= 1'b0;
+		xvclk <= 1'b0;
+	end
+	if ((clkdiv == 3'd2) || (clkdiv == 3'd5)) begin
+		tlw <= 1'b1;
+	end else begin
+		tlw <= 1'b0;
+	end
 end
-assign xpclk = (clkdiv == 3'd0) || (clkdiv == 3'd3);
-assign tlw = (clkdiv == 3'd2) || (clkdiv == 3'd5);
-assign xvclk = xpclk;
 
 // `ifndef verilator3
 // reg						xpclk;
@@ -237,6 +254,12 @@ wire					j_xcpuclk;
 // JERRY - Extra signals
 wire					j_den;
 wire					j_aen;
+wire					j_ainen;
+wire	[0:15]	snd_l;
+wire	[0:15]	snd_r;
+wire					snd_l_en;
+wire					snd_r_en;
+
 
 // Tristates / Busses
 wire					rw;
@@ -253,6 +276,15 @@ reg						u374_clk_prev = 1'b1;
 reg		[0:7]		u374_reg;
 wire	[0:15]	joy_bus;
 wire					joy_bus_oe;
+
+// AUDIO
+//wire	[19:0]	pcm_l;
+//wire	[19:0]	pcm_r;
+reg	[15:0]	r_aud_l;
+reg	[15:0]	r_aud_r;
+wire	[15:0]	w_aud_l;
+wire	[15:0]	w_aud_r;
+
 
 // Debug
 wire	[63:0]	xd_r;
@@ -564,7 +596,20 @@ assign abus[0:23] =
 			j68_address_final[20], j68_address_final[21], j68_address_final[22], j68_address_final[23]
 		};
 assign xa_in = abus;
-assign j_xa_in = abus;
+// assign j_xa_in = abus;
+assign j_xa_in[0:23] =
+	(aen) ?
+		xa_out[0:23]
+	:
+		{ 
+			j68_address_final[0], j68_address_final[1], j68_address_final[2], j68_address_final[3],
+			j68_address_final[4], j68_address_final[5], j68_address_final[6], j68_address_final[7],
+			j68_address_final[8], j68_address_final[9], j68_address_final[10], j68_address_final[11],
+			j68_address_final[12], j68_address_final[13], j68_address_final[14], j68_address_final[15],
+			j68_address_final[16], j68_address_final[17], j68_address_final[18], j68_address_final[19],
+			j68_address_final[20], j68_address_final[21], j68_address_final[22], j68_address_final[23]
+		};
+
 reg	[0:23]	abus_dly;
 always @(posedge sys_clk)
 begin
@@ -670,12 +715,57 @@ assign dbus[62] = (den[2]) ? xd_out[62] : (dram_oe[3]) ? dram_q[62] : 1'bz;
 assign dbus[63] = (den[2]) ? xd_out[63] : (dram_oe[3]) ? dram_q[63] : 1'bz;
 
 assign xd_in[0:63] = dbus[0:63];
-assign j_xd_in[0:31] = { dbus[0:15], (j_den) ? j_xd_out[16:31] : 16'b11111111_11111111 };
+// assign j_xd_in[0:31] = { dbus[0:15], (j_den) ? j_xd_out[16:31] : 16'b11111111_11111111 };
 reg	[0:63]	dbus_dly;
 always @(posedge sys_clk)
 begin
 	dbus_dly <= dbus;
 end
+
+assign j_xd_in[0] = (den[0]) ? xd_out[0] : 
+	(dram_oe[0]) ? dram_q[0] : (os_rom_oe) ? os_rom_q[0] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[0] : (cart_oe[0]) ? cart_q[0] : (joy_bus_oe) ? joy_bus[0] : 1'bz;
+assign j_xd_in[1] = (den[0]) ? xd_out[1] : 
+	(dram_oe[0]) ? dram_q[1] : (os_rom_oe) ? os_rom_q[1] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[1] : (cart_oe[0]) ? cart_q[1] : (joy_bus_oe) ? joy_bus[1] : 1'bz;
+assign j_xd_in[2] = (den[0]) ? xd_out[2] : 
+	(dram_oe[0]) ? dram_q[2] : (os_rom_oe) ? os_rom_q[2] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[2] : (cart_oe[0]) ? cart_q[2] : (joy_bus_oe) ? joy_bus[2] : 1'bz;
+assign j_xd_in[3] = (den[0]) ? xd_out[3] : 
+	(dram_oe[0]) ? dram_q[3] : (os_rom_oe) ? os_rom_q[3] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[3] : (cart_oe[0]) ? cart_q[3] : (joy_bus_oe) ? joy_bus[3] : 1'bz;
+assign j_xd_in[4] = (den[0]) ? xd_out[4] : 
+	(dram_oe[0]) ? dram_q[4] : (os_rom_oe) ? os_rom_q[4] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[4] : (cart_oe[0]) ? cart_q[4] : (joy_bus_oe) ? joy_bus[4] : 1'bz;
+assign j_xd_in[5] = (den[0]) ? xd_out[5] : 
+	(dram_oe[0]) ? dram_q[5] : (os_rom_oe) ? os_rom_q[5] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[5] : (cart_oe[0]) ? cart_q[5] : (joy_bus_oe) ? joy_bus[5] : 1'bz;
+assign j_xd_in[6] = (den[0]) ? xd_out[6] : 
+	(dram_oe[0]) ? dram_q[6] : (os_rom_oe) ? os_rom_q[6] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[6] : (cart_oe[0]) ? cart_q[6] : (joy_bus_oe) ? joy_bus[6] : 1'bz;
+assign j_xd_in[7] = (den[0]) ? xd_out[7] : 
+	(dram_oe[0]) ? dram_q[7] : (os_rom_oe) ? os_rom_q[7] : 
+	(j68_wr_ena & j68_byte_ena[0] & xba_in) ? j68_wr_data[7] : (cart_oe[0]) ? cart_q[7] : (joy_bus_oe) ? joy_bus[7] : 1'bz;
+
+assign j_xd_in[8] = (den[0]) ? xd_out[8] : 
+	(dram_oe[0]) ? dram_q[8] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[8] : (cart_oe[0]) ? cart_q[8] : (joy_bus_oe) ? joy_bus[8] : 1'bz;
+assign j_xd_in[9] = (den[0]) ? xd_out[9] : 
+	(dram_oe[0]) ? dram_q[9] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[9] : (cart_oe[0]) ? cart_q[9] : (joy_bus_oe) ? joy_bus[9] : 1'bz;
+assign j_xd_in[10] = (den[0]) ? xd_out[10] : 
+	(dram_oe[0]) ? dram_q[10] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[10] : (cart_oe[0]) ? cart_q[10] : (joy_bus_oe) ? joy_bus[10] : 1'bz;
+assign j_xd_in[11] = (den[0]) ? xd_out[11] : 
+	(dram_oe[0]) ? dram_q[11] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[11] : (cart_oe[0]) ? cart_q[11] : (joy_bus_oe) ? joy_bus[11] : 1'bz;
+assign j_xd_in[12] = (den[0]) ? xd_out[12] : 
+	(dram_oe[0]) ? dram_q[12] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[12] : (cart_oe[0]) ? cart_q[12] : (joy_bus_oe) ? joy_bus[12] : 1'bz;
+assign j_xd_in[13] = (den[0]) ? xd_out[13] : 
+	(dram_oe[0]) ? dram_q[13] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[13] : (cart_oe[0]) ? cart_q[13] : (joy_bus_oe) ? joy_bus[13] : 1'bz;
+assign j_xd_in[14] = (den[0]) ? xd_out[14] : 
+	(dram_oe[0]) ? dram_q[14] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[14] : (cart_oe[0]) ? cart_q[14] : (joy_bus_oe) ? joy_bus[14] : 1'bz;
+assign j_xd_in[15] = (den[0]) ? xd_out[15] : 
+	(dram_oe[0]) ? dram_q[15] : (j68_wr_ena & j68_byte_ena[1] & xba_in) ? j68_wr_data[15] : (cart_oe[0]) ? cart_q[15] : (joy_bus_oe) ? joy_bus[15] : 1'bz;
+
+assign j_xd_in[16:31] = 16'b11111111_11111111;
+
 /*assign xd_in[0:15] = (den[0]) ? xd_out[0:15] : dbus_dly[0:15];
 assign xd_in[16:31] = (den[1]) ? xd_out[16:31] : dbus_dly[16:31];
 assign xd_in[32:63] = (den[2]) ? xd_out[32:63] : dbus_dly[32:63];
@@ -1531,6 +1621,11 @@ j_jerry jerry_inst
 	//.tlw(xpclk), // /!\
 	.aen(j_aen),
 	.den(j_den),
+	.ainen(j_ainen),
+	.snd_l(snd_l),
+	.snd_r(snd_r),
+	.snd_l_en(snd_l_en),
+	.snd_r_en(snd_r_en),
 	.sys_clk(sys_clk)
 );
 
@@ -1715,9 +1810,261 @@ assign vga_vs_n = (vc < 2) ? 1'b0 : 1'b1;
 assign vga_blank = ( (vc > 2+17) && (vc < 240+2+17) && (vga_hc > 304+152) && (vga_hc < 304+152+2026) ) ? 1'b0 : 1'b1;
 
 
+assign w_aud_l[15:0] = { 
+	snd_l[15], snd_l[14], snd_l[13], snd_l[12], snd_l[11], snd_l[10], snd_l[9], snd_l[8], 
+	snd_l[7], snd_l[6], snd_l[5], snd_l[4], snd_l[3], snd_l[2], snd_l[1], snd_l[0]
+};
+assign w_aud_r[15:0] = { 
+	snd_r[15], snd_r[14], snd_r[13], snd_r[12], snd_r[11], snd_r[10], snd_r[9], snd_r[8], 
+	snd_r[7], snd_r[6], snd_r[5], snd_r[4], snd_r[3], snd_r[2], snd_r[1], snd_r[0]
+};
+
+reg j_xws_prev = 1'b1;
+reg j_xsck_prev = 1'b1;
+
+always @(posedge sys_clk) 
+begin
+	j_xws_prev <= j_xws_in;
+	j_xsck_prev <= j_xsck_in;
+	
+  if (rst) begin
+    r_aud_l <= 16'd0;
+    r_aud_r <= 16'd0;
+  end else begin
+		if (snd_clk) begin
+			r_aud_l <= w_aud_l;
+			r_aud_r <= w_aud_r;
+			/*if (w_aud_l[15]) begin
+				r_aud_l <= {1'b0, ~w_aud_l[14:0]};
+			end else begin
+				r_aud_l <= {1'b1, w_aud_l[14:0]};
+			end
+
+			if (w_aud_r[15]) begin
+				r_aud_r <= {1'b0, ~w_aud_r[14:0]};
+			end else begin
+				r_aud_r <= {1'b1, w_aud_r[14:0]};
+			end*/
+		end
+	end
+end
+
+wire snd_clk;
+wire dac_clk;
+//assign snd_clk = ~j_xws_prev & j_xws_out;
+assign snd_clk = j_xws_prev & ~j_xws_in;
+//assign snd_clk = xpclk;
+//assign dac_clk = j_xsck_prev ^ j_xsck_in;
+
+reg [3:0] dac_clkdiv = 4'd0;
+always @(posedge sys_clk)
+begin
+	dac_clkdiv <= dac_clkdiv + 1;
+end 
+assign dac_clk = (dac_clkdiv == 4'd0);
+
+////////////////////////////////////
+// Interpolator / low-pass filter //
+////////////////////////////////////
+
+wire [15:0] w_rd_smp_l;
+wire  [6:0] w_rd_smp_hi_l;
+wire [15:0] w_rd_smp_r;
+wire  [6:0] w_rd_smp_hi_r;
+
+reg  [22:0] r_smp_l;
+reg  [22:0] r_smp_r;
+reg  [22:0] r_acc_l;
+reg  [22:0] r_acc_r;
+
+// FIFO storing 256 samples for left and right
+sample_fifo U_sample_fifo
+(
+  .reset(rst),
+  .clk(sys_clk),
+  .wr_ena(snd_clk),
+  .wr_smp_l(r_aud_l),
+  .wr_smp_r(r_aud_r),
+  .rd_smp_l(w_rd_smp_l),
+  .rd_smp_r(w_rd_smp_r)
+);
+assign w_rd_smp_hi_l = {7{w_rd_smp_l[15]}};
+assign w_rd_smp_hi_r = {7{w_rd_smp_r[15]}};
+
+// 248-tap moving average filter
+// It has a gain of : 248/256 = 0.96875
+always @(posedge rst or posedge sys_clk) begin
+  if (rst) begin
+    r_smp_l <= 23'd0;
+    r_smp_r <= 23'd0;
+    r_acc_l <= 23'd0;
+    r_acc_r <= 23'd0;
+  end
+  else if (snd_clk) begin
+    // Delay current sample by one CCK cycle
+    r_smp_l <= { {7{r_aud_l[15]}}, r_aud_l };
+    r_smp_r <= { {7{r_aud_r[15]}}, r_aud_r };
+    // Add sample (n), subtract sample (n-248)
+    r_acc_l <= r_acc_l + r_smp_l - { w_rd_smp_hi_l, w_rd_smp_l };
+    r_acc_r <= r_acc_r + r_smp_r - { w_rd_smp_hi_r, w_rd_smp_r };
+  end
+end
+
+
+s2_hq_dac dac_l
+(
+	.reset(rst),
+	.clk(sys_clk),
+	.clk_ena(dac_clk),
+	.pcm_in(r_acc_l[22:3]),
+	//.pcm_in({r_aud_l[15:0], r_aud_l[3:0]}),
+	.dac_out(aud_l)
+);
+
+s2_hq_dac dac_r
+(
+	.reset(rst),
+	.clk(sys_clk),
+	.clk_ena(dac_clk),
+	.pcm_in(r_acc_r[22:3]),
+	//.pcm_in({r_aud_r[15:0], r_aud_r[3:0]}),
+	.dac_out(aud_r)
+);
+
+/*reg [15:0] acc_l;
+reg [15:0] acc_r;
+reg	r_dac_l;
+reg	r_dac_r;
+
+always @(posedge rst or posedge sys_clk) 
+begin
+  if (rst) begin
+		acc_l <= 16'd0;
+		acc_r <= 16'd0;
+	end else if (xpclk) begin
+		{ r_dac_l, acc_l } <= { 2'b00, ~r_aud_l[15], r_aud_l[14:1] } + { 1'b0, acc_l };
+		{ r_dac_r, acc_r } <= { 2'b00, ~r_aud_r[15], r_aud_r[14:1] } + { 1'b0, acc_r };
+	end
+end
+
+assign aud_l = r_dac_l;
+assign aud_r = r_dac_r;*/
+
+
 endmodule
 
 ///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+module sample_fifo
+(
+  input         reset,
+  input         clk,
+  input         wr_ena,
+  input  [15:0] wr_smp_l,
+  input  [15:0] wr_smp_r,
+  output [15:0] rd_smp_l,
+  output [15:0] rd_smp_r
+);
+
+wire [31:0] w_wr_data;
+wire [31:0] w_rd_data;
+reg   [7:0] r_wr_addr;
+reg   [7:0] r_rd_addr;
+reg         r_rd_ena;
+
+assign w_wr_data[31:16] = wr_smp_l;
+assign w_wr_data[15:0]  = wr_smp_r;
+assign rd_smp_l = w_rd_data[31:16];
+assign rd_smp_r = w_rd_data[15:0];
+
+always @(posedge reset or posedge clk) begin
+  if (reset) begin
+    r_wr_addr <= 8'd0;
+    //r_rd_addr <= 8'd8;
+		r_rd_addr <= 8'd20;
+    r_rd_ena  <= 1'b0;
+  end
+  else if (wr_ena) begin
+    r_wr_addr <= r_wr_addr + 8'd1;
+    r_rd_addr <= r_rd_addr + 8'd1;
+    if (r_rd_addr == 8'd255) r_rd_ena <= 1'b1;
+  end
+end
+
+`ifdef SIMULATION
+
+// Infered block RAM
+reg  [31:0] r_mem_blk [0:255];
+
+// Write side
+always@(posedge clk) begin
+  if (wr_ena)
+    r_mem_blk[r_wr_addr] <= w_wr_data;
+end
+
+reg  [31:0] r_q_p0;
+reg  [31:0] r_q_p1;
+
+// Read side
+always@(posedge reset or posedge clk) begin
+  if (reset) begin
+    r_q_p0 <= 32'h0000_0000;
+    r_q_p1 <= 32'h0000_0000;
+  end else begin
+    if (wr_ena & r_rd_ena)
+      r_q_p0 <= r_mem_blk[r_rd_addr];
+    r_q_p1 <= r_q_p0;
+  end
+end
+
+assign w_rd_data = r_q_p1;
+
+`else
+
+// Declared Altera block RAM
+altsyncram U_altsyncram_256x32
+(
+    // Write side
+    .clock0     (clk),
+    .wren_a     (wr_ena),
+    .address_a  (r_wr_addr),
+    .data_a     (w_wr_data),
+    // Read side
+    .aclr1      (reset),
+    .clock1     (clk),
+    .rden_b     (wr_ena & r_rd_ena),
+    .address_b  (r_rd_addr),
+    .q_b        (w_rd_data)
+);
+defparam 
+    U_altsyncram_256x32.operation_mode      = "DUAL_PORT",
+    U_altsyncram_256x32.width_a             = 32,
+    U_altsyncram_256x32.widthad_a           = 8,
+    U_altsyncram_256x32.width_b             = 32,
+    U_altsyncram_256x32.widthad_b           = 8,
+    U_altsyncram_256x32.outdata_aclr_b      = "CLEAR1",
+    U_altsyncram_256x32.outdata_reg_b       = "CLOCK1";
+
+`endif
+
+endmodule
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
 `ifdef SIMULATION
 module os_rom
 (

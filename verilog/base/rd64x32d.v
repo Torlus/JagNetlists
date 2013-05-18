@@ -49,8 +49,18 @@ wire	[31:0]	r_qb;
 wire wren_a;
 wire wren_b;
 
-assign wren_a = ~nwea;
-assign wren_b = ~nweb;
+assign wren_a = ~nwea & clka;
+assign wren_b = ~nweb & clkb;
+
+always @(posedge sys_clk)
+begin
+	if (~nwea & clka) begin
+		$display("DSP REG WR-A $%x #%x", aa, da);
+	end
+	if (~nweb & clkb) begin
+		$display("DSP REG WR-B $%x #%x", ab, db);
+	end
+end
 
 	altsyncram	altsyncram_component (
 				.wren_a (wren_a),

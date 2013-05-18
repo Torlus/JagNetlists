@@ -37,3 +37,18 @@ set_input_delay -clock ram_clk_pin -max [expr $SSR_tCO_max + $tPCB_max] \
 
 set_input_delay -clock ram_clk_pin -min [expr $SSR_tDOH_min + $tPCB_min] \
 [get_ports {SSRAM_DQ[*]}]
+
+
+set_false_path -from $sys_clk -to [get_ports {SW[*]}]
+
+#set_multicycle_path -setup 2 -to [get_fanouts [get_pins -hierarchical *xpclk*\|combout]] -through [get_pins -hierarchical *fd_data\|ena]
+#set_multicycle_path -hold 1 -to [get_fanouts [get_pins -hierarchical *xpclk*\|combout]] -through [get_pins -hierarchical *fd_data\|ena]
+
+#set_multicycle_path -setup 2 -from [get_fanouts [get_pins -hierarchical *xpclk*\|combout]] -to [get_registers *fd_data]
+#set_multicycle_path -hold 1 -from [get_fanouts [get_pins -hierarchical *xpclk*\|combout]] -to [get_registers *fd_data]
+
+#set_multicycle_path -setup 2 -from [get_registers *clkdiv*] -to [get_registers *fd_data]
+#set_multicycle_path -hold 1 -from [get_registers *clkdiv*] -to [get_registers *fd_data]
+
+set_multicycle_path -setup 2 -from [get_registers *xpclk*] -to [get_registers *fd_data]
+set_multicycle_path -hold 1 -from [get_registers *xpclk*] -to [get_registers *fd_data]

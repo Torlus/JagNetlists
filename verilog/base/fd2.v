@@ -10,19 +10,19 @@ module fd2
 	input		sys_clk
 );
 
-reg	data = 1'b0;
+reg	fd_data = 1'b0;
 
-assign q = data;
-assign qn = ~data;
+assign q = fd_data;
+assign qn = ~fd_data;
 
 // always @(posedge cp or negedge cd)
 always @(posedge sys_clk)
 begin
 	if (cp | (~cd)) begin
 		if (~cd) begin
-			data <= 1'b0;
+			fd_data <= 1'b0;
 		end else begin
-			data <= d;
+			fd_data <= d;
 		end
 	end
 end

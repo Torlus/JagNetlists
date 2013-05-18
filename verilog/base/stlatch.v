@@ -11,11 +11,10 @@ module stlatch
 
 reg	data = 1'b0;
 
-// assign d1 = (en) ? d : data;
+//assign d1 = (en) ? d : data;
 reg r_d1 = 1'b0;
 assign d1 = r_d1;
 
-//always @(negedge sys_clk) // /!\ FUGLY - but necessary atm
 always @(posedge sys_clk)
 begin
 	if (en) begin

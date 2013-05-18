@@ -24,6 +24,14 @@ public class CompositeEntity extends Entity {
 		}
 		return false;
 	}
+	@Override
+	public boolean requireMemclk() {
+		for(Instance inst : instances) {
+			if (inst.entity.requireMemclk())
+				return true;
+		}
+		return false;
+	}
 
 	
 	public Signal findSignal(String name, int bit, int index) {

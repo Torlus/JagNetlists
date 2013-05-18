@@ -84,6 +84,10 @@ module j_i2s
 	output dr_15_out,
 	output dr_15_oe,
 	input dr_15_in,
+	output [0:15] snd_l,
+	output [0:15] snd_r,
+	output snd_l_en,
+	output snd_r_en,
 	input sys_clk // Generated
 );
 wire [0:7] t;
@@ -498,7 +502,7 @@ assign wsout = wsout_obuf;
 assign i2sen = i2sen_obuf;
 
 
-// I2S.NET (23) - t : join
+// I2S.NET (24) - t : join
 assign t[0] = t_0;
 assign t[1] = t_1;
 assign t[2] = t_2;
@@ -508,26 +512,26 @@ assign t[5] = t_5;
 assign t[6] = t_6;
 assign t[7] = t_7;
 
-// I2S.NET (24) - b : join
+// I2S.NET (25) - b : join
 assign b[0] = b_0;
 assign b[1] = b_1;
 assign b[2] = b_2;
 assign b[3] = b_3;
 assign b[4] = b_4;
 
-// I2S.NET (25) - bc : join
+// I2S.NET (26) - bc : join
 assign bc[0] = bc_0;
 assign bc[1] = bc_1;
 assign bc[2] = bc_2;
 assign bc[3] = bc_3;
 
-// I2S.NET (26) - pu : dummy
+// I2S.NET (27) - pu : dummy
 
-// I2S.NET (27) - bu : dummy
+// I2S.NET (28) - bu : dummy
 
-// I2S.NET (28) - bcu : dummy
+// I2S.NET (29) - bcu : dummy
 
-// I2S.NET (49) - p[0-7] : stlatchc
+// I2S.NET (50) - p[0-7] : stlatchc
 j_stlatchc p_from_0_to_7_inst_0
 (
 	.d1 /* OUT */ (p_0),
@@ -601,7 +605,7 @@ j_stlatchc p_from_0_to_7_inst_7
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (53) - t[0] : dncnt
+// I2S.NET (54) - t[0] : dncnt
 j_dncnt t_index_0_inst
 (
 	.q /* OUT */ (t_0),
@@ -614,7 +618,7 @@ j_dncnt t_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (54) - t[1-7] : dncnt
+// I2S.NET (55) - t[1-7] : dncnt
 j_dncnt t_from_1_to_7_inst_0
 (
 	.q /* OUT */ (t_1),
@@ -693,15 +697,15 @@ j_dncnt t_from_1_to_7_inst_6
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (55) - tldl : nr2
+// I2S.NET (56) - tldl : nr2
 assign tldl = ~(tco_7 | i2s3w);
 
-// I2S.NET (56) - tld : ivm
+// I2S.NET (57) - tld : ivm
 assign tld = ~tldl;
 
-// I2S.NET (57) - tu[0-7] : dummy
+// I2S.NET (58) - tu[0-7] : dummy
 
-// I2S.NET (61) - sckout : slatchc
+// I2S.NET (62) - sckout : slatchc
 j_slatchc sckout_inst
 (
 	.q /* OUT */ (sckout_obuf),
@@ -712,13 +716,13 @@ j_slatchc sckout_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (62) - sckol : iv
+// I2S.NET (63) - sckol : iv
 assign sckol = ~sckout_obuf;
 
-// I2S.NET (63) - ben : an2
+// I2S.NET (64) - ben : an2
 assign ben = sckout_obuf & tco_7;
 
-// I2S.NET (67) - b[0] : upcnt1
+// I2S.NET (68) - b[0] : upcnt1
 j_upcnt1 b_index_0_inst
 (
 	.q /* OUT */ (b_0),
@@ -729,7 +733,7 @@ j_upcnt1 b_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (68) - b[1-4] : upcnt1
+// I2S.NET (69) - b[1-4] : upcnt1
 j_upcnt1 b_from_1_to_4_inst_0
 (
 	.q /* OUT */ (b_1),
@@ -767,26 +771,26 @@ j_upcnt1 b_from_1_to_4_inst_3
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (69) - bu[0-3] : dummy
+// I2S.NET (70) - bu[0-3] : dummy
 
-// I2S.NET (70) - bco[4] : dummy
+// I2S.NET (71) - bco[4] : dummy
 
-// I2S.NET (71) - bresl : an2h
+// I2S.NET (72) - bresl : an2h
 assign bresl = resetl & i2s3wl;
 
-// I2S.NET (72) - i2s3wl : iv
+// I2S.NET (73) - i2s3wl : iv
 assign i2s3wl = ~i2s3w;
 
-// I2S.NET (76) - wsod0 : nd3
+// I2S.NET (77) - wsod0 : nd3
 assign wsod0 = ~(bco_3 & bl_4 & wsen);
 
-// I2S.NET (77) - wsod1 : nd2
+// I2S.NET (78) - wsod1 : nd2
 assign wsod1 = ~(wsout_obuf & notbco_3);
 
-// I2S.NET (78) - wsod : nd2
+// I2S.NET (79) - wsod : nd2
 assign wsod = ~(wsod0 & wsod1);
 
-// I2S.NET (79) - wsi : fd2q
+// I2S.NET (80) - wsi : fd2q
 fd2q wsi_inst
 (
 	.q /* OUT */ (wsout_obuf),
@@ -796,31 +800,31 @@ fd2q wsi_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (80) - notbco[3] : iv
+// I2S.NET (81) - notbco[3] : iv
 assign notbco_3 = ~bco_3;
 
-// I2S.NET (81) - bl[4] : iv
+// I2S.NET (82) - bl[4] : iv
 assign bl_4 = ~b_4;
 
-// I2S.NET (86) - scks : mx2p
+// I2S.NET (87) - scks : mx2p
 assign scks = (i2sen_obuf) ? sckout_obuf : sckin;
 
-// I2S.NET (87) - sck : nivu
+// I2S.NET (88) - sck : nivu
 assign sck = scks;
 
-// I2S.NET (88) - sckl : ivh
+// I2S.NET (89) - sckl : ivh
 assign sckl = ~scks;
 
-// I2S.NET (107) - wss : mx2p
+// I2S.NET (108) - wss : mx2p
 assign wss = (i2sen_obuf) ? wsout_obuf : wsin;
 
-// I2S.NET (108) - ws : nivh
+// I2S.NET (109) - ws : nivh
 assign ws = wss;
 
-// I2S.NET (109) - wsl : iv
+// I2S.NET (110) - wsl : iv
 assign wsl = ~wss;
 
-// I2S.NET (110) - ws[0] : fd2
+// I2S.NET (111) - ws[0] : fd2
 fd2 ws_index_0_inst
 (
 	.q /* OUT */ (ws_0),
@@ -831,7 +835,7 @@ fd2 ws_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (111) - ws[1] : fd2
+// I2S.NET (112) - ws[1] : fd2
 fd2 ws_index_1_inst
 (
 	.q /* OUT */ (ws_1),
@@ -842,19 +846,19 @@ fd2 ws_index_1_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (112) - wsp0 : nd3
+// I2S.NET (113) - wsp0 : nd3
 assign wsp0 = ~(ws_0 & wsl_1 & rising);
 
-// I2S.NET (113) - wsp1 : nd3
+// I2S.NET (114) - wsp1 : nd3
 assign wsp1 = ~(wsl_0 & ws_1 & falling);
 
-// I2S.NET (114) - wsp2 : nd2
+// I2S.NET (115) - wsp2 : nd2
 assign wsp2 = ~(msb & everyword);
 
-// I2S.NET (115) - wsp : nd3
+// I2S.NET (116) - wsp : nd3
 assign wsp = ~(wsp0 & wsp1 & wsp2);
 
-// I2S.NET (116) - i2sint : fd1q
+// I2S.NET (117) - i2sint : fd1q
 fd1q i2sint_inst
 (
 	.q /* OUT */ (i2int),
@@ -863,9 +867,9 @@ fd1q i2sint_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (117) - wsu[1] : dummy
+// I2S.NET (118) - wsu[1] : dummy
 
-// I2S.NET (121) - bci[0] : upcnt1s
+// I2S.NET (122) - bci[0] : upcnt1s
 j_upcnt1s bci_index_0_inst
 (
 	.q /* OUT */ (bci_0),
@@ -876,7 +880,7 @@ j_upcnt1s bci_index_0_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (122) - bci[1-3] : upcnt1s
+// I2S.NET (123) - bci[1-3] : upcnt1s
 j_upcnt1s bci_from_1_to_3_inst_0
 (
 	.q /* OUT */ (bci_1),
@@ -905,45 +909,45 @@ j_upcnt1s bci_from_1_to_3_inst_2
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (123) - bcco[3] : dummy
+// I2S.NET (124) - bcco[3] : dummy
 
-// I2S.NET (124) - bcl[0-3] : ivm
+// I2S.NET (125) - bcl[0-3] : ivm
 assign bcl_0 = ~bci_0;
 assign bcl_1 = ~bci_1;
 assign bcl_2 = ~bci_2;
 assign bcl_3 = ~bci_3;
 
-// I2S.NET (125) - bc[0-3] : ivm
+// I2S.NET (126) - bc[0-3] : ivm
 assign bc_0 = ~bcl_0;
 assign bc_1 = ~bcl_1;
 assign bc_2 = ~bcl_2;
 assign bc_3 = ~bcl_3;
 
-// I2S.NET (127) - bcres0 : nd2
+// I2S.NET (128) - bcres0 : nd2
 assign bcres0 = ~(wsl_0 & ws);
 
-// I2S.NET (128) - bcres1 : nd3
+// I2S.NET (129) - bcres1 : nd3
 assign bcres1 = ~(ws_0 & wsl & mode16);
 
-// I2S.NET (129) - bcres2 : nd2
+// I2S.NET (130) - bcres2 : nd2
 assign bcres2 = ~(lsb & mode32);
 
-// I2S.NET (130) - bcresl : an4p
+// I2S.NET (131) - bcresl : an4p
 assign bcresl = bcres0 & bcres1 & bcres2 & resetl;
 
-// I2S.NET (132) - bcen : nd2
+// I2S.NET (133) - bcen : nd2
 assign bcen = ~(mode16 & ov);
 
-// I2S.NET (136) - ovd0 : nd2
+// I2S.NET (137) - ovd0 : nd2
 assign ovd0 = ~(ov & bcresl);
 
-// I2S.NET (137) - ovd1 : nd3
+// I2S.NET (138) - ovd1 : nd3
 assign ovd1 = ~(lsb & mode16 & bcresl);
 
-// I2S.NET (138) - ovd : nd2
+// I2S.NET (139) - ovd : nd2
 assign ovd = ~(ovd0 & ovd1);
 
-// I2S.NET (139) - ov : fd1q
+// I2S.NET (140) - ov : fd1q
 fd1q ov_inst
 (
 	.q /* OUT */ (ov),
@@ -952,22 +956,22 @@ fd1q ov_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (140) - ovl : ivh
+// I2S.NET (141) - ovl : ivh
 assign ovl = ~ov;
 
-// I2S.NET (145) - leftd0 : nd2
+// I2S.NET (146) - leftd0 : nd2
 assign leftd0 = ~(wsl_0 & ws);
 
-// I2S.NET (146) - leftd1 : nd2
+// I2S.NET (147) - leftd1 : nd2
 assign leftd1 = ~(left & notlsb);
 
-// I2S.NET (147) - leftd2 : nd2
+// I2S.NET (148) - leftd2 : nd2
 assign leftd2 = ~(right & lsb);
 
-// I2S.NET (148) - leftd : nd3
+// I2S.NET (149) - leftd : nd3
 assign leftd = ~(leftd0 & leftd1 & leftd2);
 
-// I2S.NET (149) - left : fd1q
+// I2S.NET (150) - left : fd1q
 fd1q left_inst
 (
 	.q /* OUT */ (left),
@@ -976,73 +980,73 @@ fd1q left_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (150) - right : iv
+// I2S.NET (151) - right : iv
 assign right = ~left;
 
-// I2S.NET (152) - ll : mx2
+// I2S.NET (153) - ll : mx2
 assign ll = (mode32) ? left : wsl_0;
 
-// I2S.NET (153) - rr : ivh
+// I2S.NET (154) - rr : ivh
 assign rr = ~ll;
 
-// I2S.NET (157) - bit[14] : an6
+// I2S.NET (158) - bit[14] : an6
 assign bit_14 = ovl & bcl_3 & bcl_2 & bcl_1 & bc_0 & vcc;
 
-// I2S.NET (158) - bit[13] : an6
+// I2S.NET (159) - bit[13] : an6
 assign bit_13 = ovl & bcl_3 & bcl_2 & bc_1 & bcl_0 & vcc;
 
-// I2S.NET (159) - bit[12] : an6
+// I2S.NET (160) - bit[12] : an6
 assign bit_12 = ovl & bcl_3 & bcl_2 & bc_1 & bc_0 & vcc;
 
-// I2S.NET (160) - bit[11] : an6
+// I2S.NET (161) - bit[11] : an6
 assign bit_11 = ovl & bcl_3 & bc_2 & bcl_1 & bcl_0 & vcc;
 
-// I2S.NET (161) - bit[10] : an6
+// I2S.NET (162) - bit[10] : an6
 assign bit_10 = ovl & bcl_3 & bc_2 & bcl_1 & bc_0 & vcc;
 
-// I2S.NET (162) - bit[9] : an6
+// I2S.NET (163) - bit[9] : an6
 assign bit_9 = ovl & bcl_3 & bc_2 & bc_1 & bcl_0 & vcc;
 
-// I2S.NET (163) - bit[8] : an6
+// I2S.NET (164) - bit[8] : an6
 assign bit_8 = ovl & bcl_3 & bc_2 & bc_1 & bc_0 & vcc;
 
-// I2S.NET (164) - bit[7] : an6
+// I2S.NET (165) - bit[7] : an6
 assign bit_7 = ovl & bc_3 & bcl_2 & bcl_1 & bcl_0 & vcc;
 
-// I2S.NET (165) - bit[6] : an6
+// I2S.NET (166) - bit[6] : an6
 assign bit_6 = ovl & bc_3 & bcl_2 & bcl_1 & bc_0 & vcc;
 
-// I2S.NET (166) - bit[5] : an6
+// I2S.NET (167) - bit[5] : an6
 assign bit_5 = ovl & bc_3 & bcl_2 & bc_1 & bcl_0 & vcc;
 
-// I2S.NET (167) - bit[4] : an6
+// I2S.NET (168) - bit[4] : an6
 assign bit_4 = ovl & bc_3 & bcl_2 & bc_1 & bc_0 & vcc;
 
-// I2S.NET (168) - bit[3] : an6
+// I2S.NET (169) - bit[3] : an6
 assign bit_3 = ovl & bc_3 & bc_2 & bcl_1 & bcl_0 & vcc;
 
-// I2S.NET (169) - bit[2] : an6
+// I2S.NET (170) - bit[2] : an6
 assign bit_2 = ovl & bc_3 & bc_2 & bcl_1 & bc_0 & vcc;
 
-// I2S.NET (170) - bit[1] : an6
+// I2S.NET (171) - bit[1] : an6
 assign bit_1 = ovl & bc_3 & bc_2 & bc_1 & bcl_0 & vcc;
 
-// I2S.NET (171) - bit[0] : an6
+// I2S.NET (172) - bit[0] : an6
 assign bit_0 = ovl & bc_3 & bc_2 & bc_1 & bc_0 & vcc;
 
-// I2S.NET (175) - msbl : ivh
+// I2S.NET (176) - msbl : ivh
 assign msbl = ~msb;
 
-// I2S.NET (176) - lsb : niv
+// I2S.NET (177) - lsb : niv
 assign lsb = bit_0;
 
-// I2S.NET (177) - notlsb : iv
+// I2S.NET (178) - notlsb : iv
 assign notlsb = ~lsb;
 
-// I2S.NET (181) - msbd : nr2
+// I2S.NET (182) - msbd : nr2
 assign msbd = ~(ovd | bcresl);
 
-// I2S.NET (182) - msbi : fd1q
+// I2S.NET (183) - msbi : fd1q
 fd1q msbi_inst
 (
 	.q /* OUT */ (msbi),
@@ -1051,10 +1055,10 @@ fd1q msbi_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (183) - msb : nivh
+// I2S.NET (184) - msb : nivh
 assign msb = msbi;
 
-// I2S.NET (187) - sd[15] : slatch
+// I2S.NET (188) - sd[15] : slatch
 j_slatch sd_index_15_inst
 (
 	.q /* OUT */ (sd_15),
@@ -1064,7 +1068,7 @@ j_slatch sd_index_15_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (188) - sd[0-14] : slatchr
+// I2S.NET (189) - sd[0-14] : slatchr
 j_slatchr sd_from_0_to_14_inst_0
 (
 	.q /* OUT */ (sd_0),
@@ -1201,7 +1205,7 @@ j_slatchr sd_from_0_to_14_inst_14
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (192) - lrd[0-15] : slatch
+// I2S.NET (193) - lrd[0-15] : slatch
 j_slatch lrd_from_0_to_15_inst_0
 (
 	.q /* OUT */ (lrd_0),
@@ -1331,7 +1335,7 @@ j_slatch lrd_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (193) - rrd[0-15] : slatch
+// I2S.NET (194) - rrd[0-15] : slatch
 j_slatch rrd_from_0_to_15_inst_0
 (
 	.q /* OUT */ (rrd_0),
@@ -1461,13 +1465,13 @@ j_slatch rrd_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (194) - trrd : an2h
+// I2S.NET (195) - trrd : an2h
 assign trrd = msb & ll;
 
-// I2S.NET (195) - trld : an2h
+// I2S.NET (196) - trld : an2h
 assign trld = msb & rr;
 
-// I2S.NET (199) - drr[0-15] : ts
+// I2S.NET (200) - drr[0-15] : ts
 assign ts_pe_151_a0_out = rrd_0;
 assign ts_pe_151_a0_oe = i2s1r;
 assign ts_pe_152_a0_out = rrd_1;
@@ -1501,7 +1505,7 @@ assign ts_pe_165_a0_oe = i2s1r;
 assign ts_pe_166_a0_out = rrd_15;
 assign ts_pe_166_a0_oe = i2s1r;
 
-// I2S.NET (200) - drl[0-15] : ts
+// I2S.NET (201) - drl[0-15] : ts
 assign ts_pe_151_a1_out = lrd_0;
 assign ts_pe_151_a1_oe = i2s2r;
 assign ts_pe_152_a1_out = lrd_1;
@@ -1535,15 +1539,15 @@ assign ts_pe_165_a1_oe = i2s2r;
 assign ts_pe_166_a1_out = lrd_15;
 assign ts_pe_166_a1_oe = i2s2r;
 
-// I2S.NET (204) - drws : ts
+// I2S.NET (205) - drws : ts
 assign ts_pe_151_a2_out = ws;
 assign ts_pe_151_a2_oe = i2s3r;
 
-// I2S.NET (205) - drleft : ts
+// I2S.NET (206) - drleft : ts
 assign ts_pe_152_a2_out = left;
 assign ts_pe_152_a2_oe = i2s3r;
 
-// I2S.NET (206) - dru[2-15] : ts
+// I2S.NET (207) - dru[2-15] : ts
 assign ts_pe_153_a2_out = gnd;
 assign ts_pe_153_a2_oe = i2s3r;
 assign ts_pe_154_a2_out = gnd;
@@ -1573,7 +1577,7 @@ assign ts_pe_165_a2_oe = i2s3r;
 assign ts_pe_166_a2_out = gnd;
 assign ts_pe_166_a2_oe = i2s3r;
 
-// I2S.NET (212) - dpl[0-15] : slatch
+// I2S.NET (213) - dpl[0-15] : slatch
 j_slatch dpl_from_0_to_15_inst_0
 (
 	.q /* OUT */ (dpl_0),
@@ -1703,7 +1707,7 @@ j_slatch dpl_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (213) - dpr[0-15] : slatch
+// I2S.NET (214) - dpr[0-15] : slatch
 j_slatch dpr_from_0_to_15_inst_0
 (
 	.q /* OUT */ (dpr_0),
@@ -1833,7 +1837,7 @@ j_slatch dpr_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (214) - dp[0-15] : mx2
+// I2S.NET (215) - dp[0-15] : mx2
 assign dp_0 = (rr) ? dpr_0 : dpl_0;
 assign dp_1 = (rr) ? dpr_1 : dpl_1;
 assign dp_2 = (rr) ? dpr_2 : dpl_2;
@@ -1851,10 +1855,10 @@ assign dp_13 = (rr) ? dpr_13 : dpl_13;
 assign dp_14 = (rr) ? dpr_14 : dpl_14;
 assign dp_15 = (rr) ? dpr_15 : dpl_15;
 
-// I2S.NET (218) - ds[0] : mx2
+// I2S.NET (219) - ds[0] : mx2
 assign ds_0 = (msb) ? dp_0 : gnd;
 
-// I2S.NET (219) - ds[1-15] : mx2
+// I2S.NET (220) - ds[1-15] : mx2
 assign ds_1 = (msb) ? dp_1 : qs_0;
 assign ds_2 = (msb) ? dp_2 : qs_1;
 assign ds_3 = (msb) ? dp_3 : qs_2;
@@ -1871,7 +1875,7 @@ assign ds_13 = (msb) ? dp_13 : qs_12;
 assign ds_14 = (msb) ? dp_14 : qs_13;
 assign ds_15 = (msb) ? dp_15 : qs_14;
 
-// I2S.NET (221) - qs[0-15] : fd1q
+// I2S.NET (222) - qs[0-15] : fd1q
 fd1q qs_from_0_to_15_inst_0
 (
 	.q /* OUT */ (qs_0),
@@ -1985,10 +1989,10 @@ fd1q qs_from_0_to_15_inst_15
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (222) - i2txd : join
+// I2S.NET (223) - i2txd : join
 assign i2txd = qs_15;
 
-// I2S.NET (226) - i2sen : slatchc
+// I2S.NET (227) - i2sen : slatchc
 j_slatchc i2sen_inst
 (
 	.q /* OUT */ (i2sen_obuf),
@@ -1999,7 +2003,7 @@ j_slatchc i2sen_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (227) - mode32 : slatch
+// I2S.NET (228) - mode32 : slatch
 j_slatch mode32_inst
 (
 	.q /* OUT */ (mode32),
@@ -2009,7 +2013,7 @@ j_slatch mode32_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (228) - wsen : slatch
+// I2S.NET (229) - wsen : slatch
 j_slatch wsen_inst
 (
 	.q /* OUT */ (wsen),
@@ -2019,7 +2023,7 @@ j_slatch wsen_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (229) - rising : slatch
+// I2S.NET (230) - rising : slatch
 j_slatch rising_inst
 (
 	.q /* OUT */ (rising),
@@ -2029,7 +2033,7 @@ j_slatch rising_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (230) - falling : slatch
+// I2S.NET (231) - falling : slatch
 j_slatch falling_inst
 (
 	.q /* OUT */ (falling),
@@ -2039,7 +2043,7 @@ j_slatch falling_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (231) - everyword : slatch
+// I2S.NET (232) - everyword : slatch
 j_slatch everyword_inst
 (
 	.q /* OUT */ (everyword),
@@ -2049,14 +2053,56 @@ j_slatch everyword_inst
 	.sys_clk(sys_clk) // Generated
 );
 
-// I2S.NET (233) - mode16 : iv
+// I2S.NET (234) - mode16 : iv
 assign mode16 = ~mode32;
 
-// I2S.NET (235) - gnd : tie0
+// I2S.NET (236) - gnd : tie0
 assign gnd = 1'b0;
 
-// I2S.NET (236) - vcc : tie1
+// I2S.NET (237) - vcc : tie1
 assign vcc = 1'b1;
+
+// I2S.NET (240) - snd_l : join
+assign snd_l[0] = dpl_0;
+assign snd_l[1] = dpl_1;
+assign snd_l[2] = dpl_2;
+assign snd_l[3] = dpl_3;
+assign snd_l[4] = dpl_4;
+assign snd_l[5] = dpl_5;
+assign snd_l[6] = dpl_6;
+assign snd_l[7] = dpl_7;
+assign snd_l[8] = dpl_8;
+assign snd_l[9] = dpl_9;
+assign snd_l[10] = dpl_10;
+assign snd_l[11] = dpl_11;
+assign snd_l[12] = dpl_12;
+assign snd_l[13] = dpl_13;
+assign snd_l[14] = dpl_14;
+assign snd_l[15] = dpl_15;
+
+// I2S.NET (241) - snd_r : join
+assign snd_r[0] = dpr_0;
+assign snd_r[1] = dpr_1;
+assign snd_r[2] = dpr_2;
+assign snd_r[3] = dpr_3;
+assign snd_r[4] = dpr_4;
+assign snd_r[5] = dpr_5;
+assign snd_r[6] = dpr_6;
+assign snd_r[7] = dpr_7;
+assign snd_r[8] = dpr_8;
+assign snd_r[9] = dpr_9;
+assign snd_r[10] = dpr_10;
+assign snd_r[11] = dpr_11;
+assign snd_r[12] = dpr_12;
+assign snd_r[13] = dpr_13;
+assign snd_r[14] = dpr_14;
+assign snd_r[15] = dpr_15;
+
+// I2S.NET (242) - snd_l_en : niv
+assign snd_l_en = i2s1w;
+
+// I2S.NET (243) - snd_r_en : niv
+assign snd_r_en = i2s2w;
 
 // --- Compiler-generated PE for BUS dr[0]
 assign dr_0_out = (ts_pe_151_a0_oe & ts_pe_151_a0_out ) | (ts_pe_151_a1_oe & ts_pe_151_a1_out ) | (ts_pe_151_a2_oe & ts_pe_151_a2_out ) | 1'b0;

@@ -9,18 +9,18 @@ module fd4q
 	input		sys_clk
 );
 
-reg	data = 1'b1;
+reg	fd_data = 1'b1;
 
-assign q = data;
+assign q = fd_data;
 
 // always @(posedge cp or negedge sd)
 always @(posedge sys_clk)
 begin
 	if (cp | (~sd)) begin
 		if (~sd) begin
-			data <= 1'b1;
+			fd_data <= 1'b1;
 		end else begin
-			data <= d;
+			fd_data <= d;
 		end
 	end
 end

@@ -15,7 +15,8 @@ DEF 	I2S	(resetl,clk,din[0..15],i2s1w,i2s2w,i2s3w,i2s4w,
 
 		i2txd,sckout,wsout,i2int,i2sen:IO;
 
-		dr[0..15]:TRI);
+		dr[0..15]:TRI;
+INT16/ snd_l:OUT; INT16/ snd_r:OUT; snd_l_en,snd_r_en:OUT); (* GE *)
 
 		INT8/t,INT5/b,INT4/bc:IO;
 BEGIN
@@ -234,6 +235,12 @@ Mode16 :=	IV (mode16,mode32);
 
 Gnd :=	TIE0 (gnd);
 Vcc :=	TIE1 (vcc);
+
+(* GE *)
+Snd_L := JOIN(snd_l, dpl[0..15]);
+Snd_R := JOIN(snd_r, dpr[0..15]);
+Snd_L_en := NIV(snd_l_en, i2s1w);
+Snd_R_en := NIV(snd_r_en, i2s2w);
 
 END;
 

@@ -48,16 +48,12 @@ wire	[31:0]	r_qb;
 
 wire wren_a;
 wire wren_b;
-//reg wren_a = 1'b0;
-//reg wren_b = 1'b0;
 
 assign wren_a = ~nwea & clka;
 assign wren_b = ~nweb & clkb;
 
 always @(posedge sys_clk)
 begin
-	//wren_a <= ~nwea & clka;
-	//wren_b <= ~nweb & clkb;
 	if (~nwea & clka) begin
 		$display("GPU REG WR-A $%x #%x", aa, da);
 	end

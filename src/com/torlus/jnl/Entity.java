@@ -18,6 +18,10 @@ public abstract class Entity {
 	public boolean requireSysclk() {
 		return false;
 	}
+	public boolean requireMemclk() {
+		return false;
+	}
+
 	
 	public void findDeps(TreeMap<String, Entity> map) {
 		String name = getBaseName();
@@ -95,9 +99,18 @@ public abstract class Entity {
 			}
 		}
 		if (requireSysclk()) {
-			vlog += "\t" + SignalType.IN.verilogPortType() + " sys_clk // Generated\n";
+			if (!requireMemclk()) {
+				vlog += "\t" + SignalType.IN.verilogPortType() + " sys_clk // Generated\n";
+			} else {
+				vlog += "\t" + SignalType.IN.verilogPortType() + " sys_clk, // Generated\n";
+				vlog += "\t" + SignalType.IN.verilogPortType() + " mem_clk // Generated\n";
+			}
 			return vlog;
 		}
+		if (requireMemclk()) {
+			vlog += "\t" + SignalType.IN.verilogPortType() + " mem_clk // Generated\n";
+			return vlog;
+		}		
 		return vlog.substring(0, vlog.length() - 2) + "\n";
 	}
 
@@ -216,12 +229,19 @@ public abstract class Entity {
 				vt = vt.replaceAll("##SIG##", "in");
 			}
 			vlog += verilogExpand(vt);
-			if (n == inst.entity.ios.size() - 1 && !requireSysclk()) {
+			if (n == inst.entity.ios.size() - 1 && !requireSysclk() && !requireMemclk()) {
 				vlog = vlog.substring(0, vlog.length() - 2) + "\n";
 			}
 		}
 		if (requireSysclk()) {
-			vlog += "\t.sys_clk(sys_clk) // Generated\n";
+			if (!requireMemclk()) {
+				vlog += "\t.sys_clk(sys_clk) // Generated\n";
+			} else {
+				vlog += "\t.sys_clk(sys_clk), // Generated\n";
+			}
+		}
+		if (requireMemclk()) {
+			vlog += "\t.mem_clk(mem_clk) // Generated\n";
 		}
 		vlog += ");\n";
 		return vlog;

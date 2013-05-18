@@ -12,22 +12,22 @@ module fd4e
 	input		sys_clk
 );
 
-reg	data = 1'b1;
+reg	fd_data = 1'b1;
 
-assign q = data;
-assign qn = ~data;
+assign q = fd_data;
+assign qn = ~fd_data;
 
 // always @(posedge cp or negedge sd)
 always @(posedge sys_clk)
 begin
 	if (cp | (~sd)) begin
 		if (~sd) begin
-			data <= 1'b1;
+			fd_data <= 1'b1;
 		end else begin
 			if (~te) begin
-				data <= d;
+				fd_data <= d;
 			end else begin
-				data <= ti;
+				fd_data <= ti;
 			end
 		end
 	end

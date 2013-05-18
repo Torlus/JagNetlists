@@ -82,6 +82,8 @@ module jag_s2
 	output					VGA_CLK,
 `endif
 
+	output	AUD_LEFT,
+	output	AUD_RIGHT,
 	
 	output	[7:0] HEX_0,
 	output	[7:0] HEX_1,
@@ -323,7 +325,10 @@ jaguar jag
 	.vga_hs_n(vga_hs_n),
 	.vga_r(vga_r),
 	.vga_g(vga_g),
-	.vga_b(vga_b)
+	.vga_b(vga_b),
+	
+	.aud_l(AUD_LEFT),
+	.aud_r(AUD_RIGHT)
 );
 
 
